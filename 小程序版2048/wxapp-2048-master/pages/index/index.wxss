@@ -1,7 +1,0 @@
-/**index.wxss**/
-.more{
-	color: #aaa;
-	font-size: 14px;
-	position:fixed;
-	bottom: 20px;
-}
