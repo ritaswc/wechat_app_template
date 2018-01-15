@@ -1,0 +1,95 @@
+<view style="position:relative">
+<view class="search-input bgc" style="{{searchHeight}}rpx;">
+    <view class="search-area">
+        <image class="icon-search" src="/image/merchant/merchandise-control/44guanli.png"></image>
+        <input class="f2" placeholder-class="ph-class" placeholder="输入名称开始搜索" />
+    </view>
+    <view class="search-btn">搜索</view>
+</view>
+<view class="search-condition" style="{{orderFilterHeight}}rpx;">
+    <view class="search-item" bindtap="searchByOrder">
+        <view class="icon-wrap">
+            <image class="icon-left" src="/image/merchant/merchandise-control/45guanli{{searchByOrder?'o':'h'}}.png"></image>
+            <text class="f3 {{searchByOrder?'c':'c-6'}}">排序</text>
+        </view>
+        <image class="icon_right" src="/image/merchant/merchandise-control/47guanli{{searchByOrder?'o':'h'}}.png"></image>
+    </view>
+    <view class="search-item" bindtap="searchByFilter">
+         <view class="icon-wrap">
+             <image class="icon-left" src="/image/merchant/merchandise-control/46guanli{{searchByFilter?'o':'h'}}.png"></image>
+             <text class="f3 {{searchByFilter?'c':'c-6'}}">过滤</text>
+         </view>
+         <image class="icon_right" src="/image/merchant/merchandise-control/47guanli{{searchByFilter?'o':'h'}}.png"></image>
+    </view>
+</view>
+
+<scroll-view scroll-y="true" style="height:{{scrollHeight}}px" scroll-top="0">
+  <view class="prod-list" wx:for="{{prodlist}}">
+     <view class="prod" style="height:{{prodItemHeight}}rpx">
+        <view id="{{index}}" style="right:{{item.right}}px;transition:{{item.transition}}" bindtouchstart="startProdItem" bindtouchmove="moveProdItem" bindtouchend="endProdItem" class="prod-before {{item.open?'open':'close'}}">
+            <view class="prod-info-wrap">
+                <image class="prod-img" src="{{item.prodImg}}"></image>
+                 <view class="info">
+                    <view class="title f1 c5">
+                        商品名称
+                    </view>
+                    <view class="two-line-ellipsis des f2 c4">
+                        商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                    </view>
+                    <view class="prod-status f5">上架</view>
+                 </view>
+            </view>
+            <view class="tag-wrap">
+                <view wx:for="{{tagArr}}" class="tag-item f5 c">
+                    标签
+                </view>
+            </view>
+        </view>
+        <view class="prod-after" style="height:{{prodItemHeight}}rpx">
+            <view class="item-btn-wrap" 
+            style="height:{{shelveHeight}}rpx;">
+                <view class="off-shelve">下架</view>
+                <view class="shelve">上架</view>
+            </view>
+        </view>
+     </view>
+  </view>
+</scroll-view>
+    <view class="add-prod" bindtap="addProduct">
+        <image src="/image/merchant/merchandise-control/48guanli.png"></image>
+    </view>
+</view>
+
+<view class="mask {{(searchByFilter||searchByOrder) ? '' : 'hide' }}">
+    <scroll-view class="order-select-list" scroll-y="true">
+         <view class="item f3">
+            <text class="c-6">内容内容内容</text>
+            <!--<image class="icon_yes_no_bg" src="/image/merchant/discount/53youhuij.png"></image>-->
+        </view>
+
+        
+        <view wx:if="{{searchByOrder}}" class="item f3">
+            <text class="c">内容内容内容</text>
+            <image class="icon_yes_no_bg" src="/image/merchant/discount/53youhuij.png"></image>
+        </view>
+        <view wx:if="{{searchByFilter}}" class="item f3">
+            <text class="c-6">内容内容内容</text>
+            <image class="arrow-right" src="/image/common/icon_arrow.png"></image>
+        </view>
+
+       
+        <view class="item f3">
+            <text class="c-6">内容内容内容</text>
+            <text>哈哈哈哈哈</text>
+            <!--<image src="/image/merchant/discount/53youhuij.png"></image>-->
+        </view> 
+    </scroll-view>
+    <view wx:if="{{searchByFilter}}" class="two-btn-wrap">
+        <view class="bgc f2">重置</view>
+        <view class="bgc f2" catchtap="confirmFilter">确定</view>
+    </view>
+</view>
+
+
+
+

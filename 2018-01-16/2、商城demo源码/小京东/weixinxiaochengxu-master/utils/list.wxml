@@ -1,0 +1,24 @@
+
+<!--列表list组件 -->
+<template name="list">
+  <scroll-view class="scroll-posts-list" scroll-y="true" style="height:100%" bindscrolltolower="lower">
+    <view class="list">
+      <block wx:for="{{List}}" wx:key="">
+        <view class="posts-list">
+          <view class="posts-list-info" index="{{index}}">
+            <image class="userimg" src="{{item.author.avatar_url}}" />
+            <view class="item-box">
+              <view class="userinfo">
+                <text class="username">{{item.author.loginname}}</text>
+                <text class="time">{{item.last_reply_at}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  <loading class="loading" hidden="{{hidden}}">
+    <text class="loading-font">加载中...</text>
+  </loading>
+</template>

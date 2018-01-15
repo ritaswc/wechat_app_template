@@ -1,0 +1,6 @@
+<view class="container">
+  <import src="../templates/joke-tpl"/>
+  <block wx:for="{{jokes}}" wx:key="item">
+    <template is="joke-tpl" data="{{item, index}}"/>
+  </block>
+</view>

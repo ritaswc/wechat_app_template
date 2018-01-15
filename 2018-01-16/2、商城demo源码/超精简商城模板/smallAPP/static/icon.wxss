@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "lsh iconfont";
+  src: url("fonts/iconfont.eot");
+  src: url("fonts/iconfont.eot?#iefix") format("embedded-opentype"),
+       url("fonts/iconfont.woff") format("woff"),
+       url("fonts/iconfont.ttf") format("truetype"),
+       url("fonts/iconfont.svg#@{icon-font-svg-id}") format("svg");
+}
+
+.iconf {
+  position: relative;
+  display: inline-block;
+  font-family: 'lsh iconfont';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  
+}
+
+.i-scan::before                     { content: "\e60d"; }   /** 扫码 **/
+.i-search::before                   { content: "\e606"; }   /** 搜索 **/
+.i-clear::before                    { content: "\e605"; }   /** 清空 **/
+.i-item-add::before                 { content: "\e600"; }   /** 商品增加 **/
+.i-item-subtract::before            { content: "\e603"; }   /** 商品减少 **/
+.i-about::before                    { content: "\e610"; }   /** i(信息、通知) **/
+.i-star-empty::before               { content: "\e612"; }   /** 未选中评价 **/
+.i-star-full::before                { content: "\e611"; }   /** 选中评价 **/
+.i-arrow-r::after                   { content: "\e60b"; }   /** > (右箭头) **/
+.i-triangle-t::before               { content: "\e60a"; }   /** 向上三角 **/
+.i-triangle-b::before               { content: "\e60c"; }   /** 向下三角 **/
+.i-arrow-t::after                   { content: "\e607"; }   /** 收起 **/
+.i-arrow-b::after                   { content: "\e60e"; }   /** 展开 **/
+.i-clock::before                    { content: "\e60f"; }   /** 闹钟 **/
+.i-bolt::before                     { content: "\e613"; }   /** 闪电 **/
+.i-collect-star-full::before        { content: "\e614"; }   /** 闪电 **/
+.i-collect-star-empty::before       { content: "\e604"; }   /** 闪电 **/

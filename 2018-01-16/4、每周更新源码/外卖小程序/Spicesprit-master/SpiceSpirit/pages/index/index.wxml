@@ -1,0 +1,67 @@
+<view class="page-view" disable-scroll="true">
+<!--城市 地址选择区域-->
+    <view class="header-view">
+        <view class="header-top">
+            <view class="city-label">
+                <text>{{city}}</text>
+            </view>
+            <view class="address-view" bindtap="chooseAddress">
+                <image src="../../images/leftLocationImg.png" class="left_img"></image>
+                <text>太华写字楼</text>
+                <image src="../../images/locationMore.png" class="right_img"></image>
+            </view>
+        </view>
+        <!--操作类别选择区域-->
+        <view class="header-bottom">
+            <block wx:for="{{foodCategorys}}" wx:key="*this">
+                <view class="category-item item{{index}}" bindtap="selectSection" data-index="{{index}}">
+                    <text>{{item}}</text>
+                    <block wx:if="{{current_id ==index}}">
+                    <view class="line"></view>
+                    </block>
+                </view>
+            </block>
+        </view>
+    </view>
+
+    <!--内容区域-->
+    
+    <block wx:if="{{current_id == 0}}">
+        <view class="content-view hot" scroll-y="true">
+            <block wx:for="{{hot_goods}}" wx:key="{{id}}" wx:for-item="good">
+                <view class="hot-item">
+                    <image src="{{good.pic}}" class="good-img" bindtap="showdetail" data-index="{{index}}"></image>
+                    <view class="sale-view">
+                        <text style="font-size:22rpx;">月销量</text>
+                        <text style="font-size:18rpx;color:#ed4040;margin-left:10rpx;">{{good.sale_num}}</text>
+                    </view>
+                    <view class="button">
+                         <text>选择规格</text>
+                    </view>
+                </view>
+             </block>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="content-view common" scroll-y="true" >
+            <block wx:for="{{common_goods}}" wx:key="{{id}}" wx:for-item="good">
+                <view class="common-item">
+                    <image src="{{good.pic}}" class="common-img" bindtap="showdetail" data-index="{{index}}"></image>
+                    <view class="common-name"><text style="margin-left:10rpx;">{{good.name}}</text></view>
+                    <view class="common-sale-view">
+                        <text style="font-size:22rpx;color:#7c7c7c;">月销量</text>
+                        <text style="font-size:18rpx;color:#ed4040;margin-left:10rpx;">{{good.sale_num}}</text>
+                    </view>
+                    <text class="common-price">{{good.price}}元</text>
+                    <view class="add-button">
+                        <image src="../../images/foodAdd.png" style="width:40rpx;height:40rpx;"></image>
+                    </view>
+                </view>
+             </block>
+        </view>
+    </block>
+</view>
+<!--购物车图标-->
+<view class="shopcar-view" catchtap = "showshopcar">
+    <image src="../../images/shopCar.png"></image>
+</view>

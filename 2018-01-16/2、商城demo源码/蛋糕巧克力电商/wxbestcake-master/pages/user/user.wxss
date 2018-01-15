@@ -1,0 +1,25 @@
+page{background-color: #f0f0f0;}
+.u{display: flex;padding:15px 0; flex-direction:row; background-color:#576b95}
+.u .logo{padding:0 20px;}
+.u .logo image{width: 60px; height: 60px; border-radius: 50%; border:2px solid #fff;}
+
+.des .uname{ color: #fff;font-weight:bold;font-size:15pt; padding: 2px 0;}
+.des .phone{ color: #fff;font-size:13pt;}
+
+
+.ua{display: flex;flex-direction:row; background-color: #fff; }
+.ua .tab{padding:15px 0; }
+.ua .jzb{flex: 1;border-bottom:1rpx solid #ccc;}
+.ua .cpn{flex: 1;border-left:1rpx solid #ccc;border-right:1rpx solid #ccc;border-bottom:1rpx solid #ccc;}
+.ua .exp{flex: 1;border-bottom:1rpx solid #ccc;}
+.ua .amount{text-align: center;font-size: 8pt;}
+.ua .amount text{font-size: 15pt; font-weight: bold; padding: 0 3px;}
+.ua .nm{text-align: center;font-size: 10pt; color: #666;}
+.ua .jzb .amount{color: #f00;}
+
+.ub{margin-top: 10px; border-top:1rpx solid #ccc;border-bottom:1rpx solid #ccc; background-color: #fff;}
+.ub .item{height:45px;line-height: 45px; display: flex;flex-direction:row;}
+.ub .item .icon{width: 50px;height: 30px;}
+.ub .item .tit{width: 300rpx; font-size: 13pt;}
+.ub .item .con{flex: 1; font-size: 12pt}
+.item-a .tit,.item-a .con{border-bottom: 1rpx solid #ddd;}

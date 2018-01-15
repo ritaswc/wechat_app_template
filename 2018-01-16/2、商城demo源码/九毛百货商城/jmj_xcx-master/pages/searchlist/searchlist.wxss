@@ -1,0 +1,65 @@
+/* pages/searchlist/searchlist.wxss */
+page{
+    background:#f8f8f8;
+}
+.head{
+    height:116rpx;
+    background:#fff;
+}
+.head .item:nth-child(1){
+    border: 1rpx solid #ff44a0;
+    border-radius: 5rpx 0 0 5rpx;
+    width: 286rpx;
+    height: 64rpx;
+    text-align: center;
+    line-height: 64rpx;
+    color: #ff4aa0;
+    font-size: 30rpx;
+}
+.head .item:nth-child(2){
+    border: 1px solid #ff44a0;
+    border-radius: 0 5rpx 5rpx 0;
+    width: 286rpx;
+    height: 64rpx;
+    text-align: center;
+    line-height: 64rpx;
+    color: #ff4aa0;
+    font-size: 30rpx;
+}
+.head .item.active{
+    background: #ff4aa0;
+    color: #fff;
+}
+.headbg{
+    height:20rpx;
+    background:#eee;
+}
+.articleItem{
+    margin: 30rpx 0rpx 0 15rpx;
+}
+.articleItem .articleItemList{
+    width:350rpx;
+    background:#eee;
+    margin-right:10rpx;
+    margin-top:15rpx;
+}
+.articleItem .articleItemList .img{
+    position:relative;
+    width:350rpx;
+    height:260rpx;
+    overflow: hidden;
+    border-radius: 20rpx 20rpx 0 0;
+}
+.articleItem .articleItemList .img .proimg{
+    width:526rpx;
+    height:260rpx;
+    position:relative;
+}
+.articleItem .articleItemList .name{
+    margin:15rpx;
+    font-size: 28rpx;
+    color: #3d4245;
+    line-height: 35rpx;
+    height: 70rpx;
+    /*padding:15rpx;*/
+}

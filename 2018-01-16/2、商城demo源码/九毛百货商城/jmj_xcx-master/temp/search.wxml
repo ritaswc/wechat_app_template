@@ -1,0 +1,18 @@
+<template name="search">
+<view>
+<form bindsubmit="formSubmit">
+  <view class="sectionS">
+  <view class="inputContainer" bindtap="inputfocus">
+      <input class="inputsearch" name="input" placeholder="元旦大礼等你来搜" placeholder-style="color:#ff0000;text-align:left;font-size:28rpx"  value="{{inputValue}}"  disabled="{{true}}" />
+    <!--两个耳朵一个蝴蝶结-->
+    <view class="mark" bindfocus="inputfocus"></view>
+    <image src="{{src.img1}}" class="img1"></image>
+    <image src="{{src.img2}}" class="img2"></image>
+    <image src="{{src.img3}}" class="img3"></image>
+    <!--搜索图标-->
+    <image src="{{src.img4}}" class="img4"></image>
+  </view>
+  </view>
+</form>
+</view>
+</template>

@@ -1,0 +1,21 @@
+<!--pages/massage/massage.wxml-->
+<view class="massage-wrap">
+    <view class="wrap">
+        <ul>
+            <li bindtap="lookme">
+                <view class="image-look">
+                    <image class="img1" src="image/_03.png"></image>
+                    <view hidden="{{massage_look==''?true:false}}"  class="massage_num">{{massage_look}}</view>
+                 </view>
+                <text>谁看过我</text>
+            </li>
+            <li bindtap="systemMassage">
+                <view class="image-massage">
+                    <image class="img1" src="image/_09.png"></image>
+                    <view hidden="{{massage_num== 0 ?true:false}}" class="massage_num">{{massage_num}}</view>
+                 </view>
+                <text class="last">系统消息</text>
+            </li>
+        </ul>
+    </view>
+</view>

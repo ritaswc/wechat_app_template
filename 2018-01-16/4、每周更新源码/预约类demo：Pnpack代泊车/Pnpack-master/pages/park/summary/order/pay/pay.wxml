@@ -1,0 +1,12 @@
+<view>
+<view class="container">
+<text class="text">根据您提交的泊车时间</text>
+<text class="text">系统计算出您本次泊车最优方案为</text>
+<text class="data">0天1次</text>
+<text class="text">共支付费用为</text>
+<text class="data">0天1次</text>
+</view>
+ <view class="form-btn bottom">
+      <a class="bttn btn-refer" bindtap="bindSuccess" >微信支付</a> 
+    </view>
+    </view>

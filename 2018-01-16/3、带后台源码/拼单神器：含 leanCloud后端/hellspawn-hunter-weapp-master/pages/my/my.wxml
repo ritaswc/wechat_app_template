@@ -1,0 +1,30 @@
+<!--pages/my/my.wxml-->
+<import src="../template/template.wxml" />
+<view class="click_list">
+    <navigator url="../feedback/feedback?type=2" class="cell">
+        <view class="cell_primary">
+            <view>我要吐槽</view>
+        </view>
+        <view class="cell_ft">
+        </view>
+    </navigator>
+    <view class="cell_line"></view>
+    <navigator url="../statement/statement" class="cell">
+        <view class="cell_primary">
+            <view>免责申明</view>
+        </view>
+        <view class="cell_ft">
+        </view>
+    </navigator>
+</view>
+<view class="my_title">
+    <text>查询历史</text>
+</view>
+<view>
+    <block wx:for="{{ searchRecord }}" wx:key="id">
+      <template is="onmyoji" data="{{ ...item }}" />
+    </block>
+</view>
+<view class="footer">
+    <text>Copyright © 2017 RaPoSpectre.com</text>
+  </view>

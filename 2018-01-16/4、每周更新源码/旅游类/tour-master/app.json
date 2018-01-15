@@ -1,0 +1,49 @@
+{
+  "pages": [
+        "pages/index/index",
+    "pages/destination/destination",
+     "pages/destination/cityView/cityView", 
+    "pages/index/view-detail/view-detail",
+    "pages/find/find",
+    "pages/personal/personal",
+    "pages/personal/modify-info/modify-info",
+    "pages/index/view-list/view-list"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/navbar/home.png",
+        "selectedIconPath": "/images/navbar/home_active.png"
+      },
+      {
+        "pagePath": "pages/destination/destination",
+        "text": "目的地",
+        "iconPath": "/images/navbar/destination.png",
+        "selectedIconPath": "/images/navbar/destination_active.png"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "/images/navbar/find.png",
+        "selectedIconPath": "/images/navbar/find_active.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "/images/navbar/my.png",
+        "selectedIconPath": "/images/navbar/my_active.png"
+      }
+    ]
+  }
+}

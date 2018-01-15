@@ -1,0 +1,13 @@
+.container{
+  -webkit-align-items: center;
+          align-items: center;
+  margin-top: 240rpx;
+}
+.error-cry{
+  width: 160rpx;
+  height: 160rpx;
+}
+.error-msg{
+  color:#999;
+  margin:40rpx 0;
+}

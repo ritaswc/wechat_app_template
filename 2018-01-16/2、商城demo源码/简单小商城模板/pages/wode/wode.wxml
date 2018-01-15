@@ -1,0 +1,30 @@
+<!--pages/wode/wode.wxml-->
+<view class="user-box">
+    <image class="userimg" src="{{userImg}}" 
+        style="width:{{imgWidth}};height:{{imgHeight}};margin:{{marginAuto}};display:{{displayBlock}};border-radius:{{borderCircle}}">
+    </image>
+    <view class="user-info">
+        {{userName}}
+    </view>
+    <view class="service" style="display:flex;flex-direction:row">
+        <view class="wait-pay">待付款</view>
+        <view class="custom-service">退款 / 售后</view>
+    </view>
+</view>
+<view class="user-operation">
+     <view wx:for="{{userOoperation1}}" class="service-content">
+         <image class="service-img" src="{{item.imgUrl}}"></image>
+         <view class="" style="">{{item.text}}</view>
+     </view>
+     <view class="blank"></view>
+     <view wx:for="{{userOoperation2}}" class="service-content">
+         <image class="service-img" src="{{item.imgUrl}}"></image>
+         <view class="" style="">{{item.text}}</view>
+     </view>
+</view>
+<view class="tips">
+      关注微信服务号获取订单最新状态！
+</view>
+<view class="" style="padding:10px 15px;background:#f5f5f5"> 
+    <button id="cancelBtn" type="primary">注销</button>
+</view>

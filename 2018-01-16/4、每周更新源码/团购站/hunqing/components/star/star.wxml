@@ -1,0 +1,9 @@
+<template name='star'>
+  <view class='star-rating'>
+    <block wx:for="{{[1,2,3,4,5]}}" wx:for-item='i' wx:key='*this'>
+      <image src="../../images/arrow01.png" wx:if="{{i <= count}}"></image>
+      <image src="../../images/arrow02.png" wx:if="{{ i > count && i - 1 < count }}"></image>
+      <image src="../../images/arrow03.png" wx:if="{{ i > count && !(i - 1 < count) }}"></image>
+    </block>
+  </view>
+</template>

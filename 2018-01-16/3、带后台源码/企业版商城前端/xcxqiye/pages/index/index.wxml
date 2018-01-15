@@ -1,0 +1,77 @@
+
+<!--index.wxml-->
+<view class="page">
+   <view class="er">
+   <image class="faf" src="../../images/log.jpg"></image>
+<view class="sousuo">
+     <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box" bindtap="inpu">
+                    <input type="text" class="weui-search-bar__input" placeholder="请输入搜索内容" value="{{inputValue}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="searchAction"  disabled="disabled"/>
+              <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+            </view>
+        </view>
+</view>
+</view>
+
+<!--分类-->
+  <view class="df nav"  >
+    <view wx:for="{{kbs}}" class="df_1" data-text="{{item.text}}" bindtap="dele">
+        <image src="{{item.imgs}}"></image>     
+        <text>{{item.text}}</text>  
+    </view>  
+  </view>
+
+<view class="xian"></view>
+<!--分类two-->
+  <view class="df nav two" >
+    <view class="df_1" bindtap="qiang">
+     <view class="lie">超级推荐</view> 
+      <view class="sss"> 百里挑一的超级翡翠</view>
+        <image class="mm" src="/images/sp_slt02.png"></image>
+    </view>
+    <view class="df_1" bindtap="qiang">
+     <view class="lie">清仓</view> 
+      <view class="sss"> 百里挑一的超级翡翠</view>
+        <image class="mm" src="/images/sp_slt03.png"></image>
+    </view>
+    <view class="df_1" bindtap="qiang">
+     <view class="lie">店主推荐</view> 
+      <view class="sss"> 百里挑一的超级翡翠</view>
+        <image class="mm" src="/images/sp_slt04.png"></image>
+    </view>
+  </view>
+  <!--我是一条分割线-->
+<view class="xian"></view>
+
+  <!--推荐内容开始-->
+<view class="name">
+   <i> 宁为玉碎不为瓦全 </i>
+</view>
+<!--横滑动--> 
+ <view class="cont">
+    <navigator class="pr" url="../detail/detail?productId={{item.ProID}}" hover-class="changestyle" wx:for="{{productData}}">
+    <image src="../../images/viedo.png" class="vi"></image>
+    <image class="cont_image" src="{{item.ImgUrl}}"></image>
+      <view class="video" wx:if="{{item.IsVedioPath}}">
+            <image src="/images/viedo.png"></image>
+      </view>
+      <view class="title">{{item.ProductName}} </view>
+      <view class="gmxx df">
+        <text class="jiage df_11">￥：{{item.Price}}</text> 
+        <text class="jiage df_2" >原价￥{{item.Price}}</text> 
+      </view>
+            <view class="gmxx df">
+           <span class="xiaoliang df_3">新上架</span>  
+<span class="xiaoliang df_4">库存：{{item.UpsetPrice
+}}</span> 
+      </view>
+    </navigator>
+</view>
+  <!--底部清除-->
+  <view class="clear mt10">点击查看更多</view>
+</view>

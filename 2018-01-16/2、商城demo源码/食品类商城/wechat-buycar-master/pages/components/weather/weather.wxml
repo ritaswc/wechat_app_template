@@ -1,0 +1,30 @@
+<view class="bg">
+    <view class="text">
+        <view class="line_flag"></view>
+        <text>今日天气</text>
+    </view>
+    
+     <view class="venues_list">
+            <image src="{{today.image}}"  class="img"/>
+            <block>
+                <view class="title">{{today.date}}</view>
+                <view class="title">天气:{{today.type1}}</view>
+                <view class="title">温度:{{today.lowtemp}}-{{today.hightemp}}</view>
+            </block>
+    </view>
+
+    <view class="text">
+        <view class="line_flag"></view>
+        <text>天气预测</text>
+    </view>
+ 
+    <view class="choice_list">
+        <view wx:for="{{forecast}}">
+       
+            <image src="{{item.image}}" class="img"/>
+            <view class="title">{{item.date}}</view>
+            <view class="title">天气:{{item.type1}}</view>
+            <view class="title">温度:{{item.lowtemp}}-{{item.hightemp}}</view>
+        </view>
+    </view>
+</view>

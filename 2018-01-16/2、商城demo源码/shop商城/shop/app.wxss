@@ -1,0 +1,16 @@
+/**app.wxss**/
+.container {
+  /*height: 100%;*/
+  display: flex;
+  box-sizing: border-box;
+  flex-direction : column;
+} 
+.wx-swiper-dot:before{
+  color:#fff;
+}
+.wx-swiper-dot-active:before{
+  color:#ffca00;
+}
+.display-block{
+    display: block;
+}

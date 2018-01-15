@@ -1,0 +1,134 @@
+<scroll-view>
+  <view class="page-header fixed-header">
+   <input placeholder="请输入关键字" ></input>
+    <view class="header-img">
+      <image mode="aspectFill" class="image"  src="../../images/serach.png"></image>
+   </view>
+  </view>
+  
+  <view class="contaniner fixed-cont">
+    <view class="assort">
+        <view class="ul">
+            <view class="li">
+              <image mode="aspectFill" class="left-image"  src="../../images/classify05.png"></image>
+               <text>化妆品</text>
+            </view>
+             <view class="li">
+              <image mode="aspectFill" class="left-image"  src="../../images/classify06.png"></image>
+               <text>居家百货</text>
+            </view>
+             <view class="li">
+              <image mode="aspectFill" class="left-image"  src="../../images/classify07.png"></image>
+               <text>时尚智能</text>
+            </view>
+             <view class="li">
+              <image mode="aspectFill" class="left-image"  src="../../images/classify08.png"></image>
+               <text>营养保健</text>
+            </view>
+             <view class="li">
+              <image mode="aspectFill" class="left-image"  src="../../images/classify09.png"></image>
+               <text>女鞋箱包</text>
+            </view>
+             <view class="active">
+              <image mode="aspectFill" class="left-image"  src="../../images/classify01.png"></image>
+               <text>母婴用品</text>
+            </view>
+             <view class="li">
+              <image mode="aspectFill" class="left-image"  src="../../images/classify02.png"></image>
+               <text>女装正品</text>
+            </view>
+             <view class="li">
+              <image mode="aspectFill" class="left-image"  src="../../images/classify03.png"></image>
+               <text>男装正品</text>
+            </view>
+             <view class="li">
+              <image mode="aspectFill" class="left-image"  src="../../images/classify04.png"></image>
+               <text>内衣服饰</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="assort-cont">
+       <view class="right-height">
+       <navigator url="" redirect hover-class="other-navigator-hover">
+          <image mode="aspectFill" class="right-img"  src="../../images/classify-ph01.png"></image>
+       </navigator>
+
+       <view class="right-center">
+                <text class="dt">
+                    宝宝营养
+                </text>
+                <view class="float">
+                    <navigator url="" redirect hover-class="other-navigator-hover">
+                       <image  mode="aspectFill" class="right-one"  src="../../images/classify-ph02.png"></image>
+                    <view>BABY</view>
+                   </navigator>
+                </view>
+                <view class="float">
+                    <navigator url="" redirect hover-class="other-navigator-hover">
+                       <image  mode="aspectFill" class="right-one"  src="../../images/classify-ph03.png"></image>
+                    <view>BABY</view>
+                   </navigator>
+                </view>
+                <view class="float">
+                    <navigator url="" redirect hover-class="other-navigator-hover">
+                       <image  mode="aspectFill" class="right-one"  src="../../images/classify-ph02.png"></image>
+                    <view>BABY</view>
+                   </navigator>
+                </view>
+                <view class="float">
+                    <navigator url="" redirect hover-class="other-navigator-hover">
+                       <image  mode="aspectFill" class="right-one"  src="../../images/classify-ph03.png"></image>
+                    <view>BABY</view>
+                   </navigator>
+                </view>
+               
+       </view>
+         
+
+
+        <view class="right-center">
+                <text class="dt">
+                    妈妈专区 
+                </text>
+                <view class="float">
+                    <navigator url="" redirect hover-class="other-navigator-hover">
+                       <image  mode="aspectFill" class="right-one"  src="../../images/classify-ph04.png">化妆品</image>
+                    <view>BABY</view>
+                   </navigator>
+                </view>
+                <view class="float">
+                    <navigator url="" redirect hover-class="other-navigator-hover">
+                       <image  mode="aspectFill" class="right-one"  src="../../images/classify-ph05.png"></image>
+                    <view>BABY</view>
+                   </navigator>
+                </view>
+                <view class="float">
+                    <navigator url="" redirect hover-class="other-navigator-hover">
+                       <image  mode="aspectFill" class="right-one"  src="../../images/classify-ph04.png"></image>
+                    <view>BABY</view>
+                   </navigator>
+                </view>
+                <view class="float">
+                    <navigator url="" redirect hover-class="other-navigator-hover">
+                       <image  mode="aspectFill" class="right-one"  src="../../images/classify-ph05.png"></image>
+                    <view>BABY</view>
+                   </navigator>
+                </view>
+               
+       </view>
+
+
+
+       </view>
+    </view>
+
+  </view>
+
+ 
+
+
+
+
+
+</scroll-view>

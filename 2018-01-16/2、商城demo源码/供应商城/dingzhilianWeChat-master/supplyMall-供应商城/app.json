@@ -1,0 +1,14 @@
+{
+  "pages":[
+     "pages/index/index",
+     "pages/index/searchpros/searchpros",
+     "pages/index/searchpros/prodetail/prodetail",
+     "pages/index/searchpros/prodetail/inventory/inventory"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "供应商城",
+    "navigationBarTextStyle":"white"
+  }
+}

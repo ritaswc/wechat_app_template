@@ -1,0 +1,91 @@
+.detail_container {
+  background-color: white;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+scroll-view {
+  background-color: white;
+  height: 100%;
+ 
+}
+
+.detail_swiper {
+  height: 720rpx;
+  border-top: 0.5px solid silver;
+  border-top-color: #efeff4;
+  border-bottom: 0.5px solid silver;
+  border-bottom-color: #efeff4;
+}
+
+swiper-item image {
+  width: 100%;
+  height: 720rpx;
+}
+
+.detail_title {
+  font-size: 15px;
+  color: black;
+  padding: 10px 10px 0px 10px;
+  line-height: 1.5em;
+}
+
+.detail_price {
+  font-size: 17px;
+  color: #dd3a40;
+  padding: 10px;
+  border-bottom: 10px solid silver;
+  border-bottom-color: #efeff4;
+}
+
+.detail_spec {
+  font-size: 15px;
+  color: black;
+  padding: 10px;
+  border-bottom: 10px solid silver;
+  border-bottom-color: #efeff4;
+  line-height: 1.5em;
+}
+
+.detail_footer {
+  z-index: 100;
+  flex-direction: column;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.detail_footer_btn {
+  width: 100%;
+  height: 58px;
+  background-color: #dd3a40;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.text-box {
+  margin-bottom: 70rpx;
+  padding: 40rpx 0;
+  display: flex;
+  min-height: 300rpx;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30rpx;
+  color: #353535;
+  line-height: 2em;
+}
+
+.tips {
+  background-color: rgba(255, 255, 255, 0.5);
+  /*opacity: 0.2;*/
+  text-align: center;
+  line-height: 22px;
+  font-size: 18px;
+  color: red;
+}

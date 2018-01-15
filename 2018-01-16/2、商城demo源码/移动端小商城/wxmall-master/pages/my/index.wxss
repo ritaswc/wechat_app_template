@@ -1,0 +1,53 @@
+/**index.wxss**/
+.container {
+  background-color: #f1f1f1;
+  padding-top: 10px;
+  color: black;
+}
+.weui_cell{
+  position: relative;
+  display: flex;
+  height: 36px;
+  align-items: center;
+  border-bottom: 1px solid #f8f8f8;
+  background: #ffffff;
+}
+.weui_cell_avatar{
+  position: relative;
+  display: flex;
+  height: 60px;
+  align-items: center;
+  border-bottom: 1px solid #f8f8f8;
+  background: #fff;
+}
+.userinfo_qrcode {
+  position: absolute;
+  right: 25px;
+  width: 20px;
+  height: 20px;
+}
+.userinfo_avatar {
+  position: absolute;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.weui_cell_bd{
+  font-size: 12px;
+  padding-left: 10px;
+}
+.weui_cell_hd{
+  position: absolute;
+  right: 25px;
+  font-size: 12px;
+}
+.with_arrow{
+  position: absolute;
+  right: 10px;
+  width: 10px;
+  height: 15px;
+  background-image: url(../../images/all_next_btn.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}

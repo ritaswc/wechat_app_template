@@ -1,0 +1,36 @@
+<!--款式销售统计 - 颜色 -->
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<view class="order-statistics">
+    <view class="statistics-title">
+        <text>{{style}} 款式颜色销售量</text> 
+    </view>
+   
+    <view class="statistics-detail">
+        <view class="table table-4">
+            <view class="tr bg-w">
+                <view class="th">排名</view>
+                <view class="th">颜色名称</view>
+                <view class="th">销售件数</view>
+                <view class="th">占比</view>
+            </view>
+            <view class="tr" wx:for="{{colors}}">
+                <view class="td {{(index == 0 || index == 1 || index == 2) ? 'orange' : ''}}">{{index+1}}</view>
+                <view class="td">{{item.color_name}}</view>
+                <view class="td">{{item.count}}</view>
+                <view class="td">{{item.distribution}}</view>
+            </view>
+            <!--空行-->
+            <view class="tr hrline"></view>  
+            <view class="tr total">
+                <view class="tolcenter">
+                    <text class="tolleft-text1">销售总量 : </text>
+                    <text class="tolleft-text2">{{total}}件</text>
+                </view>
+            </view> 
+        </view>
+    
+    </view>
+</view>
+

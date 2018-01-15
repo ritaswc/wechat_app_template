@@ -1,0 +1,158 @@
+/**index.wxss**/
+page {
+  background-color: #ffffff;
+}
+.shop-name-status {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 96rpx;
+  background-color: #ffffff;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+.shop-name-status .name {
+  margin-right: 12rpx;
+}
+.shop-name-status .status {
+  color: #ffffff;
+  width: 90rpx;
+  height: 36rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18rpx;
+}
+.status-open {
+  background-color: #ffb448;
+}
+.status-rest {
+  background-color: #5380e6;
+}
+
+.shop-info {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #ffffff;
+}
+.shop-info .shop-info-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-info .shop-info-left .item {
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  width: 535rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+.shop-info .shop-info-left .item:last-child {
+  border: none;
+}
+.shop-info .shop-info-left .item .title {
+  letter-spacing:0.8em;
+}
+.shop-info .shop-info-left .item image{
+  width: 34rpx;
+  height: 33rpx;
+  margin-right: 10rpx;
+}
+.shop-info .shop-info-left .item text {
+  padding-left: 20rpx;
+}
+.shop-info .shop-info-left .item .discount {
+  padding-left: 40rpx;
+}
+.shop-info .shop-info-left .item .item-half {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+.shop-info .shop-info-right {
+  width: 185rpx;
+  display: flex;
+  flex-direction: column;
+}
+.shop-info .shop-info-right2 {
+  width: 185rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.shop-info .shop-info-right2 image {
+  width: 90rpx;
+  height: 90rpx;
+  margin-bottom: 30rpx;
+}
+.shop-info .shop-info-right2 .open {
+  color: #ffffff;
+}
+
+.shop-info .shop-info-right view{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ffffff;
+}
+.shop-info .shop-info-right .rest{
+
+  background-color: #e6eaf4;
+}
+.shop-info .shop-info-right .close{
+  background-color: #6493fe;
+}
+.shop-info .shop-info-right .close{
+  background-color: #6493fe;
+}
+/*公告*/
+.notice-info {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.notice-info .notice-title-wrap {
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: center;
+}
+.notice-info .notice-title-wrap image{
+  width: 30rpx;
+  height: 27rpx;
+  padding-top: 4rpx;
+  margin-right: 10rpx;
+}
+
+.notice-info .notice-content {
+  margin: 0 30rpx;
+  text-indent: 2em;
+  line-height: 45rpx;
+  padding: 14rpx 14rpx 30rpx;
+}
+.pic-title-btn-wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+}
+.pic-title-btn-wrap .pic-title-btn {
+  width: 375rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.pic-title-btn-wrap .pic-title-btn image {
+  margin: 85rpx 0 30rpx;
+  width: 94rpx;
+  height: 94rpx;
+}
+.pic-title-btn-wrap .pic-title-btn text {
+  
+}

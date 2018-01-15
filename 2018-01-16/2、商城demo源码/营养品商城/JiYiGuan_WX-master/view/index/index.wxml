@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="header"></view>
+  <view class="page-section page-section-spacing swiper">
+    <swiper indicator-dots="true" indicator-active-color="#c81623" autoplay="false" interval="5000" duration="500">
+      <swiper-item wx:for="{{banner_list}}" wx:for-item="banner" wx:key="{{banner.banner_id}}">
+        <image style="width: 514px; height: 150px; position: absolute; left: 50%; margin-left: -257px;" src="{{banner.banner_image}}" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="index-category">
+    <navigator url="/view/category/index?category_id={{category.category_id}}" class="index-category-item" wx:for="{{category_list}}" wx:for-item="category" wx:key="{{category.category_id}}">
+      <view class="index-category-item-icon" style="background: {{category.category_color}};">
+        <image class="index-category-item-icon-image" src="{{category.category_image}}" />
+      </view>
+      {{category.category_name}}
+    </navigator>
+  </view>
+    <navigator url="/view/product/index?product_id={{product.product_id}}" class="category-right-item" style="width: {{(window_width - 23) / 2}}px; margin: 7px 0 0 7px;" wx:for="{{product_list}}" wx:for-item="product" wx:key="{{product.product_id}}">
+      <image style="width: {{(window_width - 22) / 2}}px; height: {{(window_width - 22) / 2}}px;" src="{{product.product_image_original}}" />
+      <view class="category-right-item-name">{{product.product_name}}</view>
+      <view class="category-right-item-price">￥{{product.product_price}}</view>
+    </navigator>
+    <view style="float: left; width: 100%; margin-top: 8px;"></view>
+</view>

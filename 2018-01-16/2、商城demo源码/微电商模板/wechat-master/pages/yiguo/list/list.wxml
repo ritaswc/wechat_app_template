@@ -1,0 +1,66 @@
+<view class="list-tab">
+    <ul>
+        <li class="{{current == 0 ? 'active' : ''}}" catchtap="switchSlider" data-index="0">默认</li>
+        <li class="{{current == 1 ? 'active' : ''}}" catchtap="switchSlider" data-index="1">价格</li>
+        <li class="{{current == 2 ? 'active' : ''}}" catchtap="switchSlider" data-index="2">热销</li>
+    </ul>
+</view>
+
+<swiper class="swiper-box"  current="{{current}}" indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" bindchange="changeSlider">
+  <block>
+
+  
+<!-- 1 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scroll-box">
+         <view class="list-view" >
+           <view class="list-box" wx:for="{{listgoods}}" wx:for-item="list" wx:key="index" data-id="{{list.id}}" bindtap="lookdetail">
+              <view class="list-images" ><image src="{{list.pic_url}}" /></view>
+              <view class="list-text">
+                  <text class="name">{{list.name}}</text>
+                  <view class="txt">
+                      <text class="price">{{list.price}}</text>
+                      <text class="type">{{list.type}}</text>
+                  </view>
+              </view>
+           </view>
+          </view>
+      </scroll-view>
+    </swiper-item>
+<!--2  -->
+    <swiper-item>
+    	<scroll-view scroll-y="true" class="scroll-box">
+         <view class="list-view" >
+           <view class="list-box" wx:for="{{listgoods}}" wx:for-item="list" wx:key="index">
+              <view class="list-images"><image src="{{list.pic_url}}" /></view>
+              <view class="list-text">
+                  <text class="name">{{list.name}}</text>
+                  <view class="txt">
+                      <text class="price">{{list.price}}</text>
+                      <text class="type">{{list.type}}</text>
+                  </view>
+              </view>
+           </view>
+          </view>
+      </scroll-view>
+    </swiper-item>
+<!-- 3 -->
+    <swiper-item>
+    	<scroll-view scroll-y="true" class="scroll-box">
+         <view class="list-view" >
+           <view class="list-box" wx:for="{{listgoods}}" wx:for-item="list" wx:key="index">
+              <view class="list-images"><image src="{{list.pic_url}}" /></view>
+              <view class="list-text">
+                  <text class="name">{{list.name}}</text>
+                  <view class="txt">
+                       <text class="price">{{list.price}}</text>
+                      <text class="type">{{list.type}}</text>
+                  </view>
+              </view>
+           </view>
+          </view>
+      </scroll-view>
+    </swiper-item>
+
+  </block>
+</swiper>

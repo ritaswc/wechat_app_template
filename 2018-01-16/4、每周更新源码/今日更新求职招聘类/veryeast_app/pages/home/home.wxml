@@ -1,0 +1,57 @@
+<!--home.wxml-->
+<view class="nav">
+    <view class="action">
+        <view>
+            <image src="../../image/action.png"></image>
+        </view>
+        <!--填上用户所在地,不允许修改-->
+        <view class="diqu">
+            {{action}}
+        </view>
+    </view>
+    <view class="inputbox">
+        <icon color="#fff" type="search" size="20"/>
+        <input bindfocus="go_to_search"  placeholder-class="placeholder" placeholder="请输入职位名或者公司名" />
+    </view>
+    
+</view>
+<swiper indicator-dots="true" circular="true"  autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{imgUrls}}">
+        <swiper-item bindtap="goZhihiWeiList" data-c_userid="{{item.c_userid}}" data-job_id = "{{item.job_id}}" data-id="{{item.id}}">
+            <!--<image src="{{item}}" class="slide-image" />-->
+            <view class="slide-image" style="background-image:url( {{item.image}} )"></view>
+        </swiper-item>
+    </block>
+</swiper>
+<view class="remen-list">
+    <!--<ul>
+            <li>
+                <view class="img">
+                    <image mode="aspectFill" src="../../image/taobao.png"></image>
+                </view>
+                <text>热门职位</text>
+            </li>
+        </ul>-->
+</view>
+<!--职位推荐-->
+<view class="tuijian">
+    <view></view>
+    <text>职位推荐</text>
+    <view></view>
+</view>
+<view class="remenList">
+    <block wx:for="{{remenList}}">
+        <view bindtap="goZhihiWeiList" class="list" data-c_userid="{{item.c_userid}}" data-job_id="{{item.job_id}}">
+            <!--<image class="hotImg" src="../../image/hot.png"></image>-->
+            <view class="left">
+                <view class="positionName">{{item.company_name}}</view>
+                <view class="conpany">{{item.job_name}}</view>
+                <view class="time">{{item.update_time}}</view>
+            </view>
+            <view class="right">
+                <view class="money">{{item.salary}}</view>
+                <view>{{item.work_place}}</view>
+            </view>
+        </view>
+    </block>
+  </view>

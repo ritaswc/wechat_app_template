@@ -1,0 +1,12 @@
+<view class="user">
+  <view class="userinfor">
+    <text class="user-motto">欢迎成为会员</text>
+    手机号:
+    <input bindinput="userNameInput" type="text" placeholder="请输入手机号码"/>
+     密码:
+    <input bindinput="EventHandle" type="password" placeholder="请设置密码"/>
+     确认密码:
+    <input bindinput="userPasswordInput" type="password" placeholder="请密码保持一致"/>
+    <button bindtap="register">立即注册</button>
+  </view>
+</view>

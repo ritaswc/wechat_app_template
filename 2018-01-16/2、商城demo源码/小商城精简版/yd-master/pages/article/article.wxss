@@ -1,0 +1,326 @@
+/**load之前的占位图样式**/
+.container{
+  background-color: #fff;
+  z-index: -1;
+  opacity: 0;
+  background-color: transparent;
+  transition: all .2s ease-in;
+}
+
+.loading-placeholder {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.loading-placeholder image{
+  width: 100%;
+  height: 100%;
+}
+
+.load .container {
+  background-color: #fff;
+  z-index: 1;
+  opacity: 1;
+}
+
+.load .loading-placeholder {
+  width: 0;
+  height: 0;
+  z-index: -2;
+}
+/**load之前的占位图样式 end**/
+
+/* 文章公共头部 */
+.header{
+  width: 100%;
+}
+
+.banner-list{
+  height: 432rpx;
+}
+
+.banner-list swiper-item{
+  width: 100%;
+  height: 100%;
+}
+
+.banner{
+  width: 100%;
+  height: 100%;
+}
+
+
+.title-container{
+  color: #252629;
+  font-weight: normal;
+  line-height: 60rpx;
+  font-size: 40rpx;
+  text-align: left;
+  margin: 14rpx 24rpx 0;
+}
+
+.price-and-author-container{
+  padding:10rpx 24rpx 0;
+  font-size: 28rpx;
+  line-height: 1;
+
+  display: -webkit-flex;
+  -webkit-align-items: -webkit-center;
+          align-items: -webkit-center;
+
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+
+  border-bottom: 1px solid #bababa;
+  padding-bottom: 16rpx;
+  /* 高度变大的问题，只要限制最大高度即可解决 */
+  max-height: 68rpx;
+}
+
+.price{
+  color: #e60012;
+}
+
+.datetime{
+  color:#d0d0d0;
+}
+
+.author{
+  display: block;
+  -webkit-flex: 1;
+          flex: 1;
+
+  display: -webkit-flex;
+  -webkit-justify-content: -webkit-flex-end;
+          justify-content: -webkit-flex-end;
+  -webkit-align-items: center;
+
+  display: flex;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+  align-items: center;
+
+}
+
+.author image{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+.author text{
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+  -webkit-align-items: center;
+          align-items: center;
+  margin-left: 20rpx;
+  color:#616368;
+}
+
+/* 文章内容区 */
+.content{
+  padding:0 24rpx 40rpx 24rpx;
+  line-height: 1.625;
+  font-size: 32rpx;
+  text-align: left;
+  word-wrap: break-word;
+  word-break: break-word;
+  color:#616368;
+
+}
+
+.p,
+.ul,
+.ol,
+.li,
+.img,
+.editorhead,
+.editorcontent,
+.h2,
+.h3,
+.tips,
+.address
+.lift{
+  display: block;
+}
+
+.p{
+  margin-top: 38rpx;
+}
+
+.img{
+  width: 100%;
+  margin-top: 38rpx;
+}
+
+.h2,
+.h3{
+  color: #252629;
+  padding-left: 12rpx;
+}
+
+.h2{
+  margin: 62rpx 0 38rpx;
+  border-left: 24rpx solid #e60012;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.h3{
+    border-left: 6rpx solid #e60012;
+    margin: 38rpx 0;
+    font-weight: normal;
+}
+
+.lift{
+  color: #8e8e93;
+  font-size: 12rpx;
+  line-height: 1;
+  margin-top: 4rpx;
+}
+
+.address{
+  position: relative;
+  color: #8e8e93;
+  font-size: 12rpx;
+  line-height: 1;
+  top:-48rpx;
+  left: 34rpx;
+}
+
+.ul,.ol{
+  color: #616368;
+  margin: 38rpx 24rpx;
+}
+
+.ul .li,.ol .li{
+  font-size: 32rpx;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.ul .li:before{
+    position: absolute;
+    top: 30rpx;
+    left: -22rpx;
+    width: 12rpx;
+    height: 12rpx;
+    font-size: 12rpx;
+    line-height: 12rpx;
+    border-radius: 50%;
+    background-color: #e60012;
+    content: '';
+}
+.ol {
+  counter-reset: section;
+}
+
+.ol .li{
+  counter-increment: section;
+}
+
+.ol .li:before{
+    position: absolute;
+    top: 10rpx;
+    left: -32rpx;
+    font-size: 32rpx;
+    line-height: 1;
+    content: '';
+    content: counter(section) '. ';
+}
+
+.tips{
+  line-height: 1.69;
+  font-size: 26rpx;
+  text-align: left;
+  background-color: #f4f4f4;
+  position: relative;
+  padding: 14rpx 48rpx 14rpx 24rpx;
+  margin: 38rpx 0;
+  box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.15);
+}
+
+.tips:before{
+  content: '';
+  position: absolute;
+  width: 100rpx;
+  height: 60rpx;
+  background-color: #fff;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  right: -40rpx;
+  top: -20rpx;
+}
+
+.editorhead,
+.editorcontent{
+  margin: 38rpx 0;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.editorhead{
+  margin: 14rpx 0;
+  color: red;
+}
+
+.editorcontent{
+  margin: 14rpx 0;
+  line-height: 1.909;
+  font-size: 22rpx ;
+}
+
+
+/* sku */
+.sku{
+  background-color: #efeff4;
+  line-height: 1.71;
+  font-size: 28rpx;
+  color: #535353;
+  padding: 24rpx;
+  margin: 24rpx 0;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.sku-info{
+  -webkit-flex: 1;
+          flex: 1;
+  margin: -9rpx 0 0 24rpx;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.sku-title{
+  -webkit-flex: 1;
+          flex: 1;
+}
+
+.sku-footer{
+  display: -webkit-flex;
+  display: flex;
+  font-size: 24rpx;
+  line-height: 1;
+  -webkit-align-items: flex-end;
+          align-items: flex-end;
+}
+.sku-footer text{
+  -webkit-flex: 1;
+          flex: 1;
+}
+.sku-footer navigator{
+  -webkit-align-self: flex-end;
+          align-self: flex-end;
+  color: #fff;
+  background-color: #e60012;
+  text-align: center;
+  line-height: 40rpx;
+  width: 132rpx;
+  padding: 4rpx 0;
+  opacity: 0.5;
+  border-radius: 6rpx;
+}

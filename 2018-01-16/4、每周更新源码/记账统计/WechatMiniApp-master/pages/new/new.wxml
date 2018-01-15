@@ -1,0 +1,44 @@
+
+<!--pages/new/new.wxml-->
+<view class="top-bgimage">
+  <view class="container">
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+</view>
+<view class="main-body">
+  <form bindsubmit="formSave">
+
+    <!--日期-->
+    <picker name="pickerDate" mode="date" value="{{date}}" start="2005-01-01" end="2018-01-01" bindchange="bindDateChange">
+      <view class="input-new">{{date}}</view>
+    </picker>
+    <view class="hs20"></view>
+
+    <!--分类-->
+    <picker name="pickerCategory" value="{{categoryArray[categoryIndex].ID}}" bindchange="bindCategoryChange" range="{{categoryArray}}" range-key="{{'Name'}}">
+      <view class="input-new">{{categoryArray[categoryIndex].Name}}</view>
+    </picker>
+    <view class="hs20"></view>
+
+    <!--标题-->
+    <input name="inputTitle" class="input-new" placeholder="写个标题" value="{{title}}" />
+    <view class="hs20"></view>
+
+    <!--金额-->
+    <input name="inputMoney" type="digit" class="input-new" bindinput="bindMoneyInput" placeholder="输入金额" value="{{money}}" />
+    <view class="hs20"></view>
+
+    <!--描述-->
+    <view class="area-wrp-new">
+      <textarea name="inputRemark" maxlength="-1" auto-height="true" cursor-spacing="20" bindinput="bindRemarkInput" bindblur="bindRemarkBlur" placeholder="描述一下" value="{{remark}}" />
+    </view>
+    <view class="hs20"></view>
+
+    <!--保存-->
+    <button class="btn-new" hover-class="btn-new-hover" form-type="submit" loading="{{loadingStatus}}">保存</button>
+    <view class="hs20"></view>
+  </form>
+</view>

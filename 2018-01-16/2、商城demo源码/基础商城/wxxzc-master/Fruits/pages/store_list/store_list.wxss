@@ -1,0 +1,24 @@
+/**index.wxss**/
+.show {
+   display: block;
+}
+.hidden {
+ display: none;
+}
+.menu {display: block;height: 38px;}
+/*一级菜单*/
+.menu dt {
+   font-size: 15px;float:left;width: 33%;height: 38px;border-right: 1px solid #d2d2d2;
+   border-bottom: 1px solid #d2d2d2; text-align: center;background-color: #f4f4f4; color: #5a5a5a;line-height: 38px;
+}
+/*二级菜单外部容器样式*/
+.menu dd{ position: absolute;width: 100%;top:39px; left:0;z-index:999;}
+/*二级菜单普通样式*/
+.menu li{
+   font-size: 14px; line-height: 34px;color: #575757;height: 34px;display: block;padding-left: 8px;
+   background-color: #fff;border-bottom: 1px solid #dbdbdb;
+}
+.menu li.highlight{
+   background-color: #f4f4f4;
+}
+

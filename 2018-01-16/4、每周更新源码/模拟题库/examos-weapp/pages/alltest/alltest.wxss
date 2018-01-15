@@ -1,0 +1,173 @@
+page, .container, .content, swiper{
+	height:100%;
+}
+
+.content{
+	padding: 10px 0 65px 0;
+}
+
+.content .question-wrapper{
+	font-size: 16px;
+	padding: 0 10px;
+}
+
+.content .question-header{
+	height: 30px;
+	border-bottom: 1px solid #CCC;
+	line-height: 20px;
+}
+
+.content .question-header .question-type{
+	height: 20px;
+	padding: 0 5px;
+	color: #00a5cf;
+	font-size: 12px;
+	line-height: 20px;
+	border: 1px solid #00a5cf; 
+	border-radius: 5px;
+	float: left;
+}
+
+.content .question-header .question-num{
+	margin-left: 10px;
+	font-size: 14px;
+	line-height: 22px;
+    letter-spacing: 2px;
+}
+
+.content .question-content{
+	margin: 5px 0;
+	line-height: 24px;
+	word-break: break-all;
+}
+
+.content .question-choice{
+	padding-top: 10px;
+}
+
+.content .question-choice label{
+	padding: 10px 0;
+	word-break:break-all;
+	overflow: hidden;
+	display: block;
+	border-bottom: 1px solid #CCC;
+}
+
+.content .question-choice label.selected{
+	color: #00a5cf;
+}
+
+.content .question-choice label.wrong{
+	color: #f44336;
+}
+
+.content .question-choice label.correct{
+	color: #4caf50;
+}
+
+.content .question-choice label radio, .content .question-choice label checkbox{
+	display: none;
+	float: left;
+}
+
+.content .question-choice label text{
+	line-height:24px;
+}
+
+.content .question-choice label .icon{
+	margin-right: 15px;
+}
+
+.content .question-choice label .fa-circle, .content .question-choice label .fa-square{
+	color: #EEE;
+	-webkit-text-fill-color: #EEE;
+	-webkit-text-stroke:1px #CCC;
+}
+
+.content .answer-wrapper{
+	padding: 10px;
+	margin-bottom: 50px;
+}
+
+.content .answer-wrapper view{
+	margin-bottom: 10px;
+}
+
+.content .correct-answer text:first-child, .content .my-answer text:first-child{
+	padding: 5px;
+	margin-right: 10px;
+	color: #FFF;
+	background: #33CD5F;
+	font-size: 14px;
+	display: inline-block;
+}
+
+.content .correct-answer text:first-child{
+	background: #33CD5F;
+}
+
+.content .my-answer text:first-child{
+	background: #9e831d;
+}
+
+.content .analysis {
+	font-size: 16px;
+}
+
+.sideBar .answer-card{
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+
+.sideBar .answer-card text{
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	background: #FFF;
+	text-align: center;
+}
+
+.sideBar .answer-card .card-content{
+	padding: 10px;
+}
+
+.sideBar .answer-card .card-title{
+	margin-bottom: 10px;
+	color: #EF473A;
+	text-align: center;
+	display:block;
+}
+
+.sideBar .answer-card .row view{
+	width: 20%;
+	margin: 4px 0;
+	text-align: center;
+	float: left;
+}
+
+.sideBar .answer-card .row view text{
+	width: 80%;
+	padding: 3px 0;
+	color: white;
+	background: #CCC;
+	display: block;
+}
+
+.sideBar .answer-card .row view text.current,
+.sideBar .answer-card .row view text.finished{
+	background: #00a5cf !important;
+}
+
+.sideBar .answer-card .row view text.correct{
+	background: #8bc34a;
+}
+
+.sideBar .answer-card .row view text.wrong{
+	background: #FC6E62;
+}
+
+.wx-swiper-dots ,.wx-swiper-dots-horizon{
+	position: relative;
+	top: 85%;
+}

@@ -1,0 +1,8 @@
+<view class="switch-view">
+   <view bindtap="onTitleBarsClick0" class="view-list {{curSelClassifyIndex == 0 ? 'active' : ''}}">
+    <text>列表模式</text>
+   </view>
+   <view bindtap="onTitleBarsClick1" class="view-big-img {{curSelClassifyIndex == 1 ? 'active' : ''}}">
+    <text>大图模式</text>
+   </view>
+</view>

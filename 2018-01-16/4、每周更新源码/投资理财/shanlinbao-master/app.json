@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/propertys/property/property",
+    "pages/invest/invest",
+    "pages/mes/me/me",
+    "pages/mes/accountmangers/accountmanger/accountmanger",
+    "pages/mes/mores/more/more",
+    "pages/mes/mores/suggest/suggest",
+    "pages/main/main",
+    "pages/logs/logs",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "#b1b1b1",
+    "enablePullDownRefresh": "true",
+    "navigationBarBackgroundColor": "#ff7460",
+    "navigationBarTitleText": "善林宝",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#ff7460",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "text": "精选",
+        "pagePath": "pages/main/main",
+        "iconPath": "/images/rbt_main_choicenesst_wite.png",
+        "selectedIconPath": "/images/rbt_main_choiceness_red.png",
+        "iconColor": "#8a8a8a",
+        "selectedColor": "#ff7460",
+        "navigationBarTitleText": "精选"
+      },
+      {
+        "text": "投资",
+        "pagePath": "pages/invest/invest",
+        "iconPath": "/images/rbt_main_invest_wite.png",
+        "selectedIconPath": "/images/rbt_main_invest_red.png",
+        "iconColor": "#8a8a8a",
+        "selectedColor": "#ff7460",
+        "navigationBarTitleText": "投资"
+      },
+      {
+        "text": "资产",
+        "pagePath": "pages/propertys/property/property",
+        "iconPath": "/images/rbt_main_account_wite.png",
+        "selectedIconPath": "/images/rbt_main_account_red.png",
+        "iconColor": "#8a8a8a",
+        "selectedColor": "#ff7460",
+        "navigationBarTitleText": "资产"
+      },
+      {
+        "text": "我",
+        "pagePath": "pages/mes/me/me",
+        "iconPath": "/images/rbt_main_more_wite.png",
+        "selectedIconPath": "/images/rbt_main_more_red.png",
+        "iconColor": "#8a8a8a",
+        "selectedColor": "#ff7460",
+        "navigationBarTitleText": "我",
+        "backgroundColor": "#f0f0f0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+<!--pages/shenghuo/miaosha/miaosha.wxml-->
+<!--<text>pages/shenghuo/miaosha/miaosha.wxml</text>-->
+
+<import src="miaoshaCell/miaoshaCell.wxml"/>
+
+<block wx:for="{{miaoshaList}}" wx:for-item="item" wx:key="key">
+    <view class="miaoshaList-container" catchtap="tapmiaoshaCell">
+      <template is="miaoshaCell" data="{{...item}}"></template>
+    </view>
+  </block>
+

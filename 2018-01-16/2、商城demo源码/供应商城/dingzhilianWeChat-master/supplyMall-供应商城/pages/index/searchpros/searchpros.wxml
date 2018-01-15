@@ -1,0 +1,61 @@
+
+<!-- bindscrolltoupper="refresh" -->
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  搜索中...
+</loading>
+
+<!--searchpros.wxml-->
+<view class="index">
+
+  <!--搜索区域-->
+  <view class="index-topcon">
+    <view class="index-search">
+
+      <!--图片搜索结果图-->
+      <view wx:if="{{isShow}}" class="camera-image" bindtap="deleteImage">
+        <image class="search-image" src="{{chaImgSrc}}"></image>
+        <image class="search-cha" src="{{weixinCtx}}cha.png"></image>
+      </view>
+      <input class="search-ipt" type="text" value="{{styleName}}" placeholder="搜索定制链供应商城商品" bindinput="styleName" />
+      <view class="search-btn" bindtap="searchStyle">搜索</view>
+
+      <!--搜索图标-->
+      <image class="search-icon" src="{{weixinCtx}}s_search.png"></image>
+
+      <!--图片上传-->
+      <view class="index-camera">
+        <button class="camera-file" bindtap="chooseImageTap"></button>
+        <image class="camera-icon" src="{{weixinCtx}}s_camera.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <!--产品区域-->
+  <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="{{hasMore ? 'bindDownLoad' : ''}}" bindscroll="scroll">
+    <view class="procon">
+      <navigator wx:for="{{list}}" class="procon-imgmes" url="prodetail/prodetail?styleId={{item.id}}">
+        <image class="imgmes-img" src="{{ctx}}{{item.thumb}}"></image>
+        <text class="imgmes-mes1">{{item.style}}</text>
+        <view class="imgmes-mes2">
+          <text class="mes1">库存 : {{item.store
+            < 1000 ? item.store : '1000+'}}</text>
+              <text class="mes2">￥{{item.price_of_foreign}}</text>
+        </view>
+      </navigator>
+    </view>
+
+    <!-- 内容为空样式 -->
+    <view class="empty-con" wx:if="{{emptyShow}}">
+      <image class="empty-image" src="{{weixinCtx}}note.png"></image>
+      <text class="empty-text">小的未找到相关产品</text>
+    </view>
+
+    <!-- 上拉加载-->
+    <view class="tips" wx:if="{{scrollTop > scrollHeight && list.length>0}}">
+      <image class="tipsImg" wx:if="{{hasMore}}" src="{{weixinCtx}}loaddingpro.gif"></image>
+      <view class="tipsText" wx:else>
+        <text>没有更多内容了</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

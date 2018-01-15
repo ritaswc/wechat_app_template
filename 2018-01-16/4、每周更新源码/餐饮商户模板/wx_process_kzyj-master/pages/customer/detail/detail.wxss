@@ -1,0 +1,218 @@
+.container {
+    height: 100%;
+}
+.swiper-wrap {
+    width: 750rpx;
+    height: 260rpx;
+}
+.swiper-img {
+    width: 100%;
+    height: 260rpx;
+}
+.shop-status {
+    display: flex;
+    background-color: #ffffff;
+    padding: 30rpx 30rpx;
+    justify-content: space-between;
+}
+.shop-status .status-left .left-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shop-status .status-left .status {
+   margin-left:  10rpx;
+   width: 90rpx;
+   height: 36rpx;
+   border-radius: 18rpx;
+   color: #47b101;
+   font-size: 22rpx;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 1rpx solid #47b101;
+
+}
+.shop-status .status-left .open-time {
+    padding-top: 20rpx;
+}
+
+
+.shop-status .status-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.shop-status .status-right .img-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.shop-status .status-right .coll-wrap {
+    padding-right: 30rpx;
+}
+.shop-status .status-right .img-wrap text {
+    padding-top: 10rpx;
+}
+.shop-status .status-right .border-left{
+    border-left: 1rpx solid #f2f2f2;
+    padding-left: 30rpx;
+}
+.shop-status .status-right .shoucang {
+    width: 40rpx;
+    height: 40rpx;
+
+}
+.shop-status .status-right .phone {
+    width: 44rpx;
+    height: 37rpx;
+}
+
+.info-list {
+  background-color: #ffffff;
+  margin-top: 30rpx;
+}
+.info-list .info-item {
+    display: flex;
+    margin: 0 30rpx;
+    padding: 20rpx 0;
+    border-bottom: 1rpx solid #f2f2f2;
+}
+.info-list .info-item:last-child {
+    border:none;
+    margin-bottom: 30rpx;
+}
+.info-list .info-item .info-item-img-wrap {
+     width: 44rpx;
+     height: 44rpx;
+}
+.info-list .info-item .info-item-img{
+    width: 44rpx;
+    height: 44rpx;
+    padding: 5rpx;
+}
+.info-list .info-item .info-item-text{
+    margin-left: 10rpx;
+    line-height: 35rpx;
+}
+
+/*列表样式*/
+.list-nav {
+    height: 76rpx;
+    width: 100%;
+    display: flex;
+    background-color: #ffffff;
+    border-bottom: 1rpx solid #f2f2f2;
+}
+.list-nav .nav-pro{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list-nav .nav-service{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list-nav .cur, .list-nav .cur {
+    color: #c60e16;
+    border-bottom: 4rpx solid #c60e16;
+}
+.nav-fixed {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+.item-list {
+    background-color: #ffffff;
+}
+.item-list .item{
+    padding: 30rpx 30rpx;
+    border-top: 1rpx solid #f2f2f2;
+}
+.item-list .item .item-content{
+    display: flex;
+}
+.item-list .item .item-content .item-img-wrap{
+    width: 160rpx;
+    height: 140rpx;
+}
+.item-list .item .item-content .item-img-wrap .item-img{
+    width: 160rpx;
+    height: 140rpx;
+}
+.item-list .item .item-content .item-intro-wrap {
+    margin-left: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+.item-list .item .item-content .item-intro-wrap .item-intro-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.item-list .item .item-content .item-intro-wrap .item-intro-top .status {
+    background-color: #9174ff;
+    color: #ffffff;
+    border: 1rpx solid #9174ff;
+    border-radius: 4rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10rpx;
+}
+.item-list .item .item-content .item-intro-wrap .item-intro-top .status-x {
+    background-color: #9174ff;
+    border: 1rpx solid #9174ff;
+}
+.item-list .item .item-content .item-intro-wrap .item-intro-top .status-y {
+    background-color: #5bd712;
+    border: 1rpx solid #5bd712;
+}
+
+
+.item-list .item .item-content .item-intro-wrap .item-intro-bottom {
+    margin-top: 30rpx;
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.item-list .item .item-content .item-intro-wrap .item-intro-bottom  .item-intro{
+    /*text-overflow: -o-ellipsis-lastline;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical
+}
+
+
+.item-list .item .item-content .item-intro-wrap .item-price {
+    margin-left: 30rpx;
+    color: #e3131c; 
+}
+.item-list .item .item-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.item-list .item .item-tag-list .tag-item{
+    margin-top: 20rpx;
+    border: 1rpx solid #c60e16;
+    width: 100rpx;
+    height: 40rpx;
+    border-radius: 2rpx;
+    margin-right: 10rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

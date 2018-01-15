@@ -1,0 +1,51 @@
+/* pages/aboutous/aboutous.wxss */
+page{
+    background-color: #efefef;
+}
+.aboutous_wrap{
+    background-color: #fff;
+}
+.a_contant{
+    width: 94%;
+    margin: 0 auto;
+    text-align: center;
+}
+.img_01{
+    padding-top: 40rpx;
+    width: 300rpx;
+    height: 200rpx;
+}
+.img_02{
+    width: 42rpx;
+    height: 42rpx;
+    padding-left: 10rpx;
+}
+.a_contant text{
+    display: block;
+    text-align: left;
+    line-height: 150%;
+}
+.line{
+    border-bottom: 1px dashed  #c6c6c6;
+    margin: 15rpx 0;
+}
+.a_contact{
+    color: #929292;
+}
+.a_contact view{
+    display: flex;
+    align-items: center;
+}
+.a_contact view .url{
+    color: #4188d9;
+}
+.a_contact view text{
+    padding-left: 30rpx;
+    color: #333;
+}
+.shangbiao{
+    text-align: center;
+    font-size: 12pt;
+    color: #b8b8b8;
+    padding: 90rpx 0 10rpx 0;
+}

@@ -1,0 +1,14 @@
+<view class="container">
+    <view class="address-item">
+        <view class="address-info">
+            <view class="info-one">
+                <text class="name">彭峰</text>
+                <text class="tel-no">13922230747</text>
+            </view>
+            <text class="address-content">广东省广州市天河区保利克洛维中</text>
+        </view>
+        <view class="address-edt">
+        </view>
+     </view>
+     <button>新建地址</button>
+</view>

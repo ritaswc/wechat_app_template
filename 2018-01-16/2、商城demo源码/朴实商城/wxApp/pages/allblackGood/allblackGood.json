@@ -1,0 +1,22 @@
+{
+	"navigationBarTitleText": "所有黑货",
+	"tabBar":{
+		"color":"#ddd",
+		"selectedColor":"#000",
+		"borderStyle":"black",
+		"list":[
+			{
+				"pagePath":"../pages/index/index",
+				"iconPath":"../images/home.png",
+				"selectedIconPath":"../images/s_home.png"
+			
+			},
+			{
+			    "pagePath":"../pages/shoppingCar/shoppingCar",
+			    "iconPath":"../images/car.png",
+			    "selectedIconPath":"../images/s_car.png"
+	
+			}
+		]
+	}
+}

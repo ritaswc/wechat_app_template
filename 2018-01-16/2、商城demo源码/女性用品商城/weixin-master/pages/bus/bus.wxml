@@ -1,0 +1,89 @@
+
+<view class="contaniner fixed-contb">
+    
+     <view class="shopcar">
+         <view class="shopcar-checkbox">
+            <view class="label">
+            <image class="img-one" mode="aspectFit" src="../../images/img/dian.png"></image>
+            </view>
+            <view class="figure">
+              <image class="img-ones" mode="aspectFit" src="../../images/detail-pp03.png"></image>
+            </view>
+        <view class="dl">
+        <view class="detail">
+            <text>超级大品牌服装，现在买只要9298</text>
+            <view>颜色：经典绮丽款</view>
+            <view class="size">尺寸：L</view>
+            </view>
+            <view class="add">
+               <text>-</text>
+               <input value="13"></input>
+               <text>+</text>
+            </view>
+            <view class="h3">￥6353.00</view>
+            <view class="small">
+              <image class="del" mode="aspectFit" src="../../images/shopcar-icon01.png"></image>
+            </view>
+        </view>
+
+         </view>
+     </view>
+
+<view class="shopcar">
+         <view class="shopcar-checkbox">
+            <view class="label">
+            <image class="img-one" mode="aspectFit" src="../../images/img/dian.png"></image>
+            </view>
+            <view class="figure">
+              <image class="img-ones" mode="aspectFit" src="../../images/detail-pp03.png"></image>
+            </view>
+        <view class="dl">
+        <view class="detail">
+            <text>超级大品牌服装，现在买只要9298</text>
+            <view>颜色：经典绮丽款</view>
+            <view class="size">尺寸：L</view>
+            </view>
+            <view class="add">
+               <text>-</text>
+               <input value="13"></input>
+               <text>+</text>
+            </view>
+            <view class="h3">￥6353.00</view>
+            <view class="small">
+              <image class="del" mode="aspectFit" src="../../images/shopcar-icon01.png"></image>
+            </view>
+        </view>
+
+         </view>
+     </view>
+
+     <view class="shopcar">
+         <view class="shopcar-checkbox">
+            <view class="label">
+            <image class="img-one" mode="aspectFit" src="../../images/img/dian.png"></image>
+            </view>
+            <view class="figure">
+              <image class="img-ones" mode="aspectFit" src="../../images/detail-pp03.png"></image>
+            </view>
+        <view class="dl">
+        <view class="detail">
+            <text>超级大品牌服装，现在买只要9298</text>
+            <view>颜色：经典绮丽款</view>
+            <view class="size">尺寸：L</view>
+            </view>
+            <view class="add">
+               <text>-</text>
+               <input value="13"></input>
+               <text>+</text>
+            </view>
+            <view class="h3">￥6353.00</view>
+            <view class="small">
+              <image class="del" mode="aspectFit" src="../../images/shopcar-icon01.png"></image>
+            </view>
+        </view>
+
+         </view>
+     </view>
+
+
+</view>

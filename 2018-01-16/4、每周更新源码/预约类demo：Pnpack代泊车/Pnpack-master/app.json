@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/index/index",    
+    "pages/login/login",    
+    "pages/validate/validate",
+    "pages/evaluate/evaluate",
+    "pages/trip/compensate/compensate",
+    "pages/trip/order/order",
+    "pages/car/editCar/editCar",
+    "pages/car/addCar/chooseVehicle/chooseVehicle",
+    "pages/car/car",
+    "pages/personal/personal",
+    "pages/park/park",
+    "pages/park/summary/summary",
+    "pages/trip/trip",
+    "pages/car/addCar/addCar",
+    "pages/car/addCar/chooseBrand/chooseBrand",
+    "pages/park/summary/order/order",
+    "pages/park/summary/order/pay/pay"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00a598",
+    "navigationBarTitleText": "PnPark-VIP代泊",
+    "navigationBarTextStyle": "#FFF"
+  }
+}

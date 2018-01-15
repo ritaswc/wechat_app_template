@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/tutorial/tutorial",
+    "pages/appeal/appeal",
+    "pages/isBreath/isBreath",
+    "pages/unconsciousnessStudy/unconsciousnessStudy",
+    "pages/breathe/breathe",
+    "pages/burning/burning"
+  ],
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "急救小程序",
+    "navigationBarTextStyle":"black"
+  },
+
+  "tabBar": {
+    "color": "#B2BEC1",
+    "selectedColor": "#FA5834",
+    "list": [{
+      "pagePath": "pages/tutorial/tutorial",
+      "text": "教程",
+      "iconPath": "./assets/images/tutorial-tabbar.png",
+      "selectedIconPath": "./assets/images/selected-tutorial-tabbar.png"
+    }, {
+      "pagePath": "pages/appeal/appeal",
+      "text": "求助",
+      "iconPath": "./assets/images/appeal-tabbar.png",
+      "selectedIconPath": "./assets/images/selected-appeal-tabbar.png"
+    }]
+  }
+
+}

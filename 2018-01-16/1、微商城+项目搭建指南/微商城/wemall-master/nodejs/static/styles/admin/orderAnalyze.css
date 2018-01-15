@@ -1,0 +1,42 @@
+.order-analyze {
+	height: 120px;
+}
+
+.order-analyze-numberwrap {
+	text-align: right;
+	padding: 10px 20px 0 0;
+}
+
+.order-analyze-number {
+	text-align: right;
+	font-size: 36px;
+	color: #fff;
+}
+
+.order-analyze-number span {
+	font-size: 24px;
+	margin-right: 6px;
+}
+
+.order-analyze-desc {
+	text-align: right;
+	color: #fff;
+	font-size: 16px;
+}
+
+.order-chart-box {
+	border: 1px solid #e7ecf1;
+	height: 400px;
+	margin-top: 20px;
+	padding: 12px;
+}
+
+.order-chart-title {
+	font-size: 20px;
+    color: #000;
+}
+
+.order-chart {
+	width: 100%;
+	height: 330px;
+}

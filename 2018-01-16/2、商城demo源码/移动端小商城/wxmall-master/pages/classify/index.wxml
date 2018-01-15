@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="nav_left">
+    <block wx:for="{{navLeftItems}}">
+      <view class="nav_left_items {{curNav == index ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}">{{item.name}}</view>
+    </block>
+  </view>
+  <view class="nav_right">
+    <view wx:if="{{navRightItems.length}}">
+      <block wx:for="{{navRightItems}}">
+        <view class="nav_right_items">
+          <navigator url="../list/index?brand={{item.id}}&typeid={{navRightItems[curIndex].id}}">
+              <!--<image wx:if="{{item.picture}}" src="{{item.picture}}"></image>-->
+              <!--<image wx:else src="../../images/gift_icon.png"></image>-->
+              <image src="../../images/gift_icon.png"></image> <!--测试用-->
+              <text>{{item.name}}</text>
+          </navigator>
+        </view>
+      </block>
+    </view>
+    <view wx:else class="nodata">暂无数据</view>
+  </view>
+</view>

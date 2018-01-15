@@ -1,0 +1,28 @@
+<template name='good'>
+	<view class='good' bindtap='goodDetail'>
+		<image src="{{good.url}}" mode="aspectFill"></image>
+		<view class='mask'></view>
+		<view class='info'>
+			<view class='title'>
+				<text>{{good.name}}</text>
+			</view>
+			<view class='detail'>
+				<view class='timeinfo'>
+				<text>{{good.address}}</text>
+				
+				</view>
+				<view class='address' >
+				<text>{{good.km}}</text>
+				
+				</view>
+			</view>
+
+		</view>
+
+		<view class='bottom'>
+		<view class='price'>￥{{good.price}}</view>
+		<view class='oldprice'>￥{{good.oldprice}}</view>
+		<view class='selled'>已售{{good.sell}}</view>
+		</view>
+	</view>
+</template>

@@ -1,0 +1,10 @@
+<template name="nomore">
+    <view class="noMore_cat flexbox" wx:if="{{!showstate}}">
+        <image src="{{noMore_cat}}" class="empty_img" />
+        <view class="content">
+            <text>~</text>
+            <text>暂时木有更多内容</text>
+            <text>~</text>
+        </view>
+   </view>
+</template>

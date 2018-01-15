@@ -1,0 +1,35 @@
+page {
+	padding: 15px;
+}
+.list-header{
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.userinfo-avatar {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.header-name{
+	font-size: 20px;
+}
+.list-container{
+	margin: 10px;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	background-color: #eee;
+	text-align: left;
+	border-radius: 10px;
+}
+.list-item{
+	display: block;
+	padding: 0 0;
+}
+
+.list-btn{
+	margin: 1rem 2rem;
+}

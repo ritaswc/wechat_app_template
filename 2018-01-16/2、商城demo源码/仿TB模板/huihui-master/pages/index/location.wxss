@@ -1,0 +1,172 @@
+.search-city {
+  border: #DD292A solid 2rpx;
+  border-radius: 2rpx;
+  height: 66rpx;
+  margin: 30rpx auto;
+  overflow: hidden;
+  position: relative;
+  width: 90%;
+}
+.search-city icon { margin-top: 10rpx; }
+.search-text {
+  background: #fff;
+  border: none;
+  color: #666;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 34rpx;
+  font-weight: 400;
+  height: 34px;
+  left: 0;
+  line-height: 18px;
+  margin: 0;
+  padding: 0 42px 0 8px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.search-icon {
+  background: #DD292A;
+  color: #fff;
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  position: absolute;
+  right: 0px;
+  text-align: center;
+  width: 42px;
+  z-index: 2;
+}
+.searchLetter {
+  position: fixed;
+  right: 0;
+  width: 50rpx;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #666;
+  z-index: 1;
+}
+
+.searchLetter view {
+  margin-top: 18rpx;
+}
+.location-now { width: 100%; }
+.location-city {
+  color: #333;
+  display: block;
+  font-size: 14px;
+  padding: 0 0 5px 16px;
+}
+.location { overflow: hidden; padding: 5px 0 5px 12px; width: calc(100% - 23px); }
+.touchClass {
+  color: #aaa; 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
+
+.showSlectedLetter {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -100rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+  font-size: 52rpx;
+  z-index: 1;
+}
+
+.selection {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 10rpx;
+   display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30rpx;
+}
+
+.item_letter {
+  align-items: center;
+  background-color: #f2f2f2;
+  color: #666;
+  display: flex;
+  font-size: 36rpx;
+  font-weight: 500;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.item_city {
+  display: flex;
+  background-color: #fff;
+  height: 100rpx;
+  padding-left: 34rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #ededed;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.hotcity-common {
+  font-size: 28rpx;
+  color: #666;
+  padding: 0 0 0 30rpx;
+}
+
+.thisCity {
+  padding-top: 30rpx;
+}
+
+.thisCityName {
+  display: inline-block;
+  border: 1rpx solid #2ab4ff;
+  border-radius: 8rpx;
+  padding: 10rpx 0;
+  font-size: 24rpx;
+  color: #2ab4ff;
+  text-align: center;
+  min-width: 149.5rpx;
+  margin: 20rpx 0 20rpx 30rpx;
+}
+
+.thishotText {
+  color: #2ab4ff;
+  font-size: 20rpx;
+  margin: 0 !important;
+}
+
+.slectCity {
+  border-color: #2ab4ff !important;
+}
+
+.slectCity view {
+  color: #2ab4ff !important;
+}
+
+.weui-grid {
+  position: relative;
+  float: left;
+  padding: 10rpx 0;
+  width: 149.5rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #dedede;
+  border-radius: 8rpx;
+  margin: 10rpx 12rpx;
+  background:#fff;
+}
+
+.weui-grid_label {
+  display: block;
+  text-align: center;
+  color: #333;
+  font-size: 24rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

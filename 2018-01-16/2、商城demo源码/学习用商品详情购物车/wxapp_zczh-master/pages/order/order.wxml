@@ -1,0 +1,55 @@
+<view class="warp">
+    <form catchsubmit="formSubmit" catchreset="formReset"> 
+         <!-- 黑框提示并消失 -->  
+        <toast hidden="{{toast1Hidden}}" bindchange="toast1Change">  
+            {{notice_str}}  
+        </toast>  
+        <!--提示弹框和确认-->
+        <view class="page__bd">  
+            <modal title="确认" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="confirm_one" bindcancel="cancel_one">  
+                确认提交么？  
+            </modal>  
+            <!--<modal class="modal" hidden="{{modalHidden2}}" no-cancel bindconfirm="modalChange2" bindcancel="modalChange2">  
+                <view> 提示 </view>  
+                <view> 清空成功 </view>  
+            </modal>  -->
+        </view> 
+        <view class="order clearfix">
+        <image class="pic" src="{{serverSrc}}{{good.goods_pic}}"></image>
+            <text class="title">{{good.goods_name}}</text>
+            <text class="price">￥{{num*good.goods_price}}</text>
+            <!--<view class="change yangshi">
+                <span>款　　式:</span>
+                <radio-group>
+                    <label>款式A<radio></radio></label>
+                    <label>款式B<radio></radio></label>
+                    <label>款式C<radio></radio></label>
+                </radio-group>
+            </view>-->
+            <view class=" number ">
+                    数　　量:　<span bindtap="sub" class="sub">-</span>
+                    <span class="n">{{num}}</span>
+                    <span bindtap="add" class="add">+</span>
+            </view>
+        </view>
+        <view class="row">
+            <span>收货人：</span><input type="text" name="name" placeholder="姓名(必填)" value="{{address.receiver}}"/>
+        </view> 
+        <view class="row">
+            <span>手机号：</span><input name="number" type="number" placeholder="11位手机号(必填)" value="{{address.phone}}"/>
+        </view>
+        <view class="row">
+            <span>地　址：</span>
+            <input name="address" type="text" placeholder="详细地址(必填)" value="{{address.address}}"/>
+        </view>  
+        <view class="row"><span>备　注：</span><input name="txt" type="text" placeholder=""/></view> 
+        <button class="buyNow" formType="submit">提交订单</button>
+        <view class="goAdr"  bindtap="goAdr">
+            <text>去已有地址选择</text>
+            <image src="../../image/go.png"></image>
+        </view> 
+    </form>
+</view>
+<!--<view class="personal" bindtap="goPer">
+    <image src="../../image/per.png"></image>
+</view>-->

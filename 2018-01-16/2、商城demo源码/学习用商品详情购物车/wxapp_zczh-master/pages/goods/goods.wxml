@@ -1,0 +1,36 @@
+<swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block>
+      <swiper-item wx:for="{{good.goods_slide}}">
+        <image src="{{serverSrc}}{{item.slide_pic}}" class="slide-image" />
+      </swiper-item>
+    </block>
+</swiper>
+<view class="goods_info">
+            <text class="title">{{good.goods_name}}</text>
+            <text class="price">￥{{good.goods_price}}</text><span>原价：￥{{good.default_price}}</span>
+            <text class="info">{{good.goods_description}}</text>
+</view>
+<view class="gs_dt">
+<text>商品详情</text>
+<view wx:for="{{good.main}}" bindtap="toBigpic" id="{{index}}">
+    <image src="{{item}}" ></image>
+</view>
+</view>
+<view style="height:82rpx;"></view>
+<view class="btnBar">
+    <span class="back" bindtap="back">返回首页</span>
+    <span class="buy" bindtap="submit">立即购买</span>
+    <view class="contactUs">
+        <contact-button 
+        type="default-light" 
+        size="22"
+        session-from="weapp"
+        ></contact-button>
+   </view> 
+</view>
+<!--<view class="buyCar" style="display:{{buyCar}}" >
+    <span class="submit" bindtap="submit">提交订单</span>
+</view>-->
+<view class="personal" bindtap="goPer">
+    <image src="../../image/per.png"></image>
+</view>

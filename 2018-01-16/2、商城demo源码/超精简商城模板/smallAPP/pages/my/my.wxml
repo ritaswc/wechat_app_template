@@ -1,0 +1,29 @@
+<view class="mod-my">
+    <!--循环生成列表-->
+    <block wx:key="1" wx:for="{{myList}}">
+        <view class="item {{item.className}}" bindtap="{{item.events}}">
+            <image class="icon-main" src="{{item.iconPath}}" />
+            <text class="name">{{item.name}}</text>
+            <text class="info">{{item.info}}</text>
+            <view class="iconf i-arrow-r"></view>
+        </view>
+        <block wx:key="1" wx:if="{{item.orderList && item.orderList.length > 0}}">
+            <view class="item orders">
+                <block wx:key="1" wx:for="{{item.orderList}}" wx:for-item="order">
+                    <button plain="true" hover-class="button-hover" class="order-name">
+                        {{order.name}}
+                        <text wx:if="{{order.count > 0}}" class="order-count">{{order.count}}</text>
+                    </button>
+                </block>
+            </view>
+        </block>
+    </block>
+
+    <!--退出登录-->
+    <view class="log-out" bindtap="logOut">退出当前账号</view>
+
+    <!--退出登录模态框-->
+    <modal title="确认" hidden="{{modalHidden}}" bindconfirm="modalChange" bindcancel="modalChange">
+        确认退出登录？
+    </modal>
+</view>

@@ -1,0 +1,24 @@
+.city-container {
+  padding-top: 30rpx;
+  padding-left: 50rpx;
+  padding-bottom: 30rpx;
+  background:  #000000;
+}
+
+.city {
+  border-bottom: 1px solid #ccc;
+  padding: 10rpx;
+  color:aliceblue
+}
+
+swiper {
+  height: 1150rpx;
+}
+
+
+
+
+
+@import "now.wxss";
+@import "daily.wxss";
+@import "lifeIndex.wxss";

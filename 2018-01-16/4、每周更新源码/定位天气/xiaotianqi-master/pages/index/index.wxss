@@ -1,0 +1,36 @@
+.msgCard {
+  border-radius: 2px;
+  margin-bottom: 5px;
+}
+
+.msgPanel {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.msgPanel > image {
+  width: 160pt;
+}
+.nowPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.searchLoc {
+  padding: 5pt;
+}
+
+.nowTime {
+  padding-top: 20pt;
+  padding-right: 10pt;
+  font-size: 14pt;
+}
+.nowText {
+  padding: 20pt;
+  font-size: 50pt;
+}
+
+/*.
+*/

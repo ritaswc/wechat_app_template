@@ -1,0 +1,6 @@
+<!--pages/feedback/feedback.wxml-->
+
+
+<view class="feedback">
+    <image src="/images/icons/wechat.png" mode="widthFix" />
+</view>

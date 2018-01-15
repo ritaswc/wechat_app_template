@@ -1,0 +1,59 @@
+<!-- 物流信息 -->
+<view bindtap="kuaidiInfo" class="kuaidi">
+	<view class="kuaidiIcon">
+		<image src="../../../images/icon_logistics.png"></image>
+	</view>
+	<view class="kuaidiInfo">
+		<view>
+			<text>承运来源：</text><text>顺丰快递</text>
+		</view>
+		<view>
+			<text>运单编号：</text><text>1123164</text>
+		</view>
+		<view>
+			<text>物流状态：</text><text>已收货</text>
+		</view>
+	</view>
+</view>
+
+<!-- 收货地址 -->
+<view bindtap="todeliver" class="address">
+	<view>
+		<text class="name">杨天佑</text><text class="number">12166292893</text>
+	</view>
+	<view>
+		上海市上海闵行区|七宝老街
+	</view>
+</view>
+
+<!-- 订单详情 -->
+<view class="orderDetails">
+	<view class="orderDetailsTit">订单详情</view>
+	<view class="orderDetailsStatus">
+		<view>订单编号<text class="orderNum">1003455</text></view>
+		<view>下单时间<text class="orderNum">2016-11-03 15:30:07</text></view>
+		<view>订单状态<text class="orderStatus">交易完成</text></view>
+	</view>
+</view>
+
+<!-- 商品订单详情 -->
+<view class="productDetails">
+	<view class="orderListTitle">
+		<view class="userImg"><image src="http://ojhq3mgil.bkt.clouddn.com/web/478/20170116/201701161749246654.jpg"></image></view>
+		<text class="userName">上善若水</text>
+		<text class="orderStatus">交易成功</text>
+	</view>
+	<view bindtap="toProductDetails" class="orderListDetails">
+		<view class="productImg">
+			<image src="http://ojhq3mgil.bkt.clouddn.com/465/20161024/201610241238006043.jpg"></image>
+		</view>
+		<view class="productInfo">
+			<view class="productTitle">Canmake缤纷糖果保湿唇彩 唇蜜 01经典粉色</view>
+			<text class="productPrice">￥132.00</text>
+			<text class="productQuantity">x1</text>
+		</view>
+	</view>
+	<view class="productCount">
+		<view>合计：￥<text>132.00</text></view>
+	</view>
+</view>	

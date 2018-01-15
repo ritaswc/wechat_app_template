@@ -1,0 +1,19 @@
+<!--pages/experience/experience.wxml-->
+<view class="experience_wrap">
+    <navigator url="../objecTive/objecTive">
+        <button>添加工作经验</button>
+    </navigator>
+    <view class="list_box">
+        <block wx:for="{{list}}">
+            <view class="box" >
+                <view class="left" catchlongtap="delete_exp" data-id="{{item.id}}">
+                    <view class="name">{{item.company_name_cn}}</view>
+                    <view class="time">{{item.begin_year}}-{{item.begin_month}}~{{item.end_year}}{{item.end_month}}</view>
+                </view>
+                <view class="right" bindtap="go_work_exps" data-id="{{item.id}}">
+                     <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

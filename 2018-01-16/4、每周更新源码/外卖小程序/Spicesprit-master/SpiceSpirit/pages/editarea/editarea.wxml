@@ -1,0 +1,4 @@
+<view class="input-view">
+    <input placeholder="请填写区域地址" placeholder-style="color:#c6c6c6"/>
+    <view></view>
+</view>

@@ -1,0 +1,85 @@
+/* pages/detail/detail.wxss */
+page{
+    background: #eee;
+}
+.container{
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+.topHead{
+    position: relative;
+    padding: 10px 0;
+    margin: 0 10px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+.topHead .imgwrap{
+    width: 100rpx;
+    height: 100rpx;
+    padding: 5px;
+    border: 1px solid #ebebeb;
+    border-radius: 50%;
+}
+.topHead image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+
+.topHead .topTitle{
+    width: 80%;
+    padding-top: 14px;
+   
+}
+
+.topHead .topTitle .t{
+    font-size: 16px;
+    display: block;
+}
+.topHead .topTitle .i{
+    font-size: 12px;
+    color: #ccc;
+}
+
+.moreInfo{
+    margin: 0 10px;
+}
+
+.moreInfo .item_li{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    line-height: 90rpx;
+    border-bottom: 1px solid #ccc;
+}
+
+.moreInfo .item_li .param_t,.moreInfo .item_li .param_d{
+    font-size: 32rpx;
+    color: #ccc;
+}
+
+.moreInfo .item_li .param_t{
+    color: #000;
+    padding-left: 5px;
+}
+.moreInfo .item_li .param_d{
+    padding-right: 5px;
+}
+.moreInfo .item_ct{
+    padding-top:10px;
+}
+.moreInfo .item_ct .param_t{
+    padding-left: 5px;
+}
+.moreInfo .item_ct .param_c{
+    padding: 5px;
+    line-height: 48rpx;
+    color: #ccc;
+    font-size: 32rpx;
+}
+
+.btnWrap{
+    margin: 40px 10px 0;
+}

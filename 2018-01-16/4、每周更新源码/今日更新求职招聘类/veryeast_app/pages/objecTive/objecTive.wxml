@@ -1,0 +1,111 @@
+<!--pages/objecTive/objecTive.wxml-->
+<view  class="objecTive_wrap">
+    <view wx:if="{{showTip}}" class="tip">{{tip}}</view>
+    <form bindsubmit="formSubmit">
+        <view class="middle bottom">
+            <!--开始时间-->
+            <view bindtap="data_back" class="dingyue">
+                <view class="left">
+                    <text>*</text>开始时间
+                </view>
+                <view class="right">
+                    <picker name="begin_time" mode="date" fields="month"   start="1940-01" end="{{endTime}}" bindchange="begin_time">
+                        <text >{{begin_time}}</text>
+                        <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                    </picker>
+                </view>
+            </view>
+             <!--结束时间-->
+            <view bindtap="data_back" class="dingyue">
+                <view class="left">
+                    <text>*</text>结束时间
+                </view>
+                <view class="right">
+                    <picker name="end_time" mode="date" fields="month"   start="1940-02" end="{{endTime}}" bindchange="end_time">
+                        <text >{{end_time}}</text>
+                        <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                    </picker>
+                </view>
+            </view>
+            <!--所属行业-->
+            <view bindtap="data_back" class="dingyue">
+                <view class="left">
+                   <text>*</text>所属行业
+                </view>
+                <view class="right">
+                    <picker name="company_industry"   bindchange="selectHangye" range="{{hangye}}">
+                        <text data-id = "{{hangyelist.id}}">{{hangyelist.val}}</text>
+                        <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                    </picker>
+                </view>
+            </view>
+            <!--企业名称-->
+            <view bindtap="data_back" class="dingyue">
+                <view class="left">
+                   <text>*</text>企业名称
+                </view>
+                <view class="right">
+                    <input name="company_name_cn" bindinput="changedisable" placeholder="请输入企业名称" value="{{company_name}}"/>
+                </view>
+            </view>
+            <!--职位-->
+            <view bindtap="data_back" class="dingyue">
+                <view class="left">
+                   <text>*</text>职位
+                </view>
+                <view class="right" bindtap="select_zhiwei">
+                    <text class="text">{{zhiwei.job}}</text>
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+            <!--所在城市-->
+            <view bindtap="data_back" class="dingyue">
+                <view class="left">
+                   <text></text>所在城市
+                </view>
+                <view class="right" bindtap="sel_work_city">
+                    <text class="text">{{city.current_location}}</text>
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+            <!--职位薪资-->
+            <view bindtap="data_back" class="dingyue">
+                <view class="left">
+                   <text></text>职位薪资
+                </view>
+                <view class="right">
+                    <picker name="salary" bindchange="selectSalary" range="{{salaryArray}}">
+                        <text data-id = "{{salarylist.id}}">{{salarylist.val}}</text>
+                        <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                    </picker>
+                </view>
+            </view>
+            <!--岗位职责-->
+            <view bindtap="data_back" class="dingyue">
+                <view class="left">
+                   <text></text>岗位职责
+                </view>
+                <view class="right">
+                    <navigator bindtap="changedisable" url="../commonSelect/commonSelect?status=duty">
+                        <text class="text">{{duty}}</text>
+                        <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                    </navigator>
+                </view>
+            </view>
+            <!--工作业绩-->
+            <view bindtap="data_back" class="dingyue" style="border-bottom:none">
+                <view class="left">
+                   <text></text>工作业绩
+                </view>
+                <view class="right">
+                    <navigator bindtap="changedisable" url="../commonSelect/commonSelect?status=Deeds">
+                        <text class="text">{{Deeds}}</text>
+                        <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                    </navigator>   
+                </view>
+            </view>
+        </view>
+        <button disabled="{{disabled}}" loading="{{showLoading}}" formType="submit" class="save">保存</button>
+    </form>
+    
+</view>

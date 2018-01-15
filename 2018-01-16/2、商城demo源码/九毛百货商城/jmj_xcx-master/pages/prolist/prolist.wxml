@@ -1,0 +1,126 @@
+<import src="../../temp/search.wxml"/>
+<import src="../../temp/headnav.wxml"/>
+<template is="search" data="{{src:src}}" />
+<template is="headnav" data="{{headnav:headnav,navState:navState,class1:class1,class2:class2}}" />
+<!--热门分类-->
+<view class="cathot">
+    <view class="title flexbox">
+        <view class="line1"></view>
+        <text class="text1">热门分类</text>
+        <text class="text2">ヒット分類</text>
+        <view class="line2"></view>
+    </view>
+    <scroll-view scroll-x="{{true}}" class="cathotList">
+        <navigator url="url"  wx:for="{{prolist.category_list}}" wx:key="{{item.id}}" class="itemList flexinlinebox">
+            <image src="{{item.image}}" class="itemImg"></image>
+            <text class="text">{{item.name}}</text>
+        </navigator>
+    </scroll-view>
+</view>
+<!--最新品-->
+<view class="proList">
+    <view class="box new">
+        <image src="{{imgNew}}" class="logo"></image>
+        <navigator url="" class="text">更多
+        <image src="{{imgMore}}" class="more"></image>
+        </navigator>
+    </view>
+    <view class="item wrapbox">
+        <navigator url="url" class="itemList" wx:for="{{prolist.goods_list1}}" wx:key="{{item.id}}">
+            <image src="{{item.img}}" class="img" />
+            <text class="name hidewrap">{{item.name}}</text>
+            <view class="price"><text style="font-size:20rpx;">¥</text>{{item.sell_price}}</view>
+        </navigator>
+    </view>
+</view>
+<!--随机专辑-->
+<view class="artic">
+    <navigator class="banner-img">
+        <image src="{{article_list1.image}}" class="img"/>
+        <text class="goodsNum">{{article_list1.goods_count}} 件商品</text>
+        <view class="goodslookNum">
+        <image src="{{imgLook}}" class="imglook"/>
+        <text>{{article_list1.visit_num}}</text>
+        </view>
+    </navigator>
+    <view class="single" style="position:relative;z-index:1"></view>
+    <scroll-view class="goodsList"  scroll-x="{{true}}">
+    <view class="mark">
+        <navigator wx:for="{{article_list1.goods_list}}" wx:key="{{item.id}}" class="goodsListItem flexinlinebox" url="../products/products?id={{item.id}}&title={{item.name}}">
+        <image src="{{item.img}}" />
+        <text class="name hidewrap">{{item.name}}</text>
+        <view class="price"><text style="font-size:20rpx;">¥</text>{{item.sell_price}}</view>
+        </navigator>
+    </view>
+    </scroll-view>
+</view>
+<!--热门品牌-->
+<view class="hotbrand">
+    <view class="title flexbox">
+        <view class="line1"></view>
+        <text class="text1">热门品牌</text>
+        <text class="text2">ヒットブランド</text>
+        <view class="line2"></view>
+    </view>
+    <view class="brand wrapbox">
+        <navigator url="../brand/brand?id={{item.id}}&title={{item.name}}" wx:for="{{prolist.brand_list}}" wx:key="{{item.id}}">
+           <image src="{{item.logo}}" class="log"></image> 
+        </navigator>
+    </view>
+</view>
+<!--最热卖-->
+<view class="proList">
+    <view class="box new">
+        <image src="{{imgHot}}" class="logo"></image>
+        <navigator url="" class="text">更多
+        <image src="{{imgMore}}" class="more"></image>
+        </navigator>
+    </view>
+    <view class="item wrapbox">
+        <navigator url="url" class="itemList" wx:for="{{prolist.goods_list2}}" wx:key="{{item.id}}">
+            <image src="{{item.img}}" class="img" />
+            <text class="name hidewrap">{{item.name}}</text>
+            <view class="price"><text style="font-size:20rpx;">¥</text>{{item.sell_price}}</view>
+        </navigator>
+    </view>
+</view>
+<!--随机专辑2-->
+<view class="artic">
+    <view class="banner-img">
+        <image src="{{article_list2.image}}" class="img"/>
+        <text class="goodsNum">{{article_list2.goods_count}} 件商品</text>
+        <view class="goodslookNum">
+        <image src="{{imgLook}}" class="imglook"/>
+        <text>{{article_list2.visit_num}}</text>
+        </view>
+    </view>
+    <view class="single" style="position:relative;z-index:1"></view>
+    <scroll-view class="goodsList"  scroll-x="{{true}}">
+    <view class="mark">
+        <view wx:for="{{article_list2.goods_list}}" wx:key="{{item.id}}" class="goodsListItem flexinlinebox">
+        <image src="{{item.img}}" />
+        <text class="name hidewrap">{{item.name}}</text>
+        <view class="price"><text style="font-size:20rpx;">¥</text>{{item.sell_price}}</view>
+        </view>
+    </view>
+    </scroll-view>
+</view>
+<!--推荐商品-->
+<view class="proList">
+    <view class="box new">
+        <image src="{{prolist.pic}}" class="logo"></image>
+        <navigator url="" class="text">更多
+        <image src="{{imgMore}}" class="more"></image>
+        </navigator>
+    </view>
+    <view class="pushitem flexstart">
+        <navigator url="url" class="pushList" wx:for="{{prolist.goods_list3}}" wx:key="{{item.id}}">
+            <view class="img-container flexbox">
+             <image src="{{item.img}}" class="img" />
+            </view>
+            <text class="name hidecamp">{{item.name}}</text>
+            <view class="price"><text style="font-size:20rpx;">¥</text>{{item.sell_price}}</view>
+        </navigator>
+    </view>
+</view>
+

@@ -1,0 +1,308 @@
+@import "../../../common/ui.wxss";
+
+page {
+  background-color: #f5f5f5;
+}
+
+.head {
+  height: 420rpx;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+
+.filter {
+  filter: blur(24px);
+  height: 420rpx;
+  width: 100%;
+  position: absolute;
+  z-index: -10;
+}
+
+.cover {
+  display: flex;
+}
+
+.jianjie {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 258rpx;
+  padding: 16rpx 0;
+}
+
+.control {
+  display: flex;
+  justify-content: space-around;
+}
+
+.playUrl {
+  margin: 0 28rpx;
+}
+
+.mTitle {
+  font-size: 30rpx;
+  color: white;
+}
+
+.enName {
+  font-size: 22rpx;
+  color: white;
+}
+
+.rater {
+  display: flex;
+}
+
+.subject {
+  font-size: 26rpx;
+  color: white;
+}
+
+.rateN {
+  font-size: 24rpx;
+  color: #fec500;
+}
+
+.rateP {
+  font-size: 18rpx;
+  color: #8e8381;
+}
+
+.area {
+  color: #8e8381;
+  font-size: 24rpx;
+  line-height: 32rpx;
+}
+
+.like {
+  width: 326rpx;
+  height: 60rpx;
+  background-color: #7f706b;
+  border: 1px #9f948d solid;
+  border-radius: 6rpx;
+  color: white;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 24rpx;
+}
+
+.space {
+  margin-right: 30rpx;
+}
+
+.plot {
+  background-color: #fff;
+  font-size: 28rpx;
+  line-height: 46rpx;
+  padding: 26rpx 30rpx;
+}
+
+.flex {
+  height: 120rpx;
+  overflow: hidden;
+}
+
+.arrow {
+  height: 36rpx;
+  position: relative;
+  background-color: white;
+  border-bottom: 2rpx #d8d8d8 solid;
+  margin-bottom: 20rpx;
+}
+
+.uparrow:after {
+  transform: matrix(0.71, -0.71, 0.71, 0.71, 0, 0);
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #ccc;
+  border-style: solid;
+  position: absolute;
+  left: 50%;
+  margin-right: -22rpx;
+}
+
+.downarrow:after {
+  transform: matrix(0.71, 0.71, 0.71, -0.71, 0, 0);
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #ccc;
+  border-style: solid;
+  position: absolute;
+  left: 50%;
+  margin-right: -22rpx;
+}
+
+.actorLi {
+  display: flex;
+}
+
+.actTitle {
+  margin: 28rpx 0 20rpx 28rpx;
+  font-size: 28rpx;
+}
+
+.acItem {
+  width: 134rpx;
+  display: flex;
+  flex-flow: column;
+  margin: 0 7rpx 34rpx;
+  font-size: 22rpx;
+  align-items: center;
+}
+
+.textOver {
+  width: 130rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.rankWarp {
+  display: flex;
+  margin: 0 74rpx;
+  justify-content: space-between;
+}
+
+.rankNum {
+  color: #f34d41;
+  font-size: 34rpx;
+  text-align: center;
+}
+
+.rankB {
+  font-size: 24rpx;
+  color: #a5a5a5;
+  margin-top: 20rpx;
+}
+
+.tBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.videoN {
+  margin-right: 56rpx;
+  color: #a5a5a5;
+  position: relative;
+}
+
+.videoN::after {
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  content: " ";
+  display: inline-block;
+  height: 14rpx;
+  width: 14rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #ccc;
+  border-style: solid;
+  position: absolute;
+  top: 8rpx;
+}
+
+.buy {
+  background-color: #ef4238;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 94rpx;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.scr-H-item {
+  display: inline-block;
+}
+
+.scr-H {
+  white-space: nowrap;
+}
+
+.spa {
+  width: 22rpx;
+}
+
+.img-item {
+  margin: 0 5rpx;
+}
+
+.long {
+  width: 288rpx;
+  height: 184rpx;
+}
+
+.short {
+  width: 210rpx;
+  height: 184rpx;
+}
+
+.audience {
+  background-color: #fff;
+  margin-bottom: 18rpx;
+}
+
+.mark-head {
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-width: 2rpx 0 2rpx 0;
+  border-color: #ccc;
+  border-style: solid;
+}
+
+.au-mark {
+  margin-left: 30rpx;
+  font-size: 30rpx;
+}
+
+.my-mark {
+  width: 130rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  text-align: center;
+  margin-right: 30rpx;
+  border-radius: 24rpx;
+  color: #ef4238;
+  font-size: 24rpx;
+  border: 2rpx #ef4238 solid;
+}
+
+.audience-item {
+  display: flex;
+  margin-top: 28rpx;
+}
+
+.pWord {
+  font-size: 28rpx;
+  line-height: 1.6;
+  margin-top: 20rpx;
+  margin-right: 50rpx;
+}
+
+.avatarUrl {
+  margin: 0 26rpx;
+}
+.nickName{
+  font-size: 24rpx;
+
+}
+.dToa{
+display: flex;
+justify-content: space-between;
+font-size: 22rpx;
+color: #A3A3A3;
+margin-top: 20rpx;
+}
+.audienceD{
+  border-bottom: 1rpx #A3A3A3 solid;
+  padding-bottom: 22rpx;
+}

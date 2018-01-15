@@ -1,0 +1,13 @@
+<import src="../../../templates/toast/toast.wxml" />
+<template name="list">
+    <view class="list" hover-class="none" data-tip="{{tip}}" data-url="{{url}}" catchtap='navigateTo'>
+        <view class="list-text">{{text}}</view>
+        <view class="list-info" wx:if="{{!img}}">{{info}}</view>
+        <view class="list-info avatar" wx:if="{{img}}"><image src="{{info}}"></image></view>
+        <view class="arrow-wrap">{{tip}}<image src="../images/accessory.png" class="list-arrow"></image></view>
+    </view>
+</template>
+<scroll-view scroll-y="trues" class="user">
+    <template wx:for="{{list}}" is="list" data="{{...item}}"></template>
+</scroll-view>
+ <template is="toast" data="{{...toast}}" />

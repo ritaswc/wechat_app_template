@@ -1,0 +1,23 @@
+<!--pages/details/details.wxml-->
+<view class='{{light?"del-page":"del-page-night"}}' >
+    <view class="del-icon"><span class="iconfont icon-group28" bindtap="change"></span></view>
+    <view class="del-title">
+        {{news.title}}
+    </view>
+    <view class="del-aside">
+        {{news.source}}
+        {{news.pubDate}}
+    </view>
+    <!--这里开始是内容-->
+    <block wx:for="{{news.allList}}" wx:key="item" >
+        <view class="allList" >
+            <image wx:if="{{item.url}}" mode="widthFix" src="{{item.url}}"></image>
+           <view class="text" wx:else>{{item}}</view> 
+        </view>
+    </block>
+
+</view>
+<view class="fen-box">
+    <view class="fen-hr"></view>
+    <view class="fen-item"></view>
+</view>

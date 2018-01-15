@@ -1,0 +1,131 @@
+.good {
+  overflow: hidden;
+  position: relative;
+  border-radius: 8rpx;
+  margin: 25rpx;
+}
+
+.good image {
+  width: 100%;
+  height: 375rpx;
+  vertical-align: bottom;
+}
+
+.good .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 560rpx;
+  border-top-left-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6)0, rgba(0, 0, 0, 0)100%);
+}
+
+.good .info {
+  position: absolute;
+  top: 30rpx;
+  left: 12rpx;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.good .info .title {
+  color: #fff;
+  font-size: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.info .title text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 2rpx 2rpx rgba(0, 0, 0, 0.4);
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.good .detail {
+  position: relative;
+  padding-left: 36rpx;
+}
+
+.good .detail .timeinfo {
+  color: #fff;
+  font-size: 22rpx;
+  line-height: 1;
+}
+
+.good .timeinfo text {
+  margin-right: 20rpx;
+}
+
+.good .address {
+  color: #fff;
+  font-size: 22rpx;
+  line-height: 1;
+  margin-top: 6rpx;
+}
+
+.good  .detail::before {
+  content: '';
+  position: absolute;
+  top: 4rpx;
+  left: 24rpx;
+  width: 6rpx;
+  height: 100%;
+  background-color: #4abdcc;
+}
+
+.good .userinfo {
+  position: absolute;
+  left: 25rpx;
+  bottom: 35rpx;
+  z-index: 2;
+}
+
+.good .userinfo image {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+}
+
+.good .userinfo .username {
+  margin-left: 15rpx;
+  color: #fff;
+  font-size: 20rpx;
+  vertical-align: middle;
+}
+
+.good .bottom {
+  position: absolute;
+  left: 25rpx;
+  bottom: 20rpx;
+  z-index: 2;
+  color: #fff;
+  font-size: 22rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  width: 660rpx;
+  align-items: flex-end;
+}
+
+.bottom .price {
+  color: #f63;
+  font-size: 30rpx;
+  margin-right: 14rpx;
+}
+
+.bottom .oldprice {
+  color: #fff;
+  font-size: 22rpx;
+  text-decoration: line-through;
+  flex: 1;
+}
+
+.bottom .selled {
+  color: #ffffff;
+  font-size: 22rpx;
+}

@@ -1,0 +1,70 @@
+<view>
+  <view class="mg-t-20">
+    <view class="p-20">具体地址</view>
+    <view class="bg-f p-20">{{pointInfo}}</view>
+  </view>
+  <view class="mg-t-20">
+    <view class="p-20">选择车辆</view>
+    <view class="bg-f p-20">
+    <text wx:if="{{carData==''}}" >您还没有车辆，去添加吧</text>
+      <view class="section">
+        <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{carData}}">
+          <view class="picker">
+            {{carData[index]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="mg-t-20 ">
+    <view class="p-20">交车时间</view>
+    <view class="column bg-f p-20">
+      <view class="row">
+        <text class="section__title" >日期:</text>
+        <view class="section mg-r-10">
+          <picker class="picker1" mode="date" value="{{dateHan}}" start="{{dateHan}}" bindchange="bindDateHan">
+            <view class="picker">
+              {{dateHan}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="row mg-t-20">
+        <text class="section__title">时间:</text>
+        <view class="section mg-r-10" >
+          <picker  class="picker1" mode="time" value="{{timeHan}}" start="{{timeHan}}" bindchange="bindTimeHan">
+            <view class="picker">
+              {{timeHan}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="mg-t-20">
+    <view class="p-20">取车时间</view>
+    <view class="column bg-f p-20">
+      <view class="row">
+        <text class="section__title">日期:</text>
+        <view class="section mg-r-10">
+          <picker mode="date" class="picker1"  value="{{dateTake}}" start="{{dateTake}}" bindchange="bindDateTake">
+            <view class="picker">
+              {{dateTake}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="row mg-t-20">
+        <text class="section__title">时间:</text>
+        <view class="section mg-r-10">
+          <picker mode="time"  class="picker1" value="{{timeTake}}" start="{{timeTake}}" bindchange="bindTimeTake">
+            <view class="picker">
+              {{timeTake}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bg-pp color-f text-a p-20 mg-t-50" bindtap="bindSuccess">预约代泊</view>
+</view>

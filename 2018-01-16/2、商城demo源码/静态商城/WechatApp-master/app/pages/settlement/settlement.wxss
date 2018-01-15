@@ -1,0 +1,214 @@
+.main {
+    padding: 0;
+   
+    margin: 0;
+    background-color: #f8f8f8;
+    font-family: -apple-system, SF UI Text, Helvetica Neue, Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+.order-confirm {
+    height: 100%;
+    padding-top: 0.5rem;
+    color: #353535;
+    position: relative;
+      background-color: #f8f8f8;
+}
+.order-confirm .address {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #FFF;
+}
+
+.order-confirm .address .top-line{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 7rpx;
+}
+.order-confirm .address .bottom-line{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 7rpx;
+}
+.order-confirm .address .content{
+    padding: 0 0.6rem;
+    overflow: hidden;
+    line-height: 156rpx;
+    font-size: 0.8rem;
+    margin: 0.6rem 0;
+}
+.order-confirm .address .content .address_icon {
+    height: 30rpx;
+    float: left;
+    width: 0.6rem;
+    margin-top: 1.1rem;
+}
+.order-confirm .address .content .address_text{
+    float: left;
+    padding: 0 0.5rem;
+    width: 13rem;
+}
+.order-confirm .address .adr{
+    line-height: 1.2rem;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+ }
+ .order-confirm .address .ddress{
+        display: block;
+    margin-top: 0.2rem;
+    line-height: 0.8rem;
+    font-size: 0.65rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+ }
+ .order-confirm .address .arrow{
+    height: 40rpx;
+    float: right;
+    width: 19rpx;
+    margin-top: 1.1rem;
+}
+.items-list {
+    width: 100%;
+    background: #FFF;
+    padding: 0rem 0.4rem;
+    margin: 0;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.items-list .product {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #EFEFEF;
+    padding: 0.75rem 0.35rem;
+    list-style: none;
+    background: #FFF;
+    display: list-item;
+}
+.items-list .product .img image{
+    display: block;
+    float: left;
+    width: 3.7rem;
+    height: 3.7rem;
+    border: 1px solid #D6D6D6;
+    margin-right: 0.5rem;
+}
+.items-list .product .param{
+    position: relative;
+    height: 3.7rem;
+    font-size: 0.6rem;
+    line-height: 0.7rem;
+    width: 100%;
+}
+.items-list  .param .title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width:10.6rem;
+}
+.items-list  .param .type {
+    margin: 0.3rem 0;
+    color: #A0A0A0;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.items-list .param .price { 
+    position: absolute;
+    top: 0rem;
+    right: 0.45rem;
+    font-size: 0.7rem;
+    float: right;
+}
+.items-list .param .num{ 
+    padding-top: 0.3rem;
+    text-align: center;
+}
+
+.settlement {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 118rpx;
+    background-color: #EFEFEF;
+    line-height: 2.5rem;
+    font-size: 0.85rem;
+    z-index:999;
+    padding: 5rpx 0.75rem;
+    box-sizing:border-box;
+}
+.settlement .price{
+    color:red;
+}
+.settlement .text {
+    display: inline-block;
+    padding-top:10rpx;
+}
+.settlement text{
+   height: 30rpx;
+   position: relative;
+   padding-top: 20rpx;
+}
+.statistics {
+    margin-top: 0.5rem;
+    padding: 0 0.4rem;
+    background-color: #FFF;
+    
+}
+.statistics view{
+    height: 1.8rem;
+    line-height: 1.8rem;
+    font-size: 0.7rem;
+    padding: 0 0.45rem;
+}
+.border-bottom{
+    border-bottom: 1px solid #EFEFEF;
+}
+.statistics text{
+    display: block;
+    float: right;
+    padding: 0 0.45rem;
+}
+
+.wechat{
+    width: 100%;
+    height: 120rpx;
+    line-height: 120rpx;
+    padding: 0 28.125rpx;
+    background-color: #FFF;
+    margin-top: 18.75rpx;
+    font-size: 0.8rem;
+}
+.wechat image{
+    width: 60rpx;
+    float: left;
+    height: 60rpx;
+    margin-top: 28.125rpx;
+}
+.wechat text{
+    text-indent: 18.75rpx;
+    display: inline-block;
+}
+.settlement button {
+    float: right;
+    background-color: #FF2D4B;
+    color: #FFF;
+    width: 185rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 0.2rem;
+    margin-top: 0.4rem;
+    border: none;
+    outline: none;
+    font-size: 23.4375rpx;
+}

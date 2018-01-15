@@ -1,0 +1,49 @@
+page {
+  height: 100%;
+  background: #f0f1f4; }
+
+.mine_title {
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 20rpx; }
+
+.mine_msg {
+  height: 200rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee; }
+
+.mine_msg_left {
+  display: flex;
+  align-items: center; }
+
+.login_no {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 20rpx;
+  border-radius: 50%; }
+
+.mine_msg_right {
+  display: flex;
+  align-items: center; }
+
+.setting_icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 30rpx; }
+
+.mine_nav {
+  padding: 20rpx 0rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.mine_nav_item {
+  text-align: center;
+  width: 33.33%;
+  border-right: 1px solid #eee; }
+
+.no_border {
+  border: none; }

@@ -1,0 +1,403 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.index-head-logo-f{
+  font-family:"微软雅黑";
+  font-size: 28rpx;
+  color: #fff;
+}
+
+page {
+  -ms-overflow-style: none;
+}
+.flex {
+  flex:1;
+}
+.rel {
+  position: relative;
+}
+.border-slice {
+  border-bottom: 10px solid #eee;
+}
+.head {
+  height: 110px;
+}
+.head-banner {
+  background: url(http://i.pengxun.cn/images/bms1/050_app[1].jpg) no-repeat;
+  background-size: 100%;
+  height: 110px;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: -2;
+}
+.index-head-logo {
+  padding-left: 18px;
+  padding-top: 30px;
+  display: flex;
+}
+.index-head-logo-img {
+  height: 60px;
+  width: 60px;
+}
+.index-head-logo-f { 
+  margin-left: 15px;
+  flex:1;
+}
+.index-head-bottom {
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  line-height: 30px;
+  display: flex;
+}
+.index-sign {
+  background: url(http://i.pengxun.cn/static/vzan/web/index/images/01/icon1.png) no-repeat 33% 2%;
+  background-size:552%;
+  vertical-align: -5px;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+.index-focus {
+  background: url(http://i.pengxun.cn/static/vzan/web/index/images/01/icon1.png) no-repeat 62% 2%;
+  background-size:552%;
+  vertical-align: -6px;
+  height: 48rpx;
+  width:48rpx;
+  display: inline-block;
+}
+.index-heading-content view {
+  display: inline-block;
+  padding:0 14rpx;
+  font-size: 30rpx;
+  font-family: "Microsoft YaHei",Arial;
+}
+.index-heading-scrol {
+  padding: 5rpx 0;  
+  width: 100%;
+  /*border-bottom:20rpx solid #eee;*/
+  overflow: hidden;
+  display: flex;
+}
+.index-heading-content::-webkit-scrollbar {
+  display: none;
+}
+.index-heading-content {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    white-space: nowrap;
+    overflow-y:hidden;
+}
+.scrollview-hide {
+  position: relative;
+  border: 1px solid #fff;
+  background-color: #eee;
+  top: -12px;
+  height: 7px;
+  widows: 100%;
+}
+.index-heading-more {
+  height: 60rpx;
+  width: 80rpx;
+  background-color: #fff;
+  font-size: 31.2rpx;
+  text-align: center;
+  line-height: 60rpx;
+  opacity:0.2;
+  -webkit-filter:blur(0.1px);
+  filter:blur(0.1px);
+}
+.bankuai {
+  margin: 5px 5px;
+  border: 1px solid #17b5ee;
+  width: 77px;
+  text-align: center;
+}
+
+.fl text {
+  color:#000;
+}
+.aricle-user-wrap {
+  position: relative;
+}
+.index-poster-name {
+  color:#5a85ce;
+  font-weight:bold;
+  font-size:31rpx;
+  font-family: "Microsoft YaHei",Arial;
+}
+.index-poster-kind {
+  background-color: #5bc3ff;
+  border-radius: 2px;
+  margin-left: 5px;
+  height: 130rpx;
+  font-size: 22rpx;
+  color: #fff;
+  font-family: "Microsoft YaHei",Arial;
+  vertical-align:1px;
+  padding: 0px 5px;
+}
+.index-post-info {
+  font-size:24rpx;
+  font-family: "Microsoft YaHei",Arial;
+  margin-right: 10px;
+  color: #858585;
+}
+.index-poster-arrow {
+  border-width: 0 2rpx 2rpx 0;
+  border-style: solid;
+  border-color: #c8c8cd;
+  position: absolute;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  top: 0;
+  right: 30rpx;
+  height: 14rpx;
+  width: 14rpx;
+}
+.article-content-container{
+  color: black;
+  line-height: 150%;
+  margin-bottom: 8px;
+  padding: 0 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.section-theme {
+  color:#17b5ee;
+  border-radius: 2px;
+  font-size: 25rpx;
+  line-height: 25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 5px;
+  border: 1px solid #17b5ee;
+}
+
+.article-content {
+ margin-left: 2px;
+ font-family: "Microsoft YaHei",Arial;
+ font-size: 30rpx;
+ height: 26px;
+ overflow: hidden;
+ text-overflow: ellipsis;
+}
+.article-content-title {
+  font-size:18px;
+  font-family:Microsoft YaHei,Arial;
+  font-weight:bold;
+  display:block;
+}
+.icon-reward {
+  vertical-align: -4px;
+  width: 17px;
+  border: 0;
+  height: 17px;
+  background: url(http://i.pengxun.cn/static/vzan/web/index/images/post-big-pic-06.png) no-repeat 0 0;
+  background-size: 100%;
+  display: inline-block
+}
+.icon-zhuan {
+    vertical-align: -4px;
+    width: 17px;
+    height: 17px;
+    background: url(http://i.pengxun.cn/static/vzan/web/index/images/icon1.png) no-repeat 34% 37%;
+    background-size: 735%;
+    display: inline-block;
+}
+.icon-ping {
+    vertical-align: -4px;
+    width: 17px;
+    height: 17px;
+    background: url(http://i.pengxun.cn/static/vzan/web/index/images/icon1.png) no-repeat 62% 37%;
+    background-size: 735%;
+    display: inline-block;
+}
+.icon-zan {
+    vertical-align: -3px;
+    width: 17px;
+    height: 17px;
+    background: url(http://i.pengxun.cn/static/vzan/web/index/images/icon1.png) no-repeat 34% 67%;
+    background-size: 735%;
+    display: inline-block;
+}
+.em {
+  color:#858585;
+  font-size:28.8rpx;
+  font-family: "Microsoft YaHei",Arial;
+  padding: 0 2px;
+}
+.fr {
+  float:right;
+}
+.res {
+  width: 25%;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+}
+.res-info {
+  display: flex;
+  padding-left: 2px;
+  border-bottom: 1px solid #d6d6d6;
+  width: 100%;
+}
+.comment-content-image-wrap {
+  display: inline-block;
+}
+.comment-content-msg-wrap {
+  display: inline-block;
+  padding: 6px;
+  width: 100%;
+}
+.res-content-name {
+  color: #5a85ce;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 30rpx;
+  font-family: "Microsoft YaHei",Arial;
+  line-height:normal;
+  float:left;
+}
+.res-content-time {
+  color: #cccccc;
+  font-size: 26.4rpx;
+  margin-right: 10px;
+  font-family: "Microsoft YaHei",Arial;
+  line-height:normal;
+  float:right;
+}
+.res-content {
+  font-size: 30rpx;
+  line-height: 140%;
+  font-family: "Microsoft YaHei",Arial;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.reward-logo {
+  display: flex;
+  padding: 5px 0px;
+  border-bottom: 1px solid #d6d6d6;
+}
+.reward-logo-icon {
+    top: 0;
+    left: 0;
+    margin: 4px 0;
+    margin-left: 12px;
+    width: 15px;
+    height: 15px;
+    border: 0;
+    background: url(http://i.pengxun.cn/static/vzan/web/index/images/post-big-pic-06.png?v=1) no-repeat 0 -15px;
+    background-size: 100%;
+}
+.reward-logo-img-container {
+  padding: 2px 2px;
+  display: inline-block;
+}
+.praise-logo {
+  display: flex;
+  padding: 5px 0px;
+  border-bottom: 1px solid #d6d6d6;
+}
+.praise-logo-icon {
+  top: 0;
+  left: 0;
+  margin-top: 4px;
+  margin-left: 12px;
+  width: 15px;
+  height: 15px;
+  background: url(http://i.pengxun.cn/static/vzan/web/index/images/post-big-pic-06.png?v=1) no-repeat 0 -105px;
+  background-size: 100%;
+}
+.praise-logo-container {
+  width: 93%;
+  margin-left: 5px;
+}
+.praise-logo-img-container {
+  padding: 2px 2px;
+  display: inline-block;
+}
+.comment-container {
+  display: flex;
+}
+.comment-icon {
+  top: 0;
+  left: 0;
+  margin-top: 10px;
+  margin-left: 12px;
+  width: 15px;
+  height: 15px;
+  background: url(http://i.pengxun.cn/static/vzan/web/index/images/post-big-pic-06.png?v=1) no-repeat 0 -90px;
+  background-size: 100%;
+}
+.comment-content {
+  width: 93%;
+}
+.comment-image{
+  display:flex;  
+}
+.comment-image view {
+  padding-right: 5px;
+}
+.comment-voice-container {
+  margin-top: 4px;
+}
+.audio-wrap {
+  width:150px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #d6d6d6;
+  padding: 3px 0;
+  float:left;
+}
+.audio-time-wrap {
+ height: 30px;
+ line-height: 30px;
+ padding-left: 10px;
+ font-family: "Microsoft YaHei",Arial; 
+ float: left;
+ font-size: 26rpx; 
+}
+.selected {
+  background:#17b5ee;
+}
+
+
+
+
+
+/* 状态 */
+.zaned {
+    vertical-align: -3px;
+    width: 16px;
+    border: 0;
+    height: 16px;
+    background: url(http://i.pengxun.cn//content/images/imgpost2/01/zaned.png) no-repeat;
+    background-size: 16px 16px;
+    display: inline-block;
+}
+

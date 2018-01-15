@@ -1,0 +1,64 @@
+<import src="../../templates/toast/toast.wxml" />
+<template name="order-cell">
+    <view class="order-cell">
+        <view class="cell-status">
+        {{refund_status==="没有售后" ? order_status : "售后处理中"}}
+        </view>
+        <navigator url="../order-detail/order-detail?subOrderSn={{sub_order_sn}}" hover-class="none" class="cell-item">
+            <view class="{{goods.length===1?'':'hide'}}">
+                <image class="good-thumb" src="{{goods[0].thumb_url}}" alt="item"/>
+                <view class="item-content">
+                    <view class="content-name">{{goods[0].goods_name}}</view>
+                    <view class="content-attr">{{goods[0].goods_attr}}</view>
+                    <view class="content-count">￥{{goods[0].sum_price}}<view class="content-amount">×{{goods[0].goods_number}}</view></view>
+                </view>
+            </view>
+            <scroll-view scroll-x="true" class="{{goods.length===1?'hide':''}}">
+                <view style="display:inline-block;" wx:for="{{goods}}"><image class="good-thumb" src="{{item.thumb_url}}"></image></view>
+            </scroll-view>
+        </navigator>
+        <view class="cell-count">
+            <view class="count-amount">共{{goods.length}}件商品</view>
+            <view class="count-price">￥{{total_amount}}</view>
+            <view class="count-carriage">运费：<text>￥{{shipping_price}}</text></view>
+        </view>
+        <view class="cell-btn" hidden="{{order.isButtonShow}}">
+            <!-- <button class="btn-order btn-solid-red">去支付</button> 
+            <button class="btn-order btn-hollow-gray" data-order-id="{{order_sn}}" bindtap="cancalOrder">取消订单</button> -->
+
+            <button class="btn-order btn-solid-red" wx:if="{{ order.orderStatus==='待支付' }}" bindtap="payOrder" data-order-sn="{{order.orderSn}}">去支付</button>
+
+            <button class="btn-order btn-hollow-gray" wx:if="{{ order.orderStatus==='待支付' }}" bindtap="cancelOrder" data-order-sn="{{order.orderSn}}">取消订单</button>
+
+            <button class="btn-order btn-hollow-gray" wx:if="{{ order.orderStatus==='待发货'&&refund_status === '没有售后' }}" bindtap="drawbackOrder" data-order-sn="{{order.subOrderSn}}">申请退款</button>
+
+            <button class="btn-order btn-hollow-gray" wx:if="{{ order.orderStatus==='待收货' }}" bindtap="logistics" data-order-sn="{{order.subOrderSn}}">查看物流</button>
+
+            <button class="btn-order btn-solid-red" wx:if="{{ order.orderStatus==='待收货' }}" bindtap="confirmOrder" data-order-sn="{{order.subOrderSn}}">确认收货</button>
+
+            <button wx:if="{{ order.orderStatus==='交易成功'||order.orderStatus==='交易关闭'||order.orderStatus==='订单关闭'}}" bindtap="order.deleteOrder({ subOrderSn:order.data.sub_order_sn })">删除订单</button>
+        </view>
+    </view>
+</template>
+
+<view class="nav-header">
+    <view wx:for="{{navs}}" class="nav-cell {{item.alias==activeNav?'active':''}}" bindtap="changeList" data-alias="{{item.alias}}">{{item.text}}</view>
+</view>
+
+<view class="orders-wrap" hidden="{{loading}}">
+    <scroll-view scroll-y="true" class="orders">
+        <view class="order-list {{orderList.length===0?'hide':''}}">
+            <block wx:for="{{orderList}}">
+                <template is="order-cell" data="{{...item}}"></template>
+            </block>
+        </view>
+        <view class="empty {{orderList.length===0?'':'hide'}}">
+            <image class="empty-img" src="images/empty.png"></image>
+            <view>您还没有相关的订单</view>
+            <view>可以去看看有哪些想买的</view>
+            <navigator open-type="switchTab" url="../home/home" hover-class="none" class="btn-to-home btn-solid-red" >随便逛逛</navigator>
+        </view>
+    </scroll-view>
+     <template is="toast" data="{{...toast}}" />
+</view>
+<loading hidden="{{!loading}}">正在加载中...</loading>

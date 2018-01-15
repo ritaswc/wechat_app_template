@@ -1,0 +1,26 @@
+<view class="flex-wrap header">
+<text class="fornt_text">打卡项目</text>
+<text class="add tappable" ontap="addTod0">添加</text>
+</view>
+<view class="container">
+<view class="task_list">
+<block>
+    <view class="flex-warp todo">
+        <view class="cir">
+        <icon type="circle" size="23" class="cir1"></icon>
+        </view>
+        <view class="task_wrap" bindtap="test" >
+            <view class="task_name">早起</view>
+            <view class="task_context">每天7点起床</view>
+        </view>
+        <view class="task_comfirm">
+         <text class="check" >√</text>
+        </view>
+        <view class="process">
+        <progress percent="20"  color="#a49ab7" stroke-width="4"/>
+        <text>20% complete</text>
+        </view>
+    </view>
+</block>
+</view>
+</view>

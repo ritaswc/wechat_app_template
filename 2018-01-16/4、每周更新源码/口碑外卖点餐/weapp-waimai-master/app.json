@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/list/list",
+    "pages/detail/detail",
+    "pages/card/card",
+    "pages/order/order",
+    "pages/my/my"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#1984d1",
+    "navigationBarTitleText": "外 卖",
+    "navigationBarTextStyle":"white"
+  },
+   "tabBar": {
+     "selectedColor":"#ee5511",
+     "borderStyle":"white",
+     "position":"bottom",
+    "list": [{
+      "text": "外卖",
+      "pagePath": "pages/index/index",
+      "iconPath":"./images/waimai.png",
+      "selectedIconPath":"./images/waimai_select.png"
+    }, {
+      "text": "会员卡",
+      "pagePath": "pages/card/card",
+      "iconPath":"./images/card.png",
+      "selectedIconPath":"./images/card_select.png"
+    },{
+      "text": "订单",
+      "pagePath": "pages/order/order",
+      "iconPath":"./images/order.png",
+      "selectedIconPath":"./images/order_select.png"
+    },{
+      "text": "我的",
+      "pagePath": "pages/my/my",
+      "iconPath":"./images/my.png",
+      "selectedIconPath":"./images/my_select.png"
+    }]
+  }
+}

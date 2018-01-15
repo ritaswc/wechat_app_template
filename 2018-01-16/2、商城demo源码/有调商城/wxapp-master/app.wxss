@@ -1,0 +1,125 @@
+/**app.wxss**/
+/*
+  整个小程序的公共样式表
+  可以在页面组件的class属性上直接使用app.wxss中声明的样式规则
+*/
+page{
+  height: 100%;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+/*
+  声明 通用样式
+  在所有页面上均可用
+*/
+/*.logo-bg-color{
+  background-color:#e60012;
+}
+.white-font-color{
+  color:#fff;
+}*/
+
+
+/*@media screen and (max-width:640px) {
+    .container {
+        font-size: 92.7536231884058px;
+    }
+}
+@media screen and (max-width:620px) {
+    .container {
+        font-size: 89.85507246376811px;
+    }
+}
+@media screen and (max-width:600px) {
+    .container {
+        font-size: 86.95652173913044px;
+    }
+}
+@media screen and (max-width:580px) {
+    .container {
+        font-size: 84.05797101449275px;
+    }
+}
+@media screen and (max-width:560px) {
+    .container {
+        font-size: 81.15942028985506px;
+    }
+}
+@media screen and (max-width:540px) {
+    .container {
+        font-size: 78.26086956521739px;
+    }
+}
+@media screen and (max-width:520px) {
+    .container {
+        font-size: 75.3623188405797px;
+    }
+}
+@media screen and (max-width:500px) {
+    .container {
+        font-size: 72.46376811594203px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .container {
+        font-size: 69.56521739130434px;
+    }
+}
+@media screen and (max-width:460px) {
+    .container {
+        font-size: 66.66666666666666px;
+    }
+}
+@media screen and (max-width:440px) {
+    .container {
+        font-size: 63.768115942028984px;
+    }
+}
+@media screen and (max-width:435px) {
+    .container {
+        font-size: 63.04347826086956px;
+    }
+}
+@media screen and (max-width:428px) {
+    .container {
+        font-size: 62.028985507246375px;
+    }
+}
+    .container {
+        font-size: 60px;
+    }
+}
+@media screen and (max-width:384px) {
+    .container {
+        font-size: 55.65217391304348px;
+    }
+}
+@media screen and (max-width:380px) {
+    .container {
+        font-size: 55.07246376811594px;
+    }
+}
+@media screen and (max-width:375px) {
+    .container {
+        font-size: 54.347826086956516px;
+    }
+}
+@media screen and (max-width:360px) {
+    .container {
+        font-size: 52.17391304347826px;
+    }
+}
+@media screen and (max-width:320px) {
+    .container {
+        font-size: 46.3768115942029px;
+    }
+}*/

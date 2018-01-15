@@ -1,0 +1,38 @@
+<import src="../../common/template/head.wxml" />
+<template is="head" data="{{...head}}"/>
+
+<swiper style="height:150rpx;" autoplay="true" interval="2000" circular="true">
+  <block wx:for="{{indexData.swiperImg}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item}}" style="height:100%;width:100%;"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<block wx:for="{{indexData.moviesList}}">
+  <navigator url="./detail/detail?title={{item.title}}&id={{item.id}}">
+    <view style="height:216rpx;" class="movie">
+      <image src="{{item.coverImg}}" style="height:172rpx;width:122rpx;"></image>
+      <view class="intro-warp">
+        <view style="font-size:12px" class="intro">
+          <view style="font-size:30rpx; color:#222222">{{item.title}}</view>
+          <view style="font-size:24rpx; color:#686868">{{item.class}}</view>
+          <view style="font-size:24rpx;white-space:nowrap;text-overflow:ellipsis;overflow:hidden; color:#686868">{{item.actor}}</view>
+          <view style="font-size:24rpx; color:#A3A3A3;" wx:if="{{item.onsale}}">今天{{item.counts[0]}}家影院放映{{item.counts[1]}}场</view>
+          <view style="font-size:24rpx; color:#A3A3A3;" wx:else>{{item.dataline}}</view>
+        </view>
+        <view class="buy">
+          <view class="rating" wx:if="{{item.onsale}}">
+            <text>{{item.rating}}</text>
+            <text style="font-size:18rpx;">分</text>
+          </view>
+          <view class="rating" wx:else>
+            <text>{{item.numbers}}</text>
+            <text style="font-size:18rpx;">人想看</text>
+          </view>
+          <navigator url="../theaterList/theaterList?title={{item.title}}&id={{item.id}}" class="buy-nav" wx:if="{{item.onsale}}">购票</navigator>
+          <navigator url="../theaterList/theaterList?title={{item.title}}&id={{item.id}}" class="buy-nav pre" wx:else>预售</navigator>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</block>

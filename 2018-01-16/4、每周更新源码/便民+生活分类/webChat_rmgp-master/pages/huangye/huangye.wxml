@@ -1,0 +1,8 @@
+<view>
+  <text>{{nation}}</text>
+  <text>{{province}}</text>
+  <text>{{city}}</text>
+  <text>{{district}}</text>
+  <text>{{street}}</text>
+  <text>{{street_number}}</text>
+</view>

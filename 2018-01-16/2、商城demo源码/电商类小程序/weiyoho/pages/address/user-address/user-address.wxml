@@ -1,0 +1,34 @@
+
+<!--地址管理-->
+<radio-group class="radio-group" bindchange="radioChange">
+<view hidden="{{hiddenAddress}}" class="address" wx:for="{{address}}">
+  <view  class="address-icon">
+    <radio checked="{{index==radioindex?true:false}}"   value="{{index}}" />
+  </view>
+  
+  <view class="address-detail">
+    <view class="address-name-phone">
+      <text class="address-name">{{item.name}}</text>
+      <text class="address-phone">{{item.phone}}</text>
+    </view>
+    <view class="address-info">{{item.province}}{{item.city}}{{item.town}}{{item.address}}</view>
+    <view class="address-edit">
+      <view>
+        <icon></icon>
+        <text hidden="{{index==radioindex?false:true}}">默认</text>
+        </view>
+      <view>
+        <text>编辑</text>
+        <text> | </text>
+        <text data-id="{{index}}" bindtap="delAddress">删除</text>
+      </view>
+    </view>
+  </view>
+</view>
+</radio-group>
+<navigator url="../address">
+  <view hidden="{{hiddenAddress}}" class="add-address">
+    <image class="add-address-icon" src="#"></image>
+    <view>新增地址</view>
+  </view>
+</navigator>

@@ -1,0 +1,79 @@
+<view class="address">
+    <navigator url="../address/address?from=cart2" wx:if="{{order.addressList}}" class="addr flexScoll">
+        <image src="{{bg}}"  class="bg1"/>
+        <image src="{{bg}}"  class="bg2"/>
+        <view class="left">
+            <view class="top">
+                <text class="name hidewrap">{{order.addressList[0].accept_name}}</text>
+                <text class="phone">{{order.addressList[0].mobile}}</text>
+            </view>
+            <view class="zip hidewrap">
+                {{order.addressList[0].province_val}}{{order.addressList[0].city_val}}{{order.addressList[0].area_val}}{{order.addressList[0].address}}{{order.addressList[0].zip}}
+            </view>
+        </view>
+        <view class="right flexbox">
+           <image src="{{img1}}"  class="img01"/>
+        </view>
+    </navigator>
+    <navigator url="../addaddr/addaddr?from=cart2" wx:else class="addr flexScoll">
+        <image src="{{bg}}"  class="bg1"/>
+        <image src="{{bg}}"  class="bg2"/>
+        <image src="{{img2}}"  class="img02"/>
+        <text class="adda">添加收货地址</text>
+    </navigator>
+</view>
+<view class="goods">
+    <view class="top flexstart">
+        <image src="{{img3}}" class="img03"/>
+        <text class="text1">东京直邮</text>
+    </view>
+    <view class="goods" wx:for="{{order.goodsList}}" wx:key="{{index}}">
+        <view class="detail flexstart">
+            <image src="{{item.img}}"  class="goodsimg"/>
+            <view>
+                <view class="name hidecamp">{{item.name}}</view>
+                <view class="pri flexstart">
+                    <text class="price">¥ {{item.sell_price}}</text>
+                    <text class="num">x{{item.count}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="box itemBox">
+    <view class="left">商品金额</view>
+    <view class="right">¥ {{order.sum}}</view>
+</view>
+<view class="box itemBox">
+    <view class="left">订单邮费</view>
+    <view class="right">¥ {{order.delivery_money}}</view>
+</view>
+<view class="box itemBox">
+    <view class="left">优惠券</view>
+    <view class="right">选择优惠券</view>
+</view>
+<view class="box itemBox">
+    <view class="left">实付额</view>
+    <view class="right">¥ {{lastPay}}</view>
+</view>
+<view class="tip">
+    <text style="color:#ff4aa0">温馨提醒  </text>付款成功后，九猫家不会以付款异常,卡单,系统升级为由联系您，请勿泄露银行卡号,手机验证码,否则会造成钱款的损失。如有疑问咨询客服，谨防电话诈骗！
+</view>
+<view class="box itemBox" style="margin-top:20rpx;border-bottom:none">
+    <view class="left">配送方式</view>
+    <view class="right">{{order.delivery[0].name}}</view>
+</view>
+<view class="last"></view>
+<view class="fixbottom">
+    <view class="box itemBox">
+        <view class="left" style="color:#bbb;font-size:24rpx">共{{order.count}}件商品</view>
+        <view class="right"><text style="color:#3d4245">合计：</text>¥ {{lastPay}}</view>
+    </view>
+    <view class="news flexbox">
+        <image src="{{checkState?imgcheck:imgcheckno}}"  class="check" bindtap="checkS"/>
+        <view class="new">本人同意 <navigator url="../agreement/agreement" style="color:#ff4aa0">《个人委托协议》</navigator >和<navigator url="../agreement/agreement" style="color:#ff4aa0">《用户协议》</navigator></view>
+    </view>
+    <view class="tobuy flexbox">
+        <button class="buy" disabled="{{!checkState}}">确认</button>
+    </view>
+</view>

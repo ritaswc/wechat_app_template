@@ -1,0 +1,22 @@
+<view class="cart-list" >
+    <view class="content" wx:for="{{goods}}" id="{{index}}" data-dish="{{item.id}}" style="display:flex;flex-direction:row">
+        <view style="width:10%" catchtap="selectState" id="{{index}}"><icon type="success" color="#FF6537" style="margin-top:33px;"></icon></view>
+        <view style="width:35%"><image src="{{item.imgUrl}}" style="width:90px;height:88px;border:1px solid #ccc"></image></view>
+        <view style="display:flex;flex-direction:column;width:55%">
+           <view class="goods-text" style="">
+               <text class="goods-name">{{item.name}}</text>
+               <text class="goods-price">{{item.price}}</text>
+           </view>
+           <view class="goods-info">{{item.pz}}</view>
+           <view style="display:flex;flex-direction:row;justify-content: space-between;">
+                <view class="" style="display:flex;flex-direction:row;border:1px solid #ccc;margin-top:16px;width:70%">
+                    <view class="des">-</view>
+                    <view class="numInput" style=""><input type="text" value="1" style="width:40px;height:30px"/></view>
+                    <view class="add">+</view>
+                </view>
+                <view class="remove" style=""><image src="{{item.delImg}}" style="28px;height:32px;"></image></view>
+           </view> 
+        </view>
+    </view>
+</view>
+<loading hidden="{{hiddening}}">加载中..</loading>

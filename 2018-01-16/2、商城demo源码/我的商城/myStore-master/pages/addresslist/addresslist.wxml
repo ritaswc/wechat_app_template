@@ -1,0 +1,19 @@
+
+<!--pages/addresslist/addresslist.wxml-->
+<view>
+  <block wx:for="{{addressList}}">
+    <view class="ui-padding-10" data-index = "{{index}}" bindtap = "selectOtherAddress">
+      <view class="ui-flex">
+        <text class="ui-width-50">收货人:{{item.consigneeName}}</text>
+        <text class="ui-width-50 address-phonenum">{{item.phoneNum}}</text>
+      </view>
+      <view class="ui-pt-10">
+        <text wx:if = "{{item.isDefult}}" class = "defult-address">[默认地址]</text><text>{{item.province + " " +item.city + " " + item.district + " " + item.detailedInfo}}</text>
+      </view>
+      <view class = "line ui-mt-10"></view>
+    </view>
+  </block>
+  <view>
+   <button class="btn-area-button" bindtap="addAdress" type="primary">添加收货地址</button>
+  </view>
+</view>

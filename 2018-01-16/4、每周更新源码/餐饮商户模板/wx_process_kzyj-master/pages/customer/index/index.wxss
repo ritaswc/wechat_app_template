@@ -1,0 +1,382 @@
+/* pages/customer/index/index.wxss */
+/**index.wxss**/
+
+.choice-list-mask {
+  background-color: rgba(0,0,0,.5);
+  height: 100%;
+  width: 100%;
+  z-index: 10001;
+  position: fixed;
+  top: 80rpx;
+}
+.slide-wrap {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 464rpx;
+}
+.slide-wrap .slide-item {
+    height: 87rpx;
+    width: 670rpx;
+    padding-left: 20rpx;
+    margin: 0 30rpx;
+    border-bottom: 1rpx solid #f2f2f2;
+    display: flex;
+    align-items: center;
+}
+.slide-wrap .slide-item:last-child {
+   border: none;
+}
+
+.search-condition-wrap {
+  width: 100%;
+}
+.search-condition-wrap .search-header {
+  display: flex;
+  height: 80rpx;
+  width: 100%;
+  background-color: #f2f2f2;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.search-condition-wrap .search-header .search-header-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-condition-wrap .search-header .search-header-item image {
+  width: 32rpx;
+  height: 30rpx;
+  padding: 10rpx 0;
+}
+.search-condition-wrap .search-header .search-header-item .search-header-img {
+  width: 25rpx;
+  height: 14rpx;
+  margin-left: 10rpx;
+}
+.search-condition-wrap .search-header .search-header-item text {
+  margin-left: 10rpx;
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+}
+
+/*分类搜索*/
+.search-category {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+.search-category .category-item {
+  display: flex;
+  width: 25%;
+  height: 145rpx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.search-category .category-item image {
+  width:80rpx;
+  height: 80rpx; 
+}
+.search-category .category-item text {
+  margin-top: 10rpx;
+}
+
+/*公告*/
+.notice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #002aff;
+  font-size: 24rpx;
+  height: 65rpx;
+  margin-left: 30rpx;
+}
+.notice image {
+  width: 30rpx;
+  height:30rpx;
+}
+.notice .notice-slider {
+  flex: 1;
+  height: 65rpx;
+  line-height: 65rpx;
+  margin: 10rpx;
+}
+
+
+/*商户 样式*/
+.pull-down-refresh {
+  height: 20rpx;
+  text-align: center;
+  color: #aaa;
+}
+page .scroll-view-con {
+  background-color: #eeeeee
+}
+
+.scroll-item-content {
+  display: flex;
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.scroll-item-content .centent-left {
+  padding: 40rpx 20rpx 40rpx 30rpx;
+  width: 158rpx;
+  height: 142rpx;
+}
+.scroll-item-content .content-center{
+  width: 376rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.scroll-item-content .content-center .shop-tag {
+  display: flex;
+  flex-direction: row;
+}
+.scroll-item-content .content-center .shop-tag .tag {
+  margin-right: 10rpx;
+  width: 88rpx;
+  height: 30rpx;
+  font-size: 22rpx;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-item-content .content-center .shop-name {
+  font-size: 30rpx;
+}
+.scroll-item-content .content-center .shop-tag {
+  padding-top: 10rpx;
+}
+.scroll-item-content .content-center .shop-introduce,.scroll-item-content .content-center .shop-address {
+  font-size: 26rpx;
+  color: #808080;
+  padding-top: 20rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+} 
+.scroll-item-content .content-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 30rpx;
+}
+.scroll-item-content .content-right .distence {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.scroll-item-content .content-right .distence image{
+  width: 13rpx;
+  height: 15rpx;
+  margin-right: 4rpx;
+}
+.scroll-item-content .content-right .distence text{
+  font-size: 24rpx;
+  color: #b2b2b2;
+}
+.scroll-item-content .content-right .content-right-img {
+  margin-top: 40rpx;
+  width: 88rpx;
+  height: 88rpx;
+}
+
+
+.tips {
+    font-size: 28rpx;
+    text-align: center;
+    padding: 10rpx 0 30rpx;
+    color: #ccc;
+}
+.tips image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+
+.tips image,
+.tips text {
+    vertical-align: middle;
+}
+/**我的 样式**/
+/*.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx 0;
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
+}
+.userinfo .settings {
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.userinfo .userinfo-avatar {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  margin-bottom: 30rpx;
+}
+
+.userinfo .userinfo-nickname {
+  color: #aaa;
+}*/
+/*优惠券列表样式*/
+.discount-coupon-item {
+    margin-top: 20rpx;
+    display: flex;
+    margin-left: 30rpx;
+}
+
+.discount-coupon-item .discount-coupon-info {
+    background-color: #ffffff;
+    position: relative;
+    width: 510rpx; 
+    height: 243rpx; 
+    display: flex;
+    justify-content: center;
+}
+.discount-coupon-item .discount-coupon-info .half-circle {
+  position: absolute;
+  left: -27rpx;
+  top: 94rpx;
+  width: 54rpx;
+  height: 54rpx;
+}
+.discount-coupon-item .discount-coupon-info .info-wrap {
+    width: 350rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    font-size: 28rpx;
+}
+.discount-coupon-item .discount-coupon-info .info-wrap text {
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.discount-coupon-item .discount-coupon-info .info-wrap .discount-coupon-phone {
+    padding-top: 20rpx;
+    font-size: 60rpx;
+    color: #c60e16;
+}
+.discount-coupon-item .discount-coupon-info .info-wrap  .discount-coupon-des {
+    padding-top: 17rpx;
+}
+.discount-coupon-item .discount-coupon-info .info-wrap .discount-coupon-expire {
+  padding-top: 10rpx;
+}
+.discount-coupon-item .enter-shop {
+    width: 176rpx;
+    font-size: 28rpx;
+    background-color: #fdc3c3;
+    color: #c60e16;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.discount-coupon-item .discount-coupon-right {
+  width: 3rpx;
+  height: 243rpx;
+  margin-right: 30rpx;
+}
+
+/*优惠券详情*/
+.dis-cou-detail {
+  position: fixed;
+  background-color: rgba(0,0,0,.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10002;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dis-cou-detail .detail-content {
+  width: 600rpx;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60rpx;
+  padding-bottom: 30rpx;
+}
+.dis-cou-detail .detail-content .cancel {
+  position: absolute;
+  width: 55rpx;
+  height: 47rpx;
+  top: 14rpx;
+  right: 14rpx;
+}
+.dis-cou-detail .detail-content .phone {
+  margin-top: 40rpx;
+  font-size: 60rpx;
+}
+.dis-cou-detail .detail-content .discunt-pic {
+   margin-top: 40rpx;
+   width: 238rpx;
+   height: 238rpx;
+}
+.dis-cou-detail .detail-content .discount-intro {
+  margin: 40rpx 76rpx;
+  text-align: left;
+}
+.dis-cou-detail .detail-content .receive-time {
+  color: #cda839;
+}
+.dis-cou-detail .detail-content .expired-time {
+  color: #cda839;
+  margin-top: 30rpx;
+}
+
+
+/*底部选项卡样式*/
+.bottom-tabbar {
+  width: 100%;
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 0rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-top: 1rpx solid #eeeeee;
+}
+.shop, .mine {
+  height: 100%;
+  flex: 1;
+  color: #c60e16;
+  text-align: center;
+  line-height: 100rpx;
+}
+.cur {
+  background-color: #c60e16;
+  color: #ffffff;
+}
+

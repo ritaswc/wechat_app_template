@@ -1,0 +1,82 @@
+
+<!--pages/payorder/payorder.wxml-->
+
+<!--<view class="payorder-container">
+  <view class="weui-form-preview payorder-box">
+    <view class="weui-cells weui-cells_after-title">
+      <radio-group bindchange="radioChange">
+        <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="{{item.value}}">
+          <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+          <view class="weui-cell__bd">{{item.name}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+            <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+          </view>
+        </label>
+      </radio-group>
+      <view class="weui-cell weui-cell_link">
+        <view class="weui-cell__bd" >更多地址</view>
+      </view>
+    </view>
+    <view class="weui-form-preview__hd">
+      <view class="weui-form-preview__label">付款金额</view>
+      <view class="weui-form-preview__value_in-hd">¥{{payorder.goods_price}}</view>
+    </view>
+    <view class="weui-form-preview__bd">
+      <view class="weui-form-preview__item" wx:for="{{payorder.goods}}">
+        <view class="weui-form-preview__label">商品名称:</view>
+        <view class="weui-form-preview__value">{{item.goods_name}}</view>
+        <view class="weui-form-preview__label"></view>
+        <view class="weui-form-preview__value">{{item.goods_num}}*{{item.goods_price}}</view>
+      </view>
+    </view>
+    <view class="weui-form-preview__ft">
+      <navigator class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">返回首页</navigator>
+      <navigator class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">更多详情</navigator>
+    </view>
+  </view>
+  <button type="primary" >支付</button>
+</view>-->
+<view class="shoppingCart-container">
+  <view class="hasGood">
+    <view class="address" bindtap="addmore" >
+      <view class="add-img">
+        <image src="../../images/icons/address.png"></image>
+      </view>
+      <view class="add-text">
+        <view class="add-name">
+          <text>{{radioItems.name}}</text>
+          <text class="add-phone">{{radioItems.phone}}</text>
+        </view>
+        <view class="add-add">
+          <text>{{radioItems.address}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="order-box">
+    <view class="order" wx:for="{{payorder.goods}}">
+      <view class="order-img"><image src="{{item.spec_key}}"></image></view>
+      <view class="order-name">{{item.goods_name}}</view>
+      <view class="order-num">
+        <text>数量：{{item.goods_num}}</text>
+        <text>单价：{{item.goods_price}}</text>
+      </view>
+    </view>
+    <view style="height:100rpx;line-height:100rpx;background:#fff;margin:20rpx 0 100rpx 0">
+       <checkbox  checked="true"/><text>同意<text>《微友货相关的法律法规》</text></text>
+    </view>
+    </view>
+    <view class="footer">
+      <ul>
+      <li>  <view class="wechatpay"><image src="../../images/icons/wechatpay.png"></image><text>微信支付</text></view></li>
+        <li class="goodAll">
+      
+          <text>实付款:</text>
+          <text>¥{{payorder.goods_price}}</text>
+        </li>
+        <li class="calcute"  bindtap="pay">
+          <text>支付订单</text>
+        </li>
+      </ul>
+    </view>
+  </view>
+</view>

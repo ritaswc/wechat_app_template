@@ -1,0 +1,16 @@
+/* pages/sug/sug.wxss */
+page{
+    background: #ccc;
+}
+
+textarea{
+    background: #fff;
+    width: 96%;
+    padding: 2%;
+    font-size: 24rpx;
+    margin-top: 10px;
+}
+
+button{
+    margin: 20px 10px 0;
+}

@@ -1,0 +1,19 @@
+
+<!--pages/goodsearch/goodsearch.wxml-->
+<view class="containsView">
+  <view class="headView">
+    <input id="keysearch" bindinput="bindKeyInput" placeholder="请输入需要搜索的商品"
+    value="{{hotsearch}}" class="input" placeholder-style="font-size:20px" focus></input>
+    <button class="btn-search" bindtap="click">{{cancelValue}}</button>
+  </view>
+  <view class="divLine"></view>
+
+  <!--历史搜索-->
+  <view class="histroysearch">历史搜索：</view>
+
+  <!--list-->
+  <view class="seachlist" wx:for="{{list}}" wx:for-item="itemWord" wx:for-index="idx" wx:key="idx">
+    <button data-name="{{itemWord}}" class="button" wx:if="{{itemWord != ''}}" bindtap="clickName">{{itemWord}}</button>
+  </view>
+  <button style="display:block;margin-top:20rpx" bindtap="clearSearchStorage">清空浏览记录</button>
+</view>

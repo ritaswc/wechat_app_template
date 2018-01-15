@@ -1,0 +1,10 @@
+<!--pages/cate2/cate2.wxml-->
+<import src="../../temp/goods.wxml"/>
+<import src="../../temp/nomore.wxml"/>
+    <scroll-view scroll-y="{{true}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-top="{{scrollTop}}" bindscroll="scroll">
+    <image src="{{topImg}}" class="topImg" bindtap="toTop" wx:if="{{showBotton}}" />
+<!--商品展示组件-->
+    <template is="goods" data="{{goodslist:cate2}}" />
+ <!--没有更多组件-->
+    <template is="nomore" data="{{showstate:show,noMore_cat:noMore_cat}}" />     
+</scroll-view>

@@ -1,0 +1,61 @@
+.content,.detail{
+	width: 95%;
+	margin: 0 auto;
+	padding-bottom: 60px;
+}
+
+.content .card{
+	min-height: 50px;
+	margin: 15px auto;
+	padding: 16px;
+	background: #FFF;
+	font-size: 14px;
+	line-height: 24px;
+	border: 1px solid #CCC;
+	cursor: pointer;
+}
+
+.content .card image{
+	width: 50px;
+	height: 50px;
+	margin-right: 15px;
+	float: left;
+}
+
+.content .card .title{
+	font-size: 18px;
+	font-family: 'SimHei';
+}
+
+.content .card .m-content{
+	padding-top: 10px;
+	color: gray;
+}
+
+.detail .icon{
+	width: 40px;
+	height: 40px;
+	margin-right: 15px;
+	float: left;
+}
+
+.detail-card {
+	margin-top: 20px;
+	padding: 20px 10px;
+	border: 1px solid #CCC;
+}
+
+.detail .title{
+	line-height: 40px;
+	font-size: 20px;
+	font-family: 'SimHei';
+}
+
+
+.detail .detail-content{
+	padding: 20px 0;
+}
+
+.bottom-bar .bottom-list{
+	width: 50%;
+}

@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "page/component/home/index",
+    "page/component/tracks/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#black",
+    "navigationBarTitleText": "破破的歌",
+    "navigationBarTextStyle":"white"
+  }
+}

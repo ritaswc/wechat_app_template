@@ -1,0 +1,16 @@
+<!--person.wxml-->
+<view class="container">
+  	<view class="person">
+		<view class="person-info">
+			<view class="head"><image src="{{userData.AvatarLarge}}" mode="widthFix"></image></view>
+			<view class="name">
+				<text class="nickname">{{'昵称: ' + userData.Nickname}}</text>
+				<text class="username">{{'用户名: ' + userData.Username}}</text>
+			</view>
+		</view>
+		<view class="other-info">
+			<navigator class="other-list" wx:for="{{infos}}" wx:key="url" url="{{item.url}}">{{item.content}}</navigator>
+			<view class="other-list" bindtap="logOff">退出登录</view>
+		</view>
+	</view><!-- person -->
+</view>

@@ -1,0 +1,8 @@
+<view class="jxq_hd">
+    <navigator url="jxqRule/jxqRule">加息卷使用规则<image src="../../../../images/account/arrowright.png"></image></navigator>
+</view>
+
+<view class="jxq_con">
+    <image src="../../../../images/account/jxj_wu.png"></image>
+    <view class="">没有更多的券了</view>
+</view>

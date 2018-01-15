@@ -1,0 +1,53 @@
+<view class="addr-body">
+    <form class = "form" bindsubmit="formSubmit" bindreset="formReset">
+        <view class="top-sec">
+            <view class="input-wrapper">
+                <view class="input-title">收货人</view>
+                <input bindinput = "setName" name="input" placeholder="请输入收货人的名字" value = "{{address.recipient}}" placeholder-style = "color: #888888; "/>
+            </view>
+            <view class="input-wrapper">
+                <view class="input-title">手机号码</view>
+                <input bindinput = "setPhone"  name="input" placeholder="手机号码" value = "{{address.telephone}}" placeholder-style = "color: #888888; " />
+            </view>
+            <view class="input-wrapper">
+                <view class="input-title">所在区域</view><!--
+                --><view class = "area-wrapper">
+                <view wx:if = "{{!address.area}}" class = "not-set" bindtap = "setArea">未设置></view>
+                <view wx:if = "{{address.area}}" class = "set" bindtap = "setArea"> {{address.province}} {{address.city}} {{address.area}}</view>
+            </view>
+            </view>
+            <view class="input-wrapper">
+                <view class="input-title">详细地址</view>
+                <input bindinput = "setDetail" class = "input-long" name="input"  value = "{{address.address}}"  placeholder="街道、门牌等详细地址信息" placeholder-style = "width: 100%;color: #888888; " />
+            </view>
+        </view>
+        <view class="bottom-sec">
+            <view class="input-wrapper">
+                <view  class = "check-box {{address.isDefault == '1'? 'active': ''}}" value="radio1" bindtap = "setDefault">设为默认地址</view>
+            </view>
+        </view>
+        <view class="add-address">
+            <button class = "address-btn" formType="submit" bindtap = "saveAddr">保存</button>
+        </view>
+    </form>
+    <view wx:if = "{{isShow}}" class = "set-area-wrapper">
+        <view class="area-mask" catchtap = "hideMask"></view>
+        <view class = "white-bg">
+            <view class = "top-option">
+                <view class="ok" catchtap = "confirm">确定</view>
+                <view class="cancel" catchtap = "hideMask">取消</view>
+            </view>
+            <picker-view indicator-style="height: 40px;" style="width: 100%; height: 200px;background: white;opacity: 1" bindchange="bindChange">
+                <picker-view-column>
+                    <view wx:for="{{province}}" style="line-height: 40px; text-align: center">{{item}}</view>
+                </picker-view-column>
+                <picker-view-column>
+                    <view wx:for="{{city}}" style="line-height: 40px; text-align: center">{{item}}</view>
+                </picker-view-column>
+                <picker-view-column>
+                    <view wx:for="{{area}}" style="line-height: 40px; text-align: center">{{item}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+</view>

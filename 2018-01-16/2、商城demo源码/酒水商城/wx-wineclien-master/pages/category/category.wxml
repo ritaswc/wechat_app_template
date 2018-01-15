@@ -1,0 +1,40 @@
+<view style = "background-color:#F5F5F5">
+<!--左侧分类-->
+    <scroll-view class="left_scrol_style" scroll-x = "{{false}}" scroll-y = "{{true}}">
+        <view wx:for-items="{{leftDataSource}}" class = "left_list_item_style" id = "{{index}}" bindtap = "rightListClick">
+            <view class = "flag_line_color_size flag_line_select" wx:if="{{leftListSelectItem == index}}"></view>
+            <view class = "flag_line_color_size flag_line_nomal" wx:if="{{leftListSelectItem != index}}"></view>
+            <text class = "left_list_text left_list_text_select" wx:if="{{leftListSelectItem == index}}">{{item}}</text>
+            <text class = "left_list_text left_list_text_nomal" wx:if="{{leftListSelectItem != index}}">{{item}}</text>
+            <view class = "line_color_size"></view>
+            <view class = "flag_line_color_size" style = "background-color:#e5e5e5;width:1px;bottom:0px;left:74px;"></view>
+        </view>
+    </scroll-view>
+<!--右详细-->
+    <scroll-view class = "right_list_style" style = "width:{{rightItemWidth}}px" scroll-x = "{{false}}" scroll-y = "{{true}}">
+        <view wx:for-items="{{rightDataSource}}" class = "right_list_item">
+        <!--商品主图-->
+            <image src="{{item.thumb_url}}" class = "right_list_item_image"  id = "{{index}}" bindtap = "pushGoodDetail"></image>
+            <text class = "right_list_item_title">{{item.title}}</text>
+            <view class = "tags_back_view">
+                <text class = "tags">精选</text>
+                <text class = "tags">打折</text>
+                <text class = "tags">促销</text>
+            </view>
+            <text class = "right_list_item_specification">{{item.specification}}</text>
+            <text class = "right_list_item_sale_count">已售{{item.sale_count}}</text>
+            <view class = "price_back_view">
+                <text class  = "right_list_item_price">¥{{item.price}}</text>
+                <text class = "right_list_item_market_price">{{item.marketPrice}}</text>
+            </view>
+            <!--加减号-->
+            <view>
+                <image src="../resource/add.png" class = "add_image_style" id = "{{index}}" bindtap = "addImageDidClick"></image>
+                <text class = "good_buy_number">{{item.buy}}</text>
+                <image src="../resource/reduce.png" class = "reduce_image_style" id = "{{index}}" bindtap = "reduceImageClick"></image>
+            </view>
+
+            <view class = "right_line"></view>
+        </view>
+    </scroll-view>
+</view>

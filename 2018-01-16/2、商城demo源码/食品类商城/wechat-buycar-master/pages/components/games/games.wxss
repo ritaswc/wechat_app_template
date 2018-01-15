@@ -1,0 +1,77 @@
+.bc_{
+  height:5rem;
+  width: 5rem;
+  margin: 3px 3px;
+  line-height: 5rem;
+  text-align: center;
+  font-size: 30px;
+  color: #fff7eb;
+}
+.bc_0{
+    color:#ccc0b2;
+    background: #ccc0b2;
+}
+.bc_2
+{
+    color: #7c736a;
+    background: #eee4da;
+}
+.bc_4
+{
+    color: #7c736a;
+    background: #ece0c8;
+}
+.bc_8
+{
+    color: #fff7eb;
+    background: #f2b179;
+}
+.bc_16
+{
+    color:#fff7eb;
+    background:#f59563;
+}
+.bc_32
+{
+    color:#fff7eb;
+    background:#f57c5f;
+}
+.bc_64
+{
+    color:#fff7eb;
+    background:#f65d3b;
+}
+.bc_128
+{
+    color:#fff7eb;
+    background:#edce71;
+}
+.bc_256
+{
+    color:#fff7eb;
+    background:#edcc61;
+}
+.bc_512
+{
+    color:#fff7eb;
+    background:#ecc850;
+}
+.bc_1024
+{
+    color:#fff7eb;
+    background:#edc53f;
+}
+.bc_2048
+{
+    color:#fff7eb;
+    background:#eec22e;
+}
+.bc{
+  display: flex;
+}
+
+#bc_cavas{
+  width:100%;
+  height: 100%;
+  background-color: #b8af9e;
+}

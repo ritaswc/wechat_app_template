@@ -1,0 +1,59 @@
+<import src="../../temp/empty.wxml"/>
+<!--购物车为空的状态-->
+<template is="empty" data="{{empty:empty}}" wx:if="{{cart.goodsList.length==0}}"/>
+<view wx:else>
+    <view class="banner">
+        <image src="{{img1}}" class="bannerImg"/>
+    </view>
+    <!--展示购物车商品-->
+    <view class="goods">
+        <view class="goodsList" wx:for="{{cart.goodsList}}" wx:key="{{index}}">
+            <view class="top flexstart">
+                <image src="{{img2}}" class="img02"/>
+                <text class="text1">东京直邮</text>
+            </view>
+            <view class="detail">
+                <view class="name_del flexstart">
+                   <view class="name hidecamp">{{item.name}}</view>
+                   <view class="del flexbox"  data-ite="{{item}}" data-index="{{index}}" bindtap="delgoods">
+                       <image src="{{del}}" class="img03" />
+                   </view>
+                </view>
+                <view class="pro flexite">
+                   <view class="img">
+                        <image src="{{item.img}}" class="goodsimg" />
+                   </view>
+                   <view class="price">
+                        ¥ {{item.sell_price}}
+                   </view>
+                   <view class="count flexstart">
+                        <view class="red" bindtap="reduce" data-index="{{index}}">
+                            <image src="{{reduce}}" class="img04" />
+                        </view>
+                        <view class="buyNum">{{item.count}}</view>
+                        <view class="red" bindtap="add" data-index="{{index}}">
+                            <image src="{{add}}" class="img04" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="bottom box">
+                <text>商品金额</text>
+                <text class="text1">¥ {{item.sum}}</text>
+            </view>
+        </view>
+        <view class="bottomview">
+            <view class="total box">
+                <view class="text">
+                    <text class="text1">合计:</text>
+                    <text class="text2">¥ {{cart.final_sum}}</text>
+                </view>
+                <view class="totalNum" bindtap="toCart2">结算({{cart.count}})</view>
+             </view>
+             <view class="condition_price">
+                满288就可以包邮哟
+             </view>
+        </view>
+    </view>
+</view>
+

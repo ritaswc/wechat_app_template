@@ -1,0 +1,14 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <swiper autoplay="true" indicator-dots="true" interval="5000" duration="1000">
+    <swiper-item>
+      <image src="../../images/wx.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/vr.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/iqiyi.png"></image>
+    </swiper-item>
+  </swiper>
+</view>

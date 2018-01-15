@@ -1,0 +1,49 @@
+<view>
+    <view class="post-title-wrap" >
+        <textarea class="c-fullwidth post-title"  name="textarea1" placeholder="标题，可以不填..." type="textarea"/>
+    </view>
+    <view class="post-mainbody-wrap" >
+        <textarea class="c-fullwidth post-mainbody"  name="textarea1" placeholder="这一刻的想法..." type="textarea"/>
+    </view>
+    <view class="post-submit-container" >
+        <view class="post-position-wrap" >
+            <image class="post-position-icon"  mode="scaleToFill" src="http://qty83k.creatby.com/materials/origin/0024e9b38e605192d94951ce3dffe8ae_origin.png" style="background-size: 100% 100%; background-position: 0% 0%; background-repeat: no-repeat; background-image: url(http://qty83k.creatby.com/materials/origin/0024e9b38e605192d94951ce3dffe8ae_origin.png); "/>
+            <text class="post-position-text" >点击发送位置</text>
+        </view>
+        <button class="post-submit"  hover-class="button-hover" size="default" type="default" style="color:#fff;background-color:rgba(23,181,238,1)">
+            发表
+        </button>
+    </view>
+</view>
+<view class="post-icon-container" >
+    <view class="post-icon-emoj-wrap" >
+        <view class="post-icon-emoj"> </view>
+        <text class="post-icon-desc" >表情</text>
+    </view>
+    <view class="post-icon-emoj-wrap" >
+        <view class="post-icon-img"></view>
+        <text class="post-icon-desc" >图片</text>
+    </view>
+    <view class="post-icon-emoj-wrap" >
+        <view class="post-icon-voice"></view>
+        <text class="post-icon-desc" >语音</text>
+    </view>
+    <view class="post-icon-emoj-wrap" >
+        <view class="post-icon-vedio" ></view>
+        <text class="post-icon-desc" >视频</text>
+    </view>
+    <view class="post-icon-emoj-wrap" >
+        <view class="post-icon-reward"></view>
+        <text class="post-icon-desc" >悬赏</text>
+    </view>
+</view>
+<view class="post-type-container" >
+    <text class="post-type-wrap" >运营日报</text>
+    <text class="post-type-wrap" >运营交流</text>
+    <text class="post-type-wrap" >改进建议</text>
+    <text class="post-type-wrap" >操作指南</text>
+    <text class="post-type-wrap" >常见问题</text>
+    <text class="post-type-wrap" >微赞故事</text>
+    <text class="post-type-wrap" >更新进度</text>
+    <text class="post-type-wrap" >公众号运营</text>
+</view>

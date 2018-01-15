@@ -1,0 +1,13 @@
+.userinfor{
+   margin-top: 30px; 
+}
+.user-motto{
+  display: block;
+  margin-bottom: 80px;
+  text-align: center
+}
+.userinfor input{
+    color: #000;
+    margin-bottom: 10px;
+    background-color:#F8F8F8;
+}

@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/sku/sku",
+    "pages/gotogo/gotogo",
+    "pages/gift-result/gift-result",
+    "pages/article/article",
+    "pages/all/all",
+    "pages/filter/filter"
+  ],
+  "window": {
+    "navigationBarBackgroundColor":"#2E2E2F",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "礼物挑选神器"
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  }
+}

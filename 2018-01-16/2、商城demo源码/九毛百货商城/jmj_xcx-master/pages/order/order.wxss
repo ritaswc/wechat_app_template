@@ -1,0 +1,33 @@
+/* pages/order/order.wxss */
+.top{
+    height: 91rpx;
+    line-height: 91rpx;
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-bottom: 1rpx solid #eee;
+    z-index: 2;
+}
+.top .item{
+    -webkit-flex:1;
+    text-align:center;
+    width:20%;
+}
+.top .item.active{
+    color:#ff4aa0;
+}
+.top .item .bg1{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    margin-left:3.5%;
+    background: #ff4aa0;
+    border-radius: 6rpx;
+    width: 13%;
+    height:6rpx;
+}
+.top .item.active .bg1{
+    display:block;
+}

@@ -1,0 +1,68 @@
+<view class="container">
+  <view class="header"></view>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__bd">
+      <navigator url="/view/qrcode/index" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="{{userInfo.avatarUrl}}" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">{{userInfo.nickName}}</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">二维码</view>
+      </navigator>
+    </view>
+  </view>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__bd">
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title margin-top">
+    <navigator url="/view/order/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">我的订单</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access order-info">查看全部订单</view>
+    </navigator>
+    <view class="weui-media-box weui-media-box_appmsg order">
+      <navigator url="/view/order/index" class="order-item">
+        <view class="order-item-icon">
+          <image class="order-item-icon-image" src="/image/pay.png" />
+        </view>
+        代付款
+      </navigator>
+      <navigator url="/view/order/index" class="order-item">
+        <view class="order-item-icon">
+          <image class="order-item-icon-image" src="/image/send.png" />
+        </view>
+        代发货
+      </navigator>
+      <navigator url="/view/order/index" class="order-item">
+        <view class="order-item-icon">
+          <image class="order-item-icon-image" src="/image/deliver.png" />
+        </view>
+        代收货
+      </navigator>
+      <navigator url="/view/order/index" class="order-item">
+        <view class="order-item-icon">
+          <image class="order-item-icon-image" src="/image/comment.png" />
+        </view>
+        已完成
+      </navigator>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title margin-top">
+    <navigator url="/view/delivery/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="/image/location.png" style="margin-right: 5px; margin-top: 5px; width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">我的地址</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/view/favor/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="/image/favor_active.png" style="margin-right: 5px; margin-top: 5px; width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">我的收藏</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+</view>

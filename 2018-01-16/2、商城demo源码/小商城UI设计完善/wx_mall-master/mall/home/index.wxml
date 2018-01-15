@@ -1,0 +1,133 @@
+<view>
+    <view class="header flex row">
+        <view class="logo">
+            <image src="http://o86ac3exs.bkt.clouddn.com/92521dee-3163-4799-a383-3c025b966998.png"></image>
+        </view>
+
+        <navigator class="search" url="../../pages/wx/index" hover-class="navigator-hover">
+            <icon class="search_icon" type="search" size="16" color="#999"/>
+            <text class="search_text">搜一搜</text>
+        </navigator>
+
+        <navigator url="../../icon/index" hover-class="navigator-hover" class="classify">
+            <view class="classify_view">
+                <icon class="classify_icon" type="info" size="20" color="#5cc922"/>
+                <text class="classify_text">分类</text>
+            </view>
+        </navigator>
+    </view>
+
+    <view class="text_scroll flex">
+        <icon class="text_scroll_icon" type="info" size="20" color="#f96"/>
+        <view class="text_scroll_text">
+            <text>这是一段滚动的文字</text>
+        </view>
+    </view>
+
+
+    <swiper duration="1000" interval="3000" current="0" autoplay="true" class="swiper">
+        <swiper-item wx:for="{{slider}}" wx:key="item">
+            <view>
+                <view>
+                    <navigator url="{{ item.url }}" hover-class="navigator-hover" class="slider_item">
+                        <image class="slider_img" mode="scaleToFill" src="{{ item.img }}"></image>
+                    </navigator>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+
+
+
+    <view class="category">
+        <view wx:for="{{ category }}" wx:key="item" class="category_item">
+            <navigator url="{{ item.url }}" hover-class="navigator-hover">
+                <view class="flex column category_item_btn">
+                    <image src="{{ item.img }}" class="category_logo"></image>
+                    <text>{{ item.text }}</text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+
+    <view class="hot_scroll">
+        <view class="hot flex">
+            <view class="hot_title">
+                <text>头条</text>
+            </view>
+            <swiper class="hot_list" autoplay="true" interval="3000" duration="1000">
+                <swiper-item wx:for="{{ hot }}" wx:key="item">
+                    <view>
+                        <text class="hot_list_text">{{ item.text }}</text>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+
+
+
+
+    <view class="product">
+        <view class="product_title">////  全网精选  ////</view>
+        <view class="product_list">
+            <view style="margin-right:5px;overflow:hidden;">
+                <view class="product_item" wx:for="{{ product }}" wx:key="item">
+                    <view class="product_item_container">
+                        <navigator class="product_link" url="{{ item.url }}" hover-class="navigator-hover">
+                            <image class="product_img" src="{{ item.img }}"></image>
+                            <view class="product_info">
+                                <view class="product_name"><text>{{ item.name }}</text></view>
+                                <view class="costAndAdd"><text class="product_cost">￥{{ item.cost }}</text></view>
+                            </view>
+                        </navigator>
+                        <view class="addCart" bindtap="addCost"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+
+
+    <block wx:if="{{ mask }}">
+        <view class="mask" bindtap="maskHidden"></view>
+    </block>
+
+    <block wx:if="{{ cart }}">
+        <view class="cart">
+            <view class="cart_close" bindtap="maskHidden"><icon type="clear" size="20" color="red"/></view>
+            <view class="cart_product">
+                <view class="cart_product_img">
+                    <image src="http://o86ac3exs.bkt.clouddn.com/1c0319e5-1a53-4637-ac26-6c8d456c69cd.jpg?imageView2/1/w/200/h/200"></image>
+                </view>
+                <view class="cart_product_info">
+                    <view class="cart_product_price">￥100</view>
+                    <view class="cart_product_repertory">库存 100 件</view>
+                </view>
+            </view>
+            <view class="buy_number flex">
+                <view class="buyNumber">
+                    <text>购买数量</text>
+                </view>
+                <view class="selectNumber">
+                    <button type="default" bindtap="down">-</button>
+                    <input type="number" value="{{ number }}" bindinput="import"/>
+                    <button type="default" bindtap="up">+</button>
+                </view>
+            </view>
+
+            <button type="warn" class="cart_sure" bindtap="cartSure"> 确定 </button>
+        </view>
+    </block>
+
+
+
+    <input type="number" value="{{ test }}" bindinput="test"/>
+
+
+
+
+
+</view>

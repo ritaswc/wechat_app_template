@@ -1,0 +1,47 @@
+<!--pages/allrest/rest.wxml-->
+<include src="../template/share.wxml"/>
+<scroll-view class="nav_list border" scroll-x="true" scroll-left="{{left}}">
+   <view 
+   wx:for="{{content}}" 
+   class="label_name {{select == item.labelid?'active':''}}"
+  bindtap="changeContent"
+   id="{{item.labelid}}"
+   data-index="{{index}}"
+   >
+        {{item.labelname}}
+   </view>
+</scroll-view>
+<scroll-view class="content" scroll-y="true">
+   <view class="res_con">
+      <navigator 
+      wx:for="{{showRest}}"
+      class="res_detail border" 
+      url="../rdetail/rdetail?id={{item.id}}&name={{cityName}}"
+      >
+        <view class="top_con">
+          <image src="{{item.cover}}"></image>
+          <view class="top_con_right">
+            <view class="item_name">{{item.name}}</view>
+            <view class="item_price">
+              <text class="item_cost" style="margin-right:20rpx">{{item.cost}}元/人</text>
+              <text class="item_type" wx:if="{{item.type !=''}}">{{item.type}}</text>
+            </view>
+            <view class="item_desc" wx:if="{{item.desc != ''}}">
+              {{item.desc}}
+            </view>
+             <view class="item_desc" wx:else>
+              {{item.reason}}
+            </view>
+          </view>
+        </view>
+        <view class="bot_label" wx:if="{{item.label != ''}}">
+          <text  wx:for="{{item.label}}">{{item.name}}</text>
+        </view>
+    </navigator>
+  </view>
+  <view class="num" wx:if="{{len>0}}">
+    <text class="xt"></text>
+       <text>共 {{len}} 家</text> 
+    <text class="xt"></text>
+  </view>
+</scroll-view>

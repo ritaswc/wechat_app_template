@@ -1,0 +1,22 @@
+page{
+    background-color: #f5f4f4;
+}
+.cpupon-view{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.coupon-item{
+    width: 95%;
+    height: 140rpx;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20rpx;
+}
+.coupon-item image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,79 @@
+
+
+
+<view class="content">
+<scroll-view class="collectionView" scroll-y="false">
+
+    <view style="height:26%;width:100%">
+    <!--轮播图-->
+        <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="2000" duration="350">
+            <block wx:for="{{imageArray}}">
+                <swiper-item>
+                <image src="{{item.img}}" style="width:100%;height:100%" mode="scaleToFill"/>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view style="height:160px;width:100%;">
+         <view style="height:50%;width:100%;">
+            <view class="icon_back"wx:for-items="{{iconArray}}" wx:for-item="item" wx:if="{{index<4}}">
+                <image src="{{item.picture_url}}" style="width:60px;height:60px;display:table;margin-left:auto;margin-right:auto"></image>
+                <text style="display:table;margin-left:auto;margin-right:auto;font-size:12px;">{{item.title}}</text>
+            </view>
+        </view>
+        <view style="height:50%;width:100%;">
+           <view class="icon_back"wx:for-items="{{iconArray}}" wx:for-item="item" wx:if="{{index<4}}">
+                <image src="{{item.picture_url}}" style="width:60px;height:60px;display:table;margin-left:auto;margin-right:auto"></image>
+                <text style="display:table;margin-left:auto;margin-right:auto;font-size:12px;">{{item.title}}</text>
+            </view>
+        </view>
+    </view>
+<!--整个item-->
+    <view class="collectionView_item" wx:for-items="{{collectionDataSource}}" wx:for-item="item" wx:key="collectionDataSource">
+        <view class="back_view">
+            <view class="super_left">
+                <view class="item_top">
+                <!--商品主图-->
+                    <image class="image" src="{{item.avatar_url}}"/>
+                </view>
+                <!--商品标题-->
+                <view class="title_back">
+                    <text class = "text">{{item.title}}</text>  
+                    <view style =  "padding-top:6px;height:30%;position:relative">
+                           <text class = "tags">精选</text>
+                        <image class = "addShopImage"  src="../resource/add.png"bindtap="addButtonClick" id="{{index}}"/>
+                        <text class = "numberShop">{{item.buy}}</text>
+                        <image class = "addShopImage" src="../resource/reduce.png" mode="aspectFill" bindtap="reduceButtonClick" id="{{index}}"/>
+                    </view> 
+                    <view style="position:relative;left:0;top:5%;">
+                             <text class = "price">¥{{item.price}}.00</text>
+                             <text class = "mark_price">{{item.marketPrice}}.00</text>
+                    </view>
+                </view>
+            </view>
+            <view class="super_right">
+                <view class="item_top">
+                <!--商品主图-->
+                    <image class="image" src="{{item.avatar_url}}"/>
+                </view>
+                <!--商品标题-->
+                <view class="title_back">
+                    <text class = "text">{{item.title}}</text>  
+                    <view style =  "padding-top:6px;height:30%;position:relative">
+                        <text class = "tags">精选</text>
+                        <image class = "addShopImage"  src="../resource/add.png"bindtap="addButtonClick" id="{{index}}"/>
+                        <text class = "numberShop">{{item.buy}}</text>
+                        <image class = "addShopImage" src="../resource/reduce.png" mode="aspectFill" bindtap="reduceButtonClick" id="{{index}}"/>
+                    </view> 
+                    <view style="position:relative;left:0;top:5%;">
+                             <text class = "price">¥{{item.price}}.00</text>
+                             <text class = "mark_price">{{item.marketPrice}}.00</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!--每个item之间的间隔线-->
+        <view class="line"></view>
+    </view>
+</scroll-view>
+</view>

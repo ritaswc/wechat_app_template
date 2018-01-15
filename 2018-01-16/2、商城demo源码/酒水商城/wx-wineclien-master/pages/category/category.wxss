@@ -1,0 +1,187 @@
+/*左侧分类视图*/
+.left_scrol_style{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 75px;
+    display: block;
+    background-color: #F5F5F5;
+}
+    /*左侧列表样式*/
+    .left_list_item_style{
+        height: 45px;
+        width: 100%;
+        position: relative
+    }
+        .line_color_size{
+            width: 100%;
+            height: 1px;
+            background-color: #D2D2D2;
+            position: absolute;
+            bottom: 0px;
+        }
+        .flag_line_color_size{
+            height: 100%;
+            width: 2px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+                .flag_line_select{
+                    background-color: #FF6261;
+                }
+                .flag_line_nomal{
+                    background-color: #E5E5E5;
+                }
+        /*左侧侧列表字体*/
+        .left_list_text{
+            text-align: center;
+            font-size: 15px;
+            line-height:44px;
+            position: absolute;
+            top: 0px;
+            bottom: 1px;
+            left: 2px;
+            right: 0px;
+            display: block
+        }
+            .left_list_text_nomal{
+                color: #787878;
+                background-color: #E5E5E5;
+            }
+            .left_list_text_select{
+                color: #FF6261;
+                background-color: white;
+            }
+/*右侧列表样式*/
+.right_list_style{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 75px;
+    background-color: #F5F5F5;
+}
+    /*右侧列表item*/
+    .right_list_item{
+        height: 90px;
+        width: 100%;
+        position: relative;
+        background-color: white;
+    }   
+        /*商品主图*/
+        .right_list_item_image{
+            position: absolute;
+            height: 80px;
+            width: 80px;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+        }
+        /*商品名称*/
+        .right_list_item_title{
+            text-align: left;
+            font-size: 16px;
+            position: absolute;
+            left: 90px;
+            top: 5px;
+            right: 5px;
+            height: 20px;
+            line-height: 20px;
+            color: #323232;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis
+        }
+        /*tags*/
+        .tags_back_view{
+            position: absolute;
+            top: 30px;
+            left: 90px;
+            right: 5px;
+            height: 10px;
+        }
+            /*tags*/
+            .tags{
+                background-color: red;
+                font-size: 10px;
+                color: white;
+                line-height: 10px;
+                border-radius: 3px;
+                margin-left: 5px;
+                height: 10px;
+                float: left;
+            }
+        /*规格*/
+        .right_list_item_specification{
+            font-size: 10px;
+            line-height: 10px;
+            color: #B2B2B2;
+            position: absolute;
+            left: 90px;
+            bottom: 37px;
+        }
+        /*已售*/
+        .right_list_item_sale_count{
+            font-size: 10px;
+            line-height: 10px;
+            color: #B2B2B2;
+            position: absolute;
+            left: 90px;
+            bottom: 23px;
+        }
+        /*价钱的背景试图*/
+        .price_back_view{
+            height: 20px;
+            position: absolute;
+            bottom: 5px;
+            left: 90px;
+        }
+            /*售价*/
+            .right_list_item_price{
+                color: #FF6261;
+                font-size: 16px;
+            }
+            /*市场价*/
+            .right_list_item_market_price{
+                font-size: 13px;
+                color: #333333;
+                margin-left: 3px;
+                text-decoration:line-through;
+            }
+        /*+号按钮*/
+        .add_image_style{
+            width:30px;
+            height:30px;
+            position:relative;
+            top:50px;
+            right:10px;
+            float:right;
+        }
+        /*——号按钮*/
+        .reduce_image_style{
+            width:30px;
+            height:30px;
+            position:relative;
+            top:50px;
+            right:10px;
+            float:right;
+        }
+        /*购买数量*/
+        .good_buy_number{
+            height:30px;
+            line-height:30px;
+            position:relative;
+            top:50px;right:10px;
+            float:right;
+            font-size:16px;
+            margin-right:3px;
+            margin-left:3px;
+        }
+    .right_line{
+        height: 1px;
+        width: 100%;
+        background-color: #F5F5F5;
+        position: absolute;
+        bottom: 0px;
+    }

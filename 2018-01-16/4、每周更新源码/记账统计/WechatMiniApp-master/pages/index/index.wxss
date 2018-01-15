@@ -1,0 +1,48 @@
+/**index.wxss**/
+
+.btn-new {
+  background-color: #333;
+  border-radius: 10rpx;
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.btn-new-hover {
+  background-color: #5e81bf;
+}
+
+.list {
+  border-top: 1px solid #eee;
+  padding-top: 40rpx;
+  margin-top: 40rpx;
+  line-height: 50rpx;
+}
+
+.list-title {
+  color: #5e81bf;
+}
+
+.list-date {
+  font-size: 24rpx;
+  color: #ccc;
+  margin: 10rpx 0;
+}
+
+.list-date-week {
+  padding-left: 20rpx;
+}
+
+.list-remark {
+  color: #333;
+}
+
+.list-tag {
+  color: #ff5722;
+}
+
+.list-image {
+  width: 50%;
+}

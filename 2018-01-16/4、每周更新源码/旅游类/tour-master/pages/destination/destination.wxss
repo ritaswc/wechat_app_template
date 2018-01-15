@@ -1,0 +1,274 @@
+/* pages/destination/destination.wxss */
+page{
+  font-weight: bold;
+}
+/*顶部*/
+
+.top {
+  position: relative;
+  height: 300rpx;
+  font-weight: bold;
+}
+
+.top .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 300rpx;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}
+
+/*底图*/
+
+.top .img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -2;
+  width: 100%;
+  height: 300rpx;
+}
+
+.top .img image {
+  width: 100%;
+  height: 100%;
+}
+
+/*位置*/
+
+.top .pos {
+  position: relative;
+  padding-top: 42rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+.top .pos .icon {
+  height: 8rpx;
+  width: 18rpx;
+  margin-left: 18rpx;
+  background: url(/images/destination/destination.png) no-repeat;
+  background-size: 94rpx 38rpx;
+}
+
+/*搜索*/
+
+.top .search {
+  position: relative;
+  width: 100%;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  margin: 0 auto;
+  height: 65rpx;
+}
+
+.top .search input {
+  margin-top: 46rpx;
+  border-radius: 32px;
+  background: #77663f;
+  width: 100%;
+  height: 65rpx;
+  padding: 10rpx 24rpx;
+  box-sizing: border-box;
+}
+
+.top .search .icon {
+  position: absolute;
+  z-index: 9999;
+  right: 94rpx;
+  top: 20rpx;
+  height: 26rpx;
+  width: 26rpx;
+  background: url(/images/destination/destination.png) no-repeat;
+  background-size: 94rpx 38rpx;
+  background-position: -38rpx 0;
+}
+
+.placeholderClass {
+  color: #867a70;
+  font-size: 24rpx;
+}
+
+/*城市*/
+
+.top .city {
+  position: relative;
+  margin-top: 54rpx;
+  padding: 0 40rpx;
+  color: #bbb3ab;
+  font-size: 26rpx;
+  line-height: 42rpx;
+  justify-content: space-between;
+  display: flex;
+  z-index: 1;
+}
+
+.top .city text{
+width: 70rpx;
+text-align: center;
+}
+.top .city text:first-child{
+  padding-bottom: 18rpx;
+ 
+}
+.top .active{
+  color: #98d361;
+   border-bottom: 6rpx solid #98d361; 
+}
+.top .city .line {
+  width: 1px;
+  height: 42rpx;
+  background: #bbb3ab;
+}
+
+.top .city .icon {
+  margin-top: 20rpx;
+  height: 8rpx;
+  width: 18rpx;
+  background-position: -18px 0;
+  background: url(/images/destination/destination.png) no-repeat;
+  background-size: 94rpx 38rpx;
+}
+
+/*公共头部*/
+
+.hot-view, .hot-city {
+  padding: 0 40rpx;
+  padding-top: 28rpx;
+}
+
+.hot .title {
+  height: 34rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #948475;
+  font-weight: bold;
+}
+
+.hot .title text {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.hot .title text:first-child, .hot .title text:last-child {
+  height: 1px;
+  background: #eae1d2;
+}
+
+.img-box, .city-box {
+  overflow: hidden;
+}
+
+/*周边热门景区*/
+
+.img-box {
+  margin-top: 44rpx;
+  padding-bottom: 26rpx;
+}
+
+.img-box .img {
+  position: relative;
+  width: 328rpx;
+  height: 194rpx;
+  border-radius: 10px;
+  float: left;
+}
+
+.img-box .img:nth-of-type(2n) {
+  margin-left: 14rpx;
+}
+
+.img-box .img:nth-of-type(n+3) {
+  margin-top: 14rpx;
+}
+
+.img-box image {
+  width: 100%;
+  height: 100%;
+}
+
+.img-box text {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 28rpx;
+  box-sizing: border-box;
+  height: 48rpx;
+  line-height: 48rpx;
+  background: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-size: 26rpx;
+}
+
+.divider {
+  width: 100%;
+  height: 18rpx;
+  background: #f0ede2;
+}
+
+/*周边热门城市*/
+
+.city-box {
+  margin-top: 55rpx;
+  padding-bottom: 56rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.city-box .city {
+  width: 154rpx;
+  height: 70rpx;
+  border: 1px solid #efe8dd;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 80px;
+  color: #bbb4af;
+  font-size: 26rpx;
+}
+
+.city-box .city:nth-of-type(n+4) {
+  margin-top: 18rpx;
+}
+
+.nearby {
+  position: absolute;
+  right: 40rpx;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 50%;
+  background: #98d361;
+  color: #fff;
+  font-size: 22rpx;
+  align-items: center;
+  box-shadow: 0 20rpx 40rpx 20rpx #b6b6b6;
+}
+
+.nearby .icon {
+  height: 38rpx;
+  width: 30rpx;
+  margin-top: 15rpx;
+  background: url(/images/destination/destination.png) no-repeat;
+  background-size: 94rpx 38rpx;
+  background-position: -64rpx 0;
+}
+
+.nearby text:last-child {
+  margin-top: 10rpx;
+}

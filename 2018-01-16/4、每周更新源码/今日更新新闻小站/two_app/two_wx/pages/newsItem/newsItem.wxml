@@ -1,0 +1,19 @@
+
+    <view class = "news-list">
+      <!--单个新闻-->
+      <view class = "news-item"  wx:for="{{newsData}}" bindtap="tourl" data-index="{{index}}" >
+      {{item.allList.lenght}}
+        <view class = "news-item-info" >
+          <view class = "header">
+            <text class = "channelName" data-index="{{index}}">{{item.channelName}}</text>
+            <text class = "source" data-index="{{index}}">{{item.source}}</text>
+          </view>
+          <view class = "title" data-index="{{index}}">{{item.title}}</view>
+          <view class = "time" data-index="{{index}}">{{item.pubDate}}</view>
+        </view>
+     
+        <view class = "news-item-image"  wx:if="{{item.imageurls[0]!=null}}">
+          <image src="{{item.imageurls[0].url}}"  hidden="{{item.imageurls[0]==null}}" style="width:100%;height:100%" data-url="/pages/details/details" data-index="{{index}}"  mode="aspectFill" ></image>
+        </view>
+      </view>  
+    </view>

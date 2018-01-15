@@ -1,0 +1,22 @@
+{
+  "pages":[
+     
+    "pages/index/index",
+   "pages/personal/personal",
+    "pages/address/address",
+    "pages/orderList/orderList",
+    "pages/order/order",
+    "pages/goods/goods",
+    "pages/bigpic/bigpic",
+    "pages/editAddress/editAddress"
+     
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#3b3b3b",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"#fff"
+  },
+  "debug": false
+}

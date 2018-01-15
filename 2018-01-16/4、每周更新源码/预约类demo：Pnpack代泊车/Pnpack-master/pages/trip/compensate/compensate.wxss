@@ -1,0 +1,14 @@
+.header{
+    padding: 40rpx 40rpx
+}
+.checkbox{
+    margin:30rpx 0;
+}
+.prome{
+  width:595rpx;
+height:88rpx;
+line-height:88rpx;
+font-size:35rpx;
+margin-top:38rpx;
+color:#fff;
+}

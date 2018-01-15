@@ -1,0 +1,30 @@
+.search-content{
+    height:60rpx;
+    padding: 30rpx;
+}
+scroll-view {  
+  height: 600px;  
+    float: left;  
+  width: 94%;  
+}  
+.wordindex {  
+  line-height: 50rpx;  
+  background: #f7f7f7;  
+  font-size: 14px;  
+  color: #929292;  
+  padding-left: 28rpx;  
+} 
+.zm-index{
+ float: right;  
+  position: fixed;  
+  right: 0;  
+  margin-top: 20%;  
+  margin-right: 10rpx;  
+  color: #e0004a;  
+  font-size: 11px; 
+}
+.zm-index text{
+    display: flex;  
+  line-height: 18rpx;
+ 
+}

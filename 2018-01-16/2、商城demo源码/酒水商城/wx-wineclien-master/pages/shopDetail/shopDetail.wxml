@@ -1,0 +1,88 @@
+<view  class = "content">
+    <scroll-view scroll-x = "{{false}}" scroll-y = "{{true}}">
+        <swiper  style = "height:{{loop_image_height}}px" autoplay = "{{true}}" indicator-dots= "{{true}}" interval="1000" duration="350">
+            <swiper-item wx:for-items = "{{good_detail.product_info.pic_array }}">
+                <image src="{{item}}" class = "loop_image_style"></image>
+            </swiper-item>
+        </swiper>
+        <view style = "background-color:#F5F5F5;height:1px;width:100%"></view>
+        <view class = "good_info_back">
+            <text class = "good_info_title">{{good_detail.product_info.title}}</text>
+            <!--tags-->
+            <view class = "tags_back_view">
+                <text class = "tags">精选</text>
+                <text class = "tags">打折</text>
+                <text class = "tags">促销</text>
+            </view>
+            <view class = "good_info_price_back">
+                <view>
+                    <text class = "phone_price_name">手机专享:</text>
+                    <text class = "good_price">¥{{good_detail.product_info.price}}</text>
+                </view>
+                <view class = "phone_price_name">
+                     <text style = "">零售价:¥{{good_detail.product_info.marketPrice}}</text>
+                </view>
+                <view class = "phone_price_name">
+                    <text style = "">已售:¥{{good_detail.product_info.sale_count}}</text>
+                </view>
+            </view>
+        </view>
+        <view style = "background-color:#F5F5F5;height:10px;width:100%;"></view>
+        <view class = "integral_back_view">
+            <image src="../resource/JKMMMainIntegr.png" class = "integral_image"></image>
+            <text class = "integral_title">{{good_detail.product_info.integral}}</text>
+        </view>
+        <view style = "background-color:#F5F5F5;height:1px;width:100%"></view>
+        <view class = "integral_back_view">
+            <text class = "info_name">品牌</text>
+            <text class = "info_content">{{good_detail.product_info.brand}}</text>
+        </view>
+        <view style = "background-color:#F5F5F5;height:1px;width:100%"></view>
+        <view class = "integral_back_view">
+            <text class = "info_name">规格</text>
+            <text class = "info_content">{{good_detail.product_info.specification}}</text>
+        </view>
+        <view style = "background-color:#F5F5F5;height:1px;width:100%"></view>
+        <view class = "integral_back_view">
+            <text class = "info_name">产地</text>
+            <text class = "info_content">{{good_detail.product_info.origin}}</text>
+        </view>
+        <view style = "background-color:#F5F5F5;height:10px;width:100%;"></view>
+        <view class = "comment_title_back_view">
+            <text class = "comment_order_title">评价晒单</text>
+            <text class = "comment_order_content">({{good_detail.comment_count}}评价)</text>
+            <image src="../resource/rightTrangle.png" class = "comment_image"></image>
+            <text class = "comment_good_number">{{good_detail.comment_scale}}</text>
+            <text class = "comment_good_title">好评</text>
+        </view>
+        <view style = "background-color:#F5F5F5;height:1px;width:100%;"></view>
+        <view class = "comment_list" wx:for-items = "{{good_detail.comment_list}}" wx:for-item = "comment">
+            <view class = "comment_list_userinfo_back">
+                <view>
+                    <image src="{{comment.avatar_url}}" class = "comment_user_image"></image>
+                    <text class = "comment_user_name">{{comment.name}}</text>
+                </view>
+                <view>
+                    <image src="../resource/add.png" class = "comment_start"></image>
+                    <image src="../resource/add.png" class = "comment_start"></image>
+                    <image src="../resource/add.png" class = "comment_start"></image>
+                    <image src="../resource/add.png" class = "comment_start"></image>
+                    <image src="../resource/add.png" class = "comment_start"></image>
+                </view>
+                <view>
+                    <text class = "comment_time">{{comment.created_at_str}}</text>
+                </view>
+            </view>
+            <view class = "comment_content_back_view">
+                <text>{{comment.content}}</text>
+            </view>
+            <view style = "background-color:#F5F5F5;height:1px;width:100%;position:absolute;bottom:0px;"></view>
+        </view>
+        <view style = "background-color:#F5F5F5;height:10px;width:100%;"></view>
+        <view class = "comment_title_back_view">
+            <text class = "comment_order_title">商品详情</text>
+        </view>
+        <view style = "background-color:#F5F5F5;height:1px;width:100%"></view>
+        <image src="{{good_detail.product_desc_url}}" bindload = "imageLoad" style = "width:100%;height:{{good_detail_image_height}}px"></image>
+    </scroll-view>
+</view>

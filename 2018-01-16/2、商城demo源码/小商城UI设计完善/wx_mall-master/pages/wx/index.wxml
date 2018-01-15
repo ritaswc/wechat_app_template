@@ -1,0 +1,19 @@
+<view>
+    <view class="wx_list" wx:for="{{items}}" wx:key="item" bindtap="massage_info">
+        <navigator url="../../mall/home/index" hover-class="navigator-hover" style="display:block;width:100%;">
+            <view class="item">
+                <view class="item_logo">
+                    <image class="logo" src="images/leng.png"></image>
+                </view>
+                <view class="item_container">
+                    <text class="item_title">{{index}}</text>
+                    <text class="item_message">{{item.message}}</text>
+                </view>
+                <view class="item_time">
+                    <text class="time">{{item.time}}</text>
+                </view>
+            </view>
+        </navigator>
+
+    </view>
+</view>

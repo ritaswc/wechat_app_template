@@ -1,0 +1,29 @@
+<!--pages/shenghuo/AllServiceclassify/ServiceDetailInfo/ServiceDetailInfo.wxml-->
+<!--<text>pages/shenghuo/AllServiceclassify/ServiceDetailInfo/ServiceDetailInfo.wxml</text>-->
+
+
+<import src="../../../../wxParse/wxParse.wxml" />
+
+<view class="ServiceDetailInfo-container">
+  <image class="ServiceDetailInfo-image" src="http://m.jointem.com/{{detailDic.serviceContentImgUrl}}"></image>
+  <view class="goodServersDetail-company-name">
+    <view class="titleName">{{detailDic.serviceTitle}}</view>
+    <view class="bottom">
+      <view class="bottom-left">
+        <image class="img" src="../img/sz.png"></image>
+        <view class="textcc">发布时间:{{detailDic.serviceCreateTime}}</view>
+      </view>
+      <view class="bottom-right">
+        <image class="img" src="../img/eye.png"></image>
+        <view class="textcc">{{detailDic.servicePv}}人浏览</view>
+      </view>
+    </view>
+  </view>
+  <view class="spaceSeparateView"></view>
+  <view class="goodServersDetail-company-address">{{detailDic.serviceMerchantName}}</view>
+  <view class="spaceSeparateView"></view>
+
+  <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:htmlContentStr.nodes}}" />
+  </view>
+</view>

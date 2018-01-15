@@ -1,0 +1,112 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "jsonapi-datastore",
+        "scope": null,
+        "escapedName": "jsonapi-datastore",
+        "name": "jsonapi-datastore",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/liuxy/work/wechat_program_front"
+    ]
+  ],
+  "_from": "jsonapi-datastore@latest",
+  "_id": "jsonapi-datastore@0.4.0-beta",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/jsonapi-datastore",
+  "_nodeVersion": "0.12.7",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/jsonapi-datastore-0.4.0-beta.tgz_1458052797419_0.7578040463849902"
+  },
+  "_npmUser": {
+    "name": "beauby",
+    "email": "lucas.hosseini@gmail.com"
+  },
+  "_npmVersion": "2.13.5",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "jsonapi-datastore",
+    "scope": null,
+    "escapedName": "jsonapi-datastore",
+    "name": "jsonapi-datastore",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/jsonapi-datastore/-/jsonapi-datastore-0.4.0-beta.tgz",
+  "_shasum": "b499fce924d45e2bc3c6178681520063e2361f10",
+  "_shrinkwrap": null,
+  "_spec": "jsonapi-datastore",
+  "_where": "/Users/liuxy/work/wechat_program_front",
+  "author": {
+    "name": "Lucas Hosseini",
+    "email": "lucas.hosseini@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/beauby/jsonapi-datastore/issues"
+  },
+  "dependencies": {},
+  "description": "JavaScript client-side JSON API data handling made easy.",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "chai": "^3.2.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jsbeautify": "^0.1.1",
+    "gulp-jscs": "^2.0.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-markdox": "^0.1.1",
+    "gulp-mocha": "^2.1.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-wrap": "^0.11.0",
+    "mocha": "^2.2.5"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dist": {
+    "shasum": "b499fce924d45e2bc3c6178681520063e2361f10",
+    "tarball": "https://registry.npmjs.org/jsonapi-datastore/-/jsonapi-datastore-0.4.0-beta.tgz"
+  },
+  "files": [
+    "dist/"
+  ],
+  "gitHead": "56512d7be9b424cbd0da0a71acbed65eab14e042",
+  "homepage": "https://github.com/beauby/jsonapi-datastore#readme",
+  "keywords": [
+    "JSON",
+    "parsing",
+    "serializing",
+    "datastore",
+    "JSONAPI"
+  ],
+  "license": "MIT",
+  "main": "dist/node-jsonapi-datastore.js",
+  "maintainers": [
+    {
+      "name": "beauby",
+      "email": "lucas.hosseini@gmail.com"
+    }
+  ],
+  "name": "jsonapi-datastore",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beauby/jsonapi-datastore.git"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "version": "0.4.0-beta"
+}

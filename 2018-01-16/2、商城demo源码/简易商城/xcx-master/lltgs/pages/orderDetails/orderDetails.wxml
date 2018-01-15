@@ -1,0 +1,38 @@
+<!--pages/orderDetails/orderDetails.wxml-->
+<view class="header">
+    <view class="order_item">状态：<text>{{orderInf.pay_status == '0'?'待支付':'已支付'}}</text></view>
+    <view class="order_item">订单编号：<text>{{orderInf.order_sn}}</text></view>
+    <view class="order_item">下单时间：<text>{{orderInf.add_time}}</text></view>
+    <view wx:if="{{orderInf.pay_status == '0'}}" class="order_item wxpay" catchtap="wxpay">
+        <form report-submit="true" bindsubmit="getfid">
+            <button class="btn" form-type="submit">去支付</button>
+        </form>
+    </view>
+    <view wx:if="{{orderInf.pay_status == '2'}}" class="order_item">
+        <button data-oid="{{orderInf.goods_id}}" catchtap="buyAgain">再次购买</button>
+    </view>
+</view>
+<view class="main1">
+    <view class="order_item">联系方式：<text>{{orderInf.mobile}}</text></view>
+    <view class="order_item">收货人：<text>{{orderInf.consignee}}</text></view>
+    <view class="order_item">收货地址：<text>{{orderInf.address}}</text></view>
+</view>
+<view class="main2">
+    <view class="goods_top">
+        <image src="../../images/icon_01.png"></image>{{orderInf.wangzhan}}
+    </view>
+    <view class="goods_inf">
+        <image src="https://shop.llzg.cn/{{orderInf.goods_thumb}}">
+        </image>
+        <view class="goods_options">
+            <text class="goods_name">{{orderInf.goods_name}}</text>
+            <text class="goods_rule">{{orderInf.goods_attr}}</text>
+            <view class="goods_price">￥{{orderInf.goods_price}}<text>{{orderInf.goods_number}}件</text></view>
+        </view>
+    </view>
+</view>
+<view class="main3">
+    <view class="total_item">商品总额<text>￥{{goods_total}}</text></view>
+    <view class="total_item">运费<text>￥{{orderInf.shipping_fee}}</text></view>
+    <view class="total">实付金额：<text>￥{{orderInf.order_amount}}</text></view>
+</view>

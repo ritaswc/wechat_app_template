@@ -1,0 +1,34 @@
+<view class="purchase">
+    <view class="header">
+        <view class="header-wrapper"  style = "width: {{length *300}}rpx">
+            <view class = "single" wx:for="{{product}}" wx:for-index="index" data-index = "{{index}}"  bindtap="switchTab">
+                <text class = "text-detail {{curNav == index ? 'active' : ''}}">{{item.title}}</text>
+            </view>
+        </view>
+    </view>
+    <view class = "main-container">
+        <block wx:if="{{list.goodsList == null}}">
+            <view class = "wait-more">敬请期待...</view>
+        </block>
+        <block wx:if="{{list.goodsList != null}}">
+            <view class = "list-detail" wx:for="{{list.goodsList}}" wx:for-item="item" data-value = "{{item}}">
+                <view class = "list-sec">
+                    <view class = "top-sec">
+                        <image class="sec-img" src="{{item.goodsImg}}" background-size="cover"></image>
+                    </view>
+                    <view class = "bottom-sec">
+                        <view class = "pirce-wrapper">
+                            <view class="inline-block now">￥{{item.sellPrice}}</view>
+                        </view>
+                        <view class = "top-title">
+                            <view class = "text-overflow title inline-block">{{item.goodsName}}</view>
+                            <view class = "text-overflow description inline-block">{{item.tagline}}</view>
+                        </view>
+                        <view class = "go-buy" data-value = "{{item}}" bindtap="getDetail">详情</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+</view>

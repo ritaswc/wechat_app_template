@@ -1,0 +1,119 @@
+.course-basic-info {
+	display: flex;
+	padding: 32rpx;
+	justify-content: space-between;
+    background-color: #fff;
+}
+
+.course-type {
+	color: #8c8c8c;
+	font-size: 28rpx;
+	margin: 24rpx 0;
+}
+
+.course-image,
+.course-image image {
+	width:240rpx;
+	height:144rpx;
+}
+
+.study-course-btn-wrapper {
+	overflow:hidden;
+	padding: 20rpx 0 30rpx 0;
+    background-color: #fff;
+}
+
+.study-course-btn {
+	float:right;
+	height: 60rpx;
+	font-size: 28rpx;
+	line-height: 60rpx;
+	padding: 0 40rpx;
+	margin-right: 40rpx;
+	color: #fff;
+	border-radius: 60rpx;
+	background-color: #7fabfd;
+}
+
+.course-summary {
+	padding: 32rpx;
+	color: #666;
+	font-size: 28rpx;
+}
+
+
+.tab-wrapper {
+    margin-top: 20rpx;
+}
+
+
+/*
+	课件
+ */
+
+.courseware-list {
+
+}
+
+.courseware-item {
+	display: flex;
+	padding: 32rpx;
+	/*justify-content: space-between;*/
+	border-bottom: 1px solid #dcdcdc;
+}
+
+.courseware-info {
+	flex:1
+}
+.courseware-name {
+	color: #000;
+	font-size: 28rpx;
+	margin-bottom: 12rpx;
+}
+
+.courseware-teacher {
+	color: #999;
+	font-size: 28rpx;
+}
+.courseware-study-btn-wrapper {
+	width: 100rpx;
+}
+.courseware-study-btn,
+.star-rating-btn {
+	display:inline-block;
+	font-size: 28rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	padding: 0 30rpx;
+	border-radius: 60rpx;
+	color: #fff;
+	background-color: #7fabfd;
+}
+
+
+/*
+	评分
+ */
+
+
+.star-rating {
+	display:flex;
+	justify-content: center;
+}
+
+.star-list {
+	overflow:hidden;
+}
+
+.star-item {
+	float:left;
+	width: 60rpx;
+	height: 60rpx;
+	margin-right: 10rpx;
+	margin-top: 80rpx;
+}
+
+.star-rating-btn {
+	position:absolute;
+	top: 180rpx;
+}

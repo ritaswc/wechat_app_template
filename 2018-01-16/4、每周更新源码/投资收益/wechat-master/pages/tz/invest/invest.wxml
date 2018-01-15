@@ -1,0 +1,65 @@
+<view class="tz_content">
+    <view class="tz_list">
+        可用余额：<text>7829994.15</text> 元
+        <view class="right">
+            <navigator url="../../account/recharge/recharge">去充值</navigator>
+        </view>
+    </view>
+
+    <view class="tz_list">
+        项目剩余：<text>7829994.15</text> 元
+    </view>
+
+    <view class="tz_list">
+        <view class="left">
+            投资金额：
+        </view>        
+        <view class="right_input yuan_bg">
+            <input type="number" placeholder="须是100元整倍数" class="" ></input>
+        </view>
+    </view>
+
+    <view class="tz_list">
+        <view class="left">
+            我的红包券：
+        </view>
+        <view class="right_input">
+            <input type="number"></input>
+        </view>
+    </view>
+
+    <view class="tz_list">
+        <view class="left">
+            我的加息券：
+        </view>
+        <view class="right_input">
+            <input type="number"></input>
+        </view>
+    </view>
+
+    <view class="tz_list">
+        <view class="left">
+            安全密码：
+        </view>
+        <view class="right_input">
+            <input type="password" placeholder="请输入安全密码" ></input>
+        </view>
+    </view>
+
+    <view class="tz_list">
+        <view class="left">
+            验证码：
+        </view>
+        <view class="right_yzm">
+            <input type="text" placeholder="请输入验证码" ></input>
+            <view class="yzm">
+                <image src="../../../images/tz/yzm.jpg"></image>
+            </view>
+        </view>
+    </view>
+</view>
+
+
+<view class="invest_btn">
+    <button size="default" type="primary" hover-class="none">立即投资</button>
+</view>

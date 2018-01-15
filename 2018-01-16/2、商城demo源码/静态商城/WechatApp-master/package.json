@@ -1,0 +1,22 @@
+{
+  "name": "ateddy-wechatapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cp pre-commit-eslint.sh .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ateddy/WechatApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^3.8.0",
+    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-plugin-import": "^2.0.1"
+  }
+}

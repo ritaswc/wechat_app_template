@@ -1,0 +1,6 @@
+<view class="unconsciousness">
+  <text class="unconsciousness-title animated swing">患者有呼吸吗？</text>
+  <image bindtap="tap" data-breathe="{{true}}" class="right" src="../../assets/images/right-large.svg" />
+  <image bindtap="tap" data-breathe="{{true}}" class="right" src="../../assets/images/wrong-large.svg" />
+  <button class="btn animated fadeInUp">不会判断？</button>
+</view>

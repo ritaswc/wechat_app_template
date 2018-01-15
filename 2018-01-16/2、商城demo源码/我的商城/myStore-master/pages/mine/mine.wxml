@@ -1,0 +1,7 @@
+<!--pages/mine/mine.wxml-->
+<view>
+<view class = "userinfo">
+<image class = "avatar-url" src="{{userInfo.avatarUrl}}"></image>
+<text>{{userInfo.nickName}}</text>
+</view>
+</view>

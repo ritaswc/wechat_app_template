@@ -1,0 +1,30 @@
+<view class="wraper">
+	<!-- 商品订单 -->
+	<view class="pay">
+		<text class="product">商品订单</text><text class="price">0.01元</text>
+	</view>
+	<!-- 订单详情 -->
+	<view class="order">
+		<view class="">订单描述: <text>商城购物</text></view>
+		<view>订单编号: <text>1000009201</text></view>
+	</view>
+	<!-- 支付方式 -->
+	<view class="payTitle">
+		<text>请选择支付方式</text>
+	</view>
+	<view class="payType">
+		<view class="payList">
+			<view class="payImg"><image src="../../images/shouru_weixin.png"></image></view>
+			<view>微信支付</view>
+		</view>
+		<view class="payList">
+			<view class="payImg"><image src="../../images/shouru_zhifubao.png"></image></view>
+			<view>支付宝支付</view>
+		</view>
+		<view class="payList">
+			<view class="payImg"><image src="../../images/shouru_bank.png"></image></view>
+			<view>银行卡支付</view>
+		</view>
+	</view>
+
+</view>

@@ -1,0 +1,132 @@
+<!--index.wxml-->
+<!-- <loading hidden="{{loadingHidden}}">玩命搜索数据</loading> -->
+
+<!-- <view class="category-container" bindtap="actionSheetChange" animation="{{animationData}}"> -->
+<!-- <view class="category-container {{actionSheetHidden ? 'hide' : 'show'}}" bindtap="actionSheetChange">
+  <block wx:for="{{category.items}}" wx:key="items">
+    <view bindtap="bindItemTap" data-group="{{category.name}}" data-item="{{item}}" class="{{category.selectedIndex === index ?'selected':''}}">{{item}}</view>
+  </block>
+  <view-cancel bindtap="hideActiveSheet">取消</view-cancel>
+</view> -->
+<view class="{{load ? 'load': ''}}">
+  <view class="loading-placeholder">
+    <image src="./icon/placeholder.png"></image>
+  </view>
+</view>
+
+<scroll-view
+  class="container {{load ? 'container-show': ''}}"
+  scroll-y="true"
+  bindscrolltolower="scrolltolower"
+  lower-threshold="300"
+  style="height:100%;">
+    <!-- <view class="search-box">
+     <input class="search-input" placeholder="搜索你想要的礼物" placeholder-class="placeholder-style" bindchange="bindChange" value="{{query}}"/>
+     <view class="search-btn"><icon type="search" bindtap="search" size="18"/></view>
+    </view> -->
+
+    <!-- <view class="category-tabs">
+      <view class="tab" wx:for="{{categorys}}" wx:key="name" wx:for-item="category">
+        <view class="tab-title {{currentIndex === index ? 'active':''}}">
+          <text wx:if="{{category.selectedIndex === 0}}" bindtap="switchSelectCond" data-group="{{category.name}}">{{category.title}}</text>
+          <text wx:else bindtap="switchSelectCond" data-group="{{category.name}}">{{category.items[category.selectedIndex]}}</text>
+          <i class="arrow">▴</i>
+          <view class="line"></view>
+        </view>
+      </view>
+    </view> -->
+    <!-- 相比上面，少了选中红色状态  -->
+    <view class="category-tabs">
+      <view class="tab" wx:for="{{categorys}}" wx:key="name" wx:for-item="category">
+        <view class="tab-title {{currentIndex === index ? 'active':''}}"  bindtap="switchSelectCond" data-group="{{category.name}}">
+          <text wx:if="{{category.selectedIndex <= 0}}">{{category.title}}</text>
+          <text wx:else>{{category.items[category.selectedIndex]}}</text>
+          <image class="arrow" src="./icon/arrow.png"></image>
+        </view>
+        <view class="line"></view>
+      </view>
+    </view>
+
+    <view class="result-area">
+
+      <view class="section-sep first-section-sep clearfix" wx:if="{{raiders.length > 0}}">
+        <view class="section-sep-container">
+          <text class="pull-left">攻略</text>
+          <view class="pull-right" bindtap="viewAll">
+            <text>全部</text>
+            <image src="./icon/arrow-red.png" class="arrow-red"></image>
+          </view>
+        </view>
+      </view>
+
+      <view class="up-list" wx:if="{{raiders.length > 0}}">
+        <block wx:for="{{raiders}}" wx:for-item="raider" wx:key="aid">
+          <view class="up-list-item">
+            <navigator url="../article/article?id={{raider.aid}}">
+             <view class="item-desc-container">
+                <image class="item-img" src="{{raider.thumb_image_url}}"></image>
+                <view class="info-view">
+                  <text class="title">{{raider.title}}</text>
+                  <view class="target-word">
+                    <block wx:for="{{raider.rendered_keywords}}" wx:key="index">
+                      <text wx:if="{{index === 0}}" class="keyword">{{ item }}  </text>
+                      <text wx:else>  {{ item }}</text>
+                    </block>
+                  </view>
+                </view>
+             </view>
+           </navigator>
+         </view>
+        </block>
+     </view>
+
+    <view class="section-sep clearfix" wx:if="{{ goods_copy.length > 0 }}">
+      <view class="section-sep-container">
+        <text class="pull-left">单品</text>
+        <view class="pull-right" bindtap="orderBy">
+          <text>{{orderByActionSheetItems[currentPX]}}</text>
+          <image src="./icon/arrow-red.png" class="arrow-red arrow-red-down {{order?'selected':''}}"></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="down-list" wx:if="{{ goods_copy.length > 0 }}">
+      <block wx:for="{{goods}}" wx:for-item="good" wx:key="aid">
+        <view class="down-list-item">
+          <navigator url="{{good.ctype ? '../article/article?id='+good.aid : '../sku/sku?sid=' + good.aid }}">
+            <view class="image-container">
+              <image src="{{good.thumb_image_url}}"></image>
+            </view>
+            <view class="info-container">
+              <text class="info">{{good.title}}</text>
+              <text class="price">{{ ( !good.price || good.price === "N/A" ) ? "无":good.price }}</text>
+            </view>
+          </navigator>
+        </view>
+      </block>
+      <!-- import写在顶部会出问题。不知道原因。。 -->
+      <import src="../../common/loading.wxml"/>
+      <template is="loading" data="{{done, text:'只有这些啦~'}}"/>
+    </view>
+  </view>
+  <view  wx:if="{{ goods_copy.length === 0 }}" class="error-cry-container">
+    <image class="error-cry" src="../../common/icon/cry.png"></image>
+    <text class="error-msg">
+      当前条件下，找不到商品
+      换个条件试试
+    </text>
+  </view>
+</scroll-view>
+<!-- <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+  <block wx:for="{{category.items}}">
+    <action-sheet-item bindtap="bindItemTap" data-group="{{category.name}}" data-item="{{item}}" class="{{category.selectedIndex === index ?'selected':''}}">{{item}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel bindtap="hideActiveSheet">取消</action-sheet-cancel>
+</action-sheet> -->
+
+<!-- <action-sheet hidden="{{orderByActionSheetHidden}}" bindchange="orderByActionSheetChange">
+  <block wx:for="{{orderByActionSheetItems}}" wx:key="items">
+    <action-sheet-item bindtap="orderByBindItemTap" data-item="{{item}}">{{item}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel bindtap="orderByHideActiveSheet">取消</action-sheet-cancel>
+</action-sheet> -->

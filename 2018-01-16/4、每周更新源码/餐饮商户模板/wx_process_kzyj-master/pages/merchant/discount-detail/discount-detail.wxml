@@ -1,0 +1,34 @@
+<view class="text-input-wrap">
+    <view class="item">
+        <text>名称</text>
+        <input disabled="{{inputDisabled}}" placeholder-class="ph-class f1" placeholder="请输入优惠券名称" />
+    </view>
+    
+</view>
+<view class="text-input-wrap">
+    <view class="item">
+        <text>发放时间</text>
+        <input disabled="{{inputDisabled}}" placeholder-class="ph-class f1" placeholder="2016-12-25" />
+    </view>
+    <view class="item">
+        <text>生效时间</text>
+        <input disabled="{{inputDisabled}}" placeholder-class="ph-class f1" placeholder="请输入生效时间" />
+    </view>
+    <view class="item">
+        <text>过期时间</text>
+        <input disabled="{{inputDisabled}}" placeholder-class="ph-class f1" placeholder="请输入失效时间" />
+    </view>
+</view>
+<view class="text-input-wrap">
+    <view class="item">
+        <text>发放张数</text>
+        <input disabled="{{inputDisabled}}" placeholder-class="ph-class f1" placeholder="请输入发放的张数" />
+    </view>
+    
+</view>
+<view class="text-textarea-wrap">
+    <text class="f1 c5">优惠券说明</text>
+    <textarea disabled="{{inputDisabled}}" class="f2" placeholder-class="ph-class f2" placeholder="满100减20" />
+</view>
+<button class="btn cancel-after-verification">核销</button>
+<button class="btn close-btn">取消</button>

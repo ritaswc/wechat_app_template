@@ -1,0 +1,10 @@
+.msgArea{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    width: 100%;
+    background: #eee;
+}

@@ -1,0 +1,51 @@
+@import '../../components/good/good.wxss';
+page{
+    background-color: #f0f0f0;
+}
+
+.banner{
+    width: 100%;
+    height: 411rpx;
+}
+
+.funcs{
+    background-color: #ffffff;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding: 20rpx 0 0rpx 0;
+}
+
+.funcs .func{
+    width: 25%;
+    text-align: center;
+    margin-bottom: 30rpx;
+}
+.funcs .func image{
+    width: 100rpx;
+    height: 100rpx;
+  text-align: center;
+
+}
+.funcs .func .name{
+    text-align: center;
+    color: #666666;
+    font-size: 26rpx;
+    margin-top: 10rpx;
+}
+
+.maylike{
+    background-color: #fff;
+    margin-top: 30rpx;
+padding-top: 20rpx;
+}
+
+.maylike .title{
+    color: #808080;
+    font-size: 28rpx;
+margin-left: 28rpx;
+margin-bottom: -10rpx;
+
+}

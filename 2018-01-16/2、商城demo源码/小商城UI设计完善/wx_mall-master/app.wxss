@@ -1,0 +1,38 @@
+/**app.wxss**/
+
+@import "icon.wxss";
+
+
+@font-face{font-family:Muiicons;font-weight:400;font-style:normal;src:url(fonts/mui.ttf) format('truetype')}
+page{
+    background: #f2f2f2;
+    font-family:"iconfont";
+}
+.flex{
+    display: flex;
+}
+.column{
+    flex-direction: column;
+}
+.row{
+    flex-direction: row;
+}
+.arrows{
+    position: relative;
+}
+.arrows:after{
+    position: absolute;
+    right:15px;
+    top:50%;
+    margin-top:-3px;
+    content: "";
+    display: inline-block;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    height: 6px;
+    width: 6px;
+    border-width: 2px 2px 0 0;
+    border-color: #c8c8cd;
+    border-style: solid;
+    margin-left: .3em;
+}

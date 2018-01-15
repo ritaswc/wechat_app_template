@@ -1,0 +1,76 @@
+<!-- import写在顶部会出问题。不知道原因。。 -->
+<scroll-view
+  class="container"
+  scroll-y="true"
+  bindscrolltolower="scrolltolower"
+  lower-threshold="300"
+  style="height:100%;">
+  <!-- <view class="search-box">
+   <view class="bg-image"></view>
+   <input class="search-input" placeholder="搜索你想要的礼物" placeholder-class="placeholder-style" bindchange="bindChange"/>
+   <view class="search-btn">
+     <icon type="search" bindtap="confirm"/>
+   </view>
+  </view> -->
+  <!-- 功能区 -->
+  <view class="function-area">
+    <!-- <view class="tag"><text>挑礼神器</text></view> -->
+    <view class="function-list">
+      <navigator url="../filter/filter" hover-class="navigator-hover">
+        <view class="function">
+            <image src="icon/filter.png"></image>
+            <text>礼物挑选器</text>
+        </view>
+      </navigator>
+      <!-- <navigator url="../filter/filter" hover-class="navigator-hover">
+        <view class="function">
+            <image src="icon/secretary.png"></image>
+            <text>有调小秘书</text>
+        </view>
+     </navigator> -->
+     <navigator url="../gotogo/gotogo" hover-class="navigator-hover">
+        <view class="function no-border">
+            <image src="icon/gotogo.png" style="width:88rpx;height:60rpx;"></image>
+            <text>逛一逛</text>
+        </view>
+     </navigator>
+    </view>
+  </view>
+  <!-- meta列表 -->
+  <view class="metainfo-area">
+    <text class="tag" data-tag="攻略"></text>
+    <view class="up-list">
+      <block wx:for="{{meta_infos}}" wx:key="nid" wx:for-item="meta_info">
+        <view class="up-list-item">
+          <navigator url="../article/article?id={{meta_info.nid}}">
+             <view class="item-desc-container">
+                <!-- <text>{{index}}</text> -->
+                <image class="item-img" src="{{meta_info.thumb_image_url}}"></image>
+                <view class="info-view">
+                  <text class="title">{{meta_info.title}}</text>
+                  <view class="content"></view>
+                  <view class="item-footer">
+                    <view class="item-footer-author">
+                      <image src="{{meta_info.author.pic}}" class="avatar"></image>
+                      <text>{{meta_info.author.name}}</text>
+                    </view>
+                    <view class="item-footer-view">
+                      <image src="./icon/view.png" class="view"></image>
+                      <text>{{meta_info.read_count}}</text>
+                    </view>
+                  </view>
+                </view>
+             </view>
+           </navigator>
+       </view>
+      </block>
+      <!-- <view class="loading-container">
+        <view class="loading  {{done ? 'hide' : ''}}"></view>
+        <text class="{{done ? '' : 'hide'}}">只有这些啦~</text>
+      </view> -->
+      <import src="../../common/loading.wxml"/>
+      <template is="loading" data="{{done, text:'只有这些啦~'}}"/>
+    </view>
+  </view>
+  <!-- <template is="to-top"/> -->
+</scroll-view>

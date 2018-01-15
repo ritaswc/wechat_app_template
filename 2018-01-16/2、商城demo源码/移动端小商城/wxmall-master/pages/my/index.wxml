@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+    <block wx:for="{{userListInfo}}">
+        <view wx:if="{{item.avatar}}" class="weui_cell_avatar">
+            <view class="weui_cell_bd"> {{item.text}} </view>
+            <image class="userinfo_avatar" src="{{userInfo.avatarUrl}}"></image>
+            <view class="with_arrow"></view>
+        </view>
+        <view wx:else class="weui_cell">
+            <view class="weui_cell_bd"> {{item.text}} </view>
+            <view wx:if="{{item.hastext}}" class="weui_cell_hd"> {{item.text}} </view>
+            <image wx:if="{{item.qrcode}}" class="userinfo_qrcode" src="../../images/qr_code.png"></image>
+            <view class="with_arrow"></view>
+        </view>
+    </block>
+</view>

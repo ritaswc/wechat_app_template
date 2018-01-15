@@ -1,0 +1,186 @@
+page {
+  background-color: #efeff4;
+}
+
+.shoppingCart-container {
+  width: 100%;
+}
+
+.shoppingCart-container .hasGood {
+  width: 100%;
+}
+
+
+
+.number {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.number .price {
+  text-align: center;
+  color: #fd544a;
+  font-weight: 900;
+}
+
+.quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity text {
+  background-color: #f2f2f2;
+  margin: 5px;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  font-weight: 900;
+  color: #939393;
+}
+
+.quantity input {
+  width: 30px;
+  height: 26px;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.shoppingCart-container .hasGood .footer {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.shoppingCart-container .hasGood .footer ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.shoppingCart-container .hasGood .footer ul .goodAll {
+  line-height: 100rpx;
+  color: #888;
+  font-size: 14px;
+  margin-left: 20rpx;
+  flex: 1;
+}
+
+.shoppingCart-container .hasGood .footer ul .goodAll text {
+  font-weight: bold;
+  color: red;
+}
+
+.shoppingCart-container .hasGood .footer ul .calcute text {
+  display: block;
+  margin: 0 auto;
+  width: 160rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #ff2501;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  flex: 1;
+  padding: 0 20rpx
+}
+
+.modal-close {
+  color: #939393;
+}
+
+/*商品标题*/
+
+.title {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  text-overflow: ellipsis;
+  color: #333;
+  height: 36px;
+}
+
+.tit-content {
+  margin-top: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.address{
+    display: flex;
+    height: 100rpx;
+    background: #fff;
+    margin: 20rpx 0;
+    padding: 10px;
+}
+.add-img{
+    margin-top: 20rpx
+}
+.add-img image{
+    width: 30rpx;
+    height: 40rpx;
+}
+.add-text{
+    margin-left: 20rpx;
+}
+.add-phone{
+    margin-left: 20rpx;
+}
+.add-name{
+    width: 100%;
+    font-weight: bold
+}
+.add-add{
+    font-size: 12px;
+}
+
+
+.order-box{
+
+}
+.order{
+    width: 710rpx;
+    height: 120rpx;
+    background: #fff;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 20rpx;
+   
+}
+.order-name{
+    flex: 1;
+    font-size: 12px;
+    font-weight: bold
+}
+.order-num{
+    width: 200rpx;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+}
+.order-img{
+    width: 100rpx;
+}
+.order-img image{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.wechatpay{
+    padding: 0 20rpx;
+    display: flex;
+    margin-top: 25rpx;
+    font-size: 14px;
+}
+.wechatpay text{
+    margin-left: 15rpx;
+}
+.wechatpay image{
+    width: 60rpx;
+    height:60rpx;
+}

@@ -1,0 +1,32 @@
+
+<view>
+    <view class="main_view">
+        <scroll-view>
+            <block wx:for-items="{{addressData}}">
+                <view data-item="{{item}}" catchtap="addressClick" class="top_background">
+                    <view class="top_view">
+                        <text>{{item.trueName}}　{{item.mobPhone}}</text>
+                    </view>
+                    <view class="address_view">
+                        <text>{{item.areaInfo}} {{item.address}}</text>
+                    </view>
+                </view>
+                <view class="bottom_view">
+                    <view data-item="{{item}}" bindtap="addrDelete">
+                        <image class="address_image" src="../../images/addr_delete.png" mode="aspectFit"></image>
+                        <text> 删除　</text>
+                    </view>
+                    <view data-item="{{item}}" bindtap="addrEdit">
+                        <image class="address_image" src="../../images/addr_edit.png" mode="aspectFit"></image>
+                        <text> 编辑　　</text>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+    <view class="add_address" bindtap="addressAdd">
+        <view class="add">
+            <text>新建地址</text>
+        </view>
+    </view>
+</view>

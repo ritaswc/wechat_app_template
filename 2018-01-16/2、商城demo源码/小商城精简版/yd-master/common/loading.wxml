@@ -1,0 +1,6 @@
+<template name="loading">
+  <view class="loading-container">
+    <view class="loading  {{done ? 'hide' : ''}}"></view>
+    <text class="{{done ? '' : 'hide'}}">{{text}}</text>
+  </view>
+</template>

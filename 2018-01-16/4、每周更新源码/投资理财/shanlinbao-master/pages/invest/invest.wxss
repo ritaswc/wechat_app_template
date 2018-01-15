@@ -1,0 +1,50 @@
+.invest_title {
+  height:72rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.invest_img {
+  width: 160rpx;
+  height: 60rpx;
+}
+
+.invest_title_text {
+  font-size: 30rpx;
+  margin-left: 12rpx;
+  margin-right: 12rpx;
+}
+
+.invest_cotent_view {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12rpx;
+  margin-bottom: 12rpx;
+}
+.invest_cotent_text_view {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+  padding-top: 4rpx;
+  padding-bottom: 4rpx;
+  justify-content:flex-start;
+}
+.invest_content_text {
+  font-size: 30rpx;
+  margin-top: 10px
+}
+.invest_content_tex_year_red {
+  font-size: 30rpx;
+  color: #ff7460;
+}
+
+.invest_content_tex_year_buttom {
+  font-size: 28rpx;
+  margin-top: 24rpx;
+
+}

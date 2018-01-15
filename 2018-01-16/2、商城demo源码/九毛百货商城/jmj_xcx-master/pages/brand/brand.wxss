@@ -1,0 +1,138 @@
+/* pages/brand/brand.wxss */
+.banner{
+    width:750rpx;
+    height:360rpx
+}
+.top .title{
+    background:#fff;
+    height:110rpx;
+    border-bottom:1px solid #bbb;
+}
+.top .logo{
+    width:165rpx;
+}
+.top .logo .logoImg{
+    width:124rpx;
+    height:124rpx;
+    border-radius:50%;
+    border:1rpx solid #eee;
+    position:relative;
+    left:20rpx;
+    top:-40rpx;
+}
+.top .name{
+    font-weight: bold;
+    margin-top:17rpx;
+    font-size:32rpx;
+    color:#3d4245;
+}
+.top .num{
+    margin-top:15rpx;
+    color:#bbb;
+    font-size:12px;
+}
+.top .num .img{
+    width:22rpx;
+    height:22rpx;
+    margin:7rpx 14rpx;
+    position:relative;
+    top:5rpx;
+    vertical-align: middle;
+}
+.top .dis{
+    background:#fff;
+    padding:12rpx 21rpx;
+}
+.top .dis .text{
+    font-size:26rpx;
+    line-height:40rpx;
+    color:#3d4225;
+}
+.tap{
+    padding:10rpx;
+    widht:100%;
+    text-align:center;
+}
+.tapImg{
+    width:30rpx;
+    height:15rpx;
+}
+/*相关专辑*/
+.relate{
+    margin-top:20rpx;
+    background:#fff;
+}
+.relate .title{
+    height:70rpx;
+    line-height:70rpx;
+    border-bottom:1rpx solid #bbb;
+}
+.relate .img{
+    margin:0 20rpx;
+    width:31rpx;
+    height:31rpx;
+    position:relative;
+    top:20rpx;
+}
+.relate .text{
+    font-size:14px;
+    color:#3d4245;
+}
+.relate .articleList{
+    height:211rpx;
+    white-space: nowrap;
+    padding: 0 22rpx;
+}
+.relate .articleList navigator{
+    display:inline-block;
+    margin-top:17.5rpx
+}
+.relate .articleList .article_img{
+    width:306rpx;
+    height:172rpx;
+    margin-left:22rpx;
+}
+/*相关商品*/
+.relate .content .item{
+    height:240rpx;
+    border-bottom:1rpx solid #bbb;
+}
+.relate .content .item .left{
+    width:238rpx;
+    height:240rpx;
+}
+.relate .content .item .left image{
+    width:188rpx;
+    height:188rpx;
+}
+.relate .content .item .right{
+    width:500rpx;
+}
+.relate .content .item .name{
+    margin-top:10rpx;
+    font-size:30rpx;
+    color:#3d4245;
+    height:68rpx;
+    line-height:34rpx;
+}
+.relate .content .item .dis{
+    margin:15rpx 0;
+    font-size:26rpx;
+    color:#bbb;
+    line-height:30rpx;
+    height:60rpx;
+}
+.relate .content .item .price{
+    height:50rpx;
+    line-height:50rpx;
+}
+.relate .content .item .price .text1{
+    padding-left:10rpx;
+    font-size:16px;
+    color:#ff4aa0;
+}
+.relate .content .item .price .text2{
+    padding-left:31rpx;
+    font-size:12px;
+    color:#bbb;
+}

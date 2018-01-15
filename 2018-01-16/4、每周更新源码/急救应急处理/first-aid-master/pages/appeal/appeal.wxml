@@ -1,0 +1,18 @@
+<view class="appeal-container">
+  <view class="appeal-title">你的位置</view>
+  <view class="appeal-address">
+    <view>
+      <span class="appeal-address-city">{{city}}</span>
+      <span class="appeal-address-area">{{district}}</span>
+    </view>
+    <view wx:if="{{ street.length <= 8 }}" class="appeal-address-detail" >{{street}}</view>
+    <view wx:if="{{ street.length > 8 }}" class="appeal-address-detail-small" >{{street}}</view>
+  </view>
+  <view class="appeal-telephone-container">
+    <image
+      class="appeal-telephone"
+      src="../../assets/images/telephone-large.svg"
+      bindtap="callPhone"
+    />
+  </view>
+</view>

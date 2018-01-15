@@ -1,0 +1,48 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section">
+    <view class="section__title">省：</view>
+    <picker bindchange="bindChangeProvince" value="{{indexProvince}}" range="{{arrayProvince}}">
+      <view class="picker">
+        {{arrayProvince[indexProvince]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="section">
+    <view class="section__title">市：</view>
+    <picker bindchange="bindChangeCity" value="{{indexCity}}" range="{{arrayCity}}">
+      <view class="picker">
+        {{arrayCity[indexCity]}}
+      </view>
+    </picker>
+  </view>
+
+  <view  class="section">
+    <view class="section__title">区/县：</view>
+    <picker bindchange="bindChangeCounty" value="{{indexCounty}}" range="{{arrayCounty}}">
+      <view class="picker">
+        {{arrayCounty[indexCounty]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="detail-address">
+    <view class="section_title">详细地址：</view>
+    <input name="inputDetail" placeholder="输入地址信息" value="{{detailAddress}}" />
+  </view>
+
+  <view class="detail-address">
+    <view class="section_title">收货人姓名：</view>
+    <input name="inputName" placeholder="名字" value="{{receiverName}}" />
+  </view>
+
+  <view class="detail-address">
+    <view class="section_title">手机号：</view>
+    <input name="inputMobile" placeholder="联系手机" value="{{receiverMobile}}" />
+  </view>
+
+  <view class="btn-area">
+    <button formType="submit" type='primary'>确认提交</button>
+    <!--<button formType="reset">清空表单</button>-->
+  </view>
+</form>

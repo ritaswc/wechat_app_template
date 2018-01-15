@@ -1,0 +1,33 @@
+<view class="tit">
+  <view class="tit-back" catchtap="goBack" wx:if="{{his}}">返回</view>
+  <text class="tit-text">详情(滑动可移除)</text>
+  <view class="tit-tool" catchtap="clearCart">清空</view>
+</view>
+<view class="pro" animation="{{p._ani}}" wx:if="{{!p.del}}" wx:for="{{plist}}" wx:for-item="p" wx:key="supplyno">
+  <view class="pro-con" animation="{{p.ani}}" bindtouchstart="ptouchsatrt" data-index="{{p.index}}" bindtouchend="ptouchend">
+    <view class="pimg" data-index="{{p.index}}" data-name="{{p.name}}" data-brand="{{p.brand}}" catchtap="previewImg" >
+      <image src="{{p.img}}" mode="aspectFill"></image>
+    </view>
+    <view class="pname">
+      <view class="name">{{p.name}}</view>
+      <text class="des">{{p.size}}</text>
+    </view>
+    <view class="ptprice">￥{{p.price*p.num}}</view>
+    <view class="pnum">
+      <view class="num num-a" data-type="-1" data-index="{{p.index}}" catchtouchstart="changeNum"><text>-</text></view>
+      <text class="num-text">{{p.num}}</text>
+      <view class="num num-b" data-type="1" data-index="{{p.index}}" catchtouchstart="changeNum"><text>+</text></view>
+    </view>
+  </view>
+  <view class="del" data-index="{{p.index}}" catchtap="del">
+    <text>删除</text>
+  </view>
+</view>
+<view wx:if="{{plist.length==0||total==0}}" class="null">暂无商品</view>
+<view class="tool">
+  <view class="total">总金额：
+    <text>￥{{total}}</text>
+  </view>
+  <view class="gobuy" bindtap="goOrder">确认下单</view>
+</view>
+<view class="tool-layer"></view>

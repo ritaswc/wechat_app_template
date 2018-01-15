@@ -1,0 +1,38 @@
+page{
+	background: #fff;
+}
+.banner{
+	width: 100%;
+	height: 300rpx;
+}
+.banner image{
+	width: 100%;
+	height: 100%;
+}
+.productList{
+	width: 46%;
+	height: 520rpx;
+	border: 1rpx solid #f3f3f3;
+	margin-top: 2.5%;
+	margin-left: 2.5%;
+	float: left;
+}
+.productList .productImg{
+	width: 100%;
+	height: 350rpx;
+}
+.productList .productImg image{
+	width: 100%;
+	height: 100%;
+}
+.productList .productPrice{
+	color: #f12035;
+	line-height: 60rpx;
+}
+.productList .productName{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

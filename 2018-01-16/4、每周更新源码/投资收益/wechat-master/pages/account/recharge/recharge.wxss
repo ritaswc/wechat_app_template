@@ -1,0 +1,17 @@
+.notice {font-size: 32rpx;padding:40rpx;line-height: 1.4em;}
+.notice text {font-size: 26rpx;color: #777;}
+.recharge_con {background: #fff;padding-left: 40rpx;border-bottom: 2rpx solid #ccc;border-top:2rpx solid #ccc; }
+.recharge_con_list {padding: 30rpx 40rpx 30rpx 0;border-bottom: 2rpx solid #ccc;font-size: 30rpx;}
+.recharge_con_list .left {display: inline-block;width: 50%;}
+.recharge_con_list .right {display: inline-block;width: 50%;text-align: right;}
+.left_text text {vertical-align:sub;}
+.left_text input {width: 50%;float: right;text-align: right; display: inline-block;font-size: 24rpx;padding: 0 10rpx;}
+.border_none {border-bottom: none;}
+.error {color: #ff5304;text-align: right;font-size: 26rpx;margin-top: 20rpx;margin-right: 40rpx;display: none;}
+.recharge_btn {padding:60rpx 40rpx 30rpx 40rpx;}
+.recharge_btn button {background: #ff5304;}
+.recharge_btn view {font-size: 26rpx;color: #ff5304;margin-bottom: 16rpx;text-align: center;}
+.agree {font-size: 26rpx;padding: 0 40rpx;margin-top: 60rpx;}
+.agree navgiator {display: inline-block;float: left;}
+.agree label {display: inline-block;float: left;}
+

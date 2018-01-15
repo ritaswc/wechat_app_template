@@ -1,0 +1,176 @@
+<import src="/template/postlist" />
+<import src="/template/emoij" />
+<view class="page-container">
+  <view class="tabbar-container">
+    <view style="border-right:1px solid #eee; " class="tabbar-wrap {{selected==1?'tabbar-wrap-selected':''}}" catchtap="showList" data-id="1">{{uid==user.Id?"我的":"TA的"}}发帖</view>
+    <view class="tabbar-wrap {{selected==2?'tabbar-wrap-selected':''}}" catchtap="showList" data-id="2">{{uid==user.Id?"我的":"TA的"}}付费贴</view>
+  </view>
+  <view class="post-container">
+
+    <!-- 我的发帖 -->
+    <view wx:if="{{selected==1}}">
+      <block wx:for="{{articles}}" wx:for-item="article">
+        <view style="height:20rpx;width:100%;background-color:#eee"></view>
+        <view class="post-wrap">
+          <view>
+            <template is="post-head" data="{{...article}}" />
+            <view style="clear:both"></view>
+          </view>
+          <view>
+            <template is="post-content" data="{{...article}}" />
+
+            <!-- 地址 -->
+            <view wx:if="{{article.Address}}" class="address">{{article.Address.province + article.Address.city + article.Address.district + article.Address.street + article.Address.streetNumber}}</view>
+
+            <!-- 转评赞 -->
+            <template is="share" data="{{...article}}" />
+          </view>
+          <view>
+
+            <!-- 赞赏头像 -->
+            <template is="rewardimgs" data="{{...article}}" />
+          </view>
+          <view>
+
+            <!-- 点赞头像-->
+            <template is="praiseimgs" data="{{...article}}" />
+          </view>
+
+          <!-- 回复信息 -->
+          <view wx:if="{{article.articleComments}}" class="comment-container">
+            <view style="width:7%">
+              <view class="comment-icon"></view>
+            </view>
+            <view class="comment-content">
+              <block wx:for="{{article.articleComments}}" wx:for-item="comment" wx:key="Id" wx:if="{{index < 3 || currentMoreComment == article.Id}}">
+                <view class="res-info">
+
+                  <!-- 头像 -->
+                  <view>
+                    <template is="commentimg" data="{{...comment}}" />
+                  </view>
+                  <view class="comment-content-msg-wrap" catchtap="commentUser" data-id="{{comment.Id}}" data-uid="{{comment.ComUser.Id}}" data-name="{{comment.ComUser.NickName || comment.ComUser.Nickname}}" data-artid="{{article.Id}}">
+                    <template is="commentcontent" data="{{...comment}}" />
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+
+          <!-- 评论 -->
+          <view wx:if="{{article.CommentCount>3 && currentMoreComment != article.Id}}" style="clear:both" class="more-comments" data-id="{{article.Id}}" catchtap="moreComment">查看更多{{article.CommentCount}}信息</view>
+        </view>
+      </block>
+      <view style="padding-top:10px" class="text-align-centere font-13rem" wx:if="{{!articles || articles == [] || articles.length == 0}}">没有数据</view>
+    </view>
+
+    <!-- 我的付费贴 -->
+    <view>
+      <block wx:if="{{selected==2}}" wx:for="{{payArticles}}" wx:for-item="article">
+        <view style="height:20rpx;width:100%;background-color:#eee"></view>
+        <view class="post-wrap">
+          <view>
+            <template is="post-head" data="{{...article}}" />
+            <view style="clear:both"></view>
+          </view>
+          <view>
+            <template is="post-content" data="{{...article}}" />
+
+            <!-- 地址 -->
+            <view wx:if="{{article.Address}}" class="address">{{article.Address.province + article.Address.city + article.Address.district + article.Address.street + article.Address.streetNumber}}</view>
+
+            <!-- 转评赞 -->
+            <template is="share" data="{{...article}}" />
+          </view>
+          <view>
+
+            <!-- 赞赏头像 -->
+            <template is="rewardimgs" data="{{...article}}" />
+          </view>
+          <view>
+
+            <!-- 点赞头像-->
+            <template is="praiseimgs" data="{{...article}}" />
+          </view>
+
+          <!-- 回复信息 -->
+          <view wx:if="{{article.articleComments}}" class="comment-container">
+            <view style="width:7%">
+              <view class="comment-icon"></view>
+            </view>
+            <view class="comment-content">
+              <block wx:for="{{article.articleComments}}" wx:for-item="comment" wx:key="Id" wx:if="{{index < 3 || currentMoreComment == article.Id}}">
+                <view class="res-info">
+
+                  <!-- 头像 -->
+                  <view>
+                    <template is="commentimg" data="{{...comment}}" />
+                  </view>
+                  <view class="comment-content-msg-wrap" catchtap="commentUser" data-id="{{comment.Id}}" data-uid="{{comment.ComUser.Id}}" data-name="{{comment.ComUser.NickName || comment.ComUser.Nickname}}" data-artid="{{article.Id}}">
+                    <template is="commentcontent" data="{{...comment}}" />
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+
+          <!-- 评论 -->
+          <view wx:if="{{article.CommentCount>3 && currentMoreComment != article.Id}}" style="clear:both" class="more-comments" data-id="{{article.Id}}" catchtap="moreComment">查看更多{{article.CommentCount}}信息</view>
+        </view>
+      </block>
+      <view style="padding-top:10px" class="text-align-centere font-13rem" wx:if="{{!payArticles || payArticles == [] || payArticles.length == 0}}">没有数据</view>
+    </view>
+  </view>
+
+  <!-- 评论帖子 -->
+  <view wx:for="{{showRecomment}}" class="recommend-container">
+    <view style="width:100%;height:100%" catchtap="commentCancle"></view>
+    <view class="recomment-wrap">
+
+      <!-- 发帖图片 -->
+      <view style="margin:12px;">
+        <block wx:for="{{selectedImgs}}" wx:for-item="imgs">
+          <view style="position:relative;max-height:80px; width:20%; margin:5px; display:inline-block; vertical-align:middel">
+            <view class="img-remove" data-id="{{imgs.id}}" catchtap="removeImg"></view>
+            <image style="width:100%;max-height:80px;" src="{{imgs.src}}" />
+          </view>
+        </block>
+      </view>
+      <form bindsubmit="commentSubmit" bindreset="commentCancle">
+        <view style="width:100%; padding:5px;background-color:#fff">
+          <textarea name="content" class="recommend-text" placeholder="{{showRecomment.toUserName?'回复'+showRecomment.toUserName+':':'回复帖子:'}}" value="{{commentText}}" />
+        </view>
+        <view class="recommend-line-container">
+          <view class="recommend-icon-container">
+            <view class="recommend-emoij-wrap recommend-wrap" catchtap="selectEmoij">
+              <view class="recommend-emoij"></view>
+            </view>
+            <view class="recommend-imgae-wrap recommend-wrap" catchtap="selectImg">
+              <view class="recommend-img"></view>
+            </view>
+
+            <!-- 
+          <view class="recommend-voice-wrap recommend-wrap">
+            <view class="recommend-voice"></view>
+          </view>
+          -->
+          </view>
+          <view class="recommend-submit-container">
+            <button class="recommend-cancle-wrap recommend-wrap" form-type="reset">取消</button>
+            <button class="recommend-submit-wrap recommend-wrap" form-type="submit">发表</button>
+          </view>
+        </view>
+      </form>
+      <view class="post-qq-face bz clearfix" style="{{emoij?'display:block':'display:none'}}">
+        <template is="emoij" />
+      </view>
+      <view style="clear:both"></view>
+    </view>
+  </view>
+
+  <!-- 正在加载 -->
+  <view class="loading" style="display:{{loading?'block':'none'}}">
+    <image style="height:16px; width:16px;" src="http://i.pengxun.cn/content/images/loading.gif"></image>
+    <view class="loading">正在加载...</view>
+  </view>
+</view>

@@ -1,0 +1,54 @@
+@import "../../common/header/header.wxss";
+@import "../../common/footer/footer.wxss";
+@import "../../common/itemList/itemList.wxss";
+
+.mod-home {
+  background-color: #f0f0f0;
+  margin-top: 80rpx;
+}
+.mod-home .scroll-view .slider .slider-image{
+  width: 100%;
+  height: 480rpx;
+}
+
+/** 分类推荐 **/
+.cates {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  padding-bottom: 20rpx;
+  background-color: #fff;
+}
+.cates .cate {
+  width: 25%;
+  height: 170rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.cates .cate .img {
+  width: 110rpx;
+  height: 150rpx;
+}
+.cates .cate .name {
+  font-size: 30rpx;
+}
+
+/** 活动banner **/
+.banners {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  margin: 20rpx 0;
+}
+.banners .banner {
+  width: 100%;
+}
+.banners .banner .img {
+  width: 100%;
+  height: 330rpx;
+  display: block;
+}

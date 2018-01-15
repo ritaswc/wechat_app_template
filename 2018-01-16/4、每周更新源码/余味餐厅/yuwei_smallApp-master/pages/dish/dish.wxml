@@ -1,0 +1,23 @@
+<!--pages/dish/dish.wxml-->
+<include src="../template/share.wxml"/>
+<view class="header">
+    <image src="{{obj.imgs[0]}}"></image>
+    <view class="item_name">{{obj.name}}</view>
+    <view class="item_origin" wx:if="{{obj.name_origin != ''}}">{{obj.name_origin}}</view>
+    <view class="item_cost border" wx:if="{{obj.cost != ''}}">单价:{{obj.cost}}</view>
+    <view class="item_cost border" wx:if="{{obj.cost == ''}}">单价:暂无</view>
+</view>
+<view class="content">
+        <view wx:if="{{obj.taste != ''}}">
+            <view class="big">口感</view>
+            <view class="small">{{obj.taste}}</view>
+        </view>
+        <view wx:if="{{obj.material != ''}}">
+            <view class="big">食材</view>
+             <view class="small">{{obj.material}}</view>
+        </view>
+        <view wx:if="{{obj.desc != ''}}">
+            <view class="big">推荐理由</view>
+             <view class="small">{{obj.desc}}</view>
+        </view>
+</view>

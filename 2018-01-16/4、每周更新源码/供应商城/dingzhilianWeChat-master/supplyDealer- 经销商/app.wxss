@@ -1,0 +1,271 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-family:"微软雅黑";
+  font-size:30rpx;
+  color:#333;
+} 
+
+page{
+  background-color:#f2f2f2;
+  font-family:"微软雅黑";
+  font-size:30rpx;
+  color:#333;
+}
+
+/*内容为空样式*/
+.empty-con{
+  width:290rpx;
+  height: 200rpx;
+  margin:auto;
+  margin-top:280rpx;
+  text-align: center;
+}
+
+.empty-image{
+  display:block;
+  width:120rpx;
+  height: 120rpx;
+  margin:auto;
+  margin-bottom: 20rpx; 
+}
+
+.empty-text{
+  display:block;
+}
+
+
+/*内容为空样式*/
+
+
+
+.text-red{
+  color:#fe4645;
+}
+
+button{
+  border:none;
+  border-radius:0;
+}
+
+input{
+  font-family:"微软雅黑";
+}
+
+
+
+/*上拉加载*/
+
+.tipsImg{
+  width:40rpx;
+  height: 40rpx;
+  display:block;
+  margin:20rpx auto;
+}
+
+.tipsText{
+  line-height: 80rpx;
+  text-align: center;
+}
+
+/*上拉加载*/
+
+
+
+/*回到顶部*/
+
+.toTop{
+    width:70rpx;
+    height: 70rpx;
+    position: fixed;
+    bottom:100rpx;
+    right:20rpx;
+}
+
+.toTop image{
+    width:70rpx;
+    height: 70rpx;
+}
+
+/*回到顶部*/
+
+
+/*表格*/
+.order-statistics{
+    width:100%;
+}
+
+.table {
+  width: 100%;
+  border: 0px solid darkgray;
+  background-color: #fff;
+  margin-top:20rpx;
+}
+
+.table-4 .td,.table-4 .th{
+  width:25%;
+  font-size:26rpx;
+  border:1rpx solid #ccc;
+  font-family:"微软雅黑";
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.table-6 .td,.table-6 .th{
+  width:16.66%;
+  font-size:24rpx;
+  border:1rpx solid #ccc;
+  font-family:"微软雅黑";
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.table-5 .td,.table-5 .th{
+  width:20%;
+  font-size:24rpx;
+  border:1rpx solid #ccc;
+  font-family:"微软雅黑";
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.order-nav{
+  display: block;
+  width:100%;
+  height: 80rpx;
+  color:#27b2eb;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 80rpx;
+  align-items: center;
+}
+
+.hrline{
+  height: 100rpx;
+  background-color: #f2f2f2;
+}
+
+.td {
+  height: 80rpx;
+  line-height: 80rpx;
+  justify-content: center;
+  text-align: center;
+  color:#333;
+  background-color: #e8f8ff;
+}
+
+.tr:nth-child(2n) .td{
+  background-color: #fff;
+}
+
+.bg-w{
+  background: snow;
+  height: 60rpx;
+}
+
+.bg-g{
+  background-color: #e8f8ff;
+}
+
+.th {
+  justify-content: center;
+  background: #e6e6e6;
+  display: flex;
+  height: 60rpx;
+  align-items: center;
+  color:#666;
+}
+
+/*表格*/
+
+
+/*总计*/
+
+.total{
+    position: fixed;
+    bottom:0;
+    background-color:#ffffff!important;
+}
+
+.total .td{
+    background-color:#ffffff!important;
+    color:#ff8457;
+}
+
+.total .td:first-child{
+    background-color:#27b2eb!important;
+    color:#fff;
+}
+
+.total2{
+    position: fixed;
+    bottom:0;
+    background-color:#ffffff;
+    width:100%;
+    height: 80rpx;
+}
+
+.tolleft{
+  float: left;
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: right; 
+}
+
+.tolright{
+  float: left;
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.tolleft-text2{
+  color:#ff6410;
+}
+
+.tolleft .tolleft-text2{
+   margin-right: 20rpx;
+}
+
+.tolright .tolleft-text1{
+   margin-left: 20rpx;
+}
+
+/*总计*/
+
+/*筛选按钮*/
+.screen-btn{
+    position: absolute;
+    width:160rpx;
+    height: 54rpx;
+    line-height: 54rpx;
+    border:none!important;
+    border-radius: 0!important;
+    padding-left:0;
+    padding-right: 0;
+    margin:0;
+    top:56rpx;
+    right: 20rpx;
+    background-color:#27b2eb;
+    color:#fff;
+    font-size:26rpx;
+    text-align:center;
+}

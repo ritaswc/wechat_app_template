@@ -1,0 +1,6 @@
+<template name="pic-tpl">
+    <view class="single-pic">
+        <image src="{{item.url}}" mode="widthFix"/>
+        <text>{{item.content}}</text>
+    </view>
+</template>

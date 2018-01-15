@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="category-panel">
+      <view class="category-section" wx:for="{{categorys}}" wx:for-item="category" wx:key="title">
+        <view class="icon-left">
+          <image src="{{category.icon}}"></image>
+          <view class="vertical-line" wx:if="{{category.title !== '价格'}}"></view>
+        </view>
+        <view class="title-and-list">
+          <view class="category-title">
+            <text>{{category.allTitle}}</text>
+          </view>
+          <scroll-view class="category-list" scroll-x="true">
+            <view class="item" wx:for="{{category.items}}" wx:for-index="index" wx:key="items">
+              <!-- 默认选中“不限” -->
+              <text data-group="{{category.name}}" data-item="{{item}}" bindtap="select" class="item-text {{category.selectedIndex === index ?'selected':''}}">{{item}}</text>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+  </view>
+  <view class="btn-container">
+    <button type="default" plain="true" bindtap="reset"> 重置 </button>
+    <button type="primary" bindtap="confirm" class="confirm" style="background-color: rgb(8,8,8);"> 完成 </button>
+  </view>
+</view>

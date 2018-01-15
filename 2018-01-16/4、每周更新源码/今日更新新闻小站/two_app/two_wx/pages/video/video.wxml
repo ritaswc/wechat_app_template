@@ -1,0 +1,24 @@
+<!--pages/video/video.wxml-->
+
+<view class="section tc">
+  <video src="{{src}}"   controls ></video>
+  <view class="btn-area">
+    <button bindtap="bindButtonTap">获取视频</button>
+  </view>
+</view>
+<view class="section tc">
+  <video id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+  <view class="btn-area">
+    <button bindtap="bindButtonTap">获取视频</button>
+    <input bindblur="bindInputBlur"/>
+    <button bindtap="bindSendDanmu">发送弹幕</button>
+  </view>
+</view>
+<view class="section tc">
+  <video id="myVideo1" src="http://v.qq.com/iframe/player.html?vid=d01407scfnv" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+  </video>
+</view>
+<view class="section tc">
+  <video id="myVideo2" src="http://101.226.112.164/vhot2.qqvideo.tc.qq.com/i03939tzzwt.p712.1.mp4?sha=10D71E7B66B6077874E36A0A802C19A94311F9F1&sdtfrom=v1000&type=mp4&vkey=FCC6A38E399AE2916FDECB41B6D6DE43CEA66723BA29B40B44D6E7EC58EB1F072C2A9EF4EEBFF4845D0AAAD7AD2A9D39137CD41F9DF3E41A5C7503E9A83326F4DB795E161E3A049011412ECFC7939CFFB742703E22F06163&level=0&platform=70902&br=54&fmt=hd&sp=0&guid=8EDC112940E91E6991AF726BA4989FE626F8B498&ocid=424023468&ocid=596448684&ocid=1114798346" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+  </video>
+</view>

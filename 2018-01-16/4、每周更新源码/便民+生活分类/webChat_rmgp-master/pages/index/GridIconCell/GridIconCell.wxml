@@ -1,0 +1,7 @@
+
+<template name="GridIconCell">
+<view class="gridIconCell-container">
+  <image class="icon" src="{{iconUrl}}"></image>
+  <text class="iconTitle">{{iconTitle}}</text>
+  </view>
+</template>

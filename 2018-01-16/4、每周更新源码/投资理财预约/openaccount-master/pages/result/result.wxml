@@ -1,0 +1,14 @@
+<!--pages/result/result.wxml-->
+<view class="body {{bodyShow ? 'bodyShow' : ''}}">
+    <view class="bg_area" style="height: {{windowHeight}}px">
+        <image class="img" src="{{bgImg}}" mode="aspectFill"></image>
+    </view>
+
+    <view class="result_area">
+        <image class="img" src="{{imgSuccess}}" mode="widthFix"></image>
+    </view>
+
+    <view class="logo_area">
+        <image class="imgT9Logo img" src="{{imgT9Logo}}" mode="aspectFit"></image>
+    </view>
+</view>

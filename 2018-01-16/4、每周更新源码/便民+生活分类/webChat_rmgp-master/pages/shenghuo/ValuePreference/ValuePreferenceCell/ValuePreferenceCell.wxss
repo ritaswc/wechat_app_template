@@ -1,0 +1,171 @@
+.ValuePreferenceCell-container {
+  width: 100%;
+  height: 91px;
+  display: flex;
+  flex-direction: row;
+  /*padding: 8px 8px;*/
+  padding: 8px;
+  background-repeat: no-repeat;
+  background-size: 100% 90px;
+  box-sizing: border-box;
+  margin: 0px 0px 5px 0px;
+  position: relative;
+  /*background-image: url(../../../iamges/shenghuo/lingquan/quan04.png);*//*background-image: url(http://m.jointem.com/lqz13577759356/img/20170506/1494033602952865.jpg);*/
+}
+
+.backgroundImg {
+  width: 96%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 90px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: -1;
+}
+
+.cell-left-image {
+  width: 66px;
+  height: 66px;
+  /*text-align: center;
+  overflow: hidden;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;*/
+  border-radius: 5px;
+  margin-top: 12px;
+  margin-left: 8px;
+}
+
+.cell-center-container {
+  margin-left: 10px;
+  position: relative;
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  /*width: 100% - 22% - 66px;*/
+  width: 60%;
+  height: 100%;
+}
+
+.center-title {
+  font-size: 13px;
+  font-weight: bold;
+  width: 100%;
+  height: 20px;
+}
+
+.center-title-2-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 23px;
+  color: #b9995a;
+}
+
+.center-title-2-container-1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.center-title-2-container-2 {
+  position: relative;
+  font-size: 12px;
+  top: 10px;
+  left: 8px;
+}
+
+.center-title-3-container {
+  font-size: 12px;
+}
+
+.center-title-3-container-1 {
+  margin-right: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.center-title-3-container-2 {
+  position: absolute;
+  right: 10px;
+  display: inline-block;
+}
+
+.cell-right-container {
+  color: #b9995a;
+  display: flex;
+  flex-direction: column;
+  width: 22%;
+  height: 100%;
+  padding-top: 18px;
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  /*right: 10px;*/
+  align-items: center;
+}
+
+.cell-right-container-1 {
+  font-size: 14px;
+  color: #fff;
+}
+
+/** 立即领取 - （类型：到店使用） */
+
+.cell-right-container-2-brown {
+  color: #b9995a;
+  left: 50%;
+  width: 70px;
+  font-size: 12px;
+  border-radius: 20px;
+  border-width: 2.5px;
+  background-color: #fff;
+  border: solid 2px #a38140;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/** 立即领取 - （类型：网店使用） */
+
+.cell-right-container-2-blue {
+  color: #64b3f8;
+  left: 50%;
+  width: 70px;
+  font-size: 12px;
+  border-radius: 20px;
+  border-width: 2.5px;
+  background-color: #fff;
+  border: solid 2px #4a9ef3;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/** 去使用 - 到店使用*/
+
+.cell-right-container-2-daodian-use {
+  color: #b9995a;
+  left: 50%;
+  width: 70px;
+  font-size: 12px;
+  border-radius: 20px;
+  border-width: 2.5px;
+  background-color: #fbec4f;
+  border: solid 2px #a38140;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/** 去使用 - 网店使用*/
+
+.cell-right-container-2-wangdian-use {
+  color: #64b3f8;
+  left: 50%;
+  width: 70px;
+  font-size: 12px;
+  border-radius: 20px;
+  border-width: 2.5px;
+  background-color: #fbec4f;
+  border: solid 2px #4a9ef3;
+  margin-top: 12px;
+  text-align: center;
+}

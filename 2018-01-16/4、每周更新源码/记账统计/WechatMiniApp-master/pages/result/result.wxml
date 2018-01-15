@@ -1,0 +1,44 @@
+
+<!--pages/result/result.wxml-->
+<scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" enable-back-to-top="true" bindscrolltolower="bindDownLoad">
+  <view class="top-bgimage">
+    <view class="container">
+      <view class="userinfo">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="main-body">
+    <view class="list" wx:key="{{indexList}}" wx:for="{{indexList}}">
+      <view class="list-title" bindtap="bindItemTap" data-id="{{item.ID}}" data-title="{{item.Title}}">
+        <text>{{item.BillType}} {{item.Money}} 元</text>
+        <text class="blank-char"> | </text>
+        <text>{{item.BillCat}}</text>
+        <text class="blank-char"> | </text>
+        <text>{{item.Title}}</text>
+      </view>
+      <view class="list-date">
+        <text>{{item.BillDate}}</text>
+        <text class="list-date-week">{{item.BillWeek}}</text>
+      </view>
+      <view class="list-remark">
+        <text>{{item.Remark}}</text>
+        <view data-id="{{i.tag}}" bindtap="bindTagTap" class="list-tag" wx:for="{{item.Tags}}" wx:for-item="i">
+          <text>{{i.tag}}</text>
+        </view>
+      </view>
+      <block wx:if="{{item.Image != ''}}">
+        <view class="hs20"></view>
+        <image class="list-image" data-url="{{item.Image}}" src="{{item.Image}}" mode="widthFix" bindtap="bindShowImage"></image>
+      </block>
+    </view>
+    <view class="no-result" hidden="{{noResultHidden}}">
+      <image src="../../images/icon-noresult.png" class="no-result-image"></image>
+      <view>
+        <text>没有结果</text>
+      </view>
+    </view>
+  </view>
+  <view class="bottom-line" hidden="{{bottomLineHidden}}">我是有底线的</view>
+</scroll-view>

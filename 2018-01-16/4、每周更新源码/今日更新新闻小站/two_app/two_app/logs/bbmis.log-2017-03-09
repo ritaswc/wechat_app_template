@@ -1,0 +1,16 @@
+[2017-03-09 11:03:39.557] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-09 11:03:40.254] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-09 11:03:40.443] [INFO] console - data::{"access_token":"B5F86JrOUoURt51vfynytk5CqL2xHRonWGzuBsni-TLTjbX8u4e7dnHbFa_i4n9L_CFUlo9vSnA3V6UejzhVRhb4Y4sSKNyZ_9ms8KQaeZn_wTH-B1ZkVG8s2LZZh3YUJAJdAFAZQZ","expires_in":7200}
+[2017-03-09 11:03:40.670] [INFO] console - data:::[object Object]
+[2017-03-09 11:03:40.673] [INFO] BBMIS - JSSDK签名:5e518218461165bc1af49ceced127110e34ef5c8
+[2017-03-09 11:07:35.345] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-09 11:07:35.553] [INFO] BBMIS - JSSDK签名:caa5608715f9d42602f2a8919b1db35d1408d9ac
+[2017-03-09 11:08:13.573] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-09 11:08:14.057] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-09 11:08:14.234] [INFO] BBMIS - JSSDK签名:0bce64410bbb2cf6e331ae91af232ef3732ea1ef
+[2017-03-09 13:58:59.098] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-09 13:58:59.098] [INFO] BBMIS - ：第一次签名错误
+[2017-03-09 13:59:22.183] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-09 13:59:22.410] [INFO] console - data::{"access_token":"xvwRneVr7abwyN1yYTYW2tF9QJJH-n0GW12pFwxVPfglVDMAjpLHvpfMKQQ_YcAmBc0O1kLnLgML424_XTKvK2vYL23ZbuOwi_v9C4sFJaZn5qSJIVO85P3hG6hsbAnzAIGeAAAIQO","expires_in":7200}
+[2017-03-09 13:59:22.630] [INFO] console - data:::[object Object]
+[2017-03-09 13:59:22.631] [INFO] BBMIS - JSSDK签名:acf18d45040cf88bd29e23971fe4b138a433a1ea

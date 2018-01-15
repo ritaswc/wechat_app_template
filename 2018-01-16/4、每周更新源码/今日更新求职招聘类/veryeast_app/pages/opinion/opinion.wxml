@@ -1,0 +1,16 @@
+<view class="opinion_wrap">
+    <view class="wrap">
+        <form bindsubmit="formSubmit">
+            <view class="contant_wrap">
+                <view class="contant">
+                    <textarea name="opinion"   value="{{contact}}" auto-height placeholder-class="placeholder" placeholder="为了带给您更好的体验,期待您的任何反馈,我们将会不断改进" />
+                </view>
+            </view>
+            
+            <view class="phone">
+                <input name="contant" value="{{contant}}" placeholder-class="placeholder" placeholder="您的手机号或者邮箱,方便我们及时给您回复" />
+            </view>
+            <button formType="submit" hover-class="none" loading="{{loading}}">提交</button>
+        </form>
+    </view>
+</view>

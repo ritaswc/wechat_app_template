@@ -1,0 +1,28 @@
+
+<!--pages/huawei/huawei.wxml-->
+<view wx:if="{{!shopList}}">
+  <view class="null-hint">正在加载中，请稍等...</view>
+</view>
+<view wx:elif="{{shopList.length === 0}}">
+  <view class="null-hint">当前没有商品</view>
+</view>
+<view wx:elif="{{shopList.length > 0}}">
+  <scroll-view class="huawei-scroll">
+    <view class="item-container">
+      <block wx:for="{{shopList}}" wx:key="id">
+        <view class="shop-item" catchtap = "itemClick" data-id = "{{item.shopID}}">
+          <image class="huawei-item-img" src="{{item.imgUrl}}"></image>
+          <view class = "shop-info">
+            <view class="huawei-item-title">
+              <text class = "shop-title">{{item.shopName}}</text>
+            </view>
+            <view>
+              <text class="item-price">{{item.price}}</text>
+              <text class="item-sales">{{item.sales}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

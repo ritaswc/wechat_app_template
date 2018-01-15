@@ -1,0 +1,26 @@
+<view>
+  <view wx:for="{{result}}" wx:for-item="item">
+    <view class="invest_title">
+      <text class="invest_title_text">{{item.productType}}</text>
+      <text class="invest_title_text">{{item.productDesc}}</text>
+    </view>
+    <view class="line" />
+    <view>
+      <view class="invest_cotent_view">
+        <image src="/images/icon_investment_u_you.png" class="invest_img"></image>
+        <view class="invest_cotent_text_view">
+          <text class="invest_content_tex_year_red">{{item.yearRate}}%</text>
+          <text class="invest_content_tex_year_buttom">预期年化收益</text>
+        </view>
+        <view class="invest_cotent_text_view">
+          <text class="invest_title_text">{{item.typeTerm}}</text>
+          <text class="invest_content_tex_year_buttom">期限</text>
+        </view>
+        <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+      </view>
+     <view class="line" />
+     <view class="line_top12" hidden="{{index==result.length-1?true:false}}" />
+
+    </view>
+  </view>
+</view>

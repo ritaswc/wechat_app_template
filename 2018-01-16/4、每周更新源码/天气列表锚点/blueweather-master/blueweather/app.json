@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/cityChooser/cityChooser",
+    "pages/myCity/myCity",
+    "pages/logs/logs"
+    
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#555aaa",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Today Weather",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+   
+  },
+   "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "天气页面"
+    }, {
+      "pagePath": "pages/myCity/myCity",
+     
+      "text": "我的城市"
+    }]
+  }
+}

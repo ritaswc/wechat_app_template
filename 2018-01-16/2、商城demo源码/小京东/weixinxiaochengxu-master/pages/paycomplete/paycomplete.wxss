@@ -1,0 +1,10 @@
+.user {
+  height: 100%;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  background: #fff;
+  padding: 30rpx 25rpx 30rpx 0;
+  margin: 15rpx 0 0 0;
+}

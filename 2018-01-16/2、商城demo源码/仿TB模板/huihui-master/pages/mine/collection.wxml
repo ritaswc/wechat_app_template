@@ -1,0 +1,86 @@
+<view class="container">
+  <view class="list">
+    <scroll-view scroll-y="true" style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <view class="shop">
+       <view class="shop list">
+          <block>
+             <navigator url="../detail/detail" hover-class="navigator-hover">
+              <image src="{{img_url}}store/img_store.jpg" class="pic"></image>
+              <view class="brand_item">
+                <view class="right_cont">
+                  <view class="li_title">
+                    <text class="title">汇汇演示</text>
+                    <image src="{{img_url}}store/rz.png" class="rzpic"></image>
+                  </view>
+                  <text class="comment">
+                    <text class="star">
+                      <text class="star_span"></text>
+                    </text>
+                  </text>
+                  <view class="discount">
+                    <text class="dlt">8.8</text>
+                    <text class="drt">折</text>
+                  </view>
+                  <view class="other">
+                    <text class="olt">生活服务</text>
+                    <text class="ort">南城区|{{'< '}}100m</text>
+                </view>
+				<view class="price">
+				 <view class="price1">
+                  <text class="coupon1">满</text>
+                  <text class="dispan">满100减10,满200减20</text>
+                </view>
+                <view class="price2">
+                  <text class="coupon2">券</text>
+                  <text class="dispan">100元代金券</text>
+                </view>
+				</view>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+       <view class="shop list">
+          <block>
+             <navigator url="../detail/detail" hover-class="navigator-hover">
+              <image src="{{img_url}}store/img_store.jpg" class="pic"></image>
+              <view class="brand_item">
+                <view class="right_cont">
+                  <view class="li_title">
+                    <text class="title">汇汇演示</text>
+                    <image src="{{img_url}}store/rz.png" class="rzpic"></image>
+                  </view>
+                  <text class="comment">
+                    <text class="star">
+                      <text class="star_span"></text>
+                    </text>
+                  </text>
+                  <view class="discount">
+                    <text class="dlt">8.8</text>
+                    <text class="drt">折</text>
+                  </view>
+                  <view class="other">
+                    <text class="olt">生活服务</text>
+                    <text class="ort">南城区|{{'< '}}100m</text>
+                </view>
+				<view class="price">
+				 <view class="price1">
+                  <text class="coupon1">满</text>
+                  <text class="dispan">满100减10,满200减20</text>
+                </view>
+                <view class="price2">
+                  <text class="coupon2">券</text>
+                  <text class="dispan">100元代金券</text>
+                </view>
+				</view>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+
+    </view>
+    <view class="loading">努力加载中…</view>
+</scroll-view>
+</view>
+</view>

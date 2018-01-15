@@ -1,0 +1,17 @@
+.warp{background:#fff;}
+form{font-size:24rpx;width:100%}
+form .row{font-size: 30rpx;border-top:1px #ccc solid; border-bottom:1px #ccc solid;line-height: 80rpx; height: 80rpx;width:100%;margin-bottom: 50rpx;}
+form .row span{float:left;width:150rpx;height:60rpx;}
+form .row input{display: inline-block;width: 600rpx;height:80rpx;font-size: 24rpx}
+.order{width:650rpx;padding:50rpx;color:#fff;font-family: "微软雅黑";background: #282828;font-size:28rpx; }
+.order .title{font-size:32rpx;margin-bottom:20rpx;}
+.order .price{color:#f60;}
+.order text{display: block}
+.order .number span{border: 1px #ccc solid;width:60rpx;display: inline-block;text-align: center;line-height: 60rpx;}
+.order .number .n{border-left:none;border-right: none }
+.pic{width: 100px;height: 100px;float: left;border:1px #f90 solid;margin-right:30rpx;  }
+.change{float: left}
+.buyNow{position: fixed;bottom: 0;left: 0;background: #bc0807;width: 100%;color: #fff;font-size:30rpx;font-family: "微软雅黑";line-height: 82rpx;display: block;text-align: center;border-radius:0}
+.goAdr {height: 100rpx;line-height: 100rpx;font-size: 32rpx;width: 50%;}
+.goAdr text{vertical-align: middle}
+.goAdr image{ height:40rpx;width:40rpx;vertical-align: middle }

@@ -1,0 +1,13 @@
+<view class="login-container">
+  <view class="header">
+    <picker bindchange="bindPickerChange" value="{{groupId}}" range="{{group}}">
+      <view class="picker">
+        你当前的群：{{group[groupId]}}
+      </view>
+    </picker>
+  </view>
+  <view class="footer-btn">
+    <button type="primary" bindtap="loginbtn">登录商城</button>
+    <button type="warn" bindtap="checkbtn">提交验证</button>
+  </view>
+</view>

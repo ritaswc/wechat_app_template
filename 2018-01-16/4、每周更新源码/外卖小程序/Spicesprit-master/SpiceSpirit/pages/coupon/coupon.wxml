@@ -1,0 +1,7 @@
+<view class="cpupon-view">
+    <block wx:for="{{couponList}}" wx:key="{id}" wx:for-item="coupon">
+        <view class="coupon-item">
+            <image src="../../images/coupon_bg.png"></image>
+        </view>
+    </block>
+</view>

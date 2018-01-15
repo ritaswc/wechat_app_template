@@ -1,0 +1,38 @@
+/**index.wxss**/
+
+.swiper-image {
+  width: 100%;
+}
+
+.nav-item {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20rpx;
+}
+
+.nav-img {
+  width: 110rpx;
+  height: 114rpx;
+}
+.nav-text{
+  padding-top: 20rpx;
+  font-size: 30rpx;
+}
+.category-title{
+  padding-top: 15rpx;
+  padding-left: 20rpx;
+  padding-bottom: 15rpx;
+  display: flex;
+  align-items: center;
+}
+.small-icon-img{
+  width: 45rpx;
+  height:45rpx;
+  margin-right: 15rpx;
+}
+.small-text{
+  font-size: 30rpx;
+   font-weight: 900;
+}

@@ -1,0 +1,31 @@
+<import src="../../template/item-template.wxml"/>
+<view class="container">
+
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">    
+  <block wx:for="{{movies}}" wx:for-index="index">    
+    <swiper-item>    
+      <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
+    </swiper-item>    
+  </block>    
+</swiper>
+
+<view class="section index-nav">
+       <template is="index_index_navs_tmpl" data="{{...index_index_navs_tmpl}}"/>
+</view>
+
+<view class="text">
+        <view class="line_y"></view>
+        <text>兑换商品</text>
+</view>
+<template is="list_index_items_tmpl" data="{{...list_index_items_tmpl}}" />
+<view class="text">
+        <view class="line_y"></view>
+        <text>折扣商品</text>
+</view>
+     <template is="list_index_items_tmpl" data="{{...list_index_items_tmpl}}" />
+
+
+
+    
+
+</view>

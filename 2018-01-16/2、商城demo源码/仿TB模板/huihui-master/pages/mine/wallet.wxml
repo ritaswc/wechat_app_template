@@ -1,0 +1,64 @@
+<view class="header">
+	<view class="money">
+		<text class="money-b">3000.00</text>
+		<text>元</text>
+	</view>
+	<button  class="recharge-btn" type="default">充值</button>
+</view>
+<view class="wrapper">
+	<view class="tap">
+		<view class="tap-header">
+			<text class="item active">最近一周</text>
+			<text class="item">最近一月</text>
+			<text class="item">最近半年</text>
+		</view>
+	</view>
+	<view class="group">
+		<view class="group-item">
+			<scroll-view scroll-y="true" style="height: 100%" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+			<view class="group-ul">
+				<view class="group-li">
+					<view class="left">
+						<text class="lt-h">充值</text>
+						<text class="lt-time">2016-12-09 12:00</text>
+					</view>
+					<view class="right">
+						<text class="rt-span">+1000个</text>
+						<text class="rt-em">余额：3000个</text>
+					</view>
+				</view>
+				<view class="group-li">
+					<view class="left">
+						<text class="lt-h">充值</text>
+						<text class="lt-time">2016-12-09 12:00</text>
+					</view>
+					<view class="right">
+						<text class="rt-span">+1000个</text>
+						<text class="rt-em">余额：3000个</text>
+					</view>
+				</view>
+				<view class="group-li">
+					<view class="left">
+						<text class="lt-h">充值</text>
+						<text class="lt-time">2016-12-09 12:00</text>
+					</view>
+					<view class="right">
+						<text class="rt-span">+1000个</text>
+						<text class="rt-em">余额：3000个</text>
+					</view>
+				</view>
+				<view class="group-li">
+					<view class="left">
+						<text class="lt-h">充值</text>
+						<text class="lt-time">2016-12-09 12:00</text>
+					</view>
+					<view class="right">
+						<text class="rt-span">+1000个</text>
+						<text class="rt-em">余额：3000个</text>
+					</view>
+				</view>
+			</view>
+  		</scroll-view>
+		</view>
+	</view>
+</view>

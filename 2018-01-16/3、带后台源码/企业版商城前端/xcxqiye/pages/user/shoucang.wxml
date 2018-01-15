@@ -1,0 +1,67 @@
+<!--pages/user/shoucang.wxml-->
+<view class="page">
+    <view class="search_no" wx:if="{{!productData.length}}">
+            <view class="font_14"><image class="scimg" src="/images/search_no.png"></image></view>
+            <text>暂时还没有收藏/(ㄒoㄒ)/~~</text>
+        </view>
+
+    <view class="shop df" wx:for="{{productData}}">        
+        <image class="sh_slt" src="{{item.ImgUrl}}"></image>
+        <view class="df_1">            
+            <view class="sp_text">
+                <navigator url="../index/detail?productId={{item.ProID}}">
+                    <view class="sp_tit ovh1">{{item.ProductName}}</view>
+                </navigator>
+                <view class="sp_jg">￥：{{item.Price}}</view>
+                <view class="dle" data-fav-id="{{item.ccid}}" bindtap="removeFavorites">取消收藏</view>
+            </view>
+        </view>
+    </view>
+     <!--<view class="shop df">        
+        <image class="sh_slt" src="/images/sp_slt02.png"></image>
+        <view class="df_1">            
+            <view class="sp_text">
+                <view class="sp_tit ovh1">冰种阳绿蛋面戒指蛋</view>
+                <view class="sp_neb">数量：×1</view>
+                <view class="sp_jg">￥：2000</view>
+                <view class="dle"> 取消收藏</view>
+            </view>
+        </view>
+    </view>
+    <view class="shop df">
+        <image class="sh_slt" src="/images/sp_slt03.png"></image>
+        <view class="df_1">            
+            <view class="sp_text">
+                <view class="sp_tit ovh1">冰种阳绿蛋面戒指蛋</view>
+                <view class="sp_neb">数量：×1</view>
+                <view class="sp_jg">￥：2000</view>
+                <view class="dle"> 取消收藏</view>
+            </view>
+        </view>
+    </view>
+    <view class="shop df">
+        <image class="sh_slt" src="/images/sp_slt04.png"></image>
+        <view class="df_1">            
+            <view class="sp_text">
+                <view class="sp_tit ovh1">冰种阳绿蛋面戒指蛋</view>
+                <view class="sp_neb">数量：×1</view>
+                <view class="sp_jg">￥：2000</view>
+                <view class="dle"> 取消收藏</view>
+            </view>
+        </view>
+    </view>
+    <view class="shop df">
+        <image class="sh_slt" src="/images/sp_slt04.png"></image>
+        <view class="df_1">            
+            <view class="sp_text">
+                <view class="sp_tit ovh1">冰种阳绿蛋面戒指蛋</view>
+                <view class="sp_neb">数量：×1</view>
+                <view class="sp_jg">￥：2000</view>
+                <view class="dle"> 取消收藏</view>
+            </view>
+        </view>
+    </view> -->
+
+</view>
+
+

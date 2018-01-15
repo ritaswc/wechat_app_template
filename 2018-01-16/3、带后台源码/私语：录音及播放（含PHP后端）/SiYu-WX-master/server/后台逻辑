@@ -1,0 +1,72 @@
+第一次进入小程序
+client:
+	wx.login
+	wx.request + code
+server:
+	根据code appid appsecret 获取session_key openid
+	生成session 存储session_key openid
+	返回session
+client:
+	将session写入storage 和sever建立通信
+	wx.request + session
+server:
+	根据session 获取session_key openid
+	执行其他操作
+	返回操作结果
+
+之后进入小程序
+client:
+	从storage获取session
+	wx.request + session 请求判断session是否过期
+server:
+	返回结果
+client:
+	如果过期 则流程按第一次进入小程序执行
+	否则 wx.request + session
+server:
+	根据session 获取session_key openid
+	执行其他操作
+	返回操作结果
+
+
+
+数据库设计
+	session(id, session, session_key, openid, last_active_datetime)
+	user(id, openid, nickname, avatar_url, gender, city, reg_datetime)
+	whisper(id, poster_openid, duration, tag, src, post_datetime)
+
+
+?login/login 登录
+post{
+	code 
+	raw_data 
+	signature 
+}
+
+?login/check session登录 维持登录
+post{
+	session
+}
+
+?whisper/whisper 上传
+post{
+	session
+	file
+	tag
+	duration
+}
+
+?search/view 查看
+post{
+	session
+	index
+	number
+}
+
+?search/search 搜索
+post{
+	session
+	key
+	index
+	number
+}

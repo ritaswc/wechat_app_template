@@ -1,0 +1,37 @@
+<view class="notice">
+    第三方支付：<text>（您的充值将通过第三方支付完成，充值免手续费）</text>
+</view>
+<view class="recharge_bd">
+    <view class="recharge_con">
+        <view class="recharge_con_list">
+            <view class="left">
+                平安银行
+            </view>
+            <view class="right">
+                尾号 2021
+            </view>
+        </view>
+        <view class="recharge_con_list border_none">
+            <view class="left_text">
+                <text>充值金额</text>
+                <input type="text" placeholder="请输入充值金额"></input>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="error">
+    请输入充值金额
+</view>
+
+<view class="agree">
+    <label>
+        <checkbox checked />已阅读并同意 
+    </label>
+    <navigator url="">《第三方支付代扣协议》</navigator>
+</view>
+
+<view class="recharge_btn">
+    <view>为保障安全,充值提现所绑定的银行卡不可更换。</view>
+    <button size="default" type="primary" hover-class="none">立即充值</button>
+</view>
+

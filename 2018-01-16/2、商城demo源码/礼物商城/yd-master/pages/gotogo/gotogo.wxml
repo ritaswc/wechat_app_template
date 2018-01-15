@@ -1,0 +1,26 @@
+<view class="container">
+    <view class="article-list">
+      <block wx:for="{{queue}}" wx:key="cid">
+        <!-- 设置一个不存在的 hover-class 否则在点击的一瞬间下面的卡片会显示出来 -->
+        <navigator url="../article/article?id={{item.cid}}" hover-class="null">
+          <!-- 不用反转数组了，根据索引倒序指定z-index即可保证gotogos数组中的第一个在最上面，最后一个在最下面 -->
+          <!-- item.cid == currentCid ? animationData : null 更新之后报错了！故最后的null改为'' -->
+          <view
+            class="article-box"
+            style="z-index:{{queue.length - index}};"
+            animation="{{index === 0 ? animationData : ''}}">
+            <image src="{{item.cover_image_url}}"></image>
+            <view class="article-info">
+              <text class="article-title">{{item.title}}</text>
+              <text class="price">{{item.price}}</text>
+            </view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+  <view class="operate-area">
+    <view bindtap="dislike"><image src="icon/dislike.png"></image></view>
+    <view bindtap="like"><image  class="dislike" src="icon/like.png"></image></view>
+  </view>
+  <text class="view-all" bindtap="viewAll" >查看全部喜欢 ></text>
+</view>

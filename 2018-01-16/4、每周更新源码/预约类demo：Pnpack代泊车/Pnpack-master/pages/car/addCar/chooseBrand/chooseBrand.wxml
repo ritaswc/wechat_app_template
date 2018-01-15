@@ -1,0 +1,39 @@
+
+<!--pages/car/addCar/chooseBrand/chooseBrand.wxml-->
+<!--<view>
+  <view class="search-content bg-f">
+    <input class="search" placeholder="您想搜索什么车型" bindinput="onBindInput" placeholder-class="placeholder" bindfocus="onBindFocus" />
+  </view>-->
+  <scroll-view scroll-y="true" scroll-into-view="{{toView}}" class="result all">
+    <view wx:for="{{successdata}}" wx:for-item="item">
+     <view id="{{item.kind}}" class="wordindex">{{item.kind}}</view> 
+      <view data-name="{{brans.name}}" data-id="{{brans.brand_id}}"  data-logo="{{brans.brand_logo}}"bindtap="edit" wx:for="{{item.brands}}" wx:for-item="brans">
+        <view class="bg-f row row-jc br-b p-20">
+          <image class="car-icon" src="{{brans.brand_logo}}"></image>
+          <text>{{brans.name}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!--<view class="result search" wx:if="{{searchResult}}">
+    <text>s</text>
+    <view>
+      <view class="bg-f row row-jc br-b p-20">
+        <image class="car-icon" src="../../../../images/history.png"></image>
+        <text>可是对方</text>
+      </view>
+      <view class="bg-f row row-jc br-b p-20">
+        <image class="car-icon" src="../../../../images/history.png"></image>
+        <text>宝马</text>
+      </view>
+    </view>
+  </view>-->
+  <view class="zm-index">
+
+  <text wx:for="{{successdata}}" bindtap="choiceWordindex" data-wordindex="{{item.kind}}">  
+    {{item.kind}}  
+  </text>  
+</view>  
+
+<!--</view>-->

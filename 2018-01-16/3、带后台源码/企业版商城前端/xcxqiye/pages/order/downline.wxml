@@ -1,0 +1,90 @@
+<!--pages/order/downline.wxml-->
+<view class="w100">
+    <view class="p_all">您使用的是线下支付，订单会直接生成，全部金额需通过线下转账转至以下任意账号，转款完成，请到个人中心待付款订单点击确认付款，把您你交易流水号发给我们，以便平台快速确认。平台未确认收到款时，此件商品其他用户仍然可以购买，请您尽快转帐支付。</view>
+    <view class="p_all">
+        <text>支付宝</text>
+        <text>姓名:王添名</text>
+        <text class="c3">支付宝:6211666@qq.com</text>
+        <!-- <text>复制帐号</text> -->
+    </view>
+    <view class="p_all">
+        <text>银行:中国农业银行</text>
+        <text>支行:昆明春城支行营业室</text>
+        <text>户名:王添名</text>
+        <text class="c3">卡号:6228 4808 6819 4970 273</text>
+        <!-- <text>复制卡号</text> -->
+    </view>
+    <view class="p_all">
+        <text>银行:中国建设银行</text>
+        <text>支行:昆明西园南路支行</text>
+        <text>户名:王添名</text>
+        <text class="c3">卡号:6217 0038 6001 3184 799</text>
+        <!-- <text>复制卡号</text> -->
+    </view>
+    <view class="p_all">
+        <text>银行:中国银行</text>
+        <text>支行:昆明市东风支行</text>
+        <text>户名:王添名</text>
+        <text class="c3">卡号:6217 8527 0000 6705 006</text>
+        <!-- <text>复制卡号</text> -->
+    </view>
+    <view class="p_all">
+        <text>银行:中国工商银行</text>
+        <text>支行:昆明市南屏支行</text>
+        <text>户名:王添名</text>
+        <text class="c3">卡号:6212 8825 0200 0126 626</text>
+        <!-- <text>复制卡号</text> -->
+    </view>
+    <view class="p_all">
+        <text>银行:兴业银行</text>
+        <text>支行:昆明分行</text>
+        <text>户名:王添名</text>
+        <text class="c3">卡号:6229 0947 3063 8569 10</text>
+        <!-- <text>复制卡号</text> -->
+    </view>
+
+		<view class="p_all01 mt10 bg">
+			<view class=" mt10">
+              <view class="df zhuc">
+                <view class="mr10">支付行名称</view>
+                <view class="df_1 ble pl10">
+                <picker bindchange="bindPickerPayBankNameChange" value="{{index1}}" range="{{payBankNameList}}">
+                    <view class="picker">
+                    当前选择：{{payBankName}}
+                    </view>
+                </picker>
+                </view>
+                <image  class="x_right mt10" src="/images/x_right.png"></image>
+            </view>
+
+			</view>
+			<view class=" mt10">
+            <!-- <view class="c3">支付流水号</view> -->
+			<input class="inputStyle" name="input"  bindinput="bindKeyInputPayNo" placeholder="支付流水号" value="{{mobileValue}}"/>			
+			</view>
+			<view class=" mt10">
+            <!-- <view class="c3">支付人</view>    -->            
+			<input class="inputStyle" name="input"  bindinput="bindKeyInputPayUser" placeholder="支付人" value="{{addressValue}}"/>		
+			</view>
+            <view class=" mt10">
+                <view class="df zhuc">
+                <view class="mr10">支付方式</view>
+                <view class="df_1 ble pl10">
+                <picker bindchange="bindPickerPayMethodChange" value="{{index2}}" range="{{payMethodList}}">
+                    <view class="picker">
+                    当前选择：{{payMethod}}
+                    </view>
+                </picker>
+                </view>
+                <image  class="x_right mt10" src="/images/x_right.png"></image>
+                </view>	
+			</view>
+		</view>		
+
+	<view class="p_all01 mtt0">
+		<view class="btnGreen">
+		<button type="primary" id="btnPay" formType="submit" bindtap="submitPayInfo">确定</button>
+	</view>
+	</view>
+
+</view>

@@ -1,0 +1,58 @@
+/*分割线样式*/
+
+.divLine {
+  margin-top: 15rpx;
+  background: #f3f3f3;
+  width: 100%;
+  height: 5rpx;
+}
+
+/*整体view样式*/
+
+.containsView {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  margin-top: 30rpx;
+  margin-bottom: 15rpx;
+  background-color: white;
+  flex-direction: column;
+}
+
+/*顶部view整体样式*/
+
+.headView {
+  display: flex;
+  margin-left: 25rpx;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.btn-search {
+  position: relative;
+  top: 5px;
+  right: 10px;
+}
+
+.input {
+  margin-top: 22rpx;
+  width: 80%;
+}
+
+.histroysearch .seachlist {
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+}
+
+.button {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  margin-left: 10px;
+}
+
+.seachlist {
+  display: inline-block;
+  border-radius: 3px;
+  flex-direction: row;
+}

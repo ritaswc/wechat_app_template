@@ -1,0 +1,244 @@
+[2017-02-27 09:39:29.926] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPv9frqrcgeUjdQnCPnoPyE8tKFee1A3hQianHa8Kff2TI\/0","privilege":[]}
+[2017-02-27 09:45:12.992] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-02-25 18:05:05 , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:496:26)
+[2017-02-27 09:45:41.642] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:286:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-02-27 09:47:45.274] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPv9frqrcgeUjdQnCPnoPyE8tKFee1A3hQianHa8Kff2TI\/0","privilege":[]}
+[2017-02-27 10:05:33.437] [INFO] console - { shelvesid: '1488160586965',
+  shelves_type: '',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1b9ukbcolfj16tlkgvlmkr04f.jpg","http://olnlit77s.bkt.clouddn.com/o_1b9ukbcolfj16tlkgvlmkr04f.jpg"]}',
+  title: '美丽的念',
+  describe: '1',
+  product_group: '{"products":[{"productid":"1488006951920","count":"40","retail_price":80}]}',
+  label: undefined,
+  total_price: '0',
+  selling_price: '3400',
+  amount: '50',
+  purchased: undefined,
+  begin_datetime: '2017-02-27 00:00:00  ',
+  finish_datetime: '2017-02-27 23:59:59',
+  power: undefined,
+  carousel: 0,
+  carousel_picture: null,
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'fb64a5d0fb0e11e693154b76981a0d03',
+  limit_purchased: '50',
+  postage: 0,
+  need_express: 0 }
+[2017-02-27 13:56:09.573] [INFO] console - { shelvesid: '1488173145201',
+  shelves_type: '1',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1b9q475o51gldc961j761aks1ceh9.png","http://olnlit77s.bkt.clouddn.com/o_1b9q475o51gldc961j761aks1ceh9.png"]}',
+  title: '11',
+  describe: '<p><img src="http://olnlit77s.bkt.clouddn.com/o_1b9uq171j1n34a9cur51e3e6lnn.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1b9uq1bofva7mh7lp61d9i1dehs.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1b9uq1fis1m5g1v7h1pbq1tk6108311.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1b9v0ak071i332f11jmut531hbtn.jpg"></p>',
+  product_group: '{"products":[{"productid":"1488006951920","count":"1","retail_price":80}]}',
+  label: '{"text":["火热促销","火热促销","店家大促"]}',
+  total_price: '0',
+  selling_price: '80',
+  amount: '0',
+  purchased: undefined,
+  begin_datetime: '2017-02-27 00:00:00  ',
+  finish_datetime: '2017-02-27 23:59:59',
+  power: undefined,
+  carousel: 0,
+  carousel_picture: 'http://olnlit77s.bkt.clouddn.com/o_1b9uq1vr8iqe108l142m12gs6v71g.jpg',
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'fb64a5d0fb0e11e693154b76981a0d03',
+  limit_purchased: '0',
+  postage: 0,
+  need_express: 0 }
+[2017-02-27 13:56:35.887] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:397:17
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-02-27 13:57:49.984] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:397:17
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-02-27 14:15:25.413] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:286:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-02-27 14:16:50.308] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:286:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-02-27 15:06:18.039] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-02-25 18:05:05 , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:496:26)
+[2017-02-27 15:06:27.330] [INFO] BBMIS - 用户信息:{"errcode":40001,"errmsg":"invalid credential, access_token is invalid or not latest, hints: [ req_id: qYKiPA0187s103 ]"}
+[2017-02-27 15:06:27.332] [WARN] console - Unhandled rejection openid不能为空
+[2017-02-27 15:07:29.487] [INFO] BBMIS - 用户信息:{"errcode":40001,"errmsg":"invalid credential, access_token is invalid or not latest, hints: [ req_id: 4BK0249s102 ]"}
+[2017-02-27 15:07:29.492] [WARN] console - Unhandled rejection openid不能为空
+[2017-02-27 15:07:57.141] [INFO] BBMIS - 用户信息:{"errcode":40001,"errmsg":"invalid credential, access_token is invalid or not latest, hints: [ req_id: 5IPfCA0276s113 ]"}
+[2017-02-27 15:07:57.146] [WARN] console - Unhandled rejection openid不能为空
+[2017-02-27 15:10:39.862] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPv9frqrcgeUjdQnCPnoPyE8tKFee1A3hQianHa8Kff2TI\/0","privilege":[]}
+[2017-02-27 15:10:55.068] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-02-25 18:05:05 , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:496:26)
+[2017-02-27 17:23:25.061] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-02-27 00:00:00 , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:496:26)
+[2017-02-27 17:36:44.603] [INFO] console - { shelvesid: '1488188173551',
+  shelves_type: '1',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1b9ver3j614pe1mtakco1gpi4d619.jpg","http://olnlit77s.bkt.clouddn.com/o_1b9ver3j614pe1mtakco1gpi4d619.jpg"]}',
+  title: '121',
+  describe: '<p><img src="http://olnlit77s.bkt.clouddn.com/o_1b9verier130j1and1j52f1b12g71o.jpg"></p>',
+  product_group: '{"products":[{"productid":"1488006951920","count":"20","retail_price":80}]}',
+  label: '{"text":["火热促销"]}',
+  total_price: '1600',
+  selling_price: '1600',
+  amount: '1212',
+  purchased: undefined,
+  begin_datetime: '2017-02-27 00:00:00 ',
+  finish_datetime: '2017-02-27 23:59:59',
+  power: undefined,
+  carousel: 0,
+  carousel_picture: 'http://olnlit77s.bkt.clouddn.com/o_1b9ver8se1j51abo1ov71on42641e.jpg',
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'fb64a5d0fb0e11e693154b76981a0d03',
+  limit_purchased: '121',
+  postage: 0,
+  need_express: 0 }
+[2017-02-27 18:04:33.232] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/ajNVdqHZLLA1KEZt9D3xR5UOtvwXCuAfSXBNcCPoIkRcSdFrB4iahpRPc8Xulfc9oCNDC747m87ToflA1syygCezoWAInRqvBuPLobNURVBo\/0","privilege":[]}
+[2017-02-27 18:53:37.874] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/ajNVdqHZLLA1KEZt9D3xR5UOtvwXCuAfSXBNcCPoIkRcSdFrB4iahpRPc8Xulfc9oCNDC747m87ToflA1syygCezoWAInRqvBuPLobNURVBo\/0","privilege":[]}
+[2017-02-27 20:29:01.858] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-27 20:30:02.725] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-27 20:37:19.031] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-27 20:40:53.650] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}

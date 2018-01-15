@@ -1,0 +1,55 @@
+{
+
+  "pages": [
+    "pages/index/index",
+    "pages/goodsearch/goodsearch",
+    "pages/goodshop/goodshop",
+    "pages/goodsDetail/goodsDetail",
+    "pages/login/login",  
+    "pages/logs/logs",
+    "pages/mime/mime",
+    "pages/orderConfirm/orderConfirm",
+    "pages/goodlist/goodlist",
+    "pages/specValue/specValue",
+    "pages/ordertotal/ordertotal",
+    "pages/addressManager/addressManager",
+    "pages/addressAdd/addressAdd",
+     "pages/manager/manager",
+     "pages/service/service",
+     "pages/coupon/coupon",
+     "pages/paycomplete/paycomplete"
+  ],
+  "window": {
+    "enablePullDownRefresh": "true",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTitleText": "雷铭购物",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#575757",
+    "selectedColor": "#f40",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "搜索",
+        "iconPath": "images/classify_nomal.png",
+        "selectedIconPath": "images/classify_pressed.png"
+      },
+      {
+        "pagePath": "pages/mime/mime",
+        "text": "个人中心",
+        "iconPath": "images/mime_nomal.png",
+        "selectedIconPath": "images/mime_pressed.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
+}

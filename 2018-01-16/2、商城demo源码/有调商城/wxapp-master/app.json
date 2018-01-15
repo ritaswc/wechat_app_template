@@ -1,0 +1,48 @@
+{
+  "pages": [
+      "pages/zdm/listview/listview",
+      "pages/swiper/swiper",
+      "pages/index/index",
+      "pages/discover/discover",
+      "pages/my/my"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "有调",
+    "navigationBarBackgroundColor": "#686869",
+    "backgroundColor": "#FF00FF"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#474747",
+    "list": [{
+      "comment": "有调",
+      "pagePath": "pages/index/index",
+      "iconPath": "icon/3x/logo.png",
+      "selectedIconPath": "icon/3x/logo_selected.png"
+    }, {
+      "comment": "值得买",
+      "pagePath": "pages/zdm/listview/listview",
+      "iconPath": "icon/3x/zdm.png",
+      "selectedIconPath": "icon/3x/zdm_selected.png"
+    }, {
+      "comment": "发现",
+      "pagePath": "pages/discover/discover",
+      "iconPath": "icon/3x/discover.png",
+      "selectedIconPath": "icon/3x/discover_selected.png"
+    }, {
+      "comment": "我的",
+      "pagePath": "pages/my/my",
+      "iconPath": "icon/3x/my.png",
+      "selectedIconPath": "icon/3x/my_selected.png"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
+}

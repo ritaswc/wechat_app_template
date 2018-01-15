@@ -1,0 +1,15 @@
+@import "../common/lib/weui.wxss";
+
+.weui-form-preview{
+    margin-bottom: 25px;
+}
+.new-vote-select-date {
+    float: left;
+}
+.new-vote-select-time {
+    margin-left: 20rpx;
+    float: left;
+}
+.text-font-my-family {
+    font-family: SimHei;
+}

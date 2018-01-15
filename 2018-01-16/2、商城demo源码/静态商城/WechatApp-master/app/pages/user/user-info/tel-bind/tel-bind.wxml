@@ -1,0 +1,18 @@
+<import src="../../../../templates/mm-radio/mm-radio.wxml" />
+<view id="tel-binding" class="ng-scope">
+  <view class="p">我们将发送验证码到您的手机</view>
+  <view class="tel-input-wrapper">
+    <view class="tel-input">
+      <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAgCAIAAACHPC9vAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpjMjljZmE5OS05YjFiLTZkNGEtYjU4Zi1kNzFjNTFmOTk0NWQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjhCN0I0QjE2QjU5MTFFNkJEMUVEQTUxNDc4QzM5MEMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjhCN0I0QjA2QjU5MTFFNkJEMUVEQTUxNDc4QzM5MEMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTAzZjg5YzEtNjQ3Yy1hYTRlLWFiZjgtZGJkYTVlNDg3YWFmIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6MjkwYzM3ZmQtNjlhMS0xMWU2LWJlNjEtZjEzZTRiYmZmMzNjIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+nDJC5AAAANZJREFUeNrs1aEKhEAQBmD3sAkmm8W6XcybzcatvoLv4EuYjBo1azYIBovJLQZNixYtN3BiuzLKhWN/2IEpH+ww7JJxHJMkEUJo2Ni2HYYhiaKIEEIpRUN930PV53n2fT8IAjRUFEWe5y/tduBCUB+APlGQghSkoL+DdDht28LLjSamaTqh4zi2bUND+76fkOd5d36RsiyzLHt0Rt+yLEtVVVfLGLMsCwOt69o0zdW6rouEHMeJ4/jne2QYxjAMdV2jia7rACEwhTRNpZRoyDRNzvlbgAEAaClKeRntbMYAAAAASUVORK5CYII=" alt=""></image>
+      <input type="tel" placeholder="请输入11位手机号码" maxlength="11" class="ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched" />
+    </view>
+  </view>
+  <view class="mm-checkbox operation" checked="checked">
+  <template is="mm-radio" data="{{...items}}"></template>
+  <label for="0f6255ee-4f7c-4510-bdb9-3ddd9612d876" class="labelCheck"><text class="text-primary ng-scope">《商城使用协议》</text></label>
+</view>
+  <button class="btn-primary disabled" disabled="disabled">获取验证码</button>
+  <view class="ng-isolate-scope">
+  	  <view   class="ng-isolate-scope"></view>
+  </view>
+</view>

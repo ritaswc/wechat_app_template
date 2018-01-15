@@ -1,0 +1,371 @@
+@import '../../components/comment/comment.wxss';
+page {
+  background-color: #f0f0f0;
+}
+
+.top {
+  position: relative;
+}
+
+.banners {
+  width: 100%;
+  height: 400rpx;
+}
+
+.banners .banner {
+  width: 100%;
+  height: 400rpx;
+  vertical-align: bottom;
+}
+
+.top .marsk {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 220rpx;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 100%);
+}
+
+.top .info {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  padding: 20rpx;
+}
+
+.top .info .name {
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.top .info .dec {
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  line-height: 32rpx;
+}
+
+.services {
+  background-color: #fff;
+  border-bottom: 2rpx solid #ddd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80rpx;
+  width: 100%;
+}
+
+.services .serve {
+  flex: 1;
+  color: #65c07a;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.services .serve .service {
+  margin-right: 26rpx;
+}
+
+.services .selled {
+  color: #999;
+  font-size: 26rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.services icon {
+  margin-top: 0rpx;
+  margin-right: 6rpx;
+}
+
+.store {
+  border-bottom: 3rpx solid #ddd;
+  border-top: 3rpx solid #ddd;
+  background-color: #fff;
+  padding-left: 20rpx;
+  margin-top: 26rpx;
+}
+
+.store .title {
+  color: #111;
+  font-size: 28rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.store .storeinfo {
+  display: flex;
+  padding: 20rpx 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-bottom: 3rpx solid #ddd;
+  border-top: 3rpx solid #ddd;
+}
+
+.store .storeinfo .storemain {
+  flex: 1;
+  margin-right: 10rpx;
+}
+
+.store .storeinfo .storemain .name {
+  color: #111;
+  font-size: 32rpx;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.store .storeinfo .verticalline {
+  height: 70rpx;
+  width: 3rpx;
+  background-color: #ddd;
+}
+
+.store .storeinfo .call {
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  padding: 20rpx 30rpx;
+}
+
+.store .storeinfo .km {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 10rpx;
+}
+
+.store .storeinfo .km .star-rating {
+  display: inline-block;
+  margin-right: 6rpx;
+  flex: 1;
+}
+
+.store .storeinfo .km .star-rating image {
+  width: 28rpx;
+  height: 27rpx;
+  margin-right: 4rpx;
+}
+
+.store .storeinfo .km .distance {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.location {
+  background-color: #fff;
+  height: 90rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: 4rpx;
+}
+
+.location .icon {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.location .info {
+  flex: 1;
+  color: #333;
+  font-size: 26rpx;
+  margin: 0 10rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.location .arrow_left {
+  height: 30rpx;
+  width: 21rpx;
+  margin-right: 20rpx;
+}
+
+.border_top_bottom {
+  border-bottom: 3rpx solid #ddd;
+  border-top: 3rpx solid #ddd;
+}
+
+.grounp {
+  padding-left: 20rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.grounp .title {
+  border-bottom: 3rpx solid #ddd;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #111;
+  font-size: 28rpx;
+}
+
+.grounp .grounp_item {
+  color: #111;
+  font-size: 28rpx;
+  margin-top: 16rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.grounp .grounp_item .name {
+  width: 400rpx;
+}
+
+.grounp .grounp_item .count {
+  width: 250rpx;
+}
+
+.grounp .grounp_item .value {
+  width: 100rpx;
+  text-align: right;
+  margin-right: 16rpx;
+}
+
+.grounp .oldvalue {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-top: 10rpx;
+}
+
+.grounp .oldvalue .name {
+  width: 150rpx;
+  color: #111;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.grounp .oldvalue .value {
+  width: 200rpx;
+  color: #111;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  font-weight: bold;
+  text-align: right;
+  margin-right: 16rpx;
+}
+
+.grounp .nowvaule {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.grounp .nowvaule .name {
+  font-weight: bold;
+  width: 150rpx;
+  color: #ff6b3a;
+  font-size: 32rpx;
+  margin-top: 10rpx;
+}
+
+.grounp .nowvaule .value {
+  font-weight: bold;
+  width: 200rpx;
+  color: #ff6b3a;
+  font-size: 32rpx;
+  text-align: right;
+  margin-right: 16rpx;
+}
+
+.grounp .describe{
+    color: #111111;
+    font-size: 28rpx;
+    line-height: 1.3rem;
+    margin: 20rpx 10rpx 20rpx 0;
+}
+
+.notice{
+    background-color: #fff;
+    margin-top: 20rpx;
+    padding-left: 20rpx;
+    padding-bottom: 20rpx;
+}
+
+.notice .title{
+   border-bottom: 3rpx solid #ddd;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #111;
+  font-size: 28rpx;
+}
+.notice .name{
+    margin-top: 20rpx;
+    color: #777777;
+    font-size: 28rpx;
+}
+.notice .info{
+    margin-top: 10rpx;
+    color: #111111;
+    font-size: 26rpx;
+    margin-right: 10rpx;
+
+    line-height: 28rpx;
+
+}
+.notice .info .point{
+    width: 6rpx;
+    height: 6rpx;
+    margin: 8rpx 0;
+    background-color: #111111;
+    border-radius: 6rpx;
+display: inline-block;
+margin-right: 4rpx;
+}
+
+.buy{
+position: fixed;
+bottom: 0;
+left: 0;
+background-color: #fff;
+border-top: 3rpx solid #ddd;
+height: 120rpx;
+width: 100%;
+display: flex;
+flex-wrap: nowrap;
+align-items: center;
+}
+
+.buy .oldprice{
+flex: 1;
+color: #999;
+font-size: 24rpx;
+text-decoration: line-through;
+margin-left: 10rpx;
+margin-top: 8rpx;
+}
+.buy .price{
+  color: #ff6633;
+  font-size: 44rpx;
+margin-left: 25rpx;
+font-weight: bold;
+}
+.buy .gobuy{
+  background-color: #ff6633;
+  padding: 22rpx 34rpx;
+color: #fff;
+font-size: 30rpx;
+margin-right: 20rpx;
+border-radius: 4rpx;
+}

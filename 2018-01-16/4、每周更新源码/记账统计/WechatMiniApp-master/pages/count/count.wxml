@@ -1,0 +1,62 @@
+<!--pages/count/count.wxml-->
+<view class="top-bgimage">
+  <view class="container">
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="main-body">
+    <view class="option" bindtap="bindOptionTap">
+        <text id="1" class="{{optionColorId == 1 ? 'option-color-highlight' : 'option-color'}}">全部</text>
+        <text class="blank-char"> | </text>
+        <text id="2" class="{{optionColorId == 2 ? 'option-color-highlight' : 'option-color'}}">年消费</text>
+        <text class="blank-char"> | </text>
+        <text id="3" class="{{optionColorId == 3 ? 'option-color-highlight' : 'option-color'}}">月明细</text>
+    </view>
+
+    <!--按时间分类-->
+    <view class="hs20"></view>
+    <view>
+        <view class="list-title-left">消费时间</view>
+        <view class="list-title-right">支出金额</view>
+        <view class="clear"></view>
+    </view>
+
+    <view wx:key="{{listAll}}" wx:for="{{listAll}}" bindtap="bindAll" data-id="{{item.DateTime}}">
+        <view class="list-content-left">{{item.DateTime}}</view>
+        <view class="list-content-right">{{item.Money}}</view>
+        <view class="clear"></view>
+    </view>
+
+    <!--按支出分类-->
+    <view class="hs20"></view>
+    <view>
+        <view class="list-title-left">支出分类</view>
+        <view class="list-title-right">支出金额</view>
+        <view class="clear"></view>
+    </view>
+
+    <view wx:key="{{listCat}}" wx:for="{{listCat}}" bindtap="bindCat" data-id="{{item.C_Id}}">
+        <view class="list-content-left">{{item.C_Name}}</view>
+        <view class="list-content-right">{{item.Money}}</view>
+        <view class="clear"></view>
+    </view>
+
+    <!--按收入分类-->
+    <view class="hs20"></view>
+    <view>
+        <view class="list-title-left">收入分类</view>
+        <view class="list-title-right">收入金额</view>
+        <view class="clear"></view>
+    </view>
+
+    <view wx:key="{{listInc}}" wx:for="{{listInc}}" bindtap="bindCat" data-id="{{item.C_Id}}">
+        <view class="list-content-left">{{item.C_Name}}</view>
+        <view class="list-content-right">{{item.Money}}</view>
+        <view class="clear"></view>
+    </view>
+    <view class="hs20"></view>
+</view>

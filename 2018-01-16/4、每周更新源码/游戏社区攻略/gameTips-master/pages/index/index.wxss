@@ -1,0 +1,14 @@
+/**index.wxss**/
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  margin-top:20px;
+  margin-right:15px;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+

@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/category",
+    "pages/search/search",
+    "pages/user/user",
+    "pages/user/shoucang",
+    "pages/user/address",
+    "pages/user/dingdan",
+    "pages/user/tuihuo",
+    "pages/order/pay",
+    "pages/order/detail",
+    "pages/order/downline",
+    "pages/list/list",
+    "pages/listdetail/listdetail",
+    "pages/detail/detail",
+    "pages/address/user-address/user-address",
+    "pages/address/address",
+    "pages/inf/inf",
+    "pages/news/news",  
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#321C0F",
+    "navigationBarTitleText": "企业版",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#dd2727",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/sou.png",
+        "selectedIconPath": "images/shou.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "iconPath": "images/fei.png",
+        "selectedIconPath": "images/feii.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "images/woo.png",
+        "selectedIconPath": "images/wooo.png",
+        "text": "关于我们"
+      },
+      {
+        "pagePath": "pages/inf/inf",        
+      "iconPath": "images/zixun.png",
+      "selectedIconPath": "images/zi.png",
+       "text": "资讯"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/hui.png",
+        "selectedIconPath": "images/huiyuan.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

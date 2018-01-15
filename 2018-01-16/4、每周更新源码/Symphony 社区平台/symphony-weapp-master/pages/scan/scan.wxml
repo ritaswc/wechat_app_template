@@ -1,0 +1,47 @@
+<view class="body wrapper share">
+  <view class="content">
+    <text class="title">关于『书单』</text>
+    <view>
+      书单是黑客派社区的一个纸质书共享活动，所有书均来自捐赠，原则上当前的书籍持有者有义务将书寄送给需要的会员。
+    </view>
+    <view>
+      我们鼓励你在书籍上
+      <text class="ft-warn">留下笔迹</text>，任何信息都行，让其他人可以看到一些有意思的内容也是蛮不错的 😅
+    </view>
+    <view>
+      <text class="h3">共享意味着什么</text>
+      一旦你共享了一本书，就会使用你的社区账号自动发一篇书籍共享帖，这意味着你做了一个
+      <text class="ft-warn">承诺</text>：将书送到需要的人手中。
+    </view>
+    <view>如果有同城的书籍需求者回帖，就面交吧！</view>
+    <view>
+      <text class="h3">一点思考</text>
+      似共享书籍的事情有很多人做过，比如：
+      <view>
+        • 摆摆书架
+      </view>
+      <view>
+        • 青番茄
+      </view>
+      <view>
+        • 书巢
+      </view>
+      <view>
+        • 丢书大作战
+      </view>
+      <view>
+        • 很多社区的书籍交换
+      </view>
+      <view>大家的出发点都是想让这个世界变得更好。</view>
+    </view>
+    <view>黑客派的『书单』将作为长期活动持续下去，大家随时都能参与进来，让你我的生活变得更丰富有趣！
+    </view>
+  </view>
+  <view class="bottom-btn wrapper" wx:if="{{isLogin}}">
+    <button bindtap="logout" class="logout">登出</button>
+    <button type="primary" bindtap="scan">ISBN 扫码 </button>
+  </view>
+  <view class="bottom-btn wrapper" wx:else>
+    <button bindtap="goLogin" type="primary">参与『书单』计划</button>
+  </view>
+</view>

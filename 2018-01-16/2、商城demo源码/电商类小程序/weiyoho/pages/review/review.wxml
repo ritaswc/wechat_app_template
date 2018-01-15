@@ -1,0 +1,10 @@
+<!--pages/review/review.wxml-->
+<view class="review-container">
+  <scroll-view class="review-scroll" scroll-y="true"  bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view class="review-item" wx:for="{{reviewData}}" wx:for-index="index" >
+        <text>{{item.tpl}}</text>
+        <button data-id="{{index}}" type="default" bindtap="notPass">不通过</button>
+        <button data-id="{{index}}" type="primary" bindtap="pass">通过</button>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,25 @@
+<!--pages/feedback/feedback.wxml-->
+<view class="title">
+    <text>选择类型</text>
+</view>
+<view class="radio_list">
+<radio-group bindchange="bindRadio">
+    <label class="radio_item"><radio checked="{{ !isAdvice }}" value="1"></radio>数据报错</label>
+    <view class="cell_line"></view>
+    <label class="radio_item"><radio checked="{{ isAdvice }}" value="2"></radio>吐槽建议</label>
+</radio-group>
+</view>
+<block wx:if="{{ !isAdvice }}">
+    <view class="title_item">
+    <text>报错地点：{{ sceneName }}</text>
+    </view>
+</block>
+<view class="title">
+    <text>内容</text>
+</view>
+<view>
+    <textarea class="textarea" bindinput="bindTextArea" value="{{ content }}" />
+</view>
+<view class="button_area">
+    <button class="button" bindtap="bindSubmit">提交</button>
+</view>

@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/goodsDetail/detail",
+    "pages/brand/brand",
+    "pages/login/login",
+    "pages/template/favorites/favorites",
+    "pages/template/goodsList/list"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "XY-首页",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar" : {
+    "backgroundColor" : "#000",
+    "color" : "#dbdcdc",
+    "selectedColor" : "#f1e63b",
+    "borderStyle" : "black",
+    "list" : [{
+      "pagePath" : "pages/index/index",
+      "text" : "XY",
+      "iconPath" : "resource/images/ic_tabbar_normal2.png",
+      "selectedIconPath" : "resource/images/ic_tabbar_selected2.png"
+      },{
+      "pagePath" : "pages/index/index",
+      "text" : "商城",
+      "iconPath" : "resource/images/ic_tabbar_normal1.png",
+      "selectedIconPath" : "resource/images/ic_tabbar_selected1.png"
+      },{
+      "pagePath" : "pages/index/index",
+      "text" : "晒物",
+      "iconPath" : "resource/images/tabbar_cart.png",
+      "selectedIconPath" : "resource/images/tabbar_cart_selected.png"
+      },{
+      "pagePath" : "pages/index/index",
+      "text" : "分类",
+      "iconPath" : "resource/images/ic_tabbar_normal3.png",
+      "selectedIconPath" : "resource/images/ic_tabbar_selected3.png"
+      },{
+      "pagePath" : "pages/login/login",
+      "text" : "我的",
+      "iconPath" : "resource/images/ic_tabbar_normal4.png",
+      "selectedIconPath" : "resource/images/ic_tabbar_selected4.png"
+      }]
+  },
+  "networkTimeout" : {
+    "request" : 5000
+  }
+}

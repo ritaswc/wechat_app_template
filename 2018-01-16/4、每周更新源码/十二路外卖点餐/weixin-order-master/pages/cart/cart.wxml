@@ -1,0 +1,36 @@
+<scroll-view scroll-y="true" scroll-x="false" class="cart-list" wx:if="{{cartListShow}}">
+  <view wx:for="{{postList}}" class="sub-cart-list" wx:for-item="item" wx:for-index="index">
+    <view class="sub-cart-img">
+      <view class="sub-cart-img-inner">
+        <image src="{{item.imgSrc}}"></image>
+      </view>
+    </view>
+    <view class="sub-cart-middle">
+      <view class="sub-cart-title">
+        <text>{{item.foodName}}</text>
+        <text class="f20">￥{{item.price}}</text>
+      </view>
+      <view class="sub-cart-num">
+        <view class="flex-1">数量:</view>
+        <view class="flex-2">
+          <image bindtap="plus" data-index="{{index}}" class="plus" src="/images/plus_gray.png"></image>
+          <text class="num">{{item.num}}</text>
+          <image bindtap="add" data-index="{{index}}" class="add" src="/images/add_gray.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="cart-del" bindtap="delThisFood" data-index="{{index}}">
+      <image src="/images/del.png"></image>
+    </view>
+  </view>
+</scroll-view>
+<view class="ma_cart_none" wx:if="{{showModal}}">
+  <image src="/images/cart_none.png"></image>
+  <text>你还没有点餐噢~~~</text>
+</view>
+<view class="cart_total">
+  <view class="cart_total_inner">
+    <text class="total">合计:￥888.00</text>
+    <view class="settle">结算</view>
+  </view>
+</view>

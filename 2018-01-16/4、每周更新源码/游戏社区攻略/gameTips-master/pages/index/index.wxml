@@ -1,0 +1,29 @@
+<!--index.wxml-->
+
+<view class="page">
+    <view class="page__hd" style="padding:20px 40px;">
+        <view class="page__title">欢迎使用"游戏攻略社区"</view>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+
+    <view class="page__bd">
+        <view class="weui-cells__title">攻略类型</view>
+        <view class="weui-cells weui-cells_after-title" wx:for="{{gameList}}" wx:key="id">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="{{ item.linkUrl }}" open-type="navigate">
+                <view class="weui-cell__hd">
+                    <image src="{{item.icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">{{ item.name }}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" wx:if="{{ item.desc }}">{{ item.desc }}</view>
+            </navigator>
+        </view>
+    </view>
+
+    <view class="weui-footer weui-footer_fixed-bottom">
+        <view class="weui-footer__links">
+            <navigator url="../../example/index" class="weui-footer__link">WebUI样式</navigator>
+        </view>
+        <view class="weui-footer__text">Copyright © 2017 serenitynight.com</view>
+    </view>
+</view>

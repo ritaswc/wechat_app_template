@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "view/index/index",
+    "view/cart/index",
+    "view/cart/detail",
+    "view/my/index",
+    "view/category/index",
+    "view/product/index",
+    "view/qrcode/index",
+    "view/order/index",
+    "view/order/check",
+    "view/order/result",
+    "view/delivery/index",
+    "view/delivery/detail",
+    "view/favor/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "微信商城",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#e8e8ed"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#c81623",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "view/index/index",
+        "iconPath": "/image/home.png",
+        "selectedIconPath": "/image/home_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "view/cart/index",
+        "iconPath": "/image/cart.png",
+        "selectedIconPath": "/image/cart_active.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "view/my/index",
+        "iconPath": "/image/my.png",
+        "selectedIconPath": "/image/my_active.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

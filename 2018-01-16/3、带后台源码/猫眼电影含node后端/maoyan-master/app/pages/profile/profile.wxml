@@ -1,0 +1,11 @@
+<view></view>
+<view class="warp">
+  <view class="item">我的订单</view>
+  <view class="item">优惠券</view>
+  <view class="item last">影院会员卡</view>
+</view>
+<view class="warp">
+  <view class="item">想看的电影</view>
+  <view class="item last">看过的电影</view>
+</view>
+<view></view>

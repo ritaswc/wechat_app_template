@@ -1,0 +1,184 @@
+/* pages/jobDetail/jobDetail.wxss */
+.image1{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 5rpx;
+}
+.position_name,.position_salary,.position_company{
+    margin: 20rpx auto 0;
+    width: 94%;
+}
+.position_salary,.position_company{
+    font-size: 13pt;
+}
+.position_salary{
+    color: #e58026;
+}
+.position_company{
+    color: #666666;
+}
+
+.position_box{
+    width: 94%;
+    margin: 16rpx auto 0;
+    font-size: 11pt;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    color: #666666;
+}
+.position_box .time_{
+    width: 33%;
+}
+
+.position_box li{
+    text-align: left;
+    height: 50rpx;
+    line-height: 50rpx;
+    width: 170rpx;
+    display: flex;
+    align-items: center;
+}
+.p_d_box{
+    margin-top: 16rpx;
+    font-size: 12pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+.p_d_box li{
+    width: 33.33%;
+    text-align: center;
+    border-right: 1px solid #e5e5e5;
+    line-height: 180%;
+}
+.p_d_box li view{
+    color: #666666;
+}
+.p_d_detail{
+    color: #666666;
+    margin: 30rpx 0;
+    font-size: 12pt;
+    padding-left: 3%;
+    line-height: 180%;
+    background-color: #e5e5e5;
+    text-align: left;
+}
+.p_description{
+    width: 93%;
+    min-height: 200rpx;
+    margin: 0 auto;
+    word-break:break-all;
+}
+.user_box{
+    position: fixed;
+    bottom: 0;
+    background-color: #e5e5e5;
+    height: 100rpx;
+    width: 100%;
+    font-size: 10pt;
+    color: #f6f6f6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.user_box .left{
+    color: #666666;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.user_box .left view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user_box .right{
+    width: 100%;
+    font-size: 12pt;
+    text-align: center;
+    color: #fff;
+    height: 70rpx;
+    line-height: 70rpx;
+    display: flex;
+    justify-content: center;
+   
+}
+ button{
+    color: #fff;
+    line-height: 70rpx;
+    width: 97%;
+    background-color: #e58026;
+    border-radius: 6rpx; 
+}
+.image2{
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.position_detail{
+    padding-bottom: 100rpx;
+}
+/*其他职位*/
+
+.remenList .list{
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  text-align: left;
+}
+.remenList .list .hotImg{
+display: inline-block;
+width: 40rpx;
+height: 40rpx;
+margin-right: 10rpx;
+}
+.remenList .list .left{
+  width: 70%;
+}
+.remenList .list .left .positionName{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.positionName .job_name{
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.remenList .list .left .conpany{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12pt;
+  color: #aaa;
+  padding-top: 10rpx;
+}
+.remenList .list .left .time{
+  font-size: 12pt;
+  color: #aaa;
+  padding-top: 10rpx;
+}
+
+
+.remenList .list .right{
+  margin-top: 30rpx;
+  text-align: right;
+}
+.remenList .list .right view{
+  padding-top: 10rpx;
+  font-size: 12pt;
+  color: #aaa;
+}
+.remenList .list .right .money{
+  color: #fc9a39;
+}

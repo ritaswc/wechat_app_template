@@ -1,0 +1,19 @@
+<!--chapterlist.wxml-->
+<view class="container">
+    <view class="loading" wx:if="{{!chapters.length}}"></view>
+	<view class="content" wx:else>
+        <view class="chapter-list {{item.isSelected? 'selected': ''}}" wx:for="{{chapters}}" wx:key="chapterId">
+            <text data-chapter="{{item}}" bindtap="listToggle">{{item.title}}</text>
+            <view class="col-menu">
+                <view class="progress-bar">
+                    <progress percent="{{100*item.historyNum/item.totalNum}}" stroke-width="6"/>
+					<view>{{item.historyNum}}/{{item.totalNum}}</view>
+				</view>
+                
+                <view class="menu">
+                    <navigator url="../alltest/alltest?cid={{item.chapterId}}">整章练习</navigator>
+                </view>
+			</view>
+        </view>
+	</view>
+</view>

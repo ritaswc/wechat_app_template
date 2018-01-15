@@ -1,0 +1,120 @@
+.headerView {
+  z-index: 1;
+  top: 0;
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  height: 72rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.top-bar-item {
+  display: inline-block;
+  width: 33%;
+  color: gray;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.top-bar-active {
+  color: red;
+  font-size: 32rpx;
+}
+
+.container {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.scrollview-list {
+  margin-top: 72rpx;
+}
+
+.img {
+  height: 200rpx;
+  width: 200rpx;
+}
+
+/*每个item样式*/
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+  padding: 10rpx;
+  margin-bottom: 25rpx;
+  border-bottom: solid 2px #ebebeb;
+  background: white;
+}
+
+.item-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+/*右边信息样式*/
+
+.goodsinfo {
+  width: 500rpx;
+  display: block;
+  margin-left: 15rpx;
+  flex-direction: column;
+}
+
+.goodsname {
+  margin-top: 15rpx;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.goodsnum {
+  margin-left: 30rpx;
+  font-size: 14px;
+  margin-top: 15rpx;
+}
+
+.item-headerview {
+  align-items: center;
+  margin-bottom: 20rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.status {
+  position: absolute;
+  right: 15px;
+  font-size: 16px;
+  width: 100px;
+  background: red;
+  color: white;
+  line-height: 30px;
+}
+
+.statusandprice {
+  width: 140px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-text {
+  font-size: 16px;
+}
+
+.divLine {
+  background: #f3f3f3;
+  width: 100%;
+  height: 4rpx;
+}
+.tips{
+  flex-direction: row;
+  justify-content: center;
+  font-size: 16sp;
+}

@@ -1,0 +1,17 @@
+<!--pages/shenghuo/GoodLife/LifeSearchList/LifeSearchList.wxml-->
+<!--<text>pages/shenghuo/GoodLife/LifeSearchList/LifeSearchList.wxml</text>-->
+<import src="../GoodLifeCell/GoodLifeCell.wxml" />
+
+<view class="lifeSearchList-container">
+  <view class="search-bg1"></view>
+  <view class="search-box">
+    <view class="search-icon">
+      <input class="input" placeholder="点击搜索" />
+    </view>
+  </view>
+
+  <block wx:for="{{LifeSearchList}}" wx:for-item="item" wx:key="key">
+    <!--<view class="CouponSearchListCell">{{item.doorName}}</view>-->
+    <template is="GoodLifeCell" data="{{...item}}"></template>
+  </block>
+</view>

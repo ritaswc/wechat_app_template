@@ -1,0 +1,69 @@
+/* pages/basicInf/basicInf.wxss */
+page{
+    /*background-color: #efefef;*/
+}
+.image2{
+    width: 35rpx;
+    height: 30rpx;
+}
+.objecTive_wrap{
+    margin-bottom: 1px;
+}
+.middle{
+    background-color: #fff;
+    /*border-bottom: 1px solid #e5e5e5;*/
+    padding: 0 0 0 2%;
+}
+.middle .dingyue{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 78rpx;
+    padding-right: 3%;
+    border-bottom: 1px solid #e5e5e5;
+}
+ .middle .dingyue .left{
+    display: flex;
+    align-items: center;
+}
+ .middle .dingyue .left text{
+    color: red;
+    display: block;
+    width: 14pt;
+}
+.middle  .right{
+    color: #999999;
+    width: 68%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+}
+.middle  .right input{
+    text-align: right;
+    width: 100%;
+}
+.middle  .right picker{
+    width: 100%;
+}
+.middle .dingyue .right text{
+    width: 90%;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.list_box .bottom{
+    margin-bottom: 60rpx;
+}
+.btn{
+    margin-top: 60rpx;
+    background-color: #fff;
+    color: red;
+}
+.save{
+    width: 94%;
+    margin: 20rpx;
+    background-color: #e58026;
+    color: #fff;
+}

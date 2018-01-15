@@ -1,0 +1,5 @@
+<!-- sample.wxml -->
+<view class="btn-area">
+  <navigator url="login?title=login" hover-class="login-hover">跳转到新页面</navigator>
+
+</view>

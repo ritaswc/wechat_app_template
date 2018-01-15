@@ -1,0 +1,61 @@
+/* pages/index/message/message.wxss */
+.consequence{
+    width:710rpx;
+    background-color:#fff;
+    padding:0 20rpx;
+    margin-top: 20rpx;
+}
+
+.mes-num{
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.num1{
+    float: left;
+    font-size:30rpx;
+}
+
+.num2{
+    float: right;
+    font-size:24rpx;
+    color:#999;
+}
+
+.mes-detail{
+    border-bottom: 2rpx solid #e5e5e5;
+    padding-bottom:20rpx;
+    line-height: 46rpx;
+    font-size:28rpx;
+    color:#666;
+}
+
+.mes-detail2{
+    padding-bottom:20rpx;
+    line-height: 46rpx;
+    font-size:28rpx;
+    color:#666;
+}
+
+.mes-btn{
+    width:100%;
+    height: 98rpx;
+}
+
+.btn-nav{
+    float: right;
+    width:140rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    text-align: center;
+    color:#27b2eb;
+    border:1px solid #27b2eb;
+    margin-left: 20rpx;
+    margin-top:20rpx;
+}
+
+.btn-nav-alr{
+    float: right;
+    height: 98rpx;
+    line-height: 98rpx;
+}

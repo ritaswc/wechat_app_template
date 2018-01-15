@@ -1,0 +1,103 @@
+
+.top_line{
+    height: 0.5px;
+    background-color: #EFEFF4;
+}
+.top_view{
+    font-size: 15px;
+    padding: 10px;
+}
+.address_view{
+    padding: 0px 10px 10px 10px;
+    font-size: 13px;
+    line-height: 1.5em;
+    color: #939393;
+    border-bottom: 10px solid silver;
+    border-bottom-color: #EFEFF4;
+}
+.goods_info{
+    display: flex;
+    min-height: 100px;
+}
+.image_icon{
+    display: flex;
+    margin-left: 10px;
+    max-height: 100px;
+    max-width: 80px;
+}
+.goods_infos{
+    display: flex;
+    flex-direction: column;
+    }
+.text_style_1{
+    padding: 5px 10px 0 10px;
+    font-size: 15px;
+    line-height: 1.5em;
+}
+.text_style_2{
+    padding: 10px 10px 0 10px;
+    font-size: 12px;
+    color: #B3B3B3;
+}
+.text_style_3{
+    padding: 10px 10px 0 10px;
+    font-size: 15px;
+    color: red;
+}
+.order_info{
+    font-size: 13px;
+    border-top: 0.5px solid silver;
+    border-top-color: #EFEFF4;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.order_info_right_color{
+    color: #939393;
+    font-size: 12px;
+    padding-top: 1px;
+}
+.coupon{
+    font-size: 13px;
+    border-top: 10px solid silver;
+    border-top-color: #EFEFF4;
+    border-bottom: 10px solid silver;
+    border-bottom-color: #EFEFF4;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.bottom_text_1{
+    padding: 10px 10px 0px 10px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+.bottom_text_2{
+    padding: 5px 10px 0px 10px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+.bottom_text_3{
+    padding: 5px 10px 10px 10px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+.true_pay{
+    padding: 10px;
+    border-top: 0.5px solid silver;
+    border-top-color: #EFEFF4;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.true_pay_right{
+    color: red;
+}
+.bottom_btn{
+    margin: 5px 10px 10px 10px;
+}
+.right_text{
+    color: red;
+}

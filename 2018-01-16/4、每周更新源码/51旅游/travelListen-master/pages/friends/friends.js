@@ -1,0 +1,38 @@
+Page({
+    data: { 
+        list:[
+            {
+                list:[
+                    {
+                        name:'驴友圈',
+                        icon:'../../images/tour_track_icon.png',
+                        page:'tour_track/tour_track',
+                        arrow:'../../images/ic_arrow_right.png'
+                    }
+                ]
+            },
+            {
+                list:[
+                    {
+                        name:'偶遇',
+                        icon:'../../images/meet_with_icon.png',
+                        page:'meet/meet',
+                        arrow:'../../images/ic_arrow_right.png'
+                    },
+                    {
+                        name:'约伴',
+                        icon:'../../images/about_with_icon.png',
+                        page:'about_with/about_with',
+                        arrow:'../../images/ic_arrow_right.png'
+                    },
+                    {
+                        name:'附近的群',
+                        icon:'../../images/friends_icon.png',
+                        page:'near_group/near_group',
+                        arrow:'../../images/ic_arrow_right.png'
+                    }
+                ]
+            }
+        ]
+    }
+})

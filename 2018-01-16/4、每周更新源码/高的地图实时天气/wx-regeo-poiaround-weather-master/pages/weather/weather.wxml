@@ -1,0 +1,7 @@
+<view class="container">
+  <text>{{weather.city.text}} : {{weather.city.data}}</text>
+  <text>{{weather.weather.text}} : {{weather.weather.data}}</text>
+  <text>{{weather.temperature.text}} : {{weather.temperature.data}} ℃</text>
+  <text>风速 : {{weather.winddirection.data}} {{weather.windpower.data}}</text>
+  <text>{{weather.humidity.text}} : {{weather.humidity.data}}</text>
+</view>

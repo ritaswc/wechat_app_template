@@ -1,0 +1,21 @@
+.order {
+    padding: 0px;
+}
+.order-info {
+    font-size: 14px;
+}
+.order-item {
+    float: left;
+    width: 25%;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.order-item-icon {
+    height: 35px;
+}
+.order-item-icon-image {
+    width: 30px;
+    height: 30px;
+}

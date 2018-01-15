@@ -1,0 +1,102 @@
+/*index.wxss*/
+
+.container {
+  background-color: #f2f2f2;
+}
+
+view.section {
+  /*display: block;*/
+  width: 100%;
+}
+
+/*轮播*/
+
+.swiper_box {
+  /*width: 100%;*/
+  height: 187.5px;
+}
+
+swiper.swiper {
+  height: 100%;
+}
+
+.swiper-item {
+  display: block;
+  height: 100%;
+}
+
+.slide-image {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+/*分类*/
+
+.index-nav {
+  height: 65px;
+  /*background: red;*/
+  display: flex;
+  flex-direction: row;
+  /*align-items: center;*/
+  background-color: #fff;
+  color: #646464;
+  text-align: center;
+  /*设置下边框颜色*/
+  border-bottom: 1px solid #888;
+}
+
+.index-nav view {
+  flex: 1;
+  flex-direction: column;
+  border-right: 1px solid #f2f2f2;
+}
+
+.index-nav image {
+  width: 38px;
+  height: 38px;
+}
+
+.index-nav text {
+  font-size: 16px;
+}
+
+/*列表*/
+
+view.text {
+  display: flex;
+  align-items: center;
+  /*position: relative;*/
+  padding: 10px 10px 10px 12px;
+  font-size: 15px;
+  color: #656565;
+}
+
+view.text:before {
+  position: absolute;
+  display: block;
+  content: ' ';
+  left: -5px;
+  width: 2px;
+  height: 100%;
+  background-color: #09bb07;
+}
+
+.line_y {
+  width: 3px;
+  height: 100%;
+  height: 18px;
+  display: inline-block;
+  background-color: #09bb07;
+}
+
+view.text text {
+  margin-left: 10px;
+  line-height: 18px;
+}
+
+.item {
+  margin-bottom: 7px;
+  height: 126px;
+}

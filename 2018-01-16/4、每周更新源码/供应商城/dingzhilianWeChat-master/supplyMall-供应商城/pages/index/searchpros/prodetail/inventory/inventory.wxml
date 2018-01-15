@@ -1,0 +1,41 @@
+
+<!--pages/index/inventory/inventory.wxml-->
+<view class="container">
+
+  <!-- 款式 -->
+  <view class="inven">
+    <text class="invenTitle">款式</text>
+    <text class="invenMes {{item.id == secondId ? 'styleActive' : ''}}" wx:for="{{seconds}}" data-secondid="{{item.id}}" bindtap="searchColors">{{item.name}}</text>
+  </view>
+
+  <!-- 颜色 -->
+  <view class="inven">
+    <text class="invenTitle">颜色</text>
+    <text class="invenMes2 {{item.id == detailId ? 'colorActive' : ''}}" wx:for="{{colors}}" data-detailid="{{item.id}}"  bindtap="searchStores">{{item.color_name}}</text>
+  </view>
+
+  <!-- 库存 -->
+  <view class="inven">
+    <text class="invenTitle">库存</text>
+    <view class="flex-wrp">
+      <view class="flex-item">
+        <image src="{{weixinCtx}}m-table.png"></image>
+      </view>
+      <view class="flex-item">当前库存</view>
+      <view class="flex-item">占用库存</view>
+      <view class="flex-item">在途库存</view>
+    </view>
+    <view class="flex-wrp" wx:for="{{stores}}">
+      <view class="flex-mes">{{item.size_name}}</view>
+      <view class="flex-mes">{{item.store}}</view>
+      <view class="flex-mes">{{item.occupation_store}}</view>
+      <view class="flex-mes">{{item.transit_store}}</view>
+    </view>
+  </view>
+
+  <!--采购咨询 -->
+  <view class="cont">
+    <contact-button class="cont-icon" type="default-light" size="27" session-from="weapp"></contact-button>
+    <text class="cont-text" >采购咨询</text>
+  </view>
+</view>

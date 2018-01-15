@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<view class="index">
+
+  <!--搜索区域-->
+  <view class="index-topcon" style="background-image:url({{weixinCtx}}logo_bg.png);">
+    <view class="index-search">
+
+      <!--图片搜索结果图-->
+      <view wx:if="{{isShow}}" class="camera-image" bindtap="deleteImage">
+        <image class="search-image" src="{{chaImgSrc}}"></image>
+        <image class="search-cha" src="{{weixinCtx}}cha.png"></image>
+      </view>
+      <input class="search-ipt" type="text" placeholder="搜索定制链供应商城商品" bindinput="styleName" />
+      <view class="search-btn" bindtap="searchStyle">搜索</view>
+
+      <!--搜索图标-->
+      <image class="search-icon" src="{{weixinCtx}}s_search.png"></image>
+
+      <!--图片上传-->
+      <view class="index-camera">
+        <button class="camera-file" bindtap="chooseImageTap"></button>
+        <image class="camera-icon" src="{{weixinCtx}}s_camera.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <!--历史记录-->
+  <view class="index-history" wx:if="{{history.length > 0}}">
+    <text class="history-text">历史记录</text>
+    <image class="history-dustbin" src="{{weixinCtx}}s_delete.png" bindtap="removeHistory"></image>
+    <view class="history-con">
+      <navigator class="history-tips" wx:for="{{history}}" url="searchpros/searchpros?style={{item}}">{{item}}</navigator>
+    </view>
+  </view>
+
+  <!--潮流服装-->
+  <view class="index-history">
+    <text class="history-text">服装</text>
+    <view class="history-con">
+      <navigator class="classify" wx:for="{{productSorts}}" url="searchpros/searchpros?id={{item.id}}&style={{item.name}}">
+        <image src="{{weixinCtx}}{{item.back_image}}"></image>
+        <text class="text-num">{{item.count}}款</text>
+      </navigator>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+<template name="signin">
+  <view>
+        <modal title="请登录" confirm-text="确认" cancel-text="取消" hidden="{{signinHidden}}" bindconfirm="modalconfirm" bindcancel="modalcancel">
+                   <label>
+                        <view class="section"><text>账号:</text><input bindinput="saveusername" placeholder="微信号/手机号" value="{{userlocal.nickName}}" /></view>
+                        <view class="section"><text>密码:</text><input bindinput="saveuserpwd" placeholder="请输入密码"  value="{{userlocal.nickPwd}}"/></view>
+                  </label>
+        </modal>
+  </view>
+</template>

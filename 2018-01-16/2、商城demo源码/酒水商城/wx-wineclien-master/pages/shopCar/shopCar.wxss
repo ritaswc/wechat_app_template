@@ -1,0 +1,115 @@
+/*输入框背景样式*/
+.input_back_view_style{
+    background:white;
+    height: 50px;
+    width: 100%;
+    position: relative;
+}
+    /*输入框样式*/
+    .input_class{
+        border-width: 1px;
+        border-color: #D3D3D3;
+        border-style:solid;
+        border-radius: 5px;
+        display: block;
+        height: 30px;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        right: 20px;
+    }
+/*list样式*/
+.scrol_view_style{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #F5F5F5;
+}
+/*item*/
+.list_item_style{
+    position: relative;
+    height: 90px;
+    width: 100%;
+    background: white;
+}
+    /*商品主图*/
+    .good_main_image{
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+    }
+    /*商品名称*/
+    .item_good_title{
+        text-align: left;
+        display: block;
+        font-size: 16px;
+        height: 20px;
+        line-height: 20px;
+        position: absolute;
+        left: 100px;
+        top: 10px;
+        right: 5px;
+        white-space:nowrap;
+        word-break:keep-all;
+        overflow:hidden;
+        text-overflow:ellipsis;
+    }
+     /*+号按钮*/
+        .add_image_style{
+            width:30px;
+            height:30px;
+            position:relative;
+            top:30px;
+            right:10px;
+            float:right;
+        }
+        /*——号按钮*/
+        .reduce_image_style{
+            width:30px;
+            height:30px;
+            position:relative;
+            top:30px;
+            right:10px;
+            float:right;
+        }
+        /*购买数量*/
+        .good_buy_number{
+            height:30px;
+            position:relative;
+            top:30px;
+            right:10px;
+            width: 50px;
+            text-align: center;
+            float:right;
+            font-size:16px;
+            margin-right:3px;
+            margin-left:3px;
+            border-width: 1px;
+            border-color: #D3D3D3;
+            border-style: solid;
+            border-radius: 5px;
+        }
+     /*价钱的背景试图*/
+        .price_back_view{
+            height: 20px;
+            position: absolute;
+            bottom: 10px;
+            left: 100px;
+            right: 5px;
+        }
+            /*售价*/
+            .right_list_item_price{
+                color: #FF6261;
+                font-size: 16px;
+            }
+            /*市场价*/
+            .right_list_item_market_price{
+                font-size: 13px;
+                color: #333333;
+                margin-left: 3px;
+                text-decoration:line-through;
+            }

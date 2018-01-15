@@ -1,0 +1,96 @@
+.vLine {
+  height: 2rpx;
+  background-color: #e5e5e5;
+}
+
+.vDate {
+  margin-left: 40rpx;
+  display: flex;
+  align-items: center;
+}
+.vLabeldate
+{
+  height: 48rpx;
+  line-height: 58rpx;
+  font-size: 34rpx;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.vDate image {
+  width: 25rpx;
+  height: 25rpx;
+  margin-left: 18rpx;
+  /*transform: rotate(90deg);*/
+}
+
+.vWorkRecord {
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.12);
+  margin-left: 40rpx;
+  height: 132rpx;
+  display: flex;
+  align-items: center;
+}
+
+.pWorkers-item {
+  height: 86rpx;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.12);
+}
+
+.vStaffData {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+
+.tName {
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 34rpx;
+}
+
+.tWorkTime {
+  height: 40rpx;
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.38);
+  margin: 0rpx 40rpx 0rpx 0rpx;
+}
+
+.tNoWorkTime {
+  margin: 0rpx auto 0rpx 20rpx;
+}
+
+.iHead {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.iMore {
+  width: 52rpx;
+  height: 100%;
+  margin: 0rpx 40rpx 0rpx auto;
+}
+
+.noquick {
+  display: flex;
+  flex-direction: column;
+}
+
+.noquick image {
+  width: 344rpx;
+  height: 344rpx;
+  margin: 224rpx auto 0rpx auto;
+}
+
+.noquick text {
+  margin: 66rpx auto 0rpx auto;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 34rpx;
+  letter-spacing: -0.8rpx;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.38);
+}

@@ -1,0 +1,13 @@
+.container {
+    width:96%; margin-left:2%; margin-top:10px;
+}
+
+.single-pic {
+    width:100%; border-bottom:1px #ddd solid; 
+    align-items: center;
+    display: flex; flex-direction: column; padding-top:8px; margin-top:10px;
+}
+
+.single-pic text {
+    font-size:32rpx; padding-bottom:10px; padding-top:7px;
+}

@@ -1,0 +1,247 @@
+
+<view class="container">
+  <!--<import src="../switch/switch.wxml"/>-->
+  <!--<include src="temp.wxml"/>-->
+ <!-- <view class="switch-view clearfix">
+    <view bindtap="onTitleBarsClick0" class="view-list {{curSelClassifyIndex == 0 ? 'active' : ''}}">
+     <text>列表模式</text>
+    </view>
+    <view bindtap="onTitleBarsClick1" class="view-big-img {{curSelClassifyIndex == 1 ? 'active' : ''}}" bindtap="switchBigImgView">
+     <text>大图模式</text>
+    </view>
+ </view> -->
+
+ <!-- <import src="../switch/switch"/>
+ <template is="switch-view" data="{{curSelClassifyIndex: 0}}"/> -->
+
+<include src="../switch/switch.wxml"/>
+<swiper bindchange="onBindchange" current="{{curSelClassifyIndex}}" duration="300">
+    <!-- listview -->
+    <swiper-item>
+      <scroll-view scroll-y="true"  style="height: 100%;">
+      <listview class="listview">
+        <listitem class="listitem">
+          <view class="listitem-desc-container">
+             <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20141014/firstpage/00_5.jpg"></image>
+             <view class="info-view">
+               <text class="title">史上最全的分包装，最全最全史上最全的分包装</text>
+               <text class="price">
+                 12.99元包邮
+               </text>
+               <view class="footer-desc">
+                   <text class="source">
+                   网易考拉
+                   </text>
+                   <view class="source-from">
+                     <text class="from">
+                       买个便宜货
+                     </text>
+                     <datetime class="datetime">
+                       10:45
+                     </datetime>
+                   </view>
+               </view>
+             </view>
+          </view>
+        </listitem>
+
+        <listitem class="listitem">
+          <view class="listitem-desc-container">
+             <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20141015/firstpage/00_2.jpg"></image>
+             <view class="info-view">
+               <text class="title">我的绅士史上-衬衫我的绅士史上-衬衫我的绅士史上-衬衫我的绅士史上-衬衫
+                 我的绅士史上-衬衫我的绅士史上-衬衫我的绅士史上-衬衫我的绅士史上-衬衫
+                 我的绅士史上-衬衫我的绅士史上-衬衫我的绅士史上-衬衫我的绅士史上-衬衫
+               </text>
+               <text class="price">
+                 98元包邮
+               </text>
+               <view class="footer-desc">
+                   <text class="source">
+                     有调
+                   </text>
+                   <view class="source-from">
+                   <text class="from">
+                     有调
+                   </text>
+                   <datetime class="datetime">
+                     12:45
+                   </datetime>
+                 </view>
+
+               </view>
+             </view>
+          </view>
+        </listitem>
+
+        <listitem class="listitem">
+          <view class="listitem-desc-container">
+             <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20160409/firstpage/38thumb.jpg"></image>
+             <view class="info-view">
+               <text class="title">银幕上亮瞎眼的硬汉腕表
+               </text>
+               <text class="price">
+                 1299元
+               </text>
+               <view class="footer-desc">
+                   <text class="source">
+                     有调
+                   </text>
+                   <view class="source-from">
+                   <text class="from">
+                     买个便宜货
+                   </text>
+                   <datetime class="datetime">
+                     10:12
+                   </datetime>
+                 </view>
+
+               </view>
+             </view>
+          </view>
+        </listitem>
+
+        <listitem class="listitem">
+          <view class="listitem-desc-container">
+             <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20141029/goodthing/00_4.jpg"></image>
+             <view class="info-view">
+               <text class="title">Ettinger，低调的皇室血脉
+               </text>
+               <text class="price">
+                 299元
+               </text>
+               <view class="footer-desc">
+                   <text class="source">
+                     有调
+                   </text>
+                   <view class="source-from">
+                   <text class="from">
+                     买个便宜货
+                   </text>
+                   <datetime class="datetime">
+                     23:12
+                   </datetime>
+                 </view>
+
+               </view>
+             </view>
+          </view>
+        </listitem>
+
+        <listitem class="listitem">
+          <view class="listitem-desc-container">
+             <image class="item-img" src="//a.diaox2.com/cms/sites/default/files/20160912/goodthing/sl.png"></image>
+             <view class="info-view">
+               <text class="title">有了Superbook，手机摇身一变成电脑
+               </text>
+               <text class="price">
+                 299元
+               </text>
+               <view class="footer-desc">
+                   <text class="source">
+                     淘宝
+                   </text>
+                   <view class="source-from">
+                   <text class="from">
+                     天猫
+                   </text>
+                   <datetime class="datetime">
+                     03:34
+                   </datetime>
+                 </view>
+
+               </view>
+             </view>
+          </view>
+        </listitem>
+
+        <listitem class="listitem">
+          <view class="listitem-desc-container">
+             <image class="item-img" src="//search.image.alimmdn.com/55/bb0e0ea0f86c968912883532f3f0921e43db70c77bc7282996d8bf830@188w_188h_1e%7C188x188-5rc"></image>
+             <view class="info-view">
+               <text class="title">出何日党务旱地和下图
+               </text>
+               <text class="price">
+                 299元
+               </text>
+               <view class="footer-desc">
+                   <text class="source">
+                     京东
+                   </text>
+                   <view class="source-from">
+                   <text class="from">
+                     京东
+                   </text>
+                   <datetime class="datetime">
+                     13:45
+                   </datetime>
+                 </view>
+
+               </view>
+             </view>
+          </view>
+        </listitem>
+      </listview>
+      </scroll-view>
+    </swiper-item>
+    <!-- bigImg -->
+    <swiper-item>
+        <scroll-view>
+          <listview class="big-listview">
+          <listitem class="big-listitem">
+            <view class="image-container">
+              <image src="//content.image.alimmdn.com/sku/1469850064em_pic_jpg.jpeg@320w_320h_1e%7C320x320-5rc"></image>
+            </view>
+            <view class="info-container">
+              <text class="info">摩天轮3D氛围灯</text>
+              <text class="price">￥158</text>
+            </view>
+          </listitem>
+
+          <listitem class="big-listitem">
+            <view class="image-container">
+              <image src="//search.image.alimmdn.com/340039/99b6b8cbb68a914926e01d02cbf636e04dce590232fb5c1ab9e26e4f@320w_320h_1e%7C320x320-5rc"></image>
+            </view>
+            <view class="info-container">
+              <text class="info">摩天轮3D氛围灯</text>
+              <text class="price">￥158</text>
+            </view>
+          </listitem>
+
+          <listitem class="big-listitem">
+            <view class="image-container">
+              <image src="//content.image.alimmdn.com/cms/sites/default/files/20160730/firstpage/8.jpg@320w_320h_1e%7C320x320-5rc"></image>
+            </view>
+            <view class="info-container">
+              <text class="info">摩天轮3D氛围灯</text>
+              <text class="price">￥158</text>
+            </view>
+          </listitem>
+
+          <listitem class="big-listitem">
+            <view class="image-container">
+              <image src="//content.image.alimmdn.com/cms/sites/default/files/20160730/firstpage/4.jpg@320w_320h_1e%7C320x320-5rc"></image>
+            </view>
+            <view class="info-container">
+              <text class="info">摩天轮3D氛围灯</text>
+              <text class="price">￥158</text>
+            </view>
+          </listitem>
+
+          <listitem class="big-listitem">
+            <view class="image-container">
+              <image src="//content.image.alimmdn.com/cms/sites/default/files/20161008/firstpage/t21.jpg@320w_320h_1e%7C320x320-5rc"></image>
+            </view>
+            <view class="info-container">
+              <text class="info">摩天轮3D氛围灯</text>
+              <text class="price">￥158</text>
+            </view>
+          </listitem>
+        </listview>
+    </scroll-view>
+</swiper-item>
+</swiper>
+
+
+
+</view>

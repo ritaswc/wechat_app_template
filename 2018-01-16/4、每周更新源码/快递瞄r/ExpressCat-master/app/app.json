@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/personal/personal",
+
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#EF6262",
+    "navigationBarTitleText": "快递喵",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "color": "#323232",
+    "selectedColor": "#EF6262",
+    "borderStyle": "dark",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "查快递",
+        "iconPath":"images/express.png",
+        "selectedIconPath":"images/express_select.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的快递",
+        "iconPath":"images/manager.png",
+        "selectedIconPath":"images/manager_select.png"
+      }
+    ]
+  }
+}

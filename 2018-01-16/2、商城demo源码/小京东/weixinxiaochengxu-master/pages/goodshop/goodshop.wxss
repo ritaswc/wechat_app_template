@@ -1,0 +1,109 @@
+/*整体view样式*/
+
+.containsView {
+  padding: 5rpx 15rpx 15rpx 15rpx;
+  margin-bottom: 15rpx;
+  background-color: white;
+  flex-direction: column;
+}
+
+/*头部整体样式*/
+
+.topContainsView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10rpx;
+  margin-bottom: 25rpx;
+   border-bottom: solid 2px #ebebeb;
+}
+
+/**
+ * 商品样式
+*/
+
+.goodsImage {
+  width: 180rpx;
+  height: 180rpx;
+  
+  mode:'scaleToFill';
+}
+
+/*右侧文本整体样式*/
+
+.topRightView {
+  margin-left: 15rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/*用户名称样式*/
+
+.topRightName {
+  font-size: 25rpx;
+}
+
+/*时间样式*/
+
+.topRightTime {
+  font-size: 25rpx;
+  color: red;
+  margin-top: 10rpx;
+}
+
+/*因为中间部分不一样不放在整体样式中*/
+
+/*顶部view整体样式*/
+
+.headerView {
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*每个Item样式*/
+
+.headerItemView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+/*Item样式中的图标样式 */
+
+.bottomItemImage {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+/*Item中的文字样式*/
+
+.headerItemText {
+  font-size: 30rpx;
+  color: #b8b2b2;
+  margin-left: 10rpx;
+  margin-top: 8rpx;
+}
+
+/*销量和评价那一条*/
+
+.saleAndcom {
+  margin-top: 8rpx;
+  flex-direction: row;
+}
+
+.saletext {
+  font-size: 25rpx;
+}
+
+.saleRightText {
+  margin-left: 100rpx;
+  font-size: 25rpx;
+}

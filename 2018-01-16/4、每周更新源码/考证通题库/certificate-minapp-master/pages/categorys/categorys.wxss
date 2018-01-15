@@ -1,0 +1,31 @@
+.category-container {
+  height: 100%;
+  /*width: 100%;*/
+  text-align: center;
+  padding: 60rpx 0;
+  box-sizing: border-box;
+}
+
+.picker {
+  border-top: 1px solid #d9d9d9;
+  width: 100%;
+  height: 300px;
+  margin-top: 24px;
+  text-align:center;
+}
+
+.picker-bottom {
+  width: 100%;
+  border-bottom: 2px solid #d9d9d9;
+  margin-bottom: 24px;
+}
+
+.button-large {
+  width: 94%;
+  margin: 8px;
+}
+
+
+button[type="primary"] {
+  background-color: #47c577;
+}

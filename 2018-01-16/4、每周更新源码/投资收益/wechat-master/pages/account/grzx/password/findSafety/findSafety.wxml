@@ -1,0 +1,30 @@
+<view class="notice">
+    安全提醒：为确保安全，登录密码请不要与安全密码相同
+</view>
+<view class="grzx_bd">
+    <view class="grzx_con">
+        <view class="grzx_con_list">
+            账户名：<text>李***</text>
+        </view>
+        <view class="grzx_con_list">
+            您的手机号：<text>137****0568</text>
+        </view>
+        <view class="grzx_con_list">
+            <input type="text" placeholder="请输入图形验证码"></input>
+            <view class="yzm"><image src="../../../../../images/account/yzm.jpg"></image></view>
+        </view>
+        <view class="grzx_con_list border_none">
+            <input type="text" placeholder="请输入手机验证码"></input>
+            <view class="sjyzm">发送验证码</view>
+        </view>
+    </view>
+</view>
+<view class="notice_bottom"> 请输入上面图片显示的字符，不区分大小写</view>
+<view class="error">
+    当前密码长度必须在6~16之间
+</view>
+<view class="grzx_btn">
+    <navigator url="../findSafetys/findSafetys">
+        <button size="default" type="primary">下一步</button>
+    </navigator>
+</view>

@@ -1,0 +1,51 @@
+{
+  "pages":[
+    
+    "pages/auxStore/auxGoods/auxGoods",
+    "pages/auxStore/cityChoose/cityChoose",
+    "pages/auxStore/goods_item/goods_item",
+    "pages/mainStore/mainStore",
+    "pages/userCenter/userCenter",
+    "pages/shopCart/shopCart",       
+    "pages/toRegister/toRegister",
+    "pages/registConfirm/registConfirm",
+    "pages/toLogin/toLogin",
+    "pages/forgetPassw/forgetPassw",
+    "pages/userAgreement/userAgreement",
+    "pages/userNav/myAccount/myAccount"
+     
+  ],
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [{  
+      "pagePath": "pages/auxStore/auxGoods/auxGoods",
+      "text": "辅材商城",
+      "iconPath": "images/auxStore.png",
+      "selectedIconPath": "images/auxStore_pressed.png"
+    },
+    {
+      "pagePath": "pages/mainStore/mainStore",
+      "text": "主材商城",
+      "iconPath": "images/mainStore.png",
+      "selectedIconPath": "images/mainStore_pressed.png"
+    },
+    {
+      "pagePath": "pages/shopCart/shopCart",
+      "text": "购物车",
+      "iconPath": "images/shopCart.png",
+      "selectedIconPath": "images/shopCart_pressed.png"
+    },
+    {
+      "pagePath": "pages/userCenter/userCenter",
+      "text": "个人中心",
+      "iconPath": "images/userCenter.png",
+      "selectedIconPath": "images/userCenter_pressed.png"
+    }]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

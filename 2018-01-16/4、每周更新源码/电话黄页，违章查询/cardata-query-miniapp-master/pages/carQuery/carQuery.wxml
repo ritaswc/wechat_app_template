@@ -1,0 +1,29 @@
+<view class="container" style="background-color: white;height:{{windowHeigh}}px">
+    <view class="queryTip">临沂plus</view>
+    <view class="queryView">
+        <view class="left">车牌号码:</view>
+        <view class="center">{{myProvinceZWJX}} {{myCityPYJX}}      </view>
+        <input bindinput="setCPHM" value="{{cphm}}" placeholder="请输入车牌号码" placeholder-style="font-size:28rpx;color:#ccc;margin-left:5rpx;"/>
+    </view>
+    <view class="queryView">
+    <view class="left">车辆类型:</view>
+  <picker range-key="name" bindchange="bindPickerChange" value="{{index}}" range="{{supportCodes}}">
+    <view class="picker" style="color:blue;height: 200rpx;line-height: 200rpx;">
+     {{lstypeName}}{{supportCodes[index]}}
+    </view>
+  </picker>
+    </view>
+    <view class="queryView">
+        <view class="left" >车架号码:</view>
+        <input bindinput="setCJH" value="{{cjh}}"  placeholder="{{cjhInputTip}}" placeholder-style="font-size:50rpx;color:#ccc;padding-left:10rpx;height:200rpx;line-height:200rpx;"/>
+    </view>
+    <view class="queryView" >
+        <view class="left">发动机号:</view>
+        <input bindinput="setFDJH" value="{{fdjh}}"  placeholder="{{fdjInputTip}}" placeholder-style="font-size:28rpx;color:#ccc;padding-left:10rpx;height:70rpx;line-height:70rpx;" style="width:70%;"/>
+    </view>
+    <view class="errorTip">
+        {{errorTip}}
+    </view>
+    <button type="primary" bindtap="queryData" class="queryButton">查询</button>
+    <view class="supportTip">技术支持QQ291883110</view>    
+</view>

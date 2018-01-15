@@ -1,0 +1,138 @@
+/**index.wxss**/
+/*顶部搜索*/
+.top_search{
+  display: flex;
+  height: 90rpx;
+  padding: 0 20rpx;
+  background-color: white;
+}
+.logo{
+  width: 80rpx;
+}
+.logo image{
+  width: 100%;
+  height: 100%;
+}
+.search_inp{
+  flex: 1;
+  background:red;
+  height:66rpx;
+  margin-top:12rpx;
+  background-color: #f3f3f3;
+  border-radius: 10rpx;
+}
+.search_inp input{
+  height: 100%;
+  text-align: center;
+  font-size: 30rpx;
+}
+.search_btn{
+  width: 80rpx;
+}
+.search_btn image{
+  width: 100%;
+  height: 100%;
+}
+
+/*top导航栏*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.top_nav_wrap{
+  background-color: white;
+  text-align: center;
+  margin: 10rpx auto;
+}
+.top_nav{
+  white-space: nowrap; 
+  display: flex;
+}
+.top_nav_item{
+  width: 40px;
+  padding: 22rpx 20rpx;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+/*banner*/
+.banner{
+  margin-top: 10rpx;
+}
+.banner image{
+  width: 100%;
+  height:100%;
+}
+
+
+/*热门活动*/
+.hot_activity{
+  margin-bottom: 20rpx;
+}
+.hot_activity_tit{
+  width: 100%;
+  height: 40px;
+}
+.hot_activity_tit image{
+  width: 100%;
+  height: 100%;
+}
+.activity_pic{
+  width: 100%;
+  height: 120px;
+  position: relative;
+}
+.activity_pic image{
+  width: 100%;
+  height: 100%;
+}
+.activity_pic::before{
+  position: absolute;
+  bottom: -1px;
+  width: 0;
+  height: 0;
+  left: 50%;
+  margin-left: -10px;
+  content: " ";
+  border-bottom: 10px solid #ffffff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+/*热门活动下滑块*/
+.activity_list{
+  height: 240rpx;
+  background-color: white;
+}
+.activity_main{
+  width: 25%;
+  height: 100%;
+  padding:0 5rpx;
+}
+.activity_main image{
+  width: 100%;
+  height: 160rpx;
+}
+.activity_list swiper-item{
+  display: flex;
+}
+.picDisc{
+    width: 100px;
+    color: #666666;
+    font-size: 30rpx;
+    text-overflow: ellipsis;
+    /*display: -webkit-box;*/
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    
+}
+
+
+
+
+
+
+
+
+

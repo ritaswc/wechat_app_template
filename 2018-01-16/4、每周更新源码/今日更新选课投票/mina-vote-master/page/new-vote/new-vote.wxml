@@ -1,0 +1,6 @@
+<import src="../common/head.wxml"/>
+<import src="../common/foot.wxml"/>
+
+
+<image class="image" src="../resources/pic/newVote.png"/>
+<button bindtap="newVote" class="new-vote-btn">新建投票</button>

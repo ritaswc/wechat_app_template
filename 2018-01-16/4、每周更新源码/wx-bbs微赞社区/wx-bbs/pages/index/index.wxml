@@ -1,0 +1,182 @@
+
+
+
+<!--index.wxml-->
+<view class="body">
+  <view class="border-slice">
+    <view class="head">
+      <view class="index-head-logo">
+        <image class="index-head-logo-img" src="http://i.pengxun.cn/upload/thumbnail/20150923/130874432266460890.jpg"></image>
+        <text class="index-head-logo-f">
+          话题  7179 | 访问 984328
+        </text>
+      </view>
+      <view class="head-banner"></view>
+    </view>
+    <view class="index-head-bottom">
+        <view class="flex"><view class="index-sign"></view>签到</view>
+        <view class="flex"><view class="index-focus"></view>关注</view>
+    </view>
+    <view class="head-announcement">
+      <view><view class="announcement-icon02"></view><text></text></view>
+      <view><view class="announcement-icon02"></view><view></view></view>
+    </view>
+  </view>
+  <view class="index-heading-scrol">
+    <scroll-view class="index-heading-content" scroll-x="true" scroll-left="{{scrollLeft}}" style="width:100%">
+
+      <view  class="f1 bankuai {{currentTypeId==0&&hot==0?'selected':''}}"  catchtap="toBankuai" data-typeid="0"><text>全部</text></view>
+
+      <view  class="fl bankuai {{currentTypeId==0&&hot==1?'selected':''}}" catchtap="toBankuai" data-typeid="0" data-hot="1"><text>热帖</text></view>
+
+      <block wx:for="{{typeList}}" wx:for-item="type" wx:key="ArticleTypeID">
+        <view wx:if="{{type.ArticleTypeID != 0}}" class="fl bankuai {{ currentTypeId==type.ArticleTypeID?'selected':''}}" catchtap="toBankuai" data-typeid="{{type.ArticleTypeID}}">
+            <text>{{type.ArticleTypeName}}</text>
+        </view>
+      </block>
+      <!--<view style="{{css.bankuaiSelected}}" class="fl bankuai "><text>热帖</text></view>
+      <view style="{{css.bankuaiSelected}}" class="fl bankuai "><text>运营日报</text></view>
+      <view style="{{css.bankuaiSelected}}" class="fl bankuai "><text>操作指南</text></view>
+      <view style="{{css.bankuaiSelected}}" class="fl bankuai "><text>常见问题</text></view>
+      <view style="{{css.bankuaiSelected}}" class="fl bankuai "><text>微赞故事</text></view>
+      <view style="{{css.bankuaiSelected}}" class="fl bankuai "><text>更新进度</text></view>-->
+    </scroll-view>
+    <view class="index-heading-more" catchtap="moreType" >+</view>
+  </view>
+  <view class="scrollview-hide"></view>
+  <!-- 帖子内容 -->
+  <scroll-view class="art-content" scroll-y="true" scroll-x="false" 
+  bindscrolltolower="moreArticle" data-page-index="{{pageIndex}}" style="height: 900px;width:100%;">
+    <block wx:for="{{articles}}" wx:for-index="idx" wx:for-item="item" wx:key="Id">
+      <view class="border-slice">
+        <!-- 贴主信息-->
+        <view>
+            <view style="padding:30rpx 24rpx 16rpx; float:left">
+              <image style="width:40px;height:40px;overflow:hidden;" src="{{item.User.Headimgurl}}"></image>
+            </view>
+            <view style="padding:30rpx 0px 0px; overflow:hidden; height:110rpx;">
+              <view class="aricle-user-wrap">
+                <text class="index-poster-name">V.{{item.User.NickName}}</text>
+                <text class="index-poster-kind">V.{{item.User.Level}}</text>
+                <view class="index-poster-arrow" catchtap="openArrow" data-user-id="{{item.User.Id}}"></view>
+              </view>
+              <view style="height:40rpx">
+                <text class="index-post-info">{{item.CreateDate}}</text>
+                <text class="index-post-info">浏览{{item.Click}}</text>
+              </view>
+            </view>
+        </view>
+        <view style="clear:both"></view>
+        <!-- 帖子正文 -->
+        <view>
+          <view class="article-content-container">
+            <view href="../logs" class="article-content-title" >{{item.Title}}</view>
+            <view>
+                <a class="section-theme" bindtap="toBankuai">{{item.ArticleTypeName}}</a>
+                <a class="article-content">{{item.ContentDesc}}</a>
+            </view>
+            <!-- 语音 -->
+            <view wx:if="{{item.Voice}}" class="comment-voice-container">
+              <view class="audio-wrap" catchtap="playAudio" data-v-id="{{item.Voice.Id}}">
+                <image style="width:22px; height:22px;margin-left:4px" src="{{audioIcon}}"></image>            
+                <audio  class="audio" id="{{item.Voice.Id}}" 
+                poster="http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000" 
+                src="{{item.Voice.TransFilePath}}"></audio>
+              </view>
+              <view class="audio-time-wrap"><text>{{item.Voice.VoiceTime}}"</text></view>
+            </view>
+            <!-- 图片 -->
+            <block wx:for="{{item.Images}}" wx:for-item="image" wx:key="thumbnail">
+              <view>
+                <image mode="left" style="max-height:200px; max-width:100%" src="{{image.thumbnail}}" class="article-image"></image>
+              </view>
+            </block>
+            <!-- 视频 
+            <block wx:for="" wx:for-item="video">
+                <view>
+
+                </view>
+            </block>
+            -->
+          </view>
+          <!-- 转评赞 -->
+          <view>
+            <!-- 转发 -->
+            <view class="fr res"><view class="icon-zan {{item.IsPraise == 0?'':'zaned'}}"></view><em style="color:{{item.IsPraise == 0?'':'#5a85ce'}}" class="em">赞 {{item.Praise}}</em> </view>
+            <view class="fr res"><view class="icon-ping"></view><em class="em">评 {{item.CommentCount}}</em> </view>
+            <view class="fr res"><view class="icon-zhuan"></view><em class="em">转</em> </view>
+             <view class="fr res"><view class="icon-reward"></view><em class="em">赏 {{item.Praise}}</em> </view>
+            <view style="clear:both"></view>
+          </view>
+        </view>
+         <!-- 赞赏头像 -->
+        <view wx:if="{{item.RewardUsers}}" class="reward-logo">
+          <view style="width:7%"><view class="reward-logo-icon"></view></view>
+          <view class="praise-logo-container">
+            <block wx:for="{{item.RewardUsers}}" wx:for-item="rewardUser" wx:key="Id">
+              <view class="reward-logo-img-container"><image style="width:35px; height:35px;" src="{{rewardUser.Headimgurl}}"></image></view>
+            </block>
+          </view>
+        </view>
+        <!-- 点赞头像-->
+        <view wx:if="{{item.PraiseUsers}}" class="praise-logo">
+          <view style="width:7%"><view class="praise-logo-icon"></view></view>
+          <view class="praise-logo-container">
+            <block wx:for="{{item.PraiseUsers}}" wx:for-item="praiseUser" wx:key="Id">
+              <view class="praise-logo-img-container"><image style="width:35px; height:35px;" src="{{praiseUser.Headimgurl}}"></image></view>
+            </block>
+          </view>
+        </view>
+        <!-- 回复信息 -->
+          <view wx:if="{{item.ArticleComments}}" class="comment-container">
+            <view style="width:7%"><view class="comment-icon"></view></view>
+            <view class="comment-content"> 
+              <block wx:for="{{item.ArticleComments}}" wx:for-item="comment" wx:key="Id">
+                <view class="res-info">
+                  <!-- 头像 -->
+                  <view class="comment-content-image-wrap">
+                    <image style="width:47px;height:47px;padding:6px" src="{{comment.ComUser.Headimgurl}}" ></image>
+                  </view>
+                  <view class="comment-content-msg-wrap">
+                    <view>
+                      <view class="res-content-name">{{comment.ComUser.NickName}}</view>
+                      <view class="res-content-time">{{comment.CreateDate}}</view>
+                      <view style="clear:both"></view>
+                    </view>
+                    <!-- 文字回复 -->
+                    <view class="res-content">
+                      <text wx:if="{{comment.DUser}}">回复<text style="color:#5a85ce;max-width:110px;">@{{comment.DUser.NickName}} : </text></text>
+                      <text>{{comment.ContentHtml}}</text>
+                    </view>
+                    <!-- 语音 -->
+                    <view wx:if="{{comment.Voice}}" class="comment-voice-container">
+                      <view class="audio-wrap" catchtap="playAudio" data-v-id="{{comment.Voice.Id}}">
+                        <image style="width:22px; height:22px;margin-left:4px" src="{{audioIcon}}"></image>            
+                        <audio  class="audio" id="{{comment.Voice.Id}}" 
+                        poster="http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000" 
+                        src="{{comment.Voice.TransFilePath}}"></audio>
+                      </view>
+                      <view class="audio-time-wrap"><text>{{comment.Voice.VoiceTime}}"</text></view>
+                    </view>
+                    <!-- 评论图片 -->
+                    <view class="comment-image" >
+                      <block wx:for="{{comment.Images}}" wx:for-item="comImages" wx:key="Id">
+                      <view><image style="width:66px;height:66px;" src="{{comImages.filepath}}"></image> </view>
+                      </block>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+<view class="comment-voice-container">
+   <view class="audio-wrap">
+      <audio id="test" class="audio" name="此时此刻" controls   poster="http://i.pengxun.cn/content/images/voice/voiceplaying.png" 
+      src="http://shop.vzan.com/t.mp3"></audio>
+  </view>
+</view>

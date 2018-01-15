@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["pages/showShop/showShop.json"],"sourcesContent":["// Window configuration\n// https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html#window\n{\n  \"navigationBarTitleText\": \"可取号商家\"\n}\n"],"file":"showShop.json"}

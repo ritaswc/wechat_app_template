@@ -1,0 +1,10 @@
+<!--pages/order/order.wxml-->
+<import src="../../temp/empty.wxml"/>
+<view class="top flexbox">
+     <view wx:for="{{orderState}}" wx:key="{{index}}" class="{{item.id==id?class1:class2}}" bindtap="changeState" data-index="{{index}}">
+         {{item.state}}
+         <text class="bg1"></text>
+     </view>
+</view>
+<!--购物车为空的状态-->
+<template is="empty" data="{{empty:empty}}" wx:if="{{orderList.length==0}}"/>

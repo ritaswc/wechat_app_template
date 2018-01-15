@@ -1,0 +1,63 @@
+/* pages/user/main.wxss */
+
+/*头部图片大小*/
+.userimage image{
+  width: 384px;
+  height: 150px;
+}
+/*分类*/
+.index-nav {
+  height: 60px;
+  /*background: red;*/
+  display: flex;
+  flex-direction: row;
+  /*align-items: center;*/
+  background-color: #fff;
+  color: #646464;
+  text-align: center;
+  /*设置下边框颜色*/
+  border-bottom: 1px solid #888;
+}
+
+.index-nav view {
+  flex: 1;
+  flex-direction: column;
+  border-right: 1px solid #f2f2f2;
+}
+
+.index-nav image {
+  width: 28px;
+  height: 28px;
+}
+
+.index-nav text {
+  font-size: 15px;
+}
+
+/*内容*/
+.userInfor button{
+  text-align: left;
+}
+.content image{
+  width:15px;
+  height: 15px;
+}
+.b-right{
+  float: right;
+}
+.order text{
+  float:right;
+}
+.order image{
+  width:15px;
+  height:15px;
+}
+.b-text{
+  margin-left: 7px;
+  font-size: 15px;
+  color: #555;
+}
+.order .b-image{
+  width:20px; 
+  height:20px;
+}

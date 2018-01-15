@@ -1,0 +1,18 @@
+<view class="warp">
+<!--<scroll-view scroll-y="true">-->
+    <radio-group  class="group">
+        <view wx:for="{{address}}" class="clearfix row" id="{{item.id}}">
+            <label bindtap="radioChange" id="{{item.id}}">
+                <radio value="{{item}}" checked="{{item.checked}}" id="{{item.id}}"/>
+                <text class="address">{{item.province}}{{item.city}}{{item.area}}{{item.street}}\n{{item.receiver}}{{item.phone}}</text>
+            </label>
+            <view class="fr del" catchtap="del" id="{{item.id}}"><image src="../../image/del.png"></image></view>
+            <view class="fr edit" catchtap="toEdit" id="{{item.id}}"><image src="../../image/edit.png"></image></view>
+        </view>
+    </radio-group>
+<!--</scroll-view>    -->
+    <view class="add" bindtap="toEdit" id="add">
+        <image src="../../image/add.png"></image>
+        <view class="txt">新增地址</view>
+    </view>
+</view>

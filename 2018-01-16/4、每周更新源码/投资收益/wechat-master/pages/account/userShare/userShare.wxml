@@ -1,0 +1,37 @@
+<view class="banner">
+    <image src="../../../images/account/yaoqin_banner.jpg"></image>
+</view>
+
+<view class="title">
+    <view class="left">
+        累计佣金<text> 0.00 </text>元
+    </view>
+    <view class="right">
+        邀请好友<text> 3 </text>人
+    </view>
+</view>
+
+<view class="content">
+    <view class="content_top">
+        <view class="left">
+            <text>李蕾</text>
+        </view>
+        <view class="right">
+            <navigator url="userSharerule/userSharerule">活动规则</navigator>
+        </view>
+        <view class="content_topLine">
+            <image src="../../../images/account/yaoqin_line.jpg"></image>
+        </view>
+
+        <view class="ewm">
+            <image src="../../../images/account/fwh.png"></image>
+            <view>
+                老司机，把真金分享给更多的人吧~
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="grzx_btn">
+    <button size="default" type="primary" bindtap="change">立即寻找取金人</button>
+</view>

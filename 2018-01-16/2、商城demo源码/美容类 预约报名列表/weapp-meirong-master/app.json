@@ -1,0 +1,41 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/book/book",
+    "pages/technician/technician",
+    "pages/technicain_detail/technicain_detail",
+    "pages/edit_addr/edit_addr",
+    "pages/user/user"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#37383c",
+    "navigationBarTitleText": "美容",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color":"#333",
+    "selectedColor":"#d24a58",
+    "backgroundColor":"#f6f6f7",
+    "borderStyle":"white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath":"images/index_icon.png",
+      "selectedIconPath":"images/index_icon_HL.png"
+    }, {
+      "pagePath": "pages/technician/technician",
+      "text": "技师",
+      "iconPath":"images/skill_icon.png",
+      "selectedIconPath":"images/skill_icon_HL.png"
+    }, {
+      "pagePath": "pages/user/user",
+      "text": "我的",
+      "iconPath":"images/user_icon.png",
+      "selectedIconPath":"images/user_icon_HL.png"
+    }
+    
+    ]
+  }
+}

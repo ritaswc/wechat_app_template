@@ -1,0 +1,54 @@
+page{
+    background-color: #f5f4f4;
+}
+.edit-view{
+    width: 100%;
+    background-color: white;
+    border-top: solid #d8d8d8 1rpx;
+    margin-top: 20rpx;
+}
+.input{
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 30rpx;
+    font-size: 30rpx;
+    border-bottom: solid #d8d8d8 1rpx;
+}
+.reciver input{
+    margin-left: 20rpx;
+    flex-grow: 1;
+}
+.phone input{
+    margin-left: 20rpx;
+    flex-grow: 1;
+}
+.area{
+    position: relative;
+}
+.area .left{
+    width: 34rpx;
+    height: 26rpx;
+    margin-left: 20rpx;
+}
+.area .right{
+    width: 12rpx;
+    height: 22rpx;
+    position: absolute;
+    right: 50rpx;
+    top: 30rpx;
+}
+.detail input{
+    margin-left: 20rpx;
+    flex-grow: 1;
+}
+.complete{
+    width: 90%;
+    margin-left: 5%;
+    height: 70rpx;
+    background-color: #e6424f;
+    color: white;
+    font-size: 30rpx;
+    margin-top: 200rpx;
+}

@@ -1,0 +1,36 @@
+<!--pages/addaddr/addaddr.wxml-->
+<view class="section">
+    <input  bindinput="bindnameInput" placeholder="输入收货人的姓名" class="inputName" value="{{name}}"/>
+</view>
+<view class="section">
+    <input  bindinput="bindmobileInput" placeholder="输入手机号" class="inpurMobile" value="{{mobile}}"/>
+</view>
+<view class="section">
+    <view class="picker" bindtap="choCity">
+        <text style="color:#bbb">选择城市</text> {{ptocho}} {{citcho}} {{arecho}}
+    </view>
+    <picker-view indicator-style="height: 25px;" style="width: 100%; height: 300rpx;background:#eee" value="{{value}}" bindchange="bindChange" wx:if="{{showPicker}}">
+        <picker-view-column >
+            <view wx:for="{{pro}}" style="margin-left:80rpx;height:25px" wx:key="{{index}}">{{item.text}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{city}}" style="margin-left:80rpx;line-height: 50rpx" wx:key="{{index}}">{{item.text}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view wx:for="{{area}}" style="margin-left:80rpx;line-height: 50rpx" wx:key="{{index}}">{{item.text}}</view>
+        </picker-view-column>
+    </picker-view>
+    <!--<picker  value="{{index}}" range="{{cityData}}">-->
+        <!--<input class="picker" bindchange="bindPickerChange" placeholder="选择城市" class="inputCity" value="{{cityData[index].text}}"/>-->
+    <!--</picker>-->
+</view>
+<view class="section">
+    <input  bindinput="bindaddrInput" placeholder="详细收货地址" class="inputAddr" value="{{addr}}" style="{{showPicker?style1:style2}}"/>
+</view>
+<view class="section">
+    <input  bindinput="bindzipInput" placeholder="邮编" class="inputzip" value="{{zip}}"/>
+</view>
+<view class="section">
+    <input  bindinput="bindcardInput" placeholder="输入身份证号" class="inputCard" value="{{card}}"/>
+</view>
+<button class="submit" disabled="{{disbutton}}" bindtap="saveAddr">保存</button>

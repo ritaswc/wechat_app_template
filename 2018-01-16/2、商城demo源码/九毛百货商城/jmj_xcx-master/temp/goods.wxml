@@ -1,0 +1,15 @@
+<template name="goods">
+    <view class="wareItem flexstart">
+        <navigator url="../products/products?id={{item.id}}&title={{item.name}}"  wx:for="{{goodslist}}" wx:key="{{item.id}}">
+            <view class="goodsItem">
+                <view class="img flexbox">
+                  <image src="{{item.img}}" class="proimg" />
+                </view>
+                <view class="name hidecamp">{{item.name}}</view>
+                <view class="sellprice">¥ {{item.sell_price}}</view>
+                <view class="jp-price">日本价:{{item.jp_price}} 円</view>
+                <view class="jp-price">国内价：¥{{item.market_price}}</view>
+            </view>
+        </navigator>  
+   </view>
+</template>

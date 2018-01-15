@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/movies/index",
+    "pages/theater/logs",
+    "pages/explore/explore",
+    "pages/profile/profile",
+    "pages/movies/position/position",
+    "pages/movies/detail/detail",
+    "pages/theaterList/theaterList",
+    "pages/search/search",
+    "pages/search/indexsearch/indexsearch",
+    "pages/shop/shop",
+    "pages/shop/map/map",
+    "pages/shop/seat/seat",
+    "pages/book/book",
+
+
+
+
+
+    "pages/profile/order/order",
+    "pages/profile/coupon/coupon",
+    "pages/profile/vipCard/vipCard",
+    "pages/profile/wonder/wonder",
+    "pages/profile/saw/saw"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#D43E37",
+    "navigationBarTitleText": "猫眼电影"
+  },
+  "tabBar": {
+    "color": "#6A6767",
+    "selectedColor": "#D74D4C",
+    "backgroundColor": "#F5F5F5",
+    "list": [
+      {
+        "pagePath": "pages/movies/index",
+        "text": "电影",
+        "iconPath": "img/tab/1.png",
+        "selectedIconPath": "img/tab/1s.png"
+      },
+      {
+        "pagePath": "pages/theater/logs",
+        "text": "影院",
+        "iconPath": "img/tab/2.png",
+        "selectedIconPath": "img/tab/2s.png"
+      },
+      {
+        "pagePath": "pages/explore/explore",
+        "text": "发现",
+        "iconPath": "img/tab/3.png",
+        "selectedIconPath": "img/tab/3s.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "img/tab/4.png",
+        "selectedIconPath": "img/tab/4s.png"
+      }
+    ]
+  }
+}

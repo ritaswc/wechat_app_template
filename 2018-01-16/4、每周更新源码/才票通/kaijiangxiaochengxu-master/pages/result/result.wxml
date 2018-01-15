@@ -1,0 +1,81 @@
+<import src="../../wxSortPickerView/wxSortPickerView.wxml" />
+<loading class="loading" hidden="{{isHidden}}">正在加载</loading>
+<view>
+  <view class="time-info">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{timeArray}}">
+      <view class="picker">
+        <text class="award-time-info">开奖时间</text>
+        <text class="award-time-date">{{timeArray[index]}}</text>
+        <image src="../../image/icon.png" class="icon"></image>
+      </view>
+    </picker>
+  </view>
+  <scroll-view scroll-y="true">
+    <view class="info">
+      <text class="info-time">{{tag}}</text>
+    </view>
+    <view class="item1" wx:for="{{rstInfo}}" wx:for-item="item" wx:for-index="i">
+      <view wx:if="{{hisId != 15}}">
+        <view class="item" wx:for="{{item}}" wx:for-item="two">
+
+          <!--判断item-1-->
+          <view class="item-info">
+            <text class="item-info-period">{{two.issue}}期</text>
+            <text class="item-info-time">{{two.date}} [{{two.week}}]</text>
+          </view>
+          <view wx:if="{{hisId == 4 || hisId == 5 || hisId == 17 || hisId == 23}}">
+            <view class="item-span-down" wx:for="{{ two.codes}}" wx:for-index="id" wx:for-item="one">
+              <template is="standard_1" data="{{one}}" />
+            </view>
+          </view>
+          <view wx:if="{{hisId == 11 || hisId == 12 || hisId == 13 }}">
+            <view class="item-span-down" wx:for="{{  two.codes}}" wx:for-index="id" wx:for-item="one">
+              <template is="standard_2" data="{{one}}" />
+            </view>
+          </view>
+          <view wx:if="{{hisId == 10 || hisId == 14 || hisId == 20 || hisId == 22 || hisId == 3 ||hisId == 6|| hisId == 7 || hisId == 9 || hisId == 1  }}">
+            <view class="item-span-down" wx:for="{{  two.codes}}" wx:for-index="id" wx:for-item="one">
+              <template is="standard_3" data="{{one}}" />
+            </view>
+          </view>
+          <view wx:if="{{hisId == 24 || hisId == 42 || hisId == 43   }}">
+            <view class="item-span-down" wx:for="{{  two.codes}}" wx:for-index="id" wx:for-item="one">
+              <template is="standard_4" data="{{one}}" />
+            </view>
+          </view>
+          <view wx:if="{{hisId == 27 }}">
+            <view class="item-span-down" wx:for="{{  two.codes}}" wx:for-index="id" wx:for-item="one">
+              <template is="standard_5" data="{{one}}" />
+            </view>
+          </view>
+          <view wx:if="{{hisId == 21 }}">
+            <view class="item-span-down" wx:for="{{  two.codes}}" wx:for-index="id" wx:for-item="one">
+              <template is="standard_6" data="{{one}}" />
+            </view>
+          </view>
+          <view wx:if="{{hisId == 15 }}">
+            <view class="item-span-down-2" wx:for="{{  two.codes}}" wx:for-index="id" wx:for-item="one">
+              <template is="standard_8" data="{{id,one}}" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:else>
+      <view class="item-1" wx:for="{{item}}" wx:for-item="two">
+
+          <!--判断item-1-->
+          <view class="item-info">
+            <text class="item-info-period">{{two.issue}}期</text>
+            <text class="item-info-time">{{two.date}} [{{two.week}}]</text>
+          </view>
+          
+          <view wx:if="{{hisId == 15 }}">
+            <view class="item-span-down-2" wx:for="{{  two.codes}}" wx:for-index="id" wx:for-item="one">
+              <template is="standard_8" data="{{id,one}}" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

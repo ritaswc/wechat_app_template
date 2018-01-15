@@ -1,0 +1,51 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/my/index",
+        "pages/college/index",
+        "pages/course/index",
+        "pages/coursedetail/index",
+        "pages/videoplayer/index",
+        "pages/searchlist/index",
+        "pages/mycourse/index",
+        "pages/myinfo/index",
+        "pages/editeInfo/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#7fabfd",
+        "navigationBarTitleText": "消化内镜",
+        "navigationBarTextStyle": "light"
+    },
+    "tabBar": {
+        "color": "#5b5b5d",
+        "selectedColor": "#7fabfd",
+        "borderStyle": "#dad9d7",
+        "backgroundColor": "#fff",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "iconPath": "images/shouye1.png",
+                "selectedIconPath": "images/shouye.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/college/index",
+                "iconPath": "images/type1.png",
+                "selectedIconPath": "images/type.png",
+                "text": "分类"
+            },
+            {
+                "pagePath": "pages/course/index",
+                "iconPath": "images/xueyuan1.png",
+                "selectedIconPath": "images/xueyuan.png",
+                "text": "课程"
+            },
+            {
+                "pagePath": "pages/my/index",
+                "iconPath": "images/mine1.png",
+                "selectedIconPath": "images/mine.png",
+                "text": "我的"
+            }
+        ]
+    }
+}

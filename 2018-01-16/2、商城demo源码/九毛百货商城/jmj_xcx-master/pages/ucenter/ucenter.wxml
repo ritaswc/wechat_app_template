@@ -1,0 +1,32 @@
+<!--pages/ucenter/ucenter.wxml-->
+<view class="userinfo">
+    <image src="{{img_bg}}" class="img_bg" />
+    <image src="{{userInfo.avatarUrl}}" class="imglogo" />
+    <text class="name">{{userInfo.nickName}}</text>
+</view>
+<!--我的订单-->
+<view class="order">
+    <view class="top box">
+        <text>我的订单</text>
+        <navigator url="../order/order?cid=0&title=全部订单" class="text2">全部订单 ></navigator>
+    </view>
+    <view class="content flexbox">
+        <navigator url="../order/order?cid={{item.id}}&title={{item.state}}" wx:for="{{order_gaid}}" wx:key="{{item.id}}" class="item">
+            <image src="{{item.img}}" />
+            <text class="text">{{item.state}}</text>
+        </navigator>
+    </view>
+</view>
+<!--个人中心类目-->
+<view class="line flexbox" style="margin-top:20rpx">
+    <navigator url="url" wx:for="{{line1}}" wx:key="{{item.id}}" class="item">
+        <image src="{{item.img}}" />
+        <text class="text">{{item.name}}</text>
+    </navigator>
+</view>
+<view class="line flexbox">
+    <navigator url="url" wx:for="{{line2}}" wx:key="{{item.id}}" class="item">
+        <image src="{{item.img}}" />
+        <text class="text">{{item.name}}</text>
+    </navigator>
+</view>

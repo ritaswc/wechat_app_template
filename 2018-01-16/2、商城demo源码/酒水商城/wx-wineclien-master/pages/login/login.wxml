@@ -1,0 +1,8 @@
+<view>
+        <image src="../resource/logintop.png" class = "image_login" style = "height:{{logintopheight}}px;" bindload="image_load_fin"></image>
+        <input placeholder="请输入用户名" maxlength="11" class = "user_name_input" style = " top:{{logintopheight + 10}}px" type="number" bindinput="user_name_input_focus" focus="{{name_focus}}"/>
+        <button class = "send_number_button" style = " top:{{logintopheight + 10}}px" bindtap = "send_button_click"  wx:if = "{{send_time == 60}}">验证</button>
+        <button class = "send_number_button" style = " top:{{logintopheight + 10}}px" wx:if = "{{send_time != 60}}" bindtap = "send_button_click" disabled = "{{true}}">{{send_time}}s</button>
+        <input placeholder="请输入验证码" maxlength="4" class = "user_name_input" password = "{{true}}" style = "top : {{logintopheight + 50}}px;right:20px;" type="number" focus="{{pass_focus}}" bindinput="pass_word_input_focus"/>
+        <button class = "login_button" style = "top : {{logintopheight + 90}}px;right:20px;" bindtap="login_button_click">登录</button>
+</view>

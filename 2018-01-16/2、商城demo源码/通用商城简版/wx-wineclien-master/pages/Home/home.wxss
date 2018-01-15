@@ -1,0 +1,144 @@
+page{
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+.icon_back{
+    width: 25%;
+    height:100%;
+    float: left;
+}
+
+/*view*/
+.content{
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+}
+/*整个scrollview*/
+.collectionView{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/*item*/
+.collectionView_item{
+    height: 32%;
+}
+
+/*每个item的线*/
+.line{
+    background-color: #000;
+    height: 1px;
+    width: 100%;
+    margin-bottom: 1px;
+}
+/*图片*/
+.image{
+    width:100%;
+    height:100%;
+    ime-mode: aspectFill;
+}
+.item_top{
+    height: 55%;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+/*标题样式*/
+.title_back{
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 37%;
+    word-break:keep-all;           /* 不换行 */
+    white-space:nowrap;          /* 不换行 */
+    overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;
+    margin-bottom:2%;
+    position: relative;
+}
+.text{
+    width: 100%;
+    height: 20%;
+    font-size: 15px;
+    word-break:keep-all;           /* 不换行 */
+    white-space:nowrap;          /* 不换行 */
+    overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;
+}
+/********************************************/
+
+
+.back_view{
+    width: 100%;
+    height: 100%;
+}
+
+/*item左侧的div*/
+.super_left{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+/*item左侧的div*/
+.super_right{
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+/*添加购物车图片*/
+.addShopImage{
+    height: 20px;
+    width: 20px;
+    right: 2px;
+    float: right;
+}
+/*商品数量*/
+.numberShop{
+    font-size: 14px;
+    height: 20px;
+    text-align: center;
+    right: 2px;
+    float: right;
+    margin-top: 5px;
+}
+/*商品标签*/
+.tags{
+    font-size: 10px;
+    border-radius :2px;
+    border-color: red;
+    color: red;
+    border-width: 1px;
+    border-style:solid;
+    top: 4px;
+    left: 0px;
+    position: absolute;
+}
+.price{
+    font-size: 15px;
+    color: red;
+    top: 4px;
+    left: 0px;
+    float: left;
+}
+.mark_price{
+    font-size: 12px;
+    color: #333333;
+    top: 3px;
+    left: 0px;
+    float: left;
+    margin-left: 3px;
+    position: relative;
+    text-decoration:line-through;
+}

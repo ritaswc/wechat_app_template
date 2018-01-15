@@ -1,0 +1,26 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="detail_container">
+  <scroll-view scroll-y="true" scroll-x="false" class="scroll-view">
+    <swiper class="detail_swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{detailData[0].goodsCallyList}}">
+        <swiper-item>
+          <image src="http://testbbcimage.leimingtech.com{{item}}" mode="scaleToFill"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="detail_title">{{detailData[0].goodsName}}</view>
+    <view class="detail_price">￥{{detailData[0].goodsStorePrice}}</view>
+    <view class="detail_spec">已选
+      <block wx:for="{{detailData[0].goodsSpec.specGoodsSpec}}">{{item}}　</block>
+    </view>
+
+    <!--这里data中article为bindName-->
+    <template is="wxParse" data="{{wxParseData:goodsDetail.nodes}}" />
+    <view class="detail_footer">
+      <view class="tips">{{tips}}</view>
+      <view class="detail_footer_btn" bindtap="buyNow">
+        <text>立即购买</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["pages/grade/grade.json"],"sourcesContent":["// Window configuration\n// https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html#window\n{\n  \"navigationBarTitleText\": \"评分\"\n}\n"],"file":"grade.json"}

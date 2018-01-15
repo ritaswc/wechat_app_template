@@ -1,0 +1,33 @@
+
+<!-- 销售统计 -->
+<view class="container">
+
+  <!--时间选择器-->
+  <view class="screen-time">
+    <view class="time-style">
+      <text class="time1 section__title">起始时间</text>
+      <picker mode="date" value="{{start}}" start="2015-01-01" end="2030-12-31" bindchange="bindStartChange">
+        <view class="picker">
+          {{start}}
+        </view>
+      </picker>
+    </view>
+    <view class="time-style">
+      <text class="time1 section__title">结束时间</text>
+      <picker mode="date" value="{{end}}" start="2015-01-01" end="2030-12-31" bindchange="bindEndChange">
+        <view class="picker">
+          {{end}}
+        </view>
+      </picker>
+    </view>
+    <button class="screen-btn" bindtap="filtrate">筛选</button>
+  </view>
+
+  <!-- 柱形图 -->
+  <text class="canvas-title">订单个数销售情况</text>
+  <canvas canvas-id="columnCanvas1"></canvas>
+  <text class="canvas-title">订单件数销售情况</text>
+  <canvas canvas-id="columnCanvas2"></canvas>
+  <text class="canvas-title">订单销售额销售情况</text>
+  <canvas canvas-id="columnCanvas3"></canvas>
+</view>

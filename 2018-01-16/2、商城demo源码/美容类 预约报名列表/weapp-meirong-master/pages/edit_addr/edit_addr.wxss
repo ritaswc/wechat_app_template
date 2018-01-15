@@ -1,0 +1,51 @@
+.edit_wrap{
+    font-size:30rpx;
+    padding:60rpx 0rpx 20rpx;
+}
+.form_group{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin:20rpx;
+    line-height: 60rpx;
+}
+.form_group text{
+    text-align: right;
+    width:100rpx;
+}
+.form_group input,
+.form_group picker{
+    width:460rpx;
+    border:1px solid #ddd;
+    border-radius:8rpx;
+    height:60rpx;
+    line-height: 60rpx;
+    padding:0rpx 20rpx;
+}
+.form_group .sendmsg_input{
+    width:290rpx;
+    margin-right:14rpx;
+}
+.form_group button{
+    font-size:30rpx;
+    height:60rpx;
+    line-height: 60rpx;
+    border:1px dotted #fff;
+    background:white;
+    padding:0rpx;
+    margin:0rpx;
+    outline:none;
+    color:#000;
+}
+.placeholder_style{
+    font-family:'微软雅黑';
+    color:#adadad;
+}
+.save_btn{
+    width:600rpx;
+    background:#d24a58;
+    font-size: 32rpx;
+    color:#fff;
+    border-radius: 0rpx;
+    margin:40rpx 0rpx 10rpx;
+}

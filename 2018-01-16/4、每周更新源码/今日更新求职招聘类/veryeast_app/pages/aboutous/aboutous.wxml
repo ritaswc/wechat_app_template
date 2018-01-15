@@ -1,0 +1,29 @@
+<!--pages/aboutous/aboutous.wxml-->
+<view class="aboutous_wrap">
+    <view class="a_contant">
+        <image class="img_01" src="image/_03.png"></image>
+        <text>最佳东方（VeryEast.Cn）——酒店业招聘品牌，隶属于杭州东方网升科技股份有限公司旗下，是行业招聘网站，被誉为酒店人才梦工厂。
+目前最佳东方已在全国34个省市、自治区和港澳特别行政区以及十多个包括英国、美国、迪拜、马尔代夫在内的海外国家和地区，拥有405万个人注册简历会员。</text>
+        <view class="line"></view>
+        <view class="a_contact">
+            <view>
+                官方网站: <text class="url">www.veryeast.cn</text>
+            </view>
+            <view>
+                手机网站: <text class="url">m.veryeast.cn</text>
+            </view>
+            <view>
+                官方微博: <text>weibo.com/zjdf</text>
+            </view>
+            <view>
+                热线电话: <text>400-826-0101</text><view data-num="400-826-0101" bindtap="contantous"><image  class="img_02" src="image/_04.png"></image></view>
+            </view>
+            <view>
+                应用版本: <text>1.0.0</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="shangbiao">
+    COPY RIGHT 2003-2016 最佳东方版权所有
+</view>

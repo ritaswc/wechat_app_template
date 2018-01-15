@@ -1,0 +1,42 @@
+/* pages/experience/experience.wxss */
+
+.experience_wrap button{
+    width: 94%;
+    color: #fff;
+    background-color: #f18e2e;
+    margin: 30rpx auto;
+}
+.image2{
+    width: 35rpx;
+    height: 30rpx;
+}
+.box{
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3%;
+    height: 140rpx;
+}
+.left .time{
+    font-size: 12pt;
+}
+.left{
+    width: 70%;
+    height: 100%;
+    padding-top: 40rpx;
+}
+.left .name{
+    width: 100%;
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+}
+.right{
+    width: 30%;
+    text-align: right;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

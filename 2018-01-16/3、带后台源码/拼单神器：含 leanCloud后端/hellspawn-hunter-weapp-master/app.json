@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/my/my",
+    "pages/onmyoji/onmyoji",
+    "pages/feedback/feedback",
+    "pages/statement/statement"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#e53927",
+    "navigationBarTitleText": "式神猎手",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#b7b7b7",
+    "backgroundColor": "#fff",
+    "selectedColor": "#e53927",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "寻",
+      "iconPath": "static/image/search.png",
+      "selectedIconPath": "static/image/searchs.png"
+    }, {
+      "pagePath": "pages/my/my",
+      "text": "我",
+      "iconPath": "static/image/my.png",
+      "selectedIconPath": "static/image/mys.png"
+    }
+    ]
+  }
+}

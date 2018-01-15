@@ -1,0 +1,33 @@
+<template name="list_product">
+    <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;"
+        class="list" bindscrolltoupper="pullDownRefresh"  bindscrolltolower="pullUpLoad"
+        bindscroll="scroll"
+    >
+        <view class="tips" wx:if="{{hasMore}}">
+           <image src="../../../images/loading.gif" mode="aspectFill"/><text>玩了命的加载中...</text>
+            <!--<view wx:else><text>没有更多内容了</text></view>-->
+        </view>
+        <view class="typeList" wx:for="{{productList}}" wx:key="{{index}}">
+            <view class="typeTitle">{{item.name}}</view>
+            <view class="typeItem" wx:for="{{item.merchants}}" wx:for-item="merchants" wx:for-index="i" wx:key="{{i}}">
+                <image class="pro_img" src="{{merchants.icon}}" />
+                <view class="msg">
+                    <text>{{merchants.name}}</text>
+                    <view>
+                        <image class="full" src="../../../images/star_orange_small.png"/> 
+                        <image class="full" src="../../../images/star_orange_small.png"/> 
+                        <image class="full" src="../../../images/star_orange_small.png"/> 
+                        <image class="full" src="../../../images/star_orange_small.png"/> 
+                        <image class="half" src="../../../images/star_orange_small.png"/> 
+                        已有{{merchants.commentNum}}人评价
+                    </view>
+                    <text>参考价￥{{merchants.referencePrice}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="tips" wx:if="{{loadMore}}">
+           <image src="../../../images/loading.gif" mode="aspectFill"/><text>加载更多...</text>
+            <!--<view wx:else><text>没有更多内容了</text></view>-->
+        </view>
+    </scroll-view>
+</template>

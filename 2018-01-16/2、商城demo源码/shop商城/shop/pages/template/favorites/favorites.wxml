@@ -1,0 +1,30 @@
+<template name="collect">
+    <action-sheet hidden="{{actionSheetHidden}}" bindchange="closeCollect">
+        <view class="collect_view">
+            <text class="title">选择收藏夹</text>
+            <view class="collect">
+                <view class="createCollectRow">
+                    <form bindsubmit="createCollect">
+                        <view class="createCollectInput">
+                            <input type="text" placeholder="添加收藏夹" name="name" value="{{createCollectName}}" class="input" />
+                            <input type="hidden" style="display: none;" value="{{data.goods_id}}" name="goods_id" />
+                        </view>
+                        <button class="createCollectBtn fa fa-plus" formType="submit"></button>
+                    </form>
+                </view>
+                <scroll-view class="ul" scroll-y="true" style="height:11rem;">
+                    <block wx:for-items="{{data.data}}">
+                        <view class="li_view" catchtap="selectCollect" data-goods_id="{{data.goods_id}}" data-group_id="{{item.group_id}}"><text>{{item.group_name}} ({{item.group_num}})</text></view>
+                        <!--<action-sheet-item class="item" bindtap="bind">{{item.group_name}}</action-sheet-item>-->
+                    </block>
+                </scroll-view>
+            </view>
+        </view>
+        <!--<action-sheet-cancel class="cancel">取消</action-sheet-cancel>-->
+    </action-sheet>
+</template>
+
+
+
+
+

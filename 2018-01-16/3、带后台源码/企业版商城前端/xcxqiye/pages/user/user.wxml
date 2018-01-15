@@ -1,0 +1,59 @@
+<!--pages/user/user.wxml-->
+<view class="page">
+    <view class="userinfo">
+			<image class="userinfo-avatar fl_l" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+			<text class="fl_l">{{userInfo.nickName}}</text></view>
+    <!--<view class="sc mt10 df">
+        <view class="df_1 tc">
+        <navigator url="../user/shoucang" hover-class="none">
+          <view><image src="/images/use_sc.png"></image></view>
+          <text>我的收藏</text>
+          </navigator>
+        </view>
+        <view class="df_1 tc">
+        <navigator url="../qyry/qyry" hover-class="none">
+          <view><image src="/images/guan.png"></image></view>
+          <text>关于我们</text>
+          </navigator>
+        </view>
+    </view> -->
+    <!--订单详情-->
+    <view class="qbdd mt10">
+    <span class="font_14 c3">全部订单</span>
+    <navigator class="fl_r c9 font_12 l_h20" url="../user/dingdan?currentTab=0" hover-class="none" >查看全部订单 ></navigator>
+    </view>
+    <view class="sc df tc bte ">
+    <navigator class="df_1" url="../user/dingdan?currentTab=0" hover-class="none" >
+        <view>
+        <image src="/images/dfk.png"></image> 
+       </view>
+        <text class="font_12">待付款<text style="color:red">({{orderInfo.PendingSum}})</text></text>
+      </navigator>
+      <navigator class="df_1" url="../user/dingdan?currentTab=2" hover-class="none" >
+          <view><image src="/images/dpl.png"></image></view>
+          <text class="font_12">待收货<text style="color:red">({{orderInfo.ReceiptSum}})</text></text>
+      </navigator>
+
+    <navigator class="df_1" url="../user/dingdan?currentTab=3" hover-class="none" >
+          <view><image src="/images/dsh.png"></image></view>
+          <text  class="font_12">已完成<text style="color:red">({{orderInfo.HasSum}})</text></text>
+      </navigator>
+
+    
+    <navigator class="df_1" url="../user/dingdan?currentTab=4" hover-class="none" >
+          <view><image src="/images/tksh.png"></image></view>
+          <text class="font_12">退款/售后<text style="color:red">({{orderInfo.ReturnSum}})</text></text>
+       </navigator>
+
+    </view>
+    
+<view class="qbdd mt110">
+ <navigator url="../address/user-address/user-address" >
+    <span class="font_14 c3">地址管理</span>
+    <span class="fl_r c9 font_12 l_h20" hover-class="none"> ></span>
+    </navigator>
+    </view>
+
+</view>
+
+

@@ -1,0 +1,28 @@
+/* pages/address/address.wxss */
+.picker-select{
+    border: darkgray solid 1rpx;
+}
+.select-img{
+    width: 24rpx;
+    height: 14rpx;
+    align-self:center;
+      -webkit-align-self: center;
+}
+.input-address{
+    border: darkgray solid 1rpx;
+    margin-top: 20rpx;
+    padding: 10rpx;
+    width: 705rpx;
+
+}
+
+.defult-address{
+    padding: 20rpx 10rpx;
+}
+
+.chk-defult{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}

@@ -1,0 +1,141 @@
+<!--pages/customer/index/index.wxml-->
+<import src="../../../components/msg/msg.wxml"/>
+
+<template is="msg" data="{{...__msg__}}"/>
+
+<view class="{{showChoiceList ? 'choice-list-mask zoomIn' : 'choice-list-mask zoomIn hide'}}" bindtap="closeChoiceList">
+  <scroll-view scroll-y="true" class="slide-wrap"> 
+      <block wx:for="{{array}}" wx:key="unique">
+          <view wx:if="{{itemcon==item.message}}" bindtap="tapSlideItem" class="slide-item f2 c" data-itemcon="{{item.message}}">
+          {{item.message || item.content}}
+        </view>
+        <view wx:else bindtap="tapSlideItem" class="slide-item f2 c5" data-itemcon="{{item.message}}">
+          {{item.message || item.content}}
+        </view>
+      </block> 
+  </scroll-view>
+</view>
+  
+<view wx:if="{{showContent}}">
+  <view wx:if="{{tabbarAct=='shop'}}" >
+    <view class="search-condition-wrap" style="height: {{searchHeight}}rpx;">
+        <view class="search-header">
+          <view class="search-header-item" bindtap="searchByConcern" id="1">
+            <image  src="{{concern ? '/image/customer/index/1_start_h.png' : '/image/customer/index/1_start.png'}}"></image>
+            <text class="f2 {{concern ?'c':'c5' }}">关注</text>
+          </view>
+          <view class="search-header-item" bindtap="searchByDiscount" id="2">
+            <image src="{{discount ?'/image/customer/index/2taohong.png':'/image/customer/index/2taohui.png'}}"></image>
+            <text class="f2 {{discount ?'c':'c5' }}">优惠</text>
+          </view>
+          <view class="search-header-item" bindtap="searchByDistance" id="3">
+            <text class="f2 {{distence ?'c':'c5' }}">800米</text>
+            <image class="search-header-img" src="{{distence ? '/image/customer/index/3jianhong.png':'/image/customer/index/3jianhui.png' }}"></image>
+          </view>
+          <view class="search-header-item" bindtap="searchByStatus" id="4">
+          <text class="f2 {{status ?'c':'c5' }}">已开张</text>
+            <image class="search-header-img" src="{{status ? '/image/customer/index/3jianhong.png':'/image/customer/index/3jianhui.png'}}"></image>
+          </view>
+        </view>
+        <view class="search-category">
+            <view wx:for="{{searchImgText}}" wx:key="{{item.title}}" class = "category-item" data-title="{{item.title}}" bindtap="selectCategory">
+              <image src="{{ selectCategoryTitle==item.title ? item.srcH : item.src}}"></image>
+              <text class="f4 {{selectCategoryTitle==item.title ? 'c':'c4'}}">{{item.title}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="notice" style="height:{{noticeHeight}}rpx">
+      <image src="/image/common/icon_notice.png"></image>
+      <swiper class="notice-slider" 
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <swiper-item wx:for="{{imgUrls}}" wx:key="unique">
+          <text>公告内容内容内容内容内容内容内容内</text>
+        </swiper-item>
+      </swiper>
+    </view>
+
+
+
+    <view class="container">
+      <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" class="scroll-view-con" style="height:{{scrollHeight}}px;width:100%"  bindscrolltolower="toLower" bindscroll="scroll">
+          <view wx:for="{{arrList}}" wx:key="unique" class="scroll-item-content" bindtap="merchantDetail">
+            <image class="centent-left" src="/image/customer/index/3jianhui.png" mode="aspectFit"></image>
+            <view class="content-center">
+              <view class="shop-name">商户名称商户名称</view>
+              <view class="shop-tag">
+                <view class="tag discount-tag">优惠</view>
+                <view class="tag open-tag">开张中</view>
+                <view class="tag rest-tag">休息中</view>
+              </view>
+              <view class="shop-introduce">商户简介简介简介简介简介简介简</view>
+              <view class="shop-address">商户地址地址地址地址地址地址地址地址</view>
+            </view>
+            <view class="content-right">
+              <view class="distence">
+                  <image src="/image/customer/index/3xyh.png"></image>
+                  <text>200m</text>
+              </view>
+              <image class="content-right-img" src="/image/customer/index/12dianhua.png" mode="aspectFit"></image>
+            </view>
+          </view>
+          
+          <view class="tips">
+            <view wx:if="{{hasMore}}"><image src="../../../image/common/loading.gif" mode="aspectFill"/><text>加载中...</text></view>
+            <view wx:else><text>没有更多内容了</text></view>
+          </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!--我的-->
+  <import src="../../../components/mine-top/mine-top.wxml"/>
+  <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" style="height:{{scrollHeightMine}}px;width:100%"  bindscrolltolower="toLower" bindscroll="scroll" wx:if="{{tabbarAct=='mine'}}" class="container">
+    <!--<view  class="userinfo">
+      <image class="settings" bindtap="aboutUs" src="../../../image/customer/mine/19shezhi.png"></image>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>-->
+    <template is="mineTop" data="{{userInfo:userInfo}}"></template>
+  <!--优惠券-->
+    <view wx:for="{{['','','','','']}}" class="discount-coupon-item">
+      <view class="discount-coupon-info" bindtap="showDiscountDetail">
+          <image class="half-circle" src="../../../image/customer/mine/20yuany.png"></image>
+          <view class="info-wrap">
+              <text class="discount-coupon-name f2 c5">优惠券名</text>
+              <text class="discount-coupon-phone">1234567122</text>
+              <text class="discount-coupon-des f5 c4">此优惠券可在全国各dddddd</text>
+              <text class="discount-coupon-expire f5 c4">过期时间 2018-01-01</text>
+          </view>
+      </view>
+      <!--进入店铺-->
+      <view class="enter-shop">进入店铺</view>
+      <image class="discount-coupon-right" src="../../../image/customer/mine/21juchi.png"></image>
+    </view>
+
+    <view class="tips">
+      <view wx:if="{{hasMore}}"><image src="../../../image/common/loading.gif" mode="aspectFill"/><text>加载中...</text></view>
+      <view wx:else><text>没有更多内容了</text></view>
+    </view>
+  </scroll-view>
+  <view wx:if="{{showDiscountDetail}}" class="dis-cou-detail zoom-in">
+    <view class="detail-content">
+      <view bindtap="closeDiscountDetail">
+        <image class="cancel"  src="../../../image/customer/mine/22chac.png"></image>
+      </view>
+      
+      <text class="shop-name f1 c5">优惠券商家</text>
+      <text class="phone c">13288888888</text>
+      <image class="discunt-pic" mode="scaleToFill" src="../../../image/customer/mine/22chac.png"></image>
+      <text class="discount-intro f2 c4">优惠券商家优惠券商家优惠券商家优惠券商家优惠券商家优惠券商家</text>
+      <text class="receive-time f2 c5">领取时间 2017年02月02日</text>
+      <text class="expired-time f2 c5">过期时间 2017年02月02日</text>
+    </view>
+  </view>
+  <!--底部选项卡-->
+  <view class="bottom-tabbar" style="height:{{tabbarHeight}}rpx">
+    <view id="shop" class="shop {{tabbarAct=='shop' ? 'cur':''}}" 
+    bindtap="switchTabbar">商户</view>
+    <view id="mine" class="mine {{tabbarAct=='mine' ? 'cur':''}}" 
+    bindtap="switchTabbar">我的</view>
+  </view>
+</view>
+

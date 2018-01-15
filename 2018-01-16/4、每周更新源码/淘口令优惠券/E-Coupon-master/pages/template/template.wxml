@@ -1,0 +1,12 @@
+<!--加载等待-->
+<template name="loading">
+  <view class="template-load" hidden="{{isLoading ? true : false}}">
+    <view>上拉加载更多</view>
+  </view>
+  <view class="template-load" hidden="{{isLoading ? false : true}}">
+    <view hidden="{{loadOver ? true : false}}">
+      <view class="loading"></view>正在加载
+    </view>
+    <view hidden="{{loadOver ? false : true}}">没有更多数据</view>
+  </view>
+</template>

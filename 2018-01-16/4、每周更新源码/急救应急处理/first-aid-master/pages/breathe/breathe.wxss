@@ -1,0 +1,96 @@
+@import "../../components/steps/steps.wxss"
+@import "../appeal/appeal.wxss"
+.breathe-container {
+  font-family: PingFangSC-Regular, sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  flex-shrink: 0;
+}
+.swiper {
+  display: flex;
+  height: 100%;
+  width: 100vw;
+}
+.swiper-item {
+  /*height: 100%;*/
+  width:100vw;
+}
+.item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 50rpx;
+}
+.description {
+  flex-shrink: 0;
+  font-size: 50rpx;
+  line-height: 80rpx;
+  width: 650rpx;
+  color: #23454D;
+  border-bottom: 1px solid rgba(178,190,193, 0.4);
+  padding-bottom: 50rpx;
+}
+.importent {
+  box-shadow: 0px -20rpx yellow inset;
+}
+.img {
+  margin: 50rpx 50rpx;
+}
+.nav {
+  display: flex;
+  position: fixed;
+  bottom: 100rpx;
+  left: 0;
+  right: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 50rpx 50rpx;
+}
+.nav-end {
+  display: flex;
+  position: fixed;
+  bottom: 100rpx;
+  left: 0;
+  right: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50rpx 50rpx;
+}
+
+.back {
+  color: #FA5834;
+  font-size: 50rpx;
+  border: 1px solid #FA5834;
+  border-radius: 50%;
+  width: 100rpx;
+  height: 100rpx;
+  flex-shrink: 0;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.next {
+  color: white;
+  font-size: 50rpx;
+  background: linear-gradient( 45deg, #FF4C2F, #FF7856 );
+  border: 1px solid #FA5834;
+  line-height: 100rpx;
+  width: 300rpx;
+  border-radius: 100rpx;
+  text-align: center;
+}
+
+.next-end {
+  color: #FAA796;
+  font-size: 40rpx;
+  border: 1px solid #FAA796;
+  line-height: 100rpx;
+  width: 400rpx;
+  border-radius: 100rpx;
+  text-align: center;
+}

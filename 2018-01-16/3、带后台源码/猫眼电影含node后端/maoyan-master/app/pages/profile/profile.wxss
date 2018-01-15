@@ -1,0 +1,38 @@
+page {
+  background-color: #f5f5f5;
+}
+
+.warp {
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx #dcdcdc solid;
+  border-top: 1rpx #dcdcdc solid;
+}
+
+.item {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx #dcdcdc solid;
+  position: relative;
+}
+
+.item::after {
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #ccc;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  right: 0;
+  margin-right: 28rpx;
+  margin-top: 30rpx;
+  
+}
+.last{
+    border-bottom:none;
+}

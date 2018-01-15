@@ -1,0 +1,91 @@
+@import "star-template/star.wxss";
+
+.ratings-content {
+  padding: 42rpx 16rpx 0 12rpx;
+}
+
+.ratings-header {
+  position: relative;
+  display: flex;
+  color: #bbb4af;
+}
+
+.ratings-header-img {
+  position: relative;
+  height: 82rpx;
+  width: 82rpx;
+}
+
+.ratings-header-img image {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.ratings-header-img text {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 6rpx 10rpx;
+  border-radius: 80rpx;
+  font-size: 18rpx;
+  font-weight: bold;
+  color: #fff;
+  background: #98d361;
+}
+
+.ratings-header-name {
+  margin-left: 36rpx;
+}
+
+.ratings-header-name .username {
+  margin-top: 22rpx;
+  font-size: 24rpx;
+}
+
+.ratings-header-name .star-wrapper {
+  margin-top: 16rpx;
+}
+
+.ratings-header-time {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 22rpx;
+}
+
+.ratings-body text {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #948475;
+  margin-top: 40rpx;
+  margin-bottom: 30rpx;
+  line-height: 44rpx;
+}
+
+.ratings-body view {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ratings-body view image {
+  float: left;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.ratings-body view image +image {
+  margin-left: 20rpx;
+}
+
+.ratings-body view image:nth-of-type(4n+1) {
+  margin-left: 0;
+}
+
+.ratings-body view image:nth-of-type(n+5) {
+  margin-top: 20rpx;
+}

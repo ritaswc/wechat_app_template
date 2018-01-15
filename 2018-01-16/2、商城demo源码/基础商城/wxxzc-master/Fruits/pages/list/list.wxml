@@ -1,0 +1,35 @@
+<!--全部块-->
+<view class="quan">
+<!--搜索框-->
+<view class="search">
+  <input placeholder="商品搜索：请输入商品关键字" auto-focus/>
+<!--<image width="50" heigth="50" src="../../images/s_btn.png"></image>-->
+  
+</view>
+<!--价格、人气、销量排行-->
+<view class="body">
+  <view class="nav bc_white">
+    <view class="{{selected?'red':'default'}}" bindtap="selected">默认</view>
+    <view class="{{selected1?'red':'default'}}" bindtap="selected1">价格</view>
+    <view class="{{selected2?'red':'default'}}" bindtap="selected2">销量</view>
+    <view class="{{selected3?'red':'default'}}" bindtap="selected3">人气</view>
+  </view>
+  <view class="{{selected?'show':'hidden'}}"></view>
+  <view class="{{selected1?'show':'hidden'}}">for activity</view>
+  <view class="{{selected1?'show':'hidden'}}">for ac</view>
+  <view class="{{selected1?'show':'hidden'}}">for a</view>
+</view>
+<!--图片展示-->
+  <view class="navs">
+      <block wx:for-items="{{navs}}" wx:key="name">
+        <view class="nav-item" catchtap="catchTapCategory" data-
+type="{{item.name}}">
+          <image src="{{item.icon}}" class="nav-image"/>
+          <text>{{item.name}}</text>
+          <text class="names">{{item.names}}</text>
+        </view>
+</block>
+</view>
+  
+<!--总体结束标签-->
+</view>

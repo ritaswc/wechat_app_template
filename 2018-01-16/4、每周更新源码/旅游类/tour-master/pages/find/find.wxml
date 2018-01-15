@@ -1,0 +1,29 @@
+
+<!--pages/find/find.wxml-->
+<view class="tab">
+  <text class="{{active==0?'active':''}}" bindtap="hotClick">热门</text>
+  <text class="{{active==1?'active':''}}" bindtap="aroundClick">周边</text>
+  <text class="{{active==2?'active':''}}" bindtap="hongkongClick">香港</text>
+  <text class="{{active==3?'active':''}}" bindtap="aomenClick">澳门</text>
+  <text class="icon"></text>
+</view>
+<view class="view-box">
+  <view class="view">
+    <view class="img">
+      <text class="title">晚霞下的古河湖</text>
+      <image src="/images/find/view1.png"></image>
+    </view>
+  </view>
+  <view class="view">
+    <view class="img">
+      <text class="title">金沙江大拐弯</text>
+      <image src="/images/find/view2.png"></image>
+    </view>
+  </view>
+  <view class="view">
+    <view class="img">
+      <text class="title">最美在普者黑</text>
+      <image src="/images/find/view3.png"></image>
+    </view>
+  </view>
+</view>

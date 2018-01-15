@@ -1,0 +1,289 @@
+<!--index.wxml-->
+<!--顶部搜索 begin-->
+<view class="search" id="search">
+    <view class="search-inner clearfix">
+      <view class="search-l fl" id="channel">
+        <icon></icon>
+        <text>频道</text>
+      </view>
+      <view class="search-r fr">
+        <input id="search_value" type="text" placeholder="搜索康康药品/器械/成人用品"></input>
+      </view>
+    </view>
+</view>
+<!--顶部搜索 end-->
+
+<!--顶部轮播图 begin-->
+<import src="../index/template/topScroll.wxml"/>
+<template is="topScroll" data="{{ topScroll,indicatorDots,autoplay,interval,duration }}"/>
+<!--顶部轮播图 end-->
+
+<!--导航图标 begin-->
+<import src="../index/template/banner.wxml"/>
+<template is="banner" data="{{ bannerIcon }}"/>
+<!--导航图标 end-->
+
+<!--文字广告 begin-->
+<view class="tehui">【特惠】全场满39元包邮。</view>
+<!--文字广告 end-->
+
+
+<!--秒杀模块 begin-->
+	<view class="skill mt30" id="skill_sec">
+		<view class="skill-top clearfix">
+			<view class="skillt-l fl"><image src="../images/skill-logo.png" alt=""></image></view>
+			<view class="skillt-m fl" id="skill_timeout">21点场<text>00</text>:<text>00</text>:<text>00</text></view>
+			<view class="skillt-r fr"><navigator url="">1元秒健康<icon></icon></navigator></view>
+		</view>
+		<scroll-view scroll-x="true" class="skill-list" id="skill_list">
+			<view class="skill-li">
+				<navigator url="">
+					<view class="skill-promotion">1.4折</view>
+					<view class="skill-img"><image src="../images/skill-pro.jpg" alt=""></image></view>
+					<view class="skill-vipprice">￥<text>39.00</text></view>
+					<view class="skill-marprice">￥149.00</view>
+				</navigator>
+			</view>
+			<view class="skill-li">
+				<navigator url="">
+					<view class="skill-promotion">1.4折</view>
+					<view class="skill-img"><image src="../images/skill-pro.jpg" alt=""></image></view>
+					<view class="skill-vipprice">￥<text>39.00</text></view>
+					<view class="skill-marprice">￥149.00</view>
+				</navigator>
+			</view>
+			<view class="skill-li">
+				<navigator url="">
+					<view class="skill-promotion">1.4折</view>
+					<view class="skill-img"><image src="../images/skill-pro.jpg" alt=""></image></view>
+					<view class="skill-vipprice">￥<text>39.00</text></view>
+					<view class="skill-marprice">￥149.00</view>
+				</navigator>
+			</view>
+			<view class="skill-li">
+				<navigator url="">
+					<view class="skill-promotion">1.4折</view>
+					<view class="skill-img"><image src="../images/skill-pro.jpg" alt=""></image></view>
+					<view class="skill-vipprice">￥<text>39.00</text></view>
+					<view class="skill-marprice">￥149.00</view>
+				</navigator>
+			</view>
+			<view class="skill-li">
+				<navigator url="">
+					<view class="skill-promotion">1.4折</view>
+					<view class="skill-img"><image src="../images/skill-pro.jpg" alt=""></image></view>
+					<view class="skill-vipprice">￥<text>39.00</text></view>
+					<view class="skill-marprice">￥149.00</view>
+				</navigator>
+			</view>
+			<view class="skill-li">
+				<navigator url="">
+					<view class="skill-promotion">1.4折</view>
+					<view class="skill-img"><image src="../images/skill-pro.jpg" alt=""></image></view>
+					<view class="skill-vipprice">￥<text>39.00</text></view>
+					<view class="skill-marprice">￥149.00</view>
+				</navigator>
+			</view>
+		</scroll-view>
+	</view>
+<!--秒杀模块 end-->
+
+<!--热门专题 begin-->
+	<view class="some-room mt30 clearfix">
+		<view class="sroom-l box-sizing fl"><navigator url=""><image src="../images/newuser.jpg" alt=""></image></navigator></view>
+		<view class="sroom-r fr">
+			<view><navigator url=""><image src="../images/ppweek.jpg" alt=""></image></navigator></view>
+			<view><navigator url=""><image src="../images/jfsc.jpg" alt=""></image></navigator></view>
+		</view>
+	</view>
+<!--热门专题 end-->
+
+<!--横幅图片广告-1 begin-->
+<view class="guid mt30"><navigator url=""><image src="../images/guid.jpg" alt=""></image></navigator></view>
+<!--横幅图片广告-1 end-->
+
+<!--拼团广告 begin-->
+	<view class="fine-puzzle mt30">
+		<view class="floor-title">精品拼团 <text>GROUP</text> <icon></icon></view>	
+		<scroll-view scroll-x="true" class="puzzle-list" id="puzzle_list">
+			<view class="puzzle-li box-sizing">
+				<navigator url="">
+					<view class="puzzle-logo">
+						<text>立省</text>
+						<text>￥307.00</text>
+					</view>
+					<view class="puzzle-img"><image src="../images/puzzle-pro.jpg" alt=""></image></view>
+					<text class="puzzle-name plr20">【包邮】正宗山东东阿阿胶东阿阿胶250g山阿阿胶东阿阿胶250东阿阿胶250g山阿阿胶东阿阿胶250东阿阿胶250g山阿阿胶东阿阿胶250g</text>
+					<view class="puzzle-ft plr20 clearfix">
+						<view class="puzzleft-l fl">
+							<text>￥</text>
+							<text class="puzzle-ll-text2">39.9</text>
+							<text class="puzzle-ll-text3">/2件</text>
+							<text>已售10086</text>
+						</view>
+						<view class="puzzleft-r fr">
+							<text class="box-sizing">3人团</text><text>去开团</text>
+						</view>
+					</view>
+				</navigator>
+			</view>
+			<view class="puzzle-li box-sizing">
+				<navigator url="">
+					<view class="puzzle-logo">
+						<text>立省</text>
+						<text>￥307.00</text>
+					</view>
+					<view class="puzzle-img"><image src="../images/puzzle-pro.jpg" alt=""></image></view>
+					<text class="puzzle-name plr20">【包邮】正宗山东东阿阿胶东阿阿胶250g山阿阿胶东阿阿胶250东阿阿胶250g山阿阿胶东阿阿胶250东阿阿胶250g山阿阿胶东阿阿胶250g</text>
+					<view class="puzzle-ft plr20 clearfix">
+						<view class="puzzleft-l fl">
+							<text>￥</text>
+							<text class="puzzle-ll-text2">39.9</text>
+							<text class="puzzle-ll-text3">/2件</text>
+							<text>已售10086</text>
+						</view>
+						<view class="puzzleft-r fr">
+							<text class="box-sizing">3人团</text><text>去开团</text>
+						</view>
+					</view>
+				</navigator>
+			</view>
+			<view class="puzzle-li box-sizing">
+				<navigator url="">
+					<view class="puzzle-logo">
+						<text>立省</text>
+						<text>￥307.00</text>
+					</view>
+					<view class="puzzle-img"><image src="../images/puzzle-pro.jpg" alt=""></image></view>
+					<text class="puzzle-name plr20">【包邮】正宗山东东阿阿胶东阿阿胶250g山阿阿胶东阿阿胶250东阿阿胶250g山阿阿胶东阿阿胶250东阿阿胶250g山阿阿胶东阿阿胶250g</text>
+					<view class="puzzle-ft plr20 clearfix">
+						<view class="puzzleft-l fl">
+							<text>￥</text>
+							<text class="puzzle-ll-text2">39.9</text>
+							<text class="puzzle-ll-text3">/2件</text>
+							<text>已售10086</text>
+						</view>
+						<view class="puzzleft-r fr">
+							<text class="box-sizing">3人团</text><text>去开团</text>
+						</view>
+					</view>
+				</navigator>
+			</view>
+		</scroll-view>
+	</view>
+<!--拼团广告 end-->
+
+<!--热门科室 begin-->
+	<view class="hot-room mt30">
+		<view class="floor-title">热门科室 <text>HOT</text></view>	
+		<view class="hroom-list clearfix">
+			<navigator class="box-sizing" url=""><image src="../images/hootroom1.jpg" alt=""></image></navigator>
+			<navigator class="box-sizing hrm-li2" url=""><image src="../images/hootroom2.jpg" alt=""></image></navigator>
+			<navigator class="box-sizing" url=""><image src="../images/hootroom3.jpg" alt=""></image></navigator>
+			<navigator class="box-sizing" url=""><image src="../images/hootroom4.jpg" alt=""></image></navigator>
+			<navigator class="box-sizing" url=""><image src="../images/hootroom5.jpg" alt=""></image></navigator>
+			<navigator class="box-sizing" url=""><image src="../images/hootroom6.jpg" alt=""></image></navigator>
+			<navigator class="box-sizing" url=""><image src="../images/hootroom7.jpg" alt=""></image></navigator>
+			<navigator class="box-sizing" url=""><image src="../images/hootroom8.jpg" alt=""></image></navigator>
+		</view>
+	</view>
+<!--热门科室 end-->
+
+<!--横幅图片广告-2 begin-->
+	<view class="guid mt30"><navigator url=""><image src="../images/guid.jpg" alt=""></image></navigator></view>
+<!--横幅图片广告-2 end-->
+
+<!--健康精选 begin-->
+	<view class="health-select mt30">
+		<view class="floor-title">健康精选 <text>FOCUS</text></view>	
+		<view class="heal-list">
+			<navigator url=""><image src="../images/health1.jpg" alt=""></image></navigator>
+			<navigator url=""><image src="../images/health2.jpg" alt=""></image></navigator>
+			<navigator url=""><image src="../images/health3.jpg" alt=""></image></navigator>
+		</view>
+	</view>
+<!--健康精选 end-->
+
+<!--横幅图片广告-3 begin-->
+	<view class="guid mt30"><navigator url=""><image src="../images/guid.jpg" alt=""></image></navigator></view>
+<!--横幅图片广告-3 end-->
+
+<!--猜你喜欢 begin-->
+<view class="seclist">
+	<view class="user-like">
+		<view class="like-top">
+			<view class="liketop-name">猜你喜欢</view>
+			<view class="liketop-line"></view>
+		</view>
+		<view class="like-list clearfix" id="like_list">
+			<navigator class="like-lilf" url="">
+				<view class="likepro-img"><image src="../images/likepro.jpg" alt=""></image></view>
+				<view class="likepro-name plr26 text-elli">鱼跃 制氧机 YU300 1台</view>
+				<view class="likepro-price clearfix plr26"><text class="fl">￥<text>39.9</text></text><text class="fr">￥59.9</text></view>
+			</navigator>
+			<navigator url="">
+				<view class="likepro-img"><image src="../images/likepro.jpg" alt=""></image></view>
+				<view class="likepro-name plr26 text-elli">鱼跃 制氧机 YU300 1台</view>
+				<view class="likepro-price clearfix plr26"><text class="fl">￥<text>39.9</text></text><text class="fr">￥59.9</text></view>
+			</navigator>
+			<navigator class="like-lilf" url="">
+				<view class="likepro-img"><image src="../images/likepro.jpg" alt=""></image></view>
+				<view class="likepro-name plr26 text-elli">鱼跃 制氧机 YU300 1台</view>
+				<view class="likepro-price clearfix plr26"><text class="fl">￥<text>39.9</text></text><text class="fr">￥59.9</text></view>
+			</navigator>
+			<navigator url="">
+				<view class="likepro-img"><image src="../images/likepro.jpg" alt=""></image></view>
+				<view class="likepro-name plr26 text-elli">鱼跃 制氧机 YU300 1台</view>
+				<view class="likepro-price clearfix plr26"><text class="fl">￥<text>39.9</text></text><text class="fr">￥59.9</text></view>
+			</navigator>
+		</view>
+	</view>
+	<view class="load-more clearfix">
+		<view class="spinner fl">
+					<view class="spinner-container container1">
+							<view class="circle1"></view>
+							<view class="circle2"></view>
+							<view class="circle3"></view>
+							<view class="circle4"></view>
+					</view>
+					<view class="spinner-container container2">
+							<view class="circle1"></view>
+							<view class="circle2"></view>
+							<view class="circle3"></view>
+							<view class="circle4"></view>
+					</view>
+					<view class="spinner-container container3">
+							<view class="circle1"></view>
+							<view class="circle2"></view>
+							<view class="circle3"></view>
+							<view class="circle4"></view>
+					</view>
+			</view>
+		<view class="load-cont fl">康康正在努力为你加载更多...</view>
+	</view>
+</view>
+<!--猜你喜欢 end-->
+
+
+<!--频道 begin-->
+<view class="left-fixed-nav">
+    <scroll-view scroll-y="true" class="left-fixed-list">
+        <view class="lfnav-li1"><navigator href="http://vmall.360kad.com/topic/v_nk2.shtml?kzone=%E7%94%B7%E7%A7%91%E7%94%A8%E8%8D%AF%0d%0a">男科药馆</navigator></view>
+        <view class="lfnav-li2"><navigator href="http://vmall.360kad.com/topic/cryp_zt.shtml?kzone=%E5%B9%B8%E7%A6%8F%E7%94%9F%E6%B4%BB%0d%0a">成人用品</navigator></view>
+        <view class="lfnav-li3"><navigator href="http://vmall.360kad.com/Category/v47.shtml">肝胆科</navigator></view>
+        <view class="lfnav-li4"><navigator href="http://vmall.360kad.com/Category_v46/Index.aspx">肿瘤科</navigator></view>
+        <view class="lfnav-li5"><navigator href="http://vmall.360kad.com/Category_v756/Index.aspx">妇科</navigator></view>
+        <view class="lfnav-li6"><navigator href="http://vmall.360kad.com/Category/v48.shtml">神经科</navigator></view>
+        <view class="lfnav-li7"><navigator href="http://vmall.360kad.com/Category/v278.shtml">风湿骨科</navigator></view>
+        <view class="lfnav-li8"><navigator href="http://vmall.360kad.com/Category_v904/Index.aspx">滋养保健</navigator></view>
+        <view class="lfnav-li9"><navigator href="http://vmall.360kad.com/Category/all.shtml#a3">全部药品</navigator></view>
+    </scroll-view>
+</view>
+<view class="over-bg"></view>
+<!--频道 end-->
+
+<!--底部 begin-->
+<import src="../index/template/footer.wxml"/>
+<template is="footer" data="{{ footerNav }}"/>
+<!--底部 end-->
+

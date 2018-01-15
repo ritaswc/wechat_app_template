@@ -1,0 +1,36 @@
+<!--pages/cardetail/cardetail.wxml-->
+
+<view class="container">
+    <view class="car-wrap">
+        <view class="left">
+            <text>车牌号：</text>
+            <text>车架号：</text>
+            <text>发动机号：</text>
+        </view>
+        <view class="right">
+            <text class="common">{{carData.carnumber}}</text>
+            <text class="common">{{carData.carcode}}</text>
+            <text class="common">{{carData.cardrivenumber}}</text>
+        </view>
+    </view>
+    <view class="car-record">
+        <view class="title">车辆小历史</view>
+        <view>违章次数统计：{{carData.result.length ? carData.result.length : "0"}} 次</view>
+
+        <block wx:if="{{carData.result.length}}">
+            <view class="list" wx:for="{{carData.result}}">
+                    <view>{{item.index + 1}}、</view>
+                    <view>时间：{{item.Time}}</view>
+                    <view>地点：{{item.Location}}</view>
+                    <view>原因：{{item.Reason}}</view>
+                    <view>金额：{{item.count}}￥</view>
+                    <view>扣分数：-{{item.Degree}}</view>
+                    <view>状态：{{item.status == 0 ? "未处理" : "已处理" }}                 </view>
+                    <!--<view>滞纳金：{{item.Latefine}}</view>-->
+            </view>
+        </block>
+    </view>
+    <button wx:if="{{carData.result.length}}" type="">联系办理</button>
+
+    <button wx:if="{{carData}}" type="warn" bindtap="deleteCar">删除此车辆</button>
+</view> 

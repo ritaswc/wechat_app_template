@@ -1,0 +1,3 @@
+/* pages/order/order.wxss */
+
+@import "../../component/empty/empty.wxss";

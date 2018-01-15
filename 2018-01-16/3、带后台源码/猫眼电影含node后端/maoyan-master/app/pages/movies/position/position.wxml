@@ -1,0 +1,25 @@
+<view class="suggest">
+  <icon type="search" size="13"></icon>
+  <input placeholder="输入城市中文名或拼音" placeholder-class="placeholder" />
+</view>
+<scroll-view scroll-y class="scroll" bindtap="selcity" scroll-into-view="{{scrollId}}">
+  <view class="title" id="定位">定位城市</view>
+  <view class="citys">
+    <view class="city" data-set="{{position}}">{{position}}</view>
+  </view>
+  <block wx:if="{{recent.length>0}}">
+    <view class="title" id="最近">最近访问的城市</view>
+    <view class="citys">
+      <view wx:for="{{recent}}"  class="city" data-set="{{item}}">{{item}}</view>
+    </view>
+  </block>
+  <view wx:for="{{li}}" wx:key="*this" id="{{item.fon}}">
+    <view class="title">{{item.fon}}</view>
+    <view class="{{index==0?'citys':''}}">
+      <view wx:for="{{item.citys}}" wx:key="*this" class="city" data-set="{{item}}">{{item}}</view>
+    </view>
+  </view>
+</scroll-view>
+<view class="slibar" catchtap="scrollto">
+  <view wx:for="{{['定位','最近','热门','A','B','C','D','E','F','G','H','J','K','L','M','P','Q','R','S','T','W','X','Y','Z']}}"  class="letter" data-to="{{item}}" class="{{index<=2?'letter':''}}">{{item}}</view>
+</view>

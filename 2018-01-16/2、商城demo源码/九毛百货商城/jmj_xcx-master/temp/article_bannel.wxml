@@ -1,0 +1,32 @@
+<template name="article_bannel">
+<view class="scrollContainer">
+      <view class="scrollItem" wx:for="{{cateList}}" wx:key="{{index}}" class="itemL" wx:if="{{item.list.length>2}}">
+           <view class="title">
+              <view>
+                  <image src="{{item.icon}}" class="logo-img"/>
+                  <text>{{item.category_name}}</text>
+              </view>
+              <view bindtap="favorite" data-index="{{index}}">
+                <image src="{{item.is_favorite==0?ufimgimg:fimgimg}}" class="itemLike"/>
+                <text class="itemLikeText">{{item.favorite_num}}</text>
+              </view>
+           </view> 
+           <navigator url="../article/article?id={{item.id}}&title={{item.title}}" class="banner-img">
+               <image src="{{item.image}}" class="img"/>
+               <text class="goodsNum">{{item.goods_num}} 件商品</text>
+               <view class="goodslookNum">
+                  <image src="{{imgLook}}" class="imglook"/>
+                  <text>{{item.visit_num}}</text>
+               </view>
+           </navigator>
+           <view class="single" style="position:relative;z-index:1"></view>
+           <scroll-view class="goodsList"  scroll-x="{{true}}">
+              <navigator url="../products/products?id={{item.id}}&title={{item.name}}" wx:for="{{item.list}}" wx:key="{{item.id}}" class="goodsListItem flexinlinebox">
+                <image src="{{item.img}}" />
+                <text class="name hidewrap">{{item.name}}</text>
+                <view class="price">¥{{item.sell_price}}</view>
+              </navigator>
+           </scroll-view>
+      </view>
+    </view>
+    </template>

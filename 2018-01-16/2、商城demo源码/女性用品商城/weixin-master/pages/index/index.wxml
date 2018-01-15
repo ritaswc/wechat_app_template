@@ -1,0 +1,113 @@
+<scroll-view>
+<view id="header" class="mui-bar mui-bar-nav">
+<icon type="search" style="position:absolute;top:10px;left:20px;"/>
+<input style="padding:0px 0 0 30px;" class="sch-txt" placeholder="请输入关键字"></input>
+</view>
+
+<swiper style="height:410rpx;" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+      <block wx:for="{{slides}}" wx:for-item="slide" wx:key="id">
+        <swiper-item class="item">
+          <navigator url="{{slide.url}}">
+            <image class="slide-img" src="{{slide.img}}" mode="aspectFit"/>
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="navs">
+      <block wx:for-items="{{navs}}" wx:key="name">
+        <view class="nav-item" catchtap="catchTapCategory" data-type="{{item.name}}">
+          <image src="{{item.icon}}" class="nav-image"/>
+          </view>
+      </block>
+    </view>
+    <view class="navs1">
+      <block wx:for-items="{{navs1}}" wx:key="name">
+        <view class="nav-item" catchtap="catchTapCategory" data-type="{{item.name}}">
+          <image src="{{item.icon1}}" class="nav-image"/>
+          </view>
+      </block>
+    </view>
+     <view>
+    <image calss="image-body"  src="../../images/img/hometit1.jpg"></image>
+    </view>
+    <view>
+    <image class="images-girl" src="../../images/t1.jpg"></image>
+    </view>
+    <view>
+    <image class="girl" src="../../images/t2.jpg"></image>
+    </view>
+    <view>
+    <image class="girl" src="../../images/t2.jpg"></image>
+    </view>
+    <view>
+    <image class="girl" src="../../images/t2.jpg"></image>
+    </view>
+    <view>
+    <image calss="hot" src="../../images/img/hometit2.jpg"></image>
+    </view>
+    <view>
+    <image class="t3" src="../../images/t3.jpg"></image>
+    </view>
+    <view>
+    <image class="t3" src="../../images/t3.jpg"></image>
+    </view>
+    <view>
+    <image class="t33" src="../../images/t3.jpg"></image>
+    </view>
+    <view>
+    <image src="../../images/img/hometit3.jpg"></image>
+    </view>
+    <view>
+    <image src="../../images/sch-banner.jpg"></image>
+    </view>
+    <view class="navs2">
+      <block wx:for-items="{{navs2}}" wx:key="name">
+        <view class="nav-item" catchtap="catchTapCategory" data-type="{{item.name}}">
+          <image src="{{item.icon2}}" class="icon2"/>
+          </view>
+      </block>
+    </view>
+
+    <view>
+    <image calss="image-body"  src="../../images/img/hometit1.jpg"></image>
+    </view>
+    <view>
+    <image class="images-girl" src="../../images/t1.jpg"></image>
+    </view>
+    <view>
+    <image class="girl" src="../../images/t2.jpg"></image>
+    </view>
+    <view>
+    <image class="girl" src="../../images/t2.jpg"></image>
+    </view>
+    <view>
+    <image class="girl" src="../../images/t2.jpg"></image>
+    </view>
+    <view>
+    <image src="../../images/img/hometit2.jpg"></image>
+    </view>
+    <view>
+    <image class="t3" src="../../images/t3.jpg"></image>
+    </view>
+    <view>
+    <image class="t3" src="../../images/t3.jpg"></image>
+    </view>
+    <view>
+    <image class="t33" src="../../images/t3.jpg"></image>
+    </view>
+    <view>
+    <image src="../../images/img/hometit3.jpg"></image>
+    </view>
+    <view>
+    <image src="../../images/sch-banner.jpg"></image>
+    </view>
+    <view class="navs2">
+      <block wx:for-items="{{navs2}}" wx:key="name">
+        <view class="nav-item" catchtap="catchTapCategory" data-type="{{item.name}}">
+          <image src="{{item.icon2}}" class="icon2"/>
+          </view>
+      </block>
+    </view>
+    
+  
+</scroll-view>

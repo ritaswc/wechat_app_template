@@ -1,0 +1,139 @@
+/**index.wxss**/
+page {
+  width: 100%;
+  background: #eee;
+}
+
+.ad{
+  width: 100%;
+  height: 60px;
+}
+
+.ad image{
+	height: 60px;
+}
+.tabs{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	border-bottom: 1px solid #CCC;
+	z-index: 1000;
+}
+
+.tabs .row-subject{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+
+	width: 90%;
+	max-height: 215px;
+	margin: 0 auto;
+	background: #EEE;
+	border: 3px solid #c2c2c2;
+	border-radius: 10px;
+	z-index: 100;
+	overflow-y: scroll;
+}
+
+.tabs .row-subject .title{
+	height: 39px;
+	line-height: 39px;
+	text-align: center;
+	border-bottom: 1px solid #CCC;
+  display: block;
+}
+
+.tabs .row-subject .close{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 40px;
+	line-height: 39px;
+	text-align: center;
+	color: #000;
+	display: block;
+}
+
+.tabs .row-subject view{
+	position: relative;
+	left: 0;
+	width: 33.33%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	list-style: none;
+	float: left;
+  	overflow:hidden;
+}
+
+.tabs .row-subject view.selected{
+	background: #DDD;
+}
+
+.showTab {
+	padding: 10px;
+	background: #FFF;
+}
+
+.showTab text{
+	text-indent: 10px;
+}
+
+.slider-wrapper {
+	width: 96%;
+	margin: 0 auto;
+}
+
+.slider-wrapper .slider{
+	position: relative;
+	margin: 0 auto;
+	margin-top: 10px;
+	padding: 10px; 
+	background: #fff;
+	border: 1px solid #CCC;
+}
+
+.slider-wrapper .slider .card navigator{
+	color: #000;
+	text-decoration: none;
+	line-height: 16px;
+	display: block;
+	float: left;
+}
+
+.slider-wrapper .slider .card navigator:first-child{
+	width: 60%;
+	margin-top: 10px;
+	margin-left: 5%;
+}
+
+.slider-wrapper .slider .card navigator:last-child{
+	font-size: 14px;
+	line-height: 58px;
+}
+
+.slider-wrapper .slider .card image{
+	max-width: 40px;
+	max-height: 40px;
+	margin-right: 20px;
+	vertical-align: middle;
+	float: left;
+}
+
+.slider-wrapper .slider .card .intro{
+	margin-top: 5px;
+	font-size: 14px;
+	color: #6B6B6B;
+}
+
+.slider-wrapper .slider .card .button{
+	width: 80px;
+	text-align: center;
+	float: right;
+}

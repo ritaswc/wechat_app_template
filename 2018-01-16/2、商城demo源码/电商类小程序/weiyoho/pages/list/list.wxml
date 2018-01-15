@@ -1,0 +1,13 @@
+<view class="classify">
+  <block wx:for="{{itemlist}}">
+    <navigator class="classify-nav" url="./listdetail/listdetail?title={{item.title}}">
+      <view>
+        <image class="classify-pic" src="{{item.image}}"></image>
+      </view>
+      <view>
+        <text class="classify-enname">{{item.title}}</text>
+        <!--<text class="classify-name">{{item.title}}</text>-->
+      </view>
+    </navigator>
+  </block>
+</view>

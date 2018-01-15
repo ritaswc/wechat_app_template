@@ -1,0 +1,24 @@
+
+<!--index.wxml-->
+<view class="container">
+  <view class="nowinfo">
+    <text class="now-cityname">{{now.cityName}}</text>
+    <text class="now-text">{{now.text}}</text>
+    <text class="now-temperature">{{now.temperature}}</text>
+  </view>
+  <view class="futureinfo">
+    <scroll-view scroll-y="true" style="height: 200px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <view class="wa-list">
+        <view class="wa-item future-box" wx:key="{{day}}" wx:for="{{future}}">
+          <text class="future-text">{{item.day}}</text>
+          <text class="future-text">{{Day}}</text>
+          <image src="../../asset/{{item.code_day}}.png" mode="widthFix" style="width:50rpx"></image>
+          <text class="future-text"> {{Night}}</text>
+          <image src="../../asset/{{item.code_night}}.png" mode="widthFix" style="width:50rpx"></image>
+          <text class="future-text">{{item.high}}</text>
+          <text class="future-text">{{item.low}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+/**index.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.nowinfo{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:100rpx;
+}
+
+.now-cityname{
+  font-size:30px;
+}
+
+.now-temperature{
+  padding-top:15px;
+  font-size:50px;
+}
+
+.future-box{
+   display: flex;
+   justify-content: space-between;
+}
+
+.future-text{
+  padding:10rpx;
+}
+
+.future-text:nth-child(2){
+}

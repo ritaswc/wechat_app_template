@@ -1,0 +1,56 @@
+
+<!--main.wxml-->
+<view class="userInfor">
+  <view class="userimage">
+    <navigator url="login?title=login" hover-class="login-hover">
+      <block class="userimage">
+        <image src="{{image}}" />
+      </block>
+    </navigator>
+    <view class="order">
+      <button>
+        <image src="{{image0}}"></image>
+        我的订单
+        <text>查看全部订单 ></text>
+      </button>
+    </view>
+  </view>
+  <view class="section index-nav">
+    <block wx:for-items="{{navs}}">
+      <view class="l-c-c" catchtap="go" data-type="{{item.text}}">
+        <image src="{{item.image}}" class="slide-image" />
+        <view></view>
+        <text>{{item.text}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="content">
+    <navigator url="address?title=register" hover-class="address-hover">
+      <button>
+        <image src="{{image1}}" />
+        <text class="b-text">收货地址</text>
+        <text class="b-right"> > </text>
+      </button>
+    </navigator>
+    <button>
+      <image src="{{image2}}" />
+      <text class="b-text">实名认证</text>
+      <text class="b-right"> > </text>
+    </button>
+    <button>
+      <image src="{{image3}}" />
+      <text class="b-text">我的收藏</text>
+      <text class="b-right"> > </text>
+    </button>
+    <button>
+      <image src="{{image4}}" />
+      <text class="b-text">我的优惠券</text>
+      <text class="b-right"> > </text>
+    </button>
+    <button>
+      <image src="{{image5}}" />
+      <text class="b-text">联系客服</text>
+      <text class="b-right"> > </text>
+    </button>
+  </view>
+</view>

@@ -1,0 +1,58 @@
+<view class="text-input-wrap">
+    <view class="text-input-item">
+        <view class="name f1 c5">
+            名称
+        </view>
+        <input class="f1 c4" placeholder-class="ph-class" placeholder="请输入服务名称" />
+    </view>
+    <view class="text-input-item">
+        <view class="name f1 c5">
+            服务价格(元)
+        </view>
+        <input class="f1 c4" placeholder-class="ph-class" placeholder="填写商品价格" />
+    </view>
+</view>
+
+<view class="text-pic-cell">
+    <view class="text-img-wrap">
+        <text class="section-item-left f1 c5">服务照片</text>
+        <image bindtap="choicePic" src="{{tempFilePaths?tempFilePaths:'/image/common/icon_add_pic.png'}}"></image>
+     </view>
+</view>
+
+<view class="text-textarea-wrap">
+    <text class="f1 c5">简介</text>
+    <textarea placeholder-class="ph-class" placeholder="简介..." />
+</view>
+<view class="tag-choice-wrap">
+    <view class="choice-tag-cell" bindtap="chooseTag">
+        <text class="f1 c5">标签</text>
+        <image class="arrow-right" src="/image/common/icon_arrow.png"></image>
+    </view>
+    <view class="tag-list">
+        <view wx:for="{{['','','','','','','','','','','','']}}" wx:key="unquie" class="tag f2 c4"> 
+            标签
+        </view>
+    </view>
+</view>
+<button class="btn stop-btn f2">暂停</button>
+<button class="btn save-btn f2" style="margin-top: 40rpx;">保存并上架</button>
+<button class="btn save-btn f2" style="margin-top: 40rpx;background:#e74249;">永久删除</button>
+<button class="btn close-btn f2" style="margin-top: 40rpx;margin-bottom: 40rpx;">取消</button>
+
+<view class="mask {{showTags?'':'hide'}}">
+    <view class="tag-wrap" style="height: 736rpx;">
+        <view class="title bgc">选择标签</view>
+        <view class="add-self-tag">
+            <input placeholder="自定义标签内容" placeholder-class="ph-class" />
+            <text class="f1 c">加入</text>
+        </view>
+        <scroll-view class="tag-list" scroll-y="true">
+            <view catchtap="selectTag" class="tag-item" wx:for="{{tagArr}}" wx:key="unquie" wx:for-index="idx" id="{{idx}}">
+                <image src="/image/common/icon_{{item.selected?'yes':'no'}}.png"></image>
+                <text class="f2 {{item.selected?'c':'c5'}}">{{item.text}}</text>
+            </view>
+        </scroll-view>
+        <view class="confirm-btn bgc" catchtap="confirmTag">确认标签</view>
+    </view>
+</view>

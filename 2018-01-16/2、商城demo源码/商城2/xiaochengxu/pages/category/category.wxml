@@ -1,0 +1,17 @@
+<view style="flex-direction:row;" class="flex-wrp">
+  <scroll-view class="first-category" style="height: {{windowHeight}}px;" scroll-y="true">
+    <view wx:for="{{array}}" id="category{{index}}" bindtap="toggleCategory" class="category-item">
+      {{item.message}}
+    </view>
+  </scroll-view>
+  <scroll-view class="second-category" style="height: {{windowHeight}}px;" scroll-y="true">
+    <view wx:for="{{childCategory}}" wx:for-index="idx">
+      <text class="category-title">{{item.title}}</text>
+      <view>
+        <view wx:for="{{item.array}}" class="col-4 category-name">
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

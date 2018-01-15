@@ -1,0 +1,6 @@
+<view class="container">
+    <import src="../templates/pic-tpl"/>
+    <block wx:for="{{pics}}" wx:key="item">
+        <template is="pic-tpl" data="{{item}}"/>
+    </block>
+</view>

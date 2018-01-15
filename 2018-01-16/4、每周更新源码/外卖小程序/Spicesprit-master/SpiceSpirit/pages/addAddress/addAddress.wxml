@@ -1,0 +1,22 @@
+<view class="edit-view">
+    <view class="input reciver">
+        <text>收货人</text>
+        <input placeholder="请填写收货人姓名"  placeholder-style="color:#c6c6c6"/>
+    </view>
+    <view class="input phone">
+        <text>手机号</text>
+        <input placeholder="请填写收货人电话"  placeholder-style="color:#c6c6c6"/>
+    </view>
+    <view class="input area" catchtap="selectarea">
+        <text>小区/大厦/学校</text>
+        <image src="../../images/darkLocation.png" class="left"></image>
+        <text style="font-size:30rpx;color:#c6c6c6;margin-left:20rpx;">请点击添加地址</text>
+        <image src="../../images/rightArrow.png" class="right"></image>
+    </view>
+    <view class="input detail">
+        <text>楼号-门牌号</text>
+        <input placeholder="请输入楼号门牌号"  placeholder-style="color:#c6c6c6"/>
+    </view>
+</view>
+
+<button class="complete">完成</button>

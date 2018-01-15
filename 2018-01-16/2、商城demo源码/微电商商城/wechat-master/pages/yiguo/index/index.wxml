@@ -1,0 +1,67 @@
+<!--index.wxml-->
+<view class="container">
+
+
+
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper-box">
+  <block wx:for-items="{{banner_list[0].banner}}">
+    <swiper-item >
+      <image class="slide-image" src="{{item.pic_url}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+
+ <view>
+  <view class='menueview' >
+   <block wx:for-items="{{banner_list[1].banner}}">
+     <view  class="menue-1">
+        <view class="menueimg">
+            <image src="{{item.pic_url}}" class="menue-image" />
+        </view>
+        <view class="menuetext">{{item.title}}</view>
+    </view>
+   </block>
+  </view>
+ </view>
+
+<view class='hg-container'>
+  <text class="hg-title">新品推荐</text>
+        <view class='gooditem'>
+            <view class='imgview'  wx:for="{{newgoods}}" wx:for-index="idx" wx:for-item="good">
+              <image class='productimg' src='{{good.hg_pic}}'/>
+            </view>
+        </view>
+</view>
+
+<view class='hg-container'>
+  <text class="hg-title">超值买</text>
+        <view class='gooditem'>
+            <view class='imgview'  wx:for="{{newgoods}}" wx:for-index="idx" wx:for-item="good">
+              <image class='productimg' src='{{good.hg_pic}}'/>
+            </view>
+        </view>
+</view>
+
+<view class='hot-container'>
+  <view class="hot-title">食惠购</view>
+        <view class='hot-gooditem'>
+            <view class='hot-imgview'  wx:for="{{hotgoods}}" wx:for-index="idx" wx:for-item="hot">
+              <image class='hot-product' src='{{hot.more_pic}}'/>
+            </view>
+        </view>
+</view>
+
+<view class="footer">
+  <view>
+  <text>沪ICP备09008015号</text>
+  <text>m.yiguo.com</text>
+  <text>上海易果电子商务有限公司</text>
+  <text>上海市金钟路999号c幢6楼</text>
+  </view>
+</view>
+
+
+</view>

@@ -1,0 +1,52 @@
+/* pages/attendance/attendance.wxss */
+
+
+page {
+    background: #fafafa;
+}
+
+.header {
+    padding: 40rpx 40rpx 20rpx 40rpx;
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 9.75pt;
+    border-bottom: 1px solid #eee;
+}
+
+.item {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 20rpx 40rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.item-left {
+    flex:1;
+    line-height: 24px;
+    font-size: 12.75pt;
+    color: #000000;
+}
+
+.item-right {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+.picker {
+    padding: 10rpx;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 12.75pt;
+}
+
+.button {
+    margin-top: 100rpx;
+    width: 80%;
+    background: #22a1e0;
+    color: #ffffff;
+}

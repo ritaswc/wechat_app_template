@@ -1,0 +1,83 @@
+
+<!--pages/personal/personal.wxml-->
+<view class="persional">
+  <view class="persional-header">
+    <view class="edit">
+      <text bindtap="edit">编辑</text>
+    </view>
+    <view class="info">
+      <view class="vip" wx:if="{{userInfo.vip}}">
+        <text class="vip-true"></text>
+        <text>高级会员</text>
+      </view>
+       <view class="vip" wx:else>
+        <text class="vip-false"></text>
+        <text>高级会员</text>
+      </view>
+      <view class="header-img">
+        <image src="{{userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="send">
+        <text >签到送积分</text>
+      </view>
+    </view>
+    <view class="name">
+      <view class="username">
+        <text>{{userInfo.nickName}}</text>
+        <text>lv.{{userInfo.grade}}</text>
+      </view>
+      <text class="tel">{{userInfo.tel}}</text>
+    </view>
+  </view>
+  <view class="persional-body">
+    <view class="top">
+      <view class="left">
+        <text></text>
+        <text>积分</text>
+        <text>{{userInfo.integrate}}</text>
+      </view>
+      <view class="right">
+        <text></text>
+        <text>现金卷</text>
+        <text>{{userInfo.Cash}}</text>
+      </view>
+    </view>
+    <view class="bottom">
+      <view class="my-order box">
+        <view>
+            <text></text>
+        </view>
+        <text>我的订单</text>
+        <text></text>
+      </view>
+      <view class="purchase-order box">
+        <view>
+            <text></text>
+        </view>
+        <text>抢购订单</text>
+        <text></text>
+      </view>
+      <view class="my-grade box">
+        <view>
+            <text></text>
+        </view>
+        <text>我的等级</text>
+        <text></text>
+      </view>
+      <view class="my-evaluation box">
+        <view>
+            <text></text>
+        </view>
+        <text>我的评价</text>
+        <text></text>
+      </view>
+      <view class="my-collection box">
+        <view>
+            <text></text>
+        </view>
+        <text>我的收藏</text>
+        <text></text>
+      </view>
+    </view>
+  </view>
+</view>

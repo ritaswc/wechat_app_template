@@ -1,0 +1,19 @@
+<view class="body" wx:if="{{loaded}}">
+  <view class="shdz"><navigator url="../../user/editaddress/editaddress?mod=add" open-type="navigate" hover-class="navigator-hover">添加收货地址</navigator></view>
+  <view class="m_box" data-aid="{{a.id}}" wx:for="{{addresslist}}" wx:key="id" wx:for-index="i" wx:for-item="a">
+    <view class="m_address_list">
+      <view>{{a.name}} {{a.phone}}</view>
+      <view>{{a.city}} {{a.area}} {{a.address}}</view>
+      <view style="border-bottom: 1px dashed #ccc;"></view>
+      <view class="m_control">
+      <view class="{{a.isDefault?'m_box_control_select':'m_box_control'}}" data-aid="{{a.id}}" bindtap="toDefault">  <icon type="success" size="15" color="{{a.isDefault?'#ff6000':'#EEE'}}"/> 设置默认</view>
+        <view class="m_box_control" data-aid="{{a.id}}" bindtap="toDelete">  <icon type="clear" size="15" color="{{a.isDefault?'#ff6000':'#EEE'}}"/>删除</view>
+        <view class="m_box_control">
+        <navigator url="{{'../../user/editaddress/editaddress?mod=edit&id='+a.id}}" open-type="navigate" hover-class="navigator-hover">修改</navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  
+</view>

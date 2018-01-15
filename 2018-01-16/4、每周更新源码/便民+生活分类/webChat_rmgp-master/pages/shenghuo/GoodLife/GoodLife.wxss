@@ -1,0 +1,26 @@
+/* pages/shenghuo/GoodLife/GoodLife.wxss */
+@import "../AllServiceclassify/AllServiceclassifyCell/AllServiceclassifyCell.wxss";
+@import "GoodLifeCell/GoodLifeCell.wxss";
+
+.scroll-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.caroucels {
+  width: 100%;
+  height: 300rpx;
+}
+
+.gridCell-container {
+  margin-top: 10px;
+  width: 20%;
+  height: 58px;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+

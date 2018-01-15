@@ -1,0 +1,109 @@
+.d-wait {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 11rpx solid #eee;
+}
+.d-wait > view {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1rpx solid #eee;
+  line-height: 56rpx;
+}
+.d-wait > view .kind,
+.d-wait > view .desk,
+.d-wait > view .time {
+  width: 33.33%;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+}
+.d-wait > view .desk > text {
+  color: #ed4d30;
+}
+.d-wait > view:nth-child(1) {
+  background-color: #eee;
+}
+.d-wait > view:nth-child(1) .kind,
+.d-wait > view:nth-child(1) .desk,
+.d-wait > view:nth-child(1) .time {
+  color: #333;
+}
+.d-wait > text {
+  color: #999;
+  font-size: 22rpx;
+  line-height: 55rpx;
+  padding-left: 46rpx;
+}
+.d-wait > text::before {
+  display: inline-block;
+  content: '';
+  width: 8rpx;
+  height: 8rpx;
+  background-color: #a0a0a0;
+  border-radius: 50%;
+  transform: translate(-11rpx, -2rpx);
+}
+.restaurant-info .top {
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+  align-items: center;
+}
+.restaurant-info .top image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}
+.restaurant-info .top .top-center {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30rpx;
+}
+.restaurant-info .top .top-center .top-center-name {
+  font-size: 26rpx;
+  color: #333;
+  line-height: 50rpx;
+}
+.restaurant-info .top .top-center .restaurant-grade {
+  position: relative;
+  overflow: hidden;
+  font-size: 26rpx;
+  color: #ccc;
+}
+.restaurant-info .top .distance {
+  flex: 1;
+  text-align: right;
+  color: #999;
+  font-size: 26rpx;
+}
+.restaurant-info .r-i-address,
+.restaurant-info .r-i-tel,
+.restaurant-info .r-i-time {
+  line-height: 60rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  padding-left: 65rpx;
+  font-size: 24rpx;
+}
+.restaurant-info .triangle::after {
+  right: 30rpx;
+}
+.restaurant-info .r-i-address::before,
+.restaurant-info .r-i-tel::before,
+.restaurant-info .r-i-time::before {
+  display: inline-block;
+  color: #333;
+  font-size: 30rpx;
+  transform: translateX(-20rpx);
+}
+.take-number {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ed4d30;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 700;
+  line-height: 72rpx;
+  text-align: center;
+}

@@ -1,0 +1,20 @@
+<view>
+    <scroll-view class = "scrol_view_style" scroll-x = "{{false}}" scroll-y = "{{true}}">
+        <view wx:for-items = "{{dataSource}}" class = "list_item_style">
+            <image src="{{item.thumb_url}}" class = "good_main_image"></image>
+            <text class = "item_good_title">{{item.title}}</text>
+            <image src="../resource/add.png" class = "add_image_style" id = "{{index}}" bindtap = "addButtonClick"></image>
+            <input class = "good_buy_number" value = "{{item.buy}}"/>
+            <image src="../resource/reduce.png" class = "reduce_image_style" id = "{{index}}" bindtap = "reduceButtonClick"></image>
+            <view class = "price_back_view">
+                <text class  = "right_list_item_price">¥{{item.price}}</text>
+                <text class = "right_list_item_market_price">{{item.marketPrice}}</text>
+            </view>
+            <view style = "position:absolute;bottom:0px;left:0px;right:0px;height:1px;background-color:#D3D3D3"></view>
+        </view>
+        <view style = "height:10px;background-color:#F5F5F5;width:100%"></view>
+        <view class = "input_back_view_style">
+            <input placeholder="给的留言(选填、45字以内)" maxlength="45" class = "input_class"/>
+        </view>
+    </scroll-view>
+</view>

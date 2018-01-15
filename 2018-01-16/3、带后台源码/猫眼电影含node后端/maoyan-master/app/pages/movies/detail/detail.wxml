@@ -1,0 +1,108 @@
+<image src="{{des.coverImg}}" class="filter"></image>
+<view class="head">
+  <view class="cover">
+    <navigator url="" class="playUrl">
+      <image src="{{des.coverImg}}" style="width:212rpx;height:290rpx;"></image>
+    </navigator>
+    <view class="jianjie">
+      <view>
+        <view class="mTitle">{{des.title}}</view>
+        <view class="enName">{{des.enName}}</view>
+      </view>
+      <view class="rater">
+        <view class="space">
+          <view class="subject">观众评分</view>
+          <text class="rateN">{{des.rating[0][0]}}</text>
+          <text class="rateP">({{des.rating[1][0]}}万人测)</text>
+        </view>
+        <view>
+          <view class="subject">专业评分</view>
+          <text class="rateN">{{des.rating[0][1]}}</text>
+          <text class="rateP">({{des.rating[1][1]}}人评)</text>
+        </view>
+      </view>
+      <view>
+        <view wx:for="{{des.des}}" class="area">
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="control">
+    <view class="islooked like">想看</view>
+    <navigator url="" class="like">评分</navigator>
+  </view>
+</view>
+<view catchtap="flex">
+  <view class="plot {{flexed?'':'flex'}}">{{des.plot}}</view>
+  <view class="arrow {{flexed?'uparrow':'downarrow'}}"></view>
+</view>
+<view class="warp" style="height:346rpx;">
+  <view class="tBar">演职人员</view>
+  <scroll-view scroll-x style="width:100%">
+    <view class="actorLi">
+      <view wx:for="{{des.actors}}" class="acItem">
+        <image src="{{item[2]}}" style="width:134rpx;height:172rpx;margin-bottom:18rpx;"></image>
+        <view class="textOver">{{item[0]}}</view>
+        <view style="color:#9B9B9B;" class="textOver">{{item[1]}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="warp" style="height:184rpx;">
+  <view class="tBar">票房</view>
+  <view class="rankWarp">
+    <view>
+      <view class="rankNum">{{des.piaoFang[0]}}</view>
+      <view class="rankB">昨日票房排行</view>
+    </view>
+    <view>
+      <view class="rankNum">{{des.piaoFang[1]}}</view>
+      <view class="rankB">首周票房(万)</view>
+    </view>
+    <view>
+      <view class="rankNum">{{des.piaoFang[2]}}</view>
+      <view class="rankB">累计票房(万)</view>
+    </view>
+  </view>
+</view>
+<view class="warp" style="height:278rpx;">
+  <view class="tBar">
+    <view>视频和剧照</view>
+    <view class="videoN">{{des.video.counts}}</view>
+  </view>
+  <scroll-view scroll-x class="scr-H">
+    <view class="spa scr-H-item"></view>
+    <navigator class="img-item scr-H-item" url="" wx:for="{{des.video.video}}" hover-class="none">
+      <image src="{{item}}" class="{{index==0?'long':'short'}}"></image>
+    </navigator>
+    <view class="spa scr-H-item"></view>
+  </scroll-view>
+</view>
+<view class="audience">
+  <view class="mark-head">
+    <view class="au-mark">观众评论</view>
+    <navigator url="" class="my-mark">我的短评</navigator>
+  </view>
+  <view>
+    <view wx:for="{{des.pinlun.audience}}" class="audience-item">
+      <view class="avatarUrl">
+        <image src="{{item.avatarUrl}}" style="width:58rpx;height:58rpx; border-radius: 50%;"></image>
+      </view>
+      <view class="audienceD">
+        <view>
+          <view class="nickName">{{item.nickName}}</view>
+          <view></view>
+        </view>
+        <view class="pWord">{{item.pWord}}</view>
+        <view class="dToa">
+          <view>{{item.date}}</view>
+          <view style="margin-right:36rpx;">{{item.admire}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <navigator url=""></navigator>
+</view>
+<navigator url="../../theaterList/theaterList?title={{des.title}}&id={{des.id}}" class="buy">优惠购票</navigator>
+<view style="height:100px;"></view>

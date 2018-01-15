@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="header"></view>
+  <view class="result-icon">
+    <icon type="success" size="80"></icon>
+  </view>
+  <view class="result-title">
+    订单确认成功
+  </view>
+  <view class="result-content">
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="placeholder">订单号：</view>
+        <view class="placeholder">金 额：</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder" style="padding-left: 3px;">E20170427989460</view>
+        <view class="placeholder">￥599.00</view>
+      </view>
+    </view>
+  </view>
+  <view class="result-button">
+    <button class="weui-btn" type="primary" bindtap="handleHome">返回首页</button>
+    <button class="weui-btn" type="default" bindtap="handleOrder">查看订单</button>
+  </view>
+</view>

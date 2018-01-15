@@ -1,0 +1,19 @@
+.container {
+  padding:15rpx 15px 0px 20rpx; text-align: left; width:100%;
+
+  display: flex; flex-direction: column;
+}
+
+.single-joke {
+  margin-top:1.5%; border-bottom:1px #ddd solid; padding-bottom:7px; width:97%;
+}
+
+.single-joke view {
+  color:#777; font-size: 30rpx; 
+}
+.single-joke view.num {
+  float:left; width:18px; height:18px; background:#3ba20d; border-radius:15px; text-align: center; margin-right:3px; color:#FFF;
+}
+.single-joke text {
+  font-size:31rpx; margin-top:5px; line-height:44rpx; color:#444;
+}

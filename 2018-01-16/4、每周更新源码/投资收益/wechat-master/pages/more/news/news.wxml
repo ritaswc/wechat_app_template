@@ -1,0 +1,55 @@
+<view class="page">
+    <view class="page_body">
+        <view class="page_bd_title">
+            <!--<button size="mini" bindtap="change" id="tab0" class="{{tab0Show?'tab_info_show':''}}">商行贷</button>
+            <button size="mini" bindtap="change" id="tab1" class="{{tab1Show?'tab_info_show':''}}">商抵贷</button>
+            <button size="mini" bindtap="change" id="tab2" class="{{tab2Show?'tab_info_show':''}}">商企贷</button>-->
+            <view bindtap="change" id="tab0" class="tab0 {{tab0Show ? 'tab_info_show' : ''}}">平台公告</view>
+            <view bindtap="change" id="tab1" class="tab1 {{tab1Show ? 'tab_info_show' : ''}}">平台动态</view>
+            <view bindtap="change" id="tab2" class="tab2 {{tab2Show ? 'tab_info_show' : ''}}">媒体报道</view>
+        </view>
+        <view class="page_bd_con">
+            <view class="content {{tab0Show?'tab_con_show':'tab_con_hide'}}">
+                <navigator url="../article/ptgg/ptgg">普汇云准备金开放查询的公告 <text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎担保实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇金鼎投资担保实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云与金鼎投实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与资担保实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">普汇云准备金开放查询的公告 <text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎担保实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇金鼎投资担保实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云与金鼎投实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与资担保实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">普汇云准备金开放查询的公告 <text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎担保实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇金鼎投资担保实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云与金鼎投实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与资担保实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投实现...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与<text>2016-11-07</text></navigator>
+            </view>
+            <view class="content {{tab1Show?'tab_con_show':'tab_con_hide'}}">
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投资担<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投资担保实<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投资担保实...<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投资担保实现<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投资担保<text>2016-11-07</text></navigator>
+            </view>
+            <view class="content {{tab2Show?'tab_con_show':'tab_con_hide'}}">
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投资担保实<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投资担保<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投资担<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投资<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎投<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金鼎<text>2016-11-07</text></navigator>
+                <navigator url="../article/ptgg/ptgg">关于普汇云通与金<text>2016-11-07</text></navigator>
+            </view>
+        </view>
+    </view>
+</view>

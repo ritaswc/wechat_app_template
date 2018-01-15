@@ -1,0 +1,29 @@
+<!--pages/shenghuo/AllServiceclassify/SecondaryService/SecondaryService.wxml-->
+<!--<text>pages/shenghuo/AllServiceclassify/SecondaryService/SecondaryService.wxml</text>-->
+
+
+<import src="../HeaderSection/HeaderSection.wxml" />
+
+<view class="allService-container">
+  <scroll-view class="scroll-container" scroll-y="true">
+
+    <view class="search-bg1"></view>
+    <view class="search-box">
+      <view class="search-city">玉溪市</view>
+      <view class="search-icon">
+        <input placeholder="点击搜索" />
+      </view>
+    </view>
+
+    <view class="fuwufl-item-list">
+
+      <template is="HeaderSection" data="{{...dic}}"></template>
+
+    </view>
+  </scroll-view>
+
+
+
+
+
+</view>

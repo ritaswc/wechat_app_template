@@ -1,0 +1,9 @@
+<template name="topScroll"> 
+    <swiper class="lunbo" id="lunbo" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{topScroll}}">
+            <swiper-item>
+              <image src="{{item.Pic}}" class="slide-image"/>
+            </swiper-item>
+        </block>
+    </swiper>
+</template>

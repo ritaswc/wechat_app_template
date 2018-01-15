@@ -1,0 +1,78 @@
+/* pages/evaluate/evaluate.wxss */
+page {
+    background: #FFF;
+}
+.column{
+  padding-left:74rpx;
+
+}
+.right{
+  position:absolute;
+right:83rpx;
+top:710rpx;
+
+}
+.icon-add {
+    width: 40rpx;
+    height: 40rpx;
+    background: #929292;
+    border-radius: 50%;
+}
+.l-evalbox{
+  height: 100rpx;
+  padding: 0 3%;
+  margin-top: 10rpx;
+  background: #FFF;
+  line-height: 100rpx;
+}
+.l-evaltxt{
+ width:182rpx;
+  display: block;
+  font-size: 26rpx;
+  color: #666666;
+}
+.evaltxt{
+  font-size: 26rpx;
+  color: #666666;
+}
+.l-evalist .icon{
+  background-image: url(http://images.iwocar.com/shadow.png);
+  background-repeat: no-repeat;
+  background-position: 0;
+  background-size: 80%;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.l-evalist .cur{
+  background-image:url(http://images.iwocar.com/star.png);
+  background-repeat: no-repeat;
+  background-position: 0;
+  background-size: contain;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.evaltxt1{
+  font-size: 26rpx;
+  color: #666666;
+  border: 1px solid #e5e5e5;
+  margin-right:74rpx;
+  width:250px;
+
+
+}
+.prome2 {
+width:607rpx;
+height:88rpx;
+line-height:88rpx;
+font-size:35rpx;
+margin-top:161rpx;
+color:#fff;
+text-align:center;
+
+
+}
+

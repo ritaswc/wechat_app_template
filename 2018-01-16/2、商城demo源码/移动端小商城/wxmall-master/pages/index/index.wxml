@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+    <view>
+        <swiper class="swiper_box" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+                autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+            <block wx:for="{{images}}">
+                <swiper-item>
+                    <image src="{{item.picture}}" class="slide-image"/>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+
+    <view class="goods_box">
+        <block wx:for="{{goodsItems}}">
+            <view class="goods_item">
+                <navigator url="../list/index?brand={{item.tree.id}}&typeid={{navRightItems[curIndex].id}}">
+                    <image src="{{item.picture}}"></image>
+                    <view class="content">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="price">
+                        <image src="../../images/all_money_icon.png"></image>
+                        <text>{{item.price}}</text>
+                    </view>
+                </navigator>
+            </view>
+        </block>
+    </view>
+
+    <loading hidden="{{loadingHidden}}">
+        加载中...
+    </loading>
+</view>

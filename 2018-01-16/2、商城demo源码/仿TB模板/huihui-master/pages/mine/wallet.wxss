@@ -1,0 +1,157 @@
+.header {
+  position: fixed;
+  width: 100%;
+  height: 260rpx;
+  background: #dd2a2a;
+}
+
+.header button {
+  background-color: #dd2a2a;
+}
+
+.money {
+  padding: 20rpx 0 32rpx;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+}
+
+.money-b {
+  padding-right: 10rpx;
+  font-size: 64rpx;
+  font-weight: normal;
+}
+
+.recharge-btn {
+  width: 200rpx;
+  border: #fff solid 1rpx;
+  line-height: 64rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+
+.wrapper {
+  position: absolute;
+  top: 135px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.tap {
+  position: relative;
+  bottom: auto;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+}
+
+.tap-header {
+  position: relative;
+  width: 100%;
+  height: 84rpx;
+  background: #fff;
+  overflow: hidden;
+}
+
+.item {
+  display: block;
+  float: left;
+  width: 33.3333%;
+  height: 78rpx;
+  line-height: 78rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.item:after {
+  bottom: 0;
+  border-bottom: #dedede solid 1rpx;
+  position: absolute;
+  left: 0rpx;
+  right: 0rpx;
+  width: 100%;
+  height: 2rpx;
+  content: '';
+  overflow: hidden;
+  opacity: 0.6;
+}
+
+.item.active {
+  border-bottom: #dd2a2a solid 4rpx;
+  color: #dd2a2a;
+}
+
+.group {
+  width: 100%;
+}
+
+.group-item {
+  font-size: 14px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.group-ul {
+  padding: 0 15px;
+  list-style: none;
+  background-color: #fff;
+}
+
+.group-li {
+  position: relative;
+  width: 100%;
+  padding: 10px 0 6px;
+  line-height: 22px;
+  overflow: hidden;
+}
+
+.group-li:after {
+  bottom: 0;
+  border-bottom: #dedede solid 1px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  height: 1px;
+  content: '';
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+.left {
+  float: left;
+}
+
+.lt-h {
+  display: block;
+  padding: 0;
+  margin: 0;
+  line-height: 22px;
+  font-size: 15px;
+  font-weight: normal;
+  color: #333;
+}
+
+.lt-time {
+  display: block;
+  font-size: 14px;
+  color: #888;
+}
+
+.right {
+  float: right;
+}
+
+.rt-span {
+  display: block;
+  text-align: right;
+  color: #333;
+}
+
+.rt-em {
+  display: block;
+  font-style: normal;
+  color: #888;
+}

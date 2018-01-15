@@ -1,0 +1,39 @@
+.vWall {
+  background-color: rgba(200, 200, 200, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.vWall text {
+  height: 56rpx;
+  margin-top: 386rpx;
+  font-size: 40rpx;
+  color: #000;
+  text-align: center;
+}
+
+.vLocation {
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.vLocation image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.vLocation text {
+  	height: 48rpx;
+	font-size: 34rpx;
+	color: #b2b2b2;
+    margin: auto 0rpx auto 10rpx;
+}
+
+
+.checkBtn {
+  width: 85%;
+  margin-top: 108rpx;
+  background-color: #22a1e0;
+  color: #fff;
+}

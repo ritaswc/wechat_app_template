@@ -1,0 +1,72 @@
+<!--pages/boss/boss.wxml-->
+
+<view class="boss">
+
+    <view class="header">
+        <text>在精准定位100米内打卡有效，详细地址可以手动更改。</text>
+    </view>
+
+    <view class="content">
+
+        <view class="item bottom" bindtap="toCompanyName">
+            <view class="item-left">
+                <text>公司</text>
+            </view>
+            <view class="item-right">
+                <text>{{name}}</text>
+                <view class="arrow"></view>
+            </view>
+        </view>
+
+        <view class="item bottom" bindtap="toAddress">
+            <view class="item-left">
+                <text>详细地址</text>
+            </view>
+            <view class="item-right">
+                <text>{{address}}</text>
+                <view class="arrow"></view>
+            </view>
+        </view>
+
+        <view class="item bottom" bindtap="handleUpdateLocation">
+            <view class="item-left">
+                <text>精准定位</text>
+            </view>
+            <view class="item-right">
+                <text>纬度:{{latitude}}，经度:{{longitude}}</text>
+                <view class="arrow"></view>
+            </view>
+        </view>
+
+        <view class="item" bindtap="toAttendance">
+            <view class="item-left">
+                <text>考勤时间</text>
+            </view>
+            <view class="item-right">
+                <view class="arrow"></view>
+            </view>
+        </view>
+    </view>
+
+    <view class="content-bottom">
+        <view class="item bottom" bindtap="toApplyList">
+            <view class="item-left">
+                <text>申请列表</text>
+            </view>
+            <view class="arrow"></view>
+        </view>
+
+        <view class="item" bindtap="dissolveCompany">
+            <view class="item-left">
+                <text>解散企业</text>
+            </view>
+            <view class="arrow"></view>
+        </view>
+    </view>
+
+    <view class="feedback" bindtap="feedback">
+        <text>欢迎反馈</text>
+    </view>
+    
+
+</view>

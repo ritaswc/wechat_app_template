@@ -1,0 +1,10 @@
+<template name="empty">
+    <view class="empty flexbox">
+        <image src="{{empty.emptyCat}}" class="cat" />
+        <view class="content">
+            <text>~</text>
+            <text>{{empty.text}}</text>
+            <text>~</text>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,8 @@
+/*.warp{background-color: #fff}*/
+page{background-color:#f6f6f6}
+form{font-size:24rpx;width:100%}
+form .row{font-size: 30rpx; border-bottom:1px #ccc solid;width:100%;}
+form .row text{float:left;width:150rpx;height:60rpx;line-height: 60rpx;}
+form .row input{display: inline-block;width: 600rpx;height:60rpx;line-height: 60rpx;}
+/*form .row textarea{height: 160rpx;line-height: 80rpx;}*/
+button{margin-top: 200rpx;background-color:#56d176;color: #fff;font-family: "微软雅黑"}

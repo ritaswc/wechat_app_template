@@ -1,0 +1,68 @@
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+
+<!--库存中心-->
+<view class="container">
+
+  <!-- 库存为空样式 -->
+  <view class="empty-con" wx:if="{{emptyShow}}">
+    <image class="empty-image" src="{{imageCtx}}dealer/note.png"></image>
+    <text class="empty-text">暂未关联任何供应商</text>
+  </view>
+  <view wx:else>
+
+    <!-- 搜索框 -->
+    <view class="search">
+      <input class="search-ipt" type="text" bindconfirm="srarchStyle" value="{{styleName}}" bindinput="styleInput" placeholder="请输入款式名称" placeholder-class="placeholder-color" />
+      <text class="search-text" bindtap="srarchStyle">搜索</text>
+    </view>
+    <view class="choose">
+      <view class="order-con">
+        <text class="text1">选择供应商</text>
+        <picker class="text2" bindchange="bindPickerChange1" range-key="name" value="{{supplierIndex}}" range="{{supplier}}">
+          <view>{{supplier[supplierIndex].name}}</view>
+        </picker>
+      </view>
+      <view class="order-con">
+        <text class="text1">选择款式</text>
+        <picker class="text2" bindchange="bindPickerChange2" range-key="name" value="{{styleIndex}}" range="{{style}}">
+          <view>{{style[styleIndex].name}}</view>
+        </picker>
+      </view>
+      <view class="order-con">
+        <text class="text1">选择款式二级</text>
+        <picker class="text2" bindchange="bindPickerChange3" range-key="name" value="{{styleSecondIndex}}" range="{{styleSecond}}">
+          <view>{{styleSecond[styleSecondIndex].name}}</view>
+        </picker>
+      </view>
+      <view class="order-con">
+        <text class="text1">选择颜色</text>
+        <picker class="text2" bindchange="bindPickerChange4" range-key="color_name" value="{{styleColorIndex}}" range="{{styleColor}}">
+          <view>{{styleColor[styleColorIndex].color_name}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <!--库存-->
+    <view class="re-table">
+      <!--无尺码-->
+      <view class="empty-con" wx:if="{{emptySizeShow}}">
+        <image class="empty-image" src="{{imageCtx}}dealer/note.png"></image>
+        <text class="empty-text">暂无款式信息</text>
+      </view>
+      <view class="re-tr" wx:else>
+        <view class="re-th">尺码</view>
+        <view class="re-th">当前库存</view>
+        <view class="re-th">占用库存</view>
+        <view class="re-th">在途库存</view>
+      </view>
+      <view class="re-tr" wx:for="{{styleSize}}">
+        <view class="re-td">{{item.size_name}}</view>
+        <view class="re-td">{{item.store}}</view>
+        <view class="re-td">{{item.occupation_store}}</view>
+        <view class="re-td">{{item.transit_store}}</view>
+      </view>
+    </view>
+  </view>
+</view>

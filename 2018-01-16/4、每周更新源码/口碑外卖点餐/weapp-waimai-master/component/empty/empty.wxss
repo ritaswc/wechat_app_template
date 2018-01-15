@@ -1,0 +1,18 @@
+.empty{
+    margin:200rpx auto;
+}
+.empty-icon{
+    width: 200rpx;
+    height: 200rpx;
+    margin: 0 auto 40rpx auto;
+}
+
+.empty-image{
+    width: 100%;
+    height: 100%;
+}
+
+.empty-text{
+    text-align: center;
+    color: #999;
+}

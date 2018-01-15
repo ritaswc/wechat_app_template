@@ -1,0 +1,5 @@
+<view class="container">
+  <view class="naviButton" id="Regeo" bindtouchstart="naviToRegeo">逆地理编码</view>
+  <view class="naviButton" id="weahter" bindtouchstart="naviToWeather">天气</view>
+  <view class="naviButton" id="poi" bindtouchstart="naviToPoi">POI查询</view>
+</view>

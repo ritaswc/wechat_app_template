@@ -1,0 +1,74 @@
+<import src="../../wxParse/wxParse.wxml" />
+<import src="../../templates/toast/toast.wxml" />
+<scroll-view class="page" scroll-y="true" id="product-detail">
+    <view class="section swiper-container">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="3000" duration="300" bindchange="currentchange">
+            <block wx:for="{{product.picture}}">
+                <swiper-item class="picture">
+                    <image mode="aspectFill" src="{{item}}"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+        <text class="index-con">{{current}} / {{product.picture.length}}</text>
+    </view>
+    <view class="product-detail">
+        <view class="detail product-name">{{product.goods_name}}</view>
+        <view class="detail product-price">¥ {{product.goods_price}}</view>
+        <view class=" product-market">
+            <text>市场价：¥ {{product.market_price}}</text>
+            <text class="product-sold">已售{{product.sold_count}}件</text>
+        </view>
+    </view>
+    <view class="product-car">
+        <button class="car" bindtap="navigateToCart">
+            <view class="cart-wrapper">
+                <image src="../../images/cart.png"></image>
+                <text class="badge badge-animation" wx:if="{{cartNum>0}}">{{cartNum}}</text>
+            </view>
+        </button>
+        <button class="add-car" bindtap="addCar">加入到购物车</button>
+    </view>
+    <view class="product-recommend">
+        <view wx:for="{{wxParseData}}" wx:for-item="activity">
+            <view wx:for="{{activity.child}}" wx:for-item="act">
+                <view wx:if="{{activity.tag == 'p'}}">{{act.text}}</view>
+                <view class="con-text-center" wx:if="{{act.tag == 'img' || act.tag == 'gif'}}">
+                    <image src="{{act.attr.src}}" mode="aspectFit"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="adding-to-cart-popup-background" style="display:{{popDisplay}}">
+        <view class="adding-to-cart-popup">
+            <view class="header">
+                <view class="close" bindtap="closePop"><image src="close.png"></image></view>
+                <image alt="" class="product-image" src="{{product.goods_image}}"></image>
+                <view class="product-info">
+                    <view class="stock-price text-primary p">￥ {{goodsPrice}}</view>
+                    <view class="stock p">库存{{totalStock}}件</view>
+                    <view class="spec-title p">请选择口味和重量</view>
+                </view>
+            </view>
+            <view class="section">
+                <view class="specs" wx:for="{{product.spec}}" wx:for-item="spec">
+                    <text class="h2">{{spec.spec_name}}</text>
+                    <view class="spec-btns">
+                        <button wx:for="{{spec.value}}"  data-spec-id="{{spec.spec_id}}" data-value-id="{{item.value_id}}" disabled="{{item.disabled}}" class="{{item.class}}" catchtap="choseSpec">{{item.value_text}}</button>
+                    </view>
+                </view>
+                <view class="quantity">
+                    <text class="h2">购买数量</text>
+                    <view class="counter">
+                        <button class="{{subButton.class}}" disabled="{{subButton.disabled}}" catchtap="subShopNum">-</button>
+                        <text class="{{buyNumClass}}">{{buyNum}}</text>
+                        <button  class="{{addButton.class}}" disabled="{{addButton.disabled}}" catchtap="addShopNum">+</button>
+                    </view>
+                </view>
+            </view>
+            <view class="footer">
+                <button catchtap="submitCart">确定</button>
+            </view>
+        </view>
+    </view>
+    <template is="toast" data="{{...toast}}"/>
+</scroll-view>

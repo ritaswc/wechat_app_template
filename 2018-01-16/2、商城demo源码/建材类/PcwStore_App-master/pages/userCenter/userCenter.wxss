@@ -1,0 +1,262 @@
+/* pages/userCenter/userCenter.wxss */
+.container{
+    height: 100%;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+    width: 100%;
+    position: fixed;
+}
+
+.top{
+    background-color: #00acff;
+    text-align: center;
+    line-height: 200rpx;
+    margin: 0 auto;
+}
+
+.top_image{
+    height: 150rpx;
+    width: 150rpx;
+    border-radius: 60px;
+    vertical-align: middle;
+}
+
+.center{
+    text-align: center;
+    margin: 0 auto;    
+}
+
+.center_image{
+    width: 450rpx;
+    height: 450rpx;
+    margin: 3rem 0;
+    vertical-align: middle;
+    position: relative;
+}
+
+.image_text{
+   position: absolute;
+   z-index: 1001;
+   left: 40px;
+   top:80px;
+   color:#424242;
+   font-size: 20px;
+}
+
+.wenzi{
+   position: absolute;
+   bottom:4rem;
+   right: 4%;
+}
+
+.wenzi_text{
+    color:#424242;
+    font-size: 16px;
+}
+
+.button{
+    position: fixed;
+    bottom: 1.2rem;
+    width: 92%;
+    background-color: #00acff;
+    left: 4%;
+}
+
+.button_pressed{
+     background-color: #00a1e0;
+}
+
+.button_text{
+    color:#FFFFFF;
+}
+
+/* 登录成功wxss样式 */
+.s_container{
+    height: 100%;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+    width: 100%;
+    position: fixed;
+}
+
+.s_top{
+    height: 150px;
+    background-color: #00acff;
+    position: relative;
+}
+
+.s_top_image{
+    width: 95px;
+    height: 95px;
+    border-radius: 60px;
+    margin-top: 35px;
+    margin-left: 20px;
+}
+
+.s_top_text{
+    color:#FFFFFF;
+    position: absolute;
+    top:50px;
+    left: 130px;
+    font-size: 20px;
+}
+
+.s_top_vip{
+    color:#FFFFFF;
+    font-size: 15px;
+    opacity: 0.6;
+    position: absolute;
+    top:95px;
+    left: 130px;
+}
+
+.s_top_text_vip{
+    background-color: red;
+    border-radius: 10px;
+    padding: 2px 9px;
+    font-size: 14px;
+    color:#FFFFFF;
+    position: absolute;
+    top:93px;
+    left: 195px;
+}
+
+.nav_address{
+   line-height: 35px;
+   padding: 0 10px; 
+   background-color: rgba(0,0,0,0.15);
+   border-bottom-left-radius: 20px;
+   border-top-left-radius: 20px;
+   -moz-border-radius-bottomleft: 20px;
+   -moz-border-radius-topleft: 20px;
+   -webkit-border-bottom-left-radius: 20px;
+   -webkit-border-top-left-radius: 20px;
+    position: absolute;
+    top:90px;
+    right: 0;
+    width: 80px;
+    text-align: center;
+}
+
+.nav_text{
+   color: white; 
+   font-size: 16px; 
+}
+
+.content_order{
+    height: 140px;
+    margin-top: 10px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.order_manager{
+    position: relative;
+    line-height:50px;
+    height: 50px;
+    border-bottom: 1px solid #d1d1d1;  
+}
+
+.order_image{   
+    margin-top: -10px;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.order_text_css1{
+    color:#000000;
+    font-size: 25px;    
+    margin: 0 10px;
+}
+
+.order_text_css2{
+    color:#7B7B7B;
+    font-size: 22px;    
+    margin: 0 10px;
+    position: absolute;
+    right: 15px;
+}
+
+.order_content{
+    height: 100px;
+}
+
+.order_item{
+    height: 100px;
+    line-height: 100px;
+    width: 25%;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+.order_css1{
+    line-height:55px;
+    height: 55px;
+    display: block;
+}
+
+.order_css2{
+    line-height:50px;
+    height:50px;
+    display: block;
+    margin-top: -16px;
+    /*background-color: #00acff;*/
+}
+
+.my-content{
+     margin-top: 10px; 
+     text-align: center;
+}
+
+.nav-item{
+     display: inline-block;
+     width: 33.333%;
+     height: 104px;
+     line-height: 104px;
+     text-align: center;
+     border: 1px solid #d1d1d1;
+     margin-bottom:-1px;
+     margin-right: -1px;
+     background-color: #FFFFFF;
+     box-sizing: border-box;
+}
+
+.nav-image{
+     padding:15px;
+     width:37px;
+     height: 37px;
+     display: block;
+     margin: 0 auto;
+}
+
+.nav-text{
+     display: block;
+     line-height: 48px;
+     margin-top: -12px;
+     font-size: 18px;
+     color:#424242;
+}
+
+.footer_button{
+     margin-top: 10px;
+     text-align: center;
+     background-color: #FFFFFF; 
+     line-height: 50px;
+}
+
+.footer_button_pressed{
+    background-color: #f4f4f4;
+}
+
+.footer_cs{
+     margin-right: 10px;
+     font-size: 22px;
+}
+
+.footer_tel{
+     color:red;
+     font-size: 22px;
+}

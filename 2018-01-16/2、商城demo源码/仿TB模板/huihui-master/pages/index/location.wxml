@@ -1,0 +1,45 @@
+<view class="search-city">
+  <form>
+    <input class="search-text" type="text"/>
+    <view class="search-icon">
+      <icon type="search" size="25" color="#fff" />
+    </view>
+  </form>
+</view>
+<view class="searchLetter touchClass">
+  <view class="thishotText" bindtap="hotCity">
+    <view style="margin-top:0;">当前</view>
+    <view style="margin-top:0;">热门</view>
+  </view>
+  <view wx:for="{{searchLetter}}" style="color:#2ab4ff;font-size:20rpx;" wx:key="index" data-letter="{{item.name}}" catchtouchend="clickLetter" >{{item.name}}</view>
+</view>
+<block wx:if="{{isShowLetter}}">
+  <view class="showSlectedLetter">
+    {{showLetter}}
+  </view>
+</block>
+<scroll-view scroll-y="true" style="height:{{winHeight}}px" bindscroll="bindScroll" 
+ scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}">
+   <view class="location-now">
+    <text class="location-city">定位城市</text>
+    <view class="location">
+      <button type="warn" size="mini">东莞</button>
+    </view>
+  </view>
+  <view>
+    <text class="hotcity hotcity-common">热门城市</text>
+    <view class="weui-grids">
+      <block wx:for-items="{{hotcityList}}" wx:key="{{index}}">
+        <view class="weui-grid" data-cityCode="{{item.cityCode}}" data-city="{{item.city}}" bindtap="bindHotCity" >
+          <view class="weui-grid_label">{{item.city}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="selection" wx:for="{{cityList}}" wx:key="{{item.initial}}">
+    <view class="item_letter"  id="{{item.initial}}">{{item.initial}}</view>
+    <view class="item_city"  wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.id}}" data-cityCode="{{ct.code}}" data-city="{{ct.city}}" bindtap="bindCity">
+      {{ct.city}}
+    </view>
+  </view>
+</scroll-view>

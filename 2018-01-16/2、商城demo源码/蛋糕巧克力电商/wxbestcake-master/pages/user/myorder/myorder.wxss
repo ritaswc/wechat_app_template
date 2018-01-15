@@ -1,0 +1,10 @@
+/* pages/user/myorder/myorder.wxss */
+.body{margin: 10px 0; background-color: #eee; box-shadow:  5px 0 #ccc; font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif; }
+.item{display: flex; padding: 10px 0; background-color: #fff;  margin-bottom:5px;}
+.item .img{width:300rpx; text-align: center;}
+.itemjd .img image{width: 250rpx;height: 150rpx;}
+.itemjz .img image{width:100%;height:200rpx;}
+.item .con{flex: 1; padding: 0 10px 0 0;}
+.con .nm{font-size: 12pt; font-weight: bold;}
+.con .des{line-height: 20px; font-size: 12pt; padding: 5px 0;color: #666;}
+.iconpadding{padding:30px 30px 0 0;}

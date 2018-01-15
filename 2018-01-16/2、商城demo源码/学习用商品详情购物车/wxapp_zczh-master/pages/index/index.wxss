@@ -1,0 +1,18 @@
+/**index.wxss**/
+.warp{padding:10rpx;}
+.goods{font-family: "微软雅黑";width: 360rpx;}
+.goods:nth-child(2n-1){float: left}
+.goods:nth-child(2n){float: right}
+.goods image{width: 360rpx;height: 360rpx;display:block }
+.goods .price{color:red;font-size: 28rpx;display: inline-block;margin-right: 15rpx;}
+.goods text{display: block;padding-left: 10rpx;}
+.goods .info{font-size:12px;color:#789 }
+.goods .title{font-weight: 400;font-size: 30rpx;}
+.goods span{text-decoration: line-through;font-size: 28rpx;color: #ccc}
+/*轮播*/
+.slide-image {
+  height:100%;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+}

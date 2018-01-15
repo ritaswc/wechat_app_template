@@ -1,0 +1,39 @@
+.container {
+  margin-top: 20rpx;
+}
+
+.add-city-btn {
+  width: 100%;
+  background-color: #09bb07;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+  background-color: turquoise;
+  width: 98%;
+}
+
+.item-city {
+}
+
+.delete-city-btn {
+  background-color: #e64340;
+  height: 100%;
+  padding: 10rpx;
+}
+
+.item-city-container {
+  padding: 20rpx;
+  width: 80%;
+}
+
+.delete-city-btn-container {
+  width: 20%;
+}
+
+scroll-view {
+  height: 800rpx;
+}

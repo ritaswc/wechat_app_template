@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/echo/echo"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#34A2DA",
+    "navigationBarTitleText": "私语",
+    "navigationBarTextStyle":"light"
+  },
+  "tabBar": {
+    "color": "#555",
+    "selectedColor": "#34A2DA",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "私语",
+      "iconPath": "images/record.png",
+      "selectedIconPath": "images/record_selected.png"
+    }, {
+      "pagePath": "pages/echo/echo",
+      "text": "回声",
+      "iconPath": "images/echo.png",
+      "selectedIconPath": "images/echo_selected.png"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

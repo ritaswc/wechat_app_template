@@ -1,0 +1,73 @@
+<view class="addr tab">
+  <view class="tit">收货人信息</view>
+  <view class="con arrow" bindtap="myaddrChange">
+     <view class="addr_sel_m">{{oinfo.Consignee}}  {{oinfo.Cellphone}}</view>
+    <view class="addr_sel_a"> {{addr?addr:'选择收货人信息'}}</view>
+  </view>
+</view>
+<view class="date tab">
+  <view class="tit">配送日期/时间</view>
+  <view class="dt">
+    <picker mode="date" value="{{deliveryDate}}" class="dt-item pos" start="{{dateStart}}" end="{{dateEnd}}" bindchange="bindDateChange">
+      {{oinfo.DeliveryDate?oinfo.DeliveryDate:'选择配送日期'}}
+    </picker>
+    <picker mode="selector" value="{{arrTimeIndex}}" range="{{arrTime}}" class="dt-item pos" bindchange="bindTimeChange">
+      {{arrTime[arrTimeIndex]}}
+    </picker>
+  </view>
+</view>
+<view class="date tab">
+  <view class="tit">商品详情</view>
+  <view class="pro" wx:for="{{plist}}" wx:for-item="p" wx:key="name">
+    <image src="{{p.img}}" class="pimg"></image>
+    <text class="pname">{{p.name}}</text>
+    <text class="pprice">{{p.price}} x {{p.num}}</text>
+    <text class="ptprice">{{p.price*p.num}}</text>
+  </view>
+</view>
+<view class="date tab">
+  <view class="tit">配件</view>
+</view>
+<view class="date tab">
+  <view class="tit">优惠方式</view>
+  <view class="yh">
+    <view class="item arrow">
+      <view class="lable">代金卡</view>
+      <view class="content"></view>
+    </view>
+    <view class="item arrow">
+      <view class="lable">优惠券</view>
+      <view class="content"></view>
+    </view>
+  </view>
+</view>
+<view class="date tab" style="height:100px;">
+  <view class="tit">备注</view>
+  <textarea bindblur="bindTextAreaBlur" auto-height placeholder="" value="{{oinfo.Remarks}}" />
+</view>
+<view class="tool">
+  <view class="sub" bindtap="submit">提交订单</view>
+</view>
+
+<!--我的地址-->
+<view class="addr_box" wx:if="{{addrShow}}">
+  <view class="addr_head">
+    <view class="addr_head_cancel" bindtap="myaddrCancel">取消</view>
+    <view class="addr_head_title">我的地址</view>
+  </view>
+  <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" style="height: 250px;">
+    <view class="addr_body" data-aid="{{a.id}}" wx:for="{{addresslist}}" wx:key="id" wx:for-index="i" wx:for-item="a">
+      <view class="addr_body_edit"> <navigator url="{{'../user/editaddress/editaddress?mod=edit&id='+a.id}}" open-type="navigate" hover-class="navigator-hover">修改</navigator></view>
+      <view class="addr_body_my">
+        <view> {{a.name}} {{a.phone}}</view>
+        <view class="addr_body_my_det">{{a.city}} {{a.area}} {{a.address}}</view>
+      </view>
+      <view class="addr_body_sel" data-aid="{{a.id}}" bindtap="toSelect">
+      <icon type="success" size="25" data-aid="{{a.id}}" color="{{a.id==selectedID?'green':'#EEE'}}" />
+      </view>
+    </view>
+  </scroll-view>
+  <view class="addr_box_add"><navigator url="../user/editaddress/editaddress?mod=add" open-type="navigate" hover-class="navigator-hover"><label class="addr_lbl_add">+</label>新增收货地址</navigator></view>
+</view>
+<!--遮罩层-->
+<view class="hiddenbox" wx:if="{{addrShow}}" bindtap="closeaddr"></view>

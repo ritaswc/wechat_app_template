@@ -1,0 +1,30 @@
+page{
+    background-color: #f5f4f4;
+}
+.nav-view{
+    width: 100%;
+    height: 80rpx;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.nav-item{
+    width: 20%;
+    height: 80rpx;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.nav-item text{
+    font-size: 30rpx;
+    margin-top: 25rpx;
+}
+.nav-item .nav-line{
+    width: 80rpx;
+    height: 2rpx;
+    background-color: #ed4040;
+}

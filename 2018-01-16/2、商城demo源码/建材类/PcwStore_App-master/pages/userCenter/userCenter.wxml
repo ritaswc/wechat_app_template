@@ -1,0 +1,74 @@
+
+<!--pages/userCenter/userCenter.wxml-->
+<view wx:if="{{isLogin}}" class="container">
+  <view class="top">
+    <image mode="aspectFit" class="top_image" src="../../images/user_photo.png"></image>
+  </view>
+  <view class="center">
+    <image mode="aspectFit" class="center_image" src="../../images/user_nolog.png">
+      <text class="image_text">
+        您还没有登录哦！
+      </text>
+    </image>
+  </view>
+  <view class="wenzi">
+    <navigator url="../toRegister/toRegister">
+      <text class="wenzi_text">新用户注册>></text>
+    </navigator>
+  </view>
+  <button class="button" hover-class="button_pressed" bindtap="loginAction">
+    <text class="button_text">去登录</text>
+  </button>
+</view>
+
+<!--成功登陆-->
+<view wx:if="{{!isLogin}}" class="s_container">
+  <view class="s_top">
+    <image class="s_top_image" src="{{userPhoto}}"></image>
+    <text class="s_top_text">{{userNick}}</text>
+    <text class="s_top_vip">{{userVip!=0 ?'高级会员':'普通会员'}}</text>
+    <text class="s_top_text_vip" wx:if="{{userVip!=0?true : false}}">VIP</text>
+    <block>
+      <navigator class="nav_address" url="">
+        <text class="nav_text">地址管理</text>
+      </navigator>
+    </block>
+  </view>
+
+  <view class="content_order">
+      <view class="order_manager">
+          <navigator url="">
+            <image class="order_image" src="../../images/order_manager.png"></image>
+            <text class="order_text_css1">全部订单</text>
+            <text class="order_text_css2">查看全部订单 ></text>
+          </navigator>
+      </view>
+      <view class="order_content">
+                <block wx:for="{{orderItems}}">
+                 <view class="order_item">
+                      <navigator url="">
+                           <text class="order_css1">{{item.orderNum}}</text>
+                           <text class="order_css2">{{item.name}}</text>
+                      </navigator>
+                    </view>
+                </block>     
+      </view>
+  </view>
+
+  <view class="my-content">
+      <block wx:for="{{navItems}}">
+          <view class="nav-item">
+               <navigator url="../../pages/userNav/{{item.url}}/{{item.url}}">
+                   <image class="nav-image" src="../../images/{{item.imgUrl}}"></image>
+                   <text class="nav-text">{{item.name}}</text>
+               </navigator>
+          </view>
+      </block>
+  </view> 
+
+    <button class="footer_button" hover-class="footer_button_pressed" bindtap="telEvent">
+         <text class="footer_cs">品材网客服</text>
+         <text class="footer_tel">400-600-2063</text>
+    </button>
+
+</view>

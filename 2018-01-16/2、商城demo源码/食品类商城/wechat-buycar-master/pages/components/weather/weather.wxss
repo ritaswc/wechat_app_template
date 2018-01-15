@@ -1,0 +1,48 @@
+/*====*/
+.bg {
+    background-color: #f9f027;
+    width: 100%;
+    height: 800px;
+    background-image: url(../../../image/bg.jpg);
+    background-repeat: repeat-y;
+}
+.img
+{
+    height:100px;
+    width:130px;
+    margin-left: 130px;
+    text-align:center;
+}
+
+/*====*/
+
+view.text text {
+    margin-left: 10px;
+    line-height: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+.choice_list .choice_item{
+    margin-bottom: 15px;
+}
+.title{
+    width: 49%;
+    margin-left: 100px;
+   
+}
+.choice_list .title {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+  
+}
+.line_flag {
+    width: 8px;
+    height: 15px;
+    display: inline-block;
+	margin-top: .8rem;
+	margin-inline-start: .8rem;
+    background-color: orange;
+}

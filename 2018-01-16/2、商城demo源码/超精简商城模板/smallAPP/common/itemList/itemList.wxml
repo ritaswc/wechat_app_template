@@ -1,0 +1,50 @@
+<!--商品列表-->
+<!--如果存在商品-->
+<!--该模板有两个场景-->
+<!--1、购物车页面、此处需要显示选择框，以及各种错误信息-->
+<!--2、非购物车页面、只做为商品的展示，没有选择框与错误信息-->
+<view class="items-list" wx:if="{{itemList && itemList.length > 0}}">
+    <block wx:key="x" wx:for="{{itemList}}" wx:for-item="item">
+        <!--errorCode = 0 表示没有异常-->
+        <view class="flex-column item {{(item.errorCode == 0 || !showCheckBox) ? 'normal' : 'error-item'}}" data-sku_id="{{item.sku_id}}">
+            <!--发现设置hidden属性，调试的时候无效，难道是我用法不对？先通过class方法解决-->
+            <view hidden="{{item.errorCode == 0 ? true : false}}" class="err-msg{{(item.errorCode == 0 || !showCheckBox) ? ' hidden' : ''}}">{{item.errorInfo}}</view>
+            <view class="flex-row content">
+                <!--复选框-->
+                <view class="check-area{{showCheckBox ? '' : ' hidden'}}">
+                    <label class="check-label"><checkbox checked="{{item.checked}}" /></label>
+                </view>
+                <!--商品信息-->
+                <view class="flex-row sku-info">
+                    <!--商品图片-->
+                    <image class="sku-img" catchtap="jumpToItem" mode="aspectFit" src="http://res.wmdev2.lsh123.com/img/bc/fabe034912e06cd2b54ade"/>
+                    <!--商品元数据-->
+                    <view class="flex-column sku-meta">
+                        <!--商品名称-->
+                        <text class="name" catchtap="jumpToItem">{{item.name}}</text>
+                        <!--商品标签-->
+                        <view class="tags">
+                            <text wx:key="x" class="tag" wx:for="{{item.tags}}" wx:for-item="tag" style="background-color:{{tag.color}}">{{tag.name}}</text>
+                        </view>
+                        <!--商品价格与操作-->
+                        <view class="flex-row operation">
+                            <!--价格-->
+                            <view class="flex-row price">
+                                <text class="now-price">39.00</text>
+                                <text class="old-price">167.89</text>
+                            </view>
+                            <!--操作按钮-->
+                            <view class="flex-row btns">
+                                <view class="iconf i-item-subtract buy-btn" catchtap="actionAdd" />
+                                <text class="count">12</text>
+                                <view class="iconf i-item-add buy-btn" catchtap="actionSub" />
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <!--赠品数据-->
+            <view class="gifts">赠品信息</view>
+        </view>
+    </block>
+</view>

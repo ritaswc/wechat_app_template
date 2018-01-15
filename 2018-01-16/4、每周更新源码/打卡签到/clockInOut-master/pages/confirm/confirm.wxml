@@ -1,0 +1,10 @@
+<view class="vWall" style="width: {{winWidth}}px; height: {{winHeight}}px">
+  <text>{{companyName}}</text>
+  <view class="vLocation">
+    <image src="/images/icons/location.png"></image>
+    <view class="tLocation"><text>{{companyLocation}}</text></view>
+  </view>
+  <button class="checkBtn" bindtap="checkBtn_click" disabled="{{!checkButton}}">
+    {{checkButton == true ? '申请加入' : '不能重复申请'}}
+  </button>
+</view>

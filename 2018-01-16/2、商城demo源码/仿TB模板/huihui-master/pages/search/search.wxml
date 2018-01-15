@@ -1,0 +1,75 @@
+<view class="container">
+  <view class="header {{scrollDown?'scrolled':''}}">
+    <view class="search">
+      <image class="icon" src="{{img_url}}index/icon_search.png" />
+      <input bindinput="inputSearch" placeholder="{{placeholder}}" auto-focus />
+      <icon type="clear" size="15" hidden="{{!showResult}}"/>
+    </view>
+    <button type="warn" size="mini" bindtap="doSearch">搜索</button>
+  </view>
+
+  <!--模糊搜索结果-->
+  <view id="result" class="result" hidden="{{!showResult}}">
+    <view class="list-search">
+      <view class="div-after">
+        <image class="icons" src="{{img_url}}index/icon_search.png"></image>
+        <text class="div-span">汇汇</text>
+        <text class="div-em">约10个结果</text>
+      </view>
+      <view class="div-after">
+        <image class="icons" src="{{img_url}}index/icon_search.png"></image>
+        <text class="div-span">汇汇</text>
+        <text class="div-em">约10个结果</text>
+      </view>
+      <view class="div-after">
+        <image class="icons" src="{{img_url}}index/icon_search.png"></image>
+        <text class="div-span">汇汇</text>
+        <text class="div-em">约10个结果</text>
+      </view>
+      <view class="div-after">
+        <image class="icons" src="{{img_url}}index/icon_search.png"></image>
+        <text class="div-span">汇汇</text>
+        <text class="div-em">约10个结果</text>
+      </view>
+    </view>
+  </view>
+
+  <!--热门推荐-->
+  <view class="hot-search">
+    <text class="hot-title">热门搜索</text>
+    <view class="hot-list">
+      <view class="hot-ul">
+        <view class="hot-li">
+          <text class="hot-span">汇食城</text>
+        </view>
+        <view class="hot-li">
+          <text class="hot-span">潮汇美食城</text>
+        </view>
+        <view class="hot-li">
+          <text class="hot-span">哥顿蛋糕</text>
+        </view>
+
+        <view class="hot-li">
+          <text class="hot-span">满唐楼</text>
+        </view>
+        <view class="hot-li">
+          <text class="hot-span">麦当劳</text>
+        </view>
+        <view class="hot-li">
+          <text class="hot-span">肯德基</text>
+        </view>
+
+        <view class="hot-li">
+          <text class="hot-span">烧鹅</text>
+        </view>
+        <view class="hot-li">
+          <text class="hot-span">旅拍啦</text>
+        </view>
+        <view class="hot-li">
+          <text class="hot-span">湘菜</text>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,793 @@
+/**index.wxss**/
+/**
+ * 
+ * @authors zhuofangjun
+ * @date    2016-11-09 
+ * @version 微商城首页-基于微信小程序-01
+ */
+/********** 初始化 **********/
+view,scroll-view,swiper,swiper-item,icon,text,progress,mask,input,button,label,form,checkbox,checkbox-group,picker,picker-item,radio,radio-group,switch,slider,slector-item,action-sheet,action-sheet-cancel,action-sheet-item,loading,toast,modal,navigator,image,audio,video,map,canvas,native{
+  margin:0;
+  padding: 0;
+}
+page{
+  min-width: 320px;
+  font: 14px/150% "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
+  color: #222;
+  -webkit-text-size-adjust: none;
+  padding: 0;
+  margin: 0;
+  background-color: #eeeeee;
+}
+input,button {-webkit-appearance: none;appearance: none;}
+textarea {resize: none;}
+/* 禁止长按链接与图片弹出菜单 */
+navigator,image {-webkit-touch-callout: none;touch-callout: none;}
+/*去掉手持设备点击时出现的透明层*/
+navigator,button,input {-webkit-tap-highlight-color: transparent;tap-highlight-color: transparent;}
+input{outline:0;border:0;}
+/********** 公共样式 **********/
+/*伸缩的盒子*/
+.box {display: -webkit-box;display: -webkit-flex;display: box;display: flex;}
+.flex1 {-webkit-flex: 1;-webkit-box-flex: 1;box-flex: 1;flex: 1;}
+.flex2 {-webkit-flex: 2;-webkit-box-flex: 2;box-flex: 2;flex: 2;}
+.flex3 {-webkit-flex: 3;-webkit-box-flex: 3;box-flex: 3;flex: 3;}
+/*box-sizing包括边框的宽度*/
+.box-sizing {-moz-box-sizing: border-box;-o-box-sizing: border-box;box-sizing: border-box;}
+/*图片大小自适应*/
+image{width: 100%;vertical-align: top;display: block;}
+/*文字超出隐藏*/
+.text-elli {overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+/*清除浮动样式*/
+.clear {clear: both;height: 0;overflow: hidden;}
+.clearfix{zoom: 1; clear:both;}
+.clearfix:after {display: block;height: 0;overflow: hidden;content: " ";visibility: hidden;clear: both;}
+.fl{float: left;}
+.fr{float: right;}
+.hidden{display: none;}
+.block{display: block;}
+.mt30 {margin-top: 30rpx;}
+/*********** page begin ***********/
+/*头部搜索begin*/
+.search {
+    width: 100%;
+    height: 92rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    background: rgba(0,0,0,.2);
+}
+.scrollStyle {
+  opacity: 0.9;
+  background: -ms-linear-gradient(top, #4b0a18, #fb2250);/* IE 10 */
+  background:-moz-linear-gradient(top, #4b0a18, #fb2250);/*火狐*/ 
+  background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#fb2250), to(#4b0a18));/*谷歌*/ 
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fb2250), to(#4b0a18));/* Safari 4-5, Chrome 1-9*/
+  background: -webkit-linear-gradient(top, #4b0a18, #fb2250);/*Safari5.1 Chrome 10+*/
+  background: -o-linear-gradient(top, #4b0a18, #fb2250);/*Opera 11.10+*/
+}
+.search-inner {
+    width: 92%;
+    height: 64rpx;
+    margin-top: 14rpx;
+    margin-left: 4%;
+}
+.search-l {
+    width: 6%;
+    font-size: 20rpx;
+    color: white;
+}
+.search-l icon {
+    width: 40rpx;
+    height: 30rpx;
+    background: url(../images/channel.png) no-repeat;
+    background-size: 100%;
+    margin-top: 5rpx;
+}
+.search-l text {
+    width: 40rpx;
+    line-height: 24rpx;
+    margin-top: -10rpx;
+    display: block;
+}
+.search-r {
+    width: 90%;
+    height: 64rpx;
+    background-color: #f8f8f8;
+    border-radius: 40rpx;
+}
+.search-r input {
+    background: #f8f8f8 url(../images/search_logo.png) no-repeat 25rpx 18rpx;
+    background-size: 30rpx;
+    background-repeat: no-repeat;
+    color: #898989;
+    width: 100%;
+    height: 64rpx;
+    line-height: 64rpx;
+    border-radius: 40rpx;
+    font-size: 28rpx;
+    text-indent: 65rpx;
+}
+/*头部搜索end*/
+/*轮播begin*/
+.lunbo,.lunbo image{height: 330rpx;}
+.lunbo .wx-swiper-dots.wx-swiper-dots-horizontal{
+      margin-bottom: 10rpx;
+}
+.lunbo .wx-swiper-dot{
+    width: 14rpx;
+    display: inline-flex;
+    height: 14rpx;
+    vertical-align: sub; 
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    background:rgba(255,255,255,.5);
+    border-radius: 100%;
+}
+.lunbo .wx-swiper-dot::before{
+     content: '';
+     flex-grow: 1;
+} 
+.lunbo .wx-swiper-dot-active::before{
+     content: '';
+     flex-grow: 1;
+     background:rgba(255,255,255,1);
+     border-radius: 100%;
+}
+/*轮播end*/
+/*导航begin*/
+.navlist {
+    background-color: white;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.navlist navigator {
+    width: 4.5rem;
+    float: left;
+    margin-bottom: 20rpx;
+    text-align: center;
+    line-height: 30rpx;
+    font-size: 24rpx;
+    color: #222;
+    display: block;
+}
+.navlist navigator.navlist4n{margin-right: 0;}
+.navlist image:first-child {
+    margin-bottom: 10rpx;
+}
+.navlist image {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: auto;
+}
+/*导航end*/
+.seclist {
+    padding-bottom: 100rpx;
+}
+.tehui {
+    line-height: 30rpx;
+    font-size: 28rpx;
+    color: #222222;
+    background: white url(../images/tehui.png) no-repeat 30rpx 27rpx;
+    background-size: 32rpx 29rpx;
+    padding: 26rpx 30rpx;
+    border-top: 1px solid #f9f9f9;
+    text-indent: 30rpx;
+}
+/*秒杀begin*/
+.skill {
+    background-color: white;
+}
+.skill-top {
+    height: 42rpx;
+    line-height: 42rpx;
+    padding: 30rpx;
+    border-bottom: 1px solid #f7f7f7;
+    font-size: 28rpx;
+}
+.skillt-l, .skillt-l image {
+    width: 126rpx;
+    height: 40rpx;
+}
+.skillt-m {
+    font-size: 28rpx;
+    margin-left: 24rpx;
+    color: #222;
+}
+.skillt-m text {
+    font-size: 24rpx;
+    border: 1px solid #dfdfdf;
+    border-radius: 5rpx;
+    text-align: center;
+    height: 40rpx;
+    line-height: 40rpx;
+    padding-left: 6rpx;
+    padding-right: 6rpx;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.skillt-r {
+    position: relative;
+    padding-right: 32rpx;
+}
+.skillt-r navigator {
+    color: #ff3e3f;
+}
+.skillt-r icon {
+    width: 18rpx;
+    height: 18rpx;
+    display: inline-block;
+    border-top: solid 1px #ff3e3f;
+    border-right: solid 1px #ff3e3f;
+    -webkit-transform: rotate(45deg);
+    position: absolute;
+    right: 0;
+    top: 12rpx;
+}
+.skill-list {
+    padding-top: .35rem;
+    height: 290rpx;
+    display: flex;
+    white-space: nowrap;
+}
+.skill-list .skill-li {
+    width: 24%;
+    height: 290rpx;
+    position: relative;
+    margin-left: 4%;
+    text-align: center;
+    display: inline-block;
+}
+.skill-list .skill-li:last-child{margin-right: 4%;}
+.skill-promotion {
+    background-color: #ff970f;
+    color: white;
+    font-size: 24rpx;
+    width: 100rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    position: absolute;
+    top: 135rpx;
+    right: 0;
+    border-top-left-radius: 20rpx;
+    border-bottom-left-radius: 20rpx;
+}
+.skill-img, .skill-img image {
+    width: 180rpx;
+    height: 180rpx;
+}
+.skill-vipprice {
+    color: #fd3f3f;
+    font-size: 22rpx;
+    line-height: 32rpx;
+    margin-top: 16rpx;
+}
+.skill-vipprice text {
+    font-weight: bold;
+    font-size: 32rpx;
+}
+.skill-marprice {
+    font-size: 22rpx;
+    line-height: 30rpx;
+    color: #b5b5b5;
+    text-decoration: line-through;
+    margin-top: 4rpx;
+}
+/*秒杀end*/
+/*一些科室begin*/
+.some-room {
+    height: 361rpx;
+}
+.sroom-l {
+    width: 45.33%;
+    border-right: 1px solid #f9f9f9;
+    height: 361rpx;
+}
+.sroom-l image {
+    height: 361rpx;
+}
+.sroom-r {
+    width: 54.67%;
+    height: 361rpx;
+    background-color: white;
+}
+.sroom-r navigator {
+    width: 100%;
+    height: 180rpx;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.sroom-r navigator:first-child {
+    border-bottom: 1px solid #f9f9f9;
+}
+.sroom-r navigator image {
+    height: 178rpx;
+}
+.sroom-r navigator:first-child image {
+    height: 177rpx;
+}
+/*一些科室end*/
+/*guid广告位begin*/
+.guid,.guid image {
+    width: 100%;
+    height: 200rpx;
+}
+/*guid广告位end*/
+/*公用title begin*/
+.floor-title {
+    height: 96rpx;
+    line-height: 96rpx;
+    text-align: center;
+    color: #222;
+    font-size: 34rpx;
+    font-weight: bold;
+    position: relative;
+    background-color: white;
+}
+.floor-title text {
+    color: #b9e1f0;
+    font-size: 30rpx;
+    padding-right: 14rpx;
+}
+.floor-title icon{
+  position: absolute;
+    top: 40rpx;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border-top: 10rpx solid transparent;
+    border-bottom: 10rpx solid transparent;
+    border-left: 10rpx solid #222222;
+}
+/*公用title end*/
+/*拼团begin*/
+.fine-puzzle{background-color: white;}
+.puzzle-list{
+    padding-bottom: 30rpx;
+    display: flex;
+    white-space: nowrap;
+}
+.puzzle-list .puzzle-li{
+  width: 83.2%;
+  margin-left: 4%;
+  border: 1px solid #f6f6f6;
+  position: relative;
+  display: inline-block;
+}
+.puzzle-list .puzzle-li:last-child{margin-right: 4%;}
+.puzzle-logo{
+  position: absolute;
+  width: 140rpx;
+  height: 100rpx;
+  background: url(../images/puzzle-logo.png) no-repeat;
+  background-size: 100%;
+  top: 0;
+  right: 16rpx;
+  color: white;
+  text-align: center;
+  line-height: 32rpx;
+}
+.puzzle-logo text{display: block;}
+.puzzle-logo text:first-child{
+  font-size: 24rpx;
+  margin-top: 8rpx;
+  margin-bottom: 2rpx;
+}
+.puzzle-logo text:last-child{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.puzzle-img,.puzzle-img image{
+  width: 100%;
+  height: 333rpx;
+}
+.plr20{
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.puzzle-name{
+    font-size: 30rpx;
+    line-height: 40rpx;
+    font-weight: bold;
+    color: #222222;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.puzzle-ft{
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-bottom: 22rpx;
+}
+.puzzleft-l{width: 55%;}
+.puzzleft-l text{
+  float: left;
+  color: #555555;
+  font-size: 22rpx;
+}
+.puzzleft-l text:first-child{color: #ff6600;}
+.puzzleft-l text.puzzle-ll-text2{
+  color: #ff6600;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.puzzleft-l text.puzzle-ll-text3{margin-right: 18rpx;}
+.puzzleft-r{width: 45%;}
+.puzzleft-r text{
+  float: left;
+  display: block;
+  text-align: center;
+}
+.puzzleft-r text:first-child{
+  width: 42%;
+  height: 70rpx;
+  line-height: 64rpx;
+  background-color: white;
+  font-size: 30rpx;
+  color: #ff6600;
+  border-top: 1px dashed #ff6600;
+  border-bottom: 1px dashed #ff6600;
+  border-left: 1px dashed #ff6600;
+}
+.puzzleft-r text:last-child{
+  width: 58%;
+  height: 70rpx;
+  background-color: #ff6600;
+  color: white;
+  font-size: 32rpx;
+}
+/*拼团end*/
+/*热门科室 begin*/
+.hroom-list navigator {
+    float: left;
+    border-right: 1px solid #f7f7f7;
+    border-bottom: 1px solid #f7f7f7;
+    width: 50%;
+    height: 180rpx;
+}
+.hroom-list navigator:first-child, .hroom-list .hrm-li2 {
+    height: 379rpx;
+    border-top: 1px solid #f7f7f7;
+}
+.hroom-list navigator image {
+    height: 178rpx;
+}
+.hroom-list navigator:first-child image, .hroom-list .hrm-li2 image {
+    height: 374rpx;
+}
+/*热门科室 end*/
+.heal-list navigator,.heal-list navigator image {
+    height: 220rpx;
+}
+/*猜你喜欢 begin*/
+.like-top {
+    width: 520rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    position: relative;
+    color: #888888;
+    font-size: 30rpx;
+    margin: 27rpx auto;
+}
+.liketop-name {
+    position: absolute;
+    width: 194rpx;
+    height: 30rpx;
+    left: 163rpx;
+    top: 0;
+    background: #eeeeee url(../images/likestar.png) no-repeat 18rpx 4rpx;
+    background-size: 26rpx 22rpx;
+    z-index: 2;
+    text-align: center;
+    text-indent: 52rpx;
+}
+.liketop-line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+    top: 14.5rpx;
+    left: 0;
+    z-index: 1;
+}
+.like-list navigator {
+    width: 49.5%;
+    float: left;
+    vertical-align: top;
+    border: 1px solid #f2f2f2;
+    background-color: white;
+    margin-bottom: 8rpx;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.like-list navigator.like-lilf {
+    margin-right: 1%;
+}
+.likepro-img, .likepro-img image {
+    width: 250rpx;
+    height: 250rpx;
+}
+.likepro-img {
+    margin: 50rpx auto;
+}
+.plr26 {
+    padding-left: 26rpx;
+    padding-right: 26rpx;
+}
+.likepro-name {
+    color: #222;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+.likepro-price {
+    line-height: 40rpx;
+    margin-bottom: 30rpx;
+}
+.likepro-price .fl {
+    color: #fd3f3f;
+    font-size: 22rpx;
+}
+.likepro-price .fl text {
+    font-size: 30rpx;
+    font-weight: bold;
+}
+.likepro-price .fr {
+    font-size: 24rpx;
+    color: #b5b5b5;
+    text-decoration: line-through;
+}
+/*猜你喜欢 end*/
+/*CSS3 loading */
+.load-more{
+  font-size: 24rpx;
+  color: #b8b8b8;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin-top: -8rpx;
+}
+.spinner {
+    width: 40rpx;
+    height: 40rpx;
+    position: relative;
+    margin-top: 25rpx;
+    margin-left: 200rpx;
+    margin-right: 16rpx;
+}
+.spinner-container view {
+    width: 10rpx;
+    height: 10rpx;
+    background-color: #a9a9a9;
+    border-radius: 100%;
+    position: absolute;
+    -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+    animation: bouncedelay 1.2s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.spinner .spinner-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.container2 {
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+}
+.container3 {
+    -webkit-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
+}
+.circle1 {
+    top: 0;
+    left: 0;
+}
+.circle2 {
+    top: 0;
+    right: 0;
+}
+.circle3 {
+    right: 0;
+    bottom: 0;
+}
+.circle4 {
+    left: 0;
+    bottom: 0;
+}
+.container2 .circle1 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+.container3 .circle1 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+.container1 .circle2 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+.container2 .circle2 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+.container3 .circle2 {
+    -webkit-animation-delay: -0.7s;
+    animation-delay: -0.7s;
+}
+.container1 .circle3 {
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s;
+}
+.container2 .circle3 {
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+.container3 .circle3 {
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s;
+}
+.container1 .circle4 {
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s;
+}
+.container2 .circle4 {
+    -webkit-animation-delay: -0.2s;
+    animation-delay: -0.2s;
+}
+.container3 .circle4 {
+    -webkit-animation-delay: -0.1s;
+    animation-delay: -0.1s;
+}
+@-webkit-keyframes bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0.0);
+    }
+    40% {
+        -webkit-transform: scale(1.0);
+    }
+}
+@keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    40% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+/*CSS3 loading End*/
+/*底部begin*/
+.footer {
+    width: 100%;
+    height: 98rpx;
+    border-top: 1px solid #e7e7e7;
+    background-color: #f9f9f9;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+}
+.footer-nav {
+  display: -webkit-box;
+  display: box;
+  -webkit-box-align: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-pack: justify;
+  box-pack: justify;
+}
+.footer-nav navigator {
+    height: 98rpx;
+    text-align: center;
+    padding-top: 8rpx;
+    -webkit-box-flex: 1;
+    display: block;
+    font-size: 20rpx;
+}
+.footer-nav image{
+  width: 55rpx;
+  height: 49rpx;
+  margin: 0 auto;
+}
+.footer-nav text{
+  color: #888888;
+  line-height: 24rpx;
+  margin-top: 16rpx;
+}
+/*底部end*/
+/*左侧导航begin*/
+.left-fixed-nav{
+  visibility: visible;
+  width: 250rpx;
+  height: 100%;
+  border: solid 1px #e6e6e6;
+  position: fixed;
+  padding-bottom: 20rpx;
+  box-sizing:border-box;
+  background: #fff;
+  z-index: 8;
+  top: 92rpx;
+  left: -300rpx;
+  transition: left 500ms ease-out;
+}
+.show-lf-nav{
+  visibility: visible;
+  left: 0;
+}
+.left-fixed-list {
+  height: 100%;
+}
+.left-fixed-list view{
+  height: 100rpx;
+  border-bottom: solid 1px #e6e6e6;
+  box-sizing: border-box;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  padding-left: 90rpx;
+}
+.left-fixed-list view.lfnav-li1{
+  background: url(../images/manIcon.png) no-repeat 36rpx center;
+  background-size: 34rpx 30rpx;
+}
+.left-fixed-list view.lfnav-li2{
+  background: url(../images/sexIcon.png) no-repeat 36rpx center;
+  background-size: 34rpx 30rpx;
+}
+.left-fixed-list view.lfnav-li3{
+  background: url(../images/ganIcon.png) no-repeat 36rpx center;
+  background-size: 34rpx 30rpx;
+}
+.left-fixed-list view.lfnav-li4{
+  background: url(../images/zlIcon.png) no-repeat 36rpx center;
+  background-size: 34rpx 30rpx;
+}
+.left-fixed-list view.lfnav-li5{
+  background: url(../images/womenIcon.png) no-repeat 36rpx center;
+  background-size: 34rpx 30rpx;
+}
+.left-fixed-list view.lfnav-li6{
+  background: url(../images/sjIcon.png) no-repeat 36rpx center;
+  background-size: 34rpx 30rpx;
+}
+.left-fixed-list view.lfnav-li7{
+  background: url(../images/gkIcon.png) no-repeat 36rpx center;
+  background-size: 34rpx 40rpx;
+}
+.left-fixed-list view.lfnav-li8{
+  background: url(../images/bjIcon.png) no-repeat 36rpx center;
+  background-size: 34rpx 40rpx;
+}
+.left-fixed-list view.lfnav-li9{
+  background: url(../images/allIcon.png) no-repeat 36rpx center;
+  background-size: 34rpx 30rpx;
+}
+.over-bg{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  overflow: hidden;
+  display: none;
+}
+/*左侧导航end*/

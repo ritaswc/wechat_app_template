@@ -1,0 +1,74 @@
+<view class="personal-info">
+  <view class="header-info">
+    <text class="filter">头</text>
+    <text>像:</text>
+    <image src="{{avatarUrl}}"></image>
+    <text class="icon-enter" bindtap="changeHeadImg"></text>
+  </view>
+  <form class="form-info" bindsubmit="bindsubmit">
+    <view class="info-1">
+      <view>
+        <text class="filter">手</text>
+        <text>机:</text>
+        <input type="number" placeholder="请输入你的手机号码" value="{{userInfo.tel}}" name="tel" />
+      </view>
+      <view>
+        <text class="filter">姓</text>
+        <text>名:</text>
+        <input type="text" placeholder="请输入你的姓名" value="{{userInfo.nickName}}" name="name"/>
+      </view>
+      <view>
+        <text class="filter">邮</text>
+        <text>箱:</text>
+        <input type="text" placeholder="请输入你的常用邮箱" value="{{userInfo.email}}" name="email"/>
+      </view>
+    </view>
+    <view class="info-2">
+      <view>
+        <text class="filter">性</text>
+        <text>别:</text>
+        <radio-group bindchange="changeSex">
+          <label>
+            <radio  wx:if="{{!checkednan}}"value="男"></radio>
+             <radio checked wx:if="{{checkednan}}" value="男"></radio>
+            <text>男</text>
+          </label>
+
+          <label>
+            <radio wx:if="{{checkednv}}" value="女" checked></radio>
+            <radio value="女"  wx:if="{{!checkednv}}" ></radio>
+            <text>女</text>
+          </label>
+        </radio-group>
+      </view>
+      <view>
+        <text class="filter">生</text>
+        <text>日:</text>
+        <picker mode="date" value="{{date}}" start="1900-01-01" end="2017-12-31" bindchange="bindDateChange" class="picker-wrapper">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+        <text class="icon-enter"></text>
+      </view>
+      <view>
+        <text class="permanent">常居地:</text>
+        <picker bindchange="bindPosChange" value="{{index}}" range="{{array}}" class="picker-wrapper">
+          <view class="picker">
+            {{array[index]}}
+          </view>
+        </picker>
+        <text class="icon-enter"></text>
+      </view>
+    </view>
+    <view class="change-password">
+    <text class="password-icon"></text>
+    <text class="password">修改密码</text>
+    <text class="icon-enter"></text>
+  </view>
+  <view class="save-btn">
+    <button formType="submit">保存</button>
+  </view>
+  </form>
+  
+</view>

@@ -1,0 +1,409 @@
+page {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+}
+
+scroll-view {
+  height: 100%;
+}
+
+.header {
+  position: fixed;
+  display: -webkit-flex;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 15rpx;
+  box-sizing: border-box;
+  z-index: 1;
+  -webkit-transition: background 0.5s ease-in-out;
+}
+
+.header .icon {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: top;
+  margin-left: -15rpx;
+}
+
+.header .location {
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  min-width: 100rpx;
+  max-width: 340rpx;
+  padding: 8rpx 10rpx 5rpx 10rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+  vertical-align: center;
+}
+
+.header .search {
+  width: 58%;
+  color: #888;
+  font-size: 25rpx;
+  line-height: 40rpx;
+  padding: 10rpx;
+  padding-left: 30rpx;
+  border-radius: 30rpx;
+  background: #fff;
+  /*border-bottom: 1rpx solid #aaa;*/
+}
+
+.scancode{
+    position: absolute;
+    right: 5%;
+    top: 6px;
+    width: 66rpx;
+    height: 66rpx;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 11;
+}
+.code{
+   width: 50rpx;
+   height: 50rpx;
+   padding: 8rpx 0 0 8rpx;
+}
+.header.scrolled {
+  background: #dd2a2a;
+  opacity: 0.8;
+}
+
+.banner {
+  height: 330rpx;
+}
+
+.banner image {
+  width: 100%;
+  height: 100%;
+}
+
+.icons {
+  height: 370rpx;
+  padding: 20rpx 10rpx;
+  padding-bottom: 0;
+  margin-top: 10rpx;
+}
+
+.icons swiper-item {
+  width: 100%;
+  /*display: -webkit-flex;*//*flex-direction: row;*//*flex-wrap: wrap;*//*justify-content: center;*/
+}
+
+.icons .icon {
+  float: left;
+  display: -webkit-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 25%;
+  text-align: center;
+  margin: 10rpx 0;
+}
+
+.icons .icon image {
+  margin: 0 auto;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.icons .icon text {
+  color: #000;
+  font-size: 27rpx;
+  line-height: 2;
+}
+
+.section-big {
+  padding: 20rpx;
+}
+
+.section-big .title {
+  position: relative;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 20rpx;
+}
+
+.section-big .title:before {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -180rpx;
+  width: 100rpx;
+  height: 1rpx;
+  background: #000;
+}
+
+.section-big .title:after {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: 80rpx;
+  width: 100rpx;
+  height: 1rpx;
+  background: #000;
+}
+
+.discount .content {
+  width: 100%;
+  height: 450rpx;
+}
+
+.preferred .content {
+  width: 100%;
+  height: 556rpx;
+}
+
+.special .content {
+  width: 100%;
+  height: 181rpx;
+}
+
+.nearby {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nearby .filters {
+  display: -webkit-flex;
+  height: 50%;
+}
+
+.nearby .filters .filter.left {
+  -webkit-flex: 1;
+  text-align: left;
+  color: #696969;
+  font-size: 28rpx;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 45rpx;
+}
+
+.nearby .filters .filter.right {
+  -webkit-flex: 1;
+  text-align: right;
+  color: #696969;
+  font-size: 26rpx;
+  padding-right: 60rpx;
+}
+
+.nearby .filters .filter .v {
+  display: none;
+}
+
+.nearby .filters .filter.active {
+  color: #000;
+  font-weight: bold;
+}
+
+.nearby .filters .filter.active .v {
+  display: inline-block;
+}
+
+.loading {
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 2;
+  margin-bottom: 20rpx;
+}
+
+.shop {
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  margin-top: -12rpx;
+}
+
+.shop.list {
+  padding-top: 30rpx;
+  margin-bottom: 25rpx;
+  background: #fff;
+}
+
+.brand_item {
+  display: block;
+  position: relative;
+  margin-left: 135rpx;
+}
+
+.pic {
+  display: inline-block;
+  float: left;
+  width: 180rpx;
+  height: 140rpx;
+  background: url(http://appuat.huihuishenghuo.com/img/store/grey.gif) no-repeat center / 100% auto;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+
+.right_cont {
+  display: block;
+  position: relative;
+  margin-left: 90rpx;
+}
+
+.li_title {
+  width: 100%;
+  padding-top: 10rpx;
+  float: left;
+  height: 30rpx;
+  overflow: hidden;
+  max-width: 85%;
+  margin: 0;
+  line-height: 33rpx;
+  font-size: 32rpx;
+  font-weight: normal;
+  color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.title {
+  width: auto;
+  float: left;
+}
+
+.rzpic {
+  display: block;
+  float: left;
+  width: 28rpx;
+  height: 30rpx;
+  line-height: 33rpx;
+  padding-left: 10rpx;
+  color: #dd2a2a;
+}
+
+.comment {
+  display: inline-block;
+  max-width: 65%;
+  height: 40rpx;
+  margin-top: 13rpx;
+}
+
+.star {
+  display: inline-block;
+  margin-top: 10rpx;
+  height: 34rpx;
+  width: 200rpx;
+  background: url(http://appuat.huihuishenghuo.com/img/store/star-icon.png) no-repeat -96px top / auto 16px;
+}
+
+.star_span {
+  display: block;
+  height: 34rpx;
+  width: 80%;
+  background: url(http://appuat.huihuishenghuo.com/img/store/star-icon.png) no-repeat 0px top / auto 16px;
+}
+
+.discount {
+  float: right;
+  margin-right: 20rpx;
+  color: #dd2a2a;
+}
+
+.dlt {
+  font-size: 50rpx;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.drt {
+  padding-left: 5rpx;
+  font-size: 30rpx;
+}
+
+.other {
+  display: inline-block;
+  width: 100%;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 26rpx;
+  font-style: normal;
+  color: #888;
+  padding-bottom: 8rpx;
+}
+
+.olt {
+  float: left;
+}
+
+.ort {
+  float: right;
+  margin-right: 20rpx;
+}
+
+.right_cont .price {
+  width: 95%;
+  height: auto;
+  padding: 10rpx 5rpx;
+  border-top: 1rpx solid #aaa;
+}
+
+.price1 {
+  width: 100%;
+  height: 45rpx;
+}
+
+.price2 {
+  width: 100%;
+  height: 45rpx;
+}
+
+.right_cont .coupon1 {
+  display: inline-block;
+  float: left;
+  width: 33rpx;
+  height: 33rpx;
+  padding-top: 4rpx;
+  margin-right: 10rpx;
+  background: #00b7ee;
+  line-height: 33rpx;
+  vertical-align: middle;
+  text-align: center;
+  color: #fff;
+  font-size: 27rpx;
+  font-style: normal;
+  border-radius: 5rpx;
+}
+
+.right_cont .coupon2 {
+  display: inline-block;
+  float: left;
+  width: 33rpx;
+  height: 33rpx;
+  padding-top: 4rpx;
+  margin-right: 10rpx;
+  background: #f6ac19;
+  line-height: 33rpx;
+  vertical-align: middle;
+  text-align: center;
+  color: #fff;
+  font-size: 27rpx;
+  font-style: normal;
+  border-radius: 5rpx;
+}
+
+.right_cont .dispan {
+  display: inline-block;
+  float: left;
+  padding-top: 9rpx;
+  line-height: 22rpx;
+  vertical-align: middle;
+  font-size: 27rpx;
+  color: #666;
+}
+
+.right_cont .marketprice {
+  text-decoration: line-through;
+  color: #939393;
+}

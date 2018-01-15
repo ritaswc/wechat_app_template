@@ -1,0 +1,24 @@
+<template name="regStep1">
+    <view class="container {{step==1?'':'hide'}}">
+        <view class="top-img-wrap">
+            <image src="/image/merchant/reg/23xinf.png">  
+            </image>
+            <text class="f1 c5">是不是还注册成商户?</text>
+        </view>
+        <view class="tips-wrap">
+            <text class="c4">如果你</text>
+            <view class="pic-text-wrap">
+                <image src="/image/merchant/reg/24linx.png"></image>
+                <text class="f1 c">可开的商品来源</text>
+            </view>
+            <view class="pic-text-wrap">
+                <image src="/image/merchant/reg/24linx.png"></image>
+                <text class="f1 c">有不错的技能</text>
+            </view>
+            <view class="you-can-do f1 c4">
+                想提供给你的社区邻居，想有消息随时向周边用户公告，你可以<text class="c">立即注册</text>为我们的商户!
+            </view>
+        </view>
+        <button class="reg-quick bgc">立即注册</button>
+    </view>
+</template>

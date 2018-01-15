@@ -1,0 +1,43 @@
+page{
+    background-color: #f8f8f8;
+}
+.cell-group .display-none{
+    display: none;
+}
+#username-editing .cell-group {
+    position: relative;
+}
+.cell-group {
+    margin: 20rpx 0;
+    background-color: white;
+}
+#username-editing input{
+    height: 88rpx;
+    width: 640rpx;
+    border-top: 1rpx solid #eee;
+    outline: none;
+    font-size: 28rpx;
+    padding: 0 88rpx 0 28rpx;
+}
+
+.input-clear {
+    display: block;
+    position: absolute;
+    width: 88rpx;
+    height: 88rpx;
+    right: 0;
+    top: 0;
+}
+
+button.btn-primary {
+    margin: 0 20rpx;
+    border-radius: 10rpx;
+    background-color: #fc3151;
+    color: white;
+    height: 64rpx;
+    font-size: 30rpx;
+}
+
+button.btn-primary.disabled {
+    background-color: #d6d6d6;
+}

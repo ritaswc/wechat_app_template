@@ -1,0 +1,42 @@
+/* pages/addaddr/addaddr.wxss */
+input{
+    padding-left:20rpx;
+    height: 92rpx;
+    font-size: 34rpx;
+    line-height:92rpx;
+    background:#fff;
+    border-bottom:1rpx solid #eee;
+}
+.inputName{
+    border: 1rpx solid #eee;
+    margin:30rpx 0 20rpx 0;
+}
+.submit{
+    position:fixed;
+    bottom:0;
+    left:0;
+    font-size:35rpx;
+    color:#fff;
+    width:100%;
+    background:#ff4aa0;
+    height:100rpx;
+    line-height:100rpx;
+    border-radius:0;
+    z-index:4;
+}
+/*.inputAddr{*/
+    /*border-top:1rpx solid #eee;*/
+/*}*/
+button[disabled][type="default"], wx-button[disabled]:not([type]) {
+    background:#ff4aa0;
+    color:#fff;
+    opacity:0.5;
+}
+.picker{
+    padding-left:20rpx;
+    height: 92rpx;
+    font-size: 34rpx;
+    line-height:92rpx;
+    background:#fff;
+    border-bottom:1rpx solid #eee;
+}

@@ -1,0 +1,21 @@
+<view class="top_ban">
+    <image src="{{dish.imgs}}"></image>
+    <view class="title">
+        <view class="dish_title">{{dish.title}}</view>
+        <text>{{dish.sum}}</text>
+    </view>
+</view>
+<view class="container" wx:if="{{list != ''}}">
+    <view class="recommend">推荐餐厅</view>
+    <navigator class="restInfo border" wx:for="{{list}}" 
+        url="../rdetail/rdetail?id={{item.id}}&name={{dish.cityname}}"
+    >
+        <image src="{{item.cover}}"></image>
+        <view class="detail">
+            <view class="item_name">{{item.name}}</view>
+            <view class="item_cost">{{item.cost}}元/人</view>
+            <view class="item_desc" wx:if="{{item.desc != ''}}">{{item.desc}}</view>
+            <view class="item_desc" wx:else>{{item.sum}}</view>
+        </view>
+    </navigator>
+</view>

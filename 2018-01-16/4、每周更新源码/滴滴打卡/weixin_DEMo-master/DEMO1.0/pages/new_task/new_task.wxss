@@ -1,0 +1,144 @@
+/* pages/new_task/new_task.wxss */
+.fornt_text{
+background-color: #1d1128;
+color: white;
+font-family: microsoft yahei;
+position: absolute;
+left: 280rpx;
+top:120rpx;
+opacity: 0.6;
+
+}
+.taskinfo {
+  display: flex;
+  flex-direction: column;
+  background-color: #261a31;
+  width:600rpx; 
+  height:800px;
+  padding: 300px,0,200px,0;
+  border-radius: 30px;
+  box-shadow: 10x #888888;
+  position: relative;
+  z-index: 1;
+}
+
+.time_descri{
+  color:#aaa;
+  font-family: microsoft yahei;
+  opacity: 0.5;
+  align-self: center;
+  margin-top:90rpx;
+  font-size: 13pt;
+}
+.task_name{
+  font-family: microsoft yahei;
+  width: 440rpx;
+  height: 100rpx;
+  background: #2d213a;
+  position: relative;
+  left: 80rpx;
+  top:60rpx;
+  border-radius: 5%;
+}
+.name_input{
+    opacity: 0.6;
+    color: white;
+    width: 440rpx;
+    height: 90rpx;
+    font-family : microsoft yahei ;
+    position: relative;
+    top:25rpx;
+    left:15rpx;
+    font-size:13pt;
+}
+
+.task_context{
+  margin-top:30rpx;
+  width: 440rpx;
+  height: 250rpx;
+  background: #2d213a;
+  position: relative;
+  left: 80rpx;
+  top:60rpx;
+  border-radius: 5%;
+
+}
+.name_write{
+    opacity: 0.6;
+    color: white;
+    width: 440rpx;
+    height: 200rpx;
+    font-family : microsoft yahei ;
+    position: relative;
+    top:25rpx;
+    left:15rpx;
+    font-size:13pt;
+}
+
+.time{
+  margin-top: 25rpx;
+  align-self: center;
+  align-items: center;
+  font-family: microsoft yahei;
+  color: white;
+}
+.time_day1{
+  margin-left: 100rpx;
+  width:75rpx;
+  height:140rpx;
+  background: #2d213a;
+  float:left;
+  font-size: 45pt;
+  text-align: center;
+}
+.time_day2{
+  width:75rpx;
+  height: 140rpx;
+  background: #2d213a;
+  float:left;
+  margin-left: 10rpx;
+  font-size: 45pt;
+  text-align: center;
+
+}
+.time_day3{
+  width:75rpx;
+  height: 140rpx;
+  background: #2d213a;
+  float:left;
+  margin-left: 10rpx;
+  font-size: 45pt;
+  text-align: center;
+
+}
+.time_unit{
+ float: left;
+ margin: 80rpx 0 0 20rpx;
+ font-size: 14pt;
+}
+.ok_button{
+  width: 150rpx;
+  height: 150rpx;
+  background: yellow;
+  line-height: 150rpx;
+  border-radius: 150rpx;
+  position: absolute;
+  z-index: 100;
+  top:780rpx;
+  left:230rpx;
+  text-align: center;
+  font-size: 30pt;
+  color: #261a31;
+  background: #cec3dd;
+}
+.deadline{
+  position:absolute;
+  top:700rpx;
+  left:200rpx;
+  font-size: 13pt;
+  opacity: 0.5;
+}
+.deadtime{
+  float:left;
+  margin-right: 10rpx;
+}

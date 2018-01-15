@@ -1,0 +1,13 @@
+/* pages/agreement/agreement.wxss */
+.body1{
+    padding:10rpx;
+    font-size:25rpx;
+}
+.h1{
+    font-size:60rpx;
+    text-align: center;
+}
+.h2{
+    font-size:40rpx;
+    text-align: center;
+}

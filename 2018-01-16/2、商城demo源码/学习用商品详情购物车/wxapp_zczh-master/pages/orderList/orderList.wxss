@@ -1,0 +1,11 @@
+page{background-color: #fff;font-family: "微软雅黑";display: flex;flex-direction:column }
+.order {background-color: #3b3b3b;margin:20rpx 0;padding:0 20px 20px;font-size: 32rpx; color: #fff;display:flex;flex-direction: row}
+.order .pic {flex-direction:column;display: flex;margin-right: 20rpx;}
+.order .pic text{height: 80rpx;line-height: 80rpx;}
+.order .pic image{width: 200rpx;height:200rpx;border: 1px #f60 solid}
+.order .info{display: flex;flex: 1;flex-direction: column}
+.goodInfo text{display: block;font-size:28rpx;  }
+.txt{line-height: 80rpx;color: #f60;}
+.btns text{float: right;margin-left: 20rpx;text-align: center;line-height: 40rpx;font-size: 28rpx;border-radius: 2px;width:180rpx;}
+.btns .cancel{border:1px #ddd solid; }
+.btns .pay{background-color:#09bb07;border:1px #09bb07 solid;}

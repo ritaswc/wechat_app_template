@@ -1,0 +1,47 @@
+<import src='../../components/star/star.wxml' />
+<import src='../../components/comment/comment.wxml'/>
+<view class='wrap'>
+  <view class='store'>
+    <image src="{{store.photo}}" mode="aspectFill"></image>
+    <view class='info'>
+      <view class='name'>{{store.name}}</view>
+      <view class='star_price'>
+        <template is='star' data="{{count:store.star}}" /> {{store.starcount}}条
+      </view>
+      <view class='type_km'>
+        <view class='type'>{{store.buztype}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='location' bindtap='mapLocation'>
+    <image src="../../images/position.png" mode="aspectFill" class='icon'></image>
+    <view class='info'>{{store.address}}</view>
+    <image src="../../images/arrow_left.png" class='arrow_left'></image>
+  </view>
+  <view class='location phone' bindtap='callPhone'>
+    <image src="../../images/phone.png" mode="aspectFill" class='icon'></image>
+    <view class='info'>{{store.phone}}</view>
+    <image src="../../images/arrow_left.png" class='arrow_left'></image>
+  </view>
+  <view class='goods'>
+    <block wx:for="{{store.goods}}" wx:for-item="good" wx:key="good.id">
+      <view class="good {{index>0? 'border' : ''}}" wx:if="{{seeAllGoods || index < 2}}" bindtap='goodDtail'>
+        <image src="{{good.photo}}" mode="aspectFill" class='photo'></image>
+        <view class='info'>
+          <view class='goodsname'>{{good.name}}</view>
+          <view class='price'>￥{{good.price}}
+            <text>￥{{good.oldprice}}</text>
+          </view>
+        </view>
+        <view class='arrow'>已售{{good.selled}}
+          <image src="../../images/arrow_left.png"></image>
+        </view>
+      </view>
+    </block>
+    <view class='laa' bindtap='goodsmore'>
+      {{btnMsg}}
+      <image src="{{seeAllGoods ? '../../images/arrow_up.png' : '../../images/arrow_down.png'}}" mode="aspectFill"></image>
+    </view>
+  </view>
+<template is='comment' data='{{comments:store.comments,count:store.comments.length}}'/>
+</view>

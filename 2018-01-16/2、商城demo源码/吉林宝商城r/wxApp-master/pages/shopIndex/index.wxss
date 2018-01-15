@@ -1,0 +1,111 @@
+/*店铺信息*/
+
+.topMsg {
+  width: 100%;
+  height: 450rpx;
+  background: url(../../images/test.jpg);
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.shop_msg {
+  position: absolute;
+  left: 50%;
+  top: 114px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); /* IE 9 */
+  -webkit-transform: translate(-50%, -50%); /* Safari and Chrome */
+  width: 80%;
+  height: 42%;
+  background-color: rgba(225, 225, 225, 0.9);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.shop_photo {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  top: -50rpx;
+  left: 50rpx;
+  overflow: hidden;
+}
+
+.shop_photo image {
+  width: 100%;
+  height: 100%;
+}
+
+.shop_msg_left {
+  width: 80%;
+  float: left;
+  padding-top: 40rpx;
+}
+
+.shop_msg_left .shop_name {
+  font-size: 40rpx;
+  color: #515151;
+  position: relative;
+}
+
+.shop_msg_left .shop_name .shop_lv {
+  display: inline-block;
+  position: relative;
+}
+
+.shop_msg_left .shop_name .shop_lv .shop_lv_num {
+  position: absolute;
+  left: 52rpx;
+  font-size: 30rpx;
+  top: 3rpx;
+  color: white;
+}
+
+.shop_msg_left .shop_name image {
+  width: 100rpx;
+  height: 20px;
+  vertical-align: text-bottom;
+}
+
+
+.shop_msg_left .shop_name text:nth-child(3) {
+  font-size:24rpx;
+  vertical-align: middle;
+  color: red;
+}
+
+.shop_msg_left .shop_desc {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/*.shop_msg_left .shop_label{font-size: 1.3rem;}*/
+
+.shop_msg_left .shop_label image {
+  width: 20%;
+  height: 20px;
+}
+
+.shop_msg_right {
+  float: right;
+  width: 20%;
+  font-size: 25rpx;
+  transform: translateY(30%);
+  -ms-transform: translateY(30%); /* IE 9 */
+  -webkit-transform: translateY(30%); /* Safari and Chrome */
+  color: #999;
+}
+
+.shop_msg_right text {
+  margin-right: 0.5rem;
+}
+
+.shop_msg_right .li:nth-child(2) {
+  border-top: 0.1rem solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.shop_msg_right .li {
+  padding: 0.2rem 0;
+}

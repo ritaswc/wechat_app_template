@@ -1,0 +1,162 @@
+/**index.wxss**/
+/*
+ 1. 不认ID
+ 2. 不认属性选择符
+ 3. 不认相邻兄弟选择符
+*/
+
+/* 搜索部分 */
+/*.search-box{
+  display: flex;
+  height:280rpx;
+  box-sizing: border-box;
+  background-color: rgba(8,8,8,.84);
+  padding:94rpx 56rpx;
+  position: relative;
+}
+
+.search-input{
+  height: 70rpx;
+}
+
+.search-btn{
+  height: 70rpx;
+}
+
+.bg-image{
+  background:url(http://a.diaox2.com/cms/sites/default/files/20161013/goodthing/TTCOVER.jpg);
+}*/
+
+.container{
+  background-color: #fff;
+}
+
+/* 分类部分 */
+.category-panel {
+  background-color: #fff;
+  padding-left: 44rpx;
+  color: #ABACB0;
+  font-size: 32rpx;
+  margin-top: 40px;
+  display: -ms-flexbox;
+  display: block;
+  box-sizing: border-box;
+  -webkit-flex: 1;
+          flex: 1;
+  overflow: hidden;
+  -webkit-align-items: center;
+          align-items: center;
+}
+
+.category-section{
+  /*display: -webkit-box;*/
+  display: -webkit-flex;
+  display: flex;
+  padding-top: 38rpx;
+}
+
+.icon-left {
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-align-items: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-left image{
+  width: 68rpx;
+  height: 82rpx;
+  margin-bottom: 26rpx;
+}
+
+.vertical-line{
+  background:#d9d9d9;
+  width:1px;
+  height:60rpx;
+}
+
+.category-list{
+  white-space: nowrap;
+  box-sizing: border-box;
+  /*由于这行导致的在真机上布局错乱*/
+  /*display: -webkit-box;*/
+  display: -webkit-flex;
+  display: flex;
+  padding-right: 80rpx;
+  max-height: 78rpx;
+}
+
+.title-and-list{
+  margin-left: 32rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.category-title{
+  font-size:28rpx;
+  color:#333333;
+  line-height:28rpx;
+  text-align:left;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.item{
+  margin-right: 36rpx;
+  display: inline-block;
+}
+
+.item-text{
+  width:auto;
+  padding:0 16rpx;
+  height: 78rpx;
+  border-radius:40rpx;
+  border:1px rgb(228,228,228) solid;
+
+  font-size:28rpx;
+  color:#080808;
+  line-height:28rpx;
+  text-align: center;
+  box-sizing: border-box;
+
+  /*由于这行导致的在真机上布局错乱*/
+  /*display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;*/
+
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected {
+  background:#3d3d3d;
+  border-radius:40rpx;
+  color:#fff;
+}
+
+.btn-container {
+  background-color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  padding:40rpx 44rpx 40rpx 44rpx;
+}
+
+.btn-container button {
+  -webkit-flex:1;
+          flex:1;
+}
+
+.confirm{
+  margin-left: 30rpx;
+}
+
+.scroll-view_H{
+    white-space: nowrap;
+}

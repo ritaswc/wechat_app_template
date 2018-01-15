@@ -1,0 +1,20 @@
+<!--物流详情-->
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  查询中...
+</loading>
+<view class="order-detail">
+        <!-- 内容为空样式 -->
+        <view class="empty-con" wx:if="{{emptyShow}}">
+            <image class="empty-image" src="{{imageCtx}}dealer/note.png"></image>
+            <text class="empty-text">未查询到物流信息</text>
+        </view>
+        <view class="order-con">
+            <view class="order-flow {{index == 0 ? 'flow-active' : ''}}" wx:for="{{list}}">
+                <view class="flow1">
+                    <text class="flow-icon"></text>
+                    <text class="flow-time">{{item.time}}</text>
+                </view>
+                <view class="flow2">{{item.context}}</view>                  
+            </view>
+        </view>
+</view>

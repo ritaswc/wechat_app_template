@@ -1,0 +1,43 @@
+<!-- 商品轮播图-->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{details}}" wx:for-item="item" >
+<view wx:for="{{item.picture}}" wx:for-item="items" >
+    <swiper-item>
+      <image src="{{items}}" style="width:380px;"/>   
+    </swiper-item>
+   </view>
+  </block>
+</swiper>
+<!-- 商品轮播图-->
+
+
+<view wx:for="{{details}}" wx:for-item="item" class="goods_info">
+<ul>
+[{{item.name}}]{{item.describe}}
+</ul>
+<ul>
+<image src='../../images/zan.png' class='zan'></image> 点赞
+<image src='../../images/fx.png' class='fx'></image> 点赞
+</ul>
+</view>
+
+<view style="padding-top:15px;">商品信息</view>
+<image src='../../images/xq.jpg' class="goods_details"></image>
+
+<view style="padding-top:15px;">商品评价</view>
+<view wx:for="{{pingjia}}" wx:for-item="item" class="pingjia">
+<image src='{{item.touxiang_src}}' class="touxiang"></image>
+<view>{{item.nickname}}</view>
+<view>{{item.time}}</view>
+<view>{{item.content}}</view>
+</view>
+
+<view style="padding-top:15px;">图片详情</view>
+<image src='../../images/tpx.jpg' class="tu_details"></image>
+
+<view class="shop">
+<navigator url="../cart/cart" hover-class="navigator-hover">
+<view class="gwc">加入购物车</view>
+</navigator>
+</view>

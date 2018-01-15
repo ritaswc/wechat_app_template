@@ -1,0 +1,15 @@
+<template name="HotNewsCell">
+  <view class="hotNewsCell-container">
+      <view class="hotNewsCell-topView">
+        <image class="hotNewsCell-topView-left-image" src="{{titleImage}}"></image>
+        <view class="hotNewsCell-topView-right-content">
+          <text class="hotNewsCell-title">{{title}}</text>
+          <text class="hotNewsCell-Subtitle">{{description}}</text>
+        </view>
+      </view>
+    <view class="hotNewsCell-bottomView">
+      <text class="author">{{author}}</text>
+      <text class="lastUpdateTime">{{lastUpdateTime}}</text>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,58 @@
+<template name="cityWeather">
+  <view class="city-container">
+    <text class="city">{{item.now.results[0].location.name}}</text>
+  </view>
+  <view class="now">
+    <view class="now-img-container">
+      <image class="now-img" src="../../weatherImg/{{item.now.results[0].now.code}}.png" mode="widthFix"></image>
+    </view>
+    <view class="now-tmp-condition">
+      <view class="temperature">{{item.now.results["0"].now.temperature}}°</view>
+      <view class="condition">{{item.now.results["0"].now.text}}</view>
+    </view>
+  </view>
+  <view class="daily">
+    <view class="daily-date">
+      <view>
+        今天
+      </view>
+      <view>
+        明天
+      </view>
+      <view>
+        后天
+      </view>
+    </view>
+    <view class="daily-item" wx:for="{{item.daily.results[0].daily}}" wx:for-item="item1">
+      <view class="daily-img-container">
+        <image class="daily-img" src="../../weatherImg/{{item1.code_day}}.png"></image>
+      </view>
+      <view class="daily-tmp-condition">
+        <text class="tmpRange ">{{item1.high}}°/{{item1.low}}°</text>
+        <text class="tmpCondition ">{{item1.text_day}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="life-index ">
+    <view class="life-index-item ">
+      <view class="life-title">穿衣：</view>
+      <view class="life-brief ">{{item.index.results["0"].suggestion.dressing.brief}}</view>
+    </view>
+    <view class="life-index-item ">
+      <view class="life-title">运动：</view>
+      <view class="life-brief">{{item.index.results["0"].suggestion.sport.brief}}</view>
+    </view>
+    <view class="life-index-item ">
+      <view class="life-title">感冒：</view>
+      <view class="life-brief">{{item.index.results["0"].suggestion.flu.brief}}</view>
+    </view>
+    <view class="life-index-item ">
+      <view class="life-title">出行：</view>
+      <view class="life-brief">{{item.index.results["0"].suggestion.travel.brief}}</view>
+    </view>
+    <view class="life-index-item ">
+      <view class="life-title">紫外线：</view>
+      <view class="life-brief">{{item.index.results["0"].suggestion.uv.brief}}</view>
+    </view>
+  </view>
+</template>

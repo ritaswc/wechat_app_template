@@ -1,0 +1,26 @@
+.vTitle
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fafafa;
+}
+.tLabel
+{
+    margin-top: 90rpx;
+    font-size: 40rpx;
+    height: 56rpx;
+}
+.tMessage
+{
+    height: 84rpx;
+	font-size: 28rpx;
+	line-height: 3;
+	text-align: center;
+	color: #888888;
+}
+.vTitle image
+{
+    margin-top: 200rpx;
+    height: 300rpx;
+}

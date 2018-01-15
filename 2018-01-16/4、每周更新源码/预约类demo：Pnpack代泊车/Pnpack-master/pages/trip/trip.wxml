@@ -1,0 +1,25 @@
+<view class="content" data-o_id="{{item.o_id}}" data-ordercode="{{item.o_ordercode}}" data-orderstate="{{item.o_orderstate}}" bindtap="gotoOrder" wx:for="{{orders}}"  >
+  <view class="header-swiper right {{item.class1}}">
+    <view  class="wait-header {{item.class}} ">
+      <text>{{item.o_ordercode}}</text>
+      <text>{{item.o_orderstate}}</text>
+    </view>
+    <view class="wait-text ">
+      <text>地址:</text>
+      <text>{{item.p_title}}</text>
+    </view>
+    <view class="wait-text">
+      <text>开始时间:</text>
+      <text>{{item.o_starttime}}</text>
+    </view>
+    <view class="wait-text">
+      <text>结束时间:</text>
+      <text>{{item.o_endtime}}</text>
+    </view>
+    <view class="wait-text">
+      <text>订单总额：</text>
+      <text>￥{{item.o_totalfee}}元</text>
+    </view>
+  </view>
+</view>
+

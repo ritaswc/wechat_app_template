@@ -1,0 +1,90 @@
+.waiter {
+  padding: 50rpx 0 40rpx 60rpx;
+  background-image: linear-gradient(160deg, #3e4a63, #a09e94);
+  display: flex;
+  align-items: center;
+}
+.waiter image {
+  width: 136rpx;
+  height: 136rpx;
+  border-radius: 50%;
+  border: 2rpx solid #fff;
+}
+.waiter .waiter-info {
+  line-height: 50rpx;
+  margin-left: 20rpx;
+}
+.waiter .waiter-info .name {
+  color: #fff;
+}
+.waiter .icon-wuxing {
+  transform: translateX(40rpx);
+  color: #fff;
+}
+.waiter-title {
+  display: flex;
+  line-height: 105rpx;
+  justify-content: space-around;
+  color: #f00;
+  padding: 0 40rpx;
+  border-bottom: 20rpx solid #efefef;
+}
+.give-star {
+  font-size: 40rpx;
+  line-height: 90rpx;
+  padding-left: 60rpx;
+  border-bottom: 20rpx solid #efefef;
+}
+.give-star text {
+  margin-left: 10rpx;
+  color: #f4e6bd;
+}
+.give-star .active {
+  color: #ffd80d;
+}
+.tip {
+  font-size: 30rpx;
+  color: #333;
+  padding-left: 25rpx;
+  background-color: #efefef;
+  border-bottom: 20rpx solid #efefef;
+  position: relative;
+}
+.tip::before {
+  content: '';
+  position: absolute;
+  height: 30rpx;
+  width: 6rpx;
+  left: 0;
+  background-color: #ffd300;
+}
+.menu2-comment {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  padding-bottom: 30rpx;
+}
+.menu2-comment .menu2-comment-item {
+  font-size: 24rpx;
+  padding: 10rpx 30rpx;
+  border-radius: 30rpx;
+  color: #a67c52;
+  border: 1rpx solid #a67c52;
+  margin: 10rpx;
+}
+.menu2-comment .active {
+  color: #603813;
+  background-color: #fdf899;
+}
+.btn {
+  line-height: 80rpx;
+  background-color: #f00;
+  border-radius: 10rpx;
+  width: 80%;
+  position: fixed;
+  bottom: 5rpx;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  color: #fff;
+}

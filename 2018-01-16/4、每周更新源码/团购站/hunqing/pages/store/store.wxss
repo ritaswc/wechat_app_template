@@ -1,0 +1,180 @@
+@import '../../components/comment/comment.wxss';
+page{
+    background-color: #f0f0f0;
+}
+
+.store{
+padding: 15rpx;
+display: flex;
+flex-wrap: nowrap;
+align-items: center;
+flex-direction: row;
+margin-left: 10rpx;
+}
+
+.store image{
+    width: 180rpx;
+    height: 150rpx;
+    flex-shrink: 0;
+}
+.store .info{
+    height: 150rpx;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10rpx;
+    margin-left: 10rpx;
+}
+.store .info .name{
+    color: #111111;
+    font-size: 40rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.store .info .star_price{
+    color: #111111;
+    font-size: 28rpx;
+
+}
+.store .info .star_price .star-rating{
+    display: inline-block;
+    margin-right: 6rpx;
+}
+.store .info .star_price image{
+       width: 28rpx;
+      height: 27rpx;
+      margin-right: 4rpx;
+}
+
+.store .info .type_km{
+    display: flex;
+    flex-direction: row;
+    color: #777777;
+    font-size: 28rpx;
+    flex-wrap: nowrap;
+}
+
+.store .info .type_km .type{
+        overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex: 1;
+}
+
+.store .info .type_km km{
+
+}
+
+.location{
+    background-color: #fff;
+    height: 90rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 4rpx;
+}
+
+.location .icon{
+    width: 34rpx;
+    height: 34rpx;
+    margin-left: 20rpx;
+}
+.location .info{
+flex: 1;
+color: #333;
+font-size: 26rpx;
+margin: 0 10rpx;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.location .arrow_left{
+    height: 30rpx;
+    width: 21rpx;
+    margin-right: 20rpx;
+}
+
+.phone{
+    margin-top: 4rpx;
+}
+
+.goods{
+    background-color: #fff;
+    margin-top: 24rpx;
+
+}
+
+.goods .good{
+margin-left: 10rpx;
+padding: 20rpx;
+display: flex;
+flex-direction: row;
+align-items: center;
+flex-wrap: nowrap;
+}
+.goods .good .photo{
+    width: 120rpx;
+    height: 120rpx;
+    flex-shrink: 0;
+}
+.goods .good .info{
+    flex: 1;
+    margin-left: 14rpx;
+}
+.goods .good .info .goodsname{
+    color: #111111;
+    font-size: 28rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.goods .good .info .price{
+    color: #ff6633;
+    font-size: 34rpx;
+    margin-top: 26rpx;
+}
+.goods .good .info .price text{
+color: #999;
+font-size: 24rpx;
+text-decoration: line-through;
+}
+.goods .good .arrow{
+color: #777777;
+font-size: 24rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-top: 4rpx;
+}
+
+.goods .good .arrow image{
+    width: 21rpx;
+    height: 30rpx;
+    margin-left: 12rpx;
+    vertical-align: middle;
+}
+
+.goods .border{
+    border-top: 3rpx solid #f0f0f0;
+}
+
+.goods .laa{
+     border-top: 3rpx solid #f0f0f0;
+     color: #111111;
+     font-size: 24rpx;
+     text-align: center;
+     height: 90rpx;
+     line-height: 90rpx;
+}
+
+.goods .laa image{
+    width: 26rpx;
+    height: 26rpx;
+margin-left: 6rpx;
+vertical-align: middle;
+}

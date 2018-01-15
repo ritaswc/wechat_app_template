@@ -1,0 +1,38 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #f5f5f5;
+}
+.more_title {text-align: center;background: #fff;padding: 80rpx 40rpx;}
+.more_title image {width: 400rpx;height: 140rpx;}
+
+
+.more_con {background: #fff;padding: 20rpx 0 0 0;margin-top: 20rpx;}
+.more_info_name {display: inline-block;font-size: 30rpx;width: 60%}
+.more_info_name image {width: 50rpx;height: 50rpx;vertical-align: middle;margin-right: 10rpx;}
+.more_info {border-bottom: 2rpx solid #ccc;padding-bottom: 14rpx;padding-left: 40rpx;}
+.more_info_img {display: inline-block;text-align: right;width: 40%;}
+.more_info_img image {width: 40rpx;height: 40rpx;vertical-align: middle;margin-right: 40rpx;}
+
+.more_ltem {margin-top: 20rpx;}
+.more_hide {display: none;padding:30rpx 0 40rpx 40rpx;background: #edf0f5;}
+.more_show {display: block;}
+.more_hide image {width: 260rpx;height: 260rpx;margin-top: 20rpx;margin-right: 40rpx;}
+
+.more_phone {font-size: 60rpx;padding-top: 20rpx;}
+.more_p {font-size: 28rpx;line-height: 2em;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

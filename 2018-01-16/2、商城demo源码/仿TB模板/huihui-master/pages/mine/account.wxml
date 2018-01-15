@@ -1,0 +1,48 @@
+<view class="container">
+  <view class="list-account">
+    <view class="list-top">
+      <view class="list-pto">
+        <text class="span">头像</text>
+        <view class="rt">
+          <view class="photo">
+            <image class="pto" src="{{img_url}}mine/user.jpg"></image>
+          </view>
+        </view>
+      </view>
+      <view class="list-li">
+        <text class="span">昵称</text>
+        <view class="rt">
+          <text class="span">邻家小妹</text>
+        </view>
+      </view>
+      <view class="list-li">
+        <text class="span">性别</text>
+        <view class="rt">
+          <text class="span">女</text>
+        </view>
+      </view>
+      <view class="list-li">
+        <text class="span">出生日期</text>
+        <view class="rts">
+          <text class="span">2016-10-10</text>
+          <image class="lt" src="{{img_url}}mine/lt.png"></image>
+        </view>
+      </view>
+      <view class="list-li">
+        <text class="span">手机号码</text>
+        <view class="rts">
+          <text class="span">137****3816</text>
+          <image class="lt" src="{{img_url}}mine/lt.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="list-bom">
+      <view class="bom-li">
+        <text class="bspan">支付密码</text>
+        <text class="pwdbtn">修改</text>
+        <image class="lts" src="{{img_url}}mine/lt.png"></image>
+      </view>
+    </view>
+  </view>
+  <button class="btn" type="warn">退出当前账号</button>
+</view>

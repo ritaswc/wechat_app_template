@@ -1,0 +1,125 @@
+.page{
+  background-color: #f8f8f8
+}
+.swiper-container {
+  margin-top: 0;
+  padding: 0;
+}
+
+.swiper-container swiper {
+  height: 315.9rpx;
+}
+
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 0;
+}
+
+.activity {
+  width: 25%;
+  text-align: center;
+}
+
+.activity image {
+  width: 117rpx;
+  height: 117rpx;
+  margin: 0 auto;
+  margin-top: 28.08rpx;
+  border-radius: 50%;
+}
+
+.activity label {
+  display: block;
+  line-height: 65.52rpx;
+  font-size: 28.08rpx;
+}
+
+.feature-header {
+  border-bottom: 1px solid #f8f8f8;
+  height: 85rpx;
+}
+
+.feature-header text {
+    margin: 0;
+    font-weight: normal;
+    font-size: .9rem;
+    line-height: 1.6rem;
+    display: inline;
+    position: relative;
+    top: -29rpx;
+}
+
+.feature {
+  margin: 0 -16.38rpx;
+  padding: 16.38rpx;
+  border-bottom: 1px solid #f8f8f8;
+  background-size: cover;
+  position: relative;
+}
+
+.feature image {
+  width: 100%;
+  height: 315.9rpx;
+}
+
+.feature .title-wrapper {
+  font-size: 28.08rpx;
+  height: 70.2rpx;
+  line-height: 70.2rpx;
+  overflow: hidden;
+}
+
+.feature .price {
+  display: block;
+  color: #fc3151;
+  float: right;
+  font-size: 1rem;
+}
+.sold-out-tag{
+    display: block;
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 50%;
+    color: white;
+    line-height: 140rpx;
+    font-size: 35rpx;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 100rpx;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.sold-out-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.sold-out-price{
+  display: block;
+  color: darkgray;
+  float: right;
+}
+.clearfix:after { 
+    visibility: hidden; 
+    display: block; 
+    font-size: 0; 
+    content: " "; 
+    clear: both; 
+    height: 0; 
+} 
+.header-img {
+    width: 55rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+    padding: 24rpx 0;
+}

@@ -1,0 +1,31 @@
+<view>
+    <view class="header">
+        <image src="http://o86ac3exs.bkt.clouddn.com/8095d7d8-d1bf-4697-8fa3-2e7890541e50.jpg" mode="aspectFill"></image>
+    </view>
+    <view class="container">
+        <view class="list">
+            <view class="item" wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i" wx:key="i">
+                <view>
+                    <navigator url="../commodity/commodity">
+                        <view class="itemOut">
+                            <view class="itemIn">
+                                <image src="http://o86ac3exs.bkt.clouddn.com/51aeff4f-ceed-415f-aae0-0ec7175f641a.jpg"></image>
+                                <view class="itemInfo">
+                                    <view class="itemInfoColumn name">百香果3斤装</view>
+                                    <view class="itemInfoColumn price">¥32</view>
+                                    <view class="itemInfoColumn number">
+                                        <view class="repertory">库存：999</view>
+                                        <view class="numberRight">
+                                            <text class="sales">销量：534</text>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+                <view class="buy"></view>
+            </view>
+        </view>
+    </view>
+</view>

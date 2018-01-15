@@ -1,0 +1,102 @@
+/**echo.wxss**/
+.container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  height: 200rpx;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx 40rpx 20rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname {
+  display: block;
+  color: #000;
+  font-size: 32rpx;
+}
+.userinfo-records {
+  margin-top: 20rpx;
+  display: block;
+  color: #aaa;
+  font-size: 26rpx;
+}
+.records-num{
+  margin: 0 8rpx;
+}
+.search{
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  height: 60rpx;
+  background-color: #fff;
+}
+.search input{
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  height: 40rpx;
+}
+.records-list{
+  background-color: #fff;
+  position: absolute;
+  top: 320rpx;
+  bottom: 0;
+}
+.section{
+  height: 50rpx;
+  text-align: center;
+}
+.section image{
+  height: 50rpx;
+  width: 50rpx;
+}
+.section text{
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.content-wripper{
+  position: relative;
+  margin: 30rpx auto;
+  display: flex;
+  height: 150rpx;
+  line-height: 150rpx;
+  width: 96%;
+  border-radius: 10rpx;
+  border: 1px solid #7ecef4;
+}
+.content-wripper .info{
+  display: block;
+  position: absolute;
+  top: 15rpx;
+  left: 50rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.content-wripper text{
+  /*height: 40rpx;*/
+}
+.content-wripper .tag{
+  font-size: 32rpx;
+}
+.content-wripper .t{
+  margin-right: 20rpx;
+  font-size: 24rpx;
+}
+.content-wripper image{
+  display: block;
+  position: absolute;
+  right: 50rpx;
+  top: 45rpx;
+  bottom: 45rpx;
+  height: 60rpx;
+  width: 60rpx;
+}

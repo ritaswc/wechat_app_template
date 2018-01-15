@@ -1,0 +1,68 @@
+page{
+    background: #fff;
+}
+.wait-header{
+   height: 50rpx;
+   line-height: 50rpx;
+  font-size:35rpx;
+  padding: 10rpx;
+  margin: 0 40rpx;
+}
+.wait-header text:first-child{
+  float: left;
+}
+.wait-header text:last-child{
+  float: right;
+}
+.wait-text {
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 10rpx;
+  margin: 0 40rpx;
+  border-bottom: 1px solid #fff;
+  overflow: hidden;
+  font-size:30rpx;
+}
+.wait-text:last-child{
+  border-bottom:none;
+}
+.wait-text text:first-child{
+  float: left;
+}
+.wait-text text:last-child{
+  float: right;
+}
+.content{
+    overflow: hidden;
+    height:362rpx;
+    margin-top: 10rpx;
+}
+
+.right{
+    float: left;
+    width: 95%;
+    height:362rpx;
+     background-color: #eee;
+     
+}
+.jinxing{
+   border-left: 17px solid #de7c3a;
+}
+.quxiao{
+   border-left: 17px solid rgb(200,199,204);
+ 
+}
+.wancheng{
+     border-left: 17px solid #00a598;
+}
+.color-h{
+  color: rgb(222,124,58);
+  margin-left: 10rpx;
+}
+.color-s{
+  color:rgb(200,199,204);
+}
+
+
+
+

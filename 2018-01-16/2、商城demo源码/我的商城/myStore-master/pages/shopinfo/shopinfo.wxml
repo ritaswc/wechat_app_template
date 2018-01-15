@@ -1,0 +1,133 @@
+
+<!--<scroll-view class="scrollview-shop-info">-->
+<view class="shop-select-info" hidden="{{isShowSelectInfo}}">
+  <view class="mask-layer" catchtouchstart="hiddenSelectInfo"></view>
+  <view class="shop-select-info-content">
+
+    <!--商品图片和价格、库存-->
+    <view class="ui-flex ui-padding-10">
+      <image class="select-info-img" src="{{shopSelectInfo.selectInfoImg}}"></image>
+      <view catchtouchstart="noScroll">
+        <view class="select-info-price ">
+          <text>{{shopSelectInfo.selectInfoprice}}</text>
+        </view>
+        <view>
+          <text class="select-info-inventory ui-padding-10">{{shopSelectInfo.selectInfoInventory}}</text>
+        </view>
+        <view>
+          <text class="select-info-select ui-padding-10">{{shopSelectInfo.shopSelectInfoHaveSelect}}</text>
+        </view>
+      </view>
+
+      <!--关闭弹窗按钮-->
+      <icon type="clear" class="select-info-close" catchtap="hiddenSelectInfo"></icon>
+    </view>
+    <scroll-view class="select-Info-Attribute-scroll" scroll-y="true">
+
+      <!--商品属性列表-->
+      <view class="ui-width-100 ">
+        <block wx:for="{{shopSelectInfo.selectInfoAttributeList}}" wx:for-index="shopSelectIndex">
+          <view class="ui-width-100 ui-padding-10" style="height:{{item.height}}">
+            <view>
+              <text>{{item.AttributeName}}</text>
+            </view>
+            <view class="ui-flex">
+              <block wx:for="{{item.AttributeNameList}}">
+                <view class="{{item.IsSelect ? 'select-info-attr-list-name-press' : 'select-info-attr-list-name'}} " data-select-index="{{shopSelectIndex}}" data-attr-index="{{index}}" data-attr-id="{{item.AttributeID}}" catchtap="clickAttr">{{item.Name}}</view>
+              </block>
+            </view>
+            <view class="line ui-mt-30"></view>
+          </view>
+        </block>
+      </view>
+
+      <!--购买数量-->
+      <view class="ui-flex select-info-buy-bum  ui-mt-10">
+        <view class="ui-width-100">
+          <text>购买数量</text>
+        </view>
+        <view class="ui-flex">
+          <view class="num-subtraction " catchtap="shopCountSub">-</view>
+          <text>{{shopBuyCount}}</text>
+          <view class="num-add" catchtap="shopCountAdd">+</view>
+        </view>
+      </view>
+      <view class="line ui-mt-30"></view>
+    </scroll-view>
+    <button class="select-info-sumbit ui-mt-30" bindtap="sumbitShopInfo" type="primary">确定</button>
+  </view>
+</view>
+<scroll-view scroll-y = "true" class = "scroll">
+<view class="shop-info-content">
+
+  <!--轮播图-->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper-shop-info">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="ui-width-100 swiper-image" mode="aspectFit" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="tianmao">
+    <text>天猫年货节</text>
+  </view>
+
+  <!--商品标题-->
+  <view class="shop-info-title">
+    <text>{{shopInfo.shopTitle}}
+    </text>
+  </view>
+
+  <!--商品价格-->
+  <view class="shop-info-price">
+    <text>{{shopInfo.shopPrice}}
+    </text>
+  </view>
+
+  <!--商品快递,销量,地区-->
+  <view class="ui-width-100 ui-flex ">
+    <view class="ui-width-33 courier ui-padding-10">
+      <text>{{shopInfo.courier}}</text>
+    </view>
+    <view class="ui-width-33 month-sale ui-padding-10">
+      <text>{{shopInfo.sales}}</text>
+    </view>
+    <view class="ui-width-33 address ui-padding-10">
+      <text>{{shopInfo.address}}</text>
+    </view>
+  </view>
+
+  <!--空白-->
+  <view class="separate"></view>
+
+  <!--促销信息-->
+  <view class="ui-flex ui-padding-10">
+    <button class="shop-info-btn-chuxiao">促销</button>
+    <text class="shop-info-text-chuxiao">满99元享包邮;不包邮地区:台湾，香港，澳门，海外爽爽爽爽爽爽爽爽爽爽爽爽爽</text>
+  </view>
+
+  <!--空白-->
+  <view class="separate"></view>
+
+  <!--选择配置-->
+  <view class="shop-info-select ui-padding-10 ui-flex" catchtap="showSelectInfo">
+    <text class="ui-width-100">选择颜色，分类，网络类型，存储容量，套餐</text>
+    <image class="shop-info-more-icon" src="../../img/icon_more.jpg"></image>
+  </view>
+  <view class="btn-area">
+    <button bindtap="AddToCart" type="primary">加入购物车</button>
+  </view>
+
+  <!--空白-->
+  <view class="separate"></view>
+
+  <!--商品详情图片列表-->
+  <view class="shop-info-img-list ui-width-100">
+    <block wx:for="{{shopInfoImgList}}">
+      <view class="ui-width-100" style="height:{{item.height}}">
+        <image mode="aspectFill" class="ui-width-100" src="{{item.imgUrl}}" style="height:{{item.height}}"></image>
+      </view>
+    </block>
+  </view>
+</view>
+</scroll-view>

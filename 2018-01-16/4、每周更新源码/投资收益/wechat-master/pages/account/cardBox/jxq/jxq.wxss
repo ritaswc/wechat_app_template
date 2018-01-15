@@ -1,0 +1,5 @@
+.jxq_hd {font-size: 36rpx;background: #fff;text-align: center;padding: 30rpx 0;color: #348ef3;margin: 20rpx 0;border-bottom: 2rpx solid #ccc;border-top: 2rpx solid #ccc;}
+.jxq_hd image {height: 30rpx;width: 30rpx;vertical-align:middle;}
+
+.jxq_con {text-align: center;font-size: 36rpx;}
+.jxq_con image {height: 450rpx;width: 500rpx;margin-top: 60rpx;margin-bottom: 30rpx;}

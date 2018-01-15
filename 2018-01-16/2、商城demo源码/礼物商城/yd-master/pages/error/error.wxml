@@ -1,0 +1,6 @@
+<view class="container">
+  <image class="error-cry" src="../../common/icon/cry.png"></image>
+  <text class="error-msg">发生了错误，请稍后重试~</text>
+  <button bindtap="toIndex" type="warn" size="mini"  plain="true"
+       bindtap="toIndex" hover-class="other-button-hover"> 去首页看看~ </button>
+</view>

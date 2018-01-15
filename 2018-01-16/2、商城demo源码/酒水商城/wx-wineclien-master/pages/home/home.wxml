@@ -1,0 +1,78 @@
+<view class = "content">
+    <scroll-view class = "scroll-content" scroll-y = "{{true}}" scroll-x = "{{flase}}">
+        <!--轮播图-->
+        <swiper autoplay = "{{true}}" indicator-dots = "{{true}}" interval="1000" duration="350" class = "scroll-image">
+            <swiper-item wx:for-items="{{carousel_list}}">
+                <image src="{{item.img}}" class = "scroll-image-item" id = "{{index}}" bindtap = "scrollimageclick"></image>
+            </swiper-item>
+        </swiper>
+
+        <!--icon-->
+        <view class = "icon-back-style">
+            <view class = "icon_back_size">
+                <view wx:for-items="{{icon_list}}" wx:if="{{index < 4}}" class = "one_icon_back_view">
+                    <image src="{{item.picture_url}}" class = "icon_size"></image>
+                    <text class = "icon_title">{{item.title}}</text>
+                </view>
+            </view>
+            <view class = "icon_back_size">
+                <view  wx:for-items="{{icon_list}}" wx:if="{{index >= 4}}" class = "one_icon_back_view">
+                    <image src="{{item.picture_url}}" class = "icon_size"></image>
+                    <text class = "icon_title">{{item.title}}</text>
+                </view>
+            </view>
+        </view>
+        
+        <!--热卖商品-->
+        <view class = "host_good_back" wx:for-items="{{host_good_list}}" wx:if="{{index % 2 == 0}}" style = "height:{{host_good_back_height}}px">
+            <view style = "width:100%;background-color:#F5F5F5;height:5px;"></view>
+
+            <view class = "host_good_left_right_back" style="width:{{host_good_back_width}}px;height:{{host_good_back_height - 5}}px;">
+                <image src="{{host_good_list[index].thumb_url}}" class = "host_good_main_image" style= "width:{{host_good_image_width}}px;height:{{host_good_image_width}}px" id = "{{index}}" bindtap = "pushGoodDetail"></image>
+                <text class = "host_good_title">{{host_good_list[index].title}}</text>
+                <!--tags-->
+                <view class = "host_tags_back">
+                    <text class = "host_good_tags">精选</text>
+                    <text class = "host_good_tags">精选</text>
+                    <text class = "host_good_tags">精选</text>
+                </view>
+                <image src="../resource/add.png"  class = "add_image_style" id = "{{index}}" bindtap = "addButtonClick"></image>
+                <text  class = "buy_good_number">{{host_good_list[index].buy}}</text>
+                <image src="../resource/reduce.png" class = "reduce_image_style" id = "{{index}}" bindtap = "reduceButtonClick"></image>
+                <text class = "host_price">¥{{host_good_list[index].price}}</text>
+                <text class = "host_mark_price">{{host_good_list[index].marketPrice}}</text>
+            </view>  
+
+<!--商品中间的间隔线-->
+            <view style = "width:5px;background-color:#F5F5F5;height:{{host_good_back_height}}px;float:left;height:{{host_good_back_height}}px"></view>
+
+
+            <view class = "host_good_left_right_back" style="width:{{host_good_back_width}}px;height:{{host_good_back_height - 5}}px; float:right">
+                <image src="{{host_good_list[index + 1].thumb_url}}" class = "host_good_main_image" style= "width:{{host_good_image_width - 5}}px;height:{{host_good_image_width}}px"  id = "{{index + 1}}" bindtap = "pushGoodDetail"></image>
+                <text class = "host_good_title">{{host_good_list[index + 1].title}}</text>
+                <!--tags-->
+                <view class = "host_tags_back">
+                    <text class = "host_good_tags">精选</text>
+                    <text class = "host_good_tags">精选</text>
+                    <text class = "host_good_tags">精选</text>
+                </view>
+                <image src="../resource/add.png" class = "add_image_style"id = "{{index + 1}}" bindtap = "addButtonClick"></image>
+                <text class = "buy_good_number">{{host_good_list[index + 1].buy}}</text>
+                <image src="../resource/reduce.png" class = "reduce_image_style" id = "{{index + 1}}" bindtap = "reduceButtonClick"></image>
+                <text class = "host_price">¥{{host_good_list[index + 1].price}}</text>
+                <text class = "host_mark_price">{{host_good_list[index + 1].marketPrice}}</text>
+            </view>
+        </view>
+        <view style = "background-color:#F5F5F5;height:5px;width:100%"></view>
+
+
+
+
+
+
+
+
+
+
+    </scroll-view>
+</view>

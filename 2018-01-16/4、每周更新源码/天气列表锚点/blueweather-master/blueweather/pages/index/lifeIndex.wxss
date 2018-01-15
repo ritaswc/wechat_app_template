@@ -1,0 +1,26 @@
+
+
+.life-index {
+  background-color: rgb(174,221,129);
+  clear: both;
+
+}
+
+
+.life-index-item {
+     display:flex;
+  flex-direction:  row;
+
+  padding: 5rpx;
+ 
+}
+.life-brief{
+
+   width:30%;
+
+}
+
+.life-title{
+    width:22%;
+padding-left:30rpx; 
+}

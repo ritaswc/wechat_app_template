@@ -1,0 +1,29 @@
+/* pages/massageContant/massageContant.wxss */
+.massageContant_wrap{
+    width: 94%;
+    margin: 0 auto;
+    padding-top: 30rpx;
+}
+.img1{
+    width: 28rpx;
+    height: 28rpx;
+    padding-right: 10rpx;
+}
+.detail{
+    font-size: 12pt;
+    color: #999999;
+    display: flex;
+    justify-content: space-between;
+    align-items:center; 
+    line-height: 200%;
+}
+.detail .left{
+    max-width: 67%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+.contant{
+    text-align: justify;
+    padding-top: 20rpx;
+}

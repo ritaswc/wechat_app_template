@@ -1,0 +1,69 @@
+<view class="page">
+    
+    <view class="page__bd">
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label text-font-my-family">课程名称/老师:</view>
+                    <view class="weui-form-preview__label">
+
+                        <!--<picker bindchange="bindCoursePickerChange" value="{{courseIndex}}" range="{{courseNames}}">
+                            <view class="weui-input text-font-my-family">{{courseNames[courseIndex]}}</view>
+                        </picker>-->
+                        <input bindinput="bindCourseNameInput" type="text" value=""/>
+
+                    </view>
+                </view>
+            </view>
+            <block wx:for="{{options}}" wx:key="{{item}}">
+                <view class="weui-form-preview__bd">
+                    <view class="weui-form-preview__item">
+                        <view class="weui-form-preview__label text-font-my-family">{{item}}</view>
+                    </view>
+                </view>
+            </block>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label text-font-my-family">
+                        <input bindinput="bindKeyInput" class="text-font-my-family" value="{{option}}" type="text" placeholder="请输入选项"/>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft">
+                <view bindtap="addOption" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active text-font-my-family">
+                    <text>添加选项</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+    <view class="page-section">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd text-font-my-family">红包奖励</view>
+          <view class="weui-cell__ft">
+            <switch checked />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd text-font-my-family">截止日期</view>
+          <view class="weui-cell__ft">
+
+            <view class="new-vote-select-date">
+                <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                    <view class="weui-input text-font-my-family">日期:{{date}}</view>
+                </picker>
+            </view>
+
+            <view class="new-vote-select-time">
+                <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+                    <view class="weui-input text-font-my-family">时间:{{time}}</view>
+                </picker>
+            </view> 
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <button type="primary" bindtap="newVote">完成</button>

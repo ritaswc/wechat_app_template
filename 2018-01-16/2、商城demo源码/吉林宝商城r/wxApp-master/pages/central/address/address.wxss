@@ -1,0 +1,34 @@
+/* pages/userhome/address/address.wxss */
+.addressDefault{
+	padding:0rpx 40rpx 20rpx;
+	color: #fff;
+	background-color: #f12035;
+}
+.userInfo{
+	line-height: 90rpx;
+}
+.number{
+	margin-left: 120rpx;
+}
+.addressInfo{
+	line-height: 50rpx;
+}
+.addressInfo .default{
+	color: #f2d0aa;
+}
+.address{
+	padding:0rpx 40rpx 20rpx;
+	border-bottom: 1rpx solid #f3f3f3;
+	background: #fff;
+}
+.add_address{
+	width: 600rpx;
+	height: 90rpx;
+	line-height: 90rpx;
+	text-align: center;
+	background: #fff;
+	position: absolute;
+	bottom: 20rpx;
+	left: 10%;
+	border-radius: 10rpx;
+}

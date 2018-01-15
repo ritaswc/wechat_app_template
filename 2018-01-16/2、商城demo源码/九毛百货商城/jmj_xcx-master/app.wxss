@@ -1,0 +1,304 @@
+/**app.wxss**/
+/*这里可以配置我的common css*/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /*padding: 234rpx 0;*/
+  box-sizing: border-box;
+} 
+page{
+    color:#3d4245;
+    font-size:30rpx;
+    background-color:#eee;
+    font-family:"Microsoft YaHei";
+}
+/*配置几个盒子*/
+.flexinlinebox{
+  display:-webkit-inline-flex;
+  -webkit-justify-content:center;
+  -webkit-flex-wrap:wrap;
+}
+.flexbox{
+  display:-webkit-flex;
+  -webkit-justify-content:center;
+  -webkit-flex-wrap:wrap;
+  -webkit-align-items:center;
+}
+.box{
+  display: -webkit-flex;
+  -webkit-justify-content:space-between;
+  -webkit-align-items:center;
+}
+.wrapbox{
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+}
+.flexstart{
+  display: -webkit-flex;
+  -webkit-justify-content: flex-start;
+  -webkit-flex-wrap: wrap;
+}
+.flexScoll{
+  display: -webkit-flex;
+  -webkit-justify-content: flex-start;
+  -webkit-align-items:center;
+}
+.flexite{
+  display: -webkit-flex;
+  -webkit-justify-content: flex-start;
+  -webkit-align-items:flex-end;
+}
+.flexsc{
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    -webkit-align-items:flex-end;
+}
+/*配置几个超出隐藏*/
+.hidewrap{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hidecamp{
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.hidecamp2{
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+/*画小三角*/
+.single:after{
+    background: transparent;
+    position: absolute;
+    content: '';
+    left: 360rpx;
+    top: -18rpx;
+    z-index: 2;
+    width: 0;
+    height: 0;
+    border-left: 20rpx solid transparent;
+    border-right: 20rpx solid transparent;
+    border-bottom: 20rpx solid #fff;
+}
+
+/*配置公用组件的样式*/
+/*搜索条目的样式*/
+.sectionS{
+  height:120rpx;
+  background:#ff0000;
+}
+.inputContainer{
+  width:100%;
+  position:relative;
+}
+.inputsearch{
+  position:absolute;
+  padding:0 90rpx;
+  display:block;
+  background:#fff;
+  color:#3d4245;
+  width:516rpx;
+  height:60rpx;
+  line-height:60rpx;
+  border-radius:30rpx;
+  top:30rpx;
+  left:117rpx;
+  box-sizing:border-box;
+  z-index:2;
+}
+.inputContainer .mark{
+   position:absolute;
+  padding:0 90rpx;
+  display:block;
+  width:516rpx;
+  height:60rpx;
+  border-radius:30rpx;
+  top:30rpx;
+  left:117rpx;
+  box-sizing:border-box;
+  z-index:2;
+}
+.img1{
+  width:77rpx;
+  height:79rpx;
+  position:absolute;
+  z-index:1;
+  top:15rpx;
+  left:100rpx;
+}
+.img2{
+  width:77rpx;
+  height:79rpx;
+  position:absolute;
+  z-index:1;
+  top:15rpx;
+  right:100rpx;
+}
+.img3{
+  width:77rpx;
+  height:79rpx;
+  position:absolute;
+  top:10rpx;
+  right:95rpx;
+  z-index:3;
+}
+.img4{
+  position:absolute;
+  width:24rpx;
+  height:28rpx;
+  top:48rpx;
+  left:157rpx;
+  z-index:3;
+}
+/*顶部导航样式*/
+.headnav{
+  width:750rpx;
+  height:124rpx;
+  background:#fff;
+  display:-webkit-flex;
+  -webkit-jusitify-content:center;
+}
+.headItem{
+  -webkit-flex:1;
+  width:125rpx;
+  text-align:center;
+   position:relative;
+}
+.img5{
+  display:block;
+  margin:12rpx auto 0;
+  width:65rpx;
+  height:65rpx;
+}
+.headItem.active .navtext{
+  color:#ff0000;
+}
+.navtext{
+  font-size:24rpx;
+  color:#979797;
+}
+.headItem.active .bg{
+  display:block;
+}
+.bg{
+  display:none;
+  position:absolute;
+  width:95rpx;
+  left:15rpx;
+  height:6rpx;
+  border-radius:6rpx;
+  background:#ff0000;
+  bottom:0;
+}
+/*商品展示组件*/
+.wareItem{
+    margin: 30rpx 0rpx 0 15rpx;
+}
+.goodsItem{
+    background: #ffffff;
+    border-radius: 20rpx;
+    width: 350rpx;
+    height: 592rpx;
+    margin-right: 15rpx;
+    margin-bottom: 20rpx;
+}
+.goodsItem .img{
+  position:relative;
+  width:350rpx;
+  height:350rpx;
+  border-bottom:1rpx solid #eee;
+}
+.goodsItem .img .proimg{
+  width:290rpx;
+  height:290rpx;
+}
+.goodsItem .name{
+    margin-top: 10rpx;
+    font-size: 30rpx;
+    color: #3d4245;
+    line-height: 36rpx;
+    height: 72rpx;
+    width: 330rpx;
+    display: inline-block;
+    padding: 0 10rpx;
+}
+ .goodsItem .sellprice{
+    margin-top: 10rpx;
+    display: block;
+    padding-left: 10rpx;
+    color:#ff4aa0;
+    font-size:31rpx;
+ }
+ .goodsItem .jp-price{
+    display: block;
+    margin-top: 10rpx;
+    font-size: 13px;
+    color: #bbb;
+    padding-left: 10rpx;
+ }
+ /*没有更多组件*/
+ .noMore_cat{
+   margin:50rpx 0;
+ }
+ .noMore_cat .empty_img{
+   width:136rpx;
+   height:112rpx;
+ }
+ .noMore_cat .content{
+   width:100%;
+   text-align:center;
+   margin-top:35rpx;
+ }
+ .noMore_cat .content text{
+   color: #bbbbbb;
+    padding-left: 32rpx;
+    font-size:14px;
+    display: inline-block;
+ }
+ .noMore_cat .content .text1{
+   position:relative;
+   top:10rpx;
+ }
+ /*为空的组件*/
+ .empty{
+   margin:150rpx 0;
+ }
+ .empty .cat{
+   width:194rpx;
+   height:133rpx;
+ }
+ .empty .content{
+   width:100%;
+   text-align:center;
+   margin-top:35rpx;
+ }
+ .empty .content text{
+   color: #bbbbbb;
+    padding-left: 32rpx;
+    font-size:14px;
+    display: inline-block;
+ }
+ .empty .content .text1{
+   position:relative;
+   top:10rpx;
+ }
+ /*直达顶部按钮*/
+ .topImg{
+   position:fixed;
+   right:40rpx;
+   bottom:70rpx;
+   width:86rpx;
+   height:86rpx;
+   z-index:2;
+ }

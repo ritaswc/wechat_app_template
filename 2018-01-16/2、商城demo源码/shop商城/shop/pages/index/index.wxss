@@ -1,0 +1,95 @@
+/**index.wxss**/
+@import "../../resource/css/font-awesome.min.css";
+@import "../template/favorites/favorites.wxss";
+
+.index-swiper{
+height:15rem;
+}
+.swiper-item-view{
+    width:100%;
+    height:100%;
+}
+.index-goods-img{
+    width:10rem;
+    height:10rem;
+    display: block;
+    margin:1rem auto;
+}
+.index-goods-item{
+    padding:0 .5rem .8rem;
+    border-bottom:#ccc solid 1px;
+}
+.index-goods-item .index-goods-title{
+    font-size: .8rem;
+    font-weight: bold;
+    color: #333;
+}
+.index-goods-item .index-goods-desc{
+    font-size: .7rem;
+    margin-top: .25rem;
+    color: #999;
+    font-weight: 400;
+    line-height: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    -moz-line-clamp: 2;
+    -moz-box-orient: vertical;
+    -ms-line-clamp: 2;
+    -ms-box-orient: vertical;
+    -o-line-clamp: 2;
+    -o-box-orient: vertical;
+    line-clamp: 2;
+    box-orient: vertical;
+}
+.index-goods-btns{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    margin-top: .85rem;
+}
+.index-goods-btns .pirce{
+    width: 5.3rem;
+    height: 1.55rem;
+    background: #f5a52a;
+    border-radius: .2rem;
+    display: block;
+    color: #fff;
+    text-align: center;
+    line-height: 1.55rem;
+    font-size: .7rem;
+    font-weight: 400;
+}
+.index-goods-btns .del_pirce{
+    flex:1;
+    margin-left: .5rem;
+    color: #F5A52A;
+    font-size:.7rem;
+    text-decoration: line-through;
+}
+.add_heart{
+    width: 2.5rem;
+    height: 1.4rem;
+    font-size: .8rem;
+    border-radius: .2rem;
+    border: #f5a52a solid 1px;
+    display: flex;
+    color: #f5a52a;
+    text-align: center;
+    align-items:center;
+    justify-content: center;
+}
+
+.curPageNumber{
+    position: fixed;
+    bottom:1rem;
+    left:0;
+    background: rgba(0,0,0,.7);
+    color:#fff;
+    font-size:.7rem;
+    padding:.5rem .8rem;
+    border-top-right-radius:.3rem;
+    border-bottom-right-radius:.3rem;
+}

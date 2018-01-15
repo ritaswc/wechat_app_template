@@ -1,0 +1,66 @@
+page {
+  background: #fbfbfb;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ed4d30;
+  height: 354rpx;
+  padding: 50rpx 0;
+  box-sizing: border-box;
+}
+.user-info .user-avatural {
+  width: 169rpx;
+  height: 169rpx;
+  border-radius: 50%;
+}
+.user-info .user-name {
+  font-size: 24rpx;
+  color: #fff;
+}
+.user-score {
+  border-top: 1rpx solid #fff;
+  display: flex;
+  padding: 30rpx;
+  height: 143rpx;
+  box-sizing: border-box;
+  background-color: #ed4d30;
+  justify-content: space-around;
+}
+.user-score .u-s-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  width: 33%;
+  border-right: 1rpx solid #f6a698;
+}
+.user-score .u-s-content text:nth-child(1) {
+  font-size: 24rpx;
+}
+.user-score .u-s-content text:nth-child(2) {
+  color: #fff;
+  font-size: 36rpx;
+}
+.user-score .u-s-content:nth-child(3) {
+  border-right: none;
+}
+.user-list navigator {
+  padding: 0 20rpx;
+  background: #fff;
+  margin-top: 6rpx;
+  font-size: 24rpx;
+}
+.user-list navigator:nth-child(1) {
+  margin-top: 20rpx;
+}
+.user-list .iconfont::before {
+  font-size: 40rpx;
+  line-height: 80rpx;
+}
+.user-list .triangle::after {
+  right: 20rpx;
+}

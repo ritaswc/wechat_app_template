@@ -1,0 +1,52 @@
+<view wx:if="{{loaded}}">
+  <view class="daohang">
+    <navigator url="../../user/user" open-type="switchTab" hover-class="other-navigator-hover" class="dh_title">会员中心</navigator>
+      <view class="dh_jt"></view>
+    <navigator url="../../user/myorder/myorder?title=navigate" hover-class="navigator-hover" class="dh_title">我的订单</navigator>
+      <view class="dh_jt"></view>
+    订单详情
+  </view>
+  <view class="body">
+    <view class="fontsize">订单编号：
+      <label class="fontsizec">{{myorder.OrderId}}</label>
+    </view>
+    <view>
+      <label class="ctime">{{myorder.OrderTime}}</label>
+    </view>
+    <view style="border-top:#000 1px solid;border-bottom:#000 1px solid;">
+      <view wx:for="{{prolist}}" wx:key="this" wx:for-item="p">
+        <view style="border-bottom: 1px dashed #ccc;" wx:if="{{index>0}}"></view>
+        <view class="item">
+          <view class="img">
+            <image src="{{'https://res.bestcake.com/images/ksk/item/w_113/'+p.ProductName+'.jpg'}}"></image>
+          </view>
+          <view class="fontsize">
+            <view class="pcake">{{p.ProductName}}</view>
+            <view>{{p.Size}}</view>
+            <view>￥{{p.Price}}</view>
+            <view>数量x{{p.Num}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>商品金额：{{goodprice}}</view>
+    <view>+运费：{{myorder.ShippingCost}}</view>
+    <view>-优惠：{{myorder.DiscountAmount}}</view>
+    <view>应付金额：{{myorder.TotalPrice}}</view>
+  </view>
+  <view class="body">
+    <view class="bld">订单状态</view>
+    <view class="fontsize">{{myorder.OrderStatus}}</view>
+    <view class="bld">收货信息</view>
+    <view class="fontsize">{{myorder.Consignee+' '+myorder.CellPhone}}</view>
+    <view class="fontsize">{{myorder.Address}}</view>
+    <view class="bld">送货时间</view>
+    <view class="fontsize">{{myorder.DeliveryDate + ' '+myorder.DeliveryTime}}</view>
+    <view class="bld">支付方式</view>
+    <view class="fontsize">{{myorder.Payment}}</view>
+    <view class="bld">支付状态</view>
+    <view class="fontsize">{{myorder.PayStatus}}</view>  
+    <view class="bld">附言</view>
+    <view class="fontsize">{{myorder.Remarks}}</view>
+  </view>
+</view>

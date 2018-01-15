@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/shopcart/shopcart",
+    "pages/mine/mine",
+    "pages/huawei/huawei",
+     "pages/shopinfo/shopinfo",
+     "pages/address/address",
+     "pages/addresslist/addresslist"
+  ],
+  "window":{
+    "backgroundColor": "#f2f2f2",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#BF8600",
+    "navigationBarTitleText": "我的商城",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color":"#dddddd",
+    "selectedColor":"#BF8600",
+    "backgroundColor":"#323232",
+    "borderStyle":"black",
+    "list": [
+      {
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "img/index_icon.png",
+      "selectedIconPath": "img/index_icon_active.png"
+    },
+    {
+      "pagePath": "pages/shopcart/shopcart",
+      "text": "购物车",
+      "iconPath": "img/cart.png",
+      "selectedIconPath": "img/cart_active.png"
+    },
+    {
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "img/mine_icon.png",
+      "selectedIconPath": "img/mine_icon_active.png"
+    }
+    ]
+  }
+}

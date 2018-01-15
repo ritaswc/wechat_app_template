@@ -1,0 +1,44 @@
+<loading hidden="{{loadingHidden}}">正在加载...</loading>
+
+<!-- 整体样式 -->
+<view class="containsView">
+  <scroll-view scroll-y="true" bindscrolltoupper="bindscrolltoupper" bindscroll="scroll" bindscrolltolower="bindscrolltolower" style="height:{{systemInfo.windowHeight}}px">
+
+    <!-- 顶部view样式 -->
+    <view class="headerView">
+      <view class="headerItemView">
+        <text class="headerItemText">综合</text>
+      </view>
+      <view class="headerItemView">
+        <text class="headerItemText">销量</text>
+      </view>
+      <view class="headerItemView">
+        <text class="headerItemText">价格</text>
+        <image class="bottomItemImage" src="../../images/pop_select_pray.png" />
+      </view>
+      <view class="headerItemView">
+        <text class="headerItemText">筛选</text>
+        <image class="bottomItemImage" src="../../images/list_sx.png" />
+      </view>
+    </view>
+    
+    <block wx:for-items="{{list}}">
+
+      <!-- 整体item样式 -->
+      <view data-specId="{{item.specId}}" catchtap="clickitem" class="topContainsView">
+        <image class="goodsImage" src="http://testbbcimage.leimingtech.com{{item.goodsImage}}" mode='scaleToFill' />
+        <view class="topRightView">
+          <text class="topRightName">{{item.goodsName}} </text>
+          <text class="topRightTime">￥{{item.goodsPrice}}</text>
+
+          <!--销量和评价-->
+          <view class="saleAndcom">
+            <text class="saletext">{{item.storeName}}</text>
+            <text class="saleRightText">{{item.commentnum}}条评价 销量{{item.salenum}}</text>
+          </view>
+          <view class="divLine"></view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

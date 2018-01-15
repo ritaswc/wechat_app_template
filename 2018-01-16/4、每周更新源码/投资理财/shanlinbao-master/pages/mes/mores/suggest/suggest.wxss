@@ -1,0 +1,25 @@
+/* pages/mes/mores/suggest/suggest.wxss */
+
+.suggest_view{
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-align: left;
+    border-radius: 10px;
+    border:1px solid;
+    border-color:#d4d4d4; 
+}
+.suggest_button{
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+
+

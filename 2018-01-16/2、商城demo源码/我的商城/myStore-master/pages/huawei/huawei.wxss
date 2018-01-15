@@ -1,0 +1,64 @@
+/* pages/huawei/huawei.wxss */
+
+.null-hint {
+  margin: 60rpx 10rpx 0 10rpx;
+  padding: 40rpx 0;
+  border-radius: 5rpx;
+  text-align: center;
+  background-color: #fff;
+  font-size: 33rpx;
+}
+
+.item-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 100rpx;
+  margin-top: 10rpx;
+}
+
+.huawei-scroll {
+  background-color: #ececec;
+}
+
+.shop-item {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 5rpx;
+  min-height: 500rpx;
+  
+}
+.shop-info{
+    background-color: #ffffff;
+    padding-bottom: 10rpx;
+}
+
+.huawei-item-img {
+  width: 365rpx;
+  height: 365rpx;
+}
+.huawei-item-title{
+    padding: 10rpx;
+    font-size: 28rpx;
+    max-width: 345rpx;
+    color: #c3c3c3;
+    
+}
+.shop-title{
+    max-width: 345rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    display:  block;
+    text-overflow: clip;
+}
+.item-price{
+    font-size: 30rpx;
+    color: red;
+}
+.item-sales{
+    font-size: 20rpx;
+    color: #c3c3c3;
+    margin-left: 15rpx;
+}

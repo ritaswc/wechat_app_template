@@ -1,0 +1,100 @@
+<scroll-view scroll-y="true" class="container" style="height:{{scrollHeight}}px">
+    <swiper class="swiper-wrap"
+  autoplay="true" interval="3000" duration="1000" circular="true">
+        <swiper-item wx:for="{{imgUrls}}">
+        <image class="swiper-img" src="../../../image/customer/detail/13shouchong.png"/>
+        </swiper-item>
+    </swiper>
+    <view class="shop-status">
+        <view class="status-left">
+            <view class="left-top">
+                <view class="shop-name f1 c5">商户名称商户名称</view>
+                <view class="status">营业中</view>
+            </view>
+            <view class="open-time f2 c4">营业时间：9:00-18:00 </view>
+        </view>
+        <view class="status-right">
+            <view class="img-wrap coll-wrap">
+                <image class="shoucang" src="../../../image/customer/detail/13shouchui.png"></image>
+                <text class="f5 c3">未收藏</text>
+            </view>
+             <view class="img-wrap border-left">
+                <image class="phone" src="../../../image/customer/detail/14boda.png"></image>
+                <text class="f5 c3">电话</text>
+             </view>  
+        </view>
+    </view>
+    <view class="info-list">
+        <view class="info-item">
+            <view class="info-item-img-wrap">
+                <image class="info-item-img" src="../../../image/customer/detail/15jieshao.png"></image>
+            </view>
+            <text class="info-item-text f2 c5">商户简介商户简介商户简介商户简介商户简介商户简介商户简介商户简介商户简介</text>
+        </view>
+  
+        <view class="info-item">
+            <view class="info-item-img-wrap">
+                <image class="info-item-img" src="../../../image/customer/detail/16jieshao.png"></image>
+            </view>
+            <text class="info-item-text f2 c5">地址信息地址信息地址信息地址信息地址信息</text>
+        </view>
+ 
+        <view class="info-item">
+            <view class="info-item-img-wrap">
+                <image class="info-item-img" src="../../../image/customer/detail/17jieshao.png"></image>
+            </view>
+            <text class="info-item-text f2 c5">优惠券说明优惠券说明优惠券说明优惠券说明优惠券说明优惠券说明优惠券说明</text>
+        </view>
+  
+        <view class="info-item">
+            <view class="info-item-img-wrap">
+                <image class="info-item-img" src="../../../image/customer/detail/18jieshao.png"></image>
+            </view>
+            <text class="info-item-text f2 c5">商户公告商户公告商户公告商户公告商户公告商户公告商户公告商户公告</text>
+        </view>
+    </view>
+
+    <!--商品或服务列表-->
+    <view class="list-nav">
+        <text class="nav-pro cur">商品</text>
+        <text class="nav-service">服务</text>
+    </view>
+    <view class="item-list">
+        <view class="item" wx:for="{{['','','','','']}}">
+            <view class="item-content">
+                <view class="item-img-wrap">
+                    <image class="item-img" src="../../../image/customer/detail/18jieshao.png"></image>
+                </view>
+                <view class="item-intro-wrap">
+                    <view class="item-intro-top">
+                        <text class="item-name f1 c5">商品名称</text>
+                        <!--<view class="status status-x f6">不可用</view>-->
+                        <view class="status status-y f6" >可用</view>
+                    </view>
+                    <view class="item-intro-bottom" >
+                        <text class="item-intro f4 c6">商品简介简介商品简介简介商品简介简介商品简介简介商品简介简介商品简介简介</text>
+                        <view class="item-price f1">
+                            <text class="">¥100</text>
+                            <text class="f5">元</text>
+                        </view> 
+                    </view>
+                </view>
+            </view>
+            <view class="item-tag-list">
+                <text class="tag-item f5 c">标签</text>
+                <text class="tag-item f5 c">标签</text>
+                <text class="tag-item f5 c">标签</text>
+                <text class="tag-item f5 c">标签</text>
+                <text class="tag-item f5 c">标签</text>
+                <text class="tag-item f5 c">标签</text>
+                <text class="tag-item f5 c">标签</text>
+            </view>
+        </view>
+        
+        <view class="tips">
+          <view wx:if="{{hasMore}}"><image src="../../../image/loading.gif" mode="aspectFill"/><text>加载中...</text></view>
+          <view wx:else><text>没有更多内容了</text></view>
+        </view>
+
+    </view>
+</scroll-view>

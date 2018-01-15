@@ -1,0 +1,66 @@
+swiper{
+    width: 100%;
+    height: 375px;
+}
+swiper-item{
+    width: 100%;
+}
+swiper image{
+    width: 100%;
+    height:100%;
+}
+.slider{
+    border-bottom:1px solid #e0e0e0;
+    padding-bottom:15px;
+}
+page{
+    background: #ffffff;
+}
+.info{
+}
+.infoTop{
+    height:2.8em;
+    margin-top:5px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.4em;
+}
+.collect{
+    float: right;
+    width: 3.6em;
+    height:100%;
+    border-left:1px solid #E0E0E0;
+}
+.nameAndPrice{
+    font-size: 16px;
+    padding-left:15px;
+}
+.collect{
+    text-align: center;
+}
+.price{
+    color: #F23030;
+}
+.marketNumber{
+    margin:5px 15px;
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+    height: 2.4em;
+    line-height: 2.4em;
+}
+.attestation{
+    background: #f9f9f9;
+    height: 1.6em;
+    line-height:1.6em;
+    display: flex;
+}
+.attestationItem{
+    flex:1;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+.icon{
+    color: #ff4500;
+}

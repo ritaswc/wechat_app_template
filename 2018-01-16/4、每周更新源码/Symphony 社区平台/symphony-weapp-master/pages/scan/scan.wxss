@@ -1,0 +1,6 @@
+@import "../share/share.wxss";
+
+.logout {
+  float: right;
+  margin-left: 21px;
+}

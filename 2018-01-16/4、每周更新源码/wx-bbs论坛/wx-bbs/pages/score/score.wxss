@@ -1,0 +1,68 @@
+/* pages/score/score.wxss */
+
+.page-container {
+    width: 100%;
+    height: 100%;
+}
+.tabbar-wrap {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    background-color: #eeeeee;
+    height: 84rpx;
+    line-height: 84rpx;    
+}
+.tabbar-wrap-selected {
+    border-bottom: 2px solid #0e90d2;
+    background-color: #F8F8F8;
+    color: #0e90d2;
+}
+.show-rule {
+    padding: 10px;
+    text-align: center;
+    color:#0e90d2;
+}
+.score-head {
+    background-color: #eeeeee;
+    display: flex;
+}
+.score-body {
+    display: flex;
+}
+.score-head-num-warp {
+    width: 15%;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+.score-num-warp {
+    width: 15%;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    color:#ff8800;
+}
+.score-head-opera-wrap {
+    width: 50%;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+.score-head-data-wrap {
+    width: 35%;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+.score-data-wrap {
+    border-top: 1px solid #ececec;
+    font-size: 13px;
+}
+.exchange-empty {
+    font-family: SimSun,Arial Narrow,HELVETICA;
+    text-align: center;
+    color: #333333;
+    font-size: 14px;
+    line-height: 50px;
+
+}

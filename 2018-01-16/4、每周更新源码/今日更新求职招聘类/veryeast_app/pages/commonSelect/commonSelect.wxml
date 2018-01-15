@@ -1,0 +1,4 @@
+<!--pages/commonSelect/commonSelect.wxml-->
+<view class="commonSelect_wrap">
+    <textarea bindinput="inputChange" auto-height="true" focus="true" maxlength='{{length}}' value="{{value}}" placeholder="{{placeholder}}"/>
+</view>

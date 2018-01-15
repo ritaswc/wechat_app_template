@@ -1,0 +1,12 @@
+<view class="c">
+  <view class="pro">
+    <label>{{title}}：</label>
+    <text>{{pro}}</text>
+  </view>
+  <view class="fm phone">
+    <text class="label">+86</text>
+    <input type="number" maxlength="11" placeholder="请输入11位手机号" bindinput="checkPhone" />
+  </view>
+  <view class="des">优惠券密码将发送到此手机号</view>
+  <view class="sub {{phoneOk?'sub-ok':'sub-dis'}}" catchtap="pay">{{btn}}</view>
+</view>

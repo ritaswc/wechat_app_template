@@ -1,0 +1,85 @@
+<view class="container">
+  <view class="swiper-container">
+    <swiper indicator-dots="true"
+      autoplay="true" interval="3000" duration="1000"  circular="true" indicator-active-color="#7fabfd">
+      <block wx:for="{{banners}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{imageRoot}}{{item.img}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!--
+    <view class="search-field" bindtap="gotoCollege">
+      <input placeholder="请输入关键字" placeholder-style="color: #c8c8c8" disabled="true" />
+      <image src="../../images/whiteBg.png" class="bg-image" />
+      <image src="../../images/seach.png" class="search-btn" />
+    </view>
+    -->
+  </view>
+  <view class="course-list">
+    <view class="course-header">
+        <view class="course-title-wrapper">
+            <image class="course-title-image" src="../../images/tuijian.png" />
+            <view class="course-title">
+                推荐课程
+            </view>
+        </view>
+        <view class="course-more-wrapper">
+            <view class="course-more" bindtap="gotoCollege">
+                更多
+            </view>
+        </view>
+    </view>
+    <view class="course-content">
+        <block wx:for="{{recommendedCourses}}" wx:key="{{index}}">
+            <navigator url="../coursedetail/index?id={{item._id}}">
+                <view class="course-item" style="width: {{(winWidth - (10 * 3)) / 2}}px;">
+                    <view class="course-image-wrapper">
+                        <image class="course-image" src="{{imageRoot}}{{item.img}}" />
+                    </view>
+                    <view class="course-info">
+                        <view class="course-name">{{item.name}}</view>
+                        <view class="course-group">学组: {{item.specialObj}}</view>
+                        <view class="course-status">
+                            <view class="course-rating">
+                                评分: {{item.averageScore ? item.averageScore : 0}}
+                            </view>
+                            <view class="course-study-num">
+                                {{item.count ? item.count : 0}}人学习过
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </block>
+    </view>
+  </view>
+  <view class="seperator-line"></view>
+  <view class="course-list">
+    <view class="course-header">
+        <view class="course-title-wrapper">
+            <image class="course-title-image" src="../../images/jingpin.png" />
+            <view class="course-title">
+                精品课件
+            </view>
+        </view>
+        <view class="course-more-wrapper">
+        </view>
+    </view>
+    <view class="course-content">
+        <block wx:for="{{qulityVideos}}" wx:key="{{index}}">
+            <navigator url="../videoplayer/index?videoUrl={{item.mp4}}&name={{item.name}}&content={{item.content}}&unit={{item.unit}}&teacher={{item.teacher}}">
+                <view class="course-item" style="width: {{(winWidth - (10 * 3)) / 2}}px;">
+                    <view class="course-image-wrapper">
+                        <image class="course-image" src="{{imageRoot}}{{item.img}}" />
+                    </view>
+                    <view class="course-info">
+                        <view class="course-name">{{item.name}}</view>
+                        <view class="course-group">学组: {{item.specialObj}}</view>
+                    </view>
+                </view>
+            </navigator>
+        </block>
+    </view>
+  </view>
+</view>

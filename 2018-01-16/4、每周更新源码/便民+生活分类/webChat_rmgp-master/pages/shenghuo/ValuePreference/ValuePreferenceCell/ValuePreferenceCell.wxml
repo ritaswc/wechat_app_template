@@ -1,0 +1,35 @@
+<template name="ValuePreferenceCell">
+
+  <view class="ValuePreferenceCell-container">
+
+    <block wx:if="{{couponType == 1}}">
+      <image class="backgroundImg" src="/images/shenghuo/lingquan/quan04.png"></image>
+    </block>
+    <block wx:else>
+      <image class="backgroundImg" src="/images/shenghuo/lingquan/quan01.png"></image>
+    </block>
+    <image class="cell-left-image" src="http://m.jointem.com/{{topicImg}}"></image>
+    <view class="cell-center-container">
+      <text class="center-title">{{doorName}}</text>
+      <view class="center-title-2-container">
+        <text class="center-title-2-container-1">{{discountMoney}}</text>
+        <text class="center-title-2-container-2">{{money == null ? "无门槛使用" : "满" + money + "元可用" }}</text>
+      </view>
+      <view class="center-title-3-container">
+        <text class="center-title-3-container-1">{{scName}}</text>
+        <text class="center-title-3-container-2">{{couponType == 1 ? "到店使用" : "网店使用"}}</text>
+      </view>
+    </view>
+    <view class="cell-right-container">
+      <text class="cell-right-container-1">剩余{{num}}</text>
+
+      <block wx:if="{{alreadyReceived == 'ok' }}">
+        <text class="{{couponType == 1 ? 'cell-right-container-2-daodian-use' : 'cell-right-container-2-wangdian-use'}}" data-couponId="{{couponId}}" bindtap="useCoupon">去使用</text>
+      </block>
+      <block wx:else>
+        <text class="{{couponType == 1 ? 'cell-right-container-2-brown' : 'cell-right-container-2-blue'}}" data-couponId="{{couponId}}" bindtap="tapAddCoupon"> 立即领取</text>
+      </block>
+
+    </view>
+  </view>
+</template>

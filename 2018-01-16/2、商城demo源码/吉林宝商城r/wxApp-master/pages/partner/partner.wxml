@@ -1,0 +1,41 @@
+<view class="wraper">
+    <view class="banner">
+        <image src="http://ojhq3mgil.bkt.clouddn.com/web/478/20170208/201702081000316987.jpg"></image>
+    </view>
+     <view class="title">
+        <image src="../../images/partner_02.png"></image>
+    </view>
+    <!--加盟特权内容-->
+    <view class="content">
+        <view class="listItems">
+            <view class="leftImg">
+                <image src="../../images/partner_kaidian.png"></image>
+            </view>
+            <view class="rightTxt">
+                <text class="red">开店0门槛</text>
+                <text class="txtDesc">开店0门槛 轻松赚钱一键分销，一件代发，支持全渠道推广。</text>
+            </view>
+        </view>
+        <view class="listItems">
+            <view class="leftImg">
+                <image src="../../images/partner_baozhang.png"></image>
+            </view>
+            <view class="rightTxt">
+                <text class="orange">货源有保障</text>
+                <text class="txtDesc">精选商品，品质保证，众安承保，正品保障，厂家直供，丰厚佣金。</text>
+            </view>
+        </view>
+        <view class="listItems">
+            <view class="leftImg">
+                <image src="../../images/partner_yi.png"></image>
+            </view>
+            <view class="rightTxt">
+                <text class="yellow">一对一指导</text>
+                <text class="txtDesc">手把手教你成交订单，给你专业知识培训，朋友圈素材免费提供，小白也能开店赚钱！</text>
+            </view>
+        </view>
+        <view class="btnGroup">
+            <button class="btn">成为合伙人</button>
+        </view>
+    </view>
+</view>

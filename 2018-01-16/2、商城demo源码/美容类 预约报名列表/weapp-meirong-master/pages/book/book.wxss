@@ -1,0 +1,84 @@
+.container{
+    background:#fff;
+}
+.ar_coverpath{
+    width:100%;
+    margin:0rpx;
+    padding:0rpx;
+    height:175px;
+}
+.ar_coverpath image{
+    width:100%;
+}
+.ar_picker{
+    width:100%;
+    font-size:30rpx;
+    color:#000;
+    background: #efeff4;
+    margin:0;
+}
+.ar_picker .ar_picker_wrap{
+    width: 670rpx;
+    background: #fff url(../../images/arrow.png) no-repeat right center;
+    background-size:25rpx 14rpx;
+    background-position:650rpx;
+    border-radius:20rpx;
+    padding:20rpx;
+    margin:20rpx auto;
+}
+.ar_cont{
+    padding:20rpx 60rpx;
+    font-size:30rpx;
+    background: #fff;
+    margin-bottom:40rpx;
+    line-height: 45rpx;
+    color:#666666;
+}
+.ar_cont .ar_cont_h1{
+    font-size: 32rpx;
+    font-weight: 600;
+    line-height: 64rpx;
+    color:#000;
+}
+.ar_date_time{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:30rpx 0rpx 60rpx;
+}
+.ar_date_time .ar_date,
+.ar_date_time .ar_time{
+    width:47%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.ar_date_time .ar_date image{
+    width:34rpx;
+    height:38rpx;
+    
+}
+.ar_date_time .ar_time image{
+    width:45rpx;
+    height:38rpx;
+}
+.ar_date_time picker{
+    width:220rpx;
+    border:1px solid #ddd;
+    border-radius:8rpx;
+    padding:0rpx 10rpx;
+    margin-left:10rpx;
+}
+.input_msg{
+    border:1px solid #ddd; 
+    border-radius:8rpx;
+    padding:0rpx 10rpx;
+}
+.ar_book{
+    background:#d24a58;
+    font-size: 32rpx;
+    color:#fff;
+    border-radius: 0rpx;
+    margin:40rpx 0rpx 10rpx;
+}

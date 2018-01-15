@@ -1,0 +1,60 @@
+<import src="../../../components/section/section.wxml"/>
+<view class="prohibit-scroll">
+   <view class="title-area-wrap">
+        <text class="f1 c5">简介</text>
+        <textarea placeholder-class="ph-class" placeholder="简介..." />
+   </view>
+   <view class="wrap" bindtap="choiceTag">
+        <view class="choice-tag-wrap">
+            <text>标签</text>
+            <view class="choice-tag-right">
+                <text>请选择标签</text>
+                <image class="arrow-right" src="/image/common/icon_arrow.png"></image>
+            </view>
+            
+        </view>
+   </view>
+   <view class="title-area-wrap">
+        <text class="f1 c5">营业时间</text>
+        <textarea class="open-time {{(showAddressMask || showTagMask) ? 'hide':'' }}" placeholder-class="ph-class" placeholder="请输入您的营业时间..." />
+   </view>
+   <view class="text-pic-cell">
+        <text class="section-item-left f1 c5">商品照片</text>
+        <image mode="aspectFill" bindtap="choicePic" src="{{tempFilePaths ?  tempFilePaths:'/image/common/icon_add_pic.png'}}"></image>
+    </view>
+   <view class="wrap" bindtap="choiceAddress">
+        <view class="choice-tag-wrap">
+            <text>常用位置</text>
+            <text class="address">{{addressInputValue}}</text>
+            <image class="arrow-right" src="/image/common/icon_arrow.png"></image>
+        </view>
+   </view>
+   <button class="btn save-btn">保存</button>
+   <button class="btn close-btn">休业</button>
+</view>
+<!--标签选择-->
+<view class="mask {{showTagMask ? '' : 'hide'}}">
+    <view class="tag-wrap">
+        <view class="title bgc">标签</view>
+        <scroll-view class="tag-list" scroll-y="true" >
+            <view class="tag-item" wx:for="{{['','','','','','','']}}">
+                <image src="/image/common/icon_yes.png"></image>
+                <text class="f2 c5">标签</text>
+            </view>
+        </scroll-view>
+        <view class="confirm-btn bgc" bindtap="confirmTag">确认标签</view>
+    </view>
+</view>
+
+<!--地址选择-->
+<view class="mask {{showAddressMask ? '' : 'hide'}}">
+    <view class="position-content">
+        <view class="title bgc">您的地址</view>
+        <textarea bindblur="addressInput" value="{{showAddressMask ? locationAddress : ''}}" placeholder-class="ph-class" placeholder="地址内容地址内容地址内容" />
+        <view class="address-tips f5 c">*可修改您的正确的地址</view>
+        <view class="btn-wrap">
+            <view class="rechoice f1">重新选择</view>
+            <view class="ok bgc f1" bindtap="confiromAddress">确认</view>
+        </view>
+    </view>
+</view>

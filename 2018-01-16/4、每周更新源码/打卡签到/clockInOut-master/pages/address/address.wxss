@@ -1,0 +1,35 @@
+/* pages/address/address.wxss */
+
+
+page {
+    background: #fafafa;
+}
+
+
+.header {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding:30rpx 40rpx; 
+    font-size: 9.75pt;
+    color: rgba(0, 0, 0, 0.38);
+}
+.header text {
+    flex-grow: 1;
+}
+
+.header button {
+    background: #fafafa;
+    color: #22a1e0;
+}
+
+.address input {
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+    padding: 20rpx 40rpx;
+    color: rgba(0, 0, 0);
+    font-size: 12.75pt;
+}

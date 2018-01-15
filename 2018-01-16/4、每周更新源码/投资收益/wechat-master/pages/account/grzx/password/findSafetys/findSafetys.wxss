@@ -1,0 +1,10 @@
+.notice {font-size: 28rpx;padding:60rpx 40rpx;line-height: 1.8em;text-align: center;}
+.grzx_con {background: #fff;padding-left: 40rpx;border-bottom: 2rpx solid #ccc;border-top:2rpx solid #ccc; }
+.grzx_con_list {padding: 30rpx 40rpx 30rpx 0;border-bottom: 2rpx solid #ccc;font-size: 30rpx;}
+.grzx_con_list input {display: inline-block;width: 70%;}
+
+.border_none {border-bottom: none;}
+.notice_bottom {text-align: center;margin-top: 40rpx;font-size: 30rpx;padding:0 40rpx;line-height: 1.4em;}
+
+.grzx_btn {padding:60rpx 40rpx;}
+.grzx_btn button {background: #ff5304;}

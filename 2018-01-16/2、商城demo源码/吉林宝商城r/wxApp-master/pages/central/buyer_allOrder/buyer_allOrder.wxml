@@ -1,0 +1,41 @@
+<!--pages/userhome/buyer_allOrder/buyer_allOrder.wxml-->
+<view class="orderDetails">
+	<view class="orderListTitle">
+		<view class="userImg"><image src="http://ojhq3mgil.bkt.clouddn.com/web/478/20170116/201701161749246654.jpg"></image></view>
+		<text class="userName">上善若水</text>
+		<text class="orderStatus">交易成功</text>
+	</view>
+	<view class="orderListDetails">
+		<view class="productImg">
+			<image src="http://ojhq3mgil.bkt.clouddn.com/465/20161024/201610241238006043.jpg"></image>
+		</view>
+		<view class="productInfo">
+			<view class="productTitle">Canmake缤纷糖果保湿唇彩 唇蜜 01经典粉色</view>
+			<text class="productPrice">￥132.00</text>
+			<text class="productQuantity">x1</text>
+		</view>
+	</view>
+	<view class="productCount">
+		<view>合计：￥<text>132.00</text></view>
+	</view>
+</view>	
+<view class="orderDetails">
+	<view class="orderListTitle">
+		<view class="userImg"><image src="http://ojhq3mgil.bkt.clouddn.com/web/478/20170116/201701161749246654.jpg"></image></view>
+		<text class="userName">上善若水</text>
+		<text class="orderStatus">交易成功</text>
+	</view>
+	<view class="orderListDetails">
+		<view class="productImg">
+			<image src="http://ojhq3mgil.bkt.clouddn.com/465/20161024/201610241238006043.jpg"></image>
+		</view>
+		<view class="productInfo">
+			<view class="productTitle">Canmake缤纷糖果保湿唇彩 唇蜜 01经典粉色</view>
+			<text class="productPrice">￥132.00</text>
+			<text class="productQuantity">x1</text>
+		</view>
+	</view>
+	<view class="productCount">
+		<view>合计：￥<text>132.00</text></view>
+	</view>
+</view>	

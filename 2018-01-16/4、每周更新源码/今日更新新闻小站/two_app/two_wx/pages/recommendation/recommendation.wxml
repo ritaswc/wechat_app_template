@@ -1,0 +1,68 @@
+<!--pages/new_love/new_love.wxml-->
+<!--<view class="nl-container" animation="{{animationData}}">-->
+<view class="nl-container" hidden="{{!flag}}">
+<!--图片-->
+<block wx:for="{{array}}" wx:key="item.title" >
+    <view class='nl-img {{index %2==0 ? "right":"left"}}'  hidden="{{!item.check}}" bindtap="tourl">
+        <view class='message' data-title="{{item.title}}" >{{item.title}}</view>
+        <image class='images ' mode="aspectFill" src="{{item.img}}" data-title="{{item.title}}" ></image>
+    </view>
+</block>
+<!--添加按钮-->
+    <view class='nl nl-even' bindtap='h2s'> 
+        <text class = "iconfont icon-tianjia " ></text>
+     </view>
+</view>
+<!--添加选择页面-->
+<view  hidden="{{flag}}">
+<!--黑页-->
+    <!--<view class='nl-fixed'></view>-->
+    <!--白页-->
+    <view class = "selector-header">
+            <text>添加订阅</text>
+            <text class = "iconfont icon-guanbi1 close-selector" bindtap="closeQian"></text>
+        </view>
+    <view class="nl-add">
+        
+        <!--输入框-->
+        <view class="section1">
+            <input placeholder="填入你喜欢的订阅内容" class='nl-input' 
+                maxlength="16" 
+                value="{{newqian.title}}" 
+                bindconfirm="subQian" 
+                bindinput="addQian"/>
+            <span bindtap='subQian'>确认</span>
+        <!--图片选择-->
+            <view class=" selectImg">
+                <!--<view  class="section2">
+                <image src="{{tempFilePaths}}"  mode="aspectFill" style="width: 100%; height: auto"></image>
+                <view bindtap="chooseimage">自定义图片</view>
+                </view>-->
+                    <view wx:for="{{imgSelect}}"  wx:key="item" class="select_box">
+                    <image class="select_img" bindtap="check_img" data-index="{{index}}" mode="aspectFill" src="{{item.url}}"></image>
+                    <icon class="icon_img" hidden="{{imgIndex!=index}}" type="success" size="50"/>
+                </view>
+            </view>
+        <!--添加-->
+        <!--<button type="primary" class='section2 nl-btn ' size="default" bindtap="subQian"> 
+        确认添加 </button>-->
+        </view>
+        <!--订阅-->
+         <view class="section2">
+            <view class = "section2-title">我的订阅</view>
+                <block class="section2" wx:for="{{array}}" wx:key="item">
+                    <button id="qian-{{index}}" wx:if="{{item.check}}" class='nl-select {{item.check==false?"nl-select-check":""}}' bindtap="checkSelect">{{item.title}}
+                    </button>
+                </block>
+            </view>
+        <view class="section2">
+            <view class = "section2-title">推介订阅</view>
+            <block class="section2" wx:for="{{array}}" wx:key="item.title">
+            <button id="qian-{{index}}" wx:if="{{!item.check}}"  class='nl-select {{item.check==false?"nl-select-check":""}}' bindtap="checkSelect">{{item.title}}</button>
+        </block>
+        </view>  
+        <view class="section2 nl-tip" bindtap="clear">tip:</view>
+        <view class="section2 nl-tip">最多十五个标签</view>
+        <view class="section2 nl-tip">请勿重复输入相同意义的标签</view>
+    </view>
+</view>

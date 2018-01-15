@@ -1,0 +1,192 @@
+/* pages/shenghuo/ValuePreference/CouponDetail/CouponDetail.wxss */
+
+.scroll-container {
+  height: 100%;
+  width: 100%;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  top: 0px;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  background-color: #efefef;
+}
+
+.value-item {
+  width: 100%;
+  height: 91px;
+  display: flex;
+  flex-direction: row;
+  /*padding: 8px 8px;*/
+  padding: 8px;
+  background-repeat: no-repeat;
+  background-size: 100% 90px;
+  box-sizing: border-box;
+  margin: 0px 0px 5px 0px;
+  position: relative;
+}
+
+.cell-background-img {
+  width: 96%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 90px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: -1;
+}
+
+.cell-center-container {
+  margin-left: 10px;
+  position: relative;
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  /*width: 100% - 22% - 66px;*/
+  width: 60%;
+  height: 100%;
+}
+
+.cell-left-image {
+  width: 66px;
+  height: 66px;
+  /*text-align: center;
+  overflow: hidden;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;*/
+  border-radius: 5px;
+  margin-top: 12px;
+  margin-left: 8px;
+}
+
+.cell-right-container {
+  color: #fff;
+  display: flex;
+  /*flex-direction: column;*/
+  width: 22%;
+  height: 100%;
+  /*padding-top: 18px;*/
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  /*right: 10px;*/
+  align-items: center;
+  vertical-align: middle;
+}
+
+.center-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #343434;
+}
+
+.center-title-1 {
+  margin-top: 8px;
+  font-size: 12px;
+  color: rgb(100, 179, 248);
+}
+
+.center-title-2 {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #343434;
+}
+
+.cell-right-title {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+
+.cell-right-title-1 {
+  font-size: 25px;
+}
+
+/******************中间视图*******************/
+
+.middle-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 16rpx 0rpx 16rpx;
+}
+
+.address-and-call {
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.ditu-img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.address {
+  font-size: 13px;
+  max-width: 80%; /** 限制宽度 & 省略 */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.phone {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 13px;
+}
+
+.coupon-statue {
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.coupon-msg {
+  font-size: 13px;
+}
+
+.statue {
+  font-size: 13px;
+  position: absolute;
+  right: 12px;
+  color: #0164a6;
+}
+
+.qr-view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 420rpx;
+}
+
+.qr-view-container > canvas {
+  width: 420rpx;
+  height: 420rpx;
+}
+
+.qr-code-text {
+  font-size: 13px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/******************底部视图*******************/
+
+.bottom-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 16rpx 0rpx 16rpx;
+}
+
+.common-text {
+  font-size: 13px;
+  margin-top: 10px;
+}

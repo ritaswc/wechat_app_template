@@ -1,0 +1,108 @@
+<!--index.wxml-->
+<import src="../../../utils/playpercent.wxml" />
+<import src="../../../utils/lrc.wxml" />
+
+<view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">歌单</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">正在播放</view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight-31}}px" bindchange="bindChange">
+    <swiper-item>
+      <scroll-view scroll-y="true" scroll-x="false" style="height:{{winHeight}}px;">
+        <view wx:for="{{playlists}}" wx:key="playlist" class="playlist z-depth-2" bindtap="tracks" id="{{index}}">
+          <view>
+            <image src="{{item.cover}}" class="cover" mode="aspectFill"/>
+          </view>
+          <view class="hover">
+            <text></text>
+          </view>
+          <view class="title">
+            <text>{{item.title}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <view id="playingpage" class=" {{playing?'playing':''}}">
+        <view class="blurbg" style="background-image: url({{coverImgUrl}})"></view>
+        <view class="playing-wrap">
+          <view class="contents">
+            <view hidden="{{showlrc}}" style="height:200px; width:200px;" id="playing-main">
+              <image src="{{coverImgUrl}}" bindtap="loadlrc" id="pmaincover" />
+            </view>
+            <view class="nowPlayingTitle" hidden="{{showlrc}}">
+              <text>{{nowPlayingTitle}}</text>
+            </view>
+            <view class="nowPlayingArtist" hidden="{{showlrc}}" >
+              <text>{{nowPlayingArtist}}</text>
+            </view>
+          </view>
+          <template is="lrc" data="{{lrc:lrc,showlrc:showlrc,lrcindex:lrcindex}}" />
+          <view class="actions">
+            <view id="playing-actwrap">
+              <template is="playingpercent" data="{{playtime:playtime,percent:percent,duration:duration,downloadPercent:downloadPercent}}" />
+              <view id="playingaction">
+                <view class="pa-saction" bindtap="playshuffle" hidden="{{shuffle!=1}}">
+                  <image src="../../../imgs/a_p.png" />
+                </view>
+                <view class="pa-saction" bindtap="playshuffle" hidden="{{shuffle!=2}}">
+                  <image src="../../../imgs/a_y.png" />
+                </view>
+                <view class="pa-saction" bindtap="playshuffle" hidden="{{shuffle!=3}}">
+                  <image src="../../../imgs/aa9.png" />
+                </view>
+                <view class="pa-maction" data-other="-1" bindtap="playprev">
+                  <image src="../../../imgs/ajh.png" />
+                </view>
+                <view class="pa-baction" hidden="{{!playing}}" bindtap="playingtoggle" data-p="{{playing}}">
+                  <image id='pa-playing' src="../../../imgs/ajd.png" />
+                </view>
+                <view class="pa-baction" hidden="{{playing}}" bindtap="playingtoggle" data-p="{{playing}}">
+                  <image id='pa-pause' src="../../../imgs/ajf.png" />
+                </view>
+                <view class="pa-maction" data-other="1" bindtap="playnext">
+                  <image src="../../../imgs/ajb.png" />
+                </view>
+                <view class="pa-saction" bindtap="musicinfo">
+                  <image src="../../../imgs/aab.png" />
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <scroll-view scroll-y="true" style="height:{{winHeight - 110}}px" class="music_list" animation="{{animationData}}">
+          <block wx:for="{{tracks}}" wx:key="tracks">
+            <view class="item_music" bindtap="itemClick" id="{{index}}">
+              <view class="list_music_info">
+                <view class="list_ava">
+                    <image class="list_avaimg" src="{{item.cover}}" />
+                </view>
+                <view class="list_music_info">
+
+                  <text class="list_title" wx:if="{{index==curIndex}}" style="color: #da7c0c" >{{item.name}}</text>
+                  <text wx:else class="list_title" style="color:#000">{{item.name}}</text>
+
+                  <text class="list_author" wx:if="{{index==curIndex}}" style="color: #da7c0c" >{{item.artist}}</text>
+                  <text wx:else class="list_author" style="color:#000">{{item.artist}}</text>
+                </view>
+              </view>
+
+            </view>
+          </block>
+        </scroll-view>
+
+
+
+        <view>
+
+
+
+
+        </view>
+
+
+
+      </view>
+    </swiper-item>
+</swiper>

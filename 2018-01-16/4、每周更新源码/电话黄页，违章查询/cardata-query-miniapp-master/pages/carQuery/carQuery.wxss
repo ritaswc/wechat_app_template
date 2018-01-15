@@ -1,0 +1,71 @@
+view{
+    font-family:微软雅黑,-apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+.queryTip{
+    width: 98%;
+    font-size: 70rpx;
+    height: 200rpx;
+    line-height: 150rpx;
+    color: #1AAD19;
+    text-align: center;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    margin-left: 1%;
+}
+.queryView{
+    width:690rpx;
+    border-bottom: 1px solid #EFEFEF;
+    background-color: white;
+    height: 200rpx;
+    line-height: 200rpx;
+    margin-left: 30rpx;
+}
+.queryView .left{
+    float:left;
+    height:200rpx;
+    line-height:200rpx;
+    font-size: 40rpx;
+    padding-left:30rpx;
+    padding-right:30rpx;
+    width: 25%;
+}
+.queryView .center{
+    float:left;
+    height:200rpx;
+    line-height:200rpx;
+    color: #48C23D;
+    font-size: 40rpx;
+    margin-left: 6rpx;
+}
+.queryView input{
+    width:300rpx;
+    float:left;
+    height:200rpx;
+    line-height:200rpx;
+    font-size: 40rpx;
+    padding-left: 10rpx;
+    margin-top: 3rpx;
+}
+.errorTip{
+    color:red;
+    font-size: 30rpx;
+    width: 100%;
+    height: 70rpx;
+    text-align: center;
+
+}
+.queryButton{
+    height: 90rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    line-height: 90rpx;
+    font-size: 35rpx;
+    margin-top: 50rpx;
+}
+.supportTip{
+    position: absolute;
+    bottom: 0rpx;
+    width: 100%;
+    text-align: center;
+    font-size: 25rpx;
+}

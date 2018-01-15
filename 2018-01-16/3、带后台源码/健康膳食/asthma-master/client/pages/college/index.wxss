@@ -1,0 +1,108 @@
+/*
+    搜索框组件
+ */
+.search-field-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    padding:30rpx;
+    box-sizing: border-box;
+}
+
+.search-field-wrapper .search-field {
+    /*right: 220rpx;*/
+}
+
+
+.search-field {
+    flex: 1;
+    margin-right: 30rpx;
+    position: relative;
+}
+
+.search-field input {
+    padding-left: 80rpx;
+    height: 60rpx;
+    background-color: #fff;
+    font-size: 26rpx;
+    color: #7fabfd;
+    border-radius:8rpx;
+}
+.search-field .search-btn {
+    position: absolute;
+    top: 50%;
+    left: 40rpx;
+    width: 40rpx;
+    height: 40rpx;
+    transform: translateY(-50%);
+    margin-left: -20rpx;
+}
+
+.search-submit-btn {
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 0 40rpx;
+    color: #fff;
+    font-size: 28rpx;
+    border-radius: 8rpx;
+    background-color: #7fabfd;
+}
+
+
+/*
+    学组
+ */
+
+.college-group-wrapper {
+    overflow:hidden;
+    background-color: #fff;
+    padding: 32rpx;
+    font-size: 28rpx;
+    color: #333;
+    margin-bottom: 24rpx;
+}
+
+.college-group-title {
+    font-size: 38rpx;
+    margin-bottom: 32rpx;
+    font-weight: 700;
+}
+
+.college-group-list {
+    overflow:hidden;
+}
+
+
+
+.more-college-group-btn {
+    display: inline-block;
+    padding: 10rpx;
+    background-color: #7fabfd;
+    border-radius: 6rpx;
+    color: #fff;
+    float:right;
+}
+
+
+.college-group-item {
+    display: inline-block;
+    padding: 10rpx 20rpx;
+    background-color: #fff;
+    border: 1px solid #7fabfd;
+    color: #7fabfd;
+    border-radius: 6rpx;
+    margin-right: 40rpx;
+    margin-bottom: 20rpx;
+}
+
+.college-group-item.active {
+    color: #fff;
+    background-color: #7fabfd;
+}
+
+
+
+.course-content {
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}

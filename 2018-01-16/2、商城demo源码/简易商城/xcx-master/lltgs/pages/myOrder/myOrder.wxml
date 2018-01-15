@@ -1,0 +1,62 @@
+<view class="container">
+    <navigator url="../manageAddrList/manageAddrList">
+        <view class="user_address" wx:if="{{userAddr}}">
+            <view class="user_inf">
+                <text class="fullname">{{userAddr.consignee}}</text><text class="phonenum">{{userAddr.mobile}}</text>
+            </view>
+            <view class="user_addr">{{userAddr.address}}</view>
+            <text class="arrow_right">></text>
+        </view>
+        <view class='addr_prompt' wx:if="{{addr_flag == false}}">
+            请选择收货人地址<text class="arrow_right">></text>
+        </view>
+    </navigator>
+   
+    <view class="goods_inf">
+        <view class="gi_title"><image src="../../images/icon_01.png"></image>{{goodsInf.wangzhan}}</view>
+        <view class="gi_goods">
+            <image src="https://shop.llzg.cn/{{goodsInf.goods_thumb}}"></image>
+            <view class="gi_goods_options">
+                <text class="goods_name">{{goodsInf.goods_name}}</text>
+                <text class="goods_rule">规格：{{goodsInf.goods_attr}}</text>
+                <view class="goods_price">￥{{goodsInf.goods_price}}<text>×{{goods_count}}</text></view>
+            </view>
+        </view>
+        <view class="goods_count">
+            <text class="gc_title">购买数量</text>
+            <view class="gc_cont">
+                <view class="minus" bindtap="bindMinus">
+                    <image mode="widthFix" src="{{minusStatus?'../../images/minus_yes.jpg':'../../images/minus_no.jpg'}}"></image>
+                </view>
+                <text class="num">{{goods_count}}</text>
+                <view class="plus" bindtap="bindPlus">
+                    <image mode="widthFix" src="../../images/plus.jpg"></image>
+                </view>
+            </view>
+        </view>
+        <view class="user_message">
+            <text>买家留言</text>
+            <textarea placeholder="请留下您的宝贵意见（40字以内）" placeholder-style="line-height:60rpx;z-index:0" maxlength="40" bindblur="bindUserMsg"/>
+        </view>
+        <view class="gi_price gi_item">
+            <text class="gi_l">商品金额</text>
+            <text class="gi_r">￥{{goods_total}}</text>
+        </view>
+        <view class="gi_freight gi_item">
+            <text class="gi_l">运费</text>
+            <text class="gi_r">￥{{goods_freight}}</text>
+        </view>
+    </view>
+    <view class="wx_pay_cont">
+        <view class="total_fee">实付金额：<text>￥{{goods_amount}}</text></view>
+        <view class="wx_pay">
+            <form report-submit="true" bindsubmit='wxPay'>
+                <button form-type="submit">微信支付</button>
+            </form>
+        </view>
+    </view>
+</view>
+<view hidden="{{warnInf?false:true}}" class="mytoast">
+    <icon type="warn" size="40" color="white"/>
+    <view>{{warnInf}}</view>
+</view>

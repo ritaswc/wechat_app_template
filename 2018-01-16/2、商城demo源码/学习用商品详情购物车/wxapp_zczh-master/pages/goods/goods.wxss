@@ -1,0 +1,33 @@
+/*轮播*/
+swiper {height: 750rpx;}
+.slide-image {
+  height:100%;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+.goods_info{background-color: #303030;color: #fff}
+.goods_info .price{color:#f60;font-size: 14px;display: inline-block;margin-right: 15rpx;}
+.goods_info text{display: block;padding-left: 40rpx;line-height: 60rpx;}
+.goods_info .info{font-size:12px; }
+.goods_info .title{font-weight: 400;font-size: 30rpx;}
+.goods_info span{text-decoration: line-through;font-size: 14px;color: #888}
+.contact{width: 100%;height:90rpx;padding-top:10rpx; background-color: #eee}
+.contact text{line-height:90rpx;font-size:36rpx;font-family: "微软雅黑"; margin-left: 40rpx;}
+.contact span{display: block;width:70rpx;height:80rpx;border-radius: 10%;padding-left: 10rpx;background-color:#f60;float:right;margin-right: 80rpx;font-size: 12px;color:#fff }
+.contact span contact-button {margin: 0 auto}
+/*详情图*/
+.gs_dt {width:670rpx;padding:0 40rpx;}
+.gs_dt text{line-height: 80rpx;font-size:36rpx;font-family: "微软雅黑";border-bottom: 1px #eee solid;width: 100%;display: block;margin-bottom:10rpx;}
+.gs_dt image{width: 100%;display: block}
+/*底部按钮*/
+.btnBar{position: fixed;bottom: 0;width: 100%;}
+.btnBar span{display: inline-block;text-align: center;width:50%;line-height: 80rpx;font-size:30rpx;font-family: "微软雅黑"} 
+.btnBar .back{height: 80rpx;border-top:1px #ccc solid ;background-color:#fff ;position: relative; }
+.btnBar .contactUs{position: absolute;top:-150rpx;right:50rpx;background: #fceba3;padding: 24rpx 28rpx;border-radius: 50%}
+.btnBar .contactUs contact-button{margin: 0 auto}
+.btnBar .buy{background:#bc0807;height:80rpx;border-top:1px #bc0807 solid ;color: #fff}
+/*购物车*/
+.buyCar{width: 100%;position:fixed;height:100%; background: rgba(0, 0,0,0.3);top: 0;left: 0}
+.buyCar .submit{position:absolute;bottom: 0;left: 0;background: #bc0807;width: 100%;color: #fff;font-size:30rpx;font-family: "微软雅黑";line-height: 82rpx;display: block;text-align: center}
+page{height: 100%}

@@ -1,0 +1,70 @@
+<view class="container">
+  <view class="header">
+    <image class="home" src="{{img_url}}pay/home.png"></image>
+    <view class="title">
+      <text>汇汇演示</text>
+    </view>
+    <button class="sbtn" type="warn" size="mini">进店</button>
+  </view>
+  <view class="wrapper">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="content">
+        <view class="top">
+          <text class="top-price">消费金额(元)：</text>
+          <input class="top-num" type="digit"  focus="{{focus}}" bindfocus="paymentTap" bindblur="payloseTap"></input>
+        </view>
+        <view class="box-check">
+          <icon type="{{checkType==true?'circle':'success'}}" size="25" color="{{checkType==true?'':'#df2b2a'}}" bindtap="checkTap" />
+          <view class="check-tx">
+            <text>输入不参与优惠金额(如酒水/套餐)</text>
+          </view>
+        </view>
+        <view class="box" wx:if="{{!checkType}}">
+          <text class="box-price">不参与优惠金额:</text>
+          <input class="box-num" type="digit" bindfocus="paymentTap" bindblur="payloseTap"></input>
+        </view>
+        <view class="payment">
+          <view class="left">
+            <view class="lt-span">
+              <text class="lt-em">9.5</text>
+              <text>折(默认最优惠)</text>
+            </view>
+            <view class="lt-b">
+              <text>-0.05</text>
+            </view>
+          </view>
+          <view class="right">
+            <view class="rt-span">
+              <text>实付金额(元)</text>
+            </view>
+            <view class="rt-b">
+              <text>0.95</text>
+            </view>
+          </view>
+        </view>
+        <view class="other-privilege" bindtap="privilegeTap">
+          <text class="pri-tx">选择其他优惠方式付款</text>
+          <image class="pri-img" src="{{img_url}}order/lt.png" />
+        </view>
+        <view class="footer" style="bottom:{{height}}">
+          <view class="pay-type">
+            <view class="pay-ul">
+              <view class="pay-li" bindtap="paycommentTap">
+                <view class="pay-a">
+                  <image class="pay-img" src="{{img_url}}detail/qb-icon.png" />
+                  <text class="pay-tx">汇汇钱包</text>
+                </view>
+              </view>
+              <view class="pay-li" bindtap="paycommentTap">
+                <view class="pay-a">
+                  <image class="pay-img" src="{{img_url}}detail/wx-icon.png" />
+                  <text class="pay-tx">微信支付</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>

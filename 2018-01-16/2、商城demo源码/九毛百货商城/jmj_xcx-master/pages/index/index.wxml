@@ -1,0 +1,34 @@
+<import src="../../temp/search.wxml"/>
+<import src="../../temp/headnav.wxml"/>
+<import src="../../temp/article_bannel.wxml"/>
+<!--index.wxml-->
+<scroll-view scroll-y="{{true}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" bindscrolltolower="pullrefresh" lower-threshold="200" >
+<!--第一个搜索组件-->
+  <template is="search" data="{{src:src,inputValue:inputValue}}"></template>
+<!--头部导航组件-->
+  <template is="headnav" data="{{headnav:headnav,navState:0,class1:class1,class2:class2}}"></template>
+<!--轮播图组件-->
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="5000" duration="500" style="height:422rpx">
+  <block wx:for="{{banner}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item.img}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!--特别分类页面-->
+<view class="goodsCate">
+  <view class="title">
+    <view class="line"></view>
+    <text>特别推荐</text>
+    <view class="line"></view>
+  </view>
+  <view class="content">
+    <view wx:for="{{cate}}" wx:key="{{index}}">
+      <image src="{{item.image}}" class="img"></image>
+    </view>
+  </view>
+</view>
+<!--专辑页面下拉刷新列表-->
+    <template is="article_bannel" data="{{cateList:cateList,fimgimg:fimgimg,ufimgimg:ufimgimg,imgLook:imgLook}}" />
+    <loading hidden="{{lodding}}">加载中...</loading>
+</scroll-view>

@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+dist
+*.log
+.idea
+*.swp
+.bashrc
+debug
+wemall
+sdk
+configuration.prod.json
+DESIGN.md

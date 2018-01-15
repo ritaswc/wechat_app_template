@@ -1,0 +1,15 @@
+<view class = "container">
+    <swiper class="swiperWrap" autoplay circular>
+        <block wx:for = "{{imgs}}" wx:key="0">
+            <swiper-item>
+                <image src="{{item}}"></image>
+            </swiper-item>
+        </block>    
+    </swiper>
+    <!--<button bindtap="sendMSG">CLICK</button>-->
+    <!--import template-->
+    <view>
+        <import src="../common/item.wxml"/>
+        <template is="item" data="{{array}}"/>
+    </view>
+</view>

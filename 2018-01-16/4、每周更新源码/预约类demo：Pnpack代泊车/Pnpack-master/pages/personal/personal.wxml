@@ -1,0 +1,56 @@
+<view bindtap="bindSuccess" class="container column">
+  <view class="container">
+    <view class="info-cont">
+      <view class="infoMain">
+        <view class="info-items" bindtap="setPhotoInfo">
+          <text>头像</text>
+          <view class="infotext">
+            <image wx:if="{{imgUrl!=null}}" class="userinfo-avatar" src="{{imgUrl}}" background-size="cover"></image>
+            <image wx:else class="userinfo-avatar" src="{{userInfo.headImg}}" background-size="cover"></image>
+             <view class="phone">
+            <image class="phone-icon park-icon" src="../../images/more2.png"></image>
+          </view>
+          </view>
+         
+        </view>
+        <view class="info-items">
+          <text>名字</text>
+          <view class="infotext">
+            <input  class="info-motto" bindinput="bindKeyInput" value="{{userInfo.nickname}}" maxlength="15" auto-focus/>
+            <view class="phone">
+              <image class="phone-icon park-icon" src="../../images/more2.png"></image>
+          </view>
+          </view>
+           
+        </view>
+        <view class="info-items">
+          <text>性别</text>
+          <view class="infotext">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="info-motto">
+              <view class="picker">
+                {{array[index]}}
+              </view>
+            </picker>
+             <view class="phone">
+              <image class="phone-icon park-icon" src="../../images/more2.png"></image>
+          </view>
+          </view>
+          
+        </view>
+        <view class="info-items">
+          <text>手机号</text>
+          <view class="infotext">
+            <text class="info-motto">{{userInfo.phone}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="user-order bg-f row box-s">
+    <view class="user-order-data column-c" wx:for="{{pnPark}}" wx:key="{{pnPark}}" wx:for-item="item" catchtap="bindViewTapPark" data-page="{{item.page}}">
+      <image src="{{item.img}}"></image>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+   
+</view>

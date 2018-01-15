@@ -1,0 +1,78 @@
+<!--首页-->
+<view class="container">
+    <!--顶部搜索-->
+    <view class="search">
+        <!--退出-->
+        <view class="exit">
+            <text class="companyName">由米定制</text>
+            <button class="companyBtn">退出</button>
+        </view>
+        <navigator class="message-tip" url="/pages/index/message/message">
+            <image class="message-image" src="{{imageCtx}}dealer/message.png"></image>
+            <!--有消息时显示小红点-->
+            <text class="message-icon" wx:if="{{hasMessage}}"></text>
+        </navigator>
+        
+        <input class="search-ipt" bindinput="searchInput" type="text" placeholder="请输入订单名称或单号" placeholder-class="placeholder-color" />
+        <text class="search-btn" bindtap="bindSearchTap">搜索</text>
+    </view>
+
+    <view class="order-detail">
+        <!--订单-->
+        <view class="order">
+            <text class="order-title">订单</text>
+             <navigator class="order-con" url="/pages/index/orderlist1/orderlist1">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl01.png"></image>
+                    <text class="orders-text">印花订单</text>
+                </view>
+            </navigator>
+            <navigator class="order-con" url="/pages/index/orderlist2/orderlist2">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl03.png"></image>
+                    <text class="orders-text">进货订单</text>
+                </view>
+            </navigator>
+        </view>
+
+        <!--统计-->
+        <view class="order">
+            <text class="order-title">统计</text>
+            <navigator class="order-con" url="/pages/index/basicInfo_statistics/basicInfo_statistics">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl04.png"></image>
+                    <text class="orders-text">基础信息统计</text>
+                </view>
+            </navigator>
+            <navigator class="order-con" url="/pages/index/orderMes_statistics/orderMes_statistics">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl12.png"></image>
+                    <text class="orders-text">接单信息统计</text>
+                </view>
+            </navigator>
+            <navigator class="order-con" url="/pages/index/shipment_statistics/shipment_statistics">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl13.png"></image>
+                    <text class="orders-text">发货情况统计</text>
+                </view>
+            </navigator>
+            <navigator class="order-con" url="/pages/index/profit_statistics/profit_statistics">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl14.png"></image>
+                    <text class="orders-text">利润情况统计</text>
+                </view>
+            </navigator>
+        </view>
+
+        <!--库存-->
+        <view class="order">
+            <text class="order-title">库存</text>
+            <navigator class="order-con" url="/pages/index/repertoryCentre/repertoryCentre">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl11.png"></image>
+                    <text class="orders-text">库存中心</text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

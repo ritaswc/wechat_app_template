@@ -1,0 +1,18 @@
+page{padding: 55px 0 0;background-color: #f3f3f3;}
+.tab{width: 720rpx; position: fixed;z-index: 100; left: 14rpx; top:10rpx;border:1px solid #576b95;height: 40px; line-height:40px;border-radius: 5px;display: flex;font-size: 13pt;}
+.tab-layer{width: 750rpx;height: 50px; background: #fff;opacity: 0.9;left: 0;top: 0; position: fixed;z-index: 99; border-bottom: 1rpx solid #dedede;}
+.tab .tab-on{background-color: #576b95;text-align: center; color: #fff;flex: 1;}
+.tab .tab-out{text-align: center;flex: 1;}
+
+.item{display: flex; padding: 10px 0; background-color: #fff;border-bottom: 1px solid #eee;}
+.item:active{background-color: #f5f5f5;}
+.item .img{width:300rpx; text-align: center;}
+.itemjd .img image{width: 250rpx;height: 180rpx; }
+.itemjz .img image{width:100%;height:200rpx;}
+.item .con{flex: 1; padding: 0 10px 0 0;}
+.con .nm{font-size: 14pt; font-weight: bold;}
+.con .des{line-height: 22px; font-size: 12pt; padding: 5px 0;color: #999;}
+.con .sub{color: #ff6a00;font-size: 12pt;}
+.con .sub text{font-size: 15pt;}
+
+.jzitem image{width: 720rpx; height:540rpx; }

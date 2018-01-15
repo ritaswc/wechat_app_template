@@ -1,0 +1,74 @@
+
+<!--<view class="page_title">
+  余味全球美食
+</view>-->
+<include src="../template/commonSearch.wxml" />
+<view class="container">
+  <view class="label">- {{first.title}} -</view>
+  <view class="banner">
+    <image src="{{first.content.cover}}"></image>
+    <view class="cityInfo">
+      <text style="font-size:32rpx">{{first.content.name}}</text>
+      <text style="font-size:24rpx">{{first.content.summary}}</text>
+    </view>
+  </view>
+  <view class="classify" wx:if="{{len == 4}}">
+    <navigator url="../allrest/rest?cityid={{first.content.id}}&labelid={{item.labelid}}" class="classify_bol" wx:for="{{first.content.labellist}}">
+      <image src='{{item.labelimg}}'></image>
+      <text>{{item.labelname}}</text>
+    </navigator>
+  </view>
+  <view class="musteat" wx:if = "{{ven > 0}}">
+    <view class="label">- {{second.title}} -</view>
+    <view class="dish_content {{flag==true?'show':''}}">
+      <navigator class="dish_detail" wx:for="{{second.content}}" url="../musteat/musteat?id={{item.id}}&name={{cityname}}" wx:if="{{num==0}}">
+        <image src="{{item.cover}}"></image>
+        <text>{{item.name}}</text>
+      </navigator>
+
+      <navigator class="dish_detail one" wx:for="{{second.content}}" url="../musteat/musteat?id={{item.id}}&name={{cityname}}" wx:if="{{num==1}}">
+        <image src="{{item.cover}}"></image>
+        <text>{{item.name}}</text>
+      </navigator>
+
+      <navigator class="dish_detail two" wx:for="{{second.content}}" url="../musteat/musteat?id={{item.id}}&name={{cityname}}" wx:if="{{num==2}}">
+        <image src="{{item.cover}}"></image>
+        <text>{{item.name}}</text>
+      </navigator>
+    </view>
+    <view class="more_con {{flag == true?'show':''}}" catchtap="toggle" wx:if="{{num != 0}}">
+      <text wx:if="{{flag != true}}">查看全部美食</text>
+      <text wx:if="{{flag == true}}">收起</text>
+      <image class="arrowr" src="../image/arrowright.png"></image>
+    </view>
+  </view>
+  <view class="resaurant" wx:if="{{ren > 0}}">
+    <view class="label">- {{three.title}} -</view>
+   <view class="res_con">
+      <navigator 
+      class="res_detail border" 
+      wx:for="{{three.content}}
+      url="../rdetail/rdetail?id={{item.id}}&name={{cityname}}"
+      >
+        <view class="top_con">
+          <image src="{{item.cover}}"></image>
+          <view class="top_con_right">
+            <view class="item_name">{{item.name}}</view>
+            <view class="item_price">
+              <text wx:if="{{item.km != ''}}"  style="margin-right:20rpx">{{item.km}}</text>
+              <text>{{item.cost}}元/人</text>
+            </view>
+            <view class="item_desc">{{item.desc}}</view>
+          </view>
+        </view>
+        <view class="bot_label">
+          <text wx:for="{{item.label}}">{{item.name}}</text>
+        </view>
+    </navigator>
+  </view>
+  <navigator class="more_rest" url="../allrest/rest?id={{first.content.id}}" hover-class="none">
+     <text>查看全部餐厅</text>
+     <image src="../image/arrowright.png"></image>
+  </navigator>
+</view>
+</view>

@@ -1,0 +1,70 @@
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<!--渠道下单统计-->
+<view class="container">
+
+  <!--状态-->
+  <view class="state">
+    <view class="state-text {{item.orderType == orderType ? 'state-active' : ''}}" data-type="{{item.orderType}}" wx:for="{{typeList}}" bindtap="manageerStatistic">{{item.name}}</view>
+  </view>
+
+  <!--时间选择器-->
+  <view class="screen-time" style="margin-top:102rpx;">
+    <view class="time-style">
+      <text class="time1 section__title">起始时间</text>
+      <picker mode="date" value="{{start}}" start="2015-01-01" end="2030-12-31" bindchange="bindStartChange">
+        <view class="picker">{{start}}</view>
+      </picker>
+    </view>
+    <view class="time-style">
+      <text class="time1 section__title">结束时间</text>
+      <picker mode="date" value="{{end}}" start="2015-01-01" end="2030-12-31" bindchange="bindEndChange">
+        <view class="picker">{{end}}</view>
+      </picker>
+    </view>
+    <text class="screen-btn" bindtap="manageerStatistic">筛选</text>
+  </view>
+  <view class="order-statistics">
+    <view class="statistics-detail">
+      <!-- 内容为空样式 -->
+      <view class="empty-con" wx:if="{{emptyShow}}">
+        <image class="empty-image" src="{{imageCtx}}dealer/note.png"></image>
+        <text class="empty-text">暂无数据</text>
+      </view>
+      
+      <view class="table table-6" wx:else>
+        <view class="tr bg-w">
+          <view class="th">{{adminDept == null ? '部门' : '渠道'}}</view>
+          <view class="th">个数</view>
+          <view class="th">件数</view>
+          <view class="th">销售额</view>
+          <view class="th">应付</view>
+          <view class="th">毛利</view>
+        </view>
+        <view class="tr" wx:for="{{list}}">
+          <view class="td">
+            <view class="order-nav" bindtap="go" data-id="{{adminDept == null ? item.dept_id : item.m_id}}" data-name="{{adminDept == null ? item.dept : item.manageer}}">{{adminDept == null ? item.dept : item.manageer}}</view>
+          </view>
+          <view class="td">{{item.count}}</view>
+          <view class="td">{{item.total_pkgs}}</view>
+          <view class="td">{{item.total_amount}}</view>
+          <view class="td">{{item.predict_give}}</view>
+          <view class="td">{{item.profit}}</view>
+        </view>
+        
+        <!--空行-->
+        <view class="tr hrline"></view>
+        <!--总计-->
+        <view class="tr total">
+          <view class="td">总计</view>
+          <view class="td">{{total.count}}</view>
+          <view class="td">{{total.total_pkgs}}</view>
+          <view class="td">{{total.total_amount}}</view>
+          <view class="td">{{total.predict_give}}</view>
+          <view class="td">{{total.profit}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

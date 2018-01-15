@@ -1,0 +1,77 @@
+{
+  "pages":[
+    "pages/shenghuo/shenghuo",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/bianmin/bianmin",
+    "pages/huangye/huangye",
+    "pages/myself/myself",
+    "pages/index/HotNewsDetail/HotNewsDetail",
+    "pages/index/temp/temp",
+    "pages/shenghuo/ttPrize/ttPrizeCell/ttPrizeCell",
+    "pages/shenghuo/ttPrize/ttPrize",
+    "pages/shenghuo/OnePrize/OnePrizeCell/OnePrizeCell",
+    "pages/shenghuo/OnePrize/OnePrize",
+    "pages/shenghuo/miaosha/miaoshaCell/miaoshaCell",
+    "pages/shenghuo/miaosha/miaosha",
+    "pages/shenghuo/ValuePreference/ValuePreferenceCell/ValuePreferenceCell",
+    "pages/shenghuo/ValuePreference/CouponDetail/CouponDetail",
+    "pages/shenghuo/ValuePreference/ValuePreference",
+    "pages/shenghuo/GoodLife/GoodLifeCell/GoodLifeCell",
+    "pages/shenghuo/GoodLife/LifeSearchList/LifeSearchList",
+    "pages/shenghuo/GoodLife/GoodLife",
+    "pages/shenghuo/SelectedGoods/SelectedGoodsGridCell/SelectedGoodsGridCell",
+    "pages/shenghuo/SelectedGoods/SelectedGoods",
+    "pages/shenghuo/AllServiceclassify/AllServiceclassifyCell/AllServiceclassifyCell",
+    "pages/shenghuo/AllServiceclassify/HeaderSection/HeaderSection",
+    "pages/shenghuo/AllServiceclassify/AllServiceclassify",
+    "pages/shenghuo/AllServiceclassify/SecondaryService/SecondaryService",
+    "pages/shenghuo/AllServiceclassify/ServiceCategoryList/ServiceCategoryListCell/ServiceCategoryListCell",
+    "pages/shenghuo/AllServiceclassify/ServiceCategoryList/ServiceCategoryList",
+    "pages/shenghuo/AllServiceclassify/ServiceDetailInfo/ServiceDetailInfo",
+    
+    "pages/login/login"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#302f34",
+    "navigationBarTitleText": "人民的公仆",
+    "navigationBarTextStyle":"white",
+    "backgroundTextStyle":"dark",
+    "enablePullDownRefresh":true
+  },
+
+  "tabBar": {
+        "color": "#abadbb",
+        "selectedColor": "#0164a6",
+    "list": [
+      {
+        "pagePath": "pages/shenghuo/shenghuo",
+        "text": "生活",
+        "iconPath": "images/tab/sh.png",
+        "selectedIconPath": "images/tab/sh_selected.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "政务",
+        "iconPath": "images/tab/zhengwu.png",
+        "selectedIconPath": "images/tab/zhengwu_selected.png"
+      },
+      {
+        "pagePath": "pages/bianmin/bianmin",
+        "text": "便民",
+        "iconPath": "images/tab/bianmin.png",
+        "selectedIconPath": "images/tab/bianmin_selected.png"
+      },
+      {
+        "pagePath": "pages/myself/myself",
+        "text": "我的",
+        "iconPath": "images/tab/me.png",
+        "selectedIconPath": "images/tab/me_selected.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

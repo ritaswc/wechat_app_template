@@ -1,0 +1,47 @@
+<view class="{{load ? 'load': ''}}">
+  <view class="loading-placeholder">
+    <image src="./icon/placeholder.png"></image>
+  </view>
+</view>
+
+<scroll-view style="height:100%;" class="container {{load ? 'container-show': ''}}" scroll-y="{{scrollY}}">
+    <view class="sku">
+      <image src="{{sku.images[0].url}}" style="width:150rpx;height:150rpx;"></image>
+      <view class="sku-info">
+        <text class="sku-title">{{sku.title}}</text>
+        <text class="sku-from">{{sku.brand}}</text>
+      </view>
+    </view>
+    <text class="buy-method-tips">您可以通过以下方式购买</text>
+    <view class="buy-area">
+      <block wx:for="{{sku.sales}}" wx:key="price" wx:for-item="sale">
+        <view class="buy-item">
+          <view class="item-header">
+            <text>{{sale.mart}}</text>
+            <image src="{{sale.url}}" style="width:{{ 28 * sale.ratio }}rpx;height:28rpx;"></image>
+          </view>
+          <view class="item-info">
+            <view class="info-area">
+              <view class="info">
+                <text class="key">价格：</text>
+                <text class="value price">{{sale.price}}</text>
+              </view>
+              <view class="info">
+                <text class="key">说明：</text>
+                <text class="value">{{sale.intro}}</text>
+              </view>
+            </view>
+            <text class="buy-button" bindtap="buy" data-url="{{sale.link_m_cps || sale.link_pc_cps || sale.link_m_raw || sale.link_pc_raw}}">购买 ></text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="copy-container" wx:if="{{show}}">
+      <view class="copy-box">
+        <text class="copy-box-title">点击链接并复制，在浏览器下打开</text>
+        <textarea auto-height maxlength="0" value="{{url || ''}}"/>
+        <view class="copy-box-confirm" bindtap="confirm">确定</view>
+      </view>
+    </view>
+    <text class="buy-price-tips">价格仅供参考，实际价格以卖家为准</text>
+</scroll-view>

@@ -1,0 +1,33 @@
+
+<!-- 订单来源统计 -->
+<view class="container">
+
+  <!--时间选择器-->
+  <view class="screen-time">
+    <view class="time-style">
+      <text class="time1 section__title">起始时间</text>
+      <picker mode="date" value="{{start}}" start="2015-01-01" end="2030-12-31" bindchange="bindStartChange">
+        <view class="picker">
+          {{start}}
+        </view>
+      </picker>
+    </view>
+    <view class="time-style">
+      <text class="time1 section__title">结束时间</text>
+      <picker mode="date" value="{{end}}" start="2015-01-01" end="2030-12-31" bindchange="bindEndChange">
+        <view class="picker">
+          {{end}}
+        </view>
+      </picker>
+    </view>
+    <text class="screen-btn" bindtap="filtrate">筛选</text>
+  </view>
+
+  <!-- 柱形图 -->
+  <canvas canvas-id="pieCanvas" wx:if="{{!emptyShow}}"></canvas>
+  <!-- 内容为空样式 -->
+  <view class="empty-con" wx:else>
+    <image class="empty-image" src="{{imageCtx}}dealer/note.png"></image>
+    <text class="empty-text">暂无数据</text>
+  </view>
+</view>

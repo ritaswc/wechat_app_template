@@ -1,0 +1,33 @@
+<view wx:if="{{loaded}}" class="c">
+  <view class="m">
+    <swiper indicator-dots="true" autoplay="false" current="0" circular="false" duration="400" class="hd">
+      <block wx:for="{{imgMinList}}" wx:for-item="url" wx:key="*this">
+        <swiper-item data-index="{{index}}" catchtap="previewImg">
+          <image src="{{url}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="tit">{{name}}</view>
+    <view class="des">{{des}}</view>
+    <view class="pp">
+      <view class="price">￥
+        <text>{{(current.price*num)+".00"}}</text>
+      </view>
+    </view>
+    <view class="size">
+      <view class="sitem {{current.size==s.Size?'sitem-on':'sitem-out'}}" data-supplyno="{{s.SupplyNo}}" data-size="{{s.Size}}" data-price="{{s.CurrentPrice}}" catchtap="changeCurrent" wx:for="{{CakeType}}" wx:for-item="s" wx:key="Id">
+        <text>{{s.Size}}</text>
+      </view>
+    </view>
+    <view class="sm">主要原料：
+      <text>{{resource}}</text>
+    </view>
+    <view class="sm">贮存条件：
+      <text>{{fresh}}</text>
+    </view>
+  </view>
+  <view class="tool">
+    <view class="tbtn add" catchtap="addCart">加入购物车(<text class="cart-num">{{cartNum}}</text>)</view>
+    <view class="tbtn buy" catchtap="_go">购买等额优惠券</view>
+  </view>
+</view>

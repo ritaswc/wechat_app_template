@@ -1,0 +1,44 @@
+.swiper-container {
+  position: relative;
+  width:100%;
+}
+
+.swiper-container .slide-image {
+  position:absolute;
+  width:100%;
+  height:158px;
+}
+
+.course-header {
+    display: flex;
+    width:100%;
+    height: 100rpx;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.course-title-wrapper,
+.course-more-wrapper {
+    display:flex;
+    align-items: center;
+}
+
+.course-title {
+    color: #676767;
+    font-size: 32rpx;
+    margin-left: 10rpx;
+}
+
+.course-title-image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.course-more {
+    padding: 10rpx 20rpx;
+    font-size: 28rpx;
+    color: #fff;
+    background-color: #7fabfd;
+    border-radius: 8rpx;
+}

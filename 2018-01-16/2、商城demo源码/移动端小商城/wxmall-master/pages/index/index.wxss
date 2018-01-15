@@ -1,0 +1,67 @@
+.container {
+    background-color: #f1f1f1;
+    color: black;
+}
+.swiper_box {
+    width: 100%;
+}
+scroll-view {
+    width: 100%;
+    height: 100%;
+}
+swiper-item image {
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+}
+page .wx-swiper-dots.wx-swiper-dots-horizontal {
+    margin-left: 35%;
+}
+page .wx-swiper-dot {
+    color: #6f6f6f;
+}
+page .wx-swiper-dot-active{
+    color: #f9752b;
+}
+.goods_box {
+    margin: 3px;
+    width: 100%;
+}
+.goods_item {
+    display: inline-block;
+    width: 49%;
+    margin: 0.5%;
+    background-color: white;
+}
+.goods_item image {
+    width: 100%;
+    height: 180px;
+}
+.goods_item .content {
+    width: 100%;
+    height: 32px;
+    margin: 5px;
+}
+.goods_item .content text {
+    font-size: 12px;
+    line-height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.goods_item .price {
+    width: 100%;
+    height: 16px;
+    margin: 5px;
+}
+.goods_item .price image {
+    width: 6px;
+    height: 10px;
+}
+.goods_item .price text {
+    margin-left: 2px;
+    font-size: 12px;
+    color: red;
+}

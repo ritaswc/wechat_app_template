@@ -1,0 +1,58 @@
+<view class="grzx_bd">
+    <view class="grzx_con">
+        <navigator url="">
+            <view class="grzx_con_list">
+                <view class="left">
+                    会员等级
+                </view>
+                <view class="right">
+                    VIP1 <image src="../../../images/account/arrowright.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <navigator url="password/password">
+            <view class="grzx_con_list border_none">
+                <view class="left">
+                    密码管理
+                </view>
+                <view class="right">
+                    <image src="../../../images/account/arrowright.png"></image>
+                </view>
+            </view>
+        </navigator>
+    </view>
+
+    <view class="grzx_con">
+        <navigator url="">
+            <view class="grzx_con_list">
+                <view class="left">
+                    手机认证<text>已认证</text>
+                </view>
+                <view class="right">
+                    134****0568 <image src="../../../images/account/arrowright.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <!-- 实名认证之后就不能修改名字还有银行卡也是 只能联系客服 -->
+        <view class="grzx_con_list">
+            <view class="left">
+                实名认证<text>已认证</text>
+            </view>
+            <view class="right">
+                李** <image src="../../../images/account/arrowright.png"></image>
+            </view>
+        </view>
+        <view class="grzx_con_list border_none">
+            <view class="left">
+                银行卡认证<text>已认证</text>
+            </view>
+            <view class="right">
+                工商银行
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="grzx_btn">
+    <button size="default" type="primary">退出账户</button>
+</view>

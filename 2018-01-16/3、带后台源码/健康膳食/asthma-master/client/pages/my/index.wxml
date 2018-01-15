@@ -1,0 +1,26 @@
+<view class="container">
+    <view class="userinfo">
+        <view class="user-avatar-wrapper">
+            <image class="user-avatar" src="{{userInfo.avatarUrl}}" />
+        </view>
+        <view class="user-nickname">{{userInfo.nickName}}, 您好</view>
+    </view>
+    <view class="menu-list">
+        <navigator url="../mycourse/index">
+            <view class="my-course menu-item">
+                <view class="menu-item-title">
+                    我的课程
+                </view>
+                <image class="next-icon" src="../../images/rightArrow.png" />
+            </view>
+        </navigator>
+        <navigator url="../myinfo/index">
+            <view class="my-setting menu-item">
+                <view class="menu-item-title">
+                    我的资料
+                </view>
+                <image class="next-icon" src="../../images/rightArrow.png" />
+            </view>
+        </navigator>
+    </view>
+</view>

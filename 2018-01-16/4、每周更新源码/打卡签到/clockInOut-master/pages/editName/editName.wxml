@@ -1,0 +1,7 @@
+<view style="height: {{winHeight}}px; width: {{winWidth}}px;background-color: #fafafa">
+  <view class="vLine"></view>
+    <view class="tLabel">修改备注</view>  
+  <view class="vLocation" bindtap="location">
+    <input placeholder="{{name}}" bindinput="bindInput"maxlength="10" ></input>
+  </view>
+</view>

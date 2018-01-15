@@ -1,0 +1,35 @@
+/* pages/jobstatus/jobstatus.wxss */
+page{
+    background-color: #efefef;
+}
+.image2{
+    width: 35rpx;
+    height: 30rpx;
+}
+.middle{
+    background-color: #fff;
+    margin-top: 60rpx;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    padding: 0 0 0 3%;
+}
+.middle .dingyue{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 78rpx;
+    padding-right: 3%;
+    border-bottom: 1px solid #e5e5e5;
+}
+.list_box .middle .dingyue .left{
+    display: flex;
+    align-items: center;
+}
+.list_box .bottom{
+    margin-bottom: 60rpx;
+}
+.btn{
+    margin-top: 60rpx;
+    background-color: #fff;
+    color: red;
+}

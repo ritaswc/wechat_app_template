@@ -1,0 +1,42 @@
+<view class="column">
+  <view class="l-evalbox row">
+  <text class="l-evaltxt">取车服务：</text>
+  <view class="l-evalist flex-1" bindtap="chooseicon">
+    <icon class="{{tabArr.curHdIndex >'0'? 'cur icon' : 'icon'}}" data-id="1"></icon>
+    <icon class="{{tabArr.curHdIndex >'1'? 'cur icon' : 'icon'}}" data-id="2"></icon>
+    <icon class="{{tabArr.curHdIndex >'2'? 'cur icon' : 'icon'}}" data-id="3"></icon>
+    <icon class="{{tabArr.curHdIndex >'3'? 'cur icon' : 'icon'}}" data-id="4"></icon>
+    <icon class="{{tabArr.curHdIndex >'4'? 'cur icon' : 'icon'}}" data-id="5"></icon>
+   
+  </view>
+   <text class="evaltxt">{{word[strnumber-1]}}</text>
+</view>
+<view class="l-evalbox row">
+  <text class="l-evaltxt">换车服务：</text>
+  <view class="l-evalist flex-1" bindtap="chooseicon1">
+    <icon class="{{tabArr1.curHdIndex >'0'? 'cur icon' : 'icon'}}" data-ids="1"></icon>
+    <icon class="{{tabArr1.curHdIndex >'1'? 'cur icon' : 'icon'}}" data-ids="2"></icon>
+    <icon class="{{tabArr1.curHdIndex >'2'? 'cur icon' : 'icon'}}" data-ids="3"></icon>
+    <icon class="{{tabArr1.curHdIndex >'3'? 'cur icon' : 'icon'}}" data-ids="4"></icon>
+    <icon class="{{tabArr1.curHdIndex >'4'? 'cur icon' : 'icon'}}" data-ids="5"></icon>
+    
+  </view>
+  <text class="evaltxt">{{word[strnumber1-1]}}</text>
+</view>
+<view class="l-evalbox row">
+  <text class="l-evaltxt">泊车点评价：</text>
+  <view class="l-evalist flex-1" bindtap="chooseicon2">
+    <icon class="{{tabArr2.curHdIndex >'0'? 'cur icon' : 'icon'}}" data-idss="1"></icon>
+    <icon class="{{tabArr2.curHdIndex >'1'? 'cur icon' : 'icon'}}" data-idss="2"></icon>
+    <icon class="{{tabArr2.curHdIndex >'2'? 'cur icon' : 'icon'}}" data-idss="3"></icon>
+    <icon class="{{tabArr2.curHdIndex >'3'? 'cur icon' : 'icon'}}" data-idss="4"></icon>
+    <icon class="{{tabArr2.curHdIndex >'4'? 'cur icon' : 'icon'}}" data-idss="5"></icon>
+  </view>
+  <text class="evaltxt">{{word[strnumber2-1]}}</text>
+</view>
+
+  <textarea class="evaltxt1" value="{{evaContent}}" maxlength="40" placeholder="亲！写下购买体会和使用感受来帮助其他小伙伴～" bindinput="charChange"/>
+  <view class="evaltxt right">{{evalength}}/40</view>
+  
+  <view class="prome2 bg-pp" bindtap="bindsubmint">提交评价</view>
+</view>

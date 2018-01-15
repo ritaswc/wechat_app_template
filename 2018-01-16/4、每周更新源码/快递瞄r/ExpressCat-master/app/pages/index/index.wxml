@@ -1,0 +1,33 @@
+
+<!--index.wxml-->
+<view class="box">
+  <view class="search-box">
+    <view class="head-img">
+      <image src="../../images/logocat.png"></image>
+    </view>
+    <form bindsubmit="formSubmit">
+      <view class="search-input">
+        <input focus="{{focus}}" placeholder="请输入快递单号" placeholder-class="placeholderstyle" cursor-spacing="50px" name="expressorder" type="number" />
+        <image src="../../images/scanning.png" bindtap="scanCode"></image>
+      </view>
+      <view class="search-button">
+        <button form-type="submit">查询</button>
+      </view>
+    </form>
+  </view>
+  <view class="explain-line">
+    <view class="explain-block"></view>
+    <view class="explain-text">查询历史</view>
+  </view>
+  <view class="search-result">
+    <view class="history-item" wx:for="{{historySearch}}">
+      <view class="history-detail" bindtap="showDetail" data-order="{{item.order}}" data-name="{{item.name}}" data-code="{{item.code}}">
+        <view class="expressname">{{item.name}}</view>
+        <view class="expressorder">{{item.order}}</view>
+      </view>
+      <view class="delhistory" data-order="{{item.order}}" bindtap="deleteHistory">
+        <image src="../../images/delete.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+page{
+    height: 100%;
+}
+.detail-box{
+    height: 100%;
+    font-family: "Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+.detail-list{
+    height: 100rpx;
+}
+.detail-name{
+    font-size: 14px;
+    color: #aaa
+}
+.detail-name ul{
+   display: flex;
+   flex-direction: column;
+}
+.detail-name li{
+    height:80rpx;
+    border-bottom: 1px solid #ccc;
+}

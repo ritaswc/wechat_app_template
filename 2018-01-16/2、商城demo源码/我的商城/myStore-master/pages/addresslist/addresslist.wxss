@@ -1,0 +1,7 @@
+/* pages/addresslist/addresslist.wxss */
+.address-phonenum{
+    text-align: right;
+}
+.defult-address{
+color: orangered;
+}

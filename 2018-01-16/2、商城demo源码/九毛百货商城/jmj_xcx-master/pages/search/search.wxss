@@ -1,0 +1,61 @@
+/* pages/search/search.wxss */
+page{
+    background:#fff;
+}
+.text1{
+    background: #f8f8f8;
+    border: 1rpx solid #eeeeee;
+    width: 100%;
+    height: 50rpx;
+    font-size: 28rpx;
+    color: #bbbbbb;
+    text-align: left;
+    padding: 0 15rpx;
+    line-height:50rpx
+}
+.rightCancle{
+    display: inline-block;
+    position:absolute;
+    right:10rpx;
+    top:35rpx;
+    color:#fff;
+    font-size:35rpx;
+}
+.keyword{
+    padding: 0 5% 6% 5%;
+}
+.keyword .keywordItem{
+    display: inline-block;
+    width: auto;
+    padding: 11rpx 33rpx;
+    text-align: center;
+    margin: 24rpx 20rpx 10rpx 0;
+    font-size: 30rpx;
+    background: #f8f8f8;
+    border-radius: 4rpx;
+    height: 62rpx;
+    color: #979797;
+    line-height:62rpx;
+}
+.confirm{
+    border: 1rpx solid #ff44a0;
+    border-radius: 10rpx;
+    font-size: 40rpx;
+    width: 78%;
+    margin:74rpx 11% 0;
+    height: 96rpx;
+    text-align:center;
+    line-height:96rpx;
+    color: #ff44a0;
+}
+.cancel{
+    border: 1rpx solid #bbb;
+    border-radius: 10rpx;
+    font-size: 40rpx;
+    width: 78%;
+    margin:74rpx 11% 0;
+    height: 96rpx;
+    text-align:center;
+    line-height:96rpx;
+    color: #bbb;
+}

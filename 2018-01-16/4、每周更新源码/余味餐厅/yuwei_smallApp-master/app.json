@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/list",
+    "pages/allrest/rest",
+    "pages/musteat/musteat",
+    "pages/rdetail/rdetail",
+    "pages/search/search",
+    "pages/dish/dish"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#1a1a1a",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": false
+  }
+}

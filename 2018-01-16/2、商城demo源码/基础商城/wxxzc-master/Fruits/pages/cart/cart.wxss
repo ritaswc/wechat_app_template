@@ -1,0 +1,19 @@
+.button {
+  background-color: blur;
+  padding-top: 20px;
+}
+
+.shouhuo{
+    font-size:15px;
+    margin-top:20px;
+    float:left;
+    margin-left:150px;
+    padding-bottom:5px;
+}
+
+.order_yes{
+    font-size:15px;
+    margin-top:20px;
+    float:right;
+    margin-right:10px;
+}

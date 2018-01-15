@@ -1,0 +1,65 @@
+page {
+  background: #f6f6f6;
+}
+
+.weui-tab__panel {
+  padding-top: 0;
+  padding-bottom: 50px;
+}
+
+.padding-wrap {
+  padding: 10px 15px;
+}
+
+.bg_color {
+  /*background-color: #f0eff5;*/
+  background-color: #fff;
+}
+
+/*.items-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}*/
+
+.wx-checkbox-input {
+  border-radius: 50% !important;
+}
+
+/*左部图片*/
+
+.carts-image {
+  width: 120rpx;
+  height: 120rpx;
+  display: block;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.carts-content{
+  display: flex;
+  flex-direction: column;
+}
+.carts-title{
+  font-size: 14px;
+  font-weight: bold;
+}
+.carts-price{
+  font-size: 14px;
+  display: flex;
+  color: red;
+}
+.carts-price button{
+  width: 120rpx;
+  height: 50rpx;
+  margin-left: 60rpx;
+  line-height: 50rpx;
+  font-size: 14px;
+}
+
+.upbtn{
+  background: red;
+  color: #fff;
+}
+.downbtn{
+  color: #fff;
+  background: green
+}

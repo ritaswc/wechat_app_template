@@ -1,0 +1,55 @@
+<view class="section">
+  <scroll-view scroll-y="true" style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view class="scroll-ul">
+    		<!-- 折扣 -->
+    	<view class="scroll-li-zk {{checkType==true?'active':''}}">
+    		<view class="scroll-label">
+    			 <view class="scroll-box zk">
+    			 	 <icon class="scroll-icon" type="{{checkNum==true?'circle':'success'}}" size="25" color="{{checkType==true?'':'#df2b2a'}}" bindtap="checkTap" />
+    			 	 <view class="box-title zk">
+    			 	 	<text class="box-em">9.5</text>
+    			 	 	<text class="em-tx">折优惠</text>
+    			 	 </view>
+    			 </view>
+    			 <view class="scroll-bottom">
+    			 	<text class="bottom-span">优惠金额</text>
+    			 	 	<text class="bottom-b">25.00</text>
+    			 </view>
+    		</view>
+    	</view>
+    		<!-- 代金券 -->
+			<view class="scroll-li-djq">
+				<view class="scroll-label">
+    			 <view class="scroll-box djq">
+    			 	 <icon class="scroll-icon" type="circle" size="25" bindtap="checkTap" />
+    			 	 <view class="box-title djq">
+    			 	 	<text class="box-em">20</text>
+    			 	 	<text class="em-tx">元代金券</text>
+    			 	 </view>
+    			 	 <view class="box-time">有效期2016-04-25至2016-10-29</view>
+    			 </view>
+    			 <view class="scroll-bottom">
+    			 	<text class="bottom-span">优惠金额</text>
+    			 	 	<text class="bottom-b">25.00</text>
+    			 </view>
+    		</view>
+			</view>
+			<!-- 满减 -->
+			<view class="scroll-li-mj">
+				<view class="scroll-label">
+    			 <view class="scroll-box mj">
+    			 	 <icon class="scroll-icon" type="circle" size="25" bindtap="checkTap" />
+    			 	 <view class="box-title djq">
+    			 	 	<text class="box-em-mj">满减优惠</text>
+    			 	 </view>
+    			 	 <view class="box-num">满100减20</view>
+    			 </view>
+    			 <view class="scroll-bottom">
+    			 	<text class="bottom-span">优惠金额</text>
+    			 	 	<text class="bottom-b">25.00</text>
+    			 </view>
+    		</view>
+			</view>
+    </view>
+  </scroll-view>
+</view>

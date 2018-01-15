@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+   <image class="userinfo-avatar" src="https://avatars1.githubusercontent.com/u/12889190?v=3&s=466"></image>
+   <text class="slogan">
+    不
+    跟
+    风
+
+    不
+    将
+    就
+
+    做
+    自
+    己 
+    </text>
+</view>

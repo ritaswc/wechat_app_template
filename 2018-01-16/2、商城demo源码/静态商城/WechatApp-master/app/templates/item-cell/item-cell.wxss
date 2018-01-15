@@ -1,0 +1,43 @@
+.item-cell {
+  font-size: 28.12rpx;
+  background: #fff;
+  overflow: hidden;
+  padding: 35.15rpx 0;
+  border-bottom: 1px solid #efefef;
+}
+
+.item-content {
+    margin-left: 212.35rpx;
+    margin-right: 17.84rpx;
+    height: 175.77rpx;
+    position: relative;
+}
+.content-name {
+    font-size: 23.44rpx;
+    line-height: 32.81rpx;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.content-attr {
+    margin-top: 11.72rpx;
+    font-size: 23.44rpx;
+    color: #a0a0a0;
+    line-height: 32.81rpx;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.content-count {
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+}
+.content-amount {
+    float: right;
+}

@@ -1,0 +1,267 @@
+/* pages/prolist/prolist.wxss */
+.cathot{
+    background:#fff;
+    margin-top:15rpx;
+    border-top:1px solid #eee;
+    width:100%;
+}
+.cathot .title{
+    height:98rpx;
+    position:relative;
+}
+.cathot .title .text1{
+    width:100%;
+    text-align:center;
+    font-size:30rpx;
+    color:#3d4245;
+}
+.cathot .title .text2{
+    width:100%;
+    text-align:center;
+    font-size:24rpx;
+    color:#bbb;
+    position:relative;
+    top:-10rpx;
+}
+.cathot .title .line1{
+    position:absolute;
+    display: inline-block;
+    background:#bbb;
+    width: 33rpx;
+    height: 2rpx;
+    top:26rpx;
+    left:260rpx;
+}
+.cathot .title .line2{
+    position:absolute;
+    display: inline-block;
+    background:#bbb;
+    width: 33rpx;
+    height: 2rpx;
+    top:26rpx;
+    left:460rpx;
+}
+.cathotList{
+    height:200rpx;
+    white-space: nowrap;
+}
+.cathotList .itemList{
+    width:200rpx;
+    height:200rpx;
+}
+.cathotList .itemList .text{
+    font-size: 26rpx;
+    color: #979797;
+    display: block;
+    min-width:50rpx;
+    text-align:center;
+}
+.cathotList .itemImg{
+    width:154rpx;
+    height:154rpx;    
+}
+/*推荐的最新品*/
+.proList{
+    background:#fff;
+    margin-top:20rpx;
+}
+.proList .new{
+    height:100rpx;
+    border-bottom:1rpx solid #eee;
+}
+.proList .new .logo{
+  width:307rpx;
+  height:66rpx;
+  margin-left:17rpx;
+}
+.proList .new .text{
+    font-size: 26rpx;
+    color: #bbbbbb;
+}
+.proList .new .more{
+    width:15rpx;
+    height:22rpx;
+    margin-right:20rpx;
+}
+.proList .item .itemList{
+    width:232rpx;
+}
+.proList .item .img{
+    margin-top:10rpx;
+    width:232rpx;
+    height:232rpx;
+}
+.proList .item .name{
+    width:232rpx;
+    display:inline-block;
+    text-align:center;
+    font-size: 26rpx;
+    color: #3d4245;
+    line-height:35rpx;
+}
+.proList .item .price{
+    color:#ff4aa0;
+    font-size:26rpx;
+    text-align:center;
+}
+/*随机专辑样式*/
+.artic{
+    margin-top:20rpx;
+    background:#fff;
+}
+.artic .itemL{
+   margin-top:20rpx;
+   background:#fff;
+}
+.banner-img{
+  position:relative;
+  height:379rpx;
+  width:750rpx;
+}
+.banner-img .img{
+  height:379rpx;
+  width:750rpx;
+}
+.goodsNum{
+    display: inline-block;
+    position: absolute;
+    width: 128rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    text-align: center;
+    top: 24rpx;
+    left: 429rpx;
+    background: rgba(0,0,0,0.5);
+    border-radius: 4rpx;
+    color: #fff;
+    font-size: 22rpx;
+    z-index:2;
+}
+.goodslookNum{
+    position: absolute;
+    width: 152rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    text-align: center;
+    top: 24rpx;
+    right: 11rpx;
+    background: rgba(0,0,0,0.5);
+    border-radius: 4rpx;
+    color: #fff;
+    font-size: 22rpx;
+}
+.imglook{
+  width:35rpx;
+  height:21rpx;
+  position:relative;
+  top:4rpx;
+  right:4rpx;
+}
+.artic .goodsList{  
+   white-space: nowrap;
+   height:310rpx;
+   width:100%;
+}
+.artic .goodsList .goodsListItem{
+  width:220rpx;
+  margin-top:20rpx;
+  border-right:1rpx solid #eee;
+}
+.artic .goodsList .goodsListItem image{
+  width:180rpx;
+  height:180rpx;  
+}
+.artic .goodsList .goodsListItem .name{
+    width: 190rpx;
+    font-size: 24rpx;
+    color: #3d4225;
+    margin-top:30rpx;
+}
+.artic .goodsList .goodsListItem .price{
+  width:190rpx;
+  font-size: 24rpx; 
+ margin-top:10rpx;
+  color: rgb(255, 74, 160);
+}
+/*热门品牌*/
+.hotbrand{
+    border:1px solid #eee;
+    background:#fff;
+    margin-top:15rpx;
+    border-top:1px solid #eee;
+    width:100%;
+}
+.hotbrand .title{
+    height:98rpx;
+    position:relative;
+}
+.hotbrand .title .text1{
+    width:100%;
+    text-align:center;
+    font-size:30rpx;
+    color:#3d4245;
+}
+.hotbrand .title .text2{
+    width:100%;
+    text-align:center;
+    font-size:24rpx;
+    color:#bbb;
+    position:relative;
+    top:-10rpx;
+}
+.hotbrand .title .line1{
+    position:absolute;
+    display: inline-block;
+    background:#bbb;
+    width: 33rpx;
+    height: 2rpx;
+    top:26rpx;
+    left:260rpx;
+}
+.hotbrand .title .line2{
+    position:absolute;
+    display: inline-block;
+    background:#bbb;
+    width: 33rpx;
+    height: 2rpx;
+    top:26rpx;
+    left:460rpx;
+}
+.brand .log{
+    width:161rpx;
+    height:103rpx;
+}
+/*最后一个推荐*/
+.pushitem{
+    background:#f8f8f8 !important;
+    padding-top:15rpx;
+}
+.pushitem .pushList{
+    margin-left: 1.8%;
+    width: 355rpx;
+    background: #fff;
+    margin-bottom: 16rpx;
+}
+.pushitem .pushList .img-container{
+    width:100%;
+    height:350rpx;
+    border-bottom:1rpx solid #eee;
+}
+.pushitem .pushList .img-container .img{
+    width:290rpx;
+    height:290rpx;
+}
+.pushitem .pushList .name{
+    font-size:28rpx;
+    color:#3d4245;
+    padding-left:15rpx;
+    margin-top:15rpx;
+    height:70rpx;
+    line-height:35rpx;
+}
+.pushitem .pushList .price{
+    color:#ff4aa0;
+    font-size:27rpx;
+    padding:10rpx 0;
+    margin-left:15rpx;
+}

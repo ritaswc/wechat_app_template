@@ -1,0 +1,32 @@
+page {
+  background: #efeff4;
+}
+
+.weui_avatar {
+  width: 120rpx;
+  height: 120rpx;
+  vertical-align: middle;
+}
+
+.weui-cells_access .weui-cell:not(.no_access) {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.weui-cells_access .weui-cell__ft:after {
+  content: " ";
+  display: inline-block;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  position: relative;
+  top: -2px;
+  top: -1px;
+  margin-left: 0.3em;
+}
+.weui-cell_primary text{
+  width: 200rpx;
+}

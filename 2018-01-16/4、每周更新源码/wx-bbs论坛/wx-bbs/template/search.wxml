@@ -1,0 +1,15 @@
+
+<!-- 搜索框 -->
+<view class="search-container" style="display:{{searchClicked?'block':'none'}}">
+  <view class="search-wrap">
+    <form bindsubmit="search">
+      <view class="search-form-wrap">
+        <input name="keyWord" class="search-input font-13rem" placeholder="请输入关键词" />
+      </view>
+      <view class="search-btn-wrap">
+        <button class="search-btn font-13rem" form-type="submit">搜索</button>
+      </view>
+    </form>
+  </view>
+  <view style="width:100%;height:100%" catchtap="searchCancle"></view>
+</view>

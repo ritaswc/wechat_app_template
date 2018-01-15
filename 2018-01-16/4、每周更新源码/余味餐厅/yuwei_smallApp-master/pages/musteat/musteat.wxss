@@ -1,0 +1,80 @@
+/* pages/musteat/musteat.wxss */
+.top_ban{
+    height:400rpx;
+    position:relative;
+}
+.top_ban image{
+    width:100%;
+    height:100%;
+}
+.dish_title{
+    margin-top:150rpx
+}
+.title{
+    width:100%;
+    height:100%;
+    text-align: center;
+    position: absolute;
+   top:0px;
+    color:#fff;
+    font-size:32rpx;
+    background: rgba(0,0,0,.3)
+}
+.title text{
+    display: block;
+    font-size: 26rpx;
+    margin-top:20rpx;
+    line-height: 24px;
+    padding:0 3%;
+}
+.container{
+    padding:0 22rpx;
+    background:#fff;
+}
+.restInfo{
+    padding:20rpx 0;
+    position:relative;
+    overflow: hidden
+}
+.restInfo image{
+    width:30%;
+    height:170rpx;
+    float:left;
+}
+.detail{
+    width:65%;
+    float:right;
+}
+.recommend{
+    border-left:6rpx solid #ffa10d;
+    padding-left:18rpx;
+    margin-top:36rpx;
+    font-size: 32rpx;
+    color:#282828;
+}
+.item_name{
+    width:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:32rpx;
+    color:#282828;
+
+}
+.item_cost{
+    font-size:26rpx;
+    color:#c1c1c1;
+    margin:18rpx 0;
+}
+.item_desc{
+    font-size:26rpx;
+    color:#909090;
+    width:100%;
+    overflow:hidden;
+    line-height:40rpx;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+
+}

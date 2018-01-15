@@ -1,0 +1,3 @@
+<template name="company-item">
+    <view class="companyName"><text>{{item.name}}</text></view>
+</template>

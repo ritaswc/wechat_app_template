@@ -1,0 +1,37 @@
+
+<!--客户分布统计 - 城市-->
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<view class="order-statistics">
+  <view class="statistics-title">
+    <text>{{province}}客户分布TOP{{city10.length}}</text>
+  </view>
+  <view class="statistics-detail">
+    <view class="table table-4">
+      <view class="tr bg-w">
+        <view class="th">排名</view>
+        <view class="th">城市</view>
+        <view class="th">客户数</view>
+        <view class="th">占比</view>
+      </view>
+      <view class="tr" wx:for="{{city10}}">
+        <view class="td {{(index == 0 || index == 1 || index == 2) ? 'orange' : ''}}">{{index+1}}</view>
+        <view class="td">
+          {{item.city}}
+        </view>
+        <view class="td">{{item.count}}</view>
+        <view class="td">{{item.distribution}}</view>
+      </view>
+      <!--空行-->
+      <view class="tr hrline"></view>  
+      <view class="tr total">
+          <view class="tolcenter">
+              <text class="tolleft-text1">客户数总计 : </text>
+              <text class="tolleft-text2">{{total}}个</text>
+          </view>
+      </view>
+    </view>
+
+  </view>
+</view>

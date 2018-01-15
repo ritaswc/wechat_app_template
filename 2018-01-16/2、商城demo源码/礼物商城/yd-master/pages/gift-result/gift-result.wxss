@@ -1,0 +1,324 @@
+/**load之前的占位图样式**/
+.container{
+  z-index: -1;
+  opacity: 0;
+  background-color: transparent;
+  transition: all .2s ease-in;
+}
+
+.loading-placeholder {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.loading-placeholder image{
+  width: 100%;
+  height: 100%;
+}
+
+.container-show {
+  z-index: 1;
+  opacity: 1;
+  /*background-color: rgb(240,240,240);*/
+}
+
+.load{
+  width: 0;
+  height: 0;
+  z-index: -2;
+}
+
+.load .loading-placeholder{
+  width: 0;
+  height: 0;
+}
+/**load之前的占位图样式 end**/
+
+/*
+ 1. 不认ID
+ 2. 不认属性选择符
+ 3. 不认相邻兄弟选择符
+*/
+.search-box{
+  padding-top: 38.647rpx;
+}
+/* 顶部tab */
+.category-tabs {
+  padding-top: 10rpx;
+  display: -webkit-flex;
+  display: flex;
+
+  background-color: rgb(46,46,47);
+  color: #fff;
+  height: 60rpx;
+}
+
+.tab{
+  -webkit-flex:1;
+          flex:1;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  position: relative;
+  overflow: hidden;
+  font-size: 26rpx;
+  -webkit-align-items: center;
+          align-items: center;
+}
+
+.tab-title{
+  -webkit-flex: 1;
+          flex: 1;
+  -webkit-display: flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+.line{
+  width: 1px;
+  background-color: rgb(81,81,81);
+  height: 20rpx;
+}
+
+.arrow{
+  /*原始大小 14 * 8 */
+  transition: all .2s ease-in-out;
+  width: 21rpx;
+  height: 12rpx;
+  margin-left: 14rpx;
+}
+
+.active .arrow{
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.no-border {
+  border:none;
+}
+
+.arrow-red {
+  width: 21rpx;
+  height: 12rpx;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  margin-left: 14rpx;
+  vertical-align: 6rpx;
+  transition: all .2s ease-in-out;
+}
+.arrow-red-down{
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin-left: 14rpx;
+}
+.selected{
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+.section-sep{
+  padding:20rpx 30rpx 0 30rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  line-height: 1;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+
+.section-sep-container{
+  -webkit-flex: 1;
+          flex: 1;
+  padding-bottom: 20rpx;
+  border-bottom:1px #eaeaea solid;
+}
+
+.first-section-sep{
+  margin-top: 0;
+  /*padding-top: 20px;*/
+}
+
+/* 上部横条结构卡片 */
+.up-list{
+  -webkit-display: flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+}
+
+.up-list-item navigator{
+  padding: 30rpx 30rpx 0 30rpx;
+}
+
+.item-desc-container{
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: flex;
+  border-bottom: 1px rgb(237,237,237) solid;
+  padding-bottom: 30rpx;
+}
+
+.item-img{
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.info-view{
+  -webkit-flex: 1;
+          flex: 1;
+  margin-left:30rpx;
+  font-size: 24rpx;
+  color:#999;
+}
+
+.title{
+  font-size:28rpx;
+  line-height: 1.45;
+  max-height: 82rpx;
+  color:#080808;
+  margin-bottom: 20rpx;
+  word-break: break-all;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: start;
+  -webkit-line-clamp: 2;
+}
+
+.title, .price, .footer-desc {
+    -webkit-flex:1;
+            flex:1;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.target-word{
+  margin-top: 20rpx;
+}
+.keyword{
+  color: #ff685c;
+}
+.other-word{
+  margin-left: 12rpx;
+  color:#999;
+}
+.source-from{
+    -webkit-justify-content: flex-end;
+            justify-content: flex-end;
+    -webkit-flex:1;
+            flex:1;
+    -webkit-display: flex;
+    display: flex;
+    -webkit-align-items: flex-end;
+            align-items: flex-end;
+}
+.source{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-end;
+            align-items: flex-end;
+}
+.datetime{
+    margin-left:24rpx;
+}
+
+/* 下方左右结构文章卡片 */
+.down-list{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: -webkit-space-between;
+          justify-content: -webkit-space-between;
+          justify-content: space-between;
+  background-color: #fff;
+  padding: 30rpx 30rpx 0 30rpx;
+}
+
+.down-list-item{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: -webkit-column;
+          flex-direction: -webkit-column;
+          flex-direction: column;
+  width: 330rpx;
+}
+
+.image-container{
+  /*box-sizing: border-box;*/
+  background-color: #eee;
+  border:1px rgb(221,221,221) solid;
+  width: 312rpx;
+  height: 312rpx;
+  /*设计图给的边距很奇怪，一点儿也不协调，也不好看，没有强迫症的人看到都受不了*/
+  /*padding: 32rpx 4rpx 36rpx 14rpx;*/
+  padding: 14rpx;
+  background-color: #fff;
+}
+
+.image-container image{
+  /* 注意这个。终于解决了在小程序中图片尺寸的问题了*/
+  width: 312rpx;
+  height: 312rpx;
+}
+
+.info-container{
+  padding:0 0 16rpx 0;
+  color:#080808;
+  background-color: #fff;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+
+.info-container .price{
+  color:#f14538;
+  margin-top: 14rpx;
+  line-height: 1;
+}
+
+.info-container .info{
+  margin-top: 14rpx;
+  /*line-height: 1;*/
+  height: 76rpx;
+  word-break: break-all;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: start;
+  -webkit-line-clamp: 2;
+}
+
+.error-cry-container{
+  width: 100%;
+  text-align: center;
+  margin-top: 240rpx;
+}
+
+.error-cry{
+  width: 160rpx;
+  height: 160rpx;
+  margin:40rpx 0;
+}
+.error-msg{
+  color:#999;
+}
+
+
+/*.selected {
+  color:#ef4438;
+  position: relative;
+}
+.selected:after{
+  font-size: 28rpx;
+  position: absolute;
+  right: 18rpx;
+  content:'√';
+}*/

@@ -1,0 +1,181 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view hidden="{{ allHidden }}">
+  <!--第一页显示 店铺地址-->
+  <view hidden="{{ hiddenMain }}" wx:if="{{ showMain }}" class="businessCooperation">
+    <view class="shop-top">
+      <view>店铺地址</view>
+      <!--<input type="text" disabled="true" class="input-txt triangle" placeholder="地区信息"  placeholder-class="c-gray" value="{{province}}-{{city}}-{{county}}" focus="{{focus}}" bindfocus="open" />-->
+      <view bindtap="open" class="input-txt triangle">{{province}}-{{city}}-{{county}}</view>
+    </view>
+    <view class="shop-center">
+      <input value="{{ addressDetail }}" data-type="addressDetail" bindinput="inputMessage" placeholder="请填写详细地址"/>
+    </view>
+    <view bindtap="addMapSite" class="add-map iconfont icon-icglobaltitlebar48iconfontmap">
+      {{ shopAddress }}
+    </view>
+    <view class="lxr">
+      <text>联系人</text>
+      <input value="{{ lxrName }}" data-type="lxrName" bindinput="inputMessage" placeholder="请输入真实姓名"/>
+    </view>
+    <view class="tel">
+      <text>联系人电话</text>
+      <input value="{{ lxrPhone }}" data-type="lxrPhone" bindinput="inputMessage" placeholder="请输入电话号码" type="number"/>
+    </view>
+    <view class="addpic">
+      <text>店铺照片</text>
+      <text bindtap="addPic" class="triangle">{{ addPicText }}</text>
+    </view>
+    <button bindtap="nextStep" class="start-shop">下一步</button>
+  </view>
+  <!--第二页显示 照片上传-->
+  <view hidden="{{ hiddenMain }}" wx:if="{{ !showMain }}" class="add-shop-pic">
+    <view class="pic">店铺照片仅用于核实您的店铺是否真实存在，不会对外展示</view>
+    <view class="face">
+      <view class="face-left">
+        <text>门脸图</text>
+        <image src="{{ faceImg }}"></image>
+      </view>
+      <view class="face-right">
+        <text>需要拍出完整门匾、门框（建议正对门店2米处拍摄）</text>
+        <button data-shop='faceImg' bindtap='upFacePic'>上传</button>
+      </view>
+    </view>
+    <view class="bottom">
+      <view class="bottom-left">
+        <text>店内环境图</text>
+        <image src="{{ insideImg }}"></image>
+      </view>
+      <view class="bottom-right">
+        <text>需真实反映用餐环境（收银台、用餐桌椅）</text>
+        <button data-shop='insideImg' bindtap='upFacePic'>上传</button>
+      </view>
+    </view>
+    <button bindtap="saveShopImg" class="start-shop">保存</button>
+  </view>
+  <!--第三页显示 资质信息-->
+  <view hidden="{{ !hiddenMain }}" class="zizhi">
+    <view class="face">
+      <view class="face-left">
+        <text>法人手持身份证</text>
+        <image src="{{ IdFaceImg }}"></image>
+      </view>
+      <view class="face-right">
+        <view class="text-wrap">
+          <text>1需要清晰展示五官和文字信息</text>
+          <text>2不可自拍、不可只拍身份证</text>
+        </view>
+        <button data-shop='IdFaceImg' bindtap='upFacePic'>上传</button>
+      </view>
+    </view>
+    <view class="name">
+      <text>法人姓名</text>
+      <input data-type="frName" bindinput="inputMessage" placeholder="请输入姓名" type="text"/>
+    </view>
+    <view class="id-number">
+      <text>法人身份证号</text>
+      <input data-type="frIdNumber" bindinput="inputMessage" placeholder="请输入身份证号" type="idcard"/>
+    </view>
+    <view class="license-kind">
+      <view>执照类型</view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{ license }}">
+          <radio color="#f00" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class="license-img">
+      <view class="face-left">
+        <text>营业执照</text>
+        <image src="{{ licenseImg }}"></image>
+      </view>
+      <view class="face-right">
+        <view class="text-wrap">
+          <text>1.需要文字清晰、边框完整、露出国徽</text>
+          <text>2.拍复印件需加盖印章，可用有效特许证件代替</text>
+        </view>
+        <button data-shop='licenseImg' bindtap='upFacePic'>上传</button>
+      </view>
+
+    </view>
+    <view class="license-name">
+      <text>执照名称</text>
+      <input data-type="zzName" bindinput="inputMessage" placeholder="请输入执照名称" type="text"/>
+    </view>
+    <view class="license-number">
+      <text>执照注册号</text>
+      <input data-type="zzNumber" bindinput="inputMessage" placeholder="请输入执照注册号" type="text"/>
+    </view>
+    <view class="license-site">
+      <text>执照所在地</text>
+      <input data-type="zzAddress" bindinput="inputMessage" placeholder="请输入执照所在地" type="text"/>
+    </view>
+    <view class="license-time">
+      <view>执照有效期</view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{ licenseTime }}">
+          <radio color="#f00" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class="restaurant-license">
+      <view class="face-left">
+        <text>餐饮服务许可证</text>
+        <image src="{{ restaurantLicenseImg }}"></image>
+      </view>
+      <view class="face-right">
+        <view class="text-wrap">
+          <text>需要文字清晰、边框完整、真实有效</text>
+        </view>
+        <button data-shop='restaurantLicenseImg' bindtap='upFacePic'>上传</button>
+      </view>
+    </view>
+    <view class="restaurant-license-name">
+      <text>许可证名称</text>
+      <input data-type="xkzName" bindinput="inputMessage" placeholder="请输入许可证名称" type="text"/>
+    </view>
+    <view class="restaurant-license-number">
+      <text>许可证注册号</text>
+      <input data-type="xkzNumber" bindinput="inputMessage" placeholder="请输入许可证注册号" type="number"/>
+    </view>
+    <view class="restaurant-license-site">
+      <text>许可证所在地</text>
+      <input data-type="xkzAddress" bindinput="inputMessage" placeholder="请输入许可证所在地" type="text"/>
+    </view>
+    <view class="restaurant-license-time">
+      <view>许可证有效期</view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{ restaurantLicenseTime }}">
+          <radio color="#f00" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <button bindtap="nextStep2" class="start-shop">下一步</button>
+  </view>
+</view>
+<!--第四页 审核-->
+<view class="shenhe" hidden="{{ !allHidden }}">
+  <view class="iconfont icon-shenhe">
+    资质信息已提交，审核中......
+  </view>
+</view>
+<!-- S 选择省市区 -->
+<view wx:if="{{condition}}" class="citypicker">
+<picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+  <view class="cityheader">
+    <view bindtap="open" class="city-cancel">取消</view>
+    <view bindtap="open" class="city-true">确定</view>
+  </view>
+  <picker-view-column>
+    <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+  </picker-view-column>
+  <picker-view-column>
+    <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+  </picker-view-column>
+  <picker-view-column>
+    <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+  </picker-view-column>
+</picker-view>
+</view>
+<!-- E 选择省市区 -->
+
+

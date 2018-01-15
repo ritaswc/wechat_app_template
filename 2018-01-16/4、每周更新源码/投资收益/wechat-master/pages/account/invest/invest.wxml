@@ -1,0 +1,19 @@
+<!--<view>{{text}}</view>-->
+<view class="invest_hd">
+    <view class="left">
+        <view class="title">投资笔数</view>
+        <view class="hd_num">共<text>32</text>笔</view>
+    </view>
+    <view class="left">
+        <view class="title">投资金额</view>
+        <view class="hd_num">共<text>1562032</text>元</view>
+    </view>
+</view>
+
+<view class="invest_bd">
+    <view class="invest_list">
+        <block wx:for="{{investList}}">
+            <view>{{item.money}}</view>
+        </block>
+    </view>
+</view>

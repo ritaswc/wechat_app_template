@@ -1,0 +1,114 @@
+<!--pages/basicInf/basicInf.wxml-->
+<view class="basicInf_wrap">
+    <form bindsubmit="formSubmit">
+        <view class="middle bottom">
+            <!--姓名-->
+            <view  class="dingyue">
+                <view class="left">
+                    <text>*</text>姓名
+                </view>
+                <view class="right">
+                    <input bindinput="changedisabled" name="true_name_cn" value="{{name}}" />
+                </view>
+            </view>
+
+             <!--性别-->
+            <view  class="dingyue">
+                <view class="left">
+                    <text>*</text>性别
+                </view>
+                <view class="right">
+                    <picker name="gender" bindchange="selectsex" range="{{sexArray}}">
+                        <text data-id = "{{sex.id}}">{{sex.val}}</text>
+                        <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                    </picker>
+                </view>
+            </view>
+
+            <!--手机号码-->
+            <view class="dingyue">
+                <view class="left">
+                   <text>*</text>手机号码
+                </view>
+                <view class="right">
+                    <input bindinput="changedisabled" name="mobile" value="{{mobile}}"/>
+                </view>
+            </view>
+
+            <!--出生日期-->
+            <view class="dingyue">
+                <view class="left">
+                   <text>*</text>出生日期
+                </view>
+                <view class="right">
+                    <picker name="birthday" mode="date" value="{{birthday}}" start="1800-01-01" end="2017-09-01" bindchange="dataOfBirth">
+                        <text>{{birthday}}</text>
+                        <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                    </picker>
+                    
+                </view>
+            </view>
+
+            <!--工作经验-->
+            <view class="dingyue">
+                <view class="left">
+                   <text>*</text>工作经验
+                </view>
+                <view class="right">
+                    <input name="work_year" bindinput="changedisabled" value="{{work_year}}"/>
+                </view>
+            </view>
+
+            <!--最高学历-->
+            <view class="dingyue">
+                <view class="left">
+                   <text>*</text>最高学历
+                </view>
+                <view class="right">
+                    <picker name="degree" bindchange="selectEducation" range="{{educationArray}}">
+                        <text data-id = "{{education.id}}">{{education.val}}</text>
+                        <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                    </picker>
+                    
+                </view>
+            </view>
+
+            <!--现居地-->
+            <view  class="dingyue">
+                <view class="left">
+                   <text>*</text>现居地
+                </view>
+                <view class="right">
+                    <input bindfocus="selectLocation" name="current_location" data-id="{{current_location.id}}" value="{{current_location.current_location}}"/>
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+
+             <!--E-mail-->
+            <view class="dingyue">
+                <view class="left">
+                   <text>*</text>E-mail
+                </view>
+                <view class="right">
+                    <input name="email" bindinput="changedisabled" value="{{email}}" />
+                </view>
+            </view>
+
+            <!--毕业时间-->
+            <view class="dingyue">
+                <view class="left">
+                   <text></text>毕业时间
+                </view>
+                <view class="right">
+                    <picker name="graduation_time" mode="date" value="{{graduate}}" start="1800-01-01" end="2017-09-01" bindchange="dataOfGraduate">
+                        <text>{{graduate}}</text>
+                        <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                    </picker>
+                    
+                </view>
+            </view>
+        </view>
+        <button disabled="{{disabled}}" loading="{{showLoading}}" formType="submit" class="save">保存</button>
+    </form>
+     
+</view>

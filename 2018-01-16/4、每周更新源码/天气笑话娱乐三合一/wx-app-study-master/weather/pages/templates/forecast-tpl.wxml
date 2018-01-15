@@ -1,0 +1,7 @@
+<template name="forecast-tpl">
+    <view class="forecast-item">
+        <view>{{item.date}} {{item.week}}</view>
+        <view>{{item.type}}</view>
+        <view>{{item.lowtemp}} / {{item.hightemp}}</view>
+    </view>
+</template>

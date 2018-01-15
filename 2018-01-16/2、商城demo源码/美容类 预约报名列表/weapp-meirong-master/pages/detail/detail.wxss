@@ -1,0 +1,45 @@
+.container{
+    background:#fff;
+}
+.ar_coverpath{
+    width:100%;
+    margin:0;
+    box-sizing:border-box;
+}
+.ar_coverpath image{
+    width:100%;
+    height:390rpx;
+}
+.ar_cont{
+    padding:0rpx 60rpx;
+    font-size:30rpx;
+    background: #fff;
+    margin-bottom:40rpx;
+    line-height: 45rpx;
+    color:#666666;
+}
+.ar_cont .ar_cont_h1,
+.ar_cont .ar_cont_price{
+    font-size: 32rpx;
+    font-weight: 600;
+    line-height: 64rpx;
+    color:#000;
+}
+.ar_cont .ar_cont_price{
+    color: #e64340;
+    margin-left:60rpx;
+}
+.ar_line{
+    width:100%;
+    height:1rpx;
+    content: '';
+    background: #ddd;
+    margin:30rpx 0rpx;
+}
+.ar_book{
+    background:#d24a58;
+    font-size: 32rpx;
+    color:#fff;
+    border-radius: 0rpx;
+    margin:40rpx 0rpx 10rpx;
+}

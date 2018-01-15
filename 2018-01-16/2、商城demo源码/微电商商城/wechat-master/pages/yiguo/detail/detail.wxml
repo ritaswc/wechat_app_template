@@ -1,0 +1,15 @@
+<view class="detail-box">
+    <view class="detail-list">
+        <view><image src="{{detailgood.pic_url}}"></image></view>
+        <view class="detail-name">
+            <ul>
+                <li>{{detailgood.name}}</li>
+                <li>{{detailgood.price}}</li>
+                <li>规格 {{detailgood.type}}</li>
+                <li>信息 产地：泰国 发货地: 结单时间：20:00</li>
+                <li>用户评价（31）</li>
+                <li>商品图文详情（建议在WIFI下查看）</li>
+            </ul>
+        </view>
+    </view>
+</view>

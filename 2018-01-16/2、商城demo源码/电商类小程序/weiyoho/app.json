@@ -1,0 +1,65 @@
+{
+  "debug": true,
+  "pages": [
+    "pages/index/index",
+    "pages/banner/banner",
+     "pages/order/order",
+    "pages/list/list",
+    "pages/detail/detail",
+     "pages/list/detail/detail",
+    "pages/shoppingCart/shoppingCart",
+    "pages/payorder/payorder",
+    
+    "pages/login/login",
+    "pages/address/user-address/user-address",
+    "pages/mine/mine",
+    "pages/address/address",
+    "pages/list/listdetail/listdetail",
+    "pages/review/review",
+    "pages/cart/cart",
+    "pages/addgoods/addgoods",
+    "pages/collect/collect",
+    "pages/message/message",
+    "pages/shop/goods/goods",
+    
+    "pages/edit/edit"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#b6aaec",
+    "navigationBarTitleText": "微友货",
+    "navigationBarTextStyle": "white"
+ 
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "backgroundColor": "#f3f2f7",
+    "selectedColor": "#b6aaec",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon/home.png",
+        "selectedIconPath": "images/icon/home-actived.png"
+      },
+      {
+        "text": "分类",
+        "pagePath": "pages/list/list",
+        "iconPath": "images/icon/nav-list.png",
+        "selectedIconPath": "images/icon/nav-listHL.png"
+      },
+      {
+        "text": "购物车",
+        "pagePath": "pages/shoppingCart/shoppingCart",
+        "iconPath": "images/icon/cart.png",
+        "selectedIconPath": "images/icon/cart-actived.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/icon/mine.png",
+        "selectedIconPath": "images/icon/mine-actived.png"
+      }
+    ]
+  }
+}

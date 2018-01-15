@@ -1,0 +1,94 @@
+<!--examtest.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+    <swiper indicator-dots="true" current="{{curPage}}">
+        <swiper-item>
+            <view id="sideBar" class="sideBar">
+                <view class="answer-card">
+                    <view class="card-content">
+                        <text class="card-title">【题号】</text>
+                        <view class="row">
+                            <view wx:for="{{lists}}" wx:key="number">
+                            <text class="{{!isSubmitted&&item.number==curNum?'current':''}} {{!isSubmitted&&item.status != 0?'finish':''}} {{isSubmitted&&item.status==1?'correct':'wrong'}}" data-list="{{item}}" bindtap="questionSwitch">{{item.number}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view><!-- answer-card结束 -->
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view wx:if="{{!choices.length}}" class="loading"></view>
+            <block wx:else>
+                <view class="content" wx:if="{{examPage}}">
+                    <view class="question-wrapper">
+                        <view class="question-header">
+                            <view class="question-type">{{cTypeContent[cType]}}</view>
+                            <text class="question-num">{{curNum}}/{{totalNum}}</text>
+                        </view> <!-- question-header结束 -->
+                        <form bindsubmit="submitAnswer">
+                        <!--<view class="question-content">{{questionContent}}</view>-->
+                        <view class="question-content"><template is="wxParse" data="{{wxParseData:questionContent.nodes}}"/></view>
+                        <!-- question-content结束 -->
+                       <!--单选-->
+                        <block wx:if="{{cType==1}}"> 
+                            <radio-group class="question-choice" bindchange="choiceChange">
+                                <label 
+                                wx:for="{{choices}}"
+                                wx:key="choiceId" 
+                                class="{{!isSubmitted&&item.isChosen||isSubmitted&&item.isRight==1?'selected':''}} {{isSubmitted&&item.isChosen&&item.isRight==-1?'wrong':''}}">
+                                    <radio value="{{item.choiceId}}" checked="{{item.isChosen}}" disabled="{{isSubmitted}}" color="#00a5cf"/>
+                                    <text><text class="icon fa {{(!isSubmitted&&!item.isChosen)||(isSubmitted&&!item.isChosen &&item.isRight != 1)?'fa-circle':''}} {{item.isChosen||(isSubmitted&&item.isRight==1)?'fa-check':''}} {{item.isChosen&&isSubmitted&&item.isRight!=1?'fa-close':''}}"></text>{{item.content}}</text>
+                                </label>
+                            </radio-group>
+                        </block>
+                        <!--多选-->
+                        <block wx:else>
+                            <checkbox-group class="question-choice" bindchange="choiceChange">
+                                <label 
+                                wx:for="{{choices}}"
+                                wx:key="choiceId" 
+                            class="{{!isSubmitted&&item.isChosen||isSubmitted&&item.isRight==1?'selected':''}} {{isSubmitted&&item.isChosen&&item.isRight==-1?'wrong':''}}">
+                                    <checkbox value="{{item.choiceId}}" checked="{{item.isChosen}}" disabled="{{isSubmitted}}" color="#00a5cf"/>
+                                    <text><text class="icon fa {{(!isSubmitted&&!item.isChosen)||(isSubmitted&&!item.isChosen &&item.isRight != 1)?'fa-square':''}} {{item.isChosen||(isSubmitted&&item.isRight==1)?'fa-check':''}} {{item.isChosen&&isSubmitted&&item.isRight!=1?'fa-close':''}}"></text>{{item.content}}</text>
+                                </label>
+                            </checkbox-group>
+                        </block>            
+                        </form>
+                    </view>
+                    <!-- question-wrapper结束 -->		
+                    <view class="answer-wrapper" wx:if="{{isSubmitted}}">
+                        <view class="my-answer"><text>我的答案</text><text id="my-answer">{{myChoicesLetter}}</text></view>
+                        <view class="correct-answer"><text>正确答案</text><text id="correct-answer">{{answers}}</text></view>
+                        <!--<view>{{analysisContent}}</view>-->
+                        <template is="wxParse" data="{{wxParseData:analysisContent.nodes}}" />
+                    </view>	<!-- answer-wrapper结束 -->	
+                </view> <!-- content结束 -->
+                <view class="content" v-else>
+                    <view class="result">
+                        <view class="title">测试结果数据分析：</view>
+                        <view class="col-score">
+                            <view>得分：{{score}}</view>
+                            <view>正确率：{{accuracy}}%</view>
+                            <view class="clear"></view>
+                        </view>
+                        <view class="title">测试结果分布：</view>
+                        <view class="card-content">
+                            <view class="row">
+                                <view wx:for="{{lists}}" wx:key="number">
+                                <text class="{{!isSubmitted&&item.number==curNum?'current':''}} {{!isSubmitted&&item.status != 0?'finish':''}} {{isSubmitted&&item.status==1?'correct':'wrong'}}" data-list="{{item}}" bindtap="questionSwitch">{{item.number}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <!-- content结束 -->	                
+            </block>
+            <view class="bottom-bar">
+                <view class="bottom-list" bindtap="preQuestion"><text class="icon fa fa-arrow-circle-o-left"></text><text class="text">上一题</text></view>
+                <view wx:if="{{!isSubmitted}}" class="bottom-list" bindtap="submitExam"><text class="icon fa fa-search"></text><text class="text">提交</text></view>
+                <view wx:else class="bottom-list {{isFavorite?'selected':''}}" bindtap="pageSwitch"><text class="icon fa fa-exchange"></text><text class="text">切换</text></view>
+                <view class="bottom-list" bindtap="nextQuestion"><text class="icon fa fa-arrow-circle-o-right"></text><text class="text">下一题</text></view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>

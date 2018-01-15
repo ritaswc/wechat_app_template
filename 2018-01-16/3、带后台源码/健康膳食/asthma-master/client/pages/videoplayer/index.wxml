@@ -1,0 +1,184 @@
+<view class="container" style="width: {{winWidth}}px;">
+    <video src="{{src}}" controls  class="video-style" style="width: {{winWidth}}px;height:200px;"></video>
+  	<view class="tab-wrapper">
+	    <view class="swiper-tab tab-list">
+            <view class="swiper-tab-list tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="switchNav">简介</view>
+            <view class="swiper-tab-list tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="switchNav">评论</view>
+        </view>
+        <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 243}}px" bindchange="bindChange">
+            <swiper-item>
+				<view class="courseware-expert">
+                    <view class="courseware-teacher">
+                        <view class="courseware-teacher-title">
+                            讲师：
+                        </view>
+                        <view class="courseware-teacher-content">
+                            {{teacher}}
+                        </view>
+                    </view>
+                    <view class="courseware-unit">
+                        <view class="courseware-unit-title">
+                            单位：
+                        </view>
+                        <view class="courseware-unit-content">
+                            {{unit}}
+                        </view>
+                    </view>
+                    <view class="courseware-summary">
+                        <view class="courseware-summary-title">
+                            简介：
+                        </view>
+                        <view class="courseware-summary-content">
+                            {{content}}
+                        </view>
+                    </view>
+				</view>
+            </swiper-item>
+            <swiper-item>
+                <scroll-view scroll-y="true" style="height: {{winHeight - 240}}px;">
+                    <view class="seperator-line"></view>
+                    <view class="rating-btn-wrapper" bindtap="showCommentDialog">
+                        <view>
+                            <view class="star-rating">
+                                <image class="star-item" src="../../images/star_gan.png" />
+                                <image class="star-item" src="../../images/star_gan.png" />
+                                <image class="star-item" src="../../images/star_gan.png" />
+                                <image class="star-item" src="../../images/star_gan.png" />
+                                <image class="star-item" src="../../images/star_gan_active.png" />
+                            </view>
+                            <view class="comment-prompt">点我评论</view>
+                        </view>
+                    </view>
+                    <view class="seperator-line"></view>
+                    <view class="comments-list">
+                        <view class="comments-item">
+                            <image class="header-icon" src="../../images/header_icon.png" />
+                            <view class="comment-text-info">
+                                <view class="comment-user-and-rating">
+                                    <view class="comment-user-name">
+                                        louisGan
+                                    </view>
+                                    <view class="star-rating">
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan_active.png" />
+                                    </view>
+                                </view>
+                                <view class="comment-time">
+                                    2017-04-17
+                                </view>
+                                <view class="comment-content">
+                                    这是评论的正文部分
+                                </view>
+                            </view>
+                        </view>
+                        <view class="seperator-line"></view>
+                        <view class="comments-item">
+                            <image class="header-icon" src="../../images/header_icon.png" />
+                            <view class="comment-text-info">
+                                <view class="comment-user-and-rating">
+                                    <view class="comment-user-name">
+                                        louisGan
+                                    </view>
+                                    <view class="star-rating">
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan_active.png" />
+                                    </view>
+                                </view>
+                                <view class="comment-time">
+                                    2017-04-17
+                                </view>
+                                <view class="comment-content">
+                                    这是评论的正文部分
+                                    这是评论的正文部分
+                                    这是评论的正文部分
+                                    这是评论的正文部分
+                                    这是评论的正文部分
+                                    这是评论的正文部分
+                                    这是评论的正文部分
+                                    这是评论的正文部分
+                                    这是评论的正文部分
+                                    这是评论的正文部分
+                                    这是评论的正文部分
+                                    这是评论的正文部分
+                                    这是评论的正文部分
+                                </view>
+                            </view>
+                        </view>
+                        <view class="seperator-line"></view>
+                        <view class="comments-item">
+                            <image class="header-icon" src="../../images/header_icon.png" />
+                            <view class="comment-text-info">
+                                <view class="comment-user-and-rating">
+                                    <view class="comment-user-name">
+                                        louisGan
+                                    </view>
+                                    <view class="star-rating">
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan_active.png" />
+                                    </view>
+                                </view>
+                                <view class="comment-time">
+                                    2017-04-17
+                                </view>
+                                <view class="comment-content">
+                                    这是评论的正文部分
+                                </view>
+                            </view>
+                        </view>
+                        <view class="seperator-line"></view>
+                        <view class="comments-item">
+                            <image class="header-icon" src="../../images/header_icon.png" />
+                            <view class="comment-text-info">
+                                <view class="comment-user-and-rating">
+                                    <view class="comment-user-name">
+                                        louisGan
+                                    </view>
+                                    <view class="star-rating">
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan.png" />
+                                        <image class="star-item" src="../../images/star_gan_active.png" />
+                                    </view>
+                                </view>
+                                <view class="comment-time">
+                                    2017-04-17
+                                </view>
+                                <view class="comment-content">
+                                    这是评论的正文部分
+                                </view>
+                            </view>
+                        </view>
+                        <view class="seperator-line"></view>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view wx:if="{{commentDialogStatus}}">
+        <view class="comment-dialog" id="dialog-bg" catchtap="hideCommentDialog">
+            <view class="comment-field">
+                <view class="comment-title">评价该课程</view>
+                <view class="comment-star-rating-wrapper">
+                    <view class="star-rating">
+                        <block class="star-list" wx:for="{{starImages}}" wx:key="{{index}}">
+                            <image class="star-item" data-gindex="{{index}}" src="{{item}}" bindtap="changeStar" />
+                        </block>
+                    </view>
+                </view>
+                <view class="comment-text">推荐</view>
+                <textarea class="comment-input-field" placeholder="评论，140字以内"  placeholder-style="color:#999;" />
+                <view class="submit-comment-btn">提交</view>
+            </view>
+        </view>
+    </view>
+</view>

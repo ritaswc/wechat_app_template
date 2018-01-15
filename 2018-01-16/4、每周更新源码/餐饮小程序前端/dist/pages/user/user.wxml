@@ -1,0 +1,19 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="user">
+  <!--user-info-->
+  <view class="user-info">
+    <image class="user-avatural" src="{{ userInfo.avatarUrl }}"></image>
+    <text class="user-name">{{ userInfo.nickName }}</text>
+  </view>
+  <!--user-score-->
+  <view class="user-score">
+    <navigator url="{{ item.title == '优惠券' ? '../useroperation/useroperation?operation=coupon' : item.title == '正在排队' ? '../useroperation/useroperation?operation=number' : '' }}" hover-class="none" class="u-s-content" wx:for="{{ userDetail }}" wx:key="unique">
+      <text>{{ item.title }}</text>
+      <text>{{ item.number }}</text>
+    </navigator>
+  </view>
+  <!--user-list-->
+  <view class="user-list">
+    <navigator url="../useroperation/useroperation?operation={{ item.id }}" hover-class="none" class="triangle {{ item.icon }}" wx:for="{{ userList }}" wx:key="unique">  {{ item.title }}</navigator>
+  </view>
+</view>

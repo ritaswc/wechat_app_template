@@ -1,0 +1,28 @@
+<scroll-view
+  class="container"
+  scroll-y="true"
+  bindscrolltolower="scrolltolower"
+  lower-threshold="300"
+  style="height:100%;">
+  <view class="up-list">
+      <view class="up-list-item" wx:for="{{articles}}" wx:for-item="article" wx:key="aid">
+        <navigator url="../article/article?id={{article.aid}}">
+           <view class="item-desc-container">
+              <!-- <text>{{index}}</text> -->
+              <image class="item-img" src="{{article.thumb_image_url}}"></image>
+              <view class="info-view">
+                <text class="title">{{article.title}}</text>
+                <view class="target-word">
+                  <block wx:for="{{article.rendered_keywords}}" wx:key="index">
+                    <text wx:if="{{index === 0}}" class="keyword">{{ item }}  </text>
+                    <text wx:else>  {{ item }} </text>
+                  </block>
+                </view>
+              </view>
+           </view>
+         </navigator>
+     </view>
+     <import src="../../common/loading.wxml"/>
+     <template is="loading" data="{{done, text:'只有这些啦~'}}"/>
+  </view>
+</scroll-view>

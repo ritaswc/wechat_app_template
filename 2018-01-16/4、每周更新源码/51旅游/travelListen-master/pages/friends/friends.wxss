@@ -1,0 +1,43 @@
+@charset "UTF-8";
+page {
+  display: block;
+  min-height: 100%;
+  background: #eeeeee; }
+
+swiper {
+  min-height: 800rpx; }
+
+swiper-item {
+  min-height: 100%;
+  margin-top: 88rpx; }
+
+.slide-view {
+  width: 100%; }
+
+page .wx-swiper-dots.wx-swiper-dots-horizontal {
+  top: 0; }
+
+page .wx-swiper-dot {
+  width: 252rpx;
+  display: inline-flex;
+  height: 88rpx;
+  line-height: 80rpx;
+  vertical-align: sub;
+  background: #fff;
+  border-bottom: 5rpx solid transparent; }
+  page .wx-swiper-dot:nth-child(1)::before {
+    content: '消息'; }
+  page .wx-swiper-dot:nth-child(2)::before {
+    content: '通讯录'; }
+  page .wx-swiper-dot:nth-child(3)::before {
+    content: '发现'; }
+
+page .wx-swiper-dot-active {
+  border-color: #00bbfc; }
+
+page .wx-swiper-dot::before {
+  flex-grow: 1; }
+
+page .wx-swiper-dot-active::before {
+  color: #00bbfc;
+  flex-grow: 1; }

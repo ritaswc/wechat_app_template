@@ -1,0 +1,31 @@
+<!--pages/howPublic/howPublic.wxml-->
+<view class="howPublic_wrap">
+      <view class="middle bottom">
+            <view bindtap="data_back" data-privacy="1" data-status="{{arr[0]}}" class="dingyue none_bottom">
+                <view class="left">
+                    {{arr[0]}}
+                </view>
+                <view class="right">
+                    <image  wx:if="{{_public ==arr[0] ? 'true' :''}}" class="image2" src="../searchend/image/_109.png"></image>
+                </view>
+            </view>
+             
+            <view bindtap="data_back" data-privacy="2" data-status="{{arr[1]}}" class="dingyue none_bottom">
+                <view class="left">
+                    {{arr[1]}}
+                </view>
+                <view class="right">
+                    <image wx:if="{{_public ==arr[1] ? 'true' :''}}" class="image2" src="../searchend/image/_109.png"></image>
+                </view>
+            </view>
+            
+            <view bindtap="data_back" data-privacy="3" data-status="{{arr[2]}}" class="dingyue none_bottom"  style="border-bottom:none;">
+                <view class="left">
+                    {{arr[2]}}
+                </view>
+                <view class="right">
+                    <image wx:if="{{_public ==arr[2] ? 'true' :''}}" class="image2" src="../searchend/image/_109.png"></image>
+                </view>
+            </view>
+        </view>
+</view>

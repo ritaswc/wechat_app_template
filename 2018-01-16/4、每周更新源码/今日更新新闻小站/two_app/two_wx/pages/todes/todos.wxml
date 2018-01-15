@@ -1,0 +1,57 @@
+<!--pages/todes/todos.wxml-->
+<view class="page">
+<view class="search"> 
+    <view class="todes-box">
+        <label for="search" class="todes-sea" bindtap="search">
+            <span class="iconfont icon-sousuo1" ></span>
+        </label>
+        <input id="search" placeholder="搜索新闻" class="todes-inp" bindconfirm="search" bindfocus="hidden"  bindblur="hidden" value="{{search}}"/>
+        <!--<view class="todes {{hidden?'todes-hidden':''}}">
+            <span class="iconfont icon-bohui"></span>
+        </view>-->
+        <view class="todes" bindtap="toRecom">
+            <span class="iconfont icon-shoucang2"></span>
+        </view>
+         <view class="todes">
+            <span class="iconfont icon-erweima"></span>
+        </view>
+    </view>
+    <view class="searchs" wx:for="{{searchs}}" wx:key="item" hidden="{{hidden?true:false}}">
+  <view bindtap="search" data-title="{{item.title}}"> 
+      {{item.title}}
+  </view>
+</view>
+</view>
+<!--历史浏览-->
+
+
+
+<view class="center todes-404" wx:if="{{content==0}}">
+      <image src="../../image/good.png"></image>
+</view>
+<!--404-->
+<view class="center todes-404" wx:elif="{{content==1}}">
+      <image src="../../image/no.png"></image>
+</view>
+<!--新闻列表-->
+
+    <view class = "news-list" wx:else>
+      <!--单个新闻-->
+      <view class = "news-item"  wx:for="{{newsData}}" bindtap="tourl" data-index="{{index}}" >
+      {{item.allList.lenght}}
+        <view class = "news-item-info" >
+          <view class = "header">
+            <text class = "channelName" data-index="{{index}}">{{item.channelName}}</text>
+            <text class = "source" data-index="{{index}}">{{item.source}}</text>
+          </view>
+          <view class = "title" data-index="{{index}}">{{item.title}}</view>
+          <view class = "time" data-index="{{index}}">{{item.pubDate}}</view>
+        </view>
+     
+        <view class = "news-item-image"  wx:if="{{item.imageurls[0]!=null}}">
+          <image src="{{item.imageurls[0].url}}"  hidden="{{item.imageurls[0]==null}}" style="width:100%;height:100%" data-url="/pages/details/details" data-index="{{index}}"  mode="aspectFill" ></image>
+        </view>
+      </view>  
+    </view>
+  </view>
+

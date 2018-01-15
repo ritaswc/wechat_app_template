@@ -1,0 +1,17 @@
+<template name="cell">
+  <view class="tutorial-list-cell">
+    <view class="tutorial-list-cell-number">{{number}}</view>
+    <view>
+      <text>{{description}}</text>
+      <block wx:if="{{src}}">
+        <image class="tutorial-list-cell-image" src="{{src}}"/>
+      </block>
+    </view>
+  </view>
+</template>
+
+<template name="tutorialList">
+  <view wx:for="{{list}}" wx:key="">
+    <template is="cell" data="{{ number: index+1, description: item.description, src: item.src }}" />
+  </view>
+</template>

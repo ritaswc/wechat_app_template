@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/classify/index",
+    "pages/cart/index",
+    "pages/my/index",
+    "pages/details/index",
+    "pages/brand/index",
+    "pages/list/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"white",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "首页",
+    "navigationBarBackgroundColor": "white",
+    "backgroundColor": "#f1f1f1",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#6f6f6f",
+    "selectedColor": "#f9752b",
+    "borderStyle": "white",
+    "backgroundColor": "white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/all_tc_xgg_icon.png",
+      "selectedIconPath": "images/all_tc_xgg_icon.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/classify/index",
+      "iconPath": "images/all_tc_lm_icon.png",
+      "selectedIconPath": "images/all_tc_lm_icon.png",
+      "text": "类目"
+    }, {
+      "pagePath": "pages/cart/index",
+      "iconPath": "images/all_gwc_btn.png",
+      "selectedIconPath": "images/all_gwc_btn.png",
+      "text": "购物车"
+    }, {
+      "pagePath": "pages/my/index",
+      "iconPath": "images/all_sh_icon.png",
+      "selectedIconPath": "images/all_sh_icon.png",
+      "text": "我的"
+    }]
+  },
+  "debug": true
+}

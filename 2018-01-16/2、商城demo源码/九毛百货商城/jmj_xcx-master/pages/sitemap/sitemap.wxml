@@ -1,0 +1,24 @@
+<!--pages/sitemap/sitemap.wxml-->
+<import src="../../temp/search.wxml"/>
+<!--第一个搜索组件-->
+  <template is="search" data="{{src:src}}"></template>
+<!--分类页面-->
+<view class="cateSite">
+  <view wx:for="{{sitemap}}" wx:key="{{index}}" class="catList">
+      <view class="list">
+        <image src="{{item.bannerImg}}" class="bannerImg" bindtap="showCate" data-key="{{index}}"/>
+      </view>
+      <view class="{{choState==index?item.class2:item.class1}}">
+        <view class="top">
+          <image src="{{item.img2}}" class="log" />
+          <text class="text">{{item.name}}</text>
+        </view>
+        <view class="content flexstart">
+          <navigator url="../cate2/cate2?id={{item.id}}&title={{item.title}}" class="cate2 flexbox" wx:for="{{item.child}}" wx:key="{{item.id}}" redirect>
+            <image src="{{item.image}}" class="cate2img" />
+            <text class="text hidewrap">{{item.name}}</text>
+          </navigator>
+        </view>
+      </view>
+    </view>
+</view>

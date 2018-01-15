@@ -1,0 +1,40 @@
+<import src="../../components/steps/steps.wxml"/>
+<view class="breathe-container">
+  <template is="steps" data="{{ total: 2, current }}"/>
+  <swiper class="swiper" current="{{current}}" bindchange="swiperChange">
+    <swiper-item class="swiper-item">
+      <view class="item-container">
+        <view class="description">确认伤者无意识但有呼吸后,让病人<span class="importent">侧卧</span>,头部<span class="importent">后仰</span>,可以跟她说话,安抚他,
+即使没意识也可以听见。</view>
+        <image class="img" src="../../assets/images/cewo.gif" />
+        <view class="nav">
+          <view bindtap="next" class="next">下一步 {{">"}}</view>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <view class="item-container">
+        <view class="description">寻找帮手,拨打 120。</view>
+        <view class="appeal-address" style="width: 100%">
+          <view>
+            <span class="appeal-address-city">{{city}}</span>
+            <span class="appeal-address-area">{{district}}</span>
+          </view>
+          <view wx:if="{{ street.length <= 8 }}" class="appeal-address-detail" >{{street}}</view>
+          <view wx:if="{{ street.length > 8 }}" class="appeal-address-detail-small" >{{street}}</view>
+        </view>
+        <view class="appeal-telephone-container" style="bottom: 350rpx;">
+          <image
+            class="appeal-telephone"
+            src="../../assets/images/telephone-large.svg"
+            bindtap="callPhone"
+          />
+        </view>
+        <view class="nav-end">
+          <view bindtap="back" class="back">{{"<"}}</view>
+          <view class="next-end">直到医务人员到达</view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

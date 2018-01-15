@@ -1,0 +1,59 @@
+
+<!--index.wxml-->
+<scroll-view>
+
+  <!--轮播图-->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="swiper-image" bindtap="swiperClick" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!--导航-->
+  <view class="ui-flex">
+    <block wx:for="{{navs}}">
+      <view class="nav-item" catchtap="navClick" data-type="{{item.text}}">
+        <image class="nav-img" src="{{item.icon}}"></image>
+        <text class="nav-text">{{item.text}}</text>
+      </view>
+    </block>
+  </view>
+
+  <!--空白-->
+  <view class="separate"></view>
+
+  <!--最热-->
+  <view class="volume">
+    <view class="category-title">
+      <image class="small-icon-img" src="../../img/volume_small.png"></image>
+      <text class="small-text">最热</text>
+    </view>
+    <image class="ui-width-100" src="../../img/index_volume.jpg" bindtap="volumeClick"></image>
+  </view>
+
+  <!--空白-->
+  <view class="separate"></view>
+
+  <!--最新-->
+  <view class="new">
+    <view class="category-title">
+      <image class="small-icon-img" src="../../img/new_small.png"></image>
+      <text class="small-text">最新</text>
+    </view>
+    <image class="ui-width-100" src="../../img/index_new.jpg" bindtap="newClick"></image>
+  </view>
+
+  <!--空白-->
+  <view class="separate"></view>
+
+  <!--最火-->
+  <view class="hot">
+    <view class="category-title">
+      <image class="small-icon-img" src="../../img/hot_small.png"></image>
+      <text class="small-text">最火</text>
+    </view>
+    <image class="ui-width-100" src="../../img/index_hot.jpg" bindtap="hotClick"></image>
+  </view>
+</scroll-view>

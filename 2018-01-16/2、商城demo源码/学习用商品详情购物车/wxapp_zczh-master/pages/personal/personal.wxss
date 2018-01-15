@@ -1,0 +1,24 @@
+page{background-color: #fff;}
+.warp{padding: 0 30rpx;font-family: "微软雅黑";color: #000;font-size: 30rpx;}
+.userPic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.userPic image {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userPic text{
+  color: #aaa;
+}
+/*.userPic{width: 200rpx;height: 200rpx;}*/
+.myOrder,.myAddress{line-height:80rpx;padding:0 20rpx;border-top: 1px #e6e6e6 solid;}
+.myOrder{margin-bottom:40rpx;}
+.myOrder .paylist{border-top: 1px #e6e6e6 solid}
+.myOrder .paylist view{width:305rpx;text-align: center;}
+.myOrder .paylist view image{width:60rpx;height: 60rpx;display: block;margin: 20rpx auto 0 }
+.myAddress{border-bottom: 1px #e6e6e6 solid;}

@@ -1,0 +1,17 @@
+
+<!--绑定手机号内容-->
+<view class="phone-login">
+  <view class="phone-item">
+    <input type="number" name="user_phone" bindinput="onBindInputPhone" id="user-phone" maxlength="11" placeholder="请输入手机号码" />
+  </view>
+  <view class="get-code">
+    <button type="default" id="get-code" disabled="{{disabled}}" bindtap="getCode" class="bttn btn-get"> {{code_text}} </button>
+  </view>
+  <view class="phone-item item-code">
+    <input type="number" name="user-code" bindinput="onBindInputCode" maxlength="6" id="user-code" placeholder="请输入验证码" />
+  </view>
+  <view class="clearfix"></view>
+  <view class="form-btn mg-t-80">
+    <a class="bttn btn-refer" bindtap="bindSuccess">绑定</a> 
+  </view>
+</view>

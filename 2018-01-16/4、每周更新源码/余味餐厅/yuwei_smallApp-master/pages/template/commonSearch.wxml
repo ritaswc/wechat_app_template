@@ -1,0 +1,6 @@
+<view class="header_search" bindtap="search">
+  <view class="search">
+    <image class="search_icon" src="../image/search.png"></image>
+    请输入城市名/餐厅名/美食名搜索相关内容 
+  </view>
+</view>

@@ -1,0 +1,63 @@
+/* pages/shenghuo/AllServiceclassify/SecondaryService/SecondaryService.wxss */
+
+@import "../HeaderSection/HeaderSection.wxss";
+
+.allService-container {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.scroll-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.search-bg1 {
+  height: 55px;
+  position: relative;
+  top: 0px;
+  z-index: 1;
+  background-color: #f5f5f9;
+}
+
+.search-box {
+  height: 33px;
+  position: absolute;
+  width: 94%;
+  z-index: 2;
+  top: 10px;
+  margin: 0 3% 0 3%;
+  background-color: white;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.search-city {
+  width: 75px;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #e1e1e1;
+  margin: 6px 0 6px 5px;
+  padding-right: 5px;
+}
+
+.search-icon {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 1;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.fuwufl-item-list{
+  width: 100%;
+  border-top: solid #efefef 1px;
+  background: #ffffff;
+}

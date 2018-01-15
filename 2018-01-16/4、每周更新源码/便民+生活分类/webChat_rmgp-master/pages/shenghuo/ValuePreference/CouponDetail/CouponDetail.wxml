@@ -1,0 +1,48 @@
+<!--pages/shenghuo/ValuePreference/CouponDetail/CouponDetail.wxml-->
+<!--<text>pages/shenghuo/ValuePreference/CouponDetail/CouponDetail.wxml</text>-->
+
+<scroll-view class="scroll-container" scroll-y="true">
+
+  <view class="list-container">
+    <!--<block wx:for="{{couponDetail}}" wx:for-item="item" wx:key="key">-->
+    <view class="value-item">
+      <image class="cell-background-img" src="/images/shenghuo/lingquan/quan01.png"></image>
+      <image class="cell-left-image" src="http://m.jointem.com/{{couponDetail.topicImg}}"></image>
+      <view class="cell-center-container">
+        <view class="center-title">{{couponDetail.doorName}}</view>
+        <view class="center-title-1">{{couponDetail.money == null ? "无门槛使用" : "满" + money + "元可用" }}</view>
+        <view class="center-title-2">{{couponDetail.scName}}</view>
+      </view>
+      <view class="cell-right-container">
+        <view class="cell-right-title">¥
+          <text class="cell-right-title-1">{{couponDetail.discountMoney}}</text>
+        </view>
+      </view>
+    </view>
+    <!--</block>-->
+  </view>
+
+  <view class="spaceSeparateView"></view>
+  <view class="middle-container">
+    <view class="address-and-call">
+      <image class="ditu-img" src="/images/icon/daoh.png" data-companyInfo="{{couponDetail.companyInfo}}" bindtap="tapDitu" ></image>
+      <text class="address" data-companyInfo="{{couponDetail.companyInfo}}" bindtap="tapDitu">{{couponDetail.companyInfo.address}}</text>
+      <image class="phone" src="/images/icon/call.png" data-phone="{{couponDetail.companyInfo.phone}}" bindtap="tapPhone"></image>
+    </view>
+    <view class="coupon-statue">
+      <view class="coupon-msg">消费券信息</view>
+      <!--//status 优惠券的使用状态：0-未使用，1-已使用，2-已过期，3-已删除，4-已锁定-->
+      <view class="statue">{{couponInfo.status == 0 ? "未使用":(couponInfo.status == 1 ?"已使用":(couponInfo.status == 2 ? "已过期":(couponInfo.status == 3 ? "已删除":(couponInfo.status == 4 ? "已锁定":"" )) ) )}}</view>
+    </view>
+    <view class="qr-view-container">
+      <canvas canvas-id="qrcode" />
+    </view>
+    <text class="qr-code-text">{{"消费码: " + couponInfo.couponCode}}</text>
+  </view>
+  <view class="spaceSeparateView"></view>
+  <view class="bottom-container">
+    <view class="common-text">使用期限:{{" " + couponDetail.startTime + " —— " + couponDetail.endTime}}</view>
+    <view class="common-text">使用说明:</view>
+    <view class="common-text">{{couponDetail.explain}}</view>
+  </view>
+</scroll-view>

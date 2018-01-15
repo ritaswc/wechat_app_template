@@ -1,0 +1,58 @@
+/* pages/massage/massage.wxss */
+.massage-wrap {
+    background-color:#fff; 
+}
+.massage-wrap .wrap{
+    margin: auto;
+    width: 94%;
+}
+page{
+    background-color: #efefef;
+}
+.img1{
+    width: 35pt;
+    height: 35pt;
+}
+.massage-wrap .wrap ul .image-look{
+    width: 35pt;
+    height: 35pt;
+    position: relative;
+}
+.massage-wrap .wrap ul .image-massage{
+    width: 35pt;
+    height: 35pt;
+    position: relative;
+}
+.massage-wrap .wrap ul .massage_num{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15pt;
+    height: 15pt;
+    background-color: red;
+    text-align: center;
+    color: #fff;
+    font-size: 12pt;
+    line-height: 15pt;
+    border-radius:50px;
+    padding: 1.2pt;
+}
+.massage-wrap .wrap ul{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #e5e5e5;
+}
+.massage-wrap .wrap ul li{
+    display: flex;
+    align-items: center;
+    padding: 15rpx;
+}
+.massage-wrap .wrap ul li .last{
+    border-bottom: none;
+}
+.massage-wrap .wrap ul li text{
+    padding-left: 15rpx;
+    width: 85%;
+    line-height: 400%;
+    border-bottom: 1px solid #e5e5e5;
+}

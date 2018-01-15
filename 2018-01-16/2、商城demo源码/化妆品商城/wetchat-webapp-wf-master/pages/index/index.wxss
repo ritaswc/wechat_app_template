@@ -1,0 +1,29 @@
+swiper {
+    height:400rpx;
+}
+.product{
+    background-color: white;
+    margin: 20rpx 20rpx 15rpx;
+    -moz-box-shadow:2rpx 2rpx 5rpx #969696;
+    -webkit-box-shadow:2rpx 2rpx 5rpx #969696;
+    box-shadow:2rpx 2rpx 5rpx #969696;
+}
+.prod-content{
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt;
+    padding: 20rpx;
+}
+.pro-image {
+    width: 100%;
+    height: 350rpx;
+}
+.prod-title {
+    color: #353535;
+}
+.prod-money{
+    color: #e64340;
+}
+.slide-image{
+    width: 100%;
+}

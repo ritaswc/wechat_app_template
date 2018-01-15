@@ -1,0 +1,11 @@
+<!--我的排行榜页面-->
+<!--头像-->
+<!-- 我的排行榜-->
+<view class="ph" wx:for="{{cate_src}}" wx:for-item="item" style="">
+  <image class="ph_image" mode="{{item.mode}}" src="{{item.picture}}"></image>
+  <view>
+  <view class="section__title1">{{item.text}}</view>
+  <view class="section__title2">{{item.card}}</view>
+  </view>
+</view>
+<!-- 我的排行榜-->

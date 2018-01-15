@@ -1,0 +1,44 @@
+<!--pages/my/my.wxml-->
+<view class="page">
+	<view class="header">
+		<view class="userInfo">
+			<image src="{{userInfo.avatarUrl}}" class="userinfo-avatar" background-size="cover" />
+			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+		</view>
+	</view>
+
+	<view class="content">
+		<view class="all-order" bindtap="goAllOrder">
+			<view>
+				<image src="http://oalppxaqn.bkt.clouddn.com/%E5%85%A8%E9%83%A8%E8%AE%A2%E5%8D%95.png" />
+				<text class="all-order-word">全部订单</text>
+			</view>
+			<view>
+				<text class="look-all-order">查看全部订单</text>
+				<text class="corner">></text>	
+			</view>
+			
+		</view>
+		
+		<view class="line"></view>
+
+		<view class="wait-info">
+			<block wx:for="{{array}}">
+				<view class="wait-info-cell">
+					<image src="{{item.address}}"></image>
+					<view>{{item.id}}</view>
+				</view>
+			</block>	
+		</view>
+
+		<view class="product-address" bindtap="goAddressManager">
+			<view class="address-cell">
+				<image src="http://o7qokh4e6.bkt.clouddn.com/%E5%9C%B0%E5%9D%80.png" />
+				<text>地址管理</text>
+			</view>
+			<text class="corner-address">></text>
+		</view>
+
+	</view>
+
+</view>

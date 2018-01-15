@@ -1,0 +1,20 @@
+<!--pages/shenghuo/miaosha/miaoshaCell/miaoshaCell.wxml-->
+<!--<text>pages/shenghuo/miaosha/miaoshaCell/miaoshaCell.wxml</text>-->
+
+<template name="miaoshaCell">
+
+  <view class="miaoshaCell-container">
+    <image class="miaoshaCell-topView-left-image" src="http://m.jointem.com/{{prdImg}}"></image>
+    <view class="miaoshaCell-topView-right-content">
+      <text class="miaoshaCell-title">{{prdName}}</text>
+
+      <view class="miaoshaCell-bottomView">
+        <text class="miaoshaCell-dIPriceTitle">¥{{dIPrice}}</text>
+        <text class="miaoshaCell-costPriceTitle">¥{{costPrice}}</text>
+        <button class="miaoshaCell-rightBtn">马上抢</button>
+      </view>
+      
+    </view>
+  </view>
+
+</template>

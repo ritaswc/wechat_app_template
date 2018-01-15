@@ -1,0 +1,11 @@
+<template name='star'>
+  <view class='star-rating'>
+    <block wx:for="{{[1,2,3,4,5]}}" wx:for-item='i' wx:key='*this'>
+    <view class='star'>
+    <view class="{{i <= count ? 'select' : 'unselect'}}"></view>
+    <view class='half' wx:if='{{ i > count && i - 1 < count }}'></view>
+      <image src="../../images/star.png"></image>
+      </view>
+    </block>
+  </view>
+</template>

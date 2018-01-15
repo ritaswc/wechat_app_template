@@ -1,0 +1,10 @@
+<view class="content">
+  <text class="content-title">请仔细检查泊车人的详细信息，包括照片驾龄、驾照、体检证明等重要信息，无误后请让该泊车人告知您他的身份验证码，将身份验证码输入到下方，点击“开始验证”通过后方可将车钥匙交给他进行泊车。</text>
+  <view class="row content-vali">
+    <view class="content-vali-text">验证码</view>
+    <view>
+      <input type="digit" maxlength="6" bindinput="bindKeyInput" />
+    </view>
+  </view>
+  <view class="content-button" bindtap="verifyCode">开始验证</view>
+</view>

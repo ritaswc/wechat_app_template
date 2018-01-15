@@ -1,0 +1,35 @@
+<import src="/component/quantity/index.wxml" />
+<view class="container">
+  <view class="header"></view>
+  <view class="weui-panel weui-panel_access">
+    <view url="" class="weui-media-box weui-media-box_appmsg" wx:for="{{cart_list}}" wx:for-item="product" wx:key="{{product.product_id}}">
+      <view class="cart-list-checkbox" bindtap="handleSingle" id="{{product.product_id}}">
+        <icon class="checkbox" type="{{product.is_check ? 'success' : 'circle'}}" color="{{product.is_check ? '#c81623' : '#dddddd'}}" />
+      </view>
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg cart-list-image">
+        <image class="weui-media-box__thumb image" src="{{product.product_image}}" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">{{product.product_name}}</view>
+        <view style="height: 33px;">
+          <template is="zan-quantity" data="{{ ...product.product_quantity, componentId: product.product_id }}" />
+        </view>
+      </view>
+      <view class="weui-cell__ft">￥{{product.product_total_price}}</view>
+    </view>
+  </view>
+  <view style="height: 50px;"></view>
+  <view class="footer" wx:if="{{cart_list.length > 0}}">
+    <view class="footer-total">
+      <view class="footer-total-checkbox" bindtap="handleAll">
+        <icon class="checkbox" type="{{is_select ? 'success' : 'circle'}}" color="{{is_select ? '#c81623' : '#dddddd'}}" />
+      </view>
+      <view class="footer-total-text">
+        总计: ￥{{cart_total}}
+      </view>
+    </view>
+    <view class="footer-balance" style="background-color: {{is_select ? color : '#dddddd;'}}" bindtap="handleBalance">
+      去结算
+    </view>
+  </view>
+</view>

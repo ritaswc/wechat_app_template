@@ -1,0 +1,205 @@
+/* pages/auxStore/auxGoods/auxGoods.wxss */
+.nav{
+    position: fixed;
+    top:0;
+    width: 100%;
+    background-color: #00acff;
+    z-index: 10001;
+}
+
+.nav_item{
+    white-space: nowrap;
+    height: 51px;
+}
+
+.nav_city{
+    width: 25%;
+    display: inline-block;
+    position: relative;
+}
+
+.nav_search{
+    width: 55%;
+    display: inline-block;
+    position: relative;
+}
+
+.nav_message{
+    width: 20%;
+    display: inline-block;
+    position: relative;
+}
+
+.textCity{
+    color: #FFFFFF;
+    position: absolute;
+    top:-34px;
+    left: 20px;
+}
+
+.imgCity{
+    width: 16px;
+    height: 12px;
+    position: absolute;
+    top:-28px;
+    left: 70px;
+}
+
+.searchBtn{
+    white-space: nowrap;
+    background-color: #FFFFFF;
+}
+
+.textSearch{
+    margin-left: -3.8rem;
+    font-size: 19px;
+}
+
+.iconSearch{
+    margin-bottom: -30px;
+    position: absolute;
+    left: 10px;
+    top:10px;
+}
+
+.textMessage{
+    color:#FFFFFF;
+    position: absolute;
+    top:-34px;
+    right: 15px;
+}
+
+.content{
+    margin-top: 60px;
+    flex-direction: row;
+    display: flex;
+}
+
+.cataList{
+    width: 5rem;
+    background-color: #FFFFFF;
+    position: fixed;
+    left: 0;
+    top:60px;
+    z-index: 101;
+}
+
+.list_item{
+    border: 1px solid #d1d1d1; 
+    height: 3.8rem;
+    text-align: center;
+    margin-top: -1px;
+}
+
+.list_item.selected{
+    background-color: #00acff;
+}
+
+.imgCata{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.textCata{
+    display: block;
+    margin-top: 5px;
+    font-size: 23px;
+}
+
+.brandList{
+  position: relative;
+  left: 5.5rem;
+  z-index: 11;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 90%;
+}
+
+.brandItems{
+    background-color: #FFF7EA;
+    border:1px solid #aaaaaa;
+    text-align: center;
+    width:32%;
+    /*height: 4.5rem;*/
+    /*line-height: 4.5rem;*/
+    padding: 1.4rem 0.5rem;
+    margin-bottom: 0.3rem;
+    margin-right: 0.3rem;
+}
+
+.textBrand{
+    color:#424242;
+}
+
+
+/*弹出层*/
+.serachEvent{
+    position: fixed;
+    left: 0;
+    top:0;
+    background-color: #000000;
+    z-index:100001;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+
+.my_search{
+    position: fixed;
+    background-color: #00acff;
+    left: 0;
+    top:0;
+    height: 50px;
+    width: 100%;
+    z-index: 100003;
+    white-space: nowrap;
+}
+
+.my_return{
+    display: inline-block;
+    width: 18%;
+}
+
+.textReturn{
+    color:#FFFFFF;
+    position: absolute;
+    left: 5%;
+    top:12px;
+}
+
+.search_item{
+    display: inline-block; 
+    width: 64%;
+    position: relative;
+}
+
+.my_input{
+    background-color: #FFFFFF;
+    height: 45px;
+    border-radius: 5px;
+    padding-left: 42px;
+}
+
+.myIcon{
+    position: absolute;
+    top:12px;
+    left: 12px;
+}
+
+.search{
+    display: inline-block;
+    width: 18%;
+    
+}
+
+.search_cancel{
+    color:#FFFFFF;
+    position: absolute;
+    top: 12px;
+    right: 5%;
+}
+

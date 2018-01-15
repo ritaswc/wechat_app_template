@@ -1,0 +1,26 @@
+<!--会员中心页面-->
+<!--首页图片-->
+<image src="{{header_src}}" style="width:370px;height:145px; padding-top:15px;"></image>
+<!--两大分类-->
+<view class="body">
+  <view class="nav bc_white">
+    <view class="{{selected?'red':'default'}}" bindtap="selected">会员中心</view>
+    <view class="{{selected1?'red':'default'}}" bindtap="selected1">分销中心</view>
+  </view>
+  <!--<view class="{{selected?'show':'hidden'}}">for system</view>
+  <view class="{{selected1?'show':'hidden'}}">for activity</view>-->
+</view>
+<!-- 五个分类状态-->
+<view class="section__ctn" wx:for="{{cate_src}}" wx:for-item="item" style=" float:left; padding-left:18px; padding-top:15px;">
+  <image style="width: 46px; height: 46px; float:left;" mode="{{item.mode}}" src="{{item.picture}}"></image>
+  <view class="section__title" style="font-size:15px;">{{item.text}}</view>
+</view>
+<!-- 五个分类状态-->
+<!-- 八个小模块-->
+<view class="section__ctn1" wx:for="{{cate_src1}}" wx:for-item="item" style=" float:left; padding-left:18px; padding-top:15px;">
+ <navigator url="{{item.url}}">
+  <image style="width: 70px; height: 55px; float:left;" mode="{{item.mode}}" src="{{item.picture}}"></image>
+  </navigator>
+  <view class="section__title" style="font-size:12px;">{{item.text}}</view>
+</view>
+<!-- 八个小模块-->

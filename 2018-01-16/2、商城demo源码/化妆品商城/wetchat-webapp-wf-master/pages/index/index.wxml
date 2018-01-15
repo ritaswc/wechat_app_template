@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<swiper indicator-dots="{{indicatorDots}}"  
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
+      <block wx:for="{{imgUrls}}" >  
+        <swiper-item >  
+           <navigator url="{{item.link}}"  hover-class="navigator-hover">  
+            <image  src="{{item.url}}" class="slide-image" mode="widthFix"   />  
+           </navigator>   
+        </swiper-item>  
+      </block>  
+</swiper>
+<view class="container">
+    <view wx:for="{{proLst}}" class="product" >
+        <navigator url="{{item.link}}">
+            <image  src="{{item.url}}" class="pro-image" mode="widthFix" />
+            <view class="prod-content">
+                <text class="prod-title">{{item.text}}</text>
+                <text class="prod-money">{{item.title}}</text>
+            </view>
+        </navigator>
+    </view>
+</view>
+ <!--<loading hidden="{{loadingHidden}}">
+        加载中...
+    </loading>-->

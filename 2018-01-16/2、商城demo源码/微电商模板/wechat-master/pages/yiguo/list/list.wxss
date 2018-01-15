@@ -1,0 +1,66 @@
+page{
+  height: 100%;
+}
+.list-tab{
+  height: 106rpx;
+  box-sizing: border-box;
+  padding: 5px 10px;
+}
+.list-tab ul{
+  display: flex;
+  height: 72rpx;
+  border: 1px solid #008842;
+  border-radius:12rpx;
+}
+.list-tab li{
+  flex: 1;
+  display: flex;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  color: #008842;
+}
+.list-tab .active{
+  background: #008842;
+  color: #ffffff;
+}
+/*list-box*/
+.list-view{
+  border-top: 1px solid #cccccc;
+}
+.list-box{
+  display: flex;
+  padding: 5px 10px;
+  border-bottom: 1px solid #aaaaaa;
+}
+.list-images image{
+  width: 170rpx;
+  height: 170rpx;
+}
+.list-text {
+  font-size: 14px;
+  color: #666666;
+  background: url(/images/icons/btn-tabs_09.png) no-repeat right center;
+  background-size:60rpx;
+}
+.list-text .name{
+  display: block;
+  height: 100rpx;
+  width: 500rpx;
+  padding: 5px;
+}
+.list-text .txt{
+  padding: 5px;
+  color:#aaaaaa;
+
+}
+.list-text .price{
+  font-size: 18px;
+  color: red;
+}
+.swiper-box{
+  height: 100%;
+}
+.scroll-box{
+  height: 100%;
+}

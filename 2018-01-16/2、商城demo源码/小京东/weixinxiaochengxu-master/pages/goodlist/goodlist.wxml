@@ -1,0 +1,36 @@
+<import src="../common/nav.wxml" />
+<loading hidden="{{loadingHidden}}">正在加载...</loading>
+
+<!-- 整体 -->
+<view class="containsView">
+
+  <!-- 顶部导航栏 -->
+  <view class="headerView">
+    <block wx:for="{{navList}}" wx:key="">
+      <view catchtap="onTapTag" data-index="{{index}}" id="{{item.id}}" class="top-bar-item {{index == activeIndex ? 'top-bar-active' : ''}}">
+        {{item.title}}
+      </view>
+    </block>
+  </view>
+
+  <!--scrollview-->
+  <scroll-view scroll-y="true" class="scrollview-list" bindscrolltolower="bindscrolltolower" style="height:750px">
+    <block wx:for-items="{{list}}" wx:key="">
+
+      <!-- item-->
+      <view data-specId="{{item.specId}}" catchtap="clickitem" class="topContainsView">
+        <image class="goodsImage" src="http://testbbcimage.leimingtech.com{{item.goodsImage}}" mode='scaleToFill' />
+        <view class="topRightView">
+          <text class="topRightName">{{item.goodsName}} </text>
+          <text class="topRightTime">￥{{item.goodsPrice}}</text>
+
+          <!--销量和评价-->
+          <view class="saleAndcom">
+            <text class="saletext">{{item.storeName}}</text>
+            <text class="saleRightText">{{item.commentnum}}条评价 销量{{item.salenum}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

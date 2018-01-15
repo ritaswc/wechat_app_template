@@ -1,0 +1,8 @@
+<template name="nav">
+444444444
+    <view class="nava">
+      <navigator url="navigate?title=navigate" hover-class="navigator-hover">跳转到新页面</navigator>
+      <navigator url="redirect?title=redirect" open-type="redirect" hover-class="other-navigator-hover">在当前页打开</navigator>
+      <navigator url="index" open-type="switchTab" hover-class="other-navigator-hover">切换 Tab</navigator>
+    </view>
+</template>

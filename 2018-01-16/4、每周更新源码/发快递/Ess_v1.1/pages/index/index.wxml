@@ -1,0 +1,19 @@
+<image src="{{bannerImg}}" mode ='widthFix' class="bannerImg"></image>
+<view class="form">
+    <view class="li" style="border-color:{{name_err}}">
+        <image class="ico" mode ='widthFix' src="{{senManImg}}" ></image>
+        <input class="input"  placeholder="请输入姓名" bindinput="nameChange" value="{{val}}" />
+    </view>
+    <view class="li" style="border-color:{{tel_err}}">
+        <image class="ico" mode ='widthFix' src="{{phoneImg}}"></image>
+        <input class="input" style="color:{{ipt_tel}}" placeholder="请输入手机号码" type="number" bindinput="telChange" value="{{val}}" />
+    </view>
+    <view class="li" style="border-color:{{adds_err}}">
+        <image class="ico" mode ='widthFix' src="{{addsImg}}"></image>
+        <input class="input"   placeholder="请填写所在的详细地址及街道" bindinput="addsChange" value="{{val}}"/>
+    </view>
+</view>
+
+<view class="err_msg">{{err_msg}}</view>
+
+<button class="button" bindtap="doRequest">发快递</button>

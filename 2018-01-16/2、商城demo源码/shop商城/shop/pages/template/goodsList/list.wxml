@@ -1,0 +1,16 @@
+<template name="goodsList">
+    <view class="goods_list">
+        <block wx:for-items="{{brand_list}}">
+            <view class="list-goods" data-id="{{item.goods_id}}" catchtap="jump_detail_page">
+                <view class="{{index % 2 == 0 ? 'odd' : 'even'}}">
+                    <view class="imgspan">
+                        <image src="{{item.goods_img}}" class="img" mode="aspectFit"></image>
+                    </view>
+                    <view class="title">{{item.goods_name}}</view>
+                    <view class="pri"><text class="price">¥{{item.goods_price}}</text><text class="del_price" wx:if="{{item.last_format_price != 0}}">¥{{item.last_format_price}}</text></view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view style="display: {{!!showEndTip ? 'block' : 'none'}}" class="end">E.N.D</view>
+</template>

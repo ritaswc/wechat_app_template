@@ -1,0 +1,65 @@
+page{
+    background-color: #fff;
+}
+
+.order-detail{
+    width:710rpx;
+    padding:0 20rpx;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.order-con{
+    width:100%;
+    display: inline-block;
+}
+
+.flow1{
+    display: inline-block;
+    margin-top:20rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.flow-icon{
+    width:14rpx;
+    height: 14rpx;
+    border-radius: 14rpx;
+    background-color: #ccc;
+    float: left;
+    margin-top:13rpx;
+    margin-right: 20rpx;
+}
+
+
+
+.flow-time{
+    float:left;
+    color:#999;
+}
+
+.flow2{
+    float: right;
+    width: 678rpx;
+    padding-bottom: 20rpx;
+    border-bottom:2rpx dashed #a1a1a1;
+    text-align:justify;
+}
+
+.flow-active .flow-icon{
+    background-color: #fe4645!important;
+}
+
+.flow-active .flow-time{
+    color:#333;
+}
+
+
+.flow-active .flow2{
+    color:#fe4645;
+}
+
+
+.order-con .order-flow:last-child .flow2{
+    border-bottom:none;
+}

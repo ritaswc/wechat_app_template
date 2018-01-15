@@ -1,0 +1,16 @@
+<!--pages/shenghuo/SelectedGoods/SelectedGoodsGridCell/SelectedGoodsGridCell.wxml-->
+<!--<text>pages/shenghuo/SelectedGoods/SelectedGoodsGridCell/SelectedGoodsGridCell.wxml</text>-->
+
+<template name="SelectedGoodsGridCell">
+  <view class="selectedGoodsGridCell-container">
+    <image class="cell-img" src="http://m.jointem.com/{{img}}"></image>
+    <view class="prdName">{{prdName}}</view>
+    <view class="list-item-price">
+      <view class="classname">¥
+        <text class="lowestPrice">{{lowestPrice}}</text>
+        <text class="price-decimal">.00</text>
+        <text class="originalPrice">¥{{originalPrice}}</text>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,55 @@
+/* pages/shopcart/shopcart.wxss */
+
+.cart-phonenum{
+  text-align: right;
+}
+
+.coupons {
+  box-sizing: border-box;
+}
+
+.user-coupons-text {
+  color: red;
+  text-align: right;
+}
+
+.cart-shop-list {
+  margin-bottom: 200rpx;
+}
+
+.cart-shop-img {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.cart-shop-title {
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.cart-shop-select-info{
+  font-size: 24rpx;
+  color: darkgray;
+}
+.cart-shop-price{
+  font-size: 24rpx;
+  color: red;
+}
+.cart-count-option{
+    font-size: 24rpx;
+    border:  darkgray solid 1rpx;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+
+}
+
+.bottom-pay {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.total-count-money {
+  padding: 20rpx;
+  background-color: #f2f2f2;
+  font-size: 30rpx;
+}

@@ -1,0 +1,11 @@
+<view class="container">
+<include src="../zdm/switch/switch.wxml"/>
+<swiper style="flex: 1;width:100%;" bindchange="onBindchange" current="{{curSelClassifyIndex}}">
+    <swiper-item>
+      1
+    </swiper-item>
+    <swiper-item>
+      2
+    </swiper-item>
+</swiper>
+</view>

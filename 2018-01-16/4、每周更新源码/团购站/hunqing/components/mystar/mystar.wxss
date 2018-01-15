@@ -1,0 +1,51 @@
+.star-rating {
+  display: inline-block;
+  position: relative;
+}
+
+.star {
+  position: relative;
+  width: 28rpx;
+  height: 28rpx;
+  display: inline-block;
+  margin-right: 4rpx;
+}
+
+.star .select {
+  background-color: #f63;
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 4rpx;
+}
+
+.star .unselect {
+  background-color: #ddd;
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 4rpx;
+}
+
+.star .half {
+  background-color: #f63;
+  width: 14rpx;
+  height: 28rpx;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top-left-radius: 4rpx;
+  border-bottom-left-radius: 4rpx;
+}
+
+.star image {
+  width: 24rpx;
+  height: 24rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -12rpx;
+  margin-top: -12rpx;
+  z-index: 2;
+  display: inline-block;
+  vertical-align: middle;
+}

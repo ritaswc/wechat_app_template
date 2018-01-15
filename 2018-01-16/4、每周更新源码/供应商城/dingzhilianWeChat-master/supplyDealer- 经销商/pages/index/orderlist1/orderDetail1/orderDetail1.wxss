@@ -1,0 +1,144 @@
+@import "wxParse/wxParse.wxss";
+
+.order-detail{
+    width:710rpx;
+    padding:0 20rpx;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.order-con{
+    width:100%;
+    display: inline-block;
+    border-bottom: 2rpx solid #e5e5e5;
+}
+
+.order-con:last-child{
+    border-bottom: none;
+}
+
+.text1{
+    color:#999;
+    height: 80rpx;
+    line-height: 80rpx;
+    float: left;
+}
+
+.text2{
+    width:540rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    float: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.text3{
+    width:540rpx;
+    line-height: 50rpx;
+    float:right;
+    margin-top:18rpx;
+}
+
+.first-text3{
+    margin-top:0;
+    margin-bottom: 20rpx;
+}
+
+.text4{
+    float: right;
+    color:#fe4645;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.table-tr{
+    width:710rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom:2rpx dashed #e5e5e5;
+    font-size:26rpx;
+}
+
+.table-tr:last-child{
+    border-bottom:none;
+}
+
+.table-td{
+    float:left;
+}
+
+.orders-image{
+    width:334rpx;
+    height: 180rpx;
+    margin:20rpx 0;
+}
+
+.flow1{
+    display: inline-block;
+    margin-top:20rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.flow-active .flow-icon{
+    background-color: #fe4645!important;
+}
+
+.flow-icon{
+    width:14rpx;
+    height: 14rpx;
+    border-radius: 14rpx;
+    background-color: #ccc;
+    float: left;
+    margin-top:13rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}
+
+.flow-time{
+    float:left;
+    color:#999;
+}
+
+.flow2{
+    float: right;
+    width: 656rpx;
+    padding-bottom: 20rpx;
+    border-bottom:2rpx dashed #a1a1a1;
+}
+
+.text-flow{
+    color:#333;
+    line-height: 40rpx;
+}
+
+.order-con .order-flow:last-child .flow2{
+    border-bottom:none;
+}
+
+.statu-amend{
+    position: fixed;
+    bottom:0;
+    left: 0;
+    width:100%;
+    height: 98rpx;
+    line-height: 98rpx;
+    background-color:#27b2eb;
+    color:#fff;
+    text-align: center;
+    font-size:32rpx;
+}
+
+.see-detail{
+    color:#27b2eb;
+    margin-left: 20rpx;
+}
+
+.see-icon{
+    width:12rpx;
+    height: 22rpx;
+    margin-left: 10rpx;
+}

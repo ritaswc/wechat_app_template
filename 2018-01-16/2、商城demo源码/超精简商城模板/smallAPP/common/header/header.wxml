@@ -1,0 +1,10 @@
+<!--公共header模块-->
+<!--header本来想做成京东似得滚动背景色渐变，但微信的scroll事件必须绑定到scroll-view上，且必须指定高度-->
+<!--暂时没有去实现-->
+<view class="header" style="background-color:rgba(255,131,71,1)">
+    <view class="main" bindtap="jumpToSearch">
+        <view class="iconf i-search" />
+        <input class="input" disabled="true" placeholder="请输入您要搜索的商品" type="search" placeholder-class="place-holder" />
+        <view class="iconf i-scan" />
+    </view>
+</view>

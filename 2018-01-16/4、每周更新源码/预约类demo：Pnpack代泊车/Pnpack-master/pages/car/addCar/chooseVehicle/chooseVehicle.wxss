@@ -1,0 +1,23 @@
+
+.title {
+  margin: 50rpx 85rpx;
+}
+
+.chooseProvince {
+  color: #00a598;
+  margin-right: 20rpx;
+}
+
+.carVehicle {
+  margin: 0 85rpx 30rpx;
+}
+
+radio-group {
+  margin: 50rpx 85rpx;
+  width:536rpx;
+
+}
+
+radio-group radio {
+  margin: 25rpx 10rpx;
+}

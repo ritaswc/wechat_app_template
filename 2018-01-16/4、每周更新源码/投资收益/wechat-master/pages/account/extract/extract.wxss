@@ -1,0 +1,12 @@
+.mt20 {margin-top: 20rpx;}
+.extract_con {background: #fff;padding-left: 40rpx;border-bottom: 2rpx solid #ccc;border-top:2rpx solid #ccc; }
+.extract_con_list {padding: 30rpx 40rpx 30rpx 0;border-bottom: 2rpx solid #ccc;font-size: 30rpx;}
+.extract_con_list .left {display: inline-block;width: 50%;}
+.extract_con_list .right {display: inline-block;width: 50%;text-align: right;}
+.left_text text {vertical-align:sub;}
+.left_text input {width: 50%;float: right;display: inline-block;border: 2rpx solid #ccc;border-radius: 10rpx;font-size: 24rpx;padding: 0 10rpx;}
+.border_none {border-bottom: none;}
+.error {color: #ff5304;text-align: center;font-size: 26rpx;margin-top: 20rpx;display: none;}
+.extract_btn {padding:60rpx 40rpx 30rpx 40rpx;}
+.extract_btn button {background: #ff5304;}
+.notice {font-size: 26rpx;color: #ff5304;padding: 0 40rpx;line-height: 1.4em;}

@@ -1,0 +1,21 @@
+<!--pages/collect/collect.wxml-->
+<view class="collect_wrap">
+    <block wx:for="{{collect}}">
+        <view bindtap="goZhiweiList" class="c_box" data-job_id="{{item.job_id}}" data-company_id="{{item.company_id}}">
+            <view class="img_box">
+                <image wx:if="{{item.is_stop}}" class="img1" src="../deliver/image/jieshu.png"></image>
+                <view class="name">{{item.job_name}}</view>
+            </view>
+            <view class="companyname">{{item.company_name}}</view>
+            <view class="bottom">
+                <view class="left">{{item.job_area}}</view>
+                <view class="right"><text>{{item.favorite_date}}</text>收藏</view>
+            </view>
+        </view>
+    </block>
+</view>
+<!--没有数据-->
+    <view wx:if="{{nodelLIst}}" class="no_data">
+        <image class="img4" src="../deliver/image/deliver_01.png"></image>
+        <text>快去投递简历吧,获取更多机会!</text>
+    </view>

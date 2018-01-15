@@ -1,0 +1,129 @@
+.hide {
+    display: none;
+}
+.orders-wrap {
+    font-size: 28.12rpx;
+    height: 100%;
+}
+.orders {
+    height: 100%;
+}
+
+.nav-header {
+    font-size: 28.12rpx;
+    display: -webkit-box;
+    text-align: center;
+    background: #fff;
+    padding: 0 16.41rpx;
+    height: 100.77rpx;
+    line-height: 100.77rpx;
+}
+.nav-cell {
+    -webkit-box-flex: 1;
+}
+.nav-cell.active {
+    color: #ff4b2d;
+    border-bottom: #ff4b2d 4.69rpx solid;
+}
+
+.order-cell {
+    margin-top: 23.44rpx;
+    background: #fff;
+    padding: 0 16.41rpx;
+    overflow: hidden;
+}
+.cell-status {
+    text-align: right;
+    padding: 23.44rpx 18.74rpx;
+    color: #ff2d4b;
+}
+.cell-item {
+    padding-bottom: 35.15rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    height:175.77rpx;
+}
+.item-content {
+    margin-left: 212.35rpx;
+    margin-right: 17.84rpx;
+    height: 175.77rpx;
+    position: relative;
+}
+.content-name {
+    font-size: 23.44rpx;
+    line-height: 32.81rpx;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.content-attr {
+    margin-top: 11.72rpx;
+    font-size: 23.44rpx;
+    color: #a0a0a0;
+    line-height: 32.81rpx;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.content-count {
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+}
+.content-amount {
+    float: right;
+}
+.cell-count {
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    overflow: hidden;
+    padding: 23.44rpx 18.74rpx;
+}
+.count-amount {
+    float: left;
+}
+.count-carriage {
+    float: right;
+}
+.count-price {
+    float: right;
+    margin-left: 28.12rpx;
+    color: #ff2b4d;
+}
+.count-price::before {
+    content: "实付：";
+    color: #000;
+}
+.cell-btn {
+    padding: 17.58rpx 18.74rpx;
+    overflow: hidden;
+}
+
+.empty {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 28.12rpx;
+    color: #a0a0a0;
+    line-height: 48rpx;
+}
+.empty-img {
+    width: 187.49rpx;
+    height: 187.49rpx;
+    margin-top: 164.05rpx;
+    margin-bottom: 23.44rpx;
+}
+.btn-to-home {
+    margin-top: 35.15rpx;
+    width: 337.48rpx;
+    height: 79.68rpx;
+    line-height: 79.68rpx;
+    border-radius: 11.72rpx;
+    display: inline-block;
+}

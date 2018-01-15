@@ -1,0 +1,26 @@
+
+<!--index.wxml-->
+<view class="container">
+
+  <!--<view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>-->
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+    用户名：
+    <input type="text" placeholder="请输入手机号码" bindinput="userNameInput"/>
+    密码：
+    <input type="text" bindinput="userPasswordInput" password="true" placeholder="请输入密码"/>
+    <button bindtap="logIn">登录</button>
+    <navigator url="register?title=register" hover-class="register-hover">
+      <button>注册</button>
+    </navigator>
+  </view>
+  <view>
+    <template name="body">
+      <text>{{responseData}}</text>
+    </template>
+    <text>{{responseData}}</text>
+  </view>
+</view>

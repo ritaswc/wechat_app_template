@@ -1,0 +1,27 @@
+<view class="weui-cells weui-cells_form">
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <view class="weui-label">标题</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入帖子标题" bindblur="feedBackTitle" bindinput="feedBackTitle" bindconfirm="feedBackTitle" />
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <view class="weui-label">内容</view>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea auto-height="true" class="weui-input" placeholder="问题内容" bindblur="feedBackInput" bindinput="feedBackInput" bindconfirm="feedBackInput" />
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <button  class="weui-btn weui-btn_mini weui-btn_primary" bindtap="submit">提交</button>
+    </view>
+  </view>
+  
+</view>
+<view class="weui-footer">2017 © NUTZ.CN</view>

@@ -1,0 +1,7 @@
+<view class="cart-box">
+    <view class="cart-img"><image src="http://img02.yiguo.com/e/web/150930/00981/161016/cart-none.png"></image></view>
+    <view class="cart-emt">购物车还是空的...</view>
+    <view class="cart-btn"><button catchtap="cart" type="primary" data-id="0101001" bindtap="lookdetail"> 去购物 </button></view>    
+
+    
+</view>

@@ -1,0 +1,60 @@
+.top_line{
+    height: 1px;
+    background-color: #efeff4;
+}
+.add_item{
+    padding: 10px;
+    margin: 0px 10px 0px 10px;
+    border-bottom: 1px solid silver;
+    border-bottom-color: #efeff4;
+    display: flex;
+    font-size: 15px;
+}
+.item_text{
+    padding-top: 3px;
+}
+.item_input{
+    padding-left: 30px;
+    width: 70%;
+}
+.item_input_1{
+    padding-left: 15px;
+    width: 70%;
+}
+.item_picker{
+    width: 100%;
+}
+.item_picker1{
+    width: 85%;
+}
+.picker{
+    padding-top: 1px;
+    padding-left: 61px;
+    color: lightskyblue;
+}
+.picker_1{
+    padding-top: 1px;
+    padding-left: 39px;
+    color: lightskyblue;
+}
+.add_address{
+    display: inline-block;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    right: 0;
+}
+.add{
+    width: 90%;
+    height: 44px;
+    background-color: #dd3a40;
+    color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 15px;
+    margin-left: 5%;
+}

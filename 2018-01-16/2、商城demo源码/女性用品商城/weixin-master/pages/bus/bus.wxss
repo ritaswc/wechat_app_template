@@ -1,0 +1,121 @@
+/**index.wxss**/
+.contaniner {
+    overflow: hidden;
+    width: 100%;
+}
+
+.fixed-contb {
+    margin-bottom: 20%;
+}
+
+ .shopcar {
+    background-color: #fff;
+    box-shadow: 0 2px 2px #d7d7d7;
+    margin: 2% 0;
+    overflow: hidden;
+    padding: 4% 0;
+    width: 100%;
+}
+
+.del{
+   height: 20px;
+   width: 20px;
+}
+
+.label {
+    -moz-user-select: none;
+    background: rgba(0, 0, 0, 0) url("../images/check.png") no-repeat scroll 50% center / 60% auto;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.img-one{
+  margin-top: 40px;
+  margin-left: 5px;
+  height: 20px;
+  width:20px;
+}
+
+.figure {
+    float: left;
+    height: 10em;
+    overflow: hidden;
+    width: 30%;
+}
+
+.figure image {
+    width: 100px;
+    height:100px;
+    margin-left: 30px;
+}
+
+.dl {
+    float: left;
+    height: 5em;
+    margin: 0 3%;
+    overflow: hidden;
+    position: relative;
+    width: 60%;
+}
+
+.dl view {
+    color: #999;
+    font-size: 0.8em;
+}
+
+.add {
+    bottom: 0;
+    display: table;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 46%;
+    padding-top: 20px;
+}
+
+.h3 {
+    bottom: 20%;
+    color: red;
+    font-size: 1.9em;
+    font-weight: normal;
+    position: absolute;
+    right: 3%;
+    
+}
+
+.small {
+    bottom: 0;
+    display: block;
+    position: absolute;
+    right: 3%;
+    width: 10%;
+}
+.size{
+    padding-bottom: 20px;
+}
+.detail{
+    padding-bottom: 30px;
+}
+.add{
+   margin-top:50px; 
+    }
+.add input{
+    
+    border: 1px solid #c8c8c8;
+    color: #666;
+    display: table-cell;
+    font-size: 1.25em;
+    margin-left: -1px;
+    padding: 10% 0;
+    text-align: center;
+    width: 100%;
+}
+.add text{
+    border: 1px solid #c8c8c8;
+    display: table-cell;
+    padding: 1% 10%;
+    width: 50%;
+}

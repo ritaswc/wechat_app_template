@@ -1,0 +1,3 @@
+<view>{{text}}</view>
+<view>{{shu}}</view>
+<view>{{hh}}</view>

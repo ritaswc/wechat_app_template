@@ -1,0 +1,15 @@
+/* pages/tag/tag.wxss */
+
+.tag-list-view {
+  color: #333;
+  display: inline-table;
+}
+
+.tag-list-text {
+  background-color: #f8f8f8;
+  border: 2rpx solid #ddd;
+  padding: 16rpx 28rpx;
+  margin: 0 30rpx 30rpx 0;
+  border-radius: 10rpx;
+  display: inline-table;
+}

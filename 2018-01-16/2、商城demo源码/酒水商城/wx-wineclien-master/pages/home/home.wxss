@@ -1,0 +1,152 @@
+page{
+    height: 100%
+}
+.content{
+    width: 100%;
+    height: 100%;
+}
+/*背景滚动试图*/
+.scroll-content{
+    background-color: #F5F5F5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+/*轮播图*/
+.scroll-image{
+    width: 100%;
+}
+/*轮播图 item*/
+.scroll-image-item{
+    width:100%;
+    height: 100%;
+    ime-mode: aspectFit;
+}
+/*icon 背景图*/
+.icon-back-style{
+    width: 100%;
+    height: 200px;
+}
+/*一个icon背景*/
+.one_icon_back_view{
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+/*icon样式*/
+.icon_size{
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:8px; 
+}
+/*icon的标题*/
+.icon_title{
+    font-size: 14px;
+    text-align: center;
+    margin-top: 8px;
+    display: block;
+    width: 100%;
+}
+.icon_back_size{
+    width: 100%;
+    height: 50%;
+}
+
+
+/*热卖商品背景*/
+.host_good_back{
+    width: 100%;
+    background-color: white;
+    position: relative
+}
+/*热卖商品左侧右侧背景*/
+.host_good_left_right_back{
+    float: left;
+    position: relative;
+    overflow: hidden
+}
+/*热卖商品主图*/
+.host_good_main_image{
+    text-align: center;
+}
+/*商品标题*/
+.host_good_title{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    height: 38px;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;
+}
+/*商品tags*/
+.host_good_tags{
+    background-color: red;
+    font-size: 10px;
+    color: white;
+    border-radius: 3px;
+    margin-left: 3px;
+    line-height: 10px;
+    float: left;
+}
+/*商品tags背景*/
+.host_tags_back{
+    width:90%;
+    height:20px;
+    display:block;
+    margin-right:auto;
+    margin-left:auto;
+    padding-top:5px;
+}
+/*价钱*/
+.host_price{
+    font-size: 16px;
+    color: red;
+    margin-top: 10px;
+    margin-left: 5%;
+}
+/*商品市场价*/
+.host_mark_price{
+    font-size: 13px;
+    color: #333333;
+    margin-top: 10px;
+    margin-left: 3px;
+    text-decoration:line-through;
+}
+/*加号*/
+.add_image_style{
+    width:30px;
+    height:30px;
+    position:relative;
+    top:-10px;
+    right:10px;
+    float:right;
+}
+/*减号*/
+.reduce_image_style{
+    width:30px;
+    height:30px;
+    position:relative;
+    top:-10px;
+    right:10px;
+    float:right;
+}
+/*购买商品数量*/
+.buy_good_number{
+    height:20px;
+    position:relative;
+    top:-3px;
+    right:10px;
+    float:right;
+    font-size:16px;
+    margin-right:3px;
+    margin-left:3px;
+}

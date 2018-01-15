@@ -1,0 +1,4 @@
+<!--<include src='../../../components/nav'/>-->
+
+<import src="../navbar/navbar.wxml"/>
+<template is="navbar"/>

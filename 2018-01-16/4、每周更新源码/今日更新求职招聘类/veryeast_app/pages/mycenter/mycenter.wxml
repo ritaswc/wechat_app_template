@@ -1,0 +1,146 @@
+<!--pages/mycenter/mycenter.wxml-->
+<view class="wrap">
+    <!--用户登录-->
+    <view class="user_logon">
+        <view  bindtap="bindViewTap" class="userinfo">
+            <image bindtap="change_avatarUrl_" class="userinfo-avatar" src="{{userInfo.avatarUrl || avatar}}" background-size="cover"></image>
+            <text class="userinfo-nickname">{{user_name}}</text>
+        </view>
+    </view>
+    <view class="list_box">
+        <view class="top">
+            <!--绑定现有最佳东方账号-->
+                <navigator wx:if="{{showBading}}" url="../logs/logs">
+                    <view  class="first">
+                        <view class="my_resume left">
+                            <image src="image/dingyue_03.png"></image>
+                            绑定已有账号
+                        </view>
+                        <view class="right">
+                            <image src="image/jiantou_tou.png"></image>
+                        </view>
+                    </view>
+                </navigator>
+            <!--我的简历-->
+            <navigator url="../myresume/myresume">
+                <view class="first" style="border-bottom:none">
+                    <view class="my_resume left">
+                        <image src="image/jianli_01.png"></image>
+                        我的简历
+                    </view>
+                    <view class="right">
+                        <image src="image/jiantou_tou.png"></image>
+                    </view>
+                </view>
+            </navigator>
+            <!--刷新简历-->
+            <!--<view class="second">
+                <image class="image1" src="image/shuaxin_02.png"></image>
+                刷新简历
+            </view>-->
+        </view>
+        <view class="middle">
+            <!--职位订阅-->
+            <!--<view class="dingyue">
+                <view class="left">
+                    <image class="image1" src="image/dingyue_03.png"></image>
+                    职位订阅
+                </view>
+                <view class="right">
+                    <image class="image2" src="image/jiantou_tou.png"></image>
+                </view>
+            </view>-->
+            <!--职位收藏-->
+            <navigator url="../collect/collect">
+                <view bindtap="collect" class="dingyue" style="border-bottom:none">
+                    <view class="left">
+                        <image class="image1" src="image/shouchang_04.png"></image>
+                        职位收藏
+                    </view>
+                    <view class="right">{{favorited_num}}个收藏
+                        <image class="image2" src="image/jiantou_tou.png"></image>
+                    </view>
+                </view>
+            </navigator>
+            <!--我的关注-->
+            <!--<view class="dingyue">
+                <view class="left">
+                    <image class="image1" src="image/guanzhu_05.png"></image>
+                    我的关注
+                </view>
+                <view class="right">
+                    <image class="image2" src="image/jiantou_tou.png"></image>
+                </view>
+            </view>-->
+            <!--屏蔽的企业-->
+            <!--<view class="dingyue">
+                <view class="left" style="color:red;">
+                    <image class="image1" src="image/pingbi_06.png"></image>
+                    屏蔽的企业
+                </view>
+                <view class="right">
+                    <image class="image2" src="image/jiantou_tou.png"></image>
+                </view>
+            </view>-->
+            <!--个人增值服务-->
+            <!--<view class="dingyue none_bottom" style="border-bottom:none;">
+                <view class="left">
+                    <image class="image1" src="image/zenzhi_07.png"></image>
+                    个人增值服务
+                </view>
+                <view class="right">
+                    <image class="image2" src="image/jiantou_tou.png"></image>
+                </view>
+            </view>-->
+        </view>
+        
+        <view class="middle bottom">
+            <!--设置-->
+            <!--<navigator url="../seeting/seeting">
+                <view class="dingyue none_bottom">
+                    <view class="left">
+                        <image class="image1" src="image/shezhi_08.png"></image>
+                        设置
+                    </view>
+                    <view class="right">
+                        <image class="image2" src="image/jiantou_tou.png"></image>
+                    </view>
+                </view>
+            </navigator>-->
+             <!--意见反馈-->
+             <navigator url="../opinion/opinion">
+                <view class="dingyue none_bottom" >
+                    <view class="left">
+                        <image class="image1" src="image/yijina_09.png"></image>
+                        意见反馈
+                    </view>
+                    <view class="right">
+                        <image class="image2" src="image/jiantou_tou.png"></image>
+                    </view>
+                </view>
+             </navigator>
+             <!--关于我们-->
+            <navigator url="../aboutous/aboutous">
+                <view class="dingyue none_bottom" style="border-bottom:none">
+                    <view class="left">
+                        <image class="image1" src="image/more_10.png"></image>
+                        关于我们
+                    </view>
+                    <view class="right">
+                        <image class="image2" src="image/jiantou_tou.png"></image>
+                    </view>
+                </view>
+            </navigator>
+            <!--更多-->
+            <!--<view bindtap="more" class="dingyue none_bottom"  style="border-bottom:none;">
+                <view class="left">
+                    <image class="image1" src="image/more_10.png"></image>
+                    更多
+                </view>
+                <view class="right">
+                    <image class="image2" src="image/jiantou_tou.png"></image>
+                </view>
+            </view>-->
+        </view>
+    </view>
+</view>

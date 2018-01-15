@@ -1,0 +1,36 @@
+<view class="feedback-page">
+    <view>
+        <view>
+            <view id="feedback">
+                <view class="feedback-cell feedback-cell-system">
+                    <image ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHV8AAB1fAThpIDAAAACxSURBVGhD7dKxDcAgFMTQkP1HTUE2iJjhFdGXTO8T2Kxnv9fkc0++/Ll7D/i7YAUqgAb6QiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgQqgQMYrwApxoAIokPEKsEIcqAAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAfGF/gAZn4DTUiZc3IAAAAASUVORK5CYII=" alt="" class="avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHV8AAB1fAThpIDAAAACxSURBVGhD7dKxDcAgFMTQkP1HTUE2iJjhFdGXTO8T2Kxnv9fkc0++/Ll7D/i7YAUqgAb6QiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgQqgQMYrwApxoAIokPEKsEIcqAAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAfGF/gAZn4DTUiZc3IAAAAASUVORK5CYII="></image>
+                    <view class="bubble">你好，有什么需要帮助？<span class="wedge"></span></view>
+                </view>
+                <view class="feedback-cell feedback-cell-user">
+                    <image ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHV8AAB1fAThpIDAAAACxSURBVGhD7dKxDcAgFMTQkP1HTUE2iJjhFdGXTO8T2Kxnv9fkc0++/Ll7D/i7YAUqgAb6QiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgQqgQMYrwApxoAIokPEKsEIcqAAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAfGF/gAZn4DTUiZc3IAAAAASUVORK5CYII=" alt="" class="avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHV8AAB1fAThpIDAAAACxSURBVGhD7dKxDcAgFMTQkP1HTUE2iJjhFdGXTO8T2Kxnv9fkc0++/Ll7D/i7YAUqgAb6QiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgQqgQMYrwApxoAIokPEKsEIcqAAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAfGF/gAZn4DTUiZc3IAAAAASUVORK5CYII="></image>
+                    <view class="bubble">你们是不是只是从淘宝收集好吃的零食，不能直接购买的，如果需要购买会跳到淘宝去购买是吗？<span class="wedge"></span></view>
+                </view>
+                <view class="feedback-cell feedback-cell-system">
+                    <image ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHV8AAB1fAThpIDAAAACxSURBVGhD7dKxDcAgFMTQkP1HTUE2iJjhFdGXTO8T2Kxnv9fkc0++/Ll7D/i7YAUqgAb6QiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgQqgQMYrwApxoAIokPEKsEIcqAAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAfGF/gAZn4DTUiZc3IAAAAASUVORK5CYII=" alt="" class="avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHV8AAB1fAThpIDAAAACxSURBVGhD7dKxDcAgFMTQkP1HTUE2iJjhFdGXTO8T2Kxnv9fkc0++/Ll7D/i7YAUqgAb6QiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgQqgQMYrwApxoAIokPEKsEIcqAAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAfGF/gAZn4DTUiZc3IAAAAASUVORK5CYII="></image>
+                    <view class="bubble">是的，我们每天会从淘宝挑选好吃的<span class="wedge"></span></view>
+                </view>
+                <view class="feedback-cell feedback-cell-user">
+                    <image ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHV8AAB1fAThpIDAAAACxSURBVGhD7dKxDcAgFMTQkP1HTUE2iJjhFdGXTO8T2Kxnv9fkc0++/Ll7D/i7YAUqgAb6QiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgQqgQMYrwApxoAIokPEKsEIcqAAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAfGF/gAZn4DTUiZc3IAAAAASUVORK5CYII=" alt="" class="avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHV8AAB1fAThpIDAAAACxSURBVGhD7dKxDcAgFMTQkP1HTUE2iJjhFdGXTO8T2Kxnv9fkc0++/Ll7D/i7YAUqgAb6QiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgQqgQMYrwApxoAIokPEKsEIcqAAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAfGF/gAZn4DTUiZc3IAAAAASUVORK5CYII="></image>
+                    <view class="bubble">怎么注册成为会员？<span class="wedge"></span></view>
+                </view>
+                <view class="feedback-cell feedback-cell-system">
+                    <image ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHV8AAB1fAThpIDAAAACxSURBVGhD7dKxDcAgFMTQkP1HTUE2iJjhFdGXTO8T2Kxnv9fkc0++/Ll7D/i7YAUqgAb6QiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgQqgQMYrwApxoAIokPEKsEIcqAAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAfGF/gAZn4DTUiZc3IAAAAASUVORK5CYII=" alt="" class="avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHV8AAB1fAThpIDAAAACxSURBVGhD7dKxDcAgFMTQkP1HTUE2iJjhFdGXTO8T2Kxnv9fkc0++/Ll7D/i7YAUqgAb6QiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgQqgQMYrwApxoAIokPEKsEIcqAAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAfGF/gAZn4DTUiZc3IAAAAASUVORK5CYII="></image>
+                    <view class="bubble">我们现在仅支付第三方登录，如QQ登录，微博和微信登录，还不能直接注册。<span class="wedge"></span></view>
+                </view>
+                <view class="feedback-cell feedback-cell-user">
+                    <image ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHV8AAB1fAThpIDAAAACxSURBVGhD7dKxDcAgFMTQkP1HTUE2iJjhFdGXTO8T2Kxnv9fkc0++/Ll7D/i7YAUqgAb6QiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgQqgQMYrwApxoAIokPEKsEIcqAAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAfGF/gAZn4DTUiZc3IAAAAASUVORK5CYII=" alt="" class="avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHV8AAB1fAThpIDAAAACxSURBVGhD7dKxDcAgFMTQkP1HTUE2iJjhFdGXTO8T2Kxnv9fkc0++/Ll7D/i7YAUqgAb6QiiQ8QqwQhyoAApkvAKsEAcqgAIZrwArxIEKoEDGK8AKcaACKJDxCrBCHKgACmS8AqwQByqAAhmvACvEgQqgQMYrwApxoAIokPEKsEIcqAAKZLwCrBAHKoACGa8AK8SBCqBAxivACnGgAiiQ8QqwQhyoAApkvAKsEAfGF/gAZn4DTUiZc3IAAAAASUVORK5CYII="></image>
+                    <view class="bubble">好的，谢谢哈~~~~<span class="wedge"></span></view>
+                </view>
+                <view class="reply-box">
+                    <input type="text" placeholder="向果果说出您的意见" />
+                    <button class="send">发送</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

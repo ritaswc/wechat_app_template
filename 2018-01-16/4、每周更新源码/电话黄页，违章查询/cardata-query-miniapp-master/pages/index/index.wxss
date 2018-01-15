@@ -1,0 +1,76 @@
+/**index.wxss**/
+page{
+  background: #f9f9f9;
+}
+.container{
+  padding: 32rpx;
+}
+.service-title{
+  padding: 32rpx 0 0 48rpx;
+  font-size: 38rpx;
+}
+.services{
+    display: flex;
+    display: -webkit-flex;
+    box-sizing: border-box;
+}
+.services view{
+    box-sizing: border-box;
+    /*border: 1rpx solid #ccc;*/
+    flex: 1;
+    -webkit-flex: 1;
+    
+    /*background: #f1f1f1;*/
+    text-align: center;
+    padding: 32rpx 0;
+    
+}
+.services view image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.services view text{
+  display: block;
+}
+
+
+.car-list{
+  background: #fff100;
+  padding: 32rpx;
+  font-size: 40rpx;
+  line-height: 40rpx;
+  font-family: "Microsoft YaHei";
+  position: relative;
+  border-radius: 10rpx;
+  box-shadow: 0 0 20rpx rgba(255, 241, 0, .5);
+  margin: 32rpx 0;
+}
+.car-list .icon{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 32rpx;
+  top: 27rpx;
+}
+
+.button-add {
+  margin-top: 80rpx;
+  text-align: center;
+  position: relative;
+  border: 1rpx solid #eee; 
+  padding: 16rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  box-shadow: 0 0 10rpx rgba(255, 241, 0, .8);
+}
+.button-add image{
+  vertical-align: top;
+  height: 80rpx;
+  width: 80rpx;
+}
+.button-add text{
+  line-height: 80rpx;
+  vertical-align: top;
+  font-size: 40rpx;
+  margin-left: 20rpx;
+}

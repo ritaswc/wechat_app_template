@@ -1,0 +1,20 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/cardetail/cardetail",
+    "pages/queryResult/queryResult",
+    
+    
+    
+    
+    "pages/carQuery/carQuery",
+    "pages/addcar/addcar"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff100",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

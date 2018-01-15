@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
+    <block wx:for-items="{{images.data}}">
+      <swiper-item>
+            <image src="{{serverSrc+item.slide_pic}}"  class="slide-image" id="{{item.goods_id}}" bindtap="detailgoods"/>
+      </swiper-item>
+    </block> 
+</swiper>
+<view class="warp clearfix">
+    <view class="goods" wx:for="{{goods.data}}" wx:for-index="idx" >
+        <view  id="{{item.goods_id}}" bindtap="detailgoods">
+            <image src="{{serverSrc}}{{item.goods_pic}}"></image>
+            <text class="title">{{item.goods_name}}</text>
+            <text class="price">￥{{item.goods_price}}</text><span>原价：￥{{item.default_price}}</span>
+        </view>  
+    </view>
+</view>
+<view class="personal" bindtap="goPer">
+    <image src="../../image/per.png"></image>
+</view>

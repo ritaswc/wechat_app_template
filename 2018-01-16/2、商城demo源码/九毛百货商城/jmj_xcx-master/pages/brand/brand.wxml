@@ -1,0 +1,70 @@
+<import src="../../temp/nomore.wxml"/>
+<scroll-view scroll-y="{{true}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" bindscrolltolower="pullrefresh" lower-threshold="200" scroll-top="{{scrollTop}}" bindscroll="scroll">
+<view class="top">
+    <image src="{{brand.banner?brand.banner:nobanner}}" class="banner" />
+    <view class="title flexstart">
+        <view class="logo">
+            <image src="{{brand.logo}}" class="logoImg" />       
+        </view>
+        <view class="right">
+            <view class="name hidewrap">{{brand.name}}</view>
+            <view class="num flexstart">
+                <image src="{{img001}}" class="img" />
+                <view>商品<text style="color:#ff4aa0">55</text>款</view>
+            </view>
+        </view>
+    </view>
+    <view class="dis">
+        <view class="{{showState?class2:class1}}">
+        {{brand.description}}
+        </view>
+        <view class="tap" bindtap="change" wx:if="{{brand.description}}">
+            <image src="{{!showState?showAll:showHalf}}" class="tapImg"  />
+        </view>
+    </view>
+</view>
+<!--相关专辑-->
+<view class="relate">
+    <view class="title flexstart">
+       <image src="{{img001}}" class="img" />
+       <text class="text">相关专辑</text>
+    </view>
+    <scroll-view class="articleList"  scroll-x="{{true}}">
+        <navigator url="../article/article?id={{item.id}}&title={{item.title}}" wx:for="{{brand.article_list}}" wx:key="{{item.id}}">
+            <image src="{{item.image}}" class="article_img" />
+        </navigator>
+    </scroll-view>
+</view>
+<!--关联商品-->
+<view class="relate">
+    <view class="title flexstart">
+       <image src="{{img001}}" class="img" />
+       <text class="text">相关商品</text>
+    </view>
+    <view class="content">
+        <navigator url="../products/products?id={{item.id}}&title={{item.name}}" class="item flexstart" wx:for="{{goodsList}}" wx:key="{{item.id}}">
+        <view class="left flexbox">
+          <image src="{{item.img}}" />
+        </view>
+        <view class="right">
+            <view class="name hidecamp">
+            {{item.name}}
+            </view>
+            <view class="dis hidecamp">
+            {{item.description}}
+            </view>
+            <view class="price flexstart">
+                <view class="text1"><text style="font-size:13px">¥</text>{{item.sell_price}}</view>
+                <view class="text2">日本价：{{item.jp_price}}円</view>
+            </view>
+        </view>
+        </navigator>
+    </view>
+</view>
+<!--直达顶部按钮-->
+<image src="{{topImg}}" class="topImg" bindtap="toTop" wx:if="{{showBotton}}" />
+<!--没有更多组件-->
+<template is="nomore" data="{{showstate:showcat,noMore_cat:noMore_cat}}" />   
+<loading hidden="{{lodding}}">加载中...</loading>
+</scroll-view>
+

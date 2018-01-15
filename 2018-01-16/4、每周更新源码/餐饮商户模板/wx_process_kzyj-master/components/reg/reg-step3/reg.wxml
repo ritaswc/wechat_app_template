@@ -1,0 +1,42 @@
+<template name="regStep3">
+    <view class="container">
+        <view class="step-tips">
+            <image class="step-img" src="/image/merchant/reg/25jibenh.png"></image>
+            <text class="f2 c">基本信息</text>
+            <image class="step-tips-arrow" src="/image/merchant/reg/28jibenh.png"></image>
+            <image class="step-img" src="/image/merchant/reg/26jibenh.png"></image>
+            <text class="f2 c">详细信息</text>
+            <image class="step-tips-arrow" src="/image/merchant/reg/28jibeno.png"></image>
+            <image class="step-img" src="/image/merchant/reg/27jibeno.png"></image>
+            <text class="f2 c3">等待审核</text>
+        </view>
+        <view class="shop-means">
+            <view class="business-type">
+                <text class="f1 c5">营业类型</text>
+                <input placeholder-class="ph-class"  placeholder="营业类型"/>
+                <image src="/image/merchant/reg/29jiantou.png"></image>
+            </view>
+            <view class="business-time f1 c5">营业时间</view>
+            <input class="business-time-input f2" placeholder-class="ph-class" placeholder="请输入您的营业时间"/>
+            <view class="contact-way">
+                <text class="f1 c5">联系方式</text>
+                <input placeholder-class="ph-class"  placeholder="请输入有效联系方式"/>
+            </view>
+        </view>
+        <view class="merchant-pic-wrap">
+            <text class="f1 c5">商户照片</text>
+            <image class="merchant-pic" src="/image/merchant/reg/30shangc.png"></image>
+        </view>
+        <view class="merchant-introduce-briefly">
+            <text class="f1 c5">商户简介</text>
+            <textarea placeholder-class="ph-class" placeholder="介绍内容" />
+        </view>
+       
+        <view class="commonly-used-position">
+            <text class="f1 c5">常用位置</text>
+            <image src="/image/merchant/reg/29jiantou.png"></image>
+            <text class="choice-position f1 c4">请选择您的位置</text>
+        </view>
+        <button class="reg-quick bgc">下一步</button>
+    </view>
+</template>

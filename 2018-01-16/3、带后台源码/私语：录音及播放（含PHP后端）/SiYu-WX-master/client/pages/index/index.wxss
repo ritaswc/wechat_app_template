@@ -1,0 +1,109 @@
+/**index.wxss**/
+.container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.record-view {
+  text-align: center;
+  height: 500rpx;
+  background-color: #fff;
+}
+.record-status{
+  opacity: 0;
+  padding-top: 20rpx;
+  height: 80rpx;
+}
+.record-status image{
+  height: 20rpx;
+  width: 20rpx;
+}
+.record-status text{
+  color: red;
+  margin-left: 10rpx;
+  font-size: 30rpx;
+  font-family: "Microsoft YaHei";
+}
+.record-status .dot{
+  font-weight: 600;
+}
+.record-timer{
+  height: 200rpx;
+  line-height: 200rpx;
+  /*background-image: url(/images/wave.png);*/
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.record-timer .duration{
+  font-size: 100rpx;
+  font-family: "Arial";
+}
+.record-content{
+  height: 200rpx;
+}
+.content-wripper{
+  position: relative;
+  margin: 50rpx 0;
+  display: inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 60%;
+  border: 1px solid #7ecef4;
+  border-radius: 10rpx;
+}
+.content-wripper text{
+  font-size: 30rpx;
+  display: block;
+  position: absolute;
+  left: 60rpx;
+}
+.content-wripper image{
+  display: block;
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+  bottom: 20rpx;
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.record-form {
+  margin-top: 20rpx;
+}
+.record-switch{
+  height: 400rpx;
+  background-color: #fff;
+}
+.tip{
+  text-align: center;
+}
+.tip text{
+  color: #888;
+  display: block;
+  padding-top: 20rpx;
+  font-size: 30rpx;
+}
+.big-btn{
+  padding-top: 35rpx;
+  text-align: center;
+}
+.big-btn image{
+  height: 250rpx;
+  width: 250rpx;
+  border-radius: 50%;
+  border: 1px solid #7ecef4;
+}
+
+.record-post{
+  margin: 20rpx auto;
+  height: 100rpx;
+  background-color: #fff;
+}
+.record-tag{
+  height: 100%;
+  padding: 0 30rpx;
+  font-size: 32rpx;
+}

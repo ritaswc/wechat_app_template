@@ -1,0 +1,47 @@
+<import src="ValuePreferenceCell/ValuePreferenceCell.wxml" />
+<view class="page-container">
+  <view class="top-container">
+    <view class="counpon-oparition-city">
+      <view class="city-location-tittle" bindtap="showList()">{{localCtiyName}}</view>
+    </view>
+    <scroll-view class="scroll-view_container selected" scroll-x="true" bindscroll="scroll">
+      <block wx:for="{{couponCategoryList}}" wx:for-item="item" wx:key="key">
+        <view class="flex-sub-box-5 {{ currentTabIndex == item.id ? 'active' : '' }}" bindtap="clickOrderTab" data-index="{{item.id}}">{{item.cateName}}</view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <view class="nav">
+    <view class="nav-son borders {{shownavindex == 1? 'active' : ''}}" bindtap="listprice" data-nav="1">
+      <view class="content">{{priceSelectedName}}</view>
+      <view class="icon"></view>
+    </view>
+    <view class="nav-son {{shownavindex == 2? 'active' : ''}}" bindtap="listquancheng" data-nav="2">
+      <view class="content">{{quanchengSelectedName}}</view>
+      <view class="icon"></view>
+    </view>
+  </view>
+
+  <view class="temp temp1 {{priceopen ? 'slidown' : 'slidup'}} {{priceshow ? 'disappear':''}}">
+    <view wx:for="{{content}}" wx:key="key">
+      <view bindtap="tapPriceCell" data-index="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <view class="temp temp2 {{quanchengopen ? 'slidown' : 'slidup'}} {{quanchengshow ? 'disappear':''}}">
+    <view wx:for="{{content}}" wx:key="key">
+      <view bindtap="tapQuanchengCell" data-index="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <!--<view class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>-->
+
+
+  <block wx:for="{{couponCategoryList}}" wx:for-item="item" wx:key="key">
+    <view class="couponSearchList-container" hidden="{{ currentTabIndex != item.id }}">
+      <block wx:for="{{couponSearchList[currentTabIndex]}}" wx:for-item="item" wx:key="key">
+        <!--<view class="CouponSearchListCell">{{item.doorName}}</view>-->
+        <template is="ValuePreferenceCell" data="{{...item}}"></template>
+      </block>
+    </view>
+  </block>
+
+</view>

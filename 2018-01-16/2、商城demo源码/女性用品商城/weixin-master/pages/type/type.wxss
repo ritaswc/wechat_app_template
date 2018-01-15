@@ -1,0 +1,134 @@
+.page-header {
+    width: 100%;
+    background-color: #db3752;
+    overflow: hidden;
+    height:50px;
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.page-header input {
+    border: medium none;
+    border-radius: 3em;
+    float: left;
+    font-size: 1em;
+    margin: 2% 5%;
+    padding: 1.5% 7.5%;
+    width: 50%;
+    line-height: normal;
+    height:20px;
+    background-color: #eeeeee
+}
+
+.header-img{
+    width: 25%;
+    display: inline-block;
+    margin: 3% 0;
+    float: right;
+    border: 0;
+}
+
+.image{
+    width:22px;
+    height:22px
+}
+
+.contaniner {
+    width: 100%;
+    overflow: hidden;
+}
+.fixed-cont {
+    margin-top: 15%;
+    margin-bottom: 20%;
+}
+
+.contaniner .assort {
+    width: 40%;
+    float: left;
+}
+
+.ul {
+    width: 100%;
+    list-style: none;
+}
+
+.li {
+    width: 92%;
+    background-color: #000;
+    border-bottom: solid 1px #c8c8c8;
+    border-right: solid 1px #c8c8c8;
+    padding: 12% 4%;
+}
+
+.left-image{
+    width:22px;
+    height:22px;
+    margin: 0 10%;
+    vertical-align: middle;
+}
+
+.active {
+    border-right: none;
+    background-color: #fff;
+    padding: 12% 4%;
+}
+
+.li text {
+    font-size: 1.1em;
+    color: #666;
+    vertical-align: middle;
+}
+
+.contaniner .assort-cont {
+    width: 52%;
+    margin: 5% 4%;
+    float: right;
+}
+
+.right-header{
+    display: block;
+}
+
+.right-center {
+    width: 100%;
+    margin-top: 5%;
+    overflow: hidden;
+}
+
+.right-img{
+    height:50px;
+    width: 140px;
+}
+
+.dt {
+    font-size: 0.8em;
+    color: #999;
+    margin-bottom: 3%;
+}
+
+.dd{
+    width: 48%;
+    float: left;
+    margin-bottom: 3%;
+}
+
+.right-center image {
+    height:60px;
+    width:60px;
+}
+
+.right-center view {
+    
+    color: #666;
+    font-size: 0.8em;
+}
+
+.float {
+    width: 48%;
+    float: left;
+    margin-bottom: 3%;
+}

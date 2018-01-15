@@ -1,0 +1,24 @@
+<template name="noticeItem">
+    
+</template>
+
+<view class="container">
+    <textarea placeholder-class="ph-class phbgc" placeholder="请输入您的公告内容..."/>
+    <view class="notice-condition-choice" bindtap="choiceAllCanSee">
+        <image wx:if="{{allCanSee}}" src="/image/merchant/reg/32xuanhong.png"></image>
+        <image wx:else src="/image/merchant/reg/32xuanhui.png"></image>
+        <text class="f2 c5">所有人可见</text>
+    </view>
+    <view class="notice-condition-choice" bindtap="choiceAttentionCanSee">
+        <image wx:if="{{attentionCanSee}}" src="/image/merchant/reg/32xuanhong.png"></image>
+        <image wx:else src="/image/merchant/reg/32xuanhui.png"></image>
+        <text class="f2 c5">关注可见</text>
+    </view>
+    <view class="notice-condition-choice" bindtap="choiceVipCanSee">
+        <image wx:if="{{vipCanSee}}" src="/image/merchant/reg/32xuanhong.png"></image>
+        <image wx:else src="/image/merchant/reg/32xuanhui.png"></image>
+        <text class="f2 c5">会员可见</text>
+    </view>
+</view>
+    <button class="release">发布</button>
+    <button class="cancel">取消</button>

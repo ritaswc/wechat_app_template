@@ -1,0 +1,18 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.title-part {
+  width:100%; text-align: center; margin-top:12px; border-bottom:1px #ddd solid; padding-bottom: 10px; color:brown; font-weight: bold;
+}
+
+.footer-part {
+  font-size:28rpx; text-align: center; margin-top:12px; padding-bottom:10px; color:#aaa; float:left; width:100%;
+}

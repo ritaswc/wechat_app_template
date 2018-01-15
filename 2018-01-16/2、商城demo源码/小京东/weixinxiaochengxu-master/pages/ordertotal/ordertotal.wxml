@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="headerView flex-wrp flex-tab">
+    <view class="top-bar-item {{currentNavtab==idx ? 'top-bar-active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+      {{itemName}}
+    </view>
+  </view>
+
+  <!--列表list组件 需要修改-->
+  <scroll-view bindscroll="srcoll" class="scrollview-list" scroll-y="true" style="height:750px" bindscrolltolower="lower">
+    <view class="list" wx:for="{{newlist}}" wx:key="">
+      <view class="item-headerview">
+        <view class="statusandprice">
+          <view class="item-text">状态:{{item.state}}</view>
+          <view class="item-text">总价:{{item.orderTotalPrice}}</view>
+        </view>
+        <button data-button="{{item.button}}"class="status" bindtap="orderbutton">{{item.button}}</button>
+      </view>
+      <view class="divLine"></view>
+      <view class="item-bottom">
+        <image class="img" src="http://testbbcimage.leimingtech.com{{item.goodsImage}}" mode='scaleToFill' />
+        <view class="goodsinfo">
+          <text class="goodsname">{{item.goodsName}}</text>
+          <text class="goodsnum">{{item.goodsNum}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <loading class="loading" hidden="{{hidden}}">
+    <text class="loading-font">加载中...</text>
+  </loading>
+  <view class="tips">{{tips}}</view>
+</view>

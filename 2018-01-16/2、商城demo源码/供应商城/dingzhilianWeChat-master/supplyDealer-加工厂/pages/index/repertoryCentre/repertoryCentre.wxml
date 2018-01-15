@@ -1,0 +1,525 @@
+<!--库存中心-->
+<view class="container">
+    <!-- 选项卡 -->
+    <view class="topChoose">
+        <text class="choose-text1 {{all ? 'textActive' :''}}" bindtap="clickAll">所有库存</text>
+        <text class="choose-text2 {{warn ? 'textActive' :''}}" bindtap="clickWarn">预警库存</text>
+        <text class="choose-text3 {{stockout ? 'textActive' :''}}" bindtap="clickStockout">缺货库存</text>
+    </view>
+    <!-- 搜索框 -->
+    <view class="search">
+        <input class="search-ipt"  type="text" placeholder="请输入款式名称" placeholder-class="placeholder-color" />
+        <text class="search-text">搜索</text>
+    </view>
+    <scroll-view>
+        <!-- 所有库存 -->
+        <view class="reper" wx:if="{{all}}">
+            <view class="choose">    
+                <view class="order-con">
+                    <text class="text1">选择款式</text>       
+                    <picker class="text2" bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+                        <view>{{array2[index2]}}</view>
+                    </picker>
+                </view>
+                <view class="order-con">
+                    <text class="text1">选择款式二级</text>       
+                    <picker class="text2" bindchange="bindPickerChange3" value="{{index3}}" range="{{array3}}">
+                        <view>{{array3[index3]}}</view>
+                    </picker>
+                </view>
+                <view class="order-con">
+                    <text class="text1">选择颜色</text>       
+                    <picker class="text2" bindchange="bindPickerChange4" value="{{index4}}" range="{{array4}}">
+                        <view>{{array4[index4]}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="re-table">
+                <view class="re-tr">
+                    <view class="re-th">尺码</view>
+                    <view class="re-th">当前库存</view>
+                    <view class="re-th">占用库存</view>
+                    <view class="re-th">在途库存</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">S</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">M</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">L</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XXL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">M</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">L</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XXL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">M</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">L</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XXL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">M</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">L</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XXL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">M</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">L</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XXL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">M</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">L</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XXL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">M</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">L</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XXL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+                <view class="re-tr">
+                    <view class="re-td">XXXL</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                    <view class="re-td">100</view>
+                </view>
+            </view>
+        </view>
+
+        <!-- 预警库存 -->
+        <view class="reper" wx:elif="{{warn}}" style="width:100%;">   
+            <view class="order-statistics">   
+                <view class="table table-5">
+                    <view class="tr bg-w">
+                        <view class="th">款式名称</view>
+                        <view class="th">款式二级</view>
+                        <view class="th">颜色</view>
+                        <view class="th">尺码</view>
+                        <view class="th">当前库存</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司淘宝活动款设计</view>
+                        <view class="td">男款</view>
+                        <view class="td">藏青色</view>
+                        <view class="td">S</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">女款</view>
+                        <view class="td">藏青色x香蕉黄</view>
+                        <view class="td">XXXL</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司淘宝活动款设计</view>
+                        <view class="td">男款</view>
+                        <view class="td">藏青色</view>
+                        <view class="td">S</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">女款</view>
+                        <view class="td">藏青色x香蕉黄</view>
+                        <view class="td">XXXL</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司淘宝活动款设计</view>
+                        <view class="td">男款</view>
+                        <view class="td">藏青色</view>
+                        <view class="td">S</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">女款</view>
+                        <view class="td">藏青色x香蕉黄</view>
+                        <view class="td">XXXL</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司淘宝活动款设计</view>
+                        <view class="td">男款</view>
+                        <view class="td">藏青色</view>
+                        <view class="td">S</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">女款</view>
+                        <view class="td">藏青色x香蕉黄</view>
+                        <view class="td">XXXL</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司淘宝活动款设计</view>
+                        <view class="td">男款</view>
+                        <view class="td">藏青色</view>
+                        <view class="td">S</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">女款</view>
+                        <view class="td">藏青色x香蕉黄</view>
+                        <view class="td">XXXL</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司淘宝活动款设计</view>
+                        <view class="td">男款</view>
+                        <view class="td">藏青色</view>
+                        <view class="td">S</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">女款</view>
+                        <view class="td">藏青色x香蕉黄</view>
+                        <view class="td">XXXL</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                </view>      
+            </view>
+        </view>
+
+        <!-- 缺货库存 -->
+        <view class="reper" wx:else="{{stockout}}" style="width:100%;">   
+            <view class="order-statistics">   
+                <view class="table table-5">
+                    <view class="tr bg-w">
+                        <view class="th">款式名称</view>
+                        <view class="th">款式二级</view>
+                        <view class="th">颜色</view>
+                        <view class="th">尺码</view>
+                        <view class="th">当前库存</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司淘宝活动款设计</view>
+                        <view class="td">男款</view>
+                        <view class="td">藏青色</view>
+                        <view class="td">S</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">女款</view>
+                        <view class="td">藏青色x香蕉黄</view>
+                        <view class="td">XXXL</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司淘宝活动款设计</view>
+                        <view class="td">男款</view>
+                        <view class="td">藏青色</view>
+                        <view class="td">S</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">女款</view>
+                        <view class="td">藏青色x香蕉黄</view>
+                        <view class="td">XXXL</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司淘宝活动款设计</view>
+                        <view class="td">男款</view>
+                        <view class="td">藏青色</view>
+                        <view class="td">S</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">女款</view>
+                        <view class="td">藏青色x香蕉黄</view>
+                        <view class="td">XXXL</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司淘宝活动款设计</view>
+                        <view class="td">男款</view>
+                        <view class="td">藏青色</view>
+                        <view class="td">S</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">女款</view>
+                        <view class="td">藏青色x香蕉黄</view>
+                        <view class="td">XXXL</view>
+                        <view class="td">100</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                    <view class="tr">
+                        <view class="td">某公司</view>
+                        <view class="td">男女同款</view>
+                        <view class="td">白色</view>
+                        <view class="td">XXXXL</view>
+                        <view class="td">2000</view>
+                    </view>
+                </view>      
+            </view>
+        </view>
+    </scroll-view>
+
+</view>

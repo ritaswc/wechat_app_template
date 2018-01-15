@@ -1,0 +1,66 @@
+page{
+    background-color: #f5f4f4;
+}
+.edit-view{
+    width: 100%;
+    height: 160rpx;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20rpx;
+    background-color: white;
+    border-top-width: 1rpx;
+    border-bottom-width: 1rpx;
+    border: solid #d8d8d8 1rpx;
+    font-size: 30rpx;
+}
+
+.num1-view{
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-width: 0;
+    border-bottom: solid #d8d8d8 1rpx;
+}
+.num1-view  text{
+    margin-left: 35rpx;
+    margin-right: 30rpx;
+}
+.num2-view{
+    display: flex;
+    height: 80rpx;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+.num2-view  text{
+    margin-left: 35rpx;
+    margin-right: 60rpx;
+}
+
+.num2-view .button{
+    display: flex;
+    position: absolute;
+    right: 10rpx;
+    width: 180rpx;
+    padding: 0;
+    height: 80rpx;
+    align-items: center;
+}
+.num2-view  .button .line{
+    width: 1rpx;
+    height: 30rpx;
+    background-color: #e6424f;
+}
+.num2-view .button text{
+    flex-shrink: 1;
+    margin: 0 0 0 10rpx;
+}
+.next-button{
+    margin-top: 85rpx;
+    margin-left: 5%;
+    width: 89%;
+    height: 85rpx;
+    background-color: #e6424f;
+    color: white;
+}

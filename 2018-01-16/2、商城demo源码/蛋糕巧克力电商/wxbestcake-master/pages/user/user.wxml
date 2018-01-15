@@ -1,0 +1,60 @@
+<view class="u" wx:if="{{loaded}}" >
+  <view class="logo" bindtap="changeimg">
+    <image src="{{headimg}}"></image>
+  </view>
+  <view class="des">
+    <view class="uname">{{userInfo.nickName}}</view>
+    <view class="phone">{{phone}}</view>
+  </view>
+</view>
+<view class="ua">
+  <view class="jzb tab">
+    <view class="amount">
+      <text>{{jzb}}</text>元</view>
+    <view class="nm">极致币</view>
+  </view>
+  <view class="cpn tab">
+    <view class="amount">
+      <text>2</text>张</view>
+    <view class="nm">优惠券</view>
+  </view>
+  <view class="exp tab">
+    <view class="amount">
+      <text>{{exp}}</text>分</view>
+    <view class="nm">经验</view>
+  </view>
+</view>
+<view class="ub">
+  <view class="item item-a" >
+    <view class="icon">
+    </view>
+    <view class="tit" >
+      <navigator url="../user/myorder/myorder" open-type="navigate" hover-class="navigator-hover">我的订单</navigator>
+    </view>
+    <view class="con"></view>
+  </view>
+  <view class="item item-a">
+    <view class="icon">
+    </view>
+    <view class="tit" >
+      <navigator url="../user/myaddress/myaddress" open-type="navigate" hover-class="navigator-hover">收货地址</navigator>
+    </view>
+    <view class="con"></view>
+  </view>
+    <view class="item item-a">
+    <view class="icon">
+    </view>
+    <view class="tit" >
+      <navigator url="../user/mycoupons/mycoupons" open-type="navigate" hover-class="navigator-hover">我的优惠券</navigator>
+    </view>
+    <view class="con"></view>
+  </view>
+  <view class="item  ">
+    <view class="icon">
+    </view>
+    <view class="tit"  bindtap="exist">
+      退出登录
+    </view>
+    <view class="con"></view>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<view class="warp">
+<form bindsubmit="formSubmit">
+        <view class="row">
+        <text>收货人：</text><input type="text" name="name" placeholder="姓名(必填)" value="{{old_address.receiver}}"/>
+        </view>  
+        <view class="row">
+        <text>手机号：</text><input name="number" type="number" placeholder="11位手机号(必填)" value="{{old_address.phone}}"/>
+        </view>
+        <view class="row">
+        <text>省：</text><input name="province" type="text" placeholder="" value="{{old_address.province}}"/>
+        </view>
+        <view class="row">
+        <text>市：</text><input name="city" type="text" placeholder="" value="{{old_address.city}}"/>
+        </view>
+        <view class="row">
+        <text>区/县：</text><input name="district" type="text" placeholder="区/县(必填)" value="{{old_address.area}}"/>
+        </view>
+        <view class="row">
+        <text>详细地址：</text><input name="detail" type="text" placeholder="详细地址(必填)" value="{{old_address.street}}"/> 
+        </view>
+        <button  formType="submit">确认</button>  
+</form>
+</view>

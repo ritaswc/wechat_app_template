@@ -1,0 +1,27 @@
+<!--pages/shenghuo/OnePrize/OnePrizeCell/OnePrizeCell.wxml-->
+
+<!--<template name="OnePrizeCell">
+  <scroll-view class="grid-container" scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLower">
+    <block wx:for="{{onePrizeList}}" wx:for-item="OnePrize">
+      <view class="single-view-container">
+        <view class="OnePrize-container" catchtap="onOnePrizeTap" data-OnePrizeId="{{OnePrize.id}}">
+          <image class="OnePrize-img" src="http://m.jointem.com/super/img/20170227/1488207828900564.jpg"></image>
+          <text class="OnePrize-title">自拍神器tr750 美颜数码相机</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</template>-->
+
+<template name="OnePrizeCell">
+  <scroll-view class="grid-container" scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLower">
+    <block wx:for="{{onePrizeList}}" wx:for-item="OnePrize" wx:key="key">
+      <view class="single-view-container">
+        <view class="OnePrize-container" catchtap="onOnePrizeTap" data-OnePrizeId="{{OnePrize.OnePrizeid}}">
+          <image class="OnePrize-img" src="{{OnePrize.preImgUrl}}"></image>
+          <text class="OnePrize-title">{{OnePrize.name}}</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</template>

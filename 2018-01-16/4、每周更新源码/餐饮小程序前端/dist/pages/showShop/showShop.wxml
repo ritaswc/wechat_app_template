@@ -1,0 +1,8 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<import src="../template/template"></import>
+<view class="show-shop">
+  <view class="near-shop">
+    <view class="slide ">{{ title }}</view>
+      <template is="shopList" data="{{ nearShop }}"></template>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+<!--pages/shenghuo/ttPrize/ttPrizeCell/ttPrizeCell.wxml-->
+
+<template name="ttPrizeCell">
+<view class="ttPrizeCell-container">
+  <image src="http://m.jointem.com/{{imgUrl}}" class="ttPrizeCell-image"></image>
+  <view class="ttPrizeCell-bottomView">
+  <text class="ttPrizeCell-bottomView-left">{{name}}</text>
+  <button class="ttPrizeCell-bottomView-rightBtn">立即参与</button>
+  </view>
+</view>
+</template>

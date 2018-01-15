@@ -1,0 +1,148 @@
+<!--pages/user/dingdan.wxmldisplay: flex-->
+<view class="swiper-tab">
+<scroll-view scroll-x="true" style=" white-space: nowrap; " >
+  <view class="swiper-tab-list {{currentTab==0 ?'on' : ''}}" data-current="0" bindtap="swichNav"><text style="color:#458B00">▋</text>关于我们</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">旗下品牌</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">分公司介绍</view>
+  <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">公益事业</view>
+  <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">专家委员</view>
+  <view class="swiper-tab-list {{currentTab==5 ? 'on' : ''}}" data-current="5" bindtap="swichNav">售后服务</view>
+
+  </scroll-view>
+</view>
+
+
+<view class="c_t60"></view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+
+  <!-- 综合 -->
+  <swiper-item> 
+
+    <view class="shop df" wx:for="{{order5}}">        
+
+        <view class="df_1">            
+            <view class="sp_text">
+
+        <view>
+                {{item.text}}
+        </view>
+
+      <view class="classname">
+       <image style="width:100%" class="" src="{{item.ImgUrl}}" ></image>
+      </view>
+
+            </view>
+        </view>
+    </view>
+              
+  </swiper-item>
+
+  <!-- 销量 -->
+  <swiper-item>
+
+    <view class="search_no" >
+
+    <view class="shop df" wx:for="{{order5}}">
+
+        <view class="df_1">            
+            <view class="sp_text">
+
+        <view>
+                {{item.text}}
+        </view>
+
+      <view class="classname">
+       <image style="width:100%" class="" src="{{item.ImgUrl}}" ></image>
+      </view>
+
+
+            </view>
+        </view>
+        </view>
+    </view>
+  </swiper-item>
+
+  <!-- 折扣 -->
+  <swiper-item>
+
+        <view class="search_no">
+        <view class="shop df" wx:for="{{order5}}">        
+        <view class="df_1">            
+            <view class="sp_text">
+        <view>
+                {{item.text}}
+        </view>
+
+      <view class="classname">
+       <image style="width:100%" class="" src="{{item.ImgUrl}}" ></image>
+      </view>
+            </view>
+        </view>
+        </view>
+    </view>
+
+  </swiper-item>
+  <!-- 折扣 -->
+  <swiper-item>
+
+        <view class="search_no">
+        <view class="shop df" wx:for="{{order5}}">        
+        <view class="df_1">            
+            <view class="sp_text">
+
+        <view>
+                {{item.text}}
+        </view>
+
+      <view class="classname">
+       <image style="width:100%" class="" src="{{item.ImgUrl}}" ></image>
+      </view>
+            </view>
+        </view>
+        </view>
+    </view>
+              
+    
+  </swiper-item>
+
+  <!--5-->
+  <swiper-item>
+
+        <view class="search_no">
+        <view class="shop df" wx:for="{{order5}}">        
+        <view class="df_1">            
+            <view class="sp_text">
+        <view>
+                {{item.text}}
+        </view>
+
+      <view class="classname">
+       <image style="width:100%" class="" src="{{item.ImgUrl}}" ></image>
+      </view>
+            </view>
+        </view>
+        </view>
+    </view>
+               
+    
+  </swiper-item>
+<!--6-->
+  <swiper-item>
+
+        <view class="search_no">
+        <view class="shop " wx:for="{{order5}}">
+        <view>
+                {{item.text}}
+        </view>
+
+      <view class="classname">
+       <image style="width:100%" class="" src="{{item.ImgUrl}}" ></image>
+      </view>
+
+        </view>
+    </view>
+
+    
+  </swiper-item>
+
+</swiper>

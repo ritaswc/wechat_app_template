@@ -1,0 +1,18 @@
+<!--pages/auxStore/cityChoose/cityChoose.wxml-->
+<view>
+      <text class="localCity">当前定位城市</text>
+     <view bindtap="localEvent" data-cindex="{{clocal}}" data-local="{{local}}">
+          <text class="myCity">{{local}}</text>
+     </view> 
+     
+</view>
+<view>
+      <text class="allCity">全部城市</text>
+      <view>
+          <block wx:for="{{city}}">
+               <view bindtap="cityEvent" data-index="{{item.goods_area_id}}" data-cityname="{{item.goods_area}}">
+                    <text class="item_city">{{item.goods_area}}</text>
+               </view>
+          </block>
+      </view>
+</view>

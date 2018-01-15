@@ -1,0 +1,27 @@
+[2017-03-31 13:39:42.620] [INFO] console - 
+[2017-03-31 13:39:42.624] [INFO] console - [0m[0m
+[2017-03-31 13:39:43.603] [INFO] console - [0m  test/app.test.js[0m
+[2017-03-31 13:39:43.849] [INFO] console - {"status":-1,"msg":{"type":2,"data":"创建失败","err":"Validation error"},"result":{}}
+[2017-03-31 13:39:43.851] [INFO] console -   [32m  ✓[0m[90m 手机验证后注册成功[0m[31m (239ms)[0m
+[2017-03-31 13:39:43.868] [INFO] console - {"status":-1,"msg":{"type":2,"data":"创建失败","err":"Validation error"},"result":{}}
+[2017-03-31 13:39:43.868] [INFO] console -   [32m  ✓[0m[90m 邮箱注册成功还需验证[0m
+[2017-03-31 13:39:43.886] [INFO] console - {"status":0,"msg":{"type":1,"data":"登录成功"},"result":{"userid":"fe8eba20089711e78359abd2b5da1aad","picture":null,"title":"mjp","sex":0,"age":18,"phone":"18826252271","integral":5,"grank":"1","grank_integral":1,"email":null,"limit":"0","limit_time":null,"code":"0","is_phone":1,"is_email":0,"openid":null,"abstract":null,"signature":null,"register_way":0,"ext":null,"createdAt":"2017-03-14T09:24:16.000Z","updatedAt":"2017-03-14T09:24:16.000Z","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBpZCI6Im5vdGVwbGF5IiwidXNlcmlkIjoiZmU4ZWJhMjAwODk3MTFlNzgzNTlhYmQyYjVkYTFhYWQiLCJwaG9uZSI6IjE4ODI2MjUyMjcxIiwibG9naW50aW1lIjoxNDkwOTM4NzgzODgxLCJleHAiOjg2NDAwMDAwLCJpYXQiOjE0OTA5Mzg3ODN9.2Br-Dy4pxytgHT8icsYj5zdL4-IgTUUoR-NaOeZSEOA"}}
+[2017-03-31 13:39:43.886] [INFO] console -   [32m  ✓[0m[90m 电话登陆成功[0m
+[2017-03-31 13:39:43.892] [INFO] console - {"status":2,"msg":{"type":4,"data":"手机或密码错误!"},"result":{}}
+[2017-03-31 13:39:43.892] [INFO] console -   [32m  ✓[0m[90m 电话登陆错误[0m
+[2017-03-31 13:39:43.899] [INFO] console - {"status":0,"msg":{"type":1,"data":"登录成功"},"result":{"userid":"fe9c9cd0089711e78359abd2b5da1aad","picture":null,"title":"mjp","sex":0,"age":18,"phone":null,"integral":5,"grank":"1","grank_integral":1,"email":"18826252271@163.com","limit":"0","limit_time":null,"code":"0","is_phone":0,"is_email":1,"openid":null,"abstract":null,"signature":null,"register_way":0,"ext":null,"createdAt":"2017-03-14T09:24:16.000Z","updatedAt":"2017-03-14T09:26:47.000Z","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBpZCI6Im5vdGVwbGF5IiwidXNlcmlkIjoiZmU5YzljZDAwODk3MTFlNzgzNTlhYmQyYjVkYTFhYWQiLCJlbWFpbCI6IjE4ODI2MjUyMjcxQDE2My5jb20iLCJsb2dpbnRpbWUiOjE0OTA5Mzg3ODM4OTgsImV4cCI6ODY0MDAwMDAsImlhdCI6MTQ5MDkzODc4M30.Q6jpZ1gZeSHeE6ZXmA9HidGzUNM66jWXOTPKnXJ0WLI"}}
+[2017-03-31 13:39:43.899] [INFO] console -   [32m  ✓[0m[90m 邮箱登陆[0m
+[2017-03-31 13:39:43.908] [INFO] console - {"status":0,"msg":{"type":-1,"data":"手机已经被使用"},"result":{}}
+[2017-03-31 13:39:43.908] [INFO] console -   [32m  ✓[0m[90m 电话已经存在[0m
+[2017-03-31 13:39:43.914] [INFO] console - {"status":0,"msg":{"type":1,"data":"手机可用"},"result":{}}
+[2017-03-31 13:39:43.915] [INFO] console -   [32m  ✓[0m[90m 电话可以使用[0m
+[2017-03-31 13:39:43.921] [INFO] console - 1 { userid: 'fe9c9cd0089711e78359abd2b5da1aad',
+  email: '18826252271@163.com' }
+[2017-03-31 13:39:43.931] [INFO] console - {"status":0,"msg":{"type":1,"data":"验证成功"},"result":{}}
+[2017-03-31 13:39:43.931] [INFO] console -   [32m  ✓[0m[90m 验证邮箱[0m
+[2017-03-31 13:39:43.937] [INFO] console - {"status":0,"msg":{"type":0,"data":"获取成功"},"result":{"userid":"fe9c9cd0089711e78359abd2b5da1aad","picture":null,"title":"mjp","sex":0,"age":18,"phone":null,"integral":5,"grank":"1","grank_integral":1,"email":"18826252271@163.com","limit":"0","limit_time":null,"code":"0","is_phone":0,"is_email":1,"openid":null,"abstract":null,"signature":null,"register_way":0,"ext":null,"createdAt":"2017-03-14T09:24:16.000Z","updatedAt":"2017-03-14T09:26:47.000Z"}}
+[2017-03-31 13:39:43.937] [INFO] console -   [32m  ✓[0m[90m 读取用户详情[0m
+[2017-03-31 13:39:43.950] [INFO] console - {"status":0,"msg":{"type":1,"data":"更新成功"},"result":{}}
+[2017-03-31 13:39:43.950] [INFO] console -   [32m  ✓[0m[90m 更新用户基本信息[0m
+[2017-03-31 13:39:43.951] [INFO] console - 
+[2017-03-31 13:39:43.951] [INFO] console - 

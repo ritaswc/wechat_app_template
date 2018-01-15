@@ -1,0 +1,9 @@
+<template name="headnav">
+<view class="headnav">
+    <view wx:for="{{headnav}}" wx:key="{{index}}" class="{{navState==index?class2:class1}}" bindtap="changeNavState" data-key="{{index}}" data-item="{{item}}" >
+      <image src="{{item.img}}" class="img5"></image>
+      <text class="navtext">{{item.name}}</text>
+      <view class="bg"></view>
+    </view>
+</view>
+</template>

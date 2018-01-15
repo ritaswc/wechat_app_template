@@ -1,0 +1,361 @@
+/* pages/products/products.wxss */
+page{
+    color:#3d4225;
+    background:#eee;
+    width:100%;
+    overflow-x: hidden;
+}
+.swiper{
+    width:100%rpx;
+    height:750rpx;
+    position:relative;
+    background:#fff;
+}
+.slide-image{
+    width:600rpx;
+    height:600rpx;
+}
+.logoImg1{
+    width:214rpx;
+    height:98rpx;
+    z-index:2;
+    position:absolute;
+    left:30rpx;
+    top:30rpx;
+}
+/*商品展示页*/
+.products{
+    background:#fff;
+    width:100%;
+    overflow-x:hidden; 
+}
+.products .line{
+    padding:0 15rpx;
+}
+.products .name{
+    width:550rpx;
+    font-size:16px;
+}
+.img02{
+    margin-top:5rpx;
+    width:120rpx;
+    height:55rpx;
+}
+.products .line2{
+    padding:15rpx;
+}
+.products .line2 .price{
+    color:rgb(255,68,160);
+    font-size:0.9em;
+}
+.products .line2 .active{
+    margin-left:20rpx;
+    margin-top:10rpx;
+}
+.products .line2 .active1{
+    color:rgb(255,68,160);
+    font-size:0.7em;
+}
+.img03{
+    width:120rpx;
+    height:32rpx;
+}
+.img04{
+    width:108rpx;
+    height:34rpx;
+    vertical-align: middle;
+    margin-right:20rpx;
+}
+.products .line3{
+    width:100%;
+    font-size:12px;
+    padding:20rpx 13rpx;
+    border-bottom:1rpx solid #eee;
+}
+.products .line3 .text1{
+    text-decoration: line-through;
+    color:#bbb;
+}
+.products .line3 .china{
+    width:300rpx;
+}
+.products .line3 .text2{
+    color:#bbb;
+}
+.products .line4{
+    width:100%;
+    padding-left:20rpx;
+    height:80rpx;
+    font-size:12px;
+    color:#bbb;
+    position:relative;
+}
+.products .line4 .weight{
+    margin-left:20rpx;
+}
+.img05{
+    width:32rpx;
+    height:32rpx;
+    margin-right:10rpx;
+}
+.right-log{
+ font-weight:bold;
+ position:absolute;
+ right:50rpx;
+ top:35rpx;
+}
+/*商品详情的关联品牌*/
+.relatebrand{
+    margin-top:20rpx;
+    background:#fff;
+}
+.relatebrand .top{
+    margin:0 20rpx;
+    height:90rpx;
+    line-height:90rpx;
+    border-bottom:1rpx solid #eee;
+    font-size:30rpx;
+}
+.relatebrand .more{
+    font-size:26rpx;
+    color:#bbb;
+}
+.relatebrand .logo{
+    width:100rpx;
+    height:100rpx;
+    border-radius:50%;
+    overflow: hidden;
+    border:1rpx solid #eee;
+    margin:20rpx;
+}
+.relatebrand .logo .brandLogo{
+    width:95rpx;
+    height:65rpx;
+}
+.relatebrand .right{
+    width:580rpx;
+    font-size:28rpx;
+}
+.relatebrand .right .name{
+    margin-bottom:10rpx;
+}
+.relatebrand .right .dis{
+    font-size:24rpx;
+    color:#bbb;
+    height:70rpx;
+    line-height:35rpx;
+}
+.relatebrand .relateGoods{
+    height:300rpx;
+    white-space: nowrap;
+}
+.relatebrand .relateGoods .item {
+    display: inline-block;
+    width:241rpx;
+}
+.relatebrand .relateGoods .item .goods_img{
+    width:180rpx;
+    height:180rpx;
+}
+.relatebrand .relateGoods .item .name{
+    font-size:26rpx;
+    width:200rpx;
+    line-height:40rpx;
+    text-align:center;
+}
+.relatebrand .relateGoods .item .price{
+    font-size:26rpx;
+    width:200rpx;
+    color:#fe0000;
+    line-height:40rpx;
+    text-align:center;
+}
+/*图文详情*/
+.detail{
+    margin-top:20rpx;
+    background:#fff;
+}
+.detail .title{
+    height:90rpx;
+    line-height:90rpx;
+    margin:0 20rpx;
+    font-size:26rpx;
+    border-bottom:1rpx solid #eee;
+}
+.img06{
+    width:100%;
+    height:1751rpx;
+}
+.img07{
+    width:100%;
+    height:480rpx;
+}
+.img08{
+    width:100%;
+    height:809rpx;
+}
+.img09{
+    width:70rpx;
+    height:70rpx;
+}
+.detail .mes .item{
+    margin-top:20rpx;
+    -webkit-flex:1;
+}
+.detail .mes .item .text1{
+    margin-top:14rpx;
+    width:100%;
+    font-size:26rpx;
+    color:#bbb;
+    text-align:center;
+}
+.detail .mes .item .text2{
+    margin-bottom:14rpx;
+    width:100%;
+    font-size:26rpx;
+    color:#bbb;
+    text-align:center;
+}
+.img10{
+    margin-left:2%;
+    width:96%;
+    height:199rpx;
+    margin-bottom:150rpx;
+    margin-top:50rpx;
+}
+/*弹出层*/
+.itemImg1{
+    width:30rpx;
+    height:30rpx;
+    margin-left:22rpx;
+    margin-right:30rpx;
+}
+.action1{
+    font-size:12px;
+}
+.action1 .tip{
+    width:650rpx;
+    text-align:left;
+}
+.action1 .tip .title{
+    font-weight:bold;
+    font-size:13px;
+    margin-bottom:30rpx;
+}
+.action1 .tip .dis{
+    color:#bbb;
+}
+
+/*底部的*/
+.fixedNav{
+    width:100%;
+    height:100rpx;
+    position:fixed;
+    bottom:0;
+    left:0;
+    z-index:3;
+    background:#fff;
+}
+.fixedNav .item{
+    -webkit-flex:1;
+}
+.fixedNav .grass{
+    border-top:1rpx solid #eee;
+    max-width:150rpx;
+}
+.fixedNav .grass .text{
+    width:100%;
+    text-align: center;
+    font-size:24rpx;
+}
+.img_grass{
+    position:relative;
+    top:10rpx;
+    width:41rpx;
+    height:35rpx;
+}
+.fixedNav .joincar{
+    font-size:30rpx;
+    color:#ff4aa0;
+    background:#eee;
+}
+.fixedNav .buyNow{
+    font-size:30rpx;
+    color:#fff;
+    background:#ff4aa0;
+}
+/*商品详情的弹出*/
+.action2 .top{
+    border-bottom:1px solid #eee;
+}
+.action2 .top .img{
+    width:260rpx;
+    position:relative;
+    height:200rpx;
+
+}
+.action2 .top .img image{
+    width:180rpx;
+    height:180rpx;
+    position:absolute;
+    top:-60rpx;
+    left:40rpx;
+    background:#fff;
+}
+.action2 .top .name{
+    width:400rpx;
+    font-size:32rpx;
+    height:70rpx;
+    line-height:35rpx;
+    margin-top:30rpx;
+}
+.action2 .top .storeNum{
+    width:400rpx;
+    font-size:30rpx;
+    margin-top:10rpx;
+}
+.action2 .top .price{
+    width:400rpx;
+    font-size:28rpx;
+    margin-top:20rpx;
+    color:#ff4aa0;
+}
+.action2 .top .close{
+    width:90rpx;
+    height:90rpx;
+    font-size:40rpx;
+}
+.action2 .cal{
+    padding:16rpx 31rpx;
+    font-size:28rpx;
+}
+.action2 .cal .count{
+    margin-top:20rpx;
+}
+.action2 .cal .red{
+    width:56rpx;
+    height:56rpx;
+    background:#eee;
+    line-height:56rpx;
+    text-align:center;
+    font-size:34rpx;
+}
+.action2 .cal .buyNum{
+    width:94rpx;
+    height:56rpx;
+    border:1rpx solid #eee;
+    line-height:56rpx;
+    text-align:center;
+    font-size:34rpx;
+    box-sizing: border-box;
+}
+.action2 .bottom{
+    margin-top:38rpx;
+}
+.action2 .bottom .join{
+    background:#ff4aa0;
+    color:#fff;
+    font-size:38rpx;
+    height:100rpx;
+    line-height:100rpx;
+}

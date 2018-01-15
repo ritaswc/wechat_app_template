@@ -1,0 +1,79 @@
+<import src="../../temp/empty.wxml"/>
+<!--大容器避免闪屏-->
+<view wx:if="{{showMessage}}">
+    <!--开始我们的种草展示-->
+    <view class="favorite" wx:if="{{favorite.goods_data.length||favorite.article_data.length}}">
+        <view class="head flexbox">
+            <view class="item left flexbox" bindtap="changeHeadState" data-sta="{{true}}">
+                <image src="{{headState?left_red:left_black}}" class="img02"/>
+                <text class="te" style="{{headState?bg2:bg1}}" >商品</text>
+            </view>
+            <view class="item right flexbox" bindtap="changeHeadState" data-sta="{{false}}">
+                <image src="{{headState?right_black:right_red}}" class="img02"/>
+                <text class="te" style="{{headState?bg1:bg2}}" >专辑</text>
+            </view>
+        </view>
+        <view class="goodsDetail" wx:if="{{headState}}">
+            <view wx:if="{{favorite.goods_data.length}}">
+                    <view class="item flexstart" wx:for="{{favorite.goods_data}}" wx:key="{{item.id}}">
+                        <navigator url="../products/products?id={{item.id}}&title={{item.name}}" >
+                            <image src="{{item.img}}" class="proimg" />
+                        </navigator>
+                        <view class="right">
+                            <view class="top flexstart">
+                                <navigator url="../products/products?id={{item.id}}&title={{item.name}}" class="name hidecamp">
+                                    {{item.name}}
+                                </navigator>
+                                <view class="del flexbox" bindtap="delGoods" data-index="{{index}}">
+                                    <image src="{{img_del}}" class="del_img" />
+                                </view>
+                            </view>
+                            <navigator url="../products/products?id={{item.id}}&title={{item.name}}" class="bottom flexsc">
+                                <view class="price">
+                                    <view class="sell">
+                                        ￥ {{item.sell_price}}
+                                    </view>
+                                    <view class="jpprice">
+                                        日本价：{{item.jp_price}} 円
+                                    </view>
+                                </view>
+                                <view class="tobuy">
+                                    立即购买
+                                </view>
+                            </navigator>
+                        </view>
+                    </view>
+            </view>
+            <view wx:else>
+                <template is="empty" data="{{empty:empty}}" />
+            </view>
+        </view>
+        <view class="articleDetail" wx:if="{{!headState}}">
+            <view wx:if="{{favorite.article_data.length}}">
+                <view wx:for="{{favorite.article_data}}" wx:key="{{item.id}}">
+                    <view class="item flexstart">
+                        <navigator url="../article/article?id={{item.id}}&title={{item.title}}"  class="flexstart" >
+                            <image src="{{item.image}}" class="articleimg" />
+                            <view class="right">
+                                <view class="name hidecamp">{{item.title}}</view>
+                                <view class="dis hidecamp">{{item.description}}</view>
+                            </view>
+                        </navigator>
+                        <view class="del flexbox" bindtap="delArticle" data-index="{{index}}">
+                            <image src="{{img_del}}" class="del_img" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view wx:else>
+                <template is="empty" data="{{empty:empty}}" />
+            </view>
+        </view>
+    </view>
+    <!--种草为空的页面展示-->
+    <view class="emptyGrass" wx:else>
+        <template is="empty" data="{{empty:empty}}" />
+    </view>
+</view>
+
+

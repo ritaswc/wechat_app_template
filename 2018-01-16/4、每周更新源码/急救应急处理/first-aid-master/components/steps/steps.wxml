@@ -1,0 +1,15 @@
+<template name="steps">
+  <view class="steps">
+    <block wx:for="{{total}}">
+      <view class="{{ current < index ? 'steps-bar': 'steps-bar-selected'}}" />
+      <block wx:if="{{current < index}}">
+        <view class="steps-dot" />
+      </block>
+      <block wx:else>
+        <view class="steps-dot-selected">
+          <view class="steps-dot" />
+        </view>
+      </block>
+    </block>
+  </view>
+</template>

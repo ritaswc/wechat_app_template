@@ -1,0 +1,110 @@
+
+<!--index.wxml-->
+<view class="container">
+
+  <!--顶部搜索-->
+  <view class="top_search">
+    <view class="logo">
+      <image src="../../images/icon_logo.png"></image>
+    </view>
+    <view class="search_inp">
+      <input placeholder="输入关键字搜索商品名" />
+    </view>
+    <view class="search_btn">
+      <image src="../../images/home_top_search@2x.png"></image>
+    </view>
+  </view>
+
+  <!--顶部搜索end-->
+
+  <!--顶部导航条-->
+  <view class="top_nav_wrap">
+    <scroll-view class="top_nav" scroll-x="true">
+      <view class="top_nav_item">推荐</view>
+      <view class="top_nav_item">推荐</view>
+      <view class="top_nav_item">推荐</view>
+      <view class="top_nav_item">推荐</view>
+      <view class="top_nav_item">推荐</view>
+      <view class="top_nav_item">推荐</view>
+      <view class="top_nav_item">推荐</view>
+      <view class="top_nav_item">推荐</view>
+      <view class="top_nav_item">推荐</view>
+      <view class="top_nav_item">推荐</view>
+      <view class="top_nav_item">推荐</view>
+      <view class="top_nav_item">推荐</view>
+    </scroll-view>
+  </view>
+
+  <!--顶部导航条end-->
+
+  <!--banner-->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="banner">
+    <block wx:for="{{banner}}">
+      <swiper-item>
+        <navigator style="height:150px;" url="../shopIndex/index" hover-class="navigator-hover">
+            <image src="{{item.labelImg}}" class="slide-image" width="355" height="150" />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!--banner  end-->
+<block wx:for="{{trunkLabelList}}">
+  <!--热门活动-->
+  <view class="hot_activity">
+    <view class="hot_activity_tit">
+        <image src="{{item.labelPre}}"></image>
+    </view>
+    <navigator class="activity_pic" url="../hotProduct/hotProduct" hover-class="navigator-hover">
+        <image src="{{item.labelImg}}"></image>
+    </navigator>
+
+    <!--活动下方滑块-->
+    <!-- <swiper class="activity_list">
+      <swiper-item>
+        <block wx:for="{{imgMsg}}">
+          <view class="activity_main">
+            <image src="{{item.imgUrl}}" class="slide-image" width="355" height="150" />
+            <text class="picDisc">{{item.picDisc}}</text>
+          </view>
+        </block>
+      </swiper-item>
+
+
+
+      <swiper-item>
+        <block wx:for="{{imgMsg}}">
+          <view class="activity_main">
+            <image src="{{item.imgUrl}}" class="slide-image" width="355" height="150" />
+            <text class="picDisc">{{item.picDisc}}</text>
+          </view>
+        </block>
+      </swiper-item>
+    </swiper> -->
+    <scroll-view class="activity_list" scroll-x="true" style=" white-space: nowrap; display: flex">
+        <block wx:for="{{item.leafList}}">
+            <view class="activity_main" style="display: inline-block">
+                <view>
+                    <navigator url="../details/index" hover-class="navigator-hover">
+                        <image src="{{item.productImg}}" class="slide-image"/>
+                    </navigator>
+                </view>
+                
+                <view class="picDisc">{{item.productName}}</view>
+            </view>
+        </block>        
+    </scroll-view>
+    <!--活动下方滑块end-->
+  </view>
+</block>
+ 
+
+
+
+
+
+
+
+
+
+</view>

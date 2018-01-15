@@ -1,0 +1,16 @@
+<view class="edit-view">
+    <view class="num1-view">
+        <text>旧手机号</text>
+        <input placeholder="请输入旧手机号" placeholder-style="color:#c6c6c6"/>
+    </view>
+    <view class="num2-view">
+        <text>验证码</text>
+        <input placeholder="请输入验证码" placeholder-style="color:#c6c6c6"/>
+        <view class="button">
+             <view class = "line"></view>
+             <text>获取验证码</text>
+        </view>
+    </view>
+    
+</view>
+<button class="next-button">下一步</button>

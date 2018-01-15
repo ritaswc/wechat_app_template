@@ -1,0 +1,85 @@
+/**index.wxss**/
+
+.userinfo {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 100%;
+  height: 650rpx;
+}
+
+.index_search_btn {
+  height: 70rpx;
+  width: 90%;
+  background-color: white;
+  color: #a1a1a1;
+  font-size: 30rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 450rpx;
+  left: 5%;
+  border-radius: 35px;
+}
+
+.index_search {
+  margin-right: 3px;
+  width: 16px;
+  height: 16px;
+}
+
+/*每个item样式*/
+
+.list {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+}
+
+.Recommend  {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16sp;
+  color: black;
+  border-bottom: solid 2px #ebebeb;
+}
+
+.item {
+  margin-top: 5rpx;
+  margin-bottom: 25rpx;
+  border-bottom: solid 2px #ebebeb;
+  background: white;
+  width: 50%;
+  flex-direction: column;
+}
+
+.img {
+  border-right: solid 2px #ebebeb;
+  height: 300rpx;
+  width: 300rpx;
+}
+
+.item-text1 {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  color: black;
+  font-weight: bold;
+}
+
+.item-text2 {
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 5px;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  color: gray;
+}

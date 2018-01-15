@@ -1,0 +1,129 @@
+/*头部整体样式*/
+
+.topContainsView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10rpx;
+  margin-bottom: 25rpx;
+  border-bottom: solid 2px #ebebeb;
+}
+
+/**
+ * 商品样式
+*/
+
+.goodsImage {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+/*右侧文本整体样式*/
+
+.topRightView {
+  width: 250px;
+  margin-left: 15rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/*用户名称样式*/
+
+.topRightName {
+  font-size: 25rpx;
+}
+
+/*时间样式*/
+
+.topRightTime {
+  font-size: 25rpx;
+  color: red;
+  margin-top: 10rpx;
+}
+
+/*Item样式中的图标样式 */
+
+.headerNavImage {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+/*Item中的文字样式*/
+
+.headerItemText {
+  font-size: 30rpx;
+  color: #b8b2b2;
+  margin-left: 10rpx;
+  margin-top: 8rpx;
+}
+
+/*销量和评价那一条*/
+
+.saleAndcom {
+  margin-top: 8rpx;
+  flex-direction: row;
+}
+
+.saletext {
+  font-size: 25rpx;
+}
+
+.saleRightText {
+  position: absolute;
+  right: 0;
+  margin-right: 10rpx;
+  font-size: 25rpx;
+}
+
+/*整体view样式*/
+
+.containsView {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  flex-direction: column;
+}
+
+/*顶部view整体样式*/
+
+.headerView {
+  z-index: 1;
+  top: 0;
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  height: 72rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.top-bar-item {
+  display: inline-block;
+  width: 25%;
+  color: gray;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.top-bar-active {
+  color: red;
+  font-size: 32rpx;
+}
+
+/*每个Item样式*/
+
+.headerNavView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18rpx;
+}
+
+/*内容会被修剪，并且其余内容是不可见的。*/
+
+.scrollview-list {
+  margin-top: 72rpx;
+}

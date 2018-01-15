@@ -1,0 +1,18 @@
+<!-- <import src="../../template/img-loader/img-loader.wxml"/>
+<template is="img-loader" data="{{ imgLoadList }}"></template>
+ -->
+<view class="page" bindtap="goMainPage">
+    <view class="header">
+        <image src="https://stevenyk.applinzi.com/%E8%BD%BB%E5%A5%A2%E7%A4%BC%E7%89%A9%E8%AF%B4.png"></image>
+    </view>
+    <view class="title">
+    	轻奢礼物说
+    </view>
+    <view class="content">
+    	<view class="num0">你是我一生未拆的礼物</view> 
+        <view class="num1">我是你一生未寄的信件</view>
+    </view>
+    <view class="footer">
+    	北京合水商贸有限公司  @2016-2017
+    </view>
+</view>

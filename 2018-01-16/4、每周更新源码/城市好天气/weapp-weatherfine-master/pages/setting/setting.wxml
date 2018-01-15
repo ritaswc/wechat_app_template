@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="wa-list">
+    <view data-city="local" class="wa-item" bindtap="cityChange">
+      {{LocalCity}}
+    </view>
+    <view wx:for="{{Citys}}" wx:key="*this" data-city="{{item}}" class="wa-item"  bindtap="cityChange">
+      {{item}}
+    </view>
+    <view class="space"></view>
+    <view class="wa-item">
+      <picker bindchange="langChange" value="{{langIndex}}" range="{{lang}}">
+        <view class="picker">
+          {{Language}}：{{lang[langIndex]}}
+        </view>
+      </picker>
+    </view>
+    <view class="wa-item">
+      <picker bindchange="tempChange" value="{{tempIndex}}" range="{{temp}}">
+        <view class="picker">
+          {{TemperatureUnit}}：{{temp[tempIndex]}}
+        </view>
+      </picker>
+    </view>
+    <view class="wa-item" bindtap="navigateAbout">
+      {{About}}
+    </view>
+  </view>
+</view>

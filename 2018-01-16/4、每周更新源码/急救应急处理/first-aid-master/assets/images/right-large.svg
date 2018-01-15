@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="356px" height="356px" viewBox="0 0 356 356" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>right-large</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="right-large">
+            <g id="有" stroke-width="2" stroke="#00BC9B">
+                <circle id="Oval-Copy" cx="178" cy="178" r="177"></circle>
+            </g>
+            <g id="分组" transform="translate(117.000000, 135.000000)" fill-rule="nonzero" fill="#00BC9B">
+                <rect id="Rectangle-11" transform="translate(26.996604, 59.964459) rotate(45.000000) translate(-26.996604, -59.964459) " x="-3.78782975" y="53.4644587" width="61.568867" height="13" rx="5"></rect>
+                <rect id="Rectangle-11" transform="translate(78.082713, 43.082713) rotate(-45.000000) translate(-78.082713, -43.082713) " x="23.654556" y="36.582713" width="108.856314" height="13" rx="5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

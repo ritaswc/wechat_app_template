@@ -1,0 +1,71 @@
+ <view class="content">
+    </view>
+    <view class="assess">
+      <view class="assess-ul">
+        <view class="assess-li">
+          <view class="head-img">
+            <image class="portrait" src="{{img_url}}detail/hh.jpg"></image>
+          </view>
+          <view class="head-right">
+            <view class="head-name">
+              <text class="name-h">隔壁老王</text>
+              <view class="name-pic"></view>
+            </view>
+            <view class="com-time">
+              <text class="assess-star">
+                <text class="assess-starspan"></text>
+              </text>
+              <text class="assess-time">2016.07.28</text>
+            </view>
+            <text class="assess-text">超级好吃，服务又好，每天都要来吃一次，一天不来就感觉少了点什么，超级棒~~~</text>
+            <view class="assess-pic">
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+            </view>
+            
+          </view>
+        </view>
+        <view class="assess-li">
+          <view class="head-img">
+            <image class="portrait" src="{{img_url}}detail/hh.jpg"></image>
+          </view>
+          <view class="head-right">
+            <view class="head-name">
+              <text class="name-h">隔壁老王</text>
+              <view class="name-pic"></view>
+            </view>
+            <view class="com-time">
+              <text class="assess-star">
+                <text class="assess-starspan"></text>
+              </text>
+              <text class="assess-time">2016.07.28</text>
+            </view>
+            <text class="assess-text">超级好吃，服务又好，每天都要来吃一次，一天不来就感觉少了点什么，超级棒~~~</text>
+            <view class="assess-pic">
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>

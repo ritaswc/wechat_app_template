@@ -1,0 +1,34 @@
+<view class="detail-box">
+
+    <view class="detail-list">
+        <scroll-view scroll-y="true" style="height: 100%;">
+            <view><image src="{{detailgood.pic_url}}"></image></view>
+            <view class="detail-name">
+                <ul>
+                    <li>{{detailgood.name}}</li>
+                    <li>{{detailgood.price}}</li>
+                    <li>规格 {{detailgood.type}}</li>
+                    <li>信息 产地：泰国 发货地: 结单时间：20:00</li>
+                    <li>用户评价（31）</li>
+                    <li>商品图文详情（建议在WIFI下查看）</li>
+                </ul>
+            </view>
+            <view class='hot-container'>
+
+
+            <view class="hot-title">热门推荐</view>
+                    <view class='hot-gooditem'>
+                        <view class='hot-imgview' wx:key="index"  wx:for="{{hotgoods}}" wx:for-index="idx" wx:for-item="hot">
+                        <image class='hot-product' src='{{hot.more_pic}}'/>
+                        </view>
+                    </view>
+</view>
+            </scroll-view>
+    </view>
+ <view class="detail-footer">
+    <view class="detail-1"></view>
+    <view class="detail-2"></view>
+    <view class="detail-3"><text>加入购物车</text></view>
+    <view class="detail-4"><text>立即购买</text></view>
+ </view>
+</view>

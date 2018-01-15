@@ -1,0 +1,45 @@
+/* pages/shenghuo/AllServiceclassify/ServiceCategoryList/ServiceCategoryList.wxss */
+
+@import "ServiceCategoryListCell/ServiceCategoryListCell.wxss";
+
+.serviceCategoryList-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.search-bg1 {
+  height: 55px;
+  position: relative;
+  top: 0px;
+  z-index: 1;
+  background-color: #f5f5f9;
+}
+
+.search-box {
+  height: 33px;
+  position: absolute;
+  width: 94%;
+  z-index: 2;
+  top: 10px;
+  margin: 0 3% 0 3%;
+  background-color: white;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.search-icon {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  width: 100%;  
+  text-align: center;
+}

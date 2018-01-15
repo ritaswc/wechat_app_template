@@ -1,0 +1,174 @@
+<view class="page">
+    
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for-items="{{voteTabs}}" wx:key="{{index}}">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                    <!-- class list -->
+                    <view class="index-bd class-list">
+                        <view class="kind-list">
+                        <block wx:for-items="{{coursesSet1}}" wx:key="{{item.id}}">
+                            <view class="kind-list-item">
+                            <view id="{{item.courseNo}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="noteGraph" data-evaluation="{{item.evaluation}}">
+                                <view class="kind-list-text">
+                                    <text class="class-list-item-title">{{item.courseName}}</text>
+                                    <text class="class-list-item-content">\n{{item.courseDesc}}</text>
+                                </view>
+                                <view class="evaluation-text">综合评价</view>
+                                <image class="kind-list-img" src="../resources/kind/logo.png"></image>
+                            </view>
+                            <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+                                <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+                                <block wx:for-items="{{item.evaluation}}" wx:for-item="eva" wx:key="*item">
+                                    <navigator url=".." class="navigator">
+                                    <view class="navigator-text">{{eva}}</view>
+                                    <view class="navigator-arrow"></view>
+                                    </navigator>
+                                </block>
+                                </view>
+                            </view>
+                            </view>
+                        </block>
+                        </view>
+                    </view>
+                </view>
+
+
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                    <!-- class list -->
+                    <view class="index-bd class-list">
+                        <view class="kind-list">
+                        <block wx:for-items="{{coursesSet2}}" wx:key="{{item.id}}">
+                            <view class="kind-list-item">
+                            <view id="{{item.courseNo}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="noteGraph" data-evaluation="{{item.evaluation}}">
+                                <view class="kind-list-text">
+                                    <text class="class-list-item-title">{{item.courseName}}</text>
+                                    <text class="class-list-item-content">\n{{item.courseDesc}}</text>
+                                </view>
+                                <view class="evaluation-text">综合评价</view>
+                                <image class="kind-list-img" src="../resources/kind/logo.png"></image>
+                            </view>
+                            <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+                                <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+                                <block wx:for-items="{{item.evaluation}}" wx:for-item="eva" wx:key="*item">
+                                    <navigator url=".." class="navigator">
+                                    <view class="navigator-text">{{eva}}</view>
+                                    <view class="navigator-arrow"></view>
+                                    </navigator>
+                                </block>
+                                </view>
+                            </view>
+                            </view>
+                        </block>
+                        </view>
+                    </view>
+                </view>
+
+
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                    <!-- class list -->
+                    <view class="index-bd class-list">
+                        <view class="kind-list">
+                        <block wx:for-items="{{coursesSet3}}" wx:key="{{item.id}}">
+                            <view class="kind-list-item">
+                            <view id="{{item.courseNo}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="noteGraph" data-evaluation="{{item.evaluation}}">
+                                <view class="kind-list-text">
+                                    <text class="class-list-item-title">{{item.courseName}}</text>
+                                    <text class="class-list-item-content">\n{{item.courseDesc}}</text>
+                                </view>
+                                <view class="evaluation-text">综合评价</view>
+                                <image class="kind-list-img" src="../resources/kind/logo.png"></image>
+                            </view>
+                            <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+                                <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+                                <block wx:for-items="{{item.evaluation}}" wx:for-item="eva" wx:key="*item">
+                                    <navigator url=".." class="navigator">
+                                    <view class="navigator-text">{{eva}}</view>
+                                    <view class="navigator-arrow"></view>
+                                    </navigator>
+                                </block>
+                                </view>
+                            </view>
+                            </view>
+                        </block>
+                        </view>
+                    </view>
+                </view>
+
+
+                <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+                    <!-- class list -->
+                    <view class="index-bd class-list">
+                        <view class="kind-list">
+                        <block wx:for-items="{{coursesSet4}}" wx:key="{{item.id}}">
+                            <view class="kind-list-item">
+                            <view id="{{item.courseNo}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="noteGraph" data-evaluation="{{item.evaluation}}">
+                                <view class="kind-list-text">
+                                    <text class="class-list-item-title">{{item.courseName}}</text>
+                                    <text class="class-list-item-content">\n{{item.courseDesc}}</text>
+                                </view>
+                                <view class="evaluation-text">综合评价</view>
+                                <image class="kind-list-img" src="../resources/kind/logo.png"></image>
+                            </view>
+                            <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+                                <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+                                <block wx:for-items="{{item.evaluation}}" wx:for-item="eva" wx:key="*item">
+                                    <navigator url=".." class="navigator">
+                                    <view class="navigator-text">{{eva}}</view>
+                                    <view class="navigator-arrow"></view>
+                                    </navigator>
+                                </block>
+                                </view>
+                            </view>
+                            </view>
+                        </block>
+                        </view>
+                    </view>
+                
+                </view>
+
+
+                <view class="weui-tab__content" hidden="{{activeIndex != 4}}">
+                    <!-- class list -->
+                    <view class="index-bd class-list">
+                        <view class="kind-list">
+                        <block wx:for-items="{{coursesSet5}}" wx:key="{{item.id}}">
+                            <view class="kind-list-item">
+                            <view id="{{item.courseNo}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="noteGraph" data-evaluation="{{item.evaluation}}">
+                                <view class="kind-list-text">
+                                    <text class="class-list-item-title">{{item.courseName}}</text>
+                                    <text class="class-list-item-content">\n{{item.courseDesc}}</text>
+                                </view>
+                                <view class="evaluation-text">综合评价</view>
+                                <image class="kind-list-img" src="../resources/kind/logo.png"></image>
+                            </view>
+                            <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+                                <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+                                <block wx:for-items="{{item.evaluation}}" wx:for-item="eva" wx:key="*item">
+                                    <navigator url=".." class="navigator">
+                                    <view class="navigator-text">{{eva}}</view>
+                                    <view class="navigator-arrow"></view>
+                                    </navigator>
+                                </block>
+                                </view>
+                            </view>
+                            </view>
+                        </block>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+</view>

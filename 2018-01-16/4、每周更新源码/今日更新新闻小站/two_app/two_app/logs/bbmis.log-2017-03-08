@@ -1,0 +1,676 @@
+[2017-03-08 10:16:53.818] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 10:16:53.874] [WARN] console - Unhandled rejection SequelizeDatabaseError: ER_BAD_FIELD_ERROR: Unknown column 'extend' in 'field list'
+    at Query.formatError (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/query.js:175:14)
+    at Query._callback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/query.js:49:21)
+    at Query.Sequence.end (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Sequence.js:86:24)
+    at Query.ErrorPacket (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Query.js:88:8)
+    at Protocol._parsePacket (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:280:23)
+    at Parser.write (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Parser.js:75:12)
+    at Protocol.write (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:146:16)
+    at Socket.Readable.push (_stream_readable.js:110:10)
+    at TCP.onread (net.js:523:20)
+[2017-03-08 10:18:31.733] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 10:18:31.740] [WARN] console - Unhandled rejection SequelizeDatabaseError: ER_BAD_FIELD_ERROR: Unknown column 'extend' in 'field list'
+    at Query.formatError (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/query.js:175:14)
+    at Query._callback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/query.js:49:21)
+    at Query.Sequence.end (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Sequence.js:86:24)
+    at Query.ErrorPacket (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Query.js:88:8)
+    at Protocol._parsePacket (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:280:23)
+    at Parser.write (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Parser.js:75:12)
+    at Protocol.write (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:146:16)
+    at Socket.Readable.push (_stream_readable.js:110:10)
+    at TCP.onread (net.js:523:20)
+[2017-03-08 10:18:47.430] [INFO] BBMIS - 用户信息:{"errcode":40001,"errmsg":"invalid credential, access_token is invalid or not latest, hints: [ req_id: cIXHLA0527s108 ]"}
+[2017-03-08 10:18:47.430] [WARN] console - Unhandled rejection openid不能为空
+[2017-03-08 10:21:15.377] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 10:21:26.995] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 11:25:02.988] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 11:25:03.214] [INFO] console - data::{"access_token":"Zhx18u3UlD-7r1JbeknWFcb3pCteCjbJDXxzcZenV--kVYEP6thtPMymEdkApxLn0HtdtV11OpnLZ4mWuq1ynfjyAYcJkSk2qhdEa8EYFkSzMMlzFlOxb15Nh-dAeDI_BDEgABAGIJ","expires_in":7200}
+[2017-03-08 11:25:03.396] [INFO] console - data:::[object Object]
+[2017-03-08 11:25:03.396] [INFO] BBMIS - JSSDK签名:42eab174bd06cf506cb73ff8ff4a934a036fa1a9
+[2017-03-08 11:32:46.757] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 11:32:47.011] [INFO] BBMIS - JSSDK签名:ec676036b85203ee7dd908f837c83a362f15bd49
+[2017-03-08 11:33:39.950] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 11:33:40.158] [INFO] BBMIS - JSSDK签名:801351c70a64b10f079d783f18d5e8d949ef716a
+[2017-03-08 11:34:39.652] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 11:34:39.832] [INFO] BBMIS - JSSDK签名:ce69c9dd3d263838401cb30e628addb194fc6834
+[2017-03-08 11:37:48.134] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 11:37:48.668] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 11:37:48.848] [INFO] BBMIS - JSSDK签名:50694a5a00961c659e5940af2c3325da5455dcbd
+[2017-03-08 11:38:44.105] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 11:38:44.318] [INFO] BBMIS - JSSDK签名:3c45a84a16c4b1b48dfa2274488ea0266cfe6359
+[2017-03-08 11:39:43.876] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 11:39:44.073] [INFO] BBMIS - JSSDK签名:be21776a38c27e754290e42f459a1ddcd1ecbade
+[2017-03-08 11:39:54.602] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 11:41:48.735] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 11:41:48.957] [INFO] BBMIS - JSSDK签名:ba50df7f856da1f14085c5c9e893c4cfe04b19eb
+[2017-03-08 11:42:11.922] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 11:42:12.152] [INFO] BBMIS - JSSDK签名:a89582e4e8d4b2b0bc5cc21c5164fdae0974d8d8
+[2017-03-08 11:54:37.621] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 11:54:37.837] [INFO] BBMIS - JSSDK签名:6a7cf6b6bd6b8395b949574d785438943ee947eb
+[2017-03-08 11:54:59.103] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 11:54:59.322] [INFO] BBMIS - JSSDK签名:58d59937d0829ba710331f7723fe477dd8f69bfe
+[2017-03-08 11:56:24.740] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 11:56:24.944] [INFO] BBMIS - JSSDK签名:2a1bfe3d222a54b2a2a2c8705a559e9a8960d494
+[2017-03-08 11:56:34.768] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 11:56:34.932] [INFO] BBMIS - JSSDK签名:bafcdabf8f45eb538e050030620277d968615888
+[2017-03-08 11:57:09.318] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 11:57:09.518] [INFO] BBMIS - JSSDK签名:d218e79cc3ea115c078816fd0a781a8cf5ec95f6
+[2017-03-08 12:03:21.069] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 12:03:21.286] [INFO] BBMIS - JSSDK签名:abf041dc23b18bde3bc5ecdbae5c8eca835782a1
+[2017-03-08 12:04:12.285] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 12:04:12.521] [INFO] BBMIS - JSSDK签名:c2938c598464b6df4b8c4f0f89e722d6f20a6181
+[2017-03-08 12:04:31.403] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 12:04:31.573] [INFO] BBMIS - JSSDK签名:901daab9c0d6342b081774409e715eadf831f214
+[2017-03-08 12:08:20.960] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 12:08:21.154] [INFO] BBMIS - JSSDK签名:caa8c1ceae467c89eae1b3bdaab1358af65e6b0f
+[2017-03-08 12:08:31.616] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 12:08:31.816] [INFO] BBMIS - JSSDK签名:559445b2ecd2f075cf21cc6a442744a56e22c752
+[2017-03-08 12:09:09.706] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 12:09:09.923] [INFO] BBMIS - JSSDK签名:5711fbc18d4cbcbb2c2896cee82c18fdc8efe014
+[2017-03-08 12:11:37.747] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 12:11:37.982] [INFO] BBMIS - JSSDK签名:f186fff7edeb9421e7f3091cd2c6d88c84a702e7
+[2017-03-08 12:13:16.442] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 12:13:16.614] [INFO] BBMIS - JSSDK签名:f9a578d8553c812fd443f192f69675cc00a60872
+[2017-03-08 12:22:48.307] [INFO] console - null
+[2017-03-08 12:22:48.311] [INFO] console - [ReferenceError: _obj is not defined]
+ReferenceError: _obj is not defined
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/marketing.js:317:45
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:691:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-08 12:25:29.926] [INFO] console - [TypeError: Cannot read property 'buy_datetime' of undefined]
+TypeError: Cannot read property 'buy_datetime' of undefined
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/marketing.js:321:45
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:691:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-08 12:26:43.219] [INFO] console - [TypeError: Cannot read property 'dataValues' of null]
+TypeError: Cannot read property 'dataValues' of null
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/marketing.js:325:85
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:691:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-08 13:09:15.513] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 13:09:15.769] [INFO] console - data::{"access_token":"g6wlZF-2ehNxb1YIIxPAbw-hlVHxLIBB4edg-wGpUhGV9LTceS-GdivLVXfS4knrz-O8wOrTFwuRL2r-zsehm-L47Q4dZzGug7B9dmoI2hMMtOdo_s9Thm5Mtk7-Ib3ELXEjACAUGN","expires_in":7200}
+[2017-03-08 13:09:15.963] [INFO] console - data:::[object Object]
+[2017-03-08 13:09:15.963] [INFO] BBMIS - JSSDK签名:012cf30b1049138e9716fa1648a9789909c4cfd6
+[2017-03-08 13:23:42.990] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 13:26:12.542] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 13:26:12.732] [INFO] BBMIS - JSSDK签名:aaaa93fd97324110c8abcda53c1edd2d34503283
+[2017-03-08 13:26:51.235] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 13:26:51.423] [INFO] BBMIS - JSSDK签名:fd3e7b59a3de716b86ee8da72f80b09e0084571f
+[2017-03-08 13:27:11.950] [INFO] console - [TypeError: Cannot read property 'dataValues' of null]
+TypeError: Cannot read property 'dataValues' of null
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/marketing.js:325:85
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:691:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-08 13:30:32.786] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 13:30:33.356] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 13:30:33.566] [INFO] BBMIS - JSSDK签名:420393e94ef995153c2552f22d65447a0fe46272
+[2017-03-08 13:32:19.930] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 13:32:20.688] [INFO] console - data::{"access_token":"iSt3GN3iM-A8rhBiuGjhJF1dGc4drsPpmef6aIeFukwGXNv068MMVooeZIwm2OLxZVveCZgNd2QB-qWWf6cHHs82-Y9DJM4s-Mp-UHczK2lT0yV0pWEGhlgD5UD6aIonJNNdAFATXX","expires_in":7200}
+[2017-03-08 13:32:20.876] [INFO] console - data:::[object Object]
+[2017-03-08 13:32:20.876] [INFO] BBMIS - JSSDK签名:c47dbd497295923fe5745b7be4aabad0fd635daf
+[2017-03-08 13:33:01.553] [INFO] console - [TypeError: Cannot read property 'dataValues' of null]
+TypeError: Cannot read property 'dataValues' of null
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/marketing.js:325:85
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:691:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-08 13:53:51.416] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 13:53:51.658] [INFO] BBMIS - JSSDK签名:f80a5ee78075f14c36f17ae295eb4719009c4ee9
+[2017-03-08 13:53:58.747] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 13:53:59.334] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 13:53:59.570] [INFO] BBMIS - JSSDK签名:9908546a9bd9f4af31da067e1369a64a630bb6c6
+[2017-03-08 13:59:53.526] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 13:59:53.756] [INFO] BBMIS - JSSDK签名:41e7707137a23d016447b33ba982c3cd9bb07154
+[2017-03-08 14:00:18.788] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 14:03:56.341] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 14:03:56.519] [INFO] BBMIS - JSSDK签名:3eb1c1929e06bc450d88909cae2ed601f44a1ca4
+[2017-03-08 14:06:58.550] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 14:06:58.778] [INFO] BBMIS - JSSDK签名:09aab3f82ee455e9b0e924ee49851aac5f720b9c
+[2017-03-08 14:41:15.875] [WARN] console - Unhandled rejection SequelizeDatabaseError: ER_BLOB_KEY_WITHOUT_LENGTH: BLOB/TEXT column 'serviceid' used in key specification without a key length
+    at Query.formatError (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/query.js:175:14)
+    at Query._callback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/query.js:49:21)
+    at Query.Sequence.end (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Sequence.js:86:24)
+    at Query.ErrorPacket (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Query.js:88:8)
+    at Protocol._parsePacket (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:280:23)
+    at Parser.write (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Parser.js:75:12)
+    at Protocol.write (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:146:16)
+    at Socket.Readable.push (_stream_readable.js:110:10)
+    at TCP.onread (net.js:523:20)
+[2017-03-08 14:42:06.248] [WARN] console - Unhandled rejection SequelizeDatabaseError: ER_BLOB_KEY_WITHOUT_LENGTH: BLOB/TEXT column 'serviceid' used in key specification without a key length
+    at Query.formatError (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/query.js:175:14)
+    at Query._callback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/query.js:49:21)
+    at Query.Sequence.end (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Sequence.js:86:24)
+    at Query.ErrorPacket (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Query.js:88:8)
+    at Protocol._parsePacket (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:280:23)
+    at Parser.write (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Parser.js:75:12)
+    at Protocol.write (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:146:16)
+    at Socket.Readable.push (_stream_readable.js:110:10)
+    at TCP.onread (net.js:523:20)
+[2017-03-08 14:54:36.663] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 14:54:36.932] [INFO] console - data::{"access_token":"JxkwpLJ7lWP-NczI_JpGKAxnFPxxRJaKCMTv6x5Oe7YYsXyK-ccEBsBw3vi0M8g0SNRcXuKSpx5kGuJa5CRZPx_Tm6X9bnro-eno5fp4n1MrfeADlURvMbr02_qu43XyJJTaACANNX","expires_in":7200}
+[2017-03-08 14:54:37.148] [INFO] console - data:::[object Object]
+[2017-03-08 14:54:37.149] [INFO] BBMIS - JSSDK签名:f975d1b05cfdb9268a0158b3301a8ebb8d1ed14c
+[2017-03-08 15:10:54.784] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 15:10:54.981] [INFO] BBMIS - JSSDK签名:1e0f092222862d86bbfebd977b1282a7271b3bb5
+[2017-03-08 15:34:16.082] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 15:34:16.322] [INFO] BBMIS - JSSDK签名:283da6f0e3a45cc775de0e6fab92e34e0fd80241
+[2017-03-08 15:35:08.466] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 15:35:08.679] [INFO] BBMIS - JSSDK签名:23eb73e996846fd0500fefb38390e2cefc494ce0
+[2017-03-08 15:41:13.128] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 15:41:13.380] [INFO] BBMIS - JSSDK签名:ce7452de42fcbb6064f0eea5502c869bb7356ea3
+[2017-03-08 15:44:45.320] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 15:44:45.539] [INFO] BBMIS - JSSDK签名:9a73c4579e67dcb8bf4402ed7677e31f454a6135
+[2017-03-08 15:45:55.895] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 15:46:10.007] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 15:46:10.233] [INFO] BBMIS - JSSDK签名:f3657b311f02d55b9d10b67694fc7880eb9a62a1
+[2017-03-08 15:47:07.422] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 15:48:17.766] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 15:48:17.995] [INFO] BBMIS - JSSDK签名:bacdb6f9871da75f4e80ca4c5aa4e259393f2c8e
+[2017-03-08 15:48:42.641] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 15:48:42.823] [INFO] BBMIS - JSSDK签名:86661f321bd03c533184a4d894eb8ff173486bdc
+[2017-03-08 15:49:35.403] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 15:49:35.886] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 15:49:36.073] [INFO] BBMIS - JSSDK签名:27d111bee09a7661a44228aa0b5bc3639bc03188
+[2017-03-08 15:59:19.648] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 15:59:19.845] [INFO] console - data::{"access_token":"g6wlZF-2ehNxb1YIIxPAb-vCTzSVLMYHIUPtbQPuhdxUm6ztjKRpUQQ58Dz_MRKRHkF3_O9czQXhyIYtZlQDe_PwEa2KQn5qQ9ID2HiFBJ3O_c21-LicHyNr2sbXs7-ZQXFjACATAI","expires_in":7200}
+[2017-03-08 15:59:20.049] [INFO] console - data:::[object Object]
+[2017-03-08 15:59:20.049] [INFO] BBMIS - JSSDK签名:f7edc8ea60dd5d9264fae3b4ac9d31f0b4bece7d
+[2017-03-08 15:59:52.392] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 15:59:52.624] [INFO] BBMIS - JSSDK签名:01b7ac1f092c5e4dfb7a91cf944ff9f594f4a88a
+[2017-03-08 16:00:35.088] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:00:35.283] [INFO] BBMIS - JSSDK签名:b96e556a55fda48fbd8d98e8cf3e89fb54e85019
+[2017-03-08 16:00:56.392] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:00:56.583] [INFO] BBMIS - JSSDK签名:08a76e527848ec4e81d0d6781ce33d85a2818eb2
+[2017-03-08 16:01:02.584] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:01:02.806] [INFO] BBMIS - JSSDK签名:21a294109ede4db6cee7aca1586d0f6ee62d0656
+[2017-03-08 16:01:34.218] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:01:34.415] [INFO] BBMIS - JSSDK签名:6b4231067e2688d61e665ba6c4a21b761c606e8f
+[2017-03-08 16:02:14.426] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:02:14.665] [INFO] BBMIS - JSSDK签名:903646fda5410a695db0fca0ab8f50780e53470d
+[2017-03-08 16:05:17.274] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:05:17.474] [INFO] BBMIS - JSSDK签名:5b52591a1fa0a30d926652aeae14962aa0016725
+[2017-03-08 16:09:14.558] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:09:14.769] [INFO] BBMIS - JSSDK签名:dc213f7be1e373767fb0a8d3cda9905a72a2d5d4
+[2017-03-08 16:12:18.903] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:12:19.114] [INFO] BBMIS - JSSDK签名:00e76973fe94df64a1e69fd1c6105396313d4b7c
+[2017-03-08 16:13:20.842] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:13:21.065] [INFO] BBMIS - JSSDK签名:63450338b374c43a40d477d0fdd0d4f60621d652
+[2017-03-08 16:14:41.320] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:14:41.500] [INFO] BBMIS - JSSDK签名:614c9603703d853b031f14cd2dae02d11fe84908
+[2017-03-08 16:15:19.367] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:15:19.569] [INFO] BBMIS - JSSDK签名:aa5fcd2b78c4116c6c4acc1e34198d681b63181a
+[2017-03-08 16:15:44.137] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:15:44.362] [INFO] BBMIS - JSSDK签名:cbe1c95c76d74bd47583c87ce1cbfa559e90f58f
+[2017-03-08 16:16:17.323] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:16:17.492] [INFO] BBMIS - JSSDK签名:da25644b9d46a7ce81da018b0b5df7e930535171
+[2017-03-08 16:19:44.235] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:19:44.443] [INFO] BBMIS - JSSDK签名:4647236efbaa90b443f515f4100711135c8fdfc0
+[2017-03-08 16:19:59.733] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:19:59.927] [INFO] BBMIS - JSSDK签名:699da3c38a55e2ba50296c9eb5d2f64e412f3f23
+[2017-03-08 16:20:11.694] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:20:11.932] [INFO] BBMIS - JSSDK签名:e202d1c18c10217c11fe69ecb85c316b9b757c72
+[2017-03-08 16:21:19.020] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:21:19.202] [INFO] BBMIS - JSSDK签名:bef5abb079b9dd40df95b7b7fce081085266b55a
+[2017-03-08 16:22:22.194] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:22:22.413] [INFO] BBMIS - JSSDK签名:5e799374ec9397bdc443c2898531ee9a79271354
+[2017-03-08 16:24:33.154] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:24:33.366] [INFO] BBMIS - JSSDK签名:b65e4026e9699e7edbcf5a2a4f778c73e2a61070
+[2017-03-08 16:25:15.337] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:25:15.518] [INFO] BBMIS - JSSDK签名:7f3ebadeb1bb4ceb763e64d04f5b8e9ecfb6d3d2
+[2017-03-08 16:26:27.629] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:26:27.858] [INFO] BBMIS - JSSDK签名:67d6aa9eb47c104cdc094247608e4b0259f27bf3
+[2017-03-08 16:27:05.228] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:27:05.411] [INFO] BBMIS - JSSDK签名:1bfef278928e12551a84ccdcb81cdf06fadb56df
+[2017-03-08 16:29:24.253] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:29:24.475] [INFO] BBMIS - JSSDK签名:56b90ec81d1de619f156607940d3f6d7df74e988
+[2017-03-08 16:31:01.835] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:31:02.099] [INFO] BBMIS - JSSDK签名:43da21a4615b5ab4502c8a1db7c9882eb46c588b
+[2017-03-08 16:32:41.047] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:32:41.266] [INFO] BBMIS - JSSDK签名:f5dc8ad81b9957f0d21c8e998adc54ec5cbfc315
+[2017-03-08 16:37:33.252] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:37:33.469] [INFO] BBMIS - JSSDK签名:81b9fac2bb7154bc735782abf1643cfcdc70a4da
+[2017-03-08 16:38:15.153] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:38:15.314] [INFO] BBMIS - JSSDK签名:5e6cb3db28aeb01a4e5b0e6e3dac649c3e903366
+[2017-03-08 16:39:11.556] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:39:11.748] [INFO] BBMIS - JSSDK签名:ffe52c9e9a829d758536e7548528b8110731a50b
+[2017-03-08 16:45:00.553] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:45:00.804] [INFO] BBMIS - JSSDK签名:5f86f30066ebfa5e92dda96607b6979ee36efb7a
+[2017-03-08 16:45:16.134] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 16:45:16.673] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:45:16.842] [INFO] BBMIS - JSSDK签名:749a5f7cdcfefc7b7fe0bb6912be9cc3b18f2d09
+[2017-03-08 16:45:47.297] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 16:45:47.479] [INFO] BBMIS - JSSDK签名:a78424b3782544a93d5d777e217ef35526b2000b
+[2017-03-08 16:46:28.691] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 16:46:28.865] [INFO] BBMIS - JSSDK签名:e730592d90a5df150c56fb0b52d3ac714e551f66
+[2017-03-08 16:46:36.689] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 16:46:37.211] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 16:46:37.397] [INFO] BBMIS - JSSDK签名:14c19150cc82dcfe8eaa16c56aaf519b604d9430
+[2017-03-08 17:03:16.204] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 17:03:17.387] [INFO] console - data::{"access_token":"20At5ZMpM2EuCh70La6TlgG49JzoxN3Uuwc8Cw50Z3RsQLfY2syOkju7v6jZOX6wFIkRF11blYgfM5AvoFlYLO3j5J4gatgT_ciKU2hCntLrA01wco-4ShZVSmQDHrbMIAKeAGAASC","expires_in":7200}
+[2017-03-08 17:03:17.616] [INFO] console - data:::[object Object]
+[2017-03-08 17:03:17.616] [INFO] BBMIS - JSSDK签名:7aa24ddfb06070f781caebbf34b9012365e62db0
+[2017-03-08 17:07:25.079] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 17:07:25.954] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 17:07:26.133] [INFO] BBMIS - JSSDK签名:cc4e7a2c30069ff441bfb7b146e05368d2dbd8e0
+[2017-03-08 17:17:26.248] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 17:17:26.464] [INFO] BBMIS - JSSDK签名:0790f5c50234fa924a0ec323d43c1361eea1e6c0
+[2017-03-08 17:17:43.100] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 17:17:43.317] [INFO] BBMIS - JSSDK签名:6ee0d2e293c316f2a7c9364b55198c8454fd0f09
+[2017-03-08 17:59:23.371] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 17:59:23.788] [INFO] console - data::{"access_token":"TPKTBbXk8HtxvWzarQRn3nJyGzThf-sA_SMXxR0jZ_HyRh8zeyfpn7YC_QPezLK4qv9eN0iAaUZ28NZ2SkCZ8VB2Pzm1_iHUqAaUjCAVMlTdsGIkV9n-eRbNbBysc2CGMEJiADAXPU","expires_in":7200}
+[2017-03-08 17:59:24.068] [INFO] console - data:::[object Object]
+[2017-03-08 17:59:24.069] [INFO] BBMIS - JSSDK签名:832b307acc6a0e075439f006e307c41b67b8b760
+[2017-03-08 19:28:39.073] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 19:28:39.796] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 19:28:39.991] [INFO] console - data::{"access_token":"YtsHTFANofjfdSCb3wYw1XiEFc1Zkh8erzZYRCyYj-OXt5Cjj8zhypM8OjahdrmWYCTsWBEadNTDpCvlsx2e0qoE3x76L0hPZEkGI4ijKEYYUQaAEALHD","expires_in":7200}
+[2017-03-08 19:28:40.219] [INFO] console - data:::[object Object]
+[2017-03-08 19:28:40.220] [INFO] BBMIS - JSSDK签名:72564d0f53b27e6548f53006ec320979bd12ba67
+[2017-03-08 19:34:15.187] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 19:34:15.411] [INFO] BBMIS - JSSDK签名:94fa0ab1fcfd0c73f2350e72c2a4ca552e205825
+[2017-03-08 19:36:42.229] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 19:36:42.436] [INFO] BBMIS - JSSDK签名:14e92269e7f84fddfb1e3d14a13e73aa2afa6ef1
+[2017-03-08 19:50:28.893] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 19:50:29.456] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 19:50:29.652] [INFO] BBMIS - JSSDK签名:fab12d5f51d51437643e95c9e946f461d040c99e
+[2017-03-08 21:06:53.341] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 21:06:54.006] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:06:54.199] [INFO] console - data::{"access_token":"jdmlXU1JKEHkZUD6XrqTSJY_AegZaY9-d6ByYHc9mA-Dpbnquo38Za5-wveQ7w1UwIiFB_IWp0KFceUfLt_2nOYQjUBlCuYtAvZSu5264UgDKNbADATAD","expires_in":7200}
+[2017-03-08 21:06:54.387] [INFO] console - data:::[object Object]
+[2017-03-08 21:06:54.388] [INFO] BBMIS - JSSDK签名:4b816db4c4a0b2f39007f4a6ddfc5cc56370aedd
+[2017-03-08 21:07:17.778] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 21:07:17.979] [INFO] BBMIS - JSSDK签名:605e63aa74796cbff411854eaffdb6ad510ada73
+[2017-03-08 21:08:06.384] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 21:08:07.059] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:08:07.232] [INFO] BBMIS - JSSDK签名:9159432a9f737e05dc9699d1850c60bcc1a35e0e
+[2017-03-08 21:16:39.745] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 21:16:40.581] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:16:40.755] [INFO] console - data::{"access_token":"yzd2PjWmRUGHEIhgbngOe0JuKIG2Rcla_RzUHTql7_KdMln-E9Rptii_GetrK6_mQB4i8mHIArGERmx6sct4DimQNMx5WfXkoqTIovNpS5lSA3YbJ_ewg60hn3Uh4cN8XRFfABATNB","expires_in":7200}
+[2017-03-08 21:16:40.998] [INFO] console - data:::[object Object]
+[2017-03-08 21:16:41.000] [INFO] BBMIS - JSSDK签名:939f4ae12a2aa2e969b0cad5753599e4fa7c0132
+[2017-03-08 21:17:09.441] [INFO] console - { activityid: '88c88310040111e7a197b3f0f8d0b05e',
+  type: 0,
+  customerid: '433b1de003d311e79bfe0dab3c4bd0b9',
+  preview_picture: '{"pictures":["",""]}',
+  describe: '<p></p>',
+  rule: 'sses',
+  bengin_datetime: null,
+  finish_datetime: null,
+  praise_listPage: undefined,
+  power: undefined,
+  title: 'a',
+  couponid: undefined,
+  shelvesid: null }
+[2017-03-08 21:17:09.458] [INFO] console - [ 0 ]
+[2017-03-08 21:18:12.448] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:18:12.687] [INFO] BBMIS - JSSDK签名:3fb4328d2c000be224c553e29871dfcdbff2826a
+[2017-03-08 21:18:44.908] [INFO] console - { activityid: 'c1af77b0040111e7a197b3f0f8d0b05e',
+  type: 0,
+  customerid: '433b1de003d311e79bfe0dab3c4bd0b9',
+  preview_picture: '{"pictures":["",""]}',
+  describe: '<p></p>',
+  rule: 'ssd',
+  bengin_datetime: null,
+  finish_datetime: null,
+  praise_listPage: undefined,
+  power: undefined,
+  title: 'a',
+  couponid: undefined,
+  shelvesid: null }
+[2017-03-08 21:18:44.923] [INFO] console - [ 0 ]
+[2017-03-08 21:20:28.295] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:20:28.492] [INFO] BBMIS - JSSDK签名:e45877f264c5b3d1f146319d09ee43b5184f29e3
+[2017-03-08 21:20:36.549] [INFO] console - { activityid: '043aaf50040211e7a197b3f0f8d0b05e',
+  type: 0,
+  customerid: '433b1de003d311e79bfe0dab3c4bd0b9',
+  preview_picture: '{"pictures":["",""]}',
+  describe: '<p></p>',
+  rule: 's22',
+  bengin_datetime: null,
+  finish_datetime: null,
+  praise_listPage: undefined,
+  power: undefined,
+  title: 'a',
+  couponid: undefined,
+  shelvesid: null }
+[2017-03-08 21:20:36.562] [INFO] console - [ 0 ]
+[2017-03-08 21:20:48.648] [INFO] console - { activityid: '0b70d880040211e7a197b3f0f8d0b05e',
+  type: 0,
+  customerid: '433b1de003d311e79bfe0dab3c4bd0b9',
+  preview_picture: '{"pictures":["",""]}',
+  describe: '<p></p>',
+  rule: 's22',
+  bengin_datetime: null,
+  finish_datetime: null,
+  praise_listPage: undefined,
+  power: undefined,
+  title: 'a22',
+  couponid: undefined,
+  shelvesid: null }
+[2017-03-08 21:20:48.658] [INFO] console - [ 0 ]
+[2017-03-08 21:25:45.529] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:25:45.846] [INFO] console - data::{"access_token":"E2Ujg9RjvGqafkcaYoHeW18pOMW1-cKwt_aq9qsbM6AThxPkQEYwc5TFfRSVemHTJvGtAHQrhI_3ecPMZ3HOiMD2xBanruLCVlcmsIFpdqiZFTCbXBBLzCi5GeZOnWbGJDPjACAFZL","expires_in":7200}
+[2017-03-08 21:25:46.029] [INFO] console - data:::[object Object]
+[2017-03-08 21:25:46.029] [INFO] BBMIS - JSSDK签名:00892c18a886b3777d9a2d74eee6be27f9a39be2
+[2017-03-08 21:34:52.932] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:34:53.189] [INFO] BBMIS - JSSDK签名:b6262e7f47c80fc02f150a984d431017f35e2028
+[2017-03-08 21:38:53.169] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 21:38:54.646] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:38:54.867] [INFO] BBMIS - JSSDK签名:0e740360ac389374719e3b0a87ffad474976bb3c
+[2017-03-08 21:40:45.246] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:40:45.428] [INFO] BBMIS - JSSDK签名:1c37debbec16e987a85a8cd182880a279e6d1462
+[2017-03-08 21:45:58.586] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:45:58.830] [INFO] BBMIS - JSSDK签名:ee18834e8f3f17a44ff04b7c19ad8118257f7579
+[2017-03-08 21:47:11.700] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:47:11.925] [INFO] BBMIS - JSSDK签名:a5cd7b929f1ac9255437ff1d682f2eb9a3628d60
+[2017-03-08 21:47:22.675] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 21:47:23.448] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:47:23.607] [INFO] BBMIS - JSSDK签名:13a19e946c87ec321662b622ec31fe011c20abd3
+[2017-03-08 21:49:28.562] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:49:28.786] [INFO] BBMIS - JSSDK签名:c75ae097264ef3393ed9c98a5f6104cf8e08c06f
+[2017-03-08 21:51:24.446] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:51:24.694] [INFO] BBMIS - JSSDK签名:cbba9eda615975338198e2cab2a3b4522dd915f0
+[2017-03-08 21:51:39.496] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:51:39.677] [INFO] BBMIS - JSSDK签名:5e45855c025241c101b96951c4b6e765a23f2825
+[2017-03-08 21:57:10.256] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 21:57:10.464] [INFO] BBMIS - JSSDK签名:03727fa17b19db957994df6627ab2ab5167116e3
+[2017-03-08 22:05:07.693] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:05:07.886] [INFO] BBMIS - JSSDK签名:20c4c23aefb678ee1895b38443fb66b215cfca0f
+[2017-03-08 22:05:57.619] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 22:05:59.111] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:05:59.326] [INFO] BBMIS - JSSDK签名:433e5bbcd7b6e989dd67040c78f15d5ccf78ebf0
+[2017-03-08 22:07:14.107] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:07:14.347] [INFO] BBMIS - JSSDK签名:1af164ecadc91422169d45a679db92b6668530f9
+[2017-03-08 22:09:03.782] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:09:03.987] [INFO] BBMIS - JSSDK签名:debf728ecae54b56678c6e2dd93e19e44f7cbb32
+[2017-03-08 22:10:12.353] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:10:12.586] [INFO] BBMIS - JSSDK签名:fe11e3e435ef9729555130095234c091ae798336
+[2017-03-08 22:10:59.755] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:10:59.955] [INFO] BBMIS - JSSDK签名:b536d2920b15235f5bb8ae6c625ef961af5a6563
+[2017-03-08 22:11:27.098] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:11:27.286] [INFO] BBMIS - JSSDK签名:bd5c54e3e28603e90dc6578003b4406057346538
+[2017-03-08 22:12:27.122] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:12:27.355] [INFO] BBMIS - JSSDK签名:486912d3549a0fcef3779838285e0fafa9d71c9f
+[2017-03-08 22:13:41.064] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:13:41.263] [INFO] BBMIS - JSSDK签名:492d30707dcb321d1a111ced1ed02beb5dd96e2c
+[2017-03-08 22:14:37.824] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:14:38.050] [INFO] BBMIS - JSSDK签名:49a42a386214667bd3326760af1a1a28fe22f1cf
+[2017-03-08 22:16:25.636] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:16:25.851] [INFO] BBMIS - JSSDK签名:c6e204007306cc436d8a1ea935a5b69cadb011f9
+[2017-03-08 22:18:12.375] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:18:12.566] [INFO] BBMIS - JSSDK签名:c6ddda5d33cbc2ac694cb9d8a83cf4deb36c50f7
+[2017-03-08 22:19:32.325] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:19:32.515] [INFO] BBMIS - JSSDK签名:9a1a0e31a4e862674bd13d275099f10a17651faa
+[2017-03-08 22:20:10.845] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:20:11.044] [INFO] BBMIS - JSSDK签名:6ebff59a3e765a46929b635ad94116e0be859ac5
+[2017-03-08 22:21:43.813] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:21:44.039] [INFO] BBMIS - JSSDK签名:88c519a554c7d37ba086396a076b3dc963b65136
+[2017-03-08 22:22:28.687] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:22:28.912] [INFO] BBMIS - JSSDK签名:d1d6e9cba9c9be1924e7827a442973bc748a034a
+[2017-03-08 22:23:20.258] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:23:20.465] [INFO] BBMIS - JSSDK签名:8be11e40f26d5cb4565387912f1f3462499d7a4b
+[2017-03-08 22:25:26.754] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:25:26.962] [INFO] BBMIS - JSSDK签名:205561f5f47ece2af8501786b6e3ad60eb408385
+[2017-03-08 22:25:28.625] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:25:28.815] [INFO] BBMIS - JSSDK签名:907fe0305feb6174daf5aa2be1c3492e663d1b3c
+[2017-03-08 22:27:17.521] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:27:17.734] [INFO] console - data::{"access_token":"ZTMPD4rQPIgb7FWd6CnlPetkVIUu1jdLyF7hjD8aApXjlyJDr1kxYS6A4DQj3mwrd4JuLYp-nhiP7_hMwLdCLCdbvFLFWqsArjJD1zI3woqvIcSXMrxZwPTcj7VgUMLYUVVbABAHII","expires_in":7200}
+[2017-03-08 22:27:17.963] [INFO] console - data:::[object Object]
+[2017-03-08 22:27:17.963] [INFO] BBMIS - JSSDK签名:4eaec65b145e49edc074b716c10668c48f6f6a77
+[2017-03-08 22:28:53.951] [INFO] console - [TypeError: val.replace is not a function]
+TypeError: val.replace is not a function
+    at Object.SqlString.escape (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/sql-string.js:63:15)
+    at Object.QueryGenerator.escape (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/abstract/query-generator.js:978:22)
+    at Object.QueryGenerator.updateQuery (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/abstract/query-generator.js:474:58)
+    at QueryInterface.bulkUpdate (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/query-interface.js:604:33)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/model.js:2601:32
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:691:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-08 22:30:01.565] [INFO] console - { activityid: 
+   { activityid: '52c09d10040211e788a83dd1db1a7ad0',
+     title: 'a',
+     rule: 'sfgfgh',
+     describe: '<p></p>',
+     preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ban1c48i1skq18ocopfhgrq3ag.png",""]}' },
+  type: 0,
+  customerid: '433b1de003d311e79bfe0dab3c4bd0b9',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ban1c48i1skq18ocopfhgrq3ag.png",""]}',
+  describe: '<p></p>',
+  rule: 'sfgfgh',
+  bengin_datetime: null,
+  finish_datetime: null,
+  praise_listPage: undefined,
+  power: undefined,
+  title: 'a',
+  couponid: undefined,
+  shelvesid: null }
+[2017-03-08 22:30:01.585] [INFO] console - [TypeError: val.replace is not a function]
+TypeError: val.replace is not a function
+    at Object.SqlString.escape (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/sql-string.js:63:15)
+    at Object.QueryGenerator.escape (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/abstract/query-generator.js:978:22)
+    at Object.QueryGenerator.updateQuery (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/abstract/query-generator.js:474:58)
+    at QueryInterface.bulkUpdate (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/query-interface.js:604:33)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/model.js:2601:32
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:691:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-08 22:31:02.089] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 22:31:03.867] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:31:04.019] [INFO] console - data::{"access_token":"DXSB9hR-DspFYmwapje7qeoW9ikkrknvURwEiDdCjW64Ca5Lg6B5wVXVIzaEm3GaG3wOrerx8I1iK1N49z806D3O8NbXzuvmmZtbt5A4tWhrweFJeWExK1VgFlWLSe6vQJJjAFAUNN","expires_in":7200}
+[2017-03-08 22:31:04.233] [INFO] console - data:::[object Object]
+[2017-03-08 22:31:04.234] [INFO] BBMIS - JSSDK签名:418bbaa2bde2b369ee7e8a1beafe3f1acf362dec
+[2017-03-08 22:31:26.032] [INFO] console - { activityid: 
+   { activityid: '52c09d10040211e788a83dd1db1a7ad0',
+     title: 'a',
+     rule: 'ssdf',
+     describe: '<p></p>',
+     preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ban1c48i1skq18ocopfhgrq3ag.png",""]}' },
+  type: 0,
+  customerid: '433b1de003d311e79bfe0dab3c4bd0b9',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ban1c48i1skq18ocopfhgrq3ag.png",""]}',
+  describe: '<p></p>',
+  rule: 'ssdf',
+  bengin_datetime: null,
+  finish_datetime: null,
+  praise_listPage: null,
+  power: 0,
+  title: 'a',
+  couponid: null,
+  shelvesid: null }
+[2017-03-08 22:31:26.045] [INFO] console - [TypeError: val.replace is not a function]
+TypeError: val.replace is not a function
+    at Object.SqlString.escape (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/sql-string.js:63:15)
+    at Object.QueryGenerator.escape (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/abstract/query-generator.js:978:22)
+    at Object.QueryGenerator.updateQuery (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/abstract/query-generator.js:474:58)
+    at QueryInterface.bulkUpdate (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/query-interface.js:604:33)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/model.js:2601:32
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:691:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-08 22:32:15.912] [INFO] console - { activityid: '52c09d10040211e788a83dd1db1a7ad0',
+  title: 'a',
+  rule: 'ssd',
+  describe: '<p></p>',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ban1c48i1skq18ocopfhgrq3ag.png",""]}' }
+[2017-03-08 22:32:15.927] [INFO] console - [TypeError: val.replace is not a function]
+TypeError: val.replace is not a function
+    at Object.SqlString.escape (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/sql-string.js:63:15)
+    at Object.QueryGenerator.escape (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/abstract/query-generator.js:978:22)
+    at Object.QueryGenerator.updateQuery (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/abstract/query-generator.js:474:58)
+    at QueryInterface.bulkUpdate (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/query-interface.js:604:33)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/model.js:2601:32
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:691:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-08 22:48:32.690] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:48:32.965] [INFO] console - data::{"access_token":"hlLZOgQ8T1eC3hqK_RPgd4eg9QolHaRWGTUgGq42HcPk-XeN2H6U7rnoKUg6ecaLqBjd8lTQP6XaTH4hqntKZycM8zmHrDa2StfBHvIwhXbHGsDKGYwfNDhbh7HlbaH-GGTdABALLY","expires_in":7200}
+[2017-03-08 22:48:33.170] [INFO] console - data:::[object Object]
+[2017-03-08 22:48:33.170] [INFO] BBMIS - JSSDK签名:0aca9189cde11f5f9a8f5cdc85699c627754e5bb
+[2017-03-08 22:50:15.045] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:50:15.256] [INFO] BBMIS - JSSDK签名:8c8291751bee4cf4dbe716bce3bbc30d9c52edfa
+[2017-03-08 22:57:05.559] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 22:57:05.795] [INFO] BBMIS - JSSDK签名:31a00252e4baa716fd5c1010978695298808dfe5
+[2017-03-08 23:04:05.518] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 23:04:05.748] [INFO] BBMIS - JSSDK签名:4d502fae90b267b9ff3bb9d1fad2bb0b473c81bf
+[2017-03-08 23:06:56.187] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 23:06:56.382] [INFO] BBMIS - JSSDK签名:b8db5028c62388efd2007334b0fd0911a50893d6
+[2017-03-08 23:11:45.658] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 23:11:45.907] [INFO] BBMIS - JSSDK签名:6bcec9dd6a2066fbdaf8bf9223e5945664d7e5e9
+[2017-03-08 23:14:38.913] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 23:14:39.140] [INFO] BBMIS - JSSDK签名:25d43ff40b50b56ecca68435cfe0f6374f61b457
+[2017-03-08 23:18:56.300] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-08 23:18:56.300] [INFO] BBMIS - ：第一次签名错误
+[2017-03-08 23:18:58.556] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-08 23:18:58.556] [INFO] BBMIS - ：第一次签名错误
+[2017-03-08 23:18:59.934] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-08 23:18:59.934] [INFO] BBMIS - ：第一次签名错误
+[2017-03-08 23:19:03.266] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-08 23:19:03.266] [INFO] BBMIS - ：第一次签名错误
+[2017-03-08 23:32:39.073] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 23:32:39.308] [INFO] console - data::{"access_token":"B5F86JrOUoURt51vfynytizaqJGKqOayteHZFxAhW16KT7_LKOFrrBHWlPrj3Ea-ni0KDlOQCF_v8dlc5cUAQVdRy8-KBLdc3mASH4kCb--YGqDkzGyH1ykuikYWdxJrLBUbAAAXNG","expires_in":7200}
+[2017-03-08 23:32:39.488] [INFO] console - data:::[object Object]
+[2017-03-08 23:32:39.489] [INFO] BBMIS - JSSDK签名:f445fc9bc0c6d94cabedaaa5d427e93882cc64bb
+[2017-03-08 23:34:40.267] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 23:35:20.715] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:287:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-08 23:35:54.855] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 23:35:55.055] [INFO] BBMIS - JSSDK签名:869a781a06d7ccacf5960cdd736d6775b9e8052e
+[2017-03-08 23:36:01.362] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 23:36:01.803] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 23:36:01.983] [INFO] BBMIS - JSSDK签名:10001fdf02cc748a6d8f43aaad5c5b5777a7e81f
+[2017-03-08 23:36:16.414] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 23:36:16.635] [INFO] BBMIS - JSSDK签名:e93ca9f1c2028459593626e3c3ab065b0f94e9f5
+[2017-03-08 23:36:33.966] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 23:36:34.158] [INFO] BBMIS - JSSDK签名:8d41e007f13d2009277e52e8d1a36a8d7baaed99
+[2017-03-08 23:36:46.662] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 23:36:54.197] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:287:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-08 23:37:10.143] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 23:37:10.317] [INFO] BBMIS - JSSDK签名:4da9553bf0d2ee0734c3b8887ed5bc7a8b31f6dc
+[2017-03-08 23:37:38.457] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-08 23:37:38.688] [INFO] BBMIS - JSSDK签名:0d15db849cf1152d30aaf047849172efaf430797
+[2017-03-08 23:38:00.582] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 23:39:10.930] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:287:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-08 23:39:36.245] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 23:39:36.424] [INFO] BBMIS - JSSDK签名:bdec41a5559445bb296d49b06dd279e0c1734fa9
+[2017-03-08 23:44:42.739] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"500","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-08 23:46:51.604] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-08 23:46:51.847] [INFO] BBMIS - JSSDK签名:e3c5991b08ae28894d30d4ebc1be741537b8187e

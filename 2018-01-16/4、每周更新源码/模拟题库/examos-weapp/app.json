@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/index",
+    "pages/login/login",
+    "pages/person/person",
+    "pages/chapterlist/chapterlist",
+    "pages/alltest/alltest",
+    "pages/errorlist/errorlist",
+    "pages/favorite/favorite",
+    "pages/examtest/examtest",
+    "pages/material/material"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "backgroundColor": "#eee",
+    "navigationBarBackgroundColor": "#00a5cf",
+    "navigationBarTitleText": "会学猫",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#00a5cf",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/index",
+      "iconPath": "image/icon_home.png",
+      "selectedIconPath": "image/icon_home_HL.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/person/person",
+      "iconPath": "image/icon_user.png",
+      "selectedIconPath": "image/icon_user_HL.png",
+      "text": "个人中心"
+    }]
+  },
+  "debug": true
+}

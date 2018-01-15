@@ -1,0 +1,78 @@
+.header image{
+    width:100%;
+    height:200px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.container{
+    background: #673ab7;
+    padding: 10px;
+    vertical-align: top;
+}
+.list{
+    background: #ffffff;
+    border-radius: 5px;
+}
+.item{
+    position: relative;
+}
+.itemOut{
+    border-bottom:1px solid #e0e0e0;
+    margin-left: 10px;
+    padding: 5px 10px 15px 0;
+}
+.itemIn{
+    height:60px;
+    overflow: hidden;
+}
+.itemIn image{
+    width: 60px;
+    height:60px;
+    float: left;
+    margin-right:10px;
+}
+.itemInfo{
+    height:60px;
+    width: 100%;
+}
+.itemInfoColumn{
+    height:20px;
+    line-height:20px;
+}
+.name{
+    font-size: 14px;
+}
+.price{
+    color: #F23030;
+    font-size:16px;
+}
+.number{
+    color: #9e9e9e;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.repertory{
+    width: 50%;
+}
+.numberRight{
+    width: 50%;
+    text-align: right;
+}
+.sales{
+    display: inline-block;
+    height:20px;
+    vertical-align: top;
+    margin-right:35px;
+}
+.buy{
+    position: absolute;
+    width: 20px;
+    height:20px;
+    right:10px;
+    bottom:15px;
+    background: url(http://taoyanran.duapp.com/img/cart.png) 0 0 no-repeat;
+    background-size: 100%;
+}

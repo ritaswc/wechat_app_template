@@ -1,0 +1,154 @@
+
+<!--进货订单详情-->
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  查询中...
+</loading>
+<view class="container" wx:for="{{list}}">
+  <view class="order-detail">
+    <view class="order-con">
+      <text class="text1">订单编号</text>
+      <text class="text2">{{item.order_no}}</text>
+    </view>
+    <view class="order-con">
+      <text class="text1">订单名称</text>
+      <text class="text2">{{item.order_name}}</text>
+    </view>
+    <view class="order-con">
+      <text class="text1">订单类型</text>
+      <text class="text2">{{item.order_type == 'normal' ? '正常订单' : '售后订单'}}</text>
+    </view>
+  </view>
+  <view class="order-detail">
+    <view class="order-con">
+      <text class="text1">快递</text>
+      <text class="text2">{{item.express_name}}</text>
+    </view>
+    <view class="order-con">
+      <text class="text1">快递单号</text>
+      <view class="text2" wx:if="{{item.express_no != ''}}" bindtap="goExpress" data-expressno="{{item.express_no}}" data-expresscode="{{item.express_code}}">
+        {{item.express_no}}
+        <text class="see-detail">查看物流</text>
+        <image class="see-icon" src="{{imageCtx}}dealer/s_detail.png"></image>
+      </view>
+    </view>
+    <view class="order-con">
+      <text class="text1">收货方</text>
+      <text class="text2">{{item.name}}</text>
+    </view>
+    <view class="order-con">
+      <text class="text1">联系电话</text>
+      <text class="text2">{{item.phone}}</text>
+    </view>
+    <view class="order-con">
+      <text class="text1">收货地址</text>
+      <text class="text3">{{item.province}}{{item.city}}{{item.address}}</text>
+    </view>
+  </view>
+  <view class="order-detail">
+    <view class="order-con">
+      <text class="text1">商品价格</text>
+      <text class="text2">￥{{item.total_amount}}</text>
+    </view>
+    <view class="order-con">
+      <text class="text1">快递费用</text>
+      <text class="text2">+￥{{item.express_price}}</text>
+    </view>
+    <view class="order-con">
+      <text class="text1">优惠价格</text>
+      <text class="text2">-￥{{item.favorable_price}}</text>
+    </view>
+    <view class="order-con">
+      <text class="text1">应付</text>
+      <text class="text2">￥{{item.pay_amount}}</text>
+    </view>
+  </view>
+  <view class="order-detail">
+    <view class="order-con">
+      <text class="text1">发票信息</text>
+      <view class="text2" wx:if="{{item.is_need_invoice == 0}}">
+        不需要发票
+      </view>
+      <view class="text2" wx:elif="{{item.is_need_invoice == 1}}" bindtap="goInvoice" data-id="{{item.id}}">
+        普通发票
+        <text class="see-detail">查看详情</text>
+        <image class="see-icon" src="{{imageCtx}}dealer/s_detail.png"></image>
+      </view>
+      <view class="text2" wx:elif="{{item.is_need_invoice == 2}}" bindtap="goInvoice" data-id="{{item.id}}">
+        专票
+        <text class="see-detail">查看详情</text>
+        <image class="see-icon" src="{{imageCtx}}dealer/s_detail.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="order-detail">
+    <view wx:for="{{item.details}}" wx:for-item="detail">
+      <view class="order-con">
+        <text class="text1 ">{{detail.style_name}}-{{detail.second_name}}-{{detail.color_name}}</text>
+        <text class="text4">{{detail.remark}}</text>
+      </view>
+      <view class="order-con">
+
+        <!--尺码信息-->
+        <view class="size-table">
+          <view class="table-tr">
+            <view class="table-td" style="width:{{710 / (detail.skus.length > 0 ? detail.skus.length : 1)}}rpx" wx:for="{{detail.skus}}" wx:for-item="sku">{{sku.size}}</view>
+          </view>
+          <view class="table-tr">
+            <view class="table-td" style="width:{{710 / (detail.skus.length > 0 ? detail.skus.length : 1)}}rpx" wx:for="{{detail.skus}}" wx:for-item="sku">{{sku.count}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="order-con">
+      <view class="text2">合计：
+        <text>{{item.total_pkgs}}件</text>
+      </view>
+    </view>
+  </view>
+  <view class="order-detail">
+    <view class="order-con">
+      <text class="text1">备注</text>
+      <text class="text3 text-red">{{item.remark}}</text>
+    </view>
+  </view>
+  <view class="order-detail">
+    <view class="order-con">
+      <text class="text1">经销商</text>
+      <text class="text2 text-red">{{item.dealer_name}}</text>
+    </view>
+    <view class="order-con">
+      <text class="text1">供应商</text>
+      <text class="text2 text-red">{{item.supplier_name}}</text>
+    </view>
+    <view class="order-con">
+      <text class="text1">负责人</text>
+      <text class="text2">{{item.manageer}}-{{item.principal}}</text>
+    </view>
+  </view>
+  <view class="order-detail">
+    <view class="order-con">
+      <text class="text1">订单流程</text>
+    </view>
+    <view class="order-con">
+      <view class="order-flow {{index == 0 ? 'flow-active' : ''}}" wx:for="{{item.process}}" wx:for-item="process">
+        <view class="flow1">
+          <text class="flow-icon"></text>
+          <text class="flow-time">{{process.create_time}}</text>
+        </view>
+        <view class="flow2">
+          <text class="text-flow">{{process.brief}}</text>
+          <text class="text-flow" wx:if="{{process.state == 6 || process.state == 7}}">,原因:{{process.reason}}</text>
+          <text class="text-flow" wx:if="{{item.express_no != '' && (process.state == 2 || process.state == 4)}}">
+            快递:{{item.express_name}},单号:{{item.express_no}}
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--空行-->
+  <view class="tr hrline"></view>
+
+  <!--修改状态-->
+  <view class="statu-amend" bindtap="goUpdate" data-id="{{item.id}}" data-state="{{item.state}}" wx:if="{{item.state == 2 || item.state == 4}}">修改状态</view>
+</view>

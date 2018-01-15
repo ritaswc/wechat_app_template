@@ -1,0 +1,44 @@
+.daily {
+  flex-direction: row;
+  font-family: 'Lucida Sans',
+                 'Lucida Sans Regular',
+                 'Lucida Grande',
+                 'Lucida Sans Unicode',
+                 Geneva,
+                 Verdana,
+                 sans-serif;
+}
+
+.daily-item {
+  width: 33.3%;
+  float: left;
+}
+
+.daily-tmp-condition {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 40rpx;
+}
+
+.daily-date view {
+  text-align: center;
+  float: left;
+  width: 33.3%;
+  padding-top: 40rpx;
+  background-color:   rgb(107,194,53) ;
+}
+
+.daily-item view {
+  background-color:rgb(107,194,53);
+}
+
+.daily-img-container {
+  text-align: center;
+}
+
+.daily-img {
+  width: 120rpx;
+  height: 120rpx;
+  text-align: center;
+}

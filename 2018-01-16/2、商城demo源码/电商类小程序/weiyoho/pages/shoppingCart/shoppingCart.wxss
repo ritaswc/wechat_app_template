@@ -1,0 +1,148 @@
+page {
+  background-color: #efeff4;
+}
+
+.shoppingCart-container {
+  width: 100%;
+}
+
+.shoppingCart-container .hasGood {
+  width: 100%;
+}
+
+.shoppingCart-container .hasGood .goodList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.shoppingCart-container .hasGood .goodList li {
+  flex: 1;
+  width: 100%;
+  height: 160rpx;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+
+.shoppingCart-container .hasGood .goodList li .pic {
+  flex: 1;
+}
+
+.shoppingCart-container .hasGood .goodList li .pic image {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+.shoppingCart-container .hasGood .goodList li .info {
+  flex: 3;
+  font-size: 12px;
+  line-height: 36rpx;
+  color: #212121;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.number {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.number .price {
+  text-align: center;
+  color: #fd544a;
+  font-weight: 900;
+}
+
+.quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity text {
+  background-color: #f2f2f2;
+  margin: 5px;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  font-weight: 900;
+  color: #939393;
+}
+
+.quantity input {
+  width: 30px;
+  height: 26px;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.shoppingCart-container .hasGood .footer {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.shoppingCart-container .hasGood .footer ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.shoppingCart-container .hasGood .footer ul .goodAll {
+  line-height: 100rpx;
+  color: #888;
+  font-size: 14px;
+  margin-left: 20rpx;
+  flex: 1;
+}
+
+.shoppingCart-container .hasGood .footer ul .goodAll text {
+  font-weight: bold;
+  color: red;
+}
+
+.shoppingCart-container .hasGood .footer ul .calcute text {
+  display: block;
+  margin: 0 auto;
+  width: 160rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #ff2501;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  flex: 1;
+}
+
+.modal-close {
+  color: #939393;
+}
+
+/*商品标题*/
+
+.title {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  text-overflow: ellipsis;
+  color: #333;
+  height: 36px;
+}
+
+.tit-content {
+  margin-top: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

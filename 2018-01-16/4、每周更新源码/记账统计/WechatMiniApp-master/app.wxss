@@ -1,0 +1,66 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.top-bgimage {
+  background-image: url(http://ww3.sinaimg.cn/crop.0.0.640.640.640.750/006lQSymjw1f2eisgu0h1j30ku0kvjtu.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  height: 340rpx;
+}
+
+.hs10 {
+  height: 20rpx;
+}
+
+.hs20 {
+  height: 40rpx;
+}
+
+.clear {
+  display: block;
+  clear: both;
+  font-size: 2rpx;
+  line-height: 2rpx;
+  margin: 0;
+  padding: 0;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.main-body {
+  margin: 40rpx;
+  font-size: 28rpx;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.blank-char {
+  color: #e4e4e4;
+  font-size: 28rpx;
+  padding: 0 10rpx;
+}

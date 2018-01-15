@@ -1,0 +1,31 @@
+{
+    "pages":[
+      
+     "pages/login/login",    
+     "pages/index/index",
+     "pages/index/search/search",  
+     "pages/index/message/message",  
+
+     "pages/index/orderlist1/orderlist1",
+     "pages/index/orderlist1/orderDetail1/orderDetail1",
+     "pages/index/orderlist1/orderDetail1/changeStatus1/changeStatus1",
+     "pages/index/orderlist2/orderlist2",
+     "pages/index/orderlist2/orderDetail2/orderDetail2",
+     "pages/index/orderlist2/orderDetail2/changeStatus2/changeStatus2",
+     "pages/index/logistics/logistics",
+     
+     "pages/index/basicInfo_statistics/basicInfo_statistics",
+     "pages/index/orderMes_statistics/orderMes_statistics",
+     "pages/index/profit_statistics/profit_statistics",
+     "pages/index/shipment_statistics/shipment_statistics",
+     
+     "pages/index/repertoryCentre/repertoryCentre"
+  ],
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "定制链",
+    "navigationBarTextStyle":"white"
+  }
+}

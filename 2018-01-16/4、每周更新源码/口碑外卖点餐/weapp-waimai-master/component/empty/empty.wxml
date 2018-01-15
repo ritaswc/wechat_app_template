@@ -1,0 +1,8 @@
+<template name="empty" >
+    <view class="empty">
+        <view class="empty-icon">
+        <image  class="empty-image" src="../../images/empty.png"></image>
+    </view>
+    <view class="empty-text">{{msg}}</view>
+    </view>
+</template>

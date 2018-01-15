@@ -1,0 +1,27 @@
+/* pages/shenghuo/AllServiceclassify/AllServiceclassifyCell/AllServiceclassifyCell.wxss */
+
+.gridCell-container {
+  margin-top: 10px;
+  width: 25%;
+  height: 58px;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridCell-image {
+  width: 32px;
+  height: 32px;
+  
+}
+
+.titleName {
+  display: block;
+  margin-top: 2px;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 11px;
+}

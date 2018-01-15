@@ -1,0 +1,88 @@
+/* pages/ucenter/ucenter.wxss */
+.userinfo{
+    position:relative;
+    z-index:0;
+    height:310rpx;
+}
+.userinfo .img_bg{
+    width:100%;
+    height:310rpx;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+.userinfo .imglogo{
+    position:absolute;
+    width:100rpx;
+    height:100rpx;
+    border-radius:50%;
+    border:2rpx solid #fff;
+    bottom:31rpx;
+    left:28rpx;
+    z-index:1;
+}
+.userinfo .name{
+    display: block;
+     position:absolute;
+     bottom:55rpx;
+     left:160rpx;
+     z-index:1;
+     color:#fff;
+     font-size:32rpx;
+     text-shadow: 1rpx 1rpx 1rpx black;
+}
+/*订单*/
+.order .top{
+    padding:0 20rpx;
+    height:93rpx;
+    border-bottom:1rpx solid #bbb;
+    background:#fff;
+    font-size:34rpx;
+}
+.order .top .text2{
+    font-size:30rpx;
+    color:#bbb;
+}
+.order .content{
+    background:#fff;
+}
+.order .content .item{
+    width:187.5rpx;
+    text-align:center;
+    padding:20rpx 0;
+}
+.order .content .item image{
+    width:50rpx;
+    height:50rpx;
+}
+.order .content .item .text{
+    width:100%;
+    display: block;
+    font-size:24rpx;
+    color:#3d4245;
+    text-align:center;
+}
+/*个人中心类目*/
+ .line{
+    width:100%;
+    padding:20rpx 0;
+    background:#fff;
+    border-bottom:0.5rpx solid #eee;
+}
+.line .item{
+    width:187.5rpx;
+    text-align:center;
+    padding:20rpx 0;
+}
+.line .item image{
+    height:70rpx;
+    width:70rpx;
+}
+.line .item .text{
+    width:100%;
+    display: block;
+    font-size:24rpx;
+    color:#3d4245;
+    text-align:center;
+}

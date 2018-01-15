@@ -1,0 +1,65 @@
+<import src="../../templates/toast/toast.wxml" />
+<view id="shopping-cart" class="{{(cartList.length==0 && !loading) ? '':'hidden'}}">
+    <view class="empty">
+        <image class="icon" src="data:image/png;base64,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" alt="购物车"></image>
+        <text>购物车还空着，快去挑选商品吧</text>
+        <view class="btn btn-default" ui-sref="home" catchtap='navigateTo'>随便逛逛</view>
+    </view>
+</view>
+<scroll-view class="car-index {{(cartList.length>0 && !loading) ? '':'hidden'}}" scroll-y="true">
+    <view class="car">
+        <view class="cart {{(cartList.length>0 && !loading) ? '':'hidden'}}">
+            <view wx:for="{{cartList}}" wx:for-item="product" class="product">
+                <view class="checkbox clearfix add-btn">
+                    <icon type="{{product.status ? 'success' : 'circle'}}" color="{{product.status ? 'red' : ''}}" size="20" bindtap="selectProduct" data-checked-status="{{checkedStatus}}" data-id="{{product.id}}"></icon>
+                </view>
+                <view class="img">
+                    <image class="image" src="{{product.thumb_url}}" mode="scaleToFill"></image>
+                </view>
+                <view class="param">
+                    <view class="title">
+                        <text>{{product.goods_name}}</text>
+                    </view>
+                    <view class="type">
+                        <text>{{product.goods_attr}}</text>
+                    </view>
+                    <view class="quantity">
+                        <view class="btn-ad {{product.decr_class}}" bindtap="changeNumber" data-id="{{product.id}}" data-type="min">-</view>
+                        <view class="count">{{product.goods_number}}</view>
+                        <view class="btn-ad {{product.plus_class}}" bindtap="changeNumber" data-id="{{product.id}}" data-type="plus">+</view>
+                    </view>
+                    <view class="price">
+                        <view class="real">￥ {{product.real_price}}</view>
+                        <view class="cost">￥ {{product.market_price}}</view>
+                    </view>
+                    <view class="del" bindtap="delProduct" data-id="{{product.id}}">
+                        <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtBAMAAADINP+pAAAAKlBMVEUAAACgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKApyNsCAAAADXRSTlMA7Fohd8KHlks1seQKRhs+AQAAAI1JREFUOMtjgAHmvXfv3r1twIAODC8KCgrKbkYX5rxbACS5MDTMvQam1sI1pIaCwV0HMO/URQg3gUH2LhhcgajiWQvhCjAcNgYDmLnMEO4BBtoDNww/LgZTskDMdBPolEtARigQs1yCi7MBmRzXgYy7o+Kj4iSJI9LVFcx0hQB0FBdEA7IQ8bV30QHQ0QA9wJXpSEY20AAAAABJRU5ErkJggg=="></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="statistics">
+            共{{totalNumber}}件商品
+            <view class="sum">
+                小计：
+                <text>￥ {{totalPrice}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="balance">
+        <view class="checkbox">
+            <icon type="{{checkedStatus ? 'success' : 'circle'}}" color="{{checkedStatus ? 'red' : ''}}" size="20" bindtap="selectProduct" data-id="0" data-checked-status="{{checkedStatus}}"></icon>
+            <text>全选</text>
+        </view>
+        <button class="button" bindtap="toSettlement">结算({{buyNumber}})</button>
+        <view class="price">
+            合计：
+            <view class="sum">
+                ￥ {{buyPrice}}
+            </view>
+            <view class="hint">不含运费</view>
+        </view>
+    </view>
+    <template is="toast" data="{{...toast}}" />
+</scroll-view>
+<loading hidden="{{!loading}}">正在加载中...</loading>

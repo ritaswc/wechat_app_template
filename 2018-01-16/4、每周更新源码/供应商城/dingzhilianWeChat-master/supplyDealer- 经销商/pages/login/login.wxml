@@ -1,0 +1,11 @@
+<!--index.wxml  登录页面-->
+<view class="container">
+    <view class="logincon">
+      <input class="log-in" bindinput="phoneInput" placeholder="手机号" value="{{phone}}" auto-focus/>
+      <input class="log-in" bindinput="pwdInput" placeholder="密码" password bindconfirm="login"/>
+      <text class="log-but" bindtap="login">登录</text>
+    </view>
+
+  <text class="log-tip">还没有账号？请前往官网注册</text>
+
+</view>

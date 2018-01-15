@@ -1,0 +1,115 @@
+<import src="/template/emoij" />
+
+<!--  -->
+<view style="{{voiceSelected==0?'':'display:none'}}">
+  <view>
+    <form bindsubmit="submit">
+      <view class="post-title-wrap">
+        <textarea class="c-fullwidth post-title" name="title" value="{{title}}" placeholder="标题，可以不填..." />
+      </view>
+      <view class="post-mainbody-wrap">
+        <textarea class="c-fullwidth post-mainbody" name="artContent" value="{{artContent}}" placeholder="这一刻的想法..." />
+      </view>
+
+      <!-- 发帖图片 -->
+      <view style="margin:12px;">
+        <block wx:for="{{selectedImgs}}" wx:for-item="item">
+          <view style="position:relative;max-height:80px; width:20%; margin:5px; display:inline-block; vertical-align:middel">
+            <view class="img-remove" data-id="{{item.id}}" catchtap="removeImg"></view>
+            <image style="width:100%;max-height:80px;" src="{{item.src}}" />
+          </view>
+        </block>
+      </view>
+
+      <!-- 发表语音 -->
+      <view wx:if="{{voice}}" class="comment-voice-container">
+        <view class="audio-wrap" catchtap="playAudio" data-v-id="{{voice.Id}}">
+          <image style="width:22px; height:22px;margin-left:4px" src="{{audioIcon}}"></image>
+          <audio class="audio" id="{{voice.Id}}" poster="http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000" src="{{voice.src}}"></audio>
+        </view>
+        <view wx:if="{{voice.voiceTime}}" class="audio-time-wrap">
+          <text>{{voice.voiceTime}}"</text>
+        </view>
+        <view style="clear:both"></view>
+      </view>
+
+      <!-- 发视频 -->
+      <view wx:if="{{vedio}}" class="comment-voice-container">
+        <view style="position:relative;max-height:80px; width:20%; margin:5px; display:inline-block; vertical-align:middel">
+          <view class="img-remove" data-id="{{vedio.Id}}" catchtap="removeVedio"></view>
+          <image style="width:100%;max-height:80px;" src="{{vedio.src}}" />
+        </view>
+      </view>
+      <view class="post-submit-container">
+        <view class="post-position-wrap">
+          <image class="post-position-icon" mode="scaleToFill" src="http://qty83k.creatby.com/materials/origin/0024e9b38e605192d94951ce3dffe8ae_origin.png" style="background-size: 100% 100%; background-position: 0% 0%; background-repeat: no-repeat; background-image: url(http://qty83k.creatby.com/materials/origin/0024e9b38e605192d94951ce3dffe8ae_origin.png); "
+          />
+          <text class="post-position-text" catchtap="getLocate">{{locationMsg}}</text>
+        </view>
+        <button class="post-submit" form-type="submit" hover-class="button-hover" size="default" type="default" style="color:#fff;background-color:rgba(23,181,238,1)">
+          发表
+        </button>
+      </view>
+    </form>
+  </view>
+  <view class="post-icon-container">
+    <view class="post-icon-emoj-wrap" catchtap="changeEmoij">
+      <view class="post-icon-emoj"> </view>
+      <text class="post-icon-desc">表情</text>
+    </view>
+    <view class="post-icon-emoj-wrap" catchtap="selectImg">
+      <view class="post-icon-img"></view>
+      <text class="post-icon-desc">图片</text>
+    </view>
+    <view class="post-icon-emoj-wrap" catchtap="selectVoice">
+      <view class="post-icon-voice"></view>
+      <text class="post-icon-desc">语音</text>
+    </view>
+    <view class="post-icon-emoj-wrap" catchtap="selectVdeio">
+      <view class="post-icon-vedio"></view>
+      <text class="post-icon-desc">视频</text>
+    </view>
+    <view class="post-icon-emoj-wrap" catchtap="selectReward">
+      <view class="post-icon-reward"></view>
+      <text class="post-icon-desc">悬赏</text>
+    </view>
+  </view>
+  <view>
+    <view class="post-qq-face bz clearfix" style="{{emoij?'display:block':'display:none'}}">
+      <template is="emoij" />
+    </view>
+    <view style="clear:both"></view>
+  </view>
+
+  <!-- 选择版块 -->
+  <view class="post-type-container">
+    <block wx:if="{{categories && selectedCateogry == null}}" wx:for="{{categories}}" wx:for-item="type" wx:key="{{categories.Id}}">
+      <text class="post-type-wrap" catchtap="selectCategory" data-id="{{type.Id}}" data-name="{{type.Title}}">{{type.Title}}</text>
+    </block>
+    <block wx:if="{{categories && selectedCateogry}}">
+      <text class="post-type-wrap" catchtap="selectCategory" data-id="{{selectedCateogry.Id}}" data-name="{{selectedCateogry.Title}}">{{selectedCateogry.Title}}</text>
+      <view class="category-selected-delete" catchtap="deleteCategory"></view>
+    </block>
+  </view>
+</view>
+
+<!-- 录音页面 -->
+<view class="voice-select" style="{{voiceSelected==0?'display:none':''}}">
+  <view style="width:100%; height:100%" catchtap="cancleRecord">
+  </view>
+  <view class="record-container">
+    <view class="recored-cancle-wrap .font-13rem" catchtap="cancleRecord">取消</view>
+    <view wx:if="{{recording==0}}" class="record-wrap">
+      <view class="start-record" catchtap="startRecord">
+        <image style="width:150rpx;height:150rpx" src="/images/record.png" />
+      </view>
+      <view class="record-tip-wrap">点一下录音</view>
+    </view>
+    <view wx:if="{{recording==1}}" class="record-wrap">
+      <view>
+        <view class="stop-record" catchtap="stopRecord"></view>
+      </view>
+      <view class="record-tip-wrap">点击结束</view>
+    </view>
+  </view>
+</view>

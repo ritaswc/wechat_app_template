@@ -1,0 +1,27 @@
+<text class="fornt_text">创建新活动</text>
+<view class="container">
+  <view  class="taskinfo">
+    <view class="task_name">
+     <input placeholder="活动名称" class="name_input" value='{{T_name}}'bindinput="updateTName"/>
+    </view>
+    <view class="task_context">
+     <textarea  placeholder="简介" class="name_write" value='{{T_con}}'bindfocus="updateTCon"/>
+    </view>
+     <view class="time_descri">活动持续</view>
+     
+     <view class="time">
+      <view class="time_day1">{{date_f}}</view>
+      <view class="time_day2">{{date_l}}</view>
+      <view class="time_day3">{{date_t}}</view>
+      <view class="time_unit">days</view>
+     </view>
+  </view> 
+ <view class="deadline" > 
+ <picker mode="date" value="{{data}}" start="2016-01-01" end="2200-12-30" bindchange="bindDateChange">
+ <view class="deadtime">{{date}}</view>
+ </picker>
+ </view>
+ <view bindtap="add_ok" class="ok_button" hover="ture">
+  <text>OK</text>
+  </view>
+</view>

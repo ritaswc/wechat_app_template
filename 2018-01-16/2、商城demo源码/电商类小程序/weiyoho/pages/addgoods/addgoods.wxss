@@ -1,0 +1,30 @@
+/* pages/addgoods/addgoods.wxss */
+.addgoods-container{
+    padding: 20rpx;
+}
+.list{
+    display: flex;
+    align-content: center;
+    height: 80rpx;
+    border: 1px solid #b6aaec;
+    margin: 10rpx 0;
+}
+label{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    width: 200rpx;
+    background: #b6aaec;
+    color: #fff;
+}
+input{
+    flex: 1;
+    display: flex;
+     align-items: center
+}
+button{
+     margin: 10rpx 0;
+}
+.picker{
+    width: 400rpx;
+}

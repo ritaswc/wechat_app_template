@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>学写一个字</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+    *{padding:0;margin:0;}
+    body{font-family:"Microsoft YaHei";}
+    a{text-decoration:none;color:#333;}
+    .canvas{
+        display:block;
+        margin:30px auto;
+    }
+    .controlbox{
+        width:500px;
+        margin:0 auto;
+    }
+    .controlbox .btn{
+        display:inline-block;
+        width:30px;
+        height:30px;
+        margin:5px;
+        border:3px solid #fff;
+        color:#fff;
+    }
+    .controlbox .btn:hover{
+        border-color:#26c;
+        opacity:0.8;
+        filter:alpha(opacity=80);
+    }
+    .controlbox .btn.active{
+        border-color:#666;
+    }
+    .input_color{
+        display:block;
+        float:left;
+        padding:0 10px;
+        height:35px;
+        margin:5px;
+        border:1px solid;
+
+    }
+    .btn_reset,
+    .btn_more{
+        display:inline-block;
+        padding:0 10px;
+        line-height:35px;
+        margin:5px;
+        text-align:center;
+        background-color:#ccc;
+        border:1px solid;
+        cursor:pointer;
+    }
+    .btn_more{
+        float:left;
+    }
+    .btn_reset{
+        float:right;
+    }
+    .btn_reset:hover,
+    .btn_more:hover{
+        background-color:#eee;
+    }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" class="canvas">Your browser didn't support this tag (canvas)</canvas>
+    <div class="controlbox" id="controlbox">
+        <a href=" " class="btn active" style="background-color:#000000;"><!-- black --></a >
+        <a href="javascript:void(0);" class="btn" style="background-color:#ff0000;"><!-- red --></a >
+        <a href="javascript:void(0);" class="btn" style="background-color:#ffa500;"><!-- orange --></a >
+        <a href="javascript:void(0);" class="btn" style="background-color:#008000;"><!-- green --></a >
+        <a href="javascript:void(0);" class="btn" style="background-color:#0000ff;"><!-- blue --></a >
+        <a href="javascript:void(0);" class="btn" style="background-color:#800080;"><!-- purple --></a >
+        <div>
+            <input type="color" value="#666666" id="input_color" class="input_color" title="请选择颜色" />
+            <label class="btn_more" id="btn_more">应用此颜色</label>
+            <span class="btn_reset" id="btn_reset">清除</span>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+<!--scripts-->
+<script type="text/javascript">
+// 主
+function init() {
+    var canvas=document.getElementById("canvas");
+    var ctx=canvas.getContext("2d");
+    var canvasWidth=Math.min(500,$(window).width()-30);
+    var canvasHeight=canvasWidth;
+    var isMouseDown=false; // 鼠标按下flag
+    var lastPos={x:0,y:0}; // 历史位置
+    var lastTime=new Date().getTime(); // 历史时间戳
+    var lastLineWidth=-1; // 历史线宽
+    var defaultFontColor="#000000"; // 默认绘制字体颜色
+    var $btnColors=$(".btn");
+
+    // 设置画布大小
+    canvas.width=canvasWidth;
+    canvas.height=canvasHeight;
+    // 设置控制盒的大小
+    $("#controlbox").css("width",canvasWidth);
+
+    // 米字格绘制函数
+    function drawBlock() {
+        var borderLineWidth=6; // 边框宽
+        ctx.save();
+        // 边框
+        ctx.beginPath();
+        ctx.moveTo(borderLineWidth/2,borderLineWidth/2);
+        ctx.lineTo(canvasWidth-borderLineWidth/2,borderLineWidth/2);
+        ctx.lineTo(canvasWidth-borderLineWidth/2,canvasHeight-borderLineWidth/2);
+        ctx.lineTo(borderLineWidth/2,canvasHeight-borderLineWidth/2);
+        ctx.closePath();
+        ctx.lineWidth=borderLineWidth;
+        ctx.stroke();
+        // 斜线1
+        ctx.beginPath();
+        ctx.moveTo(borderLineWidth,borderLineWidth);
+        ctx.lineTo(canvasWidth-borderLineWidth,canvasHeight-borderLineWidth);
+        ctx.strokeStyle="#f00";
+        ctx.setLineDash([10]); // 虚线
+        ctx.lineWidth=1;
+        ctx.stroke();
+        // 斜线2
+        ctx.beginPath();
+        ctx.moveTo(canvasWidth-borderLineWidth,borderLineWidth);
+        ctx.lineTo(borderLineWidth,canvasHeight-borderLineWidth);
+        ctx.setLineDash([10]);
+        ctx.stroke();
+        // 横线
+        ctx.beginPath();
+        ctx.moveTo(borderLineWidth,canvasHeight/2);
+        ctx.lineTo(canvasWidth-borderLineWidth,canvasHeight/2);
+        ctx.setLineDash([10]);
+        ctx.stroke();
+        // 竖线
+        ctx.beginPath();
+        ctx.moveTo(canvasWidth/2,borderLineWidth);
+        ctx.lineTo(canvasWidth/2,canvasHeight-borderLineWidth);
+        ctx.setLineDash([10]);
+        ctx.stroke();
+        ctx.restore();  
+    }
+    // 写字函数
+    function drawFont(lastPos,curpos,lastTime,curTime) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(lastPos.x,lastPos.y);
+        ctx.lineTo(curpos.x,curpos.y);
+        ctx.lineCap="round";
+        ctx.lineJoin="round";
+        ctx.strokeStyle=defaultFontColor;
+        // 根据绘制速度确定线宽
+        ctx.lineWidth=setLineWidth(lastPos,curpos,lastTime,curTime);
+        ctx.stroke();
+        ctx.restore();
+    }
+    // 计算鼠标相对于canvas的坐标
+    function getCanvasCoord(position,obj) {
+        var canvasOffset=obj.getBoundingClientRect(); // 返回元素的大小及其相对于视口的位置
+        return {x:Math.round(position.x-canvasOffset.left),y:Math.round(position.y-canvasOffset.top)};
+    }
+    // 计算线宽
+    function setLineWidth(lastPos,curpos,lastTime,curTime) {
+        var s=Math.sqrt((lastPos.x-curpos.x)*(lastPos.x-curpos.x)+(lastPos.y-curpos.y)*(lastPos.y-curpos.y)); // 计算两点间的距离
+        var t=curTime-lastTime;
+        var lineWidth=1;
+        var maxLineWidth=10;
+        var minLineWidth=1;
+        var v=s/t;
+        if (v<=0.1) {
+            lineWidth=maxLineWidth;
+        } else if (v>=1) {
+            lineWidth=minLineWidth;
+        } else {
+            lineWidth=maxLineWidth*(1-v/(1-0.1));
+        }
+        if (lastLineWidth==-1) {
+            lastLineWidth=lineWidth;
+        }
+        return lineWidth*1/3+lastLineWidth*2/3; // 历史线宽和当前线宽，按比例结合，实现线段的过渡
+    }
+    // 开始绘制
+    function drawStart(ev) {
+        isMouseDown=true;
+        // 记录鼠标的历史位置，时间
+        lastPos=getCanvasCoord({x:ev.clientX,y:ev.clientY},canvas);
+        lastTime=new Date().getTime();
+    }
+    // 绘制中
+    function drawMove(ev) {
+        var curpos=getCanvasCoord({x:ev.clientX,y:ev.clientY},canvas);
+        var curTime=new Date().getTime();
+        // 写字
+        drawFont(lastPos,curpos,lastTime,curTime);
+        // 更新鼠标的历史位置,时间
+        lastPos=curpos;
+        lastTime=curTime;
+    }
+    // 结束绘制
+    function drawEnd() {
+        isMouseDown=false;
+    }
+
+    // 初始化
+    // 绘制米字格
+    drawBlock();
+
+    // 改变字体颜色
+    $btnColors.click(function () {
+        $btnColors.each(function (index,item) {
+            $(item).removeClass("active");
+        });
+        $(this).addClass("active");
+        defaultFontColor=$(this).css("backgroundColor");
+    });
+    $("#btn_more").click(function () {
+        defaultFontColor=$("#input_color").val();
+    });
+
+    // 清除
+    $("#btn_reset").click(function () {
+        // 清除画布
+        ctx.clearRect(0,0,canvasWidth,canvasHeight);
+        // 绘制米字格
+        drawBlock();    
+    });
+
+    // 交互
+    // PC端的鼠标事件
+    canvas.addEventListener("mousedown",function (ev) {
+        var ev=ev?ev:window.event;
+        drawStart(ev);
+    },false);
+    canvas.addEventListener("mousemove",function (ev) {
+        var ev=ev?ev:window.event;
+        if (isMouseDown) {
+            drawMove(ev);
+        }
+    },false);
+    canvas.addEventListener("mouseup",function () {
+        drawEnd();
+        lastLineWidth=-1; // 鼠标抬起，恢复线宽
+    },false);
+    canvas.addEventListener("mouseout",function () {
+        drawEnd();
+    },false);
+
+    // Mobile端的触摸事件
+    canvas.addEventListener("touchstart",function (ev) {
+        var ev=ev?ev:window.event;
+        drawStart(ev.touches[0]);
+    },false);
+    canvas.addEventListener("touchmove",function (ev) {
+        var ev=ev?ev:window.event;
+        if (isMouseDown) {
+            drawMove(ev.touches[0]);
+        }
+    },false);
+    canvas.addEventListener("touchend",function () {
+        drawEnd();
+        lastLineWidth=-1; // 鼠标抬起，恢复线宽
+    },false);
+
+}
+window.addEventListener("load",init,false);
+</script>
+</body>
+</html>

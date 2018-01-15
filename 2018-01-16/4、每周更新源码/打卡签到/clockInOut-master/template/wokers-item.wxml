@@ -1,0 +1,8 @@
+<template name="workers-item">
+  <view class="vWorkRecord">
+    <image class="iHead" src="{{item.img}}"></image>
+    <text class="tName">{{item.wxName}}王小二</text>
+    <text wx:if="{{item.newtime.length > 2}}" class="tWorkTime">{{item.newtime}}</text>
+    <text wx:else class="tNoWorkTime">-</text>
+  </view>
+</template>

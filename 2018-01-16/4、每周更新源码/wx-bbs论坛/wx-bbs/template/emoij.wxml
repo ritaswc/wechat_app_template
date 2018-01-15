@@ -1,0 +1,304 @@
+<template name="emoij">
+  <scroll-view scroll-y="false" style="height:290rpx;width:100%">
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="微笑" data-code="[微笑]" style="background-position: left 0;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="撇嘴" data-code="[撇嘴]" style="background-position: left -29px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="色" data-code="[色]" style="background-position: left -58px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="发呆" data-code="[发呆]" style="background-position: left -87px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="得意" data-code="[得意]" style="background-position: left -116px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="流泪" data-code="[流泪]" style="background-position: left -145px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="害羞" data-code="[害羞]" style="background-position: left -174px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="闭嘴" data-code="[闭嘴]" style="background-position: left -203px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="睡" data-code="[睡]" style="background-position: left -232px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="大哭" data-code="[大哭]" style="background-position: left -261px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="尴尬" data-code="[尴尬]" style="background-position: left -290px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="发怒" data-code="[发怒]" style="background-position: left -319px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="调皮" data-code="[调皮]" style="background-position: left -348px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="呲牙" data-code="[呲牙]" style="background-position: left -377px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="惊讶" data-code="[惊讶]" style="background-position: left -406px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="难过" data-code="[难过]" style="background-position: left -435px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="酷" data-code="[酷]" style="background-position: left -464px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="冷汗" data-code="[冷汗]" style="background-position: left -493px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="抓狂" data-code="[抓狂]" style="background-position: left -522px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="吐" data-code="[吐]" style="background-position: left -551px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="偷笑" data-code="[偷笑]" style="background-position: left -580px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="可爱" data-code="[可爱]" style="background-position: left -609px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="白眼" data-code="[白眼]" style="background-position: left -638px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="傲慢" data-code="[傲慢]" style="background-position: left -667px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="饥饿" data-code="[饥饿]" style="background-position: left -696px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="困" data-code="[困]" style="background-position: left -725px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="惊恐" data-code="[惊恐]" style="background-position: left -754px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="流汗" data-code="[流汗]" style="background-position: left -783px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="憨笑" data-code="[憨笑]" style="background-position: left -812px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="大兵" data-code="[大兵]" style="background-position: left -841px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="奋斗" data-code="[奋斗]" style="background-position: left -870px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="咒骂" data-code="[咒骂]" style="background-position: left -899px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="疑问" data-code="[疑问]" style="background-position: left -928px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="嘘" data-code="[嘘]" style="background-position: left -957px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="晕" data-code="[晕]" style="background-position: left -986px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="折磨" data-code="[折磨]" style="background-position: left -1015px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="哀" data-code="[哀]" style="background-position: left -1044px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="骷髅" data-code="[骷髅]" style="background-position: left -1073px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="敲打" data-code="[敲打]" style="background-position: left -1102px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="再见" data-code="[再见]" style="background-position: left -1131px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="擦汗" data-code="[擦汗]" style="background-position: left -1160px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="抠鼻" data-code="[抠鼻]" style="background-position: left -1189px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="鼓掌" data-code="[鼓掌]" style="background-position: left -1218px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="糗大了" data-code="[糗大了]" style="background-position: left -1247px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="坏笑" data-code="[坏笑]" style="background-position: left -1276px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="左哼哼" data-code="[左哼哼]" style="background-position: left -1305px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="右哼哼" data-code="[右哼哼]" style="background-position: left -1334px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="哈欠" data-code="[哈欠]" style="background-position: left -1363px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="鄙视" data-code="[鄙视]" style="background-position: left -1392px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="委屈" data-code="[委屈]" style="background-position: left -1421px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="快哭了" data-code="[快哭了]" style="background-position: left -1450px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="阴险" data-code="[阴险]" style="background-position: left -1479px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="亲亲" data-code="[亲亲]" style="background-position: left -1508px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="吓" data-code="[吓]" style="background-position: left -1537px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="可怜" data-code="[可怜]" style="background-position: left -1566px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="菜刀" data-code="[菜刀]" style="background-position: left -1595px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="西瓜" data-code="[西瓜]" style="background-position: left -1624px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="啤酒" data-code="[啤酒]" style="background-position: left -1653px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="篮球" data-code="[篮球]" style="background-position: left -1682px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="乒乓" data-code="[乒乓]" style="background-position: left -1711px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="咖啡" data-code="[咖啡]" style="background-position: left -1740px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="饭" data-code="[饭]" style="background-position: left -1769px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="猪头" data-code="[猪头]" style="background-position: left -1798px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="玫瑰" data-code="[玫瑰]" style="background-position: left -1827px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="凋谢" data-code="[凋谢]" style="background-position: left -1856px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="示爱" data-code="[示爱]" style="background-position: left -1885px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="爱心" data-code="[爱心]" style="background-position: left -1914px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="心碎" data-code="[心碎]" style="background-position: left -1943px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="蛋糕" data-code="[蛋糕]" style="background-position: left -1972px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="闪电" data-code="[闪电]" style="background-position: left -2001px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="炸弹" data-code="[炸弹]" style="background-position: left -2030px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="刀" data-code="[刀]" style="background-position: left -2059px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="足球" data-code="[足球]" style="background-position: left -2088px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="瓢虫" data-code="[瓢虫]" style="background-position: left -2117px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="便便" data-code="[便便]" style="background-position: left -2146px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="月亮" data-code="[月亮]" style="background-position: left -2175px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="太阳" data-code="[太阳]" style="background-position: left -2204px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="礼物" data-code="[礼物]" style="background-position: left -2233px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="拥抱" data-code="[拥抱]" style="background-position: left -2262px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="强" data-code="[强]" style="background-position: left -2291px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="弱" data-code="[弱]" style="background-position: left -2320px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="握手" data-code="[握手]" style="background-position: left -2349px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="胜利" data-code="[胜利]" style="background-position: left -2378px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="抱拳" data-code="[抱拳]" style="background-position: left -2407px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="勾引" data-code="[勾引]" style="background-position: left -2436px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="拳头" data-code="[拳头]" style="background-position: left -2465px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="差劲" data-code="[差劲]" style="background-position: left -2494px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="爱你" data-code="[爱你]" style="background-position: left -2523px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="no" data-code="[no]" style="background-position: left -2552px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="ok" data-code="[ok]" style="background-position: left -2581px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="爱情" data-code="[爱情]" style="background-position: left -2610px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="飞吻" data-code="[飞吻]" style="background-position: left -2639px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="跳跳" data-code="[跳跳]" style="background-position: left -2668px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="发抖" data-code="[发抖]" style="background-position: left -2697px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="怄火" data-code="[怄火]" style="background-position: left -2726px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="转圈" data-code="[转圈]" style="background-position: left -2755px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="磕头" data-code="[磕头]" style="background-position: left -2784px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="回头" data-code="[回头]" style="background-position: left -2813px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="跳绳" data-code="[跳绳]" style="background-position: left -2842px;"></view>
+    </view>
+    <view class="fl">
+      <view href="javascript:;" class="qqface-img" catchtap="emoijSelected" data-title="挥手" data-code="[挥手]" style="background-position: left -2871px;"></view>
+    </view>
+  </scroll-view>
+</template>

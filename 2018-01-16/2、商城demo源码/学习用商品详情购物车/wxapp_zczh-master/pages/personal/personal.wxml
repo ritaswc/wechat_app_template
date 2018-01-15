@@ -1,0 +1,28 @@
+<view class="warp">
+    <view>
+        <view class="userPic">
+            <image src="{{userInfo.avatarUrl}}"></image>
+            <text>{{userInfo.nickName}}</text>
+        </view>
+    </view>
+    <view class="myOrder">
+        <view class="clearfix br">
+            <text class="fl">我的订单</text>
+            <text class="fr">></text>
+        </view>
+        <view class="clearfix paylist">
+            <view class="fl" bindtap="no_handle">
+                <image src="../../image/pay1.png"></image>
+                <span>待付款</span>
+            </view>
+            <view class="fr" bindtap="handle">
+                <image src="../../image/payed1.png"></image>
+                <span>已付款</span>
+            </view>
+        </view>
+    </view>
+    <view class="myAddress clearfix br" bindtap="toAddress">
+        <text class="fl">我的地址</text>
+        <span class="fr">></span>
+    </view>
+</view>

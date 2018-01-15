@@ -1,0 +1,85 @@
+
+<view class="container">
+
+
+  <swiper autoplay="true" indicator-dots="true" interval="5000" duration="1000">
+    <swiper-item wx:for="{{swiper}}" wx:for-item="itemswiper">
+      <image src="{{itemswiper.image}}"></image>
+    </swiper-item>
+  </swiper>
+
+  <!--排序-->
+
+  <!--<view class="header-wrap">
+    <view class="header-wrap-leftside fl">
+      <text class="leftside-font">热门商品</text>
+      <text class="leftside-font">最新商品</text>
+    </view>
+    <view class="header-wrap-rightside fr {{open}}" bindtap="tap_filter">
+      <text class="filter-font">筛选</text>
+      <image class="filter-icon" src="../../images/icon/4.png"></image>
+    </view>
+  </view>-->
+  <view class="item-icons">
+    <view wx:for="{{iconslist}}" wx:for-item="itemlist" bindtap="listdetail" data-title="{{itemlist.name}}">
+      <image src="{{itemlist.imgurl}}"></image>
+      <text>{{itemlist.name}}</text>
+    </view>
+  </view>
+
+  <!--商品-->
+  <view class="container-wrap">
+    <view class="side">
+      <!--每个商品-->
+      <view wx:for="{{goods}}" wx:key="index" class="{{index%2? 'container-wrap-rightside  fr'  : 'container-wrap-leftside  fl'}}   side-wrap"  >
+        <image data-id="{{item.id}}" bindtap="lookdetail" class="container-img" src="{{item.goods_img}}"></image>
+        <text class="container-content">{{item.goods_name}}</text>
+        <view class="container-price">
+          <text class="price-font fl">￥{{item.market_price}}</text>
+          <image class="add-icon fr" src="../../images/icon/add.png"></image>
+        </view>
+        
+      </view>
+    </view>
+    
+  </view>
+  <view class="footer">
+    <view>地址：广东省深圳市软件产业基地6栋三楼s区</view>
+    <view>官网地址：www.uctoo.com</view>
+    <view>最终解释权归公司所有</view>
+  </view>
+</view>
+
+<!-- 筛选 -->
+<view class="filter" style="display:{{display}}">
+  <view class="weui-mask weui-animate-fade-in" bindtap="tap_filter"></view>
+  <view class="filter-items">
+    <view class="weui-cells_access fliter_bgcolor">
+      <view class="weui-cell">
+        <image class="filter_back" bindtap="tap_filter" src="../../images/icon/back-1.png"></image>
+        <view class="filter_center">
+          <text>筛选</text>
+        </view>
+        <view>确定
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd weui-cell_primary">
+          <text>价格</text>
+        </view>
+        <view class="weui-cell__ft">全部
+        </view>
+      </view>
+      <view class="weui-cell no_access">
+        <view class="weui-cell__bd weui-cell_primary">
+          <text>销量</text>
+        </view>
+        <view class="weui-cell__ft">全部
+        </view>
+      </view>
+    </view>
+    <view class="weui-btn-area">
+      <button class="weui-btn weui-btn_bgcolor" id="exitBtn">重置选项</button>
+    </view>
+  </view>
+</view>

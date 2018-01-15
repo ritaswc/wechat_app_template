@@ -1,0 +1,27 @@
+
+<!--index.wxml-->
+<view class="userinfo">
+  <scroll-view scroll-y="true" style="height:750px">
+  <div style="height:100px;">
+    <image class="userinfo-avatar" mode="scaleToFill" src="../../images/icon.png" />
+    </div>
+    <view class="index_search_btn" bindtap="click">
+      <image class="index_search" src="../../images/searchLogo.png"></image>
+      <text>搜索雷铭商品</text>
+    </view>
+
+    <!--为你推荐-->
+    <view class="Recommend ">为你推荐</view>
+
+    <!--列表list组件 -->
+    <view class="list">
+      <block wx:for-items="{{list}}" wx:key="">
+        <view class="item" catchtap="itemclick" data-specId="{{item.specId}}">
+          <view class="item-text1">{{item.gcName}}</view>
+          <view class="item-text2">{{item.goodsName}}</view>
+          <image class="img" src="http://testbbcimage.leimingtech.com{{item.goodsImage}}" mode='scaleToFill' />
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

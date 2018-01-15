@@ -1,0 +1,12 @@
+.tBar {
+  margin: 28rpx 0 20rpx 28rpx;
+  font-size: 28rpx;
+}
+
+.warp {
+  background-color: #fff;
+  border-width: 2rpx 0 2rpx 0;
+  border-color: #d8d8d8;
+  border-style: solid;
+  margin-bottom: 18rpx;
+}

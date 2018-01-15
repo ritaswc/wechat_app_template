@@ -1,0 +1,30 @@
+<view class="wraper">
+	<view class="storeList">
+		<view class="storeImg">
+			<image src="http://ojhq3mgil.bkt.clouddn.com/500/20161201/201612011335251362.jpg"></image>
+		</view>
+		<view class="storeInfo">
+			<view class="storeName">小朋友店</view>
+			<view class="storeStars"><image src="../../../images/icon_stars.png"></image></view>
+			<view class="storeLabel">
+				<image src="http://ojhq3mgil.bkt.clouddn.com/admin/20161028/201610281822325408.jpg"></image>
+				<image src="http://ojhq3mgil.bkt.clouddn.com/admin/20161028/201610281822400505.jpg"></image>
+				<image src="http://ojhq3mgil.bkt.clouddn.com/admin/20161028/201610281822482974.jpg"></image>
+			</view>
+		</view>
+	</view>
+	<view class="storeList">
+		<view class="storeImg">
+			<image src="http://ojhq3mgil.bkt.clouddn.com/500/20161201/201612011335251362.jpg"></image>
+		</view>
+		<view class="storeInfo">
+			<view class="storeName">小朋友店</view>
+			<view class="storeStars"><image src="../../../images/icon_stars.png"></image></view>
+			<view class="storeLabel">
+				<image src="http://ojhq3mgil.bkt.clouddn.com/admin/20161028/201610281822325408.jpg"></image>
+				<image src="http://ojhq3mgil.bkt.clouddn.com/admin/20161028/201610281822400505.jpg"></image>
+				<image src="http://ojhq3mgil.bkt.clouddn.com/admin/20161028/201610281822482974.jpg"></image>
+			</view>
+		</view>
+	</view>
+</view>

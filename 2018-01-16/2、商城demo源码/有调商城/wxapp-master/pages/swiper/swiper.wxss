@@ -1,0 +1,36 @@
+.container{
+    padding:0;
+    background-color: #efeff4;
+    display: flex
+}
+
+
+/* 列表模式和大图模式切换start */
+.clearfix:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+.switch-view{
+    background-color: #FAFAFA;
+    line-height: 45px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color:#464646;
+}
+
+.view-list,.view-big-img{
+    float: left;
+    width: 50%;
+}
+
+.active{
+    color:#e60012;
+}
+
+.active text{
+    display: inline-block;
+    border-bottom:2px #e60012 solid;
+}

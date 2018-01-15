@@ -1,0 +1,59 @@
+{
+  "pages":[
+    "mall/home/index",
+    "mall/commodity/commodity",
+    "mall/column/column",
+    "mall/market/index",
+    "mall/my/index",
+    "mall/special/index",
+    "mall/my/index",
+    "pages/wx/index",
+    "icon/index"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#35495e",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "微信小程序",
+    "backgroundColor": "#eee",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "tabBar" : {
+    "color" : "#888",
+    "selectedColor" : "#3CD811",
+    "backgroundColor" : "#ffffff",
+    "borderStyle" : "#4BFF2F",
+    "list" : [
+      {
+        "pagePath" : "mall/home/index",
+        "text" : "首页",
+        "iconPath" : "resources/wxmsg.png",
+        "selectedIconPath" : "resources/wxmsg-act.png"
+      },
+      {
+        "pagePath" : "mall/special/index",
+        "text" : "专题",
+        "iconPath" : "resources/record.png",
+        "selectedIconPath" : "resources/record-act.png"
+      },
+      {
+        "pagePath" : "pages/wx/index",
+        "text" : "购物车",
+        "iconPath" : "resources/record.png",
+        "selectedIconPath" : "resources/record-act.png"
+      },
+      {
+        "pagePath" : "mall/market/index",
+        "text" : "营销",
+        "iconPath" : "resources/find.png",
+        "selectedIconPath" : "resources/find-act.png"
+      },
+      {
+        "pagePath" : "mall/my/index",
+        "text" : "我的",
+        "iconPath" : "resources/user.png",
+        "selectedIconPath" : "resources/user-act.png"
+      }
+    ]
+  }
+}

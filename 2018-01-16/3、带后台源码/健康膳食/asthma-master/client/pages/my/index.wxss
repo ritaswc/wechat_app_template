@@ -1,0 +1,46 @@
+.userinfo {
+    width: 100%;
+    padding: 32rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.user-avatar-wrapper,
+.user-avatar {
+    display: block;
+    margin: 0 auto;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+
+.user-nickname {
+    text-align: center;
+    color: #999;
+    font-size: 28rpx;
+    margin: 20rpx 0;
+}
+
+
+
+.menu-item {
+    position: relative;
+    height: 80rpx;
+    line-height: 80rpx;
+    background-color: #fff;
+    color: #7fabfd;
+    font-size: 28rpx;
+    margin-bottom: 20rpx;
+    box-sizing:border-box;
+    padding-left: 50rpx;
+}
+
+.next-icon {
+    position:absolute;
+    top: 50%;
+    right: 50rpx;
+    transform: translateY(-50%);
+    width: 45rpx;
+    height: 45rpx;
+}

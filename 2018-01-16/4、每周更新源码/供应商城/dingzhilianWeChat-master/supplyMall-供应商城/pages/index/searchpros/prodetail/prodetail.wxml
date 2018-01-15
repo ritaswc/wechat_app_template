@@ -1,0 +1,90 @@
+<!--index.wxml-->
+<import src="../../../../wxParse/wxParse.wxml"/> 
+<view class="container">
+    <!--轮播-->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="0">
+            <swiper-item>
+                <image src="{{ctx}}{{item}}" class="slide-image" width="355" height="150"/>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    
+    <!--产品标题--> 
+    <view class="prodetail-title">
+      <text class="protitle11">{{style}}</text>
+      <view class="prodetail-title2">
+        <text class="protitle21">采购价</text>
+        <text class="protitle22">{{price}}</text>
+      </view>
+    </view>
+
+    <!--产品详情-->
+    <view class="prodetail-con">
+        <view>
+            <text class="con1">面料 :</text>
+            <text class="con2">{{fabric}}</text>
+        </view>
+        <view class="lineMes">
+            <text class="con1">款式 :</text>
+            <text class="con2">{{secondNames}}</text>
+        </view>
+        <view class="prodetail-con2 lineMes">
+            <text class="colorTitle">颜色 :</text>
+            <view class="colorCon">
+                <view class="colorStyle" wx:for="{{colors}}">
+                    <text class="colorStyle1" style="background:{{item.value == null ? '#fe4b5e' : item.value}};"></text>
+                    <text class="colorStyle2">{{item.color_name}}</text>
+                </view>
+            </view>
+        </view>
+        <navigator class="prodetail-con lineMes" url="inventory/inventory?styleId={{styleId}}">
+            <text class="con1">库存 :</text>
+            <text class="con2">{{store < 1000 ? store : '1000+'}}</text>
+
+            <view class="seeDetail">
+                <text class="con1" >查看详情</text>
+                <image class="seeDetailimg" src="{{weixinCtx}}see_detail.png"></image>
+            </view>
+        </navigator>
+    </view>
+
+    <view class="prodetail-con prodetail-margin">
+        <view>
+            <text class="con1">发货地 :</text>
+            <text class="con2">{{province}}{{city}}</text>
+        </view>
+        <view class="lineMes">
+            <text class="con1">咨询电话 :</text>
+            <text class="con2">{{phone}}</text>
+        </view>
+        <view class="lineMes">
+            <text class="con1">QQ :</text>
+            <text class="con2">{{qq}}</text>
+        </view>
+    </view>
+
+    <!--产品详情、产品图片 -->
+    <view class="imgDetail">
+        <view class="imgDetailTitle">
+            <text class="detail1 {{detailsClass}}" bindtap="showDetails">产品详情</text>
+            <text class="detail2 {{attentionsClass}}" bindtap="showAttentions">注意事项</text>
+        </view>
+
+        <!--产品详情 -->
+        <template wx:if="{{detailsShow}}" is="wxParse" data="{{wxParseData:show_details.nodes}}"/>
+
+        <!--注意事项 -->
+        <template wx:if="{{attentionsShow}}" is="wxParse" data="{{wxParseData:attentions.nodes}}"/>
+
+        <text class="bottomCon">已经到底啦~</text>
+
+    </view>
+
+    <!--采购咨询 -->
+    <view class="cont">
+      <contact-button class="cont-icon" type="default-light" size="27" session-from="weapp"></contact-button>
+      <text class="cont-text" >采购咨询</text>
+    </view>
+</view>

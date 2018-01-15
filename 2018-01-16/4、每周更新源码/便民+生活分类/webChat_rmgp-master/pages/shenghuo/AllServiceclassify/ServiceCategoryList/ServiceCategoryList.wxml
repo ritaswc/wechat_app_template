@@ -1,0 +1,18 @@
+<!--pages/shenghuo/AllServiceclassify/ServiceCategoryList/ServiceCategoryList.wxml-->
+<!--<text>pages/shenghuo/AllServiceclassify/ServiceCategoryList/ServiceCategoryList.wxml</text>-->
+
+<import src="ServiceCategoryListCell/ServiceCategoryListCell.wxml" />
+
+<view class="serviceCategoryList-container">
+  <view class="search-bg1"></view>
+  <view class="search-box">
+    <view class="search-icon">
+      <input class="input" placeholder="点击搜索" />
+    </view>
+  </view>
+
+  <block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="key">
+    <template is="ServiceCategoryListCell" data="{{...item,index}}"></template>
+  </block>
+
+</view>

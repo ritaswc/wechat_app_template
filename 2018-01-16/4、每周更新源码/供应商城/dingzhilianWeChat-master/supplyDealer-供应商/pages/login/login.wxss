@@ -1,0 +1,35 @@
+/**index.wxss**/
+.logincon{
+  padding-top:80rpx;
+}
+
+.log-in{
+  background-color: #fff;
+  width:668rpx;
+  height: 80rpx;
+  padding-left: 42rpx;
+  color:#666;
+  margin-bottom:25rpx;
+  font-family: "微软雅黑";
+}
+
+.log-but{
+  width:710rpx;
+  height:98rpx;
+  line-height: 98rpx;
+  background-color: #27b2eb;
+  color:#fff;
+  border:none;
+  border-radius: 0;
+  font-size:30rpx;
+  margin-top:40rpx;
+}
+
+.log-tip{
+  width:100%;
+  text-align: center;
+  color:#999;
+  font-size:30rpx;
+  position: fixed;
+  bottom:60rpx;
+}

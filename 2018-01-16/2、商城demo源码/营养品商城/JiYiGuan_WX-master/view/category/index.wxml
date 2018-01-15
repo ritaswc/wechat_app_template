@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="header"></view>
+  <view class="container">
+    <view class="header"></view>
+    <scroll-view class="category-left" scroll-y="true">
+      <view class="category-left-item {{category_id == category.category_id ? 'category-left-item-active' : ''}}" wx:for="{{category_list}}" wx:for-item="category" wx:key="{{category.category_id}}" bindtap="handleCategory" id="{{category.category_id}}">{{category.category_name}}</view>
+      <view class="category-left-item-bottom" style="height: {{window_height - 50.5 * 6}}px;"></view>
+    </scroll-view>
+    <scroll-view class="category-right" style="width: {{window_width - 100}}px;" scroll-y="true">
+      <navigator url="/view/product/index?product_id={{product.product_id}}" class="category-right-item" style="width: {{(window_width - 100 - 22) / 2}}px; margin: 7px 0 0 7px;" wx:for="{{product_list}}" wx:for-item="product" wx:key="{{product.product_id}}">
+        <image style="width: {{(window_width - 100 - 22) / 2}}px; height: {{(window_width - 100 - 22) / 2}}px;" src="{{product.product_image_original}}" />
+        <view class="category-right-item-name">{{product.product_name}}</view>
+        <view class="category-right-item-price">￥{{product.product_price}}</view>
+      </navigator>
+      <view style="float: left; width: 100%; margin-top: 8px;"></view>
+    </scroll-view>
+  </view>
+</view>

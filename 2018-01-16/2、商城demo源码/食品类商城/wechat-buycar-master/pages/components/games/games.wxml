@@ -1,0 +1,5 @@
+<view id="bc_cavas" bindtouchstart="tapStart" bindtouchmove="tapMove" bindtouchend="tapEnd">
+    <view class="bc" wx:for="{{numbers}}" wx:for-item="row" >
+        <view wx:for="{{row}}" class="bc_ bc_{{item}}"> {{item}} </view>
+    </view>
+</view>

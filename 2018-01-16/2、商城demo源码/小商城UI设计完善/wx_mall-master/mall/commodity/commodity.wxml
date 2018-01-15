@@ -1,0 +1,40 @@
+<view>
+    <view class="slider">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="3000" duration="1000">
+            <swiper-item>
+                <image src="http://o86ac3exs.bkt.clouddn.com/6a6465b2-5165-4228-bc55-a658e88a13ee.jpg"/>
+            </swiper-item>
+            <swiper-item>
+                <image src="http://o86ac3exs.bkt.clouddn.com/a9bc25a6-91bd-4fde-b08f-1bc59c4e8a16.jpg"/>
+            </swiper-item>
+        </swiper>
+    </view>
+
+    <view class="info">
+       <view class="infoTop">
+           <view class="collect">
+               <view>☆</view>
+               <view>收藏</view>
+           </view>
+           <view class="nameAndPrice">
+               <view class="name">安岳柠檬</view>
+               <view class="price">¥ 28</view>
+           </view>
+       </view>
+        <view class="marketNumber">
+            月销 99
+        </view>
+    </view>
+
+    <view class="attestation">
+        <view class="attestationItem"><text class="icon">☆</text><text> 质量检测</text></view>
+        <view class="attestationItem"><text class="icon">☆</text><text> 担保交易</text></view>
+        <view class="attestationItem"><text class="icon">☆</text><text> 企业认证</text></view>
+    </view>
+
+    <view class="imageTextInfo">
+
+    </view>
+
+
+</view>

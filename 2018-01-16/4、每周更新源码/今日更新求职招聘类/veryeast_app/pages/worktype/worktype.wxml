@@ -1,0 +1,21 @@
+<!--pages/worktype/worktype.wxml-->
+<view class="worktype_wrap">
+    <view wx:if="{{show}}" class="has_select">
+        <view class="title">
+            <view>已选职位</view>
+            <view>{{has_post.length}}/5</view>
+        </view>
+        <view class="w_action_list">
+            <view bindtap="del_this" wx:for="{{has_post}}" data-city="{{item.post}}" data-id="{{item.id}}">
+                {{item.post}}<icon size="18" class="red" type="clear"></icon>
+            </view>
+        </view>
+    </view>
+
+    <view wx:for="{{post_type}}" bindtap="select_type" data-id="{{item.id}}" data-province="{{item._type}}" class="w_a_wrap">
+        <view class="w_a_list" >{{item._type}}</view>
+        <image wx:if="{{show_img}}" class="image_select" src="../workplace/image/_03.png"></image>
+        <image wx:if="{{!show_img}}" class="image_select" src="../workplace/image/jiantou_tou.png"></image>
+    </view>
+
+</view>

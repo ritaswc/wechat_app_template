@@ -1,0 +1,63 @@
+<view>
+    <view class="fff module module1">
+        <view class="header flex">
+            <view class="user">
+                <image class="userPic" src="{{userInfo.avatarUrl}}"></image>
+                <text class="userName">{{ userInfo.nickName }}</text>
+            </view >
+            <navigator url="../../pages/wx/index" class="account mui-icon-arrowright arrows">
+                <navigator src="../../icon/index">
+                    <text class="accountMassage_text">账户管理</text>
+                </navigator>
+            </navigator>
+        </view>
+
+        <view class="flex state">
+            <view class="stateItem icon-pay">
+                <text>待付款</text>
+            </view>
+            <view class="stateItem icon-deliver">
+                <text>待发货</text>
+            </view>
+            <view class="stateItem icon-send">
+                <text>待签收</text>
+            </view>
+            <view class="stateItem icon-goodsnew">
+                <text>已完成</text>
+            </view>
+            <view class="stateItem icon-post">
+                <text>待评价</text>
+            </view>
+        </view>
+    </view>
+
+    <view>
+        <view class="fff module module2">
+            <navigator url="../../pages/wx/index" class="option arrows mui-icon-arrowright">
+                <text class="optionTitle collect icon-favorfill">收藏商品</text>
+            </navigator>
+            <navigator url="../../pages/wx/index" class="option arrows mui-icon-arrowright">
+                <text class="optionTitle record icon-attentionfill">浏览记录</text>
+            </navigator>
+        </view>
+
+        <view class="fff module module3">
+            <navigator url="../../pages/wx/index" class="option arrows mui-icon-arrowright">
+                <text class="optionTitle address icon-locationfill">管理我的收货地址</text>
+            </navigator>
+            <navigator url="../../pages/wx/index" class="option arrows mui-icon-arrowright">
+                <text class="optionTitle idea icon-writefill">意见反馈</text>
+            </navigator>
+            <navigator url="../../pages/wx/index" class="option arrows mui-icon-arrowright">
+                <text class="optionTitle service icon-mobilefill">联系客服</text>
+            </navigator>
+        </view>
+
+        <view class="fff module module3">
+            <navigator url="../../pages/wx/index" class="option arrows mui-icon-arrowright">
+                <text class="optionTitle technology icon-lightfill">技术支持</text>
+            </navigator>
+        </view>
+    </view>
+</view>
+

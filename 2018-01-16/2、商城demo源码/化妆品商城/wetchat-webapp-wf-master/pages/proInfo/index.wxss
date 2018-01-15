@@ -1,0 +1,137 @@
+.pro-head{
+background-color: white;
+border-bottom: 1rpx solid #eeeeee;
+padding: 20rpx 40rpx;
+}
+
+.center-image{
+ display: flex;
+ align-items: center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
+  height: auto;
+}
+
+swiper{
+    background-color: white;
+    min-height:600rpx;
+}
+
+.pro-title{
+    font-size: 13pt;
+    font-weight: bold;
+    color: #666;
+ 
+}
+
+.pro-price{
+     display: flex;
+     padding:  20rpx 0;
+}
+.pro-real-t{
+    font-size:11pt;
+    line-height: 18pt;
+}
+
+.pro-real-l{
+    font-size:9pt;
+    line-height: 18pt;
+}
+.pro-real-m{
+    font-size:18pt;
+    color: #ff7701;
+}
+
+.pro-old-t{
+    font-size:12pt;
+    line-height:23pt;
+
+}
+.pro-old-l{
+    font-size:9pt;
+    line-height: 18pt;
+}
+.pro-old-m{
+    font-size:15pt;
+    line-height: 18pt;
+}
+swiper {
+    padding: 40rpx 0;
+}
+
+.pro-section{
+    position: relative;
+    padding: 20rpx 40rpx;
+    overflow: hidden;
+    border-top: 1rpx #cccccc solid;
+}
+.sect-title{
+    float: left;
+    font-size:12pt;
+    display:inline-block;
+    margin-right:15rpx; 
+    line-height: 2;
+}
+.spe-lst{
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width:580rpx;
+
+}
+.spec-btn{
+    font-size: 10pt;
+    background-color: white;
+    margin: 0;
+    margin-right:10rpx; 
+    border:1rpx solid #35B6DD;
+    border-radius: 0;
+}
+.spec-btn::after{
+    width: 0;
+    height: 0;
+}
+.num-ipnut {
+    background-color: white;
+    border:1rpx solid #cccccc;
+    width: 200rpx;
+    font-size:12pt;
+    margin-right:10rpx; 
+    padding: 5rpx;
+    text-align: center;
+    height: 2em;
+}
+.add-btn,.cut-btn {
+    background-color: #eeeeee;
+}
+
+.fix-btns{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20rpx;
+    background-color:white;
+    border-top: 1rpx solid #cccccc; 
+    box-sizing: border-box;
+    z-index: 2;
+}
+.buy-btn ,.add-pro-btn {
+    width: 96%;
+    font-size: 14pt;
+    
+}
+.buy-btn{
+    background-color: #35B6DD;
+    color: #FFF;
+}
+
+.pro-all-info {
+    padding:20rpx 40rpx; 
+    font-size: 12pt;
+    color: #666;
+    line-height: 14pt;
+    border-bottom: 1rpx solid #cccccc; 
+    background-color: #FFF;
+    }

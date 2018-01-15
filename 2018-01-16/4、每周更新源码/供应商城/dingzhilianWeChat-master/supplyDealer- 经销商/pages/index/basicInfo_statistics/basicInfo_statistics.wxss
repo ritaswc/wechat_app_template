@@ -1,0 +1,103 @@
+/* pages/index/basicInfo_statistics/basicInfo_statistics.wxss */
+.order-statistics{
+    margin-top:20rpx;
+}
+
+.statistics-title{
+    width:750rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background-color:#27b2eb;
+    color:#fff;
+    text-align: center;
+}
+
+.re-tr{
+    width:100%;
+    border-bottom: 2rpx dashed #e5e5e5;
+    height: 80rpx;
+    background-color:#fff;
+}
+
+.re-tr:first-child{
+    border-bottom: 2rpx solid #e5e5e5;
+}
+
+.re-tr:last-child{
+    border-bottom: none;
+}
+
+.re-th{
+    color:#999;
+}
+
+.re-th,.re-td{
+    height: 80rpx;
+    line-height: 80rpx;
+    float: left;
+    width:25%;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.re-td text{
+    color:#999;
+}
+
+.order-table{
+    width:690rpx;
+    margin:20rpx auto 0;
+}
+
+.order-trhead{
+    width:100%;
+    float: left;
+}
+
+.order-trhead .order-th{
+    background-color:#e6e6e6;
+}
+
+.order-tr{
+    width:100%;
+    float: left;
+}
+
+.order-tr .order-td{
+    background-color:#fff;
+}
+
+.order-th,.order-td{
+    width:170rpx;
+    height:68rpx;
+    float: left;
+    line-height: 68rpx;
+    text-align: center;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-left:2rpx solid #ccc;
+    border-bottom:2rpx solid #ccc;
+}
+
+.order-th{
+    border-top:2rpx solid #ccc;
+}
+
+.order-trhead .order-th:last-child{
+    border-right:2rpx solid #ccc;
+}
+
+.order-tr .order-td:last-child{
+    border-right:2rpx solid #ccc;
+}
+
+.order-tr:nth-child(2n) .order-td{
+    background-color:#e8f8ff;
+}
+
+.empty-con{
+    margin-top:80rpx;
+}

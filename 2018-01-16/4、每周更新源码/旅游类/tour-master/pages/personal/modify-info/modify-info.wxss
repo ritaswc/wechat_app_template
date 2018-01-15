@@ -1,0 +1,131 @@
+/* pages/personal/xiugai/xingai.wxss */
+
+page {
+  background: #f0ede2;
+}
+
+.personal-info{
+  width: 100%;
+}
+.header-info,.save-btn {
+  background: #fff;
+}
+.info-1,.info-2,.change-password{
+  margin-bottom: 16rpx;
+  background: #fff;
+  
+}
+ .header-info {
+  line-height: 104rpx;
+}
+.header-info image {
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: 30rpx;
+}
+/*表单*/
+.form-info{
+  display: block;
+  width: 100%;
+}
+.header-info,.form-info view view,.change-password,.save-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 14rpx 44rpx;
+  line-height: 70rpx;
+  border-bottom: 1px solid #eae1d2;
+}
+
+.form-info>view view:last-child {
+  border: none;
+}
+
+
+
+/*enter图标*/
+.icon-enter {
+  position: absolute;
+   right: 44rpx;
+  background: url(/images/personal/xiugai.png) no-repeat;
+  background-size: 120rpx 70rpx;
+  height: 30rpx;
+  width: 16rpx;
+  background-position: 0 0;
+}
+
+
+
+/*性别选择*/
+radio-group{
+    padding-left: 15rpx;
+     color: #bbb4af;
+    font-size: 26rpx;
+}
+radio-group label:last-child{
+    margin-left: 24rpx;
+}
+/*密码*/
+
+.password-icon {
+  background: url(/images/personal/xiugai.png) no-repeat;
+  background-size: 120rpx 70rpx;
+  height: 40rpx;
+  width: 32rpx;
+  background-position: -16rpx 0;
+  margin-right: 24rpx;
+
+}
+.password {
+  color: #666;
+}
+/*保存按钮*/
+
+
+.save-btn button {
+  height: 100%;
+  width: 100%;
+  background: #98d361;
+  color: #fff;
+  font-weight: bold;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 10rpx;
+}
+/*公共*/
+.filter {
+  padding-right: 30rpx;
+}
+text {
+  font-size: 26rpx;
+  color: #948475;
+  font-weight: bold;
+}
+input,.picker-wrapper{
+    flex: 1 1 auto;
+    height: 70rpx;
+    box-sizing: border-box;
+    padding: 10rpx 15rpx; 
+}
+input,.picker{
+    font-size: 28rpx;
+    color: #000;
+}
+.input-placeholder{
+    color: #bbb4af;
+    font-size: 26rpx;
+}
+/*选择器*/
+.picker-wrapper{
+  position: relative;
+  z-index: 55;
+  background: transparent;
+   margin-top: -15rpx;
+}
+.picker-wrapper .picker{
+    padding: 0;
+    border: none;
+}

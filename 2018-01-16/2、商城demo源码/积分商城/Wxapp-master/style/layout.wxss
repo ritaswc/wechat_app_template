@@ -1,0 +1,59 @@
+/**
+ * layout
+ *
+ * 说明
+ * l:layout
+ * r:row
+ * l:left
+ * r:right
+ * c:center
+ */
+
+.l-r {
+  display: flex;
+}
+
+/*l_auto:占用剩下的*/
+.l_auto {
+  flex: 1;
+}
+
+/*& > * {
+    display: block;
+  }
+
+  // 1行内元素平分
+  // &[class^="l-r-auto"] {
+  //   flex: 1;
+  // }
+
+  // 1行内元素平分
+  &[class^="l-r-auto"] {
+    & > * {
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  // 主轴为水平方向，起点在右端
+  &[class^="l-r-r"] {
+    flex-direction: row-reverse;
+  }
+
+  // 1行2列两边对齐
+  &[class^="l-r-lr"] {
+    justify-content: space-between;
+  }
+ */
+
+.l-c {
+  display: flex;
+  /*justify-content: center;*/
+  align-items: center;
+}
+/*垂直水平居中对齐*/
+.l-c-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

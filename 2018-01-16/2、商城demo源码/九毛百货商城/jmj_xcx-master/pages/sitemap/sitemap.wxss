@@ -1,0 +1,48 @@
+/* pages/sitemap/sitemap.wxss */
+.list{
+    padding:0;
+    margin-bottom:-9rpx;
+}
+.bannerImg{
+    width:750rpx;
+    height:240rpx;
+}
+.catList .item{
+    height:0;
+    -webkit-transform:scale(1,0);
+}
+.catList .item.active{
+    height:auto;
+    -webkit-transform:scale(1,1);
+    transition:all 0.2s linear;
+}
+.catList .top{
+    height:100rpx;
+    line-height:100rpx;
+}
+.catList .top .log{
+    width:60rpx;
+    height:60rpx;
+    vertical-align: middle;
+    margin-left:10prx;
+}
+.catList .top .text{
+    color:#3d4245;
+    font-size:30rpx;
+}
+.catList .content{
+    background:#fff;
+    padding:10rpx 0 20rpx;
+}
+.catList .content .cate2{
+    width:140rpx;
+    padding:5rpx;
+}
+.catList .content .cate2 .cate2img{
+    width:120rpx;
+    height:120rpx;
+}
+.catList .content .cate2 .text{
+    font-size:24rpx;
+    color:#3d4245;
+}

@@ -1,0 +1,11 @@
+<!--myself.wxml-->
+<view class="container">
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.headImg.length > 0 ? 'http://m.jointem.com/site/headImg/' + userInfo.headImg : '/images/icon/noLogin.png' }}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <button class="btn-area" type="default" style="background:#0164a6; color:white" data-login-status="{{userInfo.userId.length > 0 ? '退出登录' : '登录' }}" bindtap="tapBtnLoginOrLoginOut">{{userInfo.userId.length > 0 ?"退出登录" : "登录" }}</button>
+</view>

@@ -1,0 +1,99 @@
+/** 购物车列表 **/
+/** 1、基础布局 **/
+.items-list .item {
+    margin: 20rpx 0;
+}
+
+.items-list .item.normal {
+    background-color: #fff;
+}
+/** 错误栏 **/
+.items-list .item.error-item {
+    background-color: #fffae7;
+}
+.items-list .err-msg {
+    font-size: 20rpx;
+    color: #ff8347;
+    border-bottom: 1rpx solid #D9D9D9;
+}
+
+.items-list .err-msg,
+.items-list .content,
+.items-list .gifts {
+    padding: 16rpx;
+}
+
+/** 赠品 **/
+.items-list .gifts {
+    font-size: 28rpx;
+    border-top: 1rpx solid #D9D9D9;
+}
+
+.items-list .content .check-area {
+    width: 80rpx;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.items-list .content .sku-info {
+    flex: 1;
+}
+.items-list .content .sku-img {
+    width: 140rpx;
+    height: 140rpx;
+}
+
+/** 商品原数据 **/
+.items-list .content .sku-meta {
+    flex: 1;
+    justify-content: space-between;
+    margin-left: 16rpx;
+    font-size: 28rpx;
+}
+.items-list .content .sku-meta .name {
+    line-height: 1.4;
+}
+.items-list .content .sku-meta .tag {
+    font-size: 12rpx;
+    padding: 5rpx;
+    border-radius: 5rpx;
+    margin-right: 5rpx;
+    color: #fff;
+}
+.items-list .content .sku-meta .operation {
+    justify-content: space-between;
+    align-content: center;
+}
+
+/** 原价与销售价 **/
+.items-list .price {
+    align-items: center;
+}
+.items-list .price .now-price {
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #f45341;
+}
+.items-list .price .now-price::before,
+.items-list .price .old-price::before {
+    content: "￥";
+}
+.items-list .price .old-price {
+    font-size: 24rpx;
+    color: #9e9e9e;
+    text-decoration: line-through;
+    margin-left: 16rpx;
+}
+
+/** 购买按钮 **/
+.items-list .sku-meta .operation .btns {
+    align-items: center;
+}
+.items-list .sku-meta .operation .btns .count {
+    margin: 0 10rpx;
+}
+.items-list .sku-meta .operation .btns .buy-btn {
+    font-size: 54rpx;
+    color: #ff8347; 
+}

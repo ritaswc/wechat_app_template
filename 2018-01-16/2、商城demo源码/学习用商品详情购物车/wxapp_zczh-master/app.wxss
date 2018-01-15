@@ -1,0 +1,6 @@
+/**app.wxss**/
+.clearfix:after{content:'';display: block;height: 0; clear: both;font-size: 0;}
+.fl{float: left}
+.fr{float: right}
+.personal{width:92rpx;height:92rpx;border-radius: 50%;border: 2px #f60 solid;position: fixed;top:20rpx;right: 20rpx;background-color: #fff}
+.personal image{display:block;width: 70%;height: 70%;margin:17rpx auto}

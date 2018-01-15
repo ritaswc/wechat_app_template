@@ -1,0 +1,78 @@
+/* pages/lookMe/lookMe.wxss */
+.img1{
+    width: 90rpx;
+    height: 90rpx;
+}
+.img2{
+    width: 70rpx;
+    height: 70rpx;
+}
+.img3{
+    width: 27rpx;
+    height: 27rpx;
+    padding-right: 8rpx;
+}
+.wrap{
+    padding: 40rpx 20rpx;
+    width: 96%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+.lookMe_wrap > view:nth-child(2n-1){
+    background-color: #f9f9f9;
+}
+.wrap .left{
+    width: 90rpx;
+    height: 90rpx;
+    min-width: 90rpx;
+    border-radius: 90rpx;
+    overflow: hidden;
+}
+.wrap .middle{
+    max-width: 58%;
+    min-width: 58%;
+}
+.middle .bottom view{
+    display: flex;
+    align-items: center;
+}
+.wrap .middle .top{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 150%;
+}
+
+.wrap .middle .bottom{
+    margin-top: 10rpx;
+    font-size: 10pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #aaa;
+}
+
+.wrap .right{
+    text-align: center;
+    font-size: 10pt;
+    color: #aaa;
+}
+
+.img4{
+    width: 350rpx;
+    height: 350rpx;
+    display: block;
+    margin:  0 auto;
+}
+.no_data{
+    padding-top: 200rpx;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #efefef !important;
+}
+page{
+    height: 100%;
+}

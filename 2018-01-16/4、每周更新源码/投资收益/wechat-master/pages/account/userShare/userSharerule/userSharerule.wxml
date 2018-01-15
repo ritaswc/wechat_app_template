@@ -1,0 +1,40 @@
+<view class="banner_rule">
+    <image src="../../../../images/account/yqhy_banner.jpg"></image>
+</view>
+
+<view class="content_bd">
+    <view class="bd_gift">
+        <view class="left" id="gift" bindtap="change">
+            3重豪礼 <text>推荐好友奖励详情表</text>
+        </view>
+        <view class="gift_con {{giftShow ? 'showlsit' : 'hidelist'}}">
+            <view><text>1</text>一重礼</view>
+            <text>首月投资奖 0.3%-1%</text>
+            <view><text>2</text>二重礼</view>
+            <text>VIP等级提升奖 20-100元</text>
+            <view><text>3</text>三重礼</view>
+            <text>VIP付费开通奖 20-100元</text>
+        </view>
+
+        <view class="left" id="rule" bindtap="change">
+            活动规则
+        </view>
+        <view class="rule_con {{ruleShow ? 'showlsit' : 'hidelist'}}">
+            <view>1、普汇云通注册用户推荐好友注册并投资，即可获得红包。</view>
+            <view>2、首月投资奖：普通用户每推荐一个投资人，即可获得被推荐人首月投资额的0.3%红包奖励，上限1000元。</view>
+            <view>3、首月投资奖：VIP用户每推荐一个投资人，推荐人根据自身VIP等级可获得被推荐人首月投资额的0.5%~1%红包奖励，上限1000元。</view>
+            <view>4、VIP付费开通奖：被推荐人付费开通VIP，推荐人根据自身VIP等级可获得20~100元红包。</view>
+            <view>5、VIP等级提升奖：被推荐人VIP等级每升1级，推荐人根据自身VIP等级可获得20~100元红包。</view>
+            <view>6、公式：奖励红包=被推荐人首月投资合计金额*推荐人等级百分比。</view>
+            <view>7、计算首月投资额时间：首笔投资30天内, 包含首笔投资当天（被推荐人投资时间与注册时间无关）</view>
+            <view>8、投资红包奖励将在完成首月投资时间后3个工作日内发放到您的普汇云通账户。</view>
+            <view>9、红包仅限在普汇云通进行投资，有效期为45日，过期回收。</view>
+            <view>10、本推荐奖励规则最终解释权归普汇云通所有。</view>
+        </view>
+    </view>
+</view>
+<view class="share_now">
+    <navigator url="">
+        立即分享
+    </navigator>
+</view>

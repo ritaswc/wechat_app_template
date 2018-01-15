@@ -1,0 +1,105 @@
+<view>
+  <view class="property_head_view">
+    <view style="display:flex;justify-content:flex-end;width:100%">
+      <image src="/images/account_record.png" style="width:40rpx;height:40rpx;margin-right:20rpx;margin-to:20rpx" />
+    </view>
+    <view style="display:flex;justify-content:center;width:100% ;align-items: center;">
+      <text style="text-align:center;font-size:28rpx;color:white">当前资产(元)</text>
+      <image src="/images/icon_account_amount_show.png" style="width:36rpx;height:20rpx;margin-left:14rpx;" />
+    </view>
+    <text style="width:100%; text-align:center;font-size:34rpx;color:white;margin-top:16rpx">6542,666.01</text>
+    <view style="display:flex;justify-content:center;width:100% ;align-items: center;margin-bottom:24rpx;">
+      <button class="property_w_btn">提现</button>
+      <button class="property_c_btn">充值</button>
+    </view>
+  </view>
+  <view style="display:flex;justify-content:center;width:100% ;align-items: center;margin-top:16rpx;;margin-bottom:24rpx;">
+    <view style="display:flex;justify-content:center;width:100% ;align-items: center;4rpx;flex-direction: column ">
+      <text style="text-align:center;font-size:24rpx;">累计收益(元)</text>
+      <text style="text-align:center;font-size:36rpx;color:#ff7460;margin-top:14rpx">2,900</text>
+    </view>
+    <view style="display:flex;justify-content:center;width:100% ;align-items: center;flex-direction: column ">
+      <text style="text-align:center;font-size:24rpx;">预期收益产(元)</text>
+      <text style="text-align:center;font-size:36rpx;color:#ff7460;margin-top:14rpx">234</text>
+    </view>
+  </view>
+  <view class="line"/>
+  <view class="line_top12" />
+  <view class="property_clounme">
+    <view>
+      <image src="/images/account_available_remain_balance.png" class="property_imges" />
+      <text class="property_text">可用余额</text>
+    </view>
+    <view>
+      <text class="property_text_title">0.0元</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line" />
+    <view class="property_clounme">
+    <view>
+      <image src="/images/account_available_remain_balance.png" class="property_imges" />
+      <text class="property_text">冻结余额</text>
+    </view>
+    <view>
+      <text class="property_text_title">0.0元</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line" />
+    <view class="property_clounme">
+    <view>
+      <image src="/images/account_uyou.png" class="property_imges" />
+      <text class="property_text">U优宝</text>
+    </view>
+    <view>
+      <text class="property_text_title">0.0元</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line" />
+    <view class="property_clounme">
+    <view>
+      <image src="/images/account_dingqi.png" class="property_imges" />
+      <text class="property_text">定期宝</text>
+    </view>
+    <view>
+      <text class="property_text_title">0.0元</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line" />
+    <view class="property_clounme">
+    <view>
+      <image src="/images/account_huoqi.png" class="property_imges" />
+      <text class="property_text">活期宝</text>
+    </view>
+    <view>
+      <text class="property_text_title">0.0元</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line" />
+    <view class="property_clounme">
+    <view>
+      <image src="/images/account_xinshou.png" class="property_imges" />
+      <text class="property_text">新手宝</text>
+    </view>
+    <view>
+      <text class="property_text_title">0.0元</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line" />
+      <view class="property_clounme">
+    <view>
+      <image src="/images/account_available_experience_balance.png" class="property_imges" />
+      <text class="property_text">体验宝</text>
+    </view>
+    <view>
+      <text class="property_text_title">0.0元</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line" />
+</view>

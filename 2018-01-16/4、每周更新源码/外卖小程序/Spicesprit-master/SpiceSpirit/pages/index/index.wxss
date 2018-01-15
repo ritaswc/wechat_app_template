@@ -1,0 +1,188 @@
+page{
+    background-color: white;
+    width: 750rpx;
+}
+.header-view{
+    width: 100%;
+    height: 160rpx;
+    background-color: #f5f4f4;
+    z-index: 500;
+    position: fixed;
+    top: 0;
+}
+.header-top{
+    height: 80rpx;
+}
+.header-bottom{
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.category-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.category-item text{
+    margin-top: 25rpx;
+    font-size: 28rpx;
+}
+.category-item .line{
+    width: 80rpx;
+    height: 2rpx;
+    background-color: #ed4040;
+}
+.item0{
+    width: 60rpx;   
+}
+.city-label{
+    width: 150rpx;
+    height: 80rpx;
+    font-size: 26rpx;
+    color: #ed4040;
+    text-align: center;
+    padding-top: 25rpx;
+}
+.header-view .address-view{
+    top: 15rpx;
+    width: 390rpx;
+    height: 50rpx;
+    background-color: #191919;
+    border-radius: 25rpx;
+    position: absolute;
+    right: 180rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*地址显示栏*/
+.address-view text{
+    color: white;
+    font-size: 28rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.left_img{
+    width: 20rpx;
+    height: 26rpx;
+    position: absolute;
+    left: 15rpx;
+    top: 10rpx;
+}
+.right_img{
+    width: 19rpx;
+    height: 10rpx;
+    position: absolute;
+    right: 20rpx;
+    top: 20rpx;
+}
+.content-view{
+    position: absolute;
+    top: 160rpx;
+    display: flex;
+    z-index: 100;
+   
+}
+.hot{
+    width: 100%;
+    flex-direction: column;
+     padding-bottom: 80rpx;
+}
+.common{
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+     padding-bottom: 120rpx;
+}
+.hot-item{
+    width: 90%;
+    height: 490rpx;
+    margin-top: 20rpx;
+    margin-left: 5%;
+    position: relative;
+}
+.hot-item .good-img{
+    position: absolute;
+    width: 100%;
+    height: 410rpx;
+}
+.hot-item .sale-view{
+    position: absolute;
+    left: 0;
+    bottom: 40rpx;
+}
+.hot-item .button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 190rpx;
+    height: 50rpx;
+    background-color: #ed4040;
+    color: white;
+    font-size: 26rpx;
+    border-radius: 10rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.common-item{
+    width: 320rpx;
+    height: 400rpx;
+    margin-top: 20rpx;
+    position: relative;
+}
+.common-img{
+    width: 100%;
+    height: 320rpx;
+    position: absolute;
+    top: 0;
+}
+.common-name{
+    position: absolute;
+    width: 100%;
+    bottom: 80rpx;
+    height: 60rpx;
+    font: 26rpx;
+    color: white;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6)
+}
+.common-item .common-sale-view{
+    position: absolute;
+    left: 0;
+    bottom: 40rpx;
+}
+.common-item .common-price{
+    font-size: 28rpx;
+    position: absolute;
+    bottom: 5rpx;
+}
+.add-button{
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.shopcar-view{
+    position: fixed;
+    bottom: 5rpx;
+    left: 30rpx;
+    z-index: 1000;
+}
+.shopcar-view image{
+    width: 110rpx;
+    height: 110rpx;
+}

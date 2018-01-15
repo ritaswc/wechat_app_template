@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="profile">
+    <view class="weui-cells weui-cells_access">
+      <view class="weui-cell" id="avatarCell">
+        <view class="weui-cell__bd weui-cell_primary">
+          <text>头像</text>
+        </view>
+        <view class="weui-cell__ft">
+          <image class="weui_avatar" src="{{userInfo.avatarUrl}}" alt></image>
+        </view>
+      </view>
+    </view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+    
+    <view class="weui-cells weui-cells_access">
+      <view class="weui-cell">
+        <view class="weui-cell__bd weui-cell_primary">
+          <text>昵称</text>
+        </view>
+        <input name="nickName" value="{{userInfo.nickName}}"/>
+        <view class="weui-cell__ft"></view>
+      </view>
+      <view class="weui-cell no_access">
+        <view class="weui-cell__bd weui-cell_primary">
+          <text>电话</text>
+        </view>
+         <input name="phone"   placeholder="请输入联系方式"/>
+        <view class="weui-cell__ft"></view>
+      </view>
+
+      <view class="weui-cell">
+        <view class="weui-cell__bd weui-cell_primary">
+          <text>微信号</text>
+        </view>
+         <input name="wxnum" placeholder="请输入微信号"/>
+        <view class="weui-cell__ft">
+        </view>
+      </view>
+   
+    </view>
+    <button formType="submit" type="primary"  style="margin-top:20px">保存</button>
+    </form>
+  </view>
+     
+</view>

@@ -1,0 +1,26 @@
+.container {
+  background: #fff;
+}
+
+.result-icon {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.result-title {
+  margin-top: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.result-content {
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.result-button {
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}

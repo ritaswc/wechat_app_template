@@ -1,0 +1,61 @@
+<!--technician.wxml-->
+
+<view class="container">
+<scroll-view  scroll-y="true"  class="page-body" bindscrolltolower="loadMore">
+  <!--category picker-->
+  <view class="ar_picker" style="background:#fff">
+    <view class="ar_picker_wrap">
+        <picker bindchange="bindCasPickerChange" value="{{casIndex}}" range="{{casArray}}">
+            <view>
+                <text>{{casArray[casIndex]}}</text>
+            </view>
+        </picker>
+    </view>
+  </view>
+  <!--address picker-->
+  <view class="ar_picker">
+     <view class="ar_picker_wrap">
+        <picker bindchange="bindAddrPickerChange" value="{{addrIndex}}" range="{{addrArray}}">
+            <view>
+                <text>{{addrArray[addrIndex]}}</text>
+            </view>
+        </picker>
+     </view>
+  </view>
+  <!--list-->
+  <view class="nav_section">
+    <view wx:if="{{list}}">
+        <block wx:for="{{list}}" wx:key="item.id">
+            <view class="nav_section_items" bindtap="navigateDetail" data-aid="{{item.id}}">
+                <!--image-->
+                <view class="section_image" >
+                <block wx:if="{{item.avatar}}">
+                    <image src="{{item.avatar}}" mode="aspectFill"></image>
+                </block>
+                <block wx:else>
+                    <image src="../../images/default_pic.png" mode="aspectFill"></image>
+                </block>
+                </view>
+                <!--content-->
+                <view class="section_cont" >
+                    <view class="section_cont_sub">
+                        <text>{{item.company}}</text>
+                    </view>
+                    <view class="section_cont_price" style="color:#000">{{item.nickname}}<text class="section_cont_price">  {{item.price}}</text></view>
+                    <view>{{item.message}}</view>
+                </view>
+                <!--book-->
+                <view class="section_book" >
+                        <view>{{item.distance}}</view>
+                </view>
+            </view>
+            
+        </block>
+    </view>
+    
+    <view wx:else>暂无数据</view>
+          
+</view>
+
+</scroll-view>
+</view>

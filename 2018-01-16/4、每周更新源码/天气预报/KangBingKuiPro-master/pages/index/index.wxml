@@ -1,0 +1,71 @@
+
+<!--index.wxml-->
+<view class="page">
+  <view class="userinfo-show">
+    <image class="userinfo-avatar" src="{{userInfo.avatar}}" background-size="cover"></image>
+    <view class="userinfo-nickname">{{userInfo.name}}</view>
+    <view class="userinfo-post">{{userInfo.post}}</view>
+    <view class="userinfo-desc">
+      <text>{{userInfo.desc}}</text>
+    </view>
+  </view>
+  <view class="page-content">
+  <!--实用工具-->
+    <view class="ui-panel">
+      <view class="panel-title">实用工具</view>
+      <view class="panel-content">
+        <view class="ui-flex">
+          <view class="ui-btn ui-flex-item">
+            <button type="primary" bindtap="weatherSearch">天气查询</button>
+          </view>
+          <view class="ui-btn ui-flex-item">
+            <button type="primary" bindtap="calc">计算器</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--小游戏-->
+    <view class="ui-panel">
+      <view class="panel-title">小游戏</view>
+      <view class="panel-content">
+        <view class="ui-flex">
+          <view class="ui-btn ui-flex-item">
+            <button type="primary" loading="{{loading}}" bindtap="tapTo2048">2048</button>
+          </view>
+          <view class="ui-btn ui-flex-item">
+            
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--<view class="container">
+<view class="section">
+  <view class="section__title">flex-direction: row</view>
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item bc_green">1</view>
+    <view class="flex-item bc_red">2</view>
+    <view class="flex-item bc_blue">3</view>
+  </view>
+</view>
+  <view class="main-content">
+    <view class="menu-list">
+      <view class="item">
+        <image class="userinfo-avatar" src="../../src/img/menu-img.jpg" background-size="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+    </view>
+  </view>
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view  bindtap="bindViewTap_xiaomi" class="userinfo">
+    <text class="userinfo-nickname">小米计算器</text>
+  </view>
+</view>-->

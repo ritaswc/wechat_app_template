@@ -1,0 +1,54 @@
+<view>
+    <view class="top_line"></view>
+    <scroll-view scroll-y="true" scroll-x="false">
+        <view bindtap="addressClick">
+            <view class="top_view">
+            <text>{{addressInfo.trueName}}  {{addressInfo.mobPhone}}</text>
+        </view>
+        <view class="address_view"><text>{{addressInfo.areaInfo}} {{addressInfo.address}}</text></view>
+        </view>
+        <view class="goods_info">
+            <view>
+                <image class="image_icon" src="http://testbbcimage.leimingtech.com{{orderData.list[0].goodsImages}}" mode="aspectFit"></image>
+            </view>
+            <view class="goods_infos">
+                <text class="text_style_1">{{orderData.list[0].goodsName}}</text>
+                <text class="text_style_2">{{orderData.list[0].specInfo}}</text>
+                <text class="text_style_3">¥ {{orderData.goodsTotalPrice}}</text>
+            </view>
+        </view>
+        <view class="order_info">
+            <text>购买数量</text>
+            <text class="order_info_right_color">{{orderData.goodsNum}}</text>
+        </view>
+        <view class="order_info">
+            <text>送货时间</text>
+            <text class="order_info_right_color">节假日均可送货</text>
+        </view>
+        <view class="order_info">
+            <text>发票信息</text>
+            <text class="order_info_right_color">个人－明细　普通发票</text>
+        </view>
+        <view class="coupon">
+            <text>优惠券</text>
+            <text class="order_info_right_color">无可用</text>
+        </view>
+        <view class="bottom_text_1">
+            <text>商品金额</text>
+            <text class="right_text">¥ {{orderData.goodsTotalPrice}}</text>
+        </view>
+        <view class="bottom_text_2">
+            <text>运费</text>
+            <text class="right_text">＋ ¥ {{orderData.goodsTotalFreight}}</text>
+        </view>
+        <view class="bottom_text_3">
+            <text>优惠券</text>
+            <text class="right_text">－ ¥ 0.0</text>
+        </view>
+        <view class="true_pay">
+            <text class="true_pay_right">¥{{orderData.goodsTotalPrice}}</text>
+            <text>实付金额:　</text>
+        </view>
+        <button class="bottom_btn" bindtap="paynow" type="primary">微信支付</button>
+    </scroll-view>
+</view>

@@ -1,0 +1,49 @@
+/* pages/select/select.wxss */
+page {
+    background-color: #fafafa;
+}
+
+
+.select {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    margin: 60rpx 0 100rpx 0;
+    line-height: 32px;
+	font-size: 23px;
+	color: rgba(0, 0, 0, 0.58);
+}
+
+.company {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 40rpx;
+	color: rgba(0, 0, 0, 0.58);
+}
+
+.company image {
+    height: 120px;
+    width: 100px;
+}
+
+.staff {
+    margin-top: 80rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 40rpx;
+	color: rgba(0, 0, 0, 0.58);
+}
+
+.staff image {
+    height: 120px;
+    width: 100px;
+}

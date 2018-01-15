@@ -1,0 +1,105 @@
+<view>
+  <view class="line_top12" />
+  <view class="account_manger_clounme">
+    <view>
+      <image src="/images/safe_user_icon.png" class="account_mannger_imges" />
+      <text class="account_mannger_text">头像</text>
+    </view>
+    <view>
+      <text class="account_mannger_text"></text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line_margin_left32" />
+  <view class="account_manger_clounme" bindtap="gotoproperty">
+    <view>
+      <image src="/images/icon_user_red.png" class="account_mannger_imges" />
+      <text class="account_mannger_text">用户名</text>
+    </view>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+  </view>
+    <view class="line_margin_left32" />
+  <view class="account_manger_clounme" bindtap="gotoproperty">
+    <view>
+      <image src="/images/rbt_main_more_red.png" class="account_mannger_imges" />
+      <text class="account_mannger_text">用户信息</text>
+    </view>
+    <view>
+      <text class="account_mannger_text">xionglihui</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line" />
+  <view class="line_top12" />
+  <view class="account_manger_clounme">
+    <view>
+      <image src="/images/safety_id_number.png" class="account_mannger_imges" />
+      <text class="account_mannger_text">身份认证</text>
+    </view>
+    <view>
+      <text class="account_mannger_text">熊** 6054**** ****5114</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line_margin_left32" />
+  <view class="account_manger_clounme" bindtap="gotoproperty">
+    <view>
+      <image src="/images/safety_binding_phone_red.png" class="account_mannger_imges" />
+      <text class="account_mannger_text">手机认证</text>
+    </view>
+    <view>
+      <text class="account_mannger_text">156****1235</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line_margin_left32" />
+  <view class="account_manger_clounme" bindtap="gotoproperty">
+    <view>
+      <image src="/images/message_manage_notice.png" class="account_mannger_imges" />
+      <text class="account_mannger_text">邮箱认证</text>
+    </view>
+    <view>
+      <text class="account_mannger_text">xio****@qq.com</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line" />
+  <view class="line_top12" />
+  <view class="account_manger_clounme">
+    <view>
+      <image src="/images/safety_login_password.png" class="account_mannger_imges" />
+      <text class="account_mannger_text">手势密码</text>
+    </view>
+    <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+  </view>
+  <view class="line_margin_left32" />
+  <view class="account_manger_clounme" bindtap="gotoproperty">
+    <view>
+      <image src="/images/safety_login_password.png" class="account_mannger_imges" />
+      <text class="account_mannger_text">登录密码</text>
+    </view>
+    <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+  </view>
+  <view class="line_margin_left32" />
+  <view class="account_manger_clounme" bindtap="gotoproperty">
+    <view>
+      <image src="/images/safety_login_password.png" class="account_mannger_imges" />
+      <text class="account_mannger_text">交易密码</text>
+    </view>
+    <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+  </view>
+  <view class="line" />
+    <view class="line_top12" />
+  <view class="account_manger_clounme" bindtap="gotoproperty">
+    <view>
+      <image src="/images/safety_card_management.png" class="account_mannger_imges" />
+      <text class="account_mannger_text">银行卡管理</text>
+    </view>
+    <view>
+      <text class="account_mannger_text">招商银行 156****1235</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+    <view class="line" />
+
+</view>

@@ -1,0 +1,29 @@
+/**app.wxss**/
+page {
+  background-color: #f8f8f8;
+  height: 100%;
+}
+
+/*button {
+  box-sizing: border-box;
+}*/
+
+.container {
+  height: 100%;
+  /*width: 100%;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60rpx 0;
+  box-sizing: border-box;
+}
+
+.color-active {
+  color: #47c577;
+}
+
+
+.color-warning {
+  color: #e5655b;
+}

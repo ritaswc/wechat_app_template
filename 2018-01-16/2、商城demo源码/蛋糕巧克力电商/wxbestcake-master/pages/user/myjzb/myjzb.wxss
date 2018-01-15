@@ -1,0 +1,6 @@
+/* pages/user/myjzb/myjzb.wxss */
+
+.bc_green{height:100px;}
+.bc_red{height:100px;}
+.bc_yellow{height:100px;}
+.bc_blue{height:100px;}

@@ -1,0 +1,127 @@
+<view class="page">
+    
+    <!-- search bar -->
+    <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索课程" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索课程</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+        <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>大数据与云计算</view>
+                </view>
+            </navigator>
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>数据库设计与实现</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    
+
+    <view wx:if="{{inputVal.length == 0}}">
+
+    <!-- class swiper -->
+    <view class="container" style="width:100%;">
+        <view class="page-body" style="width:100%;">
+            <view class="page-section page-section-spacing swiper" style="width:100%;">
+            <swiper indicator-dots="{{indicatorDots}}"
+                autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                <block wx:for="{{activities}}" wx:key="*this">
+                <swiper-item>
+                    <image src="{{item}}" class="swiper-item" mode="aspectFill"/>    
+                </swiper-item>
+                </block>
+            </swiper>
+            </view>
+        </view>
+    </view>
+
+    <!-- class list -->
+    <view class="index-bd">
+        <view class="kind-list">
+        <block wx:for-items="{{courseInfos}}" wx:key="{{item.courseNo}}">
+            <view class="kind-list-item">
+            <view id="{{item.courseNo}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="noteGraph" data-evaluation="{{item.evaluation}}">
+                <view class="kind-list-text">
+                    <text class="class-list-item-title">{{item.courseName}}</text>
+                    <text class="class-list-item-content">\n{{item.courseDesc}}</text>
+                </view>
+                <view class="evaluation-text">综合评价</view>
+                <image class="kind-list-img" src="../resources/kind/logo.png"></image>
+            </view>
+            </view>
+        </block>
+        </view>
+    </view>
+    
+    <!-- button -->
+    <view class="college-btn" bindtap="powerDrawer" data-statu="open">学院</view>
+
+    <!-- 模态窗口 -->
+    <!--mask-->
+    <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+    <!--content-->
+    <!--使用animation属性指定需要执行的动画-->
+    <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+        <!--drawer content-->
+        <view class="drawer_title">学院/专业选择</view>
+        <view class="drawer_content">
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">学院</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindCollegePickerChange" value="{{collegeIndex}}" range="{{colleges}}">
+                            <view class="weui-input">{{colleges[collegeIndex]}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">专业</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindMajorPickerChange" value="{{majorIndex}}" range="{{majors}}">
+                            <view class="weui-input">{{majors[majorIndex]}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">学号</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <view class="weui-input">
+                            <input bindinput="bindNoInputChange" class="no-input" type="text" value="" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="btn_ok" bindtap="powerDrawer" data-click="true" data-statu="close">确定</view>
+    </view>
+
+    </view> 
+</view>

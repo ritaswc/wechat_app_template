@@ -1,0 +1,44 @@
+<import src="../../templates/mm-radio/mm-radio.wxml" />
+<import src="../../templates/mm-tips/mm-tips.wxml" />
+<import src="../../templates/address-picker/address-picker.wxml" />
+<view>
+    <form name="addressForm" novalidate>
+        <view class="address-edit">
+	        <view class="addressView">
+	            <text>收 货 人</text>
+	            <input name="consignee" placeholder="请输入收货人姓名" placeholder-style="color: #A0A0A0" maxlength="15" value="{{consignee}}" bindinput="listenerReciverInput" />
+	        </view>
+	        <view class="addressView">
+	            <text>手机号码</text>
+	            <input type="text" maxlength="11" placeholder="请输入11位手机号码" bindtap="" value="{{mobile}}" bindinput="listenerPhoneInput" />
+	            <view wx:if="{{isClear}}" bindtap="{{mobile}}==''" class="input-clear"></view>
+	        </view>
+	       	<view class="addressView">
+	            <text>省市地址</text>
+	        
+	            <template is="address-picker" 
+data="{{provinceIndex:addressSelect.provinceIndex,cityIndex:addressSelect.cityIndex,districtIndex:addressSelect.districtIndex,province:addressSelect.province,city:addressSelect.city[addressSelect.selectedProvince],district:addressSelect.district[addressSelect.selectedCity]}}">
+				</template>
+
+	        </view>
+	        <view class="addressView">
+	            <text>街道地址</text>
+	            <input type="text" maxlength="60" placeholder="请输入详细街道地址" value="{{address}}" bindinput="listenerAddressInput" />
+	        </view>
+	    </view>
+
+	   	<view class="operation">
+	   		<template is="mm-radio" data="{{...items}}"></template>
+	    </view>
+	   	<view class="btnBox">
+	    	<button class="btn-block" bindtap="submitBtn">
+	        	<text>提交地址</text>
+	    	</button>
+	    </view>
+    </form>
+</view>
+<!-- <view mm-overlay-confirm is-show="addressEdit.hint" btns="addressEdit.btns">当前地址未保存，是否离开本页？</view> -->
+<view mm-loading-animation ng-if="loading"></view>
+
+<template is="city" data="{{...array}}"></template>
+<template is="mm-tips" data="{{...tipsData}}"></template>

@@ -1,0 +1,68 @@
+.give-star {
+  font-size: 40rpx;
+  line-height: 90rpx;
+  padding-left: 60rpx;
+  border-bottom: 2rpx solid #efefef;
+}
+.give-star text {
+  margin-left: 10rpx;
+  color: #f4e6bd;
+}
+.give-star .active {
+  color: #ffd80d;
+}
+.text-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20rpx;
+  height: 270rpx;
+  border-bottom: 20rpx solid #efefef;
+}
+.up-photo {
+  display: flex;
+  flex-wrap: wrap;
+}
+.up-photo .photos-wrap {
+  width: 32%;
+  margin-right: 2rpx;
+}
+.up-photo .photos-wrap .photos {
+  width: 100%;
+  height: 200rpx;
+}
+.up-photo .photos-wrap .del-photo {
+  text-align: center;
+  line-height: 40rpx;
+  border: 1rpx solid #efefef;
+  border-radius: 10rpx;
+  font-size: 20rpx;
+}
+.up-photo-icon {
+  border: 1rpx dotted #eee;
+  text-align: center;
+  line-height: 100rpx;
+}
+.in-money {
+  font-size: 24rpx;
+  display: flex;
+  border-bottom: 20rpx solid #efefef;
+  line-height: 55rpx;
+}
+.no-name {
+  padding-left: 20rpx;
+  font-size: 24rpx;
+}
+.grade-text {
+  font-size: 22rpx;
+  text-align: center;
+  color: #efefef;
+}
+.grade-btn {
+  color: #fff;
+  line-height: 60rpx;
+  background-color: #f00;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

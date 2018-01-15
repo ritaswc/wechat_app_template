@@ -1,0 +1,23 @@
+<view class="wraper">
+	<view class="productList">
+		<view class="productImg">
+			<image src="http://ojhq3mgil.bkt.clouddn.com/497/20160930/201609301336114101.jpg"></image>
+		</view>
+		<view class="productPrice">￥28.00</view>
+		<view class="productName"> #现货速发#夏威夷果280g 特产坚果干果fsdfasdfdf</view>
+	</view>
+	<view class="productList">
+		<view class="productImg">
+			<image src="http://ojhq3mgil.bkt.clouddn.com/497/20160930/201609301336114101.jpg"></image>
+		</view>
+		<view class="productPrice">￥28.00</view>
+		<view class="productName"> #现货速发#夏威夷果280g 特产坚果干果fsdfasdfdf</view>
+	</view>
+	<view class="productList">
+		<view class="productImg">
+			<image src="http://ojhq3mgil.bkt.clouddn.com/497/20160930/201609301336114101.jpg"></image>
+		</view>
+		<view class="productPrice">￥28.00</view>
+		<view class="productName"> #现货速发#夏威夷果280g 特产坚果干果fsdfasdfdf</view>
+	</view>
+</view>

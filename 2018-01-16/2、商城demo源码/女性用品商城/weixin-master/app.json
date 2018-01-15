@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/bus/bus",
+    "pages/center/center",
+     "pages/type/type"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "商城分销系统",
+    "navigationBarTextStyle":"black"
+  }
+  , "tabBar": { 
+    "selectedColor":"red",
+    "list": [{ 
+      "pagePath": "pages/index/index",
+      "iconPath":"images/footer001.png",
+      "selectedIconPath":"images/footer01.png",
+       "text": "商城首页" 
+      }, {
+         "pagePath": "pages/type/type", 
+         "iconPath":"images/footer002.png",
+         "selectedIconPath":"images/footer02.png",
+         "text": "产品分类" 
+         }
+         , {
+         "pagePath": "pages/bus/bus",
+         "iconPath":"images/footer003.png",
+         "selectedIconPath":"images/footer03.png",
+         "text": "购物车" 
+         }
+         , {
+         "pagePath": "pages/center/center", 
+         "iconPath":"images/footer004.png",
+         "selectedIconPath":"images/footer04.png",
+         "text": "会员中心" 
+         }
+         ] 
+         }, 
+         "networkTimeout": { 
+           "request": 10000, "downloadFile": 10000 
+           }, 
+           "debug": true
+}

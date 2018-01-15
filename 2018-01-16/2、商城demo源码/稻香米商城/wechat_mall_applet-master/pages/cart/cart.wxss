@@ -1,0 +1,114 @@
+.button {
+  border-radius: 0;
+}
+
+.address-container {
+  margin: 15rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.receiver {
+  display: flex;
+  justify-content: space-between;
+}
+
+.address {
+  margin-top: 15rpx
+} 
+
+.right {
+  margin-left: auto;
+  text-align: right;
+}
+
+.item {
+  height: 180rpx;
+  padding: 15rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #e4e4e4;
+  color: #333;
+  display:flex;
+  align-items:center;
+}
+
+.item text {
+  font-size: 28rpx;
+}
+
+.item image {
+  display: block;
+  width: 300rpx;
+}
+
+.item-right {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  height: 100%;
+}
+
+.title text {
+  font-size: 28rpx;
+  color: #333;
+  white-space: pre-wrap;
+  line-height: 34rpx;
+}
+
+.address-container text {
+  font-size: 34rpx;
+  color: #444;
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.numbers text, input {
+  display: block;
+}
+
+.pull-right {
+  margin-left: auto;
+  font-size: 28rpx;
+  display: flex;
+}
+
+.numbers input {
+  border: 1rpx solid lightgrey;
+  width: 60rpx;
+}
+
+.numbers text {
+  padding: 10rpx;
+}
+
+.billing-btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.billing-btn .button {
+  border-radius: 0;
+}
+
+.billing-btn view {
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  padding-left: 15rpx;
+  background-color: white;
+  font-size: 30rpx;
+}
+
+.quantity input {
+  min-height: 10rpx;
+  height: 50rpx;
+}

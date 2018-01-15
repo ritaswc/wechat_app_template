@@ -1,0 +1,46 @@
+.address-edit {
+    font-size: 0.65rem;
+    margin-top: 0.5rem;
+    background-color: #FFF;
+    padding: 0 0.4rem;
+}
+.address-edit .addressView {
+	position: relative;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    border-bottom: 1px solid #EFEFEF;
+    padding: 0 0.35rem;
+}
+.address-edit .addressView text {
+	width: 3rem;
+    text-align: justify;
+    float: left;
+}
+.address-edit .addressView input {
+    height: 1.2rem;
+    width: 11.5rem;
+    line-height: 1.2rem;
+    border: none;
+    outline: none;
+    font-size: 0.65rem;
+    //color: #A0A0A0;
+    color: #000;
+    vertical-align: middle;
+    display: inline-block;
+}
+.address-edit .addressView input:focus {
+    border: none;
+}
+.address-edit .submitBtn {
+	position: fixed;
+}
+.select {
+    float: right;
+    font-size: 0.6rem;
+    padding-right: 0.4rem;
+    color: #A0A0A0;
+}
+.operation {
+    -webkit-box-pack: end;
+    display: -webkit-box;
+}

@@ -1,0 +1,45 @@
+/* pages/worktypeTwo/worktypeTwo.wxss */
+.has_select{
+    padding: 15rpx;
+    background-color: #fffbdd;
+}
+.has_select .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #888888;
+}
+.has_select .w_action_list{
+    /*border: 1px solid red;*/
+    margin-top: 15rpx;
+    overflow: hidden;
+}
+.has_select .w_action_list view{
+    display: table;
+    float: left;
+    background-color: #fff;
+    padding: 10rpx;
+    margin: 10rpx;
+}
+.has_select .w_action_list view icon{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+.w_a_wrap{
+    border-bottom: 1px solid #e5e5e5;
+    margin-left: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.w_a_wrap .w_a_list{
+    padding: 15rpx;
+}
+.image_select{
+    width: 35rpx;
+    height: 35rpx;
+    padding-right: 3%;
+}

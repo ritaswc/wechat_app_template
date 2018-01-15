@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/classification/classification",
+    "pages/cart/cart",
+    "pages/userCenter/userCenter"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#F01663",
+    "navigationBarTitleText": "52积分商城",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#F01663",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "iconPath": "images/icon_tab_home_nomal.png",
+      "selectedIconPath": "images/icon_tab_home_selected.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/classification/classification",
+      "iconPath": "images/icon_tab_featured_normal.png",
+      "selectedIconPath": "images/icon_tab_featured_selected.png",
+      "text": "分类"
+    }, {
+      "pagePath": "pages/cart/cart",
+      "iconPath": "images/icon_tab_cart_normal.png",
+      "selectedIconPath": "images/icon_tab_cart_selected.png",
+      "text": "购物车"
+    }, {
+      "pagePath": "pages/userCenter/userCenter",
+      "iconPath": "images/icon_tab_profile_normal.png",
+      "selectedIconPath": "images/icon_tab_profile_selected.png",
+      "text": "个人中心"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

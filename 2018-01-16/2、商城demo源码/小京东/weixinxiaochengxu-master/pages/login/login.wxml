@@ -1,0 +1,15 @@
+
+<!-- login.wxml -->
+<view class="body login">
+  <view class="login-item">
+    <view class="toastview" style=" line-height: 70rpx;  background: {{backcolor}};width: 100% ;">{{showToast}}</view>
+    <view class="login-item-section">
+      <input placeholder="请输入用户名/邮箱/已验证邮箱" class="login-item-input" placeholder-style="color:gray;font-size: 18px;" bindinput="bindusnInput" />
+      <input placeholder="请输入密码" class="login-item-input" password placeholder-style="color:gray; font-size: 18px; " bindinput="bindpsdInput" />
+    </view>
+    <view class="login-item-button">
+      <button type="warn" size="default" plain="{{plain}}" loading="{{loading}}" disabled="{{disabled}}" class="login-button" bindtap="loginbutton"> 登录 </button>
+    </view>
+    <view class="error-msg" wx:if="{{error}}">{{error}}</view>
+  </view>
+</view>

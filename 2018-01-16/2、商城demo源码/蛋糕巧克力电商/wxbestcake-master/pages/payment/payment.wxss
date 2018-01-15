@@ -1,0 +1,17 @@
+
+.title{ line-height: 2em;background: #576b95; font-size: 24px;  font-weight: 300; color:#fff;text-align: center; font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;margin-bottom: 6%;}
+
+.p_paylist{display:flex; justify-content: space-between; margin:4%;}
+.p_line{border-bottom:1px solid #eee;}
+.p_paylist_imgbox{margin:0 5%;}
+.p_paylist_img{width:50px;height:50px;}
+.p_paylist_icon{margin:0 5%}
+.p_payfont {    font-size: 18px;  font-weight: 600;  font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;}
+.p_payfont .p_payfont_c{    color: #949494;    font-size:15px;    margin-top:5px;}
+.p_recharge{background: #D93515;height: 30px;width:20%;color: #fff;text-align: center; font-size: 14px;line-height: 2em; border-radius: 20px;}
+
+.m_totbox{margin:10% 2%;}
+
+.m_sub{display: flex;margin:10% 2%;}
+.m_sub_yf{background: #e1e1e1;height: 40px;width:68%;text-align: center;line-height: 2em;}
+.m_sub_btn{background: #D93515;height: 40px;color: #fff;width:30%;text-align: center;line-height: 2em;}

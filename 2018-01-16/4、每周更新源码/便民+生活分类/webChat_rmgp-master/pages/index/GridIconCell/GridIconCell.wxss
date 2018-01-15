@@ -1,0 +1,20 @@
+
+.gridIconCell-container {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.icon {
+    margin-top: 16rpx;
+    width: 93.75rpx;
+    height: 93.75rpx;
+}
+
+.iconTitle {
+    margin-top: 12rpx;
+    font-size: 13px;
+    line-height: 21rpx;
+}

@@ -1,0 +1,8 @@
+.tyj_top {height: 400rpx;}
+.tyj_top image {width: 100%;height: 400rpx;}
+
+.tyj_bd {padding: 40rpx;}
+.title {text-align: center;font-size: 36rpx;margin-bottom: 20rpx;}
+.title image {width: 34rpx;height: 34rpx;vertical-align: text-top;}
+.content view {font-size: 26rpx;line-height: 1.6em;margin-top: 14rpx;color: #666;}
+.content view text {color: #01a7fb;}

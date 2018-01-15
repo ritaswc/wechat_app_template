@@ -1,0 +1,28 @@
+.category-list {
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
+.category {
+  margin: 23.4rpx;
+  height: 355.68rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.category image {
+  width: 100%;
+  height: 100%;
+}
+
+.category text {
+  position: absolute;
+  line-height: 355.68rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32.76rpx;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

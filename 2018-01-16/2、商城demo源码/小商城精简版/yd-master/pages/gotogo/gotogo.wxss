@@ -1,0 +1,89 @@
+.container{
+  background-color: #f8f8f8;
+}
+
+.article-list {
+  width: 700rpx;
+  height: 586rpx;
+  margin: 0 auto;
+  margin-top: 140rpx;
+  overflow: hidden;
+  position: relative;
+  /*border: 1px rgb(199,199,205) solid;*/
+  line-height: 1;
+  box-sizing: border-box;
+  border-radius: 4rpx;
+  box-shadow:0px 5px 5px 0px rgba(0,0,0,0.05), 0px -2px 5px 0px rgba(0,0,0,0.05);
+}
+
+.article-box {
+  background-color: #fff;
+  position: absolute;
+  overflow: hidden;
+  padding: 26rpx;
+  /*box-shadow:0px 5px 5px 0px rgba(0,0,0,0.05), 0px -2px 5px 0px rgba(0,0,0,0.05);*/
+}
+
+.article-box image{
+    width: 648rpx;
+    height: 422rpx;
+}
+
+.article-info {
+  /*box-sizing: border-box;
+ min-height: 92rpx;*/
+ box-sizing: border-box;
+ /*background-color: #fff;*/
+ /*border-top: 1px rgb(199,199,205) solid;*/
+ font-size: 28rpx;
+ color: #333;
+ padding: 32rpx 0;
+ max-width: 648rpx;
+}
+.article-title {
+  box-sizing: border-box;
+  /*padding: 0 24rpx;*/
+  display: block;
+  overflow: hidden; /*自动隐藏文字*/
+  text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+  white-space: nowrap;/*强制不换行*/
+}
+.price {
+  display: block;
+  color:#e60012;
+  margin-top: 16rpx;
+  /*padding-left: 24rpx;*/
+}
+.operate-area {
+  margin:0 auto;
+  margin-top: 124rpx;
+  text-align: center;
+}
+.operate-area view{
+  display: inline-block;
+}
+.operate-area image{
+  margin-right: 132rpx;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: 1px rgb(199,199,205) solid;
+}
+.operate-area .dislike{
+  margin-right: 0;
+}
+/* 卡片3D叠加效果 */
+
+.article-list{
+  -webkit-perspective: 800rpx;
+          perspective: 800rpx;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.view-all{
+  position: fixed;
+  top: 25rpx;
+  right: 25rpx;
+  color:#999;
+  font-size: 26rpx;
+}

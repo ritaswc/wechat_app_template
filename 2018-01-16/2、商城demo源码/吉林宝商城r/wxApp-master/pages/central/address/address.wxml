@@ -1,0 +1,29 @@
+<view class="wraper">
+	<view bindtap="toAddMoren" class="addressDefault">
+		<view class="userInfo">
+			<text class="name">杨天佑</text><text class="number">18785500439</text>
+		</view>
+		<view class="addressInfo">
+			<text class="default">[默认]</text><text>上海上海市徐汇区龙华西路20号静安面包房</text>
+		</view>
+	</view>
+	<view class="address">
+		<view class="userInfo">
+			<text class="name">杨天佑</text><text class="number">18785500439</text>
+		</view>
+		<view class="addressInfo">
+			<text>上海上海市徐汇区龙华西路20号</text>
+		</view>
+	</view>
+	<view class="address">
+		<view class="userInfo">
+			<text class="name">杨天佑</text><text class="number">18785500439</text>
+		</view>
+		<view class="addressInfo">
+			<text>上海上海市徐汇区龙华西路20号</text>
+		</view>
+	</view>
+	<view bindtap="toAddNew" class="add_address">
+		<view>+添加新地址</view>
+	</view>
+</view>

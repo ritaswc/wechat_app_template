@@ -1,0 +1,40 @@
+.btn-area {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.btn-area button {
+  border-radius: 0;
+}
+
+.section {
+  display: flex;
+  margin: 15rpx;
+}
+
+.section__title {
+  width: 200rpx;
+  padding: 15rpx;
+}
+
+picker {
+  border: 1rpx solid lightgrey;
+  padding: 15rpx;
+  width: 440rpx;
+  text-align: center;
+}
+
+.detail-address {
+  margin: 15rpx;
+}
+
+.detail-address .section_title {
+  padding: 15rpx;
+}
+
+.detail-address input {
+  margin: 15rpx;
+  padding: 15rpx;
+  border: 1rpx solid lightgrey;
+}

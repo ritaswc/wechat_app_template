@@ -1,0 +1,48 @@
+@import "../common/index.wxss";
+@import "../common/lib/weui.wxss";
+
+.page-section {
+  margin-top: 350rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 50rpx;
+  box-sizing: border-box;
+}
+.page-body-text {
+  color: #bbb;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin: 0 0 100rpx 0;
+  text-align: center;
+}
+.page-body-button {
+  margin-top: 20rpx;
+  width: 100%;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+
+/* get user info */
+.userinfo-avatar {
+  border-radius: 128rpx;
+  width: 128rpx;
+  height: 128rpx;
+}
+.userinfo-nickname {
+  margin-top: 20rpx;
+  font-size: 38rpx;
+}
+
+/* user info list */
+.evaluation-text {
+  font-size: 12px;
+}
+.kind-list-img {
+  margin-right: 5px;
+  width: 14px;
+  height: 14px;
+}

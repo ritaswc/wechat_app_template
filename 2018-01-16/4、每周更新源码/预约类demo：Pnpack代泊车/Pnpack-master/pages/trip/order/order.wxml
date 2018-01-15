@@ -1,0 +1,125 @@
+<view>
+  <view class="wait-header">
+    <text>订单号:</text>
+    <text>{{o_ordercode}}</text>
+  </view>
+  <view class="content" wx:if="{{orderPerson==''&&orderstate=='进行中'}}">
+    <view class="header-swiper right">
+      <view class="wait-text">
+        <text class="big-text">身份验证</text>
+      </view>
+      <view class="wait-text">
+        <text>系统正在为您派单，请稍等几分钟</text>
+      </view>
+      <button class="unorder" bindtap="bindNotorder">取消订单</button>
+    </view>
+  </view>
+  <view class="content " wx:if="{{orderPerson!=''}}">
+    <view class="header-swiper right {{orderstate}}">
+      <view class="wait-text">
+        <text class="big-text">身份验证</text>
+      </view>
+      <view class="wait-text">
+        <text>系统已指派{{orderPerson.name}}师傅为您进行交车服务</text>
+      </view>
+      <view>
+        <view class="text-a content-text-2">{{orderPerson.name}}师傅</view>
+        <view class="row middle">
+          <image class="avater" src="{{orderPerson.headImg}}"></image>
+          <view class="column wait-text ">
+            <text>工号：{{orderPerson.jobnumber}}</text>
+            <text>驾龄：{{orderPerson.driving}}年</text>
+            <text>年龄：{{orderPerson.age}}岁</text>
+          </view>
+          <image class="callphone" src="../../../images/phon1.png" bindtap="bindCall" data-phone="{{orderPerson.phone}}"></image>
+        </view>
+      </view>
+      <view class="swiper-tab">
+        <image class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav" src="../../../images/sfz-l.png"></image>
+        <image class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav" src="../../../images/jz-l.png"></image>
+        <image class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav" src="../../../images/bl-l.png"></image>
+        <image class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav" src="../../../images/hz-l.png"></image>
+      </view>
+      <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:180px;" bindchange="bindChange">
+        <swiper-item>
+          <view>
+            <image class="imagedata br-b1" src="{{orderPerson.IDcards_positive}}"></image>
+            <image class="imagedata br-b1" src="{{orderPerson.IDcards_opposite}}"></image>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view>
+            <image class="imagedata br-b1" src="{{orderPerson.Driverlicense_positive}}"></image>
+            <image class="imagedata br-b1" src="{{orderPerson.Driverlicense_opposite}}"></image>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view>
+            <image class="imagedata br-b1" src="{{orderPerson.Diseases_pic}}"></image>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view>
+            <image class="imagedata br-b1" src="{{orderPerson.Criminal_pic}}"></image>
+          </view>
+        </swiper-item>
+      </swiper>
+      <view class="waiting" wx:if="{{detailinfo[2].od_state != '3-1'}}">
+        <button class="prome bg-pp" bindtap="bindIdentity">验证身份，移交车钥匙</button>
+        <button class="unorder" bindtap="bindNotorder">取消订单</button>
+      </view>
+      <view class="waiting" wx:if="{{detailinfo[2].od_state == '3-1' && !detailinfo[3].od_state}}">
+        <view class="wait-text">
+          <text class="big-text">泊车中</text>
+        </view>
+        <view class="wait-text">
+          <text>泊哥正在为您车辆进行初始检查，请认真核对检查表，无误后请签字确认</text>
+        </view>
+      </view>
+      <view class="waiting column" wx:if="{{detailinfo[3].od_state == '4-1'}}">
+        <view class="wait-text1" style="margin:-12rpx 40rpx">
+          <text class="big-text">泊车中</text>
+        </view>
+        <view class="wait-text1" wx:if="{{detailinfo[3].od_state=='4-1'}}">
+          <text>{{orderPerson.name}}师傅已于{{detailinfo[3].od_end_time}}接收车钥匙为您泊车，您可放心离开</text>
+        </view>
+        <view class="wait-text1" wx:if="{{detailinfo[4].od_state=='6'}}">
+          <text>{{orderPerson.name}}师傅已于{{detailinfo[4].od_end_time}}将您的车入库，您可点击呼叫他交还您的爱车</text>
+          <picker wx:if="{{detailinfo[5].od_state != '7-1'}}" class="prome1 bg-pp" value="{{picker1Value}}" range="{{returnCar}}" bindchange="normalPickerBindchange">
+            取车
+          </picker>
+        </view>
+        <view wx:if="{{detailinfo[5].od_state=='7-1'}}">
+          <view class="wait-text1">
+            <text>您已{{detailinfo[5].od_end_time}}申请取回爱车</text>
+          </view>
+          <view class="wait-text1">
+            <text>{{orderPerson.name}}师傅已于{{detailinfo[6].od_end_time}}接到取车通知，请您在约定的取车时间{{returnCar[picker1Value]}}到达泊车点取回您的爱车</text>
+          </view>
+        </view>
+        <view class="row" wx:if="{{detailinfo[6].od_state=='7-2'&&detailinfo[7].od_state!='10'}}">
+          <button wx:if="{{detailinfo[7].od_state!='9'}}" class="prome2 bg-pp" bindtap="bindCompensate">申请赔偿</button>
+          <button wx:if="{{detailinfo[7].od_state!='9'}}" class="prome2 bg-pp" bindtap="pnparkEnd">完成泊车</button>
+        </view>
+        <view wx:if="{{detailinfo[7].od_state=='9'}}" style="margin-top:80rpx;">
+          <view class="wait-text1">
+            <text>您的赔付申请提交成功，请保持手机畅通，我们会有服务人员与您联系！</text>
+          </view>
+        </view>
+        <view wx:if="{{detailinfo[8].od_state=='9-1'}}" style="margin-top:30rpx;">
+          <view class="wait-text1">
+            <text>您于{{detailinfo[8].od_end_time}}申请的赔偿通过！为此给您带来的不便我们深表歉意！</text>
+          </view>
+        </view>
+        <view class="waiting column mg-t-120 " wx:if="{{detailinfo[7].od_state=='10'&&orderstate!='已完成'}}">
+          <text class="wait-text2">完成订单{{orderstate}}</text>
+          <text class="wait-text2">非常感谢您的使用，请给本次服务打个分吧!</text>
+          <button class="prome bg-pp" bindtap="goEvalute">去评价</button>
+        </view>
+        <view class="waiting column mg-t-120 " wx:if="{{detailinfo[7].od_state=='10'&&orderstate=='已完成'}}">
+          <button class="prome bg-pp">已评价</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

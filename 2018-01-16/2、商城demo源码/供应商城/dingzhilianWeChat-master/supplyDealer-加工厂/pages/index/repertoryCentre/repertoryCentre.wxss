@@ -1,0 +1,185 @@
+/* pages/index/repertoryCentre/repertoryCentre.wxss */
+.topChoose{
+    width:100%;
+    height:80rpx;
+    background-color:#27b2eb;
+    position: relative;
+}
+
+.topChoose text{
+    display: inline-block;
+    height: 78rpx;
+    line-height: 78rpx;
+    color:#fff;
+    border-bottom:2rpx solid #27b2eb;
+    position: absolute;
+}
+
+.choose-text1{
+    left:20rpx;
+}
+
+.choose-text2{
+    display: block;
+    width:120rpx;
+    left:0;
+    right: 0;
+    margin:auto;
+    text-align:center;
+}
+
+.choose-text3{
+    right:20rpx;
+}
+
+.textActive{
+    border-bottom:2rpx solid #fff!important;
+}
+
+.search{
+    width:100%;
+    height:150rpx;
+    background-color:#27b2eb;
+}
+
+.search-ipt{
+    width:610rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    background-color:#f2f2f2;
+    float:left;
+    margin-left: 20rpx;
+    margin-top:41rpx;
+    padding-left:20rpx;
+    border-radius:10rpx;
+}
+
+.search-text{
+    float:right;
+    margin-top:41rpx;
+    width:100rpx;
+    height: 68rpx;
+    color:#fff;
+    text-align: center;
+    line-height: 68rpx;
+    font-size:36rpx;
+}
+
+.placeholder-color{
+    color:#999;
+}
+
+.choose{
+    width:710rpx;
+    background-color:#fff;
+    padding:0 20rpx;
+}
+
+.order-con{
+    width:100%;
+    display: inline-block;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-bottom: 2rpx dashed #e5e5e5;
+    position: relative
+}
+
+.order-con:last-child{
+    border-bottom: none;
+}
+
+.text1{
+    color:#999;
+    height: 80rpx;
+    line-height: 80rpx;
+    float: left;
+}
+
+.text2{
+    position: absolute;
+    top:0;
+    right: 0;
+    width:100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    float: right;
+    text-align: right;
+    color:#27b2eb;
+}
+
+.re-table{
+    width:100%;
+    margin-top: 20rpx;
+}
+
+.re-tr{
+    width:100%;
+    border-bottom: 2rpx solid #e5e5e5;
+    height: 60rpx;
+    background-color:#fff;
+}
+
+.re-tr:first-child{
+    background-color:#e6e6e6;
+}
+
+.re-th,.re-td{
+    height: 60rpx;
+    line-height: 60rpx;
+    float: left;
+    width:185rpx;
+    text-align: center;
+    border-right: 2rpx solid #cfcfcf;
+}
+
+.re-tr .re-th:last-child,.re-tr .re-td:last-child{
+    border-right:none;
+    width:187rpx;
+}
+
+.table-5 .tr .td:first-child{
+    width:40%;
+}
+.table-5 .tr .th:first-child{
+    width:40%;
+}
+
+.table-5 .tr .td:nth-child(3){
+    width:30%;
+}
+.table-5 .tr .th:nth-child(3){
+    width:30%;
+}
+
+.topChoose{
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 100;
+}
+
+.search{
+    position: fixed;
+    top:80rpx;
+    left: 0;
+    z-index: 100;
+}
+
+.reper{
+    margin-top:250rpx;
+}
+
+.order-statistics,.order-statistics table{
+    width:100%;     
+}
+
+.choose{
+    position: fixed;
+    top:210rpx;
+    left: 0;
+    z-index: 100;
+}
+
+.re-table{
+    margin-top:500rpx;
+}

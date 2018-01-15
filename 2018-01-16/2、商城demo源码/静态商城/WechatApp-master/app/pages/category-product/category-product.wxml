@@ -1,0 +1,12 @@
+<scroll-view class="product-list"  bindscrolltolower="lower" scroll-y="true" style="height:100%" scroll-into-view="{{toView}}"
+upper-threshold="10">
+<view class="product-group">
+    <view class="product" wx:for="{{products}}" wx:for-item="product" data-goods-id="{{product.id}}" bindtap="navigateToProduct">  
+      <view><image mode="scaleToFill" src="{{product.covers_image}}"></image></view>
+      <view class="product-content product-name"><text>{{product.goods_name}}</text></view>
+      <view class="product-content product-price"><text>¥ {{product.goods_price}}</text>
+      <text class="product-market">¥ {{product.market_price}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

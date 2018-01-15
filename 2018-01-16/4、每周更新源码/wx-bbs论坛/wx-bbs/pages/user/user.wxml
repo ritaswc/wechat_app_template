@@ -1,0 +1,74 @@
+<view class="page-container bg-color">
+  <view class="box-container">
+    <view class="user-info-container">
+      <view class="u-img-wrap">
+        <image style="width:60px; height:60px" src="{{targetUser.Headimgurl}}"></image>
+      </view>
+      <view class="u-info-wrap">
+        <view class="font-16rem">{{targetUser.Nickname}}</view>
+      </view>
+      <view class="focus-wrap fr">
+        <button class="focus">关注他</button>
+      </view>
+    </view>
+  </view>
+  <view style="width:100%;height:10px;"></view>
+
+  <!-- 发帖信息 -->
+  <view class="user-bbs-info-container">
+    <view class="user-post-wrap" catchtap="myArticleList">
+      <view class="user-post-icon" />
+      <view class="user-post-text-wrap">
+        <text class="user-text">TA的发帖</text>
+      </view>
+      <view class="user-list-container">
+        <view class="post-list-num">{{targetUser.ArticleCount}}</view>
+      </view>
+      <view class="user-arrow-wrap">
+        <view class="user-info-arrow" />
+      </view>
+    </view>
+    <view class="user-post-wrap">
+      <view class="user-join-icon" />
+      <view class="user-post-text-wrap">
+        <text class="user-text">TA参与的</text>
+      </view>
+      <view class="user-list-container">
+        <view class="post-list-num">0</view>
+      </view>
+      <view class="user-arrow-wrap">
+        <view class="user-info-arrow" />
+      </view>
+    </view>
+  </view>
+  <view style="width:100%;height:10px;"></view>
+  <view class="user-bbs-info-container">
+    <view class="user-post-wrap">
+      <view class="user-chat-icon" />
+      <view class="user-post-text-wrap">
+        <text class="user-text">发送私聊</text>
+      </view>
+      <view class="user-list-container">
+        <view class="post-list-num"></view>
+      </view>
+      <view class="user-arrow-wrap">
+        <view class="user-info-arrow" />
+      </view>
+    </view>
+  </view>
+  <view style="width:100%;height:10px;"></view>
+  <view class="user-bbs-info-container">
+    <view class="user-post-wrap">
+      <view class="user-post-aboutus" />
+      <view class="user-post-text-wrap">
+        <text class="user-text">关于我们</text>
+      </view>
+      <view class="user-list-container">
+        <view class="post-list-num">2</view>
+      </view>
+      <view class="user-arrow-wrap">
+        <view class="user-info-arrow" />
+      </view>
+    </view>
+  </view>
+</view>

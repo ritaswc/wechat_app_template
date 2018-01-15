@@ -1,0 +1,40 @@
+<view class="container">
+    <view class="pay-info">
+    <view class="info-state">
+     <icon class="icon" type="success" size="24" color="#FF7E01" />
+     <text>支付成功</text>
+    </view>
+    <text class="state-h">7咖啡饮品休闲店</text>
+    <text class="state-b">475.00元</text>
+    </view>
+  <form>
+    <view class="title">
+      <text class="title-h">匿名评价</text>
+    </view>
+    <view class="star">
+      <block wx:for="{{stars}}">
+        <image class="star-image" style="left: {{item*50}}rpx" src="{{key > item ?selectedSrc: normalSrc}}">
+          <view class="item" data-key="{{item+1}}" bindtap="selectStar"></view>
+        </image>
+      </block>
+    </view>
+    <view class="commemt">
+      <view class="box">
+        <text class="box-title">非常满意，希望能继续保持</text>
+        <view class="box-ul">
+          <text class="box-li">服务不错</text>
+          <text class="box-li">味道不错</text>
+          <text class="box-li">环境不错</text>
+        </view>
+      </view>
+      <view class="box-area">
+        <textarea class="area" bindblur="bindTextAreaBlur" auto-height  fixed="true" placeholder="其他意见和建议(内容匿名，可放心填写)" />
+      </view>
+      <view class="box-pic">
+        <image class="pic" src="{{img_url}}detail/food.png" />
+        <image class="pic" src="{{img_url}}order/upload.png" />
+      </view>
+    </view>
+    <button class="btn" type="warn">匿名评价</button>
+  </form>
+</view>

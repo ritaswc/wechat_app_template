@@ -1,0 +1,37 @@
+<view class="container edit_wrap">
+<form bindsubmit="submitForm" id="123">
+    <view class="form_group">
+        <text>姓名：</text>
+        <input type="text" placeholder="请输入预约姓名" placeholder-class="placeholder_style" name="data_name" value="{{data_name}}" />
+    </view>
+    <view class="form_group">
+        <text>电话：</text>
+        <input type="text" placeholder="请输入预约电话" placeholder-class="placeholder_style" name="data_phone" value="{{data_phone}}"/>
+    </view>
+    <view class="form_group">
+        <text></text>
+        <input type="text" class="sendmsg_input"/>
+        <button  loading="{{loading}}">发送验证码</button>
+    </view>
+    <view class="form_group">
+        <text>省：</text>
+        <picker bindchange="bindProviPickerChange" value="{{proviIndex}}" range="{{province}}" name="data_province" value="{{data_province}}">
+            <view>{{province[proviIndex]}}</view>
+        </picker>
+    </view>
+    <view class="form_group">
+        <text>市：</text>
+        <picker bindchange="bindCityPickerChange" value="{{cityIndex}}" range="{{city}}" name="data_city" value="{{data_city}}">
+            <view>{{city[cityIndex]}}</view>
+        </picker>
+    </view>
+    <view class="form_group">
+        <text>地址：</text>
+        <input type="text" placeholder="请输入预约地址" placeholder-class="placeholder_style" name="data_addr" value="{{data_addr}}"/>
+    </view>
+    <button class="save_btn"  formType="submit">保存</button>
+    <toast hidden="{{saveToastHidden}}" bindchange="hideToast">
+    保存成功
+    </toast>
+</form>
+</view>

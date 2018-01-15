@@ -1,0 +1,9 @@
+<!--修改地址页面-->
+<view class="address">
+        	<view class="address_title">
+            	收货地址管理
+            </view>
+            <view class="address_btn">
+              <navigator url="../../pages/personal_add_address/personal_add_address">新增收货地址</navigator>
+            </view>
+        </view>

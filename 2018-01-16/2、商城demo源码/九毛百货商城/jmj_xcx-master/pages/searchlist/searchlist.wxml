@@ -1,0 +1,39 @@
+<!--pages/searchlist/searchlist.wxml-->
+<import src="../../temp/search.wxml"/>
+<import src="../../temp/goods.wxml"/>
+<import src="../../temp/nomore.wxml"/>
+<scroll-view scroll-y="{{true}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" bindscrolltolower="pullrefresh" lower-threshold="200" scroll-top="{{scrollTop}}" bindscroll="scroll">
+<!--直达顶部按钮-->
+<image src="{{topImg}}" class="topImg" bindtap="toTop" wx:if="{{showBotton}}" />
+<!--第一个搜索组件-->
+  <template is="search" data="{{src:src,inputValue:inputValue}}"></template>
+<!--搜索结果展示-->
+  <view class="head flexbox" >
+      <view class="{{showState==1?class1:class2}}" bindtap="changestate"  data-state="1">商品</view>  
+      <view class="{{showState==2?class1:class2}}" bindtap="changestate" data-state="2">内容</view>  
+  </view>
+  <view class="headbg"></view>
+  <!--商品展示-->
+  <view wx:if="{{showState==1}}">
+    <!--商品展示组件-->
+    <template is="goods" data="{{goodslist:goodslist}}" />
+    <!--没有更多组件-->
+    <template is="nomore" data="{{showstate:showGoods,noMore_cat:noMore_cat}}" />
+  </view>
+  <!--专辑展示-->
+   <view wx:if="{{showState==2}}">
+     <view class="articleItem flexstart">
+        <navigator url="../article/article?id={{item.id}}&title={{item.title}}"  wx:for="{{articleList}}" wx:key="{{item.id}}">
+            <view class="articleItemList">
+                <view class="img flexbox">
+                  <image src="{{item.image}}" class="proimg" />
+                </view>
+                <view class="name hidecamp">{{item.title}}</view>
+            </view>
+        </navigator>  
+     </view>
+     <!--没有更多组件-->
+    <template is="nomore" data="{{showstate:showArticle,noMore_cat:noMore_cat}}" />   
+  </view>
+  <loading hidden="{{lodding}}">加载中...</loading>
+</scroll-view>

@@ -1,0 +1,83 @@
+<view class="container">
+	<view class="top">
+		<input type="text" placeholder="输入关键字搜索商品名"/>
+		<view class="search_btn"><image src="../../images/home_top_search@2x.png"></image></view>
+	</view>
+	<view class="left">
+		<view class="tablist">玩具婴幼</view>
+		<view class="tablist">玩具婴幼</view>
+		<view class="tablist">玩具婴幼</view>
+		<view class="tablist">玩具婴幼</view>
+		<view class="tablist">玩具婴幼</view>
+	</view>
+	<view class="right">
+		<view class="item">
+			<view class="item_top">
+				<view class="labpic"><image src="https://image.jlibom.com/xumengjuan/20161128/201611281636521441.jpg"></image></view>
+				<view class="labtit">童装&配饰</view>
+			</view>
+			<view class="item_bottom">
+				<view class="product_list">
+					<view class="product_list_pic"><image src="https://image.jlibom.com/xumengjuan/20161128/201611281637208375.jpg"></image></view>
+					<text>女童装</text>		
+				</view>
+
+				<view class="product_list">
+					<view class="product_list_pic"><image src="https://image.jlibom.com/xumengjuan/20161128/201611281637208375.jpg"></image></view>
+					<text>女童装</text>		
+				</view>
+
+				<view class="product_list">
+					<view class="product_list_pic"><image src="https://image.jlibom.com/xumengjuan/20161128/201611281637208375.jpg"></image></view>
+					<text>女童装</text>		
+				</view>
+
+				<view class="product_list">
+					<view class="product_list_pic"><image src="https://image.jlibom.com/xumengjuan/20161128/201611281637208375.jpg"></image></view>
+					<text>女童装</text>		
+				</view>
+
+				<view class="product_list">
+					<view class="product_list_pic"><image src="https://image.jlibom.com/xumengjuan/20161128/201611281637208375.jpg"></image></view>
+					<text>女童装</text>		
+				</view>
+			</view>
+		</view>
+
+		
+		<view class="item">
+			<view class="item_top">
+				<view class="labpic"><image src="https://image.jlibom.com/xumengjuan/20161128/201611281636521441.jpg"></image></view>
+				<view class="labtit">童装&配饰</view>
+			</view>
+			<view class="item_bottom">
+				<view class="product_list">
+					<view class="product_list_pic"><image src="https://image.jlibom.com/xumengjuan/20161128/201611281637208375.jpg"></image></view>
+					<text>女童装</text>		
+				</view>
+
+				<view class="product_list">
+					<view class="product_list_pic"><image src="https://image.jlibom.com/xumengjuan/20161128/201611281637208375.jpg"></image></view>
+					<text>女童装</text>		
+				</view>
+
+				<view class="product_list">
+					<view class="product_list_pic"><image src="https://image.jlibom.com/xumengjuan/20161128/201611281637208375.jpg"></image></view>
+					<text>女童装</text>		
+				</view>
+
+				<view class="product_list">
+					<view class="product_list_pic"><image src="https://image.jlibom.com/xumengjuan/20161128/201611281637208375.jpg"></image></view>
+					<text>女童装</text>		
+				</view>
+
+				<view class="product_list">
+					<view class="product_list_pic"><image src="https://image.jlibom.com/xumengjuan/20161128/201611281637208375.jpg"></image></view>
+					<text>女童装</text>		
+				</view>
+			</view>
+		</view>
+
+
+	</view>
+</view>

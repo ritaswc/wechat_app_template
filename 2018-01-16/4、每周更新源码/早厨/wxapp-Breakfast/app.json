@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#003B3A",
+    "navigationBarTitleText": "小林早厨",
+    "navigationBarTextStyle":"white"
+  }
+}

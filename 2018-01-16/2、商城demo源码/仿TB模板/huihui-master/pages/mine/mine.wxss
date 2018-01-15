@@ -1,0 +1,206 @@
+page {
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
+.container {
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  background: #df2b2a;
+}
+
+.header-top {
+  position: relative;
+  width: 100%;
+  height: 96rpx;
+}
+
+.title {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  line-height: 96rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: normal;
+  color: #fff;
+  z-index: 1;
+}
+
+.setbtn {
+  top: 20rpx;
+  right: 30rpx;
+  background-size: auto 40rpx;
+  background-position: -140px 0;
+  display: block;
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  z-index: 9;
+}
+
+.pic {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.userinfo {
+  width: 252rpx;
+  padding: 12rpx;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.4) !important;
+  background: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.img {
+  display: block;
+  width: 240rpx;
+  height: 240rpx;
+  border: #fff solid 6rpx;
+  border-radius: 50%;
+}
+
+.nickname {
+  margin: 30rpx auto;
+  text-align: center;
+}
+
+.name {
+  display: inline-block;
+  max-width: 76%;
+  padding-right: 4rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.level {
+  position:absolute;
+  background-position: 0 1px;
+  display: inline-block;
+  margin-top: 4rpx;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background: url(http://appuat.huihuishenghuo.com/img/mine/vip-icon.png) no-repeat 0 0 / 40rpx auto;
+}
+
+.account-info {
+  width: 100%;
+  overflow: hidden;
+}
+
+.list {
+  width: 100%;
+  padding: 24rpx 0;
+  margin: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.info {
+  float: left;
+  width: 33.333%;
+  display: block;
+  line-height: 48rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.num {
+  display: block;
+  font-size: 36rpx;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.type {
+  padding-top: 4rpx;
+  display: block;
+  font-size: 32rpx;
+  font-family: Courier New, Courier, monospace;
+}
+
+.nav {
+  width: 100%;
+  margin-top: 20rpx;
+  background: #fff;
+  overflow: hidden;
+}
+
+.nav-ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.left-before, .right-before, .top-after, .bottom-after {
+  float: left;
+  padding: 32rpx 0;
+  width: 33.333%;
+  position: relative;
+}
+
+.right-before:before {
+  right: 0;
+  border-right: #dedede solid 1rpx;
+}
+
+.bottom-after:after {
+  bottom: 0;
+  border-bottom: #dedede solid 1rpx;
+}
+
+.left-before:before, .right-before:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  content: '';
+  overflow: hidden;
+}
+
+.top-after:after, .bottom-after:after {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 1rpx;
+  content: '';
+  overflow: hidden;
+}
+
+.nav-li {
+  display: block;
+}
+
+.label {
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  border: 0;
+}
+
+.label-name {
+  display: block;
+  margin-top: 10rpx;
+  text-align: center;
+  line-height: 38rpx;
+  font-size: 30rpx;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  color: #333;
+}

@@ -1,0 +1,79 @@
+<!--index.wxml-->
+<view class = "news-page" wx:if ="{{!isTabSelector}}">
+<!--爱好选择栏-->
+  <scroll-view class="favor-bar" scroll-x="true">
+    <view class = "favor-tab">
+      <text class = "favor-search iconfont icon-sousuo1 "  bindtap="tosearch"></text>
+        <view wx:for = "{{favorData}}" wx:key="item" 
+          bindtap="getNewsdes" 
+          class ='favor-item {{channelId == item.channelId ? "favor-item-active":"" }} '
+          data-channelId="{{item.channelId}}">{{item.name}}</view>
+    </view>
+    <text class = "favor-add iconfont icon-tianjia3" bindtap="ctrlSelector"></text>
+  </scroll-view>
+  <!--加载-->
+  <view class = "{{isPullDown==true ? 'ball-beat':'' }}">
+    <view></view>
+    <view></view>
+    <view></view>
+  </view>
+  <!--轮播图-->
+  <view class = "news">
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" height = "170px">
+      <block wx:for="{{scrollData}}" wx:key ="{{item}}" bindtap="tourl">
+        <swiper-item hidden="{{item.imageurls[0]==null}}">
+          <view bindtap="tourls" style  ="position:relative;left:0;top:0">
+            <image src="{{item.imageurls[0].url}}" class="slide-image" data-index="{{index}}" mode="aspectFill" style="width: 100%;"/>
+            <view class = "swiper-news-title" data-index="{{index}}">{{item.title}}</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!--新闻列表-->
+    <view class = "news-list">
+      <!--单个新闻-->
+      <view class = "news-item" wx:for="{{newsData}}" bindtap="tourl" data-index="{{index}}" wx:key ="{{item}}">
+        <view class = "news-item-info" >
+          <view class = "header">
+            <text class = "channelName" data-index="{{index}}">{{item.channelName}}</text>
+            <text class = "source" data-index="{{index}}">{{item.source}}</text>
+          </view>
+          <view class = "title" data-index="{{index}}">{{item.title}}</view>
+          <view class = "time" data-index="{{index}}">{{item.pubDate}}</view>
+        </view>
+      
+        <view class = "news-item-image" wx:if="{{item.imageurls[0]!=null}}">
+
+          <image src="{{item.imageurls[0].url}}" hidden="{{item.imageurls[0]==null}}"  style="width:100%;height:100%" data-url="/pages/details/details" data-index="{{index}}"  mode="aspectFill" ></image>
+        </view>
+        
+      </view>  
+    </view>
+  </view>
+</view>
+
+<view class ="tab-selector" wx:if = "{{isTabSelector}}" animation="{{animationData}}">
+  <view class = "selector-header">
+    <text>频道定制</text>
+    <text class = "iconfont icon-guanbi1 close-selector" bindtap="ctrlSelector"></text>
+  </view>
+  <view class ="select-body">
+    <view class = "attration">
+      <view class ="attration-title">焦点频道</view>
+      <view wx:for = "{{attrationData}}" wx:key ="{{item}}"  data-index="{{index}}"
+        class = 'tab-item  {{item.selected==true?"selected":""}}' 
+        bindtap = "ctrlAttration">
+        {{item.name}}
+      </view>
+    </view>
+    <view class = "newest">
+      <view class ="newest-title">最新频道</view>
+      <view wx:for = "{{newestData}}" wx:key ="{{item}}"  data-index="{{index}}"
+        class = 'tab-item  {{item.selected==true?"selected":""}}'
+        bindtap = "ctrlNews">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+</view>

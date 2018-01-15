@@ -1,0 +1,90 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index/newUser/newUser",
+    "pages/index/safety/safety",
+
+    "pages/tz/tz",
+    "pages/tz/shd/shd",
+    "pages/tz/sdd/sdd",
+    "pages/tz/sqd/sqd",
+    "pages/tz/invest/invest",
+    
+    "pages/more/more",
+    "pages/more/news/news",
+    "pages/more/article/ptgg/ptgg",
+
+    "pages/activity/activity",
+
+    "pages/account/account",
+    "pages/account/userShare/userShare",
+    "pages/account/userShare/userSharerule/userSharerule",
+    "pages/account/grzx/grzx",
+    "pages/account/grzx/password/password",
+    "pages/account/grzx/password/changePassword/changePassword",
+    "pages/account/grzx/password/changeSafety/changeSafety",
+    "pages/account/grzx/password/findSafety/findSafety",
+    "pages/account/grzx/password/findSafetys/findSafetys",
+    "pages/account/asset/asset",
+    "pages/account/recharge/recharge",
+    "pages/account/extract/extract",
+    "pages/account/invest/invest",
+    "pages/account/refund/refund",
+    "pages/account/incomeExpense/incomeExpense",
+    "pages/account/cardBox/cardBox",
+    "pages/account/cardBox/hbq/hbq",
+    "pages/account/cardBox/hbq/hbqRule/hbqRule",
+    "pages/account/cardBox/jxq/jxq",
+    "pages/account/cardBox/jxq/jxqRule/jxqRule",
+    "pages/account/cardBox/tyj/tyj"
+
+    
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar":{
+    "color":"#000",
+    "selectedColor":"#4aafe2",
+    "backgroundColor":"#ffffff",
+    "borderStyle": "black",   
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath":"images/footer/icon_01.jpg",
+        "selectedIconPath":"images/footer/icon_01_1.jpg"
+      },
+      {
+        "pagePath":"pages/tz/tz",
+        "text":"投资",
+        "iconPath":"images/footer/icon_02.jpg",
+        "selectedIconPath":"images/footer/icon_02_1.jpg"
+      },
+      {
+        "pagePath":"pages/account/account",
+        "text":"账户",
+        "iconPath":"images/footer/icon_03.jpg",
+        "selectedIconPath":"images/footer/icon_03_1.jpg"
+      },
+      {
+        "pagePath":"pages/more/more",
+        "text":"更多",
+        "iconPath":"images/footer/icon_04.jpg",
+        "selectedIconPath":"images/footer/icon_04_1.jpg"
+      }
+    ]
+  },
+
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

@@ -1,0 +1,48 @@
+<view class="items-container carts-list">
+  <view class="carts-item" bindtap="bindViewTap">
+    <icon type="success_circle" size="20" />
+    <view>
+      <image class="carts-image" src="../../images/music/xuwei.jpg" mode="aspectFill" />
+    </view>
+    <view class="carts-text">
+      <text class="carts-title">抱枕靠垫卡通沙发抱枕办公室靠枕床头靠背可爱汽车靠垫腰枕</text>
+      <view class="weui-cell">
+        <view class="weui-cell__bd weui-cell_primary">
+          <text class="carts-price">¥3500</text>
+        </view>
+        <view class="weui-cell__ft">
+          <text class="weui-number weui-number-sub needsclik disabled">-</text>
+          <input type="number" class="weui-number-input" value="1" />
+          <text class="weui-number weui-number-plus needsclik disabled">+</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="carts-item" bindtap="bindViewTap">
+    <icon type="success_circle" size="20" />
+    <view>
+      <image class="carts-image" src="../../images/music/xuwei.jpg" mode="aspectFill" />
+    </view>
+    <view class="carts-text">
+      <text class="carts-title">抱枕靠垫卡通沙发抱枕办公室靠枕床头靠背可爱汽车靠垫腰枕</text>
+      <view class="weui-cell">
+        <view class="weui-cell__bd weui-cell_primary">
+          <text class="carts-price">¥3500</text>
+        </view>
+        <view class="weui-cell__ft">
+          <text class="weui-number weui-number-sub needsclik disabled">-</text>
+          <input type="number" class="weui-number-input" value="1" />
+          <text class="weui-number weui-number-plus needsclik disabled">+</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="carts-footer">
+    <view bindtap="bindSelectAll">
+      <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="20" />
+      <icon wx:else type="circle" size="20" />
+    </view>
+    <text>全选</text>
+    <view class="button">结算</view>
+  </view>
+</view>

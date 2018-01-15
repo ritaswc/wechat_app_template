@@ -1,0 +1,33 @@
+text {
+    display: inline-block;
+}
+.address-item {
+    display: flex;
+    justify-content: space-between;
+}
+.address-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+    .info-one{
+    display: flex;
+    justify-content: space-between;
+}
+.name{
+    
+}
+.tel-no{
+
+}
+.address-content{
+
+}
+.address-edt{
+    position: relative;
+}
+.address-edt::after {
+    content: '';
+    position: absolute;
+
+}

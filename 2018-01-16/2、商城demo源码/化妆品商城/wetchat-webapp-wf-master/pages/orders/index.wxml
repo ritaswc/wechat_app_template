@@ -1,0 +1,28 @@
+<view class="container">
+    <view class="address-choice">
+        <view class="adress-one">
+            <text class="name">彭峰</text>
+            <text>139****0747</text>
+        </view>
+        <text class="adress-two">广东广州市天河区保利克洛维中景A座1306</text>
+    </view>
+    <view class="order">
+        <image src=""></image>
+        <text>【伍佰露】白竹炭净颜洗面奶男…</text>
+        <text>商品编号:BLJ010</text>
+        <text>商品规格:100ml</text>
+    </view>
+    <view class="tem" >
+        <text>配送信息</text>
+         <text>申通</text>
+    </view>
+      <view class="buy-info" >
+         <view class="buy-one">
+            <text>总价：</text>
+            <text>¥</text>
+            <text>135.00</text>
+         </view>
+         <text>(含运费：¥0.00)</text>
+         <button>微信支付</button>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+<template name="temp">
+    <view class="switch-view">
+        <view class="view-list">
+        <text>列表模式</text>
+        </view>
+        <view class="view-big-img">
+        <text>大图模式</text>
+        </view>
+    </view>
+</template>

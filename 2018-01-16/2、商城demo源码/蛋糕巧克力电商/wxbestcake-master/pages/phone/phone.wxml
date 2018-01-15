@@ -1,0 +1,26 @@
+<view class="tab">
+  <view class="{{tab==1?'tab-on':'tab-out'}}" data-index="1" catchtap="changeTab">账号密码登录</view>
+  <view class="{{tab==2?'tab-on':'tab-out'}}" data-index="2" catchtap="changeTab">动态密码登录</view>
+</view>
+<view class="tab-layer"></view>
+<view class="fm phone">
+  <text class="label">+86</text>
+  <input type="number" maxlength="11" placeholder="请输入11位手机号" bindinput="checkPhone" />
+</view>
+<view wx:if="{{tab==1}}">
+  <view class="fm code">
+    <input type="text" password  placeholder="请输入登录密码" bindinput="changepwd" value="{{pwd}}" />  
+  </view>
+</view>
+<view wx:if="{{tab==2}}">
+  <view class="fm code">
+    <input type="text" maxlength="8" placeholder="请输入手机验证码" bindinput="checkCode" />
+    <view class="label">
+      <view wx:if="{{btnStatus}}" bindtap="sendCode" class="{{phoneOk?'btn-ok':'btn-dis'}}">发送验证码</view>
+      <view wx:if="{{!btnStatus}}" class="btn-dis">
+        <text>{{sec}}</text>秒后重新发送</view>
+    </view>
+  </view>
+</view>
+
+<view class="sub {{phoneOk&&codeOk?'sub-ok':'sub-dis'}}" bindtap="login">登 录</view>

@@ -1,0 +1,14 @@
+<view class="container">
+    <view class="title f1 c5">标题内容</view>
+    <view class="brief-wrap f2 c4">
+        <text class="author">作者：xxxx</text>
+        <text class="time">时间:2015-11-05</text>
+    </view>
+    <image class="img" src="/image/common/aboutUs/about_us.png"></image>
+    <view class="paragraph f2 c4" style="padding-top: 0;"> 
+        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+    </view>
+    <view class="paragraph f2 c4"> 
+        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+    </view>
+</view>

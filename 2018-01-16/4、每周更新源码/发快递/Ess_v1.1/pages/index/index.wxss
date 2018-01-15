@@ -1,0 +1,12 @@
+page{background-color: #efeff4}
+.bannerImg{width: 100%}
+.form{margin-top: 20rpx; background-color: white;
+      border: #e5e5e5 solid 1px; border-right: none;  border-left: none;  }
+.li{height: 130rpx; border-bottom: #e5e5e5 solid 1px; width: 90%; 
+    margin: auto; display: flex; align-items: center }
+.li:last-child{border: none}
+.ico{width:6%;}
+.input{padding-left: 20rpx;  width: 94%; color: black}
+.button{background-color: #09bb07; margin: auto; margin-top:187rpx;  
+        width: 90%; color: white }
+.err_msg{color: red; width: 90%; margin: auto; height: 20rpx; padding-top:20rpx  }

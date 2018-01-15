@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/order/order",
+    "pages/success/success"
+    
+  ],
+  "window":{
+    "backgroundColor":"#f4f4f4",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "餐厅",
+    "navigationBarTextStyle":"white"
+  },
+ "tabBar": {
+   "color": "#ffffff",
+   "backgroundColor": "#000000",
+   "selectedColor": "#EDB558",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/order/order",
+      "text": "订单"
+    }, {
+      "pagePath": "pages/success/success",
+      "text": "成功"
+    }]
+  },
+	"networkTimeout": {
+		"request": 10000,
+		"connectSocket": 10000,
+		"uploadFile": 10000,
+		"downloadFile": 10000
+	},
+	"debug": true
+}

@@ -1,0 +1,85 @@
+.logs_img1{
+    width: 60rpx;
+    height: 40rpx;
+    padding-right: 10rpx;
+}
+.placeholder{
+    color: #b2b2b2;
+}
+.logs_img2{
+    width: 90rpx;
+    height: 90rpx;
+}
+.logs_user_name{
+    border: 1px solid #e5e5e5;
+    border-radius: 6rpx;
+    width: 94%;
+    margin: 0 auto;
+    margin-top: 60rpx;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+}
+ input{
+    padding-left: 10rpx;
+    width: 80%;
+}
+.logs_user_password{
+    margin: 0 auto;
+    margin-top: 30rpx;
+    border: 1px solid #e5e5e5;
+    border-radius: 6rpx;
+    width: 94%;
+    height: 80rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logs_gorget_password{
+    width: 94%;
+    margin: 0 auto;
+    padding-top: 30rpx;
+    font-size: 13pt;
+    color: #e58026;
+    text-align: right;
+}
+.logs{
+    color: #fff;
+    width: 94%;
+    margin-top: 30rpx;
+    background-color: #e58026;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+.logs_register{
+    width: 94%;
+    margin: 0 auto;
+    padding-top: 60rpx;
+    font-size: 13pt;
+    color: #e58026;
+    text-align: center;
+}
+.logs_bottom_box{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.logs_bottom_box .title{
+    margin: 0 auto;
+    width: 94%;
+    font-size: 11pt;
+    color: #cccccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logs_bottom_box .title view{
+    width: 25%;
+    border-bottom: 1px solid #dddddd;
+}
+.logs_box{
+    margin-top: 60rpx;
+    margin-bottom: 30rpx;
+    display: flex;
+    justify-content: space-around;
+}

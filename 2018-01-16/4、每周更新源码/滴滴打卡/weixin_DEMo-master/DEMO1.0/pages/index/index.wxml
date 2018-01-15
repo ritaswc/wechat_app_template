@@ -1,0 +1,11 @@
+<view class="container">
+  <view   class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+     <text class="userinfo-level">1.Lv</text>
+     <text class="userinfo-context1">欢迎来到滴打卡</text>
+     <text class="userinfo-context2">开始你的改变吧</text>
+     <view bindtap="add" class="add_button" hover="true">添加</view>
+  </view>
+   
+</view>

@@ -1,0 +1,42 @@
+<!--pages/user/address.wxml-->
+		<view class="p_all bg_white mt10 font_12">
+			<view wx:for="{{addressList}}" class="df">
+            	<!--<radio-group name="radio-group" >
+				<label>
+				    <radio class="mt8" value="radio1" checked="true"/>
+				</label> 
+				</radio-group>-->
+<checkbox-group bindchange="checkboxgroupBindchange" class="mt8">
+   <checkbox value="checkbox1"></checkbox>
+</checkbox-group>
+
+
+				<view class="df_1 c6">
+				<view class="l_h20">{{item.Receiver}}<text class="fl_r mr10">{{item.PhoneNum}}</text></view>
+				<view class="l_h20">地址：{{item.Region}}{{item.DetailAddress}}</view>
+				</view>
+            </view>
+		</view>	
+
+		<view class="p_all bg_white mt10 font_14">
+			<view class="bbe mt10">
+			<input class="inputStyle" name="input" name="name" bindinput="setConsigneeName" placeholder="收货人姓名:" value="{{consigneeName}}"/>			
+			</view>
+			<view class="bbe mt10">
+			<input class="inputStyle" name="input" name="mobile" bindinput="setConsigneePhone" placeholder="收货人电话:" value="{{consigneePhone}}"/>			
+			</view>
+			<view class="bbe mt10">
+			<input class="inputStyle" name="input" name="mobile" bindinput="setConsigneeArea" placeholder="收货人地域:" value="{{consigneeArea}}"/>			
+			</view>
+			<view class="mt10">
+			<input class="inputStyle" name="input" name="address" bindinput="setConsigneeAddress" placeholder="收货人地址:" value="{{consigneeAddress}}"/>			
+			</view>          
+		</view>	
+
+
+		
+        <view class="p_all mt20">
+        <button type="warn" size="{{warnSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="addAddress"> 添加地址 </button>
+        
+        </view>

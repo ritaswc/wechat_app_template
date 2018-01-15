@@ -1,0 +1,179 @@
+/**index.wxss**/
+.index {
+  background-color: #fff;
+  font-family:"微软雅黑";
+  flex:0.3;
+  min-height: 100%;
+  font-size: 28rpx;
+}
+
+.index-topcon{
+  width:100%;
+  height: 500rpx;
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:cover;
+  position:relative;
+}
+
+.index-search{
+  width:706rpx;
+  height: 76rpx;
+  padding:2rpx;
+  border-radius:8rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:80rpx;
+  margin:auto;
+  background-color:#f94769;
+}
+
+.search-ipt{
+  width:500rpx;
+  border-radius:8rpx 0 0 8rpx;
+  padding-left:78rpx;
+  float:left;
+  font-family:"微软雅黑";
+  height: 72rpx;
+  margin-top: 2rpx;
+  margin-left: 2rpx;
+  background-color:#fff;
+  position: absolute;
+  z-index:1;
+  color:#333;
+}
+
+.search-btn{
+  width:120rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align:center;
+  color:#fff;
+  font-size:36rpx;
+  position:absolute;
+  top:2rpx;
+  right:10rpx;
+  z-index:10;
+  background-color:#f94769;
+
+}
+
+.search-icon{
+  width:35rpx;
+  height:35rpx;
+  position:absolute;
+  left:26rpx;
+  top:20rpx;
+  z-index:10;
+}
+
+.index-camera{
+  width:50rpx;
+  height:76rpx;
+  position:absolute;
+  right:140rpx;
+  top:0;
+  z-index:10;
+}
+
+.camera-icon{
+  width:40rpx;
+  height:35rpx;
+  margin-top:20rpx;
+}
+
+.camera-file{
+  display:block;
+  width:100%;
+  height:100%;
+  position:absolute;
+  opacity:0;
+}
+
+.index-history{
+  width:100%;
+  display:inline-block;
+  margin:20rpx 0;
+}
+
+.history-text{
+  color: #1c8ecf;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+}
+
+.history-dustbin{
+  float:right;
+  width: 30rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.history-con{
+  padding:20rpx;
+}
+
+.history-tips{
+  float: left;
+  max-width:260rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border:1px solid #ccc;
+  margin-right:20rpx;
+  margin-bottom:20rpx;
+  padding:0 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.classify{
+  width:49%;
+  height:150rpx;
+  float:left;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  position:relative;
+}
+
+.text-num{
+  position: absolute;
+  top:90rpx;
+  left: 100rpx;
+  color:#f2f2f2;
+}
+
+.classify image{
+  width: 100%;
+  height: 100%;
+}
+
+.classify:nth-child(2n){
+  margin-right: 0;
+}
+
+.camera-image{
+  position: absolute;
+  width:68rpx;
+  height: 52rpx;
+  top:12rpx;
+  left:4rpx;
+  z-index: 20;
+  border:1px solid #ccc;
+  background-color:#fff;
+}
+
+.search-image{
+  width:40rpx;
+  height: 52rpx;
+  float:left;
+}
+
+.search-cha{
+  width:15rpx;
+  float:left;
+  height:15rpx;
+  margin-top:18rpx;
+  margin-left: 8rpx;
+}

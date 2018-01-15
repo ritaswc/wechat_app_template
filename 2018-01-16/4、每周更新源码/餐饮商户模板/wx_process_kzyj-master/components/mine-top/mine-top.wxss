@@ -1,0 +1,28 @@
+/**我的 样式**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx 0;
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
+}
+.userinfo .settings {
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.userinfo .userinfo-avatar {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  margin-bottom: 30rpx;
+}
+
+.userinfo .userinfo-nickname {
+  color: #aaa;
+}

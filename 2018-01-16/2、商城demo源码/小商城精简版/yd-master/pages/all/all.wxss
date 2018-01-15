@@ -1,0 +1,127 @@
+
+.search-box{
+  background-color: rgb(242,63,65);
+}
+
+/* 上部横条结构卡片 */
+.up-list {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+}
+
+.up-list-item navigator {
+  padding: 15px 15px 0 15px;
+}
+
+.item-desc-container {
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: flex;
+  border-bottom: 1px rgb(237,237,237) solid;
+  padding-bottom: 15px;
+}
+
+.item-img {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.info-view {
+  -webkit-flex: 1;
+          flex: 1;
+  margin-left:15px;
+  font-size: 12px;
+  color:#999;
+}
+
+.title {
+  font-size:28rpx;
+  /*line-height: 1.45;*/
+  height: 126rpx;
+  color:#080808;
+  /*margin-bottom: 10px;*/
+  word-break: break-all;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: start;
+  -webkit-line-clamp: 2;
+}
+
+.title, .price {
+    -webkit-flex:1;
+            flex:1;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.target-word{
+  margin-top: 6rpx;
+}
+
+.keyword{
+  color: #ff685c;
+}
+
+.other-word{
+  margin-left: 6px;
+  color:#999;
+}
+
+
+/*.rectangle-bounce {
+    text-align: center;
+    height:50px;
+}
+
+.rectangle-bounce view {
+    height: 100%;
+    width: 7px;
+    margin: 0 3px 0 0;
+    background-color: #e60012;
+    display: inline-block;
+    -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+    animation: stretchdelay 1.2s infinite ease-in-out
+}
+
+.rectangle-bounce .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s
+}
+
+.rectangle-bounce .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s
+}
+
+.rectangle-bounce .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s
+}
+
+.rectangle-bounce .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s
+}
+
+@-webkit-keyframes stretchdelay {
+    0%, 40%, 100% {
+        -webkit-transform: scaleY(0.4)
+    }
+    20% {
+        -webkit-transform: scaleY(1)
+    }
+}
+
+@keyframes stretchdelay {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1);
+    }
+}*/

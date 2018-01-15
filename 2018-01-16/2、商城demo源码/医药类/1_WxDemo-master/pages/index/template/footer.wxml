@@ -1,0 +1,18 @@
+<!-- 通用底部组件 begin-->
+<template name="footer">
+     <view class="footer">
+        <view class="footer-nav">
+        <template is="footerIcon" data="{{item}}" wx:for="{{footerNav}}" wx:key="{{item.id}}"/>
+        </view>
+     </view>
+</template>
+<!-- 通用底部组件 end-->
+
+<!-- 通用底部图标列表 begin -->
+<template name="footerIcon">
+        <navigator url="{{item.Url}}">
+        <image src="{{item.Img}}"></image>
+        <text>{{item.Text}}</text>
+        </navigator>
+</template>
+<!-- 通用底部图标列表 end -->

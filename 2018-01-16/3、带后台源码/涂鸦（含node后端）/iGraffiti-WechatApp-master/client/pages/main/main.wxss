@@ -1,0 +1,118 @@
+/**main.wxss**/
+page {
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.canvas_area {
+    width: 100%;
+    height: 80%;
+    z-index: 10;
+}
+
+.myCanvas {
+    width: 100%;
+    height: 100%;
+}
+
+.canvas_tools {
+    position: fixed;
+    left: 0;
+    bottom: 0rpx;
+    width: 100%;
+    height: 150rpx;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.box {
+    width: 100rpx;
+    height: 100rpx;
+    margin: 27rpx;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.pencil {background-image: url('https://www.pihuataotao.cn/pencil-black.png');}
+
+.pen {background-image: url('https://www.pihuataotao.cn/pen-black.png');}
+
+.brush {background-image: url('https://www.pihuataotao.cn/brush-black.png');}
+
+.eraser {background-image: url('https://www.pihuataotao.cn/eraser-black.png');}
+
+.palette {
+    background-image: url('https://www.pihuataotao.cn/palette-black.png');
+    z-index: 100;
+}
+
+.colorbox {
+    height: 50rpx;
+    width: 50rpx;
+    position: fixed;
+    opacity: 0;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 0px;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.box01{ background-color: #ffc0cb; }
+
+.box02{ background-color: #ff1493; }
+
+.box03{ background-color: #ff0000; }
+
+.box04{ background-color: #990000; }
+
+.box05{ background-color: #ffa500; }
+
+.box06{ background-color: #ffff00; }
+
+.box07{ background-color: #ffff99; }
+
+.box08{ background-color: #adff2f; }
+
+.box09{ background-color: #00ff00; }
+
+.box10{ background-color: #008000; }
+
+.box11{ background-color: #00fa9a; }
+
+.box12{ background-color: #00ffff; }
+
+.box13{ background-color: #00bfff; }
+
+.box14{ background-color: #0000ff; }
+
+.box15{ background-color: #9932cc; }
+
+.box16{ background-color: #800080; }
+
+.box17{ background-color: #000000; }
+
+.box18{ background-color: #999999; }
+
+/*.box19{ background-color: #; }
+
+.box20{ background-color: #; }
+
+.box21{ background-color: #; }
+
+.box22{ background-color: #; }
+
+.box23{ background-color: #; }
+
+.box24{ background-color: #; }
+
+.box25{ background-color: #; }*/

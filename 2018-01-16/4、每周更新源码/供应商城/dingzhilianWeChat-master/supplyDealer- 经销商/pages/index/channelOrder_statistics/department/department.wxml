@@ -1,0 +1,41 @@
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+
+<!--渠道下单统计 - 部门-->
+<view class="order-statistics">
+  <text class="statistics-title">{{name}}下单统计</text>
+  <view class="statistics-detail">
+    <view class="table table-6">
+      <view class="tr bg-w">
+        <view class="th">{{adminDept == null ? '渠道' : '负责人'}}</view>
+        <view class="th">个数</view>
+        <view class="th">件数</view>
+        <view class="th">销售额</view>
+        <view class="th">应付</view>
+        <view class="th">毛利</view>
+      </view>
+      <view class="tr" wx:for="{{list}}">
+        <view class="td">
+          <view class="order-nav" bindtap="goDetail" data-deptid="{{item.dept_id}}" data-mid="{{item.m_id}}" data-pid="{{item.p_id}}" data-dept="{{item.dept}}" data-manageer="{{item.manageer}}" data-principal="{{item.principal}}">{{adminDept == null ? item.manageer : item.principal}}</view>
+        </view>
+        <view class="td">{{item.count}}</view>
+        <view class="td">{{item.total_pkgs}}</view>
+        <view class="td">{{item.total_amount}}</view>
+        <view class="td">{{item.predict_give}}</view>
+        <view class="td">{{item.profit}}</view>
+      </view>
+      <!--空行-->
+      <view class="tr hrline"></view>
+      <!--总计-->
+      <view class="tr total">
+        <view class="td">总计</view>
+        <view class="td">{{total.count}}</view>
+        <view class="td">{{total.total_pkgs}}</view>
+        <view class="td">{{total.total_amount}}</view>
+        <view class="td">{{total.predict_give}}</view>
+        <view class="td">{{total.profit}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,157 @@
+<!--图片轮播-->
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="5000" duration="500" class="swiper">
+  <block wx:for="{{goodsDetail.photo}}" wx:key="{{index}}" >
+    <swiper-item class="flexbox">
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+  <image src="{{img1}}" class="logoImg1" />
+</swiper>
+<!--商品内容展示-->
+<view class="products">
+     <view class="line box">
+        <view class="name hidecamp">{{goodsDetail.name}}</view>
+        <view class="icon" wx:if="{{goodsDetail.drug!=1}}">
+            <image src="{{img2}}" class="img02" />
+        </view>
+     </view>
+     <view class="line2 flexstart">
+        <view class="price">¥<text style="font-size:2.5em;font-weight:bold">{{goodsDetail.sell_price}}</text></view>
+        <view class="active">
+            <view class="active1">
+                立省<text style="font-weight:bold">{{reduce}}</text>元
+            </view>
+            <view class="active2">
+                <image src="{{img3}}" class="img03" wx:if="{{goodsDetail.delivery==1}}" />
+            </view>
+        </view>
+     </view>
+     <view class="line3 flexstart">
+        <view class="china">
+        国内专柜价:
+        <text class="text1">￥{{goodsDetail.market_price}}</text>
+        </view>
+        <view class="jp">
+            <image src="{{img4}}" class="img04" />
+            <text class="text2">{{goodsDetail.jp_price}}円</text>
+        </view>
+     </view>
+     <view class="line4 flexScoll" bindtap="action">
+        <image src="{{img5}}" class="img05" />
+        <view>日本直邮 商品编号: {{goodsDetail.goods_no}}</view>
+        <view class="weight">记重：{{weight}}g</view>
+        <view class="right-log">></view>
+     </view>
+</view>
+<!--第一个介绍弹窗-->
+<action-sheet hidden="{{actionSheetHidden1}}" bindtap="actionSheetChange">
+    <block wx:for-items="{{actionSheet1Items}}" wx:key="{{index}}">
+        <action-sheet-item class="action1 item flexstart" >
+            <image src="{{item.logo}}" class="itemImg1" />
+            <view class="tip">
+            <view class="title">{{item.title}}</view>
+            <view class="dis">{{item.text}}</view>
+            </view>
+        </action-sheet-item>
+    </block>
+</action-sheet>
+<!--品牌介绍-->
+<view class="relatebrand" wx:if="goodsDetail.brand.list">
+    <view class="top box">
+        <text>品牌介绍</text>
+        <navigator url="../brand/brand?id={{goodsDetail.brand.id}}&title={{goodsDetail.brand.name}}" redirect class="more">
+        查看<text style="color:#ff4aa0">{{goodsDetail.brand.count}}</text>件商品 >
+        </navigator>
+    </view>
+    <navigator url="../brand/brand?id={{goodsDetail.brand.id}}&title={{goodsDetail.brand.name}}" redirect class="title flexScoll">
+        <view class="logo flexbox">
+           <image src="{{goodsDetail.brand.logo}}" class="brandLogo" />
+        </view>
+        <view class="right">
+            <view class="name">{{goodsDetail.brand.name}}</view>
+            <view class="dis hidecamp">{{goodsDetail.brand.description}}</view>
+        </view>
+    </navigator>
+    <scroll-view class="relateGoods"  scroll-x="{{true}}">
+        <navigator class="item flexbox" redirect url="../products/products?id={{item.id}}&title={{item.name}}" wx:for="{{goodsDetail.brand.list}}" wx:key="{{item.id}}" wx:if="{{index<6}}">
+            <image src="{{item.img}}" class="goods_img" />
+            <view class="name hidewrap">{{item.name}}</view>
+            <view class="price">¥{{item.sell_price}}</view>
+        </navigator>
+    </scroll-view>
+</view>
+<!--图文详情介绍-->
+<view class="detail">
+    <view class="title">
+     商品图文详情
+    </view>
+    <image src="{{img6}}" class="img06" />
+    <image src="{{img7}}" class="img07" />
+    <image src="{{img8}}" class="img08" />
+</view>
+<!--服务承诺-->
+<view class="detail">
+    <view class="title">
+     服务承诺
+    </view>
+    <view class="mes box">
+        <view class="item flexbox">
+            <image src="{{img9}}" class="img09" />
+            <view class="text1">自营自采</view>
+            <view class="text2">只有正品</view>
+        </view>
+        <view class="item flexbox">
+            <image src="{{img10}}" class="img09" />
+             <view class="text1">每日直邮</view>
+            <view class="text2">安全快捷</view>
+        </view>
+        <view class="item flexbox">
+            <image src="{{img11}}" class="img09" />
+             <view class="text1">产品</view>
+            <view class="text2">质量保障</view>
+        </view>
+        <view class="item flexbox">
+            <image src="{{img12}}" class="img09" />
+             <view class="text1">东京同价</view>
+            <view class="text2">拒绝猫腻</view>
+        </view>
+    </view>
+    <view style="height:100rpx"></view>
+</view>
+<view class="fixedNav flexstart">
+    <view class="item grass flexbox" bindtap="grass">
+       <image src="{{isfavorite==0?imgblack:imgred}}" class="img_grass" />
+       <view class="text" style="{{isfavorite==0?styleblack:stylered}}">
+        {{isfavorite==0?grasstextblack:grasstextred}}
+       </view>
+    </view>
+    <view class="item joincar flexbox" bindtap="action2" data-buy="joinCar">加入购物车</view>
+    <view class="item buyNow flexbox" bindtap="action2" data-buy="buyNow">立即购买</view>
+</view>
+<!--购物车的弹出页面-->
+<action-sheet hidden="{{actionSheetHidden2}}" class="action2">
+    <view class="top flexstart">
+        <view class="img">
+            <image src="{{goodsDetail.img}}" style="{{actionSheetHidden2?styHide:styTop}}" />
+        </view>
+        <view class="text">
+            <view class="name hidecamp">{{goodsDetail.name}}</view>
+            <view class="storeNum">库存数量{{goodsDetail.store_nums}}</view>
+            <view class="price">￥{{goodsDetail.sell_price}}</view>
+        </view>
+        <view class="close flexbox" bindtap="actionSheet2Change">×</view>
+    </view>
+    <view class="cal">
+        <view class="num">数量</view>
+        <view class="count flexstart">
+            <view class="red" bindtap="reduce">-</view>
+            <view class="buyNum">{{buyNum}}</view>
+            <view class="red" bindtap="add">+</view>
+        </view>
+    </view>
+    <view class="bottom">
+         <button class="join" wx:if="{{buyy=='joinCar'}}" hover-class="none" bindtap="joincar">加入购物车</button>
+         <button class="join" wx:if="{{buyy=='buyNow'}}" hover-class="none" bindtap="buynow">立即购买</button>
+    </view>
+
+</action-sheet>

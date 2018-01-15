@@ -1,0 +1,8 @@
+/* pages/shake/shake.wxss */
+page{
+    background: rgb(45,49,50);
+    background-image: url("../images/shakeBG.png");
+    background-size: 30%;
+    background-position: top 35% center;
+    background-repeat: no-repeat;
+}

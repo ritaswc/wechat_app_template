@@ -1,0 +1,101 @@
+/*营业类型 营业时间 联系方式*/
+.shop-means {
+    width: 690rpx;
+    background-color: #ffffff;
+    padding: 0 30rpx;
+    border-top: 1rpx solid #f2f2f2;
+}
+.shop-means .business-type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 96rpx;
+    border-bottom: 1rpx solid #f2f2f2;
+    position: relative;
+}
+.shop-means .business-type text{
+    margin-right: 60rpx;
+}
+.shop-means .business-type image {
+    width: 21rpx;
+    height: 30rpx;
+    position: absolute;
+    right: 0rpx;
+}
+.shop-means .business-time {
+    height: 96rpx;
+    line-height: 96rpx;
+}
+.shop-means .business-time-input {
+    height: 88rpx;
+    padding-left: 20rpx;
+    background-color: #eeeeee;
+}
+.shop-means .contact-way{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+     height: 96rpx;
+}
+.shop-means .contact-way text{
+   margin-right: 60rpx;
+}
+/*商户照片样式*/
+.merchant-pic-wrap {
+    display: flex;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    width: 690rpx;
+    background-color: #ffffff;
+    margin-top: 30rpx;
+}
+.merchant-pic-wrap .merchant-pic {
+    width: 100rpx;
+    height: 100rpx;
+    margin-left: 60rpx;
+}
+/*商户简介*/
+.merchant-introduce-briefly {
+    margin-top: 30rpx;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 0 30rpx 30rpx;
+    width: 690rpx;
+}
+.merchant-introduce-briefly text{
+    height: 88rpx;
+    line-height: 88rpx;
+}
+.merchant-introduce-briefly textarea{
+    height: 220rpx;
+    background-color: #eeeeee;
+    width: 650rpx;
+    padding: 20rpx 20rpx;
+}
+/*常用位置*/
+.commonly-used-position {
+    display: flex;
+    width: 690rpx;
+    padding: 0 30rpx;
+    flex-direction: row;
+    background-color: #ffffff;
+    align-items: center;
+    margin-top: 30rpx;
+    position: relative;
+}
+.commonly-used-position text{
+    height: 96rpx;
+    line-height: 96rpx;
+}
+.commonly-used-position image{
+    width: 21rpx;
+    height: 30rpx;
+    position: absolute;
+    right: 30rpx;
+}
+.choice-position {
+    position: absolute;
+    right: 70rpx;
+}
+

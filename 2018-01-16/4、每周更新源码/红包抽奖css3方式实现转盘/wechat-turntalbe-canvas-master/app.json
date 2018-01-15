@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/list/list",
+    "pages/canvas/canvas",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "oWong",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#3cc51f",
+    "backgroundColor": "#eee",
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/canvas/canvas",
+      "text": "去抽奖",
+      "iconPath": "image/icon.png",
+      "selectedIconPath": "image/icon-HL.png"  
+    }, {
+      "pagePath": "pages/list/list",
+      "text": "中奖记录",
+      "iconPath": "image/icon.png",
+      "selectedIconPath": "image/icon-HL.png"
+    }]
+  }
+}

@@ -1,0 +1,26 @@
+.id{
+    padding-left:150px,
+}
+
+.id1{
+      padding: 300px,
+}
+
+.ph{
+
+}
+
+.ph_image{
+    width: 75px; 
+    height: 75px;
+}
+
+.section__title2{
+    font-size:12px;
+    padding-left:100px;
+}
+
+.section__title1{
+    font-size:12px;
+    padding-left:100px; 
+}

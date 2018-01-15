@@ -1,0 +1,151 @@
+.container{
+    padding:0;
+    background-color: #efeff4;
+    display: flex
+}
+
+swiper{
+  flex:1;
+  min-height: 100%;
+  width: 100%;
+}
+/* listview start*/
+.listview{
+  background-color: #fff;
+  margin-top: 8px;
+  
+}
+.listitem{
+    display: flex;
+    padding: 12px 12px 0 12px;
+}
+.listitem-desc-container{
+  display: flex;
+  font-size:12px;
+  border-bottom: 1px #d0d0d0 solid;
+  padding-bottom: 12px;
+  flex:1;
+}
+
+.item-img{
+    width:112px;
+    height: 112px;
+    margin-right: 12px;
+}
+
+.info-view{
+    /* flex-grow: 1; */
+    /*
+     如果 flex: 1 1 auto; 则会出现图片压缩的情况
+     因为图片的flex-shrink使用的是默认值，即1，所以超出的部分都由image和info-view压缩width来保证父容器正好容纳下所有item
+    */
+    flex:1;
+    /* flex: 1 1 0; */
+    display: flex;
+    flex-flow: column nowrap;
+    color:#8e8e93;
+}
+.title, .price, .footer-desc{
+    flex:1;
+    display: flex;
+}
+.title{
+    font-size: 17px;
+    color:#616368;
+    overflow: hidden;
+    line-height: 1.2;
+    max-height: 42px;
+}
+.price{
+    color: #e60012;
+    font-size: 16px;
+}
+.source-from{
+    justify-content: flex-end;
+    flex:1;
+    display: flex;
+    align-items: flex-end;
+}
+.source{
+    display: flex;
+    align-items: flex-end;
+}
+.datetime{
+    margin-left:12px;
+}
+/* listview end*/
+
+
+/* big-listview start*/
+
+.big-listview{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.big-listitem{
+  width: 48.6%;
+  margin-bottom: 2.8%;
+  display: flex;
+  flex-direction: column;
+}
+.image-container{
+  background-color: #eee;
+}
+
+.image-container image{
+  /* 注意这个。终于解决了在小程序中图片尺寸的问题了*/
+  width: 364rpx;
+  height: 364rpx;
+}
+
+.info-container{
+  padding:8px;
+  color:#616368;
+  background-color: #fff;
+}
+
+.info-container .price{
+  color:#616368;
+  margin-top: 8px;
+}
+.info-container .info{
+  margin-top: 8px;
+  line-height: 1;
+}
+
+/* big-listview end*/
+
+
+
+
+/* 列表模式和大图模式切换start */
+
+.switch-view{
+  display: flex;
+  background-color: #FAFAFA;
+  min-height:36px;
+  font-size: 16px;
+  color:#464646;
+  width: 100%;
+}
+
+.view-list,.view-big-img{
+    flex:1;
+    min-height:36px;
+    display: flex;
+    justify-content:center;
+}
+.switch-view text{
+  display: flex;
+  min-height:36px;
+  align-items: center;
+}
+.active{
+    color:#e60012;
+}
+.active text{
+    border-bottom:2px #e60012 solid;
+}

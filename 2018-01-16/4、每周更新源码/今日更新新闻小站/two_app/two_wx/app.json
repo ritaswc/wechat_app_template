@@ -1,0 +1,51 @@
+{
+  "pages":[
+
+    "pages/index/index",
+    
+    "pages/recommendation/recommendation",
+    "pages/video/video",
+    
+    "pages/todes/todos",
+    "pages/newsItem/newsItem",
+    "pages/details/details"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#48C23D",
+    "navigationBarTitleText": "新闻小站",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "新闻",
+      "iconPath": "image/news.png",
+      "selectedIconPath":"image/news_selected.png"
+    },{
+      "pagePath": "pages/recommendation/recommendation",
+      "text": "订阅",
+      "iconPath": "image/favor.png",
+      "selectedIconPath":"image/favor_selected.png"
+      
+    },{
+      "pagePath": "pages/todes/todos",
+      "text": "搜索",
+      "iconPath": "image/collection.png",
+      "selectedIconPath":"image/collection_selected.png"
+    },{
+      "pagePath": "pages/video/video",
+      "text": "视频",
+      "iconPath": "image/collection.png",
+      "selectedIconPath":"image/collection_selected.png"
+    }
+    ]
+  }
+  ,"networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

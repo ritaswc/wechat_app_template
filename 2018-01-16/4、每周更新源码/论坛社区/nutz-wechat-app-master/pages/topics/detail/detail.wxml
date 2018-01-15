@@ -1,0 +1,49 @@
+<view class="weui-panel__bd">
+  <view class="weui-media-box weui-media-box_appmsg">
+    <view class="weui-media-box__hd">
+      <image src="{{topic.author.avatar_url}}" class="weui-media-box__thumb"></image>
+    </view>
+    <view class="weui-media-box__bd">
+      <view class="weui-article">
+        <view class="title">{{topic.title}}
+          <image style="width: 15px; height: 15px; background-color: #eeeeee;" wx:if="{{topic.top}}" src="/image/icon/top.png" title="置顶"></image>
+          <image style="width: 15px; height: 15px; background-color: #eeeeee;" wx:if="{{topic.good}}" src="/image/icon/good.png" title="精华"></image>
+        </view>
+        <text class="weui-media-box__info">{{topic.content}}</text>
+        <view class="weui-media-box__desc topic-summary">发布于:{{topic.create_at_forread}} 分类: {{topic.tab}} 点击数: {{topic.visit_count}} 回复数:{{topic.reply_count}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__hd">回复列表</view>
+  <view class="weui-panel__bd">
+    <view wx:for="{{topic.replies}}" wx:for-item="topic" wx:key="key" class="weui-media-box weui-media-box_appmsg">
+      <view class="weui-media-box__hd">
+        <image src="{{topic.author.avatar_url}}" class="weui-media-box__thumb"></image>
+      </view>
+      <view class="weui-media-box__bd">
+        <view class="weui-article">
+          <view class="title">{{topic.author.loginname}}在{{topic.create_at_forread}}说:</view>
+          <text class="weui-media-box__info">{{topic.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{accesstoken != null}}" class="page-footer">
+  <view wx:if="{{showReplyView}}" class="reply_area">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea auto-height class="weui-input" placeholder="请输入帖子标题" bindblur="feedBackInput" bindinput="feedBackInput" bindconfirm="feedBackInput" />
+      </view>
+      <view class="weui-cell__hd">
+        <view class="weui-label">
+          <button class="weui-btn weui-btn_mini weui-btn_primary" bindtap="reply">回复</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <image wx:else style="width: 35px; height: 35px;float:right;margin-right:15px" src="/image/icon/reply.png" bindtap="showReplyView"></image>
+</view>
+<view class="weui-footer">2017 © NUTZ.CN</view>

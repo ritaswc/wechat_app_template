@@ -1,0 +1,129 @@
+.user_img {
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border: 10rpx solid #d1d3da;
+  margin: 38rpx auto 0 auto;
+  text-align: center;
+}
+
+.user_img image {
+  display: block;
+  width: 180rpx;
+  height: 180rpx;
+  border: none;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  margin: 5rpx auto 0 auto;
+}
+
+.z {
+  float: left;
+}
+
+.y {
+  float: right;
+}
+
+.user_head {
+  padding-top: 1px;
+  height: 300rpx;
+}
+
+.user_name {
+  margin: 20rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #7c7f88;
+}
+
+.order_title {
+  border-left: 6px solid #de3120;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 20rpx;
+}
+
+.order_section {
+  margin-top: 32rpx;
+  padding-bottom: 135rpx;
+}
+
+.order_box ul li {
+  height: 260rpx;
+  position: relative;
+}
+
+.sub_order_header {
+  height: 74rpx;
+  line-height: 74rpx;
+  padding: 0 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.no_pay {
+  background-color: #fed9c2;
+}
+
+.payed {
+  background-color: #e5e8f1;
+}
+
+.sub_order_content {
+  padding: 20rpx 60rpx;
+  height: 150rpx;
+  display: flex;
+  position:relative;
+}
+
+.sub_order_img image {
+  width: 230rpx;
+  height: 150rpx;
+}
+
+.pay_box {
+  position: absolute;
+  right: 44rpx;
+  bottom: 28rpx;
+}
+
+.pay_btn {
+  display: inline-block;
+  width: 180rpx;
+  height: 50rpx;
+  background-color: #de3120;
+  border-radius: 40rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: bold;
+  vertical-align: middle;
+  position:absolute;
+  right: 30rpx;
+  bottom:26rpx;
+}
+
+.sub_order_img_detail {
+  margin-left: 24rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.order_img_name {
+  margin: 10rpx 0;
+  font-size: 32rpx;
+}
+
+.m30 {
+  margin: 10rpx 0;
+  font-weight: normal;
+}
+
+.sub_order_img_detail{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}

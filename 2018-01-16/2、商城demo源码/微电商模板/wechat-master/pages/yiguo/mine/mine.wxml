@@ -1,0 +1,25 @@
+<view class="mine-box">
+    <import src="/template/signin.wxml"/>
+    <template is="signin" data="{{...item}}"/>
+
+    <view class="user">
+        <view class="user-pic"><image src="{{userInfo.avatarUrl}}"></image></view>
+        <view class="user-name">{{userInfo.nickName}}</view>
+        <view class="user-text">
+            <text>悠币：0</text>
+            <text>余额：￥0.00</text>
+        </view>
+    </view>
+
+    <view class="btn">
+        <ul>
+        <block wx:for="{{mine_list}}" wx:for-item="mine" wx:key="index" >
+            <li><image src="{{mine.pic_url}}"></image><span>{{mine.title}}</span></li>
+        </block>
+        </ul>
+    </view>
+
+    <view class="footer"><button type="warn"  bindtap="quit" > 退出登录</button></view>
+    
+
+</view>

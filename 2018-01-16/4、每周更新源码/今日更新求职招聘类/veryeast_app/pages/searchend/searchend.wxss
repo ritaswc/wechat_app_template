@@ -1,0 +1,182 @@
+/* pages/searchend/searchend.wxss */
+.image_jiantou{
+    width: 30rpx;
+    height: 20rpx;
+    margin-left: 10rpx;
+    transition: all .4s;
+}
+.image_jiantou_two{
+    width: 40rpx;
+    height: 40rpx;
+}
+.hotImg{
+    width: 38rpx;
+    height: 38rpx;
+}
+.image_duihao{
+  width: 35rpx;
+  height: 30rpx;
+}
+.search_nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120rpx;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: 100;
+}
+.search_nav ul{
+    height: 100%;
+    display: flex;
+}
+.search_nav ul li{
+    width: 33.33%;
+    height: 100%;
+    background-color: #fffbdd;
+    border-right: 1px solid #e9debb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.last_li{
+  border-right: none !important;
+}
+.search_nav ul li text{
+    color: #f18e2e;
+    font-size: 12pt;
+}
+.s_flowindow{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0,0.3);
+  z-index: 10
+}
+ .s_content{
+   display: none;
+  position: relative;
+  z-index: 100;
+  background-color: #fff;
+}
+.s_more{
+  display: none;
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+}
+.s_more .left{
+  width: 58%;
+  background-color: #f6f6f6;
+  float: left;
+}
+.s_more .right{
+  width: 42%;
+  background-color: #fff;
+  float: right;
+}
+.s_more .right .right_list{
+  border-bottom: 1px solid #e5e5e5;
+}
+.s_more .left .left_list {
+  padding-left: 2%;
+  padding-right: 2%;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.s_more .right .right_list{
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 90rpx;
+}
+.s_more .left .left_list text{
+  color: #cdcdcd;
+  font-size: 13pt;
+}
+ .s_content .s_list{
+  width: 94%;
+  margin: 0 auto;
+  height: 90rpx;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rotate{
+  transform: rotate(180deg);
+  transition: all .4s;
+}
+.active{
+  color: #f18e2e;
+}
+.show{
+  display: block !important;
+}
+.li_show{
+  background-color: #fff !important;
+}
+
+
+/*职位list*/
+.remenList{
+  margin-top: 120rpx;
+}
+.remenList .list{
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.remenList .list .left{
+    width: 70%;
+}
+.remenList .list .left .positionName{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.remenList .list .left .positionName image{
+   vertical-align: top;
+   padding-right: 10rpx;
+}
+.remenList .list .left .conpany{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12pt;
+  color: #aaa;
+  padding-top: 10rpx;
+}
+.remenList .list .left .time{
+  font-size: 12pt;
+  color: #aaa;
+  padding-top: 10rpx;
+}
+
+
+.remenList .list .right{
+  margin-top: 30rpx;
+  text-align: right;
+}
+.remenList .list .right view{
+  padding-top: 10rpx;
+  font-size: 12pt;
+  color: #aaa;
+}
+.remenList .list .right .money{
+  color: #fc9a39;
+}

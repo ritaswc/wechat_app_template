@@ -1,0 +1,57 @@
+.addrList{
+    margin-top:20rpx;
+}
+.addrList .item{
+    background:#fff;
+    margin-bottom:10rpx;
+}
+.addrList .item .top{
+    height:85rpx;
+    padding:0 20rpx;
+}
+.addrList .item .name{
+    width:150rpx;
+}
+.addrList .item .addr{
+    width:500rpx;
+    padding:20rpx;
+    color:#bbb;
+    font-size:28rpx;
+}
+.addrList .item .edit{
+    height:85rpx;
+    padding:0 20rpx;
+    color:#bbb;
+}
+.edit_img1{
+    width:40rpx;
+    height:40rpx;
+    vertical-align: baseline;
+    margin-right:10rpx;
+    position:relative;
+    top:10rpx;
+}
+.edit_img{
+    width:36rpx;
+    height:39rpx;
+    vertical-align: baseline;
+    margin-right:10rpx;
+    position:relative;
+    top:10rpx;
+}
+.addrList .item  .edimg{
+    margin-left:50rpx;
+}
+.addaddr{
+    margin:0 auto;
+    border: 1rpx solid #ff4aa0;
+    border-radius: 10rpx;
+    width: 496rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #ff4aa0;
+    background:transparent;
+    margin-top:150rpx;
+}

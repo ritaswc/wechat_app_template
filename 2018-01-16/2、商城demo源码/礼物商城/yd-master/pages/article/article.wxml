@@ -1,0 +1,69 @@
+<view class="{{load ? 'load': ''}}">
+  <view class="loading-placeholder">
+    <image src="./icon/placeholder.png"></image>
+  </view>
+  <view class="container">
+    <!-- 文章头 -->
+    <view class="header">
+      <swiper class="banner-list" indicator-dots="{{header.banners.length > 1}}" autoplay="false" interval="3000" wx:if="{{header.banners.length > 0}}">
+        <block>
+          <swiper-item wx:for="{{header.banners}}" wx:key="index">
+            <image class="banner" src="{{item}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="title-container">
+        <text class="title">{{header.title}}</text>
+      </view>
+      <view class="price-and-author-container">
+        <text class="{{header.price.type}}">{{header.price.value}}</text>
+        <view class="author">
+          <image src="{{header.author.url}}"></image>
+          <text>{{header.author.value}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <!--
+        注意：使用wx:key有一个坑，wx:key的值必须是唯一的，否则的渲染到页面上的内容会重复
+        重复的是array中最后一个命中了key的值！！！！
+      -->
+      <view wx:for="{{contents}}" wx:for-item="content" wx:key="index">
+        <!--
+          图片宽高需要计算
+          整个屏幕大小：750rpx
+          左右间隔大小：24 * 2 = 48rpx
+          图片宽度大小：750 - 48 = 702rpx
+          图片高度大小：图片高宽比 * 图片宽度大小 = ( naturalHeight / naturalWidth ) * 702
+        -->
+        <!-- type: img -->
+        <image wx:if="{{content.type === 'img'}}"
+               src="{{content.value}}"
+               class="img"
+               mode="aspectFill"
+               style="width:702rpx;height:{{content.height / content.width * 702 }}rpx;"></image>
+        <!-- type: ul -->
+        <view wx:elif="{{content.type === 'ul'}}" class="ul" wx:key="value">
+          <text wx:for="{{content.items}}" class="li">{{item}}</text>
+        </view>
+        <!-- type: sku -->
+        <view wx:elif="{{content.type === 'sku'}}" class="sku">
+          <image src="{{content.value.images[0].url}}" style="width:150rpx;height:150rpx;"></image>
+          <view class="sku-info">
+            <text class="sku-title">{{content.value.title}}</text>
+            <view class="sku-footer">
+              <text>{{content.value.price_str || content.value.price || ''}}</text>
+              <navigator url="../sku/sku?sid={{content.value.sid}}">立即购买</navigator>
+            </view>
+          </view>
+        </view>
+        <!-- type: ol -->
+        <view wx:elif="{{content.type === 'ol'}}" class="ol">
+          <text wx:for="{{content.items}}" class="li" wx:key="index">{{item}}</text>
+        </view>
+        <!-- type: p/h2/h3/editorhead/editorcontent/tips/lift/address -->
+        <text wx:else class="{{content.type}}"> {{content.value}} </text>
+      </view>
+    </view>
+  </view>
+</view>

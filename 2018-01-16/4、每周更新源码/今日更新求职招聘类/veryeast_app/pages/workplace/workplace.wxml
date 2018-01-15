@@ -1,0 +1,36 @@
+<!--pages/workplace/workplace.wxml-->
+<view class="workplace_wrap">
+    <view wx:if="{{show}}" class="has_select">
+        <view class="title">
+            <view>已选地区</view>
+            <view>{{has_select.length}}/{{length}}</view>
+        </view>
+        <view class="w_action_list">
+            <view bindtap="del_this" wx:for="{{has_select}}" data-city="{{item.city}}" data-id="{{item.id}}">
+                {{item.city}}<icon size="18" class="red" type="clear"></icon>
+            </view>
+        </view>
+    </view>
+
+
+    <view class="w_title">当前位置</view>
+    <view wx:for="{{user_action}}" bindtap="select_action" data-id="{{item.id}}" data-city="{{item.current_location}}" class="w_a_wrap">
+        <view class="w_a_list" >{{item.current_location}}</view>
+        <image wx:if="{{show_img}}" class="image_select" src="image/_03.png"></image>
+    </view>
+
+
+    <view class="w_title">热门城市</view>
+    <view wx:for="{{hot_city}}" bindtap="select_action" data-id="{{item.id}}" data-city="{{item.city}}" class="w_a_wrap">
+        <view class="w_a_list" >{{item.city}}</view>
+        <image wx:if="{{show_img}}" class="image_select" src="image/_03.png"></image>
+    </view>
+
+
+    <view class="w_title">按省份选择城市</view>
+    <view wx:for="{{province}}" bindtap="select_province" data-id="{{item.id}}" data-province="{{item.province}}" class="w_a_wrap">
+        <view class="w_a_list" >{{item.province}}</view>
+        <image wx:if="{{show_img}}" class="image_select" src="image/_03.png"></image>
+        <image wx:if="{{!show_img}}" class="image_select" src="image/jiantou_tou.png"></image>
+    </view>
+</view>

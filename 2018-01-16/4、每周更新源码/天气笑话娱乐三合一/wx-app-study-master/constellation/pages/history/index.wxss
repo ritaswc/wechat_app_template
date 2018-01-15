@@ -1,0 +1,24 @@
+/* pages/history/index.wxss */
+page {
+    height: 100%;
+}
+.history-container {
+    width:100%; height: 100%; background: url("../imgs/historybg.jpg"); background-size: cover; 
+}
+
+.title-part {
+    color: #000;
+}
+.single {
+    margin:20rpx 10px;
+}
+.single text {
+    font-size:32rpx; line-height:40rpx;
+}
+.single view {
+    font-size:32rpx; 
+}
+
+.footer-part {
+    padding-bottom:30px;
+}

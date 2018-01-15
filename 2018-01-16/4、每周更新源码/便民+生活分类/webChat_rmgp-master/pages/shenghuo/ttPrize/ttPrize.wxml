@@ -1,0 +1,10 @@
+<!--pages/shenghuo/ttPrize/ttPrize.wxml-->
+<import src="ttPrizeCell/ttPrizeCell.wxml" />
+
+<block wx:for="{{ttPrizeList}}" wx:for-item="item" wx:for-index="idx" wx:key="key">
+        <!--//template-->
+        <view catchtap="onttPrizeCellTap" data-postId="{{item.postId}}">
+             <template is="ttPrizeCell" data="{{...item}}"/>
+        </view>
+</block>
+

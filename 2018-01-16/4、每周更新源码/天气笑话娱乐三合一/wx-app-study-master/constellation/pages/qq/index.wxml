@@ -1,0 +1,16 @@
+<scroll-view class="qq-container" scroll-y="true">
+    <view class="title-part">
+        QQ吉凶查询
+    </view>
+    <view class="query">
+        <input placeholder="输入QQ号码" value="{{qq}}" bindinput="changeQQ" maxlength="11"/>
+        <button size="mini" type="primary" bindtap="queryData">查询</button>
+    </view>
+
+    <view class="result">结果：{{result}}</view>
+    <view class="detail">分析：{{detail}}</view>
+
+    <view class="footer-part">
+        仅供娱乐，无科学依据！
+    </view>
+</scroll-view>

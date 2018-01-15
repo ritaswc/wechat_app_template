@@ -1,0 +1,21 @@
+page {background: #e6e6e6;}
+.banner {height: 340rpx;}
+.banner image {width: 100%;height: 340rpx;}
+
+.title {font-size: 28rpx;padding: 20rpx;background: #fff;}
+.title .left {display: inline-block;width: 50%;box-sizing: border-box;border-right: 2rpx solid #ccc; text-align: center;}
+.title .right {display: inline-block;width: 50%;text-align: center;}
+.title text {color: #ff4400;font-size: 30rpx;}
+
+.content_top {background: #fff;margin: 30rpx;padding: 30rpx 0;}
+.content_top .left {display: inline-block;width: 50%;}
+.content_top .left text {border: 2rpx #ff4400 solid;border-radius: 20rpx;padding: 10rpx 20rpx;font-size: 26rpx;margin-left: 40rpx;color: #ff4400;}
+.content_top .right {display: inline-block;width: 45%;text-align: right;font-size: 30rpx;}
+.content_top .right navigator {border-bottom: 2rpx #777 solid;display: inline-block;}
+.content_topLine image {width: 100%;height: 30rpx;margin-top: 20rpx;}
+
+.ewm {text-align: center;margin-top: 20rpx;font-size: 26rpx;padding-bottom: 20rpx;}
+.ewm image {width: 320rpx;height: 320rpx;}
+
+.grzx_btn {padding: 0 30rpx;}
+.grzx_btn button {background: #42ace2;}

@@ -1,0 +1,15 @@
+<!--page/component/home/index.wxml-->
+<view class="music_list">
+    <block wx:for="{{tracks}}" wx:key="tracklist">
+        <view class="item_music" bindtap="itemClick" id="{{index}}">
+            <view class="list_ava">
+                <image class="list_avaimg" src="{{item.cover}}" />
+            </view>
+            <view class="list_music_info">
+                <text class="list_title">{{item.name}}</text>
+                <text class="list_author">{{item.artist}}</text>
+            </view>
+            <image wx:if="{{index==cIndex}}" class="list_control" src="../../imgs/play.png" />
+        </view>
+    </block>
+</view>

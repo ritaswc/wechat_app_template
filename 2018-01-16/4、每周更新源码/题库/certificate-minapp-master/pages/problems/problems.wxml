@@ -1,0 +1,46 @@
+<scroll-view class="problem-scroll" scroll-y="true">
+  <view class="problem-container">
+    <text class="problem-title">{{title}}</text>
+    <text class="problem-count">{{done < total ? done+1: total}}/{{total}}</text>
+    <image class="problem-image" src="../../images/problem.png"></image>
+    <text class="problem-description">{{problem.problem}}</text>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox" wx:key="{{problem._id}}" wx:for="{{problem.choices}}">
+        <checkbox value="{{item.key}}" disabled="{{submitted}}" checked="{{item.checked}}"/>
+        <image class="choice-image" src="../../images/choice-{{item.key}}.png"></image>{{item.content}}
+      </label>
+    </checkbox-group>
+  </view>
+
+  <view style="display: {{ submitted ? '' : 'none' }}">
+    <image class="problem-answer-image" style="display: {{ right ? '' : 'none' }}" src="../../images/right.png"></image>
+    <image class="problem-answer-image" style="display: {{ right ? 'none' : '' }}" src="../../images/wrong.png"></image>
+    <view class="problem-answer-container">
+      <text class="problem-answer color-active" style="display: {{ right ? '' : 'none' }}" >答案：{{problem.answer}}</text>
+      <text class="problem-answer color-warning" style="display: {{ right ? 'none' : '' }}" >答案：{{problem.answer}}</text>
+      <text class="problem-answer">解析：</text>
+      <text class="problem-answer">{{problem.analysis}}</text>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="tabbar">
+  <view class="tabbar-item" bindtap="prev">
+    <view class="tabbar-icon">
+      <image class="tabbar-image" src="../../images/back.png"></image>
+    </view>
+    <text class="tabbar-label">上一题</text>
+  </view>
+  <view class="tabbar-item" style="display: {{ submitted ? '' : 'none' }}" bindtap="next">
+    <view class="tabbar-icon">
+      <image class="tabbar-image" src="../../images/next.png"></image>
+    </view>
+    <text class="tabbar-label">下一题</text>
+  </view>
+  <view class="tabbar-item" style="display: {{ submitted ? 'none' : '' }}" bindtap="submit">
+    <view class="tabbar-icon">
+      <image class="tabbar-image" src="../../images/check.png"></image>
+    </view>
+    <text class="tabbar-label">提交</text>
+  </view>
+</view>

@@ -1,0 +1,73 @@
+<!--库存盘点-->
+<view class="container">
+    <!--时间选择器-->
+    <view class="screen-time">
+        <view class="time-style">
+            <text class="time1 section__title">起始时间</text>
+            <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                <view class="picker">
+                {{date}}
+                </view>
+            </picker>
+        </view>
+        <view class="time-style">
+            <text class="time1 section__title">结束时间</text>
+            <picker mode="date" value="{{date2}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange2">
+                <view class="picker">
+                {{date2}}
+                </view>
+            </picker>
+        </view>
+        <button class="screen-btn">筛选</button>
+    </view>
+
+    <view class="order-statistics">
+        <view class="statistics-detail">
+            <view class="table table-5">
+                <view class="tr bg-w">
+                    <view class="th">编号</view>
+                    <view class="th">款式数</view>
+                    <view class="th">件数</view>
+                    <view class="th">负责人</view>
+                    <view class="th">盘点日期</view>
+                </view>
+                <view class="tr">
+                    <view class="td">123652</view>
+                    <view class="td">10</view>
+                    <view class="td">50</view>
+                    <view class="td">哈哈</view>
+                    <view class="td">17-12-28</view>
+                </view>
+                <view class="tr">
+                    <view class="td">123652</view>
+                    <view class="td">10</view>
+                    <view class="td">50</view>
+                    <view class="td">哈哈</view>
+                    <view class="td">17-12-28</view>
+                </view>
+                <view class="tr">
+                    <view class="td">123652</view>
+                    <view class="td">10</view>
+                    <view class="td">50</view>
+                    <view class="td">哈哈</view>
+                    <view class="td">17-12-28</view>
+                </view>
+                <view class="tr">
+                    <view class="td">123652</view>
+                    <view class="td">10</view>
+                    <view class="td">50</view>
+                    <view class="td">哈哈</view>
+                    <view class="td">17-12-28</view>
+                </view>
+                <view class="tr">
+                    <view class="td">123652</view>
+                    <view class="td">10</view>
+                    <view class="td">50</view>
+                    <view class="td">哈哈</view>
+                    <view class="td">17-12-28</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+

@@ -1,0 +1,12 @@
+
+<!--pages/mes/mores/suggest/suggest.wxml-->
+<view>
+  <form bindsubmit="formSubmit">
+    <view class="suggest_view" >
+      <textarea placeholder="请输入您的宝贵意见或建议" name="text_suugest_vaules" style="font-size:14px" />
+    </view>
+    <view class="suggest_button">
+      <button form-type="submit" class="btn_theme" hover-class="other-button-hover">提交</button>
+    </view>
+  </form>
+</view>

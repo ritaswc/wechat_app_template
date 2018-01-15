@@ -1,0 +1,9 @@
+<view class="warp" >
+    <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{current}}" style="width:{{windowW}};height:{{windowH}}">
+    <block wx:for-items="{{images}}">
+      <swiper-item>
+            <image src="{{item}}"  class="slide-image" id="{{item.goods_id}}"/>
+      </swiper-item>
+    </block> 
+</swiper>
+</view>

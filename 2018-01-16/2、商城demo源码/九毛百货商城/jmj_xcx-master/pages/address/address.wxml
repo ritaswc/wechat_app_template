@@ -1,0 +1,33 @@
+<!--pages/address/address.wxml-->
+<view class="addrList" wx:if="showMessage">
+    <view class="item" wx:for="{{addr}}" wx:key="{{item.id}}">
+        <view class="top box">
+            <view class="name hidecamp">
+                {{item.accept_name}}
+            </view>
+            <view class="phone">
+                {{item.mobile}}
+            </view>
+        </view>
+        <view style="border-bottom:1rpx solid #eee">
+            <view class="addr hidewrap">
+                {{item.province_val}}{{item.city_val}}{{item.area_val}}{{item.address}}{{item.zip}}
+            </view>
+        </view>
+        <view class="box edit">
+            <view style="{{item.is_default==1?style1:style2}}" bindtap="changeDefault" data-index="{{index}}">
+                <image src="{{item.is_default==1?img_default:img_ci}}"  class="edit_img1"/>
+                收货地址
+            </view>
+            <view class="flexstart">
+                <view  bindtap="editAddr" bindtap="editAddr" data-index="{{index}}">
+                    <image src="{{img_edit}}"  class="edit_img" />编辑
+                </view>
+                <view class="edimg" bindtap="delAddr" data-index="{{index}}" wx:if="{{item.is_default!=1}}">
+                    <image src="{{img_del}}"  class="edit_img"/>删除
+                </view>
+            </view>
+        </view>
+    </view>
+    <button class="addaddr" bindtap="addAddr">添加收货地址</button>
+</view>

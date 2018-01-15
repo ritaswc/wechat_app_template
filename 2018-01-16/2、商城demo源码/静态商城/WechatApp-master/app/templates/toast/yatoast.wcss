@@ -1,0 +1,32 @@
+.yatoast {
+  display: inline-block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  padding: 20rpx 28rpx;
+  border-radius: 8rpx;
+  max-width: 600rpx;
+  z-index: 10000; }
+  .yatoast.ng-enter, .yatoast.ng-leave, .yatoast.ng-move {
+    transition-property: opacity;
+    transition-duration: 300ms;
+    transition-timing-function: ease; }
+  .yatoast.ng-enter {
+    opacity: 0; }
+  .yatoast.ng-enter.ng-enter-active {
+    opacity: 1; }
+  .yatoast.ng-leave {
+    opacity: 1; }
+  .yatoast.ng-leave.ng-leave-active {
+    opacity: 0; }
+  .yatoast.ng-move {
+    opacity: 0.5; }
+  .yatoast.ng-move.ng-move-active {
+    opacity: 1; }

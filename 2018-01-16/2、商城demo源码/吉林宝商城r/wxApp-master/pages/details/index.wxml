@@ -1,0 +1,118 @@
+<view class="container">
+	<!-- 轮播图片 -->
+	<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="banner">
+		<block wx:for="{{imgMsg}}">
+			<swiper-item>
+				<image src="{{item.imgUrl}}"/>
+			</swiper-item>
+		</block>
+	</swiper><!-- 轮播图片end -->	
+	<!-- 商品信息 -->
+	<view class="proMsg">
+		<view class="proName">
+			Canmake缤纷糖果保湿唇彩 唇蜜 01经典粉色
+		</view>
+		<text class="price">￥555.00</text>		
+		<view class="salse">
+			<view class="left">3人在卖</view>
+			<view class="middle">已出售:2</view>
+			<view class="right">运费:免运费</view>
+		</view>
+	</view><!-- 商品信息end -->
+	<!-- 店家信息 -->
+	<view class="shopMsg">
+		<view class="shopMsg_top">
+			<view class="shop_pho">
+				<image src="http://ojhq3mgil.bkt.clouddn.com/478/20161227/201612271616015049.jpg"></image>
+			</view>
+			<view class="shopMsg_right">
+				<view class="shopName">
+					<view>上善若水</view>	
+					<view class="shop_leve"><image src="../../images/member_bg02.png"></image><text>1</text></view>
+					<view>☆</view>	
+				</view>
+				<view class="shopLabel">
+					<image src="http://ojhq3mgil.bkt.clouddn.com/admin/20161028/201610281822325408.jpg"></image>
+				</view>
+			</view>
+		</view>
+		<view class="shopMsg_middle">
+			<view><view>38</view>商品数</view>
+			<view class="fx_num"><view>20</view>分销会员</view>
+			<view><view>13</view>关注数</view>
+		</view>
+		<view class="shopMsg_bottom">
+			<button plain="{{true}}"><image  src="../../images/icon_follow.png"></image>关注店铺</button>
+			<button plain="{{true}}"><image  src="../../images/icon_shop.png"></image>进店逛逛</button>
+		</view>
+	</view> <!-- 店家信息end -->
+	<!-- 热销产品 -->
+	<view class="hot_product">
+		<view><image src="../../images/line.png"></image></view>
+		<view>热销产品</view>
+		<view><image src="../../images/line02.png"></image></view>
+	</view>
+	
+	<!-- 图文详情 -->
+	<view class="hot_product">
+		<view><image src="../../images/line.png"></image></view>
+		<view>图文详情</view>
+		<view><image src="../../images/line02.png"></image></view>
+	</view>
+	<view class="details_pic">
+		<view>
+			<image mode="widthFix" src="http://ojhq3mgil.bkt.clouddn.com/web/497/20161230/201612301544571865.jpg"></image>
+		</view>
+		<view>
+			<image mode="widthFix" src="http://ojhq3mgil.bkt.clouddn.com/web/497/20161230/201612301545018473.jpg"></image>
+		</view>
+		<view>
+			<image mode="widthFix" src="http://ojhq3mgil.bkt.clouddn.com/web/497/20161230/201612301545049022.jpg"></image>
+		</view>
+	</view>
+	
+	<view class="bottom_item_wrap">
+		<view class="bottom_item">
+			<view class="icon_service">
+				<image src="../../images/icon_service.png"></image>
+			</view>
+			<view class="bottom_item_right">
+				<view class="btn" bindtap="isShow">加入购物车</view>
+				<view class="buy_btn btn">立即购买</view>
+			</view>
+		</view>
+	</view>
+	
+	<block wx:if="{{isShow}}">
+		<view class="add_item_show">
+			<view class="buy_cont">
+				<view class="shopcar">
+					<view class="shopcar_top">
+						<view class="pro_pic">
+							<image src="http://ojhq3mgil.bkt.clouddn.com/web/497/20161230/201612301544193344.jpg"></image>
+						</view>
+						<view class="kucun">
+							<view class="price">￥132.00</view>
+							<view>库存120件</view>
+						</view>
+						<view class="close" bindtap="isClose">×</view>
+					</view>
+					<view class="num">
+						<view class="sl">数量：</view>
+						<view class="buynum">
+				            <view class="disnum" data-alpha-beta="0" bindtap="changeNum">-</view>
+				            <view class="nownum">{{buynum}}</view>
+				            <view class="addnum" data-alpha-beta="1" bindtap="changeNum">+</view>
+				          </view>
+					</view>
+				</view>
+				<view class="true_btn">确认</view>
+			</view>
+		</view>
+	</block>
+	
+
+
+	
+
+</view>

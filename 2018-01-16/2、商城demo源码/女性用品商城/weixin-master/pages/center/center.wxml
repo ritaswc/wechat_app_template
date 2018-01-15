@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="san">
+    <view class="li" >我的订单</view>
+    <view class="li">我的积分</view>
+    <view class="li">我的足迹</view>
+   </view>
+     <view class="san">
+    <view class="lii" styleyle="text-aligin='center'">0.00</view>
+    <view class="lii">0</view>
+    <view class="lii">0</view>
+   </view>
+    <view class="info_list">
+    <block wx:for="{{user}}">
+        <view class="weui_cell">
+            <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p"> {{item.text}} </view>
+            </view>
+            <view wx:if="{{item.isunread}}" class="badge">{{item.unreadNum}}</view>
+            <view class="with_arrow"></view>
+        </view>
+    </block>
+  </view>
+      <view class="navs">
+      <block wx:for-items="{{navs}}" wx:key="name">
+        <view class="nav-item" catchtap="catchTapCategory" data-type="{{item.name}}">
+          <image src="{{item.icon}}" class="nav-image"/>
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+    
+  <view class="info_list">
+    <block wx:for="{{userListInfo}}">
+        <view class="weui_cell">
+            <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p"> {{item.text}} </view>
+            </view>
+            <view wx:if="{{item.isunread}}" class="badge">{{item.unreadNum}}</view>
+            <view class="with_arrow"></view>
+        </view>
+    </block>
+  </view>
+  <view class="button">
+  <button type="warn" size="{{warnSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="warn"> 退出 </button>
+  </view>
+</view>

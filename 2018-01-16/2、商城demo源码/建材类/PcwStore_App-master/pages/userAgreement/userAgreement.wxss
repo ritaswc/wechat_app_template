@@ -1,0 +1,27 @@
+/* pages/userAgreement/userAgreement.wxss */
+
+.box{
+ font-family:"微软雅黑";
+ padding:0 10px 10px;
+ background-color: #FFFFFF;
+}
+
+.title{
+  font-size:1.2em; 
+  color:#ff8000; 
+  line-height:25px; 
+  padding:10px 0; 
+  font-weight:bold; 
+  text-align:center;
+}
+
+.txt{
+    font-size:0.75em; 
+    color:#666; 
+    line-height:25px;
+}
+
+.text{
+    color:#000000; 
+    font-weight:bold;
+}

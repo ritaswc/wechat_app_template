@@ -1,0 +1,160 @@
+page {
+  background: #f6f6f6;
+}
+
+.weui-pull {
+  transition: all 0.3s;
+  transform: translate3d(0px, -40px, 0px);
+}
+
+.weui-pull__tips {
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+  color: #888;
+}
+
+.weui-pull_loading {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: -4px;
+  -webkit-animation: loadingAnimation 1s steps(12) infinite;
+  animation: loadingAnimation 1s steps(12) infinite;
+  background: transparent url() no-repeat;
+  background-size: 100%;
+}
+
+.weui-tab__panel {
+  padding-top: 0;
+  padding-bottom: 50px;
+}
+
+.bg_color {
+  background-color: #f0eff5;
+}
+
+.padding-wrap {
+  padding: 10px 15px;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.items-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.weui-media-box:before {
+  border-top: 0;
+}
+
+.wx-checkbox-input {
+  border-radius: 50% !important;
+}
+
+.content-color{
+  background-color: #fff;
+}
+
+/*左部图片*/
+
+.carts-image {
+  width: 120rpx;
+  height: 120rpx;
+  display: block;
+  /*border-radius: 5px;*/
+  margin-right: 10px;
+}
+
+/*右上部分标题*/
+
+.carts-title {
+  margin: 10rpx;
+  font-size: 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/*价格*/
+
+.carts-price {
+  display: inline-block;
+  width: 50%;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+/* 单价 */
+.origin{
+    font-size: 14px;
+}
+
+/*总价*/
+.total {
+  color: #6cf;
+  text-align: right;
+}
+
+/*顶部导航栏*/
+
+.top-nav {
+  width: 750rpx;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.top-nav-bar {
+  display: flex;
+  justify-content: space-around;
+  font-size: 13px;
+  padding: 10px 0;
+  background-color: #fff;
+  border-top: 1px solid #e5e5e5;
+}
+
+.top-nav-bar .active {
+  /*border-bottom: 2px solid #09bb07;*/
+  border-bottom: 2px solid #b6aaec;
+}
+
+.ma-top-120 {
+  margin-top: 120rpx;
+}
+
+.operate {
+  text-align: right;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 10rpx;
+}
+
+.operate .operate-item {
+  font-size: 12px;
+  color: #fff;
+  padding: 14rpx 18rpx;
+  background-color: #b6aaec;
+  border-radius: 5px;
+}
+
+.operate .pay {
+  margin-right: 30rpx;
+}
+.order_img{
+  display: flex;
+  flex-direction: column
+}
+.total{
+  color: red;
+}
+.all-total{
+  font-size: 14px;
+   color: red;
+   margin-right:100rpx; 
+}

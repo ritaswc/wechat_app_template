@@ -1,0 +1,68 @@
+
+<!--pages/address/address.wxml-->
+<view>
+<!--选择省-->
+<view class = "ui-flex ui-padding-10">
+  <view class="ui-width-30 ui-padding-10">省:</view>
+  <picker bindchange="provinceChange" value="{{indexProvince}}" range="{{provinceList}}" class = "ui-width-70">
+    <view class="ui-flex picker-select ui-padding-10">
+     <view class = "ui-width-100"><text >{{provinceList[indexProvince]}}</text></view>
+     <image class = "select-img" src="../../img/select.png"></image>
+    </view>
+  </picker>
+  </view>
+  <!--选择市-->
+  <view class = "ui-flex ui-padding-10">
+  <view class=" ui-width-30 ui-padding-10">市:</view>
+  <picker bindchange="cityChange" value="{{indexCity}}" range="{{cityList}}" class = "ui-width-70">
+    <view class="ui-flex picker-select ui-padding-10">
+     <view class = "ui-width-100"><text >{{cityList[indexCity]}}</text></view>
+     <image class = "select-img" src="../../img/select.png"></image>
+    </view>
+  </picker>
+  </view>
+  <!--选择区-->
+  <view class = "ui-flex ui-padding-10">
+  <view class="ui-width-30 ui-padding-10">区/县:</view>
+  <picker bindchange="districtChange" value="{{indexDistrict}}" range="{{districtList}}" class = "ui-width-70">
+    <view class="ui-flex picker-select ui-padding-10">
+     <view class = "ui-width-100"><text >{{districtList[indexDistrict]}}</text></view>
+     <image class = "select-img" src="../../img/select.png"></image>
+    </view>
+  </picker>
+  </view>
+  <!--详细地址-->
+  <view class = "ui-padding-10">
+  <view class = "ui-pt-10">详细地址：</view>
+  <textarea class = "input-address" placeholder="输入详细地址" auto-height = "true" bindblur="getAddressInfo"/>
+  </view>
+  <!--收货人名称-->
+  <view class = "ui-padding-10">
+  <view class = "ui-pt-10">收货人：</view>
+  <input class = "input-address" placeholder="名字" bindblur="getConsigneeName"/> 
+  </view>
+
+    <!--联系电话-->
+  <view class = "ui-padding-10">
+  <view class = "ui-pt-10">联系电话：</view>
+  <input class = "input-address" placeholder="输入手机号" type="number" bindblur="getPhoneNum"/> 
+  </view>
+
+<!--空白-->
+  <view class = "separate"></view>
+
+<!--设置为默认收获地址-->
+<view class = "ui-flex defult-address">
+<text class = "ui-width-80">设置为默认收获地址</text>
+<view class = "ui-width-20 chk-defult">
+<checkbox-group bindchange="checkboxChange">
+    <checkbox value="{{isChecked}}"/>
+</checkbox-group>
+</view>
+</view>
+
+
+<view class="btn-area">
+  <button bindtap="addNewAdress" type="primary">添加</button>
+</view>
+  </view>

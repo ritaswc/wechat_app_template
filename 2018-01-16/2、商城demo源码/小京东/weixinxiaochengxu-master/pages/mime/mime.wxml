@@ -1,0 +1,57 @@
+<view class="container more">
+
+  <!--上部信息-->
+  <view class="user flex-wrp" catchtap="mimeinfo">
+    <view class="avatar flex-item">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    </view>
+    <view class="user-info flex-item">
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="edit">查看或编辑个人主页</text>
+    </view>
+  </view>
+
+  <!--下部信息-->
+  <view class="my">
+    <view class="my-item flex-wrp" catchtap="no_payment">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/icon_already_complete.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>全部订单</text>
+      </view>
+    </view>
+    <view class="my-item flex-wrp" catchtap="already_shipped">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/icon_already_shipped.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>待付款</text>
+      </view>
+    </view>
+    <view class="my-item flex-wrp" catchtap="no_comment">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/icon_no_comment.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>待收货</text>
+      </view>
+    </view>
+    <view class="my-item flex-wrp" catchtap="customer_service">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/icon_customer_service.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>售后</text>
+      </view>
+    </view>
+    <view class="my-item flex-wrp" catchtap="coupon">
+      <view class="myitem-icon flex-item">
+        <image src="../../images/book.png"></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>优惠券</text>
+      </view>
+    </view>
+  </view>
+</view>

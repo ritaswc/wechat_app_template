@@ -1,0 +1,33 @@
+/* pages/review/review.wxss */
+page{
+    height: 100%;
+    width: 100%;
+}
+review-conatiner{
+    width: 100%;
+    height: 100%;
+    display:flex;        
+}
+.review-item{
+    width: 750rpx;
+    display: flex;
+    padding: 20rpx;
+    border-bottom:1px solid #ccc; 
+}
+.review-item text{
+    width: 360rpx;
+    text-align: center
+}
+.review-item view{
+   
+}
+.review-item button{
+    width: 150rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 12px;
+}
+.review-scroll{
+    width: 100%;
+    display: flex;
+}

@@ -1,0 +1,48 @@
+@import "HotNewsCell/HotNewsCell.wxss";
+@import "GridIconCell/GridIconCell.wxss";
+
+/**index.wxss**/
+swiper {
+  width: 100%;
+  height: 312.5rpx;
+}
+
+swiper image {
+  width: 100%;
+  height: 312.5rpx;
+}
+
+.iconList-container {
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  height: 160rpx;
+}
+
+.iconList-container-block {
+  flex-direction: row;
+  display: flex;
+  width: 25%;
+  height: 160rpx;
+}
+
+.yaowen-container {
+  height: 52rpx;
+  width: 100%;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #0164a6;
+}
+
+.yaowen {
+  line-height: 52rpx;
+  margin-left: 12px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #405f80;  
+}
+
+.hotNewsList-container {
+  flex-direction: column;
+  display: flex;
+
+}

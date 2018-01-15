@@ -1,0 +1,200 @@
+/* pages/shopinfo/shopinfo.wxss */
+page{
+  overflow: hidden;
+  height: 100%;
+}
+.scroll{
+  height: 100%;
+}
+.tianmao {
+  background-color: red;
+  padding: 10rpx;
+  text-align: center;
+}
+
+.swiper-shop-info {
+  height: 600rpx;
+}
+
+.swiper-image {
+  height: 600rpx;
+}
+
+.shop-info-title {
+  font-size: 50rpx;
+  font-weight: 900;
+  color: #000;
+  padding: 10rpx;
+}
+
+.shop-info-price {
+  font-size: 50rpx;
+  font-weight: 900;
+  color: red;
+  padding: 10rpx;
+}
+
+.courier {
+  text-align: left;
+  font-size: 26rpx;
+  color: darkgray;
+}
+
+.month-sale {
+  text-align: center;
+  font-size: 26rpx;
+  color: darkgray;
+}
+
+.address {
+  text-align: right;
+  font-size: 26rpx;
+  color: darkgray;
+}
+
+.shop-info-btn-chuxiao {
+  margin-left: 0rpx;
+  margin-right: 10rpx;
+  padding-left: 4rpx;
+  padding-right: 4rpx;
+  line-height: 24rpx;
+  box-sizing: border-box;
+  font-size: 20rpx;
+  color: orangered;
+  border: orangered solid 1rpx;
+}
+
+.shop-info-text-chuxiao {
+  font-size: 26rpx;
+  color: darkgray;
+}
+
+.shop-info-select {
+  font-size: 30rpx;
+  font-weight: 600rpx;
+  color: #000;
+  text-align: left;
+  line-height: 50rpx;
+}
+
+.shop-info-more-icon {
+  padding-top: 15rpx;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.btn-area button {
+  width: 100%;
+  border-radius: 0;
+  border-width: 0;
+}
+
+.btn-area {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.shop-select-info {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.mask-layer {
+  height: 25%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.shop-select-info-content {
+  background: #fff;
+  height: 75%;
+  opacity: 1;
+  -moz-opacity: 1;
+  filter: alpha(opacity=100);
+  position: relative;
+  overflow-y:  scroll;
+}
+
+.select-info-img {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.select-info-close {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 10rpx;
+}
+
+.select-info-price {
+  font-size: 36rpx;
+  font-weight: 900rpx;
+  color: red;
+  padding: 30rpx 10rpx 10rpx 10rpx;
+}
+
+.select-info-inventory {
+  font-size: 36rpx;
+  color: #000;
+}
+.select-Info-Attribute-scroll{
+  height:600rpx;
+}
+.select-info-select {
+  font-size: 36rpx;
+  color: #000;
+  max-width: 520rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+}
+
+.select-info-attr-list-name {
+  background-color: #eaeaea;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  padding: 10rpx;
+  margin: 10rpx;
+}
+
+.select-info-attr-list-name-press {
+  background-color: red;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  padding: 10rpx;
+  margin: 10rpx;
+}
+.select-info-buy-bum{
+  height:60rpx;
+  line-height: 60rpx;
+  box-sizing:  border-box;
+  padding: 0rpx 10rpx;
+}
+.num-subtraction{
+  height: 50rpx;
+  width: 80rpx;
+  background-color: #EDEDED;
+  color: #3C3C3C;
+  text-align: center;
+  margin-right: 10rpx;
+}
+.num-add{
+  height: 50rpx;
+  width: 80rpx;
+  background-color: #EDEDED;
+  color: #3C3C3C;
+  text-align: center;
+  margin-left:10rpx; 
+}
+.select-info-sumbit{
+  border-radius: 0rpx;
+}

@@ -1,0 +1,113 @@
+<view class="container">
+  <view class="header section">
+    <view class="header_rt" bindtap="tapShow">{{show==true?'编辑':'完成'}}</view>
+  </view>
+  <view class="body">
+    <scroll-view scroll-y="true" style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <view class="{{show==true?'order_list':'order_lists'}}">
+        <view class="box">
+          <navigator class="top" url="articleOrder">
+            <image class="img" src="{{img_url}}store/img_store.jpg"></image>
+            <text class="title">汇汇演示</text>
+            <image src="{{img_url}}order/lt.png" class="icon" wx:if="{{show}}"></image>
+          </navigator>
+        </view>
+        <view class="del" wx:if="{{!show}}">
+          <image class="del-pic" src="{{img_url}}order/del.png"></image>
+          <text class="del-title">删除</text>
+        </view>
+        <view class="info">
+          <view class="info-left">
+            <text class="span">扫码支付</text>
+            <text class="time">2016-06-12 12:59</text>
+          </view>
+          <view class="info-right">
+            <text class="price">98.00</text>
+            <text class="evaluate">待评价</text>
+          </view>
+        </view>
+        <view class="comment-btn" wx:if="{{show}}" bindtap="evaluationTap">
+          <button type="warn" size="mini" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"> 评价 </button>
+        </view>
+      </view>
+       <view class="{{show==true?'order_list':'order_lists'}}">
+        <view class="box">
+          <navigator class="top" url="articleOrder">
+            <image class="img" src="{{img_url}}store/img_store.jpg"></image>
+            <text class="title">汇汇演示</text>
+            <image src="{{img_url}}order/lt.png" class="icon" wx:if="{{show}}"></image>
+          </navigator>
+        </view>
+        <view class="del" wx:if="{{!show}}">
+          <image class="del-pic" src="{{img_url}}order/del.png"></image>
+          <text class="del-title">删除</text>
+        </view>
+        <view class="info">
+          <view class="info-left">
+            <text class="span">扫码支付</text>
+            <text class="time">2016-06-12 12:59</text>
+          </view>
+          <view class="info-right">
+            <text class="price">98.00</text>
+            <text class="evaluate">待评价</text>
+          </view>
+        </view>
+        <view class="comment-btn" wx:if="{{show}}">
+          <button type="warn" size="mini" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"> 评价 </button>
+        </view>
+      </view>
+       <view class="{{show==true?'order_list':'order_lists'}}">
+        <view class="box">
+          <navigator class="top" url="articleOrder">
+            <image class="img" src="{{img_url}}store/img_store.jpg"></image>
+            <text class="title">汇汇演示</text>
+            <image src="{{img_url}}order/lt.png" class="icon" wx:if="{{show}}"></image>
+          </navigator>
+        </view>
+        <view class="del" wx:if="{{!show}}">
+          <image class="del-pic" src="{{img_url}}order/del.png"></image>
+          <text class="del-title">删除</text>
+        </view>
+        <view class="info">
+          <view class="info-left">
+            <text class="span">扫码支付</text>
+            <text class="time">2016-06-12 12:59</text>
+          </view>
+          <view class="info-right">
+            <text class="price">98.00</text>
+            <text class="evaluate">待评价</text>
+          </view>
+        </view>
+        <view class="comment-btn" wx:if="{{show}}">
+          <button type="warn" size="mini" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"> 评价 </button>
+        </view>
+      </view>
+       <view class="{{show==true?'order_list':'order_lists'}}">
+        <view class="box">
+          <navigator class="top" url="articleOrder">
+            <image class="img" src="{{img_url}}store/img_store.jpg"></image>
+            <text class="title">汇汇演示</text>
+            <image src="{{img_url}}order/lt.png" class="icon" wx:if="{{show}}"></image>
+          </navigator>
+        </view>
+        <view class="del" wx:if="{{!show}}">
+          <image class="del-pic" src="{{img_url}}order/del.png"></image>
+          <text class="del-title">删除</text>
+        </view>
+        <view class="info">
+          <view class="info-left">
+            <text class="span">扫码支付</text>
+            <text class="time">2016-06-12 12:59</text>
+          </view>
+          <view class="info-right">
+            <text class="price">98.00</text>
+            <text class="evaluate">待评价</text>
+          </view>
+        </view>
+        <view class="comment-btn" wx:if="{{show}}">
+          <button type="warn" size="mini" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"> 评价 </button>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

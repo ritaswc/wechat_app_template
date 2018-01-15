@@ -1,0 +1,27 @@
+<view class="wraper">
+	<!-- 收货地址 -->
+	<view class="address">
+		<view>
+			<text class="name">杨天佑</text><text class="number">12166292893</text>
+		</view>
+		<view>
+			上海市上海闵行区|七宝老街
+		</view>
+	</view>
+	<form>
+		<view class="deliverInfo">
+			<view bindtap="tocompany">
+				<text class="listLeft">公司名称:</text>
+				<text>请选择物流公司</text>
+			</view>
+			<view class="numberGroup">
+				<text class="listLeft">快递单号:</text>
+				<input id="number" type="number" placeholder="请输入快递单号" name=""/>
+			</view>
+			<view class="textGroup">
+				<text class="listLeft">备注:</text>
+				<input id="text" type="text" placeholder="(选填)" name=""/>
+			</view>
+		</view>
+	</form>
+</view>

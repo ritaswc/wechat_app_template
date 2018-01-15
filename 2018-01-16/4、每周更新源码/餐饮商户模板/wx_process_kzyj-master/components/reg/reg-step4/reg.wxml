@@ -1,0 +1,23 @@
+<template name="regStep4">
+    <view class="container">
+        <view class="step-tips">
+            <image class="step-img" src="/image/merchant/reg/25jibenh.png"></image>
+            <text class="f2 c">基本信息</text>
+            <image class="step-tips-arrow" src="/image/merchant/reg/28jibenh.png"></image>
+            <image class="step-img" src="/image/merchant/reg/26jibenh.png"></image>
+            <text class="f2 c">详细信息</text>
+            <image class="step-tips-arrow" src="/image/merchant/reg/28jibenh.png"></image>
+            <image class="step-img" src="/image/merchant/reg/27jibenh.png"></image>
+            <text class="f2 c">等待审核</text>
+        </view>
+
+        <view class="waiting-logo">
+            <image src="/image/merchant/reg/31dengdai.png"></image>
+            <view class="logo-des f2">
+                文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+            </view>
+        </view>
+        
+        <button class="reg-quick bgc">返回首页</button>
+    </view>
+</template>

@@ -1,0 +1,32 @@
+page{
+    background-color: #efefef;
+}
+.opinion_wrap{
+}
+.contant_wrap{
+    background-color: #fff;
+}
+.contant{
+    width: 94%;
+    margin: 0 auto
+}
+textarea{
+    min-height: 300rpx;
+    padding: 10rpx 0;
+    width: 100%;
+}
+input{
+    margin-top: 30rpx;
+    height: 100rpx;
+    padding-left: 20rpx;
+    background-color: #fff;
+}
+button{
+    margin-top: 60rpx;
+    background-color: #e58026;
+    color: #fff;
+}
+.placeholder{
+    color: #999999;
+    font-size: 12pt;
+}

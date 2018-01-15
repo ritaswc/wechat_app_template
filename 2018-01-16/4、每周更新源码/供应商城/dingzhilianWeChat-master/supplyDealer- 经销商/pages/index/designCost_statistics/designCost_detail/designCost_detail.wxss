@@ -1,0 +1,157 @@
+.order-table{
+    width:734rpx;
+    margin:20rpx auto 0;
+}
+
+.order-trhead{
+    width:100%;
+    float: left;
+}
+
+.order-trhead .order-th{
+    background-color:#e6e6e6;
+}
+
+.order-tr{
+    width:100%;
+    float: left;
+}
+
+.order-tr .order-td{
+    background-color:#e8f8ff;
+}
+
+.order-th,.order-td{
+    width:150rpx;
+    height:68rpx;
+    float: left;
+    line-height: 68rpx;
+    text-align: center;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-left:2rpx solid #ccc;
+    border-bottom:2rpx solid #ccc;
+    font-size:26rpx;
+}
+
+.order-tr .order-td:first-child,.order-trhead .order-th:first-child{
+    width:270rpx;
+}
+
+.order-th{
+    border-top:2rpx solid #ccc;
+}
+
+.order-trhead .order-th:last-child{
+    border-right:2rpx solid #ccc;
+}
+
+.order-tr .order-td:last-child{
+    border-right:2rpx solid #ccc;
+}
+
+.order-tr:nth-child(2n) .order-td{
+    background-color:#fff;
+}
+
+.order-nav{
+    width:100%;
+    height: 68rpx;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color:#27b2eb;
+}
+
+/*时间筛选*/
+.screen-time{
+    width:750rpx;
+    height: 166rpx;
+    background-color:#fff;
+    margin-bottom:20rpx;
+    position: relative;
+}
+
+.time-style{
+    width:750rpx;
+    height: 62rpx;
+    line-height: 62rpx;
+}
+
+.time-style:first-child{
+    margin-top:22rpx;
+}
+
+.time1{
+    color:#999;
+    margin:0 20rpx;
+    float: left;
+}
+
+.time2{
+    margin-left: 20rpx;
+    float: left;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.time2 text{
+    float: left;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.screen-btn{
+    position: absolute;
+    width:160rpx;
+    height: 54rpx;
+    line-height: 54rpx;
+    border:none!important;
+    border-radius: 0!important;
+    padding-left:0;
+    padding-right: 0;
+    margin:0;
+    top:56rpx;
+    right: 20rpx;
+    background-color:#27b2eb;
+    color:#fff;
+    font-size:26rpx;
+}
+
+.statistics-title{
+    display:block;
+    width:710rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding:0 20rpx;
+    background-color:#fff;
+    position: fixed;
+    top:0;
+    left:0;
+}
+
+.statistics-detail{
+    margin-top:100rpx;
+}
+
+.choose-dep{
+    float: right;
+    color:#27b2eb;
+}
+
+.bottom-text{
+    float: left;
+    width:100%;
+    text-align: center;
+    margin: 20rpx auto;
+}
+
+.bottom-text text{
+    color:#ff8457;
+    margin-left: 10rpx;
+}
+
+.orange{
+    color:#ff8457;  
+}

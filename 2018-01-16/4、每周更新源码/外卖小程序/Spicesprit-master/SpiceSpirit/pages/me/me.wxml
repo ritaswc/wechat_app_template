@@ -1,0 +1,24 @@
+<view class="page-body">
+    <view class="header">
+        <image src="{{userHeaderUrl}}" class="userheadImg" mode="aspectFill"></image>
+        <view>
+        <text style="color:white;font-size:30rpx">蛋壳儿</text>
+        </view>  
+    </view>
+    <view class="option-view">
+        <block wx:for="{{optionNamas}}" wx:key="*this">
+            <view class="option-item" bindtap="selectoption" data-index="{{index}}">
+                <image class="item-icon" src="{{optionIcons[index]}}" style="width:45rpx;height:45rpx;"></image>
+                <text style="font-size:28rpx;">{{item}}</text>
+            </view>
+        </block>
+        <!--此处为分割线-->
+        <view class="line_h_1 line_h"></view>
+        <view class="line_h_2 line_h"></view>
+        <view class="line_v_1 line_v"></view>
+        <view class="line_v_2 line_v"></view>
+    </view>
+    <view class="tel-view" bindtap="makePhone">
+        <text style="color:#c30000;font-size:30rpx">4008-166-188</text>
+    </view>
+</view>

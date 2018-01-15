@@ -1,0 +1,77 @@
+
+<!--pages/shopcart/shopcart.wxml-->
+<view>
+
+  <!--收获地址-->
+  <view wx:if="{{isHaveAddress}}">
+    <view class="ui-padding-10">
+      <view class="ui-flex">
+        <text class="ui-width-50">收货人:{{addressInfo.consigneeName}}</text>
+        <text class="ui-width-50 cart-phonenum">{{addressInfo.phoneNum}}</text>
+      </view>
+      <view class="ui-pt-10">
+        <text>{{addressInfo.province + " " +addressInfo.city + " " + addressInfo.district + " " + addressInfo.detailedInfo}}</text>
+      </view>
+    </view>
+    <button class="btn-area-button" bindtap="selectToherAdress" type="primary">选择其他地址</button>
+  </view>
+  <view wx:else>
+    <button class="btn-area-button" bindtap="addAdress" type="primary">填写收获地址</button>
+  </view>
+
+  <!--空白-->
+  <view class="separate"></view>
+
+  <!--优惠券-->
+  <view wx:if="{{isHaveCoupons}}">
+    <view class="ui-padding-10 ui-width-100 ui-flex coupons">
+      <view class="ui-width-20 ui-padding-10">
+        <text>优惠券</text>
+      </view>
+      <view class="ui-width-80 user-coupons-text ui-padding-10">
+        <text>点击使用优惠券</text>
+      </view>
+    </view>
+  </view>
+
+  <!--空白-->
+  <view class="separate"></view>
+  <view class="cart-shop-list">
+
+    <!--购物车商品列表-->
+    <view wx:for="{{cartShopList}}">
+      <view class="ui-flex ui-padding-10" data-item-index = "{{index}}" bindtap = "onItemClick">
+        <view>
+          <image class="cart-shop-img" src="{{item.shopImg}}"></image>
+        </view>
+        <view class="ui-pl-10 ui-pr-10">
+          <view>
+            <text class="cart-shop-title">{{item.shopTitle}}</text>
+          </view>
+          <view>
+            <text class="cart-shop-select-info ui-pt-10">{{item.shopSelectInfo}}</text>
+          </view>
+          <view class="ui-flex ui-pt-10">
+            <text class="cart-shop-price ui-width-20">￥{{item.shopPrice}}</text>
+            <view class="ui-width-80 ui-flex ui-flex-end ">
+              <view class="cart-count-option" data-index = "{{index}}" bindtap = "itemCountSub">-</view>
+              <view class="cart-count-option">
+                {{item.shopCount}}
+              </view>
+              <view class="cart-count-option" data-index = "{{index}}"  bindtap = "itemCountAdd">+</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="line"></view>
+    </view>
+  </view>
+  <view class="bottom-pay">
+    <view class="total-count-money">总计:￥{{allPrice}}元 </view>
+    <view>
+      <button class="btn-area-button" bindtap="goToPay" type="warn">去支付</button>
+    </view>
+    <view>
+    </view>
+  </view>
+</view>

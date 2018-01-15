@@ -1,0 +1,89 @@
+.text-input-wrap {
+    background-color: #ffffff;
+}
+.text-input-wrap .text-input-item {
+    height: 96rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 30rpx;
+    border-bottom: 1rpx solid #f2f2f2;
+}
+.text-input-wrap .text-input-item:last-child {
+    border: none;
+}
+.text-input-wrap .text-input-item input {
+    text-align: right;
+     padding-right: 30rpx;
+}
+.text-pic-cell {
+    padding: 0 30rpx;
+}
+.text-img-wrap {
+    width: 690rpx;
+    padding: 20rpx 0;
+    border-bottom: 1rpx solid #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text-textarea-wrap {
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+}
+.tag-choice-wrap {
+    background-color: #ffffff;
+}
+.tag-choice-wrap .choice-tag-cell {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 93rpx;
+    margin: 30rpx 30rpx 0;
+    border-bottom: 1rpx solid #f2f2f2;
+}
+.tag-choice-wrap .tag-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20rpx 30rpx 0;
+}
+.tag-choice-wrap .tag-list .tag {
+    margin-bottom: 20rpx;
+    margin-right: 26rpx;
+    width: 140rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    border-radius: 30rpx;
+    border: 1rpx solid #f2f2f2;
+}
+
+.add-self-tag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 76rpx;
+    width: 100%;
+    margin-top: 20rpx;
+}
+.add-self-tag input{
+    background: #eeeeee;
+    height: 76rpx;
+    width: 492rpx;
+    margin-left: 30rpx;
+    padding-left: 30rpx;
+}
+
+.add-self-tag text {
+    flex: 1;
+    text-align: center;
+    /*margin-right: 30rpx;*/
+}
+
+
+
+

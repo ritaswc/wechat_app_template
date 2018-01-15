@@ -1,0 +1,256 @@
+/**app.wxss**/
+/*
+  整个小程序的公共样式表
+  可以在页面组件的class属性上直接使用app.wxss中声明的样式规则
+*/
+/* 容器部分 */
+page {
+  background-color: #F0F0F0;
+  height: 100%;
+  font-size: 32rpx;
+  font-family: "Hiragino Sans GB", "Helvetica Neue", Helvetica, "Microsoft Yahei", heiti, Arial, sans-serif;
+}
+
+/*搜索部分*/
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+  overflow-x: hidden;
+  /*justify-content: space-between;*/
+}
+
+.search-box{
+  -webkit-display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  background-color: rgba(8,8,8,.84);
+  padding:0 56rpx;
+  position: relative;
+}
+
+.bg-image{
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.search-input{
+  background-color: #fff;
+  padding-left: 12px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-top-left-radius: 200rpx;
+  border-bottom-left-radius: 200rpx;
+  height: 65.182rpx;
+  max-width: 577.294rpx;
+  /* 无效 */
+  /*letter-spacing: 10px;*/
+}
+
+.search-btn{
+  background-color: #fff;
+  -webkit-display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 20rpx;
+  border-top-right-radius: 200rpx;
+  border-bottom-right-radius: 200rpx;
+}
+
+.placeholder-style{
+  font-size:26rpx;
+  color: #ABACB0;
+}
+
+.clearfix:after{
+  display: table;
+  clear: both;
+  content: '';
+}
+
+.pull-left{
+  float: left;
+}
+.pull-right{
+  float: right;
+}
+
+/* 小程序中也存在web端一样的问题*/
+image{
+  vertical-align: middle;
+}
+
+
+/* scoll 懒加载 */
+.hide{
+  display: none;
+}
+
+.loading-container{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding:20rpx 0;
+  font-size: 24rpx;
+  color:#999;
+}
+
+.loading{
+  width: 40rpx;
+  height: 40rpx;
+  border:2px #ccc solid;
+  border-left: 2px red solid;
+  border-radius: 50%;
+  -webkit-animation:loading .7s linear infinite;
+  animation:loading .7s linear infinite;
+}
+@-webkit-keyframes loading{from{-webkit-transform:rotate(0);} to{-webkit-transform:rotate(359deg);}}
+@keyframes loading{from{-webkit-transform:rotate(0);transform:rotate(0);} to{-webkit-transform:rotate(359deg);transform:rotate(359deg);}}
+
+.to-top{
+  position: fixed;
+  bottom: 10rpx;
+  right: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/*.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}*/
+
+/*
+  声明 通用样式
+  在所有页面上均可用
+*/
+/*.logo-bg-color{
+  background-color:#e60012;
+}
+.white-font-color{
+  color:#fff;
+}*/
+
+
+/*@media screen and (max-width:640px) {
+    .container {
+        font-size: 92.7536231884058px;
+    }
+}
+@media screen and (max-width:620px) {
+    .container {
+        font-size: 89.85507246376811px;
+    }
+}
+@media screen and (max-width:600px) {
+    .container {
+        font-size: 86.95652173913044px;
+    }
+}
+@media screen and (max-width:580px) {
+    .container {
+        font-size: 84.05797101449275px;
+    }
+}
+@media screen and (max-width:560px) {
+    .container {
+        font-size: 81.15942028985506px;
+    }
+}
+@media screen and (max-width:540px) {
+    .container {
+        font-size: 78.26086956521739px;
+    }
+}
+@media screen and (max-width:520px) {
+    .container {
+        font-size: 75.3623188405797px;
+    }
+}
+@media screen and (max-width:500px) {
+    .container {
+        font-size: 72.46376811594203px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .container {
+        font-size: 69.56521739130434px;
+    }
+}
+@media screen and (max-width:460px) {
+    .container {
+        font-size: 66.66666666666666px;
+    }
+}
+@media screen and (max-width:440px) {
+    .container {
+        font-size: 63.768115942028984px;
+    }
+}
+@media screen and (max-width:435px) {
+    .container {
+        font-size: 63.04347826086956px;
+    }
+}
+@media screen and (max-width:428px) {
+    .container {
+        font-size: 62.028985507246375px;
+    }
+}
+    .container {
+        font-size: 60px;
+    }
+}
+@media screen and (max-width:384px) {
+    .container {
+        font-size: 55.65217391304348px;
+    }
+}
+@media screen and (max-width:380px) {
+    .container {
+        font-size: 55.07246376811594px;
+    }
+}
+@media screen and (max-width:375px) {
+    .container {
+        font-size: 54.347826086956516px;
+    }
+}
+@media screen and (max-width:360px) {
+    .container {
+        font-size: 52.17391304347826px;
+    }
+}
+@media screen and (max-width:320px) {
+    .container {
+        font-size: 46.3768115942029px;
+    }
+}*/

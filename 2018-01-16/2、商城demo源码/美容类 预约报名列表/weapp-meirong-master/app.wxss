@@ -1,0 +1,44 @@
+/**app.wxss**/
+page{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-family:'微软雅黑';
+} 
+/* 滚动条 */
+.page-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+/* 提示语 */
+.tips {
+  font-size: 28rpx;
+  text-align: center;
+  padding: 50rpx;
+  color: #ccc;
+  display:none;
+}
+
+.tips image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.tips image,
+.tips text {
+  vertical-align: middle;
+}
+
+/*tip hide*/
+.tip_0,.tip_1,tip_2,tip3{
+    display:block;
+}

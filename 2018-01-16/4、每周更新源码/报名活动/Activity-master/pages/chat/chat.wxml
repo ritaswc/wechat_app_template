@@ -1,0 +1,5 @@
+<!--pages/chat/chat.wxml-->
+<view class="container">
+    
+    <view class="msgArea">Send</view>
+</view>

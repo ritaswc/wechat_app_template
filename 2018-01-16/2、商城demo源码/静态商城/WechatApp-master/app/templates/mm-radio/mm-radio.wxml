@@ -1,0 +1,9 @@
+<template name="mm-radio">
+	<view class="radio">
+	  	<icon type="{{iconType}}" data-value-id="{{id}}" size="20" color="{{iconColor}}" bindtap="setDefault" />
+	</view>
+  	<label class="radio" bindtap="{{!isgroup ? 'setDefault' : ''}}">
+    	<radio value="{{id}}" checked="{{is_default}}" />
+    	<text class="labelText">{{labelText}}</text>
+  	</label>
+</template>

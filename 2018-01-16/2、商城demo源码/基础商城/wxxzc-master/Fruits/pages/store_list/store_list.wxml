@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<dl class="menu">
+    <dt data-index="0" bindtap="tapMainMenu">附近</dt>
+    <dd class="{{subMenuDisplay[0]}}">
+        <ul>
+            <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">100以内</li>
+            <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">100-500</li>
+            <li class="{{subMenuHighLight[0][2]}}" data-index="0-2" bindtap="tapSubMenu">500-1000</li>
+            <li class="{{subMenuHighLight[0][3]}}" data-index="0-3" bindtap="tapSubMenu">1000-3000</li>
+            <li class="{{subMenuHighLight[0][4]}}" data-index="0-4" bindtap="tapSubMenu">3000以上</li>
+        </ul>
+    </dd>
+    <dt data-index="0" bindtap="tapMainMenu">店铺名称</dt>
+    <dd class="{{subMenuDisplay[0]}}">
+        <ul>
+            <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">100以内</li>
+            <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">100-500</li>
+            <li class="{{subMenuHighLight[0][2]}}" data-index="0-2" bindtap="tapSubMenu">500-1000</li>
+            <li class="{{subMenuHighLight[0][3]}}" data-index="0-3" bindtap="tapSubMenu">1000-3000</li>
+            <li class="{{subMenuHighLight[0][4]}}" data-index="0-4" bindtap="tapSubMenu">3000以上</li>
+        </ul>
+    </dd>
+    <dt data-index="0" bindtap="tapMainMenu">人气排名</dt>
+    <dd class="{{subMenuDisplay[0]}}">
+        <ul>
+            <li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">100以内</li>
+            <li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">100-500</li>
+            <li class="{{subMenuHighLight[0][2]}}" data-index="0-2" bindtap="tapSubMenu">500-1000</li>
+            <li class="{{subMenuHighLight[0][3]}}" data-index="0-3" bindtap="tapSubMenu">1000-3000</li>
+            <li class="{{subMenuHighLight[0][4]}}" data-index="0-4" bindtap="tapSubMenu">3000以上</li>
+        </ul>
+    </dd>
+</dl>
+<view wx:for="{{store_list}}" wx:for-item="item" class="list"  style=" float:left;">
+<view class="img" style=" float:left;">
+   <navigator url="../store_xq/store_xq" >
+   <image src="{{item.src}}" style="width:123px;height:100px; padding-top:15px;"></image>
+   </navigator>
+</view>
+<view class="text" style=" float:left;padding-left:50px; padding-top:30px;">
+   <text>{{item.text1}}\n</text>
+   <text>{{item.text2}}\n</text>
+   <text>{{item.text3}}\n</text>
+</view>
+
+</view>
+
+

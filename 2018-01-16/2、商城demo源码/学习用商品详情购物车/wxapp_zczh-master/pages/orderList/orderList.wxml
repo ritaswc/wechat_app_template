@@ -1,0 +1,31 @@
+<view >
+    <view class="order" wx:for="{{order}}">
+        <view class="pic">
+            <text>订单号：{{item.order_id}}</text>
+            <image src="{{serverSrc}}{{item.goods_pic}}" ></image>
+        </view>
+        <view class="info">
+            <view class="txt clearfix" wx:if="{{item.status*1}}">
+                <text class="fr">已付款订单</text>
+            </view>
+            <view class="txt clearfix" wx:else>
+                <text class="fr">未付款订单</text>
+            </view>
+            <view class="goodInfo">
+                    <text>{{item.goods_name}}　　×{{item.goods_num}}</text>
+                    <text>地址：{{item.address}}</text>
+            </view>
+            <view class="clearfix txt"><span class="fr">共{{item.goods_num}}件 合计￥{{item.total_price}}</span></view>
+            <view class="btns clearfix">
+                <view wx:if="{{item.status*1}}">
+                    <text>正在发货...</text>
+                </view>
+                <view wx:else>
+                    <text class="pay" bindtap="pay" id="{{item.goods_id}}" data-order_id="{{item.order_id}}">去支付</text>
+                    <text class="cancel" bindtap="del" id="{{item.order_id}}">取消订单</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{order.length==0}}"><text>您还没有订单，快去商城逛逛吧！</text></view>
+</view>

@@ -1,0 +1,29 @@
+<import src="../../template/workers-item.wxml" />
+<view class="vLine"></view>
+<picker bindtap="picker_click" class="pWorkers-item" mode="date" value="{{date}}" start="2017-01-01" end="2020-12-30" bindchange="dataChange">
+  <view class="vDate">
+    <view class="vLabeldate">{{date}}</view>
+    <image src="/images/icons/down.png" mode="aspectFit"></image>
+  </view>
+</picker>
+<view class="vWorkRecord" wx:for="{{lists}}">
+  <image class="iHead" src="{{item.img}}"></image>
+  <view class="vStaffData">
+    <text class="tName">{{item.wxName}}</text>
+    <view wx:if="{{item.onetime != ''}}">
+      <text class="tWorkTime">{{item.times[0].h_m_s}}—{{item.times[1].h_m_s}}</text>
+      <text class="tWorkTime">{{item.times[2].h_m_s}}—{{item.times[3].h_m_s}}</text>
+
+      <!--<text wx:if="{{item.times[0].conditions == 通过判断该字段渲染颜色}}" class="tWorkTime">{{item.times[0].h_m_s}}——{{item.times[1].h_m_s}}</text>这个item是sweeps
+      <text wx:if="{{item.times[0].conditions == 通过判断该字段渲染颜色,但是暂时无法获取数据}}" class="tWorkTime">{{item.times[2].h_m_s}}——{{item.times[3].h_m_s}}</text>-->
+    </view>
+    <text wx:else class="tNoWorkTime">-</text>
+  </view>
+  <!--<image class="iMore" bindtap="more_click" src="/images/icons/more.png" mode="aspectFit" data-staffid="{{item._id}}"></image>-->
+</view>
+<block wx:if="{{lists.length == 0}}">
+  <view class="noquick">
+    <image src="/images/icons/noquick.png"></image>
+    <text>暂无员工</text>
+  </view>
+</block>

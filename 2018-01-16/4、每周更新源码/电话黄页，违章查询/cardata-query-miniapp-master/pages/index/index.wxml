@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="service-title">
+    生活服务:
+  </view>
+
+  <view class="services">
+    <view>
+      <image bindtap="phone" data-tel="95338" src="../../images/shunfeng.png"></image>
+      <text>顺丰快递</text>
+    </view>
+    <view>
+      <image bindtap="phone" data-tel="95543" src="../../images/shentong.png"></image>
+      <text>申通快递</text>
+    </view>
+    <view>
+      <image bindtap="phone" data-tel="95311"  src="../../images/zhongtong.png"></image>
+      <text>中通快递</text>
+    </view>
+  </view>
+  <view class="services">
+    <view>
+      <image bindtap="phone" data-tel="95599"  src="../../images/nongye.png"></image>
+      <text>农业银行</text>
+    </view>
+    <view>
+      <image bindtap="phone" data-tel="95588"  src="../../images/gongshang.png"></image>
+      <text>工商银行</text>
+    </view>
+    <view>
+      <image bindtap="phone" data-tel="95533"  src="../../images/jianshe.png"></image>
+      <text>建设银行</text>
+    </view>
+  </view>
+  <view class="services">
+    <view>
+      <image bindtap="phone" data-tel="10000"  src="../../images/dianxin.png"></image>
+      <text>中国电信</text>
+    </view>
+    <view>
+      <image bindtap="phone" data-tel="10086"  src="../../images/yidong.png"></image>
+      <text>中国移动</text>
+    </view>
+    <view>
+      <image bindtap="phone" data-tel="10010"  src="../../images/liantong.png"></image>
+      <text>中国联通</text>
+    </view>
+  </view>
+  <view class="service-title">
+    我的车辆:
+  </view>
+  <block wx:if="{{carData}}">
+    <view class="car-list" bindtap="goCardetail">
+      <image class="icon" src="../../images/right.png"></image>
+      <text>{{carData.carnumber}}</text>
+    </view>
+  </block>
+
+  <view wx:if="{{!carData}}" class="button-add" bindtap="goAddcar">
+    <image src="../../images/add.png"></image>
+    <text>添加车辆</text>
+  </view>
+  
+</view>

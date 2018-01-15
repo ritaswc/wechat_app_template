@@ -1,0 +1,13 @@
+
+<!--参加与已参与活动的列表模版-->
+<template name="item_order">
+  <view wx:for="{{array}}" wx:key="{{item.key}}" class="listItem">
+    <view class="imgWrap">
+      <image src="http://pics.sc.chinaz.com/files/pic/pic9/201510/apic15816.jpg"></image>
+    </view>
+    <view class="intro">
+      <text class="title_style">来场激情四射的比赛吧</text>
+      <text class="intro_info">美好：上课的话几乎是什么鬼</text>
+    </view>
+  </view>
+</template>

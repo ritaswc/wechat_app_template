@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="left">
+			<text class="head_select">热点</text>
+		</view>
+		<view class="right">
+			<text>关注</text>
+		</view>
+</view>
+<view class="nav">
+  <view class="{{navIndex==0?'nav_select':''}}" bindtap="changeNav" data-index="0">足球现场</view>
+	<view class="{{navIndex==1?'nav_select':''}}" bindtap="changeNav" data-index="1">足球生活</view>
+	<view class="{{navIndex==2?'nav_select':''}}" bindtap="changeNav" data-index="2">足球美女</view>
+</view>
+
+<view class="main">
+
+	<swiper bindchange="swiperChange" current="{{navIndex}}">
+		<swiper-item>
+		  <scroll-view scroll-y class="iScroll" bindscrolltoupper="refresh" style="height:100%">
+			<view wx:for="{{List1}}" wx:key="imgSrc" class="list">
+				<view><image src="{{item.imgSrc}}"></image></view>
+				<text>{{item.descripition}}</text>
+			</view>	
+			 </scroll-view>
+		</swiper-item>
+		<swiper-item>
+		  <scroll-view scroll-y class="iScroll" bindscrolltoupper="refresh" style="height:100%">
+			<view wx:for="{{List2}}" wx:key="imgSrc" class="list">
+				<view><image src="{{item.imgSrc}}"></image></view>
+				<text>{{item.descripition}}</text>
+			</view>	
+			 </scroll-view>
+		</swiper-item>
+		<swiper-item>
+		  <scroll-view scroll-y class="iScroll" bindscrolltoupper="refresh" style="height:100%">
+			<view wx:for="{{List3}}" wx:key="imgSrc" class="list">
+				<view><image src="{{item.imgSrc}}"></image></view>
+				<text>{{item.descripition}}</text>
+			</view>	
+			 </scroll-view>
+		</swiper-item>
+	</swiper>
+ 
+</view>
+
+<view class="footer">
+		<view class="foo_select">
+			<view class="iconfont icon-fangwu"></view>
+			<text>首页</text>
+		</view>
+		<view>
+			<view class="iconfont icon-sousuo_sousuo"></view>
+			<text>发现</text>
+		</view>
+		<view id="camera">
+			<view class="iconfont icon-zhaoxiangji"></view>
+		</view>
+		<view>
+			<view class="iconfont icon-touxiang"></view>
+			<text>我的</text>
+		</view>
+		<view>
+			<view class="iconfont icon-tuichu"></view>
+			<text>退出</text>
+		</view>
+</view>
+
+
+
+

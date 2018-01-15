@@ -1,0 +1,17 @@
+<view class="warp">
+
+
+    <view class="list">
+        <view wx:for="{{ special }}"  wx:key="item" class="item">
+            <navigator url="{{ item.url }}">
+                <view class="cover">
+                    <image src="{{ item.img }}"></image>
+                </view>
+                <view class="flex info">
+                    <text class="name">{{ item.name }}</text>
+                    <text class="time">{{ item.time }}</text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

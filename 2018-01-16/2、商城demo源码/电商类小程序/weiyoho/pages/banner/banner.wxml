@@ -1,0 +1,4 @@
+<!--pages/banner/banner.wxml-->
+<view class="banner-container" bindtap="banner">
+<!--<image src="../../images/post/banner.png"></image>-->
+</view>

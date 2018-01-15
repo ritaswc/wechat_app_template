@@ -1,0 +1,41 @@
+
+<!--<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+  <view class="cityselect">
+    {{array[index]}}
+  </view>
+</picker>-->
+<view class="m" bindtap="goCake" data-brand="0">
+  <image class="mg" src="{{path+'jd.jpg'}}" ></image>
+</view>
+<view class="m" data-pname="极地牛乳" data-brand="0" catchtap="goDetail">
+  <image class="mg-1" src="{{path+'001.jpg'}}" ></image>
+  <image class="mg-2" src="{{path+'001.png'}}" style="width: 400rpx;" ></image>
+</view>
+<view class="m" data-pname="莱茵河莓妖精" data-brand="0" catchtap="goDetail">
+  <image class="mg-1" src="{{path+'002.jpg'}}" ></image>
+  <image class="mg-2" src="{{path+'002.png'}}" style="width: 400rpx;"></image>
+</view>
+<view class="m" data-pname="落莓恋曲" data-brand="0" catchtap="goDetail">
+  <image class="mg-1" src="{{path+'003.jpg'}}" ></image>
+  <image class="mg-2" src="{{path+'003.png'}}" style="width: 450rpx;"></image>
+</view>
+<view class="m" data-pname="么么哒香芒" data-brand="0" catchtap="goDetail">
+  <image class="mg-1" src="{{path+'004.jpg'}}" ></image>
+  <image class="mg-2" src="{{path+'004.png'}}" style="width: 350rpx;"></image>
+</view>
+<view class="m" data-pname="巧克力石板街" data-brand="0" catchtap="goDetail">
+  <image class="mg-1" src="{{path+'005.jpg'}}" ></image>
+  <image class="mg-2" src="{{path+'005.png'}}" style="width: 350rpx;"></image>
+</view>
+<view class="m"  catchtap="goCake" data-brand="1">
+  <image class="mg" src="{{path+'jz.jpg'}}" ></image>
+</view>
+<view class="m" data-pname="吉致泡芙" data-brand="1" catchtap="goDetail">
+  <image class="mg-3" src="{{path+'j001.jpg'}}" ></image>
+</view>
+<view class="m" data-pname="吉致牛轧糖(巴旦木味)" data-brand="1" catchtap="goDetail">
+  <image class="mg-3" src="{{path+'j002.jpg'}}" ></image>
+</view>
+<view class="m" data-pname="吉致班戟-草莓抹茶" data-brand="1" catchtap="goDetail">
+  <image class="mg-3" src="{{path+'j004.jpg'}}" ></image>
+</view>

@@ -1,0 +1,60 @@
+<!--pages/auxStore/auxGoods/auxGoods.wxml-->
+<!--弹出层-->
+<view class="serachEvent" wx:if="{{mask_background}}">
+       
+</view>
+
+<view class="my_search" wx:if="{{mask_search}}">
+            <view class="my_return" bindtap="retrunEvent">
+                      <text class="textReturn">返回</text>
+                      <!--<image class="imgCity" src="../../../images/arrow_down.png"></image>-->
+            </view>
+            <view class="search_item" bindtap="">
+                 <input type="text" class="my_input" focus="true" placeholder="商品名称/型号" bindinput="searchHandle"/> 
+                 <icon type="search"size="23" class="myIcon"></icon>
+            </view>
+            <view class="search" bindtap="messageEvent">
+                 <text class="search_cancel">{{newSearch}}</text>
+            </view>
+</view>   
+
+<view class="nav">
+      <view class="nav_item">
+            <view class="nav_city" bindtap="cityEvent">
+                      <text class="textCity">{{cityName}}</text>
+                      <image class="imgCity" src="../../../images/arrow_down.png"></image>
+            </view>
+            <view class="nav_search" bindtap="searchEvent">
+                 <button class="searchBtn">
+                       <text class="textSearch">辅材搜索</text>
+                 </button> 
+                 <icon type="search"size="23" class="iconSearch"></icon>
+            </view>
+            <view class="nav_message">
+                 <text class="textMessage">消息</text>
+            </view>
+      </view>
+</view>
+
+
+
+<!--content-->
+<view class="content">
+     <view class="cataList">
+          <block wx:for="{{cataList}}">
+                  <view class="list_item {{currIndex == item.index ? 'selected':''}}" bindtap="selectIndex" data-index="{{index}}"> 
+                        <image class="imgCata" src="../../../images/{{item.imgUrl}}"></image>
+                        <text class="textCata">{{item.name}}</text>
+                  </view>              
+          </block>
+     </view>
+     <view class="brandList">
+          <block wx:for="{{cataItems}}">
+              <view class="brandItems" bindtap="goodsEvent" data-brandid="{{item.cat_children}}">
+                   <text class="textBrand">{{item.cat_name}}</text>
+              </view>
+          </block>
+     </view> 
+</view>
+
+

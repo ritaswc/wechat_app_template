@@ -1,0 +1,21 @@
+<form bindsubmit="formBindsubmit" bindreset="formReset">
+  <view style="display:flex;">
+    <label>手机号:</label>
+    <input name="phone" placeholder="请输入手机号！" class='name'/>
+  </view>
+  <view style="display:flex;">
+    <label>设置密码：</label>
+    <input name="psw" placeholder="请设置密码！" class="psw" />
+  </view>
+  <view style="display:flex;">
+    <label>姓名:</label>
+    <input name="username" placeholder="请输入姓名！" class="username" />
+  </view>
+  <view style="display:flex;">
+    <label>邮箱:</label>
+    <input name="email" placeholder="请输入邮箱！" class="email" />
+  </view>
+  <view style="display:flex;margin-top:30px;">
+    <button style="width:30%;" formType="submit" >保存</button>
+  </view>
+</form>

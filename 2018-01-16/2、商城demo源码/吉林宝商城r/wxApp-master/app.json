@@ -1,0 +1,60 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/classification/classification",
+    "pages/shopCar/shopCar",
+    "pages/central/central",
+    "pages/details/index",
+    "pages/login/login",
+    "pages/shopIndex/index",
+    "pages/hotProduct/hotProduct",
+    "pages/searchProduct/searchProduct",
+    "pages/accountOrder/accountOrder",
+    "pages/pay/pay",
+    "pages/partner/partner",
+    "pages/central/seller_order/seller_order",
+    "pages/central/seller_allOrder/seller_allOrder",
+    "pages/central/buyer_order/buyer_order",
+    "pages/central/buyer_allOrder/buyer_allOrder",
+    "pages/central/deliver_info/deliver",
+    "pages/central/order_detail/order_details",
+    "pages/central/kuaidi_info/kuaidi_info",
+    "pages/central/kuaidi_company/company",
+    "pages/central/address/address",
+    "pages/central/add_moren/add_moren",
+    "pages/central/add_new/add_new",
+    "pages/central/collect_store/collect_store",
+    "pages/central/collect_product/collect_product"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ff6662",
+    "navigationBarTitleText": "吉利宝",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "borderStyle":"white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath":"images/bot_home.png",
+      "selectedIconPath":"images/bot_home02.png"
+    },{
+      "pagePath": "pages/classification/classification",
+      "text": "分类",
+      "iconPath":"images/icon_fenlei.png",
+      "selectedIconPath":"images/icon_fenlei_default.png"
+    },{
+      "pagePath": "pages/shopCar/shopCar",
+      "text": "购物车",
+      "iconPath":"images/bot_shoppingcar.png",
+      "selectedIconPath":"images/bot_shoppingcar02.png"
+    }, {
+      "pagePath": "pages/central/central",
+      "text": "个人中心",
+      "iconPath":"images/bot_grzx.png",
+      "selectedIconPath":"images/bot_grzx02.png"
+    }]
+  },
+  "debug": true
+}

@@ -1,0 +1,62 @@
+/* pages/find/find.wxss */
+/*选项*/
+.tab{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24rpx;
+    padding-bottom: 20rpx;
+    background: #98d361;
+    align-items: center;
+    
+}
+.tab text{
+    width: 124rpx;
+    height: 48rpx;
+    text-align: center;
+    line-height: 48rpx;
+    background: #addc81;
+    color: #eeeeee;
+    font-size: 22rpx;
+   border-radius: 80rpx;
+}
+.tab .icon{
+width: 9rpx;
+height: 19rpx;
+background: url(/images/find/more.png)no-repeat;
+background-size: 9rpx 19rpx;
+
+}
+.tab .active{
+    background: #fff;
+    color: #98d361;
+}
+.view-box{
+width: 100%;
+}
+.view {
+margin-top: 12rpx;
+}
+.view .img{
+    position: relative;
+    width: 100%;
+  height: 356rpx;
+}
+.view .img image{
+    width: 100%;
+    height: 100%;
+
+}
+.view .img text{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 356rpx;
+    font-size: 30rpx;
+    color: #eeeeee;
+    font-weight: bold;
+    background: rgba(0,0,0,.75);
+    
+
+}

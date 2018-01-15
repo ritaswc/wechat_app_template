@@ -1,0 +1,19 @@
+/* pages/user/myorderdetals/myorderdetals.wxss */
+.body{padding: 10px; background-color: #fff;  margin-bottom:5px;box-shadow: 0 3px 3px #ccc; font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif; }
+.body .fontsize{font-size: 14px;}
+.body .fontsize .fontsizec {font-size: 14px;font-weight: bold;display:inline;}
+.body .ctime {font-size: 14px;display:inline;margin-left:50%;}
+.body .item{display: flex; padding: 10px 0; background-color: #fff;  margin-bottom:5px;}
+.body .item .img{width:300rpx; text-align: center}
+.body .item .img image{width: 250rpx;height: 150rpx;}
+.body .item .pcake{font-size: 16px;color: #c60;margin-bottom: 10px;}
+.body .bld{font-size: 14px;font-weight: bold;margin:10px 0;}
+
+.daohang{display:flex;color:gray;}
+.dh_title{color:cornflowerblue;}
+.dh_jt {
+  width: 0;
+  height: 0;
+  border: 0.5em solid;
+  border-color: transparent transparent transparent green;
+}

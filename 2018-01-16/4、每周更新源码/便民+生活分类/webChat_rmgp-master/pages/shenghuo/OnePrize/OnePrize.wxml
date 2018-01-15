@@ -1,0 +1,6 @@
+<!--pages/shenghuo/OnePrize/OnePrize.wxml-->
+<!--<text>pages/shenghuo/OnePrize/OnePrize.wxml</text>-->
+
+<import src="OnePrizeCell/OnePrizeCell.wxml" />
+
+<template is="OnePrizeCell" data="{{onePrizeList}}" />

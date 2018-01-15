@@ -1,0 +1,188 @@
+<view class="header {{scrollDown?'scrolled':''}}">
+  <view class="head">
+    <view class="collect {{scrollDown?'scrolled':''}}">
+      <image class="clt" src="{{scrollDown?'http://appuat.huihuishenghuo.com/img/detail/collect2.png':'http://appuat.huihuishenghuo.com/img/detail/collect.png'}}"></image>
+    </view>
+    <text class="title {{scrollDown?'scrolled':''}}">汇汇演示</text>
+  </view>
+</view>
+<scroll-view scroll-y="true" scroll-into-view="{{scrollIntoView}}" bindscroll="onScroll">
+
+  <!-- 店铺详情页面 -->
+  <view class="wrapper">
+
+    <!-- 首图 -->
+    <view class="top">
+      <view class="pic">
+        <image class="img" src="{{img_url}}detail/pic.jpg"></image>
+      </view>
+      <view class="info">
+        <text class="info-name">汇汇演示</text>
+        <text class="info-price">人均50元/人</text>
+      </view>
+    </view>
+
+    <!-- 折扣 -->
+    <view class="discount">
+      <view class="dis-num">
+        <text class="dis-b">8.8</text>
+        <text>折</text>
+      </view>
+      <view class="dis-star">
+        <text class="star">
+          <text class="star-span"></text>
+        </text>
+        <text class="star-em">4.6</text>
+      </view>
+    </view>
+
+    <!-- 满减 -->
+    <view class="full">
+      <text class="full-logo">满</text>
+      <text class="full-title">满100减10，满200减20</text>
+    </view>
+
+    <!-- 代金券 -->
+    <view class="voucher">
+      <view class="voucher-a">
+        <view class="voucher-info">
+          <text class="voucher-i">券</text>
+          <view class="voucher-sapn">
+            <text class="voucher-b">100</text>
+            <text>元代金券</text>
+          </view>
+        </view>
+        <text class="voucher-value">售价50汇币(￥50.00)</text>
+        <button type="warn" size="mini" bindtap="EventHandle">购买</button>
+      </view>
+    </view>
+
+    <!-- 门店信息 -->
+    <view class="store-info">
+      <view class="info-ul">
+        <view class="info-li">
+          <image class="location" src="{{img_url}}detail/location.png"></image>
+          <text class="info-span">南城区会展北路鸿发大厦2楼</text>
+          <image class="phone" src="{{img_url}}detail/phone.png" catchtap="makePhoneCall"></image>
+        </view>
+        <view class="info-li">
+          <image class="time" src="{{img_url}}detail/time.png"></image>
+          <text class="info-span">营业时间：0:00-24:00</text>
+        </view>
+        <view class="info-li">
+          <image class="free" src="{{img_url}}detail/free.png"></image>
+          <text class="info-span">提供停车位，提供无线，提供包厢</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 评价列表 -->
+    <view class="content">
+      <!--<view class="subbranch">
+        <text class="other">查看其它分店（10家）</text>
+        <image class="lt" src="{{img_url}}detail/lt.png"></image>
+      </view>-->
+      <view class="comment">
+        <view class="comstar">
+          <text class="sub-star">
+            <text class="sub-starspan"></text>
+          </text>
+          <text class="sub-em">4.8</text>
+        </view>
+      </view>
+    </view>
+    <view class="assess">
+      <view class="assess-ul">
+        <view class="assess-li">
+          <view class="head-img">
+            <image class="portrait" src="{{img_url}}detail/hh.jpg"></image>
+          </view>
+          <view class="head-right">
+            <view class="head-name">
+              <text class="name-h">隔壁老王</text>
+              <view class="name-pic"></view>
+            </view>
+            <view class="com-time">
+              <text class="assess-star">
+                <text class="assess-starspan"></text>
+              </text>
+              <text class="assess-time">2016.07.28</text>
+            </view>
+            <text class="assess-text">超级好吃，服务又好，每天都要来吃一次，一天不来就感觉少了点什么，超级棒~~~</text>
+            <view class="assess-pic">
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+            </view>
+            <view class="assess-reply">
+              <text class="assess-span">商家回复：</text>
+              <text>谢谢你对我们店的支持~~~欢迎你下次再次光临小店，给你优惠哦！</text>
+            </view>
+          </view>
+        </view>
+        <view class="assess-li">
+          <view class="head-img">
+            <image class="portrait" src="{{img_url}}detail/hh.jpg"></image>
+          </view>
+          <view class="head-right">
+            <view class="head-name">
+              <text class="name-h">隔壁老王</text>
+              <view class="name-pic"></view>
+            </view>
+            <view class="com-time">
+              <text class="assess-star">
+                <text class="assess-starspan"></text>
+              </text>
+              <text class="assess-time">2016.07.28</text>
+            </view>
+            <text class="assess-text">超级好吃，服务又好，每天都要来吃一次，一天不来就感觉少了点什么，超级棒~~~</text>
+            <view class="assess-pic">
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+              <view class="assess-p">
+                <image class="assess-pimg" src="{{img_url}}detail/food.png"></image>
+              </view>
+            </view>
+            <view class="assess-reply">
+              <text class="assess-span">商家回复：</text>
+              <text>谢谢你对我们店的支持~~~欢迎你下次再次光临小店，给你优惠哦！</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 更多评价 -->
+    <view class="as-more" bindtap="commentTap">
+      <text class="more">查看全部377条评价</text>
+    </view>
+  </view>
+</scroll-view>
+<view class="footer">
+
+  <!-- 返回顶层 -->
+  <view class="back-top {{scrollDown?'scrolled':''}}">
+    <image class="back" src="{{img_url}}detail/back.png"></image>
+  </view>
+
+  <!-- 买单按钮 -->
+  <view class="buy-btn">
+    <button type="warn" bindtap="toPay">优惠买单</button>
+  </view>
+</view>

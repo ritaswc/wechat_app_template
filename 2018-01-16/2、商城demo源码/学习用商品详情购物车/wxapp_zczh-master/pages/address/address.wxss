@@ -1,0 +1,11 @@
+page{background-color: #f6f6f6;}
+.warp{font-family: "微软雅黑";font-size:32rpx; }
+.group{margin-bottom:100rpx;}
+.row{line-height: 80rpx;display: flex;flex-direction:row;height: 160rpx;border-bottom: 1px #fff solid; }
+.row .address{width:500rpx;word-wrap:break-word;overflow:auto;}
+.row label{display: flex;flex-direction: row;}
+.row label radio{margin:auto 0}
+.row .edit image,.row .del image{width: 50rpx;height: 50rpx;margin:55rpx 20rpx }
+.add{width: 100%;height:100rpx;position: fixed;bottom: 0;left: 0;border-top:2px #efefef solid;background-color: #fff;font-family: "微软雅黑";display: flex;flex-direction: row;justify-content:center}
+.add .txt{color: #009df3;line-height:100rpx;height: 100rpx;}
+.add image{width:44rpx;height:44rpx;margin:28rpx 10rpx;}

@@ -1,0 +1,48 @@
+.music_list{
+  flex:1;
+  padding-bottom: 2.6rem;
+}
+
+.item_music{
+  background-color: white;
+  padding: 0.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.list_ava{
+    float: left;
+    height: 2.8rem;
+    margin-right: 10px;
+}
+.list_avaimg{
+    margin-left: 0.1rem;
+    margin-top: 0.1rem;
+    width: 2.8rem;
+    height: 2.8rem;
+}
+.list_music_info{
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+}
+.list_title{
+  display: block;
+  font-size: 14px;
+  color: #000;
+  margin-top: 5px;
+  text-align: left;
+}
+.list_author{
+  margin-top: 5px;
+  display: block;
+  font-size: 12px;
+  color: #666;
+  text-align: left;
+}
+.list_control{
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0.4rem;
+}

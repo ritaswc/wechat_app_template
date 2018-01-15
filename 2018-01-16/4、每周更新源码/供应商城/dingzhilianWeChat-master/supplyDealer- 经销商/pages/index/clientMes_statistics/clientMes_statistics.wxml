@@ -1,0 +1,50 @@
+
+<!--客户分布统计 - 全国-->
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<view class="order-statistics">
+  <view class="statistics-title">
+    <text>{{adminDept == null ? '部门客户统计' : '渠道客户统计'}}</text>
+    <picker class="choose-dep" wx:if="{{adminDept == null}}" range-key="name" bindchange="bindPickerChange1" value="{{deptIndex}}" range="{{depts}}">
+      <view class="picker">{{depts[deptIndex].name}}</view>
+    </picker>
+    <picker class="choose-dep" wx:else range-key="name" value="{{manageerIndex}}" bindchange="bindPickerChange2" range="{{manageers}}">
+      <view class="picker">{{manageers[manageerIndex].name}}</view>
+    </picker>
+  </view>
+
+  <view class="empty-con" wx:if="{{emptyShow}}">
+    <image class="empty-image" src="{{imageCtx}}dealer/note.png"></image>
+    <text class="empty-text">暂无数据</text>
+  </view>
+  
+  <view class="statistics-detail" wx:else>
+    <view class="table table-4">
+      <view class="tr bg-w">
+        <view class="th">排名</view>
+        <view class="th">省份</view>
+        <view class="th">客户数</view>
+        <view class="th">占比</view>
+      </view>
+      <view class="tr" wx:for="{{customer}}">
+        <view class="td {{(index == 0 || index == 1 || index == 2) ? 'orange' : ''}}">{{index+1}}</view>
+        <view class="td">
+          <view class="order-nav" data-province="{{item.province}}" bindtap="goCity">{{item.province}}</view>
+        </view>
+        <view class="td">{{item.count}}</view>
+        <view class="td">{{item.distribution}}</view>
+      </view>
+      <!--空行-->
+      <view class="tr hrline"></view>  
+      <view class="tr total">
+          <view class="tolcenter">
+              <text class="tolleft-text1">客户数总计 : </text>
+              <text class="tolleft-text2">{{total}}个</text>
+          </view>
+      </view>
+
+    </view>
+
+  </view>
+</view>

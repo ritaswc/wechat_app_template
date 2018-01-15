@@ -1,0 +1,102 @@
+.fff{
+    background: #ffffff;
+}
+.module{
+    margin-bottom:8px;
+}
+.header{
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    border-bottom:1px solid #e0e0e0;
+}
+.user{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.userPic{
+    width : 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.userName{
+    font-size: 16px;
+    margin-left: 15px;
+}
+.account{
+    font-size: 14px;
+    position: relative;
+    padding-right:20px;
+}
+.account:after{
+    right: 5px;
+}
+.accountMassage_text{
+    font-size: 12px;
+}
+.state{
+    width:100%;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+.stateItem{
+    padding:5px;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family:iconfont;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+    display: flex;
+
+}
+.stateItem:before{
+    font-size: 28px;
+}
+.option{
+    position: relative;
+    border-bottom:1rpx solid #e0e0e0;
+    font-family:iconfont;
+    padding:10px 0;
+    margin-left:15px;
+    font-size: 14px;
+}
+
+.module .option:last-child{
+    border-bottom: none;
+}
+.option:before{
+    position: absolute;
+    right:15px;
+    top:50%;
+    width: 14px;
+    height:14px;
+    margin-top:-7px;
+}
+.optionTitle{
+    font-family:"iconfont";
+}
+.optionTitle:before{
+    font-size: 18px;
+    margin-right: 10px;
+}
+.collect:before{
+    color: #FA7558;
+}
+.record:before{
+    color: #FFC324;
+}
+.address:before{
+    color: #673ab7;
+}
+.idea:before{
+    color: #0BD075;
+}
+.service:before{
+    color: #25B3FF;
+}
+.technology:before{
+    color: #9e9e9e;
+}

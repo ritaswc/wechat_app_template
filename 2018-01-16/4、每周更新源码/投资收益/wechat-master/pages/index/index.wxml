@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<scroll-view scroll-y="true" >
+<view class="banner">
+    <swiper indicator-dots="true" autoplay="false">
+        <block wx:for="{{imgUrl}}">
+            <swiper-item>
+                <view class="swiper_img">
+                    <navigator url="{{item.url}}"><image src="{{item.img}}"></image></navigator>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<view class="index_icon">
+    <view class="index_icon_list">
+        <view><navigator url="newUser/newUser?id=2016"><image src="../../images/index/index_01.png"></image><text>新人有礼</text></navigator></view>
+        <view><navigator url="../account/userShare/userShare"><image src="../../images/index/index_02.png"></image><text>邀请好友</text></navigator></view>
+        <view><navigator url="safety/safety"><image src="../../images/index/index_03.png"></image><text>安全保障</text></navigator></view>
+    </view>
+</view>
+
+<view class="new_ty">
+    <view class="new_ty_con">
+        <view class="new_ty_title">新人体验标</view>
+        <view class="new_ty_pro">
+            <view class="new_ty_pro_left">项目周期<text>2</text>个月</view>
+            <view class="new_ty_pro_right">年化收益<text>15.0%</text></view>
+        </view>
+        <view class="new_ty_imgleft">
+            <image src="../../images/index/index_fl.png"></image>
+        </view>
+        <view class="new_ty_imgright">
+            <image src="../../images/index/index_qd_01.png"></image>
+        </view>
+    </view>
+</view>
+
+
+<view class="index_tz"  wx:for="{{investList}}">
+
+    <view class="index_tz_title">
+        <navigator url="../tz/shd/shd?sid={{item.id}}">
+            商行贷{{item.conSn}}系列之{{item.last}}
+            <text>保</text>
+        </navigator>
+    </view>
+    <view class="index_tz_con">
+        <view class="index_con_left">
+            <view class="index_con_leftnum">{{item.rate}}</view>
+            <view class="index_con_leftper">
+                <text>%</text>
+                <view>年化收益</view>
+            </view>
+        </view>
+        <view class="index_con_right">
+            <view class="index_con_rightdata"><text>{{item.deadlineStr}}</text>个月期限</view>
+            <view>
+                <progress percent="{{item.percent}}" show-info active color="#ff723f" />
+                <!--<progress percent="50" show-info active  color="#ff723f" />-->
+            </view>
+        </view>
+        <view class="index_tz_btn">
+            <button type="primary" hover-class="red"> 立即投资 </button>
+        </view>
+        <view class="index_tz_db">
+            <image src="../../images/index/index_dp.png"></image>国资担保公司全面担保
+        </view>
+    </view>
+</view>
+</scroll-view>

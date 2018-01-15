@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="wrapper">
+    <view class="article">
+      <view class="li">
+        <text class="span">订单号</text>
+        <text class="b">0100101</text>
+      </view>
+      <view class="li">
+        <text class="span">商家名称</text>
+        <text class="b">7咖啡饮品休闲店</text>
+      </view>
+      <view class="li">
+        <text class="span">商家优惠</text>
+        <text class="b red">25元代金券</text>
+      </view>
+      <view class="li">
+        <text class="span">消费金额</text>
+        <text class="b">500.00</text>
+      </view>
+      <view class="li">
+        <text class="span">优惠金额</text>
+        <text class="b red">25.00</text>
+      </view>
+      <view class="li">
+        <text class="span">实付金额</text>
+        <text class="b">475.00</text>
+      </view>
+      <view class="li">
+        <text class="span">支付方式</text>
+        <text class="b">微信支付</text>
+      </view>
+      <view class="li">
+        <text class="span">消费时间</text>
+        <text class="b">2016-12-12 12:28</text>
+      </view>
+    </view>
+  </view>
+</view>
