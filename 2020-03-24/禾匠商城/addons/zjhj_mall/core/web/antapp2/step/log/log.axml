@@ -1,0 +1,48 @@
+<!--step/log/log.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class='top'>
+            <image src='{{__wxapp_img.step.log_bg.url}}'></image>
+            <view class='total'>
+                <view class='total-num'>{{currency}}</view>
+                <view>总获得奖励</view>
+            </view>
+            <view class='data'>
+                <view class='location'>
+                    <view class='data-num'>{{total_bout}}</view>
+                    <view>参赛次数</view>
+                </view>
+                <view class='location'>
+                    <view class='data-num'>{{bout}}</view>
+                    <view>达标次数</view>
+                </view>
+                <view class='location'>
+                    <view class='data-num'>{{bout_ratio}}%</view>
+                    <view>达标率</view>
+                </view>
+            </view>
+        </view>
+        <view class='log'>参赛记录</view>
+        <view class='list' a:for="{{list}}" a:key="{{list}}">
+            <view class='list-title'>
+                <view class='title-left'>{{item.name}} {{item.step_num}}步挑战赛</view>
+                <view class='wait' a:if='{{item.date <= time && item.log_status == 2}}'>待结算</view>
+                <view class='loser' a:if='{{item.date <= time && item.log_status == 3}}'>未达标</view>
+                <view class='loser' a:if='{{item.date > time}}'>未开始</view>
+                <view class='finish' a:if='{{item.date <= time && item.log_status == 1}}'>已结算</view>
+            </view>
+            <view class='list-body'>
+                <view class='list-num'>{{item.user_num}}</view>
+                <view>完成步数</view>
+            </view>
+            <view class='list-body'>
+                <view class='list-num'>{{item.user_currency}}</view>
+                <view>奖励金额</view>
+            </view>
+        </view>
+        <view class='loading' wx-if="{{loading}}">正在加载中...</view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

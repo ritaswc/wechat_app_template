@@ -1,0 +1,20 @@
+.list {
+    border-top: 1rpx solid #e3e3e3;
+    border-bottom: 1rpx solid #e3e3e3;
+}
+
+.item {
+    background: #fff;
+    padding: 24rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item>.flex-grow-0 {
+    padding-left: 24rpx;
+    font-weight: bold;
+    font-size: 15pt;
+}

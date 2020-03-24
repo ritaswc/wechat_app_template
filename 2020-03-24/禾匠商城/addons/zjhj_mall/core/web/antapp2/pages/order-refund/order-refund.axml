@@ -1,0 +1,8 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view a:if="{{isPageShow}}" class="body after-navber">
+        <include src="/components/goods/goods_refund.axml" />
+    </view>
+    <include src="/components/footer/footer" />
+</view>

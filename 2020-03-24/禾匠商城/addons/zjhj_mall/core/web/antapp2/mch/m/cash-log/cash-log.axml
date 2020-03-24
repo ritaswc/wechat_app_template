@@ -1,0 +1,24 @@
+<!-- 加载公共扩展 -->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <!-- 页面内容 -->
+        <view class="list">
+            <view a:for="{{list}}" a:key="{{item.id}}" class="item flex flex-row">
+                <view class="flex-grow-1">
+                    <view a:if="{{item.status==0}}">待审核</view>
+                    <view a:elif="{{item.status==1}}" style="color:#3fc24c;">已转账</view>
+                    <view a:else style="color:#ff4544;">已拒绝</view>
+                    <view style="font-size: 9pt;color: #888;margin-top: 12rpx">{{item.addtime}}</view>
+                </view>
+                <view class="flex-grow-0 flex-y-center" style="color: #ff4544;">{{item.money}}</view>
+            </view>
+        </view>
+        <view a:if="{{no_more}}" style="text-align: center;color: #888;font-size: 9pt;height: 74rpx;line-height: 74rpx">
+            没有记录了~
+        </view>
+        <include src="/components/list-loading/list-loading" />
+    </view>
+    <include src="/components/footer/footer" />
+</view>

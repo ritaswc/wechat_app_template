@@ -1,0 +1,10 @@
+<scroll-view scroll-x="true" class="scroll-view-x" scroll-with-animation="true" scroll-left="{{scrollLeft}}">
+    <view class="scroll-view-item {{cid==0 ? 'active' : ''}}" data-id='0' onTap="switchNav">
+        热销
+    </view>
+    <block a:for="{{cat}}" a:key="unique">
+    <view class="scroll-view-item {{cid==item.id ? 'active' : ''}}" data-id='0' onTap="switchNav">
+         {{item.name}}
+    </view>
+  </block>
+</scroll-view>

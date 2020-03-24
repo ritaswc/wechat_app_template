@@ -1,0 +1,80 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body">
+        <view class="page {{__page_classes}}">
+            <view class='body after-navber w-100 h-100'>
+                <view style="height:566rpx;position:relative;z-index:10">
+                    <image src="{{__wxapp_img.register.head.url}}" style="width:100%;height:566rpx;position:absolute;z-index:0;top:0;left:0"></image>
+                    <block a:if="{{status == 1}}">
+                        <view class="calendarSignDay" style='position:relative;'>
+                            <view class="lianxu">已连续签到</view>
+                            <view class="tianshu">
+                                <text style="font-size:40px;font-weight:bolder;color:#ffde00;">{{continuation}}</text>天</view>
+                        </view>
+                    </block>
+                    <block a:else>
+                        <image src="{{__wxapp_img.register.sign_in.url}}" class="registre-img" onTap="calendarSign" style='position:relative;'></image>
+                    </block>
+                    <view class="rntegral-font" style="font-size:15px;position:relative">
+                        <text>今</text>日签到获得
+                        <text style="font-weight:bolder;color:#ffde00;">{{register.register_integral}}</text>积分</view>
+                    <view class="rntegral-font" style="font-size:13px;position:relative">连续签到{{register.register_continuation}}天有惊喜哦</view>
+                    <view class="register-rule" onTap='register_rule'>规则</view>
+                </view>
+
+                <view class="content">
+                    <view class="register">
+                        <include src="/components/calendar/calendar" />
+                    </view>
+                </view>
+
+
+                <view id="modal-mask" onTap="hideModal" catchTouchmove="preventTouchMove" a:if="{{register_rule}}"></view>
+                <block a:if="{{register_rule}}">
+                    <block a:if="{{status_show == 1}}">
+                        <block a:if="{{jiangli == 1}}">
+                            <view class="register_success">
+                                <image src="{{__wxapp_img.store.jiangli.url}}" style="width:100%;height:100%;"></image>
+                                <view class="register_bac">
+                                    <view class="register_font">连续签到
+                                        <text style="color:red;">{{continuation}}</text>天</view>
+                                    <view class="register_font">今日获得
+                                        <text style="color:red;">{{register.register_integral}}</text>+
+                                        <text style="color:red;">{{register.register_reward}}</text>积分</view>
+                                    <view class="zhidaolo" onTap='hideModal'>
+                                        <view>知道咯</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                        <block a:else>
+                            <view class="register_success">
+                                <image src="{{__wxapp_img.integralMall.register.register_bg.url}}" style="width:100%;height:100%;"></image>
+                                <view class="register_bac">
+                                    <view class="register_font">连续签到
+                                        <text style="color:red;">{{continuation}}</text>天</view>
+                                    <view class="register_font">今日获得
+                                        <text style="color:red;">{{register.register_integral}}</text>积分</view>
+                                    <view class="zhidaolo" onTap='hideModal'>
+                                        <view>知道咯</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                    <block a:else>
+                        <view class="register_rule">
+                            <image class="close" src="{{__wxapp_img.register.close.url}}" onTap='hideModal'></image>
+                            <view class="rule">签到规则</view>
+                            <block a:for="{{register.register_rule}}" a:key="{{item.id}}">
+                                <view class="rule-detail">{{item}}</view>
+                            </block>
+                        </view>
+                    </block>
+                </block>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

@@ -1,0 +1,103 @@
+<!-- 加载公共扩展 -->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber" onTap="hideMoreAlert">
+        <!-- 页面内容 -->
+        <view class="top-bar">
+            <view class="search">
+                <input name="keyword" placeholder="搜索" confirm-type="search" onConfirm="searchSubmit" />
+            </view>
+            <view class="flex flex-row tab-bar">
+                <navigator url="/mch/m/goods/goods?status=1" open-type="redirect" class="flex-grow-1 flex-x-center">
+                    <view class="{{status==1?'active':''}}">出售中</view>
+                </navigator>
+                <navigator url="/mch/m/goods/goods?status=2" open-type="redirect" class="flex-grow-1 flex-x-center">
+                    <view class="{{status==2?'active':''}}">售磬</view>
+                </navigator>
+                <navigator url="/mch/m/goods/goods?status=3" open-type="redirect" class="flex-grow-1 flex-x-center">
+                    <view class="{{status==3?'active':''}}">仓库中</view>
+                </navigator>
+                <navigator url="/mch/m/goods/goods?status=4" open-type="redirect" class="flex-grow-1 flex-x-center">
+                    <view class="{{status==4?'active':''}}">最新</view>
+                </navigator>
+            </view>
+        </view>
+
+        <view class="goods-list">
+            <view a:for="{{goods_list}}" a:key="{{item.id}}" class="goods-item flex flex-row">
+                <view class="flex-grow-0" style="padding: 24rpx">
+                    <image style="width: 150rpx;height: 150rpx;border: 1rpx solid #eee" src="{{item.cover_pic}}"></image>
+                </view>
+                <view class="flex-grow-1" style="padding: 24rpx 24rpx 24rpx 0">
+                    <view class="goods-name">
+                        <view>{{item.name}}</view>
+                    </view>
+                    <view style="color: #ff4544">￥{{item.price}}</view>
+                    <view class="flex flex-row">
+                        <view class="flex-grow-1" style="color: #888">库存：{{item.goods_num}}</view>
+                        <view a:if='{{__is_sales}}' class="flex-grow-1" style="color: #888">销量：{{item.sale_num}}</view>
+                        <view class="flex-grow-0 more-btn">
+                            <view>
+                                <view onTap="showMoreAlert" data-index="{{index}}" class="more-icon flex flex-y-center">
+                                    <view>
+                                        <view></view>
+                                        <view></view>
+                                        <view></view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="more-alert {{item.show_alert?'show':''}}">
+                                <view class="flex flex-row">
+                                    <view class="flex-grow-0 more-alert-item" a:if="{{false}}">
+                                        <view>
+                                            <image src="/mch/images/icon-bianji.png"></image>
+                                        </view>
+                                        <view>编辑</view>
+                                    </view>
+                                    <block a:if="{{item.status==0}}">
+                                        <view class="flex-grow-0 more-alert-item" onTap="setGoodsStatus" data-target-status="1" data-index="{{index}}">
+                                            <view>
+                                                <image src="/mch/images/icon-xiajia.png" style="transform: rotate(180deg)"></image>
+                                            </view>
+                                            <view>上架</view>
+                                        </view>
+                                    </block>
+                                    <block a:if="{{item.status==1}}">
+                                        <view class="flex-grow-0 more-alert-item" onTap="setGoodsStatus" data-target-status="0" data-index="{{index}}">
+                                            <view>
+                                                <image src="/mch/images/icon-xiajia.png"></image>
+                                            </view>
+                                            <view>下架</view>
+                                        </view>
+                                    </block>
+                                    <view class="flex-grow-0 more-alert-item" onTap="goodsDelete" data-index="{{index}}">
+                                        <view>
+                                            <image src="/mch/images/icon-shanchu.png"></image>
+                                        </view>
+                                        <view>删除</view>
+                                    </view>
+                                    <view class="flex-grow-0 more-alert-item" a:if="{{false}}">
+                                        <view>
+                                            <image src="/mch/images/icon-tuiguang.png"></image>
+                                        </view>
+                                        <view>推广</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view a:if="{{no_goods}}" style="text-align: center;height: 174rpx;color: #888;font-size: 9pt" class="flex-y-center flex-x-center">暂无商品
+        </view>
+        <view a:if="{{!no_goods && no_more_goods}}" style="text-align: center;height: 74rpx;color: #888;font-size: 9pt" class="flex-y-center flex-x-center">已无更多商品
+        </view>
+        <view a:if="{{!no_goods && !no_more_goods}}" class="loading-more {{loading_more?'show':''}}">
+            <image style="width: 50rpx;height: 50rpx" src="{{__wxapp_img.system.loading_black.url}}"></image>
+        </view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

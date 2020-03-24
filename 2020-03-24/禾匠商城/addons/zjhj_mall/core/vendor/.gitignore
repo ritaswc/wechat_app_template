@@ -1,0 +1,15 @@
+docs/
+doc/
+tests/
+test/
+example/
+examples/
+sample/
+samples/
+*.md
+*.yml
+LICENSE
+README
+*.xml
+*.txt
+*.dist

@@ -1,0 +1,736 @@
+{template 'common/header'}
+<div id="js-user-profile" ng-controller="UserProfileDisplay" ng-cloak>
+	{if $_W['highest_role'] != 'founder'}
+	<div class="user-head-info we7-padding-bottom" >
+		<img ng-src="{{profile.avatar}}" class="img-circle user-avatar ">
+		<div class="info">
+			<h3 class="title" ng-bind="user.username"></h3>
+		</div>
+	</div>
+	{/if}
+	<div class="btn-group we7-btn-group we7-padding-bottom">
+		<a href="{php echo url('user/profile/base', array('uid' => $user['uid'], 'user_type' => PERSONAL_BASE_TYPE))}" class="btn btn-default {if $user_type == '' || $user_type == PERSONAL_BASE_TYPE}active{/if}">基础信息</a>
+		{if $_W['highest_role'] != ACCOUNT_MANAGE_NAME_CLERK}
+		{if $_W['highest_role'] != 'founder'}
+		<a href="{php echo url('user/profile/base', array('uid' => $user['uid'], 'user_type' => PERSONAL_AUTH_TYPE))}" class="btn btn-default {if $user_type == PERSONAL_AUTH_TYPE}active{/if}">应用模板权限</a>
+		<a href="{php echo url('user/profile/base', array('uid' => $user['uid'], 'user_type' => PERSONAL_LIST_TYPE))}" class="btn btn-default {if $user_type == PERSONAL_LIST_TYPE}active{/if}">使用账号列表</a>
+		<a href="{php echo url('user/profile/base', array('uid' => $user['uid'], 'user_type' => PERSONAL_LIMIT_TYPE))}" class="btn btn-default {if $user_type == PERSONAL_LIMIT_TYPE}active{/if}">账号使用期限</a>
+		{/if}
+		{/if}
+		<a href="{php echo url('user/profile/base', array('uid' => $user['uid'], 'user_type' => PERSONAL_BIND_TYPE))}" class="btn btn-default {if $user_type == PERSONAL_BIND_TYPE}active{/if}">账号绑定</a>
+	</div>
+	{if $user_type=='' || $user_type == PERSONAL_BASE_TYPE}
+	<div class="base">
+		<table class="table we7-table table-hover table-form">
+			<col width="140px " />
+			<col />
+			<col width="120px" />
+			<tr>
+				<th class="text-left" colspan="3">账户设置</th>
+			</tr>
+			<tr>
+				<td class="table-label">头像</td>
+				<td><img ng-src="{{profile.avatar}}" class="img-circle user-avatar" width="65px" height="65px" /></td>
+				<td><div class="link-group"><a href="javascript:;" ng-click="changeAvatar()">修改</a></div></td>
+			</tr>
+			<tr>
+				<td class="table-label">用户</td>
+				<td ng-bind="user.username"></td>
+				<td>{if permission_check_account_user('see_user_profile_edit_username')}<div class="link-group"><a href="#name" data-toggle="modal" data-target="" ng-click="editInfo('username', user.username)">修改</a></div>{/if}</td>
+			</tr>
+			<tr>
+				<td class="table-label">密码</td>
+				<td>******</td>
+				<td><div class="link-group"><a href="javascript:;" data-toggle="modal" data-target="#pass">修改</a></div></td>
+			</tr>
+			
+			{if !empty($user['founder_groupid'])}
+			<tr>
+				<td class="table-label">注册链接</td>
+				<td>{$user['url']}</td>
+				<td><div class="link-group"><a href="javascript:;" data-url="{$user['url']}" class="js-clip">复制链接</a></div></td>
+			</tr>
+			{/if}
+			
+		</table>
+		<div class="modal fade" id="name" role="dialog">
+			<div class="we7-modal-dialog modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<div class="modal-title">修改用户名</div>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<input type="text" ng-model="userOriginal.username" class="form-control" placeholder="用户名" />
+							<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="httpChange('username')">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="pass" role="dialog">
+			<div class="we7-modal-dialog modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<div class="modal-title">修改密码</div>
+					</div>
+					<div class="modal-body text-center">
+						<div class="we7-form" style="width: 450px; margin: 0 auto;">
+							{if empty($user['register_type'])}
+							<div class="form-group">
+								<label for="" class="control-label col-sm-2">原密码</label>
+								<div class="form-controls col-sm-10">
+									<input type="password" value="" class="form-control old-password">
+
+								</div>
+							</div>
+							{/if}
+							<div class="form-group">
+								<label for="" class="control-label col-sm-2">新密码</label>
+								<div class="form-controls col-sm-10">
+									<input type="password" value="" class="form-control new-password">
+
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="" class="control-label col-sm-2">确认新密码</label>
+								<div class="form-controls col-sm-10">
+									<input type="password" value="" class="form-control renew-password">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="httpChange('password')">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<table class="table we7-table table-hover table-form">
+			<col width="140px " />
+			<col />
+			<col width="100px" />
+			<tr>
+				<th class="text-left" colspan="3">基础信息</th>
+			</tr>
+			<tr>
+				<td class="table-label">真实姓名</td>
+				<td ng-bind="profile.realname"></td>
+				<td><div class="link-group"><a href="javascript:;" data-toggle="modal" data-target="#realname" ng-click="editInfo('realname', profile.realname)">修改</a></div></td>
+			</tr>
+			<tr>
+				<td class="table-label">出生年月日</td>
+				<td ng-bind="profile.births"></td>
+				<td><div class="link-group"><a href="javascript:;" data-toggle="modal" data-target="#birth">修改</a></div></td>
+			</tr>
+			<tr>
+				<td class="table-label">邮寄地址</td>
+				<td ng-bind="profile.address"></td>
+				<td><div class="link-group"><a href="javascript:;" data-toggle="modal" data-target="#address" ng-click="editInfo('address', profile.address)">修改</a></div></td>
+			</tr>
+			<tr>
+				<td class="table-label">居住地址</td>
+				<td ng-bind="profile.resides"></td>
+				<td><div class="link-group"><a href="javascript:;" data-toggle="modal" data-target="#reside">修改</a></div></td>
+			</tr>
+
+			<tr ng-repeat="field in extra_fields">
+				<td class="table-label" ng-bind="field.title"></td>
+				<td ng-bind="profile[field.field]"></td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td class="table-label">上次登录时间</td>
+				<td ng-bind="user.last_visit"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="table-label">上次登录IP</td>
+				<td ng-bind="user.lastip"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="table-label">注册时间</td>
+				<td ng-bind="user.joindate"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="table-label">到期时间</td>
+				<td >{$endtime}</td>
+				<td></td>
+			</tr>
+			{if $_W['isfounder'] && !user_is_vice_founder()}
+				<tr>
+					<td class="table-label">备注</td>
+					<td ng-bind="user.remark"></td>
+					<td><div class="link-group"><a href="javascript:;" data-toggle="modal" data-target="#remark" ng-click="editInfo('remark', user.remark)">修改</a></div></td>
+				</tr>
+			{/if}
+		</table>
+		{if permission_check_account_user('see_user_add_welcome_account')}
+		<table class="table we7-table table-hover table-form">
+			<col width="160px " />
+			<col />
+			<col width="100px" />
+			<tr>
+				<th class="text-left" colspan="3">用户首页设置</th>
+			</tr>
+			<tr>
+				<td class="table-label">登陆后跳转链接</td>
+				<td class="table-label">
+					<span ng-show="user_welcome_link">{{user_welcome_link.name}}</span>
+					<span ng-show="user_welcome_link.name == null">用户欢迎页</span>
+				</td>
+				<td>
+					<we7-modal-form type="'select'" label="'跳转链接'" key="'name'" value="user_welcome_link" on-confirm="saveSetting(formValue, 'welcome_link')" options="redirect_urls"></we7-modal-form>
+				</td>
+			</tr>
+		</table>
+		{/if}
+
+		{if permission_check_account_user('see_user_profile_account_num')}
+		<table class="table we7-table table-hover table-form">
+			<col />
+			<col />
+			<col />
+			<tr>
+				<th class="text-left" colspan="3">公众号使用权限</th>
+			</tr>
+			<tr>
+				<td class="table-label">可创建总数&nbsp;&nbsp;&nbsp;&nbsp;<strong ng-bind="account_num.maxaccount || 0"></strong></td>
+				<td class="table-label">已创建个数&nbsp;&nbsp;&nbsp;&nbsp;<strong ng-bind="account_num.account_num || 0"></strong></td>
+				<td class="table-label">可创建剩余个数&nbsp;&nbsp;&nbsp;&nbsp;<strong ng-bind="account_num.account_limit || 0"></strong></td>
+			</tr>
+		</table>
+		<table class="table we7-table table-hover table-form">
+			<col />
+			<col />
+			<col />
+			<tr>
+				<th class="text-left" colspan="3">小程序使用权限</th>
+			</tr>
+			<tr>
+				<td class="table-label">可创建总数&nbsp;&nbsp;&nbsp;&nbsp;<strong ng-bind="account_num.maxwxapp || 0"></strong></td>
+				<td class="table-label">已创建个数&nbsp;&nbsp;&nbsp;&nbsp;<strong ng-bind="account_num.wxapp_num || 0"></strong></td>
+				<td class="table-label">可创建剩余个数&nbsp;&nbsp;&nbsp;&nbsp;<strong ng-bind="account_num.wxapp_limit || 0"></strong></td>
+			</tr>
+		</table>
+		<table class="table we7-table table-hover table-form">
+			<col />
+			<col />
+			<col />
+			<tr>
+				<th class="text-left" colspan="3">PC使用权限</th>
+			</tr>
+			<tr>
+				<td class="table-label">可创建总数&nbsp;&nbsp;&nbsp;&nbsp;<strong ng-bind="account_num.maxwebapp || 0"></strong></td>
+				<td class="table-label">已创建个数&nbsp;&nbsp;&nbsp;&nbsp;<strong ng-bind="account_num.webapp_num || 0"></strong></td>
+				<td class="table-label">可创建剩余个数&nbsp;&nbsp;&nbsp;&nbsp;<strong ng-bind="account_num.webapp_limit || 0"></strong></td>
+			</tr>
+		</table>
+		<table class="table we7-table table-hover table-form">
+			<col />
+			<col />
+			<col />
+			<tr>
+				<th class="text-left" colspan="3">APP使用权限</th>
+			</tr>
+			<tr>
+				<td class="table-label">可创建总数&nbsp;&nbsp;&nbsp;&nbsp;<strong ng-bind="account_num.maxphoneapp || 0"></strong></td>
+				<td class="table-label">已创建个数&nbsp;&nbsp;&nbsp;&nbsp;<strong ng-bind="account_num.phoneapp_num || 0"></strong></td>
+				<td class="table-label">可创建剩余个数&nbsp;&nbsp;&nbsp;&nbsp;<strong ng-bind="account_num.phoneapp_limit || 0"></strong></td>
+			</tr>
+		</table>
+		{/if}
+		<div class="modal fade" id="realname" role="dialog">
+			<div class="we7-modal-dialog modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<div class="modal-title">修改真实姓名</div>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<input type="text" class="form-control" ng-model="userOriginal.realname">
+							<span class="help-block">请填写真实姓名</span>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="httpChange('realname')">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="birth" role="dialog">
+			<div class="we7-modal-dialog modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<div class="modal-title">修改出生年月日</div>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							{php echo tpl_fans_form('birth',$profile['birth']);}
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="httpChange('birth')">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="address" role="dialog">
+			<div class="we7-modal-dialog modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<div class="modal-title">修改邮寄地址</div>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<input class="form-control" type="text" ng-model="userOriginal.address">
+							<span class="help-block">请填写详细地址</span>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="httpChange('address')">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="reside" role="dialog">
+			<div class="we7-modal-dialog modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<div class="modal-title">修改居住地址</div>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							{php echo tpl_fans_form('reside',$profile['reside']);}
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="httpChange('reside')">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="qq" role="dialog">
+			<div class="we7-modal-dialog modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<div class="modal-title">修改QQ</div>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<input type="text" ng-model="userOriginal.qq" class="form-control" placeholder="qq" />
+							<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="httpChange('qq')">确定</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="remark" role="dialog">
+				<div class="we7-modal-dialog modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<div class="modal-title">修改备注</div>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<input type="text" ng-model="userOriginal.remark" class="form-control" placeholder="备注" />
+								<span class="help-block"></span>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" ng-click="httpChange('remark')" ng-click="editInfo('remark', user.remark)">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{/if}
+	<div class="modal fade" id="mobile" role="dialog">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">修改手机号</div>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="text" ng-model="userOriginal.mobile" class="form-control" placeholder="mobile" />
+						<span class="help-block"></span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="httpChange('mobile')">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	{if $_W['highest_role'] != 'founder'}
+	{if $user_type == PERSONAL_AUTH_TYPE}
+	<div class="modules_tpl">
+		<div class="panel we7-panel user-permission">
+			<div class="panel-heading">
+				<span>所属用户组:<span ng-bind="group_info.name"></span></span>
+			</div>
+			<div class="we7-group-show we7-padding"  ng-repeat="(packid, pack) in group_info.package_detail">
+				<div class="name">
+					{{pack.id == '-1' ? '所有服务' : pack.name}}
+				</div>
+				<div class="group-app-list" ng-if="pack.id != -1">
+					<div class="group-app-item" ng-repeat="module in pack.modules_all">
+						<img ng-src="{{module.logo}}" class="module-img" alt="">
+						<div class="info">
+							<div class="title text-over">
+								{{module.title}}
+							</div>
+							<div class="type-list">
+								<i ng-repeat="item in module.group_support | moduleInfo" ng-class="item.icon"></i>
+							</div>
+						</div>
+					</div>
+					<div class="group-app-item" ng-repeat="module in pack.templates">
+						<img ng-src="{{module.logo}}" class="template-img" alt="">
+						<div class="info">
+							<div class="title">
+								{{module.title}}
+							</div>
+							<div class="type-list">
+								<i class="wi wi-template"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="group-app-list" ng-if="pack.id == -1">
+					<div class="group-app-item">所有服务</div>
+				</div>
+				<a class="action" ng-if="pack.id != -1"></a>
+			</div>
+			<div class="we7-empty-block" ng-if="group_info.package_detail | we7IsEmpty">
+				无服务
+			</div>
+		</div>
+		{if empty($_W['isfounder'])}
+		<div class="panel we7-panel user-permission">
+			<div class="panel-heading">
+				<span>应用权限组</span>
+			</div>
+			<div class="we7-group-show we7-padding" ng-repeat="(packid, pack) in user_extra_groups">
+				<div class="name">
+					{{pack.name}}
+				</div>
+				<div class="group-app-list">
+					<div class="group-app-item" ng-repeat="module in pack.modules_all">
+						<img ng-src="{{module.logo}}" class="module-img" alt="">
+						<div class="info">
+							<div class="title text-over">
+								{{module.title}}
+							</div>
+							<div class="type-list">
+								<i ng-repeat="item in module.group_support | moduleInfo" ng-class="item.icon"></i>
+							</div>
+						</div>
+					</div>
+					<div class="group-app-item" ng-repeat="module in pack.templates">
+						<img ng-src="{{module.logo}}" class="template-img" alt="">
+						<div class="info">
+							<div class="title">
+								{{module.title}}
+							</div>
+							<div class="type-list">
+								<i class="wi wi-template"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a class="action"></a>
+			</div>
+			<div class="we7-empty-block" ng-if="!user_extra_groups">
+				无应用权限组
+			</div>
+		</div>
+		<div class="panel we7-panel user-permission">
+			<div class="panel-heading">
+				<span>附加权限</span>
+			</div>
+			<div class="we7-group-show we7-padding" ng-if="!(extend.modules | we7IsEmpty)">
+				<div class="name">
+					附加应用
+				</div>
+				<div class="group-app-list">
+					<div class="group-app-item" ng-repeat="module in extend.modules">
+						<img ng-src="{{module.logo}}" class="module-img" alt="">
+						<div class="info">
+							<div class="title text-over">
+								{{module.title}}
+							</div>
+							<div class="type-list">
+								<i ng-class="module.support | moduleInfo:'icon'" ></i>
+							</div>
+						</div>
+					</div>
+					<div class="group-app-item" ng-repeat="module in extend.templates">
+						<img ng-src="{{module.logo}}" class="template-img" alt="">
+						<div class="info">
+							<div class="title">
+								{{module.title}}
+							</div>
+							<div class="type-list">
+								<i class="wi wi-template"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a class="action"></a>
+			</div>
+
+			<div class="we7-empty-block" ng-if="extend.modules | we7IsEmpty">
+				无应用权限组
+			</div>
+		</div>
+		{/if}
+	</div>
+	{/if}
+	{if $user_type == PERSONAL_LIST_TYPE}
+	<div class="account">
+		<table class="table we7-table table-hover vertical-middle">
+			<col width="70px"/>
+			<col/>
+			<col width="100px"/>
+			<col width="240px"/>
+			<tr>
+				<th colspan="2" class="text-left">可使用的帐号</th>
+				<th>角色</th>
+				<th class="text-right">操作</th>
+			</tr>
+			<tr ng-repeat="wechat in wechats" ng-if="wechats">
+				<td class="text-left"><img ng-src="{{wechat.thumb}}" class="img-responsive account-img__list"/></td>
+				<td class="text-left">
+					<p ng-bind="wechat.name"></p>
+					<span class="color-gray">类型：
+						<span ng-if="wechat.level == 1">普通订阅号</span>
+						<span ng-if="wechat.level == 2">普通服务号</span>
+						<span ng-if="wechat.level == 3">认证订阅号</span>
+						<span ng-if="wechat.level == 4">认证服务号/认证媒体/政府订阅号</span>
+					</span>
+				</td>
+				<td>
+					<span ng-if="wechat.role == 'founder'">创始人</span>
+					<span ng-if="wechat.role == 'owner'">主管理员</span>
+					<span ng-if="wechat.role == 'manager'">管理员</span>
+					<span ng-if="wechat.role == 'operator'">操作员</span>
+					<span ng-if="wechat.role == 'clerk'">店员</span>
+				</td>
+				<td>
+					<div class="link-group" ng-if="wechat.role == 'owner'">
+						<a ng-href="./index.php?c=account&a=post&do=base&uniacid={{wechat.uniacid}}&acid={{wechat.acid}}&account_type={ACCOUNT_TYPE_OFFCIAL_NORMAL}" class="color-default">公众号设置</a>
+						<a ng-href="./index.php?c=account&a=post-user&do=edit&uniacid={{wechat.uniacid}}&acid={{wechat.acid}}&account_type={ACCOUNT_TYPE_OFFCIAL_NORMAL}" class="color-default">操作员设置</a>
+					</div>
+				</td>
+			</tr>
+
+			<tr ng-repeat="wxapp in wxapps" ng-if="wxapp">
+				<td class="text-left"><img ng-src="{{wxapp.thumb}}" class="img-responsive account-img__list"/></td>
+				<td class="text-left">
+					<p ng-bind="wxapp.name"></p>
+					<span class="color-gray">类型：
+						<span>小程序</span>
+					</span>
+				</td>
+				<td>
+					<span ng-if="wxapp.role == 'founder'">创始人</span>
+					
+					<span ng-if="wxapp.role == 'vice_founder'">副创始人</span>
+					
+					<span ng-if="wxapp.role == 'owner'">主管理员</span>
+					<span ng-if="wxapp.role == 'manager'">管理员</span>
+					<span ng-if="wxapp.role == 'operator'">操作员</span>
+					<span ng-if="wxapp.role == 'clerk'">店员</span>
+				</td>
+				<td>
+					<div class="link-group" ng-if="wxapp.role == 'owner'">
+						<a ng-href="./index.php?c=account&a=post&do=base&uniacid={{wxapp.uniacid}}&acid={{wxapp.acid}}&account_type={ACCOUNT_TYPE_APP_NORMAL}" class="color-default">小程序设置</a>
+						<a ng-href="./index.php?c=account&a=post-user&do=edit&uniacid={{wxapp.uniacid}}&acid={{wxapp.acid}}&account_type={ACCOUNT_TYPE_APP_NORMAL}" class="color-default">操作员设置</a>
+					</div>
+				</td>
+			</tr>
+			<tr ng-if="!wechats && !wxapps">
+				<td colspan="4" class="text-center">暂无数据</td>
+			</tr>
+		</table>
+	</div>
+	{/if}
+	{if $user_type == PERSONAL_LIMIT_TYPE}
+		<div class="account">
+			<table class="table we7-table ">
+				<col width="400px">
+				<col width="200px">
+				<tr>
+					<th class="user-dateline-box">
+						<span class="color-default">总计</span>用户有效期<i  data-trigger="hover" data-toggle="popover" data-placement="bottom"  data-html="true" data-content="</i>
+					用户有效期由<span class='color-red'>用户所在的用户组</span>、系统设置的<span class='color-red'>附加时间</span>、用户自己在<span class='color-red'>商城购买的用户组</span>构成。请单独修改对应选项" class='wi wi-info color-default'></i>
+					</th>
+					<th class="text-left">
+						<span class="color-default">{$total_timelimit}</span>
+					</th>
+					<th class="text-right">到期时间：{$endtime}</th>
+				</tr>
+				<tr>
+					<td class="color-gray">所属用户组：{$group_info['name']}</td>
+					<td class="text-left">
+						<span>{if $group_info['timelimit'] == 0 || !$group_info} 永久 {else} {$group_info['timelimit']} 天{/if}</span>
+					</td>
+					<td class="text-right"></td>
+				</tr>
+				<tr>
+					<td class="color-gray">附加权限</td>
+					<td class="text-left">{php echo max(0, $extra_limit_info['timelimit']) . '天'}</td>
+					<td class="text-right"></td>
+				</tr>
+			</table>
+		</div>
+	{/if}
+	{/if}
+</div>
+<script>
+require(['underscore'], function(){
+	angular.module('userProfile').value('config', {
+		user: {php echo !empty($user) ? json_encode($user) : 'null'},
+		profile: {php echo !empty($profile) ? json_encode($profile) : 'null'},
+		group_info: {php echo !empty($group_info) ? json_encode($group_info) : 'null'},
+		groups: {php echo !empty($groups) ? json_encode($groups) : 'null'},
+		wechats: {php echo !empty($account_detail['account']) ? json_encode($account_detail['account']) : 'null'},
+		wxapps: {php echo !empty($account_detail['wxapp']) ? json_encode($account_detail['wxapp']) : 'null'},
+		account_num: {php echo !empty($account_num) ? json_encode($account_num) : 'null'},
+		extra_fields: {php echo !empty($extra_fields) ? json_encode($extra_fields) : 'null'},
+		redirect_urls: {php echo !empty($redirect_urls) ? json_encode($redirect_urls) : 'null'},
+		user_extra_groups: {php echo !empty($user_extra_groups) ? json_encode($user_extra_groups) : 'null'},
+		extend: {php echo !empty($extend) ? json_encode($extend) : 'null'},
+		links: {
+			userPost: "{php echo url('user/profile/post')}",
+		},
+	});
+	angular.bootstrap($('#js-user-profile'), ['userProfile']);
+});
+</script>
+
+{if $user_type == PERSONAL_BIND_TYPE}
+<!--账号绑定-->
+<div class="bind-account" ng-controller="userBindCtrl" ng-cloak>
+	<table class="table we7-table table-hover table-form" >
+		<col width="140px " />
+		<col />
+		<col width="160px" />
+		<tr>
+			<th class="text-left" colspan="3">账号绑定</th>
+		</tr>
+		<tr>
+			<td class="table-label"><span class="wi wi-iphone color-default" style="font-size: 32px;"></span></td>
+			<td>{{bindmobile.third_nickname}}</td>
+			<td>
+				<div class="link-group">
+					<a href="javascript:;"  data-toggle="modal" data-target="#myModal" ng-if="bindmobile.third_type == 3">解绑手机号</a>
+					<a href="javascript:;"  data-toggle="modal" data-target="#myModal" ng-if="bindmobile.third_type != 3">绑定手机号</a>
+				</div>
+			</td>
+		</tr>
+		<tr ng-if="thirdlogin.qq.authstate == 1">
+			<td class="table-label"><span class="wi wi-qq color-default" style="font-size: 32px;"></span></td>
+			<td>{{bindqq.third_nickname}}</td>
+			<td>
+				<div class="link-group">
+					<a href="javascript:;" ng-if="bindqq.third_type == 1" ng-click="unbind(bindqq.third_type)">解除绑定</a>
+					<a href="{{login_urls.qq}}" ng-if="bindqq.third_type != 1">绑定QQ</a>
+				</div>
+			</td>
+		</tr>
+		<tr ng-if="thirdlogin.wechat.authstate == 1">
+			<td class="table-label"><span class="wi wi-account" style="font-size: 32px; color: #00bb00;"></span></td>
+			<td>{{bindwechat.third_nickname}}</td>
+			<td>
+				<div class="link-group">
+					<a href="javascript:;" ng-if="bindwechat.third_type == 2" ng-click="unbind(bindwechat.third_type)">解除绑定</a>
+					<a href="{{login_urls.wechat}}" ng-if="bindwechat.third_type != 2">绑定微信</a>
+				</div>
+			</td>
+		</tr>
+		<div class="modal fade basic" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">
+							<span ng-if="bindmobile.third_type != 3">绑定手机号</span>
+							<span ng-if="bindmobile.third_type == 3">解绑手机号</span>
+						</h4>
+					</div>
+					<div class="modal-body material-content clearfix">
+						<div class="form-group input-group">
+							<input type="text" class="form-control" placeholder="输入手机号" ng-model="mobile" ng-disabled="bindmobile">
+							<span class="input-group-btn">
+							<button class="btn btn-primary send-code" ng-disabled="isDisable" ng-click="sendMessage(bindmobile.third_nickname)">{{text}}</button>
+						</span>
+						</div>
+						<div class="form-group input-group">
+							<input type="text" ng-model='imagecode' class="form-control" placeholder="输入图形验证码">
+							<a href="javascript:;" class="input-group-btn imgverify" style="" ng-click="changeVerify()"><img ng-src="{{image}}" style="width: 127px; height: 32px;"/></a>
+						</div>
+						<div class="form-group">
+							<input type="text" ng-model='smscode' class="form-control" placeholder="输入手机验证码">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="mobileBind(bindmobile.third_nickname, 3)">确定</button>
+						<button type="button" class="btn smscodebtn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end  账号绑定-->
+	</table>
+</div>
+<script>
+	angular.module('userProfile').value('config',{
+		'bindqq': {php echo !empty($bind_qq) ? json_encode($bind_qq) : 'null'},
+	'bindwechat': {php echo !empty($bind_wechat) ? json_encode($bind_wechat) : 'null'},
+	'bindmobile': {php echo !empty($bind_mobile) ? json_encode($bind_mobile) : 'null'},
+	'login_urls': {php echo !empty($support_login_urls) ? json_encode($support_login_urls) : 'null'},
+	'thirdlogin' : {php echo !empty($_W['setting']['thirdlogin']) ? json_encode($_W['setting']['thirdlogin']) : 'null'},
+	'bind_sign': "{php echo !empty($bind_sign) ? $bind_sign : 'null'}",
+			'image' : "{php echo url('utility/code')}",
+			'links':{
+		'img_verify_link': "{php echo url('utility/code')}",
+				'send_code_link': "{php echo url('utility/verifycode')}",
+				'valid_mobile_link' : "{php echo url('user/profile/validate_mobile')}",
+				'bind_mobile_link' : "{php echo url('user/profile/bind_mobile')}",
+				'unbind_third_link' : "{php echo url('user/profile/unbind')}",
+	},
+	});
+	angular.bootstrap($('.bind-account'), ['userProfile']);
+</script>
+{/if}
+{template 'common/footer'}

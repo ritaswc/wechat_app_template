@@ -1,0 +1,62 @@
+{template 'common/header'}
+<ul class="we7-page-tab"></ul>
+<div class="alert we7-page-alert">
+	<p><i class="wi wi-info-sign"></i><strong class="color-dark">文件校验功能可以查看您丢失，修改，添加的文件 </strong></p>
+	<p><i class="wi wi-info-sign"></i><strong class="color-dark">注意: 使用文件校验的时候不会校验根目录下的&nbsp;&nbsp; /addons, &nbsp;&nbsp;/attachment, &nbsp;&nbsp; /data/tpl, &nbsp;&nbsp;/data/logs目录. </strong></p>
+	<p><i class="wi wi-info-sign"></i><strong class="color-dark">注意:‘被修改’和‘未知’的文件应当引起您的注意，必须确认文件是您自己修改</strong></p>
+</div>
+<div class="main">
+	<form action="" method="post" class="we7-form">
+		
+		{if $do == 'check'}
+		<label class="control-label">校验结果</label>
+		<div class="form-group">
+			<label class="col-xs-12 col-sm-2 col-md-2 col-lg-1 control-label" style="width: 180px;"><span class="text-danger">被修改文件: {$count_modify}</span><a href="javascript:" onclick="$('.modify').show();$('.lose').hide();$('.unknown').hide();">[查看]</a></label>
+			<label class="col-xs-12 col-sm-2 col-md-2 col-lg-1 control-label" style="width: 180px;"><span class="text-danger">丢失文件: {$count_lose}</span><a href="javascript:" onclick="$('.modify').hide();$('.lose').show();$('.unknown').hide()">[查看]</a></label>
+			<label class="col-xs-12 col-sm-2 col-md-2 col-lg-1 control-label" style="width: 180px;"><span class="text-info">未知文件: {$count_unknown}</span><a href="javascript:" onclick="$('.modify').hide();$('.lose').hide();$('.unknown').show();">[查看]</a></label>
+		</div>
+		<div class="modify">
+			<label class="control-label">被修改的文件</label>
+			{if empty($modify)}
+			<span class="form-control-static" >没有被被修改的文件</span>
+			{/if}
+			<div class="alert alert-info"  id="modify" style="{if empty($modify)}display:none;{/if};line-height:20px;max-height: 1000px;overflow: hidden;">
+				{loop $modify $modif}
+				<div><i class="fa fa-file-text"></i>&nbsp;&nbsp;&nbsp;{$modif}</div>
+				{/loop}
+			</div>
+			{if $count_modify > 50}<a href="javascript:" onclick="$('#modify').css({'height': 'auto', 'max-height':''});$(this).hide();" class="btn btn-primary">显示全部</a>{/if}
+		</div>
+		<div class="unknown">
+		<label class="control-label">未知的文件</label>
+			{if empty($unknown)}
+			<div class="form-control-static">没有未知的文件</div>
+			{/if}
+			<div class="alert alert-info" id="unknown" style="{if empty($unknown)}display:none;{/if}line-height:20px;max-height: 1000px;overflow: hidden;">
+				{loop $unknown $unknow}
+				<div><i class="fa fa-file-text"></i>&nbsp;&nbsp;&nbsp;{$unknow}</div>
+				{/loop}
+			</div>
+			{if $count_unknown > 50}<a href="javascript:" onclick="$('#unknown').css({'height': 'auto', 'max-height':''});$(this).hide();" class="btn btn-primary">显示全部</a>{/if}
+		</div>
+		<div class="lose">
+		<label class="control-label">丢失的文件</label>		
+			{if empty($lose)}
+			<div class="form-control-static">没有丢失的文件</div>
+			{/if}
+			<div class="alert alert-info" id="lose" style="{if empty($lose)}display:none;{/if}line-height:20px;max-height: 1000px;overflow: hidden">
+				{loop $lose $los}
+				<div><i class="fa fa-file-text"></i>&nbsp;&nbsp;&nbsp;{$los}</div>
+				{/loop}
+			</div>
+			{if $count_lose > 50}<a href="javascript:" onclick="$('#lose').css({'height': 'auto', 'max-height':''});$(this).hide();" class="btn btn-primary">显示全部</a>{/if}
+		</div>
+		{/if}
+		<div class="form-group" {if $do == 'check'}style="display: none;"{/if}>
+			<div class="col-sm-offset-2 col-sm-10">
+				<a href="{php echo url('system/filecheck/check')}" class="btn btn-primary">开始文件校验</a>
+			</div>
+		</div>
+	</form>
+</div>
+{template 'common/footer'}

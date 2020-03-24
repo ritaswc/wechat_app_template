@@ -1,0 +1,56 @@
+page {
+}
+
+.goods-comment {
+    padding: 0 24rpx;
+    background-color: #ffffff;
+}
+
+.goods-comment-title {
+    height: 80rpx;
+    font-size: 9pt;
+    color: #919191;
+}
+
+.comment-user-pic image {
+    width: 66rpx;
+    height: 66rpx;
+    border-radius: 33rpx;
+    margin-right: 20rpx;
+}
+
+.goods-comment-item {
+    border-top: 1rpx solid #e2e2e2;
+    padding-bottom: 36rpx;
+}
+
+.goods-comment-user {
+    margin-top: 32rpx;
+}
+
+.comment-user-name {
+    font-size: 11pt;
+    color: #353535;
+}
+
+.goods-comment-conent {
+    font-size: 10pt;
+    color: #353535;
+    margin: 20rpx 0;
+    line-height: 1.3;
+}
+
+.goods-comment-ginfo {
+    font-size: 9pt;
+    color: #919191;
+    margin-bottom: 16rpx;
+}
+
+.comment-pic-shell {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 4rpx;
+    margin-right: 16rpx;
+    overflow: hidden;
+    display: inline-block;
+}

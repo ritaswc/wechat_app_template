@@ -1,0 +1,13 @@
+<swiper autoplay="{{autoplay}}" bindchange="hide" circular="true" class="goods-image-swiper" duration="300" indicatorActiveColor="#ff5c5c" indicatorDots="true" interval="5000">
+    <swiper-item wx:for="{{goods.pic_list}}" wx:key="{{item.id}}">
+        <image bindtap="onGoodsImageClick" class="goods-image" data-index="{{index}}" src="{{item}}"></image>
+        <image bindtap="play" class="play {{img_hide}}" data-url="{{goods.video_url}}" src="{{__wxapp_img.store.video_play.url}}" wx:if="{{goods.video_url}}"></image>
+        <view class="flex-row flex-y-center share_commission" wx:if="{{__user_info.is_distributor==1&&__is_share_price&&goods.max_share_price>0&&goods.is_negotiable!=1&&goods.is_share}}">
+            <image class="img" src="{{__wxapp_img.store.share_commission.url}}"></image>
+            <view class="flex-col text_box">
+                <text class="text1">分销最高可赚</text>
+                <text class="text2">￥{{goods.max_share_price}}</text>
+            </view>
+        </view>
+    </swiper-item>
+</swiper>

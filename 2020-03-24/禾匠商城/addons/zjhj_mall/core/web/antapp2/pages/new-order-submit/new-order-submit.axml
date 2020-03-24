@@ -1,0 +1,338 @@
+<!--pages/new-order-submit/new-order-submit.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber" a:if="{{mch_list}}">
+        <view style="padding-bottom: 129rpx;" class="{{show_card?'no-scroll':''}} {{(show_shop || show_coupon_picker || show_card) ?'hidden':''}}">
+            <!--选择收货地址-->
+            <view class='block' a:if="{{mch_offline}}">
+                <view hover-class='none' onTap='goToAddress' class="address-picker flex-row">
+                    <block a:if="{{address}}">
+                        <view class="flex-grow-1">
+                            <view class="flex-row" style="margin-bottom: 20rpx">
+                                <view class="flex-grow-1">收货人：{{address.name}}</view>
+                                <view class="flex-grow-0">{{address.mobile}}</view>
+                            </view>
+                            <view style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">收货地址：{{address.province}}{{address.city}}{{address.district}}{{address.detail}}</view>
+                        </view>
+                    </block>
+                    <block a:else>
+                        <view class="flex-grow-1">
+                            <view style="color:#ff4544">请选择收货地址</view>
+                        </view>
+                    </block>
+                    <view class="flex-grow-0 flex-y-center">
+                        <image style="width: 12rpx; height: 22rpx;margin-left: 24rpx" src="{{__wxapp_img.store.jiantou_r.url}}" />
+                    </view>
+                </view>
+                <view class='address-bg-img flex-row'>
+                    <image src='{{__wxapp_img.pt.address_top.url}}'></image>
+                </view>
+            </view>
+
+            <!--选择付款方式-->
+            <view onTap="showPayment" class="flex-row flex-y-center" style="background: #fff;padding: 0 24rpx;height: 90rpx;margin-bottom: 20rpx;">
+                <view class="flex-grow-1">支付方式</view>
+                <view class="flex-grow-0" a:if='{{payment == 0}}'>线上支付</view>
+                <view class="flex-grow-0" a:if='{{payment == 2}}'>货到付款</view>
+                <view class="flex-grow-0" a:if='{{payment == 3}}'>账户余额支付</view>
+                <view class="flex-grow-0">
+                    <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx;margin-left: 12rpx"></image>
+                </view>
+            </view>
+
+            <block a:for="{{mch_list}}" a:for-item="item" a:for-index="index" a:key="{{item.id}}">
+                <view class="mch-item">
+                    <view class="mch-header">{{item.name}}</view>
+                    <view class="cart-list">
+                        <block a:for="{{item.goods_list}}" a:for-item="goods" a:for-index="i" a:if="{{item.show || i < 1}}" a:key="{{goods.id}}">
+                            <view class="flex-col ">
+                                <view class="cart-item border-bottom">
+                                    <view class='flex-row'>
+                                        <view class="flex-grow-0">
+                                            <image class="goods-pic" mode="aspectFill" src="{{goods.goods_pic}}" />
+                                        </view>
+                                        <view class="flex-grow-1 flex-col">
+                                            <view class="flex-grow-1">
+                                                <view class="goods-name">{{goods.goods_name}}</view>
+                                                <view class="attr-list">
+                                                    <view class="attr-item" a:for="{{goods.attr_list}}" a:for-item="attr" a:key="{{attr.id}}">
+                                                        {{attr.attr_group_name}}:{{attr.attr_name}}
+                                                    </view>
+                                                </view>
+                                            </view>
+                                            <view class="flex-grow-0 flex-row">
+                                                <view class="flex-grow-1 num">×{{goods.num}}</view>
+                                                <view class="flex-grow-0 price" style='text-decoration:line-through' a:if="{{goods.is_level == 1}}">￥:{{goods.price}}</view>
+                                                <view class="flex-grow-0 price" a:else>￥:{{goods.price}}</view>
+                                            </view>
+                                        </view>
+                                    </view>
+                                    <view a:if="{{goods.is_level == 1}}" style='color:#ff4544;text-align:right;margin-bottom:22rpx;'>会员折扣价：￥{{goods.level_price}}</view>
+                                </view>
+                                <view class='goods-intrgral flex-row' a:if="{{goods.give > 0}}">
+                                    <view class='flex-y-center'> 订单完成赠送</view>
+                                    <view class='flex-y-center' style='color:#ff4544'>{{goods.give}}</view>
+                                    <view class='flex-y-center'>积分</view>
+                                </view>
+                            </view>
+                        </block>
+                        <view class='show-more flex-x-center' a:if="{{item.goods_list.length>1}}" onTap='showMore' data-index="{{index}}">
+                            <block a:if="{{item.show}}">
+                                <view class='flex-row flex-y-center'>
+                                    <view class='flex-grow-0'>点击收起</view>
+                                    <image class='show-more-img flex-grow-0' style='transform:rotate(180deg);' src='{{__wxapp_img.shop.down.url}}'></image>
+                                </view>
+                            </block>
+                            <block a:else>
+                                <view class='flex-row flex-y-center'>
+                                    <view class='flex-grow-0'>展开另外
+                                        <text style="color:#ff4544;">{{item.show_length}}</text>
+                                    </view>
+                                    <image class='show-more-img flex-grow-0' src='{{__wxapp_img.shop.down.url}}'></image>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                    <!--配送方式-->
+                    <view style='margin-bottom:20rpx;'>
+                        <block a:if="{{item.mch_id == 0}}">
+                            <block a:if="{{item.send_type==0}}">
+                                <view class="flex flex-row flex-y-center" style='background-color:#fff;padding:0 24rpx;height:104rpx;'>
+                                    <view class="flex-grow-1">配送方式</view>
+                                    <view class="flex-grow-0 flex-row">
+                                        <view class='flex-y-center flex-x-center send-type {{item.offline == 0 ?"active":""}}' data-index="{{index}}" data-offline="0" onTap='getOffline'>
+                                            <view>快递配送</view>
+                                        </view>
+                                        <view class='flex-y-center flex-x-center send-type {{item.offline == 1 ?"active":""}}' data-index="{{index}}" data-offline="1" onTap='getOffline'>
+                                            <view>到店自提</view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </block>
+                        </block>
+                        <block a:else>
+                            <view class="flex flex-row flex-y-center" style='background-color:#fff;padding:0 24rpx;height:104rpx;'>
+                                <view class="flex-grow-1">配送方式</view>
+                                <view class="flex-grow-0 flex-row">
+                                    <view class='flex-y-center flex-x-center' data-index="{{index}}" data-offline="0">
+                                        <view>快递配送</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                        <!--自提信息-->
+                        <block a:if="{{item.offline==1}}">
+                            <view class='block'>
+                                <view class="flex-row flex-y-center border-bottom" style="padding: 0 24rpx;height: 100rpx;">
+                                    <view class="flex-grow-1" style="padding-left: 8rpx;border-right:2rpx solid #e3e3e3;">
+                                        <input style="width: 300rpx" placeholder='请输入联系人' data-index="{{index}}" value="{{item.offline_name}}" onInput='KeyName'></input>
+                                    </view>
+                                    <view class="flex-grow-1" style='margin-left:32rpx;'>
+                                        <input style="width: 300rpx;" placeholder='请输入联系电话' data-index="{{index}}" value="{{item.offline_mobile}}" onInput='KeyMobile'></input>
+                                    </view>
+                                </view>
+                                <view class="flex-row border-bottom" style="background: #fff;padding: 24rpx" onTap='{{item.shop_list.length>1?"showShop":""}}' data-index="{{index}}">
+                                    <view class='flex-grow-0' style='width:160rpx;'>
+                                        <view>门店信息</view>
+                                    </view>
+                                    <block a:if="{{item.shop_list.length>=1}}">
+                                        <view class="flex-grow-1" style='text-align:right'>
+                                            <view>{{item.shop.name}}</view>
+                                            <view>{{item.shop.mobile}}</view>
+                                            <view>{{item.shop.address}}</view>
+                                        </view>
+                                        <view class="flex-grow-0 flex-y-center">
+                                            <view a:if="{{!item.shop}}">请选择门店</view>
+                                            <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx;margin-left: 20rpx"></image>
+                                        </view>
+                                    </block>
+                                    <view class='flex-grow-0 flex-y-center' a:else>暂无门店</view>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                    <view style='margin-bottom:20rpx;'>
+                        <!--选择优惠券-->
+                        <view a:if="{{item.coupon_list && item.coupon_list.length > 0}}" onTap="showCouponPicker" class="flex-row flex-y-center border-bottom" style="background: #fff;padding: 0 24rpx;height: 90rpx;" data-index="{{index}}">
+                            <view class="flex-grow-1">优惠券</view>
+                            <view class="flex-grow-0">
+                                <view a:if="{{!item.coupon_list||item.coupon_list.length==0}}" style="color: #888">目前无可用优惠券</view>
+                                <block a:else>
+                                    <view a:if="{{item.picker_coupon && item.picker_coupon.sub_price > 0}}" style="color: #ff4544">-{{item.picker_coupon.sub_price}}元</view>
+                                    <view a:else style="color: #ff4544">有{{item.coupon_list.length}}张优惠券可以使用</view>
+                                </block>
+                            </view>
+                            <view class="flex-grow-0">
+                                <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx;margin-left: 12rpx"></image>
+                            </view>
+                        </view>
+                        <!--使用积分-->
+                        <view class="flex-row flex-y-center border-bottom" style="background: #fff;padding: 0 24rpx;height: 90rpx;" a:if="{{item.integral && item.integral.forehead_integral > 0 && integral && integral.forehead_integral > 0}}">
+                            <view class="flex-grow-1 flex-y-center">
+                                <view class='flex-y-center'>使用{{integral.forehead_integral}}积分抵扣</view>
+                                <view class='flex-y-center' style='color:#ff4544'>{{integral.forehead}}</view>
+                                <view class='flex-y-center'>元</view>
+                                <view class="flex-y-center" onTap='integration'>
+                                    <image src="{{__wxapp_img.store.ntegration.url}}" style="width: 36rpx;height: 36rpx;margin-left: 12rpx"></image>
+                                </view>
+                            </view>
+                            <view class="flex-grow-0 flex-y-center integral-switch" data-index='{{integral_radio}}'>
+                                <switch class='flex-y-center' style='height:44rpx' checked onChange="integralSwitchChange" />
+                            </view>
+                        </view>
+                    </view>
+                    <!--运费-->
+                    <view class="flex-row flex-y-center border-bottom" style="background: #fff;padding: 0 24rpx;height: 90rpx;margin-bottom:20rpx;">
+                        <view class="flex-grow-1">运费</view>
+                        <view class="flex-grow-0">
+                            <block a:if="{{item.offline==0}}">
+                                <block a:if='{{address}}'>
+                                    <view style="color:#ff4544">￥{{item.express_price}}</view>
+                                </block>
+                                <block a:else>
+                                    <view onTap='goToAddress' style="color:#888">请先选择收货地址</view>
+                                </block>
+                            </block>
+
+                            <block a:elif="{{item.offline==1}}">
+                                <view style="color:#ff4544">￥0</view>
+                            </block>
+                        </view>
+                    </view>
+                    <!--订单留言-->
+                    <view class="flex flex-row flex-y-center border-bottom" style="background: #fff;padding: 0 24rpx;height: 90rpx" a:if='{{(item.form.is_form == 0 && item.mch_id == 0) || item.mch_id > 0}}'>
+                        <view class="flex-grow-0">买家留言</view>
+                        <view class="flex-grow-0" style="padding-left: 24rpx">
+                            <input name="content" data-index="{{index}}" onInput="bindContentInput" placeholder="请填写备注" value="{{item.content}}" style='width:100%;' />
+                        </view>
+                    </view>
+                    <!--自定义表单-->
+                    <block a:if='{{item.mch_id == 0 && item.form && item.form.is_form == 1 && item.form.list.length>0}}'>
+                        <import src="/components/order/order-submit/form/form" />
+                        <template is="form" data="{{item: item,index:index,__wxapp_img:__wxapp_img}}" />
+                    </block>
+                </view>
+            </block>
+
+            <block a:if="{{is_area == 1}}">
+                <view class="bottom-bar flex-row">
+                    <view class="is_area">
+                        <view>所选地区自营商品暂时无货</view>
+                    </view>
+                </view>
+            </block>
+            <block a:else>
+                <view class="bottom-bar flex-row">
+                    <view class="flex-y-center flex-grow-1" style="padding: 0 24rpx">
+                        <view class="flex-grow-1" style="color:#ff4544 ">
+                            总计：￥{{new_total_price}}
+                        </view>
+
+                    </view>
+                    <view class="flex-y-center flex-grow-0 flex-x-center submit-btn" style='background-color:#ccc;' a:if="{{offer_rule && offer_rule.is_allowed == 1}}">
+                        <view style="white-space:normal;">{{offer_rule.msg}}</view>
+                    </view>
+                    <view onTap='orderSubmit' class='flex-x-center flex-y-center flex-row submit-btn' a:else>
+                        <view>提交</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <!-- 优惠券选择 -->
+        <view class="coupon-picker" a:if="{{show_coupon_picker}}">
+            <scroll-view class="coupon-list" scroll-y="true" style="height: 100%">
+                <view style="color: #888;font-size: 9pt;margin-bottom: 20rpx;line-height: 1.35">
+                    注：优惠券只能抵消商品金额，不能抵消运费，商品金额最多优惠到0.01元
+                </view>
+                <view onTap="pickCoupon" data-index="-1" style="height: 80rpx;margin-bottom: 24rpx;color: #888;border: 1rpx solid #e3e3e3;border-radius: 10rpx" class="flex-y-center flex-x-center">不使用优惠券
+                </view>
+                <view onTap="pickCoupon" data-index="{{index}}" class="coupon-item coupon-status-{{item.status}} {{picker_coupon&&(item.user_coupon_id==picker_coupon.user_coupon_id)?'active':''}}" a:for="{{coupon_list}}" a:key="{{item.id}}">
+                    <image class="coupon-bg" src="/images/img-coupon-bg-{{item.status==0?0:1}}.png"></image>
+                    <image a:if="{{item.status!=0}}" class="coupon-status-icon" src="/images/img-coupon-status-icon-{{item.status}}.png"></image>
+                    <view class="flex-row" style="height: 100%;overflow: hidden">
+                        <view class="flex-grow-0 flex-col flex-y-center flex-x-center coupon-left">
+                            <view class="flex-row flex-y-bottom">
+                                <view style="font-size: 9pt">￥</view>
+                                <view style="font-size: {{item.sub_price.length>4?'13':'19'}}pt;line-height: .9">
+                                    {{item.sub_price}}
+                                </view>
+                            </view>
+                            <view style="font-size: 8pt;margin-top: 10rpx">{{item.min_price_desc}}</view>
+                        </view>
+                        <view class="flex-grow-1 flex-y-center coupon-right">
+                            <view style="width: 100%">
+                                <view class="flex-row flex-y-center mb-10">
+                                    <view class="flex-grow-1" style="font-size: 13pt;font-weight: bold">{{item.event_desc}}
+                                    </view>
+                                    <view class="flex-grow-0" style="font-size: 9pt"></view>
+                                </view>
+                                <view style="font-size: 8pt;color: #888">{{item.begin_time}} ~ {{item.end_time}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        <!-- 优惠券选择 -->
+        <!--选择自提地址  开始-->
+        <view class="coupon-picker" a:if="{{show_shop}}" style='background-color:#f7f7f7;'>
+            <scroll-view class="coupon-list" scroll-y="true" style="height: 100%;padding:0;">
+                <view class='shop-block flex-y-center'>当前地址</view>
+                <view class='shop-address flex-row flex-y-center'>
+                    <view class='flex-grow-1'>{{location}}</view>
+                    <view class='flex-grow-0 flex-y-center' onTap='dingwei'>
+                        <image src='{{__wxapp_img.shop.dingwei.url}}' style='width:32rpx;height:32rpx;margin-right:2rpx;'></image>
+                        <text style='color:#2495ff'>手动定位</text>
+                    </view>
+                </view>
+                <view class='shop-block flex-y-center'>门店列表（仅展示您最近的30家门店）</view>
+                <view class="flex-row address-picker" style='margin:0;' onTap='pickShop' a:for='{{shop_list}}' data-index="{{index}}" a:key="{{item.id}}">
+                    <view class="flex-grow-0 flex-y-center">
+                        <image lazy-load="true" mode='aspectFit' src="{{item.id==shop.id?'/images/icon-shop-checked.png':'/images/icon-shop-un.png'}}" style="width: 40rpx;height: 40rpx;margin-right: 20rpx"></image>
+                    </view>
+                    <view class="flex-grow-1">
+                        <view class="flex-row" style="margin-bottom: 20rpx">
+                            <view class="flex-grow-1" style='font-weight:bold;{{item.id==shop.id?"color:#ff4544":""}}'>
+                                {{item.name}}
+                            </view>
+                            <view class='flex-grow-0' a:if='{{item.distance!=-1}}'>{{item.distance}}</view>
+                        </view>
+                        <view class="flex-row" style="margin-bottom: 20rpx">
+                            <view class="flex-grow-1">电话：{{item.mobile}}</view>
+                        </view>
+                        <view>地址：{{item.address}}</view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        <!--选择自提地址  结束-->
+        <view a:if='{{show_payment}}' class='payment flex-x-center flex-y-center'>
+            <view class='payment-modal'>
+                <view class='pay-modal'>
+                    <view class='pay-head flex-x-center flex-y-center'>
+                        <view>支付方式</view>
+                        <view class='pay-x' onTap='payClose'>
+                            <image src='{{__wxapp_img.store.close.url}}'></image>
+                        </view>
+                    </view>
+                    <view style='border-top:1rpx solid #e3e3e3' a:if="{{pay_type_list.length > 0}}">
+                        <block a:for='{{pay_type_list}}' a:key="{{item.id}}">
+                            <view class='pay-block flex-row flex-y-center' onTap='payPicker' data-index='{{item.payment}}'>
+                                <view class='flex-grow-0'>
+                                    <image src='{{item.icon}}' style='width:56rpx;height:56rpx;margin-right:32rpx;'></image>
+                                </view>
+                                <view class='flex-grow-1 {{payment==item.payment?"red":""}}'>{{item.name}}</view>
+                                <view class='flex-grow-0' a:if='{{payment==item.payment}}'>
+                                    <image src='{{__wxapp_img.store.pay_right.url}}' style='width:40rpx;height:40rpx;margin-right:18rpx;'></image>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <include src="/components/get-card/get-card.axml" />
+    </view>
+    <include src="/components/footer/footer" />
+</view>

@@ -1,0 +1,17 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="article-list">
+            <navigator class="flex-row article-item" url="/pages/article-detail/article-detail?id={{item.id}}" wx:for="{{article_list}}" wx:key="{{index}}">
+                <view class="flex-grow-1 flex-y-center title">
+                    {{item.title}}
+                </view>
+                <view class="flex-grow-0 flex-y-center">
+                    <image class="pointer" src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

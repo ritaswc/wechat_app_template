@@ -1,0 +1,23 @@
+{
+    "name": "wi1dcard/yii2-hejiang-storage",
+    "description": "A file uploading extension for Yii2, saving files to object storage service.",
+    "type": "library",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.5",
+        "qiniu/php-sdk": "^7.2",
+        "aliyuncs/oss-sdk-php": "^2.3",
+        "qcloud/cos-sdk-v5": "^1.0"
+    },
+    "authors": [
+        {
+            "name": "wi1dcard",
+            "email": "yokka47@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Hejiang\\Storage\\": "lib/"
+        }
+    }
+}

@@ -1,0 +1,469 @@
+{php define('MUI', true);}
+{template 'common/header'}
+<div class="mui-content mc-profile activity-exchange">
+		<div class="mui-table nav">
+			<a href="javascript:;" class="mui-table-cell mui-active">
+				完善资料
+			</a>
+			<a href="{php echo url('mc/profile', array('name' => 'fans', 'uniacid' => $_W['uniacid']))}" class="mui-table-cell">
+				个人信息
+			</a>
+		</div>
+		<form action="" method="post" enctype="multipart/form-data">
+				<div class="form-group">
+				<div style="padding:0 10px;" class="mui-mt15">
+					<div class="alert-warning" style="padding:10px">
+						<p><span><i class="fa fa-info-circle"></i>&nbsp;&nbsp;</span>当前系统须完善以下资料才能继续操作 {if !empty($pre)}- {$pre}{/if}</p>
+					</div>
+				</div></div>
+				<div class="mui-input-group mui-mt15">
+					{if isset($profile['avatar'])}
+						{php echo tpl_app_form_field_avatar('avatar', $profile['avatar']);}
+					{/if}
+					{if isset($profile['nickname'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['nickname']['title']}</label>
+							{php echo tpl_app_fans_form('nickname', $profile['nickname'], $system_fields['nickname']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['realname'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['realname']['title']}</label>
+							{php echo tpl_app_fans_form('realname', $profile['realname'], $system_fields['realname']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['gender'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['gender']['title']}</label>
+							{php echo tpl_app_fans_form('gender', $profile['gender'], $system_fields['gender']['title']);}	
+						</div>
+					{/if}
+					{if isset($profile['birthyear'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['birthyear']['title']}</label>
+								{php echo tpl_app_fans_form('birth', array('year' => $profile['birthyear'], 'month' => $profile['birthmonth'], 'day' => $profile['birthday']), $system_fields['birthyear']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['resideprovince'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['resideprovince']['title']}</label>
+								{php echo tpl_app_fans_form('reside', array('province' => $profile['resideprovince'], 'city' => $profile['residecity'], 'district' => $profile['residedist']), $system_fields['resideprovince']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['address'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['address']['title']}</label>
+								{php echo tpl_app_fans_form('address',$profile['address'], $system_fields['address']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['mobile'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['mobile']['title']}</label>
+									{if !empty($profile['mobile'])}
+									<input type="text" readonly name="mobile" value="{$profile['mobile']}">
+									{else}
+									{php echo tpl_app_fans_form('mobile',$profile['mobile'], $system_fields['mobile']['title']);}
+									{/if}
+						</div>
+					{/if}
+					{if isset($profile['qq'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['qq']['title']}</label>
+								{php echo tpl_app_fans_form('qq', $profile['qq'], $system_fields['qq']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['email'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['email']['title']}</label>
+								{if !empty($profile['email'])} 
+									<input type="text" readonly name="email" value="{$profile['email']}">
+								{else}
+									{php echo tpl_app_fans_form('email',$profile['email'], $system_fields['email']['title']);}
+								{/if}
+						</div>
+					{/if}
+					{if isset($profile['telephone'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['telephone']['title']}</label>
+								{php echo tpl_app_fans_form('telephone', $profile['telephone'], $system_fields['telephone']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['msn'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['msn']['title']}</label>
+								{php echo tpl_app_fans_form('msn', $profile['msn'], $system_fields['msn']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['taobao'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['taobao']['title']}</label>
+								{php echo tpl_app_fans_form('taobao', $profile['taobao'], $system_fields['taobao']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['alipay'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['alipay']['title']}</label>
+								{php echo tpl_app_fans_form('alipay', $profile['alipay'], $system_fields['alipay']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['studentid'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['studentid']['title']}</label>
+								{php echo tpl_app_fans_form('studentid', $profile['studentid'], $system_fields['studentid']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['graduateschool'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['graduateschool']['title']}</label>
+								{php echo tpl_app_fans_form('graduateschool', $profile['graduateschool'], $system_fields['graduateschool']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['education'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['education']['title']}</label>
+								{php echo tpl_app_fans_form('education', $profile['education'],$system_fields['education']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['company'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['company']['title']}</label>
+								{php echo tpl_app_fans_form('company', $profile['company'], $system_fields['company']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['occupation'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['occupation']['title']}</label>
+								{php echo tpl_app_fans_form('occupation', $profile['occupation'], $system_fields['occupation']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['position'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['position']['title']}</label>
+								{php echo tpl_app_fans_form('position', $profile['position'], $system_fields['position']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['revenue'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['revenue']['title']}</label>
+								{php echo tpl_app_fans_form('revenue', $profile['revenue'], $system_fields['revenue']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['constellation'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['constellation']['title']}</label>
+								{php echo tpl_app_fans_form('constellation', $profile['constellation'], $system_fields['constellation']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['zodiac'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['zodiac']['title']}</label>
+								{php echo tpl_app_fans_form('zodiac', $profile['zodiac'], $system_fields['zodiac']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['height'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['height']['title']}</label>
+								{php echo tpl_app_fans_form('height', $profile['height'], $system_fields['height']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['weight'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['weight']['title']}</label>
+								{php echo tpl_app_fans_form('weight', $profile['weight'], $system_fields['weight']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['bloodtype'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['bloodtype']['title']}</label>
+								{php echo tpl_app_fans_form('bloodtype', $profile['bloodtype'], $system_fields['bloodtype']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['idcard'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['idcard']['title']}</label>
+								{php echo tpl_app_fans_form('idcard', $profile['idcard'], $system_fields['idcard']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['zipcode'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['zipcode']['title']}</label>
+								{php echo tpl_app_fans_form('zipcode',$profile['zipcode'], $system_fields['zipcode']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['site'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['site']['title']}</label>
+								{php echo tpl_app_fans_form('site', $profile['site'], $system_fields['site']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['affectivestatus'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['affectivestatus']['title']}</label>
+								{php echo tpl_app_fans_form('affectivestatus', $profile['affectivestatus'], $system_fields['affectivestatus']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['lookingfor'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['lookingfor']['title']}</label>
+								{php echo tpl_app_fans_form('lookingfor', $profile['lookingfor'], $system_fields['lookingfor']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['bio'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['bio']['title']}</label>
+								{php echo tpl_app_fans_form('bio', $profile['bio'], $system_fields['bio']['title']);}
+						</div>
+					{/if}
+					{if isset($profile['interest'])}
+						<div class="mui-input-row">
+							<label>{$system_fields['interest']['title']}</label>
+								{php echo tpl_app_fans_form('interest', $profile['interest'], $system_fields['interest']['title']);}
+						</div>
+					{/if}
+				</div>
+			<div class="mui-content-padded">
+				<button type="submit" class="mui-btn mui-btn-success mui-btn-block" name="submit" value="提交">提交</button>
+				<input type="hidden" name="token" value="{$_W['token']}" />
+			</div>
+	</form>
+</div>
+
+<script>
+	$(function(){
+		$('form').submit(function(){
+			var msg = '请认真填写您的';
+{if isset($profile['avatar'])}
+			if($(this).find('input[name="avatart"]').val() == ''){
+				util.message(msg+'{$titles['avatart']}');
+				return false;
+			}
+{/if}
+{if isset($profile['nickname'])}
+			if($(this).find('input[name="nickname"]').val() == ''){
+				util.message(msg+'{$titles['nickname']}');
+				return false;
+			}
+{/if}
+{if isset($profile['realname'])}
+			if($(this).find('input[name="realname"]').val() == ''){
+				util.message(msg+'{$titles['realname']}');
+				return false;
+			}
+{/if}
+{if isset($profile['gender'])}
+			if($(this).find('input[name="gender"]').val() == ''){
+				util.message(msg+'{$titles['gender']}');
+				return false;
+			}
+{/if}
+{if isset($profile['birthyear'])}
+			if($(this).find('select[name="birth[year]"]').val() == ''){
+				util.message(msg+'{$titles['birth']}'+"年份");
+				return false;
+			}
+			if($(this).find('select[name="birth[month]"]').val() == ''){
+				util.message(msg+'{$titles['birth']}'+"月份");
+				return false;
+			}
+			if($(this).find('select[name="birth[day]"]').val() == '0'){
+				util.message(msg+'{$titles['birth']}'+"日期");
+				return false;
+			}
+{/if}
+{if isset($profile['resideprovince'])}
+			if($(this).find('select[name="reside[province]"]').val() == ''){
+				util.message(msg+'{$titles['reside']}'+"省份");
+				return false;
+			}
+			if($(this).find('select[name="reside[city]"]').val() == ''){
+				util.message(msg+'{$titles['reside']}'+"市");
+				return false;
+			}
+			if($(this).find('select[name="reside[district]"]').val() == ''){
+				util.message(msg+'{$titles['reside']}'+"县区");
+				return false;
+			}
+{/if}
+{if isset($profile['address'])}
+			if($(this).find('input[name="address"]').val() == ''){
+				util.message(msg+'{$titles['address']}');
+				return false;
+			}
+{/if}
+{if isset($profile['mobile'])}
+			if($(this).find('input[name="mobile"]').val() == ''){
+				util.message(msg+'{$titles['mobile']}');
+				return false;
+			}
+{/if}
+{if isset($profile['qq'])}
+			if($(this).find('input[name="qq"]').val() == ''){
+				util.message(msg+'{$titles['qq']}');
+				return false;
+			}
+{/if}
+{if isset($profile['email'])}
+			if($(this).find('input[name="email"]').val() == ''){
+				util.message(msg+'{$titles['email']}');
+				return false;
+			}
+{/if}
+{if isset($profile['telephone'])}
+			if($(this).find('input[name="telephone"]').val() == ''){
+				util.message(msg+'{$titles['telephone']}');
+				return false;
+			}
+{/if}
+{if isset($profile['msn'])}
+			if($(this).find('input[name="msn"]').val() == ''){
+				util.message(msg+'{$titles['msn']}');
+				return false;
+			}
+{/if}
+{if isset($profile['taobao'])}
+			if($(this).find('input[name="taobao"]').val() == ''){
+				util.message(msg+'{$titles['taobao']}');
+				return false;
+			}
+{/if}
+{if isset($profile['alipay'])}
+			if($(this).find('input[name="alipay"]').val() == ''){
+				util.message(msg+'{$titles['alipay']}');
+				return false;
+			}
+{/if}
+{if isset($profile['studentid'])}
+			if($(this).find('input[name="studentid"]').val() == ''){
+				util.message(msg+'{$titles['studentid']}');
+				return false;
+			}
+{/if}
+{if isset($profile['grade'])}
+			if($(this).find('input[name="grade"]').val() == ''){
+				util.message(msg+'{$titles['grade']}');
+				return false;
+			}
+{/if}
+{if isset($profile['graduateschool'])}
+			if($(this).find('input[name="graduateschool"]').val() == ''){
+				util.message(msg+'{$titles['graduateschool']}');
+				return false;
+			}
+{/if}
+{if isset($profile['education'])}
+			if($(this).find('input[name="education"]').val() == ''){
+				util.message(msg+'{$titles['education']}');
+				return false;
+			}
+{/if}
+{if isset($profile['company'])}
+			if($(this).find('input[name="company"]').val() == ''){
+				util.message(msg+'{$titles['company']}');
+				return false;
+			}
+{/if}
+{if isset($profile['occupation'])}
+			if($(this).find('input[name="occupation"]').val() == ''){
+				util.message(msg+'{$titles['occupation']}');
+				return false;
+			}
+{/if}
+{if isset($profile['position'])}
+			if($(this).find('input[name="position"]').val() == ''){
+				util.message(msg+'{$titles['position']}');
+				return false;
+			}
+{/if}
+{if isset($profile['revenue'])}
+			var revenue = parseFloat($(this).find('input[name="revenue"]').val())
+			if(isNaN(revenue)){
+				util.message(msg+'{$titles['revenue']}');
+				return false;
+			}
+{/if}
+{if isset($profile['constellation'])}
+			if($(this).find('input[name="constellation"]').val() == ''){
+				util.message(msg+'{$titles['constellation']}');
+				return false;
+			}
+{/if}
+{if isset($profile['zodiac'])}
+			if($(this).find('input[name="zodiac"]').val() == ''){
+				util.message(msg+'{$titles['zodiac']}');
+				return false;
+			}
+{/if}
+{if isset($profile['nationality'])}
+			if($(this).find('input[name="nationality"]').val() == ''){
+				util.message(msg+'{$titles['nationality']}');
+				return false;
+			}
+{/if}
+{if isset($profile['height'])}
+			var height = parseFloat($(this).find('input[name="height"]').val())
+			if(isNaN(height)){
+				util.message(msg+'{$titles['height']}');
+				return false;
+			}
+{/if}
+{if isset($profile['weight'])}
+			var weight = parseFloat($(this).find('input[name="weight"]').val())
+			if(isNaN(weight)){
+				util.message(msg+'{$titles['weight']}');
+				return false;
+			}
+{/if}
+{if isset($profile['bloodtype'])}
+			if($(this).find('input[name="bloodtype"]').val() == ''){
+				util.message(msg+'{$titles['bloodtype']}');
+				return false;
+			}
+{/if}
+{if isset($profile['idcard'])}
+			if(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test($(this).find('input[name="idcard"]').val()) === false) {
+				util.message(msg+'{$titles['idcard']}');
+				return false;
+			}
+{/if}
+{if isset($profile['zipcode'])}
+			if(/^\d{6}$/.test($(this).find('input[name="zipcode"]').val()) === false) {
+				util.message(msg+'{$titles['zipcode']}');
+				return false;
+			}
+{/if}
+{if isset($profile['site'])}
+			if($(this).find('input[name="site"]').val() == ''){
+				util.message(msg+'{$titles['site']}');
+				return false;
+			}
+{/if}
+{if isset($profile['affectivestatus'])}
+			if($(this).find('input[name="affectivestatus"]').val() == ''){
+				util.message(msg+'{$titles['affectivestatus']}');
+				return false;
+			}
+{/if}
+{if isset($profile['lookingfor'])}
+			if($(this).find('input[name="lookingfor"]').val() == ''){
+				util.message(msg+'{$titles['lookingfor']}');
+				return false;
+			}
+{/if}
+{if isset($profile['bio'])}
+			if($(this).find('textarea[name="bio"]').val() == ''){
+				util.message(msg+'{$titles['bio']}');
+				return false;
+			}
+{/if}
+{if isset($profile['interest'])}
+			if($(this).find('textarea[name="interest"]').val() == ''){
+				util.message(msg+'{$titles['interest']}');
+				return false;
+			}
+{/if}
+			return true;
+		});
+	});
+</script>
+
+{template 'common/footer'}

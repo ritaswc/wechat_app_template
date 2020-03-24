@@ -1,0 +1,26 @@
+<view style="background:#f7f7f7;padding-top:35rpx" wx:if="{{goods_list!=undefault&&goods_list!=''&&tab_detail=='active'}}">
+    <view class="recommend">
+        <view class="recommend-left"></view>
+        <image src="{{__wxapp_img.store.good_recommend.url}}"></image>
+        <text class="recommend-text">相关推荐</text>
+        <view class="recommend-right"></view>
+    </view>
+    <view style="padding-top:32rpx">
+        <view class="goods-list">
+            <navigator class="goods-item {{index%2?'pic-right':'pic-left'}}" openType="navigate" style="font-size:11pt;" url="/pages/goods/goods?id={{item.id}}" wx:for="{{goods_list}}" wx:key="{{item.id}}">
+                <image class="goods-pic" mode="aspectFill" src="{{item.pic_url}}"></image>
+                <view class="goods-info" style="padding:5rpx 20rpx;">
+                    <text class="mb-10 text-more-2" style="height:2.8em;line-height:1.4;">{{item.name}}</text>
+                    <view class="flex-row">
+                        <view class="flex-grow-1" style="color:#ff334b" wx:if="{{item.is_negotiable==1}}">商品面议</view>
+                        <view class="flex-grow-1" style="color:#ff334b" wx:else>￥{{item.price}}</view>
+                        <view class="flex-grow-0 fs-sm" style="color:#999;" wx:if="{{__is_sales}}">已售{{item.sales}}</view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+        <view class="loading-more {{is_loading?'active':''}}">
+            <image src="{{__wxapp_img.system.loading.url}}"></image>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,56 @@
+page {
+    background: #ff7b33;
+}
+
+.detail-name {
+    color: #999999;
+    padding-bottom: 20rpx;
+}
+
+.detail-manual {
+    color: #353535;
+    padding-bottom: 40rpx;
+}
+
+.avatar {
+    position: absolute;
+    left: 50%;
+    display: block;
+    height: 88rpx;
+    width: 88rpx;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.detail {
+    background: #ffffff;
+    padding: 98rpx 40rpx 24rpx 40rpx;
+    border-radius: 16rpx 16rpx 0 0;
+}
+
+.error {
+    margin-top: 32rpx;
+    border-radius: 32rpx;
+    background: #f7f7f7;
+    color: #999999;
+    line-height: 64rpx;
+    width: 240rpx;
+}
+
+.present {
+    background: #ffffff;
+    padding: 24rpx 40rpx 14rpx 40rpx;
+    border-radius: 0 0 16rpx 16rpx;
+}
+
+.bg {
+    display: block;
+    height: 48rpx;
+    width: 100%;
+}
+
+.no-content {
+    color: #888;
+    padding: 100rpx 0 0 0;
+    text-align: center;
+}

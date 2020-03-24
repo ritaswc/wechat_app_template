@@ -1,0 +1,57 @@
+{template 'common/header'}
+<ol class="breadcrumb we7-breadcrumb">
+	<a href="{php echo url('article/news/category');}"><i class="wi wi-back-circle"></i> </a>
+	<li>
+		<a href="{php echo url('article/news/category');}">新闻分类</a>
+	</li>
+	<li>
+		添加分类
+	</li>
+</ol>
+{if $do == 'category_post'}
+<div class="clearfix">
+	<form action="{php echo url('article/news/category_post');}" method="post" class="we7-form" role="form">
+		<div id="tpl">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-2 col-md-2 control-label">分类名称</label>
+				<div class="col-sm-8 form-controls">
+					<input type="text" class="form-control" name="title[]" vlaue="" placeholder="分类名称"/>
+					<div class="help-block">请填写分类名称</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-2 col-md-2 control-label">排序</label>
+				<div class="col-sm-8 form-controls">
+					<input type="text" class="form-control" name="displayorder[]" vlaue="" placeholder="排序"/>
+					<div class="help-block">数字越大，越靠前</div>
+				</div>
+			</div>
+			<hr/>
+		</div>
+		<div id="container"></div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label"></label>
+			<div class="col-sm-8 form-controls">
+				<a href="javascript:;" id="category-add" class="category-add-box"><i class="wi wi-plus"></i> 继续添加分类</a>
+			</div>
+		</div>
+			
+		<div class="form-group col-sm-offset-2">
+			<div class="">
+				<input type="submit" class="btn btn-primary" name="submit" value="提交" />
+				<input type="hidden" name="token" value="{$_W['token']}" />
+			</div>
+		</div>
+	</form>
+</div>
+{/if}
+<script>
+	$(function(){
+		$('#category-add').click(function(){
+			var html = $('#tpl').html();
+			$('#container').append(html);
+			return false;
+		});
+	});
+</script>
+{template 'common/footer'}

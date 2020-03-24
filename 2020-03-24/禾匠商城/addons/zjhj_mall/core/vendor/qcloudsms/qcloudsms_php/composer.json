@@ -1,0 +1,15 @@
+{
+    "name": "qcloudsms/qcloudsms_php",
+    "type": "library",
+    "description": "qcloud sms php sdk",
+    "keywords": ["qcloud", "sms", "php", "sdk"],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Qcloud\\Sms\\": "src/"
+        }
+    },
+    "require-dev": {
+        "sami/sami": "dev-master"
+    }
+}

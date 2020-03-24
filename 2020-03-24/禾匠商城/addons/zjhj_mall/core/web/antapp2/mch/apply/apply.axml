@@ -1,0 +1,154 @@
+<!-- 加载公共扩展 -->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber" style='height:100vh'>
+        <!-- 页面内容 -->
+        <form report-submit="true" onSubmit="applySubmit" a:if='{{is_form_show}}'>
+            <view class="form-group-name">基本信息</view>
+            <view class="input-group-list">
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">联系人</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" placeholder-class="placeholder" placeholder="必填" name="realname" value="{{apply?apply.realname:''}}" />
+                    </view>
+                </view>
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">联系电话</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" placeholder-class="placeholder" placeholder="必填" name="tel" value="{{apply?apply.tel:''}}" />
+                    </view>
+                </view>
+                <view a:if="{{__platform == 'wx'}}" class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">微信号</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" placeholder-class="placeholder" placeholder="" name="wechat_name" value="{{apply?apply.wechat_name:''}}" />
+                    </view>
+                </view>
+            </view>
+
+            <view class="form-group-name">店铺信息</view>
+            <view class="input-group-list" style="margin-bottom: 32rpx">
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">店铺名称</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" placeholder-class="placeholder" placeholder="必填" name="name" value="{{apply?apply.name:''}}" />
+                    </view>
+                </view>
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">所在地区</view>
+                    <view class="flex-grow-1">
+                        <view class="flex flex-row" style="height: 100%;padding: 0 32rpx" onTap="showAreaPicker">
+                            <view class="flex-grow-1 flex-y-center">
+                                <view a:if="{{!edit_district.province}}">请选择地区</view>
+                                <view a:else style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">
+                                    {{edit_district.province.name}}{{edit_district.city.name}}{{edit_district.district.name}}
+                                </view>
+                            </view>
+                            <view class="flex-grow-0 flex-y-center">
+                                <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+                            </view>
+                        </view>
+                        <view style="display: none">
+                            <input type="hidden" name="province_id" value="{{edit_district.province.id}}" />
+                            <input type="hidden" name="city_id" value="{{edit_district.city.id}}" />
+                            <input type="hidden" name="district_id" value="{{edit_district.district.id}}" />
+                        </view>
+                    </view>
+                </view>
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">详细地址</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" placeholder-class="placeholder" placeholder="必填" name="address" value="{{apply?apply.address:''}}" />
+                    </view>
+                </view>
+                <view>
+                    <picker class="" onChange="mchCommonCatChange" range="{{mch_common_cat_list}}" range-key="name" name="mch_common_cat_id" value="" style="position: relative">
+                        <view class="flex flex-row input-group">
+                            <view class="flex-grow-0 flex-y-center input-group-label">所售类目</view>
+                            <view class="flex-grow-1">
+                                <view class="flex flex-row" style="height: 100%;padding: 0 32rpx">
+                                    <view a:if="{{mch_common_cat_list[mch_common_cat_index]}}" class="flex-grow-1 flex-y-center">{{mch_common_cat_list[mch_common_cat_index].name}}
+                                    </view>
+                                    <view class="flex-grow-1 flex-y-center" a:else>
+                                        <view a:if="{{apply.mch_common_cat_id}}">{{apply.mch_common_cat_name}}</view>
+                                        <view a:else>请选择类目</view>
+                                    </view>
+                                    <view class="flex-grow-0 flex-y-center">
+                                        <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </picker>
+                </view>
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">客服电话</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" placeholder-class="placeholder" placeholder="必填" name="service_tel" value="{{apply?apply.service_tel:''}}" />
+                    </view>
+                </view>
+            </view>
+            <view a:if="{{entry_rules}}" class="flex flex-row" style="padding: 0 32rpx;margin-bottom: 32rpx">
+                <view a:if="{{agree_entry_rules}}" class="flex flex-row" onTap="disagreeEntryRules">
+                    <view class="flex-y-center">
+                        <image src="/mch/images/icon-check-on.png" style="width: 32rpx;height: 32rpx;margin-right: 16rpx;"></image>
+                    </view>
+                    <view>我已阅读并同意</view>
+                </view>
+                <view a:else class="flex flex-row" onTap="agreeEntryRules">
+                    <view class="flex-y-center">
+                        <image src="/mch/images/icon-check-off.png" style="width: 32rpx;height: 32rpx;margin-right: 16rpx;"></image>
+                    </view>
+                    <view>我已阅读并同意</view>
+                </view>
+                <view onTap="showEntryRules" style="color: #5292ed">《入驻协议》</view>
+            </view>
+
+            <block a:if="{{apply}}">
+                <button style="margin-bottom: 32rpx;margin-top: 0" a:if="{{apply.review_status==2}}" class="submit-btn" formType="submit">重新提交
+                </button>
+                <button style="margin-top: 32rpx" class="block-button view-data-btn" onTap="showApplyResult">查看审核结果
+                </button>
+            </block>
+            <block a:else>
+                <button style="margin-top: 0" class="submit-btn" formType="submit">提交</button>
+            </block>
+
+            <view style="text-align: center;padding: 24rpx">
+                <navigator url="/pages/index/index" open-type="redirect" style="padding: 12rpx;color: #888">返回首页</navigator>
+            </view>
+
+        </form>
+        <view class="apply-result {{show_result?'show':''}}" a:if="{{apply}}">
+            <image a:if="{{apply.review_status==0}}" src="/mch/images/img-shenhe-0.png" style="width: 380rpx;height: 270rpx;margin-bottom: 72rpx"></image>
+            <image a:if="{{apply.review_status==2}}" src="/mch/images/img-shenhe-1.png" style="width: 380rpx;height: 270rpx;margin-bottom: 72rpx"></image>
+            <image a:if="{{apply.review_status==1}}" src="/mch/images/img-shenhe-2.png" style="width: 380rpx;height: 270rpx;margin-bottom: 72rpx"></image>
+            <view class="review-status status-{{apply.review_status}}">{{apply.review_status_text}}</view>
+            <view class="review-result" a:if="{{apply.review_status==0}}">您的信息已提交，请耐心等待审核。</view>
+            <view class="review-result" a:else>{{apply.review_result}}</view>
+            <button class="submit-btn" onTap="hideApplyResult" a:if="{{apply.review_status==2}}">重新提交</button>
+            <block a:else>
+                <button class="block-button view-data-btn" style="border:0rpx solid #ffffff" onTap="hideApplyResult" a:if="{{apply.review_status==0 || apply.review_status==1}}">查看提交内容
+                </button>
+            </block>
+        </view>
+
+        <view class="entry-rules" a:if="{{show_entry_rules}}">
+            <view class="rules-container">
+                <view style="padding: 24rpx">
+                    <scroll-view scroll-y="true" style="max-height: 75vh">
+                        <text style="word-break: break-all">{{entry_rules}}</text>
+                    </scroll-view>
+                </view>
+                <view class="flex flex-row">
+                    <view style="color: #888" class="flex-grow-1 rules-btn" onTap="disagreeEntryRules">拒绝</view>
+                    <view style="color: #ff4544" class="flex-grow-1 rules-btn" onTap="agreeEntryRules">同意</view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <include src="./../../components/area-picker/area-picker.axml" />
+    <include src="/components/footer/footer" />
+</view>

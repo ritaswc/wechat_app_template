@@ -1,0 +1,100 @@
+.get-card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.card-block {
+    margin-top: -140rpx;
+    position: relative;
+}
+
+.card-info {
+    width: 559rpx;
+    border-radius: 0 0 30rpx 30rpx;
+    background-color: #fff;
+    margin-top: -20rpx;
+    padding: 20rpx 0 50rpx 0;
+}
+
+.card-one {
+    width: 100%;
+    height: 164rpx;
+    margin-bottom: 10rpx;
+}
+
+.card-bg {
+    width: 514rpx;
+    height: 164rpx;
+    border-radius: 10rpx;
+    box-shadow: 2rpx 2rpx 30rpx #ddd;
+    padding: 14rpx;
+}
+
+.card-bg-1 {
+    width: 100%;
+    height: 100%;
+    border: 2rpx #ff4544 dashed;
+    border-radius: 10rpx;
+    padding: 0 20rpx;
+}
+
+.card-del {
+    position: absolute;
+    right: 34rpx;
+    top: 224rpx;
+    width: 90rpx;
+    height: 90rpx;
+}
+
+.card-del image {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.card-text {
+    color: #707070;
+    margin-top: 24rpx;
+    margin-bottom: 34rpx;
+    font-size: 9pt;
+}
+
+.card-text::before {
+    content: ' ';
+    margin-right: 32rpx;
+    width: 50rpx;
+    height: 1rpx;
+    background-color: #707070;
+    overflow: hidden;
+    margin-top: 21rpx;
+}
+
+.card-text::after {
+    content: ' ';
+    margin-left: 32rpx;
+    width: 50rpx;
+    height: 1rpx;
+    background-color: #707070;
+    overflow: hidden;
+    margin-top: 21rpx;
+}
+
+.card-btn {
+    position: relative;
+}
+
+.card-btn image {
+    width: 374rpx;
+    height: 96rpx;
+}
+
+.card-get {
+    margin-top: 4rpx;
+    margin-bottom: 20rpx;
+    color: #ff4544;
+    font-size: 13pt;
+}

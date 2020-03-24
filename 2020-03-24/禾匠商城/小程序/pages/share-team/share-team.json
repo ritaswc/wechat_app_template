@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "我的团队",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

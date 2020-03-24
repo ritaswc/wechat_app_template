@@ -1,0 +1,29 @@
+.bargain-bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 96rpx;
+    background-color: #fff;
+    border-top: 1rpx solid #e2e2e2;
+    color: #999;
+    z-index: 100;
+}
+
+.bargain-bottom image {
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: 16rpx;
+}
+
+.bottom-color {
+    color: #ff4544;
+}
+
+.navbar+.body {
+    padding-bottom: 115rpx;
+}
+
+.navbar+.body .bargain-bottom {
+    bottom: 115rpx;
+}

@@ -1,0 +1,65 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <include src="/components/quick-navigation/quick-navigation.axml" />
+    <view class="body after-navber">
+
+        <block a:if='{{banner_list.length > 0}}'>
+            <swiper indicator-dots="true" autoplay="true" circular="true" interval="5000" duration="300" style="height:280rpx">
+                <block a:for="{{banner_list}}" a:key="{{item.id}}">
+                    <swiper-item>
+                        <navigator app-id="{{item.appId}}" path="{{item.path}}" target="{{item.open_type == 'wxapp' ? 'miniProgram' : ''}}" onTap="navigatorClick" data-url="{{item.page_url}}" data-open_type="{{item.open_type}}" url="{{item.page_url}}" data-open-type="{{item.open_type ? item.open_type : 'navigator'}}" hover-class='none'>
+                            <image src="{{item.pic_url}}" style="width:100%;height:280rpx" mode="aspectFill" />
+                        </navigator>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </block>
+
+        <view class="no-content" a:if="{{!new_list || new_list.length==0}}">暂无记录</view>
+        <view a:else style="padding-bottom:96rpx;">
+            <view a:for="{{new_list}}" a:key="{{item.id}}" style="background:#fff">
+                <!--<form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="/lottery/goods/goods?id={{item.id}}">
+                    <button formType="submit" id="_formIdSubmit"> -->
+                        <view style="height:20rpx;background:#f7f7f7"></view>
+                        <view class="flex-row" style="position:relative;padding:24rpx">
+                            <navigator url="/lottery/goods/goods?id={{item.id}}" hover-class="navigator-hover" style="display:inline">
+                                <image class="flex-grow-0" style="display:block;width:220rpx;height:220rpx" src="{{item.goods.cover_pic}}" />
+                                <view class="flex-x-center flex-y-center lottery-num">{{item.num}}人参与</view>
+                            </navigator>
+                            <view class="flex-col flex-grow-1" style="padding-left:24rpx;">
+                                <navigator url="/lottery/goods/goods?id={{item.id}}" hover-class="navigator-hover" style="display:inline">
+                                    <view class="text-more-2">{{item.goods.name}}</view>
+                                    <view class="flex-row flex-y-center font-minor">
+                                        <image style="margin-right:12rpx;width:24rpx;height:24rpx;display:block" src="/lottery/images/lottery_time.png" />距活动结束：
+                                        <text a:if="{{time_list[index].day>0 || time_list[index].hour>0}}"><text class="red">{{time_list[index].day}}</text>天</text>
+                                        <text a:if="{{time_list[index].day>0 || time_list[index].hour>0}}"><text class="red">{{time_list[index].hour}}</text>小时</text>
+                                        <text a:if="{{time_list[index].day==0 && time_list[index].hour==0}}"><text class="red">{{time_list[index].minute}}</text>分</text>
+                                        <text a:if="{{time_list[index].day==0 && time_list[index].hour==0}}"><text class="red">{{time_list[index].second}}</text>秒</text>
+                                    </view>
+                                    <view class="font-minor" style="padding-top:10rpx;padding-right:10rpx">共{{item.stock}}份</view>
+                                </navigator>
+
+                                <view class="flex-row flex-y-center">
+                                    <view class="flex-grow-0 red">￥0</view>
+                                    <view class="flex-grow-1 font-minor" style="text-decoration:line-through;padding-left:12rpx">原价￥{{item.original_price}}</view>
+
+                                    <form a:if="{{item.status}}" report-submit="true" onSubmit="submit" data-lottery_id="{{item.id}}" data-type="navigate">
+                                        <button formType="submit" id="lotterySubmit">
+                                            <view class="flex-y-center flex-x-center flex-grow-0 lottery-btn">立即抽奖</view>
+                                        </button>
+                                    </form>
+                                    <view a:else class="flex-y-center flex-x-center flex-grow-0 lottery-err btn-disabled">已参与</view>
+
+                                </view>
+                            </view>
+                        </view>
+                <!--</button>
+                </form> -->
+            </view>
+        </view>
+
+    </view>
+    <include src="/lottery/commons/naver/naver" />
+    <include src="/components/footer/footer" />
+</view>

@@ -1,0 +1,83 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navbar">
+        <include src="/components/common/navbar"></include>
+        <include src="/components/shopping_cart/shopping_cart"></include>
+        <include src="/components/specifications_model/specifications_model"></include>
+        <view class="quick_purchase {{_navbar?'shopping-cart':''}}">
+            <view class="{{__device}} left_nav">
+                <scroll-view scrollY="true" style="height: 100%;width:100%" wx:if="{{quick_list}}">
+                    <view bindtap="selectMenu" class="cat_name {{cat_checked?'cat_name_active':''}}" data-tag="hot_cakes" wx:if="{{quick_hot_goods_lists.length>0}}">
+                        <image class="quick-hot" src="{{__wxapp_img.store.quick_hot.url}}"></image>
+                        <view style="float:left; height:30px;display:flex;align-items:center;justify-content:center;">热销</view>
+                    </view>
+                    <view bindtap="selectMenu" class="cat_name {{item.cat_checked?'cat_name_active':''}}" data-id="{{quick_list.id}}" data-index="{{index}}" data-tag="{{'aa'+index}}" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;" wx:for="{{quick_list}}" wx:key="{{item.id}}">{{item.name}}</view>
+                </scroll-view>
+            </view>
+            <view class="{{__device}} r_goods">
+                <scroll-view scrollIntoView="{{toView}}" scrollY="true" style="height: 100%;padding: 10rpx">
+                    <block wx:if="{{quick_hot_goods_lists.length>0}}">
+                        <view class="navname" id="hot_cakes">热销</view>
+                        <view class="goodsall" wx:for="{{quick_hot_goods_lists}}" wx:for-item="goods" wx:key="{{goods.id}}">
+                            <view bindtap="get_goods_info" class="goods" data-id="{{goods.id}}">
+                                <view class="goods_pic">
+                                    <image id="goods_pic" lazyLoad="true" src="{{goods.cover_pic}}"></image>
+                                </view>
+                                <view class="goods_info">
+                                    <view class="goods_name" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{goods.name}}</view>
+                                    <view style="font-size:24rpx;color:#666666;margin-top:14rpx;" wx:if="{{__is_sales}}">销量 {{goods.virtual_sales}}</view>
+                                    <view style="font-size:16px;color:#ff4544;margin-top:22rpx;width:63%;">￥{{goods.price}}</view>
+                                </view>
+                            </view>
+                            <view class="purchase" wx:if="{{goods.use_attr==0}}">
+                                <view bindtap="jia" class="standard" data-id="{{goods.id}}" id="jia">
+                                    <image class="standard" src="{{__wxapp_img.store.jia.url}}" style="width:100%;"></image>
+                                </view>
+                                <block wx:if="{{goods.num>0}}">
+                                    <input bindinput="goodNumChange" class="standard good_num" data-id="{{goods.id}}" id="num" maxlength="999" type="number" value="{{goods.num}}"></input>
+                                    <view bindtap="jian" class="standard" data-id="{{goods.id}}" id="jian">
+                                        <image class="standard" src="{{__wxapp_img.store.jian.url}}"></image>
+                                    </view>
+                                </block>
+                            </view>
+                            <view bindtap="showDialogBtn" class="guigepurchase" data-id="{{goods.id}}" wx:if="{{goods.use_attr==1}}">选规格
+                                        <view class="guigenum" wx:if="{{goods.num>0}}">{{goods.num}}</view>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:for="{{quick_list}}" wx:for-item="goods_list" wx:key="{{goods_list.id}}">
+                        <view class="navname" id="{{'aa'+index}}">{{goods_list.name}}</view>
+                        <view class="goodsall" wx:for="{{goods_list.goods}}" wx:for-item="goods" wx:key="{{goods.id}}">
+                            <view bindtap="get_goods_info" class="goods" data-id="{{goods.id}}">
+                                <view class="goods_pic">
+                                    <image id="goods_pic" src="{{goods.cover_pic}}"></image>
+                                </view>
+                                <view class="goods_info">
+                                    <view class="goods_name" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{goods.name}}</view>
+                                    <view style="font-size:24rpx;color:#666666;margin-top:14rpx;" wx:if="{{__is_sales}}">销量 {{goods.virtual_sales}}</view>
+                                    <view style="font-size:16px;color:#ff4544;margin-top:22rpx;width:63%;">￥{{goods.price}}</view>
+                                </view>
+                            </view>
+                            <view class="purchase" wx:if="{{goods.use_attr==0}}">
+                                <view bindtap="jia" class="standard" data-id="{{goods.id}}" id="jia">
+                                    <image class="standard" lazyLoad="true" src="{{__wxapp_img.store.jia.url}}"></image>
+                                </view>
+                                <block wx:if="{{goods.num>0}}">
+                                    <input bindinput="goodNumChange" class="standard good_num" data-id="{{goods.id}}" id="num" maxlength="999" type="number" value="{{goods.num}}"></input>
+                                    <view bindtap="jian" class="standard" data-id="{{goods.id}}" id="jian">
+                                        <image class="standard" src="{{__wxapp_img.store.jian.url}}"></image>
+                                    </view>
+                                </block>
+                            </view>
+                            <view bindtap="showDialogBtn" class="guigepurchase" data-cid="{{goods_list.id}}" data-id="{{goods.id}}" data-index="{{index}}" id="guige" wx:if="{{goods.use_attr==1}}">选规格
+                                        <view class="guigenum" wx:if="{{goods.num>0}}">{{goods.num}}</view>
+                            </view>
+                        </view>
+                    </block>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

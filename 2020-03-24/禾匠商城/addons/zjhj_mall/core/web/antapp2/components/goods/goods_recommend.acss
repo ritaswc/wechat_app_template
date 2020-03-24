@@ -1,0 +1,75 @@
+/* 相关推荐 */
+.goods-item {
+    width: 370rpx;
+    display: inline-block;
+    position: relative;
+    padding: 0 5rpx;
+    margin-bottom: 14rpx;
+    font-size: 0;
+    background: #fff;
+}
+
+.goods-item .goods-pic {
+    width: 100%;
+    height: 370rpx;
+}
+
+.goods-item .goods-info {
+    padding: 0 10rpx;
+}
+
+.goods-item .goods-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 10rpx;
+    font-size: 11pt;
+    display: block;
+    text-align: center;
+}
+
+.goods-item .goods-price {
+    font-size: 11pt;
+    color: #f40;
+    display: block;
+    text-align: center;
+}
+.recommend {
+    background: #f7f7f7;
+    margin: 0 270rpx;
+    text-align: center;
+    position: relative;
+}
+
+.recommend-left {
+    height: 1rpx;
+    width: 85rpx;
+    background: #bbb;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: -45%;
+    transform: translateY(-50%);
+}
+
+.recommend image{
+    height: 24rpx;
+    width: 24rpx;
+    margin-right: 12rpx;
+}
+
+.recommend-text {
+    font-size: 10pt;
+    color: #888;
+}
+
+.recommend-right {
+    height: 1rpx;
+    width: 85rpx;
+    background: #bbb;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: -45%;
+    transform: translateY(-50%);
+}

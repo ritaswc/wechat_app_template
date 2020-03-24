@@ -1,0 +1,157 @@
+.list {
+    border-top: 0rpx solid #e3e3e3;
+}
+
+.list .item {
+    display: block;
+    background: #fff;
+    padding: 34rpx 24rpx;
+    margin-bottom: 10rpx;
+}
+
+.list .item .title {
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.list .item .cover-pic {
+    width: 268rpx;
+    height: 202rpx;
+    margin-left: 10rpx;
+    display: block;
+}
+
+.list .item .goods-count,.list .item .read-count {
+    color: #888;
+}
+
+.list .item.layout-1 .title {
+    margin-bottom: 24rpx;
+    -webkit-line-clamp: 2;
+}
+
+.list .item.layout-1 .cover-pic {
+    width: 702rpx;
+    height: 350rpx;
+    margin-left: 0;
+    margin-bottom: 24rpx;
+}
+
+.list .item.layout-0 .goods-count {
+    position: absolute;
+    bottom: 20rpx;
+    right: 0rpx;
+    display: inline-block;
+    background: rgba(0,0,0,.5);
+    color: rgba(255,255,255,0.8);
+    padding: 5rpx 10rpx;
+}
+
+.no-content {
+    color: #888;
+    padding: 100rpx 0 0 0;
+    text-align: center;
+}
+
+.loading-more {
+    text-align: center;
+    opacity: 0;
+}
+
+.loading-more.active {
+    opacity: 1;
+}
+
+.loading-more image {
+    width: 160rpx;
+    height: 80rpx;
+}
+
+.nnavbar {
+    position: fixed;
+    top: 0;
+    z-index: 4;
+    height: 90rpx;
+    width: 100%;
+    white-space: nowrap;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e2e2;
+    color: #353535;
+    border-top: 1px solid #e2e2e2;
+}
+
+.navbar-item {
+    display: inline-block;
+    margin: auto 32rpx;
+    height: 86rpx;
+}
+
+.navbar-item-active {
+    color: #ff4544;
+    border-bottom: 4rpx solid #ff4544!important;
+}
+
+.navbar-item-wrap {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 17rpx;
+}
+
+.navbar-arrow-down {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    width: 96rpx;
+    height: 72rpx;
+    background-color: #ffffff;
+    align-items: center;
+}
+
+.navbar-arrow-down-wrap {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.channel-setting {
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 6;
+    width: 100%;
+    height: 80rpx;
+    background-color: #f5f6f7;
+}
+
+.articles {
+    min-height: calc(100% - 72rpx);
+}
+
+.article {
+    display: flex;
+    height: 72rpx;
+    align-items: center;
+    justify-content: center;
+}
+
+.hideview {
+    background: #f7f7f7;
+    height: 106rpx;
+    width: 100%;
+    display: block;
+}
+
+.view1 {
+    height: 100%;
+    width: 100%;
+}
+
+.after-navber .active {
+    padding-top: 10rpx;
+}

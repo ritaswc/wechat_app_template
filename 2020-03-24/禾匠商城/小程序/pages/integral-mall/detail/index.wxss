@@ -1,0 +1,59 @@
+page {
+    background-color: #fff;
+}
+
+.detail-header {
+    height: 88rpx;
+    border-top: 1rpx solid #e2e2e2;
+    border-bottom: 1rpx solid #e2e2e2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+.header {
+    color: #353535;
+    font-size: 14px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.income {
+    height: 100%;
+    width: 38%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.income.gain {
+    border-bottom: 4rpx solid #ff6f28;
+    color: #ff6f28;
+}
+
+.income.hand {
+    border-bottom: 4rpx solid #ff6f28;
+    color: #ff6f28;
+}
+
+.income-list {
+    padding-top: 88rpx;
+}
+
+.income-road {
+    margin: 0 0rpx 16rpx 0rpx;
+    color: #353535;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.income-one {
+    padding: 40rpx 24rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+}

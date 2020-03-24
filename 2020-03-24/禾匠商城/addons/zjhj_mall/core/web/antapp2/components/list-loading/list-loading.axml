@@ -1,0 +1,5 @@
+<view a:if="{{no_more}}" style="text-align: center;color: #888;font-size: 9pt;height: 74rpx;line-height: 74rpx">没有记录了~</view>
+
+<view a:if="{{!no_more}}" style="text-align: center;padding: 12rpx;visibility:{{loading ?'visibility':'hidden'}}">
+    <image src="{{__wxapp_img.system.loading_black.url}}" style="width: 50rpx;height: 50rpx"></image>
+</view>

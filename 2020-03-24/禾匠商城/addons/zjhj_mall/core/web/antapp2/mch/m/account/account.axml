@@ -1,0 +1,77 @@
+<!-- 加载公共扩展 -->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <!-- 页面内容 -->
+        <view class="header-h">
+            <image class="header-bg" src="{{header_bg}}" mode="widthFix"></image>
+            <view style='position:relative'>
+                <view style="margin-bottom: 28rpx;font-size: 9pt">账户可用余额(元)</view>
+                <view style="font-size: 19pt;font-weight:bold;margin-bottom: 28rpx;">{{account_money}}</view>
+                <view>
+                    <view class="cash-btn" onTap="showCash">提现</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="menu-group">
+            <navigator a:if="{{false}}" url="/mch/m/account-rest/account-rest" class="menu-item flex flex-row">
+                <view class="flex-grow-1 flex flex-row">
+                    <view class="flex-grow-1 flex-y-center">待结算金额</view>
+                    <view class="flex-grow-0 flex-y-center">￥{{rest_money}}</view>
+                </view>
+                <view class="flex-grow-0 flex-y-center">
+                    <image class="pointer" src="/mch/images/icon-jiantou-you.png"></image>
+                </view>
+            </navigator>
+            <navigator url="/mch/m/account-log/account-log" class="menu-item flex flex-row">
+                <view class="flex-grow-1 flex flex-row flex-y-center">收支记录</view>
+                <view class="flex-grow-0 flex-y-center">
+                    <image class="pointer" src="/mch/images/icon-jiantou-you.png"></image>
+                </view>
+            </navigator>
+            <navigator url="/mch/m/cash-log/cash-log" class="menu-item flex flex-row">
+                <view class="flex-grow-1 flex flex-row flex-y-center">提现记录</view>
+                <view class="flex-grow-0 flex-y-center">
+                    <image class="pointer" src="/mch/images/icon-jiantou-you.png"></image>
+                </view>
+            </navigator>
+
+            <navigator url="/mch/m/settle_detail/settle_detail?settle_type=0" class="menu-item flex flex-row weijiesuan">
+                <view class="flex-grow-1 flex flex-row flex-y-center">未结算金额</view>
+                <view class="flex-grow-0 flex-y-center">
+                    <text>￥{{no_settle_price}}</text>
+                    <image class="pointer" src="/mch/images/icon-jiantou-you.png"></image>
+                </view>
+            </navigator>
+            <navigator url="/mch/m/settle_detail/settle_detail?settle_type=1" class="menu-item flex flex-row">
+                <view class="flex-grow-1 flex flex-row flex-y-center">已结算金额</view>
+                <view class="flex-grow-0 flex-y-center">
+                    <text>￥{{settle_price}}</text>
+                    <image class="pointer" src="/mch/images/icon-jiantou-you.png"></image>
+                </view>
+            </navigator>
+        </view>
+
+        <view class="footer">
+            <view onTap="showDesc" style="font-size: 9pt;padding: 12rpx;display: inline-block;color: #397ed3">交易手续费说明</view>
+        </view>
+
+        <view class="cash-modal flex-y-center flex-x-center" a:if="{{show_cash}}">
+            <view class="modal-bg"></view>
+            <view class="modal-dialog">
+                <view style="padding: 36rpx;text-align: center">
+                    <view style="margin-bottom: 36rpx">请输入提现金额(元)</view>
+                    <input class="cash-input" value="{{cash_val}}" onBlur="cashInput" placeholder="1~{{account_money}}" />
+                </view>
+                <view class="modal-dialog-footer flex flex-row">
+                    <view class="flex-grow-1" onTap="hideCash">取消</view>
+                    <view class="flex-grow-1" onTap="cashSubmit" style="color: #ff4544">提交</view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

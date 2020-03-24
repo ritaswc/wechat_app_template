@@ -1,0 +1,181 @@
+@import "../../../components/calendar/calendar.wxss";
+
+#modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+    z-index: 1111;
+    color: #fff;
+}
+
+.re_pic {
+    width: 97rpx;
+    height: 97rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.register_rule {
+    width: 80%;
+    overflow: hidden;
+    background: #fff;
+    z-index: 9999;
+    position: fixed;
+    left: 10%;
+    top: 288rpx;
+    border-radius: 8rpx;
+    padding-bottom: 96rpx;
+}
+
+.rule {
+    color: #353535;
+    font-size: 16px;
+    font-weight: bolder;
+    margin: 56rpx 0 44rpx 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rule-detail {
+    margin: 0 32rpx;
+    color: #353535;
+    font-size: 13px;
+}
+
+.close {
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    right: 32rpx;
+    top: 28rpx;
+}
+
+.content {
+    background: #fce7e2;
+    padding-top: 48rpx;
+    padding-bottom: 58rpx;
+}
+
+.register {
+    background: #fff;
+    margin: 0 24rpx;
+    border: 2rpx solid #ebebeb;
+    border-radius: 16rpx;
+}
+
+.registre-img {
+    width: 308rpx;
+    height: 308rpx;
+    margin: auto;
+    margin-bottom: 16rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendarSignDay {
+    width: 308rpx;
+    height: 308rpx;
+    color: #fff;
+    font-size: 15px;
+    margin: auto;
+    padding-top: 88rpx;
+}
+
+.lianxu {
+    width: 308rpx;
+    height: 50rpx;
+    text-align: center;
+}
+
+.tianshu {
+    height: 100rpx;
+    width: 308rpx;
+    text-align: center;
+}
+
+.rntegral-font {
+    color: #fff;
+    margin-bottom: 16rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-rule {
+    position: absolute;
+    height: 48rpx;
+    width: 96rpx;
+    background: #000000;
+    border: 2rpx solid #fff;
+    color: #ffffff;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24rpx 0 0 24rpx;
+    opacity: 0.3;
+    top: 48rpx;
+    right: 0;
+}
+
+.register_success {
+    width: 94%;
+    height: 800rpx;
+    overflow: hidden;
+    z-index: 2222;
+    position: fixed;
+    left: 3%;
+    top: 110rpx;
+    border-radius: 8rpx;
+    padding-bottom: 96rpx;
+}
+
+.register_success image {
+    position: absolute;
+    z-index: 3333;
+}
+
+.register_bac {
+    width: 80%;
+    height: 300rpx;
+    background: #fff;
+    position: absolute;
+    top: 336rpx;
+    left: 10%;
+    z-index: 4444;
+}
+
+.register_font {
+    z-index: 5555;
+    color: #353535;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30rpx;
+}
+
+.zhidaolo {
+    height: 64rpx;
+    width: 320rpx;
+    background: #ff4544;
+    margin: 42rpx auto;
+    z-index: 9999;
+    border-radius: 32rpx;
+}
+
+.zhidaolo view {
+    color: #fff;
+    font-size: 15px;
+    height: 64rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

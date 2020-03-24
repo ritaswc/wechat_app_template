@@ -1,0 +1,28 @@
+{template 'common/header'}
+
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href="{php echo url('user/registerset')}"><i class="wi wi-back-circle"></i> </a>
+		<li>
+			<a href="{php echo url('user/registerset')}">用户登录/注册设置</a>
+		</li>
+		<li>
+			用户协议
+		</li>
+	</ol>
+
+	<form action="{php echo url('user/agreement/post');}" method="post" class="we7-form" role="form" id="form1">
+		<div class="form-group">
+			<div class="form-controls">
+				{php echo tpl_ueditor('agreement_info', $settings['agreement_info']);}
+			</div>
+		</div>
+
+		<div>
+			<div class="">
+				<input type="submit" class="btn btn-primary" name="submit" value="提交" />
+				<input type="hidden" name="token" value="{$_W['token']}" />
+			</div>
+		</div>
+	</form>
+
+{template 'common/footer'}

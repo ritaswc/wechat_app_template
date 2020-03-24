@@ -1,0 +1,13 @@
+<!--step/rules/rules.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class='top'>活动规则</view>
+        <view class='rules'>
+            <text class='rule' wx-if="{{rules == 1}}">{{rule}}</text>
+            <text class='rule' wx-if="{{rules == 2}}">{{activity_rule}}</text>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

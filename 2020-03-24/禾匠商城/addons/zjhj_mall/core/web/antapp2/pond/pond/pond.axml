@@ -1,0 +1,100 @@
+<view class="page"> 
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+    
+        <view class="bg" style="{{(_navbar && _navbar.navs && _navbar.navs.length>0)?'padding-bottom:115rpx':''}}"> 
+            <view class="pond-head">
+                <image src="{{__wxapp_img.pond.pond.pond_head.url}}"/>
+                <navigator hover-class="navigator-hover" url="/pond/rule/rule" >
+                    <view class="pond-gze">规则</view>
+                </navigator>
+                <view onTap="showShareModal" class="pond-gze" style="top:104rpx">分享</view>
+            </view>
+            <view class="pond-cj">
+                <view class="pond-text">您还有<text class="pond-num">{{oppty}}</text>次抽奖机会</view> 
+            </view>
+            <view class="container-out">
+                <view class="circle" a:for="{{circleList}}" a:key="{{index}}" style="top:{{item.topCircle}}rpx;left:{{item.leftCircle}}rpx;background-color: {{(index%2==0)?colorCircleFirst:colorCircleSecond}};"></view>
+                <view class="container-in">
+                    <view class="content-out" a:for="{{awardList}}" a:key="{{index}}" style="top:{{item.topAward}}rpx;left:{{item.leftAward}}rpx;background-color: {{(index==indexSelect)?colorAwardSelect:colorAwardDefault}};">
+                        <image src="{{item.image_url}}" mode="aspectFit" class="pond-name-img"/>
+                        <view class="pond-name fs-sm">{{item.name}}</view>
+                    </view>
+                    <view class="start-btn" onTap="startGame" >
+                        <image src="/pond/images/pond-button.png" style="height:160rpx;width:100%;"/>
+                        <block a:if="{{register>0}}" >
+                            <view animation="{{animationData}}" style="display:inline;position:absolute;left:10rpx;height:136rpx;width:178rpx;">
+                                <image src="/pond/images/pond-register.png"  style="height:136rpx;width:178rpx;"/>                  
+                            </view>
+                            <view class="flex-x-center">
+                                <view animation="{{animationData}}" class="pond-register fs-sm">-{{register}}积分</view>
+                            </view>
+                        </block>
+                        <image a:else src="/pond/images/pond-cj.png" animation="{{animationData}}" style="position:absolute;left:10rpx;height:136rpx;width:178rpx;"/>
+                    </view>
+                </view>
+            </view>
+            
+            <navigator open-type="redirect" hover-class="navigator-hover" url="/pages/index/index" style="display:inline;padding-right:150rpx" >
+                <image style="height:30rpx;width:30rpx;margin-right:14rpx;margin-bottom:-1rpx" src="/pond/images/home.png"></image>
+                <view class="pond-bottom">回到首页</view>
+            </navigator>
+
+            <navigator hover-class="navigator-hover" url="/pond/prize/prize" style="display:inline">
+                <view class="pond-bottom">中奖记录</view>
+                <image class="pond-jt" src="/pond/images/pond-jt.png"></image>
+            </navigator>
+        </view>    
+
+        <!-- 活动弹窗 -->
+        <view a:if="{{prize==2}}">
+            <view class="act-modal">
+                <view class="act-modal-bg" onTap="closeActModal"></view>
+                <view class="act-modal-pic flex-y-center flex-x-center">
+                    <view style="text-align:center;position:relative">
+                        <image src="{{__wxapp_img.pond.pond.pond_success.url}}" style="height:462rpx;width:750rpx"/>
+                        <image onTap="pondClose" class="pond-model-image" src="/pond/images/pond-close.png"></image>
+                        <view class="act-modal-close flex-x-center" style="">
+                            <view class="pond-xxcy fs-b" style="margin-top:-14rpx;padding-bottom:12rpx">恭喜</view>
+                        </view>
+                        <view class="act-modal-close flex-x-center">
+                            <view class="pond-ok fs-b">抽中{{name}}</view>
+                        </view>
+                        <view class="act-modal-close flex-x-center" >
+                            <view style="width:591rpx;background:#ffffff;border-radius:0 0 24rpx 24rpx">
+                                <view class="pond-bottom pond-bottom-2" onTap="pondClose" >继续抽奖</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view a:if="{{prize==1}}">
+            <view class="act-modal">
+                <view class="act-modal-bg" onTap="closeActModal"></view>
+                <view class="act-modal-pic flex-y-center flex-x-center">
+                    <view style="text-align:center;position:relative">
+                        <image src="{{__wxapp_img.pond.pond.pond_empty.url}}" style="height:240rpx;width:750rpx"/>
+                        <image onTap="pondClose" class="pond-model-image" src="/pond/images/pond-close.png"></image>
+                        <view class="act-modal-close flex-x-center" style="">
+                            <view class="pond-xxcy fs-b" style="margin-top:-14rpx;padding-bottom:12rpx">谢谢参与</view>
+                        </view>
+                        <view class="act-modal-close flex-x-center">
+                            <view class="pond-xxcy fs-b" style="margin-top:-10rpx">再换个姿势抽奖</view>
+                        </view>
+                        <view class="act-modal-close flex-x-center" >
+                            <view style="width:591rpx;background:#ffffff;border-radius:0 0 24rpx 24rpx">
+                                <view onTap="pondClose" class="pond-bottom pond-bottom-2">继续抽奖</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <include src="/components/save_qrcode/save_qrcode" />
+    <include src="/components/footer/footer" />
+</view>

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "提交预约",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

@@ -1,0 +1,32 @@
+<view class="page {{__page_classes}}">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view>任意按钮点击按钮收集FromId：</view>
+        <form report-submit="true" onSubmit="_formIdSubmit" data-bind="myBtnClick" data-type="navigate" data-url="/pages/index/index">
+            <button formType="submit" id="_formIdSubmit">
+                <!-- 这里才是您的代码 -->
+                <view>---go to test---</view>
+            </button>
+        </form>
+        <!-- 按钮 -->
+        <view class='p-1'>
+            <view class='btn-normal btn-big' onTap='modalShow'>这是大号-常规按钮</view>
+        </view>
+        <view class='p-1'>
+            <view class='btn-main btn-middle'>这是中号-主要按钮</view>
+        </view>
+        <view class='new-modal' a:if="{{modal_show}}">
+            <view class='new-modal-content'>
+                <view class='new-modal-header'>我来组成header</view>
+                <view class='new-modal-body'>我来组成body</view>
+                <view class='new-modal-footer'>
+                    <view class='new-modal-btn' onTap='modalClose'>关闭</view>
+                    <view class='new-modal-btn' onTap='modalConfirm'>确定</view>
+                    <view class='new-modal-btn' onTap='modalConfirm'>确定</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

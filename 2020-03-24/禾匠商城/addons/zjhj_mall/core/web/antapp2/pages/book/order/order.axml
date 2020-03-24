@@ -1,0 +1,106 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class="page {{__page_classes}}">
+            <view class="body after-navber">
+
+                <view class="flex-row tab-bar">
+                    <view class="flex-grow-1">
+                        <navigator class="{{status==-1?'active':''}}" url="/pages/book/order/order?status=-1" open-type="redirect">
+                            <text>全部</text>
+                        </navigator>
+                    </view>
+                    <view class="flex-grow-1">
+                        <navigator class="{{status==0?'active':''}}" url="/pages/book/order/order?status=0" open-type="redirect">
+                            <text>待支付</text>
+                        </navigator>
+                    </view>
+                    <view class="flex-grow-1">
+                        <navigator class="{{status==1?'active':''}}" url="/pages/book/order/order?status=1" open-type="redirect">
+                            <text>待使用</text>
+                        </navigator>
+                    </view>
+                    <view class="flex-grow-1">
+                        <navigator class="{{status==2?'active':''}}" url="/pages/book/order/order?status=2" open-type="redirect">
+                            <text>已使用</text>
+                        </navigator>
+                    </view>
+                    <view class="flex-grow-1">
+                        <navigator class="{{status==3?'active':''}}" url="/pages/book/order/order?status=3" open-type="redirect">
+                            <text>售后</text>
+                        </navigator>
+                    </view>
+                </view>
+                <view class='order-list'>
+                    <view class='order-item' a:for='{{order_list}}'>
+                        <view class='flex-row' onTap='goToDetails' data-id='{{item.id}}'>
+                            <view class='goods-pic flex-grow-0'>
+                                <view class=' order-leabl' a:if='{{item.is_pay==1&&item.is_use==0&&item.apply_delete==0}}'>待使用</view>
+                                <view class=' order-leabl' a:if='{{item.is_pay==0&&item.is_cancel==0}}'>待支付</view>
+                                <view class=' order-leabl' a:if='{{item.apply_delete==1&&item.is_refund==1}}'>已退款</view>
+                                <view class=' order-leabl' a:if='{{item.apply_delete==1&&item.is_refund==2}}'>拒退款</view>
+                                <image src='{{item.cover_pic}}'></image>
+                            </view>
+                            <view class='flex-grow-1 goods-info'>
+                                <view class='goods-name'>
+                                    {{item.goods_name}}
+                                </view>
+                                <view class='flex-gorw-0 flex-row money flex-y-bottom'>
+                                    <view class='original_price flex-grow-0'>
+                                        ¥ {{item.original_price}}
+                                    </view>
+                                    <view class='price flex-grow-0'>
+                                        ¥ {{item.pay_price}}
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class='btn-group flex-row' a:if='{{item.apply_delete != 1&&item.is_refund != 1&&item.is_comment != 1}}'>
+                            <block a:if='{{item.is_pay==1&&item.is_use==0&&item.apply_delete==0}}'>
+                                <view class='btn-group-item apply flex-x-center flex-y-cneter' onTap='applyRefund' data-id='{{item.id}}' a:if='{{item.pay_price > 0}}'>
+                                    申请退款
+                                </view>
+                                <view class='btn-group-item promptly flex-x-center flex-y-cneter' onTap='orderQrcode' data-index='{{index}}'>
+                                    立即使用
+                                </view>
+                            </block>
+                            <block a:if='{{item.is_pay==0&&item.is_cancel==0}}'>
+                                <view class='btn-group-item apply flex-x-center flex-y-cneter' onTap='orderCancel' data-id='{{item.id}}'>
+                                    取消
+                                </view>
+                                <view class='btn-group-item promptly flex-x-center flex-y-cneter' onTap='orderPay' data-id='{{item.id}}' data-index='{{index}}'>
+                                    支付
+                                </view>
+                            </block>
+                            <block a:if='{{item.is_use==1&&item.is_comment==0 && __is_comment}}'>
+                                <view class='btn-group-item apply flex-x-center flex-y-cneter' data-id='{{item.id}}' onTap='comment'>
+                                    评价
+                                </view>
+                            </block>
+                        </view>
+                        <view class='btn-group flex-row' a:if="{{item.apply_delete == 1 && item.is_refund == 2 && item.is_use == 0}}">
+                            <view class='btn-group-item promptly flex-x-center flex-y-cneter' onTap='orderQrcode' data-index='{{index}}'>
+                                立即使用
+                            </view>
+                        </view>
+
+                    </view>
+                    <view class='no-data-tip' a:if='{{show_no_data_tip}}'>
+                        暂无相关订单
+                    </view>
+                </view>
+                <view class='flex-row flex-y-center modal {{hide==1?"hide":""}}' onTap='hide'>
+                    <view class='flex-y-center' style='width:100%;height:800rpx;padding:100rpx;'>
+                        <view style='background-color:#fff;width:100%;height:100%;border-radius:10rpx;padding:0 50rpx;'>
+                            <view class='flex-x-center' style='width:100%;height:50rpx;margin-top:50rpx;font-size:13pt;margin-bottom:20rpx'>核销二维码</view>
+                            <image mode="aspectFit" src='{{qrcode}}' style='width:450rpx;height:450rpx;'></image>
+                        </view>
+                    </view>
+                </view>
+
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

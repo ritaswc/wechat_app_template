@@ -1,0 +1,90 @@
+.goods-info {
+    padding: 30rpx 24rpx;
+    border-top: 1rpx solid #e3e3e3;
+}
+
+.switch-tab {
+    border-bottom: 1rpx solid #e3e3e3;
+}
+
+.switch-tab text {
+    height: 100rpx;
+    border-bottom: 5rpx solid transparent;
+}
+
+.switch-tab text.active {
+    border-bottom-color: #ff4544;
+    color: #ff4544;
+}
+
+.switch-body {
+    display: none;
+}
+
+.switch-body.active {
+    display: block;
+}
+
+.form-row {
+    padding: 28rpx 24rpx;
+}
+
+.form-row .form-label {
+    white-space: nowrap;
+    margin-right: 32rpx;
+}
+
+.form-row textarea {
+    height: 120rpx;
+}
+
+.refund-price {
+    color: #ff4544;
+}
+
+.image-list {
+    margin-left: -20rpx;
+    margin-top: -20rpx;
+}
+
+.image-picker {
+    font-size: 0;
+}
+
+.image-picker,.image-preview {
+    display: inline-block;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+}
+
+.image-preview {
+    position: relative;
+}
+
+.image-preview .image-del {
+    position: absolute;
+    top: -15rpx;
+    right: -15rpx;
+    height: 50rpx;
+    width: 50rpx;
+    background: #ff4544;
+    color: #fff;
+    font-weight: bolder;
+    border-radius: 999rpx;
+    font-size: 9pt;
+    box-shadow: 0 1rpx 2rpx rgba(0,0,0,.2);
+}
+
+.submit-btn {
+    height: 100rpx;
+    line-height: 100rpx;
+    background: #ff4544;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.active {
+    visibility: visible;
+}

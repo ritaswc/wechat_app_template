@@ -1,0 +1,65 @@
+{template 'common/header'}
+
+<div id="js-user-account-group-display" class=" user-group-display-page" ng-controller="userCreateGroupDisplay" ng-cloak>
+
+<ul class="we7-page-tab hidden">
+	<li class="active"><a href=""></a>帐号权限组列表</a></li>
+</ul>
+<div class="search-box we7-margin-bottom">
+	<form action="" class="search-form" method="get">
+		<div class="input-group ">
+			<input type="hidden" name="c" value="user">
+			<input type="hidden" name="a" value="create-group">
+			<input type="text" name="group_name" value="{$_GPC['group_name']}" class="form-control" placeholder="输入名称搜索"/>
+			<span class="input-group-btn"><button class="btn btn-default"><i class="fa fa-search"></i></button></span>
+		</div>
+	</form>
+	<a href="{php echo url('user/create-group/post')}" class="btn btn-primary">+添加帐号权限组</a>
+</div>
+
+<table class="table we7-table table-hover">
+	<col width="200px">
+	<col>
+	<col width="140px">
+	<tr>
+		<th>账号权限组</th>
+		<th>可创建账号类型/个数</th>
+		<th class="text-right">操作</th>
+	</tr>
+	<tr ng-repeat="list in lists">
+		<td ng-bind="list.group_name" ></td>
+		<td >
+			<span ng-repeat="(key, item) in we7TypeDefault" class="group-type" ng-if="list['max' + key] > 0">
+				<i ng-class="item.icon" ></i> {{list['max' + key]}}
+			</span>
+		</td>
+		<td class="text-right">
+			<div class="link-group">
+				<a href="javascript:void(0);" ng-click="edit(list.id)" class="link-item">编辑</a>
+				<a href="javascript:void(0);" ng-click="delete(list.id)" class="link-item">删除</a>
+			</div>
+		</td>
+	</tr>
+	<tr ng-if="lists | we7IsEmpty">
+		<td colspan="3">暂无帐号权限组
+		</td>
+	</tr>
+</table>
+	<div class="pull-right">
+		{$pager}
+	</div>
+</div>
+
+<script>
+	angular.module('userCreateGroup').value('config', {
+		lists: {php echo !empty($lists) ? json_encode($lists) : 'null'},
+		links: {
+			groupPost: "{php echo url('user/create-group/post')}",
+			groupDel: "{php echo url('user/create-group/del')}",
+		}
+	});
+	angular.bootstrap($('#js-user-account-group-display'), ['userCreateGroup']);
+</script>
+
+
+{template 'common/footer'}

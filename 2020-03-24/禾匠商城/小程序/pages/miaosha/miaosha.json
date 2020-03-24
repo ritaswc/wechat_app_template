@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "整点秒杀",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

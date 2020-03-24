@@ -1,0 +1,22 @@
+.article-list {
+    border-top: 1rpx solid #e3e3e3;
+}
+
+.article-item {
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+    padding: 0 24rpx;
+    height: 100rpx;
+}
+
+.article-item .title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.article-item .pointer {
+    width: 12rpx;
+    height: 24rpx;
+    margin-left: 24rpx;
+}

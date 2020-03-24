@@ -1,0 +1,45 @@
+@import "/lottery/commons/naver/naver.acss";
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1rpx solid #e3e3e3;
+    border-bottom: 1rpx solid #e3e3e3;
+    z-index: 999;
+}
+
+.top-bar navigator{
+    text-align: center;
+}
+
+.top-bar navigator text{
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom: 2rpx solid transparent;
+    width: auto;
+    display: inline-block;
+}
+
+.top-bar navigator.active text{
+    color: #ff4544;
+    border-bottom-color: #ff4544;
+}
+
+.lottery-list{
+     padding-top:92rpx
+}
+
+
+.flow image {
+    width: 20rpx;
+    height: 30rpx;
+    margin-left: 16rpx;
+}
+.no-content {
+    padding-top: 200rpx;
+    color: #888;
+    text-align: center;
+}

@@ -1,0 +1,82 @@
+.attr-picker{
+    position: fixed;
+    bottom: 110rpx;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+}
+
+.attr-picker .content-box{
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    bottom: 110rpx;
+}
+
+.attr-picker .attr-group{
+    margin-bottom: 6rpx;
+}
+.attr-picker .attr-group-name{
+    margin-bottom: 20rpx;
+}
+.attr-picker .attr-item{
+    display: inline-block;
+    margin: 0 30rpx 30rpx 0;
+    background: #f7f7f7;
+    border-radius: 10rpx;
+    padding: 15rpx 30rpx;
+}
+
+.attr-picker .attr-item.active{
+    background: #ff4544;
+    color: #fff;
+}
+
+.attr-picker .goods-pic-box{
+    position: relative;
+    width: 200rpx;
+}
+
+.attr-picker .goods-pic-box image{
+    position: absolute;
+    top: -90rpx;
+    border: 5rpx solid #fff;
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 5rpx;
+    box-shadow: 0 1rpx 2rpx rgba(0,0,0,.2);
+}
+
+.attr-picker .attr_num_0 {
+    color: #c5c5c5;
+}
+
+.attr-picker .number-input-box {
+    height: 70rpx;
+}
+
+.attr-picker .number-input-box .number-input {
+    height: 70rpx !important;
+    border: none;
+    text-align: center;
+    width: 120rpx;
+    background: #eee;
+    margin: 0 4rpx !important;
+}
+
+.attr-picker .number-input-box .number-btn {
+    height: 100% !important;
+    width: 70rpx;
+    background: #eee;
+}
+
+.attr-picker .number-input-box .number-btn.disabled {
+    background: #f6f6f6;
+    color: #aaa;
+}
+
+.attr-picker .is_member_price {
+    font-size: 7pt;
+}

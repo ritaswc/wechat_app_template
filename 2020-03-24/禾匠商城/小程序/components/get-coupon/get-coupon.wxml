@@ -1,0 +1,29 @@
+<view class="get-coupon flex-y-center flex-x-center" wx:if="{{get_coupon_list&&get_coupon_list.length>0}}">
+    <view class="get-coupon-box" style="overflow: visible">
+        <image class="get-coupon-bg" mode="widthFix" src="{{__wxapp_img.coupon.bg.url}}"></image>
+        <view class="flex-x-center mb-20">
+            <image src="{{get_coupon_list[0].type==2?'/images/icon-receive-coupon.png':'/images/img-get-coupon-title.png'}}" style="width: 226rpx;height: 51rpx"></image>
+        </view>
+        <scroll-view class="coupon-list" scrollY="true">
+            <view class="coupon-item flex-y-center" wx:for="{{get_coupon_list}}">
+                <image mode="widthFix" src="{{__wxapp_img.coupon.item_bg.url}}" style="width: 100%;height: 100%"></image>
+                <view style="width: 100%">
+                    <view class="flex-row flex-y-center">
+                        <view class="flex-grow-1 flex-row flex-y-bottom">
+                            <view style="line-height: 1">￥</view>
+                            <view style="font-size: 23pt;line-height: .85">{{item.sub_price}}</view>
+                        </view>
+                        <view class="flex-grow-0" style="font-size: 9pt;line-height: 32rpx;">
+                                满{{item.min_price}}元可用
+                            </view>
+                    </view>
+                    <view bindtap="hideGetCoupon" class="use-now" data-url="{{item.url}}">立即使用</view>
+                    <view style="font-size: 9pt">{{item.desc}}</view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="flex-x-center">
+            <image bindtap="closeCouponBox" src="{{__wxapp_img.store.close3.url}}" style="width:100rpx;height:100rpx;"></image>
+        </view>
+    </view>
+</view>

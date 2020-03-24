@@ -1,0 +1,74 @@
+{php define(MUI, true);}
+{template 'common/header'}
+<header class="mui-bar mui-bar-nav">
+	<h1 class="mui-title">{$_W['user']['store_name']}</h1>
+</header>
+{template 'nav'}
+<div class="mui-content paycenter">
+	<div class="mui-banner">
+		<img src="./resource/images/avatar.png" alt="" class="mui-logo mui-img-circle"/>
+		<h1 class="mui-name">{$_W['user']['name']}</h1>
+	</div>
+	<div class="mui-table activity-nav">
+		<div class="mui-table-cell">
+			<span class="mui-block">{$seven_revenue}</span>
+			<div>七日营收</div>
+		</div>
+		<div class="mui-table-cell">
+			<span class="mui-block">{$yesterday_revenue}</span>
+			<div>昨日营收</div>
+		</div>
+		<div class="mui-table-cell">
+			<span class="mui-block">{$today_revenue}</span>
+			<div>今日营收</div>
+		</div>
+	</div>
+	<ul class="mui-table-view mui-grid-view mui-grid-9 store-nav">
+		{if $_W['user']['clerk_type'] == 2 || ($_W['user']['clerk_type'] == 3 && in_array('coupon_consume', $user_permission))}
+		<li class="mui-table-view-cell mui-media mui-col-xs-4">
+			<a href="{php echo $this->createMobileUrl('cardconsume', array('op' => 'consume'));}">
+				<span class="mui-icon mui-img-circle mui-image"><img src="./resource/images/icon-verification.png" alt="" /></span>
+				<div class="mui-media-body">卡券核销</div>
+			</a>
+		</li>
+		{/if}
+		{if $_W['account']['level'] == ACCOUNT_SERVICE_VERIFY}
+		<li class="mui-table-view-cell mui-media mui-col-xs-4">
+			<a href="{php echo $this->createMobileUrl('scanpay', array('op' => 'index'));}">
+				<span class="mui-icon mui-img-circle mui-image"><img src="./resource/images/icon-qrcode.png" alt="" /></span>
+				<div class="mui-media-body">扫码收款</div>
+			</a>
+		</li>
+		{/if}
+		
+		<li class="mui-table-view-cell mui-media mui-col-xs-4">
+			<a href="{php echo $this->createMobileUrl('scanpay', array('op' => 'list', 'period' => '1'));}">
+				<span class="mui-icon mui-img-circle mui-image"><img src="./resource/images/icon-chart.png" alt="" /></span>
+				<div class="mui-media-body">收款记录</div>
+			</a>
+		</li>
+
+		{if $_W['container'] == 'wechat'}
+		<li class="mui-table-view-cell mui-media mui-col-xs-4">
+			<a href="javascript:;" id="scanqrcode">
+				<span class="mui-icon mui-img-circle mui-image"><img src="./resource/images/icon-chart.png" alt="" /></span>
+				<div class="mui-media-body">扫一扫</div>
+			</a>
+		</li>
+		{/if}
+	</ul>
+</div>
+<script>
+	$('#scanqrcode').click(function(){
+		wx.ready(function(){
+			wx.scanQRCode({
+				needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+				scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+				success: function (res) {
+					var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+				}
+			});
+		});
+	});
+</script>
+{template 'common/footer'}

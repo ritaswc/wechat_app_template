@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "视频专区",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

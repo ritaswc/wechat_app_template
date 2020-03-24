@@ -1,0 +1,25 @@
+{php global $_W;}
+{if file_exists(IA_ROOT. "/addons/". $_W['current_module']['name']. "/icon-custom.jpg")}
+<img src="{php echo tomedia("addons/".$_W['current_module']['name']."/icon-custom.jpg")}" class="head-app-logo" onerror="this.src='./resource/images/gw-wx.gif'">
+{else}
+<img src="{php echo tomedia("addons/".$_W['current_module']['name']."/icon.jpg")}" class="head-app-logo" onerror="this.src='./resource/images/gw-wx.gif'">
+{/if}
+<span class="font-lg">{$_W['current_module']['title']}</span>
+
+<div class="pull-right related-info module-related-info">
+</div>
+
+
+{if !defined('SYSTEM_WELCOME_MODULE')}
+<script>
+	$.post('./index.php?c=module&a=display&do=accounts_dropdown_menu', {'module_name': "{php echo $_W['current_module']['name']}", 'version_id': "{php echo $_GPC['version_id']}"}, function(data){
+		$('.module-related-info').html(data);
+	}, 'html');
+</script>
+{/if}
+
+<!-- 兼容历史性问题：模块内获取不到模块信息$module的问题-start -->
+{if defined('CRUMBS_NAV') && CRUMBS_NAV == 1}
+{php global $module;}
+{/if}
+<!-- end -->

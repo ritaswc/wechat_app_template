@@ -1,0 +1,36 @@
+<!--step/friend/friend.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class='top'>
+            <view class='top-item'>
+                <view class='top-num'>{{info.count}}</view>
+                <view>邀请好友总数</view>
+            </view>
+            <view class='line'></view>
+            <view class='top-item'>
+                <view class='top-num'>{{info.now_count}}</view>
+                <view>今日邀请好友</view>
+            </view>
+        </view>
+        <view class='list'>
+            <view class='list-title'>
+                <text>助力好友</text>
+                <text class='title-right'>助力时间</text>
+            </view>
+            <view class='list-item' a:for="{{invite_list}}" a:key="{{list}}">
+                <view class='user-avatar'>
+                    <image src='{{item.avatar_url}}'></image>
+                </view>    
+                <view class='name'>{{item.nickname}}</view>
+                <view class='time'>{{item.invite_time}}</view>
+            </view>
+            <view class='list-item' wx-if="{{length == 0}}">
+                <view class='no-friend'>暂无助力好友</view>
+            </view>
+            <view class='loading' wx-if="{{loading}}">正在加载中...</view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

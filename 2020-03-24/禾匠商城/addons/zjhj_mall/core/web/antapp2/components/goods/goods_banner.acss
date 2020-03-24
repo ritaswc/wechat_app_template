@@ -1,0 +1,45 @@
+.goods-image-swiper {
+    height: 750rpx;
+    position: relative;
+}
+
+.goods-image-swiper image{
+    height: 750rpx;
+}
+
+.goods-image {
+    width: 100%;
+    height: 100%;
+}
+.share_commission {
+    height: 80rpx;
+    width: 220rpx;
+    position: absolute;
+    right: 0;
+    bottom: 80rpx;
+    border-top-left-radius: 40rpx;
+    border-bottom-left-radius: 40rpx;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.share_commission .img {
+    width: 44rpx;
+    height: 44rpx;
+    margin-right: 14rpx;
+    margin-left: 20rpx;
+}
+
+.share_commission .text_box {
+    font-size: 7pt;
+    color: #fff;
+}
+.share_commission .text2 {
+    font-weight: bold;
+}
+
+.goods-image-swiper .play {
+  width: 150rpx;
+  height: 150rpx;
+  position: absolute;
+  top: 275rpx;
+  left: 300rpx;
+}

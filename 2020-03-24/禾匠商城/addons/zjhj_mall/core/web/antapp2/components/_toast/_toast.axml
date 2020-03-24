@@ -1,0 +1,64 @@
+<view id="_toast" a:if="{{_toast}}">
+    <view id="_toast_title" class="{{_toast.hide?'hide':''}}">
+        <text>{{_toast.title}}</text>
+    </view>
+</view>
+<view id="_loading" class=' flex-row flex-x-center flex-y-center' a:if="{{_loading}}">
+    <view class='{{_loading ? "hide" : ""}}'>
+        <image src='{{__wxapp_img.system.loading2.url}}'></image>
+    </view>
+</view>
+<block a:if="{{user_info_show}}">
+    <view class='new-modal'>
+        <view class='new-modal-content'>
+            <view class='new-modal-header' style='padding:30rpx 0;line-height:60rpx;border-bottom: 1rpx solid #eee;'>需要您的授权</view>
+            <view class='new-modal-body' style='min-height:0;margin-bottom:0;max-height:none'>
+                <view style="padding:32rpx 0 0 0;text-align: center">
+                    <view>为了提供更好的服务</view>
+                    <view>请在稍后的提示框中点击“{{__platform == 'wx'?'允许':''}}{{__platform == 'my'?'同意':''}}”</view>
+                </view>
+                <view style='text-align:center'>
+                    <image a:if="{{__platform == 'wx'}}" src='/images/icon-login-index.png' style='width:500rpx;height:460rpx;'></image>
+                    <image a:if="{{__platform == 'my'}}" src='/images/icon-login-index-my.png' style='width:500rpx;height:460rpx;'></image>
+                </view>
+                <view class='flex-x-center'>
+                    <view>
+                        <button a:if="{{__platform == 'wx'}}"
+                                style='background-color:#04be01;width:500rpx;height:80rpx;border-radius:80rpx;color:#fff;margin-bottom:40rpx;'
+                                onTap="myLogin"
+                                class="btn new-modal-btn"
+                                open-type="getUserInfo"
+                                onGetuserinfo="getUserInfo">我知道了</button>
+                        <button a:if="{{__platform == 'my'}}"
+                                style='background-color:#04be01;width:500rpx;height:80rpx;border-radius:80rpx;color:#fff;margin-bottom:40rpx;'
+                                class="btn new-modal-btn"
+                                open-type="getAuthorize"
+                                onGetAuthorize="myLogin"
+                                scope="userInfo">我知道了</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<block a:if="{{user_bind_show}}">
+    <view class='new-modal' a:if="{{!__user_info.onIng && store.option.phone_auth == 1}}">
+        <view class='new-modal-content'>
+            <view class='new-modal-header' style='padding:30rpx 0;line-height:60rpx;font-size:11pt;border-bottom: 1rpx solid #eee;'>授权获取手机号</view>
+            <view class='new-modal-body' style='min-height:0;margin-bottom:0;'>
+                <view style="padding:32rpx 0 40rpx 0;text-align: center">
+                    <image a:if="{{__platform == 'wx'}}" src="{{__wxapp_img.system.wechatapp.url}}" style="width: 88rpx;height: 88rpx;"></image>
+                    <image a:else src="{{__wxapp_img.system.alipay.url}}" style="width: 88rpx;height: 88rpx;"></image>
+                </view>
+                <view style='padding:0 41rpx;'>
+                    <view class='flex-x-center' style='margin-bottom:40rpx;'>申请获取您微信绑定的手机号</view>
+                </view>
+                <view class='flex-x-center'>
+                    <view>
+                        <button style='background-color:#04be01;width:500rpx;height:80rpx;border-radius:80rpx;color:#fff;margin-bottom:40rpx;'  open-type="getPhoneNumber" onGetphonenumber="getPhoneNumber" class="btn new-modal-btn" hover-class="none">确认</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

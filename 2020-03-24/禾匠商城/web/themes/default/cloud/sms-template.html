@@ -1,0 +1,51 @@
+{template 'common/header'}
+<style>
+.color-error {
+	color: #f15333;
+}
+.color-warning {
+	color: #f2af5a;
+}
+</style>
+<div class="we7-page-title">短信模板</div>
+<div class="alert we7-page-alert">
+	<div class="info">
+		<i class="wi wi-info"></i>可用的短信模板为调用接口，暂不支持自行创建
+	</div>
+</div>
+<div class="form-files-box sms-index" >
+	<table class="table we7-table">
+		<colgroup>
+			<col width="200px">
+			<col>
+		</colgroup>
+		<tr>
+			<th>模板名称</th>
+			<th>模板内容</th>
+		</tr>
+		<tr>
+			<td>注册/绑定验证码</td>
+			<td class="color-gray">您的短信验证码为:[数字] 您正在使用短信验证码相关功能, 需要你进行身份确认【xxx】</td>
+
+		</tr>
+		<tr>
+			<td>找回密码验证码</td>
+			<td class="color-gray">您的短信验证码为: [数字] 您正在使用短信验证码相关功能, 需要你进行身份确认【xxx】</td>
+
+		</tr>
+		<tr>
+			<td>用户过期提醒</td>
+			<td class="color-gray">您的用户名[username]即将过期。</td>
+
+		</tr>
+		<tr>
+			<td>平台到期提醒</td>
+			<td class="color-gray">您的平台账号${name}即将过期,为了不影响正常使用，请及时续费。</td>
+		</tr>
+		<tr>
+			<td>API余量提醒</td>
+			<td class="color-gray">您的平台账号${name}剩余的API流量即将耗尽，请及时购买。</td>
+		</tr>
+	</table>
+</div>
+{template 'common/footer'}

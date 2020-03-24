@@ -1,0 +1,122 @@
+{template 'common/header'}
+<div class="main">
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href="{php echo url('mc/fans')}"><i class="wi wi-back-circle"></i> </a>
+		<li>
+			<a href="{php echo url('mc/fans')}">粉丝列表</a>
+		</li>
+		<li>
+			粉丝聊天
+		</li>
+	</ol>
+	<div class="notice-fans-info">
+		<div class="media">
+			<a class="media-left" href="#">
+				<img src="{php echo tomedia($fans_info['tag']['avatar'])}" width="48">
+			</a>
+			<div class="media-body">
+				<h4 class="media-heading">{$fans_info['nickname']}</h4>
+				<p>
+					<span>粉丝编号：{$fans_info['openid']}</span>
+				</p>
+				<p>
+					{if empty($fans_info['uid'])}
+					<span>非会员</span>
+					{else}
+					<span>会员名： {$fans_info['member_info']['nickname']}</span>
+					<span>手机号：{$fans_info['member_info']['mobile']}</span>
+					<span>邮箱：无</span>
+					{/if}
+				</p>
+				<p><span>状态：{if $fans_info['follow'] == 1}已关注{else}取消关注{/if}</span>
+					{if $fans_info['follow'] == 1}
+						<span>关注时间：{php echo date('Y-m-d H:i', $fans_info['followtime'])}</span>
+					{else}
+						<span>取关时间：{php echo date('Y-m-d H:i', $fans_info['unfollowtime'])}</span>
+					{/if}
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="notice-fans-post">
+		<div class="panel we7-panel">
+			{php echo module_build_form('core', $rid, $show_chast_content)}
+		</div>
+		<button class="btn btn-primary col-lg-1 submit" onclick="send()">发送</button>
+	</div>
+	<div class="clearfix"></div>
+	<div class="notice-fans-list" ng-controller="chatsCtrl">
+		<h2 class="notice-list-head">最近20条聊天记录</h2>
+			<div class="media notice-item" ng-repeat="log in chatLogs">
+				<a class="media-left" href="#">
+					<img src="{php echo $_W['account']['logo']}" width="48" class="head-logo account-img" ng-if="log.flag == 1">
+					<img src="{php echo tomedia($fans_info['tag']['avatar'])}?time={php echo time()}" width="48" ng-if="log.flag == 2">
+				</a>
+				<div class="media-body">
+					<div class="media-heading" ng-if="log.flag == 1">
+						{$_W['account']['name']}
+						<span class="notice-item-time">{{ log.createtime }}</span>
+					</div>
+					<div class="media-heading" ng-if="log.flag == 2">
+						{$fans_info['nickname']}
+						<span class="notice-item-time">{{ log.createtime }}</span>
+					</div>
+					<div class="notice-item-content" ng-if="log.msgtype == 'text'">
+						{{ log.content }}
+					</div>
+					<div class="notice-item-content" ng-if="log.msgtype == 'image' || log.msgtype == 'mpnews'">
+						<img ng-src="{{log.content}}" width="48">
+					</div>
+					<div class="appmsgSendedItem" ng-if="log.msgtype == 'video' || log.msgtype == 'music'">
+						<a class="title-wrp" href="javascript:;">
+							<span class="icon cover" style="width: 80px;height: 80px;vertical-align: middle;display: inline-block;background-color: #d7d8da!important;"></span>
+							<span class="title" ng-if="log.msgtype == 'video'">[视频]</span>
+							<span class="title" ng-if="log.msgtype == 'music'">[音乐]</span>
+						</a>
+					</div>
+					<div class="audio-msg" ng-if="log.msgtype == 'voice'">
+						<div class="icon-audio-wrp">
+							<span class="icon-audio-msg"></span>
+						</div>
+						<div class="audio-content">
+							<div class="audio-title">[语音]</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--<div class="media notice-item">-->
+				<!--<a class="media-left" href="#">-->
+					<!--<img src="http://wx.qlogo.cn/mmopen/vrqNZwpc2mRbnoM7JPibTOLJOIHLZRf4cQvickmK2MEBu7ziaOvIalLpaNPoeehWOPd0Tmz1rpYzweibbuiat76Cs04Xj17mqJNWR/132" width="48">-->
+				<!--</a>-->
+				<!--<div class="media-body">-->
+					<!--<div class="media-heading">-->
+						<!--昵称-->
+						<!--<span class="notice-item-time">17:48</span>-->
+					<!--</div>-->
+					<!--<div class="notice-item-content">-->
+						<!--<div class="media">-->
+							<!--<a class="media-left" href="#">-->
+								<!--<img src="http://wx.qlogo.cn/mmopen/vrqNZwpc2mRbnoM7JPibTOLJOIHLZRf4cQvickmK2MEBu7ziaOvIalLpaNPoeehWOPd0Tmz1rpYzweibbuiat76Cs04Xj17mqJNWR/132" width="48">-->
+							<!--</a>-->
+							<!--<div class="media-body">-->
+								<!--<span class="media-heading">-->
+									<!--[图片]-->
+								<!--</span>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+	</div>
+</div>
+<script>
+require(['underscore'], function() {
+	angular.module('fansApp').value('config', {
+		'chatLogs' : {php echo !empty($chat_record) ? json_encode($chat_record) : '[]'},
+		'endurl' : "{php echo url('mc/chats/endchats', array('openid' => $openid))}",
+		'sendurl' : "{php echo url('mc/chats/send', array('openid' => $openid))}"
+	});
+	angular.bootstrap($('.notice-fans-list'), ['fansApp']);
+});
+</script>
+{template 'common/footer'}

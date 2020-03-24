@@ -1,0 +1,22 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view a:for="{{settleList}}" a:key="{{item.order_no}}" class='settle'>
+            <view class='settle_status'>{{item.order_status}}</view>
+            <view class='price'>{{item.price}} <text class='yuan'>元</text></view>
+            <view>
+                <view class='order_no_box'>
+                    <text class='order_no_text'>订单号</text>
+                    <text class='order_no'>{{item.order_no}}</text>
+                </view>
+                <view class='goods_info_box'>
+                    <text class='goods_explain'>商品名称</text>
+                    <text class='goods_name'>{{item.goods_name}}</text>
+                </view>
+            </view>
+        </view>
+        <include src="/components/list-loading/list-loading" />
+    </view>
+    <include src="/components/footer/footer" />
+</view>

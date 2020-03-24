@@ -1,0 +1,116 @@
+{template 'common/header'}
+<div class="optimize">
+	<ul class="we7-page-tab"></ul>
+	<div class="alert we7-page-alert">
+		<p><i class="wi wi-info-sign"></i> 启用内存优化功能将会大幅度提升程序性能和服务器的负载能力，内存优化功能需要服务器系统以及PHP扩展模块支持</p>
+		<p><i class="wi wi-info-sign"></i> 目前支持的内存优化接口有 Memcache、Redis、eAccelerator、opcache<br><p>
+		<p><i class="wi wi-info-sign"></i> 其中eAccelerator在PHP5.5版本以下可以开启，opcache在PHP5.5版本以上可以开启<p>
+		<p><i class="wi wi-info-sign"></i> 内存接口的主要设置位于 config.php 当中，您可以通过编辑 config.php 进行高级设置<p>
+	</div>
+	<div class="clearfix">
+		<div class="panel we7-panel">
+			<div class="panel-heading">当前内存工作状态</div>
+				<table class="table we7-table table-hover site-list">
+					<col width="120px"/>
+					<col width=""/>
+					<col width=""/>
+					<col width=""/>
+					<tr>
+						<th>内存接口</th>
+						<th>PHP 扩展环境</th>
+						<th>Config 设置</th>
+						<th></th>
+					</tr>
+					{loop $extensions $key $extension}
+					<tr>
+						<td><span class="label label-success">{$key}</span></td>
+						<td>
+							{if $extension['support']}
+								支持
+							{else}
+								不支持
+							{/if}
+						</td>
+						<td>
+							{if $extension['status']}
+								已开启
+							{else}
+								未开启
+							{/if}
+							{if $key == 'opcache' && $extensions['eAccelerator']['status'] && $extensions['opcache']['status']}
+							<span class="label label-danger">eAccelerator 不可与 opcache同时开启</span>
+							{/if}
+						</td>
+						<td>
+							{if $extension['status'] && $extension['clear']}
+							<a href="{$extension['clear']['url']}">{$extension['clear']['title']}</a>
+							{/if}
+							{$extension['extra']}
+						</td>
+					</tr>
+					{/loop}
+				</table>
+		</div>
+		<div class="panel we7-panel">
+			<div class="panel-heading">数据库读写分离工作状态</div>
+				<table class="table we7-table table-hover site-list">
+					<tr>
+						<td width="200">读写分离状态</td>
+						<td class="text-left">
+							{if $slave['slave_status']}
+							<span class="label label-success">已开启</span>
+							{else}
+							<span class="label label-danger">未开启</span>
+							{/if}
+						</td>
+					<tr>
+						<td>session存储方式</td>
+						<td class="text-left">
+							{if $extensions['memcache']['status'] && $setting['memcache']['session'] == 1}
+							<span class="label label-danger">memcache</span>
+							{else if $extensions['redis']['status'] && $setting['redis']['session'] == 1}
+							<span class="label label-success">redis</span>
+							{else}
+							<span class="label label-success">mysql</span>
+							{/if}
+						</td>
+					</tr>
+					<tr>
+						<td>禁用从数据库的数据表</td>
+						<td class="text-left">
+							{if !empty($slave['common']['slave_except_table'])}
+								{loop $slave['common']['slave_except_table'] $row}
+									{$row}
+								{/loop}
+							{else}
+								暂无
+							{/if}
+						</td>
+					</tr>
+				</table>
+		</div>
+		<div class="panel we7-panel">
+			<div class="panel-heading">远程访问代理设置</div>
+				<table class="table we7-table table-hover site-list">
+					<tr>
+						<td width="200">状态</td>
+						<td class="text-left">
+							{if !empty($setting['proxy']['host'])}
+								<span class="label label-success">已开启</span>
+							{else}
+								<span class="label label-danger">未开启</span>
+							{/if}
+						</td>
+					</tr>
+					{if !empty($setting['proxy']['host'])}
+					<tr>
+						<td>远程地址</td>
+						<td class="text-left">{$setting['proxy']['host']} 因安全原因，密码不予显示</td>
+					</tr>
+					{/if}
+				</table>
+		</div>
+		<br />
+	</div>
+</div>
+{template 'common/footer'}

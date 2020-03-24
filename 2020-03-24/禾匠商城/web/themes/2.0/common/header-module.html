@@ -1,0 +1,44 @@
+<!-- <span class="menu-title">
+	<i class="wi wi-apply"></i>应用
+</span> -->
+<div class="sub-module-info">
+	<div class="module-info-name">
+		{if empty($_W['current_module']['logo'])}
+			<img src="./resource/images/init_module_logo.png" class="head-app-logo module-img" onclick="initModuleLogo()">
+		{else}
+			<img src="{php echo tomedia($_W['current_module']['logo'])}" class="head-app-logo module-img">
+		{/if}
+		{if $_W['current_module']['main_module']}
+			<div class="name text-over">{$_W['current_module']['main_module_title']}</div>
+		{else}
+			<div class="name text-over">{$_W['current_module']['title']}</div>
+		{/if}
+	</div>
+	{if $_W['current_module']['main_module']}
+	<div class="module-plugin-info">
+		<a href="{php echo url('home/welcome/ext', array('m' => $_W['current_module']['main_module']))}"><i class="wi wi-angle-left"></i></a>
+		<div class="plugin-info-box">
+			{if file_exists(IA_ROOT. "/addons/". $_W['current_module']['name']. "/icon-custom.jpg")}
+				<img src="{php echo tomedia("addons/".$_W['current_module']['name']."/icon-custom.jpg")}" class="plugin-info-logo" onerror="this.src='./resource/images/gw-wx.gif'">
+			{else}
+				<img src="{php echo tomedia("addons/".$_W['current_module']['name']."/icon.jpg")}" class="plugin-info-logo" onerror="this.src='./resource/images/gw-wx.gif'">
+			{/if}
+		</div>
+		<div class="plugin-info-name text-over">{$_W['current_module']['title']}</div>
+	</div>
+	{/if}
+</div>
+
+<script>
+	function initModuleLogo() {
+		$.get('./index.php?c=module&a=manage-system&do=init_modules_logo', function(data){
+			window.location.reload();
+		});
+	}
+</script>
+
+<!-- 兼容历史性问题：模块内获取不到模块信息$module的问题-start -->
+{if defined('CRUMBS_NAV') && CRUMBS_NAV == 1}
+{php global $module;}
+{/if}
+<!-- end -->

@@ -1,0 +1,55 @@
+<template name="form">
+    <view class="address-picker" style="padding:0 24rpx;">
+        <view class="form-title text-more">{{item.form.name?item.form.name:'表单信息'}}</view>
+        <view class="form-list">
+            <view class="form-one flex-row" wx:for="{{item.form.list}}" wx:for-index="formId" wx:for-item="form" wx:key="{{form.id}}">
+                <view class="flex-grow-0 list-name {{form.type=='text'?'flex-y-center':''}} {{form.required==1?'required':''}}">{{form.name}}</view>
+                <view class="flex-grow-1 flex-y-center" wx:if="{{form.type=='text'}}">
+                    <input bindConfirm="formInput" bindInput="formInput" bindblur="formInput" data-form-id="{{formId}}" data-index="{{index}}" placeholder="{{form.tip}}" type="text" value="{{form.default}}"></input>
+                </view>
+                <view class="flex-grow-1" wx:if="{{form.type=='textarea'}}">
+                    <textarea autoHeight="true" bindConfirm="formInput" bindInput="formInput" bindblur="formInput" data-form-id="{{formId}}" data-index="{{index}}" placeholder="{{form.tip}}" style="width:auto;max-height:400rpx;height:auto" value="{{form.default}}"></textarea>
+                </view>
+                <block wx:if="{{form.type=='time'}}">
+                    <view class="flex-grow-1" style="justify-content:flex-end;text-align:right;">
+                        <picker bindchange="formInput" data-form-id="{{formId}}" data-index="{{index}}" end="23:59" mode="time" start="00:00" value="{{form.default?form.default:'00:00'}}">
+                            <view>{{form.default?form.default:'请选择'}}</view>
+                        </picker>
+                    </view>
+                    <view class="flex-grow-0">
+                        <image class="right-jiantou" src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                    </view>
+                </block>
+                <block wx:if="{{form.type=='date'}}">
+                    <view class="flex-grow-1" style="justify-content:flex-end;text-align:right;">
+                        <picker bindchange="formInput" data-form-id="{{formId}}" data-index="{{index}}" mode="date" start="{{time}}" value="{{form.default?form.default:time}}">
+                            <view>{{form.default?form.default:'请选择'}}</view>
+                        </picker>
+                    </view>
+                    <view class="flex-grow-0">
+                        <image class="right-jiantou" src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                    </view>
+                </block>
+                <view class="flex-grow-1 flex-row" style="flex-wrap:wrap" wx:if="{{form.type=='radio'}}">
+                    <view bindtap="selectForm" class="default {{v.is_selected==1?'d-active':''}}" data-form-id="{{formId}}" data-index="{{index}}" data-k="{{k}}" wx:for="{{form.default_list}}" wx:for-index="k" wx:for-item="v" wx:key="{{v.id}}">{{v.name}}</view>
+                </view>
+                <view class="flex-grow-1 flex-row" style="flex-wrap:wrap" wx:if="{{form.type=='checkbox'}}">
+                    <view bindtap="selectForm" class="default {{v.is_selected==1?'d-active':''}}" data-form-id="{{formId}}" data-index="{{index}}" data-k="{{k}}" style="border-radius:0" wx:for="{{form.default_list}}" wx:for-index="k" wx:for-item="v" wx:key="{{v.id}}">{{v.name}}</view>
+                </view>
+                <block wx:if="{{form.type=='uploadImg'}}">
+                    <view bindtap="uploadImg" class="flex-grow-1 flex-y-center" data-form-id="{{formId}}" data-index="{{index}}">
+                        <view style="text-align:right;width:100%;font-size:0" wx:if="{{form.default}}">
+                            <image mode="aspectFit" src="{{form.default}}" style="width:88rpx;height:96rpx"></image>
+                        </view>
+                        <view style="text-align:right;width:100%;color:#c9c9c9;" wx:else>
+                            <view>{{form.tip?form.tip:'请选择图片'}}</view>
+                        </view>
+                    </view>
+                    <view class="flex-grow-0 flex-y-center">
+                        <image src="{{__wxapp_img.balance.right.url}}" style="width:12rpx;height:18rpx;margin-left:18rpx;"></image>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+</template>

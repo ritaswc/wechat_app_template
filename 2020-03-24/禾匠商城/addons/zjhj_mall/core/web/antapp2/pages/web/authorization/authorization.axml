@@ -1,0 +1,39 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view>
+            <!--已绑定页面  -->
+            <block a:if="{{is_bind === 1}}">
+                <view class='flex-row flex-x-center'>
+                    <image class='bind_yes_img' src='{{app.app_logo ? app.app_logo : __wxapp_img.store.binding_yes.url}}'></image>
+                </view>
+
+                <view class='flex-row flex-x-center title'>
+                    <text>{{app.title}}</text>
+                </view>
+            </block>
+
+            <!--未绑定页面  -->
+            <block a:if="{{is_bind === 2}}">
+                <view class='flex-row flex-x-center img_box'>
+                    <image class='head_img' src='{{user.avatar_url}}'></image>
+                    <view class='img_binding_box'>
+                        <image class='img_binding' src='{{__wxapp_img.store.onIng.url}}'></image>
+                    </view>
+                    <image class='head_img' src='{{app.app_logo ? app.app_logo : __wxapp_img.store.binding_yes.url}}'></image>
+                </view>
+
+                <view class='flex-row flex-x-center title'>
+                    <text>{{app.title}}</text>
+                </view>
+                <view class='flex-row flex-x-center content'>
+                    <text>及时接收消息推送</text>
+                </view>
+                <button class='flex-row flex-x-center auth-info' onGetuserinfo='getUserInfo' open-type="getUserInfo">绑定公众号</button>
+            </block>
+
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

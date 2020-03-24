@@ -1,0 +1,151 @@
+.info-bg {
+    width: 100%;
+    height: 300rpx;
+    background-color: #f7f7f7;
+    margin-bottom: 20rpx;
+}
+
+.info-bg .bg {
+    width: 100%;
+    height: 300rpx;
+}
+
+.step1 .info {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1rpx #e3e3e3 solid;
+    border-top: 1rpx #e3e3e3 solid;
+    padding: 0 24rpx;
+}
+
+.info .info-label {
+    width: 100%;
+    height: 100rpx;
+    border-bottom: 1rpx #e3e3e3 solid;
+    color: #353535;
+}
+
+.info .info-label:last-child {
+    border-bottom: none;
+}
+
+.info .info-label .info-red {
+    color: #ff4544;
+}
+
+.info .info-label .info-gray {
+    color: #666;
+}
+
+.info .info-label.info-content {
+    height: 100rpx;
+}
+
+.info-label .info-left {
+    width: 176rpx;
+}
+
+.info-label .info-left.required::after {
+    content: "*";
+    color: #ff4544;
+}
+
+.info-label .info-agree {
+    font-size: 10pt;
+}
+
+.info-btn {
+    padding: 24rpx;
+    background-color: #f7f7f7;
+    width: 100%;
+}
+
+.info-btn .info-btn-content {
+    width: 100%;
+    background-color: #ff4544;
+    color: #fff;
+    font-weight: bold;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.info-label .info-icon {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 24rpx;
+}
+
+.info .bold {
+    font-weight: bold;
+}
+
+.info .info-label.info-height {
+    height: auto;
+}
+
+.info .info-label .info-block {
+    padding: 24rpx 0;
+}
+
+.info-block .info-top {
+    margin-bottom: 16rpx;
+}
+
+.info-block .info-bottom {
+    font-size: 9pt;
+}
+
+.step2 .info {
+    padding: 48rpx 24rpx;
+    text-align: center;
+}
+
+.step2 .info .info-title {
+    width: 100%;
+    padding: 40rpx 0;
+}
+
+.info-title .info-images {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.step2 .info-btn1 {
+    margin-top: 88rpx;
+    padding: 0 24rpx;
+    width: 100%;
+}
+
+.step2 .info-btn1 .btn {
+    width: 100%;
+    background-color: #ff4544;
+    color: #fff;
+    font-weight: bold;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 10rpx;
+}
+
+.agree-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.agree-body {
+    height: 720rpx;
+    overflow: auto;
+    padding: 10rpx 20rpx;
+}
+
+.agree-footer {
+    width: 100%;
+    height: 100rpx;
+    color: #fff;
+    background-color: #ff4544;
+    border-radius: 0 0 20rpx 20rpx;
+}

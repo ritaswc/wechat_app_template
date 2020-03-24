@@ -1,0 +1,403 @@
+{template 'common/header-base'}
+{if $_W['template'] == 'black'}
+<div class="skin-black" data-skin="black">
+	<div class="head">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container ">
+                {if !$_W['iscontroller']}
+				<div class="header-info-common pull-left">
+					<a class="header-info-common__logo" href="{php echo $_W['siteroot'] . 'web/home.php'}">
+						<img src="{if !empty($_W['setting']['copyright']['blogo'])}{php echo to_global_media($_W['setting']['copyright']['blogo'])}{else}./resource/images/logo/logo.png{/if}" class="logo" style="max-height: 40px;max-width: 100px;">
+					</a>
+					{if $_W['breadcrumb']}
+					<div class="header-info-common__breadcrumb">
+						<a href="{$_W['siteroot']}web/home.php" class="home">
+							<i class="wi wi-home"></i>
+						</a>
+						<span class="separator"> <i class="wi wi-angle-right"></i> </span>
+						<div class="item">{$_W['breadcrumb']}</div>
+					</div>
+					{/if}
+				</div>
+                {/if}
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-left">
+						{template 'common/header-topnav'}
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						{template 'common/header-user'}
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+<div class="main">
+	<div class="container">
+		<div class="panel panel-content main-panel-content ">
+			<div class="panel-body clearfix main-panel-body ">
+				<div class="left-menu">
+					<div class="left-menu-content">
+						<div class="left-menu-top skin-black">
+							<div class="account-info-name">
+								<span class="account-name"><i class="wi wi-store"></i><a href="./index.php?c=home&a=welcome&do=account&">商城</a></span>
+							</div>
+						</div>
+						{loop $this->left_menus $key $menus}
+						{if in_array($key, array('store_manage', 'store_payments', 'store_cash_manage')) && !($_W['isfounder'] && !user_is_vice_founder())}
+						{php continue;}
+						{/if}
+						<div class="panel panel-menu">
+							<div class="panel-heading">
+								<span class="" data-toggle="collapse" data-target="#frame-{$key}" onclick="util.cookie.set('menu_fold_tag:{$key}', util.cookie.get('menu_fold_tag:{$key}') == 1 ? 0 : 1)">{$menus['title']}<i class="wi wi-down-sign-s pull-right"></i></span>
+							</div>
+							<ul class="list-group collapse {if $_GPC['menu_fold_tag:'.$key] == 0}in{/if}" id="frame-{$key}">
+								{loop $menus['menu'] $menu_key $menu}
+								{if $key == 'store_goods' && !empty($_W['setting']['store'][$menu_key])}
+									{php continue;}
+								{/if}
+								{if $menu_key == 'store_goods_users_package' && user_is_vice_founder()}
+									{php continue;}
+								{/if}
+								{if $menu_key == 'store_check_cash' && !$this->store_setting['cash_status']}
+									{php continue;}
+								{/if}
+								<li class="list-group-item {if ($_GPC['type'] == $menu['type'] && $_GPC['do'] == 'goodsbuyer') || ($_GPC['do'] == $menu['type'] && $_GPC['do'] != 'goodsbuyer') || ($_GPC['do'] == 'cash' && $_GPC['operate'] == $menu['type'])}active{/if}">
+									<a href="{$menu['url']}" class="text-over" >
+										<i class="{$menu['icon']}"></i> {$menu['title']}</a>
+								</li>
+								{/loop}
+							</ul>
+						</div>
+						{/loop}
+					</div>
+				</div>
+				<div class="right-content">
+{elseif $_W['template'] == 'classical'}
+<style>
+	.tooltip.right .tooltip-arrow{border-right-color: #428bca;}
+	.tooltip.bottom .tooltip-arrow{border-bottom-color: #428bca;}
+	.tooltip-inner{background-color: #428bca; padding: 6px 12px;}
+</style>
+<div class="skin-classical" data-skin="classical">
+<div class="first-sidebar">
+		<div class="{if !empty($frames['section']['platform_module_menu']['plugin_menu'])}plugin-head{/if}">
+			<a class="logo-wrap" href="{$_W['siteroot']}">
+				<img src="{if !empty($_W['setting']['copyright']['blogo'])}{php echo to_global_media($_W['setting']['copyright']['blogo'])}{else}./resource/images/logo/logo.png{/if}" class="logo" style="max-height: 40px;max-width: 100px;">
+			</a>
+			{if !empty($_W['uid'])}
+			<div class="nav">
+				<ul class="main-nav">
+					{template 'common/header-topnav'}
+				</ul>
+				<ul class="user-info">
+                    {template 'common/header-user'}
+				</ul>
+			</div>
+			{else}
+			<ul class="user-info">
+				<li class="dropdown"><a href="{php echo url('user/register');}">注册</a></li>
+				<li class="dropdown"><a href="{php echo url('user/login');}">登录</a></li>
+			</ul>
+			{/if}
+		</div>
+</div>
+<script>
+	$(function(){
+		var $dropdownLi = $('.msg.dropdown');
+		$dropdownLi.mouseover(function() {
+			$(this).addClass('open');
+		}).mouseout(function() {
+			$(this).removeClass('open');
+		});
+	});
+</script>
+
+
+<div class="main main-classical">
+	<div class="right-fixed-top"></div>
+	<div class="container">
+		<div class="panel panel-content main-panel-content {if !empty($frames['section']['platform_module_menu']['plugin_menu'])}panel-content-plugin{/if}">
+		<div class="panel-body clearfix main-panel-body {if $_GPC['menu_fold_tag:classical'] == 1}folded{/if}">
+			<div class="icon-unfold js-folded" onclick="util.cookie.set('menu_fold_tag:classical', util.cookie.get('menu_fold_tag:classical') == 1 ? 0 : 1)">
+				<span class="wi wi-folded"></span>
+			</div>
+			<div class="left-menu-container">
+				<div class="left-menu">
+					{loop $this->left_menus $key $menus}
+					{if in_array($key, array('store_manage', 'store_payments', 'store_cash_manage')) && !($_W['isfounder'] && !user_is_vice_founder())}
+					{php continue;}
+					{/if}
+					<div class="panel panel-menu">
+						<div class="panel-heading">
+							<span class="no-collapse"{if $_GPC['menu_fold_tag:'.$key] == 1}collapsed{/if}" data-toggle="collapse" data-target="#frame-{$key}" onclick="util.cookie.set('menu_fold_tag:{$key}', util.cookie.get('menu_fold_tag:{$key}') == 1 ? 0 : 1)">{$menus['title']}<i class="wi wi-appsetting pull-right setting"></i></span>
+						</div>
+						<ul class="list-group collapse {if $_GPC['menu_fold_tag:'.$key] == 0}in{/if}" id="frame-{$key}"">
+							{loop $menus['menu'] $menu_key $menu}
+							{if $key == 'store_goods' && !empty($_W['setting']['store'][$menu_key])}
+								{php continue;}
+							{/if}
+							{if $menu_key == 'store_goods_users_package' && user_is_vice_founder()}
+								{php continue;}
+							{/if}
+							{if $menu_key == 'store_check_cash' && !$this->store_setting['cash_status']}
+								{php continue;}
+							{/if}
+							<li class="list-group-item {if ($_GPC['type'] == $menu['type'] && $_GPC['do'] == 'goodsbuyer') || ($_GPC['do'] == $menu['type'] && $_GPC['do'] != 'goodsbuyer') || ($_GPC['do'] == 'cash' && $_GPC['operate'] == $menu['type'])}active{/if}">
+								<a href="{$menu['url']}" class="text-over" >
+									<span class="nav-icon" data-container="body" data-toggle="tooltip" data-placement="right" title="{$menu['title']}"><i class="{$menu['icon']}"></i></span> <span class="nav-title">{$menu['title']}</span>
+								</a>
+							</li>
+							{/loop}
+						</ul>
+					</div>
+					{/loop}
+				</div>
+			</div>
+			<script>
+				$(function(){
+					$('.left-menu-container').slimScroll({
+						width: '210px',
+						height: 'calc(100vh - 51px)',
+						opacity: .4,
+						color: '#aaa',
+					});
+					$('.main-panel-content .icon-unfold').click(function(){
+						$('.main-panel-content').find('.main-panel-body').toggleClass('folded');
+					});
+					$('.nav-icon').tooltip('hide');
+				});
+			</script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+			<div class="right-content">
+				<div class="content">
+{elseif $_W['template'] == '2.0'}
+<div class="skin-2 {if !$_W['iscontroller']}skin-2--full{/if}" data-skin="2">
+    <div class="skin-2__left {if $frames['dimension'] == 3}skin-2__left--small{/if}">
+        <!-- logo -->
+        <a class="skin-2__logo" href="{if $_W['role'] == ACCOUNT_MANAGE_NAME_CLERK}{url 'module/display'}{else}{url 'account/display'}{/if}">
+            <img src="{if !empty($_W['setting']['copyright']['blogo'])}{php echo to_global_media($_W['setting']['copyright']['blogo'])}{else}./resource/images/logo/logo.png{/if}" class="logo" width="100%" style="max-height: 24px;">
+        </a>
+        <!-- end logo-->
+        <!-- 一级菜单 -->
+		<ul class="main-nav">
+			{template 'common/header-topnav'}
+        </ul>
+        <!-- end一级菜单 -->
+    </div>
+    <div class="skin-2__right">
+        <div class="skin-2__header">
+			{if !$_W['iscontroller']}
+			<div class="header-info-common pull-left">
+				<a class="header-info-common__logo" href="{php echo $_W['siteroot'] . 'web/home.php'}">
+					<img src="{if !empty($_W['setting']['copyright']['blogo'])}{php echo to_global_media($_W['setting']['copyright']['blogo'])}{else}./resource/images/logo/logo.png{/if}" class="logo" style="max-height: 40px;max-width: 100px;">
+				</a>
+				{if $_W['breadcrumb']}
+				<div class="header-info-common__breadcrumb">
+					<a href="{$_W['siteroot']}web/home.php" class="home">
+						<i class="wi wi-home"></i>
+					</a>
+					<span class="separator"> <i class="wi wi-angle-right"></i> </span>
+					<div class="item">{$_W['breadcrumb']}</div>
+				</div>
+				{/if}
+			</div>
+			{/if}
+			<div class="shortcut pull-left">
+				<div class="shortcut-header" data-toggle="dropdown"><i class="wi wi-menu-setting"></i>菜单</div>
+				<ul class="shortcut-list">
+					<li class="shortcut-item">
+						{loop $top_nav_shortcut $nav}
+						<div class="parent">
+							<a href="{if empty($nav['url'])}{php echo url('home/welcome/' . $nav['name']);}{else}{$nav['url']}{/if}" {if !empty($nav['blank'])}target="_blank"{/if}>
+							<i class="{$nav['icon']} icon"></i>{$nav['title']}
+							</a>
+						</div>
+						{/loop}
+					</li>
+					{php $shortcut_menu = system_shortcut_menu()}
+					{loop $shortcut_menu $menu}
+					{if !empty($menu['section'])}
+					<li class="shortcut-item">
+						<div class="parent">
+							<a href="{$menu['url']}">
+								<i class="{$menu['icon']} icon"></i>{$menu['title']}
+							</a>
+						</div>
+						<div class="child">
+							{loop $menu['section'] $section}
+							{if !isset($section['is_display']) || !empty($section['is_display'])}
+							{loop $section['menu'] $item}
+							{if !empty($item['is_display'])}
+							<div class="item text-over">
+								<a href="{$item['url']}">
+									<i class="{$item['icon']} icon"></i>{$item['title']}
+								</a>
+							</div>
+							{/if}
+							{/loop}
+							{/if}
+							{/loop}
+						</div>
+					</li>
+					{/if}
+					{/loop}
+				</ul>
+				<div class=""></div>
+			</div>
+            {if !empty($_W['uid'])}
+            <ul class="user-info">
+                {template 'common/header-user'}
+            </ul>
+            {else}
+            <ul class="user-info">
+                <li class="dropdown"><a href="{php echo url('user/register');}">注册</a></li>
+                <li class="dropdown"><a href="{php echo url('user/login');}">登录</a></li>
+            </ul>
+            {/if}
+        </div>
+        <div class="skin-2__content main">
+            {if !defined('IN_MESSAGE')}
+                {if $frames['dimension'] == 3 && in_array(FRAME, array('account', 'system', 'advertisement', 'wxapp', 'site', 'webapp', 'phoneapp', 'xzapp')) && !in_array($_GPC['a'], array('news-show', 'notice-show'))}
+                <div class="skin-2__sub">
+                    <div class="sub-top">
+                        <div class="sub-module-info">
+                            <div class="module-info-name">
+								<i class="wi wi-store color-default" style="font-size: 60px;margin-bottom: 10px;"></i>
+                                <div class="name text-over">站内商城</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 二级菜单-->
+                    <div class="js-menu" id="js-menu-{FRAME}{$_W['account']['uniacid']}">
+                        {loop $this->left_menus $key $menus}
+                        {if in_array($key, array('store_manage', 'store_payments', 'store_cash_manage')) && !($_W['isfounder'] && !user_is_vice_founder())}
+                        {php continue;}
+                        {/if}
+                        {if $key == 'store_wish_goods' && $this->store_setting['wish_module_status'] == 0}
+                        {php continue;}
+                        {/if}
+                        <div class="panel panel-menu">
+                            <div class="panel-heading">
+                                <span class="no-collapse"{if $_GPC['menu_fold_tag:'.$key] == 1}collapsed{/if}" data-toggle="collapse" data-target="#frame-{$key}" onclick="util.cookie.set('menu_fold_tag:{$key}', util.cookie.get('menu_fold_tag:{$key}') == 1 ? 0 : 1)">{$menus['title']}</span>
+                            </div>
+                            <ul class="list-group collapse {if $_GPC['menu_fold_tag:'.$key] == 0}in{/if}" id="frame-{$key}"">
+                                {loop $menus['menu'] $menu_key $menu}
+                                {if $key == 'store_goods' && !empty($_W['setting']['store'][$menu_key])}
+                                    {php continue;}
+                                {/if}
+                                {if $menu_key == 'store_goods_users_package' && user_is_vice_founder()}
+                                    {php continue;}
+                                {/if}
+                                {if $menu_key == 'store_check_cash' && !$this->store_setting['cash_status']}
+                                    {php continue;}
+                                {/if}
+                                <li class="list-group-item {if ($_GPC['type'] == $menu['type'] && $_GPC['do'] == 'goodsbuyer') || ($_GPC['do'] == $menu['type'] && $_GPC['do'] != 'goodsbuyer') || ($_GPC['do'] == 'cash' && $_GPC['operate'] == $menu['type'])}active{/if}">
+                                    <a href="{$menu['url']}" class="text-over" >
+                                        <span class="nav-icon" data-container="body" data-toggle="tooltip" data-placement="right" title="{$menu['title']}"><i class="{$menu['icon']}"></i></span> <span class="nav-title">{$menu['title']}</span>
+                                    </a>
+                                </li>
+                                {/loop}
+                            </ul>
+                        </div>
+                        {/loop}
+                    </div>
+                    <!-- end二级菜单-->
+                </div>
+                {/if}
+                <div class="skin-2__container container">
+                        <div class="content">
+            {/if}
+{else}
+
+<div data-skin="default" class="skin-default {if $_GPC['main-lg']} main-lg-body {/if}">
+<div class="head">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container ">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="{$_W['siteroot']}">
+			<img src="{if !empty($_W['setting']['copyright']['blogo'])}{php echo to_global_media($_W['setting']['copyright']['blogo'])}{else}./resource/images/logo/logo.png{/if}" class="pull-left" wstyle="max-height: 40px;max-width: 100px;">
+		</a>
+	</div>
+	<div class="collapse navbar-collapse">
+		<style>
+			.nav > li:hover .dropdown-menu {display: block;}
+		</style>
+		{php global $top_nav}
+		{php $nav_top_fold=array()}
+		{php $platform_url=url('account/display')}
+		{php $nav_top_fold[] = array('name' => 'all', 'title'=>'全部', 'type' => 'all', 'url' => $platform_url)}
+		{loop $top_nav $nav}
+			{if in_array($nav['name'], array(ACCOUNT_TYPE_SIGN, WXAPP_TYPE_SIGN, WEBAPP_TYPE_SIGN, PHONEAPP_TYPE_SIGN, XZAPP_TYPE_SIGN, ALIAPP_TYPE_SIGN, BAIDUAPP_TYPE_SIGN, TOUTIAOAPP_TYPE_SIGN))}
+				{php $nav_top_fold[]=$nav}
+			{elseif in_array($nav['name'], array('store', 'help', 'workorder', 'custom_help'))}
+				{php $nav_top_tiled_other[] = $nav}
+			{elseif $nav['name'] =='message'}
+				{php $nav_top_message = $nav}
+			{else}
+				{php $nav_top_tiled_system[] = $nav}
+			{/if}
+			{if 'store' == $nav['name'] && user_is_founder($_W['uid'], true)}{php $nav_top_tiled_system[] = $nav}{/if}
+		{/loop}
+		<ul class="nav navbar-nav  navbar-left">
+			{loop $nav_top_tiled_system $nav}
+			<li {if FRAME == $nav['name'] && !defined('IN_MODULE')} class="active" {/if}>
+			<a href="{if empty($nav['url'])}{php echo url('home/welcome/' . $nav['name']);}{else}{$nav['url']}{/if}" {if !empty($nav['blank'])}target="_blank"{/if}>{$nav['title']}</a>
+			</li>
+			{/loop}
+		</ul>
+		<ul class="nav navbar-nav navbar-left hidden">
+			{php global $top_nav}
+			{loop $top_nav $nav}
+			<li {if FRAME == $nav['name'] && !defined('IN_MODULE')} class="active"{/if}><a href="{if empty($nav['url'])}{php echo url('home/welcome/' . $nav['name']);}{else}{$nav['url']}{/if}" {if !empty($nav['blank'])}target="_blank"{/if}>{$nav['title']}</a></li>
+			{/loop}
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+            {template 'common/header-user'}
+		</ul>
+	</div>
+</div>
+</nav>
+</div>
+
+<div class="main">
+<div class="container">
+<a href="javascript:;" class="js-big-main button-to-big color-gray" title="加宽">宽屏</a>
+<div class="panel panel-content main-panel-content">
+	<div class="content-head panel-heading main-panel-heading">
+		<span class="font-lg"><i class="wi wi-store"></i> 商城</span></div>
+	<div class="panel-body clearfix main-panel-body">
+		<div class="left-menu">
+			<div class="left-menu-content">
+				{loop $this->left_menus $key $menus}
+				{if in_array($key, array('store_manage', 'store_payments', 'store_cash_manage')) && !($_W['isfounder'] && !user_is_vice_founder())}
+					{php continue;}
+				{/if}
+				<div class="panel panel-menu">
+					<div class="panel-heading">
+						<span class="no-collapse">{$menus['title']}<i class="wi wi-appsetting pull-right setting"></i></span>
+					</div>
+					<ul class="list-group">
+						{loop $menus['menu'] $menu_key $menu}
+						{if $key == 'store_goods' && !empty($_W['setting']['store'][$menu_key])}
+							{php continue;}
+						{/if}
+						{if $menu_key == 'store_goods_users_package' && user_is_vice_founder()}
+							{php continue;}
+						{/if}
+						{if $menu_key == 'store_check_cash' && !$this->store_setting['cash_status']}
+							{php continue;}
+						{/if}
+						<li class="list-group-item {if ($_GPC['type'] == $menu['type'] && $_GPC['do'] == 'goodsbuyer') || ($_GPC['do'] == $menu['type'] && $_GPC['do'] != 'goodsbuyer') || ($_GPC['do'] == 'cash' && $_GPC['operate'] == $menu['type'])}active{/if}">
+							<a href="{$menu['url']}" class="text-over" >
+								<i class="{$menu['icon']}"></i> {$menu['title']}</a>
+						</li>
+						{/loop}
+					</ul>
+				</div>
+				{/loop}
+			</div>
+		</div>
+		<div class="right-content" style="overflow: hidden;">
+{/if}

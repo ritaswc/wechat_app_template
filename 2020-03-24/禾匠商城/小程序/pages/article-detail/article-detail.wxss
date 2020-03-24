@@ -1,0 +1,7 @@
+@import "../../wxParse/wxParse.wxss";
+
+page {
+    min-height: 100%;
+    background: #fff;
+    overflow-x: hidden;
+}

@@ -1,0 +1,6 @@
+<scroll-view scrollY bindscrolltolower="lower" scrollIntoView="{{toView}}" scrollTop="{{scrollTop}}" style="height: 100%">
+    <view class="scroll-view-item bc_green" id="green"></view>
+    <view class="scroll-view-item bc_red" id="red"></view>
+    <view class="scroll-view-item bc_yellow" id="yellow"></view>
+    <view class="scroll-view-item bc_blue" id="blue"></view>
+</scroll-view>

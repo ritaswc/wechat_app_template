@@ -1,0 +1,51 @@
+@import "/lottery/commons/naver/naver.acss";
+@import "../../components/quick-navigation/quick-navigation.acss";
+.lottery-btn {
+	color:#ffffff;
+	background:#ff4544;
+	height:56rpx;
+	width:160rpx;
+	border-radius:28rpx;
+}
+
+.lottery-err { 
+    height:56rpx;
+    width:160rpx;
+    border-radius:28rpx;
+}
+.lottery-num {
+	position:absolute;
+	top:24rpx;
+	left:24rpx;
+	z-index:1;
+	padding:0 12rpx;
+	background:#ffe4e7;
+	height:40rpx;
+	border-radius:0 25rpx 25rpx 0;
+	font-size:9pt;
+	color:#ff4555;
+}
+.no-content{
+    color: #888;
+    padding: 100rpx 0 0 0;
+    text-align: center;
+}
+button#lotterySubmit {
+    display: block !important;
+    background: none !important;
+    height: auto !important;
+    width: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: inherit !important;
+    font-family: inherit !important;
+    color: inherit !important;
+    text-align: inherit;
+}
+
+button#lotterySubmit:before, button#lotterySubmit:after {
+    border-radius: 0 !important;
+    border: none !important;
+}

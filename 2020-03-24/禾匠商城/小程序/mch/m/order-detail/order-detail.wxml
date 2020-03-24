@@ -1,0 +1,155 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <block wx:if="{{order}}">
+            <view style="background: #fff;border-top: 1rpx solid #e3e3e3;border-bottom: 1rpx solid #e3e3e3;padding: 24rpx;margin-bottom: 24rpx">
+                <view class="flex flex-row" style="border-bottom: 1rpx solid #eee;padding-bottom: 24rpx">
+                    <view class="flex-grow-1" style="color: #25b6ed">订单详情</view>
+                    <view class="flex-grow-0">状态：{{order.status_text}}</view>
+                </view>
+                <view style="padding: 24rpx 0">
+                    <view style="margin-bottom: 24rpx">订单编号：{{order.order_no}}</view>
+                    <view>下单时间：{{order.addtime}}</view>
+                </view>
+                <view class="flex flex-row" style="margin-bottom: 24rpx" wx:for="{{order.goods_list}}" wx:key="{{item.id}}">
+                    <view class="flex-grow-0">
+                        <image mode="aspectFill" src="{{item.cover_pic}}" style="width: 156rpx;height: 156rpx;margin-right: 20rpx"></image>
+                    </view>
+                    <view class="flex-grow-1">
+                        <view class="goods-name">{{item.name}}</view>
+                        <view class="flex flex-row" style="color: #888;font-size: 9pt;">
+                            <view class="flex-grow-1">
+                                <view style="margin-right: 32rpx;display: inline-block" wx:for="{{item.attr}}" wx:key="{{item.id}}">{{item.attr_group_name}}:{{item.attr_name}}
+                                </view>
+                            </view>
+                            <view class="flex-grow-0">×{{item.num}}</view>
+                        </view>
+                        <view style="text-align: right;color: #ff4544;font-size: 9pt">￥{{item.total_price}}</view>
+                    </view>
+                </view>
+                <view class="flex flex-row" style="padding-bottom: 24rpx;color: #888">
+                    <view class="flex-grow-1">运费</view>
+                    <view class="flex-grow-0">+￥{{order.express_price}}</view>
+                </view>
+                <view class="flex flex-row" style="padding-top:24rpx;border-top: 1rpx solid #eee">
+                    <view class="flex-grow-1">实际支付</view>
+                    <view class="flex-grow-0">￥{{order.pay_price}}</view>
+                </view>
+                <view class="flex flex-row" style="padding-top:24rpx;" wx:if="{{order.is_pay==0}}">
+                    <view class="flex-grow-1"></view>
+                    <view class="flex-grow-0">
+                        <button bindtap="showEditModal" class="order-item-btn">改价</button>
+                    </view>
+                </view>
+            </view>
+            <view style="background: #fff;border-top: 1rpx solid #e3e3e3;border-bottom: 1rpx solid #e3e3e3;padding: 24rpx;margin-bottom: 24rpx">
+                <view class="flex flex-row" style="border-bottom: 1rpx solid #eee;padding-bottom: 24rpx">
+                    <view class="flex-grow-1" style="color: #25b6ed">收货信息</view>
+                    <view class="flex-grow-0">{{order.express_type}}</view>
+                </view>
+                <view bindtap="copyUserAddress">
+                    <view class="flex flex-row" style="margin: 20rpx 0">
+                        <view class="flex-grow-0" style="min-width: 160rpx;text-align: right;">收货人:</view>
+                        <view class="flex-grow-1" style="padding-left: 48rpx">{{order.name}}</view>
+                    </view>
+                    <view class="flex flex-row" style="margin: 20rpx 0">
+                        <view class="flex-grow-0" style="min-width: 160rpx;text-align: right;">联系电话:</view>
+                        <view class="flex-grow-1" style="padding-left: 48rpx">{{order.mobile}}</view>
+                    </view>
+                    <view class="flex flex-row" style="margin: 20rpx 0">
+                        <view class="flex-grow-0" style="min-width: 160rpx;text-align: right;">收货地址:</view>
+                        <view class="flex-grow-1" style="padding-left: 48rpx">{{order.address}}</view>
+                    </view>
+                </view>
+                <block wx:if="{{order.is_pay==1}}">
+                    <view class="flex flex-row" style="padding: 24rpx 0;border-top: 1rpx solid #eee" wx:if="{{order.is_send==0}}">
+                        <view class="flex-grow-1">买家已付款，请及时发货</view>
+                        <view class="flex-grow-0" style="padding-left: 48rpx">
+                            <button bindtap="showSendModal" class="order-item-btn">发货</button>
+                        </view>
+                    </view>
+                    <view style="padding: 24rpx 0;border-top: 1rpx solid #eee" wx:else>
+                        <view style="text-align: right" wx:if="{{order.is_confirm==0}}">
+                            <button bindtap="showSendModal" class="order-item-btn">修改物流信息</button>
+                        </view>
+                        <view wx:if="{{order.is_express==1}}">
+                            <view class="flex flex-row" style="margin: 20rpx 0">
+                                <view class="flex-grow-0" style="min-width: 160rpx;text-align: right;">快递单号:</view>
+                                <view class="flex-grow-1" style="padding-left: 48rpx">{{order.express_no}}</view>
+                            </view>
+                            <view class="flex flex-row" style="margin: 20rpx 0">
+                                <view class="flex-grow-0" style="min-width: 160rpx;text-align: right;">快递公司:</view>
+                                <view class="flex-grow-1" style="padding-left: 48rpx">{{order.express}}</view>
+                            </view>
+                            <view class="flex flex-row" style="margin: 20rpx 0">
+                                <view class="flex-grow-0" style="min-width: 160rpx;text-align: right;">物流信息:</view>
+                                <view class="flex-grow-1" style="padding-left: 48rpx">
+                                    <view class="express-detail-list" wx:if="{{order.express_data.data.list}}">
+                                        <view class="express-detail-item" wx:for="{{order.express_data.data.list}}" wx:key="{{item.id}}">
+                                            <view>{{item.detail}}</view>
+                                            <view style="color: #888">{{item.datetime}}</view>
+                                        </view>
+                                    </view>
+                                    <view style="color: #888" wx:else>暂无物流信息</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </block>
+    </view>
+    <view class="order-modal flex flex-x-center flex-y-center {{show_edit_modal?'show':''}}">
+        <view class="modal-dialog" style="margin-top: -20vh">
+            <view class="modal-body">
+                <view class="flex flex-row order-tab">
+                    <view bindtap="tabSwitch" class="flex-grow-1 order-tab-item {{order_sub_price_mode?'active':''}}" data-tab="order_sub_price_mode">优惠
+                    </view>
+                    <view bindtap="tabSwitch" class="flex-grow-1 order-tab-item {{order_add_price_mode?'active':''}}" data-tab="order_add_price_mode">加价
+                    </view>
+                </view>
+                <view style="padding: 40rpx" wx:if="{{order_sub_price_mode}}">
+                    <input bindblur="subPriceBlur" bindinput="subPriceInput" class="order-input" confirmType="done" placeholder="请输入优惠金额（元）" style="margin-bottom: 24rpx" type="digit" value="{{order_sub_price}}"></input>
+                    <view style="font-size: 9pt">最多还可优惠{{order.max_sub_price}}元</view>
+                </view>
+                <view style="padding: 40rpx" wx:if="{{order_add_price_mode}}">
+                    <input bindblur="addPriceBlur" bindinput="addPriceInput" class="order-input" confirmType="done" placeholder="请输入加价金额（元）" style="margin-bottom: 24rpx" type="digit" value="{{order_add_price}}"></input>
+                    <view style="font-size: 9pt">加价金额无限制</view>
+                </view>
+            </view>
+            <view class="modal-footer flex flex-row">
+                <button bindtap="hideEditModal" class="flex-grow-1 modal-cancel">取消
+                    <view class="modal-split"></view>
+                </button>
+                <button bindtap="editPriceSubmit" class="flex-grow-1 modal-confirm">确认</button>
+            </view>
+        </view>
+        <view class="modal-bg"></view>
+    </view>
+    <view class="order-modal flex flex-x-center flex-y-center {{show_send_modal?'show':''}}">
+        <view class="modal-dialog" style="margin-top: -20vh">
+            <view class="modal-body">
+                <view style="padding-top: 40rpx;text-align: center">选择发货方式</view>
+                <view class="flex flex-row" style="padding: 48rpx 24rpx">
+                    <view class="flex-grow-1" style="text-align: center">
+                        <view bindtap="switchSendType" class="order-item-btn order-modal-btn {{send_type=='express'?'active':''}}" data-type="express">快递配送
+                        </view>
+                    </view>
+                    <view class="flex-grow-1" style="text-align: center">
+                        <button bindtap="switchSendType" class="order-item-btn order-modal-btn {{send_type=='none'?'active':''}}" data-type="none">无需物流
+                        </button>
+                    </view>
+                </view>
+            </view>
+            <view class="modal-footer flex flex-row">
+                <button bindtap="hideSendModal" class="flex-grow-1 modal-cancel">取消
+                    <view class="modal-split"></view>
+                </button>
+                <button bindtap="sendSubmit" class="flex-grow-1 modal-confirm">确认</button>
+            </view>
+        </view>
+        <view class="modal-bg"></view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

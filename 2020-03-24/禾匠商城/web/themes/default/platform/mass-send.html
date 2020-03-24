@@ -1,0 +1,69 @@
+{template 'common/header'}
+<ul class="we7-page-tab">
+	{loop $active_sub_permission $active_menu}
+	{if permission_check_account_user($active_menu['permission_name'], false) && (empty($active_menu['is_display']) || is_array($active_menu['is_display']) && in_array($_W['account']['type'], $active_menu['is_display']))}
+	<li {if $do == $active_menu['active']}class="active"{/if}><a href="{$active_menu['url']}">{$active_menu['title']}</a></li>
+	{/if}
+	{/loop}
+</ul>
+<div class="mass-send" id="js-mass-send" ng-controller="MassSend" ng-cloak>
+	<table class="table we7-table table-hover vertical-middle">
+		<col />
+		<tr>
+			<th>消息类型</th>
+			<th>接收用户组</th>
+			<th>预计发送时间</th>
+			<th>发送人数</th>
+			<th>状态</th>
+			<th>操作</th>
+		</tr>
+		{loop $lists $list}
+		<tr>
+			<td>
+				<a href="{php echo url('platform/material/list', array('type' => $list['msgtype'], 'id' => $list['attach_id']));}" target="_blank">
+					{$types[$list['msgtype']]}
+				</a>
+			</td>
+			<td>{$list['groupname']}</td>
+			<td>{php echo date('Y-m-d H:i', $list['sendtime']);}</td>
+			<td>{if $list['group'] == '-1'}全部粉丝{else}{$list['fansnum']}{/if}</td>
+			<td>
+				{if !$list['status']}
+					<span class="label label-success">已发送</span>
+				{elseif $list['status'] == 1}
+					<span class="label label-warning">未发送</span>
+				{elseif $list['status'] == 2}
+					<span class="label label-danger">发送失败</span>
+				{/if}
+			</td>
+			<td>
+				{if $list['type'] == 1}
+					{if !$list['cron_id'] && $list['sendtime'] > TIMESTAMP}
+					<a href="{php echo url('platform/mass/cron', array('id' => $list['id']));}" class="btn btn-danger btn-sm">同步到云服务</a>
+					{/if}
+					<a href="{php echo url('platform/mass/post', array('id' => $list['id']));}" data-toggle="tooltip" data-placement="bottom">编辑</a>
+					<a href="javascript:void(0);" onclick="deleteMass('{php echo url("platform/mass/del", array("id" => $list["id"]));}')" data-toggle="tooltip" data-placement="bottom">删除</a>
+				{/if}
+			</td>
+		</tr>
+		{/loop}
+	</table>
+	<div class="text-right">
+		{$pager}
+	</div>
+</div>
+<script>
+	function deleteMass(url) {
+		util.confirm(function () {
+			window.location.href = url;
+		}, function () {
+			return false;
+		}, '确认删除吗?');
+	}
+
+	angular.module('massApp').value('config', {
+		logUrl: "{php echo url('cron/manager/log');}"
+	});
+	angular.bootstrap($('#js-mass-send'), ['massApp']);
+</script>
+{template 'common/footer'}

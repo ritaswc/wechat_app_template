@@ -1,0 +1,221 @@
+/* goods.wxss */
+@import "../../../wxParse/wxParse.acss";
+@import "/components/goods/goods_banner.acss";
+@import "/components/goods/specifications_model.acss";
+@import "/components/goods/goods_info.acss";
+@import "/components/goods/goods_buy.acss";
+@import "/components/quick-navigation/quick-navigation.acss";
+
+view {
+    overflow: visible;
+}
+
+.no-scroll {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.bar-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    box-shadow: 0 0 3rpx rgba(0, 0, 0, 0.2);
+    height: 110rpx;
+}
+
+.bar-bottom-btn {
+    border: none;
+    background: #fff;
+    font-size: 0;
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+    position: inherit;
+    border-left: 1rpx solid #e3e3e3;
+    width: 110rpx;
+}
+
+.bar-bottom-btn:after {
+    display: none;
+}
+
+.bar-bottom-btn:first-child {
+    border-left: none;
+}
+
+.bar-bottom-btn.button-hover {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.bar-bottom-btn view {
+    text-align: center;
+    width: 100%;
+}
+
+.bar-bottom-btn image {
+    width: 38rpx;
+    height: 38rpx;
+    margin-bottom: 0rpx;
+}
+
+.bar-bottom-btn text {
+    font-size: 8pt;
+    color: #888;
+    display: block;
+}
+
+.bar-bottom .add-cart {
+    background: #f39800;
+    color: #fff;
+}
+
+.bar-bottom .buy-now {
+    background: #ff4544;
+    color: #fff;
+}
+
+.goods-detail {
+    box-sizing: border-box;
+    padding: 24rpx 0;
+    background: #fff;
+}
+
+.goods-detail text, .goods-detail image, .goods-detail view {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.tab-group .tab-group-header {
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+}
+
+.tab-group .tab-group-header .tab-group-item text {
+    height: 100rpx;
+    border-bottom: 2rpx solid transparent;
+}
+
+.tab-group .tab-group-header .tab-group-item.active text {
+    color: #ff4544;
+    border-bottom-color: #ff4544;
+}
+
+.tab-group .tab-group-body .tab-group-item {
+    display: none;
+}
+
+.tab-group .tab-group-body .tab-group-item.active {
+    display: block;
+}
+
+.comment-count {
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.comment-count .comment-count-item {
+    text-align: center;
+    padding: 20rpx 0;
+    font-size: 9pt;
+}
+
+.comment-item {
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+    padding: 32rpx 24rpx;
+}
+
+.comment-item .nickname {
+    padding-left: 24rpx;
+    height: 70rpx;
+    font-weight: bolder;
+}
+
+.comment-item .addtime {
+    color: #888;
+}
+
+.comment-item .pic-list {
+    margin-left: -8rpx;
+    margin-top: -8rpx;
+}
+
+.comment-item .pic-item {
+    width: 200rpx;
+    height: 200rpx;
+    margin-left: 8rpx;
+    margin-top: 8rpx;
+    display: inline-block;
+    float: left;
+}
+
+.comment-item .score-tag {
+    display: inline-block;
+    background: #eee;
+    font-size: 9pt;
+    padding: 4rpx 12rpx;
+    border-radius: 5rpx;
+}
+
+.hide {
+    display: none;
+}
+
+.miaosha-bar {
+    height: 88rpx;
+    position: relative;
+}
+
+.miaosha-bar .img_bg {
+    width: 100%;
+    height: 100%;
+}
+
+.miaosha-bar .activity_box {
+    position: absolute;
+    right: 50rpx;
+}
+
+.miaosha-bar-right {
+    width: 240rpx;
+}
+
+.miaosha-bar-right>view {
+    width: 100%;
+}
+
+.miaosha-bar .time-over-text {
+    margin-top: 10rpx;
+    text-align: center;
+    font-size: 7pt;
+    color: #ff4544;
+    line-height: 1;
+}
+
+.miaosha-bar .timer {
+    text-align: center;
+}
+
+.miaosha-bar .timer-num {
+    background: #fff;
+    font-size: 7pt;
+    color: #555;
+    width: 44rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10rpx;
+}
+
+.miaosha-bar .timer-split {
+    color: #fff;
+    display: inline-block;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin: 0 8rpx;
+}

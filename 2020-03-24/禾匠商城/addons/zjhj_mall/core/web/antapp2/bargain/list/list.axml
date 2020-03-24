@@ -1,0 +1,62 @@
+<!--bargain/list/list.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <block a:if='{{banner_list.length > 0}}'>
+            <view class='w-100 banner'>
+                <swiper class='w-100 h-100' autoplay="true" interval="5000" duration="300" indicator-dots="true" circular="true" style='height:360rpx;'>
+                    <block a:for="{{banner_list}}" a:key="{{item.id}}">
+                        <swiper-item>
+                            <navigator app-id="{{item.appId}}" path="{{item.path}}" target="{{item.open_type == 'wxapp' ? 'miniProgram' : ''}}" onTap="navigatorClick" data-url="{{item.page_url}}" data-open_type="{{item.open_type}}" url="{{item.page_url}}" data-open-type="{{item.open_type ? item.open_type : 'navigator'}}" hover-class='none'>
+                                <image src="{{item.pic_url}}" class="slide-image" mode="aspectFill" />
+                            </navigator>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+        </block>
+
+        <view class='list'>
+            <block a:for="{{goods_list}}" a:key="{{item.id}}">
+                <view class='one flex-row' onTap='goToGoods' data-index='{{item.goods_id}}'>
+                    <view class='img flex-x-center flex-grow-0'>
+                        <image src='{{item.cover_pic}}' mode='aspectFill'></image>
+                        <image class='sku' a:if="{{item.num == 0}}" src='/bargain/images/icon-bargain-sku.png'></image>
+                    </view>
+                    <view class='flex-grow-1 flex-col' style='justify-content:space-between'>
+                        <view>
+                            <view class='text-more' style='margin-top:6rpx;'>{{item.name}}</view>
+                            <view class='sale flex-row'>
+                                <view class='flex-grow-0 flex-row' style='margin-right:16rpx;'>
+                                    <block a:for="{{item.user_list}}" a:for-item="user" a:for-index="i" a:key="{{user.id}}">
+                                        <view class='flex-grow-0 avatar' style='z-index:{{i}};'>
+                                            <image src='{{user.avatar_url}}'></image>
+                                        </view>
+                                    </block>
+                                </view>
+                                <view class='flex-grow-1 flex-y-center' a:if="{{item.num > 0}}">{{item.sale}}人正在砍价</view>
+                                <view class='flex-grow-1 flex-y-center' a:else>{{item.sale}}人已参与</view>
+                            </view>
+                        </view>
+                        <view class='flex-row'>
+                            <view class='flex-grow-1' style='line-height:1'>
+                                <view style='color:#888;text-decoration:line-through;font-size:9pt'>￥{{item.price}}</view>
+                                <view class='flex-row flex-y-bottom' style='color:#ff4544;'>
+                                    <view class='flex-grow-0'>最低￥</view>
+                                    <view class='flex-grow-0' style='font-size:15pt'>{{item.min_price}}</view>
+                                </view>
+                            </view>
+                            <view class='flex-grow-0 flex-y-bottom'>
+                                <view class='join-btn flex-x-center flex-y-center' a:if='{{item.num > 0}}'>立即参与</view>
+                                <view class='join-btn flex-x-center flex-y-center no' a:else>下次再来</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <include src="/bargain/commons/naver/naver" />
+    </view>
+    <include src="/components/footer/footer" />
+</view>

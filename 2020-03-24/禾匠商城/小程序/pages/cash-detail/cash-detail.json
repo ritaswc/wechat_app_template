@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "提现明细",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

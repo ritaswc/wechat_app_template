@@ -1,0 +1,50 @@
+<view class="page"> 
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+
+        <view class='info'>
+            <view class='info-t' style='margin-top:40rpx;'>我的账户</view>
+            <view class='info-account flex-y-center'>
+                <image class='info-bg' src='{{__wxapp_img.balance.recharge_bg.url}}'></image>
+                <view class='flex-row w-100'>
+                    <view class='flex-grow-1 flex-row'>
+                        <view class='flex-grow-0'>
+                            <image src='{{__wxapp_img.balance.recharge.url}}' style='width:72rpx;height:72rpx;margin-right:20rpx;'></image>
+                        </view>
+                        <view class='flex-grow-1' style='font-size:19pt;'>余额</view>
+                    </view>
+                    <view class='flex-grow-0 flex-y-center' style='font-size:21pt;'>￥{{__user_info.money}}</view>
+                </view>
+            </view>
+            <view class='info-t' style='margin-top:56rpx;'>充值金额</view>
+            <view class='list flex-row'>
+                <block a:for='{{list}}' a:key="{{item.id}}">
+                    <view class='one flex-x-center {{selected == index ? "active" : ""}}' onTap='click' data-index='{{index}}'>
+                        <view a:if='{{item.send_price>0}}'>
+                            <view class='flex-x-center one-1'>{{item.pay_price}}</view>
+                            <view class='flex-x-center one-2 fs-sm'>送{{item.send_price}}</view>
+                        </view>
+                        <view class='flex-y-center' a:else>
+                            <view class='flex-x-center one-1'>{{item.pay_price}}</view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <block a:if='{{balance.type == 1}}'>
+                <view class='one-type' onTap='click' data-index='-1'>
+                    <view class='flex-y-center' style='height:100%'>
+                        <input class='r-input' type='number' placeholder='手动输入充值金额' placeholder-class='r-input-p' onInput='input' value='{{money}}'></input>
+                    </view>
+                </view>
+            </block>
+            <view class='recharge-btn flex-x-center flex-y-center' onTap='pay'>立即充值</view>
+            <view class='info-t' style='margin-top:72rpx;'>充值说明</view>
+            <view class='info-t' style='border:0;line-height:1.5'>
+                <text>{{balance.help}}</text>
+            </view>
+        </view>
+        
+    </view>
+    <include src="/components/footer/footer" />
+</view>

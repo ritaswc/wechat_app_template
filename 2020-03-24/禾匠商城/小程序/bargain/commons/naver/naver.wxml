@@ -1,0 +1,22 @@
+<view class="bargain-bottom flex-row" style="font-size:13pt">
+    <view class="flex-grow-1 flex-y-center">
+        <navigator hoverClass="none" openType="redirect" style="width:100%;border-right:1rpx solid #e2e2e2" url="/bargain/list/list">
+            <view class="flex-row flex-y-center flex-x-center">
+                <view class="flex-grow-0 flex-y-center">
+                    <image src="{{naver=='list'?'/bargain/images/icon-bargain-list-selected.png':'/bargain/images/icon-bargain-list.png'}}"></image>
+                </view>
+                <view class="flex-grow-0 {{naver=='list'?'bottom-color':''}}">砍价会场</view>
+            </view>
+        </navigator>
+    </view>
+    <view class="flex-grow-1 flex-y-center flex-x-center">
+        <navigator hoverClass="none" openType="redirect" style="width:100%;" url="/bargain/order-list/order-list">
+            <view class="flex-row flex-y-center flex-x-center">
+                <view class="flex-grow-0 flex-y-center">
+                    <image src="{{naver=='order'?'/bargain/images/icon-bargain-my-selected.png':'/bargain/images/icon-bargain-my.png'}}"></image>
+                </view>
+                <view class="flex-grow-0 {{naver=='order'?'bottom-color':''}}">我的砍价</view>
+            </view>
+        </navigator>
+    </view>
+</view>

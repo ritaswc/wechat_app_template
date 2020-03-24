@@ -1,0 +1,62 @@
+{template 'common/header'}
+<div class="sensitive-word" ng-controller="sensitiveWord" ng-cloak>
+	<div class="alert we7-page-alert">
+		<p><i class="wi wi-info-sign"></i>敏感词在以下功能中过滤：自动回复关键字、微官网文章标题和内容</p>
+	</div>
+	<div class="search-box we7-margin-bottom">
+		<form action="{php url('system/sensitiveword')}" method="post"  class="search-form">
+			<div class="input-group" >
+				<input type="text" name="keyword" value="{$keyword}" class="form-control" placeholder="输入要搜索的敏感词汇">
+				<span class="input-group-btn"><button class="btn btn-default"><i class="fa fa-search"></i></button></span>
+			</div>
+		</form>
+		<a href="#" class="btn btn-primary we7-padding-horizontal"  data-toggle="modal" data-target="#myModalSensitive">添加敏感词</a>
+	</div>
+	<div class="modal fade" id="myModalSensitive" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">添加敏感词汇</h4>
+				</div>
+				<div class="modal-body we7-padding">
+					<div class="we7-margin-bottom-sm">请输入要过滤的敏感词汇</div>
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<textarea name="" ng-model="word" id="" rows="5" class="form-control" style="border: none; outline:none; box-shadow: none; resize:none; "></textarea>
+						</div>
+						<div class="panel-footer text-right color-gray">
+							按"回车"添加多个
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="saveWords()">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel we7-panel panel-table">
+		<div class="panel-heading">敏感词汇</div>
+		<div class="panel-body">
+			<div class="sensitive-list">
+				<div class="item" ng-repeat="list in lists">
+					{{list}}
+					<a href="javascript:;" class="del" ng-click="del(list)"><span class="wi wi-error-sign"></span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	angular.module('systemApp').value('config', {
+		'lists': {php echo !empty($lists) ? json_encode($lists) : 'null'},
+		'links' : {
+			'add_word_link': "{php echo url('system/sensitiveword/add')}",
+			'del_word_link': "{php echo url('system/sensitiveword/delete')}"
+		},
+	});
+	angular.bootstrap($('.sensitive-word'), ['systemApp']);
+</script>
+{template 'common/footer'}

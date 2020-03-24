@@ -1,0 +1,127 @@
+/* step/join/join.wxss */
+
+.top {
+    height: 200rpx;
+    /* padding: 42rpx 24rpx; */
+    color: #fff;
+    font-size: 12pt;
+    text-align: center;
+    position: relative;
+}
+
+.top image{
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 42rpx;
+    height: 35rpx;
+    line-height: 35rpx;
+}
+
+.dare-name{
+    display: inline-block;
+    width: 65%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 35rpx;
+    line-height: 35rpx;
+    margin-bottom: -3rpx;
+}
+
+.time{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 87rpx; 
+}
+
+.msg {
+    height: 200rpx;
+    width: 93.6%;
+    background-color: white;
+    margin: 0 24rpx;
+    color: #999;
+    text-align: center;
+    font-size: 10pt;
+    padding: 40rpx 40rpx;
+    border-radius: 16rpx;
+    position: absolute;
+    top: 160rpx;
+}
+
+.text {
+    margin-bottom: 18rpx;
+}
+
+.use-price {
+    font-size: 25pt;
+    font-family: 'DIN';
+    color: #ff9d1e;
+    margin-right: 6rpx;
+}
+
+.content {
+    background-color: white;
+    margin-top: 180rpx;
+    font-size: 11pt;
+    color: #999;
+    padding-bottom: 50rpx;
+}
+
+.content-title {
+    padding-left: 24rpx;
+    height: 87rpx;
+    line-height: 87rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+    color: #353535;
+}
+
+.content-body {
+    padding: 40rpx 56rpx 30rpx;
+}
+
+.content-num {
+    float: left;
+    height: 80rpx;
+    width: 40rpx;
+    margin-right: 32rpx;
+}
+
+.content-num image {
+    height: 40rpx;
+    width: 40rpx;
+}
+
+.step-title {
+    font-size: 12pt;
+    color: #353535;
+    margin-bottom: 10rpx;
+}
+
+.join {
+    position: fixed;
+    bottom: 0;
+    height: 150rpx;
+    width: 100%;
+    background-color: white;
+    padding: 35rpx 0;
+}
+
+.join-btn {
+    height: 80rpx;
+    width: 702rpx;
+    font-size: 13pt;
+    color: #fffefe;
+    background: linear-gradient(to right, #ff9d1e, #ffb71e);
+    border-radius: 40rpx;
+}
+
+button::after {
+  border: none
+}

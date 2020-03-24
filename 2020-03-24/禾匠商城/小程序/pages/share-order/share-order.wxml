@@ -1,0 +1,78 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="info">
+            <view class="info-title flex-row">
+                <navigator class="flex-x-center  width " openType="redirect" url="/pages/share-order/share-order?status=-1">
+                    <view class="info-text {{status==-1?'active':''}}">全部</view>
+                </navigator>
+                <navigator class="flex-x-center  width " openType="redirect" url="/pages/share-order/share-order?status=0">
+                    <view class="info-text {{status==0?'active':''}}">待付款</view>
+                </navigator>
+                <navigator class="flex-x-center width " openType="redirect" url="/pages/share-order/share-order?status=1">
+                    <view class="info-text {{status==1?'active':''}}">已付款</view>
+                </navigator>
+                <navigator class="flex-x-center width" openType="redirect" url="/pages/share-order/share-order?status=2">
+                    <view class="info-text {{status==2?'active':''}}">已完成</view>
+                </navigator>
+            </view>
+            <view class="info-content">
+                <view class="info-block" wx:for="{{list}}">
+                    <view class="info-label flex-row">
+                        <view class="info-left" style="width:80%">订单号：{{item.order_no}}</view>
+                        <view class="info-right" style="width:20%">
+                            <view class="info-status">{{item.status}}</view>
+                        </view>
+                    </view>
+                    <view bindtap="click" class="info-label flex-row" data-index="{{index}}">
+                        <view class="info-left flex-row flex-grow-1 flex-y-center">
+                            <view class="info-img flex-y-center">
+                                <image class="img" src="{{item.avatar_url}}"></image>
+                            </view>
+                            <view class="info-name text-more">{{item.nickname}}</view>
+                            <view class="info-level text-more">{{item.share_status}}</view>
+                        </view>
+                        <view class="info-right flex-grow-1">
+                            <view class="info-money flex-row">
+                                <text>{{item.is_price!=1?'预计':'已得'}}佣金：<text class="red">{{item.share_money}}</text>元</text>
+                                <view class="down flex-y-center {{index==hidden?'active':''}}">
+                                    <image src="{{__wxapp_img.share.down.url}}" style="width:26rpx;height:16rpx;margin-left: 24rpx;" wx:if="{{index==hidden}}"></image>
+                                    <image src="{{__wxapp_img.share.right.url}}" style="width:16rpx;height:26rpx;margin-left: 24rpx;" wx:else></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="{{index==hidden?'show':'hide'}}">
+                        <view class="info-label height-164 flex-row" wx:for="{{item.orderDetail}}" wx:for-item="v">
+                            <view class="info-left flex-row width-90">
+                                <view class="info-img flex-y-center">
+                                    <image class="img img-size-120" src="{{v.goods_pic}}"></image>
+                                </view>
+                                <view class="info-count">
+                                    <view class="info-detail">{{v.name}}</view>
+                                    <view class="info-detail">×{{v.num}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="info-footer flex-row" wx:if="{{is_no_more}}">
+                <view class="info-before">
+                    <view class="info-border"></view>
+                </view>
+                <view class="info-t">没有更多了</view>
+                <view class="info-after">
+                    <view class="info-border"></view>
+                </view>
+            </view>
+            <view wx:if="{{is_loading}}">
+                <view class="loading-bar {{show_loading_bar?'active':''}}" style="text-align: center">
+                    <image src="{{__wxapp_img.system.loading.url}}" style="width: 160rpx;height: 80rpx"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

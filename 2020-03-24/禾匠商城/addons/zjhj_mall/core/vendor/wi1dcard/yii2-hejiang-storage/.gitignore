@@ -1,0 +1,4 @@
+vendor/
+.vscode/
+.DS_Store
+temp/

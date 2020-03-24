@@ -1,0 +1,91 @@
+<ol class="breadcrumb we7-breadcrumb">
+    <a href="javascript:history.back()"><i class="wi wi-back-circle"></i> </a>
+    <li><a href="javascript:history.back()">应用列表 </a></li>
+    <li>添加应用</li>
+</ol>
+<div class="wish-goods-post" ng-controller="wishPost" ng-cloak>
+    <div class="search-box we7-margin-bottom">
+        <select name="" id="" ng-model="support_type" ng-change="getList(1)">
+            <option value="" >全部类型</option>
+            <option ng-value="key + '_support'" ng-repeat="(key, type) in we7TypeDefault">{{type}}</option>
+        </select>
+        <div class="search-form we7-margin-left">
+            <div class="input-group">
+                <input type="text" ng-model="keyword" class="form-control">
+                <span class="input-group-btn" ng-click="getList(1)"><button class="btn btn-default"><i class="fa fa-search color-primary"></i></button></span>
+            </div>
+        </div>
+    </div>
+    <div class="wish-goods-header">
+        市场应用列表
+    </div>
+    <div class="wish-we7-list we7-margin-bottom">
+        <div class="wish-we7-item" ng-repeat="item in list" ng-show="!loading && list.length">
+            <div class="wish-we7-box">
+                <img src="{{item.cdn_logo}}" class="logo" alt="">
+                <div class="info text-over">
+                    <div class="title text-over">{{item.title}}</div>
+                    <div class="support">
+                        <i ng-if="item.app_support == 2" title="适用于微信公众号" class="wi wi-wechat" ></i>
+                        <i ng-if="item.wxapp_support == 2" title="适用于微信小程序" class="wi wi-wxapp"></i>
+                        <i ng-if="item.webapp_support == 2" title="适用于PC" class="wi wi-pc"></i>
+                        <i ng-if="item.system_welcome_support == 2" title="适用于微擎首页" class="wi wi-home-nav-circle"></i>
+                        <i ng-if="item.android_support == 2" title="适用于安卓" class="wi wi-android"></i>
+                        <i ng-if="item.ios_support == 2" title="适用于IOS" class="wi wi-ios"></i>
+                        <i ng-if="item.aliapp_support == 2" title="适用于支付宝小程序" class="wi wi-aliapp"></i>
+                        <i ng-if="item.xzapp_support == 2" title="适用于百度熊掌号" class="wi wi-xzapp"></i>
+                        <i ng-if="item.qiyeapp_support == 2" title="适用于企业微信" class="wi wi-qiyeapp"></i>
+                        <i ng-if="item.dingdingapp_support == 2" title="适用于钉钉号" class="wi wi-dingdingapp"></i>
+                        <i ng-if="item.baiduapp_support == 2" title="适用于百度小程序" class="wi wi-baiduapp"></i>
+                        <i ng-if="item.toutiaoapp_support == 2" title="适用于字节跳动小程序" class="wi wi-toutiaoapp"></i>
+                    </div>
+                    <div class="num">{{item.purchases}}人安装</div>
+                </div>
+                <div class="mask">
+                    <div>
+                        <a href="javascript:;" ng-click="addItem(item)" class="btn btn-primary">添加至预购</a>
+                        <a href="{{'//s.w7.cc/product/' + item.id}}" target="_blank" class="btn btn-default">查看应用详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="we7-empty-block" ng-show="!loading && !list.length">
+            暂无数据
+        </div>
+        <div class="text-center we7-padding color-gray" ng-show="loading">
+            <i class="fa fa-spinner fa-spin  we7-margin-right-sm vertical-middle" style="font-size: 20px"></i>正在从应用市场读取数据，请等待
+        </div>
+    </div>
+    <div class="pull-right">
+        <we7-page conf="page"></we7-page>
+    </div>
+    <div id="modal-message" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="true" >
+        <div class="modal-dialog modal-tip">
+            <div class="modal-content">
+                <div class="modal-header clearfix">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="text-success wi wi-right-sign"></i>
+                        <p class="title">系统提示</p>
+                        <p class="content" id="modalmessage">已成功添加至待编辑列表，编辑完成后可添加至预购应用列表</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-primary" ng-click="gotoEdit()">立即编辑</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">继续添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    angular.module('we7wish').value('config', {
+        apiUrl: "{php echo url('site/entry/storeApi', array('m' => 'store', 'direct' => 1))}",
+        editUrl: "{php echo url('site/entry/wishgoodsEdit', array('m' => 'store', 'direct' => 1, 'op' => 'edit'))}"
+    })
+    angular.bootstrap($('.wish-goods-post'), ['we7wish'])
+</script>

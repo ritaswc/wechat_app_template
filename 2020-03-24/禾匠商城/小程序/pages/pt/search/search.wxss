@@ -1,0 +1,159 @@
+page {
+    background-color: #f7f7f7;
+}
+
+.search-column {
+    background-color: #efeff4;
+    padding: 0 24rpx;
+    height: 100rpx;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.search-column-left {
+    background-color: #fff;
+    height: 64rpx;
+    border-radius: 28rpx;
+    padding: 0 24rpx;
+    border: 1rpx solid #bbb;
+}
+
+.search-column-icon image {
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.search-column-input {
+    width: 100%;
+    margin-left: 24rpx;
+    line-height: 1;
+    height: 100%;
+}
+
+.search-column-input input {
+    width: 100%;
+    color: #353535;
+    font-size: 28rpx;
+}
+
+.cancel-search {
+    color: #00c203;
+    font-size: 34rpx;
+    margin-left: 24rpx;
+}
+
+.history {
+    background-color: #fff;
+    padding: 0 24rpx;
+}
+
+.history-top {
+    padding: 34rpx 0 24rpx 0;
+}
+
+.history-top-left {
+    font-size: 32rpx;
+    color: #666;
+}
+
+.history-top-right image {
+    height: 38rpx;
+    width: 30rpx;
+}
+
+.history-item {
+    height: 60rpx;
+    background-color: #eee;
+    padding: 0 20rpx;
+    color: #333;
+    display: inline-block;
+    margin: 0 20rpx 16rpx 0;
+    border-radius: 10rpx;
+    line-height: 60rpx;
+}
+
+.goods {
+    background-color: #fff;
+}
+
+.list-item {
+    padding: 24rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.list-item .corver-pic image {
+    width: 220rpx;
+    height: 220rpx;
+    border-radius: 5rpx;
+    margin-right: 24rpx;
+}
+
+.goods-title {
+    color: #353535;
+    font-size: 11pt;
+}
+
+.list-item .group-item image {
+    width: 34rpx;
+    height: 34rpx;
+    border: 1rpx solid #ffffff;
+    border-radius: 17rpx;
+}
+
+.list-item .group-item view {
+    float: left;
+    width: 24rpx;
+}
+
+.group-item {
+    margin-right: 12rpx;
+}
+
+.goods-sales {
+    font-size: 10pt;
+    color: #ff5c5c;
+}
+
+.list-item .price {
+    color: #ff5c5c;
+    font-size: 14pt;
+    margin-right: 16rpx;
+    line-height: 1;
+}
+
+.list-item .price .unit {
+    font-size: 9pt;
+}
+
+.list-item .old-price {
+    font-size: 10pt;
+    color: #919191;
+    text-decoration: line-through;
+    line-height: 1;
+}
+
+.list-item .group-btn {
+    height: 66rpx;
+    width: 180rpx;
+    color: #ffffff;
+    font-size: 12pt;
+    border-radius: 10rpx;
+    background-color: #ffa360;
+    background: -webkit-gradient(linear,left top,right bottom,color-stop(0%,#ffa360),color-stop(140%,#ff5c5c));
+    background-image: linear-gradient(140deg,#ffa360,#ff5c5c);
+}
+
+.loading-bar {
+    visibility: hidden;
+}
+
+.loading-bar.active,empty-bar {
+    visibility: visible;
+}
+
+.empty-bar {
+    height: 80rpx;
+    color: #919191;
+}

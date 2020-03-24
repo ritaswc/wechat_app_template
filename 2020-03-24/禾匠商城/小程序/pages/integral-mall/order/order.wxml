@@ -1,0 +1,120 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body">
+        <navigator class="return-index-btn" openType="redirect" url="/pages/index/index" wx:if="{{show_index}}">
+            <image src="{{__wxapp_img.nav.index.url}}" style="width: 50rpx;height: 50rpx"></image>
+        </navigator>
+        <view class="flex-row tab-bar">
+            <view class="flex-grow-1">
+                <navigator class="{{status==0?'active':''}}" openType="redirect" url="/pages/integral-mall/order/order?status=0">
+                    <text>待付款</text>
+                </navigator>
+            </view>
+            <view class="flex-grow-1">
+                <navigator class="{{status==1?'active':''}}" openType="redirect" url="/pages/integral-mall/order/order?status=1">
+                    <text>待发货</text>
+                </navigator>
+            </view>
+            <view class="flex-grow-1">
+                <navigator class="{{status==2?'active':''}}" openType="redirect" url="/pages/integral-mall/order/order?status=2">
+                    <text>待收货</text>
+                </navigator>
+            </view>
+            <view class="flex-grow-1">
+                <navigator class="{{status==3?'active':''}}" openType="redirect" url="/pages/integral-mall/order/order?status=3">
+                    <text>已完成</text>
+                </navigator>
+            </view>
+        </view>
+        <view class="order-list">
+            <view class="no-data-tip" wx:if="{{order_list.length==0}}">暂无相关订单</view>
+            <view class="order-item" wx:for="{{order_list}}" wx:for-item="order" wx:key="{{item.id}}">
+                <view style="font-size: 9pt;margin-bottom: 12rpx;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{{order.mch.name}}</view>
+                <view class="flex-row order-info">
+                    <view class="flex-grow-1">订单号:{{order.order_no}}</view>
+                    <view class="flex-grow-0">{{order.addtime}}</view>
+                </view>
+                <navigator url="/pages/integral-mall/clerk/clerk?id={{order.order_no}}">
+                    <view class="goods-list">
+                        <view class="goods-item flex-row">
+                            <view class="flex-grow-0" style="overflow: visible">
+                                <image class="goods-pic" mode="aspectFill" src="{{order.detail.pic}}"></image>
+                            </view>
+                            <view class="flex-grow-1 flex-col">
+                                <view class="flex-grow-1">
+                                    <view class="goods-name">{{order.detail.goods_name}}</view>
+                                    <view class="attr-list">
+                                        <view class="attr-item" wx:for="{{order.detail.attr}}" wx:for-item="attr">
+                                            {{attr.attr_group_name}}:{{attr.attr_name}}
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flex-grow-0 flex-row">
+                                    <view class="flex-grow-1 num">×{{order.detail.num}}</view>
+                                    <view class="flex-grow-0 price">{{order.integral}}积分
+                                        <block wx:if="{{order.pay_price>0}}">+￥:{{order.pay_price}}</block>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </navigator>
+                <view class="flex-row">
+                    <view class="flex-grow-1 flex-y-center">
+                        <block wx:if="{{status==4}}">
+                            <block wx:if="{{order.refund_type==1}}">
+                                退货退款：
+                                <text style="color: #ff4544">￥{{order.refund_price}}</text>
+                            </block>
+                            <block wx:if="{{order.refund_type==2}}">
+                                换货
+                            </block>
+                        </block>
+                        <block wx:else>合计：{{order.integral}}积分
+                            <block wx:if="{{order.pay_price>0}}">+￥:{{order.pay_price}}</block>
+                        </block>
+                    </view>
+                    <view class="flex-grow-0 flex-y-center flex-row">
+                        <view class="flex-grow-1" wx:if="{{order.is_send==0}}">
+                            <text wx:if="{{order.apply_delete==1}}">取消申请中</text>
+                            <button bindtap="orderRevoke" class="order-option-btn" data-id="{{order.id}}" wx:else>取消
+                            </button>
+                        </view>
+                        <view class="flex-grow-1" wx:if="{{order.is_pay==0&&order.pay_type!=1}}">
+                            <button bindtap="orderSubmitPay" class="order-option-btn" data-id="{{order.id}}" data-item="{{order}}">付款</button>
+                        </view>
+                        <view class="flex-grow-1" wx:if="{{order.is_pay==1&&order.is_offline==2&&order.is_send==0&&order.apply_delete==0}}">
+                            <view bindtap="orderQrcode" class="order-option-btn clerk flex-y-center" data-index="{{index}}">
+                                <image data-index="{{index}}" src="{{__wxapp_img.store.clerk.url}}" style="width:26rpx;height:26rpx;margin-right:10rpx"></image> 核销码
+                            </view>
+                        </view>
+                        <view class="flex-grow-1 flex-row" wx:if="{{order.is_send==1&&order.is_confirm==0}}">
+                            <view class="flex-grow-0" wx:if="{{order.express}}">
+                                <navigator class="order-option-btn" url="/pages/express-detail/express-detail?inId={{order.id}}">物流
+                                </navigator>
+                            </view>
+                            <view class="flex-grow-0">
+                                <button bindtap="orderConfirm" class="order-option-btn" data-id="{{order.id}}">确认收货
+                                </button>
+                            </view>
+                        </view>
+                        <view class="flex-grow-1" wx:if="{{order.is_send==1&&order.is_confirm==1&&order.is_comment==0&&__is_comment}}">
+                            <navigator class="order-option-btn" url="/pages/order-comment/order-comment?inId={{order.id}}">评价
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="hide" class="flex-row flex-y-center modal {{hide==1?'hide':''}}">
+            <view class="flex-y-center" style="width:100%;height:800rpx;padding:100rpx;">
+                <view style="background-color:#fff;width:100%;height:100%;border-radius:10rpx;padding:0 50rpx;">
+                    <view class="flex-x-center" style="width:100%;height:50rpx;margin-top:50rpx;font-size:13pt;margin-bottom:20rpx">核销二维码</view>
+                    <image src="{{qrcode}}" style="width:450rpx;height:450rpx;"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

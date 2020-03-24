@@ -1,0 +1,29 @@
+<view class="get-card flex-x-center flex-y-center" wx:if="{{show_card}}">
+    <view class="card-block">
+        <image src="{{__wxapp_img.card.top.url}}" style="width:630rpx;height:330rpx;"></image>
+        <view bindtap="cardDel" class="card-del flex-x-center flex-y-center">
+            <image src="{{__wxapp_img.card.del.url}}"></image>
+        </view>
+        <view class="flex-x-center">
+            <view class="card-info">
+                <view class="flex-x-center card-get">获得{{goods_card_list.length}}张卡券</view>
+                <view class="flex-x-center card-one" wx:if="{{index<1}}" wx:for="{{goods_card_list}}" wx:key="{{item.id}}">
+                    <view class="card-bg">
+                        <view class="card-bg-1 flex-row">
+                            <view class="flex-grow-0 flex-y-center">
+                                <image src="{{item.pic_url}}" style="width:70rpx;height:70rpx;margin-right:32rpx;"></image>
+                            </view>
+                            <view class="flex-grow-1 flex-y-center">
+                                <view class="text-more-2">{{item.content}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="card-text flex-x-center">卡券将5分钟内放入您的卡包</view>
+                <view bindtap="cardTo" class="flex-x-center card-btn">
+                    <image src="{{__wxapp_img.card.btn.url}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

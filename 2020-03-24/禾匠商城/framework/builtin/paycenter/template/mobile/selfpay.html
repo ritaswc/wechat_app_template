@@ -1,0 +1,43 @@
+{php define(MUI, true);}
+{template 'common/header'}
+<header class="mui-bar mui-bar-nav">
+	<h1 class="mui-title">{$_W['user']['store_name']}</h1>
+</header>
+{template 'nav'}
+<header class="mui-bar mui-bar-nav">
+	<h1 class="mui-title">自助付款</h1>
+</header>
+<div class="mui-content self-help-pay">
+	<div class="mui-banner mui-text-center">
+		<img src="{$fans['avatar']}" alt="" class="mui-logo mui-img-circle"/>
+	</div>
+	<form action="" method="post">
+		<input type="hidden" name="openid" value="{$fans['openid']}"/>
+		<input type="hidden" name="nickname" value="{$fans['nickname']}"/>
+		<input type="hidden" name="token" value="{$_W['token']}"/>
+		<input type="hidden" name="submit" value="{$_W['token']}"/>
+		<div class="mui-card">
+			<div class="mui-card-block">
+				<div class="mui-card-title">金额(元)</div>
+				<textarea name="fee" rows="3" class="mui-border0" placeholder="￥"></textarea>
+			</div>
+		</div>
+		<div class="mui-content-padded">
+			<button class="mui-btn mui-btn-success mui-btn-block">立即支付</button>
+			<div class="mui-text-muted mui-text-center">支付完成后,如需退款请及时联系卖家</div>
+		</div>
+	</form>
+</div>
+<script>
+	$(function(){
+		$('#pay-form').submit(function(){
+			var fee = $.trim($('#pay-form :text[name="fee"]').val());
+			if(!fee) {
+				alert('付款金额应大于0');
+				return false;
+			}
+			return true;
+		});
+	});
+</script>
+{template 'common/footer'}

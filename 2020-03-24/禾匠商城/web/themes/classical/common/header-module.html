@@ -1,0 +1,17 @@
+<div class="menu-title">
+	<i class="wi wi-apply"></i>应用
+</div>
+<div class="module-info-name">
+	{if file_exists(IA_ROOT. "/addons/". $_W['current_module']['name']. "/icon-custom.jpg")}
+		<img src="{php echo tomedia("addons/".$_W['current_module']['name']."/icon-custom.jpg")}" class="head-app-logo module-img" onerror="this.src='./resource/images/gw-wx.gif'">
+	{else}
+		<img src="{php echo tomedia("addons/".$_W['current_module']['name']."/icon.jpg")}" class="head-app-logo module-img" onerror="this.src='./resource/images/gw-wx.gif'">
+	{/if}
+	<div class="name">{$_W['current_module']['title']}</div>
+</div>
+
+<!-- 兼容历史性问题：模块内获取不到模块信息$module的问题-start -->
+{if defined('CRUMBS_NAV') && CRUMBS_NAV == 1}
+{php global $module;}
+{/if}
+<!-- end -->

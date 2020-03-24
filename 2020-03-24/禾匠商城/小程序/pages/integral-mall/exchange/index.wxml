@@ -1,0 +1,44 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body">
+        <view class="no-content" wx:if="{{coupon.length==0&&goods.length==0}}">暂无兑换记录</view>
+        <view style="border-top:1rpx solid #e2e2e2;" wx:else>
+            <view class="exchange flex-row" wx:for="{{coupon}}" wx:key="{{item.id}}">
+                <view class="flex-grow-1">
+                    <view class="cpupon-name text-more">{{item.coupon.name}} 满{{item.coupon.min_price}}元可用</view>
+                    <view class="cpupon-price">{{item.integral}}积分
+                            <block wx:if="{{item.price>0}}">+{{item.price}}</block>
+                    </view>
+                </view>
+                <view class="flex-row flex-grow-0 flex-y-center" style="margin-left:40rpx;">
+                    <navigator hoverClass="none" url="/pages/coupon/coupon?status={{item.status}}">
+                        <view class="chakan">我的优惠券</view>
+                    </navigator>
+                </view>
+            </view>
+            <view class="exchange flex-row" wx:for="{{goods}}" wx:key="{{item.id}}">
+                <view class="flex-grow-1 flex-row">
+                    <view class="flex-grow-0">
+                        <image class="goods-img" src="{{item.pic}}"></image>
+                    </view>
+                    <view class="goods-detail flex-grow-1 flex-y-center">
+                        <view>
+                            <view class="goods-name">{{item.goods_name}}</view>
+                            <view class="goods-price">{{item.pay_integral}}积分
+                                    <block wx:if="{{item.total_price>0}}">+{{item.total_price}}</block>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="flex-grow-0 flex-row flex-y-center" style="margin-left:40rpx;">
+                    <navigator hoverClass="none" url="/pages/integral-mall/clerk/clerk?id={{item.order.order_no}}&type=exchange">
+                        <view class="chakan" data-id="{{item.order.order_no}}">订单详情</view>
+                    </navigator>
+                </view>
+            </view>
+            <view style="font-size:9pt;color:#eee;" wx:if="{{is_no_more}}">--没有更多记录--</view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

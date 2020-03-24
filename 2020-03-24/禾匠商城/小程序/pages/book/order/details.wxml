@@ -1,0 +1,120 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view style="padding-bottom:120rpx;">
+            <view bindtap="goToGoodsDetails" class="goods flex-row">
+                <view class="goods-pic flex-grow-0">
+                    <image src="{{goods.cover_pic}}"></image>
+                </view>
+                <view class="goods-info flex-grow-1 flex-col">
+                    <view class="goods-name flex-grow-1">
+                        {{goods.name}}
+                    </view>
+                    <view class="flex-grow-1 goods-name" wx:for="{{attr}}">
+                        <view class="text-more-2" style="margin:5rpx 0;-webkit-line-clamp: 1;">
+                            <text>{{item['attr_group_name']}} :  </text>
+                            <text style="color:#ff6845">{{item['attr_name']}}</text>
+                        </view>
+                    </view>
+                    <view class="money flex-grow-0 flex-row flex-y-bottom ">
+                        <view class="original_price flex-gorw-0">
+                            ¥ {{goods.original_price}}
+                        </view>
+                        <view class="price flex-grow-0">
+                            ¥ {{goods.pay_price}}
+                        </view>
+                    </view>
+                </view>
+                <view class="goods-right flex-grow-0 flex-y-center">
+                    <image src="{{__wxapp_img.share.right.url}}"></image>
+                </view>
+            </view>
+            <view class="shop">
+                <view class="shop-title flex-y-center">
+                    门店信息
+                </view>
+                <view class="shop-info">
+                    <view class="shop-name">
+                        {{goods.shopList[0].name}}
+                    </view>
+                    <view class="shop-addres">
+                        地址：{{goods.shopList[0].address}}
+                    </view>
+                    <view class="shop-time">
+                        营业时间：{{goods.shopList[0].shop_time?goods.shopList[0].shop_time:'7 x 24'}}
+                    </view>
+                </view>
+                <view bindtap="goToShopList" class="all-shop flex-row flex-y-center">
+                    <view class="shop-text flex-grow-1 flex-y-center">
+                        查看全部{{goods.shopListNum}}家分店
+                    </view>
+                    <view class="shop-more flex-grow-0 flex-y-center">
+                        <image src="{{__wxapp_img.share.right.url}}"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="order">
+                <view class="order-title flex-y-center">
+                    订单信息
+                </view>
+                <view class="order-info">
+                    <view class="order-info-item">
+                        订单号：{{goods.order_no}}
+                    </view>
+                    <view class="order-info-item">
+                        下单时间：{{goods.addtime}}
+                    </view>
+                    <view class="order-info-item" wx:for="{{goods.orderForm}}">
+                        <view class="flex-row w-100 h-100" style="height:100rpx;" wx:if="{{item.type=='uploadImg'}}">
+                            <view class="flex-grow-0 flex-y-center">{{item.key}}：</view>
+                            <view class="flex-grow-1 flex-y-center">
+                                <image mode="aspectFit" src="{{item.value}}" style="width:88rpx;height:88rpx;"></image>
+                            </view>
+                        </view>
+                        <block wx:else>
+                            {{item.key}}：{{item.value}}
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="btn-group flex-row" wx:if="{{goods.apply_delete!=1&&goods.is_refund!=1&&goods.is_comment!=1}}">
+            <block wx:if="{{goods.is_pay==1&&goods.is_use==0&&goods.apply_delete==0}}">
+                <view bindtap="applyRefund" class="btn-group-item apply flex-x-center flex-y-cneter" wx:if="{{goods.pay_price>0}}">
+                    申请退款
+                </view>
+                <view bindtap="orderQrcode" class="btn-group-item promptly flex-x-center flex-y-cneter">
+                    立即使用
+                </view>
+            </block>
+            <block wx:if="{{goods.is_pay==0&&goods.is_cancel==0}}">
+                <view bindtap="orderCancel" class="btn-group-item apply flex-x-center flex-y-cneter" data-id="{{goods.id}}">
+                    取消
+                </view>
+                <view bindtap="GoToPay" class="btn-group-item promptly flex-x-center flex-y-cneter" data-id="{{goods.id}}">
+                    支付
+                </view>
+            </block>
+            <block wx:if="{{goods.is_use==1&&goods.is_comment==0&&__is_comment}}">
+                <view bindtap="comment" class="btn-group-item apply flex-x-center flex-y-cneter" data-id="{{goods.id}}" wx:if="{{__is_comment}}">
+                    评价
+                </view>
+            </block>
+        </view>
+        <view class="btn-group flex-row" wx:if="{{goods.apply_delete==1&&goods.is_refund==2}}">
+            <view bindtap="orderQrcode" class="btn-group-item promptly flex-x-center flex-y-cneter">
+                立即使用
+            </view>
+        </view>
+        <view bindtap="hide" class="flex-row flex-y-center modal {{hide==1?'hide':''}}">
+            <view class="flex-y-center" style="width:100%;height:800rpx;padding:100rpx;">
+                <view style="background-color:#fff;width:100%;height:100%;border-radius:10rpx;padding:0 50rpx;">
+                    <view class="flex-x-center" style="width:100%;height:50rpx;margin-top:50rpx;font-size:13pt;margin-bottom:20rpx">提货二维码</view>
+                    <image src="{{qrcode}}" style="width:450rpx;height:450rpx;"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

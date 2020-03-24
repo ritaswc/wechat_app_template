@@ -1,0 +1,65 @@
+.card-top {
+    width: 100%;
+    height: 90rpx;
+    border-top: 1rpx solid #e3e3e3;
+    border-bottom: 1rpx solid #e3e3e3;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.active {
+    color: #ff4544;
+    border-bottom: 4rpx solid #ff4544;
+}
+
+.card-list {
+    padding: 20rpx;
+    padding-top: 110rpx;
+}
+
+.card-one {
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    width: 702rpx;
+    height: 180rpx;
+    padding-right: 40rpx;
+}
+
+.img {
+    width: 88rpx;
+    height: 88rpx;
+    border-radius: 88rpx;
+    margin-right: 34rpx;
+    margin-left: 24rpx;
+}
+
+.img-1 {
+    width: 50rpx;
+    height: 50rpx;
+    margin-left: 60rpx;
+}
+
+.hide {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+
+.save-btn {
+    width: 200rpx;
+    height: 60rpx;
+    background-color: #ff4544;
+    color: #fff;
+    border-radius: 10rpx;
+    margin-top: 10rpx;
+}

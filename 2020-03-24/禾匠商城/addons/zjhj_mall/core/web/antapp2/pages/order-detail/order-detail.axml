@@ -1,0 +1,156 @@
+<!--pages/order-detail/order-detail.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view a:if="{{isPageShow}}" class="body after-navber">
+        <view style="overflow-x: hidden">
+            <view class="status-bar">
+                <image src="{{__wxapp_img.store.order_status_bar.url}}" mode="aspectFill"></image>
+                <text>{{order.status}}</text>
+            </view>
+
+            <navigator url="/pages/express-detail/express-detail?id={{order.order_id}}&order_type={{order.order_type}}" class="block flex-row" a:if="{{order.express_no && order.is_send==1}}">
+                <view class="flex-grow-1">
+                    <view class="mb-10">快递公司：{{order.express}}</view>
+                    <view class="">快递单号：{{order.express_no}}</view>
+                </view>
+                <view class="flex-grow-0 flex-y-center">
+                    <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+                </view>
+
+                <view class="block-row flex-row" a:if="{{false}}">
+                    <view class="flex-grow-1">快递单号：{{order.express_no}}</view>
+                    <view class="flex-grow-0">
+                        <text class="copy-text-btn" onTap="copyText" data-text="{{order.express_no}}">复制</text>
+                    </view>
+                </view>
+            </navigator>
+
+            <view class="block">
+                <view class="flex-row block-row">
+                    <view class="flex-grow-1">
+                        {{order.is_offline == 0 ? "联系人：" : "收货人："}}{{order.name}}
+                    </view>
+                    <view class="flex-grow-0">
+                        {{order.mobile}}
+                    </view>
+                </view>
+                <view a:if='{{order.address}}'>收货地址：{{order.address}}</view>
+            </view>
+            <block a:if="{{order.is_offline == 1}}">
+                <view class="block flex-row">
+                    <view class='flex-grow-1'>
+                        <view class="flex-grow-1">门店名称：{{order.shop.name}}</view>
+                        <view class="flex-grow-1">联系电话：{{order.shop.mobile}}</view>
+                        <view class="flex-grow-1">门店地址：{{order.shop.address}}</view>
+                    </view>
+                    <view class='flex-grow-0 flex-y-center' a:if='{{order.shop.longitude}}'>
+                        <text class='copy-text-btn' onTap='location'>导航</text>
+                    </view>
+                </view>
+            </block>
+
+            <view class="block">
+                <view class="block-row flex-row">
+                    <view class="flex-grow-1">订单编号：{{order.order_no}}</view>
+                    <view class="flex-grow-0">
+                        <text class="copy-text-btn" onTap="copyText" data-text="{{order.order_no}}">复制</text>
+                    </view>
+                </view>
+                <view>下单时间：{{order.addtime}}</view>
+                <view class='pay-type'>{{order.pay_type_text}}</view>
+            </view>
+
+            <view class="block">
+                <view class="flex-row block-row">
+                    <view class="flex-grow-1">商品总额</view>
+                    <view class="flex-grow-0" a:if="{{order}}">￥{{order.goods_total_price}}</view>
+                    <view class="flex-grow-0" a:else>￥0.00</view>
+                </view>
+                <view class="flex-row block-row">
+                    <view class="flex-grow-1">商品数量</view>
+                    <view class="flex-grow-0">×{{order.num}}</view>
+                </view>
+                <view class="flex-row block-row" a:if='{{user_coupon_id}}'>
+                    <view class="flex-grow-1">优惠券优惠</view>
+                    <view class="flex-grow-0">-￥{{order.coupon_sub_price}}</view>
+                </view>
+                <view class="flex-row block-row" a:if='{{order.integral && order.integral.forehead > 0}}'>
+                    <view class="flex-grow-1">积分抵扣</view>
+                    <view class="flex-grow-0">-￥{{order.integral.forehead}}</view>
+                </view>
+                <view class="flex-row block-row" a:if='{{order.discount<10 && order.discount}}'>
+                    <view class="flex-grow-1">会员折扣</view>
+                    <view class="flex-grow-0">{{order.discount}}折</view>
+                </view>
+                <view class="flex-row block-row" a:if="{{order.before_update}}">
+                    <view class="flex-grow-1">{{order.before_update}}</view>
+                    <view class="flex-grow-0">￥{{order.money}}</view>
+                </view>
+                <view class="flex-row block-row" a:if="{{order.colonel}}">
+                    <view class="flex-grow-1">团长优惠</view>
+                    <view class="flex-grow-0">￥{{order.colonel}}</view>
+                </view>
+                <view class="flex-row block-row">
+                    <view class="flex-grow-1">运费</view>
+                    <view class="flex-grow-0">￥{{order.express_price}}</view>
+                </view>
+                <view a:if='{{order.content}}'>
+                    <view>买家留言</view>
+                    <view style='width:100%;overflow:auto;word-wrap:break-word;'>{{order.content}}</view>
+                </view>
+                <view a:if='{{order.words}}'>
+                    <view>商家留言</view>
+                    <view class='fs-sm' style='width:100%;overflow:auto;word-wrap:break-word;'>{{order.words}}</view>
+                </view>
+                <view class="block-footer">合计：
+                    <text style="color: #ff4544">￥{{order.pay_price}}</text>
+                </view>
+            </view>
+
+            <view class="block">
+                <view a:for="{{order.goods_list}}" class="flex-row goods-item" a:key="{{item.id}}">
+                    <view class="flex-grow-0">
+                        <navigator url="{{item.goods_url}}" style="font-size: 0">
+                            <image mode="aspectFill" style="width: 156rpx;height: 156rpx" src="{{item.goods_pic}}"></image>
+                        </navigator>
+                    </view>
+                    <view class="flex-grow-1" style="padding-left: 20rpx">
+                        <view style="margin-bottom: 10rpx">
+                            <navigator url="{{item.goods_url}}">{{item.name}}</navigator>
+                        </view>
+                        <view class="flex-row">
+                            <view class="flex-grow-1">
+                                <view style="font-size: 9pt;color: #888;margin-right: 20rpx;display: inline-block" a:for="{{item.attr}}" a:for-item="attr" a:key="{{attr.id}}">
+                                    {{attr.attr_group_name}}：{{attr.attr_name}}
+                                </view>
+                            </view>
+                            <view class="flex-grow-0" style="text-align: right">
+                                <view>×{{item.num}}</view>
+                                <view style="color: #ff4544">￥：{{item.total_price}}</view>
+                            </view>
+                        </view>
+                        <view a:if="{{item.is_level && item.is_level == 1}}" style='color:#ff4544;text-align:right;font-size:9pt'>享受会员折扣</view>
+                        <view a:if="{{item.order_refund_enable==1}}">
+                            <navigator a:if="{{item.is_order_refund==0}}" class="flex-y-center refund-btn" url="/pages/order-refund/order-refund?id={{item.order_detail_id}}">申请售后
+                            </navigator>
+                            <text class="refund-text" a:if="{{item.is_order_refund==1}}">已申请售后</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view a:if="{{order.is_send==0 && order.apply_delete==1}}" class='order-footer flex-y-center flex-x-right flex-row'>
+                <view>退款申请中</view>
+            </view>
+
+            <view a:if="{{order.is_send==0 && order.is_pay == 1 && order.apply_delete == 0}}" class='order-footer flex-y-center flex-x-right flex-row'>
+                <view class="play-btn">
+                    <view onTap="orderRevoke" data-id="{{order.order_id}}">申请退款
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

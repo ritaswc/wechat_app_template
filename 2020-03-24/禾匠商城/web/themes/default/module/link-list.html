@@ -1,0 +1,47 @@
+{template 'common/header'}
+<div class="module-link-page">
+	{if $_W['iscontroller']}
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href=""><i class="wi wi-back-circle"></i> </a>
+		<li><a href="{php echo url('module/welcome', array('m' => $_GPC['m']));}">应用详情</a></li>
+		<li>关联账号列表</li>
+	</ol>
+	{/if}
+	<div class="user-head-info">
+		<img src="{$module_info['logo']}" class="module-img we7-margin-right-sm" alt="">
+		<div class="info">
+			<h3 class="title">{$module_info['title']}</h3>
+			<div class="type">
+				{loop uni_account_type_sign() $type_sign $type_info}
+					{php $type_sign_support = $type_sign . '_support'}
+					{if $module_info[$type_sign_support] == MODULE_SUPPORT_ACCOUNT}<i class="{php echo $type_info['icon']}"></i>{/if}
+				{/loop}
+			</div>
+		</div>
+	</div>
+
+	<div class="module-link-list">
+		{loop $account_list $sub_account}
+		<div class="module-link-item">
+			<a href="{php echo url('module/display/switch', array('module_name' => $_GPC['m'], 'uniacid' => $sub_account['uniacid']));}" class="box">
+				<img src="{$sub_account['logo']}" class="account-img" alt="">
+				<div class="info">
+					<div class="title">{$sub_account['name']}</div>
+					<div class="type">
+						<i class="wi wi-{$sub_account['type_sign']}"></i> {$sub_account['type_name']}
+					</div>
+					<div>
+						{$sub_account['version_id']}
+					</div>
+				</div>	
+				<div class="go-in">
+					<i class="wi wi-angle-right"></i>
+				</div>
+			</a>
+		</div>
+		{/loop}
+
+	</div>
+</div>
+	
+{template 'common/footer'}

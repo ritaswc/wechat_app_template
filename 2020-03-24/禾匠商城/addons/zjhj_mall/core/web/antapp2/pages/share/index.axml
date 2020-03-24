@@ -1,0 +1,107 @@
+<view class="page" style='height: 100%;'>
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber" a:if="{{__user_info && __user_info.is_distributor == 1}}">
+        <view class="info">
+            <view class="info-title flex-row">
+                <view class="flex-y-center">
+                    <image class="info-img" src="{{__user_info.avatar_url}}"></image>
+                </view>
+                <view class="info-block">
+                    <view class="info-up info-blod">{{__user_info.nickname}}</view>
+                    <view class="info-bottom">{{custom.words.parent_name.name}}：{{__user_info.parent}}</view>
+                </view>
+            </view>
+            <view class="info-content flex-row">
+                <view class="info-left">
+                    <view class="info-label">
+                        <view class="info-first">{{custom.words.can_be_presented.name}}</view>
+                        <view class="info-second info-blod info-big flex-row">{{price}}元</view>
+                    </view>
+                </view>
+                <view class="info-right">
+                    <navigator open-type="navigate" class="" url="/pages/cash/cash">
+                        <view class="info-btn">{{custom.words.cash.name}}</view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+        <view class='new-block flex-row'>
+            <view class='flex-grow-1 flex-x-center'>
+                <view class='text-more'>
+                    <view class='text-more' style='color:#22af19;margin-bottom: 16rpx;'>{{custom.words.already_presented.name}}</view>
+                    <view class='text-more'>{{cash_price}}元</view>
+                </view>
+            </view>
+            <view class='flex-grow-1 flex-x-center'>
+                <view class='text-more'>
+                    <view class='text-more' style='color:#ff8f17;margin-bottom: 16rpx;'>{{custom.words.order_money_un.name}}</view>
+                    <view class='text-more'>{{order_money_un}}元</view>
+                </view>
+            </view>
+        </view>
+        <view class="list flex-row">
+            <navigator class="item border-bottom" url="/pages/share-money/share-money">
+                <view class="list-img flex-x-center">
+                    <image class="img" src="{{custom.menus.money.icon}}"></image>
+                </view>
+                <view class="list-content text-more">{{custom.menus.money.name}}</view>
+                <view class="flex-x-center list-content">
+                    <view class="list-red">{{total_price}}</view>元</view>
+            </navigator>
+            <navigator class="item border-bottom border-between" url="/pages/share-order/share-order">
+                <view class="list-img flex-x-center">
+                    <image class="img" src="{{custom.menus.order.icon}}"></image>
+                </view>
+                <view class="list-content text-more">{{custom.menus.order.name}}</view>
+                <view class="flex-x-center list-content">
+                    <view class="list-red">{{order_money}}</view>元</view>
+            </navigator>
+            <navigator class="item border-bottom" url="/pages/cash-detail/cash-detail">
+                <view class="list-img flex-x-center">
+                    <image class="img" src="{{custom.menus.cash.icon}}"></image>
+                </view>
+                <view class="list-content text-more">{{custom.menus.cash.name}}</view>
+                <view class="flex-x-center list-content">
+                    <view class="list-red">{{total_cash}}</view>元</view>
+            </navigator>
+        </view>
+        <view class="list flex-row">
+
+            <navigator class="item border-bottom" url="/pages/share-team/share-team" a:if="{{share_setting.level != 4}}">
+                <view class="list-img flex-x-center">
+                    <image class="img" src="{{custom.menus.team.icon}}"></image>
+                </view>
+                <view class="list-content text-more">{{custom.menus.team.name}}</view>
+                <view class="flex-x-center list-content">
+                    <view class="list-red">{{team_count}}</view>人</view>
+            </navigator>
+            <navigator class="item border-bottom border-between" url="/pages/share-qrcode/share-qrcode">
+                <view class="list-img flex-x-center">
+                    <image class="img" src="{{custom.menus.qrcode.icon}}"></image>
+                </view>
+                <view class="list-content text-more">{{custom.menus.qrcode.name}}</view>
+            </navigator>
+            <view class="item border-bottom" a:if="{{share_setting.level == 4}}">
+            </view>
+            <view class="item border-bottom">
+            </view>
+        </view>
+    </view>
+    <view class='after-navber' a:if="{{__user_info && __user_info.is_distributor != 1}}" style='background-color:#fff;height:100%'>
+        <view style="padding-top:150rpx">
+            <view class='flex-row flex-x-center'>
+                <view class=''>
+                    <image src='{{__wxapp_img.share.tip.url}}' style='width:420rpx;height:240rpx;'></image>
+                </view>
+            </view>
+            <view style='padding:80rpx 0 88rpx 0;' class='flex-row flex-x-center'>您还不是{{custom.share_name.name ? custom.share_name.name : '分销商'}}。请先提交申请！</view>
+            <view class='felx-row flex-x-center'>
+                <form onSubmit="apply" report-submit='true'>
+                    <button formType='submit' class='flex-x-center flex-y-center' style='width:560rpx;height:80rpx;border-radius:40rpx;background-color:#ff4544;color:#fff;'>立即前往</button>
+                </form>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

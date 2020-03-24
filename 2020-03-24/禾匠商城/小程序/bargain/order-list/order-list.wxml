@@ -1,0 +1,60 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="list">
+            <view class="no-data-tip" wx:if="{{list.length<1}}">
+                <view>你还没有进行中的砍价</view>
+                <view>去会场逛逛！</view>
+            </view>
+            <view class="one flex-row" wx:for="{{list}}" wx:key="{{item.id}}">
+                <view class="flex-grow-0" style="width:216rpx;height:216rpx;margin-right:20rpx;">
+                    <image src="{{item.cover_pic}}"></image>
+                </view>
+                <view class="flex-grow-1 flex-col">
+                    <view class="flex-grow-0">
+                        <view class="text-more-2" style="font-size:9pt">{{item.goods_name}}</view>
+                    </view>
+                    <view class="flex-grow-1 flex-col">
+                        <block wx:if="{{item.reset_time>0}}">
+                            <view class="flex-row flex-grow-1 flex-y-center">
+                                <block wx:if="{{time_list.day>0}}">
+                                    <view class="time flex-y-center">{{item.time_list.d}}</view>
+                                    <view style="margin: 0 10rpx;">天</view>
+                                </block>
+                                <view class="time flex-y-center">{{item.time_list.h}}</view>
+                                <view class=" flex-y-center">：</view>
+                                <view class="time flex-y-center">{{item.time_list.m}}</view>
+                                <view class=" flex-y-center">：</view>
+                                <view class="time flex-y-center">{{item.time_list.s}}</view>
+                                <view class=" flex-y-center" style="margin-left:16rpx"> 后结束</view>
+                            </view>
+                            <view class="flex-grow-0 flex-row">
+                                <view class="flex-grow-1">
+                                    <view wx:if="{{item.price>0}}">
+                                        <view class="a">离最低￥{{item.min_price}}</view>
+                                        <view class="b">还差￥{{item.price}}</view>
+                                    </view>
+                                    <view wx:else>
+                                        <view class="a">已砍至最低</view>
+                                        <view class="b">￥{{item.min_price}}</view>
+                                    </view>
+                                </view>
+                                <view class="flex-grow-0 flex-y-bottom">
+                                    <navigator class="list-btn flex-x-center flex-y-center" hoverClass="none" url="/bargain/activity/activity?order_id={{item.order_id}}" wx:if="{{item.price>0}}">继续砍价</navigator>
+                                    <view bindtap="submit" class="list-btn flex-x-center flex-y-center" data-index="{{item.order_id}}" wx:else>立即购买</view>
+                                </view>
+                            </view>
+                        </block>
+                        <block wx:else>
+                            <view class="flex-grow-1" style="margin-top:40rpx;color:#666;">已结束</view>
+                            <view class="flex-grow-0" style="{{item.status==1?'color:#ff5c5c;':'color:#999;'}}">{{item.content}}</view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <include src="/bargain/commons/naver/naver"></include>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

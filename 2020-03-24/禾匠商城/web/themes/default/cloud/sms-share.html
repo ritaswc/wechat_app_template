@@ -1,0 +1,290 @@
+{template 'common/header'}
+{if $do == 'display'}
+<div class="sms-share" ng-controller="smsShare" ng-cloak>
+	<div class="search-box we7-margin-bottom">
+		<div class="input-group we7-margin-right" style="width: 300px">
+			<input type="text" ng-model="keyword" class="form-control" placeholder="输入要搜索的平台名称">
+			<span class="input-group-btn" ng-click="getList(1)"><button class="btn btn-default "><i class="fa fa-search"></i></button></span>
+		</div>
+		<select name="" ng-model="type" ng-change="getList(1)">
+			<option value="">全部平台</option>
+			<option ng-value="key" ng-repeat="(key, type) in typeList">{{type.title}}</option>
+		</select>
+		<div class="search-form"></div>
+		<a href="{php echo url('cloud/sms-share/add')}&type=add" class="btn btn-primary">添加分配短信</a>
+	</div>
+	<table class="table we7-table">
+		<tr>
+			<th>平台名称</th>
+			<th>平台类别</th>
+			<th>短信签名</th>
+			<th>可用数量</th>
+			<th>操作</th>
+		</tr>
+		<tr ng-repeat="item in list">
+			<td>{{item.uniacid == 0 ? '系统短信' : item.name}}</td>
+			<td>{{item | showType : typeList}}</td>
+			<td>【{{item.notify.sms.signature}}】</td>
+			<td>
+				{{item.notify.sms.balance}}
+			</td>
+			<td>
+				<div class="link-group">
+					<a ng-href="{{apiUrl + '&do=system'}}" ng-if="item.uniacid == 0">编辑</a>
+					<a href="javasript:;" ng-click="deleteItem(item.uniacid)" ng-if="item.uniacid != 0">删除</a>
+				</div>
+			</td>
+		</tr>
+		<tr ng-if="list | we7IsEmpty">
+			<td colspan="100">
+				<div class="text-center">暂无数据</div>
+			</td>
+		</tr>
+	</table>
+	<div class="pull-right">
+		<we7-page conf="page"></we7-page>
+	</div>
+</div>
+
+<script>
+	angular.module('smsApp').value('config', {
+		apiUrl: "{php echo url('cloud/sms-share')}do=",
+		addUrl: "{php echo url('cloud/sms-share/add')}",
+		systemUrl: "{php echo url('cloud/sms-share/system')}",
+	});
+	angular.bootstrap($('.sms-share'), ['smsApp']);
+</script>
+{/if}
+
+{if in_array($do, array('add', 'edit'))}
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href="{php echo url('cloud/sms-share')}"><i class="wi wi-back-circle"></i> </a>
+		<li><a href="{php echo url('cloud/sms-share')}">分配短信</a></li>
+		<li>添加分配短信</li>
+	</ol>
+	<div class="we7-form sms-add" ng-controller="smsAdd" ng-cloak>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">选择平台</label>
+			<div class="col-sm-4 form-controls">
+				<select ng-model="postData.uniacid" class="wide">
+					<option value="">选择平台</option>
+					<option ng-repeat="(kye, item) in setting.accounts" ng-value="item.uniacid">{{item.name}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">短信条数</label>
+			<div class="col-sm-4 form-controls">
+				<input type="text" class="form-control" ng-model="postData.balance" placeholder="设置的短信条数，请勿超过短信总量" />
+				<div class="help-block color-red">
+					<i class="wi wi-info"></i>设置的短信条数，请勿超过短信总量
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">短信签名</label>
+			<div class="col-sm-4 form-controls">
+				<select ng-model="postData.signature" class="wide">
+					<option value="">选择签名</option>
+					<option ng-repeat="(kye, item) in setting.sms_info.sms_sign" ng-value="item">{{item}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label"></label>
+			<div class="col-sm-6 form-controls">
+				<button class="btn btn-primary" ng-click="postSetting()">确认提交</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		angular.module('smsApp').value('config', {
+			apiUrl: "{php echo url('cloud/sms-share')}",
+		});
+		angular.bootstrap($('.sms-add'), ['smsApp']);
+	</script>
+{/if}
+
+{if $do == 'system'}
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href="{php echo url('cloud/sms-share')}"><i class="wi wi-back-circle"></i> </a>
+		<li><a href="{php echo url('cloud/sms-share')}">分配短信</a></li>
+		<li>添加分配短信</li>
+	</ol>
+	<div class="form-files-box sms-index" ng-controller="smsIndex" ng-cloak>
+		<table class="table we7-table">
+			<colgroup>
+				<col width="200px">
+				<col width="">
+			</colgroup>
+			<tr>
+				<th>添加设置</th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>短信条数</td>
+				<td class="">{{systemSms.system_sms_balance || 0}} 条</td>
+				<td class="color-default">
+					<a href="javascript:;" ng-click="showBalance()">
+						分配短信
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>短信签名</td>
+				<td class="">
+					<span>【{{systemSms.system_sms_sign}}】</span>
+				</td>
+				<td class="color-default">
+					<div class="link-group">
+						<a href="javascript:;" ng-click="showModal()">
+							修改签名
+						</a>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<table class="table we7-table">
+			<colgroup>
+				<col width="200px">
+				<col>
+				<col width="200px">
+			</colgroup>
+			<tr>
+				<th>提示设置</th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>用户过期提醒</td>
+				<td>{{settingSmsSign.user_expire.day || '1'}}天</td>
+				<td>
+					<div class="link-group">
+						<div class="switch" ng-class="{switchOn: settingSmsSign.user_expire.status == 1}"  ng-click="changeStatus('user_expire')"></div>
+					</div>
+				</td>
+				<td class="color-default">
+					<a href="javascript:;" ng-click="showModalSetting('user_expire', 'day')">
+						发送设置
+					</a>
+					
+				</td>
+			</tr>
+			<tr>
+				<td>平台到期提醒</td>
+				<td>{{settingSmsSign.account_sms_expire.day || '1'}}天</td>
+				<td>
+					<div class="link-group">
+						<div class="switch" ng-class="{switchOn: settingSmsSign.account_sms_expire.status == 1}"  ng-click="changeStatus('account_sms_expire')"></div>
+					</div>
+				</td>
+				<td class="color-default">
+					<a href="javascript:;" ng-click="showModalSetting('account_sms_expire', 'day')">
+						发送设置
+					</a>
+				</td>
+			</tr>
+	
+			<tr>
+				<td>API余量提醒</td>
+				<td>{{settingSmsSign.api_sms_expire.num || '3000'}}</td>
+				<td>
+					<div class="link-group">
+						<div class="switch" ng-class="{switchOn: settingSmsSign.api_sms_expire.status == 1}"  ng-click="changeStatus('api_sms_expire')"></div>
+					</div>
+				</td>
+				<td class="color-default">
+					<a href="javascript:;" ng-click="showModalSetting('api_sms_expire', 'num')">
+						发送设置
+					</a>
+				</td>
+			</tr>
+		</table>
+	
+		<div class="modal fade" id="editSetting" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog we7-modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<div class="modal-title">发送设置</div>
+					</div>
+					<div class="modal-body we7-form">
+						<div class="alert we7-page-alert" ng-if="currentType != 'api_sms_expire'">
+							<i class="wi wi-info"></i><span class="color-red">默认到期前1天发送短信，</span>请设置提前发送短信的时间
+						</div>
+						<div class="alert we7-page-alert" ng-if="currentType == 'api_sms_expire'">
+							<i class="wi wi-info"></i><span class="color-red">默认API余量低于3000发送短信，</span>可自定义API余量提醒数值
+						</div>
+						<div class="form-group">
+							<div class="input-group col-sm-12">
+								<input type="text" ng-model="formData" class="form-control" placeholder="" />
+								<span class="input-group-addon" ng-if="currentType != 'api_sms_expire'">天</span>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="changeSetting()">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="editBalance" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+			<div class="modal-dialog we7-modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<div class="modal-title">分配条数</div>
+					</div>
+					<div class="modal-body we7-form">
+						<div class="form-group">
+							<div class="input-group col-sm-12">
+								<input type="text" ng-model="currentBalance" class="form-control" placeholder="" />
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="changeBalance()">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade " id="editSign" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog we7-modal-dialog ">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title">选择短信签名</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group text-right color-default">
+							<a href="//s.w7.cc/goods-7.html" target="_blank">购买签名</a>
+						</div>
+						<div class="form-group">
+							<select ng-model="currentSign">
+								<option value="{{item}}" ng-repeat="item in smsInfo.sms_sign">{{item}}</option>
+							</select>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" name="submit" value="保存" ng-click="saveSetting()">确认</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		angular.module('smsApp').value('config', {
+			apiUrl: "{php echo url('cloud/sms-share')}do=",
+			smsSettingUrl: "{php echo url('cloud/sms-share/')}do=",
+			changeUrl: "{php echo url('cloud/sms-share/change_setting')}",
+		});
+		angular.bootstrap($('.sms-index'), ['smsApp']);
+	</script>
+{/if}
+
+{template 'common/footer'}

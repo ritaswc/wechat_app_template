@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "附近",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

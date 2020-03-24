@@ -1,0 +1,238 @@
+/* pages/cat/cat.wxss */
+.cat-list{
+    background: #f7f7f7;
+}
+
+.cat-list .cat-item{
+    height: 106rpx;
+    text-align: center;
+    border-left: 8rpx solid transparent;
+}
+
+.cat-list .cat-item.active{
+    background: #fff;
+    color: #ff4544;
+    border-left-color: #ff4544;
+}
+
+.cat-list .cat-item image{
+    margin-right: 16rpx;
+
+}
+.cat-list .cat-item .cat-name{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.sub-cat-box{
+    background: #fff;
+}
+
+.sub-cat-header{
+    height: 106rpx;
+    padding-left: 24rpx;
+    margin-bottom: 0rpx;
+    transition: background 200ms;
+}
+
+.sub-cat-header.active{
+    background: rgba(255, 69, 68, 0.07);
+}
+
+.sub-cat-header > view{
+    height: 100%;
+}
+
+.sub-cat-header navigator{
+    height: 100%;
+    padding: 0 24rpx;
+}
+
+.sub-cat-header navigator image{
+    margin-left: 14rpx;
+}
+
+.sub-cat-list{
+    flex-wrap:wrap;
+}
+
+.sub-cat-list .sub-cat-item{
+    width: 33%;
+    text-align: center;
+    margin-bottom: 40rpx;
+}
+
+.sub-cat-list .sub-cat-item image{
+    margin-bottom: 8rpx;
+}
+
+.sub-cat-list .sub-cat-item view{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.cat-block{
+    height: 160rpx;
+    background: #f7f7f7;
+    margin-bottom: 20rpx;
+}
+
+.cat-block > .flex-grow-1{
+    padding: 32rpx;
+}
+
+.cat-block > .flex-grow-0{
+    padding: 0 20rpx 0 0;
+}
+
+.cat-block .cat-image{
+    width: 128rpx;
+    height: 128rpx;
+}
+/* 隐藏侧栏的样式 start */
+.cat-block-list.big .cat-block{
+    height: 212rpx;
+}
+
+.cat-block-list.big .cat-block>.flex-grow-1{
+    padding: 48rpx;
+}
+.cat-block-list.big .cat-block>.flex-grow-0{
+    padding: 0 32rpx 0 0;
+}
+.cat-block-list.big .cat-block .cat-image{
+    width: 164rpx;
+    height: 164rpx;
+}
+/* 隐藏侧栏的样式 end */
+
+
+.cat-small-style{
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-bottom:115rpx;
+}
+
+.device_iphone_x ~ .after-navber .cat-small-style{
+    padding-bottom:165rpx;
+}
+
+.cat-small-style > .flex-grow-0{
+    text-align: center;
+    margin: 40rpx 0;
+}
+
+.cat-small-style.cat-num-3 > .flex-grow-0{
+    width: 33.333333%;
+}
+.cat-small-style.cat-num-4 > .flex-grow-0{
+    width: 25%;
+}
+
+.cat-small-style .cat-item .cat-icon{
+    width: 92rpx;
+    height: 92rpx;
+}
+
+.cat-small-style .cat-item .cat-name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10rpx;
+}
+.advert{
+    /* padding: 20rpx 24rpx 0rpx 22rpx; */
+}
+.advert image{
+    width: 500rpx;
+    height: 184rpx;
+}
+.search-icon image{
+    width: 68rpx;
+    height: 68rpx;
+}
+.search-icon{ 
+    height: 92rpx;
+    padding: 0 24rpx;
+}
+.scroll-view-x{
+    background-color: #fff;
+    white-space: nowrap;
+    top: 0;
+    z-index: 9999;
+    border-bottom:1rpx solid #e2e2e2;
+    height: 100rpx;
+}
+.scroll-view-x .scroll-view-item{
+    display:inline-block;
+    margin:22rpx 17rpx 21rpx 17rpx;
+    padding: 0rpx 26rpx;
+    color:#666666;
+    height:58rpx;
+    line-height: 58rpx;
+    white-space: nowrap;
+}
+.scroll-view-y{
+    border-top:1px solid #cccccc;
+    border-bottom:1px solid #cccccc;
+} 
+.scroll-view-x .active{
+    color: #ffffff;
+    border-radius: 29rpx;
+    background-color: #ff4544;
+    height: 58rpx;
+}
+.view-item1 {
+    border:1rpx solid #cccccc;
+    color:#666666;
+    height:56rpx;
+    margin:24rpx 0rpx 0rpx 24rpx;
+    border-radius:28rpx;
+    padding:0rpx 20rpx;
+}
+.view-item2 {
+    border:1rpx solid #ff4544;
+    color:#ff4544;
+
+}
+.goods-item{
+    width: 365rpx;
+    display: inline-block;
+    position: relative;
+    margin: 0 5rpx;
+    margin-bottom: 10rpx;
+    background: #fff;
+}
+.goods-item .goods-pic{
+    width: 100%;
+    height: 365rpx;
+}
+.goods-item .goods-info {
+    padding: 5rpx 0;
+}
+.goods-item .goods-name {
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    padding: 10rpx;
+    display: block;
+    text-align: center;
+}
+
+.goods-item .goods-price{
+    color: #f40;
+    display: block;
+    text-align: center;
+}
+.loading-bar{
+    visibility: hidden;
+}
+.loading-bar.active{
+    visibility: visible;
+}
+
+.cat-num-3 {
+    font-size: 9pt;
+}

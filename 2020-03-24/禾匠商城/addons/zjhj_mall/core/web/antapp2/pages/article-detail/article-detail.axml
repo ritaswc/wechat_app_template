@@ -1,0 +1,12 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view style="background: #fff;padding:32rpx 0">
+            <import src="../../wxParse/wxParse.axml" />
+            <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+        </view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

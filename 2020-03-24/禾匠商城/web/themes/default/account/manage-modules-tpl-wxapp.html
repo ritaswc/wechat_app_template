@@ -1,0 +1,363 @@
+{template 'common/header'}
+{template 'account/account-header'}
+<div id="js-account-manage-modules-tpl" ng-controller="AccountMangeModulesTpl" ng-cloak>
+	<div class="alert alert-info">
+		<p><i class="fa fa-exclamation-circle"></i> 无主管理员时，创始人为默认主管理员，小程序拥有所有权限</p>
+	</div>
+
+	{if !in_array($owner['uid'], $founders)}
+	<table c class="table we7-table table-hover" >
+		<tr>
+			<th colspan="5" class="text-left">
+				<span class="we7-padding-right">会员权限组： {{owner.group.name}}</span>
+				<span></span>
+			</th>
+			
+
+			
+				{if $_W['role'] == ACCOUNT_MANAGE_NAME_FOUNDER && !in_array($owner['uid'], $founders)}
+				<th class="text-right"><a href="{php echo url('user/edit/edit_modules_tpl',array('uid'=>$owner['uid']))}" class="color-default">修改</a></th>
+				{else}
+				<th class="text-right"><a href="" class="color-default"></a></th>
+				{/if}
+			
+
+		</tr>
+		<tbody ng-repeat="module_tpl in modules_tpl | filter:{'type':'default'}">
+		<tr>
+			<td colspan="5" class="text-left we7-padding-right" ng-init="module_tpl.show = true">
+				<span>{{module_tpl.name}}</span>
+			</td>
+			<td>
+				<div class="link-group">
+					<a href="javascript:;" class="color-default" ng-show="module_tpl.show" ng-click="module_tpl.show = false">收起</a>
+					<a href="javascript:;" class="color-default" ng-show="!module_tpl.show" ng-click="module_tpl.show = true">展开</a>
+					<!--<a href="javascript:;" class="color-default">删除</a>-->
+				</div>
+			</td><!--默认展开-->
+		</tr>
+		<tr ng-show="module_tpl.show">
+			<td colspan="5">
+				<div class="col-sm-1 color-gray text-left we7-padding-none">小程序应用</div>
+				<div class="col-sm-11">
+					<div class="col-sm-3 text-left we7-margin-bottom" ng-repeat="module in module_tpl.wxapp">
+						<div ng-if="module.name != 'all'" class="text-over text-left">
+							<img ng-src="{{ module.logo }}" alt="" style="width:50px;height:50px;">
+							{{ module.title }}
+						</div>
+						<label class="label label-info" ng-if="module.name == 'all'">所有模块</label>
+					</div>
+				</div>
+			</td>
+			<td class="we7-padding-right color-default"></td>
+		</tr>
+		<tr style="display:none;">
+			<td colspan="5">
+				<div class="col-sm-1 color-gray text-left we7-padding-none">小程序应用</div>
+				<div class="col-sm-11">
+					<div class="col-sm-3 text-left we7-margin-bottom" ng-repeat="module in module_tpl.wxapp">
+						<a href="javascript:;" class="label label-info" ng-bind="module.title"></a>
+					</div>
+
+				</div>
+			</td>
+			<td class="we7-padding-right color-default"></td>
+		</tr>
+		<tr ng-show="module_tpl.show"  style="display:none;">
+			<td colspan="5">
+				<div class="col-sm-1 color-gray text-left we7-padding-none">模板</div>
+				<div class="col-sm-11">
+					<div class="col-sm-3 text-left we7-margin-bottom" ng-repeat="tpl in module_tpl.templates">
+						<a href="javascript:;" class="label label-info" ng-bind="tpl.title"></a>
+					</div>
+
+				</div>
+			</td>
+			<td class="we7-padding-right color-default"></td>
+		</tr>
+		</tbody>
+	</table>
+	<table c class="table we7-table table-hover" >
+		<tr>
+			<th colspan="5" class="text-left">
+				<span class="we7-padding-right">应用权限组</span>
+				<span></span>
+			</th>
+			
+
+			
+				{if $_W['role'] == ACCOUNT_MANAGE_NAME_FOUNDER && !in_array($owner['uid'], $founders)}
+				<th class="text-right"><a class="color-default" data-toggle="modal" data-target="#change-group">修改</a></th>
+				{/if}
+			
+
+		</tr>
+		<tbody ng-repeat="module_tpl in modules_tpl | filter:{'type':'extend'}">
+		<tr>
+			<td colspan="5" class="text-left we7-padding-right" ng-init="module_tpl.show = true">
+				<span>{{module_tpl.name}}</span>
+			</td>
+			<td>
+				<div class="link-group">
+					<a href="javascript:;" class="color-default" ng-show="module_tpl.show" ng-click="module_tpl.show = false">收起</a>
+					<a href="javascript:;" class="color-default" ng-show="!module_tpl.show" ng-click="module_tpl.show = true">展开</a>
+				</div>
+			</td><!--默认展开-->
+		</tr>
+		<tr ng-show="module_tpl.show">
+			<td colspan="5">
+				<div class="col-sm-1 color-gray text-left we7-padding-none">小程序应用</div>
+				<div class="col-sm-11">
+					<div class="col-sm-3 text-left we7-margin-bottom" ng-repeat="module in module_tpl.wxapp">
+						<div ng-if="module.name != 'all'" class="text-over text-left">
+							<img ng-src="{{ module.logo }}" alt="" style="width:50px;height:50px;">
+							{{ module.title }}
+						</div>
+						<label class="label label-info" ng-if="module.name == 'all'">所有模块</label>
+					</div>
+				</div>
+			</td>
+			<td class="we7-padding-right color-default"></td>
+		</tr>
+		<tr style="display:none;">
+			<td colspan="5">
+				<div class="col-sm-1 color-gray text-left we7-padding-none">小程序应用</div>
+				<div class="col-sm-11">
+					<div class="col-sm-3 text-left we7-margin-bottom" ng-repeat="module in module_tpl.wxapp">
+						<a href="javascript:;" class="label label-info" ng-bind="module.title"></a>
+					</div>
+
+				</div>
+			</td>
+			<td class="we7-padding-right color-default"></td>
+		</tr>
+		<tr ng-show="module_tpl.show"  style="display:none;">
+			<td colspan="5">
+				<div class="col-sm-1 color-gray text-left we7-padding-none">模板</div>
+				<div class="col-sm-11">
+					<div class="col-sm-3 text-left we7-margin-bottom" ng-repeat="tpl in module_tpl.templates">
+						<a href="javascript:;" class="label label-info" ng-bind="tpl.title"></a>
+					</div>
+
+				</div>
+			</td>
+			<td class="we7-padding-right color-default"></td>
+		</tr>
+		</tbody>
+	</table>
+	<table class="table we7-table table-hover account-package-extra">
+		<tr>
+			<th colspan="5" class="text-left">
+				<span class="we7-padding-right">附加权限</span>
+				<span></span>
+			</th>
+			
+
+			
+				{if $_W['role'] == ACCOUNT_MANAGE_NAME_FOUNDER && !in_array($owner['uid'], $founders) }
+				<th class="text-right"><a class="color-default" data-toggle="modal" data-target="#jurisdiction-add">修改</a></th>
+				{/if}
+			
+
+		</tr>
+		{if !in_array($owner['uid'], $founders)}
+		<tr>
+			<td colspan="6">
+				<div class="col-sm-1 color-gray text-left we7-padding-none">小程序应用</div>
+				<div class="col-sm-11 js-extra-modules">
+					<div class="col-sm-3 text-left we7-margin-bottom" ng-repeat="module in extend.modules" ng-if="extend.modules">
+						<div ng-if="module.name != 'all'" class="text-over text-left">
+							<img ng-src="{{ module.logo }}" alt="" style="width:50px;height:50px;">
+							{{ module.title }}
+						</div>
+						<label class="label label-info" ng-if="module.name == 'all'">所有模块</label>
+					</div>
+					<div class="col-sm-3 text-left we7-margin-bottom" ng-if="!extend.modules">
+						<a href="javascript:;">---</a>
+					</div>
+				</div>
+			</td>
+		</tr>
+		{/if}
+	</table>
+	{/if}
+
+	
+
+	{if $_W['role'] == ACCOUNT_MANAGE_NAME_FOUNDER && !in_array($owner['uid'], $founders) || $_W['role'] == ACCOUNT_MANAGE_NAME_VICE_FOUNDER && $owner['uid'] != $_W['uid']}
+	<div  class="uploader-modal modal fade module" id="jurisdiction-add">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content ">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel2">选择</h4>
+				</div>
+				<div class="modal-body material-content clearfix">
+					<div class="material-nav" ng-init="jurindex=0">
+						<a href="javascript:;" ng-click="tabChange(0)"  ng-class="{true:'active',false:''}[jurindex==0]" >应用</a>
+						<!--<a href="javascript:;" ng-click="tabChange(1)" ng-class="{true:'active',false:''}[jurindex==1]">模板</a>-->
+					</div>
+					<div class="material-body" ng-show="jurindex==0" id="content-modules">
+						<div class="row">
+							{loop $modules $module_name $module}
+							{if empty($module['issystem']) && $module['wxapp_support'] == 2}
+							<div class="col-sm-2">
+								<div class="item {if is_array($current_module_names) && in_array($module_name, $current_module_names)}active{/if}"
+								     data-title="{$module['title']}"
+								     data-name="{$module['name']}"
+								     onclick="$(this).toggleClass('active')">
+									<img ng-src="{$module['logo']}" alt="" class="icon"/>
+									<div class="name">{$module['title']}</div>
+									<div class="mask">
+										<span class="wi wi-right"></span>
+									</div>
+								</div>
+							</div>
+							{/if}
+							{/loop}
+						</div>
+					</div>
+					<div class="material-body" ng-show="jurindex==1" id="content-templates">
+						<div class="row">
+							{loop $templates $temp}
+							<div class="col-sm-2">
+								<div ng-click="itemClick()" class="item {if is_array($extend['templates']) && in_array($temp, $extend['templates'])}active{/if}" data-title="{$temp['title']}" data-name="{$temp['name']}" data-id="{$temp['id']}" onclick="$(this).toggleClass('active')">
+									<i class="wi wi-home" style="color: #ddd;font-size: 48px;position:relative; top:-15px; margin: 0;"></i>
+									<div class="name">{$temp['title']}</div>
+									<div class="mask">
+										<span class="wi wi-right"></span>
+									</div>
+								</div>
+							</div>
+							{/loop}
+						</div>
+					</div>
+				</div>
+				<div class="material-pager text-right clearfix">
+					<div class="pull-left we7-form">
+						<input type="checkbox" id="selected-all" ng-model="allmodule" ng-change="allmodulechange(allmodule)">
+						<label for="selected-all">全选</label>
+					</div>
+					<ul class="pagination">
+
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="addExtend()">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="change-group">
+		<div class="modal-dialog we7-modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				</div>
+				<div class="modal-body">
+					<div class="tab-content we7-form">
+						<table class="table we7-table table-hover">
+							<tr>
+								<th class="text-left bg-light-gray">应用权限组（各权限组均包含系统模块和微站默认模板）</th>
+								<th class="text-right bg-light-gray">操作</th>
+							</tr>
+							{if permission_check_account_user('see_account_manage_module_tpl_all_permission')}
+							<tr>
+								<td class="text-left">
+									<input id="check-0" type="checkbox" name="package[]" autocomplete="off" value="-1" {if is_array($owner['group']['package']) && in_array('-1', $owner['group']['package'])}checked disabled{/if}{if is_array($extendpackage) && !empty($extendpackage[-1])}checked {/if} />
+									<label for="check-0" class="we7-padding-left we7-margin-horizontal-none">所有服务</label>
+								</td>
+								<td class="text-left">
+									<div class="link-group">
+										<a href="javascript:;" class="color-default js-unfold" data-toggle="collapse" data-target="#extend0" ng-click="changeText($event)">展开</a>
+									</div>
+								</td>
+							</tr>
+							<tr class="collapse bg-light-gray" aria-expanded="true" id="extend0">
+								<td colspan="2">
+									<div class="col-sm-2 color-gray text-left we7-padding-none">应用权限</div>
+									<div class="col-sm-10">
+										<div class="col-sm-3 text-left">
+											<span class="label label-danger">系统所有模块</span>
+										</div>
+									</div>
+									<div class="col-sm-2 color-gray text-left we7-padding-none">模板权限</div>
+									<div class="col-sm-10">
+										<div class="col-sm-3 text-left">
+											<span class="label label-danger">系统所有模板</span>
+										</div>
+									</div>
+								</td>
+							</tr>
+							{/if}
+							{loop $uni_groups $package}
+							{if !(is_array($owner['group']['package']) && in_array($package['id'], $owner['group']['package']))}
+							<tr>
+								<td class="text-left">
+									<input id="check-{$package['id']}" type="checkbox" name="package[]" autocomplete="off" {if is_array($owner['group']['package']) && in_array($package['id'], $owner['group']['package'])}checked disabled{/if} {if is_array($extendpackage) && !empty($extendpackage[$package['id']])}checked {/if} value="{$package['id']}" />
+									<label for="check-{$package['id']}" class="we7-padding-left we7-margin-horizontal-none">{$package['name']}</label>
+								</td>
+								<td>
+									<div class="link-group">
+										<a href="javascript:;" class="color-default js-unfold" data-toggle="collapse" data-target="#extend{$package['id']}" ng-click="changeText($event)">展开</a>
+									</div>
+								</td>
+							</tr>
+							<tr class="collapse bg-light-gray" aria-expanded="true" id="extend{$package['id']}">
+								<td colspan="2">
+									<div>
+										<div class="col-sm-2 color-gray text-left we7-padding-none">应用权限</div>
+										<div class="col-sm-10">
+											<div class="col-sm-3 text-left" ng-style="{'margin-right': '35px','margin-bottom': '15px'}">
+												<a href="javascript:;" class="label label-info">系统模块</a>
+											</div>
+											{loop $package['modules'] $module}
+											<div class="col-sm-3 text-left" ng-style="{'margin-right': '35px','margin-bottom': '15px'}">
+												<a href="javascript:;" class="label label-info">{$module['title']}</a>
+											</div>
+											{/loop}
+										</div>
+									</div>
+									<div>
+										<div class="col-sm-2 color-gray text-left we7-padding-none">模板权限</div>
+										<div class="col-sm-10">
+											<div class="col-sm-3 text-left" ng-style="{'margin-right': '35px','margin-bottom': '15px'}">
+												<a href="javascript:;" class="label label-info">微站默认模板</a>
+											</div>
+											{loop $package['templates'] $template}
+											<div class="col-sm-3 text-left" ng-style="{'margin-right': '35px','margin-bottom': '15px'}">
+												<a href="javascript:;" class="label label-info">{$template['title']}</a>
+											</div>
+											{/loop}
+										</div>
+									</div>
+								</td>
+							</tr>
+							{/if}
+							{/loop}
+						</table>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="changeGroup()">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	{/if}
+</div>
+<script>
+	angular.module('accountApp').value('config', {
+		owner: {php echo !empty($owner) ? json_encode($owner) : 'null'},
+		modules_tpl: {php echo !empty($modules_tpl) ? json_encode($modules_tpl) : 'null'},
+		extend: {php echo !empty($extend) ? json_encode($extend) : 'null'},
+		links: {
+			postModulesTpl: "{php echo url('account/post/modules_tpl', array('acid' => $acid, 'uniacid' => $uniacid))}",
+		},
+	});
+	angular.bootstrap($('#js-account-manage-modules-tpl'), ['accountApp']);
+</script>
+{template 'common/footer'}

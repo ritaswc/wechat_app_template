@@ -1,0 +1,216 @@
+{template 'common/header'}
+<ul class="we7-page-tab"></ul>
+<div id="js-system-platform" ng-controller="SystemPlatform" ng-cloak>
+	<a id="auth" href="{$authurl}" class="btn btn-primary pull-right we7-margin-bottom " ><i class="fa fa-wechat"></i>微信公众号登录授权</a>
+	<div class="clearfix"></div>
+	<div class="alert we7-page-alert ">
+		开发信息需开放平台审核通过后才可以看到，填写完后才可以使用授权登录功能
+	</div>
+	<table class="table we7-table table-hover table-form we7-form">
+		<col width="220px " />
+		<col />
+		<col width="230px" />
+		<tr>
+			<th class="text-left" colspan="2">微信开放平台开发信息</th>
+			<th class="we7-padding-right">
+				
+			</th>
+		</tr>
+		<tr> 
+			<td class="table-label" colspan="2">是否启用微信公众号登录授权</td>
+			<td>
+				<label>
+					<div class="switch" ng-class="{'switchOn' : platform.authstate}" ng-click="httpChange('authstate')"></div>
+				</label>
+			</td>
+		</tr>
+		<tr>     
+			<td class="table-label">AppID</td>
+			<td>
+				<input type="text"  name="appid" ng-model="platform.appid" readonly class="form-control">
+				<div class="help-block">在微信开放平台注册且审核通过后可以获取到AppId</div>
+			</td>
+			<td>
+				<div class="link-group">
+					<a href="javascript:;" data-toggle="modal" data-target="#AppID">修改</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="table-label">AppSecret</td>
+			<td>
+				<input type="text" name="appsecret" ng-model="platform.appsecret" readonly class="form-control">
+				<div class="help-block">在微信开放平台注册且审核通过后可以获取到AppSecret</div>
+			</td>
+			<td>
+				<div class="link-group"><a href="javascript:;" data-toggle="modal" data-target="#AppSecret">修改</a></div>
+			</td>
+		</tr>
+	</table>
+	<div class="modal fade" id="AppID" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">修改AppID</div>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="text" id="newappid" class="form-control" placeholder="请填写新的AppID" />
+						<span class="help-block">在微信开放平台注册且审核通过后可以获取到AppId</span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="httpChange('appid')">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="AppSecret" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">修改AppSecret</div>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="text" id="newappsecret" class="form-control" placeholder="请填写新的AppSecret" />
+						<span class="help-block">在微信开放平台注册且审核通过后可以获取到AppSecret</span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="httpChange('appsecret')">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<table class="table we7-table table-hover table-form  we7-form">
+		<col width="220px " />
+		<col />
+		<col width="230px"/>
+		<tr>
+			<th class="text-left" colspan="3">微信开放平台接入配置项</th>
+		</tr>
+		<tr>
+			<td class="table-label">登录授权的发起页域名</td>
+			<td>
+				<span ng-bind="url.host"></span>
+			</td>
+			<td>
+				<div class="link-group"><a href="javascript:;" id="copy-0" clipboard supported="supported" text="url.host" on-copied="success('0')">点击复制</a></div>
+			</td>
+		</tr>
+		<tr>
+			<td class="table-label">发起授权页的体验URL</td>
+			<td>
+				<span>{$siteroot_parse_array['host']}{$siteroot_parse_array['path']}web/index.php?c=account&a=auth&do=test</span>
+			</td>
+			<td><div class="link-group"><a href="javascript:;" id="copy-1" clipboard supported="supported" text="url.host+url.path+'web/index.php?c=account&a=auth&do=test'" on-copied="success('1')">点击复制</a></div></td>
+		</tr>
+		<tr>
+			<td class="table-label">授权事件接受URL</td>
+			<td>
+				<span>{$siteroot_parse_array['host']}{$siteroot_parse_array['path']}web/index.php?c=account&a=auth&do=ticket</span>
+			</td>
+			<td><div class="link-group"><a href="javascript:;" id="copy-2" clipboard supported="supported" text="url.host+url.path+'web/index.php?c=account&a=auth&do=ticket'" on-copied="success('2')">点击复制</a></div></td>
+		</tr>
+		<tr>
+			<td class="color-red">公众号消息校验Token</td>
+			<td>
+				
+				<input type="text" class="form-control" ng-model="platform.token" readonly>
+				<div class="help-block">与公众平台接入设置值一致，必须为英文或者数字，长度为3到32个字符. 请妥善保管, Token 泄露将可能被窃取或篡改平台的操作数据.</div>
+			</td>
+			<td>
+				<div class="link-group">
+					<a href="javascript:;" data-toggle="modal" data-target="#token">修改</a>
+					<a href="javascript:;" ng-click="httpChange('token')">生成新的</a>
+					<a href="javascript:;" id="copy-3" clipboard supported="supported" text="platform.token" on-copied="success('3')">点击复制</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="color-red">公众号消息加解密Key</td>
+			<td>
+				
+				<input type="text" class="form-control" ng-model="platform.encodingaeskey" readonly>
+				<div class="help-block">与公众平台接入设置值一致，必须为英文或者数字，长度为43个字符. 请妥善保管, EncodingAESKey 泄露将可能被窃取或篡改平台的操作数据.</div>
+			</td>
+			<td>
+				<div class="link-group">
+					<a href="javascript:;" data-toggle="modal" data-target="#encodingaeskey">修改</a>
+					<a href="javascript:;" ng-click="httpChange('encodingaeskey')">生成新的</a>
+					<a href="javascript:;" id="copy-4" clipboard supported="supported" text="platform.encodingaeskey" on-copied="success('4')">点击复制</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="table-label">公众号消息与事件接受URL</td>
+			<td>
+				<input type="text" readonly value="{$siteroot_parse_array['host']}{$siteroot_parse_array['path']}api.php?appid=/$APPID$" class="form-control">
+			</td>
+			<td><div class="link-group"><a href="javascript:;" id="copy-5" clipboard supported="supported" text="url.host+url.path+'api.php?appid=/$APPID$'" on-copied="success('5')">点击复制</a></div></td>
+		</tr>
+		<tr>
+			<td class="table-label">网页开发域名</td>
+			<td>
+				<input type="text" readonly ng-model="url.host" class="form-control">	
+			</td>
+			<td><div class="link-group"><a href="javascript:;" id="copy-6" clipboard supported="supported" text="url.host" on-copied="success('6')">点击复制</a></div></td>
+		</tr>
+	</table>
+	<div class="modal fade" id="token" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">修改token</div>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="text" id="newtoken" class="form-control" placeholder="请填写新的公众号消息校验Token" />
+						<span class="help-block">在微信开放平台注册且审核通过后可以获取到<span class="color-red">公众号消息校验Token</span></span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="httpChange('token', 'edit')">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="encodingaeskey" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">修改EncodingAESKey</div>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="text" id="newencodingaeskey" class="form-control" placeholder="请填写新的公众号消息加解密Key" />
+						<span class="help-block">在微信开放平台注册且审核通过后可以获取到<span class="color-red">公众号消息加解密Key</span></span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="httpChange('encodingaeskey', 'edit')">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	angular.module('accountApp').value('config', {
+		platform: {php echo !empty($_W['setting']['platform']) ? json_encode($_W['setting']['platform']) : 'null'},
+		url: {php echo !empty($siteroot_parse_array) ? json_encode($siteroot_parse_array) : 'null'},
+		links: {
+			platformPost: "{php echo url('system/platform')}",
+		},
+	});
+	angular.bootstrap($('#js-system-platform'), ['accountApp']);
+</script>
+{template 'common/footer'}

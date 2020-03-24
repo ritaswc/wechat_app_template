@@ -1,0 +1,176 @@
+{template 'common/header'}
+<div id="activity-detail">
+<style type="text/css">
+@charset "utf-8";
+html{background:#FFF;color:#000;}
+body, div, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset, img{border:0;}
+address, caption, cite, code, dfn,  th, var{font-style:normal;font-weight:normal;}
+ol, ul{list-style:none;}
+caption, th{text-align:left;}
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+q:before, q:after{content:'';}
+abbr, acronym{border:0;font-variant:normal;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+input, textarea, select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+input, textarea, select{font-size:100%;}
+legend{color:#000;}
+body{color:#222;font-family:Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Tohoma, Arial;height:100%;position:relative;}
+body > .tips{display:none;left:50%;padding:20px;position:fixed;text-align:center;top:50%;width:200px;z-index:100;}
+.page{padding:15px;}
+.page .page-error, .page .page-loading{line-height:30px;position:relative;text-align:center;}
+#activity-detail .page-bizinfo{border-bottom:1px dotted #CCC;}
+#activity-detail .page-bizinfo .header{padding:10px 10px 10px;}
+#activity-detail .page-bizinfo .header #activity-name{color:#000;font-size:20px;margin-bottom:5px;font-weight:bold;word-break:normal;word-wrap:break-word;}
+#activity-detail .page-bizinfo .header #post-date{color:#8c8c8c;font-size:11px;margin:0;}
+#activity-detail .page-content{padding:10px;}
+#activity-detail .page-content .media{margin-bottom:18px;}
+#activity-detail .page-content .media img{width:100%;}
+#activity-detail .page-content .text{color:#3e3e3e;font-size:1.5;line-height:1.5;width: 100%;overflow: hidden;zoom:1;}
+#activity-detail .page-content .text p{min-height:1.5em;min-height: 1.5em;word-wrap: break-word;word-break:break-all;}
+#activity-list .header{font-size:20px;}
+#activity-list .page-list{border:1px solid #ccc;border-radius:5px;margin:18px 0;overflow:hidden;}
+#activity-list .page-list .line.btn{border-radius:0;margin:0;text-align:left;}
+#activity-list .page-list .line.btn .checkbox{height:25px;line-height:25px;padding-left:35px;position:relative;}
+#activity-list .page-list .line.btn .checkbox .icons{background-color:#ccc;left:0;position:absolute;top:0;}
+#activity-list .page-list .line.btn.off .icons{background-image:none;}
+#activity-list #save.btn{background-image:linear-gradient(#22dd22, #009900);background-image:-moz-linear-gradient(#22dd22, #009900);background-image:-ms-linear-gradient(#22dd22, #009900);background-image:-o-linear-gradient(#22dd22, #009900);background-image:-webkit-gradient(linear, left top, left bottom, from(#22dd22), to(#009900));background-image:-webkit-linear-gradient(#22dd22, #009900);}
+.vm{vertical-align:middle;}
+.tc{text-align:center;}
+.db{display:block;}
+.dib{display:inline-block;}
+.b{font-weight:700;}
+.clr{clear:both;}
+.text img{max-width:100%;}
+.page-url{padding-top:18px;}
+.page-url-link{color:#607FA6;font-size:14px;text-decoration:none;text-shadow:0 1px #ffffff;-webkit-text-shadow:0 1px #ffffff;-moz-text-shadow:0 1px #ffffff;}
+#mbutton{padding:15px 10px 15px 10px; overflow:hidden; border-bottom:1px #DDD solid;}
+#mbutton > span{float:right; display:inline-block; background:#666; border:1px #DDD solid; color:#FFF; height:30px; line-height:30px; padding:0 10px; margin-left:10px;}
+#mcover{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0, 0, 0, 0.7);display:none;z-index:20000;}
+#mcover img{position:fixed;right: 18px;top:5px;width:260px;height:180px;z-index:20001;}
+.message { border-top: 1px dashed #a3a3a3;position: relative;}
+.message::before {content: '最新留言'; background: #fff;position: absolute;top: -0.8em;left: 50%;margin-left: -2em;padding: 0 5px;}
+.message-head {text-align: right;margin: 20px 0;}
+.message-head a{color: #428bca;}
+.message-list {}
+.message-content {display: flex;font-size: 14px;margin-bottom: 10px;}
+.message-content .logo {width: 40px;height: 40px;margin-right: 10px;}
+.message-list .name, .message-list .time {color: #999999;}
+.reply-list {margin-left: 50px;}
+.reply-item {border-top: 1px solid #e7e7eb;padding: 10px 0;}
+.reply-item .head:before {content: '';border-left: 2px solid #428bca;margin-right: 5px;}
+#swiper-container-page {position: fixed;top: 0;left: 0;right: 0;width: 100%;height: 100%;background-color: #000000;}
+#swiper-container-page .swiper-slide {text-align: center;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;}
+#swiper-container-page .swiper-slide img {max-width: 100%;}
+#swiper-container-page .swiper-pagination-bullet {background: #ffffff;}
+</style>
+<div class="page-bizinfo">
+	<div class="header">
+		<h1 id="activity-name">{$detail['title']}</h1>
+		<span id="post-date">
+			<span>{php echo date("Y-m-d", $detail['createtime']);}</span>
+			<span>{$detail['author']}</span>
+			{if !empty($detail['source'])}<a href="{$detail['source']}">文章来源</a>{/if}
+			{if !empty($subscribeurl)}<a href="{$subscribeurl}">{$_W['account']['name']}</a>{/if}
+			<span>阅读:{$detail['click']}次</span>
+		</span>
+	</div>
+</div>
+<div class="page-content">
+	<div class="text" id="swiper-content-page">
+		{$detail['content']}
+	</div>
+	{if !empty($setting['comment_status'])}
+	<div class="message">
+		<div class="message-head">
+			<a href="{php echo murl('site/site/comment', array('article_id' => $id))}">写留言 <img src="{$_W['siteroot']}app/resource/images/reply.png" alt=""></a>
+		</div>
+		{loop $article_lists $comment}
+		<div class="message-list">
+			<div content="message-item">
+				<div class="message-content">
+					<img src="{php echo $comment['avatar']}" alt="" class="logo">
+					<div class="message-item-content">
+						<p class="name">{php echo $comment['username']}</p>
+						<p class="content">
+							{php echo $comment['content']}
+						</p>
+						<p class="time">
+							{php echo $comment['createtime']}
+						</p>
+					</div>
+				</div>
+				{loop $comment['son_comment'] $son_comment}
+				<div class="reply-list">
+					<div class="reply-item">
+						<div class="head">
+							作者回复
+						</div>
+						<p id="content" class="content">
+							{php echo $comment['content']}
+						</p>
+						<p class="time">
+							{php echo date('Y-m-d H:i:s', $son_comment['createtime']);}
+						</p>
+					</div>
+				</div>
+				{/loop}
+			</div>
+		</div>
+		{/loop}
+		{$pager}
+	</div>
+	{/if}
+	<!-- <div class="swiper-container swiper-container-page" id="swiper-container-page" style="z-index: -1; opacity: 0;">
+		<div class="wiper-wrapper swiper-wrapper-page" id="swiper-wrapper-page"></div>
+		<div class="swiper-pagination swiper-pagination-page"></div>
+	</div> -->
+</div>
+</div>
+<script>
+	$(function() {
+		
+	})
+	require(['swiper'], function() {
+		var imgs = document.getElementById("swiper-content-page").getElementsByTagName("img")
+		if(imgs && imgs.length) {
+			var container = document.createElement('div')
+			container.id = "swiper-container-page"
+			container.style.zIndex = -1
+			container.style.opacity = 0
+			var html = '<div class="swiper-wrapper" >'
+			for (let i = 0; i < imgs.length; i++) {
+				html = html + '<div class="swiper-slide">'+ imgs[i].outerHTML +'</div>'
+			}
+			html = html + '</div><div class="swiper-pagination"></div>'
+			container.innerHTML = html
+			document.body.appendChild(container)
+			for (let i = 0; i < imgs.length; i++) {
+				imgs[i].onclick = function() {
+					if(!window.SwiperPage) {
+						container.className = "swiper-container"
+						window.SwiperPage = new Swiper('#swiper-container-page', {
+							pagination: '.swiper-pagination',
+							direction: 'horizontal'
+						})
+					}
+					SwiperPage.update()
+					SwiperPage.slideTo(i, 0)
+					SwiperPage.update()
+					//显示
+					container.style.zIndex = 2222
+					container.style.opacity = 1
+				}
+			}
+			container.onclick = function() {
+				//隐藏
+				container.style.zIndex = -1
+				container.style.opacity = 0
+			}
+		}
+		
+	})
+</script>
+{template 'common/footer'}

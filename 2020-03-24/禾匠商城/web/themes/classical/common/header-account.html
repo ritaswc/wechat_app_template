@@ -1,0 +1,62 @@
+<div class="menu-title"><i class="wi wi-white-collar"></i>{$_W['account']['type_name']}</div>
+
+<div class="account-info">
+	<img src="{$_W['account']['logo']}" class="head-logo account-img" data-container="body" data-toggle="tooltip" data-placement="right" title="{$_W['account']['name']}">
+	<div class="account-name">{$_W['account']['name']}</div>
+	{if $_W['account']->typeSign == 'account'}
+	<div class="account-type">
+		{if $_W['account']['level'] == 1 || $_W['account']['level'] == 3}
+		订阅号
+		{/if}
+		{if $_W['account']['level'] == 2 || $_W['account']['level'] == 4}
+		服务号
+		{/if}
+		<span class="account-level">
+			{if $_W['account']['level'] == 1 || $_W['account']['level'] == 3}
+			{if $_W['account']['level'] == 3}已认证{/if}
+			{/if}
+			{if $_W['account']['level'] == 2 || $_W['account']['level'] == 4}
+			{if $_W['account']['level'] == 4}已认证{/if}
+			{/if}
+		</span>
+	</div>
+	<div class="account-isconnect">
+		{if $_W['uniaccount']['isconnect'] == 0}
+		未接入
+		<a href="{php echo $_W['account']['accessurl']}" class="text-danger"> 立即接入</a>
+		{else}
+		已接入
+		{/if}
+	</div>
+	{elseif $_W['account']->typeSign == 'xzapp'}
+	<div class="account-type">
+		{if $_W['account']['level'] == 1}
+			个人
+		{elseif $_W['account']['level'] == 2}
+			媒体
+		{elseif $_W['account']['level'] == 3}
+			企业
+		{elseif $_W['account']['level'] == 4}
+			政府
+		{elseif $_W['account']['level'] == 5}
+			其他组织
+		{/if}
+	</div>
+	<div class="account-isconnect">
+		{if $_W['uniaccount']['isconnect'] == 0}
+		未接入
+		<a href="{php echo $_W['account']['accessurl']}" class="text-danger">立即接入</a>
+		{else}
+		已接入
+		{/if}
+	</div>
+	{/if}
+</div>
+<div class="account-operate">
+	{if $_W['account']->typeSign == 'account'}
+	<a href="{php echo url('utility/emulator');}" target="_blank" class="h"><i class="wi wi-iphone" data-toggle="tooltip"  data-placement="bottom" title="模拟测试"></i></a>
+	{/if}
+	{if $_W['role'] != ACCOUNT_MANAGE_NAME_OPERATOR}
+	<a href="{php echo $_W['account']['manageurl'] . '&iscontroller=0'}" class="h"><i class="wi wi-appsetting" data-toggle="tooltip"  data-placement="bottom" title="{php echo $_W['account']->typeName}设置"></i></a>
+	{/if}
+</div>

@@ -1,0 +1,7 @@
+<div class="we7-page-title">副创始人管理 </div>
+<ul class="we7-page-tab">
+	{if permission_check_account_user('see_system_manage_vice_founder')}
+		<li {if $action == 'display'} class="active"{/if}><a href="{url 'founder/display'}">副创始人管理</a></li>
+		<li {if $action == 'group'} class="active"{/if}><a href="{url 'founder/group'}">副创始人权限组</a></li>
+	{/if}
+</ul>

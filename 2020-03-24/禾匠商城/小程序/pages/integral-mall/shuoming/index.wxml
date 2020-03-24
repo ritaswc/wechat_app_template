@@ -1,0 +1,11 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body">
+        <view style="padding:36rpx 24rpx 0rpx 24rpx;" wx:for="{{integral_shuoming}}" wx:for-item="title" wx:key="{{item.id}}">
+            <view class="title">{{title.title}}</view>
+            <text style="color:#353535;">{{title.content}}</text>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

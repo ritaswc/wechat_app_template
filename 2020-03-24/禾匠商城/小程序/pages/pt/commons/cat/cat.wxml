@@ -1,0 +1,8 @@
+<scroll-view class="scroll-view-x" scrollLeft="{{scrollLeft}}" scrollWithAnimation="true" scrollX="true">
+    <view bindtap="switchNav" class="scroll-view-item {{cid==0?'active':''}}" data-id="0">
+        热销
+    </view>
+    <view bindtap="switchNav" class="scroll-view-item {{cid==item.id?'active':''}}" data-id="0" wx:for="{{cat}}" wx:key="unique">
+         {{item.name}}
+    </view>
+</scroll-view>

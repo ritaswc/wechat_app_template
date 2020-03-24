@@ -1,0 +1,24 @@
+<view class="page"> 
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+
+        <view class="no-content" a:if="{{!list || list.length==0}}">暂无中奖记录</view>
+        <block a:for="{{list}}">
+            <view class="prize-top">
+                <view class="prize-cen">
+                    <view class="prize-goods">{{item['name']}}</view>
+                    <view class="prize-time">{{item['create_time']}}</view>
+                </view>
+                <block a:if="{{item['status']==1 && item['type']==4}}">
+                    <view data-id="{{item.id}}" data-gift="{{item.gift_id}}" data-attr="{{item.attr}}" class="prize-start" onTap="submit">立即兑换</view>
+                </block>
+                <view class="prize-end" a:if="{{item['status']==2 && item['type']==4}}">已兑换</view>
+                <view class="prize-end" a:if="{{item['status']==2 && item['type']!=4}}">已发放</view>
+            </view>
+            <view class="prize-line"></view>
+        </block>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

@@ -1,0 +1,52 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="w-100 banner" wx:if="{{banner_list.length>0}}">
+            <swiper autoplay="true" circular="true" class="w-100 h-100" duration="300" indicatorDots="true" interval="5000" style="height:360rpx;">
+                <swiper-item wx:for="{{banner_list}}" wx:key="{{item.id}}">
+                    <navigator appId="{{item.appId}}" bindtap="navigatorClick" data-open-type="{{item.open_type?item.open_type:'navigator'}}" data-open_type="{{item.open_type}}" data-url="{{item.page_url}}" hoverClass="none" path="{{item.path}}" target="{{item.open_type=='wxapp'?'miniProgram':''}}" url="{{item.page_url}}">
+                        <image class="slide-image" mode="aspectFill" src="{{item.pic_url}}"></image>
+                    </navigator>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="list">
+            <view bindtap="goToGoods" class="one flex-row" data-index="{{item.goods_id}}" wx:for="{{goods_list}}" wx:key="{{item.id}}">
+                <view class="img flex-x-center flex-grow-0">
+                    <image mode="aspectFill" src="{{item.cover_pic}}"></image>
+                    <image class="sku" src="/bargain/images/icon-bargain-sku.png" wx:if="{{item.num==0}}"></image>
+                </view>
+                <view class="flex-grow-1 flex-col" style="justify-content:space-between">
+                    <view>
+                        <view class="text-more" style="margin-top:6rpx;">{{item.name}}</view>
+                        <view class="sale flex-row">
+                            <view class="flex-grow-0 flex-row" style="margin-right:16rpx;">
+                                <view class="flex-grow-0 avatar" style="z-index:{{i}};" wx:for="{{item.user_list}}" wx:for-index="i" wx:for-item="user" wx:key="{{user.id}}">
+                                    <image src="{{user.avatar_url}}"></image>
+                                </view>
+                            </view>
+                            <view class="flex-grow-1 flex-y-center" wx:if="{{item.num>0}}">{{item.sale}}人正在砍价</view>
+                            <view class="flex-grow-1 flex-y-center" wx:else>{{item.sale}}人已参与</view>
+                        </view>
+                    </view>
+                    <view class="flex-row">
+                        <view class="flex-grow-1" style="line-height:1">
+                            <view style="color:#888;text-decoration:line-through;font-size:9pt">￥{{item.price}}</view>
+                            <view class="flex-row flex-y-bottom" style="color:#ff4544;">
+                                <view class="flex-grow-0">最低￥</view>
+                                <view class="flex-grow-0" style="font-size:15pt">{{item.min_price}}</view>
+                            </view>
+                        </view>
+                        <view class="flex-grow-0 flex-y-bottom">
+                            <view class="join-btn flex-x-center flex-y-center" wx:if="{{item.num>0}}">立即参与</view>
+                            <view class="join-btn flex-x-center flex-y-center no" wx:else>下次再来</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <include src="/bargain/commons/naver/naver"></include>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

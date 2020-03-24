@@ -1,0 +1,220 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body">
+        <block a:if="{{goods_info.deliver_type==3}}">
+            <view class='flex-row flex-y-center' style='background-color:#fff;padding:0 24rpx;border-bottom:1rpx #eee solid;border-top:1rpx #eee solid;height:90rpx;'>
+                <view class='flex-grow-1 flex-x-center' style='height:100%;'>
+                    <view class='flex-y-center {{offline == 1 ?"active":""}}' style='height:100%;' data-city_id="{{address.city_id}}" data-index="1" onTap='getOffline'>快递配送
+                    </view>
+                </view>
+                <view class='flex-grow-1 flex-x-center' style='height:100%;'>
+                    <view class='flex-y-center {{offline == 2 ?"active":""}}' style='height:100%;' data-index="2" onTap='getOffline'>到店自提
+                    </view>
+                </view>
+            </view>
+        </block>
+        <!-- 送货上门 -->
+        <block a:if="{{offline==1}}">
+            <view style='height:16rpx;'></view>
+            <navigator url="/pages/address-picker/address-picker" class='user-address flex-col'>
+                <view class='user-address-top flex-grow-0 flex-row'>
+                    <image src='{{__wxapp_img.pt.address_top.url}}'></image>
+                </view>
+                <block a:if='{{ address}}'>
+                    <view class='address-center flex-row flex-y-center'>
+                        <view class='address-left flex-grow-1 flex-col'>
+                            <view class='address-userinfo flex-grow-0 flex-row'>
+                                <view class='address-username flex-grow-1'>
+                                    收货人：{{address.name}}
+                                </view>
+                                <view class='address-phone flex-grow-1'>
+                                    {{address.mobile}}
+                                </view>
+                            </view>
+                            <view class='address-text flex-grow-1 flex-row'>
+                                收货地址：{{address.province}} {{address.city}} {{address.district}} {{address.detail}}
+                            </view>
+                        </view>
+                        <view class='address-right flex-grow-0'>
+                            <image src='{{__wxapp_img.share.right.url}}'></image>
+                        </view>
+                    </view>
+                    <view class='user-address-bottom flex-grow-0 flex-row'>
+                        <image src='{{__wxapp_img.pt.address_bottom.url}}'></image>
+                    </view>
+                </block>
+                <block a:else>
+                    <view class='no-address flex-row'>
+                        <view class='flex-grow-0 address-icon'>
+                            <image src='{{__wxapp_img.pt.address.url}}'></image>
+                        </view>
+                        <view class="flex-grow-1 flex-y-center">
+                            <view>请选择收货地址</view>
+                        </view>
+                        <view class='flex-grow-0 address-to-icon'>
+                            <image src='{{__wxapp_img.store.jiantou_r.url}}'></image>
+                        </view>
+                    </view>
+                </block>
+            </navigator>
+        </block>
+        <!-- 到店自提 -->
+        <block a:if="{{offline==2}}">
+            <view class="flex-row address-picker">
+                <view class="flex-grow-1">
+                    <view class="flex-row" style="margin-bottom: 20rpx">
+                        <view class='flex-y-center flex-grow-0'>联系人：</view>
+                        <view class='flex-grow-1'>
+                            <input placeholder='可以手动填写' value="{{name}}" onInput='KeyName'></input>
+                        </view>
+                    </view>
+                    <view class="flex-row">
+                        <view class='flex-y-center flex-grow-0'>联系电话：</view>
+                        <view class='flex-grow-1'>
+                            <input placeholder='可以手动填写' value="{{mobile}}" onInput='KeyMobile'></input>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="flex-row address-picker" onTap='{{shop_list.length>=1?"showShop":""}}'>
+                <view class="flex-grow-1">
+                    <view class="flex-row" style="margin-bottom: 20rpx">
+                        <view class="flex-grow-1">门店名称：{{shop.name}}</view>
+                    </view>
+                    <view class="flex-row" style="margin-bottom: 20rpx">
+                        <view class="flex-grow-1">门店电话：{{shop.mobile}}</view>
+                    </view>
+                    <view>自提门店：{{shop.address}}</view>
+                </view>
+                <view class="flex-grow-0 flex-y-center" a:if='{{shop_list.length>=1}}'>
+                    <view a:if="{{!shop}}">请选择门店</view>
+                    <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx;margin-left: 12rpx"></image>
+                </view>
+                <view class='flex-grow-0 flex-y-center' a:else>暂无门店</view>
+            </view>
+        </block>
+        <view style='padding-bottom:120rpx'>
+            <view class="flex-col " a:for="{{goods_list}}" a:key="{{item.id}}">
+                <view class='cart-item flex-row'>
+                    <view class="flex-grow-0">
+                        <image class="goods-pic" mode="aspectFill" src="{{item.goods_pic}}" />
+                    </view>
+                    <view class="flex-grow-1 flex-col">
+                        <view class="flex-grow-1">
+                            <view class="goods-name">{{item.goods_name}}</view>
+                            <view class="attr-list">
+                                <view class="attr-item" a:for="{{item.attr_list}}" a:for-item="attr" a:key="{{attr.id}}">
+                                    {{attr.attr_group_name}}:{{attr.attr_name}}
+                                </view>
+                            </view>
+                        </view>
+                        <view class="flex-grow-0 flex-row">
+                            <view class="flex-grow-1 num">×{{item.num}}</view>
+                            <view class="flex-grow-0 price">￥:{{item.price}}</view>
+                        </view>
+
+                        <view a:if="{{type !== 'ONLY_BUY' && item.is_level === true}}" style='color:#ff4544;text-align:right;margin-bottom:22rpx;'>会员折扣价：￥{{item.level_price}}</view>
+                    </view>
+                </view>
+            </view>
+            <view onTap="showPayment" class="colonel flex-row flex-y-center">
+                <view class="flex-grow-1">支付方式</view>
+                <view class="flex-grow-0" a:if='{{payment == 0}}'>线上支付</view>
+                <view class="flex-grow-0" a:if='{{payment == 2}}'>货到付款</view>
+                <view class="flex-grow-0" a:if='{{payment == 3}}'>账户余额支付</view>
+                <view class="flex-grow-0">
+                    <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx;margin-left: 12rpx"></image>
+                </view>
+            </view>
+            <view class='colonel flex-row flex-y-center' a:if='{{type=="GROUP_BUY"}}'>
+                <view class='colonel-title flex-grow-1'>团长优惠</view>
+                <view class='colonel-price flex-grow-1'>
+                    -¥：{{colonel}}
+                </view>
+            </view>
+            <view class='colonel flex-row flex-y-center' a:if="{{offline!=2}}">
+                <view class='colonel-title flex-grow-1'>运费</view>
+                <view class='colonel-price flex-grow-1'>
+                    ¥：{{express_price}}
+                </view>
+            </view>
+            <view class='colonel flex-row flex-y-center'>
+                <view class='message-title flex-grow-0 flex-y-center'>买家留言</view>
+                <view class='message flex-grow-1 flex-y-center'>
+                    <input class='flex-y-center' style='width:100%;' onInput="onKeyinput" type='text' placeholder='你有什么想对商家说的都可以填写在这哦~' placeholder-class='message-plaseholder'></input>
+                </view>
+            </view>
+        </view>
+        <block a:if="{{is_area == 1 && offline == 1}}">
+            <view class='submit-footer' style="background:#FEBD14;color:#ffffff;display: flex;align-items: center;justify-content: center;">
+                所选地区暂时无货
+            </view>
+        </block>
+        <block a:else>
+            <form report-submit='true' onSubmit='orderSubmit'>
+                <view class='submit-footer flex-row flex-y-center'>
+                    <view class='total-title flex-y-center flex-grow-0 '>
+                        总计：
+                    </view>
+                    <view class='total-price flex-y-center flex-grow-1'>
+                        <view>¥ {{total_price_1}}</view>
+                    </view>
+                    <button class="flex-y-center flex-grow-0 flex-x-center submit-btn" form-type='submit'>提交</button>
+                </view>
+            </form>
+        </block>
+
+        <!--选择自提地址  开始-->
+        <view class="coupon-picker" a:if="{{show_shop}}" style='background-color:#f7f7f7;'>
+            <scroll-view class="coupon-list" scroll-y="true" style="height: 100%;padding:0;">
+                <view class='shop-block flex-y-center'>当前地址</view>
+                <view class='shop-address flex-row flex-y-center'>
+                    <view class='flex-grow-1'>{{location}}</view>
+                    <view class='flex-grow-0 flex-y-center' onTap='dingwei'>
+                        <image src='{{__wxapp_img.shop.dingwei.url}}' style='width:32rpx;height:32rpx;margin-right:2rpx;'></image>
+                        <text style='color:#2495ff'>手动定位</text>
+                    </view>
+                </view>
+                <view class='shop-block flex-y-center'>门店列表（仅展示离您最近的30家门店）</view>
+                <view class="flex-row address-picker" style='margin:0;' onTap='pickShop' a:for='{{shop_list}}' a:key="{{item.id}}" data-index="{{index}}">
+                    <view class="flex-grow-0 flex-y-center">
+                        <image src="{{item.id==shop.id?'/images/icon-shop-checked.png':'/images/icon-shop-un.png'}}" style="width: 40rpx;height: 40rpx;margin-right: 20rpx"></image>
+                    </view>
+                    <view class="flex-grow-1">
+                        <view class="flex-row" style="margin-bottom: 20rpx">
+                            <view class="flex-grow-1" style='font-weight:bold;{{item.id==shop.id?"color:#ff4544":""}}'>
+                                {{item.name}}
+                            </view>
+                            <view class='flex-grow-0' a:if='{{item.distance!=-1}}'>{{item.distance}}</view>
+                        </view>
+                        <view class="flex-row" style="margin-bottom: 20rpx">
+                            <view class="flex-grow-1">电话：{{item.mobile}}</view>
+                        </view>
+                        <view>地址：{{item.address}}</view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        <!--选择自提地址  结束-->
+
+        <view a:if='{{show_payment}}' class='payment'>
+            <view class='pay-modal'>
+                <view class='pay-head flex-x-center flex-y-center'>支付方式</view>
+                <block a:for='{{res.pay_type_list}}' a:key="{{item.id}}">
+                    <view class='pay-block flex-row flex-y-center' onTap='payPicker' data-index='{{item.payment}}'>
+                        <view class='flex-grow-0'>
+                            <image src='{{item.icon}}' style='width:72rpx;height:72rpx;margin-right:30rpx;'></image>
+                        </view>
+                        <view class='flex-grow-1 {{payment==item.payment?"red":""}}'>{{item.name}}</view>
+                        <view class='flex-grow-0' a:if='{{payment==item.payment}}'>
+                            <image src='{{__wxapp_img.store.pay_right.url}}' style='width:34rpx;height:34rpx;'></image>
+                        </view>
+                    </view>
+                </block>
+                <view class='pay-footer flex-x-center flex-y-center hidden' onTap='payClose'>关闭</view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

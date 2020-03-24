@@ -1,0 +1,165 @@
+{template 'common/header'}
+<div class="account-display-page" id="js-account-display" ng-controller="AccountDisplay" ng-cloak>
+	<div class="panel-cut panel">
+		<div class="panel-body">
+			<div class="search-box">
+				<select class="we7-margin-right" ng-model="chenckNav" ng-change="changes()">
+					<option value="{{item.name}}" ng-repeat="item in nav_top_fold" ng-bind="item.title"></option>
+				</select>
+				<select name="" class="select-letter we7-margin-right"  ng-init="letter = '{php echo $_GPC['letter'] ? $_GPC['letter'] : '全部'}'" ng-model="letter" ng-change="searchModule(letter)">
+					<option value="{{item == '按字母筛选(全部)' ? '全部' : item}}"  ng-repeat="item in alphabet" ng-bind="item"></option>
+				</select>
+				<form class="search-form" action="./index.php" method="get">
+					<input type="hidden" name="c" value="account">
+					<input type="hidden" name="a" value="display">
+					<input type="hidden" name="do" value="display" ng-if="type == 'all'">
+					<input type="hidden" name="type" value="{{type}}">
+					<input type="hidden" name="title" value="{{title}}">
+					<input type="text" name="letter" ng-model="activeLetter" ng-style="{'display': 'none'}">
+					<div class="input-group">
+						<input type="text" class="form-control" name="keyword" value="{$_GPC['keyword']}" placeholder="请输入平台名称">
+						<span class="input-group-btn"><button class="btn btn-default button"><i class="fa fa-search"></i></button></span>
+					</div>
+				</form>
+				<div class="creat" ng-switch="type">
+					<a ng-switch-when="all" href="javascript:;" data-toggle="modal" data-target="#owner-modal" class="btn btn-primary">新增平台</a>
+				</div>
+			</div>
+			<div class="account-display-list" infinite-scroll='loadMore()' infinite-scroll-disabled='busy' infinite-scroll-distance='0' infinite-scroll-use-document-bottom="true">
+				<div class="item" ng-repeat="detail in list|orderBy:'endtime_status'">
+					<div class="item-box">
+						{if !user_is_founder($_W['uid'])}
+						<div class="auth-type">
+							<i class="wi wi" ng-if="detail.user_role == 'owner'">主管理员</i>
+							<i class="wi wi" ng-if="detail.user_role == 'manager'">管理员</i>
+							<i class="wi wi" ng-if="detail.user_role == 'operator'">操作员</i>
+							<i class="wi wi" ng-if="detail.user_role == 'clerk'">店员</i>
+						</div>
+						{/if}
+						<a class="info" href="{{detail.switchurl}}&type={{detail.type}}">
+							<img src="{{detail.logo || ''}}" class="account-img logo" alt="">
+							<div class="name " >
+								<div ng-bind="detail.name" class="text-over">1</div>
+								<div class="type" ng-if="detail.type_sign == 'account'">
+									<span>微信公众号</span>
+									<span ng-if="detail.need_upload == 1" class="new-version">新版本</span>
+								</div>
+								<div class="type" ng-if="detail.type_sign == 'account'">
+									<span ng-if="detail.level == 1">普通订阅号</span>
+									<span ng-if="detail.level == 2">普通服务号</span>
+									<span ng-if="detail.level == 3">认证订阅号</span>
+									<span ng-if="detail.level == 4">认证服务号</span>
+									<span ng-if="detail.need_upload == 1" class="new-version">新版本</span>
+								</div>
+								<div class="type" ng-if="detail.type_sign == 'wxapp'">
+									<span>微信小程序</span>
+									<span ng-if="detail.need_upload == 1" class="new-version">新版本</span>
+								</div>
+								<div class="type" ng-if="detail.type_sign == 'webapp'">
+									<span>PC</span>
+									<span ng-if="detail.need_upload == 1" class="new-version">新版本</span>
+								</div>
+								<div class="type" ng-if="detail.type_sign == 'phoneapp'">
+									<span>APP</span>
+									<span ng-if="detail.need_upload == 1" class="new-version">新版本</span>
+								</div>
+								<div class="type" ng-if="detail.type_sign == 'xzapp'">
+									<span>熊掌号</span>
+									<span ng-if="detail.need_upload == 1" class="new-version">新版本</span>
+								</div>
+								<div class="type" ng-if="detail.type_sign == 'aliapp'">
+									<span>支付宝小程序</span>
+									<span ng-if="detail.need_upload == 1" class="new-version">新版本</span>
+								</div>
+								<div class="type" ng-if="detail.type_sign == 'baiduapp'">
+									<span>百度小程序</span>
+									<span ng-if="detail.need_upload == 1" class="new-version">新版本</span>
+								</div>
+								<div class="type" ng-if="detail.type_sign == 'toutiaoapp'">
+									<span>头条小程序</span>
+									<span ng-if="detail.need_upload == 1" class="new-version">新版本</span>
+								</div>
+								<div class="type" ng-if="detail.support_version">
+									<span>版本：{{detail.current_version.version}}</span>
+								</div>
+							</div>
+							
+							<div class="tip" ng-if="detail.endtime_status">
+								<i class="wi wi-info">已到期</i>
+							</div>
+						</a>
+						<div class="action">
+							<a href="javascript:void(0);" class="action-up" ng-click="stick(detail.uniacid, detail.type)" data-toggle="tooltip" data-placement="bottom" data-title="置顶"><i class="wi wi-stick-sign"></i></a>
+							<a class="action-account" href="{{detail.switchurl}}">
+								<i class="wi wi-denglu"></i> 进入
+							</a>
+							<div class="action-cut">
+								<a href="{php echo url('miniapp/version/display')}&uniacid={{detail.uniacid}}" class="cut-btn" ng-if="detail.support_version" data-toggle="tooltip" data-placement="bottom" data-title="切换版本">
+									<i class="wi wi-changing-over"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+			</div>
+		
+			<!--新建弹窗-->
+			<div class="modal fade modal-type" tabindex="-1" role="dialog" id="owner-modal">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header clearfix">
+							新建
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="modal-body">
+							<div class="type-list">
+								{loop $account_info $info}
+								{if !$info['can_create']}{php continue}{/if}
+								<a class="item" href="{php echo $info['createurl']}">
+									<i class="{php echo $info['icon']}"></i>
+									<div class="name">新建{php echo $info['title']}</div>
+									<div class="mark">
+										去新建
+									</div>
+								</a>
+								{/loop}
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"  data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	angular.module('accountApp').value('config', {
+		'nav_top_fold': {php echo !empty($nav_top_fold) ? json_encode($nav_top_fold) : 'null'},
+		'welcomeUrl': '{php echo url('home/welcome/');}',
+		'accountUrl': '{php echo url('account/display/')}',
+		'list' : {php echo !empty($list) ? json_encode($list) : 'null'},
+		'type' : "{$type}",
+		'keyword' : "{$keyword}",
+		'letter' : "{$letter}",
+		'founder_id' : "{$founder_id}",
+		'total' : '{$total}',
+		'links' : {
+			'changeType' : "{php echo url('account/display')}",
+			'rank' : "{php echo url('account/display/rank')}",
+			'welcome' : "{php echo url('home/welcome/add_welcome')}",
+			'wxapp_more_version' : "{php echo url('wxapp/version/display')}",
+			'aliapp_more_version' : "{php echo url('miniapp/version/display')}",
+			'baiduapp_more_version' : "{php echo url('miniapp/version/display')}",
+			'toutiaoapp_more_version' : "{php echo url('miniapp/version/display')}",
+			'phoneapp_more_version' : "{php echo url('phoneapp/version/display')}"
+		},
+		'scrollUrl' : "{php echo url('account/display', array('type'=>$type))}"
+	});
+	angular.bootstrap($('#js-account-display'), ['accountApp']);
+</script>
+
+{template 'common/footer'}

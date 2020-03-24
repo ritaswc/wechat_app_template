@@ -1,0 +1,19 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view wx:for="{{list}}">
+            <navigator class="cat-item flex flex-row {{cat_id==item.id?'active':''}}" openType="redirect" url="/mch/shop/shop?mch_id={{mch_id}}&tab=2&sort=0&cat_id={{item.id}}">
+                <view class="flex-grow-1">{{item.name}}</view>
+                <view class="flex-grow-0">
+                    <image class="pointer" src="/mch/images/icon-jiantou-you.png"></image>
+                </view>
+            </navigator>
+            <view class="sub-cat-list" wx:if="{{item.list}}">
+                <navigator class="sub-cat-item {{cat_id==item.id?'active':''}}" openType="redirect" url="/mch/shop/shop?mch_id={{mch_id}}&tab=2&sort=0&cat_id={{item.id}}" wx:for="{{item.list}}">{{item.name}}
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

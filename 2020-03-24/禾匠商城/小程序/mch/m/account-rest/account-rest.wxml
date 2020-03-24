@@ -1,0 +1,8 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <text>示例页面</text>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

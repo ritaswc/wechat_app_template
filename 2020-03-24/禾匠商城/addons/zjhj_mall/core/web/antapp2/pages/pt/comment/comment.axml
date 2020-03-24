@@ -1,0 +1,35 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body">
+        <view class='goods-comment' a:if='{{__is_comment}}'>
+            <view class='goods-comment-item flex-col' a:for='{{comment}}' a:for-index='ckey' a:key="{{item.id}}">
+                <view class='goods-comment-user flex-grow-0 flex-row flex-y-center'>
+                    <view class='comment-user-pic flex-grow-0'>
+                        <image src='{{item.avatar_url}}'></image>
+                    </view>
+                    <view class='comment-user-name flex-grow-0'>
+                        {{item.nickname}}
+                    </view>
+                </view>
+                <view class='goods-comment-conent flex-grow-1'>
+                    {{item.content}}
+                </view>
+                <view class='goods-comment-ginfo'>
+                    {{item.addtime}}
+                    <block a:for='{{item.attr}}' a:for-item="attr" a:key="{{item.id}}">
+                        {{attr.attr_group_name}}:{{attr.attr_name}}
+                    </block>
+                </view>
+                <view class='goods-comment-piclist'>
+                    <block a:for='{{item.pic_list}}' a:for-item="pic" a:key="{{item.id}}">
+                        <view class='comment-pic-shell'>
+                            <image onTap='bigToImage' style="width:160rpx;height:160rpx" mode="aspectFit" data-url='{{pic}}' data-index='{{ckey}}' src='{{pic}}'></image>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

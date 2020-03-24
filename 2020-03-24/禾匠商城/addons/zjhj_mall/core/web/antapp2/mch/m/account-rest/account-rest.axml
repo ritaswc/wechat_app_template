@@ -1,0 +1,10 @@
+<!-- 加载公共扩展 -->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <!-- 页面内容 -->
+        <text>示例页面</text>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

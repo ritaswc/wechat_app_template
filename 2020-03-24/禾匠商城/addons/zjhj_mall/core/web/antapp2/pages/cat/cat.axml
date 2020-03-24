@@ -1,0 +1,171 @@
+<view class="page"> 
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+
+        <view class="flex-y-center flex-x-center"
+              style="height: 100rpx;border-bottom: 1rpx solid #e3e3e3;border-top: 1rpx solid #e3e3e3;position: fixed;top: 0;width: 100%;z-index: 999;background: #EFEFF4">
+            <navigator url="/pages/search/search" class="flex-y-center flex-x-center fs-sm"
+                       style="width: 700rpx;height: 60rpx;background: #fff;border: 1rpx solid #e3e3e3; border-radius: 10rpx;text-align: center;color: #b2b2b2">
+                <image src="{{__wxapp_img.search.search.url}}" style="width:24rpx;height: 24rpx;margin-right:10rpx "></image>
+                <text>搜索</text>
+            </navigator>
+        </view>
+
+        <view a:if="{{store.cat_style==1||store.cat_style==3}}" style="height: 100%;padding-top: 100rpx;background: #fff">
+            <!-- 大图模式（不显示侧栏） -->
+            <scroll-view a:if="{{store.cat_style==1}}" scroll-y="true" class="cat-block-list big"
+                         style="padding: 20rpx 24rpx;height: 100%">
+                <block a:for="{{cat_list}}" a:key="{{item.id}}">
+                    <navigator class="cat-block flex-row" url="/pages/list/list?cat_id={{item.id}}">
+                        <image style="width: 100%;height: 100%" src="{{item.big_pic_url}}"></image>
+                    </navigator>
+                    <block a:if="{{item.list&&item.list.length>0}}">
+                        <navigator a:for="{{item.list}}" a:key="{{item.id}}" class="cat-block flex-row"
+                                   url="/pages/list/list?cat_id={{item.id}}">
+                            <image style="width: 100%;height: 100%" src="{{item.big_pic_url}}"></image>
+                        </navigator>
+                    </block>
+                </block>
+            </scroll-view>
+
+            <!-- 小图标模式（不显示侧栏） -->
+            <scroll-view a:if="{{store.cat_style==3}}" scroll-y="true" class="cat-block-list"
+                         style="padding: 20rpx 24rpx;height: 100%">
+                <view class="cat-small-style cat-num-4 flex-row">
+                    <block a:for="{{cat_list}}" a:key="{{item.id}}">
+                        <view class="flex-grow-0">
+                            <navigator class="cat-item" url="/pages/list/list?cat_id={{item.id}}">
+                                <image class="cat-icon" src="{{item.pic_url}}"></image>
+                                <view class="cat-name">{{item.name}}</view>
+                            </navigator>
+                        </view>
+
+                        <block a:if="{{item.list && item.list.length>0}}">
+                            <view a:for="{{item.list}}" a:key="{{item.id}}" class="flex-grow-0">
+                                <navigator class="cat-item" url="/pages/list/list?cat_id={{item.id}}">
+                                    <image class="cat-icon" src="{{item.pic_url}}"></image>
+                                    <view class="cat-name">{{item.name}}</view>
+                                </navigator>
+                            </view>
+
+                        </block>
+                    </block>
+                </view>
+            </scroll-view>
+
+        </view>
+
+        <view a:if="{{store.cat_style==2||store.cat_style==4}}" style="height: 100%;padding-top: 100rpx" class="flex-row">
+            <view class="flex-grow-0" style="height:100%;background: #fff">
+                <scroll-view class="cat-list" scroll-y="true" style="height: 100%;width: 204rpx">
+                    <view onTap="catItemClick"
+                          data-index="{{index}}"
+                          class="cat-item {{item.active?'active':''}} flex-y-center flex-x-center"
+                          a:for="{{cat_list}}" a:key="{{item.id}}">
+                        <view class="cat-name">{{item.name}}</view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="flex-grow-1" style="background: #f6dae1">
+                <view style="position: fixed;top: 100rpx;left: 200rpx;bottom: 0;right: 0;z-index:0;overflow: hidden">
+                    <scroll-view class="sub-cat-box cat-block-list" scroll-y="true" style="height: 100%;padding: 20rpx;padding-bottom: 115rpx"
+                                 scroll-top="{{sub_cat_list_scroll_top}}">
+
+                        <!-- 大图模式（开启侧栏） -->
+                        <view style="padding-bottom: 115rpx" a:if="{{store.cat_style==2}}">
+                            <block a:if="{{current_cat}}">
+                                <block a:for="{{current_cat.list}}" a:key="{{item.id}}">
+                                    <navigator class="cat-block flex-row" url="/pages/list/list?cat_id={{item.id}}">
+                                        <image style="width: 100%;height: 100%" src="{{item.big_pic_url}}"></image>
+                                    </navigator>
+                                </block>
+                            </block>
+                        </view>
+
+                        <!-- 小图标模式（开启侧栏） -->
+                        <view class="cat-small-style cat-num-3 flex-row" a:if="{{store.cat_style==4}}">
+                            <block a:if="{{current_cat}}">
+                                <block a:if="{{current_cat.advert_pic}}">
+                                    <navigator class='advert' url="{{current_cat.advert_url}}">
+                                        <image class="cat-icon" src="{{current_cat.advert_pic}}"></image>
+                                    </navigator>
+                                </block>
+                                <view a:for="{{current_cat.list}}" a:key="{{item.id}}" class="flex-grow-0">
+                                    <navigator class="cat-item " url="/pages/list/list?cat_id={{item.id}}">
+                                        <image class="cat-icon" src="{{item.pic_url}}"></image>
+                                        <view class="cat-name">{{item.name}}</view>
+                                    </navigator>
+                                </view>
+                            </block>
+                        </view>
+
+                    </scroll-view>
+                </view>
+            </view>
+        </view>
+
+
+        <view id="catall"  style="padding-top: 100rpx;background: #fff;position:fixed;top:0;width:100%;z-index:40">
+            <view a:if="{{store.cat_style==5}}">
+            <!-- 小图模式（显示顶栏） -->
+            <scroll-view class='group-top scroll-view-x'>
+                <view  class='flex-row flex-y-center'>
+                    <view class='flex-grow-1'>
+                        <scroll-view  scroll-x="true" class="scroll-view-x" scroll-into-view="{{toView}}" scroll-with-animation="true" scroll-left="{{scrollLeft}}">
+                            <block a:for="{{cat_list}}" a:key="unique">
+                                <view  onTap="goodsAll" data-index="{{index}}" id="{{item.id}}" class="scroll-view-item {{item.active?'active':''}}">{{item.name}}</view>
+                            </block>
+                        </scroll-view>
+                    </view>
+                </view>
+
+            </scroll-view>
+
+                <view hidden="{{current_cat.list=='' ? true:false}}" >
+                    <view class='flex-row' style="padding-bottom:14rpx;overflow: auto;">
+                        <block a:for="{{current_cat.list}}" a:key="{{item.id}}">
+                            <view  onTap="goodsItem" data-index="{{index}}" class="flex-grow-0 flex-y-center flex-x-center fs-sm view-item1 {{item.active?'view-item2':''}}">{{item.name}}</view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view id="cat" style="padding-top:{{catheight}}rpx;background: #fff;position:fixed;top:0;width:100%;z-index:40">
+        <view  a:if="{{store.cat_style==-1 && (current_cat.list != undefault)}}" >
+            <!-- 跳转（显示二级分类顶栏） -->
+            <scroll-view class='group-top scroll-view-x'>
+                <view class='flex-row flex-y-center'>
+                    <view class='flex-grow-1'>
+                        <scroll-view scroll-x="true" class="scroll-view-x" scroll-with-animation="true" scroll-left="{{scrollLeft}}">
+                            <block a:for="{{current_cat.list}}" a:key="unique">
+                                <view onTap="goodsItem" data-index="{{index}}" class="scroll-view-item {{item.active?'active':''}}">{{item.name}}</view>
+                            </block>
+                        </scroll-view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        </view>
+
+        <view a:if="{{store.cat_style==5 || store.cat_style==-1}}" style="padding-top:{{height+3}}px;padding-bottom:30rpx;" class="goods-list">
+            <view a:if="{{show_no_data_tip}}" class="no-data-tip">该类目暂无内容</view>
+            <navigator url="/pages/goods/goods?id={{item.id}}" open-type="navigate" a:for="{{goods_list}}" a:key="{{item.id}}" class="goods-item">
+                <image class="goods-pic" src="{{item.pic_url}}" mode="aspectFill" />
+                <view class="goods-info" style='padding:5rpx 20rpx;'>
+                    <text class="mb-10 text-more-2" style='height:2.8em;line-height:1.4;'>{{item.name}}</text>
+                    <view class='flex-row'>
+                        <view class='flex-grow-1' style='color:#ff334b'><block a:if="{{item.is_negotiable!=1}}">￥</block>{{item.price}}</view>
+                        <view a:if='{{__is_sales}}' class='flex-grow-0 fs-sm' style='color:#999;'>已售{{item.sales}}</view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+
+        <view class="loading-bar {{show_loading_bar?'active':''}}" style="text-align: center">
+            <image style="width: 160rpx;height: 80rpx" src="{{__wxapp_img.system.loading.url}}"></image>
+        </view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

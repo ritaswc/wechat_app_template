@@ -1,0 +1,28 @@
+<view a:if="{{goods_list!=undefault && goods_list!=''&& tab_detail=='active'}}" style="background:#f7f7f7;padding-top:35rpx">
+    <view class="recommend">
+        <view class="recommend-left"></view>
+        <image src="{{__wxapp_img.store.good_recommend.url}}"></image>
+        <text class="recommend-text">相关推荐</text>
+        <view class="recommend-right"></view>
+    </view>
+
+    <view style="padding-top:32rpx">
+        <view class="goods-list">
+            <navigator url="/pages/goods/goods?id={{item.id}}" open-type="navigate" a:for="{{goods_list}}" a:key="{{item.id}}" class="goods-item {{index%2? 'pic-right':'pic-left'}}" style='font-size:11pt;'>
+                <image class="goods-pic" src="{{item.pic_url}}" mode="aspectFill" />
+                <view class="goods-info" style='padding:5rpx 20rpx;'>
+                    <text class="mb-10 text-more-2" style='height:2.8em;line-height:1.4;'>{{item.name}}</text>
+                    <view class='flex-row'>
+                        <view a:if="{{item.is_negotiable == 1}}" class='flex-grow-1' style='color:#ff334b'>商品面议</view>
+                        <view a:else class='flex-grow-1' style='color:#ff334b'>￥{{item.price}}</view>
+                        <view a:if='{{__is_sales}}' class='flex-grow-0 fs-sm' style='color:#999;'>已售{{item.sales}}</view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+
+        <view class="loading-more {{is_loading?'active':''}}">
+            <image src="{{__wxapp_img.system.loading.url}}"></image>
+        </view>
+    </view>
+</view>

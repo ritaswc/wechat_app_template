@@ -1,0 +1,209 @@
+{php define('MUI', true);}
+{template 'common/header'}
+<script>
+	$(function(){
+		$(document).on('input propertychange', '.js-mobile-val', function(){
+			var mobile_value = $(this).val();
+			if (mobile_value.length == '11') {
+				$('.js-check-mobile').addClass('send-code');
+			} else {
+				$('.js-check-mobile').removeClass('send-code');
+			}
+		});
+		$(document).on('click', '.send-code', function(){
+			var username = $('#register-code input[name="username"]').val();
+			var uniacid = $(this).attr('uniacid');
+			if(!username) {
+				util.toast('请输入手机号', '', 'error');
+				return;
+			}
+			if(!/^1[3|4|5|7|8][0-9]{9}$/.test(username)) {
+				util.toast('手机号格式错误', '', 'error');
+				return;
+			}
+			if (!uniacid) {
+				util.toast('给定的参数有错误', '', 'error');
+				return;
+			};
+			var downcount = 60;
+			$('.js-timer').html(downcount + '秒后重新获取');
+			var timer = setInterval(function(){
+				downcount--;
+				if(downcount <= 0){
+					clearInterval(timer);
+					downcount = 60;
+					$('.js-timer').html('<a class="send-code" uniacid="{$_W['uniacid']}">重新获取验证码</a>');
+				}else{
+					$('.js-timer').html(downcount + "秒后重新获取");
+				}
+			}, 1000);
+			var params = {};
+			params.receiver = username;
+			params.uniacid = uniacid;
+            $.post('../web/index.php?c=utility&a=verifycode', params, function(dat) {
+                if(dat.message.errno == 0) {
+                    util.toast('发送验证码成功');
+                    $('.codeverify .mui-text-success').text(username);
+                    $('.sendcode').hide();
+                    $('.codeverify').show();
+                } else {
+                    util.toast('发送验证码失败', '', 'error');
+                    $('.sendcode').show();
+                    $('.codeverify').hide();
+                }
+            }, "json");
+		});
+		$(document).on('click', '.js-code', function() {
+			var username = $('#register-code input[name="username"]').val();
+			var password = $('#register-code input[name="password"]').val();
+			audit_password = '';
+			audit_repassword = '';
+			{if $ltype != 'code' && $audit == '1'}
+			audit_password = $('#register-code input[name="audit-password"]').val();
+			audit_repassword = $('#register-code input[name="audit-password"]').val();
+			{/if}
+			if(!username) {
+				util.toast('请输入手机号', '', 'error');
+				return;
+			}
+			if(!password) {
+				util.toast('请输入验证码', '', 'error');
+				return;
+			}
+			var href = "{php echo url('auth/register', array('code' => '1'))}";
+			$.post(href, {'username' : username, 'password' : password, 'audit_password' : audit_password, 'audit_repassword' : audit_repassword}, function(data) {
+				data = $.parseJSON(data);
+				if (data.type == 'success') {
+					location.reload();
+				} else {
+					util.toast(data.message);
+				}
+			})
+		});
+		$(document).on('click', '.register-basic', function() {
+			var username = $('#register-basic input[name="username"]').val();
+			var password = $('#register-basic input[name="password"]').val();
+			var repassword = $('#register-basic input[name="repassword"]').val();
+			if (!username || !password || !repassword) {
+				util.toast('用户名或密码为空', '', 'error');
+				return;
+			}
+			if(password.length < 6) {
+				util.toast('密码不能小于六位数', '', 'error');
+				return;
+			}
+			if (password !== repassword) {
+				util.toast('两次密码输入不一致', '', 'error');
+				return;
+			}
+			var params = {};
+			params.username = username;
+			params.password = password;
+			params.repassword = repassword;
+			var href = "{php echo url('auth/register', array('code' => '0'))}";
+			$.post(href, params, function(data) {
+				data = $.parseJSON(data);
+				if (data.type == 'success') {
+					location.reload();
+				} else {
+					util.toast(data.message, '', 'error');
+				}
+			})
+		})
+	});
+</script>
+	{if $rtype == 'email'}
+	{if ($item == 'mobile' && $ltype !== 'code') || ($item == 'email') || ($item == 'random')}
+	<div class="mui-content mc-login">
+		<div class="avatar mui-text-center">
+			<img src="{if tomedia('headimg_'.$_W['acid'].'.jpg')}{php echo tomedia('headimg_'.$_W['acid'].'.jpg');}{else}resource/images/MicroEngine.ico{/if}" class="mui-img-circle"/>
+		</div>
+		<div class="mui-input-group" id="register-basic">
+			<div class="mui-input-row">
+				<label class="mui-label-icon"><i class="fa fa-user"></i></label>
+				<input name="username" type="text" placeholder="{if $item == 'random'}请填写手机号/邮箱{elseif $item == 'email'}请填写邮箱{else}请填写手机号{/if}"/>
+			</div>
+			<div class="mui-input-row">
+				<label class="mui-label-icon"><i class="fa fa-lock"></i></label>
+				<input name="password" type="password" placeholder="密码" class="mui-input-password"/>
+			</div>
+			<div class="mui-input-row">
+				<label class="mui-label-icon"><i class="fa fa-lock"></i></label>
+				<input name="repassword" type="password" placeholder="确认密码" class="mui-input-password"/>
+			</div>
+		</div>
+		<div class="mui-content-padded">
+			<button class="mui-btn mui-btn-success mui-btn-block register-basic" type="submit">注册</button>
+		</div>
+	{/if}
+	{/if}
+
+	{if $rtype == 'mobile' || ($item == 'mobile' && $ltype == 'code')}
+	<div class="mc-login-code" id="register-code">
+		<div class="sendcode">
+			<div class="mui-content-padded mui-text-muted">请输入手机号,以收取验证码</div>
+			<div class="mui-input-group mui-mt15">
+				<div class="mui-input-row">
+					<label class="mui-label-icon"><i class="fa fa-user"></i></label>
+					<input name="username" type="text" class="js-mobile-val" placeholder="手机号"/>
+				</div>
+			</div>
+			<div class="mui-content-padded mui-text-center">
+				<button class="mui-btn mui-btn-success mui-btn-block js-check-mobile" uniacid="{$_W['uniacid']}">下一步</button>
+			</div>
+		</div>
+		<div style="display:none;" class="codeverify">
+			<div class="mui-content-padded mui-text-muted">您的手机号<span class="mui-text-success"></span>会收到一条含有6位数字验证码的短息</div>
+			<div class="mui-input-group mui-mt15">
+				<div class="mui-input-row">
+					<label class="mui-label-icon"><i class="fa fa-key"></i></label>
+					<input name="password" type="text" placeholder="验证码"/>
+				</div>
+			</div>
+			{if $ltype != 'code' && $audit == '1'}
+			<div class="mui-input-group mui-mt15">
+				<div class="mui-input-row">
+					<label class="mui-label-icon"><i class="fa fa-lock"></i></label>
+					<input name="audit-password" type="text" placeholder="密码"/>
+				</div>
+			</div>
+			<div class="mui-input-group mui-mt15">
+				<div class="mui-input-row">
+					<label class="mui-label-icon"><i class="fa fa-lock"></i></label>
+					<input name="audit-repassword" type="text" placeholder="确认密码"/>
+				</div>
+			</div>
+			{/if}
+			<div class="mui-content-padded mui-text-center">
+				<button class="mui-btn mui-btn-success mui-btn-block js-code" type="submit">注册</button>
+				<div class="mui-mt15 mui-text-center">
+					<span class="mui-text-muted js-timer">
+
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	{/if}
+	<div class="mui-content-padded">
+		<div class="mui-text-center mui-mt15">
+			<a href="{url 'auth/login' array('forward' => $_GPC['forward'])}">立即登录</a>
+			{if $rtype == 'email'}
+			{if ($item == 'mobile' && ($ltype =='hybird')) || ($item == 'random' && ($ltype !== 'password'))}
+			<span class="mui-ml5 mui-mr5 mui-text-muted">|</span>
+			<a href="{url 'auth/register' array('forward' => $_GPC['forward'], 'type' => 'mobile')}#wechat_redirect">无密码注册
+			</a>
+			{/if}
+			{else}
+			<span class="mui-ml5 mui-mr5 mui-text-muted">|</span>
+			<a href="{url 'auth/register' array('forward' => $_GPC['forward'], 'type' => 'email')}#wechat_redirect">邮箱注册
+			</a>
+			{/if}
+
+			<span class="mui-ml5 mui-mr5 mui-text-muted">|</span>
+			<a href="{url 'auth/forget' array('forward' => $_GPC['forward'])}">找回密码</a>
+		</div>
+	</div>
+</div>
+
+

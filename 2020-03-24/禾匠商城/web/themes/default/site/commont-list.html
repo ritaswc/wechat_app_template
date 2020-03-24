@@ -1,0 +1,96 @@
+{template 'common/header'}
+<ol class="breadcrumb we7-breadcrumb">
+    <a href="{php echo url('site/article')}"><i class="wi wi-back-circle"></i> </a>
+    <li><a href="{php echo url('site/article')}">文章管理</a></li>
+    <li><a href="{php echo url('site/article/comment_list',array('id' => intval($_GPC['id'])))}">文章评论</a></li>
+</ol>
+<div id="js-wesite-article-comment-display" ng-controller="articleComment" ng-cloak>
+    <div class="we7-page-search we7-padding-bottom clearfix">
+        <form action="./index.php" method="get" class="form-inline" role="form">
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <select class="form-control tpl-category-parent we7-select" id="category_parent" ng-model="order_sort" ng-change="changeSort()">
+                        <option ng-selected ="order_sort == 2" ng-value="2" >倒序</option>
+                        <option ng-selected ="order_sort == 1" ng-value="1">升序</option>
+                    </select>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <select class="form-control tpl-category-parent we7-select" id="category_parent" ng-model="is_comment" ng-change="changeComment()">
+                        <option ng-selected ="is_comment == 0" ng-value="0">全部</option>
+                        <option ng-selected ="is_comment == 2" ng-value="2" >已回复</option>
+                        <option ng-selected ="is_comment == 1" ng-value="1">未回复</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel we7-panel" id="">
+        <div class="panel-heading">
+            <span>全部留言</span>
+            <span class="pull-right">操作</span>
+        </div>
+        <div class="panel-body">
+            <div class="article-reply-item icon-selection" ng-repeat="comment in articleList">
+                <div class="media ">
+                    <div class="media-left">
+                        <a href="javascript:;">
+                            <img class="media-object reply-logo" ng-src="comment.avatar">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading reply-people">{{comment.username}}</h4>
+                        <p class="reply-content">{{comment.content}}</p>
+                        <p class="reply-time">{{comment.createtime}}</p>
+                    </div>
+                    <div class="media-right">
+                        <a href="javascript:;" ng-click="replyarticle(comment)" ng-show="!comment.replying" class="color-default">回复</a>
+                    </div>
+                </div>
+                <div class="reply-list">
+
+                    <div class="reply-item" ng-repeat="son_comment in comment.son_comment">
+                        <div class="reply-item-head">
+                            {{son_comment.username}}
+                        </div>
+                        <div class="reply-item-content">
+                            {{son_comment.content}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reply-editor" ng-show="comment.replying">
+                    <div class="reply-editor-head">
+                        回复该评论
+                    </div>
+                    <div class="reply-editor-content">
+                        <textarea ng-model="comment.replycontent" cols="30" rows="10" class="form-control replaycontent" contenteditable></textarea>
+                        <!--<div class="reply-editor-emoji">-->
+                            <!--<i class="fa fa-github-alt emotion-triggers" ng-click="selectEmoji($event,comment)"> </i>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="reply-editor-action">
+                        <button class="btn btn-primary" ng-click="send(comment)">发送 </button>
+                        <button class="btn btn-default" ng-click="cancel(comment)">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-right we7-margin-top">
+            {$pager}
+        </div>
+    </div>
+</div>
+<script>
+	angular.module('wesiteApp').value('config', {
+		articleId:"{$articleId}",
+		order_sort:"{$order_sort}",
+		is_comment:"{$is_comment}",
+		articleList: {php echo !empty($article_lists) ? json_encode($article_lists) : 'null'},
+        links :{
+			reply: "{php echo url('site/comment/post')}",
+			display: "{php echo url('site/comment/display')}",
+        }
+	});
+	angular.bootstrap($('#js-wesite-article-comment-display'), ['wesiteApp']);
+</script>
+{template 'common/footer'}

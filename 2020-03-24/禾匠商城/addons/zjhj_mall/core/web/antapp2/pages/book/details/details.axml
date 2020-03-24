@@ -1,0 +1,97 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <include src="/components/quick-navigation/quick-navigation" />
+    <view class="body after-navber">
+        <include src="/components/goods/specifications_model.axml" />
+        <view class='{{show_attr_picker?"no-scroll":""}}'>
+            <include src="/components/goods/goods_banner.axml" />
+            <include src="/components/goods/goods_info.axml" />
+
+            <view class='shop' a:if="{{goods.shopListNum > 0}}">
+                <view class='shop-title flex-y-center'>
+                    门店信息
+                </view>
+                <view class='shop-info'>
+                    <view class='shop-name'>
+                        {{shop[0].name}}
+                    </view>
+                    <view class='shop-addres'>
+                        地址：{{shop[0].address}}
+                    </view>
+                    <view class='shop-time'>
+                        营业时间：{{shop[0].shop_time?shop[0].shop_time:'7 x 24'}}
+                    </view>
+                </view>
+                <view class='all-shop flex-row flex-y-center' onTap='goToShopList'>
+                    <view class='shop-text flex-grow-1 flex-y-center'>
+                        查看全部{{goods.shopListNum}}家分店
+                    </view>
+                    <view class='shop-more flex-grow-0 flex-y-center'>
+                        <image class='icon_img' src='{{__wxapp_img.share.right.url}}'></image>
+                    </view>
+                </view>
+            </view>
+
+
+            <view class="tab-group">
+                <view class="flex-row tab-group-header">
+                    <view onTap="tabSwitch" data-tab="detail" class="flex-grow-1 flex-x-center tab-group-item {{tab_detail}}">
+                        <text class="flex-y-center">预约详情</text>
+                    </view>
+                    <view a:if='{{__is_comment}}' onTap="tabSwitch" data-tab="comment" class="flex-grow-1 flex-x-center tab-group-item {{tab_comment}}">
+                        <text class="flex-y-center">评价</text>
+                    </view>
+                </view>
+                <view class="tab-group-body">
+                    <view class="tab-group-item {{tab_detail}}">
+                        <view class="goods-detail">
+                            <import src="../../../wxParse/wxParse.axml" />
+                            <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
+                        </view>
+                    </view>
+                    <view class="tab-group-item {{tab_comment}}">
+                        <view class="comment-count flex-row">
+                            <view class="comment-count-item flex-grow-1 flex-x-center flex-col">
+                                <view>全部</view>
+                                <view>({{comment_count.score_all>999?'999+':comment_count.score_all}})</view>
+                            </view>
+                            <view class="comment-count-item flex-grow-1 flex-x-center flex-col">
+                                <view>好评</view>
+                                <view>({{comment_count.score_3>999?'999+':comment_count.score_3}})</view>
+                            </view>
+                            <view class="comment-count-item flex-grow-1 flex-x-center flex-col">
+                                <view>中评</view>
+                                <view>({{comment_count.score_2>999?'999+':comment_count.score_2}})</view>
+                            </view>
+                            <view class="comment-count-item flex-grow-1 flex-x-center flex-col">
+                                <view>差评</view>
+                                <view>({{comment_count.score_1>999?'999+':comment_count.score_1}})</view>
+                            </view>
+                        </view>
+                        <view class="comment-list">
+                            <view class="comment-item flex-row" a:for="{{comment_list}}" a:key="{{item.id}}">
+                                <view class="flex-grow-0" style="overflow: visible">
+                                    <image src="{{item.avatar_url}}" style="width: 70rpx;height: 70rpx;border-radius: 1000rpx" mode="aspectFill"></image>
+                                </view>
+                                <view class="flex-grow-1">
+                                    <view class="flex-row mb-20">
+                                        <view class="flex-grow-1 flex-y-center nickname">{{item.nickname}}</view>
+                                        <view class="flex-grow-0 flex-y-center addtime">{{item.addtime}}</view>
+                                    </view>
+                                    <view class="mb-20">{{item.content}}</view>
+                                    <view class="pic-list" a:if="{{item.pic_list&&item.pic_list.length>0}}">
+                                        <image onTap="commentPicView" a:for="{{item.pic_list}}" a:for-index="pic_index" a:key="{{item.id}}"data-index="{{index}}" data-pic-index="{{pic_index}}" src="{{item}}" mode="aspectFill" class="pic-item"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <include src="/components/goods/goods_buy" />
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

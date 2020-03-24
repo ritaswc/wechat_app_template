@@ -1,0 +1,79 @@
+<ul class="we7-page-tab">
+	<li class="{if $op == 'wishgoods' && $_GPC['status'] != 0}active{/if}"><a href="{php echo url('site/entry/wishgoodsEdit', array('m' => 'store', 'direct' => 1, 'op' => 'wishgoods', 'status' => 1))}" >已添加</a></li>
+	<li class="{if $op == 'wishgoods' && $_GPC['status'] == 0}active{/if}"><a href="{php echo url('site/entry/wishgoodsEdit', array('m' => 'store', 'direct' => 1, 'op' => 'wishgoods', 'status' => 0))}">已下架</a></li>
+	<li class="{if $op == 'cloud_goods_list'}active{/if}"><a href="{php echo url('site/entry/wishgoodsEdit', array('m' => 'store', 'direct' => 1, 'op' => 'cloud_goods_list' ))}">待编辑</a></li>
+</ul>
+<div class="wish-list" ng-controller="wishList" ng-cloak>
+
+    <div class="search-box we7-margin-bottom">
+        {if $op != 'cloud_goods_list'}
+        <select name="goods_type" id="" ng-model="goods_type" ng-change="getList(1)">
+            <option value="">全部类型</option>
+            {loop $goods_type_info $info}
+            {if $info['group'] == 'module'}
+            <option value="{$info['type']}">{$info['title']}</option>
+            {/if}
+            {/loop}
+        </select>
+        {/if}
+        <div class="search-form {if $op != 'cloud_goods_list'}we7-margin-left{/if}">
+            <div class="input-group" style="width: 400px;">
+                <input type="text" name="goods_name" ng-model="goods_name" class="form-control" placeholder="请输入要搜索的应用名称"/>
+                <span class="input-group-btn"><button class="btn btn-default" ng-click="getList(1)"><i class="fa fa-search color-primary"></i></button></span>
+            </div>
+        </div>
+        <a href="{php echo url('site/entry/wishgoodsEdit', array('m' => 'store', 'direct' => 1, 'op' => 'post'))}" class="btn btn-primary">查看应用市场</a>
+    </div>
+    <table class="table we7-table">
+        <tr>
+            <th>商品</th>
+            <th>适用类型</th>
+            <th ng-if="op == 'wishgoods'">单价</th>
+            <th>操作</th>
+        </tr>
+        <tr ng-repeat="item in list">
+            <td>
+                <div class="info">
+                    <img ng-src="{{item.logo}}" class="module-img" alt="">
+                    {{item.title}}
+                </div>
+            </td>
+            <td>
+                {{item.type_info.title}}
+				<span ng-repeat="(key, support) in item.branchs[0]['supports']">{{key != 0 ? ' - ' : ''}}{{we7TypeDefault[support]}}</span>
+			</td>
+            <td ng-if="op == 'wishgoods'">
+                {{item.price}} 元 / {{unitInfo[item.unit]}}
+            </td>
+            <td>
+                <div class="link-group">
+                    <a ng-href="{{editUrl + '&id=' + item.id + '&type=' + item.type}}">编辑</a>
+                    <a ng-if="op == 'wishgoods'" ng-click="changeStatus(item.id)" href="">{{status == 1 ? '下' : '上'}}架</a>
+                    <a ng-if="op == 'wishgoods' && status == 0"  ng-click="deleteGoods(item.id)" href="">删除</a>
+                    <a ng-if="op == 'cloud_goods_list'"  ng-click="deleteCloudGoods(item.id)" href="">删除</a>
+                </div>
+            </td>
+        </tr>
+        <tr ng-if="list | we7IsEmpty">
+            <td colspan="100">
+                <div class="text-center">暂无</div>
+            </td>
+        </tr>
+    </table>
+    <div class="pull-right">
+        <we7-page conf="page"></we7-page>
+    </div>
+</div>
+<script>
+    angular.module('we7wish').value('config', {
+        apiUrl: "{php echo url('site/entry/storeApi', array('m' => 'store', 'direct' => 1))}",
+        op: "{$op}",
+        status: "{$_GPC['status']}",
+        editGoodsUrl: "{php echo url('site/entry/goodspost', array('m' => 'store', 'direct' => 1))}",
+        editCloudGoodsUrl: "{php echo url('site/entry/wishgoodsEdit', array('m' => 'store', 'direct' => 1, 'op' => 'edit'))}",
+        changeStatusUrl: "{php echo url('site/entry/goodsseller', array('m' => 'store', 'direct' => 1, 'operate' => 'changestatus'))}",
+        deleteGoodsUrl: "{php echo url('site/entry/goodsseller', array('m' => 'store', 'direct' => 1, 'operate' => 'delete'))}",
+        deleteCloudGoods: "{php echo url('site/entry/storeApi', array('m' => 'store', 'direct' => 1, 'op' => 'delete_cloud_goods'))}"
+    })
+    angular.bootstrap($('.wish-list'), ['we7wish'])
+</script>

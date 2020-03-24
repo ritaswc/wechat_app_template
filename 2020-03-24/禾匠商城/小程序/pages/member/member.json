@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "会员中心",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

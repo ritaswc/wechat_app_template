@@ -1,0 +1,180 @@
+{template 'common/header'}
+{if $do == 'display'}
+<ul class="we7-page-tab">
+	{loop $active_sub_permission $active_menu}
+	{if permission_check_account_user($active_menu['permission_name'], false) && (empty($active_menu['is_display']) || is_array($active_menu['is_display']) && in_array($_W['account']['type'], $active_menu['is_display']))}
+	<li {if $action == $active_menu['active']}class="active"{/if}><a href="{$active_menu['url']}">{$active_menu['title']}</a></li>
+	{/if}
+	{/loop}
+</ul>
+<div id="js-profile-payment-webapp" ng-controller="paymentWebappCtrl" ng-cloak>
+	<table class="table we7-table table-hover table-form">
+		<col width="140px "/>
+		<col width="500px"/>
+		<col/>
+		<col width="140px" />
+		<tr>
+			<th colspan="2">支付参数</th>
+			<th>参数配置状态</th>
+			<th>操作</th>
+		</tr>
+		<tr>
+			<td>支付宝支付</td>
+			<td><div class="related-info">开启支付宝支付</div></td>
+			<td>{{ paysetting.alipay.has_config ? '已配置' : '未配置' }}</td>
+			<td>
+				<div class="link-group">
+					<a href="javascript:;" data-toggle="modal" data-target="#zhifubao">
+						{{  paysetting.alipay.has_config ? '修改配置' : '去配置'  }}
+					</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>微信支付</td>
+			<td><div class="related-info">开启微信支付</div></td>
+			<td>{{ paysetting.wechat.has_config ? '已配置' : '未配置' }}</td>
+			<td>
+				<div class="link-group">
+					{if $account_sign != WEBAPP_TYPE_SIGN}
+					<a href="javascript:;" ng-click="check_wechat()">
+						{{  paysetting.wechat.has_config ? '修改配置' : '去配置'  }}
+					</a>
+					<a href="{php echo url('profile/payment/switch', array('type' => 'wechat'))}" ng-if="paysetting.wechat.has_config === true">支付支持</a>
+					{else}
+					<a href="javascript:;" data-toggle="modal" data-target="#weixin_native">
+						{{  paysetting.alipay.has_config ? '修改配置' : '去配置'  }}
+					</a>
+					{/if}
+				</div>
+			</td>
+		</tr>
+	</table>
+	<!--支付宝修改-->
+	<div class="modal fade" id="zhifubao" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">支付宝支付</div>
+				</div>
+				<div class="modal-body">
+					<div class="we7-form">
+						<div class="form-group">
+							<label for="" class="control-label col-sm-2">收款支付宝账号</label>
+							<div class="form-controls col-sm-10">
+								<div class="input-group">
+									<input type="text" name="" class="form-control" ng-model="paysetting.alipay.account">
+									<a herf="#" ng-click="aliaccounthelp = !aliaccounthelp" class="input-group-addon"><i class="fa fa-exclamation-circle"></i></a>
+								</div>
+								<span class="help-block" ng-show="aliaccounthelp">
+									如果开启兑换或交易功能，请填写真实有效的支付宝账号，用于收取用户以现金兑换交易积分的相关款项。如账号无效或安全码有误，将导致用户支付后无法正确对其积分账户自动充值，或进行正常的交易对其积分账户自动充值，或进行正常的交易。 如您没有支付宝帐号，
+									<a href="https://memberprod.alipay.com/account/reg/enterpriseIndex.htm" target="_blank">请点击这里注册</a>
+								</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-sm-2">合作者身份</label>
+							<div class="form-controls col-sm-10">
+								<div class="input-group">
+									<input type="text" name="" class="form-control" ng-model="paysetting.alipay.partner">
+									<a herf="#" ng-click="alipartnerhelp = !alipartnerhelp" class="input-group-addon"><i class="fa fa-exclamation-circle"></i></a>
+								</div>
+								<span class="help-block" ng-show="alipartnerhelp">
+									支付宝签约用户请在此处填写支付宝分配给您的合作者身份，签约用户的手续费按照您与支付宝官方的签约协议为准。
+									<br>如果您还未签约，
+										<a href="https://memberprod.alipay.com/account/reg/enterpriseIndex.htm" target="_blank">
+											请点击这里签约
+										</a>；
+										如果已签约,
+										<a href="https://b.alipay.com/order/pidKey.htm?pid=2088501719138773&amp;product=fastpay" target="_blank">
+											请点击这里获取PID、Key
+										</a>;
+										如果在签约时出现合同模板冲突，请咨询0571-88158090
+								</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-sm-2">校验密钥</label>
+							<div class="form-controls col-sm-10">
+								<div class="input-group">
+									<input type="text" name="" class="form-control" ng-model="paysetting.alipay.secret">
+									<a herf="#" ng-click="alisecrethelp = !alisecrethelp" class="input-group-addon"><i class="fa fa-exclamation-circle"></i></a>
+								</div>
+								<span class="help-block" ng-show="alisecrethelp">支付宝签约用户可以在此处填写支付宝分配给您的交易安全校验码，此校验码您可以到支付宝官方的商家服务功能处查看 </span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-sm-2">模拟测试</label>
+							<div class="form-controls col-sm-10">
+								<a href="javascript:;" class="form-control-static color-default" ng-click="test_alipay()">模拟测试</a>
+								<span class="help-block">本测试将模拟提交 0.01 元人民币的订单进行测试，如果提交后成功出现付款界面，说明您站点的支付宝功能可以正常使用</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="saveEdit('alipay')">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 微信修改 -->
+	<div class="modal fade" id="weixin_native" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">微信支付</div>
+				</div>
+				<div class="modal-body overflow-auto">
+					<div class="we7-form ">
+						<div class="form-group">
+							<label class="control-label col-sm-2">appid</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" ng-model="paysetting.wechat.appid" name="appid" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2">微信支付商户号</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" ng-model="paysetting.wechat.mchid" name="mchid" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2">微信支付密钥</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" ng-model="paysetting.wechat.signkey" name="signkey" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2">模拟测试</label>
+							<div class="col-sm-8">
+								<a href="javascript:;" class="color-default" ng-click="test_wechat()">&nbsp;&nbsp;模拟测试</a>
+								<br/>
+								<img id="wechat_qrcode" src="{{ wechat_qrcode }}" style="display: none"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click='saveEdit("wechat")'>确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+    angular.module('profileApp').value('config', {
+        'paysetting' : {php echo json_encode($pay_setting)},
+        'saveurl' : "{php echo url('profile/payment/save_setting_webapp')}",
+        'test_alipay_url' : "{php echo url('profile/payment/test_alipay')}",
+        'test_wechat_url' : "{php echo url('profile/payment/test_wechat')}",
+        'account_sign' : "{$_W['account']['type_sign']}",
+    });
+    angular.bootstrap($('#js-profile-payment-webapp'), ['profileApp']);
+</script>
+{/if}
+{template 'common/footer'}

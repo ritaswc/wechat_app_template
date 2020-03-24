@@ -1,0 +1,25 @@
+{php define(MUI, true);}
+{template 'common/header'}
+<header class="mui-bar mui-bar-nav">
+	<a class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">账单详情</h1>
+</header>
+<div class="mui-content trading-detail">
+	<ul class="mui-table-view">
+		<li class="mui-table-view-cell">
+			<div class="mui-text-muted">交易成功</div>
+			<div class="account">-{$order['final_fee']}</div>
+			<div class="text-right">
+				<a href="{php echo url('mc/card/mycard')}">返回会员卡</a>
+			</div>
+		</li>
+		<li class="mui-table-view-cell mui-media">
+			<a href="javascript:;">
+				<img src="./resource/images/icon-pay.png" alt="" class="mui-media-object mui-pull-left mui-img-rounded"/>
+				<div class="mui-media-body company">{$store['business_name']}</div>
+			</a>
+		</li>
+	</ul>
+</div>
+
+{template 'common/footer'}

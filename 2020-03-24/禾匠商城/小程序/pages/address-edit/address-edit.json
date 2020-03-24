@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "编辑地址",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

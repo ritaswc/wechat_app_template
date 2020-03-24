@@ -1,0 +1,93 @@
+<view class="page {{__page_classes}}">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <include src="/components/common/get-coupon.wxml"></include>
+    <include src="/components/quick-navigation/quick-navigation.wxml"></include>
+    <view class="body after-navber">
+        <scroll-view class="group-top scroll-view-x" style="width: 100%" wx:if="{{pt_url}}">
+            <view class="flex-row flex-y-center" style="width: 100%">
+                <navigator class="search-icon flex-grow-0 flex-y-center flex-x-center" openType="navigate" url="/pages/pt/search/search">
+                    <image src="{{__wxapp_img.store.search_index.url}}"></image>
+                </navigator>
+                <view style="height:48rpx;border-right: 1rpx solid #e2e2e2;"></view>
+                <view class="flex-grow-1">
+                    <scroll-view class="scroll-view-x" scrollIntoView="{{toView}}" scrollLeft="{{scrollLeft}}" scrollWithAnimation="true" scrollX="true" style="width:100%">
+                        <view bindtap="switchNav" class="scroll-view-item {{cid==0?'active':''}}" data-id="0" id="0">
+                            热销
+                        </view>
+                        <view bindtap="switchNav" class="scroll-view-item {{cid==item.id?'active':''}}" data-id="{{item.id}}" id="{{item.id}}" wx:for="{{cat}}" wx:key="unique">
+                                {{item.name}}
+                            </view>
+                    </scroll-view>
+                </view>
+            </view>
+        </scroll-view>
+        <scroll-view scrollY bindscrolltolower="pullDownLoading" scrollIntoView="{{toView}}" scrollTop="{{scrollTop}}" style="height: 100%;" vIf="{{banner.length>0}}">
+            <swiper autoplay="true" circular="true" class="banner" duration="300" indicatorActiveColor="#ff5c5c" indicatorDots="true" interval="5000" style="{{pt_url?'':'margin-top:0rpx'}}">
+                <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}">
+                    <form bindsubmit="_formIdSubmit" data-type="navigate" data-url="{{item.page_url}}" reportSubmit="true">
+                        <button formType="submit" id="_formIdSubmit">
+                            <view style="height:320rpx">
+                                <view class="slide-title">{{item.title}}</view>
+                                <image class="slide-image" mode="aspectFill" src="{{item.pic_url}}"></image>
+                            </view>
+                        </button>
+                    </form>
+                </swiper-item>
+            </swiper>
+        </scroll-view>
+        <block wx:if="{{ad&&ad.length>0}}">
+            <import src="/components/common/index"></import>
+            <view class="advert">
+                <view class="division"></view>
+                <template is="{{'block-'+block.data.pic_list.length+'-0'}}" data="{{__wxapp_img:__wxapp_img,block:block,store:store}}"></template>
+            </view>
+        </block>
+        <view class="division"></view>
+        <form bindsubmit="_formIdSubmit" data-type="navigate" data-url="/pages/pt/details/details?gid={{item.id}}" reportSubmit="true" wx:for="{{goods}}" wx:key="{{item.id}}">
+            <button formType="submit" id="_formIdSubmit">
+                <view class="list-item flex-row">
+                    <view class="flex-grow-0 corver-pic">
+                        <image lazyLoad="true" src="{{item.cover_pic}}"></image>
+                    </view>
+                    <view class="flex-grow-1 flex-col">
+                        <view class="flex-grow-1 goods-title">
+                                {{item.name}}
+                            </view>
+                        <view class="flex-grow-0 flex-row">
+                            <view class="group-item" wx:if="{{item.groupList[0]}}">
+                                <view wx:for="{{item.groupList}}" wx:for-item="group" wx:key="{{item.id}}">
+                                    <image src="{{group.avatar_url}}"></image>
+                                </view>
+                            </view>
+                            <view class="goods-sales">
+                                    已团 {{item.virtual_sales}}
+                                </view>
+                        </view>
+                        <view class="flex-grow-0 flex-row flex-y-bottom">
+                            <view class="flex-grow-0 price flex-row flex-y-bottom">
+                                <view class="unit flex-grow-0 flex-y-bottom">
+                                        ¥
+                                    </view>
+                                <view class="flex-grow-1 flex-y-bottom">{{item.price}}</view>
+                            </view>
+                            <view class="flex-grow-1 old-price flex-y-bottom">
+                                    ¥ {{item.original_price}}
+                                </view>
+                            <view class="flex-grow-0 group-btn flex-x-center flex-y-center">
+                                    去开团
+                                </view>
+                        </view>
+                    </view>
+                </view>
+            </button>
+        </form>
+        <view class="loading-bar {{show_loading_bar?'active':''}}" style="text-align: center;{{emptyGoods==1?'display:none':''}}">
+            <image src="{{__wxapp_img.system.loading.url}}" style="width: 160rpx;height: 80rpx"></image>
+        </view>
+        <view class="empty-bar flex-row flex-x-center flex-y-center" wx:if="{{is_show}}">
+            没有更多商品了~
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

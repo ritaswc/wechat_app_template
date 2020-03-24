@@ -1,0 +1,52 @@
+<!--pages/cash-detail/cash-detail.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class="info">
+            <view class="info-title flex-row">
+                <navigator class="flex-x-center   width" url="/pages/cash-detail/cash-detail?status=-1" open-type="redirect">
+                    <view class="info-text {{status == -1?'active':''}}">全部</view>
+                </navigator>
+                <navigator class="flex-x-center  width" url="/pages/cash-detail/cash-detail?status=0" open-type="redirect">
+                    <view class="info-text {{status == 0?'active':''}}">待审核</view>
+                </navigator>
+                <navigator class="flex-x-center  width" url="/pages/cash-detail/cash-detail?status=1" open-type="redirect">
+                    <view class="info-text {{status == 1?'active':''}}">待打款</view>
+                </navigator>
+                <navigator class="flex-x-center  width" url="/pages/cash-detail/cash-detail?status=2" open-type="redirect">
+                    <view class="info-text {{status == 2?'active':''}}">已打款</view>
+                </navigator>
+                <navigator class="flex-x-center  width" url="/pages/cash-detail/cash-detail?status=3" open-type="redirect">
+                    <view class="info-text {{status == 3?'active':''}}">无效</view>
+                </navigator>
+            </view>
+            <view style="margin-top:100rpx;">
+                <block a:if="{{show_no_data_tip}}">
+                    <view class="info-no">暂无信息</view>
+                </block>
+                <block a:else>
+                    <block a:for="{{cash_list}}" a:key="{{item.id}}">
+                        <view class="info-content">
+                            <view class="info-label flex-row">
+                                <view class="info-left">
+                                    <view class="info-up">提现 {{item.price}}</view>
+                                    <view class="info-down">{{item.addtime}}</view>
+                                </view>
+                                <view class="info-right">
+                                    <block a:if="{{item.status == null}}">
+                                        已打款
+                                    </block>
+                                    <block a:else>
+                                        {{item.status}}
+                                    </block>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                </block>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

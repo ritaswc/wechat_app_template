@@ -1,0 +1,31 @@
+<style>
+	.quick.quick-quick1 {height:50px;position:fixed; bottom:0; left:0px; z-index:900; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+	.quick.quick-quick1 .quick-phone>div{width:20%; height:100%; text-align:center; position:static!important; margin:0; -webkit-box-sizing:border-box; box-sizing:border-box; -webkit-box-flex: 1; box-flex:1; -moz-box-sizing:border-box; overflow:hidden; box-shadow: none!important; border-right:1px solid #0e111a; border-left:1px solid #666a73; }
+	.quick.quick-quick1 .quick-phone>div a{display:block; color:#fff; font-size:20px; line-height:20px!important; margin-top:5px; text-decoration:none;}
+	.quick.quick-quick1 .quick-phone>div a i{ display:inline-block; width:20px; height:20px; font-size:20px;}
+	.quick.quick-quick1>div{border-top:2px solid #51515d; position:fixed; z-index:900; bottom:0; left:0; right:0; margin:auto; width:20%; display:block; width:100%; background:rgba(255,255,255,0.7); height:50px; overflow:hidden; display:-webkit-box; display:box; -webkit-box-orient: horizontal; background:-webkit-gradient(linear, 0 0, 0 100%, from(#333c45), to(#313540), color-stop(50%, #373a43));background:-moz-liner-gradient(top, 0 0, 0 100%, from(#333c45), to(#313540), color-stop(50%, #373a43));}
+	.quick.quick-quick1 .quick-phone>div label{margin:2px 5px 5px 5px; cursor:pointer; font-size:12px; display:block!important; line-height:18px; text-align:center; overflow:hidden;}
+	@-moz-document url-prefix(){
+		.quick.quick-quick1{overflow:hidden;background:#000;}
+		.quick.quick-quick1 .quick-phone>div{width:20%; float:left;background:#373B44;}
+	}
+</style>
+<div class="quick quick-quick1">
+	<div id="quick-phone" class="quick-phone">
+		{php $i = 1;}
+		{loop $_W['quickmenu']['menus'] $nav}
+		<div>
+			<a href="{$nav['url']}">
+				{if !empty($nav['icon'])}
+				<i style="background:url({media $nav['icon']}) no-repeat;background-size:cover;{$nav['css']['icon']['style']}"></i>
+				{else}
+				<i class="fa {$nav['css']['icon']['icon']}" style="{$nav['css']['icon']['style']}"></i>
+				{/if}
+				<label style="{$nav['css']['name']}">{$nav['name']}</label>
+			</a>
+		</div>
+		{php if($i>=5) break;}
+		{php $i++;}
+		{/loop}
+	</div>
+</div>

@@ -1,0 +1,16 @@
+{template 'common/header'}
+<script>
+    var currenturl = encodeURIComponent("{$_W['siteurl']}");
+
+    if(window.__wxjs_environment === 'miniprogram') {
+        wx.ready(function(){
+            wx.miniProgram.navigateTo({
+                url: "/wxapp_web/pages/view/index?url="+currenturl+"&userinfo=1"
+            })
+        })
+
+    } else {
+        window.location.href = "{$_W['siteroot']}app/index.php?i={$_W['uniacid']}&c=wxapp&a=home&do=oauth&url="+currenturl;
+    }
+</script>
+{template 'common/footer'}

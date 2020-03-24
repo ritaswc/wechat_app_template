@@ -1,0 +1,97 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body">
+        <view class="coupon">
+            <image src="{{__wxapp_img.store.bg.url}}"></image>
+            <view style="padding:36rpx 48rpx;width:100%;height:100%">
+                <view class="flex-row" style="width:100%;height:100%;line-height:1;">
+                    <view class="flex-grow-1 flex-x-center flex-y-center">
+                        <view class="flex-y-bottom">
+                            <view style="font-size:21px;">￥</view>
+                            <view style="font-size:40px;">{{coupon.sub_price}}</view>
+                        </view>
+                    </view>
+                    <view class="flex-grow-1 flex-y-center">
+                        <view>
+                            <view style="font-size:17px;margin-bottom:14rpx;">优惠券</view>
+                            <view style="font-size:15px;">满{{coupon.min_price}}元可用</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="ci_integral flex-y-center">
+            <view class="flex-y-bottom">
+                <text style="font-size:23px;">{{coupon.integral}}</text>
+                <text style="font-size:15px;">积分<block wx:if="{{coupon.price>0}}">+<text style="font-size:23px;">￥{{coupon.price}}</text>
+                    </block>
+                </text>
+            </view>
+        </view>
+        <view class="ci_shuoming">
+            优惠券说明
+        </view>
+        <view class="ci_shuoming2">
+            <view style="padding:0 24rpx 10rpx 24rpx;">
+                优惠券有效期：
+                <block wx:if="{{coupon.expire_type==1}}">
+                    兑换后{{coupon.expire_day}}天
+                </block>
+                <block wx:else>
+                    {{coupon.begin_time}} - {{coupon.end_time}}
+                </block>
+            </view>
+            <view style="padding-bottom:10rpx;padding-right:24rpx;">
+                <text style="padding-left:24rpx;">适用范围:</text>
+                <text style="padding-left:24rpx;" wx:if="{{info.length==0}}">全场通用</text>
+                <block wx:else>
+                    <text style="display:inline-block;padding:10rpx 0 0 24rpx;" wx:for="{{info}}">{{item.name}}</text>
+                </block>
+            </view>
+            <view style="padding:0 24rpx;">使用说明：本优惠券总剩余{{coupon.total_num}}张，每人限领{{coupon.user_num}}张。兑换成功后，优惠券将直接放入“我的优惠券”中。优惠券一经兑换，一律不退还积分。</view>
+        </view>
+        <view class="ci-btn-view flex-x-center flex-y-center">
+            <view bindtap="exchangeCoupon" class="ci-btn flex-x-center flex-y-center">立即兑换</view>
+        </view>
+        <view class=" flex-x-center flex-y-center" id="modal-mask" wx:if="{{showModel}}">
+            <view class="modal">
+                <view bindtap="hideModal" class="modal-close">
+                    <image src="{{__wxapp_img.integral.close.url}}" style="width:50rpx;height:50rpx;"></image>
+                </view>
+                <view class="flex-row flex-x-center flex-y-center" style="padding:88rpx 0;" wx:if="{{status==1}}">
+                    <view class="modal-left flex-grow-1 flex-x-center">
+                        <image src="{{__wxapp_img.integral.shibai.url}}" style="width:124rpx;height:134rpx;"></image>
+                    </view>
+                    <view class="flex-grow-1 flex-y-bottom" style="width:50%;">
+                        <view style="color:#353535;width:100%">
+                            <view style="margin-bottom:30rpx;font-size:13pt;">兑换失败！</view>
+                            <view class="text-more">{{content}}</view>
+                        </view>
+                    </view>
+                </view>
+                <block wx:if="{{status==4}}">
+                    <view class="modal-head" style="margin-top: -216rpx;">
+                        <image src="{{__wxapp_img.integral.success.url}}" style="width:100%;height:100%;"></image>
+                    </view>
+                    <view class="modal-body flex-x-center flex-y-center">
+                        <view>{{content}}</view>
+                    </view>
+                    <view class="modal-footer flex-row">
+                        <view class="flex-grow-1 flex-x-center flex-y-center">
+                            <navigator hoverClass="none" openType="redirect" url="/pages/coupon/coupon">
+                                <view class="modal-btn-1 flex-x-center flex-y-center">我的优惠券</view>
+                            </navigator>
+                        </view>
+                        <view class="flex-grow-1 flex-x-center flex-y-center">
+                            <navigator hoverClass="none" openType="redirect" url="/pages/index/index">
+                                <view class="modal-btn-2 flex-x-center flex-y-center">立即使用</view>
+                            </navigator>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

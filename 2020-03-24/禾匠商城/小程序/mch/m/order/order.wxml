@@ -1,0 +1,160 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="top-bar">
+            <view class="search">
+                <input bindconfirm="searchSubmit" confirmType="search" name="keyword" placeholder="搜索"></input>
+            </view>
+            <view class="flex flex-row tab-bar">
+                <navigator class="flex-grow-1 flex-x-center" openType="redirect" url="/mch/m/order/order?status=1">
+                    <view class="{{status==1?'active':''}}">待付款</view>
+                </navigator>
+                <navigator class="flex-grow-1 flex-x-center" openType="redirect" url="/mch/m/order/order?status=2">
+                    <view class="{{status==2?'active':''}}">待发货</view>
+                </navigator>
+                <navigator class="flex-grow-1 flex-x-center" openType="redirect" url="/mch/m/order/order?status=3">
+                    <view class="{{status==3?'active':''}}">待收货</view>
+                </navigator>
+                <view class="menu flex-grow-1 flex-x-center">
+                    <view bindtap="showMenu" class="menu-text flex flex-x-center flex-row {{status>3?'active':''}}">
+                        <view class="flex-y-center">
+                            <block wx:if="{{status<4}}">更多</block>
+                            <block wx:if="{{status==4}}">已完成</block>
+                            <block wx:if="{{status==5}}">售后</block>
+                            <block wx:if="{{status==6}}">取消</block>
+                        </view>
+                        <view class="flex-y-center" style="font-size: 0">
+                            <view class="menu-icon">
+                                <view></view>
+                                <view></view>
+                                <view></view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="menu-list {{show_menu?'show':''}}">
+                        <navigator openType="redirect" url="/mch/m/order/order?status=4">已完成</navigator>
+                        <navigator openType="redirect" url="/mch/m/order/order?status=5">售后</navigator>
+                        <navigator openType="redirect" url="/mch/m/order/order?status=6">取消</navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="order-list">
+            <view class="order-item" wx:for="{{order_list}}" wx:key="{{item.id}}">
+                <block wx:if="{{!item.refund_order}}">
+                    <navigator url="/mch/m/order-detail/order-detail?id={{item.id}}">
+                        <view class="flex flex-row" style="border-bottom: 1rpx solid #eee;font-size: 9pt;padding-bottom: 24rpx;color: #888;margin-bottom: 24rpx">
+                            <view class="flex-grow-1">{{item.order_no}}</view>
+                            <view class="flex-grow-0">{{item.addtime}}</view>
+                        </view>
+                        <view class="flex flex-row" style="margin-bottom: 24rpx" wx:for="{{item.goods_list}}" wx:key="{{item.id}}">
+                            <view class="flex-grow-0">
+                                <image src="{{item.cover_pic}}" style="width: 156rpx;height: 156rpx;margin-right: 24rpx"></image>
+                            </view>
+                            <view class="flex-grow-1">
+                                <view class="goods-name">{{item.name}}</view>
+                                <view style="font-size: 9pt;color: #888;">
+                                    <view style="display: inline-block;margin-right: 24rpx" wx:for="{{item.attr}}" wx:key="{{item.id}}">
+                                        {{item.attr_group_name}}:{{item.attr_name}}
+                                    </view>
+                                </view>
+                                <view class="flex flex-row">
+                                    <view class="flex-grow-1">×{{item.num}}</view>
+                                    <view class="flex-grow-0" style="color: #ff4544;text-align: right">
+                                        {{item.total_price}}
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                    <view class="flex flex-row" style="border-top: 1rpx solid #eee;padding-top: 24rpx">
+                        <view class="flex-grow-1">合计：{{item.total_price}}</view>
+                        <view class="flex-grow-0">
+                            <button bindtap="showSendModal" class="order-item-btn" data-index="{{index}}" wx:if="{{item.is_pay==1&&item.is_send==0}}">发货</button>
+                        </view>
+                    </view>
+                </block>
+                <block wx:else>
+                    <navigator url="/mch/m/order-refund/order-refund?id={{item.id}}">
+                        <view class="flex flex-row" style="border-bottom: 1rpx solid #eee;font-size: 9pt;padding-bottom: 24rpx;color: #888;margin-bottom: 24rpx">
+                            <view class="flex-grow-1">{{item.order_no}}</view>
+                            <view class="flex-grow-0">{{item.order_refund_time}}</view>
+                        </view>
+                        <view class="flex flex-row" style="margin-bottom: 24rpx">
+                            <view class="flex-grow-0">
+                                <image src="{{item.cover_pic}}" style="width: 156rpx;height: 156rpx;margin-right: 24rpx"></image>
+                            </view>
+                            <view class="flex-grow-1">
+                                <view class="goods-name">{{item.name}}</view>
+                                <view style="font-size: 9pt;color: #888;">
+                                    <view style="display: inline-block;margin-right: 24rpx" wx:for="{{item.attr}}" wx:key="{{item.id}}">
+                                        {{item.attr_group_name}}:{{item.attr_name}}
+                                    </view>
+                                </view>
+                                <view class="flex flex-row">
+                                    <view class="flex-grow-1">×{{item.num}}</view>
+                                    <view class="flex-grow-0" style="color: #ff4544;text-align: right">
+                                        {{item.total_price}}
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view style="margin-bottom: 24rpx">
+                            <image src="/mch/images/icon-shouhou.png" style="width: 32rpx;height: 32rpx;display: inline-block;margin-top: 2rpx; margin-right: 16rpx;"></image>
+                            <text style="margin-right: 16rpx;">{{item.refund_type}}</text>
+                            <text style="margin-right: 16rpx;" wx:if="{{item.status==0}}">待处理</text>
+                            <text style="margin-right: 16rpx;" wx:if="{{item.status==1}}">退款完成</text>
+                            <text style="margin-right: 16rpx;" wx:if="{{item.status==2}}">换货完成</text>
+                            <text style="margin-right: 16rpx;" wx:if="{{item.status==3}}">已拒绝</text>
+                        </view>
+                    </navigator>
+                    <view class="flex flex-row" style="border-top: 1rpx solid #eee;padding-top: 24rpx">
+                        <view class="flex-grow-1">退款金额：￥{{item.refund_price}}</view>
+                        <view class="flex-grow-0">
+                            <block wx:if="{{item.status==0}}">
+                                <button bindtap="refundDeny" class="order-item-btn" data-index="{{index}}">拒绝</button>
+                                <button bindtap="refundPass" class="order-item-btn" data-index="{{index}}">同意</button>
+                            </block>
+                            <block wx:if="{{item.status==1}}">已同意退货退款</block>
+                            <block wx:if="{{item.status==2}}">已同意换货</block>
+                            <block wx:if="{{item.status==3}}">已拒绝</block>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="flex-y-center flex-x-center" style="text-align: center;height: 174rpx;color: #888;font-size: 9pt" wx:if="{{no_orders}}">暂无订单
+        </view>
+        <view class="flex-y-center flex-x-center" style="text-align: center;height: 74rpx;color: #888;font-size: 9pt" wx:if="{{!no_orders&&no_more_orders}}">已无更多订单
+        </view>
+        <view class="loading-more {{loading_more?'show':''}}" wx:if="{{!no_orders&&!no_more_orders}}">
+            <image src="{{__wxapp_img.system.loading_black.url}}" style="width: 50rpx;height: 50rpx"></image>
+        </view>
+    </view>
+    <view class="order-modal flex flex-x-center flex-y-center {{show_send_modal?'show':''}}">
+        <view class="modal-dialog" style="margin-top: -20vh">
+            <view class="modal-body">
+                <view style="padding-top: 40rpx;text-align: center">选择发货方式</view>
+                <view class="flex flex-row" style="padding: 48rpx 24rpx">
+                    <view class="flex-grow-1" style="text-align: center">
+                        <view bindtap="switchSendType" class="order-item-btn order-modal-btn {{send_type=='express'?'active':''}}" data-type="express">快递配送
+                        </view>
+                    </view>
+                    <view class="flex-grow-1" style="text-align: center">
+                        <button bindtap="switchSendType" class="order-item-btn order-modal-btn {{send_type=='none'?'active':''}}" data-type="none">无需物流
+                        </button>
+                    </view>
+                </view>
+            </view>
+            <view class="modal-footer flex flex-row">
+                <button bindtap="hideSendModal" class="flex-grow-1 modal-cancel">取消
+                    <view class="modal-split"></view>
+                </button>
+                <button bindtap="sendSubmit" class="flex-grow-1 modal-confirm">确认</button>
+            </view>
+        </view>
+        <view class="modal-bg"></view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

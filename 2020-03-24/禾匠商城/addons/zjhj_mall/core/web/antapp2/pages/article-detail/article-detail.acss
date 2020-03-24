@@ -1,0 +1,7 @@
+/* pages/article-detail/article-detail.wxss */
+@import "../../wxParse/wxParse.acss";
+page{
+    min-height: 100%;
+    background: #fff;
+    overflow-x: hidden;
+}

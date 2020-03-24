@@ -1,0 +1,10 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class="i-qrcode flex-row">
+            <image class="img" src="{{qrcode}}" onTap="click"></image>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

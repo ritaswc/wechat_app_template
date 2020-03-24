@@ -1,0 +1,59 @@
+{template 'common/header'}
+<style type="text/css">
+body{
+	font:{$_W['styles']['fontsize']} {$_W['styles']['fontfamily']};
+	color:{if empty($_W['styles']['fontcolor'])}#555{else}{$_W['styles']['fontcolor']}{/if};
+	padding:0;
+	margin:0;
+	background-image:url('{if empty($_W['styles']['indexbgimg'])}./themes/default/images/bg_index.jpg{else}{$_W['styles']['indexbgimg']}{/if}');
+	background-size:cover;
+	background-color:{if empty($_W['styles']['indexbgcolor'])}#fbf5df{else}{$_W['styles']['indexbgcolor']}{/if};
+	{$_W['styles']['indexbgextra']}
+}
+a{color:{$_W['styles']['linkcolor']}; text-decoration:none;}
+{$_W['styles']['css']}
+.home-container{width:58%;overflow:hidden;margin:.6em .3em;}
+.home-container .box-item{float:left;display:block;text-decoration:none;outline:none;width:5em;height:6em;margin:.1em;background:rgba(0, 0, 0, 0.3);text-align:center;color:#ccc;}
+.home-container i{display:block;height:45px; margin: 5px auto; font-size:35px; padding-top:10px; width:45px;}
+.home-container span{color:{$_W['styles']['fontnavcolor']};display:block; width:90%; margin:0 5%;  overflow:hidden; height:20px; line-height:20px;}
+.footer{color:#dddddd;}
+.home-container ul li{background-color:rgba(0, 0, 0, 0.3);padding:0 10px;margin:1%;display: inline-block;height:45px;width:100%;}
+.home-container ul li a{text-decoration: none;}
+.home-container .title{color:#ccc;}
+.home-container .createtime{color:#999;font-size:12px}
+</style>
+<div class="home-container clearfix">
+	{data func="site_navs" item="row"}
+		{$row['html']}
+	{/data}
+	<!-- 该分类下文章-start -->
+	{if $_GPC['c'] == 'home' && !empty($_GPC['t'])}
+	<ul class="list list-unstyled">
+		{loop $category_list $cid $category}
+		{data func="site_article" cid=$cid return="true" assign="result"}
+			{loop $result['list'] $row}
+			<li>
+				<a href="{$row['linkurl']}">
+					<div class="title">{php echo cutstr($row['title'],10,1);}</div>
+					<div class="createtime">{php echo date('Y-m-d H:i:s', $row['createtime'])}</div>
+				</a>
+			</li>
+			{/loop}
+		{/loop}
+	</ul>
+	{/if}
+	<!-- 该分类下文章-start -->
+
+	<ul class="list list-unstyled">
+		{data module="site" func="site_article" cid="$cid" assign="result" return="true"}
+		{loop $result['list'] $row}
+		<li>
+			<a href="{$row['linkurl']}">
+				<div class="title">{php echo cutstr($row['title'],40,1);}</div>
+				<div class="createtime">{php echo date('Y-m-d H:i:s', $row['createtime'])}</div>
+			</a>
+		</li>
+		{/loop}
+	</ul>
+</div>
+{template 'common/footer'}

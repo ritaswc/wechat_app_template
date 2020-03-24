@@ -1,0 +1,69 @@
+.area-picker {
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: 250ms opacity;
+    opacity: 0;
+    background: rgba(0,0,0,.3);
+}
+
+.area-picker.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.area-picker .area-picker-bg {
+    flex-grow: 1;
+    position: relative;
+}
+
+.area-picker .area-picker-bg>scroll-view {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.area-picker .area-picker-body {
+    flex-grow: 0;
+    height: 600rpx;
+    background: #fff;
+    transform: translateY(100%);
+    transition: 250ms transform;
+    position: relative;
+}
+
+.area-picker.active .area-picker-body {
+    transform: translateY(0);
+}
+
+.area-picker .area-picker-body>scroll-view {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.area-picker .area-picker-cancel,.area-picker .area-picker-confirm {
+    display: inline-block;
+    padding: 24rpx;
+    color: #888;
+}
+
+.area-picker .area-picker-confirm {
+    float: right;
+    color: #00aa00;
+}
+
+.area-picker .area-picker-row {
+    width: 100%;
+    height: 500rpx;
+}

@@ -1,0 +1,25 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body">
+        <view class="detail-header flex-row">
+            <view class="header flex-grow-1">
+                <text bindtap="income" class="income {{status==1?'gain':''}}">收入</text>
+            </view>
+            <view class="header flex-grow-1">
+                <text bindtap="expenditure" class="income {{status==2?'hand':''}}">支出</text>
+            </view>
+        </view>
+        <view class="income-list" wx:if="{{list.length>0}}">
+            <view class="income-one" wx:for="{{list}}" wx:key="{{item.id}}">
+                <view class="income-road">{{item.content}}</view>
+                <view class="flex-row">
+                    <view class="flex-grow-1" style="color:#ff6f28" wx:if="{{status==1}}">+{{item.integral}}积分</view>
+                    <view class="flex-grow-1" style="color:#ff6f28" wx:else>{{item.integral}}积分</view>
+                    <view class="flex-grow-0" style="color:#999999;font-size:9pt;margin-top:6rpx;">{{item.content_1}} 时间 {{item.addtime}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

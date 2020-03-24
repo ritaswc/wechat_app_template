@@ -1,0 +1,215 @@
+{php define(MUI, true);}
+{template 'common/header'}
+<header class="mui-bar mui-bar-nav">
+	<h1 class="mui-title">{$_W['user']['store_name']}</h1>
+</header>
+{template 'nav'}
+{if $op == 'index'}
+<header class="mui-bar mui-bar-nav">
+	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<button class="mui-btn mui-btn-link mui-btn-nav mui-pull-right">
+		<a href="{php echo $this->createMobileUrl('scanpay',array('op' => 'list'))}">收款记录</a>
+	</button>
+	<h1 class="mui-title">扫码收款</h1>
+</header>
+<div class="mui-content scan-pay">
+	<div class="mui-text-center mui-pa10 qrcode">
+		<div class="qrcode-block" data-url="{php echo murl('entry', array('m' => 'paycenter', 'do' => 'selfpay', 'clerk_id' => $_W['user']['clerk_id']), true, true);}" style="margin-top:20px"></div>
+		<div class="mui-card-block">
+			<div class="mui-text-muted">未设置优惠 <span class="problem">?</span></div>
+			<div class="scan">让顾客扫一扫,向我付款</div>
+		</div>
+	</div>
+	<div class="or mui-text-muted mui-text-center">或者</div>
+	<form action="{php echo $this->createMobileUrl('scanpay', array('op' => 'post'));}" method="post" id="pay-form">
+		<div class="mui-pa10 mui-bg-white">
+			<h5 class="mui-desc-title">设置收款金额</h5>
+			<div class="mui-input-row"><input type="text" value="" name="fee" placeholder="输入金额"/></div>
+			<div style="display:none">
+				<div class="mui-input-row"><input type="text" value="" name="body" placeholder="添加收款理由"/></div>
+				<div class="mui-text-right mui-text-success mui-mb10 hide-body">收起</div>
+			</div>
+			<div class="mui-text-right mui-text-success mui-mb10 add-body">添加收款理由</div>
+			<button class="mui-btn mui-btn-success mui-btn-block">发起收款</button>
+			<input type="hidden" name="token" value="{$_W['token']}"/>
+			<input type="hidden" name="submit" value="{$_W['token']}"/>
+		</div>
+	</form>
+</div>
+{/if}
+
+{if $op == 'qrcode'}
+<header class="mui-bar mui-bar-nav">
+	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<button class="mui-btn mui-btn-link mui-btn-nav mui-pull-right">
+		<a href="{php echo $this->createMobileUrl('scanpay',array('op' => 'list'))}">收款记录</a>
+	</button>
+	<h1 class="mui-title">扫码收款</h1>
+</header>
+<div class="mui-content scan-pay">
+	<div class="mui-content-padded mui-text-center qrcode">
+		<div class="qrcode-block" data-url="{php echo murl('entry', array('m' => 'paycenter', 'do' => 'pay', 'id' => $id), true, true);}" style="margin-top:20px"></div>
+		<div class="mui-card-block">
+			<div class="mui-text-muted">￥{$order['fee']}</div>
+			<div class="scan">让顾客扫一扫,向我付款</div>
+		</div>
+	</div>
+</div>
+{/if}
+
+{if $op == 'list'} 
+<header class="mui-bar mui-bar-nav">
+	<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left"></a>
+	<a class="mui-btn mui-btn-link mui-btn-nav mui-pull-right" href="#check-date">
+		筛选
+	</a>
+	<h1 class="mui-title">账单</h1>
+</header>
+<div class="mui-content trading-record">
+	<ul class="mui-table-view">
+		{if empty($orders)}
+			<h1 class="mui-title">暂无记录</h1>
+		{else}
+		{loop $orders $order}
+			<li class="mui-table-view-cell">
+				<a href="{php echo $this->createMobileUrl('scanpay',array('op' => 'detail', 'id' => $order['id']))}">
+					<div class="mui-row">
+						<div class="mui-col-xs-4 mui-text-muted">
+							<span class="mui-block">{php echo date('Y-m-d', $order['paytime'])}</span>
+							<span class="mui-block">{php echo date("H:i", $order['paytime'])}</span>
+						</div>
+						<div class="mui-col-xs-3 mui-text-center">
+						<img src="./resource/images/icon-pay.png" alt="" class="mui-img-circle"/>
+						</div>
+						<div class="mui-col-xs-5">
+							<div><span class="mui-big">+{$order['final_fee']} </span></div>
+							<div class="mui-ellipsis">{if !empty($order['body'])}{$order['body']}{else}{暂无}{/if}</div>
+						</div>
+					</div>
+				</a>
+			</li>
+		{/loop}
+		{/if}
+	</ul>
+	<div id="check-date" class="mui-popover mui-popover-top">
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+				<a href="{php echo $this->createMobileUrl('scanpay',array('op' => 'list', 'period' =>'1'))}">查看全部</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a href="{php echo $this->createMobileUrl('scanpay',array('op' => 'list', 'period' => '0'))}">{php echo date('Y.m.d',time());}</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a href="{php echo $this->createMobileUrl('scanpay',array('op' => 'list', 'period' => '-1'))}">{php echo date('Y.m.d',strtotime('-1day'));}</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a href="{php echo $this->createMobileUrl('scanpay',array('op' => 'list', 'period' => '-2'))}">{php echo date('Y.m.d',strtotime('-2day'));}</a>
+			</li>
+		</ul>
+	</div>
+</div>
+{/if}
+
+{if $op == 'detail'}
+<header class="mui-bar mui-bar-nav">
+	<a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">账单详情</h1>
+</header>
+<div class="mui-content trading-detail">
+	<ul class="mui-table-view">
+		<li class="mui-table-view-cell">
+			<div class="mui-text-muted">交易成功</div>
+			<div class="account">+{$order['final_fee']}</div>
+		</li>
+		<li class="mui-table-view-cell mui-media">
+			<a href="#">
+				<img src="./resource/images/icon-pay.png" alt="" class="mui-media-object mui-pull-left mui-img-rounded"/>
+				<div class="mui-media-body company">{$store_info['business_name']}</div>
+			</a>
+		</li>
+	</ul>
+	<ul class="mui-table-view">
+		<li class="mui-table-view-cell">
+			<label>订单详情</label>
+		</li>
+		<li class="mui-table-view-cell">
+			<label>付款说明</label>
+			<span class="mui-text-muted mui-ml15">{$order['body']}</span>
+		</li>
+		<li class="mui-table-view-cell">
+			<label>支付方式</label>
+			<span class="mui-text-muted mui-ml15">{$types[$order['type']]}-{$trade_types[$order['trade_type']]}</span>
+		</li>
+		<li class="mui-table-view-cell">
+			<label>支付者</label>
+			<span class="mui-text-muted mui-ml15">{if !empty($order['nickname'])}{$order['nickname']}{else}未知{/if}</span>
+		</li>
+		<li class="mui-table-view-cell">
+			<label>创建时间</label>
+			<span class="mui-text-muted mui-ml15">{php echo date('Y-m-d H:i:s', $order['createtime'])}</span>
+		</li>
+	</ul>
+	<ul class="mui-table-view">
+		<li class="mui-table-view-cell">
+			<label>支付详情</label>
+		</li>
+		<li class="mui-table-view-cell">
+			<label>应付金额</label>
+			<span class="mui-text-muted mui-ml15">{$order['fee']}</span>
+		</li>
+		<li class="mui-table-view-cell">
+			<label>实付金额</label>
+			<span class="mui-text-muted mui-ml15">{$order['final_fee']}</span>
+		</li>
+		<li class="mui-table-view-cell">
+			<label>积分抵现</label>
+			<span class="mui-text-muted mui-ml15">{$order['credit1_fee']}</span>
+		</li>
+		<li class="mui-table-view-cell">
+			<label>余额支付</label>
+			<span class="mui-text-muted mui-ml15">{$order['credit2']}</span>
+		</li>
+		<li class="mui-table-view-cell">
+			<label>线上支付</label>
+			<span class="mui-text-muted mui-ml15">{$order['cash']}</span>
+		</li>
+		<li class="mui-table-view-cell">
+			<label>支付时间</label>
+			<span class="mui-text-muted mui-ml15">{php echo date('Y-m-d H:i:s', $order['paytime'])}</span>
+		</li>
+	</ul>
+</div>
+{/if}
+
+<script>
+require(['jquery.qrcode'], function(){
+	$('#pay-form').submit(function(){
+		var fee = $.trim($('#pay-form :text[name="fee"]').val());
+		if(!fee) {
+			alert('收款金额应大于0');
+			return false;
+		}
+		return true;
+	});
+
+	$('.add-body').click(function(){
+		$(this).prev().show();
+		$(this).hide();
+	});
+
+	$('.hide-body').click(function(){
+		$(this).parent().hide();
+		$('.add-body').show();
+	});
+
+	var url = $('.qrcode-block').data('url');
+	$('.qrcode-block').html('').qrcode({
+		render: 'canvas',
+		width: 150,
+		height: 150,
+		text: url
+	});
+
+});
+</script>
+{template 'common/footer'}

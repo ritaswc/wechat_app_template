@@ -1,0 +1,106 @@
+<div class="text-center"><img src="{$_W['account']['logo']}" class="head-logo account-img"></div>
+<div class="text-center account-name">{$_W['account']['name']}</div>
+
+{if $_W['account']->typeSign == 'account'}
+	<div class="text-center">
+		{if $_W['account']['level'] == 1 || $_W['account']['level'] == 3}
+			<span class="label label-primary">订阅号</span>
+			{if $_W['account']['level'] == 3}
+				<span class="label label-primary">已认证</span>
+			{/if}
+		{/if}
+
+		{if $_W['account']['level'] == 2 || $_W['account']['level'] == 4}
+			<span class="label label-primary">服务号</span>
+			{if $_W['account']['level'] == 4}
+				<span class="label label-primary">已认证</span>
+			{/if}
+		{/if}
+
+		{if $_W['uniaccount']['isconnect'] == 0}
+			<span class="label label-danger" data-toggle="popover">未接入</span>
+			<script>
+				$(function(){
+					var url = "{php echo $_W['account']['accessurl']}";
+					$('[data-toggle="popover"]').popover({
+						trigger: 'manual',
+						html: true,
+						placement: 'bottom',
+						content: '<i class="wi wi-warning-sign"></i>未接入微信公众号' +
+								'<a href="' +
+								url +
+								'">立即接入</a>'
+					}).on("mouseenter", function() {
+						var _this = this;
+						$(this).popover("show");
+						$(this).siblings(".popover").on("mouseleave", function() {
+							$(_this).popover('hide');
+						});
+					}).on("mouseleave", function() {
+						var _this = this;
+						setTimeout(function() {
+							if(!$(".popover:hover").length) {
+								$(_this).popover("hide")
+							}
+						}, 100);
+					});
+				});
+			</script>
+		{/if}
+	</div>
+{elseif $_W['account']->typeSign == 'xzapp'}
+	<div class="text-center">
+		{if $_W['account']['level'] == 1}
+			<span class="label label-primary">个人</span>
+		{elseif $_W['account']['level'] == 2}
+			<span class="label label-primary">媒体</span>
+		{elseif $_W['account']['level'] == 3}
+			<span class="label label-primary">企业</span>
+		{elseif $_W['account']['level'] == 4}
+			<span class="label label-primary">政府</span>
+		{elseif $_W['account']['level'] == 5}
+			<span class="label label-primary">其他组织</span>
+		{/if}
+
+		{if $_W['uniaccount']['isconnect'] == 0}
+			<span class="label label-danger" data-toggle="popover">未接入</span>
+			<script>
+				$(function(){
+					var url = "{php echo $_W['account']['accessurl']}";
+					$('[data-toggle="popover"]').popover({
+						trigger: 'manual',
+						html: true,
+						placement: 'bottom',
+						content: '<i class="wi wi-warning-sign"></i>未接入熊掌号' +
+						'<a href="' +
+						url +
+						'">立即接入</a>'
+					}).on("mouseenter", function() {
+						var _this = this;
+						$(this).popover("show");
+						$(this).siblings(".popover").on("mouseleave", function() {
+							$(_this).popover('hide');
+						});
+					}).on("mouseleave", function() {
+						var _this = this;
+						setTimeout(function() {
+							if(!$(".popover:hover").length) {
+								$(_this).popover("hide")
+							}
+						}, 100);
+					});
+				});
+			</script>
+		{/if}
+	</div>
+{/if}
+<div class="text-center operate">
+	{if $_W['account']->typeSign == 'account'}
+	<a href="{php echo url('utility/emulator');}" target="_blank"><i class="wi wi-iphone" data-toggle="tooltip" data-placement="bottom" title="模拟测试"></i></a>
+	{else}
+		<span>&nbsp;</span>
+	{/if}
+	{if $_W['role'] != ACCOUNT_MANAGE_NAME_OPERATOR}
+		<a href="{php echo $_W['account']['manageurl'] . '&iscontroller=0'}" data-toggle="tooltip" data-placement="bottom" title="{php echo $_W['account']->typeName}设置"><i class="wi wi-appsetting"></i></a>
+	{/if}
+</div>

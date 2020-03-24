@@ -1,0 +1,21 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="no-content" wx:if="{{!list||list.length==0}}">暂无记录</view>
+        <view style="padding:72rpx 24rpx 0 24rpx;position:relative" wx:else>
+            <image class="avatar" src="{{list['card_pic_url']}}"></image>
+            <view class="flex-col flex-y-center detail">
+                <view style="color:#353535;font-size:17pt;padding-bottom:48rpx">{{list['card_name']}}</view>
+                <image bindtap="goodsQrcodeClick" data-src="{{qrcode}}" src="{{qrcode}}" style="display:block;height:400rpx;width:400rpx;" wx:if="{{use===0}}"></image>
+                <view class="flex-x-center error" wx:if="{{use===1}}">已失效</view>
+            </view>
+            <image class="bg" src="/images/coupon-details.png"></image>
+            <view class="present">
+                <view class="detail-name">使用说明</view>
+                <view class="detail-manual">{{list.card_content}}</view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

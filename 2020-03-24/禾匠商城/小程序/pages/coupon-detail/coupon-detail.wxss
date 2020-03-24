@@ -1,0 +1,48 @@
+page {
+    background: #ff7b33;
+}
+
+.detail-name {
+    color: #999999;
+    padding-bottom: 20rpx;
+}
+
+.detail-manual {
+    color: #353535;
+    padding-bottom: 40rpx;
+}
+
+.xia {
+    position: absolute;
+    width: 28rpx;
+    height: 28rpx;
+    right: 15px;
+    bottom: 9px;
+}
+
+.detail-bu {
+    margin-top: 32rpx;
+    border-radius: 32rpx;
+    background: #f7f7f7;
+    color: #999999;
+    line-height: 64rpx;
+    width: 240rpx;
+}
+
+.detail-prize {
+    background: #ffffff;
+    padding: 24rpx 40rpx 14rpx 40rpx;
+    border-radius: 0 0 16rpx 16rpx;
+}
+
+.detail-head {
+    background: #ffffff;
+    padding: 64rpx 40rpx 24rpx 40rpx;
+    border-radius: 16rpx 16rpx 0 0;
+}
+
+.no-content {
+    color: #888;
+    padding: 100rpx 0 0 0;
+    text-align: center;
+}

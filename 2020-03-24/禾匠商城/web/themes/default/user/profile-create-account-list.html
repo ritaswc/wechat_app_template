@@ -1,0 +1,282 @@
+{template 'common/header'}
+<div id="js-user-edit-account" ng-controller="UserEditAccount" ng-cloak>
+	<div class="edit-account-num">
+		<div class="item">
+			<div class="title">公众号</div>
+			<div class="num">可创建总数 <span>{$user_permission_account['maxaccount']}</span></div>
+			<div class="num">已创建 <span>{$user_permission_account['account_num']}</span></div>
+			<div class="num">剩余可创建 <span>{$user_permission_account['account_limit']}</span></div>
+		</div>
+		<div class="item">
+			<div class="title">微信小程序</div>
+			<div class="num">可创建总数 <span>{$user_permission_account['maxwxapp']}</span></div>
+			<div class="num">已创建 <span>{$user_permission_account['wxapp_num']}</span></div>
+			<div class="num">剩余可创建 <span>{$user_permission_account['wxapp_limit']}</span></div>
+		</div>
+		<div class="item">
+			<div class="title">PC</div>
+			<div class="num">可创建总数 <span>{$user_permission_account['maxwebapp']}</span></div>
+			<div class="num">已创建 <span>{$user_permission_account['webapp_num']}</span></div>
+			<div class="num">剩余可创建 <span>{$user_permission_account['webapp_limit']}</span></div>
+		</div>
+		<div class="item">
+			<div class="title">APP</div>
+			<div class="num">可创建总数 <span>{$user_permission_account['maxphoneapp']}</span></div>
+			<div class="num">已创建 <span>{$user_permission_account['phoneapp_num']}</span></div>
+			<div class="num">剩余可创建 <span>{$user_permission_account['phoneapp_limit']}</span></div>
+		</div>
+		<div class="item">
+			<div class="title">熊掌号</div>
+			<div class="num">可创建总数 <span>{$user_permission_account['maxxzapp']}</span></div>
+			<div class="num">已创建 <span>{$user_permission_account['xzapp_num']}</span></div>
+			<div class="num">剩余可创建 <span>{$user_permission_account['xzapp_limit']}</span></div>
+		</div>
+		<div class="item">
+			<div class="title">支付宝小程序</div>
+			<div class="num">可创建总数 <span>{$user_permission_account['maxaliapp']}</span></div>
+			<div class="num">已创建 <span>{$user_permission_account['aliapp_num']}</span></div>
+			<div class="num">剩余可创建 <span>{$user_permission_account['aliapp_limit']}</span></div>
+		</div>
+	</div>
+	<div class="panel we7-panel user-permission">
+		<div class="panel-heading">
+			<span>所属用户组：<span >{$user_permission_account['group_name']}</span></span>
+			<!--<a href="javascript:;" class="color-default pull-right" data-toggle="modal" data-target="#group" ng-click="editGroup()">修改</a>-->
+		</div>
+		<div class="panel-body">
+			<div class="permission-heading">
+				<span >{$user_permission_account['group_name']}</span>
+				<div class="pull-right permission-edit" style="width: auto;">
+					<a href="javascript:;" class="color-default js-unfold" data-toggle="collapse" data-target="#demo-1">展开</a>
+				</div>
+			</div>
+			<div id="demo-1" class="collapse user-account-num">
+				<span>公众号使用权限： {$user_permission_account['user_group_maxaccount']}</span>
+				<span>微信小程序使用权限： {$user_permission_account['user_group_maxwxapp']}</span>
+				<span>PC使用权限： {$user_permission_account['user_group_maxwebapp']}</span>
+				<span>APP使用权限： {$user_permission_account['user_group_maxphoneapp']}</span>
+				<span>熊掌号使用权限： {$user_permission_account['user_group_maxxzapp']}</span>
+				<span>支付宝小程序使用权限：{$user_permission_account['user_group_maxaliapp']}</span>
+			</div>
+		</div>
+	</div>
+	<div class="panel we7-panel user-permission">
+		<div class="panel-heading">
+			<span>账号权限组名称</span>
+		</div>
+		{loop $user_permission_account['create_groups'] $create_group}
+		<div class="panel-body">
+			<div class="permission-heading">
+				<span >{$create_group['group_name']}</span>
+				<div class="pull-right permission-edit" style="width: auto;">
+					<a href="javascript:;" class="color-default js-unfold" data-toggle="collapse" data-target="#demo-create-account-{$create_group['id']}">展开</a>
+					<!--<a href="javascript:;" class="color-default " >删除</a>-->
+				</div>
+			</div>
+			<div id="demo-create-account-{$create_group['id']}" class="collapse user-account-num">
+				<span>公众号使用权限： {$create_group['maxaccount']}</span>
+				<span>微信小程序使用权限： {$create_group['maxwxapp']}</span>
+				<span>PC使用权限： {$create_group['maxwebapp']}</span>
+				<span>APP使用权限： {$create_group['maxphoneapp']}</span>
+				<span>熊掌号使用权限： {$create_group['maxxzapp']}</span>
+				<span>支付宝小程序使用权限：{$create_group['maxaliapp']}</span>
+			</div>
+		</div>
+		{/loop}
+	</div>
+	<div class="panel we7-panel user-permission">
+		<div class="panel-heading">
+			<span>附加权限</span>
+			<!--<a href="javascript:;" class="color-default pull-right" data-toggle="modal" data-target="#num" >修改</a>-->
+		</div>
+		<div class="panel-body">
+			<div  class=" user-account-num">
+				<span>公众号使用权限： {$user_permission_account['extra_account']}</span>
+				<span>微信小程序使用权限： {$user_permission_account['extra_wxapp']}</span>
+				<span>PC使用权限： {$user_permission_account['extra_webapp']}</span>
+				<span>APP使用权限： {$user_permission_account['extra_phoneapp']}</span>
+				<span>熊掌号使用权限： {$user_permission_account['extra_xzapp']}</span>
+				<span>支付宝小程序使用权限：{$user_permission_account['extra_aliapp']}</span>
+			</div>
+		</div>
+	</div>
+	<div class="panel we7-panel user-permission">
+		<div class="panel-heading">
+			<span>商城购买账号权限</span>
+		</div>
+		<div class="panel-body">
+			<div class="user-account-num-shop">
+				<div class="item media">
+					<div class="media-left">
+						<div class="media-object logo">
+							<i class="wi wi-account"></i>
+						</div>
+					</div>
+					<div class="media-body media-middle">
+						<h4 class="media-heading num">数量：{$user_permission_account['store_buy_account']}</h4>
+						<!--<p class="date">有效期：1个月	</p>-->
+					</div>
+				</div>
+				<div class="item media">
+					<div class="media-left">
+						<div class="media-object logo">
+							<i class="wi wi-wxapp"></i>
+						</div>
+					</div>
+					<div class="media-body media-middle">
+						<h4 class="media-heading num">数量：{$user_permission_account['store_buy_wxapp']}</h4>
+						<!--<p class="date">有效期：1个月	</p>-->
+					</div>
+				</div>
+				<!--<div class="item media">-->
+					<!--<div class="media-left">-->
+						<!--<div class="media-object logo">-->
+							<!--<i class="wi wi-pc"></i>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="media-body media-middle">-->
+						<!--<h4 class="media-heading num">数量：1</h4>-->
+						<!--<p class="date">有效期：1个月	</p>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="item media">-->
+					<!--<div class="media-left">-->
+						<!--<div class="media-object logo">-->
+							<!--<i class="wi wi-app"></i>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="media-body media-middle">-->
+						<!--<h4 class="media-heading num">数量：1</h4>-->
+						<!--<p class="date">有效期：1个月	</p>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="item media">-->
+					<!--<div class="media-left">-->
+						<!--<div class="media-object logo">-->
+							<!--<i class="wi wi-xzapp"></i>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="media-body media-middle">-->
+						<!--<h4 class="media-heading num">数量：1</h4>-->
+						<!--<p class="date">有效期：1个月	</p>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="item media">-->
+					<!--<div class="media-left">-->
+						<!--<div class="media-object logo">-->
+							<!--<i class="wi wi-aliapp"></i>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="media-body media-middle">-->
+						<!--<h4 class="media-heading num">数量：1</h4>-->
+						<!--<p class="date">有效期：1个月	</p>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="item media">-->
+					<!--<div class="media-left">-->
+						<!--<div class="media-object logo">-->
+							<!--<i class="wi wi-account"></i>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="media-body media-middle">-->
+						<!--<h4 class="media-heading num">数量：1</h4>-->
+						<!--<p class="date">有效期：1个月	</p>-->
+					<!--</div>-->
+				<!--</div>-->
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="group" role="dialog">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">修改用户组</div>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<select class="we7-select" ng-model="changeGroup">
+							<option value="">请选择所属用户组</option>
+							<option ng-value="group.id" ng-repeat="group in groups" ng-selected="group.id == group_info.id" ng-bind="group.name"></option>
+						</select>
+						<span class="help-block"></span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="httpChange('groupid')">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="num" role="dialog">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">修改附加权限</div>
+				</div>
+				<div class="modal-body we7-form">
+					<div class="form-group">
+						<label for="" class="control-label col-sm-3">公众号使用权限：</label>
+						<div class="form-controls col-sm-8">
+							<input type="text" name="group_name" class="form-control" ng-model="groupInfo.group_name" autocomplete="off" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-3">微信小程序使用权限：</label>
+						<div class="form-controls col-sm-8">
+							<input type="text" name="group_name" class="form-control" ng-model="groupInfo.group_name" autocomplete="off" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-3">PC使用权限：</label>
+						<div class="form-controls col-sm-8">
+							<input type="text" name="group_name" class="form-control" ng-model="groupInfo.group_name" autocomplete="off" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-3">APP使用权限：</label>
+						<div class="form-controls col-sm-8">
+							<input type="text" name="group_name" class="form-control" ng-model="groupInfo.group_name" autocomplete="off" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-3">熊掌号使用权限：</label>
+						<div class="form-controls col-sm-8">
+							<input type="text" name="group_name" class="form-control" ng-model="groupInfo.group_name" autocomplete="off" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-3">支付宝小程序使用权限：</label>
+						<div class="form-controls col-sm-8">
+							<input type="text" name="group_name" class="form-control" ng-model="groupInfo.group_name" autocomplete="off" />
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" >确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	angular.module('userManageApp').value('config', {
+		user: {php echo !empty($user) ? json_encode($user) : 'null'},
+		wechats: {php echo !empty($account_detail['wechat']) ? json_encode($account_detail['wechat']) : 'null'},
+		wxapps: {php echo !empty($account_detail['wxapp']) ? json_encode($account_detail['wxapp']) : 'null'},
+		group_info: {php echo !empty($group_info) ? json_encode($group_info) : 'null'},
+		webapps: {php echo !empty($account_detail['webapp']) ? json_encode($account_detail['webapp']) : 'null'},
+		phoneapps: {php echo !empty($account_detail['phoneapp']) ? json_encode($account_detail['phoneapp']) : 'null'},
+		xzapps : {php echo !empty($account_detail['xzapp']) ? json_encode($account_detail['xzapp']) : 'null'},
+		profile: {php echo !empty($profile) ? json_encode($profile) : 'null'},
+		links: {
+			recycleUser: "{php echo url('user/display/operate', array('type' => 'recycle'))}",
+		},
+	});
+
+	angular.bootstrap($('#js-user-edit-account'), ['userManageApp']);
+</script>
+{template 'common/footer'}

@@ -1,0 +1,59 @@
+{template 'common/header'}
+	<style>
+		.account-rank img{width:20px; height:20px;}
+		.alert{color:#666;padding:10px}
+		.text-strong{font-size:14px;font-weight:bold;}
+		.popover{max-width: 450px}
+		.popover-content{padding-top: 0;line-height: 30px}
+		.popover-content h5{padding-bottom: 5px}
+	</style>
+	{if $_W['iscontroller']}
+	<ol class="breadcrumb we7-breadcrumb">
+		<li><a href="javascript:;" onclick="history.go(-1)"><i class="wi wi-back-circle"></i>{$_W['account']['name']}</a></li>
+		<li>版本列表</li>
+	</ol>
+	{/if}
+	<div class="panel panel-cut">
+		<div class="panel-body">
+			<div class="user-head-info">
+				<img src="{$_W['account']['logo']}" class="account-img we7-margin-right-sm" alt="">
+				<div class="info">
+					<h3 class="title">{$_W['account']['name']}</h3>
+					<i class="wi wi-{$_W['account']['type_sign']}"></i>{php echo $_W['account']->typeName}
+				</div>
+				{if $_W['account']['type_sign'] == 'phoneapp'}
+				<a href="{php echo url('phoneapp/manage/create_display', array('uniacid' => $_W['uniacid']))}" class="btn btn-primary">新建版本</a>
+				{else}
+				<a href="{php echo url('miniapp/post', array('uniacid' => $_W['uniacid'], 'type' => ACCOUNT_TYPE))}" class="btn btn-primary">新建版本</a>
+				{/if}
+			</div>
+			<ul class="wxapp-cut-list">
+				{loop $version_list $key $list}
+				<li class="wxapp-cut-item">
+					{if $_W['account']['type_sign'] == 'phoneapp'}
+					<a href="{php echo url('phoneapp/version/home', array('uniacid' => $_W['uniacid'], 'version_id' => $list['id']))}" class="box">
+					{else}
+					<a href="{php echo url('miniapp/version/home', array('version_id' => $list['id']))}" class="box">
+					{/if}
+						<div class="left">
+							<div class="version {if $_W['account']['type_sign'] == 'wxapp' && $key == 0 && !empty($list['upload_time'])}new{/if}">{$list['version']}</div>
+							<div class="desc">{$list['description']}</div>
+							<div class="info">
+								<img src="{$list['module']['logo']}" class="module-img" alt="">
+								<div class="">
+									<div class="app-title">{$list['module']['title']}</div>
+									<div class="support-list app-version">版本： {$list['module']['version']}</div>
+								</div>
+							</div>
+						</div>
+						<div class="right">
+							<i class="wi wi-angle-right"></i>
+						</div>
+					</a>
+				</li>
+				{/loop}
+			</ul>
+		</div>
+	</div>
+</div>
+{template 'common/footer'}

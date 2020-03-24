@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "我的卡券",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

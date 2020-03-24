@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "申请提现",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

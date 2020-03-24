@@ -1,0 +1,35 @@
+<view class="page {{__page_classes}}">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+
+        <view class="after-navber">
+            <!-- 页面内容 -->
+            <view class="background" style="z-index:0;background-image: url('{{page_img.bg}}')"></view>
+            <view class="rule-btn" onTap="showRule">活动规则</view>
+            <view class="rule-bg {{showRule?'show':''}}"></view>
+            <view class="rule-content {{showRule?'show':''}}">
+                <view class="rule-close" onTap="closeRule">
+                    <image src="{{page_img.close}}"></image>
+                </view>
+                <view class="rule-text">
+                    <view class="rule-title">-拆红包活动规则-</view>
+                    <text>{{rule}}</text>
+                </view>
+            </view>
+            <view a:if="{{coupon_total_money}}" class="hongbao" style="background-image: url('{{page_img.hongbao_bg}}')">
+                <form class="hongbao-content" report-submit="true" onSubmit="openHongbao">
+                    <view class="hongbao-desc">
+                        <view>{{coupon_total_money}}元红包已包好</view>
+                        <view>快拆开和小伙伴分享红包</view>
+                    </view>
+                    <button hover-class="none" class="open-hongbao-btn" formType="submit"
+                            style="background-image: url('{{page_img.open_hongbao_btn}}')">领取
+                    </button>
+                </form>
+            </view>
+        </view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

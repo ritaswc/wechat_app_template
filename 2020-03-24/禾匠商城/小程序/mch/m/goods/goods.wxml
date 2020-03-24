@@ -1,0 +1,95 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view bindtap="hideMoreAlert" class="body after-navber">
+        <view class="top-bar">
+            <view class="search">
+                <input bindconfirm="searchSubmit" confirmType="search" name="keyword" placeholder="搜索"></input>
+            </view>
+            <view class="flex flex-row tab-bar">
+                <navigator class="flex-grow-1 flex-x-center" openType="redirect" url="/mch/m/goods/goods?status=1">
+                    <view class="{{status==1?'active':''}}">出售中</view>
+                </navigator>
+                <navigator class="flex-grow-1 flex-x-center" openType="redirect" url="/mch/m/goods/goods?status=2">
+                    <view class="{{status==2?'active':''}}">售磬</view>
+                </navigator>
+                <navigator class="flex-grow-1 flex-x-center" openType="redirect" url="/mch/m/goods/goods?status=3">
+                    <view class="{{status==3?'active':''}}">仓库中</view>
+                </navigator>
+                <navigator class="flex-grow-1 flex-x-center" openType="redirect" url="/mch/m/goods/goods?status=4">
+                    <view class="{{status==4?'active':''}}">最新</view>
+                </navigator>
+            </view>
+        </view>
+        <view class="goods-list">
+            <view class="goods-item flex flex-row" wx:for="{{goods_list}}" wx:key="{{item.id}}">
+                <view class="flex-grow-0" style="padding: 24rpx">
+                    <image src="{{item.cover_pic}}" style="width: 150rpx;height: 150rpx;border: 1rpx solid #eee"></image>
+                </view>
+                <view class="flex-grow-1" style="padding: 24rpx 24rpx 24rpx 0">
+                    <view class="goods-name">
+                        <view>{{item.name}}</view>
+                    </view>
+                    <view style="color: #ff4544">￥{{item.price}}</view>
+                    <view class="flex flex-row">
+                        <view class="flex-grow-1" style="color: #888">库存：{{item.goods_num}}</view>
+                        <view class="flex-grow-1" style="color: #888" wx:if="{{__is_sales}}">销量：{{item.sale_num}}</view>
+                        <view class="flex-grow-0 more-btn">
+                            <view>
+                                <view bindtap="showMoreAlert" class="more-icon flex flex-y-center" data-index="{{index}}">
+                                    <view>
+                                        <view></view>
+                                        <view></view>
+                                        <view></view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="more-alert {{item.show_alert?'show':''}}">
+                                <view class="flex flex-row">
+                                    <view class="flex-grow-0 more-alert-item" wx:if="{{false}}">
+                                        <view>
+                                            <image src="/mch/images/icon-bianji.png"></image>
+                                        </view>
+                                        <view>编辑</view>
+                                    </view>
+                                    <view bindtap="setGoodsStatus" class="flex-grow-0 more-alert-item" data-index="{{index}}" data-target-status="1" wx:if="{{item.status==0}}">
+                                        <view>
+                                            <image src="/mch/images/icon-xiajia.png" style="transform: rotate(180deg)"></image>
+                                        </view>
+                                        <view>上架</view>
+                                    </view>
+                                    <view bindtap="setGoodsStatus" class="flex-grow-0 more-alert-item" data-index="{{index}}" data-target-status="0" wx:if="{{item.status==1}}">
+                                        <view>
+                                            <image src="/mch/images/icon-xiajia.png"></image>
+                                        </view>
+                                        <view>下架</view>
+                                    </view>
+                                    <view bindtap="goodsDelete" class="flex-grow-0 more-alert-item" data-index="{{index}}">
+                                        <view>
+                                            <image src="/mch/images/icon-shanchu.png"></image>
+                                        </view>
+                                        <view>删除</view>
+                                    </view>
+                                    <view class="flex-grow-0 more-alert-item" wx:if="{{false}}">
+                                        <view>
+                                            <image src="/mch/images/icon-tuiguang.png"></image>
+                                        </view>
+                                        <view>推广</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="flex-y-center flex-x-center" style="text-align: center;height: 174rpx;color: #888;font-size: 9pt" wx:if="{{no_goods}}">暂无商品
+        </view>
+        <view class="flex-y-center flex-x-center" style="text-align: center;height: 74rpx;color: #888;font-size: 9pt" wx:if="{{!no_goods&&no_more_goods}}">已无更多商品
+        </view>
+        <view class="loading-more {{loading_more?'show':''}}" wx:if="{{!no_goods&&!no_more_goods}}">
+            <image src="{{__wxapp_img.system.loading_black.url}}" style="width: 50rpx;height: 50rpx"></image>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

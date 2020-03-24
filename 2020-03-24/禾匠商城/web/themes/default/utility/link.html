@@ -1,0 +1,280 @@
+<script type="text/javascript">
+	function clicklink(href, title) {
+		if(href=='tel:'){
+			require(['util'],function(u){
+				u.message('请添加一键拨号号码.');
+			});
+			return;
+		}
+		if($.isFunction({$callback})){
+			{$callback}(href, title);
+		}
+	}
+	function linkModal(a) {
+		$(".link-browser").addClass('hide');
+		$(".link-modal > div").addClass('hide');
+		$(a).removeClass('hide');
+	}
+	function retrunLinkBrowser() {
+		$(".link-browser").removeClass('hide');
+		$(".link-modal > div").addClass('hide');
+	}
+	require(['util'], function (u) {
+		$('.pagination a').click(function() {
+			var page = $(this).attr('page');
+			{$callback}('', page);
+		});
+	});
+</script>
+{if $do == 'modulelink'}
+<style type="text/css">
+	.link-browser ul li{width: 120px; }
+	.link-module {margin-left: 15px; }
+	.list-group .list-group-item a{color:#428bca;}
+	.link-browser .page-header, .link-modal .page-header{margin:25px 0 10px;}
+	.link-browser .page-header:first-child, .link-modal .page-header:first-of-type{margin-top:0;}
+	.link-browser div.btn, .link-modal div.btn{min-width:100px; text-align:center; margin:5px 2px;}
+</style>
+
+<div class="link-module">
+	<div class="link-browser">
+		<form method="post" class="form-horizontal form" enctype="multipart/form-data" >
+			<div class="form-group" id="url">
+				<label class="col-xs-12 col-sm-3 col-md-2 control-label"></label>
+					{loop $entries $key $item}
+					<div class="page-header">
+						<h4><i class="fa fa-folder-open-o"></i> {$item['title']}</h4>
+					</div>
+						{loop $item['menu'] $entrie}
+							<div class="btn btn-default" onclick="clicklink('{$entrie['url']}', '{$key}_menu_{$entrie['do']}')" title="">{$entrie['title']}</div>
+						{/loop}
+					{/loop}
+			</div>
+		</form>
+	</div>
+</div>
+{elseif $do == 'page'}
+<div class="tab-pane active" role="tabpanel">
+	<table class="table table-hover">
+		<thead class="table table-hover">
+			<tr>
+				<th style="width: 40%;">名称</th>
+				<th style="width: 30%;">创建时间</th>
+				<th style="width: 30%; text-align: right">
+					<div class="input-group input-group-sm">
+						<input type="text" class="form-control">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+						</span>
+					</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+		{loop $result['list'] $list}
+			<tr>
+				<td><a href="#">{$list['title']}</a></td>
+				<td><a href="#">{$list['createtime']}</a></td>
+				<td><button class="btn btn-default select" onclick="clicklink('./index.php?i={$list['uniacid']}&c=home&a=page&id={$list['id']}')">选取</button></td>
+			</tr>
+		{/loop}
+		</tbody>
+	</table>
+	{$result['pager']}
+</div>
+{elseif $do == 'news'}
+<div class="tab-pane active" role="tabpanel">
+	<table class="table table-hover">
+		<thead class="table table-hover">
+		<tr>
+			<th style="width: 40%;">标题</th>
+			<th style="width: 30%;"></th>
+			<th style="width: 30%; text-align: right">
+				<div class="input-group input-group-sm">
+					<input type="text" class="form-control">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+						</span>
+				</div>
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+		{loop $result['list'] $list}
+		<tr>
+			<td><a href="#">{$list['title']}</a></td>
+			<td><a href="#"></a></td>
+			<td><button class="btn btn-default select" onclick="clicklink('./index.php?i={$_W['uniacid']}&c=entry&id={$list['id']}&do=detail&m=news')">选取</button></td>
+		</tr>
+		{/loop}
+		</tbody>
+	</table>
+	{$result['pager']}
+</div>
+{elseif $do == 'article'}
+<div class="tab-pane active" role="tabpanel">
+	<ul role="tablist" class="nav nav-pills" style="font-size:14px; margin-top:10px; margin-bottom: 10px">
+		<li role="presentation" class="active" id="li_goodslist"><a data-toggle="tab" role="tab" href="javascript:" onclick="$('#articlelist').show();$('#categorylist').hide();$('.active').removeClass();$(this).parent().addClass('active')">文章</a></li>
+		<li role="presentation" class="" id="li_category"><a data-toggle="tab" role="tab" href="javascript:" onclick="$('#articlelist').hide();$('#categorylist').show();$('.active').removeClass();$(this).parent().addClass('active')">分类</a></li>
+	</ul>
+	<div id="articlelist">
+		<table class="table table-hover">
+			<thead class="table table-hover">
+			<tr>
+				<th style="width: 40%;">标题</th>
+				<th style="width: 30%;">创建时间</th>
+				<th style="width: 30%; text-align: right">
+					<div class="input-group input-group-sm">
+						<input type="text" class="form-control">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+							</span>
+					</div>
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+			{loop $result['list'] $list}
+			<tr>
+				<td><a href="#">{$list['title']}</a></td>
+				<td><a href="#"></a></td>
+				<td><button class="btn btn-default select" onclick="clicklink('./index.php?c=site&a=site&do=detail&id={$list['id']}&i={$list['uniacid']}')">选取</button></td>
+			</tr>
+			{/loop}
+			</tbody>
+		</table>
+		{$result['pager']}
+	</div>
+	<div id="categorylist" class="tab-pane" role="tabpanel" style="display: none">
+		<table class="table table-hover">
+			<thead class="navbar-inner">
+			<tr>
+				<th style="width:40%;">标题</th>
+				<th style="width:30%">创建时间</th>
+				<th style="width:30%; text-align:right">
+					<div class="input-group input-group-sm">
+						<input type="text" class="form-control">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+						</span>
+					</div>
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+			{loop $category $cate}
+				<tr>
+					<td colspan="2"><a href="#">{$cate['name']}</a></td>
+					<td class="text-right"><button class="btn btn-default select" onclick="clicklink('./index.php?c=site&a=site&cid={$cate['id']}&i={$cate['uniacid']}')">选取</button></td>
+				</tr>
+				{loop $cate['children'] $child}
+				<tr>
+					<td colspan="2" style="padding-left:50px;height:30px;line-height:30px;background-image:url('./resource/images/bg_repno.gif'); background-repeat:no-repeat; background-position: -245px -540px;"><a href="#">{$child['name']}</a></td>
+					<td class="text-right">
+						<button class="btn btn-default select" onclick="clicklink('./index.php?c=site&a=site&cid={$child['id']}&i={$child['uniacid']}')">选取</button>
+					</td>
+				</tr>
+				{/loop}
+			{/loop}
+			</tbody>
+		</table>
+	</div>
+</div>
+{elseif $do == 'phone'}
+<div id="">
+	<div class="form-group list-group-item clearfix">
+		<label class="col-xs-12 col-sm-2 col-md-2 control-label" style="margin-top:5px;">号码</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="telphone" id="telphone" value="" />
+		</div>
+		<div class="col-sm-4">
+			<a href="javascript:;" class="btn btn-primary" onclick="clicklink('tel:' + $('#telphone').val());">确定</a>
+		</div>
+	</div>
+</div>
+{elseif $do == 'entry'}
+<style type="text/css">
+.link-browser ul li{width: 120px; }
+.list-group .list-group-item a{color:#428bca;}
+.link-browser .page-header, .link-modal .page-header{margin:25px 0 10px;}
+.link-browser .page-header:first-child, .link-modal .page-header:first-of-type{margin-top:0;}
+.link-browser div.btn, .link-modal div.btn{min-width:100px; text-align:center; margin:5px 2px;}
+</style>
+
+<!--二级页面-->
+<div class="link-modal">
+	<!--一键拨号-->
+	<div id="telphone-modal" class="hide">
+		<ol class="breadcrumb">
+			<li><a href="javascript:;" onclick="retrunLinkBrowser();">选择器首页</a></li>
+			<li><a href="javascript:;" onclick="retrunLinkBrowser();">系统默认链接</a></li>
+			<li class="active">一键拨号</li>
+		</ol>
+		<div class="form-group list-group-item clearfix">
+			<label class="col-xs-12 col-sm-2 col-md-2 control-label" style="margin-top:5px;">号码</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" name="telphone" id="telphone" value="" />
+			</div>
+			<div class="col-sm-4">
+				<a href="javascript:;" class="btn btn-primary" onclick="clicklink('tel:' + $('#telphone').val());">确定</a>
+			</div>
+		</div>
+	</div>
+	{loop $modulemenus $moduletype $modules}
+		{loop $modules $modulekey $module}
+			<div id="{$module['name']}" class="hide">
+				<ol class="breadcrumb">
+					<li><a href="javascript:;" onclick="retrunLinkBrowser();">选择器首页</a></li>
+					<li><a href="javascript:;" onclick="retrunLinkBrowser();">{$modtypes[$moduletype]['title']}</a></li>
+					<li class="active">{$module['title']}</li>
+				</ol>
+				{loop $linktypes $linktypekey $linktype}
+					{if !empty($module[$linktypekey])}
+						<div class="page-header">
+							<h4><i class="fa fa-folder-open-o"></i> {$linktype}</h4>
+						</div>
+						{loop $module[$linktypekey] $m}
+							<div class="btn btn-default" onclick="clicklink('{$m['url']}', '{$m['title']}');" title="{$m['title']}">{php echo cutstr($m['title'],6);}</div>
+						{/loop}
+					{/if}
+				{/loop}
+			</div>
+		{/loop}
+	{/loop}
+</div>
+
+<!--一级页面-->
+<div class="link-browser">
+	<div class="page-header">
+		<h4><i class="fa fa-folder-open-o"></i> 系统默认链接</h4>
+	</div>
+	{loop $sysmenus $m}
+		<div class="btn btn-default" onclick="clicklink('{$m['url']}', '{$m['title']}');" title="{$m['title']}">{$m['title']}</div>
+	{/loop}
+	<div class="btn btn-default" onclick="linkModal('#telphone-modal')">一键拨号</div>
+	{if !empty($cardmenus)}
+		<div class="page-header">
+			<h4><i class="fa fa-folder-open-o"></i> 会员卡功能链接</h4>
+		</div>
+		{loop $cardmenus $c}
+		<div class="btn btn-default" onclick="clicklink('{$c['url']}', '{$c['title']}');" title="{$c['title']}">{$c['title']}</div>
+		{/loop}
+	{/if}
+	{if !empty($multimenus)}
+		<div class="page-header">
+			<h4><i class="fa fa-folder-open-o"></i> 多微站首页链接</h4>
+		</div>
+		{loop $multimenus $multi}
+			<div class="btn btn-default" onclick="clicklink('{$multi['url']}', '{$multi['title']}');" title="{$multi['title']}">{$multi['title']}</div>
+		{/loop}
+	{/if}
+	{loop $modulemenus $moduletype $modules}
+	<div class="page-header">
+		<h4><i class="fa fa-folder-open-o"></i> {$modtypes[$moduletype]['title']}</h4>
+	</div>
+		{loop $modules $modulekey $module}
+		<div class="btn btn-default" onclick="linkModal('#{$module['name']}', '{$module['title']}')" title="{$module['title']}">{$module['title']}</div>
+		{/loop}
+	{/loop}
+</div>
+{/if}

@@ -1,0 +1,32 @@
+<style>
+	.quick.quick-quick4 {padding:0px; margin:0px; height:50px; position:fixed; z-index:200; bottom:0; left:0; width:100%; background:#ececec; list-style:none; display: -webkit-box; display: -moz-box; -webkit-box-orient: horizontal; -moz-box-orient: horizontal; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;}
+	.quick.quick-quick4 li{width:25%; padding-top:3px;}
+	.quick.quick-quick4 li span{overflow:hidden;}
+	.quick.quick-quick4 li>a{color:#8c8f94; text-decoration:none; -webkit-box-sizing:border-box; box-sizing:border-box; border-bottom:0; display:block; height:100%; text-align:center; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+	.quick.quick-quick4 li>a>p{display: block; width:25px; height:25px; margin:auto; padding-top:5px; -webkit-background-size:100px auto;}
+	.quick.quick-quick4 li>a>p i{ display:block; width:20px; height:20px; font-size:20px;}
+	.quick.quick-quick4 li>a>*{pointer-events:none;}
+	@-moz-document url-prefix(){
+		.quick.quick-quick4{overflow:hidden;}
+		.quick.quick-quick4 li{width:25%; float:left;}
+	}
+</style>
+<div class="quick quick-quick4 clearfix">
+		{php $i = 1;}
+		{loop $_W['quickmenu']['menus'] $nav}
+		<li>
+			<a href="{$nav['url']}" title="{$nav['name']}">
+				<p>
+					{if !empty($nav['icon'])}
+					<i style="background:url({media $nav['icon']}) no-repeat;background-size:cover;{$nav['css']['icon']['style']}"></i>
+					{else}
+					<i class="fa {$nav['css']['icon']['icon']}" style="{$nav['css']['icon']['style']}"></i>
+					{/if}
+				</p>
+				<span style="{$nav['css']['name']}">{$nav['name']}</span>
+			</a>
+		</li>
+		{php if($i>=4) break;}
+		{php $i++;}
+		{/loop}
+</div>

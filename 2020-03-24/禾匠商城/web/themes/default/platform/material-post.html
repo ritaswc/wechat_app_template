@@ -1,0 +1,156 @@
+{template 'common/header'}
+<div class="" ng-module="materialApp" ng-controller="materialAdd" id="main" ng-cloak>
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href="{php echo url('platform/material')}"><i class="wi wi-back-circle"></i> </a>
+		<li>
+			<a href="{php echo url('platform/material')}">素材库</a>
+		</li>
+		<li>
+			{if !empty($news_list)}编辑{else}新建{/if}图文素材
+		</li>
+	</ol>
+	<div class="appmsg-edit-box">
+		<div class="appmsg-preview-area">
+			<div class="appmsg-edit-container appmsg-preview-container js-aside">
+				<div class="appmsg-container-hd">
+					<h4 class="appmsg-container-title">图文列表</h4>
+				</div>
+				<div class="appmsg-container-bd">
+					<div class="material-appmsg-item multi">
+						<div class="appmsg-content">
+							<div ng-repeat="material in materialList" ng-click="changeIndex($index)" ng-class="material.class">
+								<h4 class="appmsg-title">
+									<a href="" target="-blank">{{ material.title }}</a>
+								</h4>
+								<div class="appmsg-thumb" ng-style="{'background-image' : 'url('+material.thumb+')'}">
+								</div>
+								<a href="javascript:;" ng-if="$index == 0" ng-click="exportFromCms()">导入文章</a>
+								<div class="appmsg-edit-mask">
+									<a onclick="return false;" class="sort-up" href="javascript:;" ng-click="changeOrder('up', $index)" data-toggle="tooltip" data-placement="bottom" title="上移" ng-if="$index != 0"><i class="wi wi-stick-sign"></i></a>
+									<a onclick="return false;" class="sort-down" href="javascript:;" ng-click="changeOrder('down', $index)" data-toggle="tooltip" data-placement="bottom" title="下移" ng-if="$index != (materialList.length - 1)"><i class="wi wi-down-sign"></i></a>
+									<a href="javascript:;" ng-click="exportFromCms()">导入文章</a>
+									<a onclick="return false;" class="del" href="javascript:;" ng-if="$index != 0 && (operate == 'add' || model == 'local')" ng-click="deleteMaterial($index)" data-toggle="tooltip" data-placement="bottom" title="删除"><i class="wi wi-delete2"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a title="添加一篇图文" ng-click="addMaterial()" ng-show="(materialList.length < 8 && (operate == 'add' || operate == 'edit'))" class="appmsg-add" href="javascript:void(0);" style="display: block;">
+						<i class="add-gray">+</i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="appmsg-input-area" id="edit-container">
+			<div class="reply" ng-if="new_type == 'reply'">
+				<!--标题-->
+				<div class="appmsg-edit-item title">
+					<label for="title" class="" style="display:none">请在这里输入标题</label>
+					<input id="title" placeholder="请在这里输入标题" class="form-control we7-padding-none" name="title" id="title" ng-model="materialList[activeIndex].title" max-length="64" type="text">
+					<em class="form-control-append hidden">0/64</em>
+				</div>
+				<!--作者-->
+				<div class="appmsg-edit-item author">
+					<label for="author" class="" style="display:none">请输入作者</label>
+					<input id="author" placeholder="请输入作者" class="form-control we7-padding-none" ng-model="materialList[activeIndex].author" name="author" max-length="8" type="text">
+					<em class="form-control-append hidden">0/8</em>
+				</div>
+				<!-- 阅读原文链接 -->
+				<div we7-linker we7-my-url="materialList[activeIndex].content_source_url" class="link-form"></div>
+				<!--正文-->
+				<div class="editor-area" ng-my-upurl="{php echo url('utility/file/upload')}" ng-my-editor ng-my-value="materialList[activeIndex].content" >
+					<textarea ></textarea>
+				</div>
+			</div>
+			<div class="link" ng-if="new_type == 'link'">
+				<div class="appmsg-edit-function-area ">
+					<!-- 标题 -->
+					<div class="appmsg-edit-item title">
+						<label for="title" class="" style="display:none">请在这里输入标题</label>
+						<input id="title" placeholder="请在这里输入标题" class="form-control we7-padding-none" name="title" id="title" ng-model="materialList[activeIndex].title" max-length="64" type="text">
+						<em class="form-control-append hidden">0/64</em>
+					</div>
+					<!-- END 标题 -->
+					<!-- BEGIN 跳转链接 -->
+					<div class="we7-form appmsg-edit-item origin-url-area">
+						<div class="form-group">
+							<div class="col-sm-12 form-control-box">
+								<div we7-linker we7-my-url="materialList[activeIndex].content_source_url" we7-my-title="materialList[activeIndex].content_source_url"></div>
+							</div>
+						</div>
+					</div>
+					<!-- END 跳转链接 -->
+				</div>
+			</div>
+			<div class="row we7-form col-sm-12 other-box">
+				<div class="form-group">
+					<label class="col-sm-12 control-label">文章封面</label>
+					<div>
+						<div class="thumb-box" ng-show="!materialList[activeIndex].thumb" ng-click="pickPicture('local')">
+							选择图片
+						</div>
+						<div class="thumb-box" ng-show="materialList[activeIndex].thumb" ng-click="pickPicture('local')">
+							<img ng-src="{{ materialList[activeIndex].thumb }}">
+						</div>
+						<!-- <a  href="javascript:void(0);" class="btn btn-default" ng-click="pickPicture('local')">本地图片</a>
+						<a  href="javascript:void(0);" class="btn btn-default we7-margin-left" ng-click="pickPicture('wechat')">{$_W['account']['type_name']}图片</a>
+						<div style="margin: 20px 0 10px 0;">
+							<input type="checkbox" ng-checked="{{ materialList[activeIndex].show_cover_pic }}" ng-click="updateSelection()" id="display-cover"/>
+							<label for="display-cover">在正文顶部显示封面图</label>
+						</div>
+						<image ng-src="{{ materialList[activeIndex].thumb }}" style="max-height: 200px;"></image> -->
+					</div>
+					<div class="help-block">建议尺寸：大图片：900 * 500（单图文或多图文第一篇）/ 小图片200 * 200（多图文第一篇图文下面）</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-12 control-label" ng-click="zhaiyao()">摘要</label>
+					<div>
+						<span class="form-textarea-box">
+							<textarea class="form-textarea " ng-model="materialList[activeIndex]['digest']" name="digest" max-length="120" cols="100%" rows="4" placeholder="选填，如果不填写会默认抓取正文前54个字"></textarea>
+							<em class="form-control-append hidden">0/120</em>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-wxapp-bottom navbar-fixed-bottom" role="navigation">
+		<div class="container">
+			<div class="pager">
+				<a type="button" class="btn btn-default pull-left hidden">收起正文</a>
+				<div class="pull-right hidden">
+					<a type="button" class="btn btn-primary" ng-click="saveNews()">保存</a>
+					<a type="button" class="btn btn-default">预览</a>
+					<a type="button" class="btn btn-default">保存并群发</a>
+				</div>
+				<a type="button" class="btn btn-primary" ng-if="model == 'local' || operate == 'add'" ng-click="saveNews('local')">保存到本地</a>
+				<a id="savewechat" type="button" class="btn btn-primary" ng-click="saveNews('wechat')" ng-show="(!hidenbutton && materialList.length <= 8) || operate == 'add' && new_type == 'reply'">保存并上传到{$_W['account']['type_name']}</a>
+			</div>
+		</div>
+	</nav>
+</div>
+<script>
+	require(['underscore', 'fileUploader'], function() {
+		angular.module('materialApp').value('material', {
+			'materialList' : {php echo json_encode($news_list)},
+			'type' : '{$type}',
+			'news_rid' : '{$reply_news_id}',
+			'operate' : {if !empty($newsid)}'edit'{else}'add'{/if},
+			'model' : {if !empty($attachment['model'])}'{$attachment['model']}'{else}''{/if},
+			'url' : "{php echo url('platform/material-post/tomedia')}",
+			'newsUpload_url' : "{php echo url('platform/material-post/addnews')}",
+			'msg_url' : "{php echo url('platform/material/display')}",
+			'upload_thumb_url' : "{php echo url('platform/material-post/thumb_upload')}",
+			'upload_iamge_url' : "{php echo url('platform/material-post/image_upload')}",
+			'replace_url' : "{php echo url('platform/material-post/replace_image_url')}",
+			'num_limit' : "{$upload_limit['num']}",
+			'image_limit' : "{$upload_limit['image']}",
+			'voice_limit' : "{$upload_limit['voice']}",
+			'video_limit' : "{$upload_limit['video']}",
+			'new_type' : "{$new_type}",
+			'typeName' : "{$_W['account']['type_name']}"
+		});
+		angular.bootstrap($('#main'), ['materialApp']);
+	});
+	$('[data-toggle="tooltip"]').tooltip();
+</script>
+{template 'common/footer'}

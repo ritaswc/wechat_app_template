@@ -1,0 +1,50 @@
+.img_box {
+    margin: 80rpx 0 0 40rpx;
+}
+
+.img_binding_box {
+    height: 120rpx;
+    line-height: 150rpx;
+}
+
+.img_binding {
+    width: 50rpx;
+    height: 50rpx;
+    margin: 0 32rpx;
+}
+
+.head_img {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 16rpx;
+}
+
+.title {
+    margin-top: 40rpx;
+    font-size: 11pt;
+    color: #3f3f3f;
+}
+
+.content {
+    margin-top: 20rpx;
+    font-size: 9pt;
+    color: #999999;
+}
+
+.auth-info {
+    margin: 64rpx 24rpx 0;
+    width: 702rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    background-color: #ff4544;
+    border-radius: 44rpx;
+    color: #ffffff;
+    font-size: 11pt;
+}
+
+.bind_yes_img {
+    width: 300rpx;
+    height: 300rpx;
+    margin: 120rpx 0 64rpx;
+    border-radius: 44rpx;
+}

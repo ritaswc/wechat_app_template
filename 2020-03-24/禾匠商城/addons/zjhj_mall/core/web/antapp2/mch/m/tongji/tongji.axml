@@ -1,0 +1,54 @@
+<!-- 加载公共扩展 -->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <!-- 页面内容 -->
+        <view style="background: #fff">
+            <scroll-view class="month-scroll" scroll-x="true" scroll-with-animation="{{false}}" scroll-left="{{month_scroll_x}}">
+                <view class="month-list flex flex-row">
+                    <view class="month-item flex-grow-0"></view>
+                    <view class="month-item flex-grow-0"></view>
+                    <block a:for="{{year_list}}" a:for-index="year_index" a:key="{{item.id}}">
+                        <view onTap="changeMonth" data-year-index="{{year_index}}" data-month-index="{{index}}" a:for="{{item.month_list}}" a:key="{{item.id}}" class="month-item flex-grow-0 flex-x-center flex-y-center {{item.active?'active':''}}">
+                            <view>
+                                <view style="font-size: 9pt;margin-bottom: 8rpx">{{item.name_en}}</view>
+                                <view>{{item.name_cn}}</view>
+                            </view>
+                        </view>
+                    </block>
+                    <view class="month-item flex-grow-0"></view>
+                    <view class="month-item flex-grow-0"></view>
+                </view>
+            </scroll-view>
+            <view class="current-year flex flex-row">
+                <view class="flex-grow-1"></view>
+                <view class="flex-grow-0">
+                    <view style="margin-top: -16rpx;font-size: 9pt;">{{current_year}}</view>
+                </view>
+                <view class="flex-grow-1"></view>
+            </view>
+            <view class="flex flex-row detail-data">
+                <view class="flex-grow-1 flex-y-center">
+                    <view style="width: 100%">
+                        <view style="color: #888;">日均成交额</view>
+                        <view>{{daily_avg}}</view>
+                    </view>
+                </view>
+                <view class="flex-grow-1 flex-y-center">
+                    <view style="width: 100%;text-align: center;">
+                        <view style="color: #888;">当月成交额</view>
+                        <view>{{month_count}}</view>
+                    </view>
+                </view>
+                <view class="flex-grow-1 flex-y-center">
+                    <view style="width: 100%;text-align: right;">
+                        <view style="color: #888;">对比上月</view>
+                        <view>{{up_rate}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

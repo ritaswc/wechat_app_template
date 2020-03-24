@@ -1,0 +1,31 @@
+{template 'common/header'}
+
+<div class="app-pack">
+<div class="box clearfix">
+	{loop $version_info['modules'] $module}
+	<div class="item pic">
+		<a href="{$module['url']}">
+			<i style="background-image:url({$module['newicon']});"></i>
+			<div class="name">{$module['title']}</div>
+		</a>
+	</div>
+	{/loop}
+</div>
+{if $version_info['quickmenu']['show']}
+<div class="footer-nav">
+	{loop $version_info['quickmenu']['menus'] $menu}
+	<div class="item">
+		<a href="{$menu['url']}">
+			<img src="{$menu['icon']}" alt="" class="icon">
+			<div class="con">{$menu['name']}</div>
+		</a>
+	</div>
+	{/loop}
+</div>
+{/if}
+</div>
+</div>
+
+</div>
+</body>
+</html>

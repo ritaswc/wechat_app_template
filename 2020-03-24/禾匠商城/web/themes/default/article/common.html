@@ -1,0 +1,10 @@
+<ul class="we7-page-tab">
+    {if $action == 'news'}
+        <li {if $action == 'news' && $do == 'list'} class="active"{/if}><a href="{php echo url('article/news/list');}">新闻列表</a></li>
+        <li {if $action == 'news' && $do == 'category'} class="active"{/if}><a href="{php echo url('article/news/category');}">新闻分类</a></li>
+    {/if}
+    {if $action == 'notice'}
+        <li {if $action == 'notice' && $do == 'list'} class="active"{/if}><a href="{php echo url('article/notice/list');}">公告列表</a></li>
+        <li {if $action == 'notice' && $do == 'category'} class="active"{/if}><a href="{php echo url('article/notice/category');}">公告分类</a></li>
+    {/if}
+</ul>

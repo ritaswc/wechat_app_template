@@ -1,0 +1,148 @@
+{template 'common/header'}
+{if $do == 'display'}
+<div class="clearfix">
+	<div class="we7-padding-bottom clearfix">
+		{if empty($module['main_module'])}
+		<div class="pull-right">
+			<a href="{php echo url('module/permission/post', array('m' => $module_name))}" class="btn btn-primary we7-padding-horizontal">添加操作员</a>
+			<a href="{php echo url('user/register', array('type' => USER_TYPE_CLERK, 'm' => $module_name, 'uniacid' => $_W['uniacid']))}"  target="_blank" class="btn btn-primary we7-padding-horizontal">注册操作员</a>
+		</div>
+		{/if}
+	</div>
+	<table class="table we7-table table-hover">
+		<thead class="navbar-inner">
+		<tr>
+			<th class="text-center" style="width:100px;">操作员名称</th>
+			<th class="text-center" style="width:150px">权限信息</th>
+			<th class="text-center" style="width:150px">状态</th>
+			<th class="text-right" style="width:100px;">操作</th>
+		</tr>
+		</thead>
+		<tbody>
+		{if !empty($user_permissions)}
+		{loop $user_permissions $item}
+			<tr>
+				<td class="text-center" style="width:50px;">{$item['user_info']['username']}</td>
+				<td class="text-center">
+					{if !empty($item['permission']) && !array_key_exists('all', $item['permission'])}
+						{loop $item['permission'] $permission}
+						<span class="label label-primary">{$permission}</span>
+						{/loop}
+					{else}
+						<span class="label label-primary">所有</span>
+					{/if}
+				</td>
+				<td class="text-center">
+					{if $item['user_info']['status'] == 1}<span class="color-red">待审核</span>
+					{elseif $item['user_info']['status'] == 3}<span class="color-gray">已禁用</span>
+					{else}<span class="color-default">正常</span>
+					{/if}
+				</td>
+				<td style="width:100px;">
+					<div class="link-group" >
+						{if empty($module['main_module'])}
+							<a href="{php echo url('module/permission/post', array('uid' => $item['uid'], 'm' => $module_name));}">编辑</a>
+							<a href="javascript:void(0);" onclick="deleteClerk('{$item["uid"]}', '{$module_name}')" class="del">删除</a>
+						{else}
+							<span>---</span>
+						{/if}
+					</div>
+				</td>
+			</tr>
+		{/loop}
+		{else}
+		<tr ng-if="!wechats">
+			<td colspan="3" class="text-center">暂无数据</td>
+		</tr>
+		{/if}
+		</tbody>
+	</table>
+	<script>
+		var url = "{php echo url('module/permission/delete');}";
+		function deleteClerk(uid, module_name) {
+			url += "&uid=" + uid;
+			url += "&m=" + module_name;
+			util.confirm(function () {
+				window.location.href = url;
+			}, function () {
+				return false;
+			}, '确认删除吗?');
+		}
+	</script>
+</div>
+{/if}
+{if $do == 'post'}
+<div class="clearfix">
+	<form action="" method="post" class="form-horizontal form ajaxfrom we7-form" role="form" id="form-user">
+		<div class="form-group">
+			<label class="col-sm-2 ontrol-label">用户名</label>
+			<div class="col-sm-6 input-group">
+				<input id="" name="username" type="text" class="form-control" value="{$user['username']}" {if !empty($_GPC['uid'])}readonly{/if}/>
+				<span class="input-group-btn">
+					<a href="{php echo url('user/register', array('type' => USER_TYPE_CLERK, 'm' => $module_name, 'uniacid' => $_W['uniacid']))}"  target="_blank" class="btn btn-default">注册操作员</a>
+				</span>
+			</div>
+			<div class="col-sm-offset-2">
+				<span class="help-block">请输入用户名，用户名为 3 到 15 个字符组成，包括汉字，大小写字母（不区分大小写）</span>
+			</div>
+		</div>
+		<div class="form-group module-permission">
+			<label class="col-sm-2 control-label">权限设置</label>
+			<div class="col-sm-10">
+				{loop $all_permission $key $module_val}
+					<div class="col-sm-10 col-lg-10 col-xs-12 plugin-name">{$module_val['info']['title']}</div>
+					{loop $module_val['permission'] $sub_key $permission}
+					<div class="col-sm-4 dropdown">
+						<span class="checkbox">
+							<input id="check-child-{$key}-{$sub_key}" type="checkbox" value="{$permission['permission']}" name="module_permission[{$module_val['info']['name']}][]" {if !empty($permission['checked'])}checked{/if}>
+							<label for="check-child-{$key}-{$sub_key}" data-toggle="tooltip">{$permission['title']}{if !empty($menu['sub_permission'])}<span class="caret"></span>{/if}</label>
+						</span>
+						{if $permission['sub_permission']}
+						<ul class="dropdown-menu">
+							{loop $permission['sub_permission'] $sub_permission}
+							<li class="text-left">
+								<input id="check-child-{$sub_permission['permission']}"  we7-check-all="1" type="checkbox" value="{$sub_permission['permission']}" {if !empty($sub_permission['checked'])}checked{/if} name="module_permission[{$module_val['info']['name']}][]">
+								<label for="check-child-{$sub_permission['permission']}">
+									{$sub_permission['title']}
+								</label>
+							</li>
+							{/loop}
+						</ul>
+						{/if}
+					</div>
+					{/loop}
+				{/loop}
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 ">
+				<input type="submit" class="btn btn-primary span3" name="submit" value="提交" />
+				<input type="hidden" name="token" value="{$_W['token']}" />
+			</div>
+		</div>
+	</form>
+</div>
+<script>
+    $('.module-permission .dropdown span').hover(function(){
+        $(this).parent().addClass('open').find('.dropdown-menu').show();
+        $(this).parent().find('.dropdown-menu').hover(
+            function(){$(this).show();$(this).parent().addClass('open')},
+            function(){$(this).hide();$(this).parent().removeClass('open');}
+        );
+    },function(){
+        $(this).parent().removeClass('open').find('.dropdown-menu').hide();
+    });
+var haveChecked = false;
+$('input[type="checkbox"]').each(function(i, n) {
+	if ($(n).prop('checked')) {
+		haveChecked = true;
+	}
+});
+if (!haveChecked) {
+	$('input[type="checkbox"]').each(function(i, n) {
+		$(n).prop('checked', 'checked')
+	});	
+}
+</script>
+{/if}
+{template 'common/footer'}

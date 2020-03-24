@@ -1,0 +1,101 @@
+{php define(MUI, true);}
+{template 'common/header'}
+<style>
+	ul,li {padding:0; margin:0; border:0;}
+	body{background:#d2e6e9; padding-bottom:63px;}
+	.btn-group-top-box{padding:10px 0; border-bottom:1px solid #a5d7de; font-family:Helvetica, Arial, sans-serif; text-align:center; width:100%;}
+	.btn-group-top{overflow:hidden;}
+	.btn-group-top .btn{ -webkit-box-shadow:none; box-shadow:none; border-color:#5ac5d4; color:#5ac5d4; background:#d1e5e9; padding:6px;}
+	.btn-group-top .btn:hover{color:#FFF; background:#addbe1;}
+	.btn-group-top .btn.active{color:#FFF; background:#5ac5d4;}
+	.btn.use{background:#56c6d6; color:#FFF; border:0; border-radius:4px;}
+
+	.card-container{width:100%;max-width:640px;margin:0px auto;border-bottom:1px solid #a5d7de;}
+	.card-list{width:100%;margin:10px 0;padding:0 13px}
+	.card-list .top{height:60px;line-height:60px;background:#a9d92d url(./resource/images/card_tpl.png) repeat-x 0 bottom;border-top-left-radius:5px;border-top-right-radius:5px;}
+	.card-list .top .img{float:left;padding:0 10px}
+	.card-list .top .img img{width:40px;height:40px;border-radius:35px;}
+	.card-list .top .title{float:left;color:#FFF;font-weight:bold;font-size:16px;letter-spacing:1px}
+	.card-list .bottom{color:#b7b7b7;height:30px;line-height:30px;background:#FFF;padding:0 6px;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
+	.card-list .bottom .left-info{float:left;width:50%;overflow:hidden;}
+	.card-list .bottom .right-info{float:right;width:50%;overflow:hidden;text-align:right;}
+	.no-info{width:100%;padding:0 20px;text-align:center;height:40px;line-height:40px;color:#5ac5d4}
+	.page{width:100%;margin:0 auto;text-align:center;}
+	.page .pagination{padding:0;margin:0;}
+	.page .pagination a{color:#5ac5d4;background:#d2e6e9;border:1px solid #a5d7de;}
+	.page .pagination a:hover{color:#FFF;background:#addbe1;border:1px solid #a5d7de;}
+
+	.card-info .card-top{ position:relative; width:100%; color:#fff; background-color:#a9d92d; padding:21px 12px 12px;}
+	.card-top .logo img{width:38px; height:38px; border-radius:100%; margin-right:10px;}
+	.card-top .title{font-size:24px; margin-bottom:10px;}
+	.card-top .sub-title{margin-bottom:10px;}
+	.card-top .border-img{position: absolute; bottom: -1px; left: 0; width: 100%; height: 5px; background: url(./resource/images/card_tpl.png) repeat-x;}
+	.card-bottom{background:#fff; margin-bottom:15px; text-align:center; padding:15px 0;}
+	.card-bottom .bar-code img{width:100%; height:auto; margin-bottom:5px;}
+	.card-bottom .tips{margin:10px 0;}
+	.wx-card .operate{background:#fff; padding:15px 10px;}
+	.wx-card .operate input{margin-bottom:5px;}
+</style>
+<form action="" method="post" id="form1">
+	<input type="hidden" name="token" value="{$_W['token']}"/>
+	<input type="hidden" name="code" value="{$code['code']}"/>
+	<div class="wx-card">
+		<div class="card-info">
+			<div class="card-top" style="background: {$colors[$card['color']]}">
+				<div class="logo">
+					<img src="{$card['logo_url']}" alt="" class="img-circle">
+					<span>{$card['brand_name']}</span>
+				</div>
+				<div class="title mui-text-center">{$card['title']}</div>
+				<div class="sub-title mui-text-center">{$card['sub_title']}</div>
+				<div class="date mui-text-center">
+					{if $card['date_info']['time_type'] == 1}
+					有效期:{$card['date_info']['time_limit_start']}~{$card['date_info']['time_limit_end']}
+					{else}
+					有效期:领取后{$card['date_info']['deadline']}天后生效,{$card['date_info']['limit']}天有效
+					{/if}
+				</div>
+				<div class="border-img"></div>
+			</div>
+			<div class="card-bottom">
+				{if $error_code == 1}
+				<div class="text-muted">code码错误</div>
+				{else}
+				<div class="qrcode-block" data-url="{php echo murl('entry', array('m' => 'paycenter', 'do' => 'cardconsume', 'op' => 'consume', 'code' => $code), true, true);}" style="margin-top:20px"></div>
+				<div class="text-muted">店员可使用微信扫描上面二维码进行核销</div>
+				<div class="text-muted">code码：{$code}</div>
+				{/if}
+				<div class="tips hide">{$card['notice']}</div>
+			</div>
+		</div>
+		<div class="operate">
+			{if $error_code == 1}
+			<a class="btn btn-danger btn-block" disabled>code码错误</a>
+			{else}
+			<input type="password" id="password" name="password" class="form-control" placeholder="请输入店员密码" style="margin-bottom:20px">
+			<input type="submit" class="btn btn-success btn-block" name="submit" value="确定核销"/>
+			{/if}
+		</div>
+	</div>
+</form>
+<script>
+	require(['jquery.qrcode'], function(){
+		var url = $('.qrcode-block').data('url');
+		$('.qrcode-block').html('').qrcode({
+			render: 'canvas',
+			width: 150,
+			height: 150,
+			text: url
+		});
+	});
+	require(['util'], function(u){
+		$('#form1').submit(function(){
+			if(!$.trim($('#password').val())) {
+				u.message('请输入店员密码');
+				return false;
+			}
+			return true;
+		});
+	});
+</script>
+{template 'common/footer'}

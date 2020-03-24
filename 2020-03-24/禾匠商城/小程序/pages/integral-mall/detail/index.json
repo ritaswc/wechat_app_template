@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "积分明细",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

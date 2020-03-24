@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "商品详情",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

@@ -1,0 +1,107 @@
+.info {
+    width: 100%;
+}
+
+.white {
+    color: #fff;
+}
+
+.black {
+    color: #353535;
+}
+
+.big {
+    font-size: 18pt;
+    display: inline-block;
+}
+
+.big-13 {
+    font-size: 13pt;
+}
+
+.big-14 {
+    font-size: 14pt;
+}
+
+.bottom {
+    font-size: 9pt;
+    margin-left: 4rpx;
+    display: inline-block;
+}
+
+.info-margin {
+    margin: 20rpx 0;
+}
+
+.border-bottom {
+    border-bottom: 1rpx #ccc solid;
+    height: 100%;
+}
+
+.margin-top {
+    margin-top: 20rpx;
+}
+
+.info .info-title {
+    padding: 24rpx 24rpx;
+    background-color: #ff4544;
+    width: 100%;
+}
+
+.info .info-title .info-block {
+    width: 50%;
+}
+
+.info .info-title .info-block .info-up {
+    margin-top: 15rpx;
+    padding-bottom: 10rpx;
+}
+
+.info .info-bottom {
+    display: inline-table;
+    width: 100%;
+}
+
+.info .info-block .info-btn {
+    border: 1rpx #fff solid;
+    border-radius: 10rpx;
+    text-align: center;
+    float: right;
+    margin-top: 45rpx;
+    padding: 6rpx;
+}
+
+.info .info-content {
+    width: 100%;
+}
+
+.info .info-content .info-label {
+    width: 100%;
+    height: 96rpx;
+    padding: 0 24rpx;
+    background-color: #fff;
+}
+
+.info-content .info-label .info-left {
+    width: 50%;
+}
+
+.info-content .info-label .info-right {
+    width: 50%;
+    text-align: right;
+    color: #666666;
+}
+
+.info-footer {
+    width: 100%;
+    padding: 40rpx 24rpx 0 24rpx;
+}
+
+.info-footer .info-btn {
+    width: 100%;
+    background-color: #ff4544;
+    height: 100rpx;
+    border-radius: 10rpx;
+    line-height: 100rpx;
+    text-align: center;
+}

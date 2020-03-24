@@ -1,0 +1,229 @@
+{template 'common/header'}
+<ol class="breadcrumb we7-breadcrumb">
+	<a href="{url 'user/display'}"><i class="wi wi-back-circle"></i> </a>
+	<li><a href="{url 'user/display'}">用户管理</a></li>
+	<li>编辑用户详情</li>
+</ol>
+<div id="js-user-edit-modulestpl" ng-controller="UserEditModules" ng-cloak>
+	<div class="user-head-info we7-padding-bottom" >
+		<img ng-src="{{profile.avatar || ''}}" class="img-circle user-avatar ">
+		<div class="info">
+			<h3 class="title" ng-bind="user.username"></h3>
+		</div>
+		
+		{if $user['founder_groupid'] != ACCOUNT_MANAGE_GROUP_VICE_FOUNDER}
+		<a href="javascript:;" class="btn btn-primary" ng-click="recycleUser()">禁用</a>
+		{/if}
+		
+	</div>
+
+	<div class="btn-group we7-btn-group we7-padding-bottom">
+		<a href="{php echo url('user/edit/edit_base', array('uid' => $_GPC['uid']))}" class="btn btn-default">基础信息</a>
+		{if empty($user['founder_groupid'])}
+		<a href="{php echo url('user/edit/edit_modules_tpl', array('uid' => $_GPC['uid']))}" class="btn btn-default active">应用模板权限</a>
+		{/if}
+
+		
+			{if !empty($user['founder_groupid'])}
+			<a href="{php echo url('founder/edit/edit_modules_tpl', array('uid' => $_GPC['uid']))}" class="btn btn-default active">应用模板权限</a>
+			{/if}
+		
+
+		<a href="{php echo url('user/edit/edit_create_account_list', array('uid' => $_GPC['uid']))}" class="btn btn-default">账号创建权限</a>
+		<a href="{php echo url('user/edit/edit_account_dateline', array('uid' => $_GPC['uid']))}" class="btn btn-default">账号使用期限</a>
+
+		{if empty($user['founder_groupid'])}
+		<a href="{php echo url('user/edit/edit_account', array('uid' => $_GPC['uid']))}" class="btn btn-default">使用账号列表</a>
+		{/if}
+
+		
+			{if !empty($user['founder_groupid'])}
+			<a href="{php echo url('founder/edit/edit_account', array('uid' => $_GPC['uid']))}" class="btn btn-default">使用账号列表</a>
+			{/if}
+		
+	</div>
+
+	<!-- 所属用户组 start -->
+	<div class="panel we7-panel user-permission">
+		<div class="panel-heading">
+			<span>所属用户组：<span ng-bind="group_info.name || '无用户组'"></span></span>
+			<span class="pull-right">
+				<a href="javascript:;" ng-if="user.groupid != 0" class="color-default" ng-click="delUserGroup(group_info.id)">删除</a>
+				<a href="javascript:;" class="color-default" data-toggle="modal" data-target="#group">修改</a>
+			</span>
+		</div>
+
+		<div class="modal fade" id="group" role="dialog">
+			<div class="we7-modal-dialog modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<div class="modal-title">修改用户组</div>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<select class="we7-select" ng-model="changeGroup">
+								<option value="0">请选择所属用户组</option>
+								<option value="{{group.id}}" ng-repeat="group in groups" ng-selected="group.id == group_info.id" ng-bind="group.name"></option>
+							</select>
+							<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="httpChange('groupid')">确定</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="we7-group-show we7-padding"  ng-repeat="(packid, pack) in group_info.package_detail">
+			<div class="name">
+				{{pack.id == '-1' ? '所有服务' : pack.name}}
+			</div>
+			<div class="group-app-list" ng-if="pack.id != -1">
+				<div class="group-app-item" ng-repeat="module in pack.modules_all">
+					<img ng-src="{{module.logo}}" class="module-img" alt="">
+					<div class="info">
+						<div class="title text-over">
+							{{module.title}}
+						</div>
+						<div class="type-list">
+							<i ng-repeat="item in module.group_support | moduleInfo" ng-class="item.icon"></i>
+						</div>
+					</div>
+				</div>
+				<div class="group-app-item" ng-repeat="module in pack.templates">
+					<img ng-src="{{module.logo}}" class="template-img" alt="">
+					<div class="info">
+						<div class="title">
+							{{module.title}}
+						</div>
+						<div class="type-list">
+							<i class="wi wi-template"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="group-app-list" ng-if="pack.id == -1">
+				<div class="group-app-item">所有服务</div>
+			</div>
+			<a class="action" ng-if="pack.id != -1"></a>
+		</div>
+		<div class="we7-empty-block" ng-if="group_info.package_detail | we7IsEmpty">
+			无服务
+		</div>
+	</div>
+	<!-- 所属用户组 end -->
+
+	<!-- 应用权限组 start -->
+	<div class="panel we7-panel user-permission">
+		<div class="panel-heading">
+			<span>应用权限组</span>
+			<we7-modal-app module-list="groupList" multiple="true" on-confirm="selectUniGroup()"><a href="javascript:;" class="pull-right color-default">修改</a></we7-modal-app>
+		</div>
+		<div class="we7-group-show we7-padding" ng-repeat="(packid, pack) in user_extra_groups">
+			<div class="name">
+				{{pack.name}}
+			</div>
+			<div class="group-app-list">
+				<div class="group-app-item" ng-repeat="module in pack.modules_all">
+					<img ng-src="{{module.logo}}" class="module-img" alt="">
+					<div class="info">
+						<div class="title text-over">
+							{{module.title}}
+						</div>
+						<div class="type-list">
+							<i ng-repeat="item in module.group_support | moduleInfo" ng-class="item.icon"></i>
+						</div>
+					</div>
+				</div>
+				<div class="group-app-item" ng-repeat="module in pack.templates">
+					<img ng-src="{{module.logo}}" class="template-img" alt="">
+					<div class="info">
+						<div class="title">
+							{{module.title}}
+						</div>
+						<div class="type-list">
+							<i class="wi wi-template"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a class="action"></a>
+		</div>
+		<div class="we7-empty-block" ng-if="!user_extra_groups">
+			无应用权限组
+		</div>
+	</div>
+	<!-- 应用权限组 end -->
+
+	<!-- 附加权限 start -->
+	<div class="panel we7-panel user-permission">
+		<div class="panel-heading">
+			<span>附加权限</span>
+			<we7-modal-app module-list="moduleList" multiple="true" on-confirm="selectExtraModules()"><a href="javascript:;" class="pull-right color-default">修改</a></we7-modal-app>
+		</div>
+		<div class="we7-group-show we7-padding" ng-if="!(extend.modules | we7IsEmpty)">
+			<div class="name">
+				附加应用
+			</div>
+			<div class="group-app-list">
+				<div class="group-app-item" ng-repeat="module in extend.modules">
+					<img ng-src="{{module.logo}}" class="module-img" alt="">
+					<div class="info">
+						<div class="title text-over">
+							{{module.title}}
+						</div>
+						<div class="type-list">
+							<i ng-class="module.support | moduleInfo:'icon'" ></i> 
+						</div>
+					</div>
+				</div>
+				<div class="group-app-item" ng-repeat="module in extend.templates">
+					<img ng-src="{{module.logo}}" class="template-img" alt="">
+					<div class="info">
+						<div class="title">
+							{{module.title}}
+						</div>
+						<div class="type-list">
+							<i class="wi wi-template"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a class="action"></a>
+		</div>
+
+		<div class="we7-empty-block" ng-if="extend.modules | we7IsEmpty">
+			无应用权限组
+		</div>
+	</div>
+	<!-- 附加权限 end -->
+
+<script type="text/javascript">
+	angular.module('userManageApp').value('config', {
+		user: {php echo !empty($user) ? json_encode($user) : 'null'},
+		uid : {php echo $_GPC['uid']},
+		profile: {php echo !empty($profile) ? json_encode($profile) : 'null'},
+		group_info: {php echo !empty($group_info) ? json_encode($group_info) : 'null'},
+		groups: {php echo !empty($groups) ? json_encode($groups) : 'null'},
+		extend: {php echo !empty($extend) ? json_encode($extend) : 'null'},
+    	user_modules: {php echo !empty($user_modules) ? json_encode($user_modules) : 'null'},
+		/* 应用权限 - 应用权限组*/
+		modules_group_list: {php echo !empty($modules_group_list) ? json_encode($modules_group_list) : 'null'},
+    	source_templates: {php echo !empty($templates) ? json_encode($templates) : 'null'},
+    	extend_modules: {php echo !empty($extend_permission['modules']) ? json_encode($extend_permission['modules']) : 'null'},
+		uni_groups: {php echo !empty($uni_groups) ? json_encode($uni_groups) : 'null'},
+		user_extra_groups: {php echo !empty($user_extra_groups) ? json_encode($user_extra_groups) : 'null'},
+		links: {
+			editGroup: "{php echo url('user/edit/edit_modules_tpl')}",
+			editUniGroupsUrl: "{php echo url('user/edit/edit_uni_groups')}",
+			editExtraModulesUrl: "{php echo url('user/edit/edit_extra_modules')}",
+			editUsersPermission: "{php echo url('user/edit/edit_users_permission')}",
+			deleteUserGroupUrl: "{php echo url('user/edit/delete_user_group')}",
+			recycleUser: "{php echo url('user/display/operate', array('type' => 'recycle'))}",
+		},
+	});
+	angular.bootstrap($('#js-user-edit-modulestpl'), ['userManageApp']);
+</script>
+{template 'common/footer'}

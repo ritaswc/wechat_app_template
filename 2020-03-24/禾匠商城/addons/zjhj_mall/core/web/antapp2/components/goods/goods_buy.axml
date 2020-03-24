@@ -1,0 +1,137 @@
+<view a:if="{{__user_info.blacklist !== 1}}" class="flex-row bar-bottom">
+    <view class="flex-grow-0 flex-row">
+        <!-- 商城模块多商户 -->
+        <navigator a:if="{{pageType === 'STORE' && goods.mch}}" class="flex-grow-0 flex-y-center bar-bottom-btn" url="/mch/shop/shop?mch_id={{goods.mch.id}}" open-type="redirect">
+            <view>
+                <image src="{{__wxapp_img.store.store.url}}"></image>
+                <text>店铺</text>
+            </view>
+        </navigator>
+
+        <!-- 所有模块 -->
+        <view class="flex-grow-0 flex-y-center bar-bottom-btn" onTap='goHome'>
+            <view>
+                <image src="{{__wxapp_img.store.store.url}}"></image>
+                <text>首页</text>
+            </view>
+        </view>
+
+        <!-- 预约 -->
+        <block a:if="{{pageType === BOOK}}">
+            <block a:if="{{__platform == 'wx'}}">
+                <button class='flex-grow-0 flex-col flex-y-center flex-x-center goods-footer-icon' open-type="contact">
+                    <view class='flex-gorw-0 flex-x-center'>
+                        <image src='{{__wxapp_img.user.kf.url}}'></image>
+                    </view>
+                    <view class='flex-gorw-0 flex-x-center'>
+                        客服
+                    </view>
+                </button>
+            </block>
+            <block a:if="{{__platform == 'my'}}">
+                <view class="flex-grow-0 flex-col flex-y-center flex-x-center goods-footer-icon" style="position: relative">
+                    <view class="flex-x-center flex-y-center" style="z-index:2;width: 100%;height: 100%;position: absolute;left: 0;top:0;opacity: 0">
+                        <contact-button size="50" tnt-inst-id="{{__alipay_mp_config.cs_tnt_inst_id}}" scene="{{__alipay_mp_config.cs_scene}}" />
+                    </view>
+                    <image src='{{__wxapp_img.user.kf.url}}'></image>
+                    <view class='flex-gorw-0 flex-x-center'>
+                        客服
+                    </view>
+                </view>
+            </block>
+        </block>
+
+        <!-- 商城 -->
+        <block a:if="{{pageType === 'STORE'}}">
+            <view a:if="{{goods.is_favorite && goods.is_favorite==1}}" onTap="favoriteRemove" class="flex-grow-0 flex-y-center bar-bottom-btn">
+                <view>
+                    <image src="{{__wxapp_img.store.favorite_active.url}}"></image>
+                    <text>已收藏</text>
+                </view>
+            </view>
+            <view a:else onTap="favoriteAdd" class="flex-grow-0 flex-y-center bar-bottom-btn">
+                <view>
+                    <image src="{{__wxapp_img.store.favorite.url}}"></image>
+                    <text>收藏</text>
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <!-- 商城 -->
+    <block a:if="{{pageType === 'STORE'}}">
+        <view a:if="{{goods.is_negotiable}}" class="flex-grow-1 flex-row">
+            <view class="flex-grow-1 flex-y-center flex-x-center add-cart" a:if="{{store.good_negotiable.contact==1}}" style="background:#118eea">
+                <block a:if="{{__platform=='wx'}}">
+                    <view onTap="kfMessage" class="flex-x-center flex-y-center _negotiable" a:if="{{!store.show_customer_service}}">客服</view>
+                    <button a:else open-type="contact" class="flex-x-center flex-y-center _negotiable" session-from="{{__user_info.nickname}}|">客服</button>
+                </block>
+                <block a:if="{{__platform=='my'}}">
+                    <view class="float-icon-btn" style="position: relative">
+                        <view class="flex-x-center flex-y-center" style="z-index:2;width: 100%;border-radius:50%;height: 100%;position: absolute;left: 0;top:0;opacity: 0">
+                            <contact-button size="60" tnt-inst-id="{{__alipay_mp_config.cs_tnt_inst_id}}" scene="{{__alipay_mp_config.cs_scene}}" />
+                        </view>
+                        客服
+                    </view>
+                </block>
+            </view>
+
+            <view a:if="{{store.good_negotiable.web_contact==1}}" class="flex-grow-1  contact">
+                <navigator url="/pages/web/web?url={{store.option.web_service_url}}" class="flex-y-center flex-x-center" style="height:100%;width:100%" open-type="navigate" hover-class='none'>客服</navigator>
+            </view>
+
+            <view a:if="{{store.good_negotiable.tel==1}}" class="flex-grow-1 flex-y-center flex-x-center buy-now" onTap='callPhone' data-info='{{store.contact_tel}}'>联系电话</view>
+        </view>
+        <view a:else class="flex-grow-1 flex-row">
+            <view class="flex-grow-1 flex-y-center flex-x-center add-cart" onTap="addCart">加入购物车</view>
+            <view class="flex-grow-1 flex-y-center flex-x-center buy-now" onTap="buyNow">立即购买</view>
+        </view>
+    </block>
+
+    <!-- 秒杀 -->
+    <block a:if="{{pageType === 'MIAOSHA'}}">
+        <view class="flex-grow-1 flex-row">
+            <view class="flex-grow-1 flex-y-center flex-x-center buy-now" onTap="buyNow">立即购买</view>
+        </view>
+    </block>
+
+    <!-- 预约 -->
+    <block a:if="{{pageType === 'BOOK'}}">
+        <view class='flex-grow-1 flex-y-center flex-x-center group-buy' onTap="bespeakNow" style='{{goods.is_only==1?"width: 338rpx":""}}'>
+            立即预约
+        </view>
+    </block>
+
+    <block a:if="{{pageType === 'INTEGRAL'}}">
+        <view class="flex-grow-1 flex-row">
+            <view class="flex-grow-1 flex-y-center flex-x-center buy-now" catchTap="exchangeGoods">立即兑换</view>
+        </view>
+    </block>
+
+    <!-- 拼团 -->
+    <block a:if="{{pageType === 'PINTUAN'}}">
+        <view class='flex-grow-1 flex-col flex-y-center flex-x-center alone-buy' onTap="onlyBuy" a:if="{{goods.is_only==1}}">
+            <view class='flex-gorw-0 money'>
+                ¥{{goods.single_price}}
+            </view>
+            <view class='flex-grow-0'>
+                单独购买
+            </view>
+        </view>
+        <view class='flex-grow-1 flex-col flex-y-center flex-x-center group-buy' onTap="buyNow" style='{{goods.is_only==1?"width: 338rpx":""}}'>
+            <view class='flex-gorw-0 money'>
+                ¥{{goods.group_price}}
+            </view>
+            <view class='flex-grow-0'>
+                {{oid ? "参团" : "拼团"}}
+            </view>
+        </view>
+    </block>
+
+    <!-- 步数宝 -->
+    <block a:if="{{pageType === 'STEP'}}">
+        <view class="flex-grow-1 flex-row">
+            <view class="flex-grow-1 flex-y-center flex-x-center buy-now" catchTap="exchangeGoods" style='background-color:#ff9d1e;width:644rpx'>立即兑换</view>
+        </view>
+    </block>
+</view>

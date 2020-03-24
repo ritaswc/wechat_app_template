@@ -1,0 +1,86 @@
+.top-handle {
+    height: 80rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.week {
+    height: 46rpx;
+    width: 700rpx;
+}
+
+.prev {
+    height: 50rpx;
+    display: flex;
+    align-items: center;
+    width: 50rpx;
+}
+
+.prev image {
+    width: 12rpx;
+    height: 20rpx;
+    margin-left: 20rpx;
+}
+
+.next {
+    display: flex;
+    align-items: center;
+    height: 50rpx;
+    width: 50rpx;
+}
+
+.next image {
+    height: 20rpx;
+    width: 12rpx;
+    margin-left: 20rpx;
+}
+
+.today {
+    font-size: 13px;
+    font-weight: bolder;
+    color: #353535;
+    margin: 0 60rpx;
+}
+
+.weeks-day {
+    width: 100rpx;
+    color: #909090;
+    font-size: 12px;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+
+.box-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    flex-flow: nowrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 97rpx;
+}
+
+.item-content {
+    height: 97rpx;
+    color: #353535;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1rpx solid #ebebeb;
+    position: relative;
+}
+
+.item-content-current-day {
+    flex-grow: 2;
+}
+
+.bk-color-day {
+    background-color: #f7f7f7;
+}

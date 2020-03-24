@@ -1,0 +1,210 @@
+{template 'header'}
+<div class="we7-page-title">支付设置</div>
+<ul class="we7-page-tab">
+	<li {if $_GPC['operate'] == 'alipay' || $_GPC['operate'] == ''}class="active"{/if}><a href="{php echo $this->createWebUrl('paySetting', array('direct' => 1, 'operate' => 'alipay'))}">支付宝支付设置</a></li>
+	<li {if $_GPC['operate'] == 'wechat'}class="active"{/if}><a href="{php echo $this->createWebUrl('paySetting', array('direct' => 1, 'operate' => 'wechat'))}">微信支付设置</a></li>
+	<li {if $_GPC['operate'] == 'wechat_refund'}class="active"{/if}><a href="{php echo $this->createWebUrl('paySetting', array('direct' => 1, 'operate' => 'wechat_refund'))}">微信退款设置</a></li>
+	<li {if $_GPC['operate'] == 'ali_refund'}class="active"{/if}><a href="{php echo $this->createWebUrl('paySetting', array('direct' => 1, 'operate' => 'ali_refund'))}">支付宝退款设置</a></li>
+	<!-- <li><a href="#">京东支付设置</a></li> -->
+	<!-- <li><a href="#">银行卡支付设置</a></li> -->
+	<!-- <li><a href="#">applePay支付设置</a></li> -->
+</ul>
+<form action="" method="post" class="we7-form" id="js-pay-setting" ng-controller="storePaySettingCtrl" enctype="multipart/form-data" ng-cloak>
+	{if $operate == 'alipay'}
+	<div class="form-group">
+		<label class="control-label col-sm-2">支付宝无线支付</label>
+		<div class="col-sm-8">
+			<div class="alert alert-warning">
+				您的支付宝账号必须支持手机网页即时到账接口,才能使用手机支付功能 <a href="https://b.alipay.com/order/productDetail.htm?productId=2013080604609688" target="_blank" class="color-default">申请及详情查看这里</a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2">开关</label>
+		<div class="col-sm-8">
+				<input id='radio-1' type="radio" name='switch' ng-checked="alipay.switch == 1" value="1"/>
+				<label for="radio-1">开启 </label>
+				<input id='radio-2' type="radio" name='switch' ng-checked="alipay.switch != 1" value="2"/>
+				<label for="radio-2">关闭 </label>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2">收款支付宝账号</label>
+		<div class="col-sm-8">
+			<div class="input-group">
+				<input type="text" class="form-control" name="account" ng-model="alipay.account">
+				<span class="input-group-addon" ng-click="aliaccounthelp = !aliaccounthelp"><i class="wi wi-warning-sign" style="font-size:18px;"></i></span>
+			</div>
+			<span class="help-block" ng-show="aliaccounthelp">
+				如果开启兑换或交易功能，请填写真实有效的支付宝账号，用于收取用户以现金兑换交易积分的相关款项。如账号无效或安全码有误，将导致用户支付后无法正确对其积分账户自动充值，或进行正常的交易对其积分账户自动充值，或进行正常的交易。 如您没有支付宝帐号，
+				<a href="https://memberprod.alipay.com/account/reg/enterpriseIndex.htm" target="_blank" class="color-default">请点击这里注册</a>
+			</span>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2">合作者身份</label>
+		<div class="col-sm-8">
+			<div class="input-group">
+				<input type="text" class="form-control" name="partner" ng-model="alipay.partner">
+				<span class="input-group-addon" ng-click="alipartnerhelp = !alipartnerhelp"><i class="wi wi-warning-sign" style="font-size:18px;"></i></span>
+			</div>
+			<span class="help-block" ng-show="alipartnerhelp">
+				支付宝签约用户请在此处填写支付宝分配给您的合作者身份，签约用户的手续费按照您与支付宝官方的签约协议为准。
+				<br>如果您还未签约，
+					<a href="https://memberprod.alipay.com/account/reg/enterpriseIndex.htm" target="_blank" class="color-default">请点击这里签约</a>；
+					如果已签约,
+					<a href="https://b.alipay.com/order/pidKey.htm?pid=2088501719138773&amp;product=fastpay" target="_blank" class="color-default">请点击这里获取PID、Key</a>;
+					如果在签约时出现合同模板冲突，请咨询0571-88158090
+			</span>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2">校验密钥</label>
+		<div class="col-sm-8">
+			<div class="input-group">
+				<input type="text" class="form-control" name="secret" ng-model="alipay.secret">
+				<span class="input-group-addon" ng-click="alisecrethelp = !alisecrethelp"><i class="wi wi-warning-sign" style="font-size:18px;"></i></span>
+			</div>
+			<span class="help-block" ng-show="alisecrethelp">支付宝签约用户可以在此处填写支付宝分配给您的交易安全校验码，此校验码您可以到支付宝官方的商家服务功能处查看 </span>
+		</div>
+	</div>
+	{/if}
+	{if $operate == 'wechat'}
+	<div class="form-group">
+		<label class="control-label col-sm-2">开关</label>
+		<div class="col-sm-8">
+			<input id='radio-3' type="radio" name='switch' {if $wechat['switch'] == 1}checked{/if} value="1"/>
+			<label for="radio-3">开启 </label>
+			<input id='radio-4' type="radio" name='switch' {if $wechat['switch'] != 1}checked{/if} value="2"/>
+			<label for="radio-4">关闭 </label>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2">appid</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" name="appid" value="{$wechat['appid']}">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2">微信支付商户号</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" name="mchid" value="{$wechat['mchid']}">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2">微信支付密钥</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" name="signkey" value="{$wechat['signkey']}">
+		</div>
+	</div>
+	{/if}
+	{if $operate == 'wechat_refund'}
+	<div class="form-group">
+		<label class="control-label col-sm-2">微信退款</label>
+		<div class="col-sm-8">
+			<div class="alert alert-warning">
+				证书:<br/>
+				使用微信退款功能需要上传双向证书。<br/>
+				证书下载方式:<br>
+				微信商户平台(pay.weixin.qq.com)-->账户中心-->账户设置-->API安全-->证书下载。<br>
+				我们仅用到apiclient_cert.pem 和 apiclient_key.pem这两个证书<br>
+			</div>
+			<div class="alert alert-warning">
+				接口:<br/>
+				支付回调URL: {$_W['siteroot']}payment/wechat/refund.php
+			</div>
+		</div>
+	</div>
+
+	<input type="hidden" name="type" value="wechat_refund">
+
+	<div class="form-group">
+		<label class="control-label col-sm-2">开关</label>
+		<div class="col-sm-8">
+			<input id='radio-5' type="radio" name='switch' {if $wechat_refund['switch'] == 1}checked{/if} value="1"/>
+			<label for="radio-5">开启 </label>
+			<input id='radio-6' type="radio" name='switch' {if $wechat_refund['switch'] != 1}checked{/if} value="2"/>
+			<label for="radio-6">关闭 </label>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-2">apiclient_cert.pem 证书</label>
+		<span class="text-success  col-sm-4">
+			{{ wechat_refund.cert != '' && wechat_refund.cert != undefind ? '已上传' : '' }}
+		</span>
+		<div class="form-controls col-sm-3 pull-right">
+			<input type="file" id="cert" class="hidden" name="cert">
+			<a class="color-default" href="javascript:;" onclick="cert.click()">上传证书</a>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-2">apiclient_key.pem 证书</label>
+		<span class="text-success  col-sm-4">
+			{{ wechat_refund.key != '' && wechat_refund.key != undefind ? '已上传' : '' }}
+		</span>
+		<div class="form-controls col-sm-3 pull-right">
+			<input type="file" id="key" class="hidden" name="key">
+			<a class="color-default" href="javascript:;" onclick="key.click()">上传证书</a>
+		</div>
+	</div>
+	{/if}
+
+	{if $operate == 'ali_refund'}
+	<div class="form-group">
+		<label class="control-label col-sm-2">支付宝退款</label>
+		<div class="col-sm-8">
+			<div class="alert alert-warning">
+				商户私钥生成教程:&nbsp;<a href="//openclub.alipay.com/read.php?tid=2177&fid=46" class="color-default" target="_blank">去查看</a>
+			</div>
+		</div>
+	</div>
+
+	<input type="hidden" name="type" value="ali_refund">
+
+	<div class="form-group">
+		<label class="control-label col-sm-2">开关</label>
+		<div class="col-sm-8">
+			<input id='radio-7' type="radio" name='switch' {if $ali_refund['switch'] == 1}checked{/if} value="1"/>
+			<label for="radio-7">开启 </label>
+			<input id='radio-8' type="radio" name='switch' {if $ali_refund['switch'] != 1}checked{/if} value="2"/>
+			<label for="radio-8">关闭 </label>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-2">app_id</label>
+		<div class="col-sm-8">
+			<input type="text" class="form-control" name="app_id" value="" ng-model="ali_refund.app_id">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-2">rsa_private_key.pem 证书</label>
+		<span class="text-success  col-sm-4">{{ ali_refund.private_key != '' && ali_refund.private_key != undefind ? '已上传' : '' }}</span>
+		<div class="col-sm-3 pull-right">
+			<input type="file" id="private_key" class="hidden" name="private_key">
+			<a class="color-default" href="javascript:;" onclick="private_key.click()">上传证书</a>
+		</div>
+	</div>
+
+	{/if}
+	<div class="form-group">
+		<label class="control-label col-sm-2"></label>
+		<div class="col-sm-8">
+			<input type="hidden" name="token" value="{$_W['token']}">
+			<input type="hidden" name="operate" value="{$_GPC['operate']}">
+			<input type="submit" name="submit" value="保 存" class="btn btn-primary">
+		</div>
+	</div>
+</form>
+<script>
+	angular.module('storeApp').value('config', {
+		'alipay': {php echo !empty($alipay) ? json_encode($alipay) : 'null'},
+		'wechat_refund': {php echo !empty($wechat_refund) ? json_encode($wechat_refund) : 'null'},
+		'ali_refund': {php echo !empty($ali_refund) ? json_encode($ali_refund) : 'null'},
+	});
+	angular.bootstrap($('#js-pay-setting'), ['storeApp']);
+</script>
+{template 'common/footer'}

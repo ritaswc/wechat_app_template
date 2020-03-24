@@ -1,0 +1,43 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view style="position:relative;">
+            <navigator class="flex-grow-0" hoverClass="none" openType="redirect" url="/mch/shop/shop?mch_id={{shop.id}}">
+                <view class="btn-main flex-x-center flex-y-center summary-home fs-sm">
+                    <image src="/mch/images/icon-home.png"></image>
+                    <text>返回店铺首页</text>
+                </view>
+            </navigator>
+            <image class="summary-head" src="{{shop.header_bg}}"></image>
+            <image class="summary-logo" src="{{shop.logo}}"></image>
+        </view>
+        <view class="flex-col flex-y-center" style="margin-top:100rpx;padding:0 48rpx;font-size:15pt;">{{shop.name}}</view>
+        <view style="margin:40rpx 55rpx 0 55rpx;color:#353535">
+            <view class="flex flex-row flex-y-center summary-bottom" wx:if="{{shop.main_content}}">
+                <image class="flex-grow-0" src="/mch/images/icon-zyin.png"></image>
+                <view class="flex-grow-1">{{shop.main_content}}</view>
+            </view>
+            <view class="flex flex-row summary-bottom" wx:if="{{shop.service_tel}}">
+                <image class="flex-grow-0" src="/mch/images/icon-bhao.png"></image>
+                <view class="flex-grow-1">{{shop.service_tel}}
+                    <view bindtap="callPhone" class="copy-info" data-info="{{shop.service_tel}}">拨号</view>
+                </view>
+            </view>
+            <view class="flex flex-row summary-bottom" wx:if="{{shop.address}}">
+                <image class="flex-grow-0" src="/mch/images/icon-dhang.png"></image>
+                <view class="flex-grow-1">{{shop.address}}
+                    <view bindtap="map_power" class="copy-info">导航</view>
+                </view>
+            </view>
+            <view class="flex flex-row summary-bottom" wx:if="{{shop.summary}}">
+                <image class="flex-grow-0" src="/mch/images/icon-jjie.png"></image>
+                <text class="flex-grow-1">{{shop.summary}}</text>
+            </view>
+        </view>
+        <view class="flex-x-center" style="margin:48rpx 0;color:#888" wx:if="{{shop.latitude>0&&shop.longitude>0}}">
+            <map latitude="{{shop.latitude}}" longitude="{{shop.longitude}}" markers="{{markers}}" style="width:640rpx;height:560rpx"></map>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

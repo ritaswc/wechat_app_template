@@ -1,0 +1,210 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <!-- 授权通过后显示 -->
+        <view a:if="{{authorize == true}}">
+            <!-- 我的活力币 -->
+            <view class='top'>
+                <form class='vitality' report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="/step/detail/detail">
+                    <button formType="submit" id="_formIdSubmit">
+                        <image src='../image/price.png' class='icon'></image>
+                        <view class='vitality-text'>我的{{store.option.step.currency_name?store.option.step.currency_name:'活力币'}}</view>
+                        <view class='vitality-num'>{{my}}</view>
+                        <image src='../image/right.png' class='look'></image>
+                    </button>
+                </form>
+            </view>
+            <!-- 主模块 -->
+            <view class='today'>
+                <image src='{{__wxapp_img.step.home_bg.url}}' class='bg'></image>
+                <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="/step/top/top" class='today-top'>
+                    <button formType="submit" id="_formIdSubmit">
+                        <image src='../image/top.png'></image>
+                    </button>
+                </form>
+                <form report-submit="true" onSubmit="_formIdSubmit" data-type="reLaunch" data-url="/pages/index/index" class='today-index'>
+                    <button formType="submit" id="_formIdSubmit">
+                        <image src='../image/index.png'></image>
+                    </button>
+                </form>
+                <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url='/step/rules/rules?rules=rules' class='rule'>
+                    <button formType="submit" id="_formIdSubmit">
+                        <text>规则</text>
+                    </button>
+                </form>
+                <!-- 兑换按钮 -->
+                <view class='button' onTap='exchange'>
+                    <view class='today-step'>今日可兑步数</view>
+                    <view class='step-num'>{{overStep}}</view>
+                    <view>点击兑换</view>
+                    <view class='today-msg'>每日零点清零</view>
+                </view>
+                <view class='refresh' onTap='refresh'>
+                    <image src='../image/refresh.png'></image>
+                    <text>同步微信最新步数</text>
+                </view>
+                <!-- 分享按钮 -->
+                <form class='invite' report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="../share/share?todayStep={{todayStep}}">
+                    <button formType="submit" id="_formIdSubmit">
+                        <button class='invite-btn'>邀请好友获得永久步数加成</button>
+                    </button>
+                </form>
+                <!-- 好友助力 -->
+                <view class='help'>
+                    <view class='friend'>
+                        <view class='friend-left'>
+                            <text>好友\n助力</text>
+                        </view>
+                        <view class='friend-right'>
+                            <view class='friend-avatar' a:for="{{friend}}" a:key="{{avatar}}">
+                                <image src='{{item.avatar_url}}'></image>
+                            </view>
+                            <form report-submit="true" wx-if="{{length < 4}}" style="margin-right:20rpx;" onSubmit="_formIdSubmit" data-type="navigate" data-url="../share/share?todayStep={{todayStep}}">
+                                <button formType="submit" id="_formIdSubmit">
+                                    <image src='../image/friend.png'></image>
+                                </button>
+                            </form>
+                           <form report-submit="true" wx-if="{{length < 3}}" style="margin-right:20rpx;" onSubmit="_formIdSubmit" data-type="navigate" data-url="../share/share?todayStep={{todayStep}}">
+                                <button formType="submit" id="_formIdSubmit">
+                                    <image src='../image/friend.png'></image>
+                                </button>
+                            </form>
+                           <form report-submit="true" wx-if="{{length < 2}}" style="margin-right:20rpx;" onSubmit="_formIdSubmit" data-type="navigate" data-url="../share/share?todayStep={{todayStep}}">
+                                <button formType="submit" id="_formIdSubmit">
+                                    <image src='../image/friend.png'></image>
+                                </button>
+                            </form>
+                           <form report-submit="true" wx-if="{{length < 1}}" style="margin-right:20rpx;" onSubmit="_formIdSubmit" data-type="navigate" data-url="../share/share?todayStep={{todayStep}}">
+                                <button formType="submit" id="_formIdSubmit">
+                                    <image src='../image/friend.png'></image>
+                                </button>
+                            </form>
+                            <form report-submit="true" class='more' onSubmit="_formIdSubmit" data-type="navigate" data-url="../friend/friend">
+                                <button formType="submit" id="_formIdSubmit">
+                                    <text>查看\n更多</text>
+                                    <image src='../image/right.png'></image>
+                                </button>
+                            </form>
+                        </view>
+                    </view>
+                    <!-- 加成明细 -->
+                    <view class='addition' style='margin-bottom:10rpx;'>
+                        总邀请{{user.all_invite}}人，今日邀请{{user.now_invite}}人
+                    </view>
+                    <view class='addition'>
+                        当前步数加成{{nowAdd}}%，明天步数加成{{nextAdd}}%
+                    </view>
+                </view>
+            </view>
+            <!-- 流量主 -->
+            <ad unit-id="{{unit_id}}" onError="adError" wx-if="{{unit_id}}"></ad>
+            <!-- 兑换提醒 -->
+            <view class='remind'>
+                <view class='remind-text'>
+                    <view>每日兑换提醒</view>
+                    <view class='day'>{{store.option.step.currency_name?store.option.step.currency_name:'活力币'}}可兑换礼物,记得每天来看看哟</view>
+                </view>
+                <switch class='switch' onChange='switch' checked="{{checked}}"></switch>
+            </view>
+            <!-- 轮播图 -->
+            <swiper class='ad' indicator-dots indicator-active-color="rgb(255,69,68)" autoplay>
+                <block a:for="{{banner_list}}" a:key="{{pic}}">
+                    <swiper-item>
+                        <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="{{item.page_url}}">
+                            <button formType="submit" id="_formIdSubmit">
+                                <image src='{{item.pic_url}}' id="{{item.store_id}}" mode="aspectFill"></image>
+                            </button>
+                        </form>
+                    </swiper-item>
+                </block>
+            </swiper>
+            <!-- 步数挑战，无则隐藏 -->
+            <view class='dare' wx-if="{{activity_data.id > 0}}">
+                <view class='dare-banner'>
+                    <view class='dare-title'>步数挑战</view>
+                    <view class='dare-date' wx-if='{{activity_data.id > 0 && time != open_date}}'>{{activity_data.open_date}}开始</view>
+                    <view class='dare-date' wx-if='{{activity_data.id > 0 && time == open_date}}'>{{activity_data.name}}进行中</view>
+                    <form class='dare-right' report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="../dare/dare">
+                        <button formType="submit" id="_formIdSubmit">
+                            <view>
+                                <text>更多</text>
+                                <image src='../image/right.png'></image>
+                            </view>
+                        </button>
+                    </form>
+                </view>
+                <view class='no-dare' wx-if='{{dare == false}}'>
+                    <image src='../image/none.png'></image>
+                    <view>暂无挑战赛哦</view>
+                </view>
+                <view class='dare-item' wx-if='{{dare == true}}'>
+                    <view class='item-img'>
+                        <image src='../image/dare.png'></image>
+                    </view>
+                    <view class='dare-info' wx-if="{{time == open_date && activity_data.log.length == 0}}">
+                        <view>奖金池总额</view>
+                        <view class='info-num'>{{activity_data.suc_currency}}</view>
+                        <view>达标人数</view>
+                        <view class='info-num'>{{activity_data.suc_num}}</view>
+                    </view>
+                    <view class='item' wx-if="{{time != open_date || activity_data.log.length != 0}}">
+                        <view class='target-step'>目标步数
+                            <text>{{activity_data.step_num}}</text> 步
+                        </view>
+                        <view wx-if='{{time != open_date}}'>
+                            <view class='dare-gold'>挑战保证金
+                                <text>{{activity_data.bail_currency}}{{store.option.step.currency_name?store.option.step.currency_name:'活力币'}}</text>
+                            </view>
+                            <view>已有{{activity_data.people_num}}人参加</view>
+                        </view>
+                        <view class='target-step' wx-if='{{activity_data.log.length != 0 && time == open_date}}'>已完成
+                            <text>{{todayStep}}</text> 步
+                        </view>
+                        <view class='start' wx-if='{{activity_data.log.length != 0 && finish == false && time == open_date}}'>距目标越来越近了，加油哦~</view>
+                        <button class='join-over' wx-if='{{activity_data.log.length != 0 && time != open_date}}' open-type="share">已参赛，邀请好友</button>
+                        <button class='submit-over' wx-if='{{time == open_date && finish == true && activity_data.log_status == 2}}'>已提交成绩</button>
+                        <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="../join/join?id={{activity_data.id}}">
+                            <button formType="submit" id="_formIdSubmit">
+                                <button class='join' wx-if='{{activity_data.log.length == 0 && time != open_date}}'>立即参加</button>
+                            </button>
+                        </form>
+                        <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="../dare/dare?user_id={{user_id}}">
+                            <button formType="submit" id="_formIdSubmit">
+                                <button class='join' wx-if='{{activity_data.log.length != 0 && finish == true && time == open_date && activity_data.log_status == 3}}'>提交成绩</button>
+                            </button>
+                        </form>
+
+                    </view>
+                </view>
+            </view>
+
+            <!-- 商品兑换 -->
+            <view class='exchange-title'>
+                <image src='../image/exchange.png'></image>
+                <text>免费兑换</text>
+            </view>
+            <view class='good-list'>
+                <view class='good' a:for="{{goods}}" a:key="{{good}}" a:for-item="good">
+                    <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="../goods/goods?goods_id={{good.id}}">
+                        <button formType="submit" id="_formIdSubmit">
+                            <image src='{{good.cover_pic}}'></image>
+                            <view class='good-info'>
+                                <view class='good-name'>{{good.name}}</view>
+                                <view class='good-price'>{{good.price}}{{store.option.step.currency_name?store.option.step.currency_name:'活力币'}}</view>
+                                <button class='good-exchange'>立即兑换</button>
+                            </view>
+                        </button>
+                    </form>
+                </view>
+            </view>
+            <view class='loading' wx-if="{{loading}}">正在加载中...</view>
+        </view>
+        <!-- 授权页面 -->
+        <view class='over-screen' a:if="{{authorize == false}}">
+            <view class='window'>为确保您的正常使用，请完善授权操作</view>
+            <view onTap="openSetting" class='get-setting'>确认</view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

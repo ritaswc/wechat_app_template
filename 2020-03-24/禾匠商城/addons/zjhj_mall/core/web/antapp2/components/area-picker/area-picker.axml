@@ -1,0 +1,26 @@
+<view class="area-picker {{area_picker_show?'active':''}}">
+    <view class="area-picker-bg" onTap="hideAreaPicker">
+        <scroll-view></scroll-view>
+    </view>
+    <view class="area-picker-body">
+        <scroll-view>
+            <view class="area-picker-top">
+                <text class="area-picker-cancel" onTap="hideAreaPicker">取消</text>
+                <text class="area-picker-confirm" onTap="areaPickerConfirm">确认</text>
+            </view>
+            <view class="area-picker-row">
+                <picker-view indicator-style="height: 100rpx" style="width: 100%; height: 500rpx;" onChange="areaPickerChange">
+                    <picker-view-column>
+                        <view a:for="{{area_picker_province_list}}" a:key="index" style="line-height: 100rpx;height: 100rpx;text-align: center">{{item.name}}</view>
+                    </picker-view-column>
+                    <picker-view-column>
+                        <view a:for="{{area_picker_city_list}}" a:key="index" style="line-height: 100rpx;height: 100rpx;text-align: center">{{item.name}}</view>
+                    </picker-view-column>
+                    <picker-view-column>
+                        <view a:for="{{area_picker_district_list}}" a:key="index" style="line-height: 100rpx;height: 100rpx;text-align: center">{{item.name}}</view>
+                    </picker-view-column>
+                </picker-view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

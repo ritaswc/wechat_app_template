@@ -1,0 +1,45 @@
+<view class="page {{__page_classes}}">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <scroll-view class="scroll-view-x" scrollIntoView="{{toView}}" scrollLeft="{{scrollLeft}}" scrollWithAnimation="true" scrollX="true" style="width:100%;" wx:if="{{cat_show=='1'&&cid_url}}">
+            <view bindtap="switchNav" class="scroll-view-item {{cid==0?'active':''}}" data-id="0" id="0">
+                全部
+            </view>
+            <view bindtap="switchNav" class="scroll-view-item {{cid==item.id?'active':''}}" data-id="{{item.id}}" id="{{item.id}}" wx:for="{{cat}}" wx:key="unique">
+                    {{item.name}}
+                </view>
+        </scroll-view>
+        <scroll-view scrollY class="after-navber" scrollIntoView="{{toView}}" scrollTop="{{scrollTop}}" style="{{cat_show=='1'&&cid_url?'padding-top: 100rpx;':''}};height: 100%;">
+            <view class="goods">
+                <navigator class="goods-item" url="/pages/book/details/details?id={{item.id}}" wx:for="{{goods}}" wx:key="{{item.id}}">
+                    <view class="goods-pic">
+                        <image src="{{item.cover_pic}}"></image>
+                    </view>
+                    <view class="goods-title">
+                        {{item.name}}
+                    </view>
+                    <view class="price flex-row flex-y-center">
+                        <view class="money flex-grow-1 flex-y-center" wx:if="{{item.price!=0}}">
+                            ¥ <view style="max-width:180rpx">{{item.price}}</view>
+                        </view>
+                        <view class="money flex-grow-1 flex-y-center" wx:if="{{item.price==0}}">
+                            免费预约
+                        </view>
+                        <view class="go-book flex-gorw-0 flex-x-center flex-y-center">
+                            预约
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+            <view class="loading-bar {{show_loading_bar?'active':''}}" style="text-align: center;{{emptyGoods==1?'display:none':''}}">
+                <image src="{{__wxapp_img.system.loading.url}}" style="width: 160rpx;height: 80rpx"></image>
+            </view>
+            <view class="empty-bar flex-row flex-x-center flex-y-center" style="{{emptyGoods!=1?'display:none':''}}">
+                没有更多商品了~
+            </view>
+        </scroll-view>
+    </view>
+    <include src="/components/quick-navigation/quick-navigation.wxml"></include>
+    <include src="/components/footer/footer"></include>
+</view>

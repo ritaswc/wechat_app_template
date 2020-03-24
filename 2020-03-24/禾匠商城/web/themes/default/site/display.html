@@ -1,0 +1,117 @@
+{template 'common/header'}
+<ul class="we7-page-tab">
+	{loop $active_sub_permission $active_menu}
+	{if permission_check_account_user($active_menu['permission_name'], false) && (empty($active_menu['is_display']) || is_array($active_menu['is_display']) && in_array($_W['account']['type'], $active_menu['is_display']))}
+	<li {if $action == $active_menu['active']}class="active"{/if}><a href="{$active_menu['url']}">{$active_menu['title']}</a></li>
+	{/if}
+	{/loop}
+</ul>
+<div id="js-wesite-display" ng-controller="WesiteDisplay" ng-cloak>
+	<div class="we7-page-search we7-padding-bottom clearfix">
+		<form action="./index.php" method="get" class="form-horizontal ng-pristine ng-valid" role="form">
+			<input type="hidden" name="c" value="site">
+			<input type="hidden" name="a" value="multi">
+			<div class="input-group col-sm-4 pull-left">
+				<input name="keyword" id="" value="{$_GPC['keyword']}" class="form-control" placeholder="搜索关键字" type="text">
+				<span class="input-group-btn"><button class="btn btn-default"><i class="fa fa-search"></i></button></span>
+			</div>
+		</form>
+		<div class="pull-right">
+			<a href="{php echo url('site/multi/post')}" class="btn btn-primary we7-padding-horizontal">+新建微官网</a>
+		</div>
+	</div>
+	<div class="alert alert-info we7-page-alert">
+		<p><i class="fa fa-exclamation-circle"></i> 默认微站默认开启，不可关闭</p>
+	</div>
+	<table class="table we7-table table-hover site-list">
+		<col width="140px"/>
+		<col width=""/>
+		<col width="160px"/>
+		<col width="140px"/>
+		<col width="285px"/>
+		<tr>
+			<th colspan="2" class="text-left">名称/模板</th>
+			<th class="text-left">入口</th>
+			<th>是否启用</th>
+			<th class="text-left">操作</th>
+		</tr>
+		<tr ng-repeat="multi in multis">
+			<td class="text-left vertical-middle">
+				<div class="site-item-img">
+					<img ng-src="{{multi.preview_thumb}}">
+					<div class="cover-dark">
+						<a href="javascript:void(0);" ng-click="preview(multi.id)"></a>
+					</div>
+				</div>
+			</td>
+			<td class="text-left"> 
+				<div class="we7-margin-vertical">
+					<p class="color-gray">名称</p> 
+					<span class="color-dark" ng-bind="multi.title"></span>
+				</div>
+				<div class="we7-margin-bottom">
+					<p class="color-gray">模板风格</p>
+					<a href="javascript:;" class="color-dark" ng-bind="multi.style.name"></a>
+				</div>
+			</td>
+			<td class="text-left">
+				<div class="we7-margin-vertical">
+					<p class="color-gray">触发关键字</p> 
+					<span class="color-dark" ng-bind="multi.site_info.keyword"></span>
+				</div>
+				<div class="we7-margin-bottom">
+					<p class="color-gray">链接地址</p>
+					<div class="link-group text-left" style="min-width: 100px;">
+						<a href="javascript:;" id="copy-{{multi.id}}" class="color-default" clipboard supported="supported" text="multi.copyLink" on-copied="success(multi.id)">点击复制</a>
+					</div>
+				</div>
+			</td>
+			<td class="vertical-middle">
+				<div ng-if="default_site == multi.id">默认开启</div>
+				<label>
+					<input name="" id="" class="form-control" type="checkbox"  style="display: none;">
+					<div class="switch" ng-class="{'switchOn' : multi.status == 1}" ng-click="switchOn(multi, multi.id)" ng-if="default_site != multi.id"></div>
+				</label>
+			</td>
+			<td class="text-left">
+				<div class="we7-margin-vertical">
+					<p class="color-gray">基础操作</p>
+					<span class="link-group text-left">
+						<a ng-href="{{links.post}}multiid={{multi.id}}" class="we7-margin-right">编辑</a>
+						<a ng-href="{{links.copy}}multiid={{multi.id}}" class="we7-margin-right">复制站点</a>
+						<a href="javascript:void(0);" class="del" ng-if="default_site != multi.id" ng-click="deleteMulti(links.del, multi.id)">删除</a>
+					</span>
+					<a href="javascript:;" class="label label-success" ng-if="default_site == multi.id">默认微站</a>
+				</div>
+				<div class="we7-margin-bottom">
+					<p class="color-gray">内容设置</p>
+					<div class="link-group text-left">
+						<a href="{{links.post}}multiid={{multi.id}}&clicktype=slide" class="we7-margin-right">幻灯片</a>
+						<a href="{{links.post}}multiid={{multi.id}}&clicktype=homemenu" class="we7-margin-right">导航菜单</a>
+						<a href="{{links.post}}multiid={{multi.id}}&clicktype=quickmenu">快捷菜单</a>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div class="text-right we7-padding-top">
+		{$pager}
+	</div>
+</div>
+<script>
+require(['underscore'], function(){
+	angular.module('wesiteApp').value('config', {
+		default_site: {php echo !empty($default_site) ? json_encode($default_site) : '0'},
+		multis: {php echo !empty($multis) ? json_encode($multis) : 'null'},
+		links: {
+			post: "{php echo url('site/multi/post')}",
+			del: "{php echo url('site/multi/del')}",
+			copy: "{php echo url('site/multi/copy')}",
+			switch: "{php echo url('site/multi/switch')}",
+			appHome: "{php echo murl('home', array(), true, true)}",
+		},
+	});
+	angular.bootstrap($('#js-wesite-display'), ['wesiteApp']);
+});
+</script>
+{template 'common/footer'}

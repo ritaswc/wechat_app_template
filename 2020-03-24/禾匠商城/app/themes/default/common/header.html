@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>
+	{if !empty($title)} 
+		{$title} -
+	{elseif !empty($_W['page']['title'])} 
+		{$_W['page']['title']} -
+	{/if} 
+	{if !empty($_W['page']['sitename'])}
+		{$_W['page']['sitename']} 
+	{else}
+		{$_W['account']['name']} 
+	{/if} 
+	{if IMS_FAMILY == 'v'}
+		- Powered by W7.CC 
+	{/if}
+	</title>
+	<meta name="format-detection" content="telephone=no, address=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="keywords" content="{if empty($_W['page']['keywords'])}{if IMS_FAMILY != 'x'}微擎,微信,微信公众平台,w7.cc{/if}{else}{$_W['page']['keywords']}{/if}" />
+	<meta name="description" content="{if empty($_W['page']['description'])}{if IMS_FAMILY != 'x'}公众平台自助引擎（www.w7.cc），简称微擎，微擎是一款免费开源的微信公众平台管理系统，是国内最完善移动网站及移动互联网技术解决方案。{/if}{else}{$_W['page']['description']}{/if}" />
+	<link rel="shortcut icon" href="{$_W['siteroot']}{$_W['config']['upload']['attachdir']}/{if !empty($_W['setting']['copyright']['icon'])}{$_W['setting']['copyright']['icon']}{else}images/global/wechat.jpg{/if}" />
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+	{if $_W['container'] == 'baidu'}
+	<script src="https://xiongzhang.baidu.com/sdk/c.js?appid={$_W['account']['jssdkconfig']['appId']}&timestamp={$_W['account']['jssdkconfig']['timestamp']}&nonce_str={$_W['account']['jssdkconfig']['nonceStr']}&signature={$_W['account']['jssdkconfig']['signature']}&url={$_W['account']['jssdkconfig']['url']}"></script>
+	{/if}
+	<script type="text/javascript" src="{$_W['siteroot']}app/resource/js/app/util.js"></script>
+	<script src="{$_W['siteroot']}app/resource/js/require.js"></script>
+	<script type="text/javascript" src="{$_W['siteroot']}app/resource/js/lib/jquery-1.11.1.min.js?v=20160906"></script>
+	<script type="text/javascript" src="{$_W['siteroot']}app/resource/js/lib/mui.min.js?v=20160906"></script>
+	<script type="text/javascript" src="{$_W['siteroot']}app/resource/js/app/common.js?v=20160906"></script>
+	<link href="{$_W['siteroot']}app/resource/css/bootstrap.min.css?v=20160906" rel="stylesheet">
+	<link href="{$_W['siteroot']}app/resource/css/common.min.css?v=20160906" rel="stylesheet">
+	<script type="text/javascript">
+	if(navigator.appName == 'Microsoft Internet Explorer'){
+		if(navigator.userAgent.indexOf("MSIE 5.0")>0 || navigator.userAgent.indexOf("MSIE 6.0")>0 || navigator.userAgent.indexOf("MSIE 7.0")>0) {
+			alert('您使用的 IE 浏览器版本过低, 推荐使用 Chrome 浏览器或 IE8 及以上版本浏览器.');
+		}
+	}
+	window.sysinfo = {
+		{if !empty($_W['uniacid'])}'uniacid': '{$_W['uniacid']}',{/if}
+		{if !empty($_W['acid'])}'acid': '{$_W['acid']}',{/if}{if !empty($_W['openid'])}'openid': '{$_W['openid']}',{/if}
+		{if !empty($_W['uid'])}'uid': '{$_W['uid']}',{/if}
+		'siteroot': '{$_W['siteroot']}',
+		'siteurl': '{$_W['siteurl']}',
+		'attachurl': '{$_W['attachurl']}',
+		'attachurl_local': '{$_W['attachurl_local']}',
+		'attachurl_remote': '{$_W['attachurl_remote']}',
+		{if defined('MODULE_URL')}'MODULE_URL': '{MODULE_URL}',{/if}
+		'cookie' : {'pre': '{$_W['config']['cookie']['pre']}'}
+	};
+	// jssdk config 对象
+	jssdkconfig = {php echo json_encode($_W['account']['jssdkconfig']);} || {};
+	// 是否启用调试
+	jssdkconfig.debug = false;
+	jssdkconfig.jsApiList = [
+		'checkJsApi',
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage',
+		'onMenuShareQQ',
+		'onMenuShareWeibo',
+		'hideMenuItems',
+		'showMenuItems',
+		'hideAllNonBaseMenuItem',
+		'showAllNonBaseMenuItem',
+		'translateVoice',
+		'startRecord',
+		'stopRecord',
+		'onRecordEnd',
+		'playVoice',
+		'pauseVoice',
+		'stopVoice',
+		'uploadVoice',
+		'downloadVoice',
+		'chooseImage',
+		'previewImage',
+		'uploadImage',
+		'downloadImage',
+		'getNetworkType',
+		'openLocation',
+		'getLocation',
+		'hideOptionMenu',
+		'showOptionMenu',
+		'closeWindow',
+		'scanQRCode',
+		'chooseWXPay',
+		'openProductSpecificView',
+		'addCard',
+		'chooseCard',
+		'openCard',
+		'openAddress'
+	];
+	</script>
+</head>
+<body>
+<div class="container container-fill">
+{if $_W['container'] !== 'wechat' && ($_GPC['c'] == 'mc' || $_GPC['c'] == 'activity')}
+<header class="mui-bar mui-bar-nav">
+	<button class="mui-btn mui-btn-link mui-btn-nav mui-pull-left mui-action-back">
+		<span class="mui-icon mui-icon-left-nav"></span>
+		返回
+	</button>
+	<h1 class="mui-title">{if !empty($title)}{$title}{elseif !empty($_W['page']['title'])}{$_W['page']['title']}{/if}</h1>
+</header>
+{/if}

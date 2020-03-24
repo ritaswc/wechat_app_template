@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "二维码",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "name": "wi1dcard/yii2-hejiang-sms",
+    "description": "Third-party SMS gateway service integrations for Yii2.",
+    "type": "library",
+    "require": {
+        "php": ">=5.4",
+        "yiisoft/yii2": "~2.0.5",
+        "qcloudsms/qcloudsms_php": "^0.1.2",
+        "flc/alidayu": "^2.0"
+    },
+    "authors": [
+        {
+            "name": "wi1dcard",
+            "email": "yokka47@qq.com"
+        }
+    ],
+    "autoload":{
+        "psr-4": {
+            "Hejiang\\Sms\\": "lib/"
+        }
+    }
+}

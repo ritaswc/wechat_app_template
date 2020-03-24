@@ -1,0 +1,97 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body">
+        <view class="after-navber">
+            <view class="top-bar">
+                <scroll-view scrollIntoView="miaosha_{{top_bar_scroll}}" scrollWithAnimation="true" scrollX="true">
+                    <view class="flex-row start-time-list">
+                        <view bindtap="topBarItemClick" class="flex-grow-0 flex-y-center start-time-item {{item.active?'active':''}}" data-index="{{index}}" id="miaosha_{{index}}" wx:for="{{time_list}}" wx:key="{{item.id}}">
+                            <view>
+                                <view class="start-time">{{item.title}}</view>
+                                <view class="start-status">{{item.status_text}}</view>
+                            </view>
+                            <view class="start-time-item-icon" wx:if="{{item.active}}"></view>
+                        </view>
+                        <view bindtap="miaosha_next" class="flex-grow-0 flex-y-center start-time-item {{ms_active?'active':''}}" wx:if="{{next_list.length>0}}">
+                            <view class="start-time">预告</view>
+                            <view class="start-time-item-icon" wx:if="{{ms_active}}"></view>
+                        </view>
+                        <view class="flex-grow-1" style="background:#30353c"></view>
+                    </view>
+                </scroll-view>
+                <view class="flex-row" style="margin-top:-20rpx;background:#fff" wx:if="{{ms_active}}">
+                    <view class="flex-y-center" style="margin:40rpx 40rpx 40rpx 70rpx">
+                        <image src="/images/miaosha-next.png" style="width:100rpx;height:100rpx"></image>
+                    </view>
+                    <view class="flex-col flex-x-center">
+                        <text style="color:#3f3f3f">今天已无更多场次</text>
+                        <text style="height:10rpx"></text>
+                        <text style="color:#999999">下一场于 <text style="color:#ff4544;">{{next_time}}</text> 开始</text>
+                    </view>
+                </view>
+                <view style="background:#f7f7f7;height:12rpx" wx:if="{{ms_active}}"></view>
+                <view class="flex-row time-over-bar" wx:if="{{time_list&&!ms_active}}">
+                    <view class="flex-grow-1 flex-y-center" style="color: #ff4544">限时限量 先到先得</view>
+                    <view class="flex-grow-0 flex-y-center" style="color: #888" wx:if="{{item.active}}" wx:for="{{time_list}}" wx:key="{{item.id}}">
+                        <text wx:if="{{item.status==0}}">本场秒杀已结束</text>
+                        <block wx:if="{{item.status==1}}">
+                            <text>距离本场结束</text>
+                            <text style="color: #666;margin-left: 10rpx">{{item.end_time_over}}</text>
+                        </block>
+                        <block wx:if="{{item.status==2}}">
+                            <text>距离本场开始</text>
+                            <text style="color: #666;margin-left: 10rpx">{{item.begin_time_over}}</text>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="goods-loading" style="padding-top: 320rpx;text-align: center" wx:if="{{goods_list===null}}">
+                <image src="{{__wxapp_img.system.loading2.url}}" style="width: 120rpx;height: 120rpx"></image>
+            </view>
+            <view class="goods-list" style="{{ms_active?'padding-top:309rpx':''}}" wx:else>
+                <form bindsubmit="_formIdSubmit" data-type="navigate" data-url="/pages/miaosha/details/details?id={{item.id}}" reportSubmit="true" wx:for="{{goods_list}}" wx:key="{{item.id}}">
+                    <button formType="submit" id="_formIdSubmit">
+                        <view class="item flex-row">
+                            <view class="flex-grow-0" style="padding: 12rpx 0">
+                                <image class="cover-pic" mode="aspectFill" src="{{item.cover_pic}}"></image>
+                            </view>
+                            <view class="flex-grow-1" style="padding: 28rpx 24rpx">
+                                <view class="goods-name">{{item.name}}</view>
+                                <view class="progress-bar">
+                                    <view class="progress" style="width: {{item.sell_num*100/item.miaosha_num}}%"></view>
+                                </view>
+                                <view class="flex-row statue-text">
+                                    <block wx:if="{{item.sell_num<item.miaosha_num}}">
+                                        <view class="flex-grow-1">已抢购{{item.sell_num}}</view>
+                                        <view class="flex-grow-0" style="color: #ff4544">仅剩{{item.miaosha_num-item.sell_num}}</view>
+                                    </block>
+                                    <view class="flex-grow-1" wx:else>{{item.miaosha_num}}已抢完</view>
+                                </view>
+                                <view class="flex-row">
+                                    <view class="flex-grow-1">
+                                        <view class="miaosha-price">￥{{item.miaosha_price}}</view>
+                                        <view class="price">￥{{item.price}}</view>
+                                    </view>
+                                    <view class="flex-grow-0 flex-y-bottom">
+                                        <view class="btn" wx:if="{{item.status==0}}">查看商品</view>
+                                        <block wx:if="{{item.status==1}}">
+                                            <view class="btn btn-buy" wx:if="{{item.sell_num<item.miaosha_num}}">马上抢购</view>
+                                            <view class="btn" wx:else>查看商品</view>
+                                        </block>
+                                        <view class="btn" wx:if="{{item.status==2}}">查看商品</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </button>
+                </form>
+            </view>
+            <view class="load-more-bar {{__device}} {{loading_more?'active':''}}">
+                <image src="{{__wxapp_img.system.loading.url}}"></image>
+            </view>
+        </view>
+    </view>
+    <include src="/components/quick-navigation/quick-navigation.wxml"></include>
+    <include src="/components/footer/footer"></include>
+</view>

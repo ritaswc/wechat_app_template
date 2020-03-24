@@ -1,0 +1,261 @@
+.user-address {
+    background-color: #ffffff;
+    margin-bottom: 20rpx;
+}
+
+.user-address-top image {
+    height: 8rpx;
+    width: 100%;
+}
+
+.user-address-bottom image {
+    height: 8rpx;
+    width: 100%;
+}
+
+.address-center {
+    padding: 32rpx 24rpx;
+    font-size: 11pt;
+    color: #353535;
+}
+
+.address-right image {
+    width: 16rpx;
+    height: 26rpx;
+    margin-left: 46rpx;
+}
+
+.address-phone {
+    text-align: right;
+}
+
+.address-text {
+    margin-top: 28rpx;
+}
+
+.no-address {
+    color: #353535;
+    font-size: 11pt;
+    padding: 16rpx 24rpx;
+}
+
+.address-icon image {
+    width: 34rpx;
+    height: 42rpx;
+    margin-right: 14rpx;
+}
+
+.address-to-icon image {
+    width: 12rpx;
+    height: 22rpx;
+}
+
+.cart-item {
+    background: #fff;
+    padding: 32rpx 24rpx 10rpx 24rpx;
+}
+
+.cart-item .goods-pic {
+    width: 156rpx;
+    height: 156rpx;
+    margin-right: 20rpx;
+}
+
+.cart-item .goods-name {
+    margin-bottom: 10rpx;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.cart-item .attr-list,.cart-item .num {
+    font-size: 9pt;
+}
+
+.cart-item .attr-list .attr-item {
+    display: inline-block;
+    margin-right: 36rpx;
+}
+
+.cart-item .attr-list .attr-item:last-child {
+    margin-right: 0;
+}
+
+.colonel {
+    height: 88rpx;
+    background-color: #ffffff;
+    border-top: 1rpx solid #e2e2e2;
+    padding: 0 24rpx;
+    font-size: 11pt;
+    color: #353535;
+}
+
+.colonel-price {
+    text-align: right;
+}
+
+.message-title {
+    width: 168rpx;
+}
+
+.message-plaseholder {
+    font-size: 9pt;
+}
+
+.message input {
+    font-size: 11pt;
+    line-height: 1;
+}
+
+.submit-footer {
+    height: 98rpx;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-left: 24rpx;
+    font-size: 12pt;
+    z-index: 10;
+}
+
+.total-title {
+    color: #353535;
+}
+
+.total-price {
+    color: #ff5c5c;
+    line-height: 1;
+}
+
+.submit-btn {
+    background-color: #ff4544;
+    color: #fff;
+    width: 250rpx;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    height: 100%;
+}
+
+.active {
+    border-bottom: 4rpx #ff4544 solid;
+    color: #ff4544;
+}
+
+.address-picker {
+    background: #fff;
+    padding: 32rpx 24rpx;
+    margin-bottom: 20rpx;
+    border-bottom: 1rpx solid #e3e3e3;
+}
+
+.coupon-picker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    background: #fff;
+    border-top: 1rpx solid #e3e3e3;
+}
+
+.coupon-list {
+    padding: 34rpx;
+}
+
+.coupon-list .coupon-item {
+    height: 152rpx;
+    width: 682rpx;
+    position: relative;
+    margin-bottom: 24rpx;
+}
+
+.coupon-list .coupon-item.coupon-status-1 .coupon-right,.coupon-list .coupon-item.coupon-status-2 .coupon-right {
+    color: rgba(0,0,0,0.35)!important;
+}
+
+.coupon-list .coupon-item .coupon-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.coupon-list .coupon-item .coupon-status-icon {
+    width: 140rpx;
+    height: 98rpx;
+    position: absolute;
+    top: 0;
+    right: 8rpx;
+    z-index: 1;
+}
+
+.coupon-list .coupon-item .coupon-left {
+    color: #fff;
+    width: 202rpx;
+}
+
+.coupon-list .coupon-item .coupon-right {
+    padding: 20rpx 10rpx;
+}
+
+.shop-block {
+    width: 100%;
+    height: 70rpx;
+    padding-left: 24rpx;
+}
+
+.shop-address {
+    width: 100%;
+    background-color: #fff;
+    padding: 30rpx 24rpx;
+}
+
+.payment {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.pay-modal {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+}
+
+.pay-head {
+    height: 80rpx;
+    width: 100%;
+    color: #353535;
+    border-bottom: 1rpx #e2e2e2 solid;
+}
+
+.pay-block {
+    width: 100%;
+    height: 120rpx;
+    color: #999;
+    padding: 0 30rpx;
+    border-bottom: 1rpx #e2e2e2 solid;
+}
+
+.red {
+    color: #ff4544;
+}
+
+.pay-footer {
+    width: 100%;
+    height: 88rpx;
+    background-color: #ff4544;
+    color: #fff;
+}

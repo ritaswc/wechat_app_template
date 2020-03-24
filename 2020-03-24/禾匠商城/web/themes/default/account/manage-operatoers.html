@@ -1,0 +1,65 @@
+{template 'common/header'}
+<div id="js-user-edit-base" ng-controller="UserEditOperatoers" ng-cloak>
+
+	{template 'account/account-header'}
+
+	<div class="search-box clearfix we7-margin-bottom">
+		<form action="" method="get" class="search-form">
+			<input type="hidden" name="c" value="{$controller}">
+			<input type="hidden" name="a" value="{$action}">
+			<input type="hidden" name="do" value="{$do}">
+			<input type="hidden" name="uid" value="{$uid}">
+			<input type="hidden" name="uniacid" value="{$uniacid}">
+			<input type="hidden" name="page" value="1">
+			<div class="input-group">
+				<input class="form-control" name="username" value="{$username}" type="text" placeholder="请输入要搜索的用户名">
+				<span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button></span>
+			</div>
+		</form>
+	</div>
+	<table class="table we7-table">
+		<tr>
+			<th>用户名</th>
+			<th>操作应用</th>
+			<th>权限信息</th>
+			<th>操作</th>
+		</tr>
+		{loop $clerks $clerk}
+		<tr>
+			<td>{$users_info[$clerk['uid']]['username']}</td>
+			<td>{$modules_info[$clerk['type']]['title']}</td>
+			<td class="color-default">{php echo count($clerk['permission'])} 项</td>
+			<td class="color-default">
+				<a target="_blank" href="{php echo url('module/display/switch', array('module_name' => $clerk['permission_module'], 'uniacid' => $clerk['uniacid'], 'redirect' => urlencode(url('module/permission/post', array('uid' => $clerk['uid'], 'm' => $clerk['permission_module'], 'uniacid' => $clerk['uniacid']))) ))}">
+					权限设置
+				</a>
+				{if empty($clerk['main_module'])}
+				<a ng-click="deleteClerk('{php echo url('module/permission/delete',  array('uid' => $clerk['uid'], 'm' => $clerk['permission_module'], 'uniacid' => $clerk['uniacid']))}')" href="javascript:;">
+					删除
+				</a>
+				{/if}
+			</td>
+		</tr>
+		{/loop}
+		{if empty($clerks)}
+		<tr>
+			<td colspan="10" class="text-center">暂无操作员...</td>
+		</tr>
+		{/if}
+	</table>
+	<div class="text-right">
+		{$pager}
+	</div>
+</div>
+<script>
+	angular.module('userProfile').value('config', {
+		user: {php echo !empty($user) ? json_encode($user) : 'null'},
+        profile: {php echo !empty($profile) ? json_encode($profile) : 'null'},
+		links: {
+			recycleUser: "{php echo url('user/display/operate', array('type' => 'recycle'))}",
+		},
+    });
+	angular.bootstrap($('#js-user-edit-base'), ['userProfile']);
+</script>
+{template 'common/footer'}
+

@@ -1,0 +1,140 @@
+@-webkit-keyframes rotation{
+    from {-webkit-transform: rotate(0deg);}
+}
+.an{
+    -webkit-transform: rotate(360deg);
+    animation: rotation 2s linear infinite;
+}
+.goods-qrcode-modal{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: rgba(0,0,0,.5);
+    padding: 40rpx;
+    transform: translateY(100%);
+    opacity: .5;
+    transition: opacity 250ms;
+    visibility: hidden;
+}
+
+.goods-qrcode-modal.active{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.goods-qrcode-body{
+    background: #fff;
+    height: 100%;
+    border-radius: 10rpx;
+    z-index: 99999;
+}
+
+.goods-qrcode-modal .goods-qrcode-box{
+    height: 100%;
+    position: relative;
+    box-shadow: 0 0 15rpx rgba(0,0,0,.15);
+}
+
+.goods-qrcode-modal .goods-qrcode-loading{
+    top:0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.goods-qrcode-modal .goods-qrcode{
+    top:0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: none;
+}
+
+.goods-qrcode-modal .goods-qrcode.active{
+    display: block;
+}
+
+.goods-qrcode-modal .goods-qrcode-close{
+    position: absolute;
+    top:40rpx;
+    right: 40rpx;
+    padding: 15rpx;
+}
+
+
+.share-modal{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.0);
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: background 250ms;
+}
+
+.share-modal .share-modal-body{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #f2f2f2;
+    padding-top: 60rpx;
+    transform: translateY(100%);
+    transition: transform 250ms;
+}
+
+.share-modal.active{
+    transform: translateY(0);
+    background: rgba(0,0,0,.5);
+}
+
+.share-modal.active .share-modal-body{
+    transform: translateY(0);
+}
+
+.share-modal .share-bottom{
+    text-align: center;
+    font-size: 9pt;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 60rpx;
+    line-height: inherit;
+    border: none;
+    background: none;
+    color: inherit;
+    font-family: inherit;
+    display: inline-block;
+}
+
+.share-modal .share-bottom:after{
+    display: none;
+}
+
+.share-modal .share-bottom cover-image,
+.share-modal .share-bottom image{
+    width: 120rpx;
+    height: 120rpx;
+    margin-bottom: 12rpx;
+    border-radius: 999rpx;
+    border: 1rpx solid #eee;
+}
+
+.share-modal .share-bottom:active cover-image,
+.share-modal .share-bottom:active image{
+    opacity: .7;
+}
+
+.share-modal .share-modal-close{
+    background: #fff;
+    height: 100rpx;
+    border-top: 1rpx solid #eee;
+}

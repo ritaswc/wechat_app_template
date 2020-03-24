@@ -1,0 +1,56 @@
+page {
+    background: #fff;
+    overflow-x: hidden;
+}
+.summary-logo {
+    border-radius:16rpx;
+    display:block;
+    position:absolute;
+    top:130rpx;
+    left:50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
+    height:140rpx;
+    width:140rpx;
+}
+.summary-head {
+    display:block;
+    height:200rpx;
+    width:100%;
+}
+.summary-home {
+    position:absolute;
+    top:55rpx;
+    left:0;
+    height:56rpx;
+    width:200rpx;
+    z-index:100;
+    border-radius:0 28rpx 28rpx 0;
+    color: #fff;
+    background-color: #f39800;
+}
+.summary-home image {
+    width:12rpx;
+    height:22rpx;
+    margin-right:10rpx;
+}
+.copy-info {
+    display:inline-block;
+    border-radius:8rpx;
+    text-align:center;
+    color:#5292ed;
+    width:150rpx;
+    margin-left:30rpx;
+    line-height:44rpx;
+    border:1rpx solid #5292ed;
+}
+.summary-bottom {
+    margin-bottom:15rpx;
+}
+.summary-bottom image{
+    display:block;
+    height:32rpx;
+    width:32rpx;
+    margin-right:24rpx;
+    margin-top:8rpx;
+}

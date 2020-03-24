@@ -1,0 +1,4 @@
+/* index.wxss */
+.index-test {
+    width: 100%;
+}

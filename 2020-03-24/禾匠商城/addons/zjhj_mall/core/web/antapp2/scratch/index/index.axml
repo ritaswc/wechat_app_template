@@ -1,0 +1,102 @@
+<view class="page"> 
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber" style="overflow-x:visible">
+
+        <view style="position:relative;">
+            <image style="position:absolute;text-align:center;width:100%;" mode="widthFix" src="{{__wxapp_img.scratch.index.scratch_bg.url}}" />
+            <navigator hover-class="navigator-hover" url="/scratch/rule/rule">
+                <view class="scratch-rule">规则</view>
+            </navigator>
+            <view onTap="showShareModal" class="scratch-rule" style="top:104rpx">分享</view>
+            <view class="scratch-center" style="text-align:center">
+
+                <view class="scratch-cj">
+                    <view class="scratch-text fs-sm-13">您还有<text class="scratch-num">{{oppty}}</text>次抽奖机会</view>
+                </view>
+                <view class="scratch-bg">
+                    <view style="position:relative">
+                        <image class="scratch-bg-1" src="/scratch/images/scratch_bg.png" />
+                        <image class="scratch-bg-2" id='frame' src="/scratch/images/scratch_kuang.png"/>
+                        <view class="scratch-award" a:if="{{register}}">
+                            <view class="scratch-award-a">
+                                <canvas a:if="{{isStart}}" onTouchStart="touchStart"  onTouchMove="touchMove" onTouchEnd="touchEnd" style="position:absolute;left:0;z-index:888" id="scratch" class="scratch-canvas" canvas-id="scratch" onTouchstart="touchStart"  onTouchmove="touchMove" onTouchend="touchEnd" disable-scroll="{{isScroll}}"></canvas>
+
+
+                                <view class="scratch-bg-text">
+                                    <text a:if="{{award_name}}" class="scratch-text-1">{{name}}</text>
+                                    <view a:if="{{oppty>0 && award_name}}" class="scratch-bg-text-2" onTap ="onStart">再刮一次</view>
+                                    <view a:if="{{oppty<=0 && award_name}}" class="scratch-bg-text-3">再刮一次</view>
+                                </view>
+                            </view>
+                        </view>
+                        <image a:if="{{!register}}" class="scratch-bg-2" src="/scratch/images/scratch_hide_2.png"/>
+                        <view a:if="{{!register}}" onTap="register" class="scratch-bg-3">{{deplete_register}}积分刮一次</view>
+                    </view>
+                </view> 
+                <view style="padding:40rpx 0;color:#ffffff;">
+
+                    <navigator open-type="redirect" hover-class="navigator-hover" url="/pages/index/index" style="display:inline;padding-right:150rpx" >
+                        <image style="height:30rpx;width:30rpx;margin-right:14rpx;margin-bottom:-2rpx" src="/scratch/images/home.png"></image>
+                        <text >回到首页</text>
+                    </navigator>
+
+                    <navigator hover-class="navigator-hover" url="/scratch/prize/prize" style="display:inline;">
+                        我的中奖记录  >>
+                    </navigator>
+                </view>
+
+                
+                <view  style="margin-bottom:20rpx;height:186rpx;width:654rpx;background:#420080;display:inline-block;border-radius:16rpx;text-align:left">
+                    <view style="height:10rpx"></view>
+                    <view class="recommend">
+                        <view class="left"></view>
+                        <text>中奖名单</text>
+                        <view class="right"></view> 
+                    </view>
+
+                    <swiper class="record" style="height:100rpx;" vertical="true" autoplay="false" interval="5000" duration="500" circular="false">
+                        <swiper-item>
+                            <view style="padding: 0 50rpx">
+                                <block a:for="{{log}}" a:key="{{item.id}}">
+                                    <view class="text-more-2" style="-webkit-line-clamp:1;height:50rpx;line-height:50rpx;" >{{item.create_time}}  {{item.user}}  {{item.name}}</view>
+                                    <view a:if="{{log.length}}<2"></view>
+                                </block>
+                            </view>
+                        </swiper-item>
+                    </swiper>
+                </view> 
+              
+            </view>
+        </view>
+
+
+        <!-- model -->
+        <view a:if="{{award}}" class="model-award">
+            <view class="act-modal show">
+                <view class="act-modal-bg"></view>
+                <view class="act-modal-pic">
+                    <view class="act-modal-start">
+                        <image mode="scaleToFill" src="{{__wxapp_img.scratch.index.scratch_success.url}}" />
+                        <view class="gx">
+                            <view class="flex-y-center gx-a">
+                                <view class="text-more-2 gx-b fs-sm-13"> 
+                                    <view>恭喜获得</view>{{name}}
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="act-modal-end">
+                        <view onTap="onStart" class="act-modal-k fs-sm-13">
+                            再刮一次
+                        </view>
+                        <view class="act-zh">奖品已放入您的账号</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <include src="/components/save_qrcode/save_qrcode" />
+    <include src="/components/footer/footer" />
+</view>

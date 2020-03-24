@@ -1,0 +1,33 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view>
+            <block wx:if="{{is_bind===1}}">
+                <view class="flex-row flex-x-center">
+                    <image class="bind_yes_img" src="{{app.app_logo?app.app_logo:__wxapp_img.store.binding_yes.url}}"></image>
+                </view>
+                <view class="flex-row flex-x-center title">
+                    <text>{{app.title}}</text>
+                </view>
+            </block>
+            <block wx:if="{{is_bind===2}}">
+                <view class="flex-row flex-x-center img_box">
+                    <image class="head_img" src="{{user.avatar_url}}"></image>
+                    <view class="img_binding_box">
+                        <image class="img_binding" src="{{__wxapp_img.store.binding.url}}"></image>
+                    </view>
+                    <image class="head_img" src="{{app.app_logo?app.app_logo:__wxapp_img.store.binding_yes.url}}"></image>
+                </view>
+                <view class="flex-row flex-x-center title">
+                    <text>{{app.title}}</text>
+                </view>
+                <view class="flex-row flex-x-center content">
+                    <text>及时接收消息推送</text>
+                </view>
+                <button bindgetuserinfo="getUserInfo" class="flex-row flex-x-center auth-info" openType="getUserInfo">绑定公众号</button>
+            </block>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

@@ -1,0 +1,57 @@
+<!--step/top.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class='top'>
+            <image src='{{store.option.step.ranking_pic?store.option.step.ranking_pic:bg}}'></image>
+        </view>
+        <view class='rank'>
+            <view onTap='change' id='1'>好友排行</view>
+            <view onTap='change' id='2'>全国排行</view>
+        </view>
+        <view class='triangle-left' wx-if='{{friend}}'></view>
+        <view class='triangle-right' wx-if='{{country}}'></view>
+        <view class='my'>
+            <view class='avatar'>
+                <image src='{{avatar}}'></image>
+            </view>
+            <view class='my-info'>
+                <view class='my-name'>{{name}}</view>
+                <view wx-if="{{money != 0}}">第{{noun}}名</view>
+                <view wx-if="{{money == 0}}">暂未上榜</view>
+            </view>
+            <view class='moeny'>
+                <view class='number'>{{money}}</view>
+                <view>{{store.option.step.currency_name?store.option.step.currency_name:'活力币'}}数</view>
+            </view>
+        </view>
+        <view class='list'>
+            <view class='list-item' a:for="{{list}}" a:key="{{info}}" a:for-item="info">
+                <view class='noun'>
+                    <view class='noun-text' wx-if='{{info.noun}}'>{{info.noun}}</view>
+                    <image src='{{info.img}}' wx-if='{{info.img}}'></image>
+                </view>
+                <view class='avatar'>
+                    <image src='{{info.user.avatar_url}}'></image>
+                </view>
+                <view class='info'>
+                    <view class='name'>{{info.user.nickname}}</view>
+                </view>
+                <view class='moeny'>
+                    <view class='number'>{{info.step_currency}}</view>
+                    <view>{{store.option.step.currency_name ? store.option.step.currency_name : '活力币'}}数</view>
+                </view>
+            </view>
+        </view>
+        <view class='loading' wx-if="{{loading}}">正在加载中...</view>
+        <view class='temp' wx-if="{{ad}}">
+            <ad unit-id="{{unit_id}}" onError="adError" wx-if="{{unit_id}}"></ad>         
+        </view>
+        <!-- 流量主 -->
+        <view class='ad'>
+            <ad unit-id="{{unit_id}}" onError="adError" wx-if="{{unit_id}}"></ad>       
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

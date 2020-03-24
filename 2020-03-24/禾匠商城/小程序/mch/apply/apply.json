@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "申请入驻",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

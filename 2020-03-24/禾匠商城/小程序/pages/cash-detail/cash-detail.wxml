@@ -1,0 +1,47 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="info">
+            <view class="info-title flex-row">
+                <navigator class="flex-x-center   width" openType="redirect" url="/pages/cash-detail/cash-detail?status=-1">
+                    <view class="info-text {{status==-1?'active':''}}">全部</view>
+                </navigator>
+                <navigator class="flex-x-center  width" openType="redirect" url="/pages/cash-detail/cash-detail?status=0">
+                    <view class="info-text {{status==0?'active':''}}">待审核</view>
+                </navigator>
+                <navigator class="flex-x-center  width" openType="redirect" url="/pages/cash-detail/cash-detail?status=1">
+                    <view class="info-text {{status==1?'active':''}}">待打款</view>
+                </navigator>
+                <navigator class="flex-x-center  width" openType="redirect" url="/pages/cash-detail/cash-detail?status=2">
+                    <view class="info-text {{status==2?'active':''}}">已打款</view>
+                </navigator>
+                <navigator class="flex-x-center  width" openType="redirect" url="/pages/cash-detail/cash-detail?status=3">
+                    <view class="info-text {{status==3?'active':''}}">无效</view>
+                </navigator>
+            </view>
+            <view style="margin-top:100rpx;">
+                <view class="info-no" wx:if="{{show_no_data_tip}}">暂无信息</view>
+                <block wx:else>
+                    <view class="info-content" wx:for="{{cash_list}}" wx:key="{{item.id}}">
+                        <view class="info-label flex-row">
+                            <view class="info-left">
+                                <view class="info-up">提现 {{item.price}}</view>
+                                <view class="info-down">{{item.addtime}}</view>
+                            </view>
+                            <view class="info-right">
+                                <block wx:if="{{item.status==null}}">
+                                        已打款
+                                    </block>
+                                <block wx:else>
+                                        {{item.status}}
+                                    </block>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

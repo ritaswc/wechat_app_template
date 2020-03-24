@@ -1,0 +1,22 @@
+<view class='lottery-bottom flex-row' style='font-size:13pt'>
+    <view class='flex-grow-1 flex-y-center'>
+        <navigator hover-class='none' open-type='redirect' url='/lottery/index/index' style='width:100%;border-right:1rpx solid #e2e2e2'>
+            <view class='flex-row flex-y-center flex-x-center'>
+                <view class='flex-grow-0 flex-y-center'>
+                    <image src='{{naver == "index" ? "/lottery/images/lottery-hc-t.png" : "/lottery/images/lottery-hc-f.png"}}'></image>
+                </view>
+                <view class='flex-grow-0 {{naver == "index" ? "bottom-color" : ""}}'>抽奖会场</view>
+            </view>
+        </navigator>
+    </view>
+    <view class='flex-grow-1 flex-y-center flex-x-center'>
+        <navigator hover-class='none' open-type='redirect' url='/lottery/prize/prize' style='width:100%;'>
+            <view class='flex-row flex-y-center flex-x-center'>
+                <view class='flex-grow-0 flex-y-center'>
+                    <image src='{{naver == "prize" ? "/lottery/images/lottery-jl-t.png" : "/lottery/images/lottery-jl-f.png"}}'></image>
+                </view>
+                <view class='flex-grow-0 {{naver == "prize" ? "bottom-color" : ""}}'>抽奖记录</view>
+            </view>
+        </navigator>
+    </view>
+</view>

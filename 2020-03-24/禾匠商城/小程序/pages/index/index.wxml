@@ -1,0 +1,62 @@
+<import src="/components/common/index"></import>
+<view class="page {{__page_classes}}">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <template is="buy-data" data="{{buy:buy}}"></template>
+        <block wx:if="{{template}}">
+            <import src="/components/diy/diy.wxml"></import>
+            <view class="diy">
+                <block wx:for="{{template}}" wx:key="{{item.id}}">
+                    <view class="user-block flex-row" style="flex-wrap:wrap;" wx:if="{{item.type=='goods'}}">
+                        <template is="diy-cat" data="{{param:item.param,template_index:index}}" wx:if="{{item.param.is_cat==1}}"></template>
+                        <template is="cat-position-{{item.param.is_cat==0?0:item.param.cat_position}}" data="{{param:item.param,template_index:index,WindowHeight:WindowHeight,type:item.type}}"></template>
+                    </view>
+                    <block wx:elif="{{item.type=='modal'}}"></block>
+                    <block wx:elif="{{item.type=='topic'}}">
+                        <template is="topic-{{item.param.style}}" data="{{param:item.param,__wxapp_img:__wxapp_img,show_notice:show_notice,play:play,time_all:time_all,template_index:index}}" wx:if="{{item.param.style!=0}}"></template>
+                        <template is="topic" data="{{param:item.param,__wxapp_img:__wxapp_img,show_notice:show_notice,play:play,time_all:time_all,template_index:index}}" wx:else></template>
+                    </block>
+                    <block wx:elif="{{item.type=='integral'}}">
+                        <template is="coupon" data="{{param:item.param,__wxapp_img:__wxapp_img,show_notice:show_notice,play:play,time_all:time_all,template_index:index,coupon_index:'true',type:item.type}}" wx:if="{{item.param.is_coupon==1}}"></template>
+                        <template is="cat-position-0" data="{{param:item.param,template_index:index,WindowHeight:WindowHeight,type:item.type,time_all:time_all}}" wx:if="{{item.param.is_goods==1}}"></template>
+                    </block>
+                    <block wx:elif="{{item.type=='mch'}}">
+                        <template is="mch" data="{{mch_list:item.param.list,mch_index:'true'}}" wx:if="{{item.param.is_goods==0}}"></template>
+                        <template is="mch-1" data="{{param:item.param,mch_list:item.param.list,template_index:index,__wxapp_img:__wxapp_img}}" wx:else></template>
+                    </block>
+                    <template is="cat-position-0" data="{{param:item.param,template_index:index,WindowHeight:WindowHeight,type:item.type,time_all:time_all,__wxapp_img:__wxapp_img}}" wx:elif="{{item.type=='miaosha'||item.type=='pintuan'||item.type=='bargain'||item.type=='book'||item.type=='lottery'}}"></template>
+                    <template is="diy-{{item.type}}" data="{{param:item.param,__wxapp_img:__wxapp_img,show_notice:show_notice,play:play,time_all:time_all,template_index:index}}" wx:elif="{{item.type=='nav'||item.type=='video'}}"></template>
+                    <block wx:elif="{{item.type=='float'}}">
+                        <app-navigation __alipay_mp_config="{{__alipay_mp_config}}" __device="{{__device}}" __platform="{{__platform}}" __user_info="{{__user_info}}" home_icon="{{home_icon}}" options="{{options}}" setnavi="{{setnavi}}" store="{{store}}" wx:if="{{item.param.style==0}}"></app-navigation>
+                        <app-navigation __alipay_mp_config="{{__alipay_mp_config}}" __device="{{__device}}" __platform="{{__platform}}" __user_info="{{__user_info}}" click_pic="{{item.param.click_pic}}" home_icon="true" options="{{options}}" setnavi="{{item.param.setnavi}}" store="{{item.param.store}}" wx:else></app-navigation>
+                    </block>
+                    <template is="{{item.type}}" data="{{param:item.param,__wxapp_img:__wxapp_img,show_notice:show_notice,play:play,time_all:time_all,template_index:index,coupon_index:'true',type:item.type}}" wx:else></template>
+                </block>
+                <template is="goods-modal" data="{{__wxapp_img:__wxapp_img,show_attr_picker:show_attr_picker,goods:goods,attr_group_list:attr_group_list,form:form}}"></template>
+            </view>
+        </block>
+        <block wx:else>
+            <block wx:for="{{module_list}}" wx:key="{{item.id}}">
+                <template is="notice" data="{{notice:notice,param:update_list.notice,__wxapp_img:__wxapp_img,show_notice:show_notice,template_index:1}}" wx:if="{{item.name=='notice'}}"></template>
+                <template is="banner" data="{{param:update_list.banner}}" wx:elif="{{item.name=='banner'}}"></template>
+                <template is="search" data="{{__wxapp_img:__wxapp_img}}" wx:elif="{{item.name=='search'}}"></template>
+                <template is="nav" data="{{nav_icon_list:nav_icon_list,nav_count:nav_count}}" wx:elif="{{item.name=='nav'}}"></template>
+                <template is="topic" data="{{param:update_list.topic,topic_list:topic_list,item:item}}" wx:elif="{{item.name=='topic'}}"></template>
+                <template is="coupon" data="{{__wxapp_img:__wxapp_img,param:update_list.coupon,item:item}}" wx:elif="{{item.name=='coupon'}}"></template>
+                <template is="cat" data="{{cat_list:cat_list,__wxapp_img:__wxapp_img,cat_goods_cols:cat_goods_cols,__is_sales:__is_sales,cat_item:item}}" wx:elif="{{item.name=='cat'||item.name=='single_cat'}}"></template>
+                <template is="miaosha" data="{{__wxapp_img:__wxapp_img,miaosha:miaosha,item:item}}" wx:elif="{{item.name=='miaosha'}}"></template>
+                <template is="pintuan" data="{{__wxapp_img:__wxapp_img,pintuan:pintuan,item:item}}" wx:elif="{{item.name=='pintuan'}}"></template>
+                <template is="yuyue" data="{{__wxapp_img:__wxapp_img,yuyue:yuyue,item:item}}" wx:elif="{{item.name=='yuyue'}}"></template>
+                <template is="video" data="{{__wxapp_img:__wxapp_img,update_list:update_list,video_item:item,play:play}}" wx:elif="{{item.name=='video'}}"></template>
+                <template is="mch" data="{{__wxapp_img:__wxapp_img,mch_list:mch_list,item:item}}" wx:elif="{{item.name=='mch'&&mch_list&&mch_list.length>0}}"></template>
+                <block wx:else>
+                    <template is="{{'block-'+block.data.pic_list.length+'-'+block.style}}" data="{{__wxapp_img:__wxapp_img,block:block,item:item,store:store}}" wx:if="{{item.block_id==block.id}}" wx:for="{{block_list}}" wx:for-item="block" wx:key="block.id"></template>
+                </block>
+            </block>
+            <app-navigation __alipay_mp_config="{{__alipay_mp_config}}" __device="{{__device}}" __platform="{{__platform}}" __user_info="{{__user_info}}" home_icon="{{home_icon}}" options="{{options}}" setnavi="{{setnavi}}" store="{{store}}"></app-navigation>
+        </block>
+        <template is="act-modal" data="{{__wxapp_img:__wxapp_img,act_modal_list:act_modal_list}}" wx:if="{{act_modal_list&&act_modal_list.length>0}}"></template>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

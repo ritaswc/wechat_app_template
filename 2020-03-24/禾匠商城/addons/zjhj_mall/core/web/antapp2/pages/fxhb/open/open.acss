@@ -1,0 +1,60 @@
+/* pages/fxhb/open/open.wxss */
+@import "../common.acss";
+.hongbao{
+    position: fixed;
+    width: 600rpx;
+    left: 74rpx;
+    right: 74rpx;
+    bottom: 150rpx;
+    height: 722rpx;
+    z-index: 1;
+    background-size: 100% 100%;
+}
+
+.hongbao-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+
+.hongbao-content{
+    position: relative;
+    text-align: center;
+    display: block;
+    padding: 350rpx 25rpx 0 25rpx;
+}
+
+.hongbao-desc{
+    margin-bottom: 100rpx;
+    line-height: 1.5;
+    color: #ffd212;
+    font-size: 13pt;
+}
+
+.open-hongbao-btn{
+    display: block;
+    color: #ff2c32;
+    text-align: center;
+    margin:  0 auto;
+    transition: opacity 50ms;
+    background: none;
+    border: none;
+    height: 96rpx;
+    line-height: 96rpx;
+    width: 416rpx;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    background-size: 100% 100%;
+    font-weight: 400;
+}
+
+.open-hongbao-btn:after{
+    display: none;
+}
+
+.open-hongbao-btn:active{
+    opacity: .75;
+}
+

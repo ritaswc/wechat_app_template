@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    },
+    "navigationBarTitleText": "活动报名"
+}

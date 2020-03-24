@@ -1,0 +1,4 @@
+composer.lock
+coverage.clover
+vendor/
+build/

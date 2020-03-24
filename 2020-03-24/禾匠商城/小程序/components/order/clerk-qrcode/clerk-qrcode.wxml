@@ -1,0 +1,10 @@
+<template name="clerk-qrcode">
+    <view bindtap="hide" class="flex-row flex-y-center modal {{hide==1?'hide':''}}">
+        <view class="flex-y-center" style="width:100%;height:800rpx;padding:100rpx;">
+            <view style="background-color:#fff;width:100%;height:100%;border-radius:10rpx;padding:0 50rpx;">
+                <view class="flex-x-center" style="width:100%;height:50rpx;margin-top:50rpx;font-size:13pt;margin-bottom:20rpx">核销二维码 </view>
+                <image src="{{qrcode}}" style="width:450rpx;height:450rpx;"></image>
+            </view>
+        </view>
+    </view>
+</template>

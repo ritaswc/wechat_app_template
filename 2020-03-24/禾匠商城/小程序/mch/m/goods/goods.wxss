@@ -1,0 +1,154 @@
+.after-navber {
+    padding-top: 208rpx;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+    z-index: 10;
+}
+
+.search {
+    background: #EFEFF4;
+    border-top: 1rpx solid #e3e3e3;
+    border-bottom: 1rpx solid #e3e3e3;
+    padding: 24rpx 32rpx;
+    width: 100%;
+}
+
+.search input {
+    background: #fff;
+    border: 1rpx solid #eee;
+    border-radius: 999rpx;
+    text-align: center;
+    height: 70rpx;
+    font-size: 9pt;
+    width: 100%;
+}
+
+.tab-bar navigator view {
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom: 4rpx solid transparent;
+}
+
+.tab-bar navigator view.active {
+    border-color: #ff4544;
+    color: #ff4544;
+}
+
+.goods-list {
+    background: #fff;
+}
+
+.goods-list .goods-item {
+    border-top: 1rpx solid #eeeeee;
+    font-size: 9pt;
+}
+
+.goods-list .goods-name {
+    position: relative;
+    height: 76rpx;
+    line-height: 38rpx;
+}
+
+.goods-list .goods-name>view {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.goods-list .more-btn {
+    position: relative;
+    width: 70rpx;
+}
+
+.goods-list .more-icon {
+    position: absolute;
+    right: 0;
+    bottom: -13rpx;
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.goods-list .more-icon>view {
+    width: 100%;
+    text-align: center;
+    font-size: 0;
+}
+
+.goods-list .more-icon>view>view {
+    width: 10rpx;
+    height: 10rpx;
+    background: #888;
+    border-radius: 999rpx;
+    display: inline-block;
+    margin: 0 3rpx;
+}
+
+.goods-list .more-alert {
+    position: absolute;
+    background: rgba(0,0,0,.75);
+    color: #fff;
+    bottom: calc(100% + 10rpx);
+    right: 0;
+    border-radius: 8rpx;
+    visibility: hidden;
+    opacity: 0;
+    transition: 150ms;
+}
+
+.goods-list .more-alert.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.goods-list .more-alert:after {
+    display: inline-block;
+    position: absolute;
+    content: " ";
+    width: 0;
+    height: 0;
+    right: 20rpx;
+    border: 15rpx solid rgba(0,0,0,.75);
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.goods-list .more-alert-item {
+    padding: 20rpx 0;
+    width: 110rpx;
+    text-align: center;
+    font-size: 7pt;
+    line-height: 1;
+}
+
+.goods-list .more-alert-item image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-bottom: 10rpx;
+}
+
+.loading-more {
+    font-size: 0;
+    text-align: center;
+    padding: 12rpx;
+    opacity: .5;
+    visibility: hidden;
+    transition: 150ms;
+}
+
+.loading-more.show {
+    visibility: visible;
+    opacity: 1;
+}

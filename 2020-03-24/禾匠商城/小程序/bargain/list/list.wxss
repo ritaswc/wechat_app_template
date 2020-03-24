@@ -1,0 +1,80 @@
+@import "../commons/naver/naver.wxss";
+
+page {
+    background-color: #fff;
+}
+
+.banner {
+    height: 376rpx;
+    padding-bottom: 16rpx;
+    background-color: #f7f7f7;
+    position: relative;
+}
+
+.slide-image {
+    width: 100%;
+    height: 360rpx;
+}
+
+.list {
+    width: 100%;
+    padding-bottom: 96rpx;
+}
+
+.list .one {
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    padding: 24rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.one .img {
+    position: relative;
+    width: 220rpx;
+    height: 220rpx;
+    margin-right: 24rpx;
+}
+
+.one .img image:first-child {
+    width: 100%;
+    height: 100%;
+}
+
+.sale {
+    margin-top: 10rpx;
+    font-size: 9pt;
+}
+
+.img .sku {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160rpx;
+    height: 160rpx;
+    margin: 30rpx;
+}
+
+.join-btn {
+    width: 176rpx;
+    height: 64rpx;
+    background-color: #ff5c5c;
+    color: #fff;
+    border-radius: 32rpx;
+}
+
+.join-btn.no {
+    background-color: #cdcdcd;
+}
+
+.avatar {
+    width: 50rpx;
+    height: 50rpx;
+    position: relative;
+    margin-left: -10rpx;
+}
+
+.avatar image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50rpx;
+}

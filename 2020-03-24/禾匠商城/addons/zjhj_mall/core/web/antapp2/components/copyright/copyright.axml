@@ -1,0 +1,57 @@
+<!-- 优先使用新的版权方案 -->
+<block a:if="{{copyright&&(copyright.icon||copyright.text)}}">
+    <view a:if="{{copyright.is_phone==1}}" style="padding: 24rpx" onTap="navigatorClick" data-open_type="tel" data-tel="{{copyright.phone?copyright.phone:contact_tel}}">
+        <view style="text-align: center;font-size: 0;">
+            <image a:if="{{copyright.icon}}" src="{{copyright.icon}}" style="height: 60rpx;width: 240rpx" mode="aspectFit"></image>
+        </view>
+        <view style="text-align: center;line-height: 1">
+            <text a:if="{{copyright.text}}" style="color: rgba(0,0,0,.3);font-size: 9pt;">{{copyright.text}}</text>
+        </view>
+    </view>
+    <view a:elif="{{copyright.open_type=='wxapp'}}" style="padding: 24rpx">
+        <navigator target="miniProgram" app-id="{{copyright.appId}}" path="{{copyright.path}}" hover-class="none" open-type="navigate">
+            <view style="text-align: center;font-size: 0;">
+                <image a:if="{{copyright.icon}}" src="{{copyright.icon}}" style="height: 60rpx;width: 240rpx"data-url="{{copyright.url}}" mode="aspectFit"></image>
+            </view>
+            <view style="text-align: center;line-height: 1">
+                <text a:if="{{copyright.text}}" onTap="openWxapp" style="color: rgba(0,0,0,.3);font-size: 9pt;" data-url="{{copyright.url}}">{{copyright.text}}</text>
+            </view>
+        </navigator>
+    </view>
+    <view a:elif="{{copyright.open_type=='navigate'}}" style="padding: 24rpx">
+        <view style="text-align: center;font-size: 0;">
+            <navigator url="{{copyright.url}}" style="display: inline-block">
+                <image a:if="{{copyright.icon}}" src="{{copyright.icon}}" style="height: 60rpx;width: 240rpx" mode="aspectFit"></image>
+            </navigator>
+        </view>
+        <view style="text-align: center;line-height: 1">
+            <navigator a:if="{{copyright.text}}" style="color: rgba(0,0,0,.3);font-size: 9pt;display: inline-block" url="{{copyright.url}}">
+                <text>{{copyright.text}}</text>
+            </navigator>
+        </view>
+    </view>
+    <view a:else style="padding: 24rpx">
+        <view style="text-align: center;font-size: 0;">
+            <image a:if="{{copyright.icon}}" src="{{copyright.icon}}" style="height: 60rpx;width: 240rpx" mode="aspectFit"></image>
+        </view>
+        <view style="text-align: center;line-height: 1">
+            <text a:if="{{copyright.text}}" style="color: rgba(0,0,0,.3);font-size: 9pt;">{{copyright.text}}</text>
+        </view>
+    </view>
+</block>
+<block a:else>
+    <block a:if="{{store.copyright||store.copyright_pic_url}}">
+        <view class="flex-y-center flex-x-center flex-col" style="padding: 20rpx">
+            <view a:if="{{store.copyright_pic_url}}">
+                <navigator url="{{store.copyright_url}}">
+                    <image src="{{store.copyright_pic_url}}" style="height: 60rpx;width: 240rpx" mode="aspectFit"></image>
+                </navigator>
+            </view>
+            <view a:if="{{store.copyright}}" style="color: rgba(0,0,0,.3);font-size: 9pt;">
+                <navigator url="{{store.copyright_url}}">
+                    <text>{{copyright.text}}</text>
+                </navigator>
+            </view>
+        </view>
+    </block>
+</block>

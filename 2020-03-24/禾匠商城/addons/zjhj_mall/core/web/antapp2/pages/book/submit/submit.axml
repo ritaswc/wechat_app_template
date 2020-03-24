@@ -1,0 +1,168 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <form onSubmit="booksubmit" report-submit="true">
+            <view class='population'>
+                <view class='goods flex-row'>
+                    <view class='goods-img flex-grow-0'>
+                        <image src='{{goods.cover_pic}}'></image>
+                    </view>
+                    <view class='flex-grow-1 flex-col goods-info'>
+                        <view class='flex-grow-1 goods-name'>
+                            {{goods.name}}
+                        </view>
+                        <view class='flex-grow-1 goods-name' a:for="{{attr}}">
+                            <view style="margin:5rpx 0;-webkit-line-clamp: 1;" class="text-more-2">
+                                <text>{{item['attr_group_name']}} :  </text>
+                                <text style="color:#ff6845">{{item['attr_name']}}</text>
+                            </view>
+                        </view>
+                        <view class='flex-gorw-0 flex-row money flex-y-bottom'>
+                            <view class='original_price flex-grow-0'>
+                                ¥{{goods.original_price}}
+                            </view>
+                            <view class='price flex-grow-0'>
+                                ¥{{level_price}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class='form'>
+                    <view class='form-image'>
+                        <image src='{{__wxapp_img.yy.form_title.url}}'></image>
+                    </view>
+
+                    <view class='group-form'>
+                        <block a:for='{{form_list}}'>
+                            <block a:if="{{item.type=='text'}}">
+                                <view class='username flex-row input-shell flex-y-center'>
+                                    <view class='flex-grow-0'>
+                                        {{item.name}}：
+                                    </view>
+                                    <view class='flex-grow-1'>
+                                        <input placeholder="{{item.tip}}" data-id='{{index}}' onInput="inputChenge" value='{{item.default}}' />
+                                    </view>
+                                </view>
+                            </block>
+                            <block a:if="{{item.type=='radio'}}">
+                                <view class='group-radio flex-row input-shell flex-y-center'>
+                                    <view class='flex-grow-0'>
+                                        {{item.name}}：
+                                    </view>
+
+                                    <view class='flex-grow-1' style='padding-top:24rpx;'>
+                                        <block a:for='{{item.default}}' a:for-index="idx" a:for-item="de">
+                                            <view class="checkbox group-radio-item {{de.selected?'active':''}} flex-y-center" onTap="radioChange" data-pid='{{index}}' data-id='{{idx}}'>
+                                                <checkbox style='display:none' value="{{de.name}}" checked="{{item.selected}}" data-id='0' />{{de.name}}
+                                            </view>
+                                        </block>
+
+                                    </view>
+                                </view>
+                            </block>
+                            <block a:if="{{item.type=='checkbox'}}">
+                                <view class='group-radio flex-row input-shell flex-y-center'>
+                                    <view class='flex-grow-0'>
+                                        {{item.name}}：
+                                    </view>
+                                    <view class='flex-grow-1' style='padding-top:24rpx;'>
+                                        <block a:for='{{item.default}}' a:for-index="idx" a:for-item="de">
+                                            <view class="checkbox group-radio-item {{de.selected?'active':''}} flex-y-center" onTap="checkboxChange" data-pid='{{index}}' data-id='{{idx}}'>
+                                                <checkbox style='display:none' value="{{de.name}}" checked="{{item.selected}}" data-id='0' />{{de.name}}
+                                            </view>
+                                        </block>
+
+                                    </view>
+                                </view>
+                            </block>
+                            <block a:if="{{item.type=='time'}}">
+                                <view class='username flex-row input-shell flex-y-center'>
+                                    <view class='flex-grow-0'>
+                                        {{item.name}}：
+                                    </view>
+                                    <view class='flex-grow-1 flex-row picker-data flex-y-center'>
+                                        <picker mode="time" class='flex-grow-0' value="{{item.default}}" data-id='{{index}}' onChange="inputChenge" style='padding-right:20rpx;' start="{{item.default}}">
+                                            <view class="picker flex-y-center">
+                                                {{item.default}}
+                                            </view>
+                                        </picker>
+                                        <view class='flex-grow-0 picker-time flex-y-center'>
+                                            <image src='{{__wxapp_img.share.right.url}}'></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </block>
+                            <block a:if="{{item.type=='date'}}">
+                                <view class='username flex-row input-shell flex-y-center'>
+                                    <view class='flex-grow-0'>
+                                        {{item.name}}：
+                                    </view>
+                                    <view class='flex-grow-1 flex-row picker-data flex-y-center'>
+                                        <picker a:if='{{is_date_start}}' mode="date" class='flex-grow-0' value="{{item.default}}" data-id='{{index}}' onChange="inputChenge" style='padding-right:20rpx;' start="{{item.default}}">
+                                            <view class="picker flex-y-center">
+                                                {{item.default}}
+                                            </view>
+                                        </picker>
+                                        <!-- 无日期限制 -->
+                                        <picker a:else mode="date" class='flex-grow-0' value="{{item.default}}" data-id='{{index}}' onChange="inputChenge" style='padding-right:20rpx;'>
+                                            <view class="picker flex-y-center">
+                                                {{item.default}}
+                                            </view>
+                                        </picker>
+                                        <view class='flex-grow-0 picker-time flex-y-center'>
+                                            <image src='{{__wxapp_img.share.right.url}}'></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </block>
+                            <block a:if="{{item.type=='textarea'}}">
+                                <view class='username flex-row input-shell flex-y-top' style='padding:24rpx 0;'>
+                                    <view class='flex-grow-0 flex-y-top'>
+                                        {{item.name}}：
+                                    </view>
+                                    <view class='flex-grow-1 flex-row flex-y-center'>
+                                        <textarea data-id='{{index}}' onInput="inputChenge" placeholder="{{item.tip}}" value="{{item.default}}"/>
+                                    </view>
+                                </view>
+                            </block>
+                            <block a:if="{{item.type == 'uploadImg'}}">
+                                <view class='username flex-row input-shell flex-y-center' style='padding:20rpx 0;'>
+                                    <view class='flex-grow-0 flex-y-center'>{{item.name}}：</view>
+                                    <view class='flex-grow-1 flex-y-center' onTap='uploadImg' data-id="{{index}}">
+                                        <input data-id='100' style="display:none" value='{{item.default}}'></input>
+                                        <view a:if="{{item.default}}" style='text-align: right;width: 100%;font-size: 0'>
+                                            <image src='{{item.default}}' mode='aspectFit' style='width:88rpx;'></image>
+                                        </view>
+                                        <view a:else style='text-align:right;color:#c9c9c9;width:100%'>{{item.tip?item.tip:'请选择图片'}}</view>
+                                    </view>
+                                    <view class='flex-grow-0 flex-y-center'>
+                                        <image src='{{__wxapp_img.balance.right.url}}' style='width:12rpx;height:18rpx;margin-left:18rpx;'></image>
+                                    </view>
+                                </view>
+                            </block>
+                        </block>
+
+                        <view class='group-radio flex-row input-shell flex-y-center'>
+                            <view class='flex-grow-0'>
+                                支付方式：
+                            </view>
+                            <view class='flex-grow-1' style='padding-top:24rpx;'>
+                                <view a:if="{{wechat}}" class="checkbox group-radio-item {{pay_type=='WECHAT_PAY'?'active':''}} flex-y-cente" onTap="switch" data-type='WECHAT_PAY'>
+                                    线上支付
+                                </view>
+                                <view a:if="{{balance}}" class="checkbox group-radio-item {{pay_type=='BALANCE_PAY'?'active':''}} flex-y-cente" onTap="switch" data-type='BALANCE_PAY'>
+                                    余额支付
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <button form-type="submit" class='submit-btn flex-row flex-y-center flex-x-center'>
+                提交预约
+            </button>
+        </form>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

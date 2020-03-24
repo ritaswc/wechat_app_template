@@ -1,0 +1,46 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="top-bar flex-row">
+            <navigator class="flex-grow-1 {{status==0?'active':''}}" openType="redirect" url="/lottery/prize/prize?status=0">
+                <text>进行中</text>
+            </navigator>
+            <navigator class="flex-grow-1 {{status==2?'active':''}}" openType="redirect" url="/lottery/prize/prize?status=2">
+                <text>已中奖</text>
+            </navigator>
+            <navigator class="flex-grow-1 {{status==1?'active':''}}" openType="redirect" url="/lottery/prize/prize?status=1">
+                <text>未中奖</text>
+            </navigator>
+        </view>
+        <view class="lottery-list" style="padding-bottom:96rpx" wx:if="{{list&&list.length>0}}">
+            <block wx:for="{{list}}" wx:key="{{item.id}}">
+                <view style="height:20rpx;"></view>
+                <navigator openType="navigate" url="/lottery/goods/goods?id={{item.lottery_id}}">
+                    <view class="flex-row" style="padding:24rpx;border-bottom:1px solid #e2e2e2;background:#ffffff;">
+                        <image class="flex-grow-0" src="{{item.gift.cover_pic}}" style="display:block;width:220rpx;height:220rpx"></image>
+                        <view class="flex-col" style="padding-left:24rpx;font-size:13pt">
+                            <view class="text-more-2" style="">{{item.gift.name}}</view>
+                            <view style="color:#999999;padding-top:36rpx">共{{item.lottery.stock}}份</view>
+                        </view>
+                    </view>
+                </navigator>
+                <view class="flex-row flex-y-center" style="color:#999999;height:72rpx;padding:0 24rpx;background:#ffffff;">
+                    <view class="flex-grow-1 flex-row flex-y-center">
+                        <image src="/lottery/images/lottery_time.png" style="margin-right:12rpx;width:24rpx;height:24rpx;display:block"></image>
+                        <view>{{item.time}}</view>
+                    </view>
+                    <navigator openType="navigate" url="/lottery/detail/detail?id={{item.id}}">
+                        <view class="flex-grow-0 flex-row flex-y-center flow">
+                            <view>查看详情</view>
+                            <image src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                        </view>
+                    </navigator>
+                </view>
+            </block>
+        </view>
+        <view class="no-content" wx:else>暂无相关记录</view>
+    </view>
+    <include src="/lottery/commons/naver/naver"></include>
+    <include src="/components/footer/footer"></include>
+</view>

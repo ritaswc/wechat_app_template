@@ -1,0 +1,64 @@
+{template 'common/header'}
+<ul class="we7-page-tab hidden">
+	<li class="active"><a href="{php echo url('user/group/display') }">用户权限套餐列表  </a></li>
+</ul>
+<div class="search-box we7-margin-bottom">
+	<form action="" method="get" class="search-form">
+		<div class="input-group">
+			<input type="hidden" name="c" value="user">
+			<input type="hidden" name="a" value="group">
+			<input type="text" name="name" id="" value="{$_GPC['name']}" class="form-control" placeholder="搜索用户权限组"/>
+			<span class="input-group-btn"><button class="btn btn-default"><i class="fa fa-search"></i></button></span>
+		</div>
+	</form>
+	<a href="{php echo url('user/group/post')}" class="btn btn-primary">+添加用户组</a>
+</div>
+<table class="table we7-table table-hover user-group-display-page" id="js-user-group-display" ng-controller="UserGroupDisplay" ng-cloak>
+	<col width="200px"/>
+	<col width="120px"/>
+	<col width="200px">
+	<tr>
+		<th class="text-left">用户组</th>
+		<th>有限期</th>
+		<th>应用权限组个数</th>
+		<th>可创建账号类型/个数</th>
+		<th class="text-right">操作</th>
+	</tr>
+	<tr ng-repeat="list in lists" ng-if="!(lists | we7IsEmpty)">
+		<td class="text-left" ng-bind="list.name"></td>
+		<td><span ng-if="list.timelimit != 0" ng-bind="list.timelimit+'天'"></span><span ng-if="list.timelimit == 0">永久有效</span></td>
+		<td>
+			{{list.package.length || 0}}
+		</td>
+		<td >
+			<span ng-repeat="(key, item) in we7TypeDefault" class="group-type" ng-if="list['max' + key] > 0">
+				<i ng-class="item.icon" ></i> {{list['max' + key]}}
+			</span>
+		</td>
+		<td>
+			<div class="link-group">
+				<a href="javascript:;" ng-click="editGroup(list.id)">编辑</a>
+				<a href="javascript:;" ng-click="delGroup(list.id)" class="del">删除</a>
+			</div>
+		</td>
+	</tr>
+	<tr ng-if="lists | we7IsEmpty">
+		<td colspan="5">
+			暂无用户权限组合
+		</td>
+	</tr>
+</table>
+<div class="pull-right">
+	{$pager}
+</div>
+<script>
+	angular.module('userGroup').value('config', {
+		lists: {php echo !empty($lists) ? json_encode($lists) : 'null'},
+		links: {
+			groupPost: "{php echo url('user/group/post')}",
+			groupDel: "{php echo url('user/group/del')}",
+		}
+	});
+	angular.bootstrap($('#js-user-group-display'), ['userGroup']);
+</script>
+{template 'common/footer'}

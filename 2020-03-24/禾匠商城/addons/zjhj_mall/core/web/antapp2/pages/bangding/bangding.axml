@@ -1,0 +1,67 @@
+<view class="page"> 
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+
+        <block a:if="{{onIng}}">
+            <view class="binding_pic">
+                <image src="{{__wxapp_img.store.binding_pic.url}}" style="height:100%;width:288rpx;"></image>
+            </view>
+            <view class="binding_num">
+                <view clsss="fs-b" style="display: flex;justify-content: center;margin-bottom:16rpx;">已绑定手机</view>
+                <view class="fs-b" style="display: flex;justify-content: center;">{{binding_num}}</view>
+            </view>
+            <button class="onIng-footer" onTap="renewal">更换绑定</button>
+        </block>
+        <block a:else>
+            <view class="onIng-header ">
+                <view class="empower" style="float:left;">
+                    <text class="onIng-phone {{gainPhone?'gainPhone':''}}" onTap='gainPhone'>点击授权</text>
+                </view>
+                <block a:if="{{status}}">
+                    <view class="empower" style="float:right;">
+                        <text class="onIng-phone {{handPhone?'handPhone':''}}" onTap='handPhone'>手动授权</text>
+                    </view>
+                </block>
+            </view>
+            <view style="height:8rpx;background:#f7f7f7;"></view>
+            <block a:if="{{gainPhone}}">
+                <view class="onIng-main flex-row flex-y-center">
+                    <view class='flex-grow-1'>
+                        <input maxlength="11" disabled="true" type="number" class="number-input {{PhoneNumber?'active':''}}" value='{{PhoneNumber}}' placeholder="点击授权获取手机号" name="phone" onInput="PhoneInput" />
+                    </view>
+                    <view class='flex-grow-0'>
+                        <button open-type="getPhoneNumber" onGetphonenumber="getPhoneNumber" style="color:#ff4544;border-left:1rpx solid #e2e2e2;white-space:nowrap" class="onIng-btn" hover-class="none">点击授权</button>
+                    </view>
+                </view>
+            </block>
+
+            <block a:if="{{status}}">
+                <block a:if="{{handPhone}}">
+                    <view class="onIng-main2">
+                        <view class='flex-y-center' style="height:100rpx;border-bottom:1rpx solid #e2e2e2;">
+                            <input onInput="HandPhoneInput" type="number" class="onIng-btn {{PhoneNumber?'active':''}}" name="phone" placeholder="输入手机号" />
+                        </view>
+
+                        <view class='flex-row flex-y-center' style="height:100rpx;">
+                            <view class='flex-grow-1'>
+                                <input onInput="CodeInput" type="number" class="onIng-btn {{PhoneNumber?'active':''}}" name="code" placeholder="输入验证码" maxlength="6" />
+                            </view>
+                            <view class='flex-grow-0'>
+                                <block a:if="{{timer}}">
+                                    <view style="color:#ff4544;border-left:1rpx solid #e2e2e2;" class="fs-b onIng-btn">{{second}} S</view>
+                                </block>
+                                <block a:else>
+                                    <view onTap='nextStep' style="color:#ff4544;border-left:1rpx solid #e2e2e2;white-space:nowrap" class="fs-b onIng-btn">获取验证码</view>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </block>
+            <button class="onIng-footer" onTap="onSubmit" a:if="{{handPhone}}">确认</button>
+        </block>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

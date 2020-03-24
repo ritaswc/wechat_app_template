@@ -1,0 +1,45 @@
+{template 'common/header'}
+<div class="notice-show">
+    {if $do == 'list'}
+    <ul class="we7-page-tab">
+        <li>
+            <a href="{php echo url('article/notice-news/list');}">全部</a>
+        </li>
+        <li>
+            <a href="{php echo url('article/news-show/list');}">新闻</a>
+        </li>
+        <li>
+            <a href="{php echo url('article/notice-show/list');}">公告</a>
+        </li>
+    </ul>
+    <table class="tbale we7-table">
+        <tr>
+            <th>名称</th>
+            <th>类型</th>
+            <th>发布时间</th>
+        </tr>
+        {if !empty($list)}
+        {loop $list $item}
+        <tr>
+            <td>
+                <a href="{$item['link']}" target="_blank" class="text-over"
+                   style="{if !empty($item['style'])}{if !empty($item['style']['color'])}color: {php echo $item['style']['color']};{/if}{if !empty($item['style']['bold'])}font-weight:bold;{/if}{/if}">{$item['title']}</a>
+            </td>
+            <td>{if $item['type'] == 'notice'}公告{/if}{if $item['type'] == 'news'}新闻{/if}</td>
+            <td>{$item['createtime']}</td>
+        </tr>
+        {/loop}
+        {else}
+        <tr>
+            <td colspan="3">
+                <div class="we7-empty-block">暂无数据</div>
+            </td>
+        </tr>
+        {/if}
+    </table>
+    <div class="pull-right">
+        {$pager}
+    </div>
+    {/if}
+</div>
+{template 'common/footer'}

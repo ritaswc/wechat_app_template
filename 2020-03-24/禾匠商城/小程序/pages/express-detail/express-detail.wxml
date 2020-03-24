@@ -1,0 +1,41 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="flex-row bg-white mb-20 header-h">
+            <view class="flex-grow-0">
+                <image mode="aspectFill" src="{{data.goods_pic}}" style="width:120rpx;height:120rpx;margin-right: 24rpx"></image>
+            </view>
+            <view class="flex-grow-1">
+                <view>物流状态：
+                    <text style="color:#25ae5f">{{data.status_text}}</text>
+                </view>
+                <view style="color: #888">快递公司：{{data.express}}</view>
+                <view class="flex-row flex-y-center" style="color: #888">
+                    <view class="flex-grow-1">快递单号：{{data.express_no}}</view>
+                    <view bindtap="copyText" class="flex-grow-0 flex-x-center" data-text="{{data.express_no}}" style="width:100rpx;height:50rpx;border:1rpx solid #eee;">复制</view>
+                </view>
+            </view>
+        </view>
+        <view class="data-list" wx:if="{{data.list&&data.list.length>0}}">
+            <view class="data-item flex-row" wx:for="{{data.list}}">
+                <view class="flex-grow-0 item-icon flex-col">
+                    <view class="item-line flex-grow-0"></view>
+                    <view class="item-line flex-grow-0 fs-0">
+                        <image class="point-gray" src="{{__wxapp_img.point.gray.url}}" style="width:16rpx;height: 16rpx "></image>
+                        <image class="point-green" src="{{__wxapp_img.point.green.url}}" style="width:32rpx;height: 32rpx;left: -15rpx "></image>
+                    </view>
+                    <view class="item-line flex-grow-1"></view>
+                </view>
+                <view class="flex-grow-1 item-content">
+                    <view>{{item.detail}}</view>
+                    <view>{{item.datetime}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="no-data" wx:else>
+            暂无物流信息
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

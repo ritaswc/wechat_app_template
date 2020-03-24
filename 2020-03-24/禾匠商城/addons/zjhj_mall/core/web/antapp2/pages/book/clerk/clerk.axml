@@ -1,0 +1,67 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view style='padding-bottom:120rpx'>
+            <view class='goods flex-row' onTap='goToGoodsDetails'>
+                <view class='goods-pic flex-grow-0'>
+                    <image src='{{goods.cover_pic}}'></image>
+                </view>
+                <view class='goods-info flex-grow-1 flex-col'>
+                    <view class='goods-name flex-grow-1'>
+                        {{goods.name}}
+                    </view>
+                    <view class='flex-grow-0'>
+                        <view style="font-size: 9pt;color: #888;margin-right: 20rpx;display: inline-block" a:for="{{goods.attr}}" a:key="{{index}}">
+                            {{item.attr_group_name}}：{{item.attr_name}}
+                        </view>
+                    </view>
+                    <view class='money flex-grow-0 flex-row flex-y-bottom '>
+                        <view class='original_price flex-gorw-0'>
+                            ¥ {{goods.original_price}}
+                        </view>
+                        <view class='price flex-grow-0'>
+                            ¥ {{goods.pay_price}}
+                        </view>
+                    </view>
+                </view>
+                <view class='goods-right flex-grow-0 flex-y-center'>
+                    <image src='{{__wxapp_img.share.right.url}}'></image>
+                </view>
+            </view>
+            <view class='order'>
+                <view class='order-title flex-y-center'>
+                    订单信息
+                </view>
+                <view class='order-info'>
+                    <view class='order-info-item'>
+                        订单号：{{goods.order_no}}
+                    </view>
+                    <view class='order-info-item'>
+                        下单时间：{{goods.addtime}}
+                    </view>
+                    <view class='order-info-item' a:for='{{goods.orderForm}}'>
+                        <block a:if="{{item.type == 'uploadImg'}}">
+                            <view class='flex-row w-100 h-100' style='height:100rpx;'>
+                                <view class='flex-grow-0 flex-y-center'>{{item.key}}：</view>
+                                <view class='flex-grow-1 flex-y-center'>
+                                    <image src='{{item.value}}' mode='aspectFit' style='width:80rpx;height:80rpx;'></image>
+                                </view>
+                            </view>
+                        </block>
+                        <block a:else>
+                            {{item.key}}：{{item.value}}
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class='btn-group flex-row'>
+            <view class='btn-group-item promptly flex-x-center flex-y-cneter' onTap='nowWriteOff'>
+                确认核销
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

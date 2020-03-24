@@ -1,0 +1,2 @@
+<!--pages/test/test.wxml-->
+<text onTap='imageClick'>pages/test/test.wxml</text>

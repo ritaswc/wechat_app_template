@@ -1,0 +1,90 @@
+{template 'common/header'}
+<div class="module-account-setting" ng-controller="moduleAccountSetting" ng-cloak>
+    <div class="we7-page-title">模块配置参数</div>
+    <div class="we7-form">
+        <div class="form-group" ng-repeat="(paramKey, param) in params" ng-class="{required: param.required, error: param.error}" ng-if="setting[param.name] != 'undefined'">
+			<label class="col-sm-2 control-label">{{param.title}}</label>
+			<div class="form-controls col-sm-8">
+				<div class="" ng-if="param.type == 'date'">
+					<input type="text"class="form-control" required="param.required" ng-model="setting[param.name]" we7-date-picker we7-date-value="setting[param.name]" date-type="date" readonly>
+				</div>
+				<div class="" ng-if="param.type == 'time'">
+					<input type="text"class="form-control" required="param.required" ng-model="setting[param.name]" we7-date-picker we7-date-value="setting[param.name]" date-type="time"  readonly>
+				</div>
+				<div class="" ng-if="param.type == 'datetime'">
+					<input type="text"class="form-control" required="param.required" ng-model="setting[param.name]" we7-date-picker we7-date-value="setting[param.name]" date-type="datetime"  readonly>
+				</div>
+				<div class="" ng-if="param.type == 'text'">
+					<input type="text" class="form-control" required="param.required" ng-model="setting[param.name]" ng-change="test()" />
+				</div>
+				<div class="" ng-if="param.type == 'textarea'">
+					<textarea class="form-control" rows="3" required="param.required" ng-model="setting[param.name]"></textarea>
+				</div>
+				<div class="" ng-if="param.type == 'radio'">
+					<span ng-repeat="(key, value) in param.values ">
+						<input type="radio" id="{{'radio-' + paramKey + '-' + key }}" required="param.required" ng-value="key" ng-model="setting[param.name]">
+						<label class="radio-inline" for="{{'radio-' + paramKey + '-' + key }}">{{value}}</label>
+					</span>
+				</div>
+				<div class="" ng-if="param.type == 'checkbox'">
+					<span ng-repeat="(key, value) in param.values ">
+						<input type="checkbox" id="{{'checkbox-' + paramKey + '-' + key }}" required="param.required" ng-value="key" ng-model="setting[param.name][key]">
+						<label class="radio-inline" for="{{'checkbox-' + paramKey + '-' + key }}">{{value}}</label>
+					</span>
+				</div>
+				<div class="" ng-if="param.type == 'select'">
+					<select  ng-model="setting[param.name]" style="z-index: 1;" required="param.required" ng-options="key as value for (key, value) in param.values ">
+						<option value="" >请选择</option>
+					</select>
+				</div>
+				<div class="" ng-if="param.type == 'selects'">
+					<select ng-model="setting[param.name]" required="param.required" multiple placeholder="请选择" ng-options="key as  value for (key, value) in param.values ">
+						<!-- <option value="{{key}}" ng-repeat="(key, value) in param.values">{{value}}</option> -->
+					</select>
+				</div>
+				<div class="" ng-if="param.type == 'number'">
+					<input type="number" class="form-control" required="param.required" ng-model="setting[param.name]" />
+				</div>
+				<div class="" ng-if="param.type == 'color'">
+					<we7-colorpicker we7-my-color="setting[param.name]" >12312</we7-colorpicker>
+				</div>
+				<div class="" ng-if="param.type == 'image'">
+					<we7-file-up class="we7-input-img" ng-class="{active: setting[param.name]}" we7-file="test" data-key="{{paramKey}}" data-key="{{paramKey}}" on-confirm="fileChange">
+						<img ng-src="{{setting[param.name]}}" alt="{{setting[param.name]}}">
+						<a  href="javascript:;" ng-if="!setting[param.name]" class="input-addon"> </a>
+					</we7-file-up>
+				</div>
+				<div class="" ng-if="param.type == 'images'" style="display: flex;">
+					<div class="we7-input-img active" ng-if="setting[param.name] && setting[param.name].length" ng-repeat="(imgKey, img) in setting[param.name]">
+						<img ng-src="{{img}}" alt="{{img}}">
+						<div class="cover-dark">
+							<!-- <a href="" class="cut" ng-click="uploadImage()">更换</a> -->
+							<a href="javascript:;" class="del" ng-click="delImage(paramKey, imgKey)"><i class="fa fa-times text-danger"></i></a>
+						</div>
+					</div>
+					<div class="we7-input-img" we7-file-up we7-file="test" multiple="true" data-key="{{paramKey}}" on-confirm="fileChange" ng-if="(!setting[param.name] || setting[param.name].length < 5)">
+						<a href="javascript:;"  class="input-addon"> </a>
+					</div>
+				</div>
+				<div class="" ng-if="param.type == 'richtext'">
+					<we7-editor we7-my-value="setting[param.name]"></we7-editor>
+				</div>
+				<div class="help-block">请填写{{param.title}}</div>
+			</div>
+		</div>
+		<div class="form-group" ng-if="params">
+			<div class="form-controls col-sm-offset-2">
+				<a href="javascript:;" class="btn btn-primary" ng-click="postData()">提交</a>
+			</div>
+		</div>
+    </div>
+</div>
+<script type="text/javascript">
+	angular.module('moduleApp').value('config', {
+		modulename: "{$module['name']}",
+		token: "{$_W['token']}",
+		apiUrl: "{php echo url('module/manage-account/setting_params', array('m' => $modulename))}"
+	});
+	angular.bootstrap($('.module-account-setting'), ['moduleApp']);
+</script>
+{template 'common/footer'}

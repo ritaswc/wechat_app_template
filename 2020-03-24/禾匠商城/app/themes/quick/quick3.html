@@ -1,0 +1,32 @@
+<style>
+	.quick.quick-quick3 {text-align:center;padding:0px; margin:0px; list-style:none; height:50px; width: 100%; position:fixed; z-index:200; bottom:0; left:0; display: -webkit-box; display: -moz-box; -webkit-box-orient: horizontal; -moz-box-orient: horizontal; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; background:-webkit-gradient(linear, 0 0, 0 100%, from(#353535), to(#2d2d2d));}
+	.quick.quick-quick3 li{width:25%;padding-top:3px;}
+	.quick.quick-quick3 li span{overflow:hidden;}
+	.quick.quick-quick3 li>a{color:#8c8f94; text-decoration:none; -webkit-box-sizing:border-box; box-sizing:border-box; border-bottom:0; display:block; height:50px; text-align:center; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+	.quick.quick-quick3 li>a>p{width:25px; height:25px; margin:auto; -webkit-background-size:100px auto; padding-top:5px;}
+	.quick.quick-quick3 li>a>p i{ display:block; width:20px; height:20px; font-size:20px;}
+	.quick.quick-quick3 > * {-webkit-box-flex: 1; -moz-box-flex: 1;}
+	@-moz-document url-prefix(){
+		.quick.quick-quick3{overflow:hidden;background:#2E2E2E;}
+		.quick.quick-quick3 li{width:25%; float:left;}
+	}
+</style>
+<div class="quick quick-quick3">
+	{php $i = 1;}
+	{loop $_W['quickmenu']['menus'] $nav}
+	<li>
+		<a href="{$nav['url']}" title="{$nav['name']}">
+			<p>
+				{if !empty($nav['icon'])}
+				<i style="background:url({media $nav['icon']}) no-repeat;background-size:cover;{$nav['css']['icon']['style']}"></i>
+				{else}
+				<i class="fa {$nav['css']['icon']['icon']}" style="{$nav['css']['icon']['style']}"></i>
+				{/if}
+			</p>
+			<span style="{$nav['css']['name']}">{$nav['name']}</span>
+		</a>
+	</li>
+	{php if($i>=4) break;}
+	{php $i++;}
+	{/loop}
+</div>

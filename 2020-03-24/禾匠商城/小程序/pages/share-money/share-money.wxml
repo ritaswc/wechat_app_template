@@ -1,0 +1,56 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="info">
+            <view class="info-title flex-row">
+                <view class="info-block">
+                    <view class="info-up white">{{custom.menus.money.name}}</view>
+                    <view class="info-bottom white">
+                        <view class="big bold">{{total_price}}</view>
+                        <view class="bottom">元</view>
+                    </view>
+                </view>
+                <view class="info-block">
+                    <navigator openType="navigate" url="/pages/cash-detail/cash-detail">
+                        <view class="info-btn white big-13">{{custom.menus.cash.name}}</view>
+                    </navigator>
+                </view>
+            </view>
+            <view class="info-content black">
+                <view class="info-label flex-y-center big-13">
+                    <view class="info-left text-more">{{custom.words.can_be_presented.name}}</view>
+                    <view class="info-right">{{price}}元</view>
+                </view>
+                <view class=" info-margin">
+                    <view class="info-label big-13">
+                        <view class=" border-bottom flex-y-center">
+                            <view class="info-left text-more">{{custom.words.already_presented.name}}</view>
+                            <view class="info-right">{{cash_price}}元</view>
+                        </view>
+                    </view>
+                    <view class="info-label flex-y-center big-13">
+                        <view class="info-left text-more">{{custom.words.pending_money.name}}</view>
+                        <view class="info-right">{{un_pay}}元</view>
+                    </view>
+                </view>
+                <view bindtap="tapName" class="info-label flex-y-center  big-13" hover="true" hoverClass="button-hover">
+                    <view class="info-left text-more">{{custom.words.user_instructions.name}}</view>
+                    <view class="info-user info-right">
+                        <image src="{{__wxapp_img.share.down.url}}" style="width:26rpx;height:16rpx;" wx:if="{{block}}"></image>
+                        <image src="{{__wxapp_img.share.right.url}}" style="width:16rpx;height:26rpx;" wx:else></image>
+                    </view>
+                </view>
+                <view class="info-label flex-y-center big-13" style="height:auto;padding:24rpx 24rpx;" wx:if="{{block}}">
+                    <text class="" style="font-size:10pt;line-height:1.5">{{share_setting.content}}</text>
+                </view>
+            </view>
+            <view class="info-footer">
+                <navigator openType="navigate" url="/pages/cash/cash">
+                    <view class="info-btn white text-more">{{custom.words.apply_cash.name}}</view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

@@ -1,0 +1,109 @@
+<!--step/dare/dare.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <!-- 提交成功后提示框 -->
+        <view class='join-bg' a:if='{{join || success}}'>
+            <view class='success' a:if='{{success}}'>
+                <view class='content'>
+                    <image src='../image/submit.png' class='banner'></image>
+                    <view class='banner-text'>恭喜您</view>
+                    <image src='../image/success.png' class='success-tip'></image>
+                    <view>成功提交步数</view>
+                    <view>奖金将于24点结算后自动发放</view>
+                    <view class='tip'>奖金可至“我的{{store.option.step.currency_name?store.option.step.currency_name:'活力币'}}”查看</view>
+                    <button class='success-btn' onTap='success'>我知道了</button>
+                </view>
+            </view>
+            <!-- 参加成功后提示框 -->
+            <view class='join-success' a:if='{{join}}'>
+                <image class='join-img' src='../image/participation.png'></image>
+                <image class='join-close' onTap='close' src='../image/pond-details.png'></image>
+                <view>报名成功，记得{{open_date}}来参加哦</view>
+                <button class='invite' open-type="share">邀请好友</button>
+            </view>
+        </view>
+        <!-- 背景图 -->
+        <view class='bg'>
+            <image src='{{store.option.step.activity_pic?store.option.step.activity_pic:__wxapp_img.step.dare_bg.url}}'></image>
+        </view>
+        <view class='icon'>
+            <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="../log/log">
+                <button formType="submit" id="_formIdSubmit">
+                    <image src='../image/log.png'></image>
+                </button>
+            </form>
+            <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="../rules/rules?rules=activity_rule">
+                <button formType="submit" id="_formIdSubmit">
+                    <image src='../image/rule.png'></image>
+                </button>
+            </form>
+        </view>
+        <view class='dare' a:if="{{space == false}}">
+            <view class='join' a:for="{{activity_data}}" a:key="{{activity}}">
+                <view class='join-title'>
+                    <view class='title-left'>{{item.open_date}}期</view>
+                    <view class='msg' a:if="{{item.date !== time}}">已有{{item.people_num?item.people_num:0}}人报名</view>
+                    <view class='not' a:if="{{item.date == time && item.log.length == 0}}">未参赛</view>
+                    <view class='already' a:if="{{item.date == time && item.log.length > 0}}">已参赛</view>
+                </view>
+                <view class='activity-name'>{{item.name}}</view>
+                <view class='activity-step' a:if="{{item.date == time && item.log.length == 0}}">目标{{item.step_num}}步</view>
+                <view class='join-info' a:if="{{item.date == time && item.log.length > 0}}">
+                    <view class='target'>目标
+                        <text>{{item.step_num}}</text>步，已完成
+                        <text>{{step}}</text>步</view>
+                    <view a:if="{{item.log_status != 2}}">请于今日24点前，更新并提交步数</view>
+                    <view a:if="{{item.log_status == 2}}">奖金将于24点后结算自动发放</view>
+                    <button class='submit' onTap='submit' data-step="{{item.step_num}}" data-id="{{item.id}}" a:if="{{item.log_status != 2}}">提交成绩</button>
+                    <button class='submit-end' a:if="{{item.log_status == 2}}">已提交成绩</button>
+                </view>
+                <view class='dare-item' a:if="{{item.date == time}}">
+                    <view class='item'>
+                        <view class='total'>{{item.currency_num?item.currency_num:0}}</view>
+                        <view>奖金池总额</view>
+                    </view>
+                    <view class='item'>
+                        <view class='total'>{{item.award_num?item.award_num:0}}</view>
+                        <view>达标人数</view>
+                    </view>
+                </view>
+                <view a:if="{{item.date !== time}}">
+                    <view class='money'>{{item.currency_num?item.currency_num:0}}</view>
+                    <view>奖金池总额</view>
+                    <view class='info'>参与满
+                        <text>{{item.step_num}}</text>步起平分奖池金额</view>
+                    <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="../join/join?id={{item.id}}" class='join-btn' a:if="{{item.log.length == 0}}">
+                        <button formType="submit" id="_formIdSubmit">
+                            <button class='join-btn'>参与比赛</button>
+                        </button>
+                    </form>
+                    <button class='finish-btn' a:if="{{item.log.length > 0}}" open-type="share">已参赛,邀请好友</button>
+                </view>
+            </view>
+            <view class='temp' wx-if="{{ad}}"></view>
+            <view class='loading' wx-if="{{loading}}">正在加载中...</view>
+            <view class='temp' wx-if="{{ad}}">
+                <ad unit-id="{{unit_id}}" onError="adError" wx-if="{{unit_id}}"></ad>         
+            </view>
+        </view>
+        <!-- 无挑战 -->
+        <view class='space' a:if="{{space == true}}">
+            <image src='../image/none.png'></image>
+            <view>暂无挑战赛哦</view>
+            <view class='temp' wx-if="{{ad}}" style='margin-top:120rpx;'>
+                <ad unit-id="{{unit_id}}" onError="adError" wx-if="{{unit_id}}"></ad>         
+            </view>
+        </view>
+        <view class='ad'>
+            <ad unit-id="{{unit_id}}" onError="adError" wx-if="{{unit_id}}"></ad>        
+        </view>
+        <!-- 授权页面 -->
+        <view class='over-screen' a:if="{{authorize == false}}">
+            <view class='window'>为确保您的正常使用，请完善授权操作</view>
+            <view onTap="openSetting" class='get-setting'>确认</view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

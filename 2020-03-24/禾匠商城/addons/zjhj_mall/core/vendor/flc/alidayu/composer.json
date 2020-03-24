@@ -1,0 +1,14 @@
+{
+    "name": "flc/alidayu",
+    "description": "阿里大于(鱼)API-SDK；适用任何PHP项目，包括Laravel、Yii、Thinkphp等...",
+    "keywords": ["alidayu", "flc"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Flc\\Alidayu\\": "src/Alidayu/"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest versionCode="0.5,0.51">
+	<identifie><![CDATA[default]]></identifie>
+	<title><![CDATA[微站默认模板]]></title>
+	<description><![CDATA[由微擎提供默认微站模板套系]]></description>
+	<author><![CDATA[WeEngine Team]]></author>
+	<url><![CDATA[http://bbs.we7.cc]]></url>
+	<type><![CDATA[often]]></type>
+</manifest>

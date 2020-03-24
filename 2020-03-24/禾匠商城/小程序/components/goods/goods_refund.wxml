@@ -1,0 +1,94 @@
+<view style="padding-bottom: 100rpx;">
+    <view class="flex-row bg-white mb-20 goods-info">
+        <view class="flex-grow-0">
+            <image mode="aspectFill" src="{{goods.goods_pic}}" style="width: 156rpx;height: 156rpx;margin-right:20rpx "></image>
+        </view>
+        <view class="flex-grow-1 flex-col">
+            <view class="flex-grow-1">{{goods.name}}</view>
+            <view class="flex-grow-0 flex-row" style="font-size: 9pt">
+                <view class="flex-grow-1">
+                    <view style="margin-right: 40rpx;display: inline-block" wx:for="{{goods.attr}}" wx:key="{{item.id}}">
+                        {{item.attr_group_name}}:{{item.attr_name}}
+                    </view>
+                </view>
+                <view class="flex-grow-0">×{{goods.num}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="flex-row bg-white switch-tab mb-20">
+        <view bindtap="switchTab" class="flex-grow-1 flex-x-center" data-id="1">
+            <text class="flex-y-center {{switch_tab_1}}">退货退款</text>
+        </view>
+        <view bindtap="switchTab" class="flex-grow-1 flex-x-center" data-id="2">
+            <text class="flex-y-center {{switch_tab_2}}">换货</text>
+        </view>
+    </view>
+    <view class="switch-body {{switch_tab_1}}">
+        <view class="flex-row bg-white form-row mb-20">
+            <view class="flex-grow-0">
+                <text class="form-label">退款原因</text>
+            </view>
+            <view class="flex-grow-1">
+                <textarea bindinput="descInput" data-type="1" placeholder="请输入退款原因" rows="2" style="width: 100%;padding: 0;"></textarea>
+            </view>
+        </view>
+        <view class="flex-row bg-white form-row mb-20">
+            <view class="flex-grow-0">
+                <text class="form-label">退款金额</text>
+            </view>
+            <view class="flex-grow-1">
+                <text class="refund-price">￥{{goods.max_refund_price}}</text>
+            </view>
+        </view>
+        <view class="bg-white form-row mb-20">
+            <view class="mb-20">
+                <text class="form-label">上传凭证</text>
+            </view>
+            <view class="image-list">
+                <view class="image-preview" data-index="{{index}}" wx:for="{{refund_data_1.pic_list}}" wx:key="{{item.id}}">
+                    <text bindtap="deleteImage" class="flex-x-center flex-y-center image-del" data-index="{{index}}" data-type="1">×
+                    </text>
+                    <image mode="aspectFill" src="{{item}}" style="width: 160rpx;height: 160rpx"></image>
+                </view>
+                <view bindtap="chooseImage" class="image-picker" data-type="1" wx:if="{{!refund_data_1.pic_list||refund_data_1.pic_list.length<6}}">
+                    <image src="{{__wxapp_img.store.image_picker.url}}" style="width: 160rpx;height: 160rpx"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="switch-body {{switch_tab_2}}">
+        <view class="flex-row bg-white form-row mb-20">
+            <view class="flex-grow-0">
+                <text class="form-label">换货说明</text>
+            </view>
+            <view class="flex-grow-1">
+                <textarea bindinput="descInput" data-type="2" placeholder="请输入换货说明" rows="2" style="width: 100%;padding: 0;"></textarea>
+            </view>
+        </view>
+        <view class="bg-white form-row mb-20">
+            <view class="mb-20">
+                <text class="form-label">上传凭证</text>
+            </view>
+            <view class="image-list">
+                <view class="image-preview" data-index="{{index}}" wx:for="{{refund_data_2.pic_list}}" wx:key="{{item.id}}">
+                    <text bindtap="deleteImage" class="flex-x-center flex-y-center image-del" data-index="{{index}}" data-type="2">×
+                    </text>
+                    <image mode="aspectFill" src="{{item}}" style="width: 160rpx;height: 160rpx"></image>
+                </view>
+                <view bindtap="chooseImage" class="image-picker" data-type="2" wx:if="{{!refund_data_2.pic_list||refund_data_2.pic_list.length<6}}">
+                    <image src="{{__wxapp_img.store.image_picker.url}}" style="width: 160rpx;height: 160rpx"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<form bindsubmit="refundSubmit" data-type="1" reportSubmit="true" wx:if="{{switch_tab_1}}">
+    <button class="submit-btn" formType="submit">
+        <text>提交</text>
+    </button>
+</form>
+<form bindsubmit="refundSubmit" data-type="2" reportSubmit="true" wx:if="{{switch_tab_2}}">
+    <button class="submit-btn" formType="submit">
+        <text>提交</text>
+    </button>
+</form>

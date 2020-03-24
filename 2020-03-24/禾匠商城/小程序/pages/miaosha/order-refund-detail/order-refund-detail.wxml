@@ -1,0 +1,8 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body">
+        <include src="/components/goods/goods_send.wxml"></include>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

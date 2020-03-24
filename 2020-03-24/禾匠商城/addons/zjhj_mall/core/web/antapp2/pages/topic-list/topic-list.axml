@@ -1,0 +1,64 @@
+<view class="page {{__page_classes}}"> 
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+
+        <view class="container">
+            <scroll-view a:if="{{navigation}}" scroll-with-animation="true" scroll-into-view="{{toView}}" class="nnavbar fs-sm-13" scroll-x="true" scroll-left="{{scrollNavbarLeft}}">
+                <view class="view1">
+                    <view hidden="{{ !navigation }}" class="navbar-item " id="0" catchTap="onTapNavbar">
+                        <view class="navbar-item-wrap {{ backgrop[0] }}">全部</view>
+                    </view>
+                    <view hidden="{{ !navigation }}" class="navbar-item " id="-1" catchTap="onTapNavbar">
+                        <view class="navbar-item-wrap {{ backgrop[1] }}">精选</view>
+                    </view>
+                    <view class="navbar-item" id="{{ navbarArray[item].id }}" a:for="{{ navbarShowIndexArray }}" a:key="{{item.id}}" catchTap="onTapNavbar">
+                        <view class="navbar-item-wrap {{ navbarArray[item].type }}">{{ navbarArray[item].name }}</view>
+                    </view>
+                </view>
+            </scroll-view>
+
+            <view a:if="{{navigation}}" class="hideview" ></view>
+            <scroll-view class="articles"  hidden="{{ articlesHide }}">
+                <!-- navbar -->
+                <view class="after-navber">
+                    <view class="list">
+                        <block a:for="{{list}}" a:key="{{item.id}}">
+
+                            <navigator a:if="{{item.layout==0}}" class="item layout-0" url="/pages/topic/topic?id={{item.id}}">
+                                <view class="flex-row">
+                                    <view class="flex-grow-1 flex-col">
+                                        <view class="flex-grow-1">
+                                            <view class="title">{{item.title}}</view>
+                                        </view>
+                                        <view class="flex-grow-0 read-count fs-sm">{{item.read_count}}</view>
+                                    </view>
+                                    <view class="flex-grow-0" style="position: relative">
+                                        <image class="cover-pic" mode="aspectFill" src="{{item.cover_pic}}"></image>
+                                        <view class="goods-count" a:if="{{item.goods_count}}">{{item.goods_count}}</view>
+                                    </view>
+                                </view>
+                            </navigator>
+
+                            <navigator a:if="{{item.layout==1}}" class="item layout-1" url="/pages/topic/topic?id={{item.id}}">
+                                <view class="title" style="font-weight: 600">{{item.title}}</view>
+                                <image class="cover-pic" mode="aspectFill" src="{{item.cover_pic}}"></image>
+                                <view class="flex-row">
+                                    <view class="flex-grow-1 read-count fs-sm">{{item.read_count}}</view>
+                                    <view class="flex-grow-0 goods-count" a:if="{{item.goods_count}}">{{item.goods_count}}</view>
+                                </view>
+                            </navigator>
+
+                        </block>
+                    </view>
+                    <view class="no-content" a:if="{{!is_loading && (!list || list.length==0)}}">暂无内容</view>
+                    <view class="loading-more {{is_loading?'active':''}}">
+                        <image src="{{__wxapp_img.system.loading.url}}"></image>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

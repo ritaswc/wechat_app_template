@@ -1,0 +1,48 @@
+#_toast {
+    position: fixed;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #ff0;
+    z-index: 10000;
+    padding: 0 120rpx;
+    text-align: center;
+}
+
+#_toast_title {
+    font-size: 11pt;
+    display: inline-block;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    margin: 0 auto;
+    padding: 16rpx 32rpx;
+    border-radius: 16rpx;
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: left;
+    transition: 150ms;
+    word-break: break-all;
+    box-shadow: 0 0 25rpx 5rpx rgba(0,0,0,0.5);
+}
+
+#_toast_title.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#_loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 10000;
+}
+
+#_loading image {
+    width: 200rpx;
+    height: 200rpx;
+}

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "登录网页端",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

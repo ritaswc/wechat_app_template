@@ -1,0 +1,16 @@
+{
+    "name": "qcloudsms_demo",
+    "description": "qcloudms demo",
+    "type": "project",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "qcloudsms",
+            "email": "qcloudsms@yeah.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "qcloudsms/qcloudsms_php": "*"
+    }
+}

@@ -1,0 +1,244 @@
+.main {
+    background: -prefix-linear-gradient(top,#ee3763,#fdac42);
+    background: linear-gradient(to bottom,#ee3763,#fdac42);
+    padding-bottom: 40rpx;
+    min-height: 100%;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100rpx;
+}
+
+.block {
+    padding: 0 20rpx;
+}
+
+.rule {
+    height: 40rpx;
+    border-radius: 20rpx;
+    background-color: rgba(0,0,0,0.2);
+    margin-top: 32rpx;
+    color: #fff;
+    font-size: 9pt;
+    padding: 0 24rpx;
+}
+
+.goods-info {
+    width: 100%;
+    margin-top: 28rpx;
+    background-color: #fff;
+    border-radius: 16rpx;
+    position: relative;
+    padding-top: 59rpx;
+}
+
+.user-img {
+    position: absolute;
+    top: -64rpx;
+    left: 50%;
+    margin-left: -59rpx;
+    border-radius: 118rpx;
+    border: 1rpx solid #fff;
+    width: 118rpx;
+    height: 118rpx;
+}
+
+.goods {
+    padding: 24rpx;
+    border-top: 1rpx solid #e2e2e2;
+}
+
+.goods image {
+    width: 216rpx;
+    height: 216rpx;
+    margin-right: 20rpx;
+}
+
+.time {
+    height: 42rpx;
+    padding: 0 4rpx;
+    border-radius: 4rpx;
+    background-color: #666;
+    color: #fff;
+}
+
+.progress-box {
+    margin-top: 16rpx;
+    width: 600rpx;
+    height: 28rpx;
+    border-radius: 12rpx;
+    margin-bottom: 16rpx;
+    position: relative;
+}
+
+.progress-box image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.progress-view {
+    height: 24rpx;
+    background-color: #ff9f9f;
+    border-radius: 12rpx;
+    z-index: 10;
+    position: relative;
+}
+
+.progress-img {
+    position: absolute;
+    right: -14rpx;
+    top: -4rpx;
+    width: 30rpx;
+    height: 30rpx;
+    border: 6rpx solid #fff;
+    border-radius: 30rpx;
+    background-color: #ff9f9f;
+}
+
+.buy-btn {
+    width: 328rpx;
+    height: 82rpx;
+}
+
+.share-btn {
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    background-color: none;
+    background: rgba(255,255,255,0);
+    font-size: 0;
+    line-height: normal;
+}
+
+.share-btn:after {
+    content: '';
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+.user-info {
+    margin-top: 40rpx;
+    width: 100%;
+    border-radius: 16rpx;
+    background-color: rgba(255,255,255,0.3);
+    height: auto;
+    color: #fff;
+    padding: 48rpx 40rpx 40rpx 40rpx;
+}
+
+.one-border {
+    width: 160rpx;
+    height: 2rpx;
+    background-color: #fff;
+}
+
+.user-list {
+    padding: 48rpx 0 8rpx 0;
+    font-size: 13pt;
+}
+
+.user-one {
+    margin-bottom: 40rpx;
+}
+
+.item-img {
+    width: 80rpx;
+    height: 80rpx;
+    margin-right: 24rpx;
+    border-radius: 80rpx;
+}
+
+.tip {
+    position: relative;
+    height: 40rpx;
+    padding: 0 20rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+    color: #ff5c5c;
+    font-size: 9pt;
+}
+
+.modal-body {
+    width: 638rpx;
+    background-color: #fff;
+    position: relative;
+    padding-bottom: 48rpx;
+    border-radius: 0 0 16rpx 16rpx;
+}
+
+.modal-header {
+    width: 100%;
+    height: 200rpx;
+    position: relative;
+}
+
+.header-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.header-bg-1 {
+    width: 0;
+    height: 0;
+    margin-top: -64rpx;
+    position: relative;
+    z-index: 15;
+}
+
+.x {
+    position: absolute;
+    right: 16rpx;
+    top: 20rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.x image {
+    width: 100%;
+    height: 100%;
+}
+
+.modal-btn {
+    margin-top: 48rpx;
+}
+
+.modal-btn image {
+    width: 480rpx;
+    height: 88rpx;
+}
+
+.modal-header-2 {
+    position: relative;
+    padding: 24rpx 69rpx;
+    background-color: #fff;
+    border-radius: 16rpx;
+    width: 638rpx;
+    height: 548rpx;
+}
+
+.header-bg-3 {
+    width: 310rpx;
+    height: 240rpx;
+    position: absolute;
+    left: calc(50% - 155rpx);
+    top: calc(50% - 120rpx);
+    z-index: 10;
+}
+
+.back-img {
+    width: 18rpx;
+    height: 18rpx;
+    margin-right: 10rpx;
+}

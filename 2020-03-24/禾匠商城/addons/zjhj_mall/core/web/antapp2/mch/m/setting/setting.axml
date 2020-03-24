@@ -1,0 +1,144 @@
+<!-- 加载公共扩展 -->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <!-- 页面内容 -->
+        <form report-submit="true" onSubmit="formSubmit">
+            <view class="form-group-name">基本信息</view>
+            <view class="input-group-list">
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">联系人</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" placeholder-class="placeholder" placeholder="必填" name="realname" value="{{mch?mch.realname:''}}" />
+                    </view>
+                </view>
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">联系电话</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" placeholder-class="placeholder" placeholder="必填" name="tel" value="{{mch?mch.tel:''}}" />
+                    </view>
+                </view>
+                <view a:if="{{__platform == 'wx'}}" class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">微信号</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" placeholder-class="placeholder" placeholder="" name="wechat_name" value="{{mch?mch.wechat_name:''}}" />
+                    </view>
+                </view>
+            </view>
+
+            <view class="form-group-name">店铺信息</view>
+            <view class="input-group-list">
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">店铺名称</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" placeholder-class="placeholder" placeholder="必填" name="name" value="{{mch?mch.name:''}}" />
+                    </view>
+                </view>
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">所在地区</view>
+                    <view class="flex-grow-1">
+                        <view class="flex flex-row" style="height: 100%;padding-right:32rpx;" onTap="showAreaPicker">
+                            <view class="flex-grow-1 flex-y-center">
+                                <view a:if="{{!edit_district.province}}">请选择地区</view>
+                                <view a:else style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis">
+                                    {{edit_district.province.name}}{{edit_district.city.name}}{{edit_district.district.name}}
+                                </view>
+                            </view>
+                            <view class="flex-grow-0 flex-y-center">
+                                <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+                            </view>
+                        </view>
+                        <view style="display: none">
+                            <input type="hidden" name="province_id" value="{{edit_district.province.id}}" />
+                            <input type="hidden" name="city_id" value="{{edit_district.city.id}}" />
+                            <input type="hidden" name="district_id" value="{{edit_district.district.id}}" />
+                        </view>
+                    </view>
+                </view>
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">详细地址</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" placeholder-class="placeholder" placeholder="必填" name="address" value="{{mch?mch.address:''}}" />
+                    </view>
+                </view>
+                <view class='input-group'>
+                    <picker class="" onChange="mchCommonCatChange" range="{{mch_common_cat_list}}" range-key="name" name="mch_common_cat_id" style="position: relative">
+                        <view class="flex flex-row input-group">
+                            <view class="flex-grow-0 flex-y-center input-group-label">所售类目</view>
+                            <view class="flex-grow-1" style='padding-right:32rpx;'>
+                                <view class="flex flex-row" style="height: 100%;">
+                                    <view a:if="{{mch_common_cat_list[mch_common_cat_index]}}" class="flex-grow-1 flex-y-center">{{mch_common_cat_list[mch_common_cat_index].name}}
+                                    </view>
+                                    <view class="flex-grow-1 flex-y-center" a:else>
+                                        <view a:if="{{mch.mch_common_cat_id}}">{{mch.mch_common_cat_name}}</view>
+                                        <view a:else>请选择类目</view>
+                                    </view>
+                                    <view class="flex-grow-0 flex-y-center">
+                                        <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </picker>
+                </view>
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">客服电话</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" placeholder-class="placeholder" placeholder="必填" name="service_tel" value="{{mch?mch.service_tel:''}}" />
+                    </view>
+                </view>
+                <view class="flex flex-row input-group" style="height: auto;min-height: 115rpx">
+                    <view class="flex-grow-0 flex-y-center input-group-label">
+                        <view>
+                            <view>店铺头像</view>
+                            <view style="font-size: 9pt;color: #888;line-height: 1">80×80</view>
+                        </view>
+                    </view>
+                    <view class="flex-grow-1" onTap="uploadLogo">
+                        <view class="flex flex-row" style="height: 100%;padding: 0 32rpx">
+                            <view class="flex-grow-1 flex-y-center">
+                                <view a:if="{{mch.logo}}" style="padding: 18rpx 24rpx;text-align: right;width: 100%;font-size: 0">
+                                    <image src="{{mch.logo}}" style="height: 80rpx;width: 80rpx"></image>
+                                </view>
+                                <view a:else>请选择图片</view>
+                                <input name="logo" value="{{mch.logo}}" style="display: none" />
+                            </view>
+                            <view class="flex-grow-0 flex-y-center">
+                                <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="flex flex-row input-group" style="height: auto;min-height: 115rpx">
+                    <view class="flex-grow-0 flex-y-center input-group-label">
+                        <view>
+                            <view>店铺背景</view>
+                            <view style="font-size: 9pt;color: #888;line-height: 1">484×130</view>
+                        </view>
+                    </view>
+                    <view class="flex-grow-1" onTap="uploadHeaderBg">
+                        <view class="flex flex-row" style="height: 100%;padding: 0 32rpx">
+                            <view class="flex-grow-1 flex-y-center">
+                                <view a:if="{{mch.header_bg}}" style="padding: 18rpx 24rpx;text-align: right;width: 100%;font-size: 0">
+                                    <image src="{{mch.header_bg}}" style="height: 80rpx;width: 298rpx"></image>
+                                </view>
+                                <view a:else>请选择图片</view>
+                                <input name="header_bg" value="{{mch.header_bg}}" style="display: none" />
+                            </view>
+                            <view class="flex-grow-0 flex-y-center">
+                                <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <button class="submit-btn" formType="submit">提交</button>
+
+        </form>
+
+    </view>
+    <include src="./../../../components/area-picker/area-picker.axml" />
+    <include src="/components/footer/footer" />
+</view>

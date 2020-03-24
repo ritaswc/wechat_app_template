@@ -1,0 +1,13 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view style="padding: 150rpx 95rpx;text-align: center">
+            <image src="{{__wxapp_img.store.pc_login.url}}" style="width: 400rpx;height: 300rpx;margin-bottom: 100rpx"></image>
+            <view style="margin-bottom: 120rpx;">即将登录网页端，是否允许登录？</view>
+            <button bindtap="loginSubmit" class="login-btn" style="margin-bottom: 56rpx">允许登录</button>
+            <navigator openType="redirect" style="display: inline-block;font-size: 9pt;color: #888" url="/pages/index/index">取消</navigator>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

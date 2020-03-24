@@ -1,0 +1,28 @@
+{template 'header'}
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<image src="{$picture}?time={php echo time()}" style="margin: 2% 2% 2% 25%;width: 250px;height: 250px;"></image>
+<br/>
+<span style="margin: 2% 2% 2% 25%;width: 250px;height: 250px;">
+	打开手机微信，扫描二维码继续支付。
+</span>
+</body>
+<script>
+	get_result =  function() {
+		$.post("{php echo $this->createWebUrl('Pay', array('direct' => 1, 'operate' => 'check_pay_result'))}", {'orderid' : '{$order['id']}'}, function(data) {
+			data = $.parseJSON(data);
+			if (data.message.errno == 1) {
+				alert('支付成功!');
+				location.href="{php echo $this->createWebUrl('Orders', array('direct' => 1))}";
+				return false;
+			}
+		});
+	}
+	setInterval('get_result()', 4000);
+</script>
+</html>
+{template 'common/footer'}

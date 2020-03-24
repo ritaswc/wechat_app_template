@@ -1,0 +1,346 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="page {{__page_classes}}">
+            <view class="body after-navber">
+                <view style="position:relative;">
+                    <view class="user-info flex-row flex-y-center" wx:if="{{style.top==0}}">
+                        <image class="user-info-bg" mode="aspectFill" src="{{user_center_bg}}"></image>
+                        <view bindtap="login" class="flex-grow-1 flex-y-center flex-row userinfo-name">
+                            <view class="flex-grow-0">
+                                <image class="avatar" src="{{user_info.avatar_url}}"></image>
+                            </view>
+                            <view class="flex-grow-1">
+                                <text class="user-name">{{user_info.nickname}}</text>
+                                <view bindtap="member" class="user-level flex-row" wx:if="{{user_info.access_token}}">
+                                    <view class="level-name flex-y-bottom">
+                                        <image src="{{__wxapp_img.user.level.url}}"></image>
+                                        <view class="flex-y-center" style="height:100%;">{{user_info.level_name||'普通用户'}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="flex-grow-0 flex-y-center userinfo-addr">
+                            <navigator class="my-address flex-y-center" url="/pages/address/address">
+                                <image src="{{__wxapp_img.store.address.url}}"></image>
+                                <text>收货地址</text>
+                            </navigator>
+                        </view>
+                    </view>
+                    <view class="user-info flex-row flex-x-center flex-y-center" wx:if="{{style.top==1}}">
+                        <image class="user-info-bg" mode="aspectFill" src="{{user_center_bg}}"></image>
+                        <view bindtap="login">
+                            <view class="flex-x-center">
+                                <image class="avatar" src="{{user_info.avatar_url}}"></image>
+                            </view>
+                            <view bindtap="{{next_level||user_info&&user_info.level!=-1?'member':''}}" class="user-level flex-row flex-x-center" style="margin-top: -20rpx;;" wx:if="{{user_info.access_token}}">
+                                <view class="level-name flex-y-bottom">
+                                    <image src="{{__wxapp_img.user.level.url}}"></image>
+                                    <view class="flex-y-center" style="height:100%;">{{user_info.level_name||'普通用户'}}</view>
+                                </view>
+                            </view>
+                            <view class="flex-x-center" style="margin-top: 10rpx;">
+                                <text class="user-name">{{user_info.nickname}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="user-info flex-row flex-y-center flex-x-center" wx:if="{{style.top==2}}">
+                        <image class="user-info-bg" mode="aspectFill" src="{{user_center_bg}}"></image>
+                        <view class="flex-y-center user-info-1">
+                            <view bindtap="login" class="flex-grow-1 flex-y-center flex-row">
+                                <view class="flex-grow-0">
+                                    <image class="avatar" src="{{user_info.avatar_url}}"></image>
+                                </view>
+                                <view class="flex-grow-1">
+                                    <text class="user-name text-more">{{user_info.nickname}}</text>
+                                    <view bindtap="{{next_level||user_info&&user_info.level!=-1?'member':''}}" class="user-level flex-row" wx:if="{{user_info.access_token}}">
+                                        <view class="level-name flex-y-bottom">
+                                            <image src="{{__wxapp_img.user.level.url}}"></image>
+                                            <view class="flex-y-center" style="height:100%;">{{user_info.level_name||'普通用户'}}
+                                                </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="flex-grow-0 flex-y-center flex-x-center" style="padding: 10rpx;width: 200rpx;;">
+                                <block wx:if="{{item.open_type=='navigator'}}" wx:for="{{menus}}" wx:key="{{item.id}}">
+                                    <navigator class="option-item flex-grow-0 style" style="width: auto;" url="{{item.url}}" wx:if="{{item.id=='address'}}">
+                                        <view>
+                                            <view class="flex-x-center">
+                                                <image class="option-icon" src="{{item.icon}}"></image>
+                                            </view>
+                                            <view class="text-more-2" style="text-align: center">{{item.name}}</view>
+                                        </view>
+                                    </navigator>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="wallet flex-row" wx:if="{{wallet&&wallet.is_wallet==1}}">
+                    <view class="flex-grow-0 wallet-1 flex-x-center flex-y-center" style="{{wallet.re==1?'width:150rpx;':''}}">
+                        <view>
+                            <view class="flex-x-center">
+                                <image src="{{wallets.status_2.icon}}" style="width:48rpx;height:48rpx;margin-bottom:20rpx;"></image>
+                            </view>
+                            <view class="fs-sm">{{wallets.status_2.text}}</view>
+                        </view>
+                    </view>
+                    <view bindtap="integral_mall" class="flex-grow-0 {{wallet.re==1?'wallet-3':'wallet-2'}} flex-x-center flex-y-center" data-integral="{{user_info.integral}}">
+                        <view class="flex-grow-1 flex-y-center flex-col">
+                            <view class="num-1 flex-x-center">{{user_info.integral}}</view>
+                            <view class="flex-row num-2 flex-x-center">
+                                <image class="flex-grow-0" src="{{wallets.status_0.icon}}" style="width:26rpx;height:26rpx;margin-right:10rpx;"></image>
+                                <view class="flex-grow-0">{{wallets.status_0.text}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flex-grow-0 {{wallet.re==1?'wallet-3':'wallet-2'}}  flex-x-center flex-y-center" wx:if="{{wallet.re==1}}">
+                        <view class="flex-grow-1 flex-y-center flex-col">
+                            <navigator hoverClass="none" url="/pages/balance/balance">
+                                <view class="num-1 flex-x-center">{{user_info.money}}</view>
+                                <view class="flex-row num-2 flex-x-center">
+                                    <image class="flex-grow-0" src="{{wallets.status_1.icon}}" style="width:26rpx;height:26rpx;margin-right:10rpx;"></image>
+                                    <view class="flex-grow-0">{{wallets.status_1.text}}</view>
+                                </view>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+                <view class="order-block" wx:if="{{setting&&setting.is_order==1}}">
+                    <navigator class="my-order" url="/pages/order/order?status=-1">我的订单</navigator>
+                    <view class="flex-row">
+                        <view class="flex-grow-1">
+                            <navigator class="nav-item" url="/pages/order/order?status=0">
+                                <view>
+                                    <image src="{{orders.status_0.icon}}"></image>
+                                </view>
+                                <view>{{orders.status_0.text?orders.status_0.text:'待付款'}}</view>
+                                <view class="num-icon" wx:if="{{order_count.status_0&&order_count.status_0>0}}">
+                                    <text>{{order_count.status_0}}</text>
+                                </view>
+                            </navigator>
+                        </view>
+                        <view class="flex-grow-1">
+                            <navigator class="nav-item" url="/pages/order/order?status=1">
+                                <view>
+                                    <image src="{{orders.status_1.icon}}"></image>
+                                </view>
+                                <view>{{orders.status_1.text?orders.status_1.text:'待发货'}}</view>
+                                <view class="num-icon" wx:if="{{order_count.status_1&&order_count.status_1>0}}">
+                                    <text>{{order_count.status_1}}</text>
+                                </view>
+                            </navigator>
+                        </view>
+                        <view class="flex-grow-1">
+                            <navigator class="nav-item" url="/pages/order/order?status=2">
+                                <view>
+                                    <image src="{{orders.status_2.icon}}"></image>
+                                </view>
+                                <view>{{orders.status_2.text?orders.status_2.text:'待收货'}}</view>
+                                <view class="num-icon" wx:if="{{order_count.status_2&&order_count.status_2>0}}">
+                                    <text>{{order_count.status_2}}</text>
+                                </view>
+                            </navigator>
+                        </view>
+                        <view class="flex-grow-1">
+                            <navigator class="nav-item" url="/pages/order/order?status=3">
+                                <view>
+                                    <image src="{{orders.status_3.icon}}"></image>
+                                </view>
+                                <view>{{orders.status_3.text?orders.status_3.text:'已完成'}}</view>
+                            </navigator>
+                        </view>
+                        <view class="flex-grow-1">
+                            <navigator class="nav-item" url="/pages/order/order?status=4">
+                                <view>
+                                    <image src="{{orders.status_4.icon}}"></image>
+                                </view>
+                                <view>{{orders.status_4.text?orders.status_4.text:'售后'}}</view>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+                <view class="option-list" wx:if="{{style.menu==0&&wallet.is_menu==1}}">
+                    <block wx:for="{{menus}}" wx:key="{{item.id}}">
+                        <block wx:if="{{item.open_type=='navigator'}}">
+                            <block wx:if="{{item.id=='fenxiao'}}">
+                                <block wx:if="{{share_setting.level>0}}">
+                                    <view wx:if="{{user_info.is_distributor!=1}}">
+                                        <form bindsubmit="apply" reportSubmit="true">
+                                            <view class="option-item">
+                                                <view class="flex-row option-content">
+                                                    <view class="flex-grow-1 flex-row">
+                                                        <view class="flex-grow-0 flex-y-center">
+                                                            <image class="option-icon" src="{{item.icon}}"></image>
+                                                        </view>
+                                                        <view class="flex-grow-1 flex-y-center">{{item.name_1?item.name_1:'成为分销商'}}</view>
+                                                    </view>
+                                                    <view class="flex-grow-0 flex-y-center">
+                                                        <image class="option-jisntou" src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                                                    </view>
+                                                    <input class="hidden" name="input"></input>
+                                                    <button class="shadow-btn" formType="submit"></button>
+                                                </view>
+                                            </view>
+                                        </form>
+                                    </view>
+                                    <view wx:elif="{{user_info.is_distributor==1}}">
+                                        <navigator class="option-item" url="/pages/share/index">
+                                            <view class="flex-row option-content">
+                                                <view class="flex-grow-1 flex-row">
+                                                    <view class="flex-grow-0 flex-y-center">
+                                                        <image class="option-icon" src="{{item.icon}}"></image>
+                                                    </view>
+                                                    <view class="flex-grow-1 flex-y-center">{{item.name}}</view>
+                                                </view>
+                                                <view class="flex-grow-0 flex-y-center">
+                                                    <image class="option-jisntou" src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                                                </view>
+                                            </view>
+                                        </navigator>
+                                    </view>
+                                </block>
+                            </block>
+                            <form bindsubmit="_formIdSubmit" data-bind="myBtnClick" data-type="navigate" data-url="{{item.url}}" reportSubmit="true" wx:else>
+                                <button formType="submit" id="_formIdSubmit">
+                                    <view class="option-item">
+                                        <view class="flex-row option-content">
+                                            <view class="flex-grow-1 flex-row">
+                                                <view class="flex-grow-0 flex-y-center">
+                                                    <image class="option-icon" src="{{item.icon}}"></image>
+                                                </view>
+                                                <view class="flex-grow-1 flex-y-center">{{item.name}}</view>
+                                            </view>
+                                            <view class="flex-grow-0 flex-y-center">
+                                                <image class="option-jisntou" src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </button>
+                            </form>
+                        </block>
+                        <view bindtap="callTel" class="option-item" data-tel="{{item.tel}}" wx:elif="{{item.open_type=='tel'}}">
+                            <view class="flex-row option-content">
+                                <view class="flex-grow-1 flex-row">
+                                    <view class="flex-grow-0 flex-y-center">
+                                        <image class="option-icon" src="{{item.icon}}"></image>
+                                    </view>
+                                    <view class="flex-grow-1 flex-y-center">{{item.name}}</view>
+                                </view>
+                                <view class="flex-grow-0 flex-y-center">
+                                    <image class="option-jisntou" src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                                </view>
+                            </view>
+                        </view>
+                        <block wx:elif="{{item.open_type=='contact'}}">
+                            <button class="option-item" openType="contact" plain="true" sessionFrom="{{__user_info.nickname}}|" wx:if="{{__platform=='wx'}}">
+                                <view class="flex-row option-content">
+                                    <view class="flex-grow-1 flex-row">
+                                        <view class="flex-grow-0 flex-y-center">
+                                            <image class="option-icon" src="{{item.icon}}"></image>
+                                        </view>
+                                        <view class="flex-grow-1 flex-y-center">{{item.name}}</view>
+                                    </view>
+                                    <view class="flex-grow-0 flex-y-center">
+                                        <image class="option-jisntou" src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                                    </view>
+                                </view>
+                            </button>
+                        </block>
+                        <block wx:elif="{{item.open_type=='no_navigator'}}">
+                            <button bindtap="clearCache" class="option-item" plain="true" sessionFrom="{{__user_info.nickname}}|" wx:if="{{__platform=='wx'}}">
+                                <view class="flex-row option-content">
+                                    <view class="flex-grow-1 flex-row">
+                                        <view class="flex-grow-0 flex-y-center">
+                                            <image class="option-icon" src="{{item.icon}}"></image>
+                                        </view>
+                                        <view class="flex-grow-1 flex-y-center">{{item.name}}</view>
+                                    </view>
+                                    <view class="flex-grow-0 flex-y-center">
+                                        <image class="option-jisntou" src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                                    </view>
+                                </view>
+                            </button>
+                        </block>
+                    </block>
+                </view>
+                <view class="options-list" style="background-color: #fff;" wx:if="{{style.menu==1&&wallet.is_menu==1}}">
+                    <view class="flex-row" style="flex-wrap: wrap">
+                        <block wx:for="{{menus}}" wx:key="{{item.id}}">
+                            <block wx:if="{{item.open_type=='navigator'}}">
+                                <block wx:if="{{item.id=='fenxiao'}}">
+                                    <block wx:if="{{share_setting.level>0}}">
+                                        <view class="option-item flex-grow-0 style" wx:if="{{user_info.is_distributor!=1}}">
+                                            <form bindsubmit="apply" reportSubmit="true">
+                                                <view>
+                                                    <view class="flex-x-center">
+                                                        <image class="option-icon" src="{{item.icon}}"></image>
+                                                    </view>
+                                                </view>
+                                                <view>
+                                                    <view class="text-more-2" style="text-align: center">{{item.name_1?item.name_1:'成为分销商'}}</view>
+                                                    <input class="hidden" name="input"></input>
+                                                    <button class="shadow-btn" formType="submit"></button>
+                                                </view>
+                                            </form>
+                                        </view>
+                                        <navigator class="option-item flex-grow-0 style" url="/pages/share/index" wx:elif="{{user_info.is_distributor==1}}">
+                                            <view>
+                                                <view class="flex-x-center">
+                                                    <image class="option-icon" src="{{item.icon}}"></image>
+                                                </view>
+                                                <view class="text-more-2" style="text-align: center">{{item.name}}</view>
+                                            </view>
+                                        </navigator>
+                                    </block>
+                                </block>
+                                <form bindsubmit="_formIdSubmit" data-bind="myBtnClick" data-type="navigate" data-url="{{item.url}}" reportSubmit="true" style="width:25%;" wx:else>
+                                    <button formType="submit" id="_formIdSubmit" style="width:100%;">
+                                        <view class="option-item flex-grow-0 style" style="width:100%;">
+                                            <view>
+                                                <view class="flex-x-center">
+                                                    <image class="option-icon" src="{{item.icon}}"></image>
+                                                </view>
+                                                <view class="text-more-2" style="text-align: center">{{item.name}}</view>
+                                            </view>
+                                        </view>
+                                    </button>
+                                </form>
+                            </block>
+                            <navigator bindtap="callTel" class="option-item flex-grow-0 style" data-tel="{{item.tel}}" wx:elif="{{item.open_type=='tel'}}">
+                                <view>
+                                    <view class="flex-x-center">
+                                        <image class="option-icon" src="{{item.icon}}"></image>
+                                    </view>
+                                    <view class="text-more-2" style="text-align: center">{{item.name}}</view>
+                                </view>
+                            </navigator>
+                            <block wx:elif="{{item.open_type=='contact'}}">
+                                <button class="option-item flex-grow-0 style" openType="contact" plain="true" style="line-height:1;margin:0;height:100%;" wx:if="{{__platform=='wx'}}">
+                                    <view>
+                                        <view class="flex-x-center">
+                                            <image class="option-icon" src="{{item.icon}}"></image>
+                                        </view>
+                                        <view class="text-more-2" style="text-align: center">{{item.name}}</view>
+                                    </view>
+                                </button>
+                            </block>
+                            <view bindtap="clearCache" class="option-item flex-grow-0 style" wx:elif="{{item.open_type=='no_navigator'}}">
+                                <view>
+                                    <view class="flex-x-center">
+                                        <image class="option-icon" src="{{item.icon}}"></image>
+                                    </view>
+                                    <view class="text-more-2" style="text-align: center">{{item.name}}</view>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+                <include src="/components/copyright/copyright"></include>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

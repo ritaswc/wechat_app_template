@@ -1,0 +1,133 @@
+<view class="page {{__page_classes}}">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <!-- 新订单提示 -->
+        <import src="/components/common/index" />
+        <template is="buy-data" data="{{buy: buy}}" />
+        <block a:if="{{template}}">
+            <import src="/components/diy/diy.axml" />
+            <view class='diy'>
+                <block a:for="{{template}}" a:key="{{item.id}}">
+                    <block a:if="{{item.type == 'goods'}}">
+                        <view class='user-block flex-row' style="flex-wrap:wrap;">
+                            <block a:if="{{item.param.is_cat == 1}}">
+                                <template is="diy-cat" data="{{param:item.param,template_index:index}}" />
+                            </block>
+                            <template is="cat-position-{{item.param.is_cat == 0 ? 0 : item.param.cat_position}}" data="{{param:item.param,template_index:index,WindowHeight:WindowHeight,type:item.type}}" />
+                        </view>
+                    </block>
+                    <block a:elif="{{item.type == 'modal'}}">
+                    </block>
+                    <block a:elif="{{item.type == 'topic'}}">
+                        <block a:if="{{item.param.style != 0}}">
+                            <template is="topic-{{item.param.style}}" data="{{param:item.param,__wxapp_img:__wxapp_img,show_notice:show_notice,play:play,time_all:time_all,template_index:index}}" />
+                        </block>
+                        <block a:else>
+                            <template is="topic" data="{{param:item.param,__wxapp_img:__wxapp_img,show_notice:show_notice,play:play,time_all:time_all,template_index:index}}" />
+                        </block>
+                    </block>
+                    <block a:elif="{{item.type == 'integral'}}">
+                        <block a:if="{{item.param.is_coupon == 1}}">
+                            <template is="coupon" data="{{param:item.param,__wxapp_img:__wxapp_img,show_notice:show_notice,play:play,time_all:time_all,template_index:index,coupon_index:'true',type:item.type}}" />
+                        </block>
+                        <block a:if="{{item.param.is_goods == 1}}">
+                            <template is="cat-position-0" data="{{param:item.param,template_index:index,WindowHeight:WindowHeight,type:item.type,time_all:time_all}}" />
+                        </block>
+                    </block>
+                    <block a:elif="{{item.type == 'mch'}}">
+                        <block a:if="{{item.param.is_goods == 0}}">
+                            <template is="mch" data="{{mch_list:item.param.list,mch_index:'true'}}" />
+                        </block>
+                        <block a:else>
+                            <template is="mch-1" data="{{param:item.param,mch_list:item.param.list,template_index:index,__wxapp_img:__wxapp_img}}" />
+                        </block>
+                    </block>
+                    <block a:elif="{{item.type == 'miaosha' || item.type == 'pintuan' || item.type == 'bargain' || item.type == 'book' || item.type == 'lottery'}}">
+                        <template is="cat-position-0" data="{{param:item.param,template_index:index,WindowHeight:WindowHeight,type:item.type,time_all:time_all,__wxapp_img:__wxapp_img}}" />
+                    </block>
+                    <block a:elif="{{item.type == 'nav' || item.type == 'video'}}">
+                        <template is="diy-{{item.type}}" data="{{param:item.param,__wxapp_img:__wxapp_img,show_notice:show_notice,play:play,time_all:time_all,template_index:index}}" />
+                    </block>
+                    <block a:elif="{{item.type == 'float'}}">
+                        <block a:if="{{item.param.style == 0}}">
+                            <app-navigation setnavi="{{setnavi}}" __device="{{__device}}" home_icon="{{home_icon}}" options="{{options}}" store="{{store}}" __platform="{{__platform}}" __alipay_mp_config="{{__alipay_mp_config}}" __user_info="{{__user_info}}"></app-navigation>
+                        </block>
+                        <block a:else>
+                            <app-navigation setnavi="{{item.param.setnavi}}" __device="{{__device}}" home_icon="true" options="{{options}}" store="{{item.param.store}}" __platform="{{__platform}}" __alipay_mp_config="{{__alipay_mp_config}}" __user_info="{{__user_info}}" click_pic="{{item.param.click_pic}}"></app-navigation>
+                        </block>
+                    </block>
+                    <block a:else>
+                        <template is="{{item.type}}" data="{{param:item.param,__wxapp_img:__wxapp_img,show_notice:show_notice,play:play,time_all:time_all,template_index:index,coupon_index:'true',type: item.type}}" />
+                    </block>
+                </block>
+                <template is="goods-modal" data="{{__wxapp_img:__wxapp_img,show_attr_picker:show_attr_picker,goods:goods,attr_group_list:attr_group_list,form:form}}" />
+            </view>
+        </block>
+        <block a:else>
+            <block a:for="{{module_list}}" a:for-item="item" a:for-index="index" a:key="{{item.id}}">
+
+                <block a:if="{{item.name == 'notice'}}">
+                    <template is="notice" data="{{notice: notice,param:update_list.notice,__wxapp_img:__wxapp_img,show_notice:show_notice,template_index:1}}" />
+                </block>
+                <block a:elif="{{item.name == 'banner'}}">
+                    <template is="banner" data="{{param:update_list.banner}}" />
+                </block>
+
+                <block a:elif="{{item.name=='search'}}">
+                    <template is="search" data="{{__wxapp_img:__wxapp_img}}" />
+                </block>
+
+                <block a:elif="{{item.name == 'nav'}}">
+                    <template is="nav" data="{{nav_icon_list:nav_icon_list,nav_count:nav_count}}" />
+                </block>
+
+                <block a:elif="{{item.name == 'topic'}}">
+                    <template is="topic" data="{{param:update_list.topic,topic_list:topic_list,item:item}}" />
+                </block>
+
+                <block a:elif="{{item.name == 'coupon'}}">
+                    <template is="coupon" data="{{__wxapp_img:__wxapp_img,param:update_list.coupon,item:item}}" />
+                </block>
+
+                <block a:elif="{{item.name == 'cat' || item.name == 'single_cat'}}">
+                    <template is="cat" data="{{cat_list:cat_list,__wxapp_img:__wxapp_img,cat_goods_cols:cat_goods_cols,__is_sales:__is_sales,cat_item:item}}" />
+                </block>
+
+                <block a:elif="{{item.name == 'miaosha'}}">
+                    <template is="miaosha" data="{{__wxapp_img:__wxapp_img,miaosha:miaosha,item:item}}" />
+                </block>
+
+                <block a:elif="{{item.name == 'pintuan'}}">
+                    <template is="pintuan" data="{{__wxapp_img:__wxapp_img,pintuan:pintuan,item:item}}" />
+                </block>
+
+                <block a:elif="{{item.name == 'yuyue'}}">
+                    <template is="yuyue" data="{{__wxapp_img:__wxapp_img,yuyue:yuyue,item:item}}" />
+                </block>
+
+                <block a:elif="{{item.name == 'video'}}">
+                    <template is="video" data="{{__wxapp_img:__wxapp_img,update_list:update_list,video_item:item,play:play}}" />
+                </block>
+
+                <block a:elif="{{item.name == 'mch' && mch_list && mch_list.length > 0}}">
+                    <template is="mch" data="{{__wxapp_img:__wxapp_img,mch_list:mch_list,item:item}}" />
+                </block>
+
+                <!-- 自定义板块 开始 -->
+                <block a:else>
+                    <block a:for="{{block_list}}" a:for-item="block" a:key="block.id" a:if="{{item.block_id==block.id}}">
+                        <template is="{{'block-' + block.data.pic_list.length + '-' + block.style}}" data="{{__wxapp_img:__wxapp_img,block:block,item:item,store:store}}" />
+                    </block>
+                </block>
+                <!-- 自定义板块 结束 -->
+            </block>
+            <app-navigation setnavi="{{setnavi}}" __device="{{__device}}" home_icon="{{home_icon}}" options="{{options}}" store="{{store}}" __platform="{{__platform}}" __alipay_mp_config="{{__alipay_mp_config}}" __user_info="{{__user_info}}"></app-navigation>
+        </block>
+
+        <block a:if="{{act_modal_list && act_modal_list.length > 0}}">
+            <template is="act-modal" data="{{__wxapp_img:__wxapp_img,act_modal_list:act_modal_list}}" />
+        </block>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

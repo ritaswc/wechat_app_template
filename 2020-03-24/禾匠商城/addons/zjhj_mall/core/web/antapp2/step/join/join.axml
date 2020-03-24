@@ -1,0 +1,53 @@
+<!--step/join/join.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view a:if="{{join == false}}">
+            <view class='top'>
+                <image src='{{__wxapp_img.step.join_bg.url}}'></image>
+                <view class='title'><text class='dare-name'>{{name}}</text><text>{{step_num}}步挑战赛</text></view>
+                <view class='time'>比赛时间：{{open_date}} 00:00-23:59</view>
+            </view>
+            <view class='msg'>
+                <view class='text'>使用{{store.option.step.currency_name?store.option.step.currency_name:'活力币'}}参赛</view>
+                <view>
+                    <text class='use-price'>{{bail_currency}}</text>个</view>
+            </view>
+            <view class='content'>
+                <view class='content-title'>参赛步骤</view>
+                <view class='content-body'>
+                    <view class='content-num'>
+                        <image src='../image/one.png'></image>
+                    </view>
+                    <view class='content-text'>
+                        <view class='step-title'>报名参赛</view>
+                        <view>使用{{bail_currency}}个{{store.option.step.currency_name?store.option.step.currency_name:'活力币'}}参赛</view>
+                    </view>
+                </view>
+                <view class='content-body'>
+                    <view class='content-num'>
+                        <image src='../image/two.png'></image>
+                    </view>
+                    <view class='content-text'>
+                        <view class='step-title'>比赛日行走达{{step_num}}步</view>
+                        <view>比赛日完成并提交{{step_num}}步行走</view>
+                    </view>
+                </view>
+                <view class='content-body'>
+                    <view class='content-num'>
+                        <image src='../image/three.png'></image>
+                    </view>
+                    <view class='content-text'>
+                        <view class='step-title'>获得{{store.option.step.currency_name?store.option.step.currency_name:'活力币'}}奖励</view>
+                        <view>挑战结束，达标用户可平分奖池{{store.option.step.currency_name?store.option.step.currency_name:'活力币'}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class='join'>
+                <button class='join-btn' onTap='apply'>立即报名</button>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

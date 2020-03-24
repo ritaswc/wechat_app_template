@@ -1,0 +1,55 @@
+<view class="page"> 
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+
+        <view class='w-100'>
+            <swiper class='banner' indicator-dots="true" autoplay="true" interval="5000" duration="300" circular="true">
+                <block a:for="{{shop.pic_list}}" a:key="{{item.id}}">
+                    <swiper-item>
+                        <image class='w-100 h-100' src="{{item}}" />
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view class='block block_1'>
+            <view class='title'>{{shop.name}}</view>
+            <view class='flex-row middle'>
+                <view class='flex-grow-0' style='margin-right:20rpx;color:#707070'>评分：</view>
+                <view class='flex-grow-1'>
+                    <block a:for='{{score}}' a:key="{{item.id}}" a:if='{{index < shop.score}}'>
+                        <image src='{{__wxapp_img.store.detail_love.url}}' style='width:28rpx;height:24rpx;margin-right:6rpx;'></image>
+                    </block>
+                </view>
+            </view>
+            <view style='color:#707070;'>营业时间：{{shop.shop_time}}</view>
+        </view>
+        <view class='block'>
+            <view class='flex-row'>
+                <view class='flex-grow-1 block_2'>电话：{{shop.mobile}}</view>
+                <view class='flex-grow-0 flex-y-center shop-img' onTap='mobile'>
+                    <view class='flex-x-center shop-v'>
+                        <image src='{{__wxapp_img.shop.tel.url}}'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='block'>
+            <view class='flex-row'>
+                <view class='flex-grow-1 block_2'>{{shop.address}}</view>
+                <view class='flex-grow-0 shop-img' onTap='goto'>
+                    <view class='flex-y-center flex-x-center shop-v' style='height:100%;'>
+                        <image src='{{__wxapp_img.shop.nav.url}}'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='block_3 flex-y-center'>店铺介绍</view>
+        <view class='detail'>
+            <import src="../../wxParse/wxParse.axml" />
+            <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
+        </view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

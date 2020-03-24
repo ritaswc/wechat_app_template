@@ -1,0 +1,209 @@
+<!-- 加载公共扩展 -->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber {{fixed?'fixed-tab-'+tab:''}}">
+        <!-- 页面内容 -->
+        <view class="header-h flex-y-bottom">
+            <image class="header-bg" src="{{shop.header_bg}}"></image>
+            <view class="flex flex-row">
+                <view class="flex-grow-0 flex-y-center" style="padding: 0 24rpx;font-size: 0">
+                    <image style="width: 90rpx;height: 90rpx;border-radius: 8rpx" src="{{shop.logo}}"></image>
+                </view>
+                <view class="flex-grow-1 flex-y-center header-text">
+                    <view>
+                        <view style="width: 520rpx; margin-bottom: 4rpx;white-space: nowrap;overflow: hidden;text-overflow: ellipsis" class="shop-name">{{shop.name}}
+                        </view>
+                        <view style="font-size: 8pt">
+                            <text style="margin-right: 30rpx">商品：{{shop.goods_num}}</text>
+                            <text a:if='{{__is_sales}}'>已售：{{shop.sale_num}}</text>
+                        </view>
+                    </view>
+                    <view a:if="{{cs_icon}}" style="text-align:center" onTap="kfuStart">
+                        <image src="/mch/images/shop-kf.png" style="width: 40rpx;height: 40rpx;"></image>
+                        <view style="font-size:10pt;">客服</view>
+                    </view>
+                </view>
+                <view class="flex-grow-0 flex-y-center">
+                    <view class="flex flex-row favorite" style="display: none">
+                        <view class="flex-y-center">
+                            <image src="/mch/images/icon-shoucang.png" style="width: 34rpx;height: 28rpx;"></image>
+                        </view>
+                        <view class="flex-y-center flex-x-center favorite-text">收藏</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="tab flex flex-row">
+            <navigator open-type="redirect" url="/mch/shop/shop?mch_id={{mch_id}}&tab=1" class="tab-item flex-grow-1 flex-y-center flex-x-center {{tab==1?'active':''}}">
+                <view>
+                    <image src="/mch/images/icon-shouye{{tab==1?'-active':''}}.png"></image>
+                    <view>店铺首页</view>
+                </view>
+            </navigator>
+            <navigator open-type="redirect" url="/mch/shop/shop?mch_id={{mch_id}}&tab=2" class="tab-item flex-grow-1 flex-y-center flex-x-center {{tab==2?'active':''}}">
+                <view>
+                    <image src="/mch/images/icon-quanbu{{tab==2?'-active':''}}.png"></image>
+                    <view>全部商品</view>
+                </view>
+            </navigator>
+            <navigator open-type="redirect" url="/mch/shop/shop?mch_id={{mch_id}}&tab=3" class="tab-item flex-grow-1 flex-y-center flex-x-center {{tab==3?'active':''}}">
+                <view>
+                    <image src="/mch/images/icon-xinpin{{tab==3?'-active':''}}.png"></image>
+                    <view>新品上架</view>
+                </view>
+            </navigator>
+            <navigator open-type="redirect" url="/mch/shop-summary/shop-summary?mch_id={{mch_id}}" class="tab-item flex-grow-1 flex-y-center flex-x-center {{tab==4?'active':''}}">
+                <view>
+                    <image src="/mch/images/icon-summary.png"></image>
+                    <view>店铺简介</view>
+                </view>
+            </navigator>
+        </view>
+
+        <block a:if="{{tab==1}}">
+            <scroll-view scroll-x="true" class="shop-coupon-list" a:if="{{coupon_list && coupon_list.length}}">
+                <view class="flex flex-row">
+                    <view class="flex-grow-0 shop-coupon-item" a:for="{{coupon_list}}" a:key="{{item.id}}">
+                        <image src="/mch{{__wxapp_img.coupon.coupon.url}}"></image>
+                        <view class="flex flex-row">
+                            <view class="flex-grow-1">
+                                <view class="shop-coupon-money">
+                                    <text style="font-size: 7pt">￥</text> 20000.00
+                                </view>
+                                <view class="shop-coupon-limit">满20000.00可使用</view>
+                            </view>
+                            <view class="flex-grow-0 flex-y-center get-shop-coupon-now">立即领取</view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+
+            <navigator style="width: 100%;height: auto;font-size: 0" a:if="{{banner_list && banner_list.length}}">
+                <image style="width: 100%;height: 300rpx;background-color: #ccc"></image>
+            </navigator>
+
+            <view class="list-block" a:if="{{hot_list && hot_list.length}}">
+                <view class="block-header">热销推荐</view>
+                <view class="block-list">
+                    <navigator a:for="{{hot_list}}" a:key="{{item.id}}" class="block-item" url="/pages/goods/goods?id={{item.id}}">
+                        <view style="font-size: 0">
+                            <image src="{{item.cover_pic}}"></image>
+                        </view>
+                        <view class="item-name">{{item.name}}</view>
+                        <view class="item-price">￥{{item.price}}</view>
+                    </navigator>
+                </view>
+            </view>
+
+        </block>
+
+        <block a:if="{{tab==2}}">
+            <view class="list-block">
+                <view class="block-header flex flex-row fixed-header list-header">
+                    <navigator url="/mch/shop-cat/shop-cat?mch_id={{mch_id}}&cat_id={{cat_id}}" class="flex-grow-1 flex flex-row flex-x-center flex-y-center {{sort==0?'active':''}}">
+                        <view>分类</view>
+                        <view style="font-size: 0">
+                            <image src="/mch/images/icon-fenlei.png" style="width: 30rpx;height: 24rpx"></image>
+                        </view>
+                    </navigator>
+                    <navigator url="/mch/shop/shop?mch_id={{mch_id}}&tab=2&sort=1" open-type="redirect" class="flex-grow-1 flex-x-center flex-y-center {{sort==1?'active':''}}">综合
+                    </navigator>
+                    <navigator url="/mch/shop/shop?mch_id={{mch_id}}&tab=2&sort=2" open-type="redirect" class="flex-grow-1 flex-x-center flex-y-center {{sort==2?'active':''}}">销量
+                    </navigator>
+                    <block a:if="{{sort<3}}">
+                        <navigator url="/mch/shop/shop?mch_id={{mch_id}}&tab=2&sort=3" open-type="redirect" class="flex-grow-1 flex-x-center flex-y-center">
+                            <view>价格</view>
+                            <view style="font-size: 0">
+                                <image src="/mch/images/icon-jiage-1.png" style="width: 16rpx;height: 26rpx"></image>
+                            </view>
+                        </navigator>
+                    </block>
+                    <block a:if="{{sort==3}}">
+                        <navigator url="/mch/shop/shop?mch_id={{mch_id}}&tab=2&sort=4" open-type="redirect" class="flex-grow-1 flex-x-center flex-y-center active">
+                            <view>价格</view>
+                            <view style="font-size: 0">
+                                <image src="/mch/images/icon-jiage-2.png" style="width: 16rpx;height: 26rpx"></image>
+                            </view>
+                        </navigator>
+                    </block>
+                    <block a:if="{{sort==4}}">
+                        <navigator url="/mch/shop/shop?mch_id={{mch_id}}&tab=2&sort=3" open-type="redirect" class="flex-grow-1 flex-x-center flex-y-center active">
+                            <view>价格</view>
+                            <view style="font-size: 0">
+                                <image src="/mch/images/icon-jiage-3.png" style="width: 16rpx;height: 26rpx"></image>
+                            </view>
+                        </navigator>
+                    </block>
+                </view>
+                <view class="block-list">
+                    <navigator a:for="{{goods_list}}" a:key="{{item.id}}" class="block-item" url="/pages/goods/goods?id={{item.id}}">
+                        <view style="font-size: 0">
+                            <image src="{{item.cover_pic}}"></image>
+                        </view>
+                        <view class="item-name">{{item.name}}</view>
+                        <view class="item-price">￥{{item.price}}</view>
+                    </navigator>
+                </view>
+            </view>
+        </block>
+
+        <block a:if="{{tab==3}}">
+            <block a:if="{{new_list && new_list.length}}">
+                <view class="list-block" a:for="{{new_list}}" a:for-item="new_item" a:key="{{item.id}}">
+                    <view class="new-goods-header flex flex-row">
+                        <view class="flex-grow-1 flex-y-center">
+                            <view></view>
+                        </view>
+                        <view class="flex-grow-0">{{new_item.date}}</view>
+                        <view class="flex-grow-1 flex-y-center">
+                            <view></view>
+                        </view>
+                    </view>
+                    <view class="block-list">
+                        <navigator a:for="{{new_item.list}}" a:key="{{item.id}}" class="block-item" url="/pages/goods/goods?id={{item.id}}">
+                            <view style="font-size: 0">
+                                <image src="{{item.cover_pic}}"></image>
+                            </view>
+                            <view class="item-name">{{item.name}}</view>
+                            <view class="item-price">￥{{item.price}}</view>
+                        </navigator>
+                    </view>
+                </view>
+            </block>
+        </block>
+        <view a:if="{{no_more}}" style="text-align: center;padding: 24rpx;">
+            <view style="height: 50rpx;line-height: 50rpx;font-size: 9pt;color: #888">没有商品了~</view>
+        </view>
+        <view a:if="{{!no_more}}" style="text-align: center;padding: 24rpx;visibility: {{loading?'visible':'hidden'}}">
+            <image src="{{__wxapp_img.system.loading_black.url}}" style="width: 50rpx;height: 50rpx"></image>
+        </view>
+
+
+
+        <view a:if="{{copy}}">
+            <view class="act-modal show">
+                <view class="act-modal-bg" onTap="closeActModal"></view>
+                <view class="act-modal-pic flex-y-center flex-x-center">
+                    <view style="position:relative;width:620rpx;background:#ffffff;border-radius:16rpx;text-align:center">
+                        <image style="position:absolute;right:27rpx;top:27rpx;width: 35rpx;height: 35rpx;" onTap="kfuEnd" src="/mch/images/shop-x.png"></image>
+
+                        <view style="margin:40rpx 0;font-size:13pt;color:#353535">联系客服</view>
+                        <view style="text-align:left;padding-left:56rpx">
+                            <text a:if="{{__platform == 'wx'}}" class="we-name">店家微信: {{shop.wechat_name}}</text>
+                            <view style="font-size:12pt;color:#353535">店家电话: {{shop.tel}}</view>
+                        </view>
+                        <view style="text-align:center;padding-bottom:48rpx;padding-top:35rpx">
+                            <view onTap='copyinfo' data-info='{{shop.wechat_name}}' class="copy-info">一键复制</view>
+                            <view style="display:inline-block;width:30rpx"></view>
+                            <view onTap='callPhone' data-info='{{shop.tel}}' class="copy-info">拨打电话</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="./../..//components/quick-navigation/quick-navigation.axml" />
+    <include src="/components/footer/footer" />
+</view>

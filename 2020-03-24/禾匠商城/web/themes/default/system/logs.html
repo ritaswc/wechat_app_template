@@ -1,0 +1,171 @@
+{template 'common/header'}
+<ul class="we7-page-tab">
+	<li{if $do == 'wechat' || $do == 'detail'} class="active"{/if}><a href="{php echo url('system/logs/wechat');}">微信日志</a></li>
+	<li{if $do == 'system'} class="active"{/if}><a href="{php echo url('system/logs/system');}">系统日志</a></li>
+	<li{if $do == 'database'} class="active"{/if}><a href="{php echo url('system/logs/database');}">数据库日志</a></li>
+	<li{if $do == 'sms'} class="active"{/if}><a href="{php echo url('system/logs/sms');}">短信发送日志</a></li>
+	<li{if $do == 'attachment'} class="active"{/if}><a href="{php echo url('system/logs/attachment');}">附件操作日志</a></li>
+</ul>
+<div class="clearfix">
+	<!--<h5 class="page-header">日志信息</h5>-->
+	<!-- 筛选功能 -->
+	{if ($do != 'wechat')}
+		<form action="./index.php" method="get" class="we7-form form-inline" role="form">
+			<input type="hidden" name="c" value="system">
+			<input type="hidden" name="a" value="logs">
+			<input type="hidden" name="do" value="{$do}">
+				<div class="form-group">
+					<div class="col-sm-8 we7-padding-none">
+						{php echo tpl_form_field_daterange('time', array('starttime'=>$_GPC['time']['start'],'endtime'=>$_GPC['time']['end']));}
+					</div>
+					{if !in_array($do, array('sms', 'attachment'))}
+					<div class="col-sm-1 we7-padding-left">
+						<button class="btn btn-default"><i class="fa fa-search"></i> 搜索</button>
+					</div>
+					{/if}
+				</div>
+				{if $do == 'sms'}
+				<div class="form-group we7-margin-left">
+					<div class="input-group">
+						<input type="text" class="form-control" name="mobile" value="{$_GPC['mobile']}" placeholder="请输入手机号">
+						<div class="input-group-btn">
+							<button class="btn btn-default"><i class="fa fa-search"></i></button>
+						</div>
+					</div>
+				</div>
+				{/if}
+				{if $do == 'attachment'}
+				<div class="form-group we7-margin-left">
+					<div class="input-group">
+						<input type="text" class="form-control" name="keyword" value="{$_GPC['keyword']}" placeholder="请输入要搜索的平台名称">
+						<div class="input-group-btn">
+							<button class="btn btn-default"><i class="fa fa-search"></i></button>
+						</div>
+					</div>
+				</div>
+				{/if}
+		</form>
+	{/if}
+	
+	<!-- 微信日志 -->
+	{if ($do == 'wechat')}
+	<form action="./index.php" method="get" class="we7-form" role="form">
+		<input type="hidden" name="c" value="system">
+		<input type="hidden" name="a" value="logs">
+		<input type="hidden" name="do" value="{$do}">
+			<div class="form-group">
+				<div class="col-sm-4 form-controls">
+					<select name="searchtime" class="form-control">
+						{loop $tree $row}
+						<option value="{$row}" {if $_GPC['searchtime'] == $row}selected{/if}>{$row}</option>
+						{/loop}
+					</select>
+					
+				</div>
+				<div class="col-sm-1 we7-padding-left">
+					<button class="btn btn-default"><i class="fa fa-search"></i> 搜索</button>
+				</div>
+			</div>
+	</form>
+	<pre>
+		{if $contents}
+		{$contents}
+		{else}
+		暂无
+		{/if}
+	</pre>
+	{/if}
+	
+	<!-- 系统日志 -->
+	{if ($do == 'system')}
+	<table class="table we7-table table-hover">
+		<tr>
+			<th style="width:150px;">日志类型</th>
+			<th style="width:150px;">页面执行时间</th>
+			<th style="width:150px;">页面URL</th>
+			<th style="width:200px;">日志记录时间</th>
+		</tr>
+		{loop $list $item}
+		<tr>
+			<td>{$item['type']}</td>
+			<td>{$item['runtime']}</td>
+			<td>
+				<a href="{$item['runurl']}" target="_blank">{$item['runurl']}</a>
+			</td>
+			<td>{$item['createtime']}</td>
+		</tr>
+		{/loop}
+	</table>
+	<div class="text-right">
+		{$pager}
+	</div>
+	{/if}
+	
+	<!-- 数据据日志 -->
+	{if ($do == 'database')}
+	<table class="table we7-table table-hover">
+		<tr>
+			<th style="width:150px;">日志类型</th>
+			<th style="width:150px;">SQL执行时间</th>
+			<th style="width:150px;">SQL语句</th>
+			<th style="width:200px;">日志记录时间</th>
+		</tr>
+		{loop $list $item}
+			<tr>
+				<td>{$item['type']}</td>
+				<td>{$item['runtime']}</td>
+				<td>{$item['runsql']}</td>
+				<td>{$item['createtime']}</td>
+			</tr>
+		{/loop}
+	</table>
+	<div class="text-right">
+		{$pager}
+	</div>
+	{/if}
+	{if $do == 'sms'}
+		<table class="table we7-table table-hover site-list">
+			<tr>
+				<th style="width:150px;">接收手机</th>
+				<th style="width:150px;">发送内容</th>
+				<th style="width:150px;">错误报告</th>
+				<th style="width:200px;">发送时间</th>
+			</tr>
+			{loop $list $item}
+			<tr>
+				<td>{$item['mobile']}</td>
+				<td>{$item['content']}</td>
+				<td>{$item['result']}</td>
+				<td>{php echo date('Y-m-d H:i:s', $item['createtime'])}</td>
+			</tr>
+			{/loop}
+		</table>
+	<div class="text-right">
+		{$pager}
+	</div>
+	{/if}
+
+	<!-- 附件操作日志 -->
+    {if $do == 'attachment'}
+    <table class="table we7-table table-hover site-list">
+        <tr>
+            <th style="width:150px;">用户</th>
+            <th style="width:150px;">操作</th>
+            <th style="width:150px;">平台</th>
+            <th style="width:200px;">时间</th>
+        </tr>
+        {loop $list $item}
+        <tr>
+            <td>{$item['username']}</td>
+            <td>上传图片:{$item['filename']}</td>
+            <td><?php echo $item['name'] ? $item['name'] : '系统';?></td>
+            <td>{php echo date('Y-m-d H:i:s', $item['createtime'])}</td>
+        </tr>
+        {/loop}
+    </table>
+    <div class="text-right">
+        {$pager}
+    </div>
+    {/if}
+</div>
+{template 'common/footer'}

@@ -1,0 +1,115 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body">
+        <view class="after-navber">
+            <view class="top-bar">
+                <scroll-view scroll-x="true" scroll-into-view="miaosha_{{top_bar_scroll}}" scroll-with-animation="true">
+                    <view class="flex-row start-time-list">
+                        <view id="miaosha_{{index}}" class="flex-grow-0 flex-y-center start-time-item {{item.active?'active':''}}" a:for="{{time_list}}" a:key="{{item.id}}" data-index="{{index}}" onTap="topBarItemClick">
+                            <view>
+                                <view class="start-time">{{item.title}}</view>
+                                <view class="start-status">{{item.status_text}}</view>
+                            </view>
+                            <view a:if="{{item.active}}" class="start-time-item-icon"></view>
+                        </view>
+
+                        <view a:if="{{next_list.length>0}}" class="flex-grow-0 flex-y-center start-time-item {{ms_active?'active':''}}" onTap="miaosha_next">
+                            <view class="start-time">预告</view>
+                            <view a:if="{{ms_active}}" class="start-time-item-icon"></view>
+                        </view>
+                        <view class="flex-grow-1" style="background:#30353c"></view>
+                    </view>
+                </scroll-view>
+                <view a:if="{{ms_active}}" class="flex-row" style="margin-top:-20rpx;background:#fff">
+                    <view class="flex-y-center" style="margin:40rpx 40rpx 40rpx 70rpx">
+                        <image src="/images/miaosha-next.png" style="width:100rpx;height:100rpx" />
+                    </view>
+                    <view class="flex-col flex-x-center">
+                        <text style="color:#3f3f3f">今天已无更多场次</text>
+                        <text style="height:10rpx"></text>
+                        <text style="color:#999999">下一场于 <text style="color:#ff4544;">{{next_time}}</text> 开始</text>
+                    </view>
+                </view>
+                <view a:if="{{ms_active}}" style="background:#f7f7f7;height:12rpx"></view>
+
+                <view a:if="{{time_list && !ms_active}}" class="flex-row time-over-bar">
+                    <view class="flex-grow-1 flex-y-center" style="color: #ff4544">限时限量 先到先得</view>
+                    <view a:for="{{time_list}}" a:key="{{item.id}}" a:if="{{item.active}}" class="flex-grow-0 flex-y-center" style="color: #888">
+                        <block a:if="{{item.status==0}}">
+                            <text>本场秒杀已结束</text>
+                        </block>
+                        <block a:if="{{item.status==1}}">
+                            <text>距离本场结束</text>
+                            <text style="color: #666;margin-left: 10rpx">{{item.end_time_over}}</text>
+                        </block>
+                        <block a:if="{{item.status==2}}">
+                            <text>距离本场开始</text>
+                            <text style="color: #666;margin-left: 10rpx">{{item.begin_time_over}}</text>
+                        </block>
+                    </view>
+                </view>
+            </view>
+
+            <view a:if="{{goods_list===null}}" class="goods-loading" style="padding-top: 320rpx;text-align: center">
+                <image src="{{__wxapp_img.system.loading2.url}}" style="width: 120rpx;height: 120rpx"></image>
+            </view>
+            <view a:else class="goods-list" style="{{ms_active?'padding-top:309rpx':''}}">
+                <block a:for="{{goods_list}}" a:key="{{item.id}}">
+                    <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="/pages/miaosha/details/details?id={{item.id}}">
+                        <button formType="submit" id="_formIdSubmit">
+                            <view class="item flex-row">
+                                <view class="flex-grow-0" style="padding: 12rpx 0">
+                                    <image class="cover-pic" src="{{item.cover_pic}}" mode="aspectFill"></image>
+                                </view>
+                                <view class="flex-grow-1" style="padding: 28rpx 24rpx">
+                                    <view class="goods-name">{{item.name}}</view>
+                                    <view class="progress-bar">
+                                        <view class="progress" style="width: {{item.sell_num*100/item.miaosha_num}}%"></view>
+                                    </view>
+                                    <view class="flex-row statue-text">
+                                        <block a:if="{{item.sell_num < item.miaosha_num}}">
+                                            <view class="flex-grow-1">已抢购{{item.sell_num}}</view>
+                                            <view class="flex-grow-0" style="color: #ff4544">仅剩{{item.miaosha_num-item.sell_num}}</view>
+                                        </block>
+                                        <block a:else>
+                                            <view class="flex-grow-1">{{item.miaosha_num}}已抢完</view>
+                                        </block>
+                                    </view>
+                                    <view class="flex-row">
+                                        <view class="flex-grow-1">
+                                            <view class="miaosha-price">￥{{item.miaosha_price}}</view>
+                                            <view class="price">￥{{item.price}}</view>
+                                        </view>
+                                        <view class="flex-grow-0 flex-y-bottom">
+                                            <block a:if="{{item.status==0}}">
+                                                <view class="btn">查看商品</view>
+                                            </block>
+                                            <block a:if="{{item.status==1}}">
+                                                <block a:if="{{item.sell_num < item.miaosha_num}}">
+                                                    <view class="btn btn-buy">马上抢购</view>
+                                                </block>
+                                                <block a:else>
+                                                    <view class="btn">查看商品</view>
+                                                </block>
+                                            </block>
+                                            <block a:if="{{item.status==2}}">
+                                                <view class="btn">查看商品</view>
+                                            </block>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </button>
+                    </form>
+                </block>
+            </view>
+            <view class="load-more-bar {{__device}} {{loading_more?'active':''}}">
+                <image src="{{__wxapp_img.system.loading.url}}"></image>
+            </view>
+        </view>
+
+    </view>
+    <include src="/components/quick-navigation/quick-navigation.axml" />
+    <include src="/components/footer/footer" />
+</view>

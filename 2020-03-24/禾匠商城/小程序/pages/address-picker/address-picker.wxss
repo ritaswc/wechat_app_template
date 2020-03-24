@@ -1,0 +1,74 @@
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.bottom-bar navigator {
+    background: #ff4544;
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #fff;
+}
+
+.address-list {
+    padding-bottom: 100rpx;
+}
+
+.address-item {
+    background: #fff;
+    padding: 32rpx 24rpx;
+    border-bottom: 1rpx solid #E3E3E3;
+}
+
+.userinfo {
+    margin-bottom: 24rpx;
+}
+
+.address-detail {
+}
+
+.address-option {
+    margin-left: 48rpx;
+}
+
+.address-option image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 16rpx;
+}
+
+.btn {
+    display: block;
+    border: 1rpx solid #ddd;
+    color: #555;
+    padding: 16rpx;
+    line-height: normal;
+    background: #fff;
+    border-radius: 10rpx;
+    text-align: center;
+}
+
+.btn:active {
+    background: #fff;
+    opacity: .65;
+}
+
+.btn:after {
+    display: none;
+}
+
+.btn.btn-green {
+    background: #09bb07;
+    color: #fff;
+    border-color: #09bb07;
+}
+
+.btn.btn-red {
+    background: #ff4544;
+    color: #fff;
+    border-color: #ff4544;
+}

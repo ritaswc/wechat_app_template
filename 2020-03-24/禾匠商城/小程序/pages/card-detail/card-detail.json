@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "优惠券记录",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

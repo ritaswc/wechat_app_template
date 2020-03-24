@@ -1,0 +1,41 @@
+.goods-block {
+    width: 100%;
+    height: 72rpx;
+    background-color: #fff1f1;
+    padding: 0 24rpx;
+}
+
+.goods-info {
+    color: #3f3f3f;
+    height: 100%;
+}
+
+.goods-info .goods-img {
+    width: 18rpx;
+    height: 18rpx;
+    transform: rotate(-90deg);
+}
+
+.content-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 111;
+}
+
+.content-body {
+    width: 600rpx;
+    background-color: #fff;
+    border-radius: 8rpx;
+    padding: 28rpx 32rpx 88rpx 32rpx;
+    position: relative;
+}
+
+.content-img {
+    position: absolute;
+    right: 32rpx;
+    top: 28rpx;
+}

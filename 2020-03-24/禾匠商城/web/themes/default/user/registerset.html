@@ -1,0 +1,124 @@
+{template 'common/header'}
+{template 'system/user-setting-header'}
+<div id="js-registerset" ng-controller="RegistersetCtrl" ng-cloak>
+	{if $do == 'display'}
+	<div class="form-files-box">
+		<div class="form-files we7-margin-bottom">
+			<div class="form-file header">注册设置</div>
+			<div class="form-file">
+				<div class="form-label">用户注册</div>
+				<div class="form-value">开启后，登录页面显示立即注册入口</div>
+				<div class="form-edit">
+					<div ng-class="!settings.open ? 'switch' : 'switch switchOn'"  ng-click="saveSettingSwitch('open', settings.open)"></div>
+				</div>
+			</div>
+			<div class="form-file">
+				<div class="form-label">手机注册</div>
+				<div class="form-value">开启后，用户可以通过手机号注册/登录</div>
+				<div class="form-edit">
+					<div ng-class="!settings.mobile_status ? 'switch' : 'switch switchOn'"  ng-click="saveSettingSwitch('mobile_status', settings.mobile_status)"></div>
+				</div>
+			</div>
+			<div class="form-file">
+				<div class="form-label">审核新用户</div>
+				<div class="form-value">开启后，注册新用户需要管理员要手动审核通过/拒绝</div>
+				<div class="form-edit">
+					<div ng-class="!settings.verify ? 'switch' : 'switch switchOn'"  ng-click="saveSettingSwitch('verify', settings.verify)"></div>
+				</div>
+			</div>
+			<div class="form-file">
+				<div class="form-label">用户协议</div>
+				<div class="form-value">
+					{if !empty($settings['agreement_info'])} 已添加协议 {else} 未添加协议 {/if}
+				</div>
+				<div class="form-edit">
+					<a href="{php echo url('user/agreement')}">去修改</a>&nbsp;&nbsp;&nbsp;
+				</div>
+				<div class="form-edit">
+					<div ng-class="!settings.agreement_status ? 'switch' : 'switch switchOn'"  ng-click="saveSettingSwitch('agreement_status', settings.agreement_status)"></div>
+				</div>
+			</div>
+			<div class="form-file">
+				<div class="form-label">图形验证码</div>
+				<div class="form-value">开启后，用户注册需要输入图形验证码</div>
+				<div class="form-edit">
+					<div ng-class="!settings.code ? 'switch' : 'switch switchOn'"  ng-click="saveSettingSwitch('code', settings.code)"></div>
+				</div>
+			</div>
+			<div class="form-file">
+				<div class="form-label">密码强度校验</div>
+				<div class="form-value">开启后，用户注册时强制输入安全等级较高的密码</div>
+				<div class="form-edit">
+					<div ng-class="!settings.safe ? 'switch' : 'switch switchOn'"  ng-click="saveSettingSwitch('safe', settings.safe)"></div>
+				</div>
+			</div>
+			<div class="form-file">
+				<div class="form-label">默认所属用户组</div>
+				<div class="form-value" ng-if="group.id" ng-bind="group.name"></div>
+				<div class="form-value" ng-if="!group.id">当开启用户注册后，新注册用户将会分配到该用户组里，且拥有该组的模块操作权限</div>
+				<div class="form-edit">
+					<we7-modal-form type="'select'" label="'默认所属用户组'" key="'name'" value="group" on-confirm="saveSetting(formValue, 'groupid')" options="groups"></we7-modal-form>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-files">
+
+			<div class="form-file header">登录设置</div>
+			<div class="form-file">
+				<div class="form-label">图形验证码</div>
+				<div class="form-value">开启后，用户登录需要输入图形验证码</div>
+				<div class="form-edit">
+					<div ng-class="!copyright.verifycode ? 'switch' : 'switch switchOn'"  ng-click="saveSettingSwitch('verifycode', copyright.verifycode)"></div>
+				</div>
+			</div>
+			<div class="form-file">
+				<div class="form-label">登陆限制时间</div>
+				<div class="form-value" ng-if="copyright.refused_login_limit">{{copyright.refused_login_limit}}分钟</div>
+				<div class="form-value" ng-if="!copyright.refused_login_limit">登陆失败超出限定次数后的限制登陆时间，单位为分钟</div>
+				<div class="form-edit">
+					<we7-modal-form type="'number'" label="'登陆限制时间'" value="copyright.refused_login_limit" on-confirm="saveSetting(formValue, 'refused_login_limit')"></we7-modal-form>
+				</div>
+			</div>
+		</div>
+	</div>
+	{elseif $do == 'clerk'}
+	<div class="form-files-box">
+		<div class="form-files we7-margin-bottom">
+			<div class="form-file header">注册设置</div>
+			<div class="form-file">
+				<div class="form-label">审核新应用操作员</div>
+				<div class="form-value">开启后，注册审核新应用操作员需要管理员要手动审核通过/拒绝</div>
+				<div class="form-edit">
+					<div ng-class="!settings.clerk.verify ? 'switch' : 'switch switchOn'"  ng-click="saveSettingSwitch('clerk_verify', settings.clerk.verify)"></div>
+				</div>
+			</div>
+		</div>
+		<div class="form-files">
+			<div class="form-file header">绑定设置</div>
+			<div class="form-file">
+				<div class="form-label">强制绑定信息</div>
+				<div class="form-value" ng-if="bind.id == 'null'">选择后，应用操作员登录后，将强制绑定所选方式</div>
+				<div class="form-value" ng-if="bind.id != 'null'" ng-bind="bind.name"></div>
+				<div class="form-edit">
+					<we7-modal-form type="'select'" label="'强制绑定信息'" key="'name'" value="bind" on-confirm="saveSetting(formValue, 'clerk_bind')" options="binds"></we7-modal-form>
+				</div>
+			</div>
+		</div>
+	</div>
+	{/if}
+</div>
+<script>
+	angular.module('userManageApp').value('config', {
+		settings: {php echo !empty($settings) ? json_encode($settings) : 'null'},
+		copyright: {php echo !empty($copyright) ? json_encode($copyright) : 'null'},
+		saveSettingUrl: "{php echo url('user/registerset')}",
+		token: "{$_W['token']}",
+		groups: {php echo !empty($groups) ? json_encode($groups) : 'null'},
+		binds: {php echo !empty($binds) ? json_encode($binds) : 'null'},
+		bind: {php echo !empty($bind) ? json_encode($bind) : 'null'},
+		group: {php echo !empty($group) ? json_encode($group) : 'null'},
+	});
+	angular.bootstrap($('#js-registerset'), ['userManageApp']);
+</script>
+{template 'common/footer'}

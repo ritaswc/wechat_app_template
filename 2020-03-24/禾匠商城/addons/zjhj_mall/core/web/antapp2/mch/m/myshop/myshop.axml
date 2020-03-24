@@ -1,0 +1,115 @@
+<block a:if='{{is_show}}'>
+    <!-- 加载公共扩展 -->
+    <view class="page">
+        <include src="/components/common/common" />
+        <include src="/components/header/header" />
+        <view class="body after-navber">
+            <!-- 页面内容 -->
+            <view class="header-h">
+                <view style="text-align: center;margin-bottom: 40rpx">今日付款金额（元）</view>
+                <view style="text-align: center;font-size: 19pt;font-weight: bold;line-height: 1;margin-bottom: 64rpx">
+                    {{data1}}
+                </view>
+                <view class="flex flex-row">
+                    <view class="flex-grow-1 data-col">
+                        <view>浏览人数</view>
+                        <view>{{data2}}</view>
+                    </view>
+                    <view class="flex-grow-1 data-col">
+                        <view>付款订单数</view>
+                        <view>{{data3}}</view>
+                    </view>
+                    <view class="flex-grow-1 data-col">
+                        <view>付款件数</view>
+                        <view>{{data4}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="flex flex-row" a:if="{{data5}}" style="height: 64rpx;background: #fff;color: #ff5003;font-size: 10pt; padding: 0 24rpx;margin-bottom: 24rpx">
+                <view class="flex-grow-0 flex-y-center">
+                    <image src="/mch/images/notice.png" style="width: 34rpx;height: 34rpx;margin-right: 20rpx"></image>
+                </view>
+                <view class="flex-grow-1 flex-y-center">{{data5}}</view>
+            </view>
+            <view class="flex flex-row menu-list" style="margin-bottom: 24rpx">
+                <view class="flex-grow-0 menu-item">
+                    <form onSubmit="navigatorSubmit" report-submit="true">
+                        <input name="url" value="/mch/m/setting/setting" style="display: none" />
+                        <button formType="submit" class="block-button">
+                            <image src="/mch/images/menu-1.png"></image>
+                            <view>店铺管理</view>
+                        </button>
+                    </form>
+                </view>
+                <view class="flex-grow-0 menu-item">
+                    <form onSubmit="navigatorSubmit" report-submit="true">
+                        <input name="url" value="/mch/m/goods/goods" style="display: none" />
+                        <button formType="submit" class="block-button">
+                            <image src="/mch/images/menu-2.png"></image>
+                            <view>商品管理</view>
+                        </button>
+                    </form>
+                </view>
+                <view class="flex-grow-0 menu-item">
+                    <form onSubmit="navigatorSubmit" report-submit="true">
+                        <input name="url" value="/mch/m/order/order" style="display: none" />
+                        <button formType="submit" class="block-button">
+                            <image src="/mch/images/menu-3.png"></image>
+                            <view>订单管理</view>
+                        </button>
+                    </form>
+                </view>
+                <view class="flex-grow-0 menu-item">
+                    <form onSubmit="navigatorSubmit" report-submit="true">
+                        <input name="url" value="/mch/m/tongji/tongji" style="display: none" />
+                        <button formType="submit" class="block-button">
+                            <image src="/mch/images/menu-4.png"></image>
+                            <view>数据统计</view>
+                        </button>
+                    </form>
+                </view>
+                <view class="flex-grow-0 menu-item">
+                    <form onSubmit="navigatorSubmit" report-submit="true">
+                        <input name="url" value="/mch/m/account/account" style="display: none" />
+                        <button formType="submit" class="block-button">
+                            <image src="/mch/images/menu-5.png"></image>
+                            <view>资产</view>
+                        </button>
+                    </form>
+                </view>
+                <view class="flex-grow-0 menu-item">
+                    <form onSubmit="navigatorSubmit" report-submit="true">
+                        <input name="url" value="/mch/m/shop-qrcode/shop-qrcode" style="display: none" />
+                        <button formType="submit" class="block-button">
+                            <image src="/mch/images/menu-6.png"></image>
+                            <view>店铺二维码</view>
+                        </button>
+                    </form>
+                </view>
+                <view a:if="{{false}}" class="flex-grow-0 menu-item">
+                    <form onSubmit="navigatorSubmit" report-submit="true">
+                        <input name="url" value="/pages/mch/setting/setting" style="display: none" />
+                        <button formType="submit" class="block-button">
+                            <image src="/mch/images/menu-7.png"></image>
+                            <view>收款码</view>
+                        </button>
+                    </form>
+                </view>
+
+            </view>
+
+            <view style="text-align: center;margin-bottom: 24rpx">
+                <view onTap="showPcUrl" style="padding: 24rpx;font-size: 9pt;color: #888;display: inline-block">PC端管理网址</view>
+            </view>
+
+            <view class="pc-url {{show_pc_url?'show':''}}">
+                <view class="modal-bg" onTap="hidePcUrl"></view>
+                <view class="modal-dialog" onTap="copyPcUrl">
+                    <view style="margin-bottom: 32rpx">{{pc_url}}</view>
+                    <view style="font-size: 9pt;color: #888;text-align: center">点击可复制内容</view>
+                </view>
+            </view>
+        </view>
+        <include src="/components/footer/footer" />
+    </view>
+</block>

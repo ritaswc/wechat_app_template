@@ -1,0 +1,41 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+
+        <view class="new-body">
+            <view class="title px-24">{{title}}</view>
+            <view class="flex-row info fs-sm px-24">
+                <view class="flex-grow-1">{{addtime}}</view>
+                <view class="flex-grow-0">{{read_count}}</view>
+            </view>
+            <view class="content">
+                <import src="./../../wxParse/wxParse.axml"/>
+                <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+            </view>
+        </view>
+        <view class="bar" a:if="{{!wxParseVideoFullScreen}}">
+            <view class="flex-row">
+                <view class="flex-grow-1 flex-x-center">
+                    <view a:if="{{is_favorite==1}}" class="btn fs-sm" onTap="favoriteClick" data-action="0">
+                        <cover-image class="icon" src="{{__wxapp_img.topic.love_active.url}}"></cover-image>
+                        <view>已收藏</view>
+                    </view>
+                    <view a:else class="btn fs-sm" onTap="favoriteClick" data-action="1">
+                        <cover-image class="icon" src="{{__wxapp_img.topic.love.url}}"></cover-image>
+                        <view>收藏</view>
+                    </view>
+                </view>
+                <view class="flex-grow-1 flex-x-center">
+                    <view class="btn fs-sm" onTap="showShareModal">
+                        <cover-image class="icon" src="{{__wxapp_img.topic.share.url}}"></cover-image>
+                        <view>分享</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/save_qrcode/save_qrcode" />
+    <include src="/components/footer/footer" />
+    <include src="/components/quick-navigation/quick-navigation.axml" />
+</view>

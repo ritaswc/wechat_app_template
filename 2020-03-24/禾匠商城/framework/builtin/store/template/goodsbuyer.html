@@ -1,0 +1,699 @@
+{template 'header'}
+{if $operate == 'display'}
+	{if !in_array($type, array(STORE_TYPE_PACKAGE, STORE_TYPE_USER_PACKAGE, STORE_TYPE_ACCOUNT_PACKAGE))}
+	{if $type == 'module' || isset($module_types[$type])}
+	<div class="we7-page-title">{if $is_wish}预购应用{else}应用模块{/if}</div>
+	{elseif $type == 'account_num'}
+	<div class="we7-page-title">平台个数</div>
+	{elseif $type == 'renew'}
+	<div class="we7-page-title">平台续费</div>
+	{elseif $type == STORE_TYPE_API}
+	<div class="we7-page-title">应用访问流量(API)</div>
+	{/if}
+
+	{if $type == 'module' || isset($module_types[$type])}
+	<!-- 搜索 start -->
+	<div class="clearfix">
+		<div class="search-box we7-margin-bottom">
+			<select class="we7-margin-right">
+				<option data-url="{php echo filter_url('type:');}" {if empty($type) || $type == 'module'}selected{/if}>模块类型</option>
+				{loop $module_types $item}
+				<option data-url="{php echo filter_url('type:'. $item['type']);}" {if $type == $item['type']}selected{/if}>{$item['title']}</option>
+				{/loop}
+			</select>
+
+			<form action="" class="search-form " method="get">
+				<input type="hidden" name="c" value="site">
+				<input type="hidden" name="a" value="entry">
+				<input type="hidden" name="do" value="goodsbuyer">
+				<input type="hidden" name="m" value="store">
+				<input type="hidden" name="direct" value="{$_GPC['direct']}">
+				<input type="hidden" name="type" value="{$_GPC['type']}">
+				<input type="hidden" name="is_wish" value="{$_GPC['is_wish']}">
+				<div class="input-group" style="width: 400px;">
+					<input type="text" name="module_name" value="{$_GPC['module_name']}" class="form-control" placeholder="输入要搜索的应用名称"/>
+					<span class="input-group-btn"><button class="btn btn-default"><i class="wi wi-search"></i></button></span>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- 搜索 end -->
+	{/if}
+	<div class="wish-goods-list">
+		{loop $store_goods $goods}
+		<a href="{php echo $this->createWebUrl('goodsbuyer', array('operate' => 'goods_info', 'direct' => 1, 'goods' => $goods['id']))}" class="wish-goods-item">
+			<div class="wish-goods-box">
+				{if $goods['type'] == STORE_TYPE_API}
+				<div class="icon icon-api logo"><span class="wi wi-api"></span></div>
+				{elseif in_array($goods['type'], array(STORE_TYPE_PACKAGE, STORE_TYPE_ACCOUNT, STORE_TYPE_WXAPP,STORE_TYPE_WEBAPP,STORE_TYPE_PHONEAPP,STORE_TYPE_XZAPP,STORE_TYPE_ALIAPP,STORE_TYPE_BAIDUAPP,STORE_TYPE_TOUTIAOAPP, STORE_TYPE_ACCOUNT_RENEW, STORE_TYPE_WXAPP_RENEW, STORE_TYPE_WEBAPP_RENEW,STORE_TYPE_PHONEAPP_RENEW,STORE_TYPE_XZAPP_RENEW,STORE_TYPE_ALIAPP_RENEW,STORE_TYPE_BAIDUAPP_RENEW,STORE_TYPE_TOUTIAOAPP_RENEW))}
+				<div class="icon icon-wi logo"><span class="wi wi-appjurisdiction"></span></div>
+				{elseif $goods['type'] == STORE_TYPE_USER_PACKAGE}
+				<div class="icon icon-wi logo"><span class="wi wi-userjurisdiction"></span></div>
+				{elseif isset($module_types[$goods['type']])}
+				<img src="{$goods['module']['logo']}" alt="icon" class="logo" onerror="this.src='./resource/images/nopic-107.png'"/>
+				{/if}
+				<div class="info text-over">
+					<div class="title text-over">
+						{if (in_array($goods['type'], array_keys($store_goods_types['renew'])))}
+							{$store_goods_types['renew'][$goods['type']]['title']}
+						{else}
+							{if (in_array($goods['type'], array_keys($store_goods_types['account_num'])))}
+								{$store_goods_types['account_num'][$goods['type']]['title']}
+							{else}
+								{$goods['title']}
+							{/if}
+							{$goods['num']}
+						{/if}
+					</div>
+					<div class="price">
+						￥{$goods['price']}元
+						{if !in_array($goods['type'], array_keys($store_goods_types['account_num']))}
+							/
+							{if $goods['unit'] == 'month'}
+								{if $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}
+									{$goods['account_num']}
+								{elseif $goods['type'] == STORE_TYPE_WXAPP_RENEW}
+									{$goods['wxapp_num']}
+								{/if}
+								月
+							{elseif $goods['unit'] == 'ten_thousand'}
+								{$goods['api_num']}万次
+							{elseif $goods['unit'] == 'day'}
+								{if $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}
+									{$goods['account_num']}
+								{elseif $goods['type'] == STORE_TYPE_WXAPP_RENEW}
+									{$goods['wxapp_num']}
+								{/if}
+								天
+							{elseif $goods['unit'] == 'year'}
+								{if $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}
+									{$goods['account_num']}
+								{elseif $goods['type'] == STORE_TYPE_WXAPP_RENEW}
+									{$goods['wxapp_num']}
+								{/if}
+								年
+							{/if}
+						{/if}
+					</div>
+					{if isset($module_types[$goods['type']])}
+					<div class="support">
+						适用
+						{if $module_types[$goods['type']]['sign'] == 'phoneapp'}
+						<i class="wi wi-app"></i>
+						{elseif $module_types[$goods['type']]['sign'] == 'webapp'}
+						<i class="wi wi-pc"></i>
+						{else}
+						<i class="wi wi-{$module_types[$goods['type']]['sign']}"></i>
+						{/if}
+					</div>
+					{/if}
+				</div>
+				<span class="link">详情 ></span>
+			</div>
+		</a>
+		{/loop}
+	</div>
+	{/if}
+
+	{if $_GPC['type'] == STORE_TYPE_PACKAGE}
+	<div class="we7-page-title">应用权限组</div>
+	<div class="wish-goods-list">
+		{loop $store_goods $goods}
+		<div class="wish-goods-item">
+			<div class="wish-goods-box">
+				<div class="icon icon-api logo"><span class="wi wi-appjurisdiction"></span></div>
+				<div class="info text-over">
+					<div class="title text-over">{$module_groups[$goods['module_group']]['name']}</div>
+					<div class="price">¥ {$goods['price']}元/{if $goods['type'] != STORE_TYPE_API}{if $goods['unit'] == 'month'}月{elseif $goods['unit'] == 'day'}日{elseif $goods['unit'] == 'year'}年{/if}{/if}</div>
+					<div class="support">
+						<!-- 适用 <i class="wi wi-wxapp"></i> -->
+					</div>
+				</div>
+				<a href="{php echo $this->createWebUrl('goodsbuyer', array('operate' => 'goods_info', 'direct' => 1, 'goods' => $goods['id']))}" class="link">详情 ></a>
+			</div>
+		</div>
+		{/loop}
+	</div>
+	{/if}
+
+	{if $_GPC['type'] == STORE_TYPE_USER_PACKAGE}
+	<div class="we7-page-title">用户权限组</div>
+	<div class="wish-goods-list">
+		{loop $store_goods $goods}
+		<div class="wish-goods-item">
+			<div class="wish-goods-box">
+				<div class="icon icon-api logo"><span class="wi wi-userjurisdiction"></span></div>
+				<div class="info text-over">
+					<div class="title text-over">{$user_groups[$goods['user_group']]['name']}</div>
+					<div class="price">¥ {$goods['price']}元/{if $goods['type'] != STORE_TYPE_API}{if $goods['unit'] == 'month'}月{elseif $goods['unit'] == 'day'}日{elseif $goods['unit'] == 'year'}年{/if}{/if}</div>
+					<div class="support">
+						<!-- 适用 <i class="wi wi-wxapp"></i> -->
+					</div>
+				</div>
+				<a href="{php echo $this->createWebUrl('goodsbuyer', array('operate' => 'goods_info', 'direct' => 1, 'goods' => $goods['id']))}" class="link">详情 ></a>
+			</div>
+		</div>
+		{/loop}
+	</div>
+	{/if}
+
+	{if $_GPC['type'] == STORE_TYPE_ACCOUNT_PACKAGE}
+	<div class="we7-page-title">账号权限组</div>
+	<div class="wish-goods-list">
+		{loop $store_goods $goods}
+		<div class="wish-goods-item">
+			<div class="wish-goods-box">
+				<div class="icon icon-api logo"><span class="wi wi-userjurisdiction"></span></div>
+				<div class="info text-over">
+					<div class="title text-over">{$account_groups[$goods['account_group']]['group_name']}</div>
+					<div class="price">¥ {$goods['price']}元/{if $goods['unit'] == 'month'}月{elseif $goods['unit'] == 'day'}日{elseif $goods['unit'] == 'year'}年{/if}</div>
+					<div class="support">
+						<!-- 适用 <i class="wi wi-wxapp"></i> -->
+					</div>
+				</div>
+				<a href="{php echo $this->createWebUrl('goodsbuyer', array('operate' => 'goods_info', 'direct' => 1, 'goods' => $goods['id']))}" class="link">详情 ></a>
+			</div>
+		</div>
+		{/loop}
+	</div>
+	{/if}
+
+	<div class="text-right we7-margin-top">
+		{$pager}
+	</div>
+	<script>
+		$('select').niceSelect();
+	</script>
+{elseif $operate == 'goods_info'}
+<div class="panel-body js-goods-buyer" ng-controller="goodsBuyerCtrl">
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href="javascript:history.back()"><i class="wi wi-back-circle"></i> </a>
+		<li>
+			<a href="javascript:history.back()">商品列表</a>
+		</li>
+		<li>
+			{$goods['title']}
+		</li>
+	</ol>
+	<div class="wish-goods-detail {if $goods['type'] == STORE_TYPE_PACKAGE}jurisdiction-detail{else}module-detail{/if}">
+		<div class="wish-goods-info">
+			{if $goods['type'] == STORE_TYPE_API}
+			<div class="logo"><span class="icon-box"><i class="wi wi-api"></i></span></div>
+			{elseif in_array($goods['type'], array(STORE_TYPE_PACKAGE, STORE_TYPE_ACCOUNT, STORE_TYPE_WXAPP,STORE_TYPE_WEBAPP,STORE_TYPE_PHONEAPP,STORE_TYPE_XZAPP,STORE_TYPE_ALIAPP,STORE_TYPE_BAIDUAPP,STORE_TYPE_TOUTIAOAPP, STORE_TYPE_ACCOUNT_RENEW, STORE_TYPE_WXAPP_RENEW, STORE_TYPE_WEBAPP_RENEW,STORE_TYPE_PHONEAPP_RENEW,STORE_TYPE_XZAPP_RENEW,STORE_TYPE_ALIAPP_RENEW,STORE_TYPE_BAIDUAPP_RENEW,STORE_TYPE_TOUTIAOAPP_RENEW))}
+			<div class="logo"><span class="icon-box"><i class="wi wi-appjurisdiction"></i></span></div>
+			{elseif $goods['type'] == STORE_TYPE_USER_PACKAGE || $goods['type'] == STORE_TYPE_ACCOUNT_PACKAGE}
+			<div class="logo"><span class="icon-box"><i class="wi wi-userjurisdiction"></i></span></div>
+			{else}
+			<div class="logo"><img src="{$goods['module']['logo']}" onerror="this.src='./resource/images/nopic-107.png'"/></div>
+			{/if}
+			<div class="info">
+				<div class="title">
+					{if $all_type_info[$goods['type']]['group'] == 'module'}
+					{$goods['title']}
+					{elseif $goods['type'] == STORE_TYPE_WXAPP}
+					创建{$goods['wxapp_num']}个小程序
+					{elseif $goods['type'] == STORE_TYPE_ACCOUNT}
+					创建{$goods['account_num']}个公众号
+					{elseif in_array($goods['type'], array_keys($all_type_info['account_num']))}
+					创建{$goods['platform_num']}个{$all_type_info['account_num'][$goods['type']]['title']}
+					{elseif $goods['type'] == STORE_TYPE_USER_PACKAGE}
+					{$group_info['name']} 套餐
+					{elseif $goods['type'] == STORE_TYPE_ACCOUNT_PACKAGE}
+					{$group_info['group_name']} 套餐
+					{else}
+					{$module_groups[$goods['module_group']]['name']} 套餐
+					{/if}
+				</div>
+				<div class="support">
+					{if $goods_type_info['group'] == 'module'}
+					{$goods_type_info['title']}
+					{elseif in_array($goods['type'], array_keys($all_type_info['account_num']))}
+					增加创建{$all_type_info['account_num'][$goods['type']]['title']}数量
+					{elseif $goods['type'] == STORE_TYPE_API}
+					总计<span class="color-red">{$goods['api_num']}{if $goods['unit'] == 'ten_thousand'}万次</span>{/if}浏览次数，不限时间
+					{elseif in_array($goods['type'], array_keys($all_type_info['renew']))}
+					延长{$all_type_info['renew'][$goods['type']]['title']}到期时间
+					{elseif $goods['type'] == STORE_TYPE_ACCOUNT_PACKAGE}
+					增加创建账号的数量
+					{else}
+					增加公众号应用，小程序，模板数量
+					{/if}
+				</div>
+			</div>
+			<div class="price-box">
+				<div class="price">￥
+					<span class="fee">
+						{$goods['price']} 元
+					</span>
+					{if $goods['type'] != STORE_TYPE_API && !in_array($goods['type'], array(STORE_TYPE_ACCOUNT, STORE_TYPE_WXAPP))}/{if $goods['unit'] == 'month'}{if $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}{$goods['account_num']}{elseif $goods['type'] == STORE_TYPE_WXAPP_RENEW}{$goods['wxapp_num']}{/if}月
+					{elseif $goods['unit'] == 'day'}{if $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}{$goods['account_num']}{elseif $goods['type'] == STORE_TYPE_WXAPP_RENEW}{$goods['wxapp_num']}{/if}日
+					{elseif $goods['unit'] == 'year'}{if $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}{$goods['account_num']}{elseif $goods['type'] == STORE_TYPE_WXAPP_RENEW}{$goods['wxapp_num']}{/if}年
+					{/if}
+					{/if}
+				</div>
+				{if $all_type_info[$goods['type']]['group'] == 'module' || in_array($goods['type'], array(STORE_TYPE_PACKAGE, STORE_TYPE_ACCOUNT_RENEW, STORE_TYPE_WXAPP_RENEW, STORE_TYPE_USER_PACKAGE, STORE_TYPE_ACCOUNT_PACKAGE))}
+				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalBuy">立即购买</button>
+				{elseif $goods['type'] == STORE_TYPE_API}
+				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#BuyApi">立即购买</button>
+				{else}
+				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Buyaccount">立即购买</button>
+				{/if}
+			</div>
+		</div>
+		{if $goods_type_info['group'] == 'module'}
+		<div class="wish-goods-more">
+			{if $goods['is_wish']}
+			<div class="alert we7-page-alert"><i class="wi wi-info"></i> 预购应用，成功付款后，需要等待管理员正式安装后才能使用。</div>
+			{/if}
+			<div class="header">应用介绍</div>
+			<div class="content">
+				{$goods['description']}
+				<a href="javascript:;" class="more">展开更多</a>
+			</div>
+		</div>
+		<div class="wish-goods-pic">
+			<div class="header">应用预览图</div>
+			<div class="pic-list">
+				{loop $goods['slide'] $picture}
+					<div class="pic-item">
+						<img src="{php echo tomedia($picture)}" alt="">
+					</div>
+				{/loop}
+			</div>
+		</div>
+		{elseif in_array($goods['type'], array(STORE_TYPE_ACCOUNT, STORE_TYPE_WXAPP, STORE_TYPE_API))}
+		<div class="wish-goods-more">
+			<!-- 预购应用提示判断 -->
+			<div class="header">介绍</div>
+			<div class="content">
+				{if $goods['type'] == STORE_TYPE_API}
+				购买API浏览次数，购买之后使用时间不限
+				{else}
+				1.购买商品后您将多创建{$goods['num']}个{$goods['title']}, 不受已有用户组限制。<br/>
+				2.购买的{$goods['title']}是有时效的，到期需要继续购买方可使用。
+				{/if}
+			</div>
+		</div>
+		{elseif in_array($goods['type'], array(STORE_TYPE_ACCOUNT_RENEW, STORE_TYPE_WXAPP_RENEW))}
+		<div class="wish-goods-more">
+			<!-- 预购应用提示判断 -->
+			<div class="header">介绍</div>
+			<div class="content">
+				{if $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}
+				续费公众号
+				{else}
+				续费小程序
+				{/if}
+			</div>
+		</div>
+		{elseif in_array($goods['type'], array(STORE_TYPE_USER_PACKAGE, STORE_TYPE_ACCOUNT_PACKAGE))}
+		<div class="wish-goods-more">
+			<!-- 预购应用提示判断 -->
+			<div class="header">介绍</div>
+			<div class="content show">
+				<div class="bg-gray">
+					<div class="txt">
+						{if $goods['type'] == STORE_TYPE_USER_PACKAGE}
+						<p>购买商品后您将拥有相应的公众号应用，小程序应用，模板的使用权限，不受已有用户组的限制。 </p>
+						{else}
+						<p>购买商品后您将拥有创建相应类型账号的权限，不受已有用户组的限制。</p>
+						{/if}
+					</div>
+					<div class="creat">
+						<h1>可创建数量</h1>
+						<ul class="clearfloat">
+							<li>
+								<div class="type"><div>公众号</div><i class="wi wi-account"></i></div>
+								<div class="num">{$group_info['maxaccount']}</div>
+							</li>
+							<li>
+								<div class="type"><div>小程序</div><span><i class="wi wi-wxapp"></i></span></div>
+								<div class="num">{$group_info['maxwxapp']}</div>
+							</li>
+							<li>
+								<div class="type"><div>PC应用</div><i class="wi wi-pc"></i></div>
+								<div class="num">{$group_info['maxwebapp']}</div>
+							</li>
+							<li>
+								<div class="type"><div>APP</div><i class="wi wi-app"></i></div>
+								<div class="num">{$group_info['maxphoneapp']}</div>
+							</li>
+						</ul>
+					</div>
+					{if $goods['type'] == STORE_TYPE_USER_PACKAGE}
+					<div class="about" >
+						<h1>包含应用权限组</h1>
+						<div class="box" >
+							<div class="nav" ng-repeat="pack in packages">
+								<div class="menu">
+									<span class="pull-right color-default">
+										<a href="javascript:;" class="open color-default"  data-toggle="collapse" data-target="#demo-{{pack.id}}">展开</a>
+									</span>
+									{{ pack.name}}
+								</div>
+								<ul class="submenu collapse" style="" id="demo-{{pack.id}}">
+									<li ng-if="pack.account">
+										<span class="tit">公众号应用</span>
+										<ul>
+											<li ng-repeat="account in pack.account">
+												<img class="head" ng-src="{{account.logo}}" alt=""><span class="name" ng-bind="account.title"></span>
+											</li>
+										</ul>
+									</li>
+									<li ng-if="pack.wxapp">
+										<span class="tit">小程序应用</span>
+										<ul>
+											<li ng-repeat="wxapp in pack.wxapp">
+												<img class="head" ng-src="{{wxapp.logo}}"><span class="name" ng-bind="wxapp.title"></span>
+											</li>
+										</ul>
+									</li>
+									<li ng-if="pack.webapp">
+										<span class="tit">PC应用</span>
+										<ul >
+											<li ng-repeat="webapp in pack.webapp">
+												<img class="head" ng-src="{{webapp.logo}}"><span class="name" ng-bind="webapp.title"> </span>
+											</li>
+										</ul>
+									</li>
+									<li ng-if="pack.phoneapp">
+										<span class="tit">APP应用</span>
+										<ul >
+											<li ng-repeat="phoneapp in pack.phoneapp">
+												<img class="head" ng-src="{{phoneapp.logo}}"><span class="name" ng-bind="phoneapp.title"> </span>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					{/if}
+				</div>
+			</div>
+		</div>
+		{else}
+		<div class="wish-goods-more">
+			<!-- 预购应用提示判断 -->
+			<div class="header">介绍</div>
+			<div class="content show">
+				<div class="color-gray">购买商品后您将拥有相应的公众号应用，小程序应用，模板的使用权限，不受已有用户组的限制。</div>
+				{if $module_groups[$goods['module_group']]['account']}
+				<div class="we7-margin-top  title">公众号应用</div>
+				<div class="item-list clearfix">
+					{loop $module_groups[$goods['module_group']]['account'] $module}
+					<div class="item">
+						<img src="{$module['logo']}" alt="" class="icon"/>
+						<div class="text-over">{$module['title']}</div>
+					</div>
+					{/loop}
+				</div>
+				{/if}
+				{if $module_groups[$goods['module_group']]['wxapp']}
+				<div class="we7-margin-top title">小程序应用</div>
+				<div class="item-list clearfix">
+					{loop $module_groups[$goods['module_group']]['wxapp'] $wxapp_module}
+					<div class="item">
+						<img src="{$wxapp_module['logo']}" alt="" class="icon"/>
+						<div class="text-over">{$wxapp_module['title']}</div>
+					</div>
+					{/loop}
+				</div>
+				{/if}
+				{if $module_groups[$goods['module_group']]['templates']}
+				<div class="we7-margin-top title">模板</div>
+				<div class="item-list clearfix">
+					{loop $module_groups[$goods['module_group']]['templates'] $template}
+					<div class="item">
+						<div class="text-over">{$template['title']}</div>
+					</div>
+					{/loop}
+				</div>
+				{/if}
+			</div>
+		</div>
+		{/if}
+	</div>
+	<div class="modal fade" id="myModalBuy">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">
+						{if $goods['type'] == STORE_TYPE_PACKAGE}
+						购买应用套餐
+						{elseif $goods['type'] == STORE_TYPE_USER_PACKAGE}
+						购买用户组权限套餐
+						{elseif $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}
+						续费公众号
+						{elseif $goods['type'] == STORE_TYPE_WXAPP_RENEW}
+						续费小程序
+						{else}
+						购买<span>{$goods['title']}</span>应用
+						{/if}
+					</h4>
+				</div>
+				<div class="modal-body">
+					<form action="" method="get" class="we7-form">
+						<div class="form-group">
+							<label class="control-label col-sm-2">应用单价</label>
+							<div class="col-sm-8 form-control-static">￥{$goods['price']}{if $goods['type'] != STORE_TYPE_API}/
+								{if $goods['unit'] == 'month'}{if $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}{$goods['account_num']}{elseif $goods['type'] == STORE_TYPE_WXAPP_RENEW}{$goods['wxapp_num']}{/if}月
+								{elseif $goods['unit'] == 'day'}{if $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}{$goods['account_num']}{elseif $goods['type'] == STORE_TYPE_WXAPP_RENEW}{$goods['wxapp_num']}{/if}日
+								{elseif $goods['unit'] == 'year'}{if $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}{$goods['account_num']}{elseif $goods['type'] == STORE_TYPE_WXAPP_RENEW}{$goods['wxapp_num']}{/if}年
+								{/if}
+								{/if}</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2">购买时长</label>
+							<div class="col-sm-8">
+								<div class="clearfix we7-margin-bottom-sm" style="line-height: 34px;">
+									<input type="number" class="form-control pull-left" style="width: 80px;" value="1" ng-model="duration"/>&nbsp;
+									{if $goods['type'] != STORE_TYPE_API}
+									{if $goods['unit'] == 'month'}{if $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}*{$goods['account_num']}{elseif $goods['type'] == STORE_TYPE_WXAPP_RENEW}*{$goods['wxapp_num']}{/if}月
+									{elseif $goods['unit'] == 'day'}{if $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}*{$goods['account_num']}{elseif $goods['type'] == STORE_TYPE_WXAPP_RENEW}*{$goods['wxapp_num']}{/if}日
+									{elseif $goods['unit'] == 'year'}{if $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}*{$goods['account_num']}{elseif $goods['type'] == STORE_TYPE_WXAPP_RENEW}*{$goods['wxapp_num']}{/if}年
+									{/if}
+									{/if}
+									{if $goods['type'] == STORE_TYPE_MODULE || $goods['type'] == STORE_TYPE_WXAPP_MODULE}
+									,有效期至{{ expiretime }}
+									{/if}
+								</div>
+								<div class="select-btn">
+									<button type="button" class="btn" ng-class="duration == 1? 'btn-primary' : 'btn-default'" ng-click="changeDuration(1)">1</button>
+									<button type="button" class="btn" ng-class="duration == 3? 'btn-primary' : 'btn-default'" ng-click="changeDuration(3)">3</button>
+									<button type="button" class="btn" ng-class="duration == 6? 'btn-primary' : 'btn-default'" ng-click="changeDuration(6)">6</button>
+									<button type="button" class="btn" ng-class="duration == 12? 'btn-primary' : 'btn-default'" ng-click="changeDuration(12)">12</button>
+								</div>
+							</div>
+						</div>
+						{if $all_type_info[$goods['type']]['group'] == 'module'}
+						<div class="form-group">
+							<label class="control-label col-sm-2">{$all_type_info[$goods['type']]['title']}</label>
+							<div class="col-sm-10">
+								<div class="clearfix" style="line-height: 34px;">
+									<select class="" ng-model="uniacid">
+										<option value="{{ uniacid }}" ng-repeat="(uniacid, account) in account_list track by uniacid">{{ account.name }}</option>
+									</select>
+								</div>
+								<div class="help-block">
+									<span class="text-error">注意!</span>请确认服务所需绑定的{$all_type_info[$goods['type']]['title']},购买后不可更换.
+								</div>
+							</div>
+						</div>
+						{/if}
+
+						{if in_array($goods['type'], array(STORE_TYPE_WXAPP_RENEW, STORE_TYPE_ACCOUNT_RENEW)) || $goods['type'] == STORE_TYPE_PACKAGE && !empty($user_account)}
+						<div class="form-group">
+							<label class="control-label col-sm-2">
+								{if $goods['type'] == STORE_TYPE_WXAPP_RENEW}
+									小程序
+								{elseif $goods['type'] == STORE_TYPE_ACCOUNT_RENEW}
+									公众号
+								{/if}
+							</label>
+							<div class="col-sm-10">
+								<div class="clearfix" style="line-height: 34px;">
+									<!-- <select class="we7-select" style="width:150px;" ng-model="{if $goods['type'] == STORE_TYPE_WXAPP_MODULE}wxapp{else}uniacid{/if}"> -->
+									<select class="" style="width:150px;" ng-model="uniacid">
+										<option value="{{ uniacid }}" ng-repeat="(uniacid, account) in account_list track by uniacid">{{ account.name }}</option>
+									</select>
+									<span class="text-error">注意!</span>请确认服务所需绑定的帐号,购买后不可更换.
+								</div>
+							</div>
+						</div>
+						{/if}
+						{if $goods['type'] == STORE_TYPE_PACKAGE && !empty($wxapp_account_list)}
+						<div class="form-group">
+							<label class="control-label col-sm-2">小程序</label>
+							<div class="col-sm-10">
+								<div class="clearfix" style="line-height: 34px;">
+									<select class="" style="width:150px;" ng-model="wxapp">
+										<option value="{{ account.uniacid }}" ng-repeat="account in wxapp_account_list">{{ account.name }}</option>
+									</select>
+									<span class="text-error">注意!</span>请确认服务所需绑定的小程序,购买后不可更换.
+								</div>
+							</div>
+						</div>
+						{/if}
+						<div class="form-group">
+							<label class="control-label col-sm-2">费用明细</label>
+							<div class="col-sm-8 form-control-static">实付总计<span class="we7-margin-left">￥{{ price }}</span></div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2">支付方式</label>
+							<div class="select-btn">
+								<button type="button" ng-repeat="(way, pay_way_info) in pay_way_list track by way" ng-class="pay_way == way? 'btn btn-primary' : 'btn btn-default'" ng-click="changePayWay(way)">{{ pay_way_info.title }}</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="submit_order('order')">提交订单</button>
+					<button type="button" class="btn btn-primary hidden" ng-click="submit_order('pay')">立即支付</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="Buyaccount">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">购买<span>{$goods['title']}</span></h4>
+				</div>
+				<div class="modal-body">
+					<form action="" method="get" class="we7-form">
+						<div class="form-group">
+							<label class="control-label col-sm-2">应用单价</label>
+							<div class="col-sm-8 form-control-static">￥{$goods['price']}{if $goods['type'] != STORE_TYPE_API && $goods['type'] != STORE_TYPE_ACCOUNT && $goods['type'] != STORE_TYPE_WXAPP}/{if $goods['unit'] == 'month'}月{elseif $goods['unit'] == 'day'}日{elseif $goods['unit'] == 'year'}年{/if}{/if}</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2">费用明细</label>
+							<div class="col-sm-8 form-control-static">实付总计<span class="we7-margin-left">￥{{ price }}</span></div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2">支付方式</label>
+							<div class="select-btn">
+								<button type="button" ng-repeat="(way, pay_way_info) in pay_way_list track by way" ng-class="pay_way == way? 'btn btn-primary' : 'btn btn-default'" ng-click="changePayWay(way)">{{ pay_way_info.title }}</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="submit_order('order')">提交订单</button>
+					<button type="button" class="btn btn-primary" ng-click="submit_order('pay')">立即支付</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="BuyApi">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">购买API浏览次数</h4>
+				</div>
+				<div class="modal-body">
+					<form action="" method="get" class="we7-form">
+						<div class="form-group">
+							<label class="control-label col-sm-2">商品单价</label>
+							<div class="col-sm-8 form-control-static color-red">￥{$goods['price']} / {$goods['api_num']}{if $goods['unit'] == 'ten_thousand'}万次{/if}</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2">购买份数</label>
+							<div class="col-sm-8">
+								<div class="clearfix we7-margin-bottom-sm" style="line-height: 34px;">
+									<input type="number" class="form-control pull-left" style="width: 80px;" value="1" ng-model="duration"/>份，共购买<span class="color-red" ng-bind="goods.api_num * duration"></span>万次浏览量
+								</div>
+								<div class="select-btn">
+									<button type="button" class="btn" ng-class="duration == 10? 'btn-primary' : 'btn-default'" ng-click="changeDuration(10)">10</button>
+									<button type="button" class="btn" ng-class="duration == 20? 'btn-primary' : 'btn-default'" ng-click="changeDuration(20)">20</button>
+									<button type="button" class="btn" ng-class="duration == 30? 'btn-primary' : 'btn-default'" ng-click="changeDuration(30)">30</button>
+									<button type="button" class="btn" ng-class="duration == 50? 'btn-primary' : 'btn-default'" ng-click="changeDuration(50)">50</button>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2">公众号</label>
+							<div class="col-sm-10">
+								<div class="clearfix" style="line-height: 34px;">
+									<select class="" style="width:150px;" ng-model="uniacid">
+										<option value="{{ uniacid }}" ng-repeat="(uniacid, account) in account_list track by uniacid">{{ account.name }}</option>
+									</select>
+									<span class="text-error">注意!</span>请确认服务所需绑定的公众号,购买后不可更换.
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2">费用明细</label>
+							<div class="col-sm-8 form-control-static">实付总计 ￥<span class="color-red" ng-bind="goods.price * duration"></span></div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2">支付方式</label>
+							<div class="select-btn">
+								<button type="button" ng-repeat="(way, pay_way_info) in pay_way_list track by way" class="btn" ng-class="pay_way == way? 'btn-primary' : 'btn-default'" ng-click="changePayWay(way)">{{ pay_way_info.title }}</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="submit_order('order')">提交订单</button>
+					<button type="button" class="btn btn-primary" ng-click="submit_order('pay')">立即支付</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modal-img">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">查看图片</h4>
+				</div>
+				<div class="modal-body text-center">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	$(function() {
+		if($('.wish-goods-more .content').outerHeight() < 400) {
+			$('.wish-goods-more .content .more').hide()
+		}
+		$('.wish-goods-more .content .more').on('click', function() {
+			$('.wish-goods-more .content').toggleClass('show');
+			if($('.wish-goods-more .content').hasClass('show')) {
+				$('.wish-goods-more .content .more').text('收起');
+			} else {
+				$('.wish-goods-more .content .more').text('展开更多');
+			}
+		})
+		$('.wish-goods-pic .pic-item').on('click', function() {
+			$('#modal-img .modal-body').html('<img src=' + $(this).children('img').attr('src') + '>');
+			$('#modal-img').modal('show');
+		})
+	})
+	</script>
+</div>
+<script>
+	angular.module('storeApp').value('config', {
+		'singlePrice' : {$goods['price']},
+		'wxapp' : '{$default_wxapp}',
+		'unit' : '{$goods['unit']}',
+		account_list : {php echo json_encode($user_account)},
+		wxapp_account_list : {php echo json_encode($wxapp_account_list)},
+		pay_way : {php echo json_encode($pay_way)},
+		expiretime : "{php echo date('Y-m-d', strtotime('+1 ' . $goods['unit'], time()))}",
+		first_uniacid : "{$default_uniacid}",
+		goods : {php echo json_encode($goods)},
+		packages : {php echo !empty($group_info['package_info']) ? json_encode($group_info['package_info']) : 'null'},
+	});
+	angular.bootstrap($('.js-goods-buyer'), ['storeApp']);
+</script>
+{/if}
+{template 'common/footer'}

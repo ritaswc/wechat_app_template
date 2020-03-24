@@ -1,0 +1,4 @@
+/* header.wxss */
+.header-test {
+    width: 100%;
+}

@@ -1,0 +1,13 @@
+<div class="menu-title"><i class="wi wi-appsetting"></i>PC</div>
+<div class="webapp-info">
+	<span class="nav-icon" data-container="body" data-toggle="tooltip" data-placement="right" title="{$_W['account']['name']}">
+		<img src="{php echo tomedia('headimg_'.$_W['acid'].'.jpg')}?time={php echo time()}" class="head-logo">
+	</span>
+	<span class="webapp-name">{$_W['account']['name']}</span>
+</div>
+<div class="webapp-operate">
+	{if in_array($role, array(ACCOUNT_MANAGE_NAME_OWNER, ACCOUNT_MANAGE_NAME_MANAGER)) || $_W['isfounder']}
+	<a href="{php echo url('account/post', array('uniacid' => $_W['account']['uniacid'], 'acid' => $_W['acid'], 'account_type' => ACCOUNT_TYPE_WEBAPP_NORMAL))}" class="h"><i class="wi wi-appsetting" data-toggle="tooltip" data-placement="bottom" title="设置"></i></a>
+	{/if}
+	<a href="{php echo url('account/display', array('type' => 'all'))}"><i class="wi wi-small-routine" data-toggle="tooltip" data-placement="bottom" title="切换平台"></i></a>
+</div>

@@ -1,0 +1,174 @@
+@import "../../wxParse/wxParse.acss";
+@import "/components/shopping_cart/shopping_cart.acss";
+@import "/components/specifications_model/specifications_model.acss";
+@import "/components/goods/specifications_model.acss";
+@import "/components/goods/goods_banner.acss";
+@import "/components/goods/goods_info.acss";
+@import "/components/goods/goods_buy.acss";
+@import "/components/quick-navigation/quick-navigation.acss";
+
+view {
+    overflow: visible;
+}
+
+.no-scroll {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.share-tip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.goods-detail {
+    box-sizing: border-box;
+    padding: 24rpx 0;
+    background: #fff;
+}
+
+.goods-detail text, .goods-detail image, .goods-detail view {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.cart-nav {
+    position: fixed;
+    top: 180rpx;
+    right: 24rpx;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 0;
+    padding: 20rpx;
+    border-radius: 999rpx;
+    box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.cart-nav image {
+    width: 42rpx;
+    height: 42rpx;
+}
+
+.tab-group .tab-group-header {
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+}
+
+.tab-group .tab-group-header .tab-group-item text {
+    height: 100rpx;
+    border-bottom: 2rpx solid transparent;
+}
+
+.tab-group .tab-group-header .tab-group-item.active text {
+    color: #ff4544;
+    border-bottom-color: #ff4544;
+}
+
+.tab-group .tab-group-body .tab-group-item {
+    display: none;
+}
+
+.tab-group .tab-group-body .tab-group-item.active {
+    display: block;
+}
+
+.comment-count {
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.comment-count .comment-count-item {
+    text-align: center;
+    padding: 20rpx 0;
+    font-size: 7pt;
+}
+
+.comment-item {
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+    padding: 32rpx 24rpx;
+}
+
+.comment-item .nickname {
+    padding-left: 24rpx;
+    height: 70rpx;
+    font-weight: bolder;
+}
+
+.comment-item .addtime {
+    color: #888;
+}
+
+.comment-item .pic-list {
+    margin-left: -8rpx;
+    margin-top: -8rpx;
+}
+
+.comment-item .pic-item {
+    width: 200rpx;
+    height: 200rpx;
+    margin-left: 8rpx;
+    margin-top: 8rpx;
+    display: inline-block;
+}
+
+.reply {
+    margin: 20rpx 24rpx 20rpx 0rpx;
+    border-radius: 16rpx;
+    background: #f7f7f7;
+    font-size: 9pt;
+    padding: 22rpx 30rpx;
+    color: #ff4544;
+}
+
+.reply-content {
+    display: inline;
+    color: #666;
+}
+
+.comment-item .score-tag {
+    display: inline-block;
+    background: #eee;
+    font-size: 7pt;
+    padding: 4rpx 12rpx;
+    border-radius: 5rpx;
+}
+
+.loading-more {
+    text-align: center;
+    opacity: 0;
+}
+
+.loading-more.active {
+    opacity: 1;
+}
+
+.loading-more image {
+    width: 160rpx;
+    height: 80rpx;
+}
+
+.pic-left {
+    margin-right: 5rpx;
+}
+
+.pic-right {
+    margin-left: 5rpx;
+}
+
+.contact {
+    background: #118eea;
+    color: #fff;
+}
+
+.good-detail {
+    height: 100rpx;
+    color: #353535;
+    line-height: 100rpx;
+    padding-left: 20rpx;
+}

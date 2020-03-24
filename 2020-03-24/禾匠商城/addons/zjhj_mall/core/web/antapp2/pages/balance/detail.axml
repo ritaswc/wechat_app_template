@@ -1,0 +1,51 @@
+<view class="page"> 
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+
+        <view class='detail-block-1 flex-y-center'>
+            <block a:if="{{order_type == 'r'}}">
+                <view>
+                    <view class='flex-row'>
+                        <view class='flex-grow-0 t-color'>交易金额</view>
+                        <view class='flex-grow-1 {{list.flag == 0 ? "record-3" : "record-4"}}'>{{list.pay_price}}</view>
+                    </view>
+                    <view class='flex-row'>
+                        <view class='flex-grow-0 t-color'>赠送金额</view>
+                        <view class='flex-grow-1 {{list.flag == 0 ? "record-3" : "record-4"}}'>{{list.send_price}}</view>
+                    </view>
+                </view>
+            </block>
+            <block a:else>
+                <view class='flex-row'>
+                    <view class='flex-grow-0 t-color'>交易金额</view>
+                    <view class='flex-grow-1 {{list.flag == 0 ? "record-3" : "record-4"}}'>{{list.pay_price}}</view>
+                </view>
+            </block>
+        </view>
+        <view class='detail-block-1'>
+            <view class='flex-row' style='margin-top:16rpx;'>
+                <view class='flex-grow-0 t-color'>交易时间</view>
+                <view class='flex-grow-1'>{{list.time}}</view>
+            </view>
+            <view class='flex-row' style='margin-top:32rpx;'>
+                <view class='flex-grow-0 t-color'>交易内容</view>
+                <view class='flex-grow-1'>{{list.content}}</view>
+            </view>
+            <block a:if="{{list.order_no}}">
+                <view class='flex-row' style='margin-top:32rpx;margin-bottom:16rpx;'>
+                    <view class='flex-grow-0 t-color'>交易单号</view>
+                    <view class='flex-grow-1'>{{list.order_no}}</view>
+                </view>
+            </block>
+            <block a:if="{{list.order_refund_no}}">
+                <view class='flex-row' style='padding-top:16rpx;margin-bottom:16rpx;'>
+                    <view class='flex-grow-0 t-color'>退款单号</view>
+                    <view class='flex-grow-1'>{{list.order_refund_no}}</view>
+                </view>
+            </block>
+        </view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

@@ -1,0 +1,91 @@
+<header class="mui-bar mui-bar-nav">
+	<a class="mui-icon mui-icon-back mui-pull-left js-switch-modal" href="javascript:;"></a>
+	<a class="mui-icon mui-icon-close mui-pull-right js-switch-pay-close"></a>
+	<h1 class="mui-title">付款详情</h1>
+</header>
+<div class="mui-content">
+	<div id="pay-main-modal" class="js-main-modal">
+		<ul class="mui-table-view mui-table-view-chevron">
+			<li class="mui-table-view-cell">
+				<span class="mui-text-muted">支付宝账号</span>
+				<span class="mui-pull-right">188****1234</span>
+			</li>
+			<li class="mui-table-view-cell js-switch-pay">
+				<a class="mui-navigate-right mui-media">
+					<span class="mui-text-muted">付款方式</span>
+					<span class="mui-pull-right js-pay-default-method"></span>
+				</a>
+			</li>
+		</ul>
+		<div class="mui-row mui-pa15">
+			<div class="mui-col-xs-6">需付款</div>
+			<div class="mui-col-xs-6 mui-text-right mui-big"><span class="js-pay-fee"></span>元</div>
+		</div>
+		<div class="mui-content-padded">
+			<form action="{php echo url('mc/cash/');}" method="post">
+				<input type="hidden" name="params" value="{php echo base64_encode(json_encode($params));}" />
+				<input type="hidden" name="code" value="" />
+				<input type="hidden" name="coupon_id" value="" />
+				<input type="hidden" name="do" value="wechat" />
+				<button type="submit" class="mui-btn mui-btn-success mui-btn-block" data-payparams="{php echo base64_encode(json_encode($params));}" value="确认支付">确认支付</button>
+			</form>
+		</div>
+	</div>
+	<ul id="pay-method-modal" class="mui-table-view mui-table-view-chevron js-switch-pay-modal" style="display:none;">
+		{if !empty($pay['credit']['switch'])}
+		<li class="mui-table-view-cell" data-method="credit" data-title="余额">
+			<a class="mui-navigate-right mui-media" href="javascript:;">
+				<img src="./resource/images/money.png" alt="" class="mui-media-object mui-pull-left"/>
+				<span class="mui-media-body mui-block">
+					余额
+					<span class="mui-block mui-text-muted mui-rmb mui-mt5">{php echo sprintf('%.2f', $credtis[$setting['creditbehaviors']['currency']]);}</span>
+				</span>
+			</a>
+		</li>
+		{/if}
+		{if $pay['baifubao']['switch']}
+		<li class="mui-table-view-cell" data-method="baifubao" data-title="百度钱包">
+			<a class="mui-navigate-right mui-media" href="javascript:;">
+				<img src="./resource/images/baidu-pay.png" alt="" class="mui-media-object mui-pull-left"/>
+				<span class="mui-media-body mui-block">
+					百度钱包
+					<span class="mui-block mui-text-muted mui-mt5">百度安全支付服务</span>
+				</span>
+			</a>
+		</li>
+		{/if}
+		{if $pay['unionpay']['switch']}
+		<li class="mui-table-view-cell" data-method="unionpay" data-title="银联支付">
+			<a class="mui-navigate-right mui-media" href="javascript:;">
+				<img src="./resource/images/yl-icon.png" alt="" class="mui-media-object mui-pull-left"/>
+				<span class="mui-media-body mui-block">
+					银联支付
+					<span class="mui-block mui-text-muted mui-mt5">银联安全支付服务</span>
+				</span>
+			</a>
+		</li>
+		{/if}
+		{if !empty($pay['wechat']['switch'])}
+		<li class="mui-table-view-cell" data-method="wechat" data-title="微信支付">
+			<a class="mui-navigate-right mui-media" href="javascript:;">
+				<img src="./resource/images/wx-icon.png" alt="" class="mui-media-object mui-pull-left"/>
+				<span class="mui-media-body mui-block">
+					微信支付
+					<span class="mui-block mui-text-muted mui-mt5">微信支付,安全快捷</span>
+				</span>
+			</a>
+		</li>
+		{/if}
+		{if !empty($pay['alipay']['switch'])}
+		<li class="mui-table-view-cell" data-method="alipay" data-title="支付宝">
+			<a class="mui-navigate-right mui-media" href="javascript:;">
+				<img src="./resource/images/zfb-icon.png" alt="" class="mui-media-object mui-pull-left"/>
+				<span class="mui-media-body mui-block">
+					支付宝
+					<span class="mui-block mui-text-muted mui-mt5">简单、安全、快速</span>
+				</span>
+			</a>
+		</li>
+		{/if}
+	</ul>
+</div>

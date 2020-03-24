@@ -1,0 +1,32 @@
+.form-row {
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+    height: 88rpx;
+}
+
+.form-row:first-child {
+    border-top: 1rpx solid #eee;
+}
+
+.form-row:last-child {
+    border-bottom: 1rpx solid #eee;
+}
+
+.form-row .flex-grow-0 {
+    min-width: 200rpx;
+}
+
+.form-row .flex-grow-0>view {
+    width: 100%;
+    text-align: right;
+}
+
+.form-row .flex-grow-1 {
+    padding: 0 36rpx;
+}
+
+.form-row .flex-grow-1 input {
+    height: 100%;
+    display: block;
+    width: 100%;
+}
