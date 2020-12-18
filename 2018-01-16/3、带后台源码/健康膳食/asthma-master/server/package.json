@@ -18,7 +18,7 @@
     "express": "^4.15.2",
     "mongoose": "^4.9.2",
     "morgan": "^1.8.1",
-    "node-fetch": "^1.6.3"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
