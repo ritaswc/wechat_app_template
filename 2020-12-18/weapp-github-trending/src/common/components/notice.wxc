@@ -1,0 +1,46 @@
+<template>
+    <view>
+        <wxc-loading
+            is-show="{{!customLoading && showLoading}}"
+        ></wxc-loading>
+        <wxc-toast
+            is-show="{{showError}}"
+            icon="no"
+            icon-color="#ff5777"
+            text="服务器繁忙，请稍后再试~"
+            ></wxc-toast>
+            <!-- <wxc-abnor type="REQUEST_ERROR"></wxc-abnor> -->
+        <wxc-loadmore wx:if="{{!showLoading && !showError}}" is-end="{{true}}"></wxc-loadmore>
+    </view>
+</template>
+
+<script>
+export default {
+    config: {
+    usingComponents: {
+      "wxc-icon": "@minui/wxc-icon",
+      'wxc-loading': '@minui/wxc-loading',
+      'wxc-loadmore': '@minui/wxc-loadmore',
+      'wxc-toast': '@minui/wxc-toast',
+      'wxc-abnor': '@minui/wxc-abnor'
+    }
+  },
+  properties: {
+      showLoading: {
+          type: Boolean,
+          value: true
+      },
+      showError: {
+          type: Boolean,
+          value: false
+      },
+      customLoading: {
+          type: Boolean,
+          value: false
+      }
+  }
+};
+</script>
+
+<style>
+</style>

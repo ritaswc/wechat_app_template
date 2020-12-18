@@ -1,0 +1,27 @@
+<!-- 轮播图组件子元素 -->
+
+<template name="swiper-item">
+  <swiper-item wx:if="{{!(item.type ? item.type == 'web' : item.links[0].type == 'web')}}"><!--不渲染web网页内容-->
+    <view class="slide-nav" bindtap='navToPicture' data-id="{{item.link.url}}" >
+    <image src="{{item.thumbnail}}" mode="aspectFill"/>
+    <text class="title">{{item.title}}</text>
+    </view>
+  </swiper-item>
+</template>
+
+
+<!-- 轮播图组件总体 -->
+<template name="swiper">
+  <swiper class="swiper" autoplay="true" interval="5000" duration="1000" indicator-dots="true">
+    <block wx:if="{{subclass}}"><!--专题页用的-->
+      <block wx:for="{{subclass.podItems}}" wx:for-item="item" wx:key="index">
+       <template is="swiper-item" data="{{item}}" />
+      </block>
+    </block>
+    <block wx:else><!--主页用的-->
+      <block wx:for="{{swiper.item}}" wx:for-item="item" wx:key="index">
+        <template is="swiper-item" data="{{item}}" />
+      </block>
+    </block>
+  </swiper>
+</template>

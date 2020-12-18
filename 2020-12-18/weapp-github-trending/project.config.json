@@ -1,0 +1,16 @@
+{
+  "miniprogramRoot": "dist",
+	"description": "项目配置文件。",
+	"compileType": "miniprogram",
+	"libVersion": "1.9.1",
+	"appid": "touristappid",
+	"projectname": "Github Lite",
+  "setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"condition": {}
+}

@@ -1,0 +1,94 @@
+<template>
+     <wxc-popup class="J_Popup" animation-mode="left" align="center">
+        <view class="box">
+            <view class="left">
+                
+            </view>
+            <view class="right">
+                <view class="title">
+                    <text class="name">Jaeger</text>
+                    <!-- <text class="name-at">@jae-jae</text> -->
+                </view>
+                <view class="info">
+                    <text class="field">Email</text>
+                    <text class="value">JaegerCode@gmail.com</text>
+                    <text class="field">Github</text>
+                    <text class="value">https://github.com/jae-jae</text>
+                </view>
+            </view>
+        </view>
+    </wxc-popup>
+</template>
+
+<script>
+export default {
+config: {
+    usingComponents: {
+      'wxc-popup': '@minui/wxc-popup'
+    }
+  },
+  data: {},
+  methods: {
+    show() {
+      let popupComponent = this.selectComponent('.J_Popup');
+      popupComponent && popupComponent.show();
+    },
+    hide() {
+      let popupComponent = this.selectComponent('.J_Popup');
+      popupComponent && popupComponent.hide();
+    }
+  }
+}
+</script>
+
+<style lang="less">
+    .box {
+        display: flex;
+        align-items: center;
+    }
+
+    .left {
+        width: 300rpx;
+        height: 300rpx;
+        border-radius: 10px;
+        background-image: url('https://avatars1.githubusercontent.com/u/5620429?s=160&v=4');
+        background-size: cover;
+    }
+
+    .right {
+        width: 400rpx;
+        height: 280rpx;
+        background-color: #fff;
+        border: 1rpx solid #e5e5e5;
+        // box-shadow: 2rpx 5rpx 2rpx #e5e5e5;
+        .title {
+            margin: 20rpx auto;
+            text-align: center;
+            .name {
+                display: block;
+                font-size: 40rpx;
+                font-weight: 700;
+            }
+            .name-at {
+                display: block;
+                font-size: 22rpx;
+            }
+        }
+        .info {
+            margin-left: 20rpx;
+            text {
+                display: block;
+                font-size: 30rpx;
+            }
+            .field {
+                font-size: 22rpx;
+                color: #888;
+            }
+
+            .value {
+                margin-bottom: 20rpx;
+            }
+        }
+    }
+
+</style>

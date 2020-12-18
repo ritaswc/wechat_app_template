@@ -1,0 +1,277 @@
+<template>
+    <view class="body {{isSettingShow?'noscroll':''}}">
+        <view wx:if="{{showMini}}" class="banner-mini">
+          <view class="banner-mini-setting">
+            <wxc-button bind:click="handleSetting" type="success" plain="{{true}}" btnStyle="min-width: 66rpx;padding: 0;border:0">
+                 <my-icon type="setting" />
+            </wxc-button>
+             <wxc-button bind:click="handleQrcode" type="success" plain="{{true}}" btnStyle="min-width: 66rpx;padding: 0;border:0">
+                 <my-icon type="qrcode" />
+            </wxc-button>
+            <my-icon type="loading2" wx:if="{{refreshData}}" />
+          </view>
+          <view class="banner-mini-text">
+            <text>Trending</text>
+          </view>
+        </view>
+        <view class="banner">
+            <!-- <image class="img" src="https://image.shutterstock.com/image-photo/illustration-unusual-modern-material-design-260nw-415742497.jpg" /> -->
+        
+             <wxc-flex class="text-wrap" dir="top" main="center" cross="center">
+                <view class="text-item">
+                    <rich-text type="node" nodes="{{titleNodes}}"></rich-text>
+                </view>
+                <view class="text-item">
+                    <text>See what the GitHub community is most excited about {{setting.time === 'daily'?'today':setting.time === 'weekly'?'this week':'this month'}}.</text>
+                </view>
+            </wxc-flex>
+        </view>
+
+        <view class="menu">
+            <wxc-button bind:click="handleSetting" type="success" plain="{{true}}" btnStyle="min-width: 66rpx;padding: 0;border:0">
+                 <my-icon type="setting" />
+            </wxc-button>
+            <wxc-button bind:click="handleQrcode" type="success" plain="{{true}}" btnStyle="min-width: 66rpx;padding: 0;border:0">
+                 <my-icon type="qrcode" />
+            </wxc-button>
+            <my-icon type="loading2" wx:if="{{refreshData}}" />
+        </view>
+
+        <view class="list-wrap">
+            <view wx:for="{{list}}" wx:key="item.name">
+              <index-card data="{{item}}" />
+            </view>
+
+        </view>
+       <notice showLoading="{{showLoading}}" showError="{{showError}}"></notice>
+       
+       <setting class="setting-dialog" bind:confirm="handSettingConfirm" bind:show="handleSettingShow" bind:hide="handleSettingHide"></setting>
+       
+       <view wx:if="{{showFloatAvatar}}" class="float-avatar" bind:tap="handleShowAbout">
+        <float-avatar></float-avatar>
+       </view>
+       
+       <about class="about-card"></about>
+
+       <qrcode class="qrcode-card"></qrcode>
+
+    </view>
+</template>
+
+<script>
+import Github from "../../models/github";
+
+export default {
+  config: {
+    usingComponents: {
+      "wxc-button": "@minui/wxc-button",
+      "wxc-icon": "@minui/wxc-icon",
+      "wxc-flex": "@minui/wxc-flex",
+      "wxc-panel": "@minui/wxc-panel",
+      "index-card": "./components/index-card",
+      notice: "components/notice",
+      "my-icon": "components/icon",
+      setting: "./components/setting",
+      "float-avatar": './components/float-avatar',
+      about: "./components/about",
+      qrcode: "./components/qrcode"
+    }
+  },
+  data: {
+    titleNodes: [
+      {
+        name: "h1",
+        children: [
+          {
+            type: "text",
+            text: "Trending"
+          }
+        ]
+      }
+    ],
+    list: [],
+    showMini: false,
+    showLoading: true,
+    showError: false,
+    refreshData: true,
+    isSettingShow: false,
+    setting: {
+      time: "daily",
+      lang: ""
+    },
+    showFloatAvatar: false
+  },
+  handleSetting() {
+    let dialogComponent = this.selectComponent(".setting-dialog");
+    dialogComponent.show();
+  },
+  handleSettingShow() {
+    this.setData({
+      isSettingShow: true
+    });
+  },
+  handleSettingHide() {
+    this.setData({
+      isSettingShow: false
+    });
+  },
+  handSettingConfirm(e) {
+    this.setData({
+      setting: e.detail.dataset
+    });
+    this.getData();
+  },
+  handleShowAbout () {
+    let popupComponent = this.selectComponent('.about-card');
+    popupComponent.show()
+  },
+  handleQrcode () {
+    let popupComponent = this.selectComponent('.qrcode-card');
+    popupComponent.show()
+  },
+  getData() {
+    this.setData({
+      showLoading: true,
+      refreshData: true
+    })
+    Github.getTrending(this.data.setting)
+      .then(res => {
+        this.setData({
+          list: res.data,
+          showLoading: false
+        });
+      }).catch(() => {
+        this.setData({
+          showLoading: false,
+          showError: true
+        });
+        setTimeout(() => {
+          this.setData({
+            showError: false
+          });
+        }, 1000);
+      }).finally(() => {
+        // 刷新数据
+        Github.getTrending(this.data.setting, false).then(res => {
+          this.setData({
+            list: res.data,
+            refreshData: false
+          });
+        });
+      });
+  },
+  onLoad() {
+    this.getData();
+  },
+  onPageScroll(e) {
+    if (e.scrollTop > 100) {
+      this.setData({
+        showMini: true
+      });
+    } else {
+      this.setData({
+        showMini: false
+      });
+    }
+
+    if (e.scrollTop > 2000) {
+      this.setData({
+        showFloatAvatar: true
+      })
+    } else {
+      this.setData({
+        showFloatAvatar: false
+      })
+    }
+  },
+  onShareAppMessage () {
+    return {
+      title: 'Github今日榜单',
+      path: '/pages/home/index'
+    }
+  }
+};
+</script>
+
+<style lang='less'>
+.body {
+  // background-color: #CCCCCC;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.img {
+  width: 100%;
+}
+
+.banner-mini {
+  position: fixed;
+  top: 0;
+  background: url("https://mmbiz.qpic.cn/mmbiz_jpg/Ziac3JNhwAiamZicnibjSQaxlO5KzHECIc6X0hlicA7CoQ2cSbxNEV7iaIribn0fyz0dZlZSVoEXBF9UGVOHpWJebqiaow/0?wx_fmt=jpeg")
+    no-repeat;
+  background-size: cover;
+  color: #fff;
+  width: 100%;
+  height: 130rpx;
+  z-index: 100;
+  .banner-mini-text {
+    position: absolute;
+    // bottom: 0;
+    // left: 20rpx;
+    top: 50%;
+    left: 40%;
+  }
+  .banner-mini-setting {
+    position: absolute;
+    top: 50%;
+    left: 20rpx;
+  }
+}
+
+.banner {
+  height: 400rpx;
+  background: url("https://mmbiz.qpic.cn/mmbiz_jpg/Ziac3JNhwAiamZicnibjSQaxlO5KzHECIc6X0hlicA7CoQ2cSbxNEV7iaIribn0fyz0dZlZSVoEXBF9UGVOHpWJebqiaow/0?wx_fmt=jpeg")
+    no-repeat;
+  background-size: cover;
+  // border-radius: 0 0 30% 30%;
+}
+
+.menu {
+  position: absolute;
+  top: 60rpx;
+  left: 20rpx;
+}
+
+.text-wrap {
+  .text-item {
+    color: #fff;
+    margin: 10rpx 50rpx;
+  }
+}
+
+.list-wrap {
+  position: relative;
+  top: -100rpx;
+  margin: 20rpx;
+}
+
+.noscroll {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.float-avatar {
+  position: fixed;
+  right: 50rpx;
+  bottom: 80rpx;
+}
+
+.about-card {
+
+}
+
+</style>

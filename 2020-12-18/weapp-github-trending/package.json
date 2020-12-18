@@ -1,0 +1,42 @@
+{
+  "name": "weapp-github-trending",
+  "description": "Github Lite-小程序",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:jae/weapp-github-trending.git"
+  },
+  "author": "Jaeger <JaegerCode@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@mindev/min-cli": "^1.0.7-beta.6",
+    "@minui/wxc-abnor": "^1.0.7",
+    "@minui/wxc-button": "^1.0.2",
+    "@minui/wxc-dialog": "^1.0.9",
+    "@minui/wxc-elip": "^1.0.5",
+    "@minui/wxc-flex": "^1.0.6",
+    "@minui/wxc-icon": "^1.0.9",
+    "@minui/wxc-loading": "^1.0.8",
+    "@minui/wxc-loadmore": "^1.0.5",
+    "@minui/wxc-panel": "^1.0.1",
+    "@minui/wxc-popup": "^1.0.9",
+    "@minui/wxc-search": "^1.0.1",
+    "@minui/wxc-select": "^1.0.1",
+    "@minui/wxc-tab": "^1.0.8",
+    "@minui/wxc-toast": "^1.0.9",
+    "es6-promise": "^4.2.4",
+    "global": "^4.3.2",
+    "wx-promise-pro": "^2.4.2",
+    "wx-promise-request": "^2.1.3"
+  },
+  "devDependencies": {
+    "babel-plugin-syntax-export-extensions": "^6.13.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-preset-env": "^1.6.1"
+  },
+  "minConfig": {
+    "projectType": "application"
+  }
+}

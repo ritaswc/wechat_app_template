@@ -1,0 +1,11 @@
+<import src="/wxParse/wxParse.wxml"/>
+
+<block class="blockMargin">
+<view calss='wxParse'>
+<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+</block>
+
+<view class='main-wraper'>
+    <navBar title='福利推荐' background='#fff' back="{{true}}" home="{{true}}" bindback="handlerGobackClick" bindhome="handlerGohomeClick"></navBar>
+</view>

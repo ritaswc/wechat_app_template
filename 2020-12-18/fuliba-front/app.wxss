@@ -1,0 +1,32 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+/* 用于不带导航得子子页面 */
+.contentBigImg{
+  width: 100%;
+  border-radius: 5rpx;
+  overflow:hidden;
+  display:flex;
+ justify-content: center;            
+}
+.contentBigImg>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+   overflow:hidden;
+}
+.content-title{
+  width: 100%;
+  height: 100%;
+  margin-left: 0rpx;
+  display: flex;
+  flex-direction: column;
+}

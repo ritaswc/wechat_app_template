@@ -1,0 +1,19 @@
+<template>
+  <view class="foot">
+    
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      
+    }
+  }
+}
+</script>
+
+<style>
+  
+</style>

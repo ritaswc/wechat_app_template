@@ -1,0 +1,90 @@
+<template>
+    <dialog class="setting-dialog" title="设置" content="" confirm-text="确定" bindconfirm="onConfirm" bindcancel="onCancel" data-time="{{time}}" data-lang="{{lang}}">
+         <view class="dialog-body">
+            <text class="list-title">调整时间跨度</text>
+            <wxc-select checked="daily" items="{{timeItems}}" bind:change="handleTime"></wxc-select>
+
+            <text class="list-title">选择语言</text>
+            <scroll-view scroll-y class="lang-box">
+              <wxc-select items="{{langItems}}" bind:change="handleLang"></wxc-select>
+            </scroll-view>
+         </view>
+    </dialog>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      "wxc-popup": "@minui/wxc-popup",
+      dialog: "components/dialog",
+      "wxc-select": "@minui/wxc-select"
+    }
+  },
+  data: {
+    timeItems: [
+      { value: "daily", title: "today" },
+      { value: "weekly", title: "this week" },
+      { value: "monthly", title: "this month" }
+    ],
+    langItems: [
+      { value: "", title: "All languages" },
+      { value: "unknown", title: "Unknown languages" },
+      { value: "javascript", title: "JavaScript" },
+      { value: "php", title: "PHP" },
+      { value: "go", title: "Go" },
+      { value: "python", title: "Python" },
+      { value: "css", title: "CSS" },
+      { value: "html", title: "HTML" },
+      { value: "shell", title: "Shell" }
+    ],
+    time: 'daily',
+    lang: ''
+  },
+  methods: {
+    show() {
+      let dialogComponent = this.selectComponent(".setting-dialog");
+      dialogComponent.show();
+      this.triggerEvent("show");
+    },
+    hide() {
+      let dialogComponent = this.selectComponent(".setting-dialog");
+      dialogComponent.hide();
+      this.triggerEvent("hide");
+    },
+    onConfirm(e) {
+      this.triggerEvent("confirm",e.currentTarget);
+      this.hide();
+    },
+    onCancel() {
+      this.hide();
+    },
+    handleTime (e) {
+      this.setData({
+        time: e.detail.value
+      })
+    },
+    handleLang (e) {
+      this.setData({
+        lang: e.detail.value
+      })
+    }
+  }
+};
+</script>
+
+<style lang="less">
+.dialog-body {
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  width: 90%;
+  margin: 0 20rpx;
+  .list-title {
+    // margin-left: 20rpx;
+    font-size: 25rpx;
+    color: #888;
+  }
+  .lang-box {
+    height: 400rpx;
+  }
+}
+</style>

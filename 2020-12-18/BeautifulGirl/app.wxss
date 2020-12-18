@@ -1,0 +1,9 @@
+/**app.wxss**/
+page{
+  height: 100%;
+}
+.container {
+  min-height: 100%;
+  box-sizing: border-box;
+  position: relative;
+} 

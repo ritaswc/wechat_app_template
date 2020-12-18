@@ -1,0 +1,45 @@
+.background {
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+}
+.slide {
+	width: 100%;
+	height: 100%;
+	
+}
+.slide .swiper-item {
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+}
+.slide .slide-image {
+	width: 100%;
+}
+.slide .info  {
+	box-sizing: border-box;
+	width: 100%;
+	color: #fff;
+	background-color: #000;
+	opacity: .6;
+	padding: 26rpx;
+	position: absolute;
+	bottom: 0;
+	font-size: 32rpx;
+	line-height: 1.6;
+	letter-spacing: 4rpx;
+	max-height: 340rpx;
+	overflow-y: scroll;
+}
+.slide .info .left {
+	float: left;
+	width: 90%;
+}
+.slide .info .left .title ,
+.slide .info .right .current {
+	font-size: 42rpx;
+}
+.slide .info .right {
+	float: right;
+}
+

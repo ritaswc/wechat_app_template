@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/main-page/main-page",
+    "pages/special-page/special-page",
+    "pages/article-page/article-page",
+    "pages/picture-page/picture-page",
+    "pages/video-page/video-page",
+    "pages/doclive-page/doclive-page",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#de0000",
+    "navigationBarTitleText": "Sports News",
+    "navigationStyle": "default",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,7 @@
+<import src="card.wxml"/>
+
+<template name="topic2-card">
+  <view bindtap='navToSpecial' data-id="{{item.id ? item.id : item.links[0].url}}" class="newitem">
+    <template is="card" data="{{item}}"/>  
+  </view>
+</template>

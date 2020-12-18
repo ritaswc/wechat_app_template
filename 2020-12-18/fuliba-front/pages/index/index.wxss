@@ -1,0 +1,160 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 轮播图 */
+.swiper-container{
+  width: 100%;
+  height: 300rpx;
+  /* 居中作用 */
+  margin: 0rpx auto;
+  position: relative;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+
+.swiper{
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+.swiper-text{
+  width: auto;
+  height: 10rpx;
+  position: absolute;
+  top: 50rpx;
+  border-radius: 50rpx;
+  left: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rpx 10rpx;
+  color:white;
+  font-weight:bold
+}
+.swiperItem{
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+.swiperItem>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+.dots{
+  width: auto;
+  height: 10rpx;
+  position: absolute;
+  bottom: 20rpx;
+  border-radius: 50rpx;
+  left: 240rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rpx 10rpx;
+}
+.dotsItem{
+  width: 8rpx;
+  height: 8rpx;
+  margin: 0rpx 8rpx;
+  border-radius: 50%;
+  background-color: white;
+  transition: all .3s;
+}
+.active{
+  width: 10rpx;
+  height: 10rpx;
+  background-color: red;
+}
+/* 宫格导航 */
+.nav{
+  width: 90%;
+  height: 132rpx;
+  margin: 0rpx auto;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+.navItem{
+  width: 16%;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 35rpx;
+  color: #FF0000;
+}
+.navIcon{
+  width: 100%;
+  height: 100%;
+}
+/* 主要内容 */
+.contentList{
+  width: 100%;
+  margin: 0rpx auto;
+  margin-top: 10rpx;
+}
+.content{
+  width: 100%;
+  height: auto;
+  padding: 0rpx 0rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.contentImg{
+  width: 60%;
+  height: 70%;
+  border-radius: 5rpx;
+  overflow:hidden;
+  display:flex;
+ justify-content: center;            
+}
+.contentImg>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+   overflow:hidden;
+}
+.content-right{
+  width: 38%;
+  height: 100%;
+  margin-left: 0rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.pageUp{
+   /* padding: 0,0px,0px,500rpx; */
+  /* height: 60rpx; */
+  height:10%;
+  display: flex; 
+  /* align-items: right; */
+  margin-left:80%; 
+  /* padding: 80% */
+  /* margin-right:0 */
+ 
+}
+
+.goupimg{
+  width:10%;
+  float: right;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;  
+} 
+
+/* 客服 */
+.img-plus-style {
+height: 70rpx;
+width: 70rpx;
+position: fixed;
+bottom: 200rpx;
+right: 13rpx;
+opacity: 0.7
+}
+.zindex100{z-index: 100}
+.yc{opacity: 0}

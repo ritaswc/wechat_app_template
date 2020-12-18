@@ -1,0 +1,6 @@
+  @import "/wxParse/wxParse.wxss";
+  .blockMargin{
+    margin: 10px,
+   display：flex 
+
+  }
