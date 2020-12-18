@@ -35,7 +35,7 @@
     "path": "^0.12.7",
     "qiniu": "^6.1.13",
     "request": "^2.79.0",
-    "sequelize": "^3.28.0",
+    "sequelize": "^6.3.5",
     "serve-favicon": "~2.3.0",
     "should": "^11.2.1",
     "supertest": "^3.0.0",
