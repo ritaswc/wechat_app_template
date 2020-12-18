@@ -1,0 +1,23 @@
+<view class="Login_wrap">
+    <view class="LoginLogo">
+        <image class="img" src="http://tm.xymens.com/Templates/Default/assets/images/login_logo.png" mode="aspectFit"></image>
+    </view>
+    <view class="login_input">
+        <form bindsubmit="formSubmit" class="form_wrap">
+            <input class="input" placeholder-class="placeholder-class" type="text" name="email" placeholder="邮箱／手机号" />
+            <input class="input" placeholder-class="placeholder-class" type="password" name="pwd" password="true" placeholder="密码" />
+            <button class="button" formType="submit">登录</button>
+        </form>
+        <view class="login_bot">
+            <text class="fl">忘记密码?</text>
+            <text class="fr">注册账号</text>
+        </view>
+    </view>
+        <!--<div class='login_mode'>
+            <a href='javascript:;'><img src='http://tm.xymens.com/Templates/Default/assets/images/sina_login.png' /></a>
+            <a href='javascript:;'><img src='http://tm.xymens.com/Templates/Default/assets/images/sina_login.png' /></a>
+            <a href='javascript:;'><img src='http://tm.xymens.com/Templates/Default/assets/images/sina_login.png' /></a>
+        </div>-->
+</view>
+<modal class="modal" hidden="{{modal.hidden}}" no-cancel bindconfirm="modalChange">{{modal.msg}}</modal>
+<toast hidden="{{toast.hidden}}" duration="1500" bindchange="toastChange">{{toast.msg}}</toast>

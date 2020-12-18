@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/weather/weather"
+  ],
+  "window":{
+     "navigationBarBackgroundColor":"gray",
+     "navigationBarTextStyle":"black",
+     "navigationBarTitleText":"weather",
+     "backgroundColor":"gray",
+     "backgroundTextStyle":"dark",
+     "enablePullDownRefresh":"true"
+  },
+  "tabBar":{
+    "color": "gray",
+    "selectedColor": "black",
+    "borderStyle": "black",
+    "backgroundColor": "#E6FFEC",
+    "list":[
+      {
+        "text": "weather",
+        "pagePath": "pages/weather/weather",
+        "iconPath": "images/usbox.png",
+        "selectedIconPath": "images/usbox-actived.png"
+      },
+      {
+        "text": "weather",
+        "pagePath": "pages/weather/weather",
+        "iconPath": "images/usbox.png",
+        "selectedIconPath": "images/usbox-actived.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

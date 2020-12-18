@@ -1,0 +1,12 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/country/country"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#363b41",
+        "navigationBarTitleText": "Egret汇率计算器",
+        "navigationBarTextStyle": "white"
+    }
+}

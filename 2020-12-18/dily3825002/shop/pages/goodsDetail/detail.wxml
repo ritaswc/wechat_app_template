@@ -1,0 +1,221 @@
+<!--goodsDetail.wxml-->
+<import src="../template/favorites/favorites.wxml"/>
+
+<view class="container paddingBottom3" style="display: {{loading.isViewHidden ? 'none' : 'block'}}">
+    <swiper style="height:{{pageSetting.swiperHeight}}rpx" indicator-dots="{{swiperData.indicatorDots}}"
+            duration="{{swiperData.duration}}" autoplay="{{swiperData.autoplay}" interval="{{swiperData.interval}}"
+            class="detail-swiper">
+        <block wx:for-items="{{swiperData.data}}">
+            <swiper-item class="index-swiper-item">
+                <image class="swiper-item-view" src="{{item.img_url}}" data-id="{{item.img_id}}"
+                       mode="{{swiperData.imgMode}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="goods-info">
+        <text class="title">{{goodsData.goods_name}}</text>
+        <!--<view class="only_price"><text class="o_price">¥{{goodsData.goods_price}}</text></view>-->
+        <text class="price">¥{{goodsData.goods_price}}</text>
+        <text class="last-price" wx:if="{{goodsData.last_format_price != 0}}">¥{{goodsData.last_format_price}}</text>
+    </view>
+    <view class="fe_share">
+        <view class="share_view" catchtap="showCollect" data-id="{{goodsData.goods_id}}" data-index="0"
+              data-isCollect="{{goodsData.isCollect}}">
+            <icon class="icon fa {{goodsData.isCollect == 0 ? 'fa-heart-o' : 'fa-heart on'}}"></icon>
+            <text class="share_text">收藏</text>
+        </view>
+        <view class="share_view">
+            <icon class="icon fa fa-share-square"></icon>
+            <text class="share_text">分享</text>
+        </view>
+    </view>
+
+    <view class="goods-detail-desc">
+        <text class="title">商品描述</text>
+        <view class="product_info">
+            <text class="bm">产品编码：{{goodsData.goods_id}}</text>
+            <text class="off"></text>
+        </view>
+        <view class="desc">
+            <text wx:for-items="{{goodsData.goods_desc}}" class="display-block">{{item}}</text>
+        </view>
+    </view>
+
+    <view class="details_channel">
+        <view class="channel_name">
+            <text class="name">{{goodsData.logistics_name}}</text>
+        </view>
+        <view class="channel_desc">
+            <text wx:for-items="{{goodsData.logistics_intro}}" class="display-block">{{item}}</text>
+        </view>
+        <view class="channel_opts">
+            <text class="tip">{{goodsData.logistics_title}}</text>
+            <text class="pd_btn">去拼单</text>
+        </view>
+    </view>
+
+    <view class="details_brand borderTop5"
+          wx:if="{{goodsData.brand_logo && goodsData.brand_name && goodsData.brand_desc && goodsData.brand_id}}">
+        <view class="brand_view">
+            <view class="brand_img">
+                <image class="img" src="{{goodsData.brand_logo}}" mode="aspectFit"></image>
+                <text class="follow_btn" data-brandId="{{goodsData.brand_id}}">关注</text>
+            </view>
+            <view class="brand_info">
+                <view class="title">
+                    <text class="name">{{goodsData.brand_name}}</text>
+                    <view class="more" data-id="{{goodsData.brand_id}}" bindtap="see_brand">查看更多
+                        <icon class="icon fa fa-angle-right"></icon>
+                    </view>
+                </view>
+                <view class="desc">{{goodsData.brand_desc}}</view>
+            </view>
+        </view>
+        <scroll-view class="recommend_scroll" scroll-x="true">
+            <block wx:for-items="{{goodsData.brand_goods}}">
+                <view class="recommend_goods" data-id="{{item.goods_id}}" bindtap="jump_detail_page">
+                    <view class="img_view">
+                        <image src="{{item.goods_img}}" mode="aspectFit" class="img"></image>
+                    </view>
+                    <view class="title">{{item.goods_name}}</view>
+                    <view class="pri">
+                        <text class="price">¥{{item.goods_price}}</text>
+                        <text class="del_price" wx:if="{{item.last_format_price != 0}}">¥{{item.last_format_price}}
+                        </text>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+
+    <view class="details_recommend borderTop5" wx:if="{{matchGoods.length != 0}}">
+        <view class="details_recommend_goods">
+            <view class="title_view">
+                <text class="title">可搭配单品</text>
+            </view>
+            <scroll-view class="recommend_scroll" scroll-x="true">
+                <block wx:for-items="{{matchGoods}}">
+                    <view class="recommend_goods" data-id="{{item.goods_id}}" bindtap="jump_detail_page">
+                        <view class="img_view">
+                            <image src="{{item.goods_img}}" mode="aspectFit" class="img"></image>
+                        </view>
+                        <view class="title">{{item.goods_name}}</view>
+                        <view class="pri">
+                            <text class="price">¥{{item.goods_price}}</text>
+                            <text class="del_price" wx:if="{{item.last_format_price != 0}}">
+                                ¥{{item.last_format_price}}
+                            </text>
+                        </view>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+        <view class="details_recommend_goods" wx:if="{{sameGoods.length != 0}}">
+            <view class="title_view">
+                <text class="title">相似单品</text>
+            </view>
+            <scroll-view class="recommend_scroll" scroll-x="true">
+                <block wx:for-items="{{sameGoods}}">
+                    <view class="recommend_goods" data-id="{{item.goods_id}}" bindtap="jump_detail_page">
+                        <view class="img_view">
+                            <image src="{{item.goods_img}}" mode="aspectFit" class="img"></image>
+                        </view>
+                        <view class="title">{{item.goods_name}}</view>
+                        <view class="pri">
+                            <text class="price">¥{{item.goods_price}}</text>
+                            <text class="del_price" wx:if="{{item.last_format_price != 0}}">
+                                ¥{{item.last_format_price}}
+                            </text>
+                        </view>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+
+    <view class="goods-detail-bot-btn">
+        <text class="btn joinCart" catchtap="openCartPage" wx:if="{{goodsData.is_on_sale == 1}}">加入购物车</text>
+        <text class="btn joinCart off" wx:else="{{goodsData.is_on_sale == 0}}">已下架</text>
+    </view>
+
+
+</view>
+<!-- loaading -->
+<loading hidden="{{loading.hidden}}">{{loading.msg}}</loading>
+<toast hidden="{{toast.hidden}}" icon="{{toast.icon}}" duration="3000" bindchange="toastChange">{{toast.msg}}</toast>
+<template is="collect" data="{{...collect}}"></template>
+
+<!-- 加入购物车 -->
+<scroll-view animation="{{animationData}}" class="join_shopping_cart_view" scroll-y="true">
+
+    <view class="goods_info">
+        <view class="img_view">
+            <image src="{{goodsData.goods_img}}" class="img" mode="aspectFit"></image>
+        </view>
+        <view class="item_info">
+            <text class="title">{{goodsData.goods_name}}</text>
+            <text class="selece_text_flag">已选</text>
+            <view class="row row-1">
+                <text class="text color">颜色：{{curColors.attr_value}}</text>
+                <text class="text price">¥{{goodsData.goods_price}}</text>
+            </view>
+            <view class="row row-2">
+                <text class="text size">尺寸：{{curSizes.size}}</text>
+                <text class="text number">x{{goodsNumberInput}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="goods_tip" wx:if="{{goodsData.tag_desc.length > 0}}">
+        <text class="display-block" wx:for-items="{{goodsData.tag_desc}}">{{item}}</text>
+    </view>
+    <view class="select_class">
+        <view class="category">
+            <text class="name">颜色</text>
+            <view class="cls_view">
+                <block wx:for-items="{{goodsData.colors}}">
+                    <text class="cls {{item.goods_attr_id == curColors.goods_attr_id ? 'cur' : ''}}"
+                          data-curIndex="{{index}}" data-type="colors" catchtap="selectSizeAndColor">{{item.attr_value}}
+                    </text>
+                </block>
+            </view>
+        </view>
+        <view class="category">
+            <text class="name">尺寸</text>
+            <view class="cls_view">
+                <block wx:for-items="{{goodsData.custom_size}}">
+                    <text class="cls {{item.size == curSizes.size && item.size_country == curSizes.size_country  ? 'cur' : ''}}"
+                          data-curIndex="{{index}}" data-type="sizes" catchtap="selectSizeAndColor">{{item.size}}
+                    </text>
+                </block>
+            </view>
+            <view class="cls_detail_view" wx:if="{{curSizes.size_country && curSizes.size && curSizes.size_desc}}">
+                <view class="cls_detail_text">{{curSizes.size_country}}
+                    <text class="text">{{curSizes.size}}</text>
+                </view>
+                <view class="cls_detail_text" wx:for-items="{{curSizes.size_desc}}">{{item.name}}
+                    <text class="text">{{item.number}}</text>
+                </view>
+                <view class="cls_detail_text">中国码
+                    <etxt class="text">{{curSizes.cn_size_desc}}</etxt>
+                </view>
+            </view>
+        </view>
+
+        <view class="category">
+            <text class="name">数量</text>
+            <view class="sele_num">
+                <text class="add btn fa fa-plus" data-type="add" catchtap="change_goods_number"></text>
+                <input bindinput="" value="{{goodsNumberInput}}" class="hideInput" disabled/>
+                <text class="minus btn fa fa-minus" data-type="minus" catchtap="change_goods_number"></text>
+            </view>
+        </view>
+    </view>
+    <view class="cart_btns">
+        <text href="javascript:;" class="join buy_btn" data-type="join" catchtap="details_bot_opts">加入购物车</text>
+        <text href="javascript:;" class="buy buy_btn" data-type="buy" catchtap="details_bot_opts">立即购买</text>
+    </view>
+
+    <view class="close_select_cls" catchtap="closePageAnimate">关闭</view>
+
+
+</scroll-view>

@@ -1,0 +1,105 @@
+page {
+    background: #f2f2f2;
+}
+
+.main {
+    width: 95%;
+    margin-left: 2.5%;
+    margin-top: 20rpx;
+}
+
+.more {
+    float: right;
+}
+
+.head {
+    font-size: 25rpx;
+    margin-top: 30rpx;
+    color: #8c8c8c;
+    font-weight: bold;
+}
+
+.name {
+    line-height: 40rpx;
+    /*height: 60rpx;*/
+}
+
+.content {
+    background-color: #ffffff;
+    font-size: 25rpx;
+    margin-top: 20rpx;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    border: 1px solid white;
+    border-radius: 3px;
+    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    _height: 1%;
+}
+
+.render {
+    width: 33.3%;
+    text-align: center;
+    float: left;
+}
+
+.movieImg {
+    width: 140rpx;
+    height: 190rpx;
+}
+
+.button {
+    font-size: 24rpx;
+    margin-top: 10rpx;
+    width: 78%;
+    height: 60rpx;
+}
+
+.newContent {
+    background-color: #ffffff;
+    font-size: 25rpx;
+    margin-top: 20rpx;
+    /*padding-top: 20rpx;*/
+    padding: 20rpx;
+    border: 1px solid white;
+    border-radius: 3px;
+    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    _height: 1%;
+}
+
+.newMovieImg {
+    width: 140rpx;
+    height: 190rpx;
+    float: left;
+    padding-right: 20rpx;
+}
+
+.newName {
+    /*float: left;*/
+    margin-bottom: 15rpx;
+    font-size: 12px;
+    /*font-size: 30rpx;*/
+    /*padding-top: 10rpx;*/
+}
+
+.newDesc {
+    padding-bottom: 15rpx;
+    color: #8e8e8e;
+    font-size: 12px;
+    line-height: 30rpx;
+}
+
+.pingjia {
+    /*position: absolute;
+    bottom: 0rpx;*/
+    font-size: 12px;
+    color: #8e8e8e;
+}
+
+.copyRight {
+    font-size: 12px;
+    text-align: center;
+    margin: 40rpx;
+    color: #8e8e8e;
+}

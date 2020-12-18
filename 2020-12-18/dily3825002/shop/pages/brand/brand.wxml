@@ -1,0 +1,18 @@
+<import src="../template/goodsList/list.wxml" />
+
+<scroll-view scroll-y="true" style="height: {{systemInfo.windowHeight}}px" data-id="{{brand_info.brand_id}}" lower-threshold="300" bindscrolltolower="loadMoreGoods">
+    <image src="{{brand_info.brand_index_img}}" mode="aspectFill" class="brand_img"></image>
+    <view class="brand_info">
+        <view class="brand_opts">
+            <image src="{{brand_info.brand_logo}}" mode="aspectFit" class="img"></image>
+            <text class="title">{{brand_info.brand_name}}</text>
+            <view class="follow_btn" data-id="{{brand_info.brand_id}}"><text class="fa fa-plus"></text>|关注</view>
+        </view>
+        <view class="brand_desc">{{brand_info.brand_desc}}</view>
+    </view>
+    <template is="goodsList" data="{{brand_list, showEndTip}}"></template>
+
+    <!-- loaading -->
+    <loading hidden="{{loading.hidden}}">加载中...</loading>
+    <toast hidden="{{loadMoreToastHidden}}" duration="3000" bindchange="loadMoreMsgTip">没有了</toast>
+</scroll-view>

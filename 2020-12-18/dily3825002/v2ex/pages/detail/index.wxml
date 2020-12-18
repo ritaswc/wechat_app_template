@@ -1,0 +1,3 @@
+<view>
+<view>{{detail.content}}</view>
+</view>

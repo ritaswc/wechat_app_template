@@ -1,0 +1,22 @@
+.scroll{
+    height: 100%;
+    font-size: 14px;
+}
+.item{
+    height: 80px;
+    border-bottom: 1px solid lightgray;
+    padding: 5px;
+}
+.author{
+    color: darkgray
+}
+.title{
+    font-size: 15px;
+    margin-top: 5px;
+}
+.author-avatar{
+    width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  
+}

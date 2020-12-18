@@ -1,0 +1,51 @@
+{
+	"pages":[
+		"pages/index/index",
+		"pages/shoppingCar/shoppingCar",
+		"pages/personalInfo/personalInfo",
+		"pages/customerService/customerService",
+		"pages/allblackGood/allblackGood",
+		"pages/hotGoods/hotGoods",
+		"pages/recommend/recommend",
+		"pages/blackGift/blackGift",
+		"pages/bookList/bookList"
+	],
+	"window":{
+	"navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "黑市商城",
+    "backgroundColor": "#000",
+    "backgroundTextStyle": "dark"
+	},
+	"tabBar":{
+		"color":"#666",
+		"selectedColor":"#000",
+		"borderStyle":"black",
+		"list":[
+			{
+				"pagePath":"pages/index/index",
+				"iconPath":"images/home.png",
+				"selectedIconPath":"images/s_home.png"
+			
+			},
+			{
+			    "pagePath":"pages/shoppingCar/shoppingCar",
+			    "iconPath":"images/car.png",
+			    "selectedIconPath":"images/s_car.png"
+	
+			},
+			{
+			    "pagePath":"pages/personalInfo/personalInfo",
+			    "iconPath":"images/info.png",
+			    "selectedIconPath":"images/s_info.png"
+	
+			},
+			{
+				"pagePath":"pages/customerService/customerService",
+				"iconPath":"images/servise.png",
+				"selectedIconPath":"images/s_servise.png"
+			}
+
+		]
+	}
+}

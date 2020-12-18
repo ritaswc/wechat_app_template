@@ -1,0 +1,161 @@
+<view class="main">
+  <view class="now">
+    <view class="head">
+      <text class="title">正在热映</text>
+      <text class="more">更多</text>
+    </view>
+    <view class="content">
+      <view class="render">
+        <image class="movieImg" src="../../images/example.jpg"></image>
+        <view class="name">湄公河行动</view>
+        <view class="star">⭐️⭐️⭐️⭐️⭐️</view>
+        <button class="button" bindtap="clickSeatFun">选座购票</button>
+      </view>
+      <view class="render">
+        <image class="movieImg" src="../../images/example.jpg"></image>
+        <view class="name">湄公河行动</view>
+        <view class="star">⭐️⭐️⭐️⭐️⭐️</view>
+        <button class="button" bindtap="clickSeatFun">选座购票</button>
+      </view>
+      <view class="render">
+        <image class="movieImg" src="../../images/example.jpg"></image>
+        <view class="name">湄公河行动</view>
+        <view class="star">⭐️⭐️⭐️⭐️⭐️</view>
+        <button class="button" bindtap="clickSeatFun">选座购票</button>
+      </view>
+    </view>
+  </view>
+  <view class="future">
+    <view class="head">
+      <text class="title">即将上映</text>
+      <text class="more">更多</text>
+    </view>
+    <view class="content">
+      <view class="render">
+        <image class="movieImg" src="../../images/example.jpg"></image>
+        <view class="name">湄公河行动</view>
+      </view>
+      <view class="render">
+        <image class="movieImg" src="../../images/example.jpg"></image>
+        <view class="name">湄公河行动</view>
+      </view>
+      <view class="render">
+        <image class="movieImg" src="../../images/example.jpg"></image>
+        <view class="name">湄公河行动</view>
+      </view>
+    </view>
+  </view>
+  <view class="movieRank">
+    <view class="head">
+      <text class="title">豆瓣新片榜</text>
+      <!--<text class="more">
+      更多</text>
+      -->
+    </view>
+    <view class="newContent">
+      <view class="newRender">
+        <image class="newMovieImg" src="../../images/img.jpg"></image>
+        <view class="newName">你的名字。/你的名字/君之名</view>
+        <view class="newDesc">
+          2016-08-26(日本) / 2016-11(中国大陆) / 神木隆之介 / 上白石萌音 / 长泽雅美 / 市原悦子 / 成田凌 / 悠木碧 / 岛崎信长 / 石川界人 / 谷花音 / 日本 / www.kiminona.com / 新海诚 / ...
+        </view>
+        <view class="pingjia">9.0(32423人评价)</view>
+      </view>
+    </view>
+    <view class="newContent">
+      <view class="newRender">
+        <image class="newMovieImg" src="../../images/img.jpg"></image>
+        <view class="newName">你的名字。/你的名字/君之名</view>
+        <view class="newDesc">
+        2016-08-26(日本) / 2016-11(中国大陆) / 神木隆之介 / 上白石萌音 / 长泽雅美 / 市原悦子 / 成田凌 / 悠木碧 / 岛崎信长 / 石川界人 / 谷花音 / 日本 / www.kiminona.com / 新海诚 / ...
+        </view>
+        <view class="pingjia">9.0(32423人评价)</view>
+      </view>
+    </view>
+    <view class="newContent">
+      <view class="newRender">
+        <image class="newMovieImg" src="../../images/img.jpg"></image>
+        <view class="newName">你的名字。/你的名字/君之名</view>
+        <view class="newDesc">
+        2016-08-26(日本) / 2016-11(中国大陆) / 神木隆之介 / 上白石萌音 / 长泽雅美 / 市原悦子 / 成田凌 / 悠木碧 / 岛崎信长 / 石川界人 / 谷花音 / 日本 / www.kiminona.com / 新海诚 / ...
+        </view>
+        <view class="pingjia">9.0(32423人评价)</view>
+      </view>
+    </view>
+    <view class="newContent">
+      <view class="newRender">
+        <image class="newMovieImg" src="../../images/img.jpg"></image>
+        <view class="newName">你的名字。/你的名字/君之名</view>
+        <view class="newDesc">
+        2016-08-26(日本) / 2016-11(中国大陆) / 神木隆之介 / 上白石萌音 / 长泽雅美 / 市原悦子 / 成田凌 / 悠木碧 / 岛崎信长 / 石川界人 / 谷花音 / 日本 / www.kiminona.com / 新海诚 / ...
+        </view>
+        <view class="pingjia">9.0(32423人评价)</view>
+      </view>
+    </view>
+    <view class="newContent">
+      <view class="newRender">
+        <image class="newMovieImg" src="../../images/img.jpg"></image>
+        <view class="newName">你的名字。/你的名字/君之名</view>
+        <view class="newDesc">
+        2016-08-26(日本) / 2016-11(中国大陆) / 神木隆之介 / 上白石萌音 / 长泽雅美 / 市原悦子 / 成田凌 / 悠木碧 / 岛崎信长 / 石川界人 / 谷花音 / 日本 / www.kiminona.com / 新海诚 / ...
+        </view>
+        <view class="pingjia">9.0(32423人评价)</view>
+      </view>
+    </view>
+    <view class="newContent">
+      <view class="newRender">
+        <image class="newMovieImg" src="../../images/img.jpg"></image>
+        <view class="newName">你的名字。/你的名字/君之名</view>
+        <view class="newDesc">
+        2016-08-26(日本) / 2016-11(中国大陆) / 神木隆之介 / 上白石萌音 / 长泽雅美 / 市原悦子 / 成田凌 / 悠木碧 / 岛崎信长 / 石川界人 / 谷花音 / 日本 / www.kiminona.com / 新海诚 / ...
+        </view>
+        <view class="pingjia">9.0(32423人评价)</view>
+      </view>
+    </view>
+    <view class="newContent">
+      <view class="newRender">
+        <image class="newMovieImg" src="../../images/img.jpg"></image>
+        <view class="newName">你的名字。/你的名字/君之名</view>
+        <view class="newDesc">
+        2016-08-26(日本) / 2016-11(中国大陆) / 神木隆之介 / 上白石萌音 / 长泽雅美 / 市原悦子 / 成田凌 / 悠木碧 / 岛崎信长 / 石川界人 / 谷花音 / 日本 / www.kiminona.com / 新海诚 / ...
+        </view>
+        <view class="pingjia">9.0(32423人评价)</view>
+      </view>
+    </view>
+    <view class="newContent">
+      <view class="newRender">
+        <image class="newMovieImg" src="../../images/img.jpg"></image>
+        <view class="newName">你的名字。/你的名字/君之名</view>
+        <view class="newDesc">
+        2016-08-26(日本) / 2016-11(中国大陆) / 神木隆之介 / 上白石萌音 / 长泽雅美 / 市原悦子 / 成田凌 / 悠木碧 / 岛崎信长 / 石川界人 / 谷花音 / 日本 / www.kiminona.com / 新海诚 / ...
+        </view>
+        <view class="pingjia">9.0(32423人评价)</view>
+      </view>
+    </view>
+    <view class="newContent">
+      <view class="newRender">
+        <image class="newMovieImg" src="../../images/img.jpg"></image>
+        <view class="newName">你的名字。/你的名字/君之名</view>
+        <view class="newDesc">
+        2016-08-26(日本) / 2016-11(中国大陆) / 神木隆之介 / 上白石萌音 / 长泽雅美 / 市原悦子 / 成田凌 / 悠木碧 / 岛崎信长 / 石川界人 / 谷花音 / 日本 / www.kiminona.com / 新海诚 / ...
+        </view>
+        <view class="pingjia">9.0(32423人评价)</view>
+      </view>
+    </view>
+    <view class="newContent">
+      <view class="newRender">
+        <image class="newMovieImg" src="../../images/img.jpg"></image>
+        <view class="newName">你的名字。/你的名字/君之名</view>
+        <view class="newDesc">
+        2016-08-26(日本) / 2016-11(中国大陆) / 神木隆之介 / 上白石萌音 / 长泽雅美 / 市原悦子 / 成田凌 / 悠木碧 / 岛崎信长 / 石川界人 / 谷花音 / 日本 / www.kiminona.com / 新海诚 / ...
+        </view>
+        <view class="pingjia">9.0(32423人评价)</view>
+      </view>
+    </view>
+  </view>
+  <view class="copyRight">
+    <view>© 2005－2016 egret.com, all rights reserved</view>
+  </view>
+</view>
+
+

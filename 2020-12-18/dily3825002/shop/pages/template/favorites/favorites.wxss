@@ -1,0 +1,71 @@
+.collect_view {
+    height: 13.25rem;
+    padding-top: 2.2rem;
+    position: relative;
+    overflow: hidden;
+    width:100%;
+    margin: 0 auto;
+}
+.collect_view .title {
+    background: #F2F2F2;
+    margin: 0;
+    height: 2.25rem;
+    line-height: 2.25rem;
+    text-align: center;
+    font-size: .8rem;
+    color: #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+.collect_view .collect {
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    z-index: 1;
+    overflow: hidden;
+}
+.collect_view .collect .createCollectRow {
+    height: 2.22rem;
+    line-height: 2.22rem;
+    background: #fff;
+    position: relative;
+}
+.collect_view .collect .createCollectRow .createCollectInput {
+    padding-right: 2.22rem;
+    height: 2.22rem;
+}
+.collect_view .collect .createCollectRow .createCollectInput .input {
+    width: 100%;
+    border: none;
+    font-size: .7rem;
+    color: #999;
+    padding: .5rem;
+    box-sizing: border-box;
+    height:100%;
+}
+.collect_view .collect .createCollectRow .createCollectBtn{
+    width: 2.22rem;
+    height: 2.22rem;
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+    color: #BBB;
+    text-align: center;
+    line-height: 2.22rem;
+    background: none;
+    border:none;
+}
+.collect_view .collect .ul .li_view {
+    height: 2.22rem;
+    line-height: 2.22rem;
+    padding-left: 1rem;
+    background: #fff;
+    border-top: #ccc solid 1px;
+    font-size: .7rem;
+}
+.collect_view .collect .ul .li_view:last-child {
+    border-bottom: #ccc solid 1px;
+}

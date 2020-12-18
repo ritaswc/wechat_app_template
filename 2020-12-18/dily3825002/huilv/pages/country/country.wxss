@@ -1,0 +1,38 @@
+.render {
+    width: 25%;
+    height: 220rpx;
+    text-align: center;
+    margin-top: 30rpx;
+    /*margin-left: 5rpx;*/
+    float: left;
+    line-height: 35rpx;
+}
+
+
+/*.text {
+    width: 100rpx;
+    text-align: center;
+}*/
+
+.country {
+    /*margin-left: 30rpx;*/
+    width: 120rpx;
+    height: 120rpx;
+    /*float: left;*/
+    text-align: center;
+}
+
+.country-en {
+    width: 190rpx;
+    height: 40rpx;
+    text-align: center;
+    font-size: 10rpx;
+}
+
+.country-cn {
+    width: 190rpx;
+    height: 40rpx;
+    text-align: center;
+    font-size: 10rpx;
+    color: #8b9096;
+}
