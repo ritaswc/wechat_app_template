@@ -1,0 +1,182 @@
+/* pages/userhome/buyer_order/buyer_order.wxss */
+/*全部订单*/
+.allOrder{
+	background: #fff;
+	height: 100rpx;
+	line-height: 100rpx;
+	border-bottom: 1rpx solid #f3f3f3;
+}
+.allOrder .allOrder-left{
+	margin-left: 20rpx;
+	float: left;
+}
+.allOrder .allOrder-right{
+	font-size: 26rpx;
+	color: #666;
+	float: right;
+	padding-right: 60rpx;
+	background: url(../../../images/member_list_arrow.png) no-repeat 90% center;
+	background-size: 30rpx 30rpx;
+}
+
+/*头部导航*/
+.navTopList{
+	width: 100%;
+	height: 160rpx;
+	display: flex;
+	background: #fff;
+	border-bottom: 1rpx solid #f3f3f3;
+}
+.navTopList .order-info{
+	padding-top: 30rpx;
+	text-align: center;
+}
+.navTopList .order-info view{
+	width: 56rpx;
+	height: 56rpx;
+	margin-left:31rpx;
+}
+.navTopList .order-info text{
+	font-size: 34rpx;
+}
+.navTopList .order-info text.active{
+	color:#ff6662;
+}
+.navTopList .ywc{
+	flex:1;
+}
+.navTopList .ywc .ywc-icon{
+	background: url(../../../images/icon_jywc.png) no-repeat center center;
+	background-size: 56rpx 56rpx;
+}
+.navTopList .dfk{
+	flex:1;
+}
+.navTopList .dfk .dfk-icon{
+	background: url(../../../images/icon_dfk.png) no-repeat center center;
+	background-size: 56rpx 56rpx;
+}
+.navTopList .dfh{
+	flex:1;
+}
+.navTopList .dfh .dfh-icon{
+	background: url(../../../images/icon_dfh.png) no-repeat center center;
+	background-size: 56rpx 56rpx;
+}
+.navTopList .dsh{
+	flex:1;
+}
+.navTopList .dsh .dsh-icon{
+	background: url(../../../images/icon_dsh.png) no-repeat center;
+	background-size: 56rpx 56rpx;
+}
+.navTopList .yqx{
+	flex:1;
+}
+.navTopList .yqx .yqx-icon{
+	background: url(../../../images/icon_yqx.png) no-repeat center;
+	background-size: 56rpx 56rpx;
+}
+.navTopList .tkz{
+	flex:1;
+}
+.navTopList .tkz .tkz-icon{
+	background: url(../../../images/icon_tkz.png) no-repeat center center;
+	background-size: 56rpx 56rpx;
+}
+
+.navTopList .ywc .ywc-icon.active{
+	background: url(../../../images/icon_jywc_active.png) no-repeat center center;
+	background-size: 56rpx 56rpx;
+}
+.navTopList .dfk .dfk-icon.active{
+	background: url(../../../images/icon_dfk_active.png) no-repeat center center;
+	background-size: 56rpx 56rpx;
+}
+.navTopList .dfh .dfh-icon.active{
+	background: url(../../../images/icon_dfh_active.png) no-repeat center center;
+	background-size: 56rpx 56rpx;
+}
+.navTopList .dsh .dsh-icon.active{
+	background: url(../../../images/icon_dsh_active.png) no-repeat center center;
+	background-size: 56rpx 56rpx;
+}
+.navTopList .yqx .yqx-icon.active{
+	background: url(../../../images/icon_tkz_active.png) no-repeat center center;
+	background-size: 56rpx 56rpx;
+}
+.navTopList .tkz .tkz-icon.active{
+	background: url(../../../images/icon_tkz_active.png) no-repeat center center;
+	background-size: 56rpx 56rpx;
+}
+
+/*订单列表*/
+.orderDetails{
+	background: #fff;
+}
+.orderListTitle{
+	height: 100rpx;
+	line-height: 100rpx;
+	border-bottom: 1rpx solid #f3f3f3;
+}
+.orderListTitle .userImg{
+	float: left;
+	width: 70rpx;
+	height: 70rpx;
+	border-radius: 35rpx;
+	margin:15rpx;
+}
+.orderListTitle .userImg image{
+	border-radius: 35rpx;
+	width: 100%;
+	height: 100%;
+}
+.orderListTitle .userName{
+	padding-right: 50rpx;
+	background: url(../../../images/member_list_arrow.png) no-repeat 90% center;
+	background-size: 35rpx 35rpx;
+}
+.orderListTitle .orderStatus{
+	float: right;
+	margin-right: 20rpx;
+	color: #2f7b27;
+	font-size: 34rpx;
+}
+.orderListDetails{
+	display: flex;
+	height: 180rpx;
+	border-bottom: 1rpx solid #f3f3f3;
+}
+.orderListDetails .productImg{
+	flex: 1;
+	height: 140rpx;
+	margin-top: 20rpx;
+	margin-left: 20rpx;
+}
+.orderListDetails .productImg image{
+	width: 100%;
+	height: 100%;
+}
+.orderListDetails .productInfo{
+	flex: 4;
+	padding: 20rpx 30rpx;
+}
+.orderListDetails .productInfo .productTitle{
+	overflow: hidden;
+	text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.orderListDetails .productInfo .productQuantity{
+	float: right;
+}
+.productCount{
+	height: 80rpx;
+	line-height: 80rpx;
+	border-bottom: 20rpx solid #f3f3f3;
+}
+.productCount>view{
+	float: right;
+	margin-right: 30rpx;
+}

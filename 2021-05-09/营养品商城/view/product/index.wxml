@@ -1,0 +1,66 @@
+<import src="/component/quantity/index.wxml" />
+<view class="container">
+  <view class="header"></view>
+  <view class="page-section page-section-spacing swiper">
+    <swiper indicator-dots="true" indicator-active-color="#c81623" autoplay="false" interval="5000" duration="500" style="height: {{window_width}}px;">
+      <swiper-item wx:for="{{product_image_list}}" wx:for-item="image" wx:key="{{index}}">
+        <image style="width: 100%; height: {{window_width}}px; background-color: #ffffff;" src="{{image}}" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="product-info">
+    <view class="product-info-name">{{product_name}}</view>
+    <view class="product-info-price">￥{{product_price}}</view>
+  </view>
+  <view class="weui-cells weui-cells_after-title margin-top">
+    <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">已选：{{product_quantity.quantity}}个</view>
+    </view>
+    <view class="weui-media-box weui-media-box_appmsg" style="height: 33px;">
+      <template is="zan-quantity" data="{{ ...product_quantity, componentId: 'product_quantity' }}" />
+    </view>
+  </view>
+  <view class="weui-tab margin-top">
+    <view class="weui-navbar product-detail">
+      <view id="0" class="weui-navbar__item {{tab_index == 0 ? 'weui-bar__item_on' : ''}}" bindtap="handleTab">
+        <view class="weui-navbar__title">商品介绍</view>
+      </view>
+      <view id="1" class="weui-navbar__item {{tab_index == 1 ? 'weui-bar__item_on' : ''}}" bindtap="handleTab">
+        <view class="weui-navbar__title">用户评价</view>
+      </view>
+      <view class="weui-navbar__slider" style="width: {{slider_width}}px; left: {{slider_left}}px; transform: translateX({{slider_offset}}px); -webkit-transform: translateX({{slider_offset}}px);"></view>
+    </view>
+    <view class="weui-tab__panel" style="overflow: visible;">
+      <view class="weui-tab__content" hidden="{{tab_index != 0}}">
+        <block wx:for="{{product_content}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+          <block wx:if="{{item.type == 'img'}}">
+            <image data-index="{{index}}" style="width: 100%; height: {{item.attr.height ? item.attr.height : 0}}px" src="{{item.attr.src}}" bindload="handleImageLoad"></image>
+          </block>
+        </block>
+      </view>
+      <view class="weui-tab__content" hidden="{{tab_index != 1}}"></view>
+    </view>
+  </view>
+  <view style="height: 50px;"></view>
+  <view class="footer">
+    <view class="footer-cart" bindtap="handleCart">
+      <view class="footer-icon">
+        <image class="footer-icon-image" src="/image/cart.png" />
+        <view class="weui-badge" style="position: absolute; top: 50%; left: 50%; margin-top: -16px; margin-left: 3px;" wx:if="{{cart_count > 0}}">{{cart_count}}</view>
+      </view>
+      购物车
+    </view>
+    <view class="footer-favor" bindtap="handleFavor">
+      <view class="footer-icon">
+        <image class="footer-icon-image" src="/image/favor.png" />
+      </view>
+      收藏
+    </view>
+    <view class="footer-add-cart" bindtap="handleAddCart">
+      加入购物车
+    </view>
+    <view class="footer-buy" bindtap="handleBuy">
+      立即购买
+    </view>
+  </view>
+</view>

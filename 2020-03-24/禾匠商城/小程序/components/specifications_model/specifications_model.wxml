@@ -1,0 +1,29 @@
+<view bindtap="hideModal" catchtouchmove="preventTouchMove" id="modal-mask" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+    <view bindtap="close_box">
+        <image class="close3" src="{{__wxapp_img.store.close3.url}}"></image>
+    </view>
+    <view class="modal-title" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{goods_name}}</view>
+    <scroll-view scrollY="true" style="height: 100%;">
+        <view class="modal-content">
+            <view>
+                <view class="attr-group" wx:if="{{attr_group.attr_list.length>0}}" wx:for="{{attr_group_list}}" wx:for-item="attr_group" wx:key="{{attr_group.id}}">
+                    <view class="attr-group-name">{{attr_group.attr_group_name}} :</view>
+                    <view class="attr-list">
+                        <text bindtap="attrClick" class="attr_name {{item.checked?'select_active':''}} {{item.is_attr_num?'attr_num_0':''}}" data-group-id="{{attr_group.attr_group_id}}" data-id="{{item.attr_id}}" wx:for="{{attr_group.attr_list}}" wx:key="{{item.id}}">{{item.attr_name}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="modal-footer">
+        <view class="guigeprice" wx:if="{{check_goods_price}}">￥{{check_goods_price}}</view>
+        <view class="guigeprice" wx:else>￥{{temporaryGood.price}}</view>
+        <view class="btn-car_num" wx:if="{{check_num}}">
+            <image bindtap="guigejian" class="carStandard" src="{{__wxapp_img.store.jian.url}}"></image>
+            <input bindinput="goodNumChange" class="carStandard good_num" id="num" maxlength="999" type="number" value="{{check_num}}"></input>
+            <image bindtap="onConfirm" class="carStandard" src="{{__wxapp_img.store.jia.url}}"></image>
+        </view>
+        <view bindtap="onConfirm" class="btn-car" data-status="confirm" style="background:#FF4544;color:#FFFFFF;" wx:else>加入购物车</view>
+    </view>
+</view>

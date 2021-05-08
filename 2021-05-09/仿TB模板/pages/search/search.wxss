@@ -1,0 +1,189 @@
+.container{
+  width: 100%;
+  overflow-y:hidden;
+}
+.header {
+  display: -webkit-flex;
+  padding: 20rpx;
+  background: #fff;
+}
+
+.header:after {
+  position: absolute;
+  top: 56px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 1px;
+  background: #dedede;
+  content: '';
+  z-index: 999;
+}
+
+.header .icon {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: top;
+}
+
+.header .search {
+  -webkit-flex: 1;
+  color: #000;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  background: #eee;
+}
+
+.header wx-input {
+  margin-left: 50rpx;
+  margin-top: -2rpx;
+  width: 80%;
+}
+
+.search wx-icon {
+  margin-top: -38rpx;
+  padding-right: 6rpx;
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  z-index: 99;
+}
+
+.header .search .icon {
+  float: left;
+  margin: 1rpx 5rpx 0 0;
+}
+
+.header button {
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}
+
+.result {
+  padding: 0;
+}
+
+.icons {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: top;
+  float: left;
+  margin: 1rpx 5rpx 0 0;
+}
+
+.list-search {
+  position: fixed;
+  top: 108rpx;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  list-style: none;
+  z-index: 99;
+}
+
+.div-after {
+  position: relative;
+  overflow: hidden;
+  padding: 20rpx 24rpx;
+}
+
+.div-span {
+  display: inline-block;
+  float: left;
+  margin: 4rpx 5rpx 0 0;
+  padding-left: 10rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.div-em {
+  display: inline-block;
+  float: right;
+  font-size: 28rpx;
+  font-style: normal;
+  color: #333;
+}
+
+.hot-search {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hot-title {
+  line-height: 2;
+  padding: 24rpx;
+  margin: 0;
+  font-size: 32rpx;
+  font-weight: normal;
+  color: #666;
+}
+
+.hot-list {
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.hot-list:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 200%;
+  height: 1rpx;
+  border-top: #dedede solid 1rpx;
+  content: '';
+}
+
+.hot-ul {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 0 -1rpx;
+  list-style: none;
+}
+
+.hot-li {
+  display: inline-block;
+  float: left;
+  position: relative;
+  width: 33.333%;
+  padding: 24rpx 0;
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.hot-li:before {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 1rpx;
+  height: 200%;
+  border-left: #dedede solid 1rpx;
+  content: '';
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+.hot-li:after {
+  position: absolute;
+  bottom: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  width: 100%;
+  height: 1rpx;
+  background: #dedede;
+  content: '';
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+.hot-span {
+  display: block;
+  cursor: pointer;
+}

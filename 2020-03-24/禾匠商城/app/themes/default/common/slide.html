@@ -1,0 +1,35 @@
+<div id="carousel-container" class="carousel slide">
+	{php $slides = app_slide(array('multiid'=>$multiid));}
+	<ol class="carousel-indicators">
+		{php $slideNum = 0;}
+		{loop $slides $row}
+		<li data-target="#carousel-container" data-slide-to="{$slideNum}"{if $slideNum == '0'} class="active"{/if}></li>
+		{php $slideNum++;}
+		{/loop}
+	</ol>
+
+	<div class="carousel-inner" role="listbox">
+		{loop $slides $row}
+		<div class="item{if $slides[0] == $row} active{/if}">
+			<a href="{$row['url']}">
+				<img src="{$row['thumb']}" title="{$row['title']}" style="width:100%; vertical-align:middle;">
+			</a>
+			<div class="carousel-caption">
+				{$row['title']}
+			</div>
+		</div>
+		{/loop}
+	</div>
+</div>
+<script>
+	require(['bootstrap', 'hammer'], function($, Hammer){
+		$('#carousel-container').carousel();
+		var mc = new Hammer($('#carousel-container').get(0));
+		mc.on("panleft", function(ev) {
+			$('#carousel-container').carousel('next');
+		});
+		mc.on("panright", function(ev) {
+			$('#carousel-container').carousel('prev');
+		});
+	});
+</script>

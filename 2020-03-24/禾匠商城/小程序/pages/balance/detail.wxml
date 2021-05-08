@@ -1,0 +1,41 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="detail-block-1 flex-y-center">
+            <view wx:if="{{order_type=='r'}}">
+                <view class="flex-row">
+                    <view class="flex-grow-0 t-color">交易金额</view>
+                    <view class="flex-grow-1 {{list.flag==0?'record-3':'record-4'}}">{{list.pay_price}}</view>
+                </view>
+                <view class="flex-row">
+                    <view class="flex-grow-0 t-color">赠送金额</view>
+                    <view class="flex-grow-1 {{list.flag==0?'record-3':'record-4'}}">{{list.send_price}}</view>
+                </view>
+            </view>
+            <view class="flex-row" wx:else>
+                <view class="flex-grow-0 t-color">交易金额</view>
+                <view class="flex-grow-1 {{list.flag==0?'record-3':'record-4'}}">{{list.pay_price}}</view>
+            </view>
+        </view>
+        <view class="detail-block-1">
+            <view class="flex-row" style="margin-top:16rpx;">
+                <view class="flex-grow-0 t-color">交易时间</view>
+                <view class="flex-grow-1">{{list.time}}</view>
+            </view>
+            <view class="flex-row" style="margin-top:32rpx;">
+                <view class="flex-grow-0 t-color">交易内容</view>
+                <view class="flex-grow-1">{{list.content}}</view>
+            </view>
+            <view class="flex-row" style="margin-top:32rpx;margin-bottom:16rpx;" wx:if="{{list.order_no}}">
+                <view class="flex-grow-0 t-color">交易单号</view>
+                <view class="flex-grow-1">{{list.order_no}}</view>
+            </view>
+            <view class="flex-row" style="padding-top:16rpx;margin-bottom:16rpx;" wx:if="{{list.order_refund_no}}">
+                <view class="flex-grow-0 t-color">退款单号</view>
+                <view class="flex-grow-1">{{list.order_refund_no}}</view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

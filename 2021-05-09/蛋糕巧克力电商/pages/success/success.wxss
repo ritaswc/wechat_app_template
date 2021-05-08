@@ -1,0 +1,31 @@
+/* pages/success/success.wxss */
+
+.success_tb {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.p_font {
+  text-indent: 5%;
+  line-height: 2em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: 'microsoft yahei', Verdana, Arial, Helvetica, sans-serif;
+}
+
+.p_href {
+  color: blue;
+}
+.p_gocake{display: flex;}
+.p_jt {
+  width: 0;
+  height: 0;
+  border: 0.8em solid;
+  border-color: transparent transparent transparent green;
+  margin:5px 0 0 2em;
+}
+
+.success_tz {
+  text-align: center;
+  display: flex;
+}

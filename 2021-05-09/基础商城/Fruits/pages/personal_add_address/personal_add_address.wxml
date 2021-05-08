@@ -1,0 +1,52 @@
+<view class="address">
+        	<form>
+			<view class="address_li">
+            <view style="float:left;margin-top:10px;margin-right:10px;">收 货 人 :</view>
+            <input type="text" placeholder="请填写收货人" class="add_man" />        
+            </view>
+            <view class="address_li">
+            <view style="float:left;margin-top:10px;margin-right:10px;">手 机 号 :</view>
+            <input type="text" placeholder="请填写手机号" class="add_man" />        
+            </view>
+            <view class="address_li">
+            <view style="float:left;margin-top:10px;margin-right:10px;">选择地址 :</view>
+            <input type="text" placeholder="请填写收货人" class="add_man" />        
+            </view>
+            <view class="address_li">
+            <view style="float:left;margin-top:10px;margin-right:10px;">详细地址 :</view>
+            <input type="text" placeholder="请填写详细地址" class="add_man" />        
+            </view>
+            <view class="address_li">
+            <view style="float:left;margin-top:10px;margin-right:10px;">身份证号 :</view>
+            <input type="text" placeholder="请填写身份证号" class="add_man" />        
+            </view>
+            <view class="address_li">
+            <view style="float:left;margin-top:10px;margin-right:10px;">邮政编码 :</view>
+            <input type="text" placeholder="请填写邮政编码" class="add_man" />        
+            </view>
+          <!--  <view class="address_li" style="margin-top:25px;">
+            <view style="margin-top:25px;float:left">手机号 :</view>
+            <input type="number" placeholder="请填写手机号" class="add_phoe" />
+            </view>
+             <view class="address_li">
+            <label>详细地址 :</label>
+            <input type="text" placeholder="请填写详细地址" class="add_xiangxi" />
+            </view>
+             <view class="address_li">
+            <label>身份证号 :</label>
+            <input type="number" placeholder="请填写身份证号" class="add_card" />
+            </view>
+             <view class="address_li">
+            <label>邮政编码 :</label>
+            <input type="number" placeholder="请填写邮政编码" class="add_enail" max="6" />
+            </view>-->
+            <!--end-->
+           <view class="address_btn">
+            	<button type="submit" class="add_btn" type="warn">保   存</button>
+            </view>
+            <view class="address_btn">
+            	<button type="button" class="qx_btn">取   消</button>
+            </view>
+            </form>
+            <!--end--> 
+</view>

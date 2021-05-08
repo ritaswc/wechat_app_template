@@ -1,0 +1,193 @@
+.head {
+  padding: 30rpx;
+  display: flex;
+  height: 124rpx;
+  align-items: center;
+}
+
+.shop {
+  flex: 1;
+}
+
+.name {
+  font-size: 30rpx;
+}
+
+.adress {
+  font-size: 24rpx;
+  color: #a1a1a1;
+  margin-top: 16rpx;
+}
+
+.line {
+  height: 50rpx;
+  width: 4rpx;
+  background-color: #e5e5e5;
+  margin-right: 26rpx;
+}
+
+.map {
+  display: flex;
+  align-items: center;
+}
+
+.map-let {
+  font-size: 22rpx;
+  color: #9d9d9d;
+  text-align: center;
+}
+
+.movies {
+  white-space: nowrap;
+}
+
+.movies-item {
+  display: inline-block;
+  margin: 0 10rpx;
+}
+.select{
+  position: relative;
+}
+.backImg{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -10;
+  filter: blur(10px);
+}
+.movies-pic{
+  margin-top:46rpx; 
+  width:152rpx;
+   height:216rpx
+}
+.movies-pic-active{
+  margin-top: 20rpx;
+  height: 242rpx;
+  width: 172rpx;
+  border: 2rpx #fff solid;
+
+}
+.t-movie{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 112rpx;
+  border-bottom: 1rpx #DCDCDC solid;
+}
+.t-tr{
+  display: flex;
+  margin-top: 26rpx;
+
+}
+.t-title{
+  font-size: 30rpx;
+
+
+}
+.t-rating{
+  font-size: 24rpx;
+  color: #FFB400;
+  margin-left: 10rpx;
+
+
+}
+.t-jiamjie{
+  color: #A8A8A8;
+  font-size: 26rpx;
+  margin-top: 12rpx;
+}
+.selectDate{
+  display: flex;
+  font-size: 24rpx;
+  border-bottom: 1rpx #DCDCDC solid;
+
+}
+.oneday{
+width: 196rpx;
+height: 84rpx;
+text-align: center;
+line-height: 84rpx;
+
+}
+.activeday{
+  color: #EF473D;
+  border-bottom: 2rpx #EF4238 solid;
+  
+}
+.times{
+  padding-left: 26rpx;
+}
+.time{
+  display: flex;
+  border-bottom: 1rpx #DCDCDC solid;
+  height: 120rpx;
+  align-items: center;
+
+}
+.glr{
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 14rpx;
+}
+.start{
+  font-size: 32rpx;
+}
+.effects{
+  font-size: 24rpx;
+}
+.eg{
+  margin-left: 54rpx;
+  flex: 1;
+}
+.pd{
+  display: flex;
+  align-items: center;
+}
+.room{
+  margin-top: 20rpx;
+}
+
+.btickets{
+  width: 90rpx;
+  height: 50rpx;
+  background-color: #EF4238;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  margin-right: 22rpx;
+  margin-left: 68rpx;
+  border-radius: 6rpx;
+
+}
+.priceF{
+  font-size: 32rpx;
+  color: #EF4238;
+}
+.priceL{
+  font-size: 20rpx;
+  color: #EF4238;
+}
+.discount{
+  font-size: 20rpx;
+  margin-left: 10rpx;
+}
+.disF{
+  line-height: 28rpx;
+  padding: 6rpx;
+  background-color: #FFB400;
+  color: #fff;
+  border-radius: 4rpx;
+  border-right: none;
+  
+
+}
+.disL{
+  padding: 4rpx;
+  border: 2rpx #FFB400 solid;
+  border-left: none;
+  border-radius: 4rpx;
+  color: #FFC12B;
+
+}

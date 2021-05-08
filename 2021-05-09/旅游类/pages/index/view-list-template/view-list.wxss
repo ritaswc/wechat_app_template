@@ -1,0 +1,130 @@
+.view-info .img {
+  position: relative;
+  height: 316rpx;
+  width: 100%;
+}
+
+.view-info .img image {
+  width: 100%;
+  height: 100%;
+}
+
+.view-info .img .price {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 238rpx;
+  height: 68rpx;
+  background: rgba(177, 173, 169, 0.8);
+  line-height: 68rpx;
+}
+
+.view-info .img .price .now-price {
+  margin-left: 32rpx;
+  color: #fff;
+  font-size: 18px;
+}
+
+.view-info .img .price .old-price {
+  position: relative;
+  margin-left: 18rpx;
+  font-size: 16px;
+  color: #666;
+}
+
+.view-info .img .price .old-price .del {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  display: block;
+  background: #666;
+}
+
+.desc {
+  padding: 14rpx 32rpx;
+  font-size: 26rpx;
+  color: #666;
+  line-height: 46rpx;
+  max-height: 160rpx;
+  height: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.desc .title {
+  font-weight: bold;
+  font-family: "微软雅黑";
+}
+
+.desc .info {
+ 
+  margin-left: 26rpx;
+  font-weight: bold;
+}
+.desc .info:after{
+   content: "...";
+  position: absolute;
+  right: 32rpx;
+  bottom: 0;
+  padding: 3rpx;
+  background: #fff;
+  color: #666;
+}
+
+.other {
+  padding: 32rpx 32rpx 36rpx;
+  display: flex;
+  color: #666;
+  font-weight: bold;
+}
+
+.other>view {
+  display: flex;
+}
+
+.other .tag {
+  padding: 10rpx 14rpx;
+  background: #f7f5ef;
+  font-size: 22rpx;
+  border-radius: 5px;
+}
+
+.other .hot {
+  background: #faa99a;
+  color: #fff;
+}
+
+.other .free {
+  background: #c0d7a8;
+  color: #fff;
+}
+
+.other .position {
+  display: flex;
+  background: #f7f5ef;
+  font-size: 22rpx;
+  border-radius: 5px;
+  padding: 10rpx 14rpx;
+}
+
+.other .position .position-tag {
+  margin-left: 8rpx;
+}
+
+.other .position .icon {
+  height: 26rpx;
+  width: 22rpx;
+  background: url(/images/home/img.png)no-repeat;
+  background-size: 158rpx 40rpx;
+}
+.other .tag + .tag {
+  margin-left: 16rpx;
+}
+
+.other .seller {
+  margin-left: auto;
+  font-size: 22rpx;
+}

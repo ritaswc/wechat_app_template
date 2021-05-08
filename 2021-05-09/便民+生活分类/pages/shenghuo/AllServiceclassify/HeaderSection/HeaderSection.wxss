@@ -1,0 +1,68 @@
+/* pages/shenghuo/AllServiceclassify/HeaderSection/HeaderSection.wxss */
+
+@import "../AllServiceclassifyCell/AllServiceclassifyCell.wxss";
+
+.listtitle {
+  position: relative;
+  height: 22px;
+  margin: 0px 14px;
+  padding: 11px 0px;
+  border-bottom: solid #efefef 1px;
+  border-top: solid #efefef 1px;
+  display: flex;
+  align-items: center;
+}
+
+.blue-bd-left {
+  display: inline-block;
+  width: 3px;
+  height: 16px;
+  margin-right: 6px;
+  position: relative;
+  /*top: 4px;*/
+  background-color: #0164a6;
+}
+
+.listTitle-content {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 12px;
+  width: 120px;
+}
+
+.pindao {
+  position: absolute;
+  right: 12px;
+  vertical-align: middle;
+  text-align: right;
+  font-size: 11px;
+  margin-right: 12px;
+}
+
+.rightArrow {
+  position: absolute;
+  right: 8px;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+}
+
+/***********grid view**************/
+
+.fuwufl-box {
+  width: 718rpx;
+  padding: 0px;
+  text-align: center;
+  background: #fff;
+}
+
+.fuwufl{
+  /*border: solid red 1px;
+  box-sizing: border-box;*/
+  width: 100%;
+  padding: 0px 8px 6px 8px;
+  margin: 0px auto;
+  text-align: justify;
+}
+

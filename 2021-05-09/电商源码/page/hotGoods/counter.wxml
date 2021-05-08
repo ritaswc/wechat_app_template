@@ -1,0 +1,54 @@
+<view class="sec-kill">
+    <view class="received-wrapper">
+        <view wx:if="{{address!=null}}" class="received" data-id = "{{address.id}}" bindtap = "editAddr">
+            <view class="top-sec border-gray">
+                <view class="deli-title getter">
+                    <view class="right-arrow">
+                        <image src="../../image/people.png" class="arrow" width="355" height="150"/>
+                    </view>
+                    配送至：
+                </view>
+                <view class="user-info">
+                    <view class = " inline-block">{{address.recipient}}  </view>
+                    <view class = " inline-block">{{}} {{address.telephone}}</view>
+                </view>
+                <view class = "address-detail">{{address.province}} {{address.city}} {{address.area}} {{address.address}}</view>
+            </view>
+        </view>
+        <view wx:if="{{address == null}}" class="no-address-wrapper">
+            <view class="no-address" bindtap = "goToAddr">
+                添加收货地址
+            </view>
+        </view>
+    </view>
+    <view class="list-detail" bindtap="">
+        <view class="list-sec">
+            <view class="left-sec">
+                <image class="sec-img" src="{{image}}" background-size="cover"></image>
+            </view>
+            <view class="right-sec">
+                <view class="title">{{title}}</view>
+                <view class="description">{{tagline}}</view>
+                <view class="pirce-wrapper clearfix">
+                    <view class="inline-block now">￥{{price}}</view><!--
+                        -->
+                    <view class="inline-block num">X{{number}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="delivery center-sec">
+        <view class="left inline-block">配送方式</view>
+        <view class="right inline-block">快递 免邮</view>
+    </view>
+    <view class="bottom-sec">
+        <view class="left-sec inline-block">
+            <view class="inline-block">合计:</view>
+            <view class="inline-block red-word">￥{{price*number}}</view>
+        </view>
+        <view class="right-sec inline-block">
+            <button bindtap = "goPay">确认</button>
+        </view>
+    </view>
+</view>

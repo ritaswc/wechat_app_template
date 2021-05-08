@@ -1,0 +1,2729 @@
+[{
+	"scene_name": "探索第一章困难",
+	"team_list": [{
+		"name": "天邪鬼绿1",
+		"index": 1,
+		"monsters": [{
+			"name": "天邪鬼绿",
+			"count": 1
+			},{
+			"name": "跳跳犬",
+			"count": 3
+			}]
+		},{
+		"name": "天邪鬼绿2",
+		"index": 2,
+		"monsters": [{
+			"name": "天邪鬼绿",
+			"count": 1
+			},{
+			"name": "提灯小僧",
+			"count": 2
+			}]
+		},{
+		"name": "提灯小僧1",
+		"index": 3,
+		"monsters": [{
+			"name": "天邪鬼绿",
+			"count": 2
+			},{
+			"name": "提灯小僧",
+			"count": 1
+			}]
+		},{
+		"name": "提灯小僧2",
+		"index": 4,
+		"monsters": [{
+			"name": "灯笼鬼",
+			"count": 2
+			},{
+			"name": "提灯小僧",
+			"count": 1
+			}]
+		},{
+		"name": "首领",
+		"index": 5,
+		"monsters": [{
+			"name": "九命猫",
+			"count": 3
+			}]
+		}]
+},{
+	"scene_name": "探索第二章困难",
+	"team_list": [{
+		"name": "帚神",
+		"index": 1,
+		"monsters": [{
+			"name": "帚神",
+			"count": 1
+			},{
+			"name": "寄生魂",
+			"count": 1
+			},{
+			"name": "盗墓小鬼",
+			"count": 1
+			}]
+		},{
+		"name": "盗墓小鬼1",
+		"index": 2,
+		"monsters": [{
+			"name": "寄生魂",
+			"count": 2
+			},{
+			"name": "盗墓小鬼",
+			"count": 1
+			}]
+		},{
+		"name": "盗墓小鬼2",
+		"index": 3,
+		"monsters": [{
+			"name": "灯笼鬼",
+			"count": 2
+			},{
+			"name": "盗墓小鬼",
+			"count": 1
+			}]
+		},{
+		"name": "寄生魂1",
+		"index": 4,
+		"monsters": [{
+			"name": "灯笼鬼",
+			"count": 2
+			},{
+			"name": "寄生魂",
+			"count": 1
+			}]
+		},{
+		"name": "寄生魂2",
+		"index": 5,
+		"monsters": [{
+			"name": "盗墓小鬼",
+			"count": 2
+			},{
+			"name": "寄生魂",
+			"count": 1
+			}]
+		},{
+		"name": "首领",
+		"index": 6,
+		"monsters": [{
+			"name": "座敷童子",
+			"count": 1
+			},{
+			"name": "天邪鬼绿",
+			"count": 2
+			},{
+			"name": "天邪鬼青",
+			"count": 1
+			}]
+		}]
+	},{
+	"scene_name": "探索第三章困难",
+	"team_list": [{
+		"name": "天邪鬼黄1",
+		"index": 1,
+		"monsters": [{
+			"name": "天邪鬼黄",
+			"count": 1
+			},{
+			"name": "帚神",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 2
+			}]
+		},{
+		"name": "天邪鬼黄2",
+		"index": 2,
+		"monsters": [{
+			"name": "天邪鬼黄",
+			"count": 1
+			},{
+			"name": "童女",
+			"count": 3
+			}]
+		},{
+		"name": "赤舌1",
+		"index": 3,
+		"monsters": [{
+			"name": "赤舌",
+			"count": 1
+			},{
+			"name": "提灯小僧",
+			"count": 1
+			},{
+			"name": "灯笼鬼",
+			"count": 2
+			},{
+			"name": "鸦天狗",
+			"count": 1
+			}]
+		},{
+		"name": "赤舌2",
+		"index": 4,
+		"monsters": [{
+			"name": "赤舌",
+			"count": 1
+			},{
+			"name": "天邪鬼黄",
+			"count": 1
+			},{
+			"name": "童女",
+			"count": 2
+			},{
+			"name": "鸦天狗",
+			"count": 1
+			}]
+		},{
+		"name": "兵俑1",
+		"index": 5,
+		"monsters": [{
+			"name": "兵俑",
+			"count": 1
+			},{
+			"name": "提灯小僧",
+			"count": 1
+			},{
+			"name": "灯笼鬼",
+			"count": 2
+			}]
+		},{
+		"name": "兵俑2",
+		"index": 6,
+		"monsters": [{
+			"name": "兵俑",
+			"count": 1
+			},{
+			"name": "提灯小僧",
+			"count": 2
+			},{
+			"name": "童女",
+			"count": 1
+			}]
+		},{
+		"name": "首领",
+		"index": 7,
+		"monsters": [{
+			"name": "凤凰火",
+			"count": 1
+			},{
+			"name": "寄生魂",
+			"count": 3
+			}]
+		}]
+	},{
+	"scene_name": "探索第四章困难",
+	"team_list": [{
+		"name": "帚神1",
+		"index": 1,
+		"monsters": [{
+			"name": "帚神",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 2
+			}]
+		},{
+		"name": "帚神2",
+		"index": 2,
+		"monsters": [{
+			"name": "帚神",
+			"count": 1
+			},{
+			"name": "唐纸伞妖",
+			"count": 3
+			}]
+		},{
+		"name": "唐纸伞妖1",
+		"index": 3,
+		"monsters": [{
+			"name": "唐纸伞妖",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 3
+			}]
+		},{
+		"name": "唐纸伞妖2",
+		"index": 4,
+		"monsters": [{
+			"name": "唐纸伞妖",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 3
+			}]
+		},{
+		"name": "天邪鬼赤1",
+		"index": 5,
+		"monsters": [{
+			"name": "天邪鬼赤",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 3
+			}]
+		},{
+		"name": "天邪鬼赤2",
+		"index": 6,
+		"monsters": [{
+			"name": "天邪鬼赤",
+			"count": 1
+			},{
+			"name": "唐纸伞妖",
+			"count": 2
+			}]
+		},{
+		"name": "首领",
+		"index": 7,
+		"monsters": [{
+			"name": "雨女",
+			"count": 1
+			},{
+			"name": "青蛙瓷器",
+			"count": 1
+			},{
+			"name": "帚神",
+			"count": 2
+			}]
+		}]
+	},{
+	"scene_name": "探索第五章困难",
+	"team_list": [{
+		"name": "涂壁1",
+		"index": 1,
+		"monsters": [{
+			"name": "涂壁",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 3
+			}]
+		},{
+		"name": "涂壁2",
+		"index": 2,
+		"monsters": [{
+			"name": "涂壁",
+			"count": 2
+			},{
+			"name": "天邪鬼赤",
+			"count": 2
+			}]
+		},{
+		"name": "帚神1",
+		"index": 3,
+		"monsters": [{
+			"name": "帚神",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 2
+			}]
+		},{
+		"name": "帚神2",
+		"index": 4,
+		"monsters": [{
+			"name": "帚神",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 1
+			},{
+			"name": "天邪鬼黄",
+			"count": 2
+			}]
+		},{
+		"name": "管狐1",
+		"index": 5,
+		"monsters": [{
+			"name": "管狐",
+			"count": 2
+			},{
+			"name": "天邪鬼黄",
+			"count": 2
+			},{
+			"name": "寄生魂",
+			"count": 1
+			}]
+		},{
+		"name": "管狐2",
+		"index": 6,
+		"monsters": [{
+			"name": "管狐",
+			"count": 1
+			},{
+			"name": "天邪鬼绿",
+			"count": 3
+			},{
+			"name": "寄生魂",
+			"count": 1
+			}]
+		},{
+		"name": "首领",
+		"index": 7,
+		"monsters": [{
+			"name": "食发鬼",
+			"count": 1
+			},{
+			"name": "灯笼鬼",
+			"count": 1
+			},{
+			"name": "天邪鬼青",
+			"count": 2
+			}]
+		}]
+	},{
+	"scene_name": "探索第六章困难",
+	"team_list": [{
+		"name": "灯笼鬼1",
+		"index": 1,
+		"monsters": [{
+			"name": "灯笼鬼",
+			"count": 1
+			},{
+			"name": "帚神",
+			"count": 3
+			}]
+		},{
+		"name": "灯笼鬼2",
+		"index": 2,
+		"monsters": [{
+			"name": "灯笼鬼",
+			"count": 1
+			},{
+			"name": "帚神",
+			"count": 3
+			}]
+		},{
+		"name": "天邪鬼青1",
+		"index": 3,
+		"monsters": [{
+			"name": "天邪鬼青",
+			"count": 1
+			},{
+			"name": "天邪鬼绿",
+			"count": 3
+			}]
+		},{
+		"name": "天邪鬼青2",
+		"index": 4,
+		"monsters": [{
+			"name": "天邪鬼青",
+			"count": 1
+			},{
+			"name": "天邪鬼绿",
+			"count": 3
+			}]
+		},{
+		"name": "蝴蝶精1",
+		"index": 5,
+		"monsters": [{
+			"name": "蝴蝶精",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 2
+			},{
+			"name": "三尾狐",
+			"count": 1
+			}]
+		},{
+		"name": "蝴蝶精2",
+		"index": 6,
+		"monsters": [{
+			"name": "蝴蝶精",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 2
+			},{
+			"name": "三尾狐",
+			"count": 1
+			}]
+		},{
+		"name": "首领",
+		"index": 7,
+		"monsters": [{
+			"name": "巫蛊师",
+			"count": 1
+			},{
+			"name": "天邪鬼绿",
+			"count": 3
+			}]
+		}]
+	},{
+	"scene_name": "探索第七章困难",
+	"team_list": [{
+		"name": "鲤鱼精1",
+		"index": 1,
+		"monsters": [{
+			"name": "鲤鱼精",
+			"count": 3
+			},{
+			"name": "帚神",
+			"count": 1
+			}]
+		},{
+		"name": "鲤鱼精2",
+		"index": 2,
+		"monsters": [{
+			"name": "鲤鱼精",
+			"count": 1
+			},{
+			"name": "帚神",
+			"count": 3
+			}]
+		},{
+		"name": "河童1",
+		"index": 3,
+		"monsters": [{
+			"name": "河童",
+			"count": 1
+			},{
+			"name": "鲤鱼精",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 2
+			}]
+		},{
+		"name": "河童2",
+		"index": 4,
+		"monsters": [{
+			"name": "河童",
+			"count": 1
+			},{
+			"name": "灯笼鬼",
+			"count": 1
+			},{
+			"name": "跳跳犬",
+			"count": 2
+			}]
+		},{
+		"name": "提灯小僧1",
+		"index": 5,
+		"monsters": [{
+			"name": "提灯小僧",
+			"count": 1
+			},{
+			"name": "跳跳犬",
+			"count": 3
+			},{
+			"name": "管狐",
+			"count": 1
+			}]
+		},{
+		"name": "提灯小僧2",
+		"index": 6,
+		"monsters": [{
+			"name": "提灯小僧",
+			"count": 1
+			},{
+			"name": "跳跳犬",
+			"count": 3
+			},{
+			"name": "管狐",
+			"count": 1
+			}]
+		},{
+		"name": "提灯小僧3",
+		"index": 7,
+		"monsters": [{
+			"name": "提灯小僧",
+			"count": 1
+			},{
+			"name": "跳跳犬",
+			"count": 1
+			},{
+			"name": "鲤鱼精",
+			"count": 2
+			},{
+			"name": "管狐",
+			"count": 1
+			}]
+		},{
+		"name": "首领",
+		"index": 8,
+		"monsters": [{
+			"name": "妖狐",
+			"count": 2
+			},{
+			"name": "涂壁",
+			"count": 1
+			},{
+			"name": "座敷童子",
+			"count": 2
+			},{
+			"name": "寄生魂",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 2
+			}]
+		}]
+	},{
+	"scene_name": "探索第八章困难",
+	"team_list": [{
+		"name": "唐纸伞妖1",
+		"index": 1,
+		"monsters": [{
+			"name": "唐纸伞妖",
+			"count": 1
+			},{
+			"name": "帚神",
+			"count": 3
+			}]
+		},{
+		"name": "唐纸伞妖2",
+		"index": 2,
+		"monsters": [{
+			"name": "唐纸伞妖",
+			"count": 1
+			},{
+			"name": "山童",
+			"count": 1
+			},{
+			"name": "帚神",
+			"count": 2
+			}]
+		},{
+		"name": "樱花妖1",
+		"index": 3,
+		"monsters": [{
+			"name": "樱花妖",
+			"count": 1
+			},{
+			"name": "帚神",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 2
+			},{
+			"name": "雪女",
+			"count": 1
+			}]
+		},{
+		"name": "樱花妖2",
+		"index": 4,
+		"monsters": [{
+			"name": "樱花妖",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 3
+			},{
+			"name": "雪女",
+			"count": 1
+			}]
+		},{
+		"name": "天邪鬼绿1",
+		"index": 5,
+		"monsters": [{
+			"name": "天邪鬼绿",
+			"count": 1
+			},{
+			"name": "天邪鬼青",
+			"count": 1
+			},{
+			"name": "天邪鬼黄",
+			"count": 2
+			}]
+		},{
+		"name": "天邪鬼绿2",
+		"index": 6,
+		"monsters": [{
+			"name": "天邪鬼绿",
+			"count": 1
+			},{
+			"name": "天邪鬼青",
+			"count": 1
+			},{
+			"name": "天邪鬼黄",
+			"count": 2
+			}]
+		},{
+		"name": "首领",
+		"index": 8,
+		"monsters": [{
+			"name": "桃花妖",
+			"count": 1
+			},{
+			"name": "天邪鬼青",
+			"count": 1
+			},{
+			"name": "提灯小僧",
+			"count": 2
+			},{
+			"name": "樱花妖",
+			"count": 1
+			},{
+			"name": "帚神",
+			"count": 1
+			},{
+			"name": "蝴蝶精",
+			"count": 2
+			}]
+		}]
+	},{
+	"scene_name": "探索第九章困难",
+	"team_list": [{
+		"name": "提灯小僧1",
+		"index": 1,
+		"monsters": [{
+			"name": "提灯小僧",
+			"count": 1
+			},{
+			"name": "灯笼鬼",
+			"count": 3
+			}]
+		},{
+		"name": "提灯小僧2",
+		"index": 2,
+		"monsters": [{
+			"name": "提灯小僧",
+			"count": 1
+			},{
+			"name": "灯笼鬼",
+			"count": 1
+			},{
+			"name": "铁鼠",
+			"count": 2
+			}]
+		},{
+		"name": "铁鼠1",
+		"index": 3,
+		"monsters": [{
+			"name": "铁鼠",
+			"count": 1
+			},{
+			"name": "帚神",
+			"count": 3
+			}]
+		},{
+		"name": "铁鼠2",
+		"index": 4,
+		"monsters": [{
+			"name": "铁鼠",
+			"count": 2
+			},{
+			"name": "帚神",
+			"count": 2
+			}]
+		},{
+		"name": "山兔1",
+		"index": 5,
+		"monsters": [{
+			"name": "山兔",
+			"count": 3
+			},{
+			"name": "铁鼠",
+			"count": 1
+			},{
+			"name": "鸦天狗",
+			"count": 1
+			}]
+		},{
+		"name": "山兔2",
+		"index": 5,
+		"monsters": [{
+			"name": "山兔",
+			"count": 4
+			},{
+			"name": "鸦天狗",
+			"count": 1
+			}]
+		},{
+		"name": "首领",
+		"index": 6,
+		"monsters": [{
+			"name": "孟婆",
+			"count": 2
+			},{
+			"name": "饿鬼",
+			"count": 3
+			},{
+			"name": "灯笼鬼",
+			"count": 1
+			},{
+			"name": "鸦天狗",
+			"count": 2
+			}]
+		}]
+	},{
+	"scene_name": "探索第十章困难",
+	"team_list": [{
+		"name": "丑时之女1",
+		"index": 1,
+		"monsters": [{
+			"name": "丑时之女",
+			"count": 1
+			},{
+			"name": "傀儡师",
+			"count": 1
+			},{
+			"name": "天邪鬼青",
+			"count": 2
+			}]
+		},{
+		"name": "丑时之女2",
+		"index": 1,
+		"monsters": [{
+			"name": "丑时之女",
+			"count": 1
+			},{
+			"name": "傀儡师",
+			"count": 1
+			},{
+			"name": "天邪鬼青",
+			"count": 2
+			}]
+		},{
+		"name": "傀儡师1",
+		"index": 2,
+		"monsters": [{
+			"name": "傀儡师",
+			"count": 1
+			},{
+			"name": "觉",
+			"count": 1
+			},{
+			"name": "狸猫",
+			"count": 2
+			},{
+			"name": "犬神",
+			"count": 1
+			}]
+		},{
+		"name": "傀儡师2",
+		"index": 3,
+		"monsters": [{
+			"name": "傀儡师",
+			"count": 1
+			},{
+			"name": "觉",
+			"count": 1
+			},{
+			"name": "座敷童子",
+			"count": 2
+			},{
+			"name": "犬神",
+			"count": 1
+			}]
+		},{
+		"name": "觉1",
+		"index": 4,
+		"monsters": [{
+			"name": "觉",
+			"count": 1
+			},{
+			"name": "狸猫",
+			"count": 3
+			}]
+		},{
+		"name": "觉2",
+		"index": 5,
+		"monsters": [{
+			"name": "觉",
+			"count": 1
+			},{
+			"name": "赤舌",
+			"count": 1
+			},{
+			"name": "座敷童子",
+			"count": 2
+			}]
+		},{
+		"name": "首领",
+		"index": 6,
+		"monsters": [{
+			"name": "酒吞童子",
+			"count": 2
+			},{
+			"name": "跳跳哥哥",
+			"count": 1
+			},{
+			"name": "食发鬼",
+			"count": 2
+			},{
+			"name": "兵俑",
+			"count": 1
+			},{
+			"name": "骨女",
+			"count": 2
+			}]
+		}]
+	},{
+	"scene_name": "探索第十一章困难",
+	"team_list": [{
+		"name": "武士之灵1",
+		"index": 1,
+		"monsters": [{
+			"name": "武士之灵",
+			"count": 1
+			},{
+			"name": "寄生魂",
+			"count": 3
+			}]
+		},{
+		"name": "武士之灵2",
+		"index": 2,
+		"monsters": [{
+			"name": "武士之灵",
+			"count": 1
+			},{
+			"name": "独眼小僧",
+			"count": 3
+			}]
+		},{
+		"name": "独眼小僧1",
+		"index": 3,
+		"monsters": [{
+			"name": "独眼小僧",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 2
+			}]
+		},{
+		"name": "独眼小僧2",
+		"index": 4,
+		"monsters": [{
+			"name": "独眼小僧",
+			"count": 1
+			},{
+			"name": "管狐",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 2
+			}]
+		},{
+		"name": "饿鬼1",
+		"index": 5,
+		"monsters": [{
+			"name": "饿鬼",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 1
+			},{
+			"name": "管狐",
+			"count": 2
+			}]
+		},{
+		"name": "饿鬼2",
+		"index": 6,
+		"monsters": [{
+			"name": "饿鬼",
+			"count": 3
+			},{
+			"name": "管狐",
+			"count": 1
+			}]
+		},{
+		"name": "首领",
+		"index": 7,
+		"monsters": [{
+			"name": "鬼女红叶",
+			"count": 2
+			},{
+			"name": "童女",
+			"count": 1
+			},{
+			"name": "天邪鬼青",
+			"count": 2
+			},{
+			"name": "骨女",
+			"count": 1
+			}]
+		}]
+	},{
+	"scene_name": "探索第十二章",
+	"team_list": [{
+		"name": "海坊主1",
+		"index": 1,
+		"monsters": [{
+			"name": "海坊主",
+			"count": 1
+			},{
+			"name": "帚神",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 2
+			}]
+		},{
+		"name": "海坊主2",
+		"index": 2,
+		"monsters": [{
+			"name": "海坊主",
+			"count": 1
+			},{
+			"name": "涂壁",
+			"count": 1
+			},{
+			"name": "鸦天狗",
+			"count": 2
+			}]
+		},{
+		"name": "童男1",
+		"index": 3,
+		"monsters": [{
+			"name": "童男",
+			"count": 1
+			},{
+			"name": "天邪鬼黄",
+			"count": 1
+			},{
+			"name": "鸦天狗",
+			"count": 2
+			}]
+		},{
+		"name": "童男2",
+		"index": 4,
+		"monsters": [{
+			"name": "童男",
+			"count": 1
+			},{
+			"name": "童女",
+			"count": 1
+			},{
+			"name": "鸦天狗",
+			"count": 2
+			}]
+		},{
+		"name": "童女1",
+		"index": 5,
+		"monsters": [{
+			"name": "童女",
+			"count": 1
+			},{
+			"name": "盗墓小鬼",
+			"count": 1
+			},{
+			"name": "提灯小僧",
+			"count": 2
+			},{
+			"name": "雪女",
+			"count": 1
+			}]
+		},{
+		"name": "童女2",
+		"index": 6,
+		"monsters": [{
+			"name": "童女",
+			"count": 3
+			},{
+			"name": "盗墓小鬼",
+			"count": 1
+			},{
+			"name": "雪女",
+			"count": 1
+			}]
+		},{
+		"name": "首领",
+		"index": 7,
+		"monsters": [{
+			"name": "雪女",
+			"count": 2
+			},{
+			"name": "寄生魂",
+			"count": 1
+			},{
+			"name": "武士之灵",
+			"count": 2
+			},{
+			"name": "跳跳妹妹",
+			"count": 1
+			},{
+			"name": "跳跳哥哥",
+			"count": 2
+			}]
+		}]
+	},{
+	"scene_name": "探索第十三章困难",
+	"team_list": [{
+		"name": "饿鬼1",
+		"index": 1,
+		"monsters": [{
+			"name": "饿鬼",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 3
+			}]
+		},{
+		"name": "饿鬼2",
+		"index": 2,
+		"monsters": [{
+			"name": "饿鬼",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 3
+			}]
+		},{
+		"name": "饿鬼3",
+		"index": 3,
+		"monsters": [{
+			"name": "饿鬼",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 3
+			},{
+			"name": "首无",
+			"count": 1
+			}]
+		},{
+		"name": "唐纸伞妖1",
+		"index": 4,
+		"monsters": [{
+			"name": "唐纸伞妖",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 1
+			},{
+			"name": "天邪鬼绿",
+			"count": 2
+			}]
+		},{
+		"name": "唐纸伞妖2",
+		"index": 5,
+		"monsters": [{
+			"name": "唐纸伞妖",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 1
+			},{
+			"name": "天邪鬼绿",
+			"count": 2
+			}]
+		},{
+		"name": "唐纸伞妖3",
+		"index": 6,
+		"monsters": [{
+			"name": "唐纸伞妖",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 1
+			},{
+			"name": "天邪鬼绿",
+			"count": 2
+			},{
+			"name": "首无",
+			"count": 1
+			}]
+		},{
+		"name": "首领",
+		"index": 7,
+		"monsters": [{
+			"name": "首无",
+			"count": 1
+			},{
+			"name": "骨女",
+			"count": 1
+			},{
+			"name": "灯笼鬼",
+			"count": 1
+			},{
+			"name": "山兔",
+			"count": 1
+			}]
+		}]
+	},{
+	"scene_name": "探索第十四章困难",
+	"team_list": [{
+		"name": "帚神1",
+		"index": 1,
+		"monsters": [{
+			"name": "帚神",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 3
+			}]
+		},{
+		"name": "帚神2",
+		"index": 2,
+		"monsters": [{
+			"name": "帚神",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 3
+			}]
+		},{
+		"name": "帚神3",
+		"index": 3,
+		"monsters": [{
+			"name": "帚神",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 3
+			}]
+		},{
+		"name": "涂壁1",
+		"index": 4,
+		"monsters": [{
+			"name": "涂壁",
+			"count": 6
+			}]
+		},{
+		"name": "涂壁2",
+		"index": 5,
+		"monsters": [{
+			"name": "涂壁",
+			"count": 6
+			}]
+		},{
+		"name": "涂壁3",
+		"index": 6,
+		"monsters": [{
+			"name": "涂壁",
+			"count": 6
+			},{
+			"name": "食梦貘",
+			"count": 1
+			}]
+		},{
+		"name": "首领",
+		"index": 7,
+		"monsters": [{
+			"name": "天邪鬼赤",
+			"count": 3
+			},{
+			"name": "食梦貘",
+			"count": 5
+			}]
+		}]
+	},{
+	"scene_name": "探索第十五章困难",
+	"team_list": [{
+		"name": "天邪鬼绿1",
+		"index": 1,
+		"monsters": [{
+			"name": "天邪鬼绿",
+			"count": 1
+			},{
+			"name": "赤舌",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 2
+			}]
+		},{
+		"name": "天邪鬼绿2",
+		"index": 2,
+		"monsters": [{
+			"name": "天邪鬼绿",
+			"count": 1
+			},{
+			"name": "赤舌",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 2
+			}]
+		},{
+		"name": "天邪鬼绿3",
+		"index": 3,
+		"monsters": [{
+			"name": "天邪鬼绿",
+			"count": 1
+			},{
+			"name": "赤舌",
+			"count": 1
+			},{
+			"name": "天邪鬼赤",
+			"count": 2
+			}]
+		},{
+		"name": "提灯小僧1",
+		"index": 4,
+		"monsters": [{
+			"name": "提灯小僧",
+			"count": 1
+			},{
+			"name": "赤舌",
+			"count": 1
+			},{
+			"name": "九命猫",
+			"count": 2
+			}]
+		},{
+		"name": "提灯小僧2",
+		"index": 5,
+		"monsters": [{
+			"name": "提灯小僧",
+			"count": 1
+			},{
+			"name": "赤舌",
+			"count": 1
+			},{
+			"name": "九命猫",
+			"count": 2
+			}]
+		},{
+		"name": "提灯小僧3",
+		"index": 6,
+		"monsters": [{
+			"name": "提灯小僧",
+			"count": 1
+			},{
+			"name": "赤舌",
+			"count": 1
+			},{
+			"name": "九命猫",
+			"count": 2
+			},{
+			"name": "大天狗",
+			"count": 1
+			}]
+		},{
+		"name": "首领",
+		"index": 7,
+		"monsters": [{
+			"name": "跳跳妹妹",
+			"count": 1
+			},{
+			"name": "九命猫",
+			"count": 3
+			}]
+		}]
+	},{
+	"scene_name": "探索第十六章困难",
+	"team_list": [{
+		"name": "饿鬼1",
+		"index": 1,
+		"monsters": [{
+			"name": "饿鬼",
+			"count": 1
+			},{
+			"name": "山兔",
+			"count": 1
+			},{
+			"name": "山童",
+			"count": 2
+			}]
+		},{
+		"name": "饿鬼2",
+		"index": 2,
+		"monsters": [{
+			"name": "饿鬼",
+			"count": 1
+			},{
+			"name": "山兔",
+			"count": 1
+			},{
+			"name": "山童",
+			"count": 2
+			}]
+		},{
+		"name": "饿鬼3",
+		"index": 3,
+		"monsters": [{
+			"name": "饿鬼",
+			"count": 1
+			},{
+			"name": "山兔",
+			"count": 1
+			},{
+			"name": "山童",
+			"count": 2
+			}]
+		},{
+		"name": "赤舌1",
+		"index": 4,
+		"monsters": [{
+			"name": "赤舌",
+			"count": 1
+			},{
+			"name": "寄生魂",
+			"count": 3
+			}]
+		},{
+		"name": "赤舌2",
+		"index": 4,
+		"monsters": [{
+			"name": "赤舌",
+			"count": 1
+			},{
+			"name": "寄生魂",
+			"count": 3
+			}]
+		},{
+		"name": "赤舌3",
+		"index": 6,
+		"monsters": [{
+			"name": "赤舌",
+			"count": 1
+			},{
+			"name": "寄生魂",
+			"count": 3
+			}]
+		},{
+		"name": "首领",
+		"index": 7,
+		"monsters": [{
+			"name": "判官",
+			"count": 1
+			},{
+			"name": "鬼使黑",
+			"count": 1
+			},{
+			"name": "鬼使白",
+			"count": 1
+			}]
+		}]
+	},{
+	"scene_name": "探索第十七章困难",
+	"team_list": [{
+		"name": "鸦天狗1",
+		"index": 1,
+		"monsters": [{
+			"name": "鸦天狗",
+			"count": 1
+			},{
+			"name": "小风麒麟",
+			"count": 3
+			}]
+		},{
+		"name": "鸦天狗2",
+		"index": 2,
+		"monsters": [{
+			"name": "鸦天狗",
+			"count": 1
+			},{
+			"name": "小风麒麟",
+			"count": 3
+			}]
+		},{
+		"name": "鸦天狗3",
+		"index": 3,
+		"monsters": [{
+			"name": "鸦天狗",
+			"count": 1
+			},{
+			"name": "小风麒麟",
+			"count": 3
+			}]
+		},{
+		"name": "狸猫1",
+		"index": 4,
+		"monsters": [{
+			"name": "狸猫",
+			"count": 1
+			},{
+			"name": "小火麒麟",
+			"count": 3
+			}]
+		},{
+		"name": "狸猫2",
+		"index": 5,
+		"monsters": [{
+			"name": "狸猫",
+			"count": 1
+			},{
+			"name": "小火麒麟",
+			"count": 3
+			}]
+		},{
+		"name": "狸猫3",
+		"index": 6,
+		"monsters": [{
+			"name": "赤舌",
+			"count": 1
+			},{
+			"name": "小火麒麟",
+			"count": 3
+			},{
+			"name": "暗凤凰",
+			"count": 1
+			}]
+		},{
+		"name": "首领",
+		"index": 7,
+		"monsters": [{
+			"name": "荒川之主",
+			"count": 1
+			},{
+			"name": "灯笼鬼",
+			"count": 1
+			},{
+			"name": "骨女",
+			"count": 1
+			},{
+			"name": "山兔",
+			"count": 1
+			}]
+		}]
+	},{
+	"scene_name": "探索第十八章困难",
+	"team_list": [{
+		"name": "九命猫1",
+		"index": 1,
+		"monsters": [{
+			"name": "九命猫",
+			"count": 6
+			}]
+		},{
+		"name": "九命猫2",
+		"index": 2,
+		"monsters": [{
+			"name": "九命猫",
+			"count": 6
+			}]
+		},{
+		"name": "九命猫3",
+		"index": 3,
+		"monsters": [{
+			"name": "九命猫",
+			"count": 6
+			}]
+		},{
+		"name": "三尾狐1",
+		"index": 4,
+		"monsters": [{
+			"name": "三尾狐",
+			"count": 2
+			},{
+			"name": "九命猫",
+			"count": 2
+			},{
+			"name": "大天狗",
+			"count": 1
+			}]
+		},{
+		"name": "三尾狐2",
+		"index": 5,
+		"monsters": [{
+			"name": "三尾狐",
+			"count": 2
+			},{
+			"name": "九命猫",
+			"count": 2
+			}]
+		},{
+		"name": "三尾狐3",
+		"index": 6,
+		"monsters": [{
+			"name": "三尾狐",
+			"count": 2
+			},{
+			"name": "九命猫",
+			"count": 2
+			}]
+		},{
+		"name": "首领",
+		"index": 7,
+		"monsters": [{
+			"name": "大天狗",
+			"count": 1
+			},{
+			"name": "鸦天狗",
+			"count": 3
+			}]
+		}]
+	},{
+	"scene_name": "探索番外一见习鬼使困难",
+	"team_list": [{
+		"name": "山童1",
+		"index": 1,
+		"monsters": [{
+			"name": "山童",
+			"count": 1
+			},{
+			"name": "首无",
+			"count": 2
+			},{
+			"name": "河童",
+			"count": 3
+			}]
+		},{
+		"name": "山童2",
+		"index": 2,
+		"monsters": [{
+			"name": "山童",
+			"count": 1
+			},{
+			"name": "首无",
+			"count": 2
+			},{
+			"name": "河童",
+			"count": 3
+			}]
+		},{
+		"name": "古笼火1",
+		"index": 3,
+		"monsters": [{
+			"name": "古笼火",
+			"count": 1
+			},{
+			"name": "犬神",
+			"count": 3
+			},{
+			"name": "管狐",
+			"count": 2
+			}]
+		},{
+		"name": "古笼火2",
+		"index": 4,
+		"monsters": [{
+			"name": "古笼火",
+			"count": 1
+			},{
+			"name": "犬神",
+			"count": 3
+			},{
+			"name": "管狐",
+			"count": 2
+			}]
+		},{
+		"name": "古笼火3",
+		"index": 5,
+		"monsters": [{
+			"name": "古笼火",
+			"count": 1
+			},{
+			"name": "犬神",
+			"count": 3
+			},{
+			"name": "管狐",
+			"count": 2
+			}]
+		},{
+		"name": "鬼女红叶1",
+		"index": 6,
+		"monsters": [{
+			"name": "鬼女红叶",
+			"count": 1
+			},{
+			"name": "天邪鬼青",
+			"count": 2
+			},{
+			"name": "觉",
+			"count": 3
+			}]
+		},{
+		"name": "鬼女红叶2",
+		"index": 7,
+		"monsters": [{
+			"name": "鬼女红叶",
+			"count": 1
+			},{
+			"name": "天邪鬼青",
+			"count": 2
+			},{
+			"name": "觉",
+			"count": 3
+			}]
+		},{
+		"name": "首领",
+		"index": 8,
+		"monsters": [{
+			"name": "黑童子",
+			"count": 1
+			},{
+			"name": "鬼使黑",
+			"count": 1
+			},{
+			"name": "鬼使白",
+			"count": 1
+			},{
+			"name": "天邪鬼绿",
+			"count": 2
+			}]
+		}]
+	}, {
+	"scene_name": "挑战第一章天邪鬼绿",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "天邪鬼绿",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "天邪鬼绿",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "天邪鬼绿",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第一章九命猫",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "九命猫",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "九命猫",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "九命猫",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第二章提灯小僧",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "提灯小僧",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "提灯小僧",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "提灯小僧",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第二章座敷童子",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "座敷童子",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "座敷童子",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "座敷童子",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第三章天邪鬼黄",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "天邪鬼黄",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "天邪鬼黄",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "天邪鬼黄",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第三章铁鼠",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "铁鼠",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "铁鼠",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "铁鼠",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第三章三尾狐",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "三尾狐",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "三尾狐",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "三尾狐",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第四章青蛙瓷器",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "青蛙瓷器",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "青蛙瓷器",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "青蛙瓷器",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第四章雨女",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "雨女",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "雨女",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "雨女",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第四章管狐",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "管狐",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "管狐",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "管狐",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第五章帚神",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "帚神",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "帚神",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "帚神",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第五章食发鬼",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "食发鬼",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "食发鬼",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "食发鬼",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第六章灯笼鬼",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "灯笼鬼",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "灯笼鬼",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "灯笼鬼",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第六章巫蛊师",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "巫蛊师",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "巫蛊师",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "巫蛊师",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第六章蝴蝶精",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "蝴蝶精",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "蝴蝶精",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "蝴蝶精",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第七章天邪鬼赤",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "天邪鬼赤",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "天邪鬼赤",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "天邪鬼赤",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第七章鲤鱼精",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "鲤鱼精",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "鲤鱼精",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "鲤鱼精",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第七章河童",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "河童",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "河童",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "河童",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第八章唐纸伞妖",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "唐纸伞妖",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "唐纸伞妖",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "唐纸伞妖",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第八章桃花妖",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "桃花妖",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "桃花妖",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "桃花妖",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第九章天邪鬼青",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "天邪鬼青",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "天邪鬼青",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "天邪鬼青",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第九章山兔",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "山兔",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "山兔",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "山兔",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十章武士之灵",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "武士之灵",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "武士之灵",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "武士之灵",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十章丑时之女",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "丑时之女",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "丑时之女",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "丑时之女",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十一章寄生魂",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "寄生魂",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "寄生魂",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "寄生魂",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十一章饿鬼",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "饿鬼",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "饿鬼",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "饿鬼",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十二章童男",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "童男",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "童男",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "童男",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十二章童女",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "童女",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "童女",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "童女",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十三章涂壁",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "涂壁",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "涂壁",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "涂壁",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十三章兵俑",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "兵俑",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "兵俑",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "兵俑",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十四章狸猫",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "狸猫",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "狸猫",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "狸猫",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十四章盗墓小鬼",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "盗墓小鬼",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "盗墓小鬼",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "盗墓小鬼",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十五章跳跳弟弟",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "跳跳弟弟",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "跳跳弟弟",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "跳跳弟弟",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十五章跳跳妹妹",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "跳跳妹妹",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "跳跳妹妹",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "跳跳妹妹",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十六章赤舌",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "赤舌",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "赤舌",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "赤舌",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十六章山童",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "山童",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "山童",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "山童",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十七章萤草",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "萤草",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "萤草",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "萤草",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十七章鸦天狗",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "鸦天狗",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "鸦天狗",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "鸦天狗",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十八章独眼小僧",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "独眼小僧",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "独眼小僧",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "独眼小僧",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十八章觉",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "觉",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "觉",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "觉",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战第十八章镰鼬",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "镰鼬",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "镰鼬",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "镰鼬",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战番外一古笼火",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "古笼火",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "古笼火",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "古笼火",
+				"count": 6
+			}]
+		}]
+	},{
+	"scene_name": "挑战番外一首无",
+	"team_list": [{
+		"name": "第一回合",
+		"index": 1,
+		"monsters": [
+			{
+				"name": "首无",
+				"count": 6
+			}]
+		},{
+		"name": "第二回合",
+		"index": 2,
+		"monsters": [{
+				"name": "首无",
+				"count": 6
+			}]
+		},{
+		"name": "第三回合",
+		"index": 3,
+		"monsters": [{
+				"name": "首无",
+				"count": 6
+			}]
+		}]
+	}]

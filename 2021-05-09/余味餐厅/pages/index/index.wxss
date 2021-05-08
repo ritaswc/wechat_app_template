@@ -1,0 +1,191 @@
+@import "../style/commonrest.wxss";
+
+.page_title {
+  color: #1a1a1a;
+  font-size: 34rpx;
+  font-weight: bolder;
+  text-align: center;
+  padding: 40rpx 0 20rpx;
+  background: #fff;
+  letter-spacing: 2rpx;
+}
+
+.container {
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.label {
+  text-align: center;
+  padding: 32rpx;
+  color: #1a1a1a;
+  font-size: 32rpx;
+  letter-spacing: 2rpx;
+  font-weight: bold;
+}
+
+.banner {
+  width: 100%;
+  height: 400rpx;
+  position: relative;
+}
+
+.banner image {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.banner .cityInfo {
+  position: absolute;
+  top: 160rpx;
+  left: 0;
+  width: 100%;
+}
+
+.cityInfo text {
+  display: block;
+  margin-bottom: 30rpx;
+  text-align: center;
+  color: #fff;
+  padding: 0 12rpx;
+}
+
+.classify {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 30rpx;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 1px 1px #e5e5e5;
+}
+
+.classify_bol {
+  display: block;
+  flex: 1;
+  text-align: center;
+}
+
+.classify_bol image {
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto 26rpx;
+}
+
+.classify_bol text {
+  font-size: 24rpx;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.musteat {
+  margin-top: 14rpx;
+  background: #fff;
+  padding: 0 22rpx 34rpx;
+  box-sizing: border-box;
+  box-shadow: 0 1px 1px #e5e5e5;
+}
+
+.dish_content {
+  overflow: hidden;
+  height: auto;
+}
+
+.dish_detail {
+  width: 32%;
+  height: auto;
+  float: left;
+}
+
+.dish_detail:nth-child(3n) {
+  float: right;
+}
+
+.dish_detail:nth-child(3n-1) {
+  margin-left: 2%;
+}
+
+.dish_detail:nth-child(3n-2) {
+  float: left;
+}
+
+/*.dish_detail:nth-child(3n){
+    display: none
+}*/
+
+.dish_detail image {
+  width: 100%;
+  height: 136rpx;
+  vertical-align: top;
+}
+
+.dish_detail text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #1a1a1a;
+  padding: 20rpx 0;
+}
+
+.more_con {
+  font-size: 26rpx;
+  color: #909090;
+  text-align: center;
+  margin-top: 34rpx;
+}
+
+.more_con .arrowr {
+  display: inline-block;
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+  vertical-align: middle;
+  transition: 0.3s;
+  transform: rotate(90deg);
+}
+
+.show .arrowr {
+  transition: 0.3s;
+  transform: rotate(-90deg);
+}
+
+.resaurant {
+  overflow: hidden;
+  height: auto;
+  margin-top: 14rpx;
+  padding: 0 22rpx 34rpx;
+}
+
+.more_rest {
+  padding-top: 34rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #909090;
+}
+
+.more_rest image {
+  display: inline-block;
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+  vertical-align: middle;
+}
+
+.one:last-child {
+  display: none;
+}
+
+.two:nth-last-child(-n+2) {
+  display: none;
+}
+
+.show .one:last-child {
+  display: block;
+}
+
+.show .two:nth-last-child(-n+2) {
+  display: block;
+}

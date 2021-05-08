@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+<view class="login-container">
+
+  <view class="section-container">
+    <view class="common-text">手机号</view>
+    <input class="common-input" maxlength="11" type="number" data-type="phone" bindinput="bindKeyInput" placeholder="请输入手机号/互联网+服务账号" />
+  </view>
+
+  <view class="section-container">
+    <view class="common-text" >密码</view>
+    <input class="common-input" password type="text" data-type="pwd" bindinput="bindKeyInput" placeholder="请输入密码" />
+  </view>
+
+  <view class="btn-area">
+        <button class="btn" type="default" style="background:#0164a6; color:white" bindtap="tapBtnLogin">登录</button>
+      </view>
+</view>

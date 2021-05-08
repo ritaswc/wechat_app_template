@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/favour/favour",
+    "pages/index/index",
+    "pages/hot/hot",
+    "pages/wholesale/wholesale",
+    "pages/detail/detail",
+    "pages/template/template"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#f7f7f7",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "淘券VIP",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#ec3e42",
+    "backgroundColor": "#f7f7f7",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/favour/favour",
+        "text": "最优惠",
+        "iconPath": "images/favour.png",
+        "selectedIconPath": "images/favour-select.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "最便宜",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index-select.png"
+      },
+      {
+        "pagePath": "pages/hot/hot",
+        "text": "最畅销",
+        "iconPath": "images/hot.png",
+        "selectedIconPath": "images/hot-select.png"
+      },
+      {
+        "pagePath": "pages/wholesale/wholesale",
+        "text": "最大额",
+        "iconPath": "images/wholesale.png",
+        "selectedIconPath": "images/wholesale-select.png"
+      }
+    ]
+  }
+}

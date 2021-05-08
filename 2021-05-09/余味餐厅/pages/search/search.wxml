@@ -1,0 +1,6 @@
+<view class="header_search">
+    <view class="search">
+     <icon type="search" size="16" class="search_icon"></icon>
+        寻找你想要去的地方
+    </view> 
+</view>

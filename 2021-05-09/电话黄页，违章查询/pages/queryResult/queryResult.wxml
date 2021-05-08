@@ -1,0 +1,42 @@
+<view class="container" style="min-height:{{windowHeigh}}px;background-color: #EFEFF5;">
+    <view class="class1">
+        <view class="class1_1">           
+            <view class="left" style="width:100%;text-align:center;">{{hphm}}</view>
+        </view>
+        <view class="class1_2">
+            <view class="left">未处理</view>
+            <view class="center">共扣分</view>
+            <view class="right">共罚款</view>
+        </view>
+        <view class="class1_3">
+            <view class="left">{{listCount}}</view>
+            <view class="center">{{score}}</view>
+            <view class="right">{{moneyCount}}</view>
+        </view>
+    </view>
+    <view class="class3">
+        <!--循环开始-->
+        <view class="contentArea" wx:for="{{resultData}}" wx:for-index="idx" wx:for-item="item"  wx:key="id">
+            <view class="class3_1">
+                <view class="left">{{item.time}}</view>
+                <view class="center">扣分</view>
+                <view class="right">罚款</view>
+            </view>
+            <view class="class3_2">
+                <view class="left">{{item.handled}}</view>
+                <view class="center">{{item.score}}分</view>
+                <view class="right">{{item.price}}元</view>
+            </view>
+            <view class="class3_3">
+            <view class="class3_3_2">{{item.address}}</view>
+                <view class="class3_3_1">{{item.content}}</view>
+                
+            </view>
+            <view class="class3_4"></view>
+        </view>
+    </view>
+    <view class="class4">
+        <view bindtap="call">违章代办
+        </view>
+    </view>
+</view>

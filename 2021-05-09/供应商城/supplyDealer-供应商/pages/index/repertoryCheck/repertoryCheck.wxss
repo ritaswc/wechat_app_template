@@ -1,0 +1,9 @@
+.screen-time{
+    position: fixed;
+    left:0;
+    top:0;
+}
+
+.order-statistics{
+    margin-top:170rpx;
+}

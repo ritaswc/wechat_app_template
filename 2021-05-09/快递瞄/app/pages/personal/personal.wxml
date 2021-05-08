@@ -1,0 +1,28 @@
+<view class="header">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  </view>
+  <view class="content">
+    <view class="nickname">{{userInfo.nickName}}</view>
+    <view class="welcome">{{motto}}</view>
+  </view>
+</view>
+<view class="explain-line">
+  <view class="explain-block"></view>
+  <view class="explain-text">我的快递</view>
+</view>
+<view class="myexpress">
+  <view class="item-express" wx:for="{{expressList}}" data-order="{{item.order}}" data-name="{{item.name}}" data-code="{{item.code}}" bindtap="showDetail">
+    <view class="logo">
+      <image src="../../images/express_icon.png"></image>
+    </view>
+    <view class="detail">
+      <view class="express-detail">
+        <view class="name">{{item.name}}</view>
+        <view class="order">{{item.order}}</view>
+      </view>
+      <view class="lastStatus">{{item.AcceptStation}}</view>
+      <view class="lastDate">{{item.AcceptTime}}</view>
+    </view>
+  </view>
+</view>

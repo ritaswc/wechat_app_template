@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

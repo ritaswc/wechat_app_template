@@ -1,0 +1,39 @@
+{template 'common/header'}
+<div id="js-user-edit-account" ng-controller="UserEditAccount" ng-cloak>
+	<table class="table we7-table edit-account-dateline">
+		<tr>
+			<th>账户使用期限</th>
+			<th class="text-left">总有效天数：{{ total_timelimit }} </th>
+			<th class="text-right">有效期至：{$endtime}</th>
+		</tr>
+		<tr>
+			<td>所属用户组：{{ group_info.name }}</td>
+			<td class="text-left">有 效 天 数：{{ group_info.timelimit  == 0 || !group_info ? '永久' : group_info.timelimit }}</td>
+			<td class="text-right">
+			</td>
+		</tr>
+		<tr>
+			<td>附加权限</td>
+			<td class="text-left">有 效 天 数：{{ extra_limit_info.timelimit }}天</td>
+			<td class="text-right">
+			</td>
+		</tr>
+	</table>
+</div>
+<script>
+	angular.module('userManageApp').value('config', {
+		user: {php echo !empty($user) ? json_encode($user) : 'null'},
+		profile: {php echo !empty($profile) ? json_encode($profile) : 'null'},
+		group_info: {php echo !empty($group_info) ? json_encode($group_info) : 'null'},
+		extra_limit_info: {php echo !empty($extra_limit_info) ? json_encode($extra_limit_info) : 'null'},
+		total_timelimit: {php echo $total_timelimit},
+		groups: {php echo !empty($groups) ? json_encode($groups) : 'null'},
+		links: {
+			recycleUser: "{php echo url('user/display/operate', array('type' => 'recycle'))}",
+			editUserGroup: "{php echo url('user/edit/edit_user_group', array('uid' => $uid))}",
+			chageExtraTimelimit: "{php echo url('user/edit/edit_user_extra_limit', array('uid' => $uid))}",
+		},
+	});
+	angular.bootstrap($('#js-user-edit-account'), ['userManageApp']);
+</script>
+{template 'common/footer'}

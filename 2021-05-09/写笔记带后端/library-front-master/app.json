@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/search/search",
+    "pages/detail/detail",
+    "pages/fav/fav",
+    "pages/user/index",
+    "pages/note/index",
+    "pages/create/index",
+    "pages/edit/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#000",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "lib",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#b2b2b2",
+    "selectedColor": "#353535",
+    "borderStyle": "black",
+    "backgroundColor": "#eeeeee",
+    "list": [
+      {
+        "pagePath": "pages/search/search",
+        "iconPath": "src/img/book.png",
+        "selectedIconPath": "src/img/bookLight.png",
+        "text": "搜索"
+      },
+      {
+        "pagePath": "pages/note/index",
+        "iconPath": "src/img/note.png",
+        "selectedIconPath": "src/img/noteLight.png",
+        "text": "笔记"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "src/img/user.png",
+        "selectedIconPath": "src/img/userLight.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": false
+}

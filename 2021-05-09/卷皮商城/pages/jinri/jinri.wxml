@@ -1,0 +1,91 @@
+
+<view class="top-tab flex-wrp flex-tab " >
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+    {{itemName}}
+  </view>
+</view>
+
+<scroll-view scroll-y="true" class="container discovery withtab" bindscrolltoupper="upper" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}" bindtap="bindQueTap">
+    <swiper class="activity" indicator-dots="{{indicatorDots}}"
+            circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="155"/>
+        </swiper-item>
+      </block>
+    </swiper>
+
+<!--新加start-->
+  <view class="page-section-spacing">
+    <view class="good-list" style="flex-direction:row;">
+      <view class="good-item" wx:for="{{actListData}}">
+        <view class="item-center" bindtap="bindQueTap">
+          <image src="{{item.pic}}" class="listicon"></image>
+          <text class="listtext">{{item.words}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="act_pic">
+      <image src="{{actListData1.pic}}"></image>
+    </view>
+
+    <view class="trans">
+      <view class="trans_left">
+        <image src="{{actListData2[0].pic}}" class="trans_right_up"></image>
+      </view>
+      <view class="trans_right">
+          <image src="{{actListData2[1].pic}}" class="trans_right_up"></image>
+          <image src="{{actListData2[2].pic}}" class="trans_right_down"></image>
+      </view>
+    </view>
+
+    <view class="juan618">
+      <view class="juan618_up">
+          <view class="tit">
+            <image src="{{actListData3.pic}}"></image>
+          </view>
+          <view class="ju618up_up">
+            <image  wx:for="{{actListData4}}" src="{{item.pic}}"></image>
+          </view>
+          <view class="ju618down_up">
+            <image  wx:for="{{actListData5}}" src="{{item.pic}}"></image>
+          </view>
+      </view>
+      <view class="juan618_down">
+        <image wx:for="{{actListData6}}" src="{{item.pic}}"></image>
+      </view>
+    </view>
+
+    <view class="morn_and_night">
+        <view class="mn_pic">
+        <image src="../../images/morn_and_night.jpg"></image>
+        </view>
+        <view class="fq-item {{idx%2 ? '' : 'odd'}}" wx:for="{{actListData7}}" wx:for-index="idx" wx:for-item="item">
+            <image src="{{item.pic_url}}" class="pic"></image>
+            <view class="logo">
+                <image src="{{item.shop_logo}}" ></image>
+            </view>
+            <view class="item-text">
+              <text>{{item.coupon.rules[0].aeBankInfo}}</text>
+              <view class="bt-text">{{item.coupon.abName}}
+                <text>{{item.residue}}</text>
+              </view>
+            </view>
+        </view>
+    </view>
+  </view>
+
+<!--新加end-->
+</view>
+  <view class="ctnt1 placehold" hidden="{{currentNavtab==1 ? '' : true}}">
+    <text>女装</text>
+  </view>
+  <view class="ctnt2 placehold" hidden="{{currentNavtab==2 ? '' : true}}">
+    <text>鞋包</text>
+  </view>
+  <view class="ctnt3 placehold" hidden="{{currentNavtab==3 ? '' : true}}">
+    <text>母婴</text>
+  </view>
+</scroll-view>

@@ -1,0 +1,23 @@
+<!-- HMT Bus GO! (WXSS VER.) -->
+<!-- 站点详情页 -->
+
+<page>
+	<view class="page">
+		<view class="page__hd">
+			<view class="page__title">{{stopInfo[0].stop_name}}站</view>
+			<view class="page__desc">共有 {{totalLine}} 条线路经过此站</view>
+		</view>
+
+		<view class="page__bd">
+			<view class="weui-cells weui-cells_after-title">
+				<block wx:for="{{lineList}}" wx:for-item="list">
+					<navigator class="weui-cell weui-cell_access" url="/pages/lineInfo/index?id={{list.line_id}}" hover-class="weui-cell_active">
+						<view class="weui-cell__bd">{{list.line_name}} [{{list.line_start}} 开往 {{list.line_end}}]</view>
+						<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+					</navigator>
+				</block>
+			</view>
+		</view>
+
+	</view>
+</page>

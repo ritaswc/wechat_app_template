@@ -1,0 +1,25 @@
+/* pages/orderDetails/orderDetails.wxss */
+page{height:100%;background:#eee;}
+.header{background:#fff;padding:20rpx 20rpx 30rpx;margin-bottom:24rpx;}
+.order_item{font-size:28rpx;line-height:50rpx;color:#aaa;}
+.order_item text{color:#333;}
+.wxpay form{display:block;width:100%;}
+.header .order_item button{margin-top:30rpx;color:#666;font-size:40rpx;line-height:80rpx;}
+.header .order_item .btn{background:#e64340;border:none;color:#fff;}
+.main1{background:#fff;padding:20rpx 20rpx 30rpx;margin-bottom:24rpx;}
+.main2{background:#fff;padding:20rpx 20rpx 20rpx;margin-bottom:24rpx;}
+.goods_top{font-size:36rpx;line-height:100rpx;color:#353535;padding-left:20rpx;border-bottom:1rpx solid #eee;}
+.goods_top image{width:40rpx;height:40rpx;margin-right:20rpx;vertical-align:middle;}
+.goods_inf{border-top:1px solid #eee;position:relative;padding-left:26vw;min-height:25vw;}
+.goods_inf image{position:absolute;left:3vw;top:0;bottom:0;margin:auto 0;width:20vw;height:20vw;}
+.goods_options{padding-top:20rpx;}
+.goods_options text{display:block;} 
+.goods_options .goods_name{font-size:28rpx;line-height:40rpx;color:#353535;margin-bottom:20rpx}
+.goods_options .goods_rule{font-size:26rpx;line-height:36rpx;color:#888;}
+.goods_options .goods_price{font-size:30rpx;line-height:70rpx;color:#e64340;}
+.goods_options .goods_price text{float:right;color:#666;}
+.main3{background:#fff;padding:20rpx 20rpx 80rpx;margin-bottom:24rpx;}
+.main3 .total_item{font-size:28rpx;line-height:50rpx;color:#353535;}
+.main3 .total_item text{float:right;color:#e64340}
+.main3 .total{font-size:36rpx;line-height:80rpx;height:60rpx;color:#353535;float:right;}
+.main3 .total text{font-weight:bold;color:#e64340}

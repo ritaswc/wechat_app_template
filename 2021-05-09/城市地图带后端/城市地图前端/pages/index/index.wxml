@@ -1,0 +1,123 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar" style="background: white;">
+                <block wx:for-items="{{tabs}}" wx:key="{{index}}">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                  <view class="userinfo">
+                    <text class="user-motto" style="margin-top: 20px">AwesomeCoffice</text>
+                    <text class="user-motto" style="margin-top: 20px; margin-left:10px; margin-right: 10px">与自由工作者、程序员、设计师分享适合办公的咖啡馆、面包店</text>
+                    <text class="user-motto" style="margin-top: 20px; margin-left:10px; margin-right: 10px">还没想好推荐什么地方</text>
+
+
+                  </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                  <scroll-view scroll-y style="height: {{windowHeight}}" scroll-into-view="{{alpha}}">
+                    <view class="alphabet">
+                      <view class="now-city" hidden>
+                        <text>定位城市</text>
+                        <text class="now-city-name">杭州</text>
+                      </view>
+                      <view class="alphabet-list">
+                         <view wx:for="{{list}}" wx:key="unique" id="{{item.alphabet}}" class="section-item" wx:if="{{index!=0}}">
+                           <view class="section-item-header">
+                             {{item.alphabet}}
+                           </view>
+                           <view wx:for="{{item.datas}}" wx:key="unique" wx:for-item="cell" wx:for-index="cellIndex" class="section-item-cells">
+                             <view bindtap="bindCityViewTap" id="{{cell}}" class="section-item-cell {{cellIndex != (item.datas.length-1) ? 'border-bottom':''}}">
+                               <text>{{cell}}</text>
+                             </view>
+                           </view>
+                         </view>
+                      </view>
+                    </view>
+                    </scroll-view>
+                    <view data-id="selector" catchtouchstart="handlerAlphaTap" catchtouchmove="handlerMove" class="alphanet-selector" hidden>
+                      <view data-ap="{{item.alphabet}}" wx:for="{{list}}" wx:key="unique" class="selector-one">
+                        {{item.alphabet}}
+                      </view>
+                    </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                  <!--user.wxml-->
+                  <view style="margin-top: 10px">
+                    <view bindtap="bindLogViewTap" class="userinfo">
+                      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+                      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+                    </view>
+
+                    <view class="page__bd" style="margin-top:10px">
+                      <view class="weui-panel weui-panel_access">
+                        <view class="weui-panel__hd" style="font-size:20px; color:black; border: 1rpx solid #fff">我去过的</view>
+                        <view wx:if="{{user_comment_list != '1'}}" class="weui-panel__bd" id="{{spot_data.id}}">
+                          <block wx:for="{{user_comment_list}}" wx:for-item="comment" wx:key="*this">
+                            <view class="weui-media-box weui-media-box_text" id="{{comment.id}}" bindtap="bindViewTap">
+                              <view class="weui-media-box__title weui-media-box__title_in-text">@{{comment.comment_user_name}}</view>
+                              <view wx:if="{{comment.comment_mark == 'comment'}}" class="weui-media-box__desc">在 {{comment.comment_date}} 评论: {{comment.comment_message}}</view>
+                              <view wx:else class="weui-media-box__desc">在 {{comment.comment_date}} 签到</view>
+                            </view>
+                          </block>
+                        </view>
+                        <view wx:else class="weui-panel__bd">
+                          <view class="weui-media-box weui-media-box_text">
+                            <view class="weui-media-box__title weui-media-box__title_in-text" style="text-align:center">暂无评论</view>
+                            <view class="logo">
+                              <image src="/image/logo.png" background-size="cover"></image>
+                            </view>
+                          </view>
+                        </view>
+                        <view class="weui-panel__ft" hidden>
+                          <view class="weui-cell weui-cell_access weui-cell_link">
+                            <view class="weui-cell__bd" bindtap="bindAllCommentViewTap" id="{{spot_id}}@{{spot_data.name}}">查看更多</view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+
+                    <view class="page__bd" style="margin-top:10px">
+                      <view class="weui-panel weui-panel_access">
+                        <view class="weui-panel__hd" style="font-size:20px; color:black; border: 1rpx solid #fff">我提交的</view>
+                        <view wx:if="{{user_spot_list != '1'}}" class="weui-panel__bd" id="{{spot_data.id}}">
+                          <block wx:for="{{user_spot_list}}" wx:for-item="comment" wx:key="*this">
+                            <view class="weui-media-box weui-media-box_text" id="{{comment.id}}" bindtap="bindViewTap">
+                              <view class="weui-media-box__title weui-media-box__title_in-text">@{{comment.comment_user_name}}</view>
+                              <view wx:if="{{comment.comment_mark == 'comment'}}" class="weui-media-box__desc">在 {{comment.comment_date}} 评论: {{comment.comment_message}}</view>
+                              <view wx:else class="weui-media-box__desc">在 {{comment.comment_date}} 签到</view>
+                            </view>
+                          </block>
+                        </view>
+                        <view wx:else class="weui-panel__bd">
+                          <view class="weui-media-box weui-media-box_text">
+                            <view class="weui-media-box__title weui-media-box__title_in-text" style="text-align:center">暂无提交</view>
+                            <view class="logo">
+                              <image src="/image/logo.png" background-size="cover"></image>
+                            </view>
+                          </view>
+                        </view>
+                        <view class="weui-panel__ft" hidden>
+                          <view class="weui-cell weui-cell_access weui-cell_link">
+                            <view class="weui-cell__bd" bindtap="bindAllCommentViewTap" id="{{spot_id}}@{{spot_data.name}}">查看更多</view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+
+                    <view class="button-sp-area">
+                      <button class="weui-btn" type="primary" plain="true" bindtap="bindNewViewTap">提交新地点</button>
+                    </view>
+                  </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

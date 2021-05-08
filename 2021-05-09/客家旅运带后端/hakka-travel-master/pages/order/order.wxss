@@ -1,0 +1,186 @@
+/**order.wxss**/
+
+/* top wrapper */
+.top-wrapper {
+	padding: 15rpx;
+	background: linear-gradient(to bottom, orange, red);
+	color: #fff;
+}
+
+
+.order-datetime {
+	height: 40rpx;
+	line-height: 30rpx;
+	padding: 5rpx 0;
+	text-align: center;
+}
+
+.order-city {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.order-city text {
+	flex: 1;
+	height: 70rpx;
+	line-height: 70rpx;
+	padding: 10rpx 0;
+	text-align: center;
+}
+
+
+.order-station {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+.order-station text {
+	flex: 1;
+	max-width: 35%;
+	height: 70rpx;
+	padding: 5rpx;
+	font-size: 26rpx;
+	overflow: hidden;
+	text-align: center;
+	overflow: hidden;
+}
+/* end top wrapper */
+
+
+/* order ticket */
+.order-ticket {
+	padding: 20rpx 10rpx;
+}
+
+.ticket-type {
+	position: relative;
+	display: flex;
+	flex-flow: row nowrap;
+	height: 70rpx;
+	line-height: 60rpx;
+	padding: 10rpx 0;
+	border-bottom: 2rpx solid #999;
+}
+
+.ticket-type text {
+	flex: 1; 
+	max-width: 25%;
+	text-align: center;
+}
+
+.ticket-number {
+	display: flex;
+	flex-flow: row nowrap;
+	border-bottom: 2rpx solid #999;
+}
+
+.ticket-number view {
+	position: relative;
+	flex: 2;
+	height: 70rpx;
+	line-height: 60rpx;
+	font-size: 24rpx;
+	padding: 10rpx 30rpx;
+	max-width: 50%;
+}
+
+.ticket-number .number-select {
+	max-width: 30%;
+}
+
+.ticket-number .number-select text{
+	display: inline-block;
+	width: 56rpx;
+	height: 36rpx;
+	line-height: 36rpx;
+	text-align: center;
+	border: 2rpx solid #999;
+}
+/* end order ticket */
+
+
+/* order tip*/
+.order-tip {
+	margin-bottom: 40rpx;
+	padding: 5rpx 20rpx;
+	color: red;
+	font-size: 24rpx;
+}
+
+
+/* order contact */
+.contact-title {
+	padding-left: 20rpx;
+}
+
+.order-contact {
+	margin-top: 10rpx;
+	margin-bottom: 20rpx;
+}
+
+.contact-item {
+	position: relative;
+	padding: 10rpx;
+	border-bottom: 2rpx solid #999;
+}
+
+.contact-item view {
+	margin-left: 50rpx;
+}
+/* end order contact */
+
+
+/* order pay type */
+.pay-type-title{
+	padding-left: 10rpx;
+}
+
+.order-pay-type {
+	padding: 20rpx 10rpx;
+}
+
+.order-pay-type view {
+	position: relative;
+	height: 70rpx;
+	line-height: 70rpx;
+	margin-bottom: 10rpx;
+}
+
+.order-pay-type .pay-type-icon {
+	width: 50rpx;
+	height: 50rpx;
+}
+
+.order-pay-type view text {
+	margin-left: 80rpx;
+	font-size: 28rpx;
+}
+
+.order-pay {
+	display: flex;
+	flex-flow: row nowrap;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 80rpx;
+	line-height: 80rpx;
+	border-top: 1rpx solid orangered;
+}
+
+.order-pay text {
+	flex: 2;
+}
+
+.order-pay .total-price {
+	padding-left: 20rpx;
+}
+
+.order-pay .pay-btn {
+	flex: 1;
+	text-align: center;
+	background: linear-gradient(to right, orange, red);
+	color: #fff;
+}
+/* end order pay type */

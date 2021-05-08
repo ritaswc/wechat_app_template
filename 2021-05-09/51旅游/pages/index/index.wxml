@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- index title start-->
+  <view class="page_title">
+    <navigator url="city-list/city-list?city={{cityName}}" redirect>
+        <view class="loc_btn">{{cityName}}<image class="loc_more_img" src="../../images/icon_arrow_down_white.png"/></view>
+    </navigator>
+    
+    <view class="search_btn"><image class="seach_img" src="../../images/icon_search.png"/>搜索景点</view>
+    <view class="msg_btn"><image class="msg_img" src="../../images/icon_message.png"/></view>
+  </view>
+  <!-- index title end-->
+  <!-- index hot module start-->
+  <div class="page_hot">
+    <view class="hot_title">
+      <text>热门景点</text>
+      <text>更多景点>></text>
+    </view>
+    <!-- hot list start -->
+    <scroll-view class="scroll-view_H" scroll-x="true" style="width:100%">
+      <navigator wx:for="{{hotList}}" url="audio/audio?language={{item.vtg_language_id}}" wx:key="{{index}}" class="scroll-item">
+        <image src="../../images/icon_play.png" class="icon_play" />
+        <image src="{{item.vtg_scenic_icon}}" class="hot-img"/>
+        <text>{{item.vtg_scenic_name}}</text>
+      </navigator>
+    </scroll-view>
+    <!-- hot list end-->
+  </div>
+  <!-- index hot mudule end-->
+
+  <!-- index map start -->
+  <view bindtap="myLocation"  class="index_map">
+    <image src="../../images/btn_explain.png"/>
+  </view>
+
+  <!-- index map end -->
+  <view class="sub_nav">
+    <navigator  wx:for="{{navList}}" wx:key="{{index}}" url="{{item.page}}" class="nav_item">
+      <image src="../../images/{{item.icon}}" />
+      <text>{{item.name}}</text>
+    </navigator>
+  </view>
+
+</view>

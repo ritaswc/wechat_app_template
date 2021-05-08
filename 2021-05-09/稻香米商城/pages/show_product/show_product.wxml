@@ -1,0 +1,37 @@
+<view>
+  <view>
+    <image class="head-img" src="{{product['image-url']}}" mode="aspectFill" />
+  </view>
+
+  <text class="product-name">{{product.name}}</text>
+
+  <view>
+    <form>
+      <view class="line">
+        <view class="section price">
+          <text id="price">¥{{product.price || '无法获取价格'}}</text>
+        </view>
+        <view class="section quantity">
+          <view>购买数量：</view>
+          <input id="quantity" name="quantity" bindinput="bindQuantityInput" value="1" />
+        </view>
+      </view>
+      <view class="btn-area">
+        <button bindtap="bindAddToCart" type="primary">加入购物车</button>
+      </view>
+    </form>
+  </view>
+
+  <view class="desc-container">
+    <block wx:for="{{product.desc}}" wx:for-item="desc">
+      <view class="desc-image-view">
+        <image class="desc-image" src="{{desc[0]}}" style="height: {{desc[1]*1.18}}rpx;" mode="aspectFit"/>
+      </view>
+    </block>
+  </view>
+
+  <toast hidden="{{toastAddProduct}}" bindchange="toastChange" duration="1200">
+    <text style="font-size:28rpx">成功加入购物车</text>
+  </toast>
+
+</view>

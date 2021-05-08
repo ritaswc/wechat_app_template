@@ -1,0 +1,107 @@
+<view class="page {{__page_classes}}">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <include src="/components/common/get-coupon.axml" />
+    <include src="/components/quick-navigation/quick-navigation.axml" />
+    <view class="body after-navber">
+        <scroll-view class='group-top scroll-view-x' a:if="{{pt_url}}" style="width: 100%">
+            <view class='flex-row flex-y-center' style="width: 100%">
+                <navigator open-type='navigate' url='/pages/pt/search/search' class='search-icon flex-grow-0 flex-y-center flex-x-center'>
+                    <image src='{{__wxapp_img.store.search_index.url}}'></image>
+                </navigator>
+                <view style='height:48rpx;border-right: 1rpx solid #e2e2e2;'>
+                </view>
+                <view class='flex-grow-1'>
+                    <scroll-view scroll-x="true" scroll-into-view="{{toView}}" class="scroll-view-x" style="width:100%" scroll-with-animation="true" scroll-left="{{scrollLeft}}">
+                        <view id="0" class="scroll-view-item {{cid==0 ? 'active' : ''}}" data-id='0' onTap="switchNav">
+                            热销
+                        </view>
+                        <block a:for="{{cat}}" a:key="unique">
+                            <view id="{{item.id}}" data-id="{{item.id}}" class="scroll-view-item {{cid==item.id ? 'active' : ''}}" onTap="switchNav">
+                                {{item.name}}
+                            </view>
+                        </block>
+                    </scroll-view>
+                </view>
+            </view>
+        </scroll-view>
+
+        <scroll-view scroll-y v-if="{{banner.length > 0}}" style="height: 100%;" onScrolltolower="pullDownLoading" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+            <!-- Banner 开始 -->
+            <swiper class="banner" style='{{pt_url?"":"margin-top:0rpx"}}' autoplay="true" interval="5000" duration="300" indicator-dots="true" circular="true" indicator-active-color="#ff5c5c">
+                <block a:for="{{banner}}" a:key="{{item.id}}">
+                    <swiper-item>
+                        <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="{{item.page_url}}">
+                            <button formType="submit" id="_formIdSubmit">
+                                <view style="height:320rpx">
+                                    <view class="slide-title">{{item.title}}</view>
+                                    <image src="{{item.pic_url}}" class="slide-image" mode="aspectFill" />
+                                </view>
+                            </button>
+                        </form>
+                    </swiper-item>
+                </block>
+            </swiper>
+            <!-- Banner 结束 -->
+        </scroll-view>
+        <!--    advert  start   -->
+        <view class='advert' a:if="{{ad && ad.length>0}}">
+
+            <view class='division'></view>
+            <import src="/components/common/index" />
+            <template is="{{'block-' + block.data.pic_list.length + '-0'}}" data="{{__wxapp_img:__wxapp_img,block:block,store:store}}" />
+
+        </view>
+        <!--    advert  end    -->
+        <view class='division'></view>
+
+        <block a:for="{{goods}}" a:key="{{item.id}}">
+            <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="/pages/pt/details/details?gid={{item.id}}">
+                <button formType="submit" id="_formIdSubmit">
+                    <view class='list-item flex-row'>
+                        <view class='flex-grow-0 corver-pic'>
+                            <image lazy-load="true" src='{{item.cover_pic}}'></image>
+                        </view>
+                        <view class='flex-grow-1 flex-col'>
+                            <view class='flex-grow-1 goods-title'>
+                                {{item.name}}
+                            </view>
+                            <view class='flex-grow-0 flex-row'>
+                                <view class='group-item' a:if='{{item.groupList[0]}}'>
+                                    <view a:for='{{item.groupList}}' a:for-item="group" a:key="{{item.id}}">
+                                        <image src='{{group.avatar_url}}'></image>
+                                    </view>
+                                </view>
+                                <view class='goods-sales'>
+                                    已团 {{item.virtual_sales}}
+                                </view>
+                            </view>
+                            <view class='flex-grow-0 flex-row flex-y-bottom'>
+                                <view class='flex-grow-0 price flex-row flex-y-bottom'>
+                                    <view class='unit flex-grow-0 flex-y-bottom'>
+                                        ¥
+                                    </view>
+                                    <view class='flex-grow-1 flex-y-bottom'>{{item.price}}</view>
+                                </view>
+                                <view class='flex-grow-1 old-price flex-y-bottom'>
+                                    ¥ {{item.original_price}}
+                                </view>
+                                <view class='flex-grow-0 group-btn flex-x-center flex-y-center'>
+                                    去开团
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </button>
+            </form>
+        </block>
+        <view class="loading-bar {{show_loading_bar?'active':''}}" style="text-align: center;{{emptyGoods==1?'display:none':''}}">
+            <image style="width: 160rpx;height: 80rpx" src="{{__wxapp_img.system.loading.url}}"></image>
+        </view>
+        <view a:if='{{is_show}}' class="empty-bar flex-row flex-x-center flex-y-center">
+            没有更多商品了~
+        </view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

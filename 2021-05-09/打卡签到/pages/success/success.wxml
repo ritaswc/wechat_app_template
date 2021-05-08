@@ -1,0 +1,21 @@
+<view style="width: {{winWidth}}px; height: {{winHeight}}px; background-color: #fafafa">
+  <view class="vIcon-style">
+    <image wx:if="{{offwork==false}}" class="iIcon" src="/images/icons/signOk.png"></image>
+    <image wx:else class="iIcon" src="/images/icons/signoff.png"></image>
+  </view>
+  <view class="vSuccessMsg">
+    <text>打卡成功</text>
+  </view>
+  <view class="vDate-part">
+    <view class="vTime-style">
+      <image class="iTime" src="/images/icons/time.png"></image>
+      <text>{{time}}</text>
+    </view>
+    <view class="vLocation-style">
+      <image class="iLocation" src="/images/icons/location.png"></image>
+      <text>{{location}}</text>
+    </view>
+  </view>
+  <button class="bBack" bindtap="back">返回</button>
+  <!--<view class="vOutcompany">退出企业</view>-->
+</view>

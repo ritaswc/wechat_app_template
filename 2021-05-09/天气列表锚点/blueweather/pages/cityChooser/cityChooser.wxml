@@ -1,0 +1,29 @@
+
+<!--index.wxml-->
+<view class="container">
+  <view class="list">
+    <!--<input placeholder="请输入城市名称或拼音" bindinput="inputEvent" />-->
+    <scroll-view scroll-y="true" style="height: 1200rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <block wx:for="{{cityArray}}">
+        <block wx:if="{{item.type=='city'}}">
+          <view class="item" id="{{item.city}}" hover="true" hover-class="scroll-item-hover" bindtap="cityClickEvent">
+            <text class="city">{{item.city}}</text>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="index" id="{{item.type}}">
+            <text class="city">{{item.type}}</text>
+          </view>
+        </block>
+      </block>
+    </scroll-view>
+  </view>
+  <view class="sideBar" bindtouchmove="indexEvent" >
+    <view class="sideBar-item" hover="true" hover-class="sidebar-item-hover" wx:for="{{letterArray}}" id=" {{item}}" bindtap="tapEvent" >
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+  <!--<button size="mini " bindtap="changeToView ">click me to scroll into view </button>
+    <button size="mini " bindtap="changeScrollTop ">click me to scroll</button>-->
+</view>

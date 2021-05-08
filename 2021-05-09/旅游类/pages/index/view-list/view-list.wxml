@@ -1,0 +1,13 @@
+<import src="../view-list-template/view-list.wxml" />
+<view class="view-box">
+  <scroll-view scroll-y="true" style="height: 1335px" bindscrolltolower="lower" bindscroll="scroll">
+    <view wx:for="{{viewList }}" wx:key="{{index}}" wx:if="{{!loading}}" animation="{{animationData}}">
+       <view class="fill"></view>
+      <template is="viewList" data="{{...item}}"></template>
+   
+    </view>
+    </scroll-view>
+  <view wx:if="{{showMore}}" class="showmore">
+    <text>没有更多了</text>
+  </view>  
+</view>

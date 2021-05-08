@@ -1,0 +1,193 @@
+.container{
+  height: 1500rpx;
+}
+.top-tab{
+  width: 750rpx;
+  height: 100rpx;
+  background: #298DE5;
+  color: #8CCEFD;
+  font-size: 28rpx;
+  line-height: 100rpx;
+  box-shadow: 0 2px 2px #bebebe;
+  margin: 0 0 8rpx 0;
+  z-index: 9999;
+}
+
+.toptab.active{
+  color: #ffffff;
+  border-bottom: solid 2px #ffffff;
+}
+.activity{
+  width: 750rpx;
+  height: 375rpx;
+}
+.activity image{
+  width: 750rpx;
+  height: 375rpx;
+}
+.placehold{
+  font-size: 28rpx;
+  padding: 80rpx 0;
+}
+/*新增start*/
+
+.page-section-spacing {
+  margin-bottom: 40rpx;
+  background-color: white;
+}
+.good-list{
+  display:flex;
+  height: 140rpx;
+}
+.good-item{
+  flex: 1;
+  flex-grow: 1;
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.item-center {
+  width: 70%;
+  height: 80%;
+  margin: 16rpx auto;
+  text-align: center;
+}
+
+.listicon {
+  width: 55%;
+  height: 65%;
+}
+
+.listtext {
+  display: block;
+}
+
+.act_pic {
+  width: 100%;
+  height: 135rpx;
+}
+.act_pic image {
+  width: 100%;
+  height: 100%;
+}
+
+
+.trans {
+  width: 100%;
+  height: 464rpx;
+}
+
+.trans_left {
+  float: left;
+  width: 374rpx;
+  border-right: 2rpx;
+  height: 100%;
+}
+.trans_left image{
+  width:100%;
+  height: 100%;
+}
+
+.trans_right {
+  float: left;
+  width: 374rpx;
+  height: 100%;
+}
+
+.trans_right image {
+  width: 100%;
+  height: 50%;
+}
+
+.tit {
+  height: 100rpx;
+}
+.tit image {
+  width: 100%;
+  height: 100%;
+}
+
+.ju618up_up,.ju618down_up {
+  height:300rpx;
+}
+
+.ju618up_up image,.ju618down_up image {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+.juan618_down {
+  height: 200rpx;
+}
+
+.juan618_down image{
+  height: 100%;
+  width: 25%;
+}
+
+
+.morn_and_night {
+  width: 100%;
+  background: white;
+}
+
+.mn_pic {
+  height: 100rpx;
+}
+
+.mn_pic image{
+  height: 100%;
+  width: 100%;
+}
+
+.fq-item {
+  position: relative;
+  width: 374rpx;
+  height: 475rpx;
+  float: left;
+  font-size: 25rpx;
+}
+
+.odd {
+  margin-right: 2rpx;
+}
+
+.fq-item .pic {
+  width: 100%;
+  height: 375rpx;
+}
+
+.fq-item .logo {
+  position: absolute;
+  width: 110rpx;
+  height: 60rpx;
+  top: 350rpx;
+  right: 40rpx;
+  z-index: 20;
+}
+
+.fq-item .logo image {
+  width: 100%;
+  height: 100%;
+}
+
+.item-text {
+  height: 100rpx;
+  font-size: 28rpx;
+}
+.item-text text {
+  display: block;
+  margin-left: 10rpx;
+  color: red;
+}
+.item-text view {
+  margin-left: 10rpx;
+  color: black;
+}
+
+.bt-text text {  
+  float: right;
+  color: #bebebe;
+}
+/*新增end*/

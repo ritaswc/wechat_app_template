@@ -1,0 +1,207 @@
+<!--bargain/goods/goods.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class='w-100' style='overflow-x: hidden;position:relative;'>
+            <include src="/components/goods-header/goods-header" />
+            <include src="/components/save_qrcode/save_qrcode" />
+            <view class='banner'>
+                <swiper class="goods-image-swiper" autoplay="true" interval="5000" duration="300" indicator-dots="true" circular="true" onChange="hide">
+                    <block a:for="{{goods.pic_list}}" a:key="{{item.id}}">
+                        <swiper-item>
+                            <block a:if="{{goods.video_url}}">
+                                <image class="play {{img_hide}}" src="{{__wxapp_img.store.video_play.url}}" data-url="{{goods.video_url}}" onTap="play"></image>
+                            </block>
+                            <image onTap="onGoodsImageClick" data-index="{{index}}" class="goods-image" src="{{item.pic_url}}" mode="aspectFill" />
+                        </swiper-item>
+                    </block>
+                </swiper>
+                <block a:if='{{bargain_info}}'>
+                </block>
+                <block a:else>
+                    <view class='block' style='margin-bottom:0;'>
+                        <view class='time-load flex-row flex-y-center flex-x-center'>
+                            <image class='time-bg' src='{{__wxapp_img.bargain.bargain_goods.time_bg.url}}'></image>
+                            <block a:if='{{foreshow_time > 0}}'>
+                                <view class='flex-row'>
+                                    <view style='margin-right:20rpx;'>距活动开始</view>
+                                    <block a:if="{{time_list.d > 0}}">
+                                        <view class='time-box flex-y-center'>{{foreshow_time_list.d}}</view>
+                                        <view style='margin: 0 10rpx;'>天</view>
+                                    </block>
+                                    <view class='time-box flex-y-center'>{{foreshow_time_list.h}}</view>
+                                    <view>：</view>
+                                    <view class='time-box flex-y-center'>{{foreshow_time_list.m}}</view>
+                                    <view>：</view>
+                                    <view class='time-box flex-y-center'>{{foreshow_time_list.s}}</view>
+                                </view>
+                            </block>
+                            <block a:else>
+                                <view class='flex-row'>
+                                    <view style='margin-right:20rpx;'>距活动结束</view>
+                                    <block a:if="{{time_list.d > 0}}">
+                                        <view class='time-box flex-y-center'>{{time_list.d}}</view>
+                                        <view style='margin: 0 10rpx;'>天</view>
+                                    </block>
+                                    <view class='time-box flex-y-center'>{{time_list.h}}</view>
+                                    <view>：</view>
+                                    <view class='time-box flex-y-center'>{{time_list.m}}</view>
+                                    <view>：</view>
+                                    <view class='time-box flex-y-center'>{{time_list.s}}</view>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <view class='block'>
+                <view style='padding:10rpx 0 16rpx 0'>
+                    <view class='text-more-2' style='font-size:13pt;height: 2.8em;line-height: 1.4;'>{{goods.name}}</view>
+                </view>
+                <view class="flex-row">
+                    <view class="flex-col flex-grow-1">
+
+                        <view class="flex-row flex-y-bottom">
+                            <view>最低<text style="color:#ff5c5c">￥</text>
+                                    <text style='margin-right:16rpx;font-size:15pt;color:#ff5c5c'>{{goods.min_price}}</text>
+                            </view>
+                            <view style="margin-right:16rpx;padding-left:50rpx">原价￥{{goods.price}}</view>
+                        </view>
+
+                        <view style='padding:32rpx 0 40rpx 0' class='flex-row'>
+                            <view class='flex-grow-0'>库存：{{goods.num}}</view>
+                            <view class='flex-grow-1' style="padding-left:50rpx">已有{{goods.sale}}人参与砍价</view>
+                        </view>
+                    </view>
+
+                    <view class="flex-row flex-grow-0 flex-y-center">
+                        <button onTap="showShareModal" class="share-btn" plain="true">
+                            <image style="width: 40rpx;height: 40rpx" src="{{__wxapp_img.share.share.url}}" />
+                            <view style="color: #888">分享</view>
+                        </button>
+                    </view>
+
+                </view>
+            </view>
+
+            <!-- 用户砍价信息 -->
+            <view class='block' style='padding:24rpx 20rpx;' a:if='{{bargain_info}}'>
+                <view class='flex-row'>
+                    <image class='flex-grow-0 user-img' src='{{__user_info.avatar_url}}'></image>
+                    <view class='flex-grow-1 flex-y-center'>
+                        <view>
+                            <view class='flex-row'>
+                                <view>距本次砍价结束仅剩 </view>
+                                <view class='font-o'> {{time_list.d}}天{{time_list.h}}：{{time_list.m}}：{{time_list.s}}</view>
+                            </view>
+                            <view class='font-o' a:if="{{goods.min_price == bargain_info.price}}">已砍至最低价，赶快优惠购买吧！</view>
+                            <view class='font-o' a:else>快让你的好友助你一臂之力！</view>
+                        </view>
+                    </view>
+                </view>
+
+                <view style='margin-top:20rpx;'>
+                    <view class='flex-x-center' style='color:#ff5c5c;font-size:15pt;'>当前价￥{{bargain_info.price}}</view>
+                    <view>
+                        <view class='progress-box'>
+                            <view class='progress-view' style='width:{{bargain_info.money_per}}%'></view>
+                        </view>
+                    </view>
+                    <view class='flex-row' style='color:#666;'>
+                        <view class='flex-grow-1'>原价￥{{goods.price}}</view>
+                        <view class='flex-grow-0'>底价￥{{goods.min_price}}</view>
+                    </view>
+                </view>
+
+                <view class='info'>
+                    <scroll-view class='user-scroll' scroll-y='true' scroll-into-view="user-{{user_index}}" scroll-with-animation="true">
+                        <block a:for="{{bargain_info.bargain_info}}" a:key="{{item.id}}">
+                            <view class='one flex-row' id="user-{{index}}">
+                                <image class='flex-grow-0' src='{{item.avatar}}'></image>
+                                <view class='flex-grow-1 flex-row flex-y-center'>
+                                    <view class='flex-grow-0' style='max-width:200rpx;margin-right:6rpx;'>
+                                        <view class='text-more'>{{item.nickname}} </view>
+                                    </view>
+                                    <view>小刀一挥帮忙砍了</view>
+                                    <view style='color:#ff5c5c'>{{item.price}}</view>
+                                    <view>元</view>
+                                </view>
+                            </view>
+                        </block>
+                    </scroll-view>
+                </view>
+            </view>
+
+            <view class='flex-row flex-y-center flow'>
+                <view class='flex-grow-0'>
+                    <image src='{{__wxapp_img.bargain.bargain_goods.flow.url}}'></image>
+                </view>
+                <view class='flex-grow-1'>砍价流程</view>
+            </view>
+            <view class='block'>
+                <view class='flex-row flex-x-center' style='padding-top:24rpx;padding-bottom:40rpx;color:#999;'>
+                    <block a:for="{{flow}}" a:key="{{item.id}}">
+                        <view class='flex-grow-1' a:if="{{item.name}}">
+                            <view>
+                                <view class='flex-x-center'>
+                                    <image style='width:72rpx;height:72rpx;' src='{{item.url}}'></image>
+                                </view>
+                                <view class='flex-x-center' style='margin-top:20rpx;font-size:9pt'>{{item.name}}</view>
+                            </view>
+                        </view>
+                        <view class='flex-grow-1' a:else>
+                            <view>
+                                <view class='flex-x-center'>
+                                    <image style='width:52rpx;height:34rpx;margin-top:19rpx;' src='{{item.url}}'></image>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+
+            <view class='flex-row flex-y-center flow'>
+                <view class='flex-grow-0'>
+                    <image src='{{__wxapp_img.bargain.bargain_goods.shuoming.url}}'></image>
+                </view>
+                <view class='flex-grow-1'>活动说明</view>
+            </view>
+            <view class='block'>
+                <view class='shuoming'>
+                    <view>本次活动开始时间{{goods.begin_time}}</view>
+                    <view style='margin-top:10rpx;'>本次活动结束时间{{goods.end_time}}</view>
+                </view>
+            </view>
+
+            <view class='flex-row flex-y-center flow'>
+                <view class='flex-grow-0'>
+                    <image src='{{__wxapp_img.bargain.bargain_goods.goods.url}}'></image>
+                </view>
+                <view class='flex-grow-1'>商品详情</view>
+            </view>
+            <view class='goods-detail' style='width:100%'>
+                <import src="../../wxParse/wxParse.axml" />
+                <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
+            </view>
+
+            <!-- 底部悬浮购买按钮 -->
+            <view class='bottom flex-row flex-x-center flex-y-center'>
+                <block a:if='{{bargain_info}}'>
+                    <view class='bottom-first flex-x-center flex-y-center' style='width:346rpx;' onTap='buyNow'>立即购买</view>
+                    <navigator hover-class='none' url='/bargain/activity/activity?order_id={{bargain_info.order_id}}' open-type='redirect' class='bottom-second flex-x-center flex-y-center'>找人帮砍</navigator>
+                </block>
+                <view class='bottom-first flex-x-center flex-y-center' onTap='orderSubmit' a:else>立即砍价</view>
+            </view>
+        </view>
+
+        <!-- 视频弹窗播放 -->
+        <view class='modal flex-row {{hide}}' onTap='close'>
+            <view class='flex-y-center' style='width:100%;height:100%;position:relative;'>
+                <image src='{{__wxapp_img.store.close2.url}}' style='width:50rpx;height:50rpx;position:absolute;left:24rpx;top:24rpx'></image>
+                <video direction='' src='{{url}}' id="video" style='height:80%' autoplay="true"></video>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

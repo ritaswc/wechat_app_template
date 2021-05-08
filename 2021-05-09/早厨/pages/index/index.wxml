@@ -1,0 +1,157 @@
+<!--index.wxml-->
+<view class="container food">
+  <swiper class="food__swiper" indicator-dots="true">
+    <swiper-item>
+      <image class="food__cover"
+        mode="scaleToFill"
+        src="../../assets/avocado-smoothie.jpg"/>
+
+      <view class="food__body">
+        <view class="food__title">
+          雪梨蜂蜜牛油果奶昔 16￥
+        </view>
+
+        <view class="food__description">
+          <view class="food__line">
+            牛油果的营养成分高，有益心脏、保护肝脏
+          </view>
+
+          <view class="food__line">
+            还有改善发质和美容等功
+          </view>
+        </view>
+
+        <view class="food__description">
+          <view class="food__line">
+            成熟的牛油果口感软滑
+          </view>
+
+          <view class="food__line">
+            本身味道并不浓
+          </view>
+        </view>
+
+        <view class="food__description">
+          <view class="food__line">
+            与清爽滋润的雪梨混合
+          </view>
+
+          <view class="food__line">
+            加以蜂蜜和牛奶来调味是个不错的选择
+          </view>
+        </view>
+
+        <button class="food__action" hover-class="food__action--hover">
+          预订明天早餐
+        </button>
+      </view>
+    </swiper-item>
+
+
+
+    <swiper-item>
+      <image class="food__cover"
+        mode="scaleToFill"
+        src="../../assets/dumplings.jpg"/>
+
+      <view class="food__body">
+        <view class="food__title">
+          香脆生煎饺 (12 个）24￥
+        </view>
+
+        <view class="food__description">
+          <view class="food__line">
+            一碟带着香脆锅巴的生煎饺子
+          </view>
+
+          <view class="food__line">
+            就像小时候妈妈的手艺
+          </view>
+        </view>
+
+        <view class="food__description">
+          <view class="food__line">
+            芹菜、香菇、香葱、姜剁碎，和猪肉泥搅拌
+          </view>
+
+          <view class="food__line">
+            锅内倒入少许油，煎至焦脆结透明
+          </view>
+        </view>
+
+        <view class="food__description">
+          <view class="food__line">
+            早餐吃上一碗热腾腾的饺子
+          </view>
+
+          <view class="food__line">
+            会从心里感觉暖暖的
+          </view>
+        </view>
+
+        <button class="food__action" hover-class="food__action--hover">
+          预订明天早餐
+        </button>
+      </view>
+    </swiper-item>
+
+
+
+
+
+    <swiper-item>
+      <image class="food__cover"
+        mode="scaleToFill"
+        src="../../assets/roll.jpg"/>
+
+      <view class="food__body">
+        <view class="food__title">
+          早餐卷 19￥
+        </view>
+
+        <view class="food__description">
+          <view class="food__line">
+            胡萝卜丝土豆丝海带丝豆腐衣鸡蛋，
+          </view>
+
+          <view class="food__line">
+            全部卷入饼中
+          </view>
+        </view>
+
+        <view class="food__description">
+          <view class="food__line">
+            卷饼上贴个热乎的鸡蛋
+          </view>
+
+          <view class="food__line">
+            加上上杂菜，刷上甜酱或者辣酱
+          </view>
+        </view>
+
+        <view class="food__description">
+          <view class="food__line">
+            营养全面又可口的鸡蛋饼
+          </view>
+
+          <view class="food__line">
+            口感香嫩软，一天好的开始
+          </view>
+        </view>
+
+        <button class="food__action" hover-class="food__action--hover">
+          预订明天早餐
+        </button>
+      </view>
+    </swiper-item>
+
+  </swiper>
+
+
+
+
+
+
+
+
+</view>

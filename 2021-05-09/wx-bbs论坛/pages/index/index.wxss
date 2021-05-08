@@ -1,0 +1,332 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaaaaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.index-head-logo-f{
+  font-family:"微软雅黑";
+  font-size: 28rpx;
+  color: #ffffff;
+}
+.flex {
+  flex: 1;
+}
+.rel {
+  position: relative;
+}
+.border-slice {
+  border-bottom: 10px solid #eeeeee;
+}
+.head {
+  height: 110px;
+}
+.head-banner {
+  background: url(http://i.pengxun.cn/images/bms1/050_app[1].jpg) no-repeat;
+  background-size: 100%;
+  height: 110px;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index:2;
+}
+.index-head-logo {
+  padding-left: 18px;
+  padding-top: 30px;
+  display: flex;
+
+}
+.index-head-logo-img {
+  height: 60px;
+  width: 60px;
+}
+.index-head-logo-f { 
+  margin-left: 15px;
+  flex:1;
+}
+.index-head-bottom {
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  line-height: 30px;
+  display: flex;
+  display: -webkit-flex;
+}
+.index-sign {
+  background: url(http://i.pengxun.cn/static/vzan/web/index/images/01/icon1.png) no-repeat 33% 2%;
+  background-size:552%;
+  vertical-align: -5px;
+  height: 48rpx;
+  width: 48rpx;
+  display: inline-block;
+}
+.index-focus {
+  background: url(http://i.pengxun.cn/static/vzan/web/index/images/01/icon1.png) no-repeat 62% 2%;
+  background-size:552%;
+  vertical-align: -6px;
+  height: 48rpx;
+  width:48rpx;
+  display: inline-block;
+}
+.index-set {
+    background: url(http://i.pengxun.cn/static/vzan/web/index/images/01/settings.png) no-repeat 33% 50%;
+    width: 48rpx;
+    height:48rpx;
+    background-size: 75%;
+    display: inline-block;
+    vertical-align: -6px;
+}
+.index-heading-content view {
+  display: inline-block;
+  padding:0 14rpx;
+  font-size: 30rpx;
+  font-family: "Microsoft YaHei",Arial;
+}
+.index-heading-scrol {
+  padding: 5rpx 0;  
+  width: 100%;
+  /*border-bottom:20rpx solid #eee;*/
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+.fix-index-heading-scrol{
+  padding: 5rpx 0;  
+  width: 100%;
+  /*border-bottom:20rpx solid #eee;*/
+  overflow: hidden;
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: #ffffff;
+  border-top: 1px solid #858585;
+}
+
+.index-heading-content::-webkit-scrollbar {
+  display: none;
+}
+.index-heading-content {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    white-space: nowrap;
+    overflow-y:hidden;
+}
+.scrollview-hide {
+  position: relative;
+  border: 1px solid #ffffff;
+  background-color: #eeeeee;
+  top: -12px;
+  height: 7px;
+  widows: 100%;
+}
+.index-heading-more {
+  height: 60rpx;
+  width: 80rpx;
+  background-color: #ffffff;
+  font-size: 31.2rpx;
+  text-align: center;
+  line-height: 60rpx;
+  opacity:0.2;
+  -webkit-filter:blur(0.1px);
+  filter:blur(0.1px);
+}
+.bankuai {
+  margin: 5px 5px;
+  /*border: 1px solid #17b5ee;*/
+  width: 77px;
+  text-align: center;
+}
+
+.fl text {
+  color:#000000;
+}
+.aricle-user-wrap {
+  position: relative;
+}
+.index-poster-name {
+  color:#5a85ce;
+  font-weight:bold;
+  font-size:31rpx;
+  font-family: "Microsoft YaHei",Arial;
+  width: 200rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
+.icon-reward {
+  vertical-align: -4px;
+  width: 17px;
+  border: 0;
+  height: 17px;
+  background: url(http://i.pengxun.cn/static/vzan/web/index/images/post-big-pic-06.png) no-repeat 0 0;
+  background-size: 100%;
+  display: inline-block
+}
+.icon-zhuan {
+    vertical-align: -4px;
+    width: 17px;
+    height: 17px;
+    background: url(http://i.pengxun.cn/static/vzan/web/index/images/icon1.png) no-repeat 34% 37%;
+    background-size: 735%;
+    display: inline-block;
+}
+.icon-ping {
+    vertical-align: -4px;
+    width: 17px;
+    height: 17px;
+    background: url(http://i.pengxun.cn/static/vzan/web/index/images/icon1.png) no-repeat 62% 37%;
+    background-size: 735%;
+    display: inline-block;
+}
+.icon-zan {
+    vertical-align: -3px;
+    width: 17px;
+    height: 17px;
+    background: url(http://i.pengxun.cn/static/vzan/web/index/images/icon1.png) no-repeat 34% 67%;
+    background-size: 735%;
+    display: inline-block;
+}
+.em {
+  color:#858585;
+  font-size:28.8rpx;
+  font-family: "Microsoft YaHei",Arial;
+  padding: 0 2px;
+}
+
+
+.res-info {
+  display: flex;
+  padding-left: 2px;
+  border-bottom: 1px solid #d6d6d6;
+  width: 100%;
+}
+
+.comment-content-msg-wrap {
+  display: inline-block;
+  padding: 6px;
+  width: 100%;
+}
+
+.comment-container {
+  display: flex;
+}
+
+.comment-content {
+  width: 93%;
+}
+
+.comment-image view {
+  padding-right: 5px;
+}
+
+
+.selected {
+  color:#17b5ee;
+  border-bottom: 1px solid #17b5ee;
+}
+
+
+.recommend-emoij{background: url(http://i.pengxun.cn//content/images/imgpost2/01/post-big-pic-01.png) no-repeat 0 -234px; background-size: 100%; height: 26px; width: 26px; }
+
+
+
+
+
+.recommend-icon-container{
+  float: left;
+}
+.recommend-submit-container{
+  float: right;
+}
+.recommend-wrap{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+}
+.recommend-cancle-wrap{
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  color: #858585;
+  background: #ffffff;
+  font-size: 12px;
+  width: 60px;
+  height: 20px; 
+  line-height: 18px;
+  text-align: center;
+}
+.recommend-submit-wrap {
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 12px;
+  width: 60px;
+  height: 20px; 
+  line-height: 18px;
+  text-align: center;
+  background: #17b5ee;
+}
+.recommend-img{background: url(http://i.pengxun.cn//content/images/imgpost2/01/post-big-pic-01.png) no-repeat 0 -286px; background-size: 100%; height: 26px; width: 26px; }
+.recommend-voice{background: url(http://i.pengxun.cn//content/images/imgpost2/01/post-big-pic-01.png) no-repeat 0 -338px; background-size: 100%; height: 26px; width: 26px;}
+.recommend-text{
+    position: relative;
+    font-size: 14px;
+    text-align: justify;
+    border: 1px solid #d6d6d6;
+    height: 80px;
+    width: 100%;
+}
+
+.more-comments{
+    color: #5a85ce;
+    text-align: center;
+    line-height: 40px;
+}
+.zindex-3{
+  z-index:3;
+  position: relative;
+}
+.zindex-1{
+  z-index:1;
+}
+.loading {
+    margin: 10px 0px;
+    text-align: center;
+    color: #858585;
+    background-color: #ffffff;
+}
+.index-head-search{
+    background: url(http://j.pengxun.cn/content/images/index/searh.png) no-repeat;
+    background-size: 100%;
+    width: 18px;
+    height: 18px;
+    right: 18px;
+    top: 10px;
+    cursor: pointer;
+    z-index: 3;
+    position: absolute;
+}

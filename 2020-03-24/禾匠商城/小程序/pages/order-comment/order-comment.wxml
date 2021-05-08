@@ -1,0 +1,49 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="goods-list">
+            <view class="goods-item" wx:for="{{goods_list}}" wx:key="{{item.id}}">
+                <view class="flex-row score-row">
+                    <view class="flex-grow-0 ">
+                        <image class="goods-pic" src="{{item.goods_pic}}"></image>
+                    </view>
+                    <view class="flex-grow-1 flex-row">
+                        <view bindtap="setScore" class="flex-grow-1 score-item flex-y-center flex-x-center {{item.score==3?'active':''}}" data-index="{{index}}" data-score="3">
+                            <image src="/images/icon-comment-score-3{{item.score==3?'.active':''}}.png"></image>
+                            <text>好评</text>
+                        </view>
+                        <view bindtap="setScore" class="flex-grow-1 score-item flex-y-center flex-x-center {{item.score==2?'active':''}}" data-index="{{index}}" data-score="2">
+                            <image src="/images/icon-comment-score-2{{item.score==2?'.active':''}}.png"></image>
+                            <text>中评</text>
+                        </view>
+                        <view bindtap="setScore" class="flex-grow-1 score-item flex-y-center flex-x-center {{item.score==1?'active':''}}" data-index="{{index}}" data-score="1">
+                            <image src="/images/icon-comment-score-1{{item.score==1?'.active':''}}.png"></image>
+                            <text>差评</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="flex-row content-row">
+                    <view class="flex-grow-0 nowrap form-label">评价内容</view>
+                    <view class="flex-grow-1">
+                        <textarea bindinput="contentInput" data-index="{{index}}" maxlength="2000" placeholder="请输入评价内容" placeholderStyle="color:#ccc"></textarea>
+                    </view>
+                </view>
+                <view class="pic-list">
+                    <view class="image-preview" wx:for="{{item.pic_list}}" wx:for-index="pic_index" wx:key="{{item.id}}">
+                        <text bindtap="deleteImage" class="flex-x-center flex-y-center image-del" data-index="{{index}}" data-pic-index="{{pic_index}}">×
+                </text>
+                        <image mode="aspectFill" src="{{item}}" style="width: 160rpx;height: 160rpx"></image>
+                    </view>
+                    <view bindtap="chooseImage" class="image-picker" data-index="{{index}}" wx:if="{{!item.pic_list||item.pic_list.length<6}}">
+                        <image src="{{__wxapp_img.store.image_picker.url}}" style="width: 160rpx;height: 160rpx"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="bar-bottom">
+            <view bindtap="commentSubmit" class="submit-btn flex-x-center flex-y-center">提交</view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

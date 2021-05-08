@@ -1,0 +1,61 @@
+.top{
+    text-align: center;
+    background: #ff6662;
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+    color: #fff;
+    padding: 24rpx 0;
+}
+.photo{
+    width: 360rpx;
+    height:360rpx;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ff7981;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+.photo image{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+/*项目列表*/
+.item_list{
+    background-color: white;
+    font-size: 32rpx;
+}
+.item_list_msg{
+    position: relative;
+    padding: 28rpx;
+}
+.list_icon{
+    float: left;
+    width: 28px;
+    height: 28px;
+    margin-right: 15rpx;
+    margin-top: -10rpx;
+    background-repeat: no-repeat;
+}
+.list_icon image{
+    width: 100%;
+    height: 100%;
+}
+.item_list_msg::after{
+    content: ' ';
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    border: #999999 solid;
+    border-width: 1px 0 0 1px;
+    width: 8px;
+    height: 8px;
+    -webkit-transform: rotate(135deg);
+}
+.line_x{
+    width: 100%;
+    height: 2rpx;
+    background-color: #f3f3f3;
+}

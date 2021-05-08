@@ -1,0 +1,26 @@
+
+<view class="scan">
+    <view class="header">
+        <view class="avatar"><image src="{{avatar}}" /></view>
+        <view class="name"><text>{{wxName}}</text></view>
+    </view>
+    <view class="time-section">
+        <view class="time">
+            <view class="hourminuts">
+                <text>{{hours}}:{{minutes}}</text>
+            </view>
+            <view class="seconds">
+                <text>{{seconds}}</text>
+            </view>
+        </view>
+        <view class="date">
+            <text>{{month}}月{{day}}日  {{week}}</text>
+        </view>
+    </view>
+    <view class="footer">
+
+        <button class="to-clock" hover-class="hover-to-clock" disabled="{{touchBled}}" bindtap="toClock">{{btnStr}}</button>
+        <button class="to-list" hover-class="hover-to-list" bindtap="toList">考勤记录</button>
+
+    </view>
+</view>

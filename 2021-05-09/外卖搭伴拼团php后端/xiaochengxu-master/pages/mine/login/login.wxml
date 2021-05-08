@@ -1,0 +1,16 @@
+<!--pages/mine/login/login.wxml-->
+
+<view class="content">
+   <form bindsubmit="formSubmit">
+        <view class="section">
+            <input name="phone" bindblur="savePhone" placeholder="手机号" value="{{phone}}"/>
+        </view>
+        <view class="section">
+            <input name="code" placeholder="验证码"/>
+            <text class="code" bindtap="getCode">获取验证码</text>
+        </view>
+        <view class="btn-area">
+            <button formType="submit">绑定</button>
+        </view>
+    </form>
+</view>

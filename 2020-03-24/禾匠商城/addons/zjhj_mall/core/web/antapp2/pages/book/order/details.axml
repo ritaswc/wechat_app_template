@@ -1,0 +1,126 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view style='padding-bottom:120rpx;'>
+            <view class='goods flex-row' onTap='goToGoodsDetails'>
+                <view class='goods-pic flex-grow-0'>
+                    <image src='{{goods.cover_pic}}'></image>
+                </view>
+                <view class='goods-info flex-grow-1 flex-col'>
+                    <view class='goods-name flex-grow-1'>
+                        {{goods.name}}
+                    </view>
+                    <view class='flex-grow-1 goods-name' a:for="{{attr}}">
+                        <view style="margin:5rpx 0;-webkit-line-clamp: 1;" class="text-more-2">
+                            <text>{{item['attr_group_name']}} :  </text>
+                            <text style="color:#ff6845">{{item['attr_name']}}</text>
+                        </view>
+                    </view>
+                    <view class='money flex-grow-0 flex-row flex-y-bottom '>
+                        <view class='original_price flex-gorw-0'>
+                            ¥ {{goods.original_price}}
+                        </view>
+                        <view class='price flex-grow-0'>
+                            ¥ {{goods.pay_price}}
+                        </view>
+                    </view>
+                </view>
+                <view class='goods-right flex-grow-0 flex-y-center'>
+                    <image src='{{__wxapp_img.share.right.url}}'></image>
+                </view>
+            </view>
+
+            <view class='shop'>
+                <view class='shop-title flex-y-center'>
+                    门店信息
+                </view>
+                <view class='shop-info'>
+                    <view class='shop-name'>
+                        {{goods.shopList[0].name}}
+                    </view>
+                    <view class='shop-addres'>
+                        地址：{{goods.shopList[0].address}}
+                    </view>
+                    <view class='shop-time'>
+                        营业时间：{{goods.shopList[0].shop_time?goods.shopList[0].shop_time:'7 x 24'}}
+                    </view>
+                </view>
+                <view class='all-shop flex-row flex-y-center' onTap='goToShopList'>
+                    <view class='shop-text flex-grow-1 flex-y-center'>
+                        查看全部{{goods.shopListNum}}家分店
+                    </view>
+                    <view class='shop-more flex-grow-0 flex-y-center'>
+                        <image src='{{__wxapp_img.share.right.url}}'></image>
+                    </view>
+                </view>
+            </view>
+            <view class='order'>
+                <view class='order-title flex-y-center'>
+                    订单信息
+                </view>
+                <view class='order-info'>
+                    <view class='order-info-item'>
+                        订单号：{{goods.order_no}}
+                    </view>
+                    <view class='order-info-item'>
+                        下单时间：{{goods.addtime}}
+                    </view>
+                    <view class='order-info-item' a:for='{{goods.orderForm}}'>
+                        <block a:if="{{item.type == 'uploadImg'}}">
+                            <view class='flex-row w-100 h-100' style='height:100rpx;'>
+                                <view class='flex-grow-0 flex-y-center'>{{item.key}}：</view>
+                                <view class='flex-grow-1 flex-y-center'>
+                                    <image src='{{item.value}}' mode='aspectFit' style='width:88rpx;height:88rpx;'></image>
+                                </view>
+                            </view>
+                        </block>
+                        <block a:else>
+                            {{item.key}}：{{item.value}}
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+
+        <view class='btn-group flex-row' a:if='{{goods.apply_delete != 1&&goods.is_refund != 1&&goods.is_comment != 1}}'>
+            <block a:if='{{goods.is_pay==1&&goods.is_use==0&&goods.apply_delete==0}}'>
+                <view class='btn-group-item apply flex-x-center flex-y-cneter' a:if='{{goods.pay_price > 0}}' onTap='applyRefund'>
+                    申请退款
+                </view>
+                <view class='btn-group-item promptly flex-x-center flex-y-cneter' onTap='orderQrcode'>
+                    立即使用
+                </view>
+            </block>
+            <block a:if='{{goods.is_pay==0&&goods.is_cancel==0}}'>
+                <view class='btn-group-item apply flex-x-center flex-y-cneter' onTap='orderCancel' data-id='{{goods.id}}'>
+                    取消
+                </view>
+                <view class='btn-group-item promptly flex-x-center flex-y-cneter' onTap='GoToPay' data-id='{{goods.id}}'>
+                    支付
+                </view>
+            </block>
+            <block a:if='{{goods.is_use==1&&goods.is_comment==0&&__is_comment}}'>
+                <view a:if='{{__is_comment}}' class='btn-group-item apply flex-x-center flex-y-cneter' onTap='comment' data-id='{{goods.id}}'>
+                    评价
+                </view>
+            </block>
+        </view>
+        <view class='btn-group flex-row' a:if="{{goods.apply_delete == 1 && goods.is_refund == 2}}">
+            <view class='btn-group-item promptly flex-x-center flex-y-cneter' onTap='orderQrcode'>
+                立即使用
+            </view>
+        </view>
+
+        <view class='flex-row flex-y-center modal {{hide==1?"hide":""}}' onTap='hide'>
+            <view class='flex-y-center' style='width:100%;height:800rpx;padding:100rpx;'>
+                <view style='background-color:#fff;width:100%;height:100%;border-radius:10rpx;padding:0 50rpx;'>
+                    <view class='flex-x-center' style='width:100%;height:50rpx;margin-top:50rpx;font-size:13pt;margin-bottom:20rpx'>提货二维码</view>
+                    <image src='{{qrcode}}' style='width:450rpx;height:450rpx;'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

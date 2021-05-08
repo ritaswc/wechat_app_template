@@ -1,0 +1,14 @@
+<!--pages/order/pay/pay.wxml-->
+
+<view class="content">
+    <view class="pay">
+        <text>{{orderInfo.goods_name}}</text>
+        <text>¥ {{orderInfo.order_amount}}</text>
+        <text>{{orderInfo.consignee}}({{orderInfo.tel}})</text>
+        <text>{{orderInfo.address}}</text>
+        <button type="primary" bindtap="pay"> 微信支付 </button>
+    </view>
+</view>
+
+<import src="/asset/template/backhome.wxml" />
+<template is="backhome"/>

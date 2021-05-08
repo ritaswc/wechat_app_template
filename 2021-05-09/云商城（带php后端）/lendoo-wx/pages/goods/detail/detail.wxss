@@ -1,0 +1,97 @@
+page {
+	background: #eee;
+}
+
+/*swiper images*/
+.images {
+	position: relative;
+}
+
+.swiper-image {
+	width: 100%;
+	height: 100%;
+}
+
+/*contains title & price*/
+.summary {
+	display: flex; 
+	flex-direction: column; 
+	justify-content: space-between;
+	background: white;
+	margin: 20rpx 0;
+}
+
+/*goods title*/
+.title {
+	font-size: 34rpx;
+	margin: 10rpx;
+	line-height: 46rpx;
+}
+
+/*goods price*/
+.price {
+	color: #f60;
+	margin: 10rpx;
+}
+
+/*详情图片底部边距*/
+.detail {
+	margin-bottom: 50px;
+}
+
+.detail image{
+	width: 100%;
+}
+
+.footer {
+	background: #f9f9f9;
+	width: 100%;
+	display: flex; 
+	flex-direction: row; 
+	justify-content: space-between;
+	position: fixed;
+	bottom: 0;
+}
+
+.add-cart {
+	float: right;
+	border: 0;	
+	line-height: 100rpx;
+	text-align: center;
+	width: 350rpx;
+	height: 100rpx;
+	background-color: #f60;
+	color: white;
+	font-size: 36rpx;
+	border-radius: 0px;
+}
+
+/*购物车按钮、收藏等*/
+.opt-buttons {
+	width: 100%;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-around;
+}
+
+/*cart*/
+.button-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.button-image {
+	width: 60rpx;
+	height: 60rpx;
+}
+
+.button-text {
+	font-size: 24rpx;
+	line-height: 40rpx;
+}
+
+.contact-button {
+	width: 60rpx;
+	height: 48rpx;
+	padding-top: 5px; 
+}

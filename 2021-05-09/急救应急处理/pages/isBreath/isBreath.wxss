@@ -1,0 +1,30 @@
+@import "../../libs/animate.wxss"
+.unconsciousness {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: #23454D;
+}
+
+.unconsciousness-title {
+  font-size: 60rpx;
+  font-weight: bold;
+  line-height: 20vh;
+}
+
+.right {
+  height: 40vw;
+  width: 40vw;
+}
+.btn {
+  width: 600rpx;
+  height: 100rpx;
+  font-size: 40rpx;
+  margin: 5vh 0;
+  color: #23454D;
+  background-color: #fff;
+  border: 1px solid #B2BEC1;
+  border-radius: 100rpx;
+}

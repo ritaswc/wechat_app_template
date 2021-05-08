@@ -1,0 +1,210 @@
+.container {
+  width: 97%;
+  position: absolute;
+  z-index: 2;
+  top: 20rpx;
+  bottom: 10rpx;
+  padding: 0 10rpx 0 10rpx;
+  overflow: hidden;
+}
+
+.list {
+  height: 83%;
+}
+
+.loading {
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 2;
+  margin-bottom: 20rpx;
+}
+
+.shop {
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  margin-top: -12rpx;
+}
+
+.shop.list {
+  padding-top: 30rpx;
+  margin-bottom: 25rpx;
+  background: #fff;
+}
+
+.brand_item {
+  display: block;
+  position: relative;
+  margin-left: 135rpx;
+}
+
+.pic {
+  display: inline-block;
+  float: left;
+  width: 180rpx;
+  height: 140rpx;
+  background: url(http://appuat.huihuishenghuo.com/img/store/grey.gif) no-repeat center / 100% auto;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+
+.right_cont {
+  display: block;
+  position: relative;
+  margin-left: 90rpx;
+}
+
+.li_title {
+  width: 100%;
+  padding-top: 10rpx;
+  float: left;
+  height: 30rpx;
+  overflow: hidden;
+  max-width: 85%;
+  margin: 0;
+  line-height: 33rpx;
+  font-size: 32rpx;
+  font-weight: normal;
+  color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.title {
+  width: auto;
+  float: left;
+}
+
+.rzpic {
+  display: block;
+  float: left;
+  width: 28rpx;
+  height: 30rpx;
+  line-height: 33rpx;
+  padding-left: 10rpx;
+  color: #dd2a2a;
+}
+
+.comment {
+  display: inline-block;
+  max-width: 65%;
+  height: 40rpx;
+  margin-top: 13rpx;
+}
+
+.star {
+  display: inline-block;
+  margin-top: 10rpx;
+  height: 34rpx;
+  width: 200rpx;
+  background: url(http://appuat.huihuishenghuo.com/img/store/star-icon.png) no-repeat -96px top / auto 16px;
+}
+
+.star_span {
+  display: block;
+  height: 34rpx;
+  width: 80%;
+  background: url(http://appuat.huihuishenghuo.com/img/store/star-icon.png) no-repeat 0px top / auto 16px;
+}
+
+.discount {
+  float: right;
+  margin-right: 20rpx;
+  color: #dd2a2a;
+}
+
+.dlt {
+  font-size: 50rpx;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.drt {
+  padding-left: 5rpx;
+  font-size: 30rpx;
+}
+
+.other {
+  display: inline-block;
+  width: 100%;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 26rpx;
+  font-style: normal;
+  color: #888;
+  padding-bottom: 8rpx;
+}
+
+.olt {
+  float: left;
+}
+
+.ort {
+  float: right;
+  margin-right: 20rpx;
+}
+
+.right_cont .price {
+  width: 95%;
+  height: auto;
+  padding: 10rpx 5rpx;
+  border-top: 1rpx solid #aaa;
+}
+
+.price1 {
+  width: 100%;
+  height: 45rpx;
+}
+
+.price2 {
+  width: 100%;
+  height: 45rpx;
+}
+
+.right_cont .coupon1 {
+  display: inline-block;
+  float: left;
+  width: 33rpx;
+  height: 33rpx;
+  padding-top: 4rpx;
+  margin-right: 10rpx;
+  background: #00b7ee;
+  line-height: 33rpx;
+  vertical-align: middle;
+  text-align: center;
+  color: #fff;
+  font-size: 27rpx;
+  font-style: normal;
+  border-radius: 5rpx;
+}
+
+.right_cont .coupon2 {
+  display: inline-block;
+  float: left;
+  width: 33rpx;
+  height: 33rpx;
+  padding-top: 4rpx;
+  margin-right: 10rpx;
+  background: #f6ac19;
+  line-height: 33rpx;
+  vertical-align: middle;
+  text-align: center;
+  color: #fff;
+  font-size: 27rpx;
+  font-style: normal;
+  border-radius: 5rpx;
+}
+
+.right_cont .dispan {
+  display: inline-block;
+  float: left;
+  padding-top: 9rpx;
+  line-height: 22rpx;
+  vertical-align: middle;
+  font-size: 27rpx;
+  color: #666;
+}

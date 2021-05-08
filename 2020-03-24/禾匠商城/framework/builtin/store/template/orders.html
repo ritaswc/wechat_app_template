@@ -1,0 +1,212 @@
+{template 'header'}
+<div id="js-store-orders" ng-controller="storeOrdersCtrl" ng-cloak>
+	<div class="we7-page-title">我的订单</div>
+	<form action="{php echo $this->createWebUrl('orders', array('direct' => 1))}" class="search-box we7-margin-bottom" method="post">
+		<select class="we7-margin-right">
+			<option {if $_GPC['type'] == ''}selected{/if} data-url="{php echo $this->createWebUrl('orders', array('direct' => 1))}">全部</option>
+			<option {if $_GPC['type'] == STORE_ORDER_PLACE}selected{/if} data-url="{php echo $this->createWebUrl('orders', array('direct' => 1, 'type' => STORE_ORDER_PLACE))}">待支付</option>
+			<option {if $_GPC['type'] == STORE_ORDER_FINISH}selected{/if} data-url="{php echo $this->createWebUrl('orders', array('direct' => 1, 'type' => STORE_ORDER_FINISH))}">已完成</option>
+			<option {if $_GPC['type'] == STORE_ORDER_APPLY_REFUND}selected{/if} data-url="{php echo $this->createWebUrl('orders', array('direct' => 1, 'type' => STORE_ORDER_APPLY_REFUND))}">申请退款</option>
+			<option {if $_GPC['type'] == STORE_ORDER_REFUNDED}selected{/if} data-url="{php echo $this->createWebUrl('orders', array('direct' => 1, 'type' => STORE_ORDER_REFUNDED))}">已退款</option>
+		</select>
+		<select class="we7-margin-right">
+			<option {if $_GPC['is_wish'] == STORE_ORDER_ALL }selected{/if} data-url="{php echo $this->createWebUrl('orders', array('direct' => 1, 'is_wish' => STORE_ORDER_ALL))}">全部订单</option>
+			<option {if $_GPC['is_wish'] == STORE_ORDER_NORMAL}selected{/if} data-url="{php echo $this->createWebUrl('orders', array('direct' => 1, 'is_wish' => STORE_ORDER_NORMAL))}">普通订单</option>
+			<option {if $_GPC['is_wish'] == STORE_ORDER_WISH}selected{/if} data-url="{php echo $this->createWebUrl('orders', array('direct' => 1, 'is_wish' => STORE_ORDER_WISH))}">预购订单</option>
+		</select>
+		<div class="search-form">
+			<div class="input-group " style="width: 400px;">
+				<input type="text" name="orderid" value="" class="form-control" placeholder="请输入订单号">
+				<span class="input-group-btn"><button class="btn btn-default"><i class="fa fa-search"></i></button></span>
+			</div>
+		</div>
+	</form>
+	<table class="table we7-table vertical-middle">
+		<tr>
+			<th width="100px"></th>
+			<th width="240px">商品名称</th>
+			<th>购买用户</th>
+			<th>适用账号</th>
+			<th class="text-center">应付价格</th>
+			<th>实付价格</th>
+			<th>交易类型</th>
+			<th class="text-right">操作</th>
+		</tr>
+		<tr style="border: 0"><td colspan="7"></td></tr>
+		<tbody ng-repeat="order in orderList">
+			<tr>
+				<th colspan="7" class="color-gray ">
+					<span class="we7-margin-right" >订单号：<span ng-bind="order.orderid"></span></span>
+					<span class="we7-margin-right">创建时间：<span ng-bind="order.createtime"></span></span>
+				</th>
+				<th class="text-right " >
+					<a ng-if="order.type == order_types.STORE_ORDER_PLACE && role == 'seller'" ng-href="{{links.delOrder}}&id={{order.id}}" class="color-gray"><span class="wi wi-delete2"></span>删除</a>
+				</th>
+			</tr>
+			<tr>
+				<td ng-if="order.goods_info.type_info.group == 'module'">
+					<a class="color-default" ng-href="{{ './index.php?c=site&a=entry&do=goodsBuyer&m=store&operate=goods_info&direct=1&goods=' + order.goodsid}}"><img ng-src="{{order.goods_info.module_info.logo}}" alt="" class="module-img" ></a>
+				</td>
+				<td ng-if="order.goods_info.type == goods_types.STORE_TYPE_ACCOUNT || order.goods_info.type == goods_types.STORE_TYPE_WXAPP || order.goods_info.type == goods_types.STORE_TYPE_PACKAGE">
+					<div class="icon icon-api"><span class="wi wi-appjurisdiction"></span></div>
+				</td>
+				<td ng-if="order.goods_info.type == goods_types.STORE_TYPE_USER_PACKAGE || order.goods_info.type == goods_types.STORE_TYPE_ACCOUNT_PACKAGE">
+					<div class="icon icon-api"><span class="wi wi-userjurisdiction"></span></div>
+				</td>
+				<td ng-if="order.goods_info.type == goods_types.STORE_TYPE_API || order.goods_info.type == goods_types.STORE_TYPE_ACCOUNT_RENEW || order.goods_info.type == goods_types.STORE_TYPE_WXAPP_RENEW">
+					<div class="icon icon-api"><span class="wi wi-api"></span></div>
+				</td>
+				<td>
+					<a ng-href="{{ './index.php?c=site&a=entry&do=goodsBuyer&m=store&operate=goods_info&direct=1&goods=' + order.goodsid}}"><div class="name" ng-bind="order.goods_info.title"></div></a>
+					<span ng-if="order.goods_info.group_name" ng-bind="order.goods_info.group_name"></span>
+					<!-- 判断预购任务 -->
+					<span ng-if="order.is_wish == order_types.STORE_ORDER_WISH" class="we7-margin-top-sm"><i class="wi wi-star color-default"></i>预购应用</span>
+				</td>
+				<td ng-bind="order.buyer"></td>
+				<td ng-bind="order.account.name ? order.account.name : '-'"></td>
+				<td class="text-center">
+					<div class="color-default">￥<span ng-bind="order.amount"></span></div>
+				</td>
+				<td><span class="color-default" ng-bind="'￥' + order.amount"></span></td>
+				<td >
+					<span ng-if="order.type == order_types.STORE_ORDER_PLACE" class="color-red">待付款</span>
+					<span ng-if="order.type == order_types.STORE_ORDER_FINISH" class="color-green">交易成功</span>
+					<span ng-if="order.type == order_types.STORE_ORDER_APPLY_REFUND && role == 'buyer'" style="color:orange">
+						<span ng-if="order.refund_status == 0 || order.refund_status == -1">等待退款</span>
+					</span>
+					<span ng-if="order.type == order_types.STORE_ORDER_APPLY_REFUND && role == 'seller'" class="color-red">
+						<span ng-if="order.refund_status == 0 || order.refund_status == -1">申请退款</span>
+					</span>
+					<span ng-if="order.type == order_types.STORE_ORDER_REFUNDED && order.refund_status == 1" class="color-gray">已退款</span>
+				</td>
+				<td class="text-right">
+					<div class="link-group wish-tooltip">
+
+						<!-- 普通用户 操作按钮/提示 start-->
+
+						<a ng-if="role == 'buyer' && order.type == order_types.STORE_ORDER_PLACE" ng-href="./index.php?c=site&a=entry&m=store&do=goodsbuyer&operate=pay_order&orderid={{order.id}}&direct=1">付款</a>
+
+						<a ng-if="role == 'buyer' && order.type == order_types.STORE_ORDER_FINISH && order.is_buy == 0 && order.is_install == 0" href="javascript:void(0);" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<div>当前商品还不可以使用<span class='color-red'>当管理员购买并安装应用后,</span>应用自动可以使用。当前状态可以申请退款<br><a href='./index.php?c=site&a=entry&m=store&do=goodsbuyer&operate=apply_refund&orderid={{order.id}}&direct=1' class='color-default'>申请退款</a></div>" data-html="true"> <i class="wi wi-info" ></i> 订单提示</a>
+
+						<a href="{{ 'http://s.w7.cc/module-' + order.goods_info.module_info.cloud_mid + '.html' }}" ng-if="role == 'buyer' && order.type == order_types.STORE_ORDER_FINISH && order.is_wish == order_types.STORE_ORDER_WISH" >
+							<span ng-if="order.is_buy == 1 && order.is_install == 0">已购买</span>
+						</a>
+
+						<a href="./index.php?c=home&a=welcome&m={{ order.goods_info.module }}&do=ext&uniacid={{ order.uniacid }}" ng-if="role == 'buyer' && order.type == order_types.STORE_ORDER_FINISH && order.is_wish == order_types.STORE_ORDER_WISH && order.is_install == 1" >
+							<span>进入应用</span>
+						</a>
+
+						<a ng-if="role == 'buyer' && order.type == order_types.STORE_ORDER_REFUNDED && order.refund_status == 1" href="javascript:void(0);" data-toggle="popover" data-container="body" data-placement="bottom" data-content="<div>支付宝/微信退款, 金额到帐时间可能会有延迟</div>" data-html="true"> <i class="wi wi-info" ></i> 退款提示</a>
+
+						<!-- 普通用户 操作按钮/提示 end-->
+
+
+						<!-- 管理员 操作按钮/提示 start -->
+						<a href="javascript:void(0);" ng-if="order.type == order_types.STORE_ORDER_FINISH && role == 'seller' && order.is_buy == 0 && order.is_install == 0" ng-click="refund(order, 1)" class="color-default">退款</a>
+
+						<a href="javascript:void(0);" ng-if="order.type == order_types.STORE_ORDER_APPLY_REFUND && role == 'seller'" ng-click="refund(order)">确认退款</a>
+
+						<a href="{{ 'http://s.w7.cc/module-' + order.goods_info.module_info.cloud_mid + '.html' }}" ng-if="role == 'seller' && order.type == order_types.STORE_ORDER_FINISH && order.is_wish == order_types.STORE_ORDER_WISH && order.is_buy == 0 && order.is_install == 0" target="_blank">
+							去购买
+							<span ng-if="order.is_buy == 1 && order.is_install == 0">待安装</span>
+						</a>
+
+						<a href="javascript:void(0);" ng-if="role == 'seller' && order.type == order_types.STORE_ORDER_FINISH && order.is_wish == order_types.STORE_ORDER_WISH && order.is_buy == 1 && order.is_install == 0" data-toggle="popover" data-container="body" data-placement="bottom" data-content="<div>已购买应用, 安装后, 用户即可正常使用 <a href='./index.php?c=module&a=manage-system&do=not_installed' class='color-default'>应用管理 ></a></div>" data-html="true">
+							<i class="wi wi-info" ></i>待安装
+						</a>
+
+						<a href="javascript:void(0);" ng-if="role == 'seller' && order.type == order_types.STORE_ORDER_FINISH && order.is_wish == order_types.STORE_ORDER_WISH && order.is_install == 1" data-toggle="popover" data-container="body" data-placement="bottom" data-content="<div>应用已安装, 用户可正常使用该应用 <a href='./index.php?c=module&a=manage-system&do=installed' class='color-default'>应用管理 ></a></div>" data-html="true">
+							<i class="wi wi-info" ></i>已安装
+						</a>
+
+						<a ng-if="role == 'seller' && order.type == 1 && order.is_wish != order_types.STORE_ORDER_WISH" herf="javascript:;" ng-click="showChangePriceModal(order.id)">改价</a>
+						<!-- 管理员 操作按钮/提示 end -->
+					</div>
+				</td>
+			</tr>
+			<tr style="border: 0"><td colspan="7"></td></tr>
+		</tbody>
+	</table>
+	<div class="pull-right">
+		{$pager}
+	</div>
+	<div class="modal fade" id="change-price" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="we7-modal-dialog modal-dialog we7-form">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">修改价格</div>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="number" ng-model="newPrice.price" class="form-control" placeholder="请填写价格" />
+						<span class="help-block"></span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="changePrice()">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function() {
+		$('select').niceSelect && $('select').niceSelect()
+		$('body').on('click', function(event) {
+			var target = $(event.target);
+			if (!target.hasClass('popover')
+					&& target.data('toggle') != 'popover'
+					&& !target.parents('.popover').length) {
+						$('[aria-describedby]').click();
+			}
+		});
+	})
+	angular.module('storeApp').value('config', {
+		'role': {php echo json_encode($role)},
+		'orderList': {php echo !empty($order_list) ? json_encode($order_list) : 'null'},
+		'order_types' : {
+			'STORE_ORDER_PLACE': {STORE_ORDER_PLACE},
+			'STORE_ORDER_DELETE': {STORE_ORDER_DELETE},
+			'STORE_ORDER_FINISH': {STORE_ORDER_FINISH},
+			'STORE_ORDER_DEACTIVATE': {STORE_ORDER_DEACTIVATE},
+			'STORE_ORDER_APPLY_REFUND': {STORE_ORDER_APPLY_REFUND},
+			'STORE_ORDER_REFUND_FAIL': {STORE_ORDER_REFUND_FAIL},
+			'STORE_ORDER_REFUNDED': {STORE_ORDER_REFUNDED},
+			'STORE_ORDER_FOUNDER_REFUND': {STORE_ORDER_FOUNDER_REFUND},
+
+			'STORE_ORDER_WISH': {STORE_ORDER_WISH},
+			'STORE_ORDER_NORMAL': {STORE_ORDER_NORMAL},
+			'STORE_ORDER_ALL': {STORE_ORDER_ALL},
+		},
+
+		'goods_types' : {
+			'STORE_TYPE_ACCOUNT': {STORE_TYPE_ACCOUNT},
+			'STORE_TYPE_WXAPP': {STORE_TYPE_WXAPP},
+			'STORE_TYPE_PACKAGE': {STORE_TYPE_PACKAGE},
+			'STORE_TYPE_API': {STORE_TYPE_API},
+			'STORE_TYPE_ACCOUNT_RENEW': {STORE_TYPE_ACCOUNT_RENEW},
+			'STORE_TYPE_WXAPP_RENEW': {STORE_TYPE_WXAPP_RENEW},
+			'STORE_TYPE_USER_PACKAGE': {STORE_TYPE_USER_PACKAGE},
+			'STORE_TYPE_ACCOUNT_PACKAGE': {STORE_TYPE_ACCOUNT_PACKAGE},
+
+			'STORE_TYPE_MODULE': {STORE_TYPE_MODULE},
+			'STORE_TYPE_WXAPP_MODULE': {STORE_TYPE_WXAPP_MODULE},
+			'STORE_TYPE_WEBAPP_MODULE': {STORE_TYPE_WEBAPP_MODULE},
+			'STORE_TYPE_PHONEAPP_MODULE': {STORE_TYPE_PHONEAPP_MODULE},
+			'STORE_TYPE_XZAPP_MODULE': {STORE_TYPE_XZAPP_MODULE},
+			'STORE_TYPE_ALIAPP_MODULE': {STORE_TYPE_ALIAPP_MODULE},
+			'STORE_TYPE_BAIDUAPP_MODULE': {STORE_TYPE_BAIDUAPP_MODULE},
+			'STORE_TYPE_TOUTIAOAPP_MODULE': {STORE_TYPE_TOUTIAOAPP_MODULE},
+		},
+
+		'links': {
+			'changePrice': "{php echo $this->createWebUrl('orders', array('operate' => 'change_price', 'direct' => 1))}",
+			'delOrder': "{php echo $this->createWebUrl('orders', array('operate' => 'delete', 'direct' => 1))}",
+		},
+	});
+	angular.bootstrap($('#js-store-orders'), ['storeApp']);
+</script>
+{template 'common/footer'}

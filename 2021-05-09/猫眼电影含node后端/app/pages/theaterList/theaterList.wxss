@@ -1,0 +1,110 @@
+.head{
+  margin-bottom: 2rpx;
+}
+.scroll-H {
+  white-space: nowrap;
+}
+
+.scroll-H-item {
+  display: inline-block;
+  font-size: 26rpx;
+  padding: 20rpx 20rpx 28rpx;
+  color: #676767;
+}
+.active{
+  color:#EF4238;
+  border-bottom: 4rpx #EF4238 solid;
+}
+
+.body {
+  padding-left: 20rpx;
+  border-top: 1rpx #DCDCDC solid;
+}
+
+.theater {
+  border-bottom: 1rpx #dcdcdc solid;
+  padding: 34rpx 0;
+}
+
+.shop {
+  display: flex;
+  align-items: center;
+}
+
+.theName {
+  font-size: 30rpx;
+}
+
+.lower {
+  color: #ef4238;
+}
+
+.lowerN {
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}
+
+.lowerL {
+  font-size: 22rpx;
+}
+
+.adress {
+  font-size: 24rpx;
+  margin-top: 14rpx;
+  color: #797979;
+}
+
+.tips {
+  display: flex;
+  font-size: 22rpx;
+  margin-top: 18rpx;
+}
+
+.tipC {
+  padding: 4rpx;
+  margin-right: 6rpx;
+}
+
+.blue {
+  border: 1rpx #589daf solid;
+  border-radius: 8rpx;
+}
+
+.orang {
+  border: 1rpx #f90 solid;
+  border-radius: 8rpx;
+}
+
+.letter {
+  width: 28rpx;
+  height: 28rpx;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 28rpx;
+  border-radius: 4rpx;
+  color: #fff;
+  margin-right: 10rpx;
+}
+
+.des {
+  display: flex;
+  font-size: 22rpx;
+  color: #a0a0a0;
+  margin-top: 10rpx;
+  align-items: center;
+}
+
+.huiL {
+  background-color: #f90;
+}
+
+.kaL {
+  background-color: #a97be0;
+}
+
+.times {
+  display: flex;
+  font-size: 24rpx;
+  color: #797979;
+  margin-top: 18rpx;
+}

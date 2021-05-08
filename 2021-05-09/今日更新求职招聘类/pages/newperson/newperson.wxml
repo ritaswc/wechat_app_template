@@ -1,0 +1,12 @@
+<!--pages/newperson/newperson.wxml-->
+<view class="newperson_wrap">
+    <swiper duration="500">
+        <swiper-item  style="background-image:url( {{img[0]}} )">
+        </swiper-item>
+        <swiper-item  style="background-image:url( {{img[1]}} )">
+        </swiper-item>
+        <swiper-item  style="background-image:url( {{img[2]}} )">
+            <view bindtap="toHome" class="tiyan_naw"></view>
+        </swiper-item>
+    </swiper>
+</view>

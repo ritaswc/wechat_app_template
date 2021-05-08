@@ -1,0 +1,40 @@
+<import src="../index/GridIconCell/GridIconCell.wxml" />
+<import src="ImageCell/ImageCell.wxml" />
+<import src="GoodLife/GoodLifeCell/GoodLifeCell.wxml" />
+
+<view>
+
+  <view class="iconList-container">
+    <block wx:for="{{shenghuoiconList}}" wx:for-item="item" wx:for-index="idx" wx:key="key">
+      <view class="iconList-container-block" catchtap="tapGridCell" data-icon-id="{{idx}}">
+        <template is="GridIconCell" data="{{...item}}"></template>
+      </view>
+    </block>
+  </view>
+
+  <view class="spaceSeparateView"></view>
+
+  <view class="imageList-container">
+    <block wx:for="{{shenghuoImageList1}}" wx:for-item="item" wx:for-index="idx" wx:key="key">
+      <view class="imageList-container-block" catchtap="tapimageList1Cell" data-icon-id="{{idx}}">
+        <template is="ImageCell" data="{{...item}}"></template>
+      </view>
+    </block>
+  </view>
+
+  <view class="imageList-container">
+    <block wx:for="{{shenghuoImageList2}}" wx:for-item="item" wx:for-index="idx" wx:key="key">
+      <view class="imageList-container-block" catchtap="tapimageList1Cell" data-icon-id="{{idx}}">
+        <template is="ImageCell" data="{{...item}}"></template>
+      </view>
+    </block>
+  </view>
+
+  <view class="youxuanHeader">
+    <text class="youxuanHeaderText">--优选推荐--</text>
+  </view>
+  <block wx:for="{{list}}" wx:for-item="item" wx:key="key">
+    <!--<view class="CouponSearchListCell">{{item.doorName}}</view>-->
+    <template is="GoodLifeCell" data="{{...item}}"></template>
+  </block>
+</view>

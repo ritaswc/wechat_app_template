@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/share/share",
+    "pages/scan/scan"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4285f4",
+    "navigationBarTitleText": "黑客派",
+    "navigationBarTextStyle": "#fff"
+  }
+}

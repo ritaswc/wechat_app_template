@@ -1,0 +1,81 @@
+
+.comments{
+    background-color: #fff;
+    margin-top: 30rpx;
+    padding-left: 20rpx;
+}
+.comments .conut{
+    color: #111111;
+    font-size: 28rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 3rpx solid #f0f0f0;
+}
+
+.comments .comment{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-top: 20rpx;
+}
+
+.comments .comment .cover{
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 60rpx;
+    margin-left: 10rpx;
+    margin-right: 14rpx;
+    flex-shrink: 0;
+   
+}
+
+.comments .comment .info{
+flex: 1;
+ padding-bottom: 20rpx;
+ border-bottom: 3rpx solid #f0f0f0;
+ margin-right: 10rpx;
+}
+.comments .comment .info .name{
+    color: #111111;
+    font-size: 32rpx;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1.1em;
+}
+.comments .comment .info .star{
+    color: #111111;
+    font-size: 26rpx;
+    margin-top: 4rpx;
+}
+.comments .comment .info .star .star-rating{
+    display: inline-block;
+}
+.comments .comment .info .star .star-rating image{
+     width: 28rpx;
+      height: 28rpx;
+      margin-right: 4rpx;
+}
+
+.comments .comment .info .msg{
+    color: #111111;
+    font-size: 26rpx;
+    margin-top: 4rpx;
+    line-height: 36rpx;
+}
+
+.comments .comment .info .picture{
+    margin-top: 16rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.comments .comment .info .picture image{
+width: 120rpx;
+height: 120rpx;
+display: inline-block;
+margin-right: 40rpx;
+}

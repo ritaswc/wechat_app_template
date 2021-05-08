@@ -1,0 +1,35 @@
+
+
+
+
+<view class="self">
+  <view class="header">
+    <picker mode="date" value="{{date}}" start="2017-02-28" end="2020-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          {{date}}
+        </view>
+    </picker>
+    <view class="quit">
+      <button class="button" hover-class="hover-button" bindtap="handleQuit">退出企业</button>
+    </view>
+
+  </view>
+
+  <block wx:if="{{lists.length == 0}}">
+    <view class="no-record">
+    <image src="/images/icons/nosign.png" mode="aspectFit"></image>
+      <text>暂无打卡记录</text>
+    </view>
+  </block>
+
+  <block wx:esif>
+    <view class="list-item" wx:for="{{lists}}">
+      <view class="time">
+        <text>{{item.h_m_s}}</text>
+      </view>
+      <view class="place">
+        <text>{{item.place}}</text>
+      </view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,78 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.tc_image{
+  overflow: hidden;
+  position: relative;
+  width: 146px; 
+  height: 86px; 
+  float: left;
+  padding-left:25px; 
+  padding-top:15px;
+  padding-bottom:15px;
+}
+
+.new_goods{
+  padding-top: 15px;
+  width: 500px;
+  height: 140px;
+}
+
+.new_src{
+  width: 110px;
+  height: 80px;
+  float: left;
+  padding-left: 12px;
+}
+
+.end_src1{
+   width: 110px;
+   height: 80px;
+   padding-top:15px;
+   padding-left: 12px;
+}
+
+.end_src2{
+   width: 110px;
+   height: 80px;
+   padding-top:15px;
+   padding-left: 12px;
+}
+
+.end_src3{
+   width: 110px;
+   height: 80px;
+   padding-top:15px;
+   padding-left: 12px;
+}
+
+.footer_src{
+  width: 370px;
+  height: 180px;
+}
+/*
+.tc_name {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+}*/

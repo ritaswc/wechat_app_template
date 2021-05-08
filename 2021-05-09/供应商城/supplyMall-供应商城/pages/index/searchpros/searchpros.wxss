@@ -1,0 +1,213 @@
+.index {
+  font-family:"微软雅黑";
+  flex:1;
+  min-height: 100%;
+  font-size: 28rpx;
+  background-color:#f2f2f2;
+  margin-top:130rpx;
+}
+
+.index-topcon{
+  width:100%;
+  height: 130rpx;
+  background-color:#060e22;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 200;
+}
+
+.index-search{
+  width:706rpx;
+  height: 70rpx;
+  border-radius:8rpx;
+  background-color:#f94769;
+  position:absolute;
+  left:0;
+  right:0;
+  top:22rpx;
+  margin:auto;
+}
+
+.search-ipt{
+  width:520rpx;
+  border-radius:8rpx 0 0 8rpx;
+  padding-left:76rpx;
+  float:left;
+  border:none;
+  outline: none;
+  height: 63rpx;
+  margin-left:4rpx;
+  margin-top:4rpx;
+  background-color:#fff;
+  position: absolute;
+  z-index:1;
+  font-family:"微软雅黑";
+  color:#333;
+  font-size:26rpx;
+}
+
+.search-btn{
+  width:110rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  float:right;
+  text-align:center;
+  color:#fff;
+  font-size:30rpx;
+  position:absolute;
+  right:0;
+  z-index:10;
+  background-color:#f94769;
+
+}
+
+.search-icon{
+  width:35rpx;
+  height:35rpx;
+  position:absolute;
+  left:24rpx;
+  top:18rpx;
+  z-index:10;
+}
+
+.index-camera{
+  width:56rpx;
+  height:66rpx;
+  position:absolute;
+  right:110rpx;
+  top:0;
+  margin-top:4rpx;
+  z-index:10;
+}
+
+.camera-icon{
+  width:40rpx;
+  height:35rpx;
+  margin-top:15rpx;
+}
+
+.camera-file{
+  display:block;
+  width:100%;
+  height:100%;
+  position:absolute;
+  opacity:0;
+}
+
+.camera-image{
+  position: absolute;
+  width:68rpx;
+  height: 56rpx;
+  top:7rpx;
+  left:5rpx;
+  z-index: 20;
+  border:1px solid #ccc;
+  background-color:#fff;
+}
+
+.search-image{
+  width:40rpx;
+  height: 56rpx;
+  float:left;
+}
+
+.search-cha{
+  width:15rpx;
+  float:left;
+  height:15rpx;
+  margin-top:24rpx;
+  margin-left: 8rpx;
+}
+
+/*产品*/
+.procon{
+    display: inline-block;
+    padding: 20rpx;    
+}
+
+.procon-imgmes{
+    float:left;
+    width:350rpx;
+    height: 453rpx;
+    background-color:#fff;
+    margin-right:10rpx;
+    margin-bottom: 10rpx;
+}
+
+.procon-imgmes:nth-child(2n){
+    margin-right: 0!important;
+}
+
+.imgmes-img{
+    display:block;
+    width:350rpx;
+    height: 350rpx;
+}
+
+.imgmes-mes1{
+    display:block;
+    width:310rpx;
+    height:50rpx;
+    line-height:50rpx;
+    margin-left: 20rpx;
+    color:#333;
+    font-size:30rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.imgmes-mes2{
+    display:block;
+    width:310rpx;
+    height:40rpx;
+    line-height:40rpx;
+    margin-left: 20rpx;
+    color:#333;
+    font-size:30rpx;
+}
+
+.mes1{
+    float:left;
+    color:#999;
+    font-size:24rpx;
+}
+
+.mes2{
+    float:right;
+    color:#ff1a1a;
+    font-size:28rpx;
+}
+
+.empty-con{
+  width:290rpx;
+  height: 200rpx;
+  margin:auto;
+  margin-top:180rpx;
+  text-align: center;
+}
+
+.empty-image{
+  display:block;
+  width:120rpx;
+  height: 120rpx;
+  margin:auto;
+  margin-bottom: 20rpx; 
+}
+
+.empty-text{
+  display:block;
+}
+
+.tipsImg{
+  width:40rpx;
+  height: 40rpx;
+  display:block;
+  margin:auto;
+}
+
+.tipsText{
+  line-height: 80rpx;
+  text-align: center;
+}

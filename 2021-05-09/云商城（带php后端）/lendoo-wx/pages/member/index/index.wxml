@@ -1,0 +1,39 @@
+<view class="userinfo">
+	<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" bindtap="chooseImage"></image>
+	<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</view>
+<view class="order-area">
+	<view bindtap="navigateToOrder" class="order" data-status="0">
+		<image src="../../../images/icon_order.png" />
+		<text>待付款</text>
+	</view>
+	<view bindtap="navigateToOrder" class="order" data-status="1">
+		<image src="../../../images/icon_order.png" />
+		<text>待发货</text>
+	</view>
+	<view bindtap="navigateToOrder" class="order" data-status="2">
+		<image src="../../../images/icon_order.png" />
+		<text>已发货</text>
+	</view>
+	<view bindtap="navigateToOrder" class="order" data-status="3">
+		<image src="../../../images/icon_order.png" />
+		<text>已完成</text>
+	</view>
+</view>
+<view bindtap="navigateToAddress" class="tableviewcell">
+	<image src="../../../images/icon_address.png" />
+	<text>收货地址</text>
+</view>
+<view bindtap="navigateToShare" class="tableviewcell">
+	<image src="../../../images/icon_share.png" />
+	<text>扫码分享</text>
+</view>
+<view bindtap="navigateToDonate" class="tableviewcell">
+	<image src="../../../images/icon_donate.png" />
+	<text>赞赏捐赠</text>
+</view>
+<view bindtap="navigateToAboutus" class="tableviewcell">
+	<image src="../../../images/icon_aboutus.png" />
+	<text>关于我们</text>
+</view>
+<button bindtap="logout" type="warn" class="logout">退出</button>

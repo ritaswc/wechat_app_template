@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>设备管理</title>
+    <link rel="stylesheet" href="../public/bootstrap-table/bootstrap-table.min.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../public/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/bootstrap-editable.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <style>body{
+
+    }</style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html" id="__project__name__"></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav" id="__menu__">
+
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<div class="container">
+    <div id="toolbar">
+        <button id="remove" class="btn btn-danger" disabled>
+            <i class="glyphicon glyphicon-remove"></i> 删除
+        </button>
+        <button id="add" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+            <i class="glyphicon glyphicon-add"></i> 添加
+        </button>
+        <button id="search_w" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="生产员需要生产的设备" >
+            <i class="glyphicon glyphicon-add"></i> 未生产
+        </button>
+        <button id="search_p" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="由出仓管理员检验出仓" >
+            <i class="glyphicon glyphicon-add"></i> 已生产
+        </button>
+        <button id="search_c" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="已经出仓的设备，检验是否已送货" >
+            <i class="glyphicon glyphicon-add"></i> 已出仓
+        </button>
+        <button id="search_s" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="货已到达">
+            <i class="glyphicon glyphicon-add"></i> 已送达
+        </button>
+        <!--<span class="badge">0</span>-->
+    </div>
+    <table id="tables"
+           data-toolbar="#toolbar">
+    </table>
+
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">填写基本信息</h4>
+            </div>
+            <div class="modal-body" id="bigFrom">
+                <div class="input-group">
+                    <label  >出仓日期</label>
+                    <input type="date" class="form-control" id="outstorage_datetime" required placeholder="出仓日期" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                    <label  >设备出厂序列号</label>
+                    <input type="text" class="form-control" id="serial" required placeholder="设备出厂序列号" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                    <label >设备类型</label>
+                    <select name="" class="form-control" id="type">
+                        <option value="1">AR整形导师</option>
+                        <option value="2">颜值导师</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label >设备物流</label>
+                    <select name="" class="form-control" id="logistics">
+                        <option value="1">未生产</option>
+                        <option value="2">已生产</option>
+                        <option value="3">已出仓</option>
+                        <option value="4">已送达</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn bg-pick"  id="addsave">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 全局js -->
+<script src="../script/jquery.min.js"></script>
+<script src="../script/bootstrap.min.js"></script>
+<!--自定义-->
+<script src="../script/bbmis.js"></script>
+<script src="../script/moment.min.js"></script>
+<script src="../script/configure.js"></script>
+<script src="../js/deviceManage.js"></script>
+<!---->
+<script src="../public/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="../public/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="../public/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="../public/bootstrap-editable.min.js"></script>
+<script SRC="../public/bootstrap-table-editable.js"></script>
+</body>
+</html>

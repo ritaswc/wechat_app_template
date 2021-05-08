@@ -1,0 +1,7 @@
+<!-- //  顶部导航 -->
+    <scroll-view scroll-y style="height: 100%" onScrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view id="green" class="scroll-view-item bc_green"></view>
+        <view id="red"  class="scroll-view-item bc_red"></view>
+        <view id="yellow" class="scroll-view-item bc_yellow"></view>
+        <view id="blue" class="scroll-view-item bc_blue"></view>
+  </scroll-view>

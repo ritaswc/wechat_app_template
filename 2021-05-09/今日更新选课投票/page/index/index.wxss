@@ -1,0 +1,196 @@
+
+@import "../common/index.wxss";
+@import "../common/lib/weui.wxss";
+
+/* search bar */
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+.weui-icon-search {
+  /* modify add float:left; margin-top: 2px; margin-left:8px;*/
+  float: left;
+  margin-top: 2px;
+  margin-left: 8px;
+}
+
+/* class swiper */
+.container {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.swiper-item{
+  display: block;
+  width: 100%;
+  height: 150px;
+}
+
+/* class list */
+.class-list-item-title {
+  font-family: SimHei;
+  font-size: 32rpx;
+}
+.class-list-item-content {
+  font-family: SimHei;
+  font-size: 28rpx;
+  color: #757373;
+}
+.evaluation-text {
+  font-family: SimHei;
+  font-size: 28rpx;
+  color: dodgerblue;
+}
+
+.evaluation-text {
+  font-size: 12px;
+}
+.kind-list-img {
+  margin-left: 5px;
+  width: 14px;
+  height: 14px;
+}
+
+
+.college-btn {
+  position: fixed;
+  bottom: 0rpx;
+  width: 50px;
+  height: 50px;
+  padding: 0rpx 0;
+  border-radius: 50rpx 50rpx;
+  text-align: center;
+  line-height:50px;
+  margin: 40rpx 80%;
+  background: #494949;
+  color: #fff;
+}
+
+button{
+  margin-bottom: 30rpx;
+}
+button:last-child{
+  margin-bottom: 0;
+}
+.page-section-title{
+  padding: 0;
+}
+
+.page-section-title{
+  margin-top: 60rpx;
+  position: relative;
+}
+.info{
+  position: absolute;
+  right: 0;
+  color: #353535;
+  font-size: 30rpx;
+}
+.page-foot{
+  margin-top: 50rpx;
+}
+
+/* 模态 */
+
+/*mask*/
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+/*content*/
+.drawer_box {
+  width: 650rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 1001;
+  background: #FAFAFA;
+  margin: -150px 50rpx 0 50rpx;
+  border-radius: 3px;
+}
+
+.drawer_title{
+  padding:15px;
+  font: 20px "microsoft yahei";
+  text-align: center;
+}
+.drawer_content {
+  height: 210px;
+  overflow-y: scroll; /*超出父盒子高度可滚动*/
+}
+
+.btn_ok{
+  padding: 10px;
+  font: 20px "microsoft yahei";
+  text-align: center;
+  border-top: 1px solid #E8E8EA;
+  color: #3CC51F;
+}
+
+.top{
+	padding-top:8px;
+}
+.bottom {
+	padding-bottom:8px;
+}
+.title {
+	height: 30px;
+	line-height: 30px;
+	width: 160rpx;
+	text-align: center;
+	display: inline-block;
+	font: 300 28rpx/30px "microsoft yahei";
+}
+
+.input_base {
+	border: 2rpx solid #ccc;
+	padding-left: 10rpx;
+	margin-right: 50rpx;
+}
+.input_h30{
+	height: 30px;
+	line-height: 30px;
+}
+.input_h60{
+	height: 60px;
+}
+.input_view{
+	font: 12px "microsoft yahei";
+	background: #fff;
+	color:#000;
+	line-height: 30px;
+}
+
+input {
+	font: 12px "microsoft yahei";
+	background: #fff;
+	color:#000 ;
+}
+radio{
+	margin-right: 20px;
+}
+.grid { display: -webkit-box; display: box; }
+.col-0 {-webkit-box-flex:0;box-flex:0;}
+.col-1 {-webkit-box-flex:1;box-flex:1;}
+.fl { float: left;}
+.fr { float: right;}
+
+
+/* no input */
+.no-input {
+  height: 100rpx;
+}

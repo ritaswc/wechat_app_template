@@ -1,0 +1,17 @@
+.disabled_img {
+    width: 380rpx;
+    height: 380rpx;
+    margin-top: 200rpx;
+}
+
+.title {
+    margin-top: 56rpx;
+    font-size: 13pt;
+    color: #5292ed;
+}
+
+.content {
+    margin-top: 24rpx;
+    font-size: 9pt;
+    color: #999999;
+}

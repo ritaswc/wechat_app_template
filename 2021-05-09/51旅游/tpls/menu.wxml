@@ -1,0 +1,15 @@
+<template name="menuList">
+     <block wx:for-items="{{menuList}}" wx:key="{{index}}">
+        <view class="menu_list">
+            <block wx:for-items="{{item.list}}" wx:for-item="list" wx:for-index="i" wx:key="{{i}}">
+                <navigator url="{{list.page}}" class="menu_item">
+                    <view class="menu_left">
+                        <image class="menu_left_icon" src="{{list.icon}}" />
+                        <text class="menu_left_txt">{{list.name}}</text>
+                    </view>
+                    <image class="menu_right" src="{{list.arrow}}" />
+                </navigator>
+            </block>
+        </view>
+    </block>
+</template>

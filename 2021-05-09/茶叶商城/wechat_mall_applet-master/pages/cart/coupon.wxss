@@ -1,0 +1,61 @@
+.coupon-container {
+  display: block;
+  height: 215rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+
+.left-image image {
+  width: 100%;
+  height: 200rpx;
+}
+
+.left-image {
+  width: 100%;
+  height: 200rpx;
+}
+
+.mall_coupon_ab {
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: -200rpx;
+}
+
+.mall_coupon_ab .value {
+  text-align: center;
+  width: 35%;
+  font-size: 56rpx;
+  color: #fff;
+}
+
+.mall_coupon_more {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 200rpx;
+  justify-content: space-around;
+  margin-right: 30rpx;
+  font-size: 35rpx;
+}
+
+.mall_coupon_more .grey {
+  color: #999;
+}
+
+.no-coupon {
+  text-align: center;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  font-size: 32rpx;
+  background-color: white;
+  line-height: 80rpx;
+}
+
+page {
+  background-color: #f4f4f4;
+}

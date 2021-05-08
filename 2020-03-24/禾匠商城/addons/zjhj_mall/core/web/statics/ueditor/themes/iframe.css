@@ -1,0 +1,28 @@
+/*可以在这里添加你自己的css*/
+body {
+    font-family: -apple-system, SF UI Text, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+    font-size: 14px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+video{
+    max-width: 100%;
+    height: auto;
+    background-color: #666;
+}
+
+.goods-link{
+    margin-bottom: .5rem;
+}
+
+.goods-link .goods-img {
+    position: absolute;
+    left: .5rem;
+    top: .5rem;
+    width: 5rem;
+    height: 5rem;
+}

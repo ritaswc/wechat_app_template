@@ -1,0 +1,22 @@
+<!-- 加载公共扩展 -->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <!-- 页面内容 -->
+        <view class="list">
+            <view a:for="{{list}}" a:key="{{item.id}}" class="item flex flex-row">
+                <view class="flex-grow-1">
+                    <view>{{item.desc}}</view>
+                    <view style="font-size: 9pt;color: #888;margin-top: 12rpx">{{item.addtime}}</view>
+                </view>
+                <view class="flex-grow-0 flex-y-center" style="color: #3fc24c;" a:if="{{item.type==1}}">+{{item.price}}
+                </view>
+                <view class="flex-grow-0 flex-y-center" style="color: #ff4544;" a:else>-{{item.price}}</view>
+            </view>
+        </view>
+        
+        <include src="/components/list-loading/list-loading" />
+    </view>
+    <include src="/components/footer/footer" />
+</view>

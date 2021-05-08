@@ -1,0 +1,18 @@
+<view class="page">
+    <view class="page__hd">
+        <text class="page__title">贵宾服务</text>
+        <text class="page__desc">吴淞口国际邮轮港贵宾休息室于2016年5月全面完成建设，并投入试运营，从吴淞口国际邮轮港出发的各位贵宾级旅客将可以全程体验五星级的地面服务。</text>
+        <image class="page__img" mode="widthFix" src="http://www.cruisesh.com/upload/16221-1sjt8p5.jpg" />
+        <text class="page__desc">本贵宾服务中心特别聘请专业室内设计师精心设计和打造，在整体建筑设计与室内设计的风格上，采用海派老上海风格，力争呈献给大家一种低调的奢华，能让旅客感受到舒适、典雅的一种候船体验。整个贵宾室由大厅、四个独立的包间组成，包房内设有沙发软座、自助咖啡机，每个包房可容乃8-10位贵宾。同时大厅内设有软座，实木桌面，旅客可在此品尝意大利全进口现磨咖啡、专业点心师制作各类精美茶点以及各式饮料。整个贵宾室共4个包间，连同大厅所有座椅加起来不超过100个，立志为旅客提供高端、舒适、精致的服务体验。</text>
+        <image class="page__img" mode="widthFix" src="http://www.cruisesh.com/upload/16221-6p2360.jpg" />
+        <image class="page__img" mode="widthFix" src="http://www.cruisesh.com/upload/16221-j53nkp.jpg" />
+        <text class="page__header">服务内容</text>
+        <text class="page__desc">包括提供茶点饮料、包房休息，一整套入关前所有服务（行李托运、Check In、专车送入码头VIP专用通道进关），并可针对性的为各大船公司VIP级旅客服务。</text>
+        <text class="page__header">延伸服务</text>
+        <text class="page__desc">作为邮轮港公司旗下的配套贵宾服务室，同时也从事与邮轮港有关的各种外事接待、船员服务、各式沙龙、票务代理、邮轮港配套的高端精品酒店预订等延伸服务。</text>
+        <text class="page__header">收费标准</text>
+        <text class="page__desc">单次：300元/人</text>
+        <text class="page__header">预定电话</text>
+        <text class="page__desc">021-56690101</text>
+    </view>
+</view>

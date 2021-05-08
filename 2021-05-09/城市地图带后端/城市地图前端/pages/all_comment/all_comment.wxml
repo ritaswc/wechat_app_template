@@ -1,0 +1,26 @@
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__hd" style="font-size:20px">{{spot_name}} 所有评论</view>
+  <view wx:if="{{all_comment_list != '1'}}" class="weui-panel__bd" id="{{all_comment_list}}">
+    <block wx:for="{{all_comment_list}}" wx:for-item="comment" wx:key="*this">
+
+      <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" id="{{comment.id}}" bindtap="bindViewTap">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb userinfo-avatar" src="{{comment.comment_user_avatarurl}}"/>
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title weui-media-box__title_in-text">@{{comment.comment_user_name}}</view>
+          <view wx:if="{{comment.comment_mark == 'comment'}}" class="weui-media-box__desc">在 {{comment.comment_date}} 评论: {{comment.comment_message}}</view>
+          <view wx:else class="weui-media-box__desc">在 {{comment.comment_date}} 签到</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view wx:else class="weui-panel__bd" id="{{all_comment_list}}">
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text" style="text-align:center">暂无评论</view>
+      <view class="logo">
+        <image src="/image/logo.png" background-size="cover"></image>
+      </view>
+    </view>
+  </view>
+</view>

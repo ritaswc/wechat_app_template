@@ -1,0 +1,44 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="after-navber">
+            <view class="search flex-y-center">
+                <view class="search-input flex-row">
+                    <input bindblur="inputBlur" bindconfirm="inputConfirm" bindfocus="inputFocus" bindinput="input" class="input flex-grow-1" confirmType="search" placeholder="请输入关键字" placeholderClass="input-pp" value="{{keyword}}"></input>
+                    <view bindtap="search" class="search-btn flex-grow-0 flex-y-center flex-x-center flex-row {{show?'':'hidden'}}">
+                        <image class="flex-grow-0" src="{{__wxapp_img.shop.search.url}}" style="width:24rpx;height:24rpx;margin-right:10rpx;"></image>
+                        <view class="flex-grow-1">搜索</view>
+                    </view>
+                </view>
+            </view>
+            <view class="shop-list w-100">
+                <view bindtap="go" class="shop-one flex-row" data-index="{{index}}" wx:for="{{list}}" wx:key="{{item.id}}">
+                    <view class="flex-grow-0 flex-y-center">
+                        <image src="{{item.pic_url}}" style="width:150rpx;height:150rpx;border-radius:150rpx;"></image>
+                    </view>
+                    <view class="w-100 flex-grow-1" style="margin:0 20rpx;">
+                        <view class="text-more" style="color:#353535;">{{item.name}}</view>
+                        <view class="fs-sm flex-row" style="margin-top:22rpx;">
+                            <view class="flex-grow-0" style="margin-right:12rpx;">评分：</view>
+                            <view class="flex-grow-1">
+                                <image src="{{__wxapp_img.shop.love.url}}" style="margin-right:4rpx;width:20rpx;height:18rpx;" wx:if="{{idx<=item.score-1}}" wx:for="{{score}}" wx:for-index="idx" wx:for-item="itemn" wx:key="{{item.id}}"></image>
+                            </view>
+                        </view>
+                        <view class="fs-sm" style="margin-top:22rpx;">电话：{{item.mobile}}</view>
+                        <view class="fs-sm" style="margin-top:22rpx;">距离：{{item.distance==-1?'无':item.distance}}</view>
+                    </view>
+                    <view class="flex-grow-0 flex-y-center">
+                        <view catchtap="goto" data-index="{{index}}">
+                            <view style="text-align: right">
+                                <image src="{{__wxapp_img.shop.nav_one.url}}" style="width:50rpx;height:50rpx;margin-right:18rpx;margin-bottom:16rpx;"></image>
+                            </view>
+                            <view class="fs-sm flex-x-center">一键导航</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

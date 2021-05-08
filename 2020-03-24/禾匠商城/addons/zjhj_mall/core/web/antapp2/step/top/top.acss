@@ -1,0 +1,167 @@
+/* step/top.wxss */
+
+.top {
+    width: 100%;
+    height: 400rpx;
+}
+
+.top image {
+    width: 100%;
+    height: 400rpx;
+    z-index: 2;
+}
+
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-left: 14rpx solid transparent;
+    border-right: 14rpx solid transparent;
+    border-bottom: 18rpx solid white;
+    position: absolute;
+    left: 22.5%;
+    top: 384rpx;
+    z-index: 10;
+}
+
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-left: 14rpx solid transparent;
+    border-right: 14rpx solid transparent;
+    border-bottom: 18rpx solid white;
+    position: absolute;
+    right: 22.5%;
+    top: 384rpx;
+    z-index: 10;
+}
+
+.rank {
+    width: 100%;
+    position: absolute;
+    top: 300rpx;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    font-size: 12pt;
+    z-index: 5;
+}
+
+.rank view {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    line-height: 100rpx;
+    text-align: center;
+}
+
+.my {
+    height: 136rpx;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 20rpx;
+}
+
+.avatar {
+    padding: 24rpx;
+    float: left;
+}
+
+.avatar image {
+    height: 80rpx;
+    width: 80rpx;
+    border: 4rpx #f09b48 solid;
+    border-radius: 40rpx;
+}
+
+.my-info {
+    color: #999;
+    font-size: 9pt;
+    padding: 32rpx 0;
+    height: 100%;
+    float: left;
+}
+
+.my-name {
+    color: #353535;
+    font-size: 11pt;
+    margin-bottom: 8rpx;
+}
+
+.moeny {
+    float: right;
+    color: #999;
+    font-size: 9pt;
+    padding: 32rpx 24rpx;
+    height: 100%;
+    text-align: right;
+}
+
+.number {
+    font-size: 13pt;
+    font-family: 'DIN';
+    color: #353535;
+    margin-bottom: 10rpx;
+}
+
+.temp {
+    visibility: hidden;
+}
+
+.list-item {
+    height: 135rpx;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1rpx solid #e2e2e2;
+    overflow: hidden;
+}
+
+.noun {
+    width: 100rpx;
+    height: 135rpx;
+    float: left;
+    text-align: center;
+    padding: 43rpx 25rpx;
+}
+
+.noun image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.noun-text {
+    font-size: 11pt;
+    color: #353535;
+}
+
+.list .avatar {
+    padding-left: 0rpx;
+}
+
+.info {
+    float: left;
+    color: #353535;
+    font-size: 11pt;
+    line-height: 136rpx;
+    width: 45%;
+    overflow: hidden;
+}
+
+.name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.loading {
+    font-size: 9pt;
+    color: #353535;
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+    background-color: white;
+}
+
+.ad {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}

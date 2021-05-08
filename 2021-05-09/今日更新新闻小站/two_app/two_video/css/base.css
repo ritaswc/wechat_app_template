@@ -1,0 +1,77 @@
+
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{margin:0;padding:0;}
+body{font-size:14px;}
+img{border:none;}
+li{list-style:none;}
+input,select,textarea{outline:none;border:none;}
+textarea{resize:none;}
+a{text-decoration:none;}
+body {
+    padding-top: 50px;
+    background-color: #f0f9f8;
+}
+.navbar-default{
+    background: #00CDB1;
+}
+#__menu__{
+    margin-left: 50px;
+}
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-toggle{
+    border-color: #fff;
+}
+.navbar-default .navbar-toggle .icon-bar{
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+    background:#14b59d;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #5ee0ce;
+}
+.navbar-default .navbar-nav>li>a{
+    color: #fff;
+}
+.navbar-default .navbar-nav>li>a{
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+    color:#5e5e5e;
+}
+
+.starter-template>h1{
+    line-height: 50px;
+}
+.starter-template>h1:nth-of-type(1){
+    line-height: 50px;
+    font-family: 'Oleo Script', cursive;
+    font-size: 33px;
+}
+
+
+.lead {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -140px;
+}
+@media (max-width: 760px){
+    .lead {
+        margin-left: -100px;
+    }
+}
+
+@media (min-width: 1280px){
+    .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-left: -15px;
+        font-size: 26px;
+    }
+}

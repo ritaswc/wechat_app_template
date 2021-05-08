@@ -1,0 +1,93 @@
+
+.content{
+    color: #999;
+}
+.group-title{
+    padding: 30rpx;
+    background: #fff;
+    color: #000;
+    margin-bottom: 30rpx;
+}
+.group-title view{
+    display: flex;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.group-title view text{
+    flex-grow: 1;
+    height: 100%;
+    text-align: center;
+}
+.group-item{
+    padding: 30rpx;
+    background: white;
+    margin-bottom: 20rpx;
+}
+.goods-info{
+    display: flex;
+}
+.goods-info image{
+  width:160rpx;
+  height:160rpx;
+  display:inline-block;
+  overflow:hidden;
+}
+.goods-info .goods-info-handler{
+    padding-left: 20rpx;
+    width: 80%;
+}
+.goods-info .goods-info-handler .goods-info-price{
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx 0;
+}
+.goods-info .goods-info-handler .goods-info-name{
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.goods-info .goods-info-handler .goods-info-price .calc{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+.goods-info .goods-info-handler .goods-info-price .calc text{
+    color: #ba77ff;
+    padding-left: 30rpx;
+}
+.goods-info .goods-info-handler .group-state{
+    padding-top: 20rpx;
+}
+.goods-info .goods-info-handler .group-state text{
+    border: 2rpx solid #ba77ff;
+    padding: 10rpx;
+    margin-left: 30rpx;
+    color: #ba77ff;
+}
+.goods-info .goods-info-handler .group-state text:last-child{
+    background: #ba77ff;
+    color: white;
+}
+.goods-info .goods-info-handler .group-state.group-state-paid text:first-child{
+    border: 2rpx solid #666;
+    color: #666;
+}
+.group-time{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30rpx;
+}
+.group-time .group-time-left{
+    display: flex;
+}
+.group-time .group-time-left view{
+    padding-left: 20rpx;
+}
+.group-time text{
+    color: #ba77ff;
+}

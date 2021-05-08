@@ -1,0 +1,15 @@
+<scroll-view class="page" scroll-y="true">
+<view id="result">
+  <view class="feedback">
+    <view><image src="{{src}}" alt="img"></image></view>
+    <view><text>{{typeText}}</text></view>
+  </view>
+  <view class="next">
+    <view class="price" wx:if="{{type == 1 }}">实付款:<text>￥{{price}} 元</text></view>
+    <view class="button">
+      <!--<navigator url="../order-detail/order-detail?subOrderSn={{subOrderSn}}" hover-class="none" class="detail">查看订单</navigator>-->
+      <navigator url="../orders/orders?t=all" hover-class="none" class="to-home" open-type="navigate">返回列表</navigator>
+    </view>
+  </view>
+</view>
+</scroll-view>

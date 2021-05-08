@@ -1,0 +1,75 @@
+<view class="container">
+  <form bindsubmit="handleSubmit">
+    <view class="header"></view>
+    <view class="weui-cells weui-cells_after-title margin-top">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">收货人:</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input name="delivery_name" class="weui-input" placeholder="请输入收货人" value="{{delivery_name}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">手机号码:</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input name="delivery_phone" class="weui-input" placeholder="请输入手机号码" value="{{delivery_phone}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_select" bindtap="handlDialogOpen">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">省/市/区:</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-select weui-select_in-select-after">
+            <text class="weui-input">{{delivery_province}}{{delivery_city}}{{delivery_area}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <textarea name="delivery_street" class="weui-textarea" placeholder="请输入详细地址" style="height: 3.3em" value="{{delivery_street}}" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title  margin-top">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">设为默认地址</view>
+          <view class="weui-cell__ft">
+            <switch name="delivery_is_default" color="{{color}}" checked="{{delivery_is_default}}" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="footer">
+      <button class="footer-add" formType="submit">
+        保存
+      </button>
+    </view>
+    <view class="dialog  {{ is_dialog ? 'dialog-mask-show' : '' }}">
+      <view class="dialog-mask" bindtap="handlDialogCancel"></view>
+      <view class="dialog-container">
+        <view class="dialog-button">
+          <view bindtap="handlDialogCancel" class="dialog-button-cancel">取消</view>
+          <view bindtap="handlDialogOK" class="dialog-button-ok">确定</view>
+        </view>
+        <picker-view indicator-style="height: 50px;" class="dialog-picker" value="{{province_city_area}}" bindchange="handPickerChange">
+          <picker-view-column>
+            <view wx:for="{{province_list}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{city_list}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{area_list}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </view>
+  </form>
+</view>

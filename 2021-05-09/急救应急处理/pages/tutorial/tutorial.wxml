@@ -1,0 +1,46 @@
+<view class="tutorial-container">
+  <view class="tutorial-title animated {{ selectedTab === 0 ? 'fadeInRight' : 'fadeInLeft' }}">
+    {{ selectedTab === 0 ? emergencyTitle : studayTitle }}
+  </view>
+  <view class="tabs-container" >
+    <view class="tabs">
+      <view
+        bindtap="bindSelectedTab"
+        class="{{selectedTab === 0 ? 'selected-tab' : 'tab' }}"
+        data-tab="0"
+      >
+        应急
+      </view>
+      <view
+        bindtap="bindSelectedTab"
+        class="{{selectedTab === 1 ? 'selected-tab' : 'tab' }}"
+        data-tab="1"
+      >
+        学习
+      </view>
+    </view>
+    <view
+      class="bar"
+      style="margin-left: {{selectedTab === 0 ? '5%' : '55%'}}"
+    />
+  </view>
+  <swiper class="swiper" current="{{selectedTab}}" bindchange="change">
+    <swiper-item class="swiper-item">
+      <template
+        is="tutorial"
+        data="{{title: '意识丧失', type: '应急', tap: tap, src: '../../assets/images/unconsciousness.svg' }}"
+      />
+    <template is="tutorial" data="{{ title: '烧烫伤', type: '应急', tap: tap, src: '../../assets/images/Scald.svg' }}" />
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <template is="tutorial" data="{{ title: '意识丧失', type: '学习', tap: tap, src: '../../assets/images/unconsciousness.svg' }}" />
+    </swiper-item>
+  </swiper>
+</view>
+
+<template name="tutorial">
+  <view bindtap="tap" class="tutorial-item" data-title="{{title}}" data-type="{{type}}" >
+    <text> {{title}} </text>
+    <image src="{{src}}" style="height: 50rpx; width: 50rpx" />
+  </view>
+</template>

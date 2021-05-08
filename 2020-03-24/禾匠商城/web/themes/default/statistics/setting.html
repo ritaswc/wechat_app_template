@@ -1,0 +1,138 @@
+{template 'common/header'}
+<ul class="we7-page-tab">
+	{loop $active_sub_permission $active_menu}
+	{if permission_check_account_user($active_menu['permission_name'], false) && (empty($active_menu['is_display']) || is_array($active_menu['is_display']) && in_array($_W['account']['type'], $active_menu['is_display']))}
+	<li {if $action == $active_menu['active']}class="active"{/if}><a href="{php echo $active_menu['url'] . 'version_id=' . $_GPC['version_id']}">{$active_menu['title']}</a></li>
+	{/if}
+	{/loop}
+</ul>
+<div id="js-statistics-setting" ng-controller="statisticsSettingCtrl" ng-cloak>
+	<div class="panel we7-panel statistics-panel">
+		<div class="panel-heading">API访问流量总计</div>
+		<div class="panel-body">
+			<div class="statistics-box">
+				<div class="item">
+					<div class="header">
+						月API访问总量
+					</div>
+					<div class="number">
+						<span>{$highest_api_visit}</span>次<i data-trigger="hover" data-toggle="popover" data-placement="bottom" data-content="月API访问总量包括系统免费流量和自行购买的流量。月免费流量每月清0，自行购买流量不清0" class="wi wi-info color-red"></i>
+					</div>
+					<ul class="info">
+						<li >
+							免费流量剩余：{php echo ($highest_api_visit - $month_use) >= 0 ? $highest_api_visit - $month_use : 0}
+							<a href="{php echo url('account/post', array('uniacid' => $_W['uniacid'], 'account_type' => $_W['account']['type']))}">去设置</a>
+						</li>
+						<li >
+							<span class="color-red">付费流量</span>剩余：{php echo $highest_api_visit- $month_use >= 0 ? $order_num : ($order_num + $highest_api_visit - $month_use >= 0 ? $order_num + $highest_api_visit - $month_use : 0)}
+							<a href="{php echo url('home/welcome/ext', array('m' => 'store'))}">去购买</a>
+						</li>
+					</ul>
+				</div>
+				<div class="item">
+					<div class="header">
+						免费API访问剩余
+					</div>
+					<div class="number">
+						<span>{php echo $month_remain > 0 ? $month_remain : 0}</span>次
+					</div>
+					<ul class="info">
+						<li class="important">
+							免费流量月底清0，请尽早使用
+						</li>
+					</ul>
+				</div>
+				<div class="item">
+					<div class="header">
+						每天最高访问次数
+					</div>
+					<div class="number">
+						<span>{{setting || '不限'}}</span>次
+					</div>
+					<ul class="info">
+						<li>
+							检测间隔：{{interval ? (interval + '/秒') : '无间隔'}}
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<table class="table we7-table statistics-table table-hover table-form">
+		<col  width="300px"/>
+		<col />
+		<tr>
+			<th class="text-left" colspan="3">每日访问流量设置</th>
+		</tr>
+		<tr>
+			<td class="color-gray">每日最高访问次数</td>
+			<td ng-if="setting"><span ng-bind="setting"></span><span class="color-gray"> 次 / 天</span></td>
+			<td ng-if="!setting">不限次数</span></td>
+			<td >
+				<div class="link-group"><a href="javascript:;" data-toggle="modal" data-target="#edit-setting" ng-click="editInfo('visit', setting)">修改</a></div>
+			</td>
+		</tr>
+		<tr>
+			<td class="color-gray">检测时间间隔</td>
+			<td ng-if="interval"><span ng-bind="interval"></span><span class="color-gray"> 秒</span></td>
+			<td ng-if="!interval">无间隔</span></td>
+			<td >
+				<div class="link-group"><a href="javascript:;" data-toggle="modal" data-target="#edit-setting-time" ng-click="editInfo('interval', interval)">修改</a></div>
+			</td>
+		</tr>
+	</table>
+	<div class="modal fade" id="edit-setting" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">每天最高访问次数</div>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="number" ng-model="newVisitVal" step="1" class="form-control">
+						<span class="help-block">设置为0，表示每天最高访问次数在创始人设置的每月该公众号访问总次数内；</span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveSetting('visit')">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="edit-setting-time" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">检测时间间隔（单位：秒）</div>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="number" ng-model="newInterval" step="1" class="form-control">
+						<span class="help-block">
+							设置为0，表示每次访问都要判断是否超过设定值（精确限制访问量，但会增加服务器压力）；<br>
+							建议值：600，即每10分钟进行一次检测（模糊限制访问量，与设定值会存在一定误差，但服务器压力小）。
+						</span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveSetting('interval')">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	angular.module('statisticsApp').value('config', {
+		'highest_visit': {php echo !empty($highest_visit) ? json_encode($highest_visit) : 'null'},
+		'interval': {php echo !empty($interval) ? json_encode($interval) : 'null'},
+		'links': {
+			'editSetting': "{php echo url('statistics/setting/edit_setting')}",
+		},
+	});
+	angular.bootstrap($('#js-statistics-setting'), ['statisticsApp']);
+</script>
+{template 'common/footer'}

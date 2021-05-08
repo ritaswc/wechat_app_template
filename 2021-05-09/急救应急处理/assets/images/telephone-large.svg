@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="356px" height="356px" viewBox="0 0 356 356" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>telephone-large</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0.996492347%" y1="60.6672101%" x2="96.8284877%" y2="60.6672108%" id="linearGradient-1">
+            <stop stop-color="#FF4C2F" offset="0%"></stop>
+            <stop stop-color="#FF7856" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="telephone-large">
+            <circle id="Oval-Copy" fill="url(#linearGradient-1)" cx="178" cy="178" r="178"></circle>
+            <g id="有" transform="translate(229.000000, 256.000000)"></g>
+            <g id="Group-3" transform="translate(118.000000, 119.000000)" fill-rule="nonzero" fill="#FFFFFF">
+                <path d="M112.51858,62.2223734 C117.579995,59.6944837 119.628933,53.5525427 117.087553,48.4891044 L113.70297,41.7456736 C112.436794,39.2229487 109.218607,37.865227 106.50736,38.715497 L81.2310487,46.6423614 C79.8764573,47.0671727 78.5791781,48.536416 78.3309992,49.9381013 L77.1872463,56.3978825 C76.9401847,57.793258 75.6471865,59.2855662 74.2760142,59.6575737 C74.2760142,59.6575737 70.3519798,61.4678437 56.3685033,61.4827594 C42.3850268,61.4678437 38.4609924,59.6575737 38.4609924,59.6575737 C37.0898201,59.2855662 35.796822,57.793258 35.5497602,56.3978825 L34.4060073,49.9381013 C34.1578284,48.536416 32.8605492,47.0671727 31.5059579,46.6423614 L6.22964632,38.715497 C3.51839915,37.865227 0.300212126,39.2229487 -0.965963846,41.7456736 L-4.3505462,48.4891044 C-6.89192678,53.5525427 -4.8429888,59.6944837 0.218426655,62.2223734 C0.218426655,62.2223734 18.5797335,74.2010414 56.194447,74.2746045 C94.157273,74.2010414 112.51858,62.2223734 112.51858,62.2223734 Z" id="电话" transform="translate(56.368503, 56.368263) rotate(45.000000) translate(-56.368503, -56.368263) "></path>
+                <rect id="Rectangle" transform="translate(89.218045, 23.691729) rotate(0.000000) translate(-89.218045, -23.691729) " x="72.2180451" y="18.6917293" width="34" height="10" rx="1"></rect>
+                <rect id="Rectangle" transform="translate(89.218045, 23.691729) rotate(-90.000000) translate(-89.218045, -23.691729) " x="72.2180451" y="18.6917293" width="34" height="10" rx="1"></rect>
+            </g>
+            <text id="120" font-family="PingFangSC-Regular, PingFang SC" font-size="40" font-weight="normal" letter-spacing="0.857142627" fill="#FFFFFF">
+                <tspan x="144.694286" y="272">120</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

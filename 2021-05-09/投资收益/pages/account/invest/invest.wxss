@@ -1,0 +1,6 @@
+.invest_hd {background: #45ade1;color: #fff;padding: 80rpx 0;}
+.left {display: inline-block;width: 50%;text-align: center;}
+.right {display: inline-block;width: 50%;text-align: center;}
+.title {font-size: 44rpx;}
+.hd_num {font-size: 28rpx;margin-top: 8rpx;}
+.hd_num text {font-size: 44rpx;color: #ffd200;padding: 0 10rpx;}

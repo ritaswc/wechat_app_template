@@ -1,0 +1,58 @@
+@import "../commons/naver/naver.wxss";
+
+.list {
+    width: 100%;
+    padding-bottom: 96rpx;
+    border-top: 1rpx solid #e2e2e2;
+}
+
+.one {
+    width: 100%;
+    padding: 24rpx 20rpx;
+    margin-bottom: 8rpx;
+    background-color: #fff;
+    font-size: 9pt;
+}
+
+.one image {
+    width: 216rpx;
+    height: 216rpx;
+}
+
+.time {
+    width: auto;
+    height: 36rpx;
+    background-color: #666;
+    border-radius: 4rpx;
+    color: #fff;
+    padding: 0 6rpx;
+}
+
+.a {
+    color: #999;
+    margin-bottom: 4rpx;
+    font-size: 9pt;
+}
+
+.b {
+    color: #ff5c5c;
+}
+
+.list-btn {
+    width: 176rpx;
+    height: 64rpx;
+    border-radius: 32rpx;
+    color: #fff;
+    background-color: #ff5c5c;
+    font-size: 11pt;
+}
+
+.img {
+    width: 18rpx;
+    height: 18rpx;
+    margin-left: 12rpx;
+}
+
+.img.up {
+    transform: rotate(90deg);
+}

@@ -1,0 +1,29 @@
+page {
+    background-color: #fff;
+}
+
+.detail-block-1 {
+    border-top: 1rpx solid #e3e3e3;
+    padding: 24rpx;
+    min-height: 140rpx;
+}
+
+.detail-block-1:last-child {
+    border-bottom: 1rpx solid #e3e3e3;
+}
+
+.t-color {
+    color: #999;
+    margin-right: 40rpx;
+    width: 160rpx;
+}
+
+.record-3 {
+    font-size: 13pt;
+    color: #ff4544;
+}
+
+.record-4 {
+    font-size: 13pt;
+    color: #3fc24c;
+}

@@ -1,0 +1,198 @@
+/* pages/index/index.wxss */
+
+.active {
+  color: #ffa10d !important;
+  background: #fff;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  flex: 1;
+  background: red;
+}
+
+.stateList {
+  width: 25%;
+  background: #e3e3e3;
+  overflow-y: scroll;
+}
+
+.state_name {
+  width: 100%;
+  min-height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #727171;
+  overflow: hidden;
+}
+
+.item_name {
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  position:relative;
+}
+
+.item_list {
+  display: none;
+  background: #f3f3f3;
+  text-align: center;
+}
+
+.show_item_list {
+  display: block;
+}
+
+.show_item_list image {
+  transition: 0.3s;
+  transform: rotate(-90deg);
+}
+
+.item_list_num {
+ position:relative;
+}
+
+.cityList {
+  width: 75%;
+  padding: 6% 3%;
+  background: #fff;
+  overflow-y: scroll;
+}
+
+.cityitem {
+  width: 31%;
+  float: left;
+  height: 269rpx;
+  margin-bottom: 20rpx;
+}
+
+.cityitem:nth-child(3n-2) {
+  float: left;
+}
+
+.cityitem:nth-child(3n-1) {
+  margin-left: 3.5%;
+}
+
+.cityitem:nth-child(3n) {
+  float: right;
+}
+
+.cityitem image {
+  width: 100%;
+  height: 59%;
+  border-radius: 5px;
+}
+
+.cityitem text {
+  display: block;
+  text-align: center;
+  padding-top: 30rpx;
+  font-size: 28rpx;
+  color: #727171;
+}
+
+.arrowRight {
+  width: 20rpx;
+  height: 20rpx;
+  margin: 40rpx 20rpx 0 -20rpx;
+  float: right;
+  transition: 0.3s;
+  transform: rotate(90deg);
+}
+
+.input {
+  display: inline-block;
+  width: 85%;
+  vertical-align: middle;
+  font-size: 26rpx;
+  margin-left: 10rpx;
+  text-align: left;
+  line-height: 26rpx;
+}
+
+.search {
+  padding: 6rpx 0;
+}
+
+.c-show {
+  display: flex;
+}
+
+.c-close {
+  display: none;
+}
+
+.s-show {
+  display: block;
+}
+
+/*输入框点击部分*/
+
+.destination {
+  padding: 22rpx;
+  box-shadow: 0px 1px 3px 0.3px rgba(6, 0, 1, 0.11);
+  box-sizing: border-box;
+  margin-bottom: 14rpx;
+}
+
+.search-show {
+  background: #fff;
+}
+
+.search-show .title {
+  font-size: 32rpx;
+  color: #282828;
+  margin-bottom: 30rpx;
+}
+
+.search-show .img {
+  width: 116rpx;
+  height: 116rpx;
+  margin-right: 38rpx;
+}
+
+.city-detail {
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.d-right {
+  max-width: 75%;
+}
+
+.d-right text {
+  display: block;
+  font-size: 28rpx;
+  color: #282828;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.d-right text:nth-child(2), text:nth-child(3) {
+  font-size: 24rpx;
+  color: #868686;
+}
+
+.location:before {
+  content: "";
+  display: inline-block;
+  width: 26rpx;
+  height: 26rpx;
+  vertical-align: text-top;
+  margin-right: 8rpx;
+  background: url('../image/loc.png') no-repeat;
+  background-size: 24rpx;
+}
+
+.error {
+  text-align: center;
+  padding-top: 200rpx;
+  color: #928178;
+  background: #f5f5f5;
+}

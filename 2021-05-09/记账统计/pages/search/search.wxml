@@ -1,0 +1,26 @@
+
+<!--pages/search/search.wxml-->
+<view class="top-bgimage" bindlongtap="bindRefresh">
+  <view class="container">
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+</view>
+<view class="main-body">
+  <form bindsubmit="formSearch">
+    <view>
+      <input name="inputKey" class="input-search" placeholder="输入关键字" bindinput="bindKeyInput"  bindconfirm="bindInputSearch" confirm-type="search" value="{{key}}" />
+    </view>
+    <view class="hs20"></view>
+    <view>
+      <button class="btn-search" hover-class="btn-search-hover" form-type="submit">时光机搜索</button>
+    </view>
+  </form>
+  <view class="hs20"></view>
+  <view class="hs20"></view>
+  <view class="tag-list-view" wx:key="{{tagList}}" wx:for="{{tagList}}">
+    <text data-id="#{{item.Name}}#" class="tag-list-text" bindtap="bindTagTap">#{{item.Name}}#</text>
+  </view>
+</view>

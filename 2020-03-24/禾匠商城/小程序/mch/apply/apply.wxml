@@ -1,0 +1,144 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber" style="height:100vh">
+        <form bindsubmit="applySubmit" reportSubmit="true" wx:if="{{is_form_show}}">
+            <view class="form-group-name">基本信息</view>
+            <view class="input-group-list">
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">联系人</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" name="realname" placeholder="必填" placeholderClass="placeholder" value="{{apply?apply.realname:''}}"></input>
+                    </view>
+                </view>
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">联系电话</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" name="tel" placeholder="必填" placeholderClass="placeholder" value="{{apply?apply.tel:''}}"></input>
+                    </view>
+                </view>
+                <view class="flex flex-row input-group" wx:if="{{__platform=='wx'}}">
+                    <view class="flex-grow-0 flex-y-center input-group-label">微信号</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" name="wechat_name" placeholder="" placeholderClass="placeholder" value="{{apply?apply.wechat_name:''}}"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="form-group-name">店铺信息</view>
+            <view class="input-group-list" style="margin-bottom: 32rpx">
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">店铺名称</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" name="name" placeholder="必填" placeholderClass="placeholder" value="{{apply?apply.name:''}}"></input>
+                    </view>
+                </view>
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">所在地区</view>
+                    <view class="flex-grow-1">
+                        <view bindtap="showAreaPicker" class="flex flex-row" style="height: 100%;padding: 0 32rpx">
+                            <view class="flex-grow-1 flex-y-center">
+                                <view wx:if="{{!edit_district.province}}">请选择地区</view>
+                                <view style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis" wx:else>
+                                    {{edit_district.province.name}}{{edit_district.city.name}}{{edit_district.district.name}}
+                                </view>
+                            </view>
+                            <view class="flex-grow-0 flex-y-center">
+                                <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+                            </view>
+                        </view>
+                        <view style="display: none">
+                            <input name="province_id" type="hidden" value="{{edit_district.province.id}}"></input>
+                            <input name="city_id" type="hidden" value="{{edit_district.city.id}}"></input>
+                            <input name="district_id" type="hidden" value="{{edit_district.district.id}}"></input>
+                        </view>
+                    </view>
+                </view>
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">详细地址</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" name="address" placeholder="必填" placeholderClass="placeholder" value="{{apply?apply.address:''}}"></input>
+                    </view>
+                </view>
+                <view>
+                    <picker bindchange="mchCommonCatChange" class="" name="mch_common_cat_id" range="{{mch_common_cat_list}}" rangeKey="name" style="position: relative" value="">
+                        <view class="flex flex-row input-group">
+                            <view class="flex-grow-0 flex-y-center input-group-label">所售类目</view>
+                            <view class="flex-grow-1">
+                                <view class="flex flex-row" style="height: 100%;padding: 0 32rpx">
+                                    <view class="flex-grow-1 flex-y-center" wx:if="{{mch_common_cat_list[mch_common_cat_index]}}">{{mch_common_cat_list[mch_common_cat_index].name}}
+                                    </view>
+                                    <view class="flex-grow-1 flex-y-center" wx:else>
+                                        <view wx:if="{{apply.mch_common_cat_id}}">{{apply.mch_common_cat_name}}</view>
+                                        <view wx:else>请选择类目</view>
+                                    </view>
+                                    <view class="flex-grow-0 flex-y-center">
+                                        <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </picker>
+                </view>
+                <view class="flex flex-row input-group">
+                    <view class="flex-grow-0 flex-y-center input-group-label">客服电话</view>
+                    <view class="flex-grow-1">
+                        <input class="flex-y-center" name="service_tel" placeholder="必填" placeholderClass="placeholder" value="{{apply?apply.service_tel:''}}"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="flex flex-row" style="padding: 0 32rpx;margin-bottom: 32rpx" wx:if="{{entry_rules}}">
+                <view bindtap="disagreeEntryRules" class="flex flex-row" wx:if="{{agree_entry_rules}}">
+                    <view class="flex-y-center">
+                        <image src="/mch/images/icon-check-on.png" style="width: 32rpx;height: 32rpx;margin-right: 16rpx;"></image>
+                    </view>
+                    <view>我已阅读并同意</view>
+                </view>
+                <view bindtap="agreeEntryRules" class="flex flex-row" wx:else>
+                    <view class="flex-y-center">
+                        <image src="/mch/images/icon-check-off.png" style="width: 32rpx;height: 32rpx;margin-right: 16rpx;"></image>
+                    </view>
+                    <view>我已阅读并同意</view>
+                </view>
+                <view bindtap="showEntryRules" style="color: #5292ed">《入驻协议》</view>
+            </view>
+            <block wx:if="{{apply}}">
+                <button class="submit-btn" formType="submit" style="margin-bottom: 32rpx;margin-top: 0" wx:if="{{apply.review_status==2}}">重新提交
+                </button>
+                <button bindtap="showApplyResult" class="block-button view-data-btn" style="margin-top: 32rpx">查看审核结果
+                </button>
+            </block>
+            <button class="submit-btn" formType="submit" style="margin-top: 0" wx:else>提交</button>
+            <view style="text-align: center;padding: 24rpx">
+                <navigator openType="redirect" style="padding: 12rpx;color: #888" url="/pages/index/index">返回首页</navigator>
+            </view>
+        </form>
+        <view class="apply-result {{show_result?'show':''}}" wx:if="{{apply}}">
+            <image src="/mch/images/img-shenhe-0.png" style="width: 380rpx;height: 270rpx;margin-bottom: 72rpx" wx:if="{{apply.review_status==0}}"></image>
+            <image src="/mch/images/img-shenhe-1.png" style="width: 380rpx;height: 270rpx;margin-bottom: 72rpx" wx:if="{{apply.review_status==2}}"></image>
+            <image src="/mch/images/img-shenhe-2.png" style="width: 380rpx;height: 270rpx;margin-bottom: 72rpx" wx:if="{{apply.review_status==1}}"></image>
+            <view class="review-status status-{{apply.review_status}}">{{apply.review_status_text}}</view>
+            <view class="review-result" wx:if="{{apply.review_status==0}}">您的信息已提交，请耐心等待审核。</view>
+            <view class="review-result" wx:else>{{apply.review_result}}</view>
+            <button bindtap="hideApplyResult" class="submit-btn" wx:if="{{apply.review_status==2}}">重新提交</button>
+            <block wx:else>
+                <button bindtap="hideApplyResult" class="block-button view-data-btn" style="border:0rpx solid #ffffff" wx:if="{{apply.review_status==0||apply.review_status==1}}">查看提交内容
+                </button>
+            </block>
+        </view>
+        <view class="entry-rules" wx:if="{{show_entry_rules}}">
+            <view class="rules-container">
+                <view style="padding: 24rpx">
+                    <scroll-view scrollY="true" style="max-height: 75vh">
+                        <text style="word-break: break-all">{{entry_rules}}</text>
+                    </scroll-view>
+                </view>
+                <view class="flex flex-row">
+                    <view bindtap="disagreeEntryRules" class="flex-grow-1 rules-btn" style="color: #888">拒绝</view>
+                    <view bindtap="agreeEntryRules" class="flex-grow-1 rules-btn" style="color: #ff4544">同意</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="./../../components/area-picker/area-picker.wxml"></include>
+    <include src="/components/footer/footer"></include>
+</view>

@@ -1,0 +1,9 @@
+<img src="{$_W['account']['logo']}" class="head-logo account-img">
+<span class="wxapp-name">{$_W['account']['name']}</span>
+<span class="wxapp-version">{$version_info['version']}</span>
+<div class="pull-right">
+	<a href="{php echo url('miniapp/version/display', array('iscontroller' => 0))}" class="color-default"><i class="wi wi-cut-version"></i>切换版本</a>
+	{if in_array($_W['role'], array(ACCOUNT_MANAGE_NAME_OWNER, ACCOUNT_MANAGE_NAME_MANAGER)) || $_W['isfounder']}
+		<a href="{php echo $_W['account']['manageurl'] . '&iscontroller=0'}" class="color-default"><i class="wi wi-manage"></i>管理设置</a>
+	{/if}
+</div>

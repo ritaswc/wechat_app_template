@@ -1,0 +1,127 @@
+/*@import 'stylesheet.wxss';*/
+@import 'font-awesome.min.wxss';
+page {
+  height: 100%;
+}
+.back {
+  background-color: white;
+  padding:0 20rpx;  
+}
+.container {
+  font-size: 30rpx;
+}
+
+.mine_head {
+  width: 100%;
+  text-align: center;
+  box-sizing:border-box;
+  background-color: #F4F4F8;
+  font-size: 30rpx;
+}
+
+.mine_login {
+  display: flex;
+  height: 56rpx;
+  padding: 32rpx;
+  color: white;
+  background-color: #0068C4;
+}
+
+.mine_login text {
+  flex: 1;
+  text-align: center;
+}
+
+.mine_login .center{
+  flex: 0 0 1rpx;
+}
+
+
+.order {
+  text-align: left;
+  height:78rpx;
+  line-height:78rpx;
+}
+
+.orderText {
+  height: 100%;
+  border-bottom: 1rpx solid silver;  
+}
+
+.orderText text {
+  float: right;
+}
+.mine_icon {
+  width: 100%;
+  display: flex;
+  padding: 38rpx 0;
+  margin-bottom: 20rpx;
+}
+
+.mine_icon view{
+  flex: 1;
+}
+
+.mine_icon .fa {
+  width: 100%;
+}
+
+.mine_icon view text {
+  display: inline-block;
+  padding: 15rpx 0;
+}
+
+.flex-item {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.mylist {
+  margin-bottom: 2rpx;
+}
+
+.fa-angle-right {
+  float: right;
+  margin-right: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.list_top {
+  margin-bottom: 20rpx;
+}
+.list_down {
+  margin-bottom: 20rpx;
+}
+
+
+.footbar {
+  display: flex;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom:1rpx solid #F4F4F8;
+}
+
+.footbar text {
+  flex: 1;
+  text-align: center;
+}
+
+.copyright {
+  display: flex;
+}
+.copyright .line{
+  flex: 1;
+  height: 2rpx;
+  background-color: #F4F4F8;
+  margin-top: 22rpx;
+}
+
+.copyright .center {
+  flex: 0 0 500rpx;
+  font-size: 26rpx;
+  border: none;
+  margin-top: 12rpx;
+}

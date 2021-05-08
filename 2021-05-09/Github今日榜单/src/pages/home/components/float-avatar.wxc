@@ -1,0 +1,25 @@
+<template>
+    <view class="avatar-box">
+        <image class="avatar" src="https://avatars1.githubusercontent.com/u/5620429?s=60&v=4"></image>
+    </view>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style lang="less">
+    @size: 100rpx;
+    .avatar-box {
+        .avatar {
+            width: @size;
+            height: @size;
+            border-radius: 50%;
+            border: 10rpx solid #fff;
+            opacity: 0.8;
+        }
+    }
+    
+</style>

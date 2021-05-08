@@ -1,0 +1,25 @@
+<import src="../../tpls/menu.wxml" />
+<view class="container">
+
+    <view class="mine_title">
+        <view class="mine_msg">
+            <view class="mine_msg_left">
+                <image class="login_no" src="{{userInfo.avatarUrl}}" />
+                <text class="myname">{{userInfo.nickName}}</text>
+            </view>
+            <view class="mine_msg_right">
+                <image class="setting_icon" src="../../images/setting_smallicon_qr.png" />
+                <image class="menu_right" src="../../images/ic_arrow_right.png" />
+            </view>
+
+        </view>
+        <view class="mine_nav">
+            <text class="mine_nav_item">游迹 0</text>
+            <text class="mine_nav_item">点评 0</text>
+            <text class="mine_nav_item no_border">收藏 0</text>
+        </view>
+    </view>
+
+    <template is="menuList" data="{{menuList}}" />
+    
+</view>

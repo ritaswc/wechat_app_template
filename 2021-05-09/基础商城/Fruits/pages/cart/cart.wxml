@@ -1,0 +1,44 @@
+<image src="../../images/tus.jpg" 
+style="width:175px;height:105px;float:left;" />
+
+<view style="float:left;font-size:16px;">商品名称</view>
+<image src="../../images/sc.png" 
+style="width:20px;height:20px;float:right;padding-right:10px;" />
+<view style="padding-left:315px;padding-top:35px;font-size:16px;">￥100</view>
+
+<view style="float:left;padding-left:190px;font-size:16px;padding-top:30px;">
+共一件商品 合计：¥100
+</view>
+<!--
+<button type="default" size="{{defaultSize}}" plain="true">取消订单<button/>
+<button type="default" size="{{defaultSize}}" plain="{{plain}}">去支付<button/>
+<button style="size:mini;">退款<button/>
+<button style="size:mini;">提醒发货<button/>
+<button style="size:mini;">取消订单<button/>
+<button style="size:mini;">付款<button/>
+<button style="size:mini;">查看物流<button/>
+<button style="size:mini;">确认收货<button/>
+<button style="size:mini;">评价<button/>
+<button style="size:mini;">再次购买<button/> -->
+<!--
+<button size="{{defaultSize}}" plain="{{plain}}"
+ class="button" disabled="{{disabled}}"> 取消订单 </button>
+ -->
+
+<!--
+<navigator url="" redirect hover-class="other-navigator-hover">
+<view style="padding-top:15px;padding-left:165px;float:left;">
+填写收货地址
+</view>
+</navigator>
+<navigator url="" redirect hover-class="other-navigator-hover">
+<view style="float:right;padding-top:15px;">
+确认订单
+</view>
+</navigator>-->
+<navigator url="../personal_add_address/personal_add_address" hover-class="navigator-hover">
+<button type="primary" class="shouhuo" size='mini'>填写收货地址</button>
+</navigator>
+
+<button type="warn" class="order_yes" size='mini'>确认订单<button/>
+

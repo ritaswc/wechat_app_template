@@ -1,0 +1,13 @@
+<template name="item-cell">
+	<!--<view class="mm-checkbox">
+		<label class="">
+	  		<radio-group class="checkbox" checked="{{is_default ? true : false}}"></radio-group>
+	  		{{labelText}}
+	  	</label>
+	</view>-->
+	<radio-group class="radio-group" bindchange="radioChange">
+	  <label class="radio" wx:for="{{items}}">
+	    <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+	  </label>
+	</radio-group>
+</template>

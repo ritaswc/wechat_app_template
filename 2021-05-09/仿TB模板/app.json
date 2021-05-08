@@ -1,0 +1,68 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/index/location",
+		"pages/shop/shop",
+		"pages/order/order",
+		"pages/order/evaluation",
+		"pages/mine/mine",
+		"pages/mine/voucher",
+		"pages/mine/account",
+		"pages/mine/wallet",
+		"pages/mine/collection",
+		"pages/mine/prize",
+		"pages/search/search",
+		"pages/detail/detail",
+		"pages/order/articleOrder",
+		"pages/detail/vouchers",
+		"pages/detail/comment",
+		"pages/pay/pay",
+		"pages/pay/privilege",
+		"pages/pay/paycomment"
+	],
+	"window": {
+		"navigationBarTextStyle": "white",
+		"backgroundColor": "#efefef",
+		"backgroundTextStyle": "dark",
+		"navigationBarTitleText": "汇汇生活"
+	},
+	"tabBar": {
+		"color": "#878787",
+		"selectedColor": "#d12a1a",
+		"borderStyle": "white",
+		"backgroundColor": "#fcfcfc",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "imgs/tabBar/home_2.png",
+				"selectedIconPath": "imgs/tabBar/home_1.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/shop/shop",
+				"iconPath": "imgs/tabBar/store_2.png",
+				"selectedIconPath": "imgs/tabBar/store_1.png",
+				"text": "商家"
+			},
+			{
+				"pagePath": "pages/order/order",
+				"iconPath": "imgs/tabBar/order_2.png",
+				"selectedIconPath": "imgs/tabBar/order_1.png",
+				"text": "订单"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"iconPath": "imgs/tabBar/mine_2.png",
+				"selectedIconPath": "imgs/tabBar/mine_1.png",
+				"text": "我的"
+			}
+		]
+	},
+	"networkTimeout": {
+		"request": 10000,
+		"connectSocket": 10000,
+		"uploadFile": 10000,
+		"downloadFile": 10000
+	},
+	"debug": true
+}

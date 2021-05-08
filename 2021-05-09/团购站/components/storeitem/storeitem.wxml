@@ -1,0 +1,16 @@
+    <import src='../../components/star/star.wxml' />
+    <template name='store'>
+     <view class='store' bindtap='storelick'>
+          <image src="{{store.photo}}" mode="aspectFill"></image>
+          <view class='info'>
+            <view class='name'>{{store.name}}</view>
+            <view class='star_price'>
+              <template is='star' data="{{count:store.star}}" /> {{store.price}}
+            </view>
+            <view class='type_km'>
+              <view class='type'>{{store.buztype}}</view>
+              <view class='km'>{{store.km}}</view>
+            </view>
+          </view>
+        </view>
+        </template>

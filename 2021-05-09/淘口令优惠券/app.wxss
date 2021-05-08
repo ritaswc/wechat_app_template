@@ -1,0 +1,45 @@
+#mask {z-index: 1200;height: 100%;width: 100%;background-color: rgba(0, 0, 0, 0.7);position: fixed;left: 0px;top: 0px;}
+.template-load{text-align: center;font-size: 14px;height: 45px;line-height: 45px; background-color: #f7f7f7;}
+.template-load .loading { display: inline-block; height: 15px; width: 15px; border-radius: 100%; margin: 6px; border: 2px solid #666; border-bottom-color: transparent; vertical-align: middle; -webkit-animation: rotate 0.75s linear infinite; animation: rotate 0.75s linear infinite; }
+@-webkit-keyframes rotate {
+    0% { -webkit-transform: rotate(0deg); }
+    50% { -webkit-transform: rotate(180deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+/*tab页面公用样式*/
+#page-index{padding-top: 50px;background-color: #f7f7f7;}
+#search{position: fixed;top: 0;height: 50px;width: 100%;background-color:#f40;display: flex;align-items: center;z-index: 3}
+#logo{width: 30px;height: 30px;margin-left: 10px;}
+#search-input{flex-grow:1;height: 20px;margin: 0 10px;background-color: #e93e00;padding: 5px;padding-right: 40px; color: #fff;font-size: 14px;}
+.input-placeholder{color: #fff;font-size: 14px;}
+#search-label{position: absolute;right: 10px;top: 8px; z-index: 4;padding: 6px 10px;}
+#search-img{width: 20px;height: 20px;}
+#category{height: 50px;display: table;width: 100%;background-color: #fff;}
+.category-item{display: table-cell;width: 25%; border-bottom: 2px #fff solid;text-align: center;vertical-align: middle;color: #666;}
+.category-item view{border-right:1px #999 solid;display: flex;align-items: center;justify-content: center;}
+.category-item view image{width: 17px;height: 17px;margin-right: 5px;}
+.category-item-last view{border: none;}
+.category-select{border-bottom-color: #f40;}
+.coupon-item{height: 100px;background-color: #fff;margin: 5px 5px 0 5px;display: flex;align-items: center;justify-content: center;}
+.border-left{flex-shrink:0;width: 5px;height: 100%;background:#f7f7f7 url('http://taoquan.cillbiz.com/pic/ballR.png') repeat-y 100% 0;background-size: 3px auto;}
+.border-right{flex-shrink:0;width: 5px;height: 100%;background:#f7f7f7 url('http://taoquan.cillbiz.com/pic/ballL.png') repeat-y 0 0;background-size: 3px auto;}
+.coupon-item image{width: 80px;height: 80px;margin: 0 10px;flex-shrink:0;}
+.goods-content{flex-grow:1;height: 80px;}
+.goods-content-view{display: flex;flex-direction:column;justify-content:space-between;height: 100%;}
+.goods-name{font-size: 12px;height: 40px;line-height: 20px; text-overflow: -o-ellipsis-lastline;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical; }
+.goods-price-sales{display: flex;font-size: 10px;color: #999;line-height: 12px;}
+.goods-price{text-decoration:line-through;padding-right: 5px;}
+.goods-price-coupon{flex-grow:1;font-size: 12px;}
+.coupon-denomination{font-size: 12px;color: #f40;}
+.coupon-content{z-index: 1;width: 80px;height: 80px;flex-shrink:0;margin-left: 10px;position: relative;background-color: #f0f0f0;padding: 10px 0;border-left: 1px #ddd dotted;}
+.coupon-background{width: 80px;height: 60px;line-height: 60px; color: #fff;font-size: 60px;text-align: center;position: absolute;left: 0;top: 20px;}
+.coupon-content-view{padding: 0 5px; width: 65px;height: 80px;z-index: 2;position: relative;text-align: left;}
+.coupon-coin{color: #f40;font-size: 24px;line-height: 20px;margin-bottom: 10px;margin-left: -5px;}
+.coupon-num{color: #999;font-size: 10px;overflow:hidden; white-space:nowrap;line-height: 15px;margin-bottom: 5px;}
+.coupon-ratio{color: #999;font-size: 10px;overflow:hidden; white-space:nowrap;line-height: 15px;display: flex;}
+.coupon-ratio view{color: #f40;line-height: 30px;margin-left: 6px;font-size: 14px;}

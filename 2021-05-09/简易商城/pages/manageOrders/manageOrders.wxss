@@ -1,0 +1,22 @@
+/* pages/manageOrders/manageOrders.wxss */
+page{height:100%;}
+.container{min-height:100%;background:#eee;}
+.head{font-size:40rpx;line-height:100rpx;color:#353535;text-align:center;background:#fff;}
+.goods_item{background:#fff;margin-bottom:20rpx;}
+.goods_top{font-size:36rpx;line-height:100rpx;color:#353535;padding-left:20rpx;border-top:1px solid #eee;}
+.goods_top image{width:40rpx;height:40rpx;margin-right:20rpx;vertical-align:middle;}
+.goods_inf{border-top:1px solid #eee;position:relative;padding-left:26vw;min-height:25vw;}
+.goods_inf image{position:absolute;left:3vw;top:50%;width:20vw;height:20vw;transform:translateY(-50%)}
+.goods_options{padding-top:10rpx;}
+.goods_options text{display:block;} 
+.goods_options .goods_name{font-size:28rpx;line-height:44rpx;margin-bottom:20rpx;color:#353535;}
+.goods_options .goods_rule,.goods_options .goods_count{font-size:26rpx;line-height:40rpx;color:#888;}
+.goods_pay{border-top:1px solid #eee;padding:20rpx;position:relative;}
+.goods_pay .item{font-size:30rpx;line-height:40rpx;color:#888;}
+.goods_pay .item text{color:#e64340;}
+.goods_pay .pay{position:absolute;right:20rpx;top:30rpx;}
+.goods_pay .pay form{display:inline-block;}
+.goods_pay .pay button{width:200rpx;height:60rpx;font-size:36rpx;line-height:60rpx;}
+.goods_pay .wx_pay button{background:#e64340;color:#fff;}
+.goods_pay .buy_again button{background:#e6e6e6;color:#999;}
+.inf{display:block;background:#eee;font-size:28rpx;line-height:130rpx;text-align:center;color:#666;}

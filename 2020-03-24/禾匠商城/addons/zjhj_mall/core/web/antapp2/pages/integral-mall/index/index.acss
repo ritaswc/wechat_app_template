@@ -1,0 +1,280 @@
+/* pages/integral-mall/index/index.wxss */
+
+page {
+    background: #fff;
+}
+
+.head {
+    /* height:258rpx;  */
+    position: relative;
+    z-index: 10;
+    margin-bottom: 48rpx;
+}
+
+.head-img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.shuoming {
+    position: absolute;
+    width: 30rpx;
+    height: 30rpx;
+    left: 60%;
+    top: 50rpx;
+}
+
+.shuoming image {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.integral {
+    color: #999;
+    font-size: 9pt;
+    padding: 28rpx 0rpx 20rpx 0rpx;
+}
+
+.my-integral {
+    color: #ecb786;
+    font-size: 18pt;
+    line-height: 1;
+    position: relative;
+}
+
+.my-exchange {
+    color: #fff;
+    margin-bottom: 20rpx;
+    line-height: 1;
+    position: relative;
+}
+
+.my-exchange image {
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: 16rpx;
+}
+
+.rotation-chart {
+    height: 100%;
+    width: 100%;
+    background: #f7f7f7;
+}
+
+.swiper {
+    height: 190rpx;
+    margin: 56rpx 0rpx 20rpx 0rpx;
+    width: 100%;
+}
+
+.slide-image {
+    height: 190rpx;
+    width: 100%;
+}
+
+.exchange-coupon {
+    margin-bottom: 40rpx;
+}
+
+.coupon-head {
+    color: #353535;
+    margin: 30rpx 0rpx 38rpx 20rpx;
+    padding-left: 16rpx;
+    border-left: 4rpx solid #ff6f28;
+}
+
+.scroll-view-item {
+    width: 256rpx;
+    height: 130rpx;
+    margin-right: 16rpx;
+    position: relative;
+    color: #fff;
+}
+
+.duihuan {
+    width: 56rpx;
+    font-size: 7pt;
+    padding: 10rpx 16rpx;
+    line-height: 1.2;
+}
+
+.scroll-view {
+    display: inline-block;
+    height: 80rpx;
+    margin: 20rpx 0rpx;
+    width: 138rpx;
+}
+
+#cat_name_active view {
+    color: #ff6f28;
+}
+
+.item-image {
+    width: 46rpx;
+    height: 46rpx;
+    margin-left: 46rpx;
+}
+
+.original-cost {
+    margin: 32rpx 0 0 24rpx;
+    color: #353535;
+    font-weight: bolder;
+    line-height: 1;
+}
+
+.full-price {
+    margin: 18rpx 0 38rpx 24rpx;
+    color: #353535;
+    font-size: 11px;
+}
+
+.exchange {
+    color: #353535;
+    font-size: 9pt;
+    border: 2rpx solid #353535;
+    border-radius: 24rpx;
+    height: 48rpx;
+    padding: 0 32rpx;
+}
+
+.scroll-view view {
+    position: static;
+    display: flex;
+    justify-content: center;
+    color: #353535;
+    font-size: 10px;
+}
+
+.goods {
+    width: 375rpx;
+    /* margin-left: 10rpx; */
+    background-color: #fff;
+    margin-top: 10rpx;
+}
+
+.goods-img {
+    width: 100%;
+    height: 370rpx;
+}
+
+.goods-name {
+    margin: 20rpx 0;
+    padding: 0 24rpx;
+    color: #353535;
+    font-size: 9pt;
+    line-height: 1.4;
+    height: 2.8em;
+}
+
+.goods-price {
+    color: #ff6f28;
+    font-size: 12px;
+    margin: 0rpx 0rpx 8rpx 24rpx;
+}
+
+.goods-font {
+    color: #999;
+    font-size: 11px;
+    margin: 0rpx 24rpx;
+    height: 20rpx;
+}
+
+.goods-buy {
+    margin: 24rpx 24rpx;
+    height: 48rpx;
+    background: #e19a59;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24rpx;
+    color: #fff;
+    font-size: 15px;
+    background-image: -webkit-linear-gradient(120deg, #f1b37d, #e19a59);
+    background-image: linear-gradient(120deg, #f1b37d, #e19a59);
+}
+
+.register {
+    width: 300rpx;
+    height: 76rpx;
+    left: 30%;
+    top: 85%;
+    position: absolute;
+    z-index: 1;
+}
+
+.ci_shibai {
+    width: 580rpx;
+    height: 310rpx;
+    border-radius: 16rpx;
+    background: #fff;
+    overflow: hidden;
+    position: fixed;
+    top: 35%;
+    left: 85rpx;
+    z-index: 9999;
+}
+
+.ci_shibai_pic {
+    width: 124rpx;
+    height: 134rpx;
+    margin: 88rpx 48rpx 88rpx 96rpx;
+    float: left;
+}
+
+.ci_success_pic {
+    width: 580rpx;
+    height: 310rpx;
+    position: fixed;
+    top: 20%;
+}
+
+.ci_shibai_font {
+    margin-top: 104rpx;
+    float: left;
+    color: #353535;
+}
+
+.ci_success_font {
+    display: flex;
+    justify-content: center;
+    margin: 160rpx 0 20rpx 0;
+    color: #353535;
+    font-size: 16px;
+}
+
+.ci_success_btn {
+    margin: 0 40rpx;
+}
+
+.success_btn {
+    width: 228rpx;
+    height: 64rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30rpx;
+}
+
+.ci_close {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    right: 16rpx;
+    top: 16rpx;
+    z-index: 9999;
+}
+
+#modal-mask {
+    width: 100vh;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+    z-index: 7777;
+    color: #fff;
+}

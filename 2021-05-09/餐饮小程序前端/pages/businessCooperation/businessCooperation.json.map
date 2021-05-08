@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["pages/businessCooperation/businessCooperation.json"],"sourcesContent":["// Window configuration\n// https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html#window\n{\n  \"navigationBarTitleText\": \"资质信息\"\n}\n"],"file":"businessCooperation.json"}

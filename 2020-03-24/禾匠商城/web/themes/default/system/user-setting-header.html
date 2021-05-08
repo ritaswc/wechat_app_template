@@ -1,0 +1,6 @@
+<ul class="we7-page-tab">
+	<!--<li {if $type == 'system'}class="active"{/if}><a href="{php echo url('system/thirdlogin', array('type' => 'system'))}">系统登录</a></li>-->
+	<li {if $action == 'registerset' && $do == 'display'}class="active"{/if}><a href="{php echo url('user/registerset/display');}">登录/注册设置</a></li>
+	<li {if $action == 'thirdlogin'}class="active"{/if}><a href="{php echo url('system/thirdlogin')}">第三方配置</a></li>
+	<li {if $do == 'clerk'}class="active"{/if}><a href="{php echo url('user/registerset/clerk')}">应用操作员登录/注册设置</a></li>
+</ul>

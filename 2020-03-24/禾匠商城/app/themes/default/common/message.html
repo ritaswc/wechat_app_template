@@ -1,0 +1,22 @@
+{php define('MUI', true);}
+{template 'common/header'}
+	{if strexists($msg, 'SQL Error:')}
+	<div class="mui-content-padded">
+		<div class="mui-message">
+			<div class="mui-message-icon">
+				<span class="mui-msg-error"></span>
+			</div>
+			<h4 class="title">系统错误</h4>
+			<div class="mui-desc" style="color:#929292;">请及时联系管理员</div>
+			<div class="mui-desc" style="color:#929292; margin-top:10px; text-align:left;">{$msg}</div>
+			<div class="mui-button-area">
+				<a href="javascript:;" onclick="history.go(-1);" class="mui-btn mui-btn-success mui-btn-block">确定</a>
+			</div>
+		</div>
+	</div>
+	{else}
+	<script type="text/javascript">
+		util.message('{$msg}', '{$redirect}', '{$type}');
+	</script>
+	{/if}
+{template 'common/footer'}

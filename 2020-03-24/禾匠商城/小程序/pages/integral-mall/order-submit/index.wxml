@@ -1,0 +1,166 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body">
+        <view class="flex-row flex-y-center" style="background-color:#fff;padding:0 24rpx;border-bottom:1rpx #eee solid;border-top:1rpx #eee solid;height:90rpx;" wx:if="{{send_type==0}}">
+            <view class="flex-grow-1 flex-x-center" style="height:100%;">
+                <view bindtap="getOffline" class="flex-y-center {{offline==1?'active':''}}" data-city_id="{{address.city_id}}" data-index="1" style="height:100%;">快递配送
+                    </view>
+            </view>
+            <view class="flex-grow-1 flex-x-center" style="height:100%;">
+                <view bindtap="getOffline" class="flex-y-center {{offline==2?'active':''}}" data-index="2" style="height:100%;">到店自提
+                    </view>
+            </view>
+        </view>
+        <block wx:if="{{offline==1}}">
+            <view style="height:16rpx;"></view>
+            <navigator class="user-address flex-col" url="/pages/address-picker/address-picker">
+                <view class="user-address-top flex-grow-0 flex-row">
+                    <image src="{{__wxapp_img.pt.address_top.url}}"></image>
+                </view>
+                <block wx:if="{{address}}">
+                    <view class="address-center flex-row flex-y-center">
+                        <view class="address-left flex-grow-1 flex-col">
+                            <view class="address-userinfo flex-grow-0 flex-row">
+                                <view class="address-username flex-grow-1">
+                                    收货人：{{address.name}}
+                                </view>
+                                <view class="address-phone flex-grow-1">
+                                    {{address.mobile}}
+                                </view>
+                            </view>
+                            <view class="address-text flex-grow-1 flex-row">
+                                收货地址：{{address.province}} {{address.city}} {{address.district}} {{address.detail}}
+                            </view>
+                        </view>
+                        <view class="address-right flex-grow-0">
+                            <image src="{{__wxapp_img.share.right.url}}"></image>
+                        </view>
+                    </view>
+                    <view class="user-address-bottom flex-grow-0 flex-row">
+                        <image src="{{__wxapp_img.pt.address_bottom.url}}"></image>
+                    </view>
+                </block>
+                <view class="no-address flex-row" wx:else>
+                    <view class="flex-grow-0 address-icon">
+                        <image src="{{__wxapp_img.pt.address.url}}"></image>
+                    </view>
+                    <view class="flex-grow-1">
+                        <view>请选择收货地址</view>
+                    </view>
+                    <view class="flex-grow-0 address-to-icon">
+                        <image src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                    </view>
+                </view>
+            </navigator>
+        </block>
+        <block wx:if="{{offline==2}}">
+            <view class="flex-row address-picker">
+                <view class="flex-grow-1">
+                    <view class="flex-row" style="margin-bottom: 20rpx">
+                        <view class="flex-y-center">联系人：</view>
+                        <view>
+                            <input bindinput="KeyName" placeholder="可以手动填写" value="{{name}}"></input>
+                        </view>
+                    </view>
+                    <view class="flex-row">
+                        <view class="flex-y-center">联系电话：</view>
+                        <view>
+                            <input bindinput="KeyMobile" placeholder="可以手动填写" value="{{mobile}}"></input>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="{{shop_list.length>=1?'showShop':''}}" class="flex-row address-picker">
+                <view class="flex-grow-1">
+                    <view class="flex-row" style="margin-bottom: 20rpx">
+                        <view class="flex-grow-1">门店名称：{{shop.name}}</view>
+                    </view>
+                    <view class="flex-row" style="margin-bottom: 20rpx">
+                        <view class="flex-grow-1">门店电话：{{shop.mobile}}</view>
+                    </view>
+                    <view>自提门店：{{shop.address}}</view>
+                </view>
+                <view class="flex-grow-0 flex-y-center" wx:if="{{shop_list.length>=1}}">
+                    <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx;margin-left: 12rpx"></image>
+                </view>
+            </view>
+        </block>
+        <view class="flex-col " wx:if="{{goods}}">
+            <view class="cart-item flex-row">
+                <view class="flex-grow-0">
+                    <image class="goods-pic" mode="aspectFill" src="{{goods.cover_pic}}"></image>
+                </view>
+                <view class="flex-grow-1 flex-col">
+                    <view class="flex-grow-1">
+                        <view class="goods-name">{{goods.name}}</view>
+                        <view class="attr-list">
+                            <view class="attr-item" wx:for="{{goods.attr}}" wx:for-item="attr" wx:key="{{item.id}}">
+                                {{attr.attr_group_name}}:{{attr.attr_name}}
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flex-grow-0 flex-row">
+                        <view class="flex-grow-0 price">{{attr_integral}}积分
+                            <block wx:if="{{total_price>0}}">+￥{{attr_price}}</block>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="colonel flex-row flex-y-center" wx:if="{{offline!=2}}">
+            <view class="colonel-title flex-grow-1">运费</view>
+            <view class="colonel-price flex-grow-1">
+                ¥：{{express_price}}
+            </view>
+        </view>
+        <view class="colonel flex-row flex-y-center">
+            <view class="message-title flex-grow-0 flex-y-center">买家留言</view>
+            <view class="message flex-grow-1 flex-y-center">
+                <input bindinput="bindkeyinput" class="flex-y-center" placeholder="你有什么想对商家说的都可以填写在这哦~" placeholderClass="message-plaseholder" style="width:100%;" type="text"></input>
+            </view>
+        </view>
+        <form bindsubmit="orderSubmit" reportSubmit="true">
+            <view class="submit-footer flex-row flex-y-center">
+                <view class="total-title flex-y-center flex-grow-0 ">
+                    总计：
+                </view>
+                <view class="total-price flex-y-center flex-grow-1">
+                    {{attr_integral}}积分+￥{{new_total_price}}
+                </view>
+                <button class="flex-y-center flex-grow-0 flex-x-center submit-btn" formType="submit">提交</button>
+            </view>
+        </form>
+        <view class="coupon-picker" style="background-color:#f7f7f7;" wx:if="{{show_shop}}">
+            <scroll-view class="coupon-list" scrollY="true" style="height: 100%;padding:0;">
+                <view class="shop-block flex-y-center">当前地址</view>
+                <view class="shop-address flex-row flex-y-center">
+                    <view class="flex-grow-1">{{location}}</view>
+                    <view bindtap="dingwei" class="flex-grow-0 flex-y-center">
+                        <image src="{{__wxapp_img.shop.dingwei.url}}" style="width:32rpx;height:32rpx;margin-right:2rpx;"></image>
+                        <text style="color:#2495ff">手动定位</text>
+                    </view>
+                </view>
+                <view class="shop-block flex-y-center">门店列表（仅展示离您最近的30家门店）</view>
+                <view bindtap="pickShop" class="flex-row address-picker" data-index="{{index}}" style="margin:0;" wx:for="{{shop_list}}" wx:key="{{item.id}}">
+                    <view class="flex-grow-0 flex-y-center">
+                        <image src="{{item.id==shop.id?'/images/icon-shop-checked.png':'/images/icon-shop-un.png'}}" style="width: 40rpx;height: 40rpx;margin-right: 20rpx"></image>
+                    </view>
+                    <view class="flex-grow-1">
+                        <view class="flex-row" style="margin-bottom: 20rpx">
+                            <view class="flex-grow-1" style="font-weight:bold;{{item.id==shop.id?'color:#ff4544':''}}">
+                                {{item.name}}
+                            </view>
+                            <view class="flex-grow-0" wx:if="{{item.distance!=-1}}">{{item.distance}}</view>
+                        </view>
+                        <view class="flex-row" style="margin-bottom: 20rpx">
+                            <view class="flex-grow-1">电话：{{item.mobile}}</view>
+                        </view>
+                        <view>地址：{{item.address}}</view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

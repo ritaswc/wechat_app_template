@@ -1,0 +1,192 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <include src="/components/quick-navigation/quick-navigation" />
+    <view class="body">
+        <include src="/components/common/get-coupon.axml" />
+        <include src="/components/goods/specifications_model.axml" />
+        <view class="{{show_attr_picker?'no-scroll':''}} {{pt_detail?'pt-modal-bj':''}}">
+            <include src="/components/goods/goods_banner.axml" />
+
+            <!-- 限时抢购 -->
+            <view class='time-limit flex-row' a:if='{{goods.limit_time>0}}'>
+                <view class='flex-grow-0 flex-y-center flex-x-center'>
+                    <image src='{{__wxapp_img.pt.details.url}}'></image>
+                </view>
+                <view class='flex-grow-1 flex-col flex-x-center time-limit-logo-text'>
+                    <view class='flex-grow-0'>
+                        限时火拼
+                    </view>
+                    <view style='margin-left:50rpx;' class='flex-grow-0'>
+                        超值低价
+                    </view>
+                </view>
+                <view class='flex-grow-1 flex-col flex-y-center flex-x-center'>
+                    <view class='flex-grow-0 time-top-text'>
+                        距离结束时间剩
+                    </view>
+                    <view class='flex-grow-0 flex-row time-info flex-y-center'>
+                        <view class='flex-grow-1 time-value flex-y-center flex-x-center'>
+                            {{limit_time.days}}
+                        </view>
+                        <view class='flex-grow-0'>
+                            天
+                        </view>
+                        <view class='flex-grow-1 time-value flex-y-center flex-x-center'>
+                            {{limit_time.hours}}
+                        </view>
+                        <view class='flex-grow-0'>
+                            时
+                        </view>
+                        <view class='flex-grow-1 time-value flex-y-center flex-x-center'>
+                            {{limit_time.mins}}
+                        </view>
+                        <view class='flex-grow-0'>
+                            分
+                        </view>
+                        <view class='flex-grow-1 time-value flex-y-center flex-x-center'>
+                            {{limit_time.secs}}
+                        </view>
+                        <view class='flex-grow-0'>
+                            秒
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <include src="/components/goods/goods_info.axml" />
+
+            <view class='friend-group'>
+                <view class='pt-goods-rule flex-row flex-y-center' onTap='goArticle'>
+                    <view class='pt-rule-title flex-grow-1 flex-y-center'>
+                        支付商品开团，邀请好友参与，成功发货失败退款
+                    </view>
+                    <view class='pt-rule-right flex-grow-0 flex-y-center'>
+                        详细规则
+                    </view>
+                    <view class='pt-rule-more flex-grow-0 flex-y-center'>
+                        <image src='{{__wxapp_img.share.right.url}}'></image>
+                    </view>
+                </view>
+            </view>
+
+            <view a:if="{{group_num > 0}}" class="friend-group" style="padding-bottom:10rpx">
+                <view class="flex-y-center">
+                    <view class='friend-group-title flex-row  flex-grow-1'>
+                        以下小伙伴正在发起拼团，您可以直接参与:
+                    </view>
+                    <view onTap="more" class='pt-rule-right flex-grow-0 flex-y-center'>
+                        更多
+                    </view>
+                    <view class='pt-rule-more flex-grow-0 flex-y-center'>
+                        <image src='{{__wxapp_img.share.right.url}}'></image>
+                    </view>
+                </view>
+                <view class='friend-group-item flex-row flex-y-center' a:for="{{group_list}}" a:key="{{item.id}}" a:if="{{index<3}}">
+                    <view class='friend-corver-pic flex-grow-0 flex-y-center'>
+                        <image src='{{item.avatar_url}}'></image>
+                    </view>
+                    <view class='friend-name flex-grow-1 flex-y-center'>
+                        {{item.nickname}}
+                    </view>
+                    <view class='flex-grow-0 flex-col'>
+                        <view class='flex-grow-0 group-short' style="text-align:right">
+                            还差{{item.surplus}}人成团
+                        </view>
+                        <view class='flex-grow-0 group-short-time'>
+                            还剩 {{item.limit_time.days}}:{{item.limit_time.hours}}:{{item.limit_time.mins}}:{{item.limit_time.secs}}
+                        </view>
+                    </view>
+                    <view class='flex-grow-0 go-offered flex-y-center flex-x-center' onTap='goToGroup' data-id='{{item.id}}'>
+                        去参团
+                    </view>
+                </view>
+            </view>
+
+            <!--     商品评论     -->
+            <view class='goods-comment' a:if='{{__is_comment}}'>
+                <view class='goods-comment-title flex-row flex-y-center' onTap='goToComment'>
+                    <view class='comment-left-text flex-grow-1 flex-y-center'>
+                        买家评论{{comment_num}}
+                        <text a:if='{{__is_sales}}' style='margin-left:10rpx;'>| 销量 {{goods.virtual_sales}}</text>
+                    </view>
+                    <view class='comment-more flex-grow-0 flex-y-center'>
+                        <image src='{{__wxapp_img.share.right.url}}'></image>
+                    </view>
+                </view>
+                <view class='goods-comment-item flex-col' a:for='{{comment}}' a:for-index='ckey' a:key="{{item.id}}">
+                    <view class='goods-comment-user flex-grow-0 flex-row flex-y-center'>
+                        <view class='comment-user-pic flex-grow-0'>
+                            <image src='{{item.avatar_url}}'></image>
+                        </view>
+                        <view class='comment-user-name flex-grow-0'>
+                            {{item.nickname}}
+                        </view>
+                    </view>
+                    <view class='goods-comment-conent flex-grow-1'>
+                        {{item.content}}
+                    </view>
+                    <view class='goods-comment-ginfo'>
+                        {{item.addtime}}
+                        <block a:for='{{item.attr}}' a:for-item="attr" a:key="{{item.id}}">
+                            {{attr.attr_group_name}}:{{attr.attr_name}}
+                        </block>
+                    </view>
+                    <view class='goods-comment-piclist'>
+                        <block a:for='{{item.pic_list}}' a:for-item="pic" a:key="{{item.id}}">
+                            <view class='comment-pic-shell'>
+                                <image onTap='bigToImage' style="width:160rpx;height:160rpx" mode="aspectFit" data-url='{{pic}}' data-index='{{ckey}}' src='{{pic}}'></image>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class='pt-goods-content'>
+                <view class='pt-goods-content-title flex-y-center'>
+                    商品详情
+                </view>
+                <view class='pt-goods-details'>
+                    <import src="../../../wxParse/wxParse.axml" />
+                    <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
+                </view>
+            </view>
+
+            <include src="/components/goods/goods_buy" />
+        </view>
+
+        <!-- 弹窗 pt_detail-->
+        <view a:if="{{pt_detail}}" class="model-award">
+            <view class="act-modal show">
+                <view class="act-modal-bg"></view>
+                <view class="act-modal-pic flex-y-center flex-x-center">
+                    <view class="pt-modal">
+                        <view class="pt-modal-1">正在拼团</view>
+                        <view class="pt-modal-2">仅显示10条正在拼团信息</view>
+                        <view class="pt-modal-3"></view>
+                        <view class="pt-modal-4">
+                            <image onTap="end_more" src="/images/pond-details.png"></image>
+                        </view>
+                        <view class="pt-modal-5">
+                            <scroll-view scroll-y style="height: 500rpx;" onScrolltoupper="upper" onScrolltolower="lower" onScroll="scroll" scroll-into-view="{{toView}}">
+                                <view a:for="{{group_list}}" a:key="{{item.id}}" class="flex-row pt-modal-6">
+                                    <view class="flex-grow-0 flex-y-center flex-x-center pt-modal-7">
+                                        <image src="{{item.avatar_url}}" />
+                                    </view>
+                                    <view class="flex-col flex-grow-1 flex-x-center" style="text-align:left;">
+                                        <view class="flex-row" style="color:#353535;">
+                                            <view style="max-width:62%;" class="flex-grow-0 text-more">{{item.nickname}}</view>
+                                            <text class="flex-grow-0" style="color:#ff5c5c;font-size:9pt;margin-left:20rpx">还差{{item.surplus}}人</text>
+                                        </view>
+                                        <view style="color:#707070;font-size:9pt">剩余{{item.limit_time.days}}:{{item.limit_time.hours}}:{{item.limit_time.mins}}:{{item.limit_time.secs}}</view>
+                                    </view>
+                                    <view class='flex-grow-0 go-offered flex-y-center flex-x-center' onTap='goToGroup' data-id='{{item.id}}' style="margin-left:0rpx;font-size:11pt">去参团</view>
+                                </view>
+                            </scroll-view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

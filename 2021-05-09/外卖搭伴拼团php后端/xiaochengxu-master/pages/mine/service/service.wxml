@@ -1,0 +1,6 @@
+<!--pages/mine/service/service.wxml-->
+
+<image src="/asset/img/userdele.jpg" mode="widthFix"></image>
+
+<import src="/asset/template/backhome.wxml" />
+<template is="backhome"/>

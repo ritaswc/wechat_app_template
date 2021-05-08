@@ -1,0 +1,4 @@
+<view wx:for="{{musicList}}">
+  <button bindtap="playMusic" data-music-id="{{index}}">{{item.song}} - {{item.artist}}</button>
+</view>
+<audio id="myAudio" name="{{currentMusic.song}}" author="{{currentMusic.artist}}" src="{{currentMusic.url}}"  controls="true"></audio>

@@ -1,0 +1,60 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="info">
+            <view class="info-title flex-row" wx:if="{{share_setting.level==3}}">
+                <navigator class="flex-x-center width" openType="redirect" url="/pages/share-team/share-team?status=1">
+                    <view class="info-text {{status==1?'active':''}}">{{share_setting.first_name||'一级'}}({{first_count}})</view>
+                </navigator>
+                <navigator class="flex-x-center width" openType="redirect" url="/pages/share-team/share-team?status=2">
+                    <view class="info-text {{status==2?'active':''}}">{{share_setting.second_name||'二级'}}({{second_count}})</view>
+                </navigator>
+                <navigator class="flex-x-center width" openType="redirect" url="/pages/share-team/share-team?status=3">
+                    <view class="info-text {{status==3?'active':''}}">{{share_setting.third_name||'三级'}}({{third_count}})</view>
+                </navigator>
+            </view>
+            <view class="info-title flex-row" wx:elif="{{share_setting.level==2}}">
+                <navigator class="flex-x-center width-50" openType="redirect" url="/pages/share-team/share-team?status=1">
+                    <view class="info-text {{status==1?'active':''}}">{{share_setting.first_name||'一级'}}({{first_count}})</view>
+                </navigator>
+                <navigator class="flex-x-center width-50" openType="redirect" url="/pages/share-team/share-team?status=2">
+                    <view class="info-text {{status==2?'active':''}}">{{share_setting.second_name||'二级'}}({{second_count}})</view>
+                </navigator>
+            </view>
+            <block wx:else></block>
+            <view class="info-content" style="{{share_setting.level==1?'padding-top:0':''}}">
+                <view class="info-label" wx:for="{{list}}" wx:key="{{item.id}}">
+                    <view class="info-up flex-y-center flex-row">
+                        <view class="info-img flex-grow-0">
+                            <image class="img" src="{{item.avatar_url}}"></image>
+                        </view>
+                        <view class="info-text flex-grow-1">
+                            <view class="info-name flex-row" style="justify-content:space-between;">
+                                <view class="flex-grow-0 flex-y-center text-more" style="width:300rpx;display:block">{{item.nickname}}</view>
+                                <view class="flex-grow-0 flex-y-center fs-sm">推广{{item.child_count}}人</view>
+                            </view>
+                            <view class="info-time">注册时间：{{item.time}}</view>
+                        </view>
+                    </view>
+                    <view class="info-down flex-y-center">
+                        <view class="info-left">消费{{item.price}}元</view>
+                        <view class="info-right">
+                            <view class="info-order">{{item.count}}个订单</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="info-footer flex-row" wx:if="{{no_more}}">
+                <view class="info-before">
+                    <view class="info-border"></view>
+                </view>
+                <view class="info-t">没有更多了</view>
+                <view class="info-after">
+                    <view class="info-border"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

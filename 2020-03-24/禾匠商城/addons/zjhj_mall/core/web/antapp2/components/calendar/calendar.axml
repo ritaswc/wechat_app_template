@@ -1,0 +1,41 @@
+<view class="top-handle">
+    <view class="prev" onTap="doDay" data-key='left'>
+        <image src="{{__wxapp_img.register.left.url}}"></image>
+    </view>
+    <view class="today">{{currentDate}}</view>
+    <view class="next" onTap="doDay" data-key="right">
+        <image src="{{__wxapp_img.register.right.url}}"></image>
+    </view>
+</view>
+<view class="week">
+    <block a:for="{{weeks}}" a:key="{{item.id}}">
+        <view class="weeks-day">{{item.day}}</view>
+    </block>
+</view>
+<view class="box-flex">
+    <view class="flex-item" a:for="{{currentDayList}}" a:for-index='key' a:for-item="vo" a:key="{{key}}">
+
+        <block a:if="{{vo.is_re == 1}}">
+            <view data-day="{{vo.date}}" onTap='selectDay' class="item-content {{!selectCSS}}" a:if="{{currentDay != vo.date}}">
+                <image src="{{__wxapp_img.register.quan.url}}" class="re_pic"></image>
+                {{vo.date}}
+            </view>
+        </block>
+        <block a:else>
+            <view data-day="{{vo.date}}" onTap='selectDay' class="item-content {{!selectCSS}}" a:if="{{currentDay != vo.date}}">
+                {{vo.date}}
+            </view>
+        </block>
+        <block a:if="{{vo.is_re == 1}}">
+            <view data-day="{{vo.date}}" onTap='selectDay' class="item-content {{selectCSS}}" a:if="{{currentDay == vo.date}}">
+                <image src="{{__wxapp_img.register.quan.url}}" class="re_pic"></image>
+                {{vo.date}}
+            </view>
+        </block>
+        <block a:else>
+            <view data-day="{{vo.date}}" onTap='selectDay' class="item-content {{selectCSS}}" a:if="{{currentDay == vo.date}}">
+                {{vo.date}}
+            </view>
+        </block>
+    </view>
+</view>

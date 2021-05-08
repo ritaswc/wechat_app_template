@@ -1,0 +1,27 @@
+<view class="section">
+    <view class="flex-wrp">
+	    <view class="flex-item active}}" wx:for="{{list}}" bindtap="switchTab">{{item}}</view>
+	</view>
+	<block wx:for="{{order}}">
+		<view class="order-list" bindtap = "getDetail" data-id = "{{item.orderNum}}">
+			<view class="order-info">
+				<view>订单号 {{item.orderNum}}</view>
+				<view>订单时间 {{item.timer}}<text class="order-state">{{item.orderStatusStr}}</text></view>
+			</view>
+			<view class="pro-info" wx:for="{{item.orderList}}" wx:for-item="item" >
+				<image mode="{{item.mode}}" src="http:{{item.goodsImg}}"></image>
+				<view class="pro-detail">
+					<view class="pro-name">
+						<text class="pro-goodname text-overflow">{{item.goodsName}}</text>
+						<text class="pro-price">￥{{item.sellPrice}}</text>
+					</view>
+					<view class="pro-desc text-overflow">{{item.goodsStandardDes}}</view>
+					<view class="pro-number">x{{item.buyNum}}</view>
+				</view>
+			</view>
+			<view class="order-total">
+				共{{item.buyNums}}件商品 合计：<text class="total-price">￥{{item.totalPrice}}</text>（含运费￥{{item.feePrice}}）
+			</view>
+		</view>
+	</block>
+</view>

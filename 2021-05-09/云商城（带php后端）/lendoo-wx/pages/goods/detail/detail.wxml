@@ -1,0 +1,28 @@
+<swiper class="images" indicator-dots="true"
+autoplay="true" interval="5000" duration="1000" style="height:{{galleryHeight}}px;">
+<block wx:for="{{goods.images}}" wx:key="">
+  <swiper-item>
+    <image src="{{item}}" mode="aspectFill" class="swiper-image" bindtap="previewImage" data-current="{{index}}"/>
+</swiper-item>
+</block>
+</swiper>
+<view class="summary">
+	<text class="title">{{goods.title}}</text>
+	<text class="price">￥ {{goods.price}}</text>
+</view>
+<view class="detail">
+	<image wx:for="{{goods.detail}}" src="{{item}}" wx:key="" mode="widthFix"></image>
+</view>
+<view class="footer">
+    <view class="opt-buttons">
+        <view class="button-group" bindtap="showCart">
+            <image src="../../../images/icon_cart.png" class="button-image" />
+            <text class="button-text">购物车</text>
+        </view>
+        <view class="button-group" bindtap="">
+            <contact-button class="contact-button" size="22" /> 
+            <text class="button-text">联系客服</text>
+        </view>
+    </view>
+    <button class="add-cart" bindtap="addCart">加入购物车</button>
+</view>

@@ -1,0 +1,27 @@
+.tutorial-list-cell {
+  display: flex;
+  font-size: 40rpx;
+  color: #23454D;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(178,190,193, 0.4);
+  margin: 0 50rpx;
+  padding: 50rpx 0;
+}
+
+.tutorial-list-cell-number {
+  background-color: #FA5834;
+  color: white;
+  flex-shrink: 0;
+  border-radius: 70rpx;
+  height: 70rpx;
+  width: 70rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50rpx;
+}
+
+.tutorial-list-cell-image {
+  width: 100%;
+  margin-top: 40rpx;
+}

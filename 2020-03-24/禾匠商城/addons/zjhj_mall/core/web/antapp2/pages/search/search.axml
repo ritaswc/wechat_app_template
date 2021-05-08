@@ -1,0 +1,76 @@
+<view class="page" style='position: relative;'>
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+            <view style="display: flex;flex-direction: column;height:100%;width: 100%;">
+                <view style="flex-grow: 0;">
+                    <form>
+                        <view class="search-box">
+                            <view class="input-box">
+                                <view class='flex-row pull-down' onTap='pullDown'>
+                                    <view class='cat'>{{default_cat.name}}</view>
+                                    <view style="font-size: 0">
+                                        <image class="search-icon" src="{{__wxapp_img.search.s_up.url}}" />
+                                    </view>
+
+                                    <view a:if='{{is_show}}' class='pull-down-list'>
+                                        <view data-id='{{item.id}}' onTap='change_cat' a:for='{{cats}}' a:key='{{item.id}}' class='pull-down-text flex-x-center {{item.is_active ? "active" : ""}}'>{{item.name}}</view>
+                                    </view>
+                                </view>
+
+                                <view style="width: 75%">
+                                    <input style="width: 100%" confirm-type="search" class="search-input" auto-focus="true" onConfirm="inputConfirm" onFocus="inputFocus" onBlur="inputBlur" />
+                                </view>
+                            </view>
+                            <view>
+                                <view class="search-cancel" onTap="searchCancel">取消</view>
+                            </view>
+                        </view>
+                    </form>
+                </view>
+                <view style="flex-grow: 3;position: relative">
+                    <block a:if="{{show_history && history_list && history_list.length>0}}">
+                        <view class="search-history">
+                            <view>
+                                <text class="search-history-title">搜索历史</text>
+                                <view class="delete-search-history" onTap="deleteSearchHistory">
+                                    <image src="{{__wxapp_img.store.delete.url}}" style="width: 28rpx;height: 34rpx" />
+                                </view>
+                            </view>
+                            <view class="search-history-list">
+                                <view a:for="{{history_list}}" a:key="{{item.id}}" class="search-history-item" data-value="{{item.keyword}}" onTap="historyClick">{{item.keyword}}
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <block a:if="{{show_result}}">
+                        <view class="search-result" a:if='{{is_search}}'>
+                            <view class="goods-list" style="padding-top: 20rpx">
+                                <navigator url="{{item.url}}" open-type="navigate" a:for="{{goods_list}}" a:key="{{item.id}}" class="goods-item">
+                                    <image class="goods-pic" src="{{item.pic_url}}" mode="aspectFill" />
+                                    <view class="goods-info">
+                                        <text class="goods-name">{{item.name}}</text>
+                                        <text class="goods-price">￥{{item.price}}</text>
+                                    </view>
+                                </navigator>
+                            </view>
+                            <view class="loading-more-bar {{loading_more_active}}">
+                                <image src="{{__wxapp_img.system.loading_black.url}}" style="width: 48rpx;height: 48rpx" />
+                            </view>
+                        </view>
+                        <view class='search-result' a:else>
+                            <view class='flex-row flex-x-center' style='padding:36rpx 0;'>
+                                <view class='flex-row flex-y-center'>
+                                    <view class='flex-grow-0' style='width:100rpx;height:100rpx;margin-right:40rpx;'>
+                                        <image src='{{__wxapp_img.search.search_no.url}}' style='width:100rpx;height:100rpx;'></image>
+                                    </view>
+                                    <view class='flex-grow-1' style='color:#353535;'>抱歉，没有相关商品</view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

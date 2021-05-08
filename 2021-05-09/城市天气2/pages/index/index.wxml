@@ -1,0 +1,16 @@
+
+<!--index.wxml-->
+<view class="container">
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <div class="loading">
+    <div class="bounce1" :style="{backgroundColor:color,width:size,height:size}"></div>
+    <div class="bounce2" :style="{backgroundColor:color,width:size,height:size}"></div>
+    <div class="bounce3" :style="{backgroundColor:color,width:size,height:size}"></div>
+  </div>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

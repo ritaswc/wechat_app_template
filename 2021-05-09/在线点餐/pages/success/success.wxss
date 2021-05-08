@@ -1,0 +1,49 @@
+/* pages/success/success.wxss */
+page {
+    background: #efefef
+}
+icon {
+    display: block;
+    text-align: center;
+    margin-top: 30vh
+}
+.t1 {
+    font-family: "微软雅黑";
+    display: block;
+    text-align: center;
+    margin-top: 20rpx;
+    font-size: 5vw;
+    margin-bottom: 20rpx
+}
+.t2 {
+   color: #ccc;
+   font-size: 4vw;
+    display: block;
+    text-align: center
+}
+.bt-area{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+}
+.bt-return{
+    width: 50%;
+    height: 48px;
+    display: inline-block;
+    background-color: #fff;
+    text-align: center;
+    line-height: 48px;
+    font-size: 20px;
+}
+.bt-ok{
+    width: 50%;
+    height: 48px;
+    display: inline-block;
+    background-color: #58401f;
+    text-align: center;
+    line-height: 48px;
+    font-size: 20px;
+    color: #fff;
+}

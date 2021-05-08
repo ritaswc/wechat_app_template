@@ -1,0 +1,96 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		添加处理接口
+	</div>
+	<ul class="list-group reply-container">
+		<li class="list-group-item">
+			<div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label">接口类型</label>
+					<div class="col-sm-9 col-xs-12">
+						<label for="radio_1" class="radio-inline"><input type="radio" name="type" id="radio_1" ng-model="item.type" value="1"/> 远程地址</label>
+						<label for="radio_0" class="radio-inline"><input type="radio" name="type" id="radio_0" ng-model="item.type" value="0"/> 本地文件</label>
+					</div>
+				</div>
+				<div class="form-group" ng-show="item.type == '1'">
+					<div class="form-group" >
+						<label class="col-xs-12 col-sm-3 col-md-2 control-label">远程地址</label>
+						<div class="col-sm-9 col-xs-12">
+							<input type="text" id="" class="form-control" placeholder="" name="apiurl" ng-model="item.apiurl">
+							<div class="help-block" style="margin-top:10px;">
+								<ol style="margin-top:10px;">
+									<li>使用远程地址接口，你可以兼容其他的微信公众平台管理工具。</li>
+									<li>你应该填写其他平台提供给你保存至公众平台的URL和Token</li>
+									<li>添加此模块的规则后，只针对于单个规则定义有效，如果需要全部路由给接口处理，则修改该模块的优先级顺序。</li>
+									{if IMS_FAMILY != 'x'}<li>具体请<a href="http://www.w7.cc/docs/#api" target="_blank">查看“自定义接口回复”文档</a></li>{/if}
+								</ol>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 col-md-2 control-label" style="color:red">Token</label>
+						<div class="col-sm-9 col-xs-12">
+							<input type="text" name="wetoken" class="form-control" ng-model="item.token" />
+							<div class="help-block">与目标平台接入设置值一致，必须为英文或者数字，长度为3到32个字符.</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group" ng-show="item.type == '0'">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label">文件列表</label>
+					<div class="col-sm-9 col-xs-12">
+						<select name="apilocal" class="form-control" ng-model="item.apilocal"><option value="">请选择本地文件</option>{loop $apis $file}<option {if $row['apilocal'] == $file} selected="selected"{/if} value="{$file}">{$file}</option>{/loop}</select>
+						<div class="help-block" style="margin-top:10px;">
+							<ol style="margin-top:10px;">
+								<li>使用本地文件扩展你可以快速的扩展系统功能。</li>
+								<li>添加此模块的规则后，只针对于单个规则定义有效，如果需要全部路由给接口处理，则修改该模块的优先级顺序。</li>
+								<li>本地文件存放在模块文件夹内（/framework/builtin/userapi/api）下。</li>
+								{if IMS_FAMILY != 'x'}<li>具体请<a href="http://www.w7.cc/docs/#api" target="_blank">查看“自定义接口回复”文档</a></li>{/if}
+							</ol>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label">默认回复文字</label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="text" id="" class="form-control" placeholder="" name="default-text"  ng-model="item.default_text">
+						<div class="help-block">当接口无回复时，则返回用户此处设置的文字信息，优先级高于“默认回复URL”</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label">缓存时间</label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="text" id="" class="form-control" placeholder="" name="cachetime" ng-model="item.cachetime">
+						<div class="help-block">接口返回数据将缓存在系统中的时限，默认为0不缓存。</div>		
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+<script>
+	window.initReplyController = function($scope) {
+		$scope.item = [];
+		$scope.item = {php echo json_encode($row)};
+	};
+
+	window.validateReplyForm = function(form, $, _, util, $scope) {
+		var error = false;
+		if($scope.item.type == '1') {
+			if(!$.trim($scope.item.apiurl)) {
+				util.message('接口类型选择远程地址后,必须填写远程地址.');
+				return false;
+			}
+			if(!$.trim($scope.item.token)) {
+				util.message('接口类型选择远程地址后,必须填写Token.');
+				return false;
+			}
+		}
+		if($scope.item.type == '0') {
+			if(!$scope.item.apilocal) {
+				util.message('接口类型选择本地文件后,必须选择本地文件.');
+				return false;
+			}
+		}
+ 		return true;
+	};
+</script>

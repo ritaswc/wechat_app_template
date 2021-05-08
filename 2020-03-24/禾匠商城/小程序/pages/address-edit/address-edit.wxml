@@ -1,0 +1,44 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="bottom-bar">
+            <view bindtap="saveAddress">保存</view>
+        </view>
+        <view>
+            <view class="flex-row flex-y-center edit-row">
+                <view class="flex-grow-0 row-label">收货人</view>
+                <view class="flex-grow-1">
+                    <input bindinput="inputBlur" data-name="name" placeholder="" value="{{name}}"></input>
+                </view>
+            </view>
+            <view class="flex-row flex-y-center edit-row">
+                <view class="flex-grow-0 row-label">联系电话</view>
+                <view class="flex-grow-1">
+                    <input bindinput="inputBlur" data-name="mobile" placeholder="" type="number" value="{{mobile}}"></input>
+                </view>
+            </view>
+            <view class="flex-row flex-y-center edit-row">
+                <view class="flex-grow-0 row-label">所在地区</view>
+                <view bindtap="showAreaPicker" class="flex-grow-1 flex-row">
+                    <view class="flex-grow-1" style="text-align: right;padding-right: 24rpx">
+                        <block wx:if="{{district==null}}">请选择</block>
+                        <block wx:else>{{district.province.name}} {{district.city.name}} {{district.district.name}}</block>
+                    </view>
+                    <view class="flex-grow-0 flex-y-center">
+                        <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="flex-row flex-y-center edit-row">
+                <view class="flex-grow-0 row-label">详细地址</view>
+                <view class="flex-grow-1">
+                    <input bindinput="inputBlur" data-name="detail" placeholder="" value="{{detail}}"></input>
+                </view>
+            </view>
+            <view bindtap="getWechatAddress" class="get-wechat-address" wx:if="{{__platform=='wx'}}">授权一键获取地址</view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+    <include src="./../../components/area-picker/area-picker.wxml"></include>
+</view>

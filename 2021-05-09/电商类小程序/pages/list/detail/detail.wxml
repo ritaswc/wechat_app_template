@@ -1,0 +1,90 @@
+<import src="../../../wxParse/wxParse.wxml"/> 
+<view class="detail-box">
+  <view scroll-y="true" class="detail-list">
+    <view class="detail-scroll">
+      <swiper class="detailswiper" indicator-dots="{{indicatorDots}}" indicator-dots="true" interval="5000" duration="1000">
+        <!--<block wx:for="{{goodsPicsInfo}}">-->
+        <swiper-item>
+          <image src="{{shoppingCartInfo.goodImg}}" class="slide-image" />
+        </swiper-item>
+        <swiper-item>
+          <image src="{{shoppingCartInfo.goodImg}}" class="slide-image" />
+        </swiper-item>
+        <swiper-item>
+          <image src="{{shoppingCartInfo.goodImg}}" class="slide-image" />
+        </swiper-item>
+
+        <!--</block>-->
+      </swiper>
+  
+
+    <!--商品基本信息-->
+    <view class="shopping_container">
+      <view class="title">
+        <text>{{shoppingCartInfo.goodName}}</text>
+      </view>
+      <view style="display:flex;align-items:center;border-bottom:1px solid #ccc;">
+        <text class="carts-price discount">￥{{shoppingCartInfo.goodPrice}}</text>
+        <text class="carts-price origin">￥{{shoppingCartInfo.goodPrice}}</text>
+        <text class="Freight">运费：包邮</text>
+      </view>
+      <view class="shoptype">
+        <radio-group class="radio-group" bindchange="radioChange">
+          <text>规格：</text>
+          <label class="radio" wx:for="{{items}}">
+            <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+          </label>
+        </radio-group>
+      </view>
+      <!--<view class="shopwechat">
+        <text>店家微信：k1009756987</text>
+      </view>
+      <view class="shopwechat">
+        <text>商家店铺：{{shoppingCartInfo.shop_name}}</text>
+      </view>
+      <view class="shopwechat">
+        <text>商家地址：</text>
+      </view>-->
+    </view>
+    <view class="list-tab">
+      <ul>
+        <li class="{{current == 0 ? 'active' : ''}}" catchtap="switchSlider" data-index="0">商品详情</li>
+        <li class="{{current == 1 ? 'active' : ''}}" catchtap="switchSlider" data-index="1">商品参数</li>
+        <li class="{{current == 2 ? 'active' : ''}}" catchtap="switchSlider" data-index="2">商品评论</li>
+      </ul>
+    </view>
+    <swiper class="swiper-box" current="{{current}}" indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" bindchange="changeSlider">
+      <block>
+
+        <!-- 1 -->
+        <swiper-item>
+          <scroll-view scroll-y="true">
+           <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+          </scroll-view>
+        </swiper-item>
+
+        <!--2  -->
+        <swiper-item>
+          暂无参数
+        </swiper-item>
+
+        <!-- 3 -->
+        <swiper-item>
+          暂无评论
+        </swiper-item>
+      </block>
+    </swiper>
+      
+  </view>
+  </view> 
+  <view class="detail-footer">
+    <view class="detail-1"></view>
+    <view class="detail-2"></view>
+    <view class="detail-3" bindtap="addToCar">
+      <text>加入购物车</text>
+    </view>
+    <view class="detail-4">
+      <text>立即购买</text>
+    </view>
+  </view>
+</view>

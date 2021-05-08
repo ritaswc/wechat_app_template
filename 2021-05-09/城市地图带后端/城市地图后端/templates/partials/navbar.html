@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md fixed-top">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand ml10" href="/">
+    <span class="mr5"><i class="fa fa-coffee" aria-hidden="true" style=""></i></span> awesomecoffice
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li {% if title == 'index' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+        <a href="/" class="nav-link">首页</a>
+      </li>
+
+      <li {% if title == 'spots' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+        <a href="/spots/" class="nav-link">地点</a>
+      </li>
+    </ul>
+
+
+    {% if user.is_authenticated %}
+      <ul class="navbar-nav">
+        <li {% if title == 'account' %} class="nav-item active dropdown" {% else %} class="nav-item dropdown" {% endif %}>
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                    src="{{ user.avatar_thumbnail.url }}" alt=""
+                                    style="width: 20px; height: 20px" class="mr5" hidden>{{user.email}}</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="{% url 'user:profile' %}">我的账户</a>
+            <a class="dropdown-item" href="{% url 'user:logout' %}">退出</a>
+          </div>
+        </li>
+      </ul>
+    {% else %}
+      <ul class="navbar-nav">
+        <a href="{% url 'user:login' %}" class="btn btn-outline-success mr10"><span class="fa fa-sign-in mr5"></span>登录</a>
+        <a href="{% url 'user:signup' %}" class="btn btn-outline-success"><span class="fa fa-user-plus mr5"></span>注册</a>
+      </ul>
+    {% endif %}
+  </div>
+</nav>

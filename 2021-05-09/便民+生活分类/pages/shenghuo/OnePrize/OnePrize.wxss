@@ -1,0 +1,3 @@
+/* pages/shenghuo/OnePrize/OnePrize.wxss */
+
+@import "OnePrizeCell/OnePrizeCell.wxss";

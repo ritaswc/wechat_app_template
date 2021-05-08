@@ -1,0 +1,79 @@
+{template 'common/header'}
+<div class="notice-show ">
+	{if $do == 'list'}
+	<ul class="we7-page-tab">
+		<li >
+			<a href="{php echo url('article/notice-news/list');}" >全部</a>
+		</li>
+		<li>
+			<a href="{php echo url('article/news-show/list');}" >新闻</a>
+		</li>
+		<li >
+			<a href="{php echo url('article/notice-show/list');}" >公告</a>
+		</li>
+	</ul>
+	<div class="search-box we7-margin-bottom">
+		<select name="" class="we7-margin-right">
+			<option data-url="{php echo url('article/news-show/list');}" >全部新闻</option>
+			{loop $categroys $key $categroy}
+				{if $key}
+				<option data-url="{php echo url('article/news-show/list', array('cateid' => $categroy['id']));}" {if $cateid == $categroy['id']} selected{/if}>{$categroy['title']}</option>
+				{/if}
+			{/loop}
+		</select>
+	</div>
+	<table class="tbale we7-table">
+		<tr >
+			<th>名称</th>
+			<th>类型</th>
+			<th>发布时间</th>
+		</tr>
+		{if !empty($data)}
+		{loop $data $da}
+		<tr>
+			<td>
+				<a href="{php echo url('article/news-show/detail', array('id' => $da['id']));}" target="_blank" class="text-over" style="{if !empty($da['style'])}{if !empty($da['style']['color'])}color: {php echo $da['style']['color']};{/if}{if !empty($da['style']['bold'])}font-weight:bold;{/if}{/if}">{$da['title']}</a>
+			</td>
+			<td>新闻</td>
+			<td>{$da['createtime']}</td>
+		</tr>
+		{/loop}
+		{else}
+		<tr>
+			<td colspan="3">
+				<div class="we7-empty-block">暂无数据</div>
+			</td>
+		</tr>
+		{/if}
+	</table>
+	<div class="pull-right">
+		{$pager}
+	</div>
+	{/if}
+	{if $do == 'detail'}
+	<div class="article-page">
+		<ol class="breadcrumb we7-breadcrumb container">
+			<a href="{php echo url('article/news-show/list');}"><i class="wi wi-back-circle"></i></a>
+			<li class="active"><a href="{php echo url('article/news-show/list');}">新闻列表</a></li>
+			<li class="active">{$news['title']}</li>
+		</ol>
+		<div class="container">
+			<div class="article-box">
+				<h2 class="title">
+					{$news['title']}
+				</h2>
+				<div class="info">
+					<span>作者：{$news['author']}</span>
+					<span>来源：{$news['source']}</span>
+					<span>时间：{php echo date('Y-m-d H:i', $news['createtime']);}</span>
+					<span>阅读：{$news['click']}次</span>
+				</div>
+				<div class="article">
+					{php echo html_entity_decode($news['content'], ENT_QUOTES)}
+				</div>
+			</div>
+		</div>
+	</div>
+	{/if}
+</div>
+{template 'common/footer'}

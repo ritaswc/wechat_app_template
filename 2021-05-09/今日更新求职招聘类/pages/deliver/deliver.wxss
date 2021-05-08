@@ -1,0 +1,233 @@
+/* pages/deliver/deliver.wxss */
+page{
+    height: 100%;
+}
+.img3{
+    width: 350rpx;
+    height: 350rpx;
+}
+.no_data{
+    margin-top: 200rpx;
+    text-align: center;
+}
+
+.no_data text{
+    display: block;
+}
+.deliver-wrap{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main-list{
+    flex: 1;
+    height: 100%;
+    margin-top: 70rpx;
+}
+swiper-item {
+    overflow: scroll;
+    height: 100%;
+}
+.deliver-nav{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.deliver-nav ul{
+    display: flex;
+    justify-content: space-around;
+    background-color: #f6f6f6;
+    font-size: 11pt;
+    color: gray;
+}
+.deliver-nav ul li{
+    line-height: 250%;
+    width: 25%;
+    text-align: center;
+    border-right: 1px solid #c8c8c8;
+}
+.last{
+     border-right: none !important;
+}
+.avtivity{
+    color: #e58026;
+    border-bottom: 2px solid #e58026;
+}
+
+/*投递成功*/
+.deliver_list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 94%;
+    border-bottom:  1px solid #e5e5e5;
+    line-height: 166%;
+}
+.deliver_list .left{
+    width: 60%;
+}
+.deliver_list .left .name{
+    padding-top: 10rpx;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.deliver_list .left .hotal_name{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #666666;
+    font-size: 12pt;
+}
+.deliver_list .left .time{
+    font-size: 11pt;
+    color: #b5b5b5;
+}
+.deliver_list .right .clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.deliver_list .right .clock image{
+    width: 60rpx;
+    height: 60rpx;
+}
+.deliver_list .right text{
+    font-size: 11pt;
+    color: #b5b5b5;
+}
+/*公司已查看*/
+.have_look_list{
+    margin: auto;
+    width: 94%;
+    border-bottom:  1px solid #e5e5e5;
+    line-height: 166%;
+}
+.have_look_list .person_name{
+    padding-top: 10rpx;
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.have_look_list .person_name image{
+    width: 80rpx;
+    height: 35rpx;
+}
+.have_look_list .company_name{
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12pt;
+    color: #b5b5b5;
+}
+.has_click{
+    color: #b5b5b5;
+}
+.have_look_list .bottom{
+    display: flex;
+    justify-content: space-between;
+    font-size: 11pt;
+    color: #b5b5b5;
+}
+.have_look_list .bottom .look{
+    color: #e58026;
+}
+.look{
+  color: #e58026; 
+}
+.has_look{
+    color: #b5b5b5 !important;
+}
+/*面试邀请*/
+.swiper-item_3{
+    background-color: #efefef;
+}
+.interview{
+    margin: auto;
+    /*width: 94%;*/
+    padding: 0 3%;
+    line-height: 166%;
+    margin-bottom: 30rpx;
+    background-color: #fff;
+}
+.interview .person_name{
+    padding-top: 10rpx;
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.interview .person_name image{
+    width: 80rpx;
+    height: 35rpx;
+}
+.interview .company_name{
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12pt;
+    color: #b5b5b5;
+}
+.interview .bottom{
+    display: flex;
+    justify-content: space-between;
+    font-size: 11pt;
+    color: #b5b5b5;
+    border-bottom:  1px solid #e5e5e5;
+}
+.interview .examine{
+    text-align: center;
+    color: #e58026;
+    line-height: 200%;
+}
+/*暂不合适*/
+.inappropriate{
+    margin: auto;
+    /*width: 94%;*/
+    padding: 0 3%;
+    line-height: 166%;
+    margin-bottom: 30rpx;
+    background-color: #fff;
+}
+.inappropriate .person_name{
+    padding-top: 10rpx;
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.inappropriate .person_name image{
+    width: 80rpx;
+    height: 35rpx;
+}
+.inappropriate .company_name{
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12pt;
+    color: #b5b5b5;
+}
+.inappropriate .bottom{
+    display: flex;
+    justify-content: space-between;
+    font-size: 11pt;
+    color: #b5b5b5;
+    border-bottom:  1px solid #e5e5e5;
+}
+.has_look_two{
+    color: #b5b5b5;
+}
+.inappropriate .examine{
+    text-align: center;
+    color: #e58026;
+    line-height: 200%;
+}

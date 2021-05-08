@@ -1,0 +1,165 @@
+.items-container {
+  padding-bottom: 200rpx;
+  min-height: 700rpx;
+}
+
+.wx-checkbox-input {
+  border-radius: 50% !important;
+}
+
+/*整体列表*/
+
+.carts-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/*每行单元格*/
+
+.carts-item {
+  display: flex;
+  flex-direction: row;
+  height: 150rpx;
+  /*width属性解决标题文字太短而缩略图偏移*/
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding: 30rpx 0;
+}
+
+.carts-item icon {
+  line-height: 150rpx;
+  margin-left: 20rpx;
+}
+
+/*左部图片*/
+
+.carts-image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+/*右部描述*/
+
+.carts-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*右上部分标题*/
+
+.carts-title {
+  margin: 10rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+/*右下部分价格与数量*/
+
+.carts-subtitle {
+  font-size: 25rpx;
+  color: darkgray;
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*价格*/
+
+.carts-price {
+  color: #6cf;
+}
+
+/*复选框样式*/
+
+.carts-list icon {
+  margin-top: 22rpx;
+  margin-right: 20rpx;
+}
+
+/*底部按钮*/
+
+.carts-footer {
+  width: 100%;
+  height: 95rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  bottom: 0;
+  position: absolute;
+  background-color: #999;
+}
+
+/*复选框*/
+
+.carts-footer icon {
+  margin-left: 20rpx;
+}
+
+/*全选字样*/
+
+.carts-footer text {
+  font-size: 30rpx;
+  margin-left: 8rpx;
+  color: #fff;
+  line-height: 95rpx;
+  position: absolute;
+  left: 70rpx;
+}
+
+/*立即结算按钮*/
+
+.carts-footer .button {
+  line-height: 95rpx;
+  text-align: center;
+  width: 220rpx;
+  background-color: #fc0;
+  color: white;
+  font-size: 36rpx;
+  border-radius: 0;
+  border: 0;
+}
+
+.weui-number {
+  float: left;
+  height: 20px;
+  font-size: 25px;
+  line-height: 20px;
+  color: #666;
+  border: 1px solid #fff;
+  background-color: #f2f2f2;
+}
+
+.weui-number-sub {
+  border-right: none;
+  padding: 3px 10px;
+  border-radius: 2px 0 0 2px;
+}
+
+.weui-number-plus {
+  border-left: none;
+  margin-right: 5px;
+  padding: 3px 10px;
+  border-radius: 0 2px 2px 0;
+}
+
+.weui-number-input {
+  width:100rpx;
+  float: left;
+  height: 20px;
+  font-size: 20px;
+  color: #666;
+  -webkit-appearance: none;
+  border: 1px solid #fff;
+  background-color: #f2f2f2;
+  /*padding: 2px 0;*/
+  text-align: center;
+  border-radius: 1px;
+  margin-bottom: -1px;
+}
+
+.weui-cell:before {
+  border: none;
+}

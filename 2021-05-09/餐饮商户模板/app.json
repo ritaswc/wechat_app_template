@@ -1,0 +1,65 @@
+{
+  "pages":[
+    
+      "pages/common/guide/guide",
+
+      "pages/merchant/index/index",
+
+      "pages/merchant/mine/mine",
+
+      "pages/merchant/discount-control/discount-control",
+
+      
+
+     "pages/merchant/prodsvr-control/prodsvr-control",
+     "pages/merchant/edit-prodsvr/edit-prodsvr",
+
+    
+     "pages/merchant/edit-mine-info/edit-mine-info",
+    
+     "pages/merchant/discount-detail/discount-detail",
+    
+    
+     "pages/merchant/service-control/service-control",
+     "pages/merchant/edit-service/edit-service",
+    
+     
+     "pages/merchant/merchandise-control/merchandise-control",
+     "pages/merchant/edit-product/edit-product",
+  
+     "pages/merchant/edit-notice/edit-notice",
+     "pages/merchant/reg/reg",
+    
+    
+     "pages/customer/index/index",
+     "pages/customer/detail/detail",
+    
+   
+
+     "pages/common/about-us/about-us",  
+     "pages/common/privacy-statement/privacy-statement"
+     
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#c60e16",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle":"#ffffff",
+    "backgroundColor": "#f2f2f2",
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/common/tab-left/tab-left",
+      "text": "text"
+    },{
+      "pagePath": "pages/common/tab-right/tab-right",
+      "text": "text"
+    }]
+  },
+  "debug": true
+}

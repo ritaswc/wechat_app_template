@@ -1,0 +1,59 @@
+<!--pages/substartAct/substartAct.wxml-->
+<view class="container">
+    <view wx:if = "{{ac_name}}">
+        <input placeholder="活动名称" auto-focus/>
+    </view>
+    <view wx:if = "{{ac_time}}">
+        <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+            <picker-view-column>
+                <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+    <view wx:if = "{{ac_address}}">
+        <view class="listWrap">
+            <view class="listWrap_child">
+                <text class = "sub_title">活动地址</text>
+                <picker bindchange="showAddress" value="{{index}}" range="{{array}}" style="width:80%;">
+                    <input placeholder="活动名称" auto-focus class="nostyle" value="{{array[location]}}"/>
+                </picker>
+            </view>
+            <view class="listWrap_child">
+                <text class = "sub_title">详细地址</text>
+                <input placeholder="活动名称" auto-focus class="nostyle"/>
+            </view>
+            
+        </view>
+    </view>
+    <view wx:if = "{{ac_duration}}">
+        <view class="listWrap">
+            <view class="listWrap_child">
+                <text class = "sub_title">开始时间</text>
+                <picker mode="date" value="{{date}}" start="2015-09-01" end="2099-09-01" bindchange="bindStartDateChange" style="width:80%;">
+                    <input placeholder="开始时间" auto-focus class="nostyle" value="{{startDate}}"/>
+                </picker>
+            </view>
+            <view class="listWrap_child">
+                <text class = "sub_title">结束时间</text>
+                <picker mode="date" value="{{date}}" start="2015-09-01" end="2099-09-01" bindchange="bindEndDateChange" style="width:80%;">
+                    <input placeholder="结束时间" auto-focus class="nostyle" value="{{endDate}}"/>
+                </picker>
+            </view>
+            
+        </view>
+    </view>
+    <view wx:if = "{{ac_detail}}">
+        <view class="container">
+            <form bindsubmit="sendMsg">
+                <textarea maxlength="200" placeholder="介绍下详情吧" name="textarea"/>
+                <button form-type="submit" type="primary">提交</button>
+            </form>
+        </view>
+    </view>
+</view>

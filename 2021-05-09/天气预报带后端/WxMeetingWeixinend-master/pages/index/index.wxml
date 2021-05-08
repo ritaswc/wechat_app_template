@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+
+  <view class="weather-view">
+    <view>
+      <label>天气：</label>
+      <text>{{weatherInfo.weather[0].main}}</text>
+    </view>
+
+    <view>
+      <label>温度：</label>
+      <text>{{weatherInfo.main.temp - 273.15}} 摄氏度</text>
+    </view>
+    <view>
+      <label>风速：</label>
+      <text>{{weatherInfo.wind.speed}} 千米/小时</text>
+    </view>
+  </view>
+
+</view>

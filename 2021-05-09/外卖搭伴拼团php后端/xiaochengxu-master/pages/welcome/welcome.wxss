@@ -1,0 +1,23 @@
+/* pages/welcome/welcome.wxss */
+
+.welcome{
+  width: 100vw;
+  height: 100vh;
+  background: url('/asset/img/bg.png') repeat-x;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10%;
+  box-sizing: border-box;
+}
+.welcome.hide{
+    display: none;
+}
+.welcome image{
+  height: 432rpx;
+  opacity: 0;
+  transform: translate(0,50px)
+}

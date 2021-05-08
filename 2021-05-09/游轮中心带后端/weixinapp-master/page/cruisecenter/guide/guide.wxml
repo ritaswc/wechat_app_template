@@ -1,0 +1,12 @@
+<view class="page">
+    <view class="page__hd">
+        <text class="page__title">港口指南</text>
+        <text class="page__header">上海吴淞口国际邮轮港口</text>
+        <text class="page__desc">地址：上海市宝山区宝杨路1号</text>
+        <image class="page__img" mode="widthFix" src="http://o9mbu84vh.bkt.clouddn.com/passenger_map_pic.gif" />
+        <text class="page__desc">1）轨道交通   2）公交站点   3）出租车   4）公共停车</text>
+        <text class="page__desc"></text>
+        <text class="page__desc">港区为您提供免费饮水、咖啡简餐、便利店、外汇兑换、贵宾接待、失物招领、免税购物等。</text>
+        <text class="page__desc">如服务过程中遇到任何问题，都可拨打港区热线 021-66593169，或就近向我们的客运人员寻求帮助。</text>
+    </view>
+</view>

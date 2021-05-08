@@ -1,0 +1,18 @@
+<!-- index.wxml -->
+<form bindsubmit="onSubmit" bindreset="">
+    <view class="container">
+        <view class='title'>
+            <input name="title" placeholder-class="placeholder" placeholder="在此输入标题（可选）" value="{{item.value.title}}"  />
+        </view>
+        <view class='row' catchtap="onFocus">
+            <textarea class='text' value="{{item.value.content}}" maxlength="5000" auto-height="true"
+                      placeholder-class="placeholder" name="content" focus="{{focus}}" auto-focus="true"
+                      placeholder="点击添加文本"  />
+        </view>
+        <view class='date placeholder'>{{ item.update_date }}</view>
+        <view class='bottom'>
+            <button formType="submit" class='btn success'>保存</button>
+            <button class='btn del' bindtap="onDelete">删除</button>
+        </view>
+    </view>
+</form>

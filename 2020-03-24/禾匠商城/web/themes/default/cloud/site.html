@@ -1,0 +1,9 @@
+{template 'common/header'}
+<img src="{php echo url('utility/code')}">
+
+<form action="" method="post">
+	<input name="code" value=""/>
+	<input type="hidden" name="token" value="{$_W['token']}" />
+	<input type="submit" name="submit" value="提交" class="btn btn-primary"/>
+</form>
+{template 'common/footer'}

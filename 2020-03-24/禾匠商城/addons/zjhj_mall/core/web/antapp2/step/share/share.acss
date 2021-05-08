@@ -1,0 +1,85 @@
+/* step/share.wxss */
+
+page {
+    background-color: #f7f7f7;
+}
+
+.poster {
+    height: 708rpx;
+    width: 456rpx;
+    margin: 46rpx auto 48rpx;
+    background-color: whtie;
+    box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.15);
+}
+
+.poster image {
+    height: 708rpx;
+    width: 456rpx;
+}
+
+.mycanvas {
+    height: 1165rpx;
+    width: 750rpx;
+}
+
+.share-title {
+    font-size: 11pt;
+    color: #999;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.share-bg {
+    height: 144rpx;
+    text-align: center;
+}
+
+.cross-left {
+    float: left;
+    display: inline-block;
+    height: 100%;
+    text-align: center;    
+    width: 100rpx;
+    padding: 59rpx 37rpx;
+}
+
+.cross-right {
+    float: right;
+    height: 100%;
+    text-align: center;
+    margin-left: -20rpx;
+    width: 100rpx;
+    padding: 59rpx 37rpx;    
+}
+
+.cross-left image, .cross-right image {
+    height: 26rpx;
+    width: 26rpx;
+}
+
+.share-bg .active {
+    border: 4rpx solid #ff4544;
+}
+
+.bg-item {
+    height: 144rpx;
+    width: 120rpx;
+    margin-right: 20rpx;
+}
+
+.share-btn {
+    height: 80rpx;
+    width: 500rpx;
+    margin-top: 40rpx;
+    margin-bottom: 20rpx;
+    color: white;
+    background-color: #ff4544;
+    border-radius: 40rpx;
+    line-height: 80rpx;
+}
+
+.share-tip {
+    font-size: 9pt;
+    color: #999;
+    text-align: center;
+}

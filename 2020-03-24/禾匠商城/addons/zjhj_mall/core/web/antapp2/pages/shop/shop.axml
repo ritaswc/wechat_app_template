@@ -1,0 +1,19 @@
+<view class="page {{__page_classes}}">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class='search flex-y-center'>
+            <view class='search-input flex-row'>
+                <input class='input flex-grow-1' placeholder='请输入关键字' onFocus='inputFocus' onBlur='inputBlur' onConfirm='inputConfirm' confirm-type='search' onInput='input' value='{{keyword}}'></input>
+                <view class='search-btn flex-grow-0 flex-y-center flex-x-center flex-row {{show?"":"hidden"}}' onTap='search'>
+                    <image class='flex-grow-0' src='{{__wxapp_img.shop.search.url}}' style='width:24rpx;height:24rpx;margin-right:10rpx;'></image>
+                    <view class='flex-grow-1'>搜索</view>
+                </view>
+            </view>
+        </view>
+        <import src="./../../components/diy/diy.axml" />
+        <template is='shop' data="{{list:list,__wxapp_img:__wxapp_img}}" />
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

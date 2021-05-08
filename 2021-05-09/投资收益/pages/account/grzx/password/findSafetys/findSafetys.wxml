@@ -1,0 +1,18 @@
+<view class="notice">
+    安全密码重置
+</view>
+<view class="grzx_bd">
+    <view class="grzx_con">
+        <view class="grzx_con_list">
+            <input type="text" placeholder="请输入图形验证码"></input>
+        </view>
+        <view class="grzx_con_list border_none">
+            <input type="text" placeholder="请输入手机验证码"></input>
+        </view>
+    </view>
+</view>
+<view class="notice_bottom"> 安全提醒：为确保安全，登录密码不要跟安全密码相同长度6-16位，可由英文字母、数字和下划线组成，区分大小写</view>
+
+<view class="grzx_btn">
+    <button size="default" type="primary" bindtap="change">确定</button>
+</view>

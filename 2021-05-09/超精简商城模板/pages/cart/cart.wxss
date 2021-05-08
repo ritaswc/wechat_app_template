@@ -1,0 +1,39 @@
+@import "../../static/icon.wxss";
+@import "../../common/itemList/itemList.wxss";
+
+page {
+    background-color: #f0f0f0;
+}
+
+.mod-cart .tabs {
+    display: flex;
+    width: 100%;
+    height: 80rpx;
+    color: #9e9e9e;
+    margin: 20rpx 0;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    overflow: hidden;
+}
+.mod-cart .tabs .tab {
+    line-height: 80rpx;
+    font-size: 30rpx;
+    width: 50%;
+}
+.mod-cart .tabs .tab.active {
+    color: #f45341;
+    position: relative;
+}
+.mod-cart .tabs .tab.active::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 200rpx;
+    height: 2rpx;
+    margin-left: -100rpx;
+    background-color: #f45341;
+}

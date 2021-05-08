@@ -1,0 +1,49 @@
+<view class="addgoods-container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="list">
+      <label>商品名称:</label>
+      <input value="{{userid}}" hidden="true" name="user_id"/>
+      <input value="" name="goods_name" placeholder="请输入商品名称" />
+    </view>
+    <view class="list">
+      <label>商品分类:</label>
+      <view class="section">
+        <picker bindchange="bindPickerChangeType" value="{{typeindex}}" range="{{typeArray}}" name="cat_name">
+          <view class="picker">
+          {{typeArray[typeindex]}}
+            <input hidden="true" name="cat_name" value="{{typeArray[typeindex]}}" />
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="list">
+      <label>店铺选择：</label>
+      <view class="section">
+        <picker bindchange="bindPickerChangeGroup" value="{{groupindex}}" range="{{groupArray}}" name="shop_name">
+          <view class="picker">
+          {{groupArray[groupindex]}}
+            <input name="shop_name" hidden="true" value=" {{groupArray[groupindex]}}" />
+            <input name="shop_id" hidden="true" value="{{groupArr[groupindex]}}"/>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="list">
+      <label>商品价格:</label>
+      <input name="market_price" placeholder="请输入价格（单位：元）" />
+    </view>
+    <view class="list">
+      <label>商品数量:</label>
+      <input name="store_count" placeholder="请输入库存数量" />
+    </view>
+    <view class="list" style="height:480rpx">
+      <view bindtap="addimg">
+        <text>商品图片:</text>
+        <image style="height:450rpx" src="{{imgurl}}"></image>
+        <input value="{{imgurl}}" hidden="true" />
+      </view>
+    </view>
+    <button type="primary" formType="submit">提交</button>
+    <button type="warn" formType="reset">重置</button>
+  </form>
+</view>

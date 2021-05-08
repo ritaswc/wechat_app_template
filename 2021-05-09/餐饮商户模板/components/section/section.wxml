@@ -1,0 +1,8 @@
+<template name="section">
+    <view class="section">
+      <view wx:for="{{info}}" wx:key="unquie" class="section-item">
+        <text class="section-item-left f1 c5">{{item.name}}</text>
+        <text class="section-item-right f1 c4">{{item.content}}</text>
+      </view>
+   </view>
+</template>

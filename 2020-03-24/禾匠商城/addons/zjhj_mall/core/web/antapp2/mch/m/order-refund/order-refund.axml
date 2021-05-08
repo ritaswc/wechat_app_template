@@ -1,0 +1,97 @@
+<!-- 加载公共扩展 -->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <!-- 页面内容 -->
+        <view style="padding: 0 24rpx;background: #fff;margin-bottom: 24rpx;">
+            <view style="padding: 24rpx 0;border-bottom: 1rpx solid #eee;" class="flex flex-row">
+                <view class="flex-grow-1">订单详情</view>
+                <view class="flex-grow-0">状态：{{status_text}}</view>
+            </view>
+            <view style="padding: 24rpx 0" class="row-list">
+                <view class="flex flex-row">
+                    <view class="flex-grow-0">订单编号：</view>
+                    <view class="flex-grow-1">{{order_no}}</view>
+                </view>
+                <view class="flex flex-row">
+                    <view class="flex-grow-0">订单时间：</view>
+                    <view class="flex-grow-1">{{order_time}}</view>
+                </view>
+            </view>
+            <view class="flex flex-row" style="padding-bottom: 24rpx">
+                <view class="flex-grow-0">
+                    <image src="{{cover_pic}}" style="width: 180rpx;height: 180rpx;border: 1rpx solid #eee"></image>
+                </view>
+                <view class="flex-grow-1" style="padding-left: 24rpx;color: #888">
+                    <view class="goods-name" style="margin-bottom: 8rpx">{{name}}</view>
+                    <view class="flex flex-row">
+                        <view class="flex-grow-1" style="font-size: 9pt">
+                            <text a:for="{{attr}}" a:key="{{item.id}}">{{item.attr_group_name}}:{{item.attr_name}}</text>
+                        </view>
+                        <view class="flex-grow-0">×{{num}}</view>
+                    </view>
+                    <view style="text-align: right;color: #ff4544">￥{{total_price}}</view>
+                </view>
+            </view>
+        </view>
+        <view style="padding: 0 24rpx;background: #fff;margin-bottom: 24rpx;">
+            <view style="padding: 24rpx 0;border-bottom: 1rpx solid #eee;">售后信息</view>
+            <view style="padding: 24rpx 0;" class="row-list">
+                <view class="flex flex-row">
+                    <view class="flex-grow-0">退款编号：</view>
+                    <view class="flex-grow-1">{{order_refund_no}}</view>
+                </view>
+                <view class="flex flex-row">
+                    <view class="flex-grow-0">申请时间：</view>
+                    <view class="flex-grow-1">{{order_refund_time}}</view>
+                </view>
+                <view class="flex flex-row">
+                    <view class="flex-grow-0">售后类型：</view>
+                    <view class="flex-grow-1">{{refund_type}}</view>
+                </view>
+                <view class="flex flex-row">
+                    <view class="flex-grow-0">退款金额：</view>
+                    <view class="flex-grow-1">{{refund_price}}</view>
+                </view>
+                <view class="flex flex-row">
+                    <view class="flex-grow-0">申请理由：</view>
+                    <view class="flex-grow-1">
+                        <view>{{desc}}</view>
+                        <view style="padding-top: 24rpx;font-size: 0" a:if="{{pic_list && pic_list.length}}">
+                            <image a:for="{{pic_list}}" a:for-index="pindex" a:key="{{item.id}}" src="{{item}}" style="width: 120rpx;height: 120rpx;margin: 0 8rpx 8rpx 0;" onTap="showPicList" data-pindex="{{pindex}}" mode="aspectFill"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="padding: 0 24rpx;background: #fff;margin-bottom: 24rpx;">
+            <view style="padding: 24rpx 0;border-bottom: 1rpx solid #eee;">收货信息</view>
+            <view style="padding: 24rpx 0;" class="row-list">
+                <view class="flex flex-row">
+                    <view class="flex-grow-0">收货人：</view>
+                    <view class="flex-grow-1">{{order_refund_no}}</view>
+                </view>
+                <view class="flex flex-row">
+                    <view class="flex-grow-0">申请时间：</view>
+                    <view class="flex-grow-1">{{order_refund_time}}</view>
+                </view>
+                <view class="flex flex-row">
+                    <view class="flex-grow-0">售后类型：</view>
+                    <view class="flex-grow-1">{{refund_type}}</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="bottom-bar" a:if="{{status && status==0}}">
+            <form report-submit="true" onSubmit="_formIdFormSubmit" class="form-id-form">
+                <button formType="submit" class="form-id-button" style="text-align: right">
+                    <button class="order-item-btn" onTap="refundDeny">拒绝</button>
+                    <button class="order-item-btn" onTap="refundPass">同意</button>
+                </button>
+            </form>
+        </view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

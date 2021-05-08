@@ -1,0 +1,71 @@
+/*物流信息*/
+page{
+	background: #f3f3f3;
+}
+.kuaidiInfo{
+	background: #fff;
+	width: 100%;
+	height:220rpx;
+	margin-top: 30rpx;
+}
+.kuaidiInfo .kuaidiIcon{
+	float: left;
+	width: 120rpx;
+	height: 120rpx;
+	margin: 50rpx;
+}
+.kuaidiInfo .kuaidiIcon image{
+	width: 100%;
+	height: 100%;
+}
+.kuaidiInfo .kuaidiDetails{
+	float: left;
+	margin-top: 33rpx;
+}
+.kuaidiInfo .kuaidiDetails .company{
+	line-height: 70rpx;
+}
+.kuaidiInfo .kuaidiDetails .satus{
+	color: #f23b4d;
+}
+
+/*物理跟踪*/
+.kuaidi_follow{
+	width: 100%;
+	background: #fff;
+	padding: 0 50rpx;
+	box-sizing: border-box;
+}
+.kuaidi_follow .follow_title{
+	line-height: 70rpx;
+	font-size: 40rpx;
+	border-bottom: 1rpx solid #d5d5d5;
+}
+.kuaidi_follow .follow_satus{
+	border-left: 1rpx solid #d5d5d5;	
+}
+.kuaidi_follow .follow_satus .follow_address{
+	border-bottom: 1rpx solid #d5d5d5;
+	margin: 0 20rpx;
+	margin-top: 25rpx;
+	padding-bottom: 25rpx;
+	position: relative;
+}
+.kuaidi_follow .follow_satus .follow_address .address{
+	line-height: 60rpx;
+}
+.kuaidi_follow .follow_satus .follow_address .label{
+	width: 25rpx;
+	height: 25rpx;
+	border-radius: 50%;
+	position: absolute;
+	left: -30rpx;
+	top: -5rpx;
+	background: #d5d5d5;
+}
+.kuaidi_follow .follow_satus .follow_address .label.default{
+	background: #f23b4d;
+}
+.kuaidi_follow .follow_satus .follow_address .default{
+	color: #f23b4d;
+}

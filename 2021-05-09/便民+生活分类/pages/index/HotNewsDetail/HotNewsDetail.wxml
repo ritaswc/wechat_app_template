@@ -1,0 +1,8 @@
+<!--<view class="classname">
+<text>要闻详情页面</text>
+</view>-->
+
+<import src="../../../wxParse/wxParse.wxml"/> 
+<view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:htmlContentStr.nodes}}"/>
+</view>

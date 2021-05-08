@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+  <!--nav  bar-->
+  <view class="nav_bar">
+    <scroll-view class="nav_bar_scroll" scroll-x="true">
+      <block wx:for="{{types}}" wx:key="" wx:for-item="type">
+        <block wx:if="{{type.is_show}}">
+          <view bindtap="changeType" class="{{type.value == currentType ? 'current' : ''}} scroll_item" data-value="{{type.value}}">{{type.title}}</view>
+        </block>
+      </block>
+    </scroll-view>
+    <view class="edit_nav_bar" bindtap="gotoTypeEdit">
+        <image class="edit_nav_bar_btn" src="/image/nav_bar_edit.png"></image>  
+    </view>
+  </view>
+ 
+  <!--beauty list content-->
+  <view class="content">
+    <block wx:for="{{contentList}}" wx:key="">
+      <view class="beauty_item" data-id="{{item.link}}" data-title="{{item.title}}" bindtap="gotoAlbum">
+        <image src="{{item.img}}" mode="aspectFill"></image>
+        <text>{{item.title}}</text>
+    </view>
+    </block>
+    
+  </view>
+  
+  
+</view>

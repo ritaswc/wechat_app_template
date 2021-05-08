@@ -1,0 +1,42 @@
+.top-img-wrap {
+    margin-top: 30rpx;
+    width: 690rpx;
+    height: 198rpx;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.top-img-wrap image {
+    width: 690rpx;
+    height: 198rpx;
+}
+.top-img-wrap text {
+    position: absolute;
+    top: 80rpx;
+}
+
+.tips-wrap {
+    padding: 76rpx 30rpx;
+    width: 630rpx;
+    background-color: #ffffff;
+}
+.tips-wrap .pic-text-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 24rpx;
+}
+.tips-wrap .pic-text-wrap image {
+    width: 15rpx;
+    height: 18rpx;
+    margin-right: 12rpx;
+}
+.tips-wrap .you-can-do {
+    line-height: 60rpx;
+    margin-top: 24rpx;
+}
+.reg-quick {
+    margin-top:60rpx; 
+    color: #ffffff;
+    width: 690rpx;
+}

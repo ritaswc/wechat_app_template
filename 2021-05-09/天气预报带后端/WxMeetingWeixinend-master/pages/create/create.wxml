@@ -1,0 +1,45 @@
+<view class="container">
+<form bindsubmit="formSubmit">
+
+<!-- 会议时间 -->
+<view class="section">
+  <picker mode="date" value="{{date}}" start="{{currentDate}}" end="2017-12-31" bindchange="bindDateChange">
+    <view class="picker">
+      日期: {{date}}
+    </view>
+  </picker>
+
+    <picker mode="time" value="{{time}}" start="{{currentTime}}" end="23:59" bindchange="bindTimeChange">
+    <view class="picker">
+      时间: {{time}}
+    </view>
+  </picker>
+</view>
+
+<!-- 会议室 -->
+<view class="section">
+  <picker value="{{index}}" range="{{meetingRooms}}">
+    <view class="picker">
+      会议室：{{meetingRooms[index]}}
+    </view>
+  </picker>
+</view>
+
+<!-- 标题 -->
+   <view class="section">
+    <input name="title1" placeholder="会议标题" />
+  </view>
+
+  <view></view>
+
+<!-- 会议内容 -->
+ <view class="section">
+    <textarea name="content" placeholder="会议内容" />
+  </view>
+
+<view class="section">
+   <button form-type="submit"> 创建会议 </button>
+</view>
+
+</form>
+</view>

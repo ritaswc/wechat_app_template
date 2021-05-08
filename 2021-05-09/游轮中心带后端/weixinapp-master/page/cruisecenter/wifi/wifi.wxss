@@ -1,0 +1,42 @@
+.swiper-item{
+    display: block;
+    height: auto;
+}
+.index{
+    background-color: #FBF9FE;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+    flex: 1;
+    min-height: 100%;
+    font-size: 16px;
+}
+.section_gap {
+    padding:0 !important;
+}
+.img_swiper{
+    display: inline !important;
+}
+.flex-wrp{
+    display:flex;
+    background-color: #FFFFFF;
+}
+.flex-item{
+    width: 250rpx;
+}
+.flex-itemzi{
+    box-sizing:border-box;
+    width: 100%;
+    text-align: center;
+    border:1px solid #F3F3F3;
+    padding:50rpx 0;
+    height:250rpx;
+}
+image{
+    width:100rpx;
+    height:100rpx;
+}
+text{
+    display: block;
+}
+swiper{
+    height:400rpx;
+}

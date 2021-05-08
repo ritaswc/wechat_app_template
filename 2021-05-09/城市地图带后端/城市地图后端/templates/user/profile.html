@@ -1,0 +1,136 @@
+{% extends 'partials/base.html' %}
+
+{% block content %}
+  <div class="container mt20">
+    {% include "partials/flash.html" %}
+  </div>
+
+  <div class="container mt30" style="margin-bottom: 100px">
+    <div class="page-header">
+      <h4>个人信息</h4>
+    </div>
+
+    <form class="offset-md-2 col-md-10" action="/profile/edit/" method="post">
+      {% csrf_token %}
+      <div class="form-group row">
+        <label for="email" class="col-2 col-form-label">邮箱</label>
+        <div class="col-10">
+          <input class="form-control" type="email" name='email' value="{{ user.email }}" id="email" required="true" autofocus="true">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="username" class="col-2 col-form-label">用户名</label>
+        <div class="col-10">
+          <input class="form-control" type="text" name='username' value="{{ user.username }}" id="username" required="true">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="nickname" class="col-2 col-form-label">昵称</label>
+        <div class="col-10">
+          <input class="form-control" type="text" name='nickname' value="{{ user.nickname }}" id="nickname">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="bio" class="col-2 col-form-label">简介</label>
+        <div class="col-10">
+          <input class="form-control" type="text" name='bio' value="{{ user.bio }}" id="bio">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="url" class="col-2 col-form-label">URL</label>
+        <div class="col-10">
+          <input class="form-control" type="text" name='url' value="{{ user.url }}" id="url">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="location" class="col-2 col-form-label">地址</label>
+        <div class="col-10">
+          <input class="form-control" type="text" name='location' value="{{ user.location }}" id="location">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="button" class="col-2 col-form-label"></label>
+        <div class="col-10">
+          <button type="submit" class="btn btn btn-primary"><i class="fa fa-pencil"></i>&nbsp
+            更新
+          </button>
+          <input type="hidden" name="submit" value="submit" />
+        </div>
+      </div>
+    </form>
+
+    <div class="page-header mt30 pbn">
+      <h4>更改密码</h4>
+    </div>
+
+    <form class="offset-md-2 col-md-10" action="/password/edit/" method="post">
+      {% csrf_token %}
+      <div class="form-group row">
+        <label for="old-password" class="col-2 col-form-label">旧密码</label>
+        <div class="col-10">
+          <input class="form-control" type="password" name='old-password' value="" id="old-password" required="true">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password" class="col-2 col-form-label">新密码</label>
+        <div class="col-10">
+          <input class="form-control" type="password" name='password' value="" id="password" required="true">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="confirmPassword" class="col-2 col-form-label">确认新密码</label>
+        <div class="col-10">
+          <input class="form-control" type="password" name='confirmPassword' value="" id="confirmPassword" required="true">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="button" class="col-2 col-form-label"></label>
+        <div class="col-10">
+          <button type="submit" class="btn btn btn-primary"><i class="fa fa-key"></i>&nbsp
+            更新密码
+          </button>
+          <input type="hidden" name="submit" value="submit" />
+        </div>
+      </div>
+    </form>
+
+    <div class="page-header mt30 pbn">
+      <h4>删除账户</h4>
+    </div>
+
+    <div class="offset-md-2 col-md-10">
+      <div class="form-group row">
+        <label for="button" class="col-4 col-form-label">删除帐号操作不可逆。</label>
+      </div>
+
+      <div class="form-group row">
+        <label for="button" class="col-2 col-form-label"></label>
+        <div class="col-10">
+          <button class="btn btn-danger" id="delete-account-btn"><i class="fa fa-trash"></i>&nbsp
+            删除帐号
+          </button>
+          <form id="delete-account-form" action="/profile/delete/" method="post">
+            {% csrf_token %}
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  $('#delete-account-btn').on('click', function() {
+    notie.confirm({
+      text: '确认删除账户？',
+      submitText: '是', // optional, default = 'Yes'
+      cancelText: '否', // optional, default = 'Cancel'
+      position: 'top', // optional, default = 'top', enum: ['top', 'bottom']
+      submitCallback: function() {
+        $('#delete-account-form').submit()
+      }
+    })
+  })
+</script>
+
+
+{% endblock content %}

@@ -1,0 +1,54 @@
+<block wx:if="{{copyright&&(copyright.icon||copyright.text)}}">
+    <view bindtap="navigatorClick" data-open_type="tel" data-tel="{{copyright.phone?copyright.phone:contact_tel}}" style="padding: 24rpx" wx:if="{{copyright.is_phone==1}}">
+        <view style="text-align: center;font-size: 0;">
+            <image mode="aspectFit" src="{{copyright.icon}}" style="height: 60rpx;width: 240rpx" wx:if="{{copyright.icon}}"></image>
+        </view>
+        <view style="text-align: center;line-height: 1">
+            <text style="color: rgba(0,0,0,.3);font-size: 9pt;" wx:if="{{copyright.text}}">{{copyright.text}}</text>
+        </view>
+    </view>
+    <view style="padding: 24rpx" wx:elif="{{copyright.open_type=='wxapp'}}">
+        <navigator appId="{{copyright.appId}}" hoverClass="none" openType="navigate" path="{{copyright.path}}" target="miniProgram">
+            <view style="text-align: center;font-size: 0;">
+                <image data-url="{{copyright.url}}" mode="aspectFit" src="{{copyright.icon}}" style="height: 60rpx;width: 240rpx" wx:if="{{copyright.icon}}"></image>
+            </view>
+            <view style="text-align: center;line-height: 1">
+                <text bindtap="openWxapp" data-url="{{copyright.url}}" style="color: rgba(0,0,0,.3);font-size: 9pt;" wx:if="{{copyright.text}}">{{copyright.text}}</text>
+            </view>
+        </navigator>
+    </view>
+    <view style="padding: 24rpx" wx:elif="{{copyright.open_type=='navigate'}}">
+        <view style="text-align: center;font-size: 0;">
+            <navigator style="display: inline-block" url="{{copyright.url}}">
+                <image mode="aspectFit" src="{{copyright.icon}}" style="height: 60rpx;width: 240rpx" wx:if="{{copyright.icon}}"></image>
+            </navigator>
+        </view>
+        <view style="text-align: center;line-height: 1">
+            <navigator style="color: rgba(0,0,0,.3);font-size: 9pt;display: inline-block" url="{{copyright.url}}" wx:if="{{copyright.text}}">
+                <text>{{copyright.text}}</text>
+            </navigator>
+        </view>
+    </view>
+    <view style="padding: 24rpx" wx:else>
+        <view style="text-align: center;font-size: 0;">
+            <image mode="aspectFit" src="{{copyright.icon}}" style="height: 60rpx;width: 240rpx" wx:if="{{copyright.icon}}"></image>
+        </view>
+        <view style="text-align: center;line-height: 1">
+            <text style="color: rgba(0,0,0,.3);font-size: 9pt;" wx:if="{{copyright.text}}">{{copyright.text}}</text>
+        </view>
+    </view>
+</block>
+<block wx:else>
+    <view class="flex-y-center flex-x-center flex-col" style="padding: 20rpx" wx:if="{{store.copyright||store.copyright_pic_url}}">
+        <view wx:if="{{store.copyright_pic_url}}">
+            <navigator url="{{store.copyright_url}}">
+                <image mode="aspectFit" src="{{store.copyright_pic_url}}" style="height: 60rpx;width: 240rpx"></image>
+            </navigator>
+        </view>
+        <view style="color: rgba(0,0,0,.3);font-size: 9pt;" wx:if="{{store.copyright}}">
+            <navigator url="{{store.copyright_url}}">
+                <text>{{copyright.text}}</text>
+            </navigator>
+        </view>
+    </view>
+</block>

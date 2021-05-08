@@ -1,0 +1,25 @@
+<template name="city">
+    <view class="areas">
+        <view class="province">
+            <picker bindchange="provincePickerChange" value="{{provinceIndex}}" range="{{province.name}}" data-city-url="{{cityUrl}}">
+                <text class="select-item">{{province.name[provinceIndex]}}</text>
+            </picker>
+        </view>
+        <view class="city">
+            <block wx:if="{{!city.name.length}}"> --二级市区-- </block>
+            <block wx:if="{{city.name.length>0}}">
+                <picker bindchange="cityPickerChange" value="{{cityIndex}}" range="{{city.name}}" data-county-url="{{countyUrl}}">
+                    <text class="select-item">{{city.name[cityIndex]}}</text>
+                </picker>
+            </block>
+        </view>
+        <view class="county">
+            <block wx:if="{{!county.name.length}}"> --三级地区-- </block>
+            <block wx:if="{{county.name.length>0}}">
+                <picker bindchange="countyPickerChange" value="{{countyIndex}}" range="{{county.name}}">
+                    <text class="select-item">{{county.name[countyIndex]}}</text>
+                </picker>
+            </block>
+        </view>
+    </view>
+</template>

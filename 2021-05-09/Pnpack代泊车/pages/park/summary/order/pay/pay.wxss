@@ -1,0 +1,16 @@
+page{
+    background: #fff;
+}
+text{
+    display: block;
+     font-size:50rpx;
+}
+.text{
+   color: #000;
+}
+.data{
+     color:black;
+}
+.container{
+padding:50rpx 50rpx 0;
+}

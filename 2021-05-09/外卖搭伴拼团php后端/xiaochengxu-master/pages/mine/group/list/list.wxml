@@ -1,0 +1,35 @@
+
+<view class="content">
+    <!--<view class="group-title">
+        <view>
+            <text>我的团</text>
+        </view>
+    </view>-->
+    <view style="padding-bottom:10rpx;">
+        <block wx:for="{{groupList}}" wx:key>
+        <view class="group-item">
+            <view class="goods-info">
+                <image src="{{item.order_img}}"></image>
+                <view class="goods-info-handler">
+                    <view class="goods-info-name"><text>{{item.goods_name}}</text></view>
+                    <view class="goods-info-price">
+                        <text>¥{{item.goods_amount}}</text>
+                    </view>
+                    <view class="group-state pull-right">
+                        <text bindtap="groupDetail" data-groupid="{{item.group_id}}">团购详情</text>
+                        <text bindtap="orderDetail" data-orderid="{{item.order_id}}">订单详情</text>
+                    </view>
+                </view>
+            </view>
+            <view class="group-time">
+                <view class="group-time-left"><text>{{item.group_status}}</text> <view wx:if="{{item.group_already_person > 0}}">已团出<text>{{item.group_already_person}}</text>件</view> </view>
+                <view wx:if="{{item.group_end_time !== false}}">倒计时 <text>{{item.group_end_time}}</text></view>
+                <view wx:else><text>已结束</text></view>
+            </view>
+        </view>
+        </block>
+    </view>
+</view>
+
+<import src="/asset/template/backhome.wxml" />
+<template is="backhome"/>

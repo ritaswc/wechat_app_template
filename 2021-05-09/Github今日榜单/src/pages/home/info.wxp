@@ -1,0 +1,152 @@
+<template>
+    <view class="body">
+        <view class="top">
+            <view class="bar" bind:tap="handleBack">
+                <wxc-button type="success" plain="{{true}}" btnStyle="min-width: 66rpx;padding: 0;border:0">
+                    <wxc-icon color="#000" size="36" type="arrow-left"></wxc-icon>
+                </wxc-button>
+                <text class="bar-title">{{query.name}}</text>
+            </view>
+        </view>
+        <view class="title-box">
+            <text class="title">README</text>
+        </view>
+        <view scroll-y class="article">
+            <import src="../../common/libs/wemark/wemark.wxml" ></import>
+            <template is="wemark" data="{{...wemark}}"></template>
+
+            <view wx:if="{{showLoading}}" class="loading">
+                <my-icon type="loading" />
+            </view>
+            
+        </view>
+       <notice customLoading="{{true}}" showLoading="{{showLoading}}" showError="{{showError}}" />
+    </view>
+</template>
+
+<script>
+import Github from '../../models/github'
+
+var wemark = require('../../common/libs/wemark/wemark');
+
+export default {
+config: {
+    usingComponents: {
+      "wxc-button": "@minui/wxc-button",
+      "wxc-icon": "@minui/wxc-icon",
+      "wxc-flex": "@minui/wxc-flex",
+      "wxc-panel": "@minui/wxc-panel",
+      "index-card": "./components/index-card",
+      'notice': 'components/notice',
+      "my-icon": "components/icon",
+    },
+    navigationBarTextStyle: 'black'
+  },
+  data: {
+      wemark:{},
+      query: {},
+      showLoading: true,
+      showError: false
+  },
+  handleBack () {
+      wx.navigateBack()
+  },
+  onLoad: function (query) {
+      this.setData({
+          query
+      })
+      Github.getReadme(query.ns,query.name).then((res) => {
+            
+            let content = res.data.content.replace(/!\[([^\]]+)\]\(([^http][^\)]+)\)/g,`![$1](https://raw.githubusercontent.com/${query.ns}/${query.name}/master/$2)`)
+            
+            wemark.parse(content, this, {
+                name: 'wemark'
+            })
+
+            this.setData({
+                showLoading: false
+            })
+       }).catch(() => {
+           this.setData({
+               showLoading: false,
+               showError: true
+           })
+           setTimeout(() => {
+               this.setData({
+                   showError: false
+               })
+           }, 1000);
+       })
+  },
+  onShareAppMessage () {
+    let query = this.data.query
+    return {
+      title: `开源项目：${query.ns}/${query.name}`,
+      path: `/pages/home/info?ns=${query.ns}&name=${query.name}`
+    }
+  }
+}
+</script>
+
+<style lang="less">
+    @import '../../common/libs/wemark/wemark.wxss';
+    .body {
+        font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+    }
+    .top {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        background-color: #fff;
+        // background-color: rgb(131, 98, 98);
+        height: 130rpx;
+        width: 100%;
+        
+        .bar {
+            position: absolute;
+            background-color: #fff;
+            width: 100%;
+            top: 50rpx;
+            left: 20rpx;
+            .bar-title {
+                // font-size: 43rpx;
+                margin-top: 30rpx;
+            }
+        }
+        
+    }
+
+    .title-box {
+        background-color: #fff;
+        position: relative;
+        top: 130rpx;
+        height: 170rpx;
+        width: 100%;
+        border-bottom: 5rpx solid rgba(22, 151, 61, 0.5);
+        .title {
+            position: absolute;
+            bottom: 0;
+            // display: inline-block;
+            left: 20rpx;
+            font-size: 43rpx;
+            color: gray;
+            width: 100%;
+            
+        }
+    }
+
+    .article {
+        // margin: 40rpx 50rpx;
+        margin: 190rpx 50rpx 40rpx;
+        .loading {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+        }
+    }
+
+    
+
+    
+    
+</style>

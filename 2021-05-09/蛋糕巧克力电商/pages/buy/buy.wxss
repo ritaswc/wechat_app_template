@@ -1,0 +1,14 @@
+page{background-color: #f3f3f3;}
+.c{padding: 20rpx 30rpx;}
+.pro{padding: 0;font-size: 13pt;text-align: center;}
+.pro label{color: #000;}
+.pro text{color: #ff6a00;}
+.fm{width: 700rpx;display: flex; border: 1rpx solid #ddd;background-color: #fff; margin: 20rpx auto 0;border-radius:3px;height:50px;line-height: 50px;}
+.fm input{flex: 1;padding: 0 10px; height: 100%; font-size: 15pt;}
+
+.phone .label{width: 100rpx; border-right: 1rpx solid #eee;text-align: center; color: #999;}
+.des{color: #aaa;font-size: 11pt;padding: 10rpx 0;text-align: center;}
+
+.sub{width: 700rpx;height: 50px;line-height: 50px; text-align: center;border-radius:3px; margin:30rpx auto; }
+.sub-ok{background-color:#576b95;color: #fff;}
+.sub-dis{background-color: #d0d0d0;color: #999;}

@@ -1,0 +1,38 @@
+<view class="container">
+
+<!-- 会议时间 -->
+<view class="section">
+    <label>会议时间：</label>
+    <text>{{info.meetingTime}}</text>
+</view>
+
+<!-- 会议室 -->
+<view class="section">
+    <label>会议室</label>
+    <text>{{info.meetingRoom}}</text>
+</view>
+
+<!-- 标题 -->
+   <view class="section">
+    <label>会议标题：</label>
+    <text>{{info.title}}</text>
+  </view>
+
+  <view></view>
+
+<!-- 会议内容 -->
+ <view class="section">
+     <label>会议内容：</label>
+    <text>{{info.content}}</text>
+  </view>
+
+  <!-- 与会者 -->
+ <view class="section">
+     <label>与会者：</label>
+    <view wx:for="{{members}}">
+    {{index}}: {{item.message}}
+    </view>
+  </view>
+
+
+</view>

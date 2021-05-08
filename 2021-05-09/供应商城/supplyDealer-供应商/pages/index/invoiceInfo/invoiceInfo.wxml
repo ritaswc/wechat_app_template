@@ -1,0 +1,37 @@
+<!-- 发票信息 -->
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  查询中...
+</loading>
+<view class="container">
+    <view class="order-detail" wx:for="{{list}}">
+        <view class="order-con">
+            <text class="text1">发票种类</text>
+            <text class="text2" wx:if="{{item.is_need_invoice == 1}}">普通发票</text>
+            <text class="text2" wx:else>专票</text>
+        </view>
+        <view class="order-con">
+            <text class="text1">发票抬头</text>
+            <text class="text3">{{item.title}}</text>
+        </view>
+        <view class="order-con">
+            <text class="text1">纳税人识别号</text>
+            <text class="text2">{{item.person_code}}</text>
+        </view>
+        <view class="order-con">
+            <text class="text1">发票类型</text>
+            <text class="text2">{{item.detail}}</text>
+        </view>
+        <view class="order-con">
+            <text class="text1">金额</text>
+            <text class="text2">￥{{item.invoice_amount}}</text>
+        </view>
+        <view class="order-con">
+            <text class="text1">地址</text>
+            <text class="text3">{{item.invoice_address}}</text>
+        </view>
+        <view class="order-con">
+            <text class="text1">备注</text>
+            <text class="text3">{{item.invoice_ramark}}</text>
+        </view>
+    </view>
+</view>  

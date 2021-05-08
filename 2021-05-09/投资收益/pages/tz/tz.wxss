@@ -1,0 +1,40 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #f0f0f0;
+}
+
+.tz_head {background: #fff;margin: 20rpx;}
+.tz_head .tab {display: inline-block;width: 33.333%;text-align: center;font-size: 34rpx;padding: 20rpx 0;border-bottom: 4rpx solid #c4c4c4;border-right: 2rpx solid #c4c4c4;box-sizing: border-box;}
+.tz_head .tab.border_none {border-right: none;}
+.tz_head .tab image {width: 48rpx;height: 30rpx;margin-left: 6rpx;}
+.tz_head .active_show {border-bottom: 4rpx solid #4aafe2;color: #4aafe2;}
+
+.content {margin: 40rpx 20rpx 20rpx 20rpx;}
+.shd_list {margin-top: 20rpx;}
+.tab_title {background: #fff;font-size: 34rpx;padding: 20rpx 20rpx;}
+.tab_title .bao {background: #9bc780;color: #fff;font-size: 24rpx;padding:4rpx 6rpx;vertical-align: text-top;border-radius: 6rpx;}
+.tab_title .fan {color: #f00;font-size: 22rpx;padding:4rpx 6rpx;vertical-align: text-top;border: 2rpx solid #f00;border-radius: 6rpx;margin-left: 8rpx;}
+.tab_con {background: #f8f8f8;padding: 14rpx 0}
+
+.tab_con .left {display: inline-block;width: 40%;text-align: center;font-size: 30rpx;border-right: 2rpx solid #c4c4c4;padding: 30rpx 0 40rpx 0;box-sizing: border-box;}
+.tab_con .left text {font-size: 60rpx;color: #4aafe2;}
+.tab_con .left view {margin-top: 14rpx;}
+
+.tab_con .right {display: inline-block;width: 52%;margin-left: 5%;padding-top: 20rpx;}
+.right .clear {overflow: hidden;}
+.right .right_l {font-size: 26rpx;display: inline-block;width: 50%;float: left;}
+.right .right_l text {font-size: 44rpx;}
+
+.right .right_r {display: inline-block;width: 50%;text-align: right;}
+.right .right_r navigator {display: inline-block;font-size: 30rpx;background: #f00;color: #fff;border-radius: 10rpx;padding: 14rpx 10rpx;margin-top: 20rpx;}
+.right .progress {margin-top: 10rpx;}
+
+.show {display: block;}
+.hide {display: none;}
+
+
+
+
+
+

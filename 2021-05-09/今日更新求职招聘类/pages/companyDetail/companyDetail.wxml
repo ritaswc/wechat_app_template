@@ -1,0 +1,75 @@
+<!--pages/companyDetail/companyDetail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="companyDetail_wrap position_intro">
+    <image mode="aspectFit" class="company_image" src="{{c_user.company_logo}}"></image>
+        <view class="p_name">{{c_user.company}}</view>
+        <view class="p_list_box">
+            <ul>
+                <li>
+                    行<text style="visibility:hidden">星级</text>业: <span>{{c_user.industry}}</span>
+                </li>
+                <li>
+                    性<text style="visibility:hidden">星级</text>质: <span>{{c_user.company_nature}}</span>
+                </li>
+                <li>
+                    规<text style="visibility:hidden">星级</text>模: <span>{{c_user.company_size}}</span>
+                </li>
+                <li>
+                    星<text style="visibility:hidden">星级</text>级: 
+                    <span wx:for="{{xingji}}">
+                        <image class="image3" src="image/_09.png"></image>
+                    </span>
+                </li>
+                <li class="zhishu">
+                    雇主指数: <span>{{c_user.employ_index}}</span>
+                </li>
+            </ul>
+        </view>
+        <view class="line"></view>
+        <view class="biaoqian">
+            <view wx:for="{{biaoqian}}">{{item}}</view>
+        </view>
+        <!--企业简介-->
+        <view class="p_d_detail">企业简介</view>
+        <view class="company_industry">
+            <template is="wxParse" data="{{wxParseData:description.nodes}}"/>
+        </view>
+        <!--联系我们-->
+        <view class="p_d_detail">联系我们</view>
+        <view class="contant_ours">
+            <view>
+                <span>联 系 人: </span>{{c_user.contact_name}}
+            </view>
+            <view  class="call">
+                <span>联系电话: </span>{{c_user.contact_phone}}
+                <image wx:if="{{c_user.contact_phone==''?false:true}}" data-number="{{c_user.contact_phone}}" bindtap="call" src="image/phone.png" ></image>
+            </view>
+            <view class="call">
+                <span>固定电话: </span>{{c_user.contact_tel}}
+                <image  wx:if="{{c_user.contact_tel==''?false:true}}" data-number="{{c_user.contact_tel}}" bindtap="call" src="image/phone.png" ></image>
+            </view>
+            <view>
+                <span>邮<a style="visibility:hidden;">地地</a>箱: </span>{{c_user.contact_email}}
+            </view>
+            <view>
+                <span>地<a style="visibility:hidden;">地地</a>址: </span>{{c_user.address}}
+                <image wx:if="{{c_user.latitude==''?false:true}}" data-latitude="{{c_user.latitude}}" data-longitude="{{c_user.longitude}}" bindtap="site" src="image/site.png" ></image>
+            </view>
+        </view>
+        <!--该企业其他职位-->
+        <view   wx:if="{{c_list==''?false:true}}" class="p_d_detail">该企业其他职位</view>
+        <view class="remenList">
+            <block wx:for="{{c_list}}">
+                <view class="list" data-id="{{item.c_userid}}">
+                    <view class="left">
+                        <view class="positionName">{{item.job_name}}</view>
+                        <view class="time">{{item.update_time}}</view>
+                    </view>
+                    <view class="right">
+                        <view>{{item.salary}}</view>
+                        <view>{{item.work_place}}</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+</view>

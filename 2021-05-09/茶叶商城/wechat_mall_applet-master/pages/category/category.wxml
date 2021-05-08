@@ -1,0 +1,46 @@
+
+<view class="type-select">
+  <view class="btn">商品</view>
+  <view class="btn">店铺</view>
+</view>
+
+
+
+<view wx:if="{{activeType === '商品'}}">
+</view>
+
+
+
+
+<view wx:if="{{!items}}">
+  <view class="offline-notice">正在加载中，请稍等...</view>
+</view>
+
+<view wx:elif="{{items.length === 0}}">
+  <view class="offline-notice">没有商品</view>
+</view>
+
+<view wx:elif="{{items.length > 0}}">
+  <scroll-view scroll-y="true" height="100%">
+    <view class="item-container">
+      <block wx:for="{{items}}" wx:for-item="item" wx:key="id">
+        <view class="item">
+          <view class="item-block" bindtap="bindTapProduct" data-id="{{item.id}}">
+            <image class="head-img" src="{{item['image-url']}}" mode="aspectFit"></image>    
+            <view class="first-line">
+              <text class="name">{{item.name}}</text>
+            </view>
+            <view class="second-line">
+              <view wx:if="{{ accountType === '巴爷' }}">
+                <text>¥{{item['baye-price']}}</text>
+              </view>
+              <view wx:else>
+                <text>¥{{item['member-price']}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

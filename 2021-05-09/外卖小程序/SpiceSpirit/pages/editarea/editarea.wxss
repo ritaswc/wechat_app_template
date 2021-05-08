@@ -1,0 +1,15 @@
+.input-view{
+    background-color: #f5f4f4;
+    height: 200rpx;
+    padding-top: 20rpx;
+     border-bottom: solid #d8d8d8 1rpx;
+}
+.input-view input{
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #dbdbdb;
+    height: 80rpx;
+    border-radius: 10rpx;
+    padding: 0 20rpx;
+    font: 30rpx;
+}

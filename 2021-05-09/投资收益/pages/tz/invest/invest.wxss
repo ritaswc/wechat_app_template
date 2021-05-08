@@ -1,0 +1,16 @@
+.tz_list {background: #fff;padding: 30rpx 40rpx;border-bottom: 2rpx solid #e2e2e2;font-size: 32rpx;}
+.tz_list text {font-size: 44rpx;color: #fa8128;font-weight: 600;}
+.tz_list .right {float: right;display: inline-block;}
+.tz_list .right navigator {font-size: 26rpx;padding-top: 10rpx;color: #4aafe2;border-bottom: 2rpx solid #4aafe2;}
+
+.tz_list .left {width: 30%;display: inline-block;}
+.tz_list .right_input {display: inline-block;width: 70%;vertical-align: middle;}
+.tz_list .right_input input {border: 2rpx solid #e2e2e2;border-radius: 10rpx;padding: 0 20rpx;font-size: 26rpx;}
+.tz_list .right_input.yuan_bg {background: url(../../../images/tz/yuan.png) 95% center no-repeat;background-size:6%; }
+
+.right_yzm {display: inline-block;width: 70%;vertical-align: middle;}
+.right_yzm input {border: 2rpx solid #e2e2e2;width: 40%;display: inline-block;border-radius: 10rpx;font-size: 26rpx;padding: 0 20rpx;}
+.right_yzm .yzm {display: inline-block;}
+.right_yzm .yzm image {width:180rpx; height: 60rpx;margin-left: 20rpx;}
+.invest_btn {padding: 80rpx;}
+.invest_btn button {background: #ff5304;}

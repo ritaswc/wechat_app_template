@@ -1,0 +1,23 @@
+/* pages/login/login.wxss */
+page{
+    width: 100%;
+    height: 100%;
+}
+.login-container{
+    height: 100%;
+    width: 100%;
+    background-image: url('http://7xn9on.com1.z0.glb.clouddn.com/indexbg.jpg');
+    background-size: 100% 100%
+}
+.header{
+    text-align: center;
+    padding-top: 200rpx;
+    font-size: 20px;
+}
+.footer-btn{
+    position: absolute;
+    bottom: 30rpx;
+    left: 0;
+    display: flex;
+    width: 100%;
+}

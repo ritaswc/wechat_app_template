@@ -1,0 +1,61 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.body .title {
+  font-size:52rpx;
+  color:#000;
+  padding:36rpx 60rpx 36rpx 30rpx;
+  letter-spacing:2rpx;
+
+}
+.body .subscribe {
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+  padding: 0 30rpx;
+  color: #999;
+  vertical-align: center;
+}
+.body .subscribe .logo {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  margin-right: 30rpx;
+}
+.body .subscribe .info {
+  display: inline-block;
+}
+.body .subscribe .info .time {
+  font-size: 18rpx;
+}
+.body .subscribe .take {
+  display: inline-block;
+  float: right;
+  font-size: 20rpx;
+  padding: 10rpx 26rpx;
+  border-radius: 40rpx;
+  border: 1rpx solid #f00;
+  color: #f00;
+}
+.body .content {
+  margin-top: 30rpx;
+}
+.body .content .img {
+  width: 100%;
+  padding: 30rpx 0 10rpx;
+}
+.body .content .p {
+  padding:20rpx 30rpx;
+  font-size:38rpx;
+  line-height:1.6;
+  letter-spacing:3rpx;
+
+}
+.body .footer {
+  margin: 60rpx 30rpx;
+  font-size: 28rpx;
+}
+.body .footer .disclaimer {
+  
+}

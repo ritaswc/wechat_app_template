@@ -1,0 +1,58 @@
+.curCity{
+    background: #fff;
+    width: 100%;
+    height: 80rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text{
+        font-size: 40rpx;
+        line-height: 80rpx;
+        margin: 10rpx;
+    }
+}
+
+.hotCitys{
+    background: #eee;
+    width: 100%;
+    margin-top: 80rpx;
+    .hotTitle{
+        margin: 10rpx;
+        font-size: 36rpx;
+        line-height: 80rpx;
+        color: #666;
+    }
+    .hotList{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .hotItem{
+            background: #fff;
+            width: 30%;
+            height: 80rpx;
+            margin-bottom: 10rpx;
+            line-height: 80rpx;
+            text-align: center;
+            border:1px solid skyblue;
+            border-radius: 20rpx;
+        }
+    }
+}
+
+.allCitys{
+    height:100%;
+    .allLetter{
+        box-sizing:border-box;
+        background: #eee;
+        height: 80rpx;
+        line-height: 80rpx;
+        padding-left: 10rpx;
+    }
+    .allText{
+        box-sizing:border-box;
+        height: 100rpx;
+        line-height: 100rpx;
+        padding-left: 10rpx;
+    }
+}

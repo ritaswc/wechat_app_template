@@ -1,0 +1,55 @@
+.container {
+  width: 100%;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 16rpx;
+  background: #fff;
+}
+
+.article {
+  padding: 0 30rpx;
+  margin: 0;
+  list-style: none;
+}
+
+.li {
+  height: 84rpx;
+  line-height: 84rpx;
+}
+
+.li:after {
+  position: absolute;
+  margin-top: 84rpx;
+  left: 0;
+  right: 0;
+  width: 200%;
+  height: 1rpx;
+  background: #dedede;
+  content: '';
+  overflow: hidden;
+  opacity: 0.6;
+}
+
+.span {
+  display: inline-block;
+  float: left;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.b {
+  display: inline-block;
+  float: right;
+  font-size: 30rpx;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  color: #333;
+}
+
+.b.red {
+  color: #dd2a2a;
+}

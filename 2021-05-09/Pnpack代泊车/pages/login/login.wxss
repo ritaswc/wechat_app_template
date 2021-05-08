@@ -1,0 +1,58 @@
+page{
+     background-color: #fff;
+     font-family: Microsoft Yahei;
+}
+.phone-login{
+    padding: 14rpx 50rpx;
+       
+}
+.phone-item{
+    width: 100%;
+    height: 46rpx;
+    line-height: 46rpx;
+    margin-top: 20rpx;
+    padding: 21rpx 0;
+    display: table;
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.phone-item .park-icon{
+    display: table-cell;
+    width: 40rpx;
+    height: 40rpx;
+}
+.phone-icon{
+    background-position: 0 -52rpx;
+}
+.code-icon{
+    background-position: 0 -110rpx;
+}
+.phone-item #user-phone{
+    width: 100%;
+}
+.phone-item input{
+    display: table-cell;
+    width: 100%;
+    height: 46rpx;
+    line-height: 46rpx;
+    font-size: 34rpx;
+    padding-left: 20rpx;
+    color: #333;
+    box-sizing: border-box;
+    margin-left:20rpx;
+
+}
+.phone-item.item-code{
+    width: 55%;
+    margin-right: 45%;
+}
+.get-code{
+    float: right;
+    margin-top: 30rpx;
+    width: 40%;
+}
+.btn-get{
+    color: #00a598;
+    border:2rpx solid #00a598;
+    border-radius: 0;
+}

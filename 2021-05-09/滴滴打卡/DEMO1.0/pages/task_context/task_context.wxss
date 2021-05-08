@@ -1,0 +1,79 @@
+/* pages/task_context/task_context.wxss */
+.container_change{
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding: 0rpx 0;
+  box-sizing: border-box;
+  background-color: #1d1128;
+}
+image{
+    width:750rpx;
+    display: block;
+
+}
+.task_name{
+    height: 120rpx;
+    width:100%;
+    background-color: #261a31;
+    margin-top:-10rpx;
+    color: white;
+    font-family: microsoft yahei;
+    align-items: center;
+}
+.task_nameF{
+    float:left;
+    margin-left:140rpx;
+    margin-top:30rpx;
+}
+.leader_name{
+    float:left;
+    margin-top: 32rpx;
+    margin-left: 10rpx;
+    font-size: 12pt;
+}
+.leader_pic{
+    margin-top: 40rpx;
+    margin-left: 70rpx;
+    float:left;
+    width: 30rpx;
+    height: 32rpx;
+}
+.task_team{
+    
+     height: 230rpx;
+    width:100%;
+    background-color: #261a31;
+    margin-top:10rpx;
+    color: white;
+    font-family: microsoft yahei;
+}
+.task_teamWrap{
+    margin-top:20rpx;
+    float:left;
+    margin-left:70rpx;
+}
+.teamtext{
+    float:left;
+    font-size: 11pt;
+}
+.task_des{
+      height: 180rpx;
+    width:100%;
+    background-color: #261a31;
+    margin-top:10rpx;
+    color: white;
+    font-family: microsoft yahei;
+    font-size: 11pt;
+}
+.des_wrap{
+     margin-top:20rpx;
+    float:left;
+    margin-left:70rpx;
+}
+.des_content{
+    margin-left:15rpx;
+    margin-top:20rpx;
+
+
+}

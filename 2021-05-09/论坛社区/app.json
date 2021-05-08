@@ -1,0 +1,40 @@
+{
+    "pages": [
+        "pages/topic/topic",
+        "pages/new/new",
+        "pages/me/me",
+        "pages/topics/detail/detail"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#eee",
+        "navigationBarTitleText": "NUTZ.CN",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#333",
+        "selectedColor": "#1aad19",
+        "backgroundColor": "#eee",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/topic/topic",
+                "iconPath": "image/icon/article.png",
+                "selectedIconPath": "image/icon/article-1.png",
+                "text": "帖子"
+            },
+            {
+                "pagePath": "pages/new/new",
+                "iconPath": "image/icon/add.png",
+                "selectedIconPath": "image/icon/add-1.png",
+                "text": "发帖"
+            },
+            {
+                "pagePath": "pages/me/me",
+                "iconPath": "image/icon/user.png",
+                "selectedIconPath": "image/icon/user-1.png",
+                "text": "我"
+            }
+        ]
+    }
+}

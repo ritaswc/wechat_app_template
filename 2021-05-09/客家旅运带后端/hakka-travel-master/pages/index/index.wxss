@@ -1,0 +1,48 @@
+/**index.wxss**/
+@import "../components/toast/toast.wxss";
+
+.swiper {
+  width: 100%;
+}
+
+.silde-image {
+  width: 100%;
+  height: 350rpx;
+}
+
+.content-wrapper {
+	padding: 20rpx;
+}
+
+.city-selection-wrapper, .start-city, .date-selection-wrapper {
+	border-bottom: 2rpx solid #c3c3c3;
+}
+
+.city-selection, .exchange-btn {
+	display: inline-block;
+}
+
+.city-selection {
+	width: 80%;
+}
+
+.city-selection view, .date-selection-wrapper {
+	position: relative;
+	height: 100rpx;
+	padding: 10rpx 0;
+	line-height: 80rpx;
+}
+
+.city-selection text {
+	margin-left: 80rpx;
+}
+
+.exchange-btn {
+	position: relative;
+	height: 120rpx;
+  	width: 20%;
+}
+
+.date-picker {
+	margin-left: 80rpx;
+}

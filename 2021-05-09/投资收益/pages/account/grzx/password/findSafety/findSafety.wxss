@@ -1,0 +1,13 @@
+.notice {font-size: 28rpx;padding:60rpx 40rpx;line-height: 1.8em;text-align: center;}
+.grzx_con {background: #fff;padding-left: 40rpx;border-bottom: 2rpx solid #ccc;border-top:2rpx solid #ccc; }
+.grzx_con_list {padding: 30rpx 40rpx 30rpx 0;border-bottom: 2rpx solid #ccc;font-size: 30rpx;}
+.grzx_con_list input {display: inline-block;width: 70%;}
+.grzx_con_list view {width: 30%;display: inline-block;text-align: right;}
+.grzx_con_list .yzm image {height: 1.4rem; width: 140rpx;}
+.grzx_con_list .sjyzm {background: #ff5304;text-align: center;color: #fff;border-radius: 10rpx;height: 1.4rem;vertical-align: text-bottom;line-height: 1.4rem;font-size: 26rpx;}
+
+.border_none {border-bottom: none;}
+.notice_bottom {text-align: right;margin-top: 10rpx;font-size: 26rpx;padding-right: 40rpx;}
+.error {font-size: 26rpx;text-align: center;color: #ff5304;margin-top: 40rpx;display: none;}
+.grzx_btn {padding:60rpx 40rpx;}
+.grzx_btn button {background: #ff5304;}

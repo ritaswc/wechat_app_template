@@ -1,0 +1,84 @@
+/* pages/shenghuo/GoodLife/GoodLifeCell/GoodLifeCell.wxss */
+@import "../../../stars/stars-template.wxss";
+
+.goodLifeCell-container {
+  width: 100%;
+  height: 98px;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-bottom: 1px solid #efefef;
+  vertical-align: middle;
+}
+
+.left-container {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.left-image {
+  margin-top: 8px;
+  margin-left: 8px;
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 4px;
+}
+
+.right-container {
+  margin: 16px 12px 8px 12px;
+  display: flex;
+  width: 570rpx;
+  flex-direction: column;
+}
+
+.serviceTitle {
+  background-color: #fff;
+  font-size: 15px;
+  border: none;
+}
+
+.right-middle-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+}
+
+.address {
+  position: absolute;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.distance {
+  position: absolute;
+  right: 40rpx;
+  width: 60rpx;
+  font-size: 12px;
+  color: gray;
+  border-radius: 4px;
+}
+
+.right-bottom-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.bottomTitle {
+  font-size: 12px;
+  border: none;
+  width: 340rpx;
+  max-width: 340rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  word-break: keep-all; /* 不换行 */
+}
+
+.maxDiscountPrice {
+  color: red;
+  padding: 0px 2px;
+  font-weight: 500;
+}

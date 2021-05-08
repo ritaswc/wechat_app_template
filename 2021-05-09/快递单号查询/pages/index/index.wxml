@@ -1,0 +1,154 @@
+<view animation="{{animationError}}" class="showError" hidden="{{!errorShow}}"><text>{{errorText}}</text></view>
+<scroll-view style="height:{{wHeight}}px;overflow: hidden;" scroll-x="{{false}}" scroll-y="{{true}}" bindtap="closeDelete">
+
+  <view class="header-search">
+     <view><image src="../../images/header-banner.png" style="width: 750rpx;height: 375rpx;"></image></view>
+     <view class="header-title">
+        <!--<view class="h1">快递查询</view>
+        <view class="h2">快速查找您的快递</view> -->
+        <view class="header-input">
+          <view class="input-wrap">
+             <input type="text" 
+                    placeholder-class="placeholder" 
+                    value="{{expressNum}}" 
+                    placeholder="在此输入单号，查找您的快递"
+                    bindconfirm="searchExpress"
+                    bindinput="inputing"/>
+             <view hidden="{{!(expressNum.length > 0)}}" class="clear-input-img" bindtap="clearNum"><icon type="clear" size="14" color="#B2B2B2"/></view>
+             <view class="input-code" bindtap="scanCode"><image src="../../images/code.png"></image></view>
+          </view>
+        </view>
+     </view>
+  </view>
+
+
+    <view class="no-data" style="width: 750rpx;height:{{wHeight * scale - 375}}rpx;" wx:if="{{(moreSign.length + listTop.length + listTransport.length + listSend.length) === 0}}">
+      <view class="no-data-img"><image src="../../images/holder.png"></image></view>
+      <view class="no-data-text">
+         <view class="t1"><text>搜搜看吧</text></view>
+         <view class="t2"><text>您的快递，将出现在这里哦~</text></view>
+      </view>
+    </view>
+
+  <view class="search-items mar" wx:if="{{listTop.length}}">
+    <view class="items-title balck"><image src="../../images/black.png"></image><text>置顶({{listTop.length}})</text></view>
+    <view class="bottom-border"></view>
+    <view class="items" 
+          bindtap="goToDetails" 
+          bindtouchstart="touchStart"
+          bindtouchmove="touchMove" 
+          bindtouchend="touchEnd" 
+          bindtouchcancel="closeDelete"
+          wx:for="{{listTop}}"
+          wx:key="{{item.num}}"  
+          data-num-key="{{[item.num, item.key, item.isNeedKey, item.name]}}"
+          data-list-index="{{['showTop', index]}}"
+          style="{{index === (listTop.length-1) ? 'border:none' : ''}}"
+          animation="{{showTop[index] ? amimateSlider : ''}}">
+      <view class="img"><image src="{{item.imageUrl}}"/></view>
+      <view class="detail">
+        <view class="detail-title" wx:if="{{item.title != ''}}">{{item.title}}</view>
+        <view wx:if="{{item.title != ''}}" class="detail-express">{{item.name}}  {{item.statusText}}</view>
+        <view wx:else><text style="font-size:30rpx;color:#666;">{{item.name}}</text></view>
+        <view class="detail-msg">
+          <text>快递状态：{{item.data.acceptTime}}  {{item.data.acceptStation}}</text>
+        </view>
+      </view>
+      <view catchtap="deleteDataLocal" class="delete" data-value="{{item.num}}"><view><text>从列表中删除</text></view></view>
+    </view>
+
+  </view>
+
+  <view class="search-items mar" wx:if="{{listTransport.length}}">
+   <view class="items-title yellow"><image src="../../images/yellow.png"></image><text>派送中({{listTransport.length}})</text></view>
+   <view class="bottom-border"></view>
+   <view class="items" 
+          bindtap="goToDetails" 
+          bindtouchstart="touchStart" 
+          bindtouchend="touchEnd"
+          bindtouchcancel="closeDelete" 
+          wx:for="{{listTransport}}" 
+          wx:key="{{item.num}}"  
+          data-num-key="{{[item.num, item.key, item.isNeedKey, item.name]}}"
+          data-list-index="{{['showTransport', index]}}"
+          style="{{index === (listTransport.length-1) ? 'border:none' : ''}}"
+          animation="{{showTransport[index] ? amimateSlider : ''}}">
+      <view class="img"><image src="{{item.imageUrl}}"/></view>
+      <view class="detail">
+        <view class="detail-title" wx:if="{{item.title != ''}}">{{item.title}}</view>
+        <view wx:if="{{item.title != ''}}" class="detail-express">{{item.name}}  {{item.statusText}}</view>
+        <view wx:else><text style="font-size:30rpx;color:#666;">{{item.name}}</text></view>
+        <view class="detail-msg">
+          <text>快递状态：{{item.data.acceptTime}}  {{item.data.acceptStation}}</text>
+        </view>
+      </view>
+      <view catchtap="deleteDataLocal" class="delete" data-value="{{item.num}}"><view><text>从列表中删除</text></view></view>
+    </view>
+
+  </view>
+
+  <view class="search-items mar" wx:if="{{listSend.length}}">
+    <view class="items-title green"><image src="../../images/green.png"></image><text>运输中({{listSend.length}})</text></view>
+    <view class="bottom-border"></view>
+    <view class="items" 
+          bindtap="goToDetails" 
+          bindtouchstart="touchStart" 
+          bindtouchend="touchEnd"
+          bindtouchcancel="closeDelete" 
+          wx:for="{{listSend}}" 
+          wx:key="{{item.num}}"  
+          data-num-key="{{[item.num, item.key, item.isNeedKey, item.name]}}"
+          data-list-index="{{['showSend', index]}}"
+          style="{{index === (listSend.length-1) ? 'border:none' : ''}}"
+          animation="{{showSend[index] ? amimateSlider : ''}}">
+      <view class="img"><image src="{{item.imageUrl}}"/></view>
+      <view class="detail">
+        <view class="detail-title" wx:if="{{item.title != ''}}">{{item.title}}</view>
+        <view wx:if="{{item.title != ''}}" class="detail-express">{{item.name}}  {{item.statusText}}</view>
+        <view wx:else><text style="font-size:30rpx;color:#666;">{{item.name}}</text></view>
+        <view class="detail-msg">
+          <text>快递状态：{{item.data.acceptTime}}  {{item.data.acceptStation}}</text>
+        </view>
+      </view>
+      <view catchtap="deleteDataLocal" class="delete" data-value="{{item.num}}"><view><text>从列表中删除</text></view></view>
+    </view>
+
+  </view>
+
+  <view class="search-items mar" wx:if="{{moreSign.length}}">
+    <view class="items-title gray"><image src="../../images/gray.png"></image><text>已签收({{signLength}})</text></view>
+    <view class="bottom-border"></view>
+    <view class="items"         
+          bindtouchstart="touchStart" 
+          bindtouchmove="touchMove"
+          bindtouchend="touchEnd"
+          bindtouchcancel="closeDelete"
+          bindtap="goToDetails"
+          wx:for="{{moreSign}}" 
+          wx:key="{{item.num}}"
+          data-num-key="{{[item.num, item.key, item.isNeedKey, item.name]}}"
+          data-list-index="{{['showSign', index]}}"
+          style="{{index === (moreSign.length-1) ? 'border:none' : ''}}"
+          animation="{{showSign[index] ? amimateSlider : ''}}">
+      <view class="img"><image src="{{item.imageUrl}}"/></view>
+      <view class="detail">
+        <view class="detail-title" wx:if="{{item.title != ''}}">{{item.title}}</view>
+        <view wx:if="{{item.title != ''}}" class="detail-express">{{item.name}}  {{item.statusText}}</view>
+        <view wx:else><text style="font-size:30rpx;color:#666;">{{item.name}}</text></view>
+        <view class="detail-msg">
+          <text>快递状态：{{item.data.acceptTime}}  {{item.data.acceptStation}}</text>
+        </view>
+      </view>
+      <view catchtap="deleteDataLocal" class="delete" data-value="{{item.num}}"><view><text>从列表中删除</text></view></view>
+    </view>
+  </view>
+
+  <view class="more" wx:if="{{listSign.length}}" bindtap="getMoreSign">
+    <view class="wrap">
+      <view class="text"><text>查看更多</text></view>
+      <view class="icon"><image src="../../images/arrow-right1.png"/></view>
+    </view>
+  </view>
+
+  <view class="footer" wx:if="{{(moreSign.length + listTop.length + listTransport.length + listSend.length) > 0}}"></view>
+</scroll-view>

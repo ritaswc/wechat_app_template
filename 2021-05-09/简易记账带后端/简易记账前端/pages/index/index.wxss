@@ -1,0 +1,38 @@
+page{
+  background-color: #ddd;
+}
+.content-view{
+  background-color: white;
+}
+.text-expend{
+  color: grey;
+  font-size: 28rpx;
+  text-align: center;
+}
+.text-today-expend-num{
+  color: #10AEFF;
+  font-size: 34rpx;
+  text-align: center;
+}
+.text-month-expend-num{
+  color: #e64340;
+  font-size: 34rpx;
+  text-align: center;
+}
+.text-year-expend-num{
+  color: goldenrod;
+  font-size: 34rpx;
+  text-align: center;
+}
+.today-bill{
+  color: #10AEFF;
+}
+.spend-way-icon{
+  width: 64rpx;
+  height: 64rpx;
+}
+.item-remarks{
+  flex: 1;
+  text-overflow: ellipsis;
+  padding-left: 10rpx;
+}

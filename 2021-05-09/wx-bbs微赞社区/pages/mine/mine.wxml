@@ -1,0 +1,133 @@
+<view class="page-container">
+    <view class="user-info-container">
+        <view class="user-img-wrap">
+            <image class="user-img" mode="scaleToFill" src="http://qzapp.qlogo.cn/qzapp/101282138/A2B11AC4D94ED257E016B53438CE4050/30" style="background-size: 100% 100%; background-position: 0% 0%; background-repeat: no-repeat; background-image: url(http://qzapp.qlogo.cn/qzapp/101282138/A2B11AC4D94ED257E016B53438CE4050/30); "/>
+        </view>
+        <view class="user-info-wrap">
+            <text class="c-block user-info-name">Stephen Z</text>
+            <text class="c-block user-info-follower">粉丝 : 0</text>
+        </view>
+        <text class="c-block user-update">修改</text>
+        <view class="user-info-arrow-wrap">
+            <view class="user-info-arrow"/>
+        </view>
+        
+    </view>
+    <view class="boundary"/>
+    <view class="user-bbs-info-container">
+        <view class="user-post-wrap">
+            <view class="user-post-icon"/>
+            <view class="user-post-text-wrap">
+                <text class="user-text">我的发帖</text>
+            </view>
+            <view class="user-list-container">
+                <view class="post-list-num">2</view>
+            </view>
+            <view class="user-arrow-wrap">
+                    <view class="user-info-arrow"/>
+            </view>
+        </view>
+        <view class="user-post-wrap">
+            <view class="user-join-icon"/>
+            <view class="user-post-text-wrap">
+                <text class="user-text">我参与的</text>
+            </view>
+              <view class="user-list-container">
+                <view class="post-list-num">2</view>
+            </view>
+            <view class="user-arrow-wrap">
+                    <view class="user-info-arrow"/>
+            </view>
+        </view>
+        <view class="user-post-wrap">
+            <view class="user-reward-icon"/>
+            <view class="c-minheight wx-view_yg2I9A">
+                <text class="user-text">赏金中心</text>
+            </view>
+             <view class="user-list-container">
+                <view class="post-list-num">2</view>
+            </view>
+            <view class="user-arrow-wrap">
+                    <view class="user-info-arrow"/>
+            </view>
+        </view>
+    </view>
+    <view class="boundary"/>
+    <view class="user-bbs-info-container">
+        <view class="user-post-wrap">
+            <view class="user-post-icon"/>
+            <view class="user-post-text-wrap">
+                <text class="user-text">我的聊天</text>
+            </view>
+            <view class="user-list-container">
+                <view class="post-list-num">2</view>
+            </view>
+            <view class="user-arrow-wrap">
+                    <view class="user-info-arrow"/>
+            </view>
+        </view>
+        <view class="user-post-wrap">
+            <view class="user-post-chat"/>
+            <view class="user-post-text-wrap">
+                <text class="user-text">消息中心</text>
+            </view>
+             <view class="user-list-container">
+                <view class="post-list-num">2</view>
+            </view>
+            <view class="user-arrow-wrap">
+                    <view class="user-info-arrow"/>
+            </view>
+        </view>
+        <view class="user-post-wrap">
+            <view class="user-post-credit"/>
+            <view class="user-post-text-wrap">
+                <text class="user-text">我的积分</text>
+            </view>
+             <view class="user-list-container">
+                <view class="post-list-num">2</view>
+            </view>
+            <view class="user-arrow-wrap">
+                    <view class="user-info-arrow"/>
+            </view>
+        </view>
+    </view>
+    <view class="boundary"/>
+    <view class="user-bbs-info-container">
+        <view class="user-post-wrap">
+            <view class="user-post-gift"/>
+            <view class="user-post-text-wrap">
+                <text class="user-text">礼品兑换</text>
+            </view>
+            <view class="user-list-container">
+                <view class="post-list-num">2</view>
+            </view>
+            <view class="user-arrow-wrap">
+                    <view class="user-info-arrow"/>
+            </view>
+        </view>
+        <view class="user-post-wrap">
+            <view class="user-post-myad"/>
+            <view class="user-post-text-wrap">
+                <text class="user-text">我的广告</text>
+            </view>
+             <view class="user-list-container">
+                <view class="post-list-num">2</view>
+            </view>
+            <view class="user-arrow-wrap">
+                    <view class="user-info-arrow"/>
+            </view>
+        </view>
+        <view class="user-post-wrap">
+            <view class="user-post-aboutus"/>
+            <view class="user-post-text-wrap">
+                <text class="user-text">关于我们</text>
+            </view>
+             <view class="user-list-container">
+                <view class="post-list-num">2</view>
+            </view>
+            <view class="user-arrow-wrap">
+                    <view class="user-info-arrow"/>
+            </view>
+        </view>
+    </view>
+</view>

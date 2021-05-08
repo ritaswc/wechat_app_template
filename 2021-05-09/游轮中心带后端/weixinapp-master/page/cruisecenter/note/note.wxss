@@ -1,0 +1,10 @@
+.picker{
+    padding:10px 16px;
+    background-color: #FFFFFF;
+}
+.widgets__list{
+    display: none;
+}
+.widgets__list_show{
+    display: block;
+}

@@ -1,0 +1,5 @@
+<!--pages/welcome/welcome.wxml-->
+
+<view class="welcome {{welcomeStatus}}" animation="{{animationData}}">
+  <image src="/asset/img/shan.png" animation="{{animationImgData}}"></image>
+</view>

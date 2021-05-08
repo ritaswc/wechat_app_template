@@ -1,0 +1,359 @@
+/* pages/index/view-detail/view-detail.wxss */
+@import "../ratings-template/ratings.wxss";
+page {
+  background: #f0ede2;
+}
+
+.view-detail {
+  width: 100%;
+}
+
+.view-detail .top {
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  background: #98d361;
+}
+
+.view-detail .top view {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+.view-detail .top text {
+  padding: 12rpx 24rpx;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 80px;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.view-detail .top .active {
+  background: #fff;
+  color: #98d361;
+}
+
+/*轮番*/
+
+.swiper {
+  position: relative;
+  height: 300rpx;
+}
+
+.swiper image {
+  width: 100%;
+  height: 300rpx;
+}
+
+.swiper .mask {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 36rpx;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.view-detail .desc {
+  display: flex;
+  padding: 20rpx 34rpx;
+  font-size: 26rpx;
+  color: #666;
+  line-height: 46rpx;
+  background: #fff;
+}
+
+.desc .title {
+  font-weight: bold;
+  font-family: "微软雅黑";
+}
+
+.desc .info {
+  margin-left: 26rpx;
+  font-weight: bold;
+}
+
+.desc .share {
+  width: 50rpx;
+  margin-left: 68rpx;
+  font-size: 22rpx;
+  color: #98d361;
+  font-weight: bold;
+}
+
+.desc .share .icon {
+  display: block;
+  background: url(/images/home/view_detail.png) no-repeat;
+  background-size: 172rpx 56rpx;
+  height: 48rpx;
+  width: 48rpx;
+  background-position: -74rpx -8rpx;
+  margin-top: 10rpx;
+  margin-bottom: 14rpx;
+}
+
+ .pos {
+  display: flex;
+  margin-top: 14rpx;
+  background: #fff;
+  padding: 34rpx 50rpx 30rpx;
+  align-items: center;
+}
+
+ .pos .icon {
+  height: 40rpx;
+  width: 30rpx;
+  background: url(/images/home/view_detail.png) no-repeat;
+  background-size: 172rpx 56rpx;
+  background-position: -14rpx -8rpx;
+  margin-right: 38rpx;
+}
+
+ .pos .title {
+  font-size: 26rpx;
+  color: #948475;
+  font-weight: bold;
+}
+
+ .pos .other {
+  margin-top: 26rpx;
+  font-size: 22rpx;
+  color: #bbb4af;
+}
+
+ .pos .other text + text {
+  margin-left: 26rpx;
+}
+
+/*日期*/
+
+.date-wrapper {
+  display: flex;
+  margin-top: 14rpx;
+  align-items: center;
+  font-weight: bold;
+  background: #fff;
+  padding: 10rpx 0;
+  justify-content: space-around;
+}
+
+.date-wrapper .date {
+  display: flex;
+  flex-direction: column;
+  width: 132rpx;
+  padding: 16rpx 0;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+.date-wrapper .active {
+  background: #98d361;
+}
+
+.date text:first-child {
+  color: #948475;
+  font-size: 22rpx;
+}
+
+.date text:last-child {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 20rpx;
+}
+
+.date-wrapper .active text {
+  color: #fff;
+}
+
+/*订购*/
+
+.price {
+  height: 206rpx;
+  margin-top: 2px;
+  background: #fff;
+  padding: 36rpx 40rpx 30rpx 32rpx;
+}
+
+.price .name {
+  font-size: 28rpx;
+  color: #666;
+  font-weight: bold;
+}
+
+.price .detail {
+  margin-top: 20rpx;
+  height: 56rpx;
+  display: flex;
+}
+
+.detail view text {
+  color: #fa6f12;
+  font-weight: bold;
+}
+
+.detail view text:first-child {
+  font-size: 36rpx;
+}
+
+.detail view text:last-child {
+  font-size: 22rpx;
+}
+
+.detail .decre {
+  color: #fa6f12;
+  font-size: 18rpx;
+  border: 1px solid #fa6f12;
+  border-radius: 5rpx;
+  padding: 0 10rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  margin-left: 56rpx;
+  margin-top: 10rpx;
+}
+
+.detail .order {
+  margin-left: auto;
+  height: 100%;
+  width: 98rpx;
+  border-radius: 10rpx;
+  background: #98d361;
+  line-height: 56rpx;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 26rpx;
+}
+
+.price .info {
+  display: flex;
+  align-items: center;
+}
+
+.info>text:first-child {
+  margin-right: 10rpx;
+  font-size: 22rpx;
+  color: #bbb4af;
+  font-weight: bold;
+}
+
+.info>text:last-child {
+  height: 8rpx;
+  width: 18rpx;
+  background-position: 0 0;
+  background: url(/images/home/view_detail.png) no-repeat;
+  background-size: 86px 28px;
+}
+
+/*优惠*/
+
+.preferential {
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  height: 96rpx;
+  margin-top: 16rpx;
+  background: #fff;
+}
+
+.preferential text:nth-of-type(1), .preferential text:nth-of-type(4) {
+  background: url(/images/home/view_detail.png) no-repeat;
+  background-size: 172rpx 56rpx;
+}
+
+.preferential text:nth-of-type(1) {
+  height: 30rpx;
+  width: 30rpx;
+  background-position: -44rpx -8rpx;
+  margin-right: 36rpx;
+}
+
+.preferential text:nth-of-type(2), .preferential text:nth-of-type(3) {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #bbb4af;
+}
+
+.preferential text:nth-of-type(3) {
+  margin-left: auto;
+}
+
+.preferential text:nth-of-type(4) {
+  height: 24rpx;
+  width: 16rpx;
+  background-position: 0 -8rpx;
+  margin-left: 33rpx;
+}
+/*留言、购票须知公共头部*/
+.need,.ratings{
+  margin-top: 16rpx;
+  padding: 30rpx 28rpx 0;
+  background: #fff;
+}
+.ratings-need-common .title {
+  height: 34rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #948475;
+  font-weight: bold;
+}
+
+.ratings-need-common .title text {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.ratings-need-common .title text:first-child, .ratings-need-common .title text:last-child {
+  height: 1px;
+  background: #eae1d2;
+}
+/*公共部分结束*/
+
+/*评论*/
+.more-ratings-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 32rpx 0 38rpx;
+
+}
+.more-ratings-btn text{
+  padding: 28rpx 54rpx;
+  border: 1px solid #98d361;
+  color: #98d361;
+  font-size: 26rpx;
+  border-radius: 20rpx;
+  font-weight: bold;
+  
+}
+ 
+/*购票须知*/
+.need .content {
+  padding-top: 10rpx;
+}
+
+.need .content view .name {
+  display: block;
+  margin-top: 35rpx;
+  margin-bottom: 35rpx;
+  font-size: 24rpx;
+  font-weight: bolder;
+  color: #948475;
+}
+
+.need .content view .text text {
+  font-size: 20rpx;
+  color: #948475;
+  font-weight: bold;
+  line-height: 40rpx;
+  padding-left: 28rpx;
+}
+.need .content>view:last-child{
+  padding-bottom: 23rpx;
+}

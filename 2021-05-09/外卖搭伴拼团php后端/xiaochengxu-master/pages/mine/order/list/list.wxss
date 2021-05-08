@@ -1,0 +1,68 @@
+
+.group-title{
+    padding: 40rpx;
+    background: #000;
+    color: #666;
+    margin-bottom: 30rpx;
+}
+.group-title view{
+    border: 1px solid #666;
+    display: flex;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.group-title view text{
+    flex-grow: 1;
+    height: 100%;
+    text-align: center;
+}
+.group-title view text.active{
+    background: white;
+    color: #666;
+}
+.goods-info{
+    padding: 30rpx;
+    background: white;
+    display: flex;
+    margin-bottom: 20rpx;
+}
+.goods-info image{
+  width:160rpx;
+  height:160rpx;
+  display:inline-block;
+  overflow:hidden;
+}
+.goods-info .goods-info-handler{
+    padding-left: 20rpx;
+    width: 80%;
+}
+.goods-info .goods-info-handler .goods-info-price{
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx 0;
+}
+.goods-info .goods-info-handler .goods-info-name{
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.goods-info .goods-info-handler .group-state{
+    padding-top: 20rpx;
+}
+.goods-info .goods-info-handler .group-state text{
+    border: 2rpx solid #ba77ff;
+    padding: 10rpx;
+    margin-left: 30rpx;
+    color: #ba77ff;
+}
+.goods-info .goods-info-handler .group-state text:last-child{
+    background: #ba77ff;
+    color: white;
+}
+.goods-info .goods-info-handler .group-state.group-state-paid text:first-child{
+    border: 2rpx solid #666;
+    color: #666;
+}

@@ -1,0 +1,11 @@
+ 
+ 
+ <view class="section">
+ <view class="section__title">vertical scroll</view>
+  <scroll-view scroll-y="true" style="height: 200px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view id="green" class="scroll-view-item bc_green">11</view>
+    <view id="red"  class="scroll-view-item bc_red">111</view>
+    <view id="yellow" class="scroll-view-item bc_yellow">111</view>
+    <view id="blue" class="scroll-view-item bc_blue">1111</view>
+  </scroll-view>
+  </view>

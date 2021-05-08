@@ -1,0 +1,71 @@
+<!--pay.wxml-->
+<view class="w100">
+	<form bindsubmit="bindBtnPay" report-submit="true" name="payForm">
+		<view class="p_all bg_white df item">
+			<view class="cp_photo">			
+				<image src="{{itemData.LunBoProductImageUrl[0]}}"></image>
+			</view>
+			<view class="df_1">	
+				<view class="font_14 mt5 ovh1">
+		           {{itemData.ProductName}}
+		        </view>
+			<text class="gm_ovh_1h red pt10">¥{{itemData.Price}}</text>
+			<!-- <view class="gms_view">
+				<navigator url="##" class="">+</navigator>
+		        <input bindconfirm="EventHandle" placeholder="1"/>
+				<navigator url="##" class="">-</navigator>				
+			</view> -->
+			</view>
+		</view>		
+		
+		<view class="p_all bg_white mt10 font_14">
+		<navigator url="../user/address" hover-class="none">
+			<view class="df">
+				<view class="df_1 c6">
+				<view class="l_h20">收货人：何仔仔<text class="fl_r mr10">15980968693</text></view>
+				<view class="l_h20 mt5">地址：福建省厦门市湖里区xxxxxx号</view>
+				</view>
+				<image class="x_right mt15" src="/images/x_right.png"></image>			
+			</view>
+			</navigator>
+		</view>	
+<view class="xuan"  >
+	<view class="hui">可使用优惠券：</view>
+<!--设置监听器，当点击radio时调用-->
+<radio-group bindchange="listenerRadioGroup" class="hui">
+<!--label通常与radio和checkbox结合使用-->
+  <label style="display: flex" wx:for-items="{{array}}" class="xuan">
+  <radio value="{{item.name}}" checked="{{item.checked}}"/>{      		{item.value}}
+ </label>
+</radio-group>
+
+
+</view>
+
+		<view class="p_all bg_white mt10 font_14">
+			<textarea class="min_60" auto-height name="remark" placeholder="备注" bindinput="remarkInput" value="{{remark}}"/> 
+		</view>	
+
+	<view class="zhifu mt10 tc">应共支付：<span class="font_20 red">￥{{itemData.Price}}</span></view>
+	<!-- <navigator url="##" hover-class="none" class="zhifu mt10">支付宝<image class="x_right" src="/images/x_right.png"></image></navigator> -->
+	<!-- <navigator url="##" hover-class="none" class="zhifu">银联支付<image class="x_right" src="/images/x_right.png"></image></navigator> -->
+	<!-- <navigator url="../order/downline" hover-class="none" class="zhifu">线下支付<image class="x_right" src="/images/x_right.png"></image></navigator>
+	<navigator url="../order/downline" hover-class="none" class="zhifu">线下支付<image class="x_right" src="/images/x_right.png"></image></navigator>
+ -->
+	<view class="p_all mt10">
+		<view class="btnGreen">
+			<!-- <button type="primary" id="btnPay" formType="submit" loading="{{loading}}" disabled="{{disabled}}">微信支付</button> -->
+			<!-- <navigator url="../order/detail" hover-class="none">
+				<button class="wx_pay_submit" type="primary" id="wxPay" formType="submit" >微信支付</button>
+				<button class="xx_pay_submit" type="default" id="xxPay" formType="submit" >线下支付</button>
+			</navigator> -->
+			<button class="wx_pay_submit" type="primary" id="wxPay" disabled="{{btnDisabled}}" formType="submit" bindtap="createProductOrderByWX">微信支付</button>
+			<button class="xx_pay_submit" type="default" id="xxPay" disabled="{{btnDisabled}}" formType="submit" bindtap="createProductOrderByXX">线下支付</button>
+			
+		</view>
+	</view>
+
+
+	</form>
+
+</view>

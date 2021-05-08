@@ -1,0 +1,55 @@
+<view class="login-body">
+    <view wx:if="{{address.length > 0}}" class="login-wrapper">
+        <view class="single" wx:for="{{address}}" wx:for-item="item" bindtap="switchTab">
+            <view class="top-sec border-gray">
+                <view class="user-info">
+                    <view class="getter inline-block">
+                        <view class="right-arrow">
+                            <image src="../../image/people.png" class="arrow" width="355" height="150"/>
+                        </view>
+                        收货人：{{item.recipient}}
+                    </view>
+                    <view class="phone inline-block">
+                        <view class="right-arrow">
+                            <image src="../../image/phone.png" class="arrow" width="355" height="150"/>
+                        </view>
+                        {{item.telephone}}
+                    </view>
+                </view>
+                <view class="address-detail">
+                    <view class="right-arrow">
+                        <image src="../../image/location.png" class="arrow" width="355" height="150"/>
+                    </view>
+                    {{item.province}} {{item.city}} {{item.area}} {{item.address}}
+                </view>
+            </view>
+            <view class="bottom-sec">
+                <view bindtap="setDefault" data-value="{{item}}"
+                      class="left-default inline-block {{item.isDefault == 1 ? 'active' : ''}}">设为默认
+                </view>
+                <view class="right-option inline-block">
+                    <view bindtap="editAddr" data-id="{{item.id}}" class="edit inline-block">
+                        <view class="right-arrow">
+                            <image src="../../image/edit.png" class="arrow" width="355" height="150"/>
+                        </view>
+                        编辑
+                    </view>
+                    <view bindtap="delAddr" data-id="{{item.id}}" class="delete inline-block">
+                        <view class="right-arrow">
+                            <image src="../../image/delete.png" class="arrow" width="355" height="150"/>
+                        </view>
+                        删除
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{address.length == 0}}" class="login-wrapper">
+        <view class="no-address">
+                <image src="../../image/no-address.png" class="no-arrow" width="355" height="150"/>
+        </view>
+    </view>
+    <view class="add-address">
+        <button class="address-btn" bindtap="addAddr">添加新地址</button>
+    </view>
+</view>

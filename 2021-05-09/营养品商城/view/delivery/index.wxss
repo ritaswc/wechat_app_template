@@ -1,0 +1,21 @@
+.delivery-list-checkbox {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin-left: -5px;
+}
+
+.delivery-list-box {
+  margin-left: 30px;
+}
+
+.footer-add {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  background-color: #c81623;
+}

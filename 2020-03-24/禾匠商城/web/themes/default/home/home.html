@@ -1,0 +1,15 @@
+{template 'common/header'}
+<script>
+    window.we7Info = {'url': "{$_W['siteroot']}"};
+    if(window.sysinfo.highest_role === 'clerk' && !window.localStorage.getItem('we7StarRoute')) {
+        window.localStorage.setItem('we7StarRoute', '/modules')
+    }
+</script>
+<div>
+    <link href="./resource/home/css/star.css" rel="stylesheet">
+    <div id=app></div>
+    <script src="./resource/home/js/chunk-vendors.star.js"> </script>
+    <!-- <script src="./resource/home/js/chunk-common.star.js"> </script> -->
+    <script src="./resource/home/js/star.star.js"> </script>
+</div>
+{template 'common/footer'}

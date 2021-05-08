@@ -1,0 +1,169 @@
+<import src="/template/postlist" />
+<import src="/template/emoij" />
+<view class="body">
+  <view class="border-slice">
+    <view class="head ">
+      <view class="index-head-logo zindex-3">
+        <image class="index-head-logo-img" src="{{headInfo.logoUrl}}"></image>
+        <text class="index-head-logo-f">
+          话题 {{headInfo.articleCount}} | 访问 {{headInfo.clickCount}}
+        </text>
+      </view>
+      <view class="head-banner" style="background:url({{headInfo.backMap}}) no-repeat"></view>
+      <view class="index-head-search" catchtap="searchClick"></view>
+    </view>
+    <view class="index-head-bottom ">
+      <view wx:if="{{user.IsSign == false}}" class="flex " catchtap="sign">
+        <view class="index-sign "></view>签到</view>
+      <view wx:else="{{user.IsSign == true}}" class="flex ">已签到</view>
+      <view class="flex " catchtap="concern">
+        <view class="index-focus "></view>关注</view>
+      <view wx:if="{{user.IsWholeAdmin == true}}" class="flex">
+        <view class="index-set "></view>管理员</view>
+    </view>
+  </view>
+  <view class="index-heading-scrol ">
+    <scroll-view class="index-heading-content " scroll-x="true" scroll-left="{{scrollLeft}}" style="width:100%">
+      <view class="bankuai  {{currentTypeId==0&&hot==0?'selected':''}}" catchtap="toBankuai" data-typeid="0">
+        <text>全部</text>
+      </view>
+      <view class="bankuai  {{currentTypeId==0&&hot==1?'selected':''}}" catchtap="toBankuai" data-typeid="0" data-hot="1">
+        <text>热帖</text>
+      </view>
+      <block wx:for="{{categories}}" wx:for-item="category" wx:key="Id">
+        <view wx:if="{{category.Id != 0}}" class="bankuai  {{ currentTypeId==category.Id?'selected':''}}" catchtap="toBankuai" data-typeid="{{category.Id}}">
+          <text class="">{{category.Title}}</text>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="index-heading-more " catchtap="moreType">+</view>
+  </view>
+  <view class="scrollview-hide"></view>
+
+  <!-- 帖子内容 -->
+  <view class="art-content" scroll-y="true" scroll-x="false" bindscrolltolower="nextPage" data-page-index="{{pageIndex}}" style="width:100%;">
+    <block wx:for="{{articles}}" wx:for-index="idx" wx:for-item="item" wx:key="Id">
+      <view class="border-slice">
+
+        <!-- 贴主信息-->
+        <template is="post-head" data="{{...item}}" />
+        <view style="clear:both"></view>
+
+        <!-- 帖子正文 -->
+        <view>
+          <template is="post-content" data="{{...item}}" />
+
+          <!-- 转评赞 -->
+          <template is="share" data="{{...item}}" />
+        </view>
+
+        <!-- 赞赏头像 -->
+        <template is="rewardimgs" data="{{...item}}" />
+
+        <!-- 点赞头像-->
+        <template is="praiseimgs" data="{{...item}}" />
+
+        <!-- 回复信息 -->
+        <view wx:if="{{item.articleComments}}" class="comment-container">
+          <view style="width:7%">
+            <view class="comment-icon"></view>
+          </view>
+          <view class="comment-content">
+            <block wx:for="{{item.articleComments}}" wx:for-item="comment" wx:key="Id" wx:if="{{index < 3 || currentMoreComment == item.Id}}">
+              <view class="res-info">
+
+                <!-- 头像 -->
+                <template is="commentimg" data="{{...comment}}"></template>
+
+                <!-- 评论信息 -->
+                <view class="comment-content-msg-wrap" catchtap="commentUser" data-id="{{comment.Id}}" data-uid="{{comment.ComUser.Id}}" data-name="{{comment.ComUser.NickName}}" data-artid="{{item.Id}}">
+                  <template is="commentcontent" data="{{...comment}}" />
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+        <view wx:if="{{item.CommentCount>3 && currentMoreComment != item.Id}}" style="clear:both" class="more-comments" data-id="{{item.Id}}" catchtap="moreComment">查看更多{{item.CommentCount}}信息</view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!-- 评论帖子 -->
+<view wx:if="{{showRecomment != null}}" class="recommend-container">
+  <view style="width:100%;height:100%" catchtap="commentCancle"></view>
+  <view class="recomment-wrap">
+
+    <!-- 发帖图片 -->
+    <view style="margin:12px;">
+      <block wx:for="{{selectedImgs}}" wx:for-item="imgs" wx:key="id">
+        <view style="position:relative;max-height:80px; width:20%; margin:5px; display:inline-block; vertical-align:middel">
+          <view class="img-remove" data-id="{{imgs.id}}" catchtap="removeImg"></view>
+          <image style="width:100%;max-height:80px;" src="{{imgs.src}}" />
+        </view>
+      </block>
+    </view>
+    <form bindsubmit="commentSubmit" bindreset="commentCancle">
+      <view style="width:100%; padding:5px;background-color:#fff">
+        <textarea name="content" class="recommend-text" placeholder="{{showRecomment.toUserName?'回复'+showRecomment.toUserName+':':'回复帖子:'}}" value="{{commentText}}" />
+      </view>
+      <view class="recommend-line-container">
+        <view class="recommend-icon-container">
+          <view class="recommend-emoij-wrap recommend-wrap" catchtap="selectEmoij">
+            <view class="recommend-emoij"></view>
+          </view>
+          <view class="recommend-imgae-wrap recommend-wrap" catchtap="selectImg">
+            <view class="recommend-img"></view>
+          </view>
+
+          <!-- 
+          <view class="recommend-voice-wrap recommend-wrap">
+            <view class="recommend-voice"></view>
+          </view>
+          -->
+        </view>
+        <view class="recommend-submit-container">
+          <button class="recommend-cancle-wrap recommend-wrap" form-type="reset">取消</button>
+          <button class="recommend-submit-wrap recommend-wrap" form-type="submit">发表</button>
+        </view>
+      </view>
+    </form>
+    <view class="post-qq-face bz clearfix" style="{{emoij?'display:block':'display:none'}}">
+      <template is="emoij" />
+    </view>
+    <view style="clear:both"></view>
+  </view>
+</view>
+
+<!-- 正在加载 -->
+<view class="loading" style="display:{{loading?'block':'none'}}">
+  <image style="height:16px; width:16px;" src="http://i.pengxun.cn/content/images/loading.gif"></image>
+  <view class="loading">正在加载...</view>
+</view>
+
+<!-- 固定版块 -->
+<view class="fix-index-heading-scrol ">
+  <scroll-view class="index-heading-content " scroll-x="true" scroll-left="{{scrollLeft}}" style="width:100%">
+    <view class="bankuai  {{currentTypeId==0&&hot==0?'selected':''}}" catchtap="toBankuai" data-typeid="0">
+      <text class="">全部</text>
+    </view>
+    <view class="bankuai  {{currentTypeId==0&&hot==1?'selected':''}}" catchtap="toBankuai" data-typeid="0" data-hot="1">
+      <text class="">热帖</text>
+    </view>
+    <block wx:for="{{categories}}" wx:for-item="category" wx:key="Id">
+      <view wx:if="{{category.Id != 0}}" class="bankuai  {{ currentTypeId==category.Id?'selected':''}}" catchtap="toBankuai" data-typeid="{{category.Id}}">
+        <text class="">{{category.Title}}</text>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="index-heading-more " catchtap="moreType">+</view>
+</view>
+<include src="/template/search.wxml" />
+
+<!--<view class="comment-voice-container">
+   <view class="audio-wrap">
+      <audio id="test" class="audio" name="此时此刻" controls   poster="http://i.pengxun.cn/content/images/voice/voiceplaying.png" 
+      src="http://shop.vzan.com/t.mp3"></audio>
+  </view>
+</view>
+-->

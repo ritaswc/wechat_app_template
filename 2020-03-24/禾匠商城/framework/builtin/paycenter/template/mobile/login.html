@@ -1,0 +1,46 @@
+{php define(MUI, true);}
+{template 'common/header'}
+<header class="mui-bar mui-bar-nav">
+	<h1 class="mui-title">登录</h1>
+</header>
+<div class="mui-content paycenter-login" id="login-form">
+	<div class="mui-input-group">
+		<div class="mui-input-row">
+			<label>账号</label>
+			<input type="text" name="username" value="" placeholder="请输入登录账号"/>
+		</div>
+		<div class="mui-input-row">
+			<label>密码</label>
+			<input type="password" name="password" value="" placeholder="请输入登录密码"/>
+		</div>
+	</div>
+	<div class="mui-content-padded">
+		<button class="mui-btn mui-btn-success mui-btn-block" id="login-submit" type="submit">登录</button>
+	</div>
+</div>
+<script>
+$(function(){
+	$('#login-submit').click(function(){
+		var username = $.trim($('#login-form :text[name="username"]').val());
+		if(!username) {
+			alert('账号不能为空');
+			return false;
+		}
+		var password = $.trim($('#login-form input[name="password"]').val());
+		if(!password) {
+			alert('密码不能为空');
+			return false;
+		}
+		$.post(location.href, {username: username, password: password}, function(data){
+			var result = $.parseJSON(data);
+			if(result.message.errno != 0) {
+				alert(result.message.message);
+			} else {
+				location.reload();
+			}
+			return false;
+		});
+	});
+});
+</script>
+{template 'common/footer'}

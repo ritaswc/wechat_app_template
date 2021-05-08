@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/my/my",
+    "pages/classification/classification",
+    "pages/main/main",
+    "pages/shoppingCart/shoppingCart",
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "轻奢礼物说",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color": "#515151",
+    "selectedColor": "#09bb07",
+    "borderStyle": "white",
+    "list":[{
+        "pagePath": "pages/main/main",
+        "text": "首页",
+        "iconPath": "images/main.png",
+        "selectedIconPath": "images/selectedMain.png"
+      },
+      {
+        "pagePath": "pages/classification/classification",
+        "text": "分类",
+        "iconPath": "images/分类.png",
+        "selectedIconPath": "images/分类-selected.png"
+        },
+        {
+          "pagePath": "pages/shoppingCart/shoppingCart",
+          "text": "购物车",
+          "iconPath": "images/购物车.png",
+          "selectedIconPath": "images/购物车-selected.png"
+          },
+          { 
+            "pagePath": "pages/my/my",
+            "text": "我的",
+            "iconPath": "images/我.png",
+            "selectedIconPath": "images/我-selected.png"
+            }
+
+    ]
+  }
+}

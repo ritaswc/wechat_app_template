@@ -1,0 +1,124 @@
+.info {
+    position: relative;
+    width: 750rpx;
+    height: 324rpx;
+    color: #fff;
+    padding: 48rpx 0;
+    margin-bottom: 20rpx;
+    z-index: 10;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 324rpx;
+    z-index: 0;
+}
+
+.info-img {
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 20rpx;
+}
+
+.info-2 {
+    margin: 30rpx 0;
+    font-size: 30pt;
+    line-height: 1;
+}
+
+.info-btn {
+    width: 168rpx;
+    height: 56rpx;
+    font-size: 13pt;
+    border-radius: 28rpx;
+    border: 1rpx solid #fff;
+}
+
+.ad {
+    width: 100%;
+    height: 180rpx;
+    margin-bottom: 20rpx;
+}
+
+.ad image {
+    width: 100%;
+    height: 100%;
+}
+
+.record {
+    background-color: #fff;
+    width: 100%;
+}
+
+.record-time {
+    width: 100%;
+    height: 80rpx;
+    color: #353535;
+}
+
+.record-img {
+    width: 12rpx;
+    height: 20rpx;
+}
+
+.record-list {
+    width: 100%;
+    background-color: #fff;
+}
+
+.record-one {
+    width: 100%;
+    height: 140rpx;
+    border-top: 1rpx solid #e2e2e2;
+    padding: 0 24rpx;
+}
+
+.record-1 {
+    color: #353535;
+    margin-top: 30rpx;
+    margin-bottom: 15rpx;
+}
+
+.record-2 {
+    color: #666;
+    font-size: 9pt;
+}
+
+.record-3 {
+    font-size: 13pt;
+    color: #ff4544;
+}
+
+.record-4 {
+    font-size: 13pt;
+    color: #3fc24c;
+}
+
+.modal-h {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.body-h {
+    padding: 50rpx;
+    background-color: #fff;
+    width: 600rpx;
+    border-radius: 10rpx;
+}
+
+.btn-h {
+    margin-top: 64rpx;
+    width: 100%;
+    height: 80rpx;
+    background-color: #ff4544;
+    border-radius: 10rpx;
+    color: #fff;
+}

@@ -1,0 +1,56 @@
+.container {
+    padding: 10rpx;
+}
+
+.content {
+    margin-top: 5rpx;
+    padding: 20rpx;
+}
+
+.content-text-1 {
+    font-size: 40rpx;
+    font-weight: bold;
+}
+
+.content-text-2 {
+  
+    font-size: 32rpx;
+}
+
+.banner image {
+    width: 100%;
+    height: 500rpx;
+}
+
+.content-text-2,.content-number-data,.content-number-price {
+    margin-top: 20rpx;
+}
+
+.content-number-data {
+    line-height: 50rpx;
+}
+
+.content-number-data text {
+    margin-left: 30rpx;
+}
+
+.font-size-24 {
+    font-size: 24rpx;
+}
+
+.avatar-images {
+    width: 100rpx;
+    height: 100rpx;
+}
+.comment{
+    height:200rpx;
+    padding-top: 20rpx;
+}
+.middle{
+    margin-top:20rpx;
+}
+.comment-content{
+    margin-bottom:44rpx;
+
+}
+

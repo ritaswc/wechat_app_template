@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/showShop/showShop.less"],"names":[],"mappings":"AAAA;EACE,gBAAA","sourcesContent":[".title {\n  font-size: 40rpx;\n}\n"],"file":"showShop.wxss"}

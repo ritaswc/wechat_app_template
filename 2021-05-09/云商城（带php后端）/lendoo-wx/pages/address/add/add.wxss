@@ -1,0 +1,141 @@
+page {
+	position: relative;
+	height: 100%;
+}
+
+/*省市区文本框*/
+.area_select {
+	color: #808080;
+	width: 60%;
+}
+
+.poi {
+	font-size: 12px;
+}
+
+/*弹窗主体*/
+.modal-content {
+	position: fixed;
+	bottom: -285px;
+	left: 0;
+	width: 100%;
+	height: 285px;
+	/*box-shadow: 10rpx 0 30rpx rgba(0,0,0,.9);*/
+	margin-top: 5px;
+	background: #fff;
+	z-index: 999;
+}
+
+/*遮罩层*/
+.modal-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .8;
+    z-index: 99;
+}
+
+/*弹窗头部*/
+.modal-header {
+	margin: 2px 0;
+	font-size: 16px;
+	color: #666;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	line-height: 30px;
+}
+
+/*所在地区字样*/
+.modal-title {
+	text-align: center;
+	width: 100%;
+}
+
+/*关闭按钮*/
+.modal-close {
+	width: 20px;
+}
+
+.modal-body {
+	font-size: 14px;
+}
+
+/*每级地区标题*/
+.viewpager-title {
+	padding: 0 10px;
+	/*color: #f03118;*/
+	line-height: 30px;
+}
+
+/*分隔线*/
+.viewpager-divider {
+	width: 100%;
+	height: 1px;
+	background: #ccc;
+}
+
+/*左右滑动控件*/
+.swiper-area {
+	height:220px;
+}
+
+/*地址列表ListView容器*/
+.viewpager-listview {
+	padding-top: 5px;
+	height: 100%;
+}
+
+/*每行地址item项*/
+.viewpager-listview view{
+	line-height: 30px;
+	padding: 0 10px;
+}
+
+/*高亮当前所选地区*/
+.area-selected {
+	color: red;
+}
+
+/*初始隐藏*/
+.hidden {
+	display: none;
+}
+
+/*运行时显示*/
+.show {
+	display: block;
+}
+
+/*单元格*/
+.cell {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items:center;
+	margin: 4px;
+	border-bottom: 1px solid #eee;
+	line-height: 28px;
+}
+
+.cell:last-child {
+	border-bottom: 0;
+}
+
+/*label显示字符*/
+.cell text:first-child {
+	width: 50px;
+}
+
+/*请选择区域*/
+.region {
+	width: 90%;
+}
+
+/*保存按钮*/
+.save {
+	margin: 8px;
+}

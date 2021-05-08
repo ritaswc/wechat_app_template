@@ -1,0 +1,93 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="bg" style="{{_navbar&&_navbar.navs&&_navbar.navs.length>0?'padding-bottom:115rpx':''}}">
+            <view class="pond-head">
+                <image src="{{__wxapp_img.pond.pond.pond_head.url}}"></image>
+                <navigator hoverClass="navigator-hover" url="/pond/rule/rule">
+                    <view class="pond-gze">规则</view>
+                </navigator>
+                <view bindtap="showShareModal" class="pond-gze" style="top:104rpx">分享</view>
+            </view>
+            <view class="pond-cj">
+                <view class="pond-text">您还有<text class="pond-num">{{oppty}}</text>次抽奖机会</view>
+            </view>
+            <view class="container-out">
+                <view class="circle" style="top:{{item.topCircle}}rpx;left:{{item.leftCircle}}rpx;background-color: {{index%2==0?colorCircleFirst:colorCircleSecond}};" wx:for="{{circleList}}" wx:key="{{index}}"></view>
+                <view class="container-in">
+                    <view class="content-out" style="top:{{item.topAward}}rpx;left:{{item.leftAward}}rpx;background-color: {{index==indexSelect?colorAwardSelect:colorAwardDefault}};" wx:for="{{awardList}}" wx:key="{{index}}">
+                        <image class="pond-name-img" mode="aspectFit" src="{{item.image_url}}"></image>
+                        <view class="pond-name fs-sm">{{item.name}}</view>
+                    </view>
+                    <view bindtap="startGame" class="start-btn">
+                        <image src="/pond/images/pond-button.png" style="height:160rpx;width:100%;"></image>
+                        <block wx:if="{{register>0}}">
+                            <view animation="{{animationData}}" style="display:inline;position:absolute;left:10rpx;height:136rpx;width:178rpx;">
+                                <image src="/pond/images/pond-register.png" style="height:136rpx;width:178rpx;"></image>
+                            </view>
+                            <view class="flex-x-center">
+                                <view animation="{{animationData}}" class="pond-register fs-sm">-{{register}}积分</view>
+                            </view>
+                        </block>
+                        <image animation="{{animationData}}" src="/pond/images/pond-cj.png" style="position:absolute;left:10rpx;height:136rpx;width:178rpx;" wx:else></image>
+                    </view>
+                </view>
+            </view>
+            <navigator hoverClass="navigator-hover" openType="redirect" style="display:inline;padding-right:150rpx" url="/pages/index/index">
+                <image src="/pond/images/home.png" style="height:30rpx;width:30rpx;margin-right:14rpx;margin-bottom:-1rpx"></image>
+                <view class="pond-bottom">回到首页</view>
+            </navigator>
+            <navigator hoverClass="navigator-hover" style="display:inline" url="/pond/prize/prize">
+                <view class="pond-bottom">中奖记录</view>
+                <image class="pond-jt" src="/pond/images/pond-jt.png"></image>
+            </navigator>
+        </view>
+        <view wx:if="{{prize==2}}">
+            <view class="act-modal">
+                <view bindtap="closeActModal" class="act-modal-bg"></view>
+                <view class="act-modal-pic flex-y-center flex-x-center">
+                    <view style="text-align:center;position:relative">
+                        <image src="{{__wxapp_img.pond.pond.pond_success.url}}" style="height:462rpx;width:750rpx"></image>
+                        <image bindtap="pondClose" class="pond-model-image" src="/pond/images/pond-close.png"></image>
+                        <view class="act-modal-close flex-x-center" style="">
+                            <view class="pond-xxcy fs-b" style="margin-top:-14rpx;padding-bottom:12rpx">恭喜</view>
+                        </view>
+                        <view class="act-modal-close flex-x-center">
+                            <view class="pond-ok fs-b">抽中{{name}}</view>
+                        </view>
+                        <view class="act-modal-close flex-x-center">
+                            <view style="width:591rpx;background:#ffffff;border-radius:0 0 24rpx 24rpx">
+                                <view bindtap="pondClose" class="pond-bottom pond-bottom-2">继续抽奖</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{prize==1}}">
+            <view class="act-modal">
+                <view bindtap="closeActModal" class="act-modal-bg"></view>
+                <view class="act-modal-pic flex-y-center flex-x-center">
+                    <view style="text-align:center;position:relative">
+                        <image src="{{__wxapp_img.pond.pond.pond_empty.url}}" style="height:240rpx;width:750rpx"></image>
+                        <image bindtap="pondClose" class="pond-model-image" src="/pond/images/pond-close.png"></image>
+                        <view class="act-modal-close flex-x-center" style="">
+                            <view class="pond-xxcy fs-b" style="margin-top:-14rpx;padding-bottom:12rpx">谢谢参与</view>
+                        </view>
+                        <view class="act-modal-close flex-x-center">
+                            <view class="pond-xxcy fs-b" style="margin-top:-10rpx">再换个姿势抽奖</view>
+                        </view>
+                        <view class="act-modal-close flex-x-center">
+                            <view style="width:591rpx;background:#ffffff;border-radius:0 0 24rpx 24rpx">
+                                <view bindtap="pondClose" class="pond-bottom pond-bottom-2">继续抽奖</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/save_qrcode/save_qrcode"></include>
+    <include src="/components/footer/footer"></include>
+</view>

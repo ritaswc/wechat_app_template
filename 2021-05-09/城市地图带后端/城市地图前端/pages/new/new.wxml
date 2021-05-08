@@ -1,0 +1,80 @@
+<view class="page" style="margin-bottom:60px">
+  <view class="page__bd">
+    <view>
+      <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" markers="{{markers}}" bindmarkertap="markertap" show-location style="width: 100%; height: 280px;"></map>
+    </view>
+  </view>
+
+  <view class="page__bd">
+    <form catchsubmit="formSubmit">
+      <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                  <view class="weui-label">城市</view>
+              </view>
+              <view class="weui-cell__bd">
+                  <input class="weui-input" name="city" placeholder="请输入城市"/>
+              </view>
+          </view>
+          <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                  <view class="weui-label">地点名称</view>
+              </view>
+              <view class="weui-cell__bd">
+                  <input class="weui-input" name="spot_name" placeholder="请输入地点名称"/>
+              </view>
+          </view>
+          <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                  <view class="weui-label">下载速度</view>
+              </view>
+              <view class="weui-cell__bd">
+                  <input class="weui-input" name="download_speed" placeholder="请输入下载速度"/>
+              </view>
+          </view>
+          <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                  <view class="weui-label">上传速度</view>
+              </view>
+              <view class="weui-cell__bd">
+                  <input class="weui-input" name="upload_speed" placeholder="请输入上传速度"/>
+              </view>
+          </view>
+          <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                  <view class="weui-label">价格</view>
+              </view>
+              <view class="weui-cell__bd">
+                  <input class="weui-input" name="price_indication" placeholder="请输入价格"/>
+              </view>
+          </view>
+          <view class="weui-cells weui-cells_after-title">
+            <radio-group bindchange="radioChange">
+                <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="{{item.value}}">
+                    <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__bd">{{item.name}}</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+                        <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="bathroom" value="{{bathroom}}" hidden/>
+                    <input class="weui-input" name="longitude" value="{{longitude}}" hidden/>
+                    <input class="weui-input" name="latitude" value="{{latitude}}" hidden/>
+                    <textarea class="weui-textarea" name="commit_message" placeholder="人多吗？有插座吗？网速快吗？有熊孩子吗？有洗手间吗" style="height: 6.0em" />
+                </view>
+            </view>
+        </view>
+      </view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" formType="submit">评论</button>
+      </view>
+    </form>
+  </view>
+</view>

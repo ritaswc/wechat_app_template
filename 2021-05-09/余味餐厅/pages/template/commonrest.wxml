@@ -1,0 +1,22 @@
+  <view class="res_con">
+      <navigator 
+      class="res_detail" 
+      wx:for="{{three.content}}
+      url="../rdetail/rdetail?id={{item.id}}&name={{cityname}}"
+      >
+        <view class="top_con">
+          <image src="{{item.cover}}"></image>
+          <view class="top_con_right">
+            <view class="item_name">{{item.name}}</view>
+            <view class="item_price">
+              <text wx:if="{{item.km != ''}}"  style="margin-right:20rpx">{{item.km}}</text>
+              <text>{{item.cost}}元/人</text>
+            </view>
+            <view class="item_desc">{{item.desc}}</view>
+          </view>
+        </view>
+        <view class="bot_label">
+          <text wx:for="{{item.label}}">{{item.name}}</text>
+        </view>
+    </navigator>
+  </view>

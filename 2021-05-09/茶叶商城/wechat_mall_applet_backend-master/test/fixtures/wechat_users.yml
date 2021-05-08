@@ -1,0 +1,18 @@
+gehao:
+  id: 19245
+  open_id: "o4X350GBEGHSgAIfQvjIeo-jiJGI"
+  nickname: "bayekeji"
+  expired_at: <%= 7.days.from_now.to_s(:db) %>
+  union_open_id: "ons-ruL8EzG73uFQh7TCpY5-M7Ag"
+  avatar: "http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLTkDEUjd..."
+  gender: 1
+  country: "CN"
+  city: "Shanghai"
+  province: "Shanghai"
+  created_at: "2016-11-27 13:50:47"
+  updated_at: "2016-12-23 07:07:50"
+  customer_id: 4491
+  app_id: "wx8cdc4da512e11844"
+  session_key: "18kSv1ZsjR411jUAhEVV2w=="
+  wx_code: "021G9fDO0bi1A82duaEO0JHzDO1G9fDb"
+  client_token: "wx_bab6d75fbab1bd9fdd13bd0ead4683ead09fe85b"

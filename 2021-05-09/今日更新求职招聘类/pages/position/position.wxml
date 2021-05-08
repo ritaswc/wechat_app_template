@@ -1,0 +1,147 @@
+<!--pages/position/position.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="position_wrap">
+    <nav class="position_nav">
+        <ul>
+            <li class="{{current == 0 ? 'active' :''}}" catchtap="switchSlider" data-index="0">职位详情</li>
+            <li class="{{current == 1 ? 'active' :''}}" catchtap="switchSlider" data-index="1">企业介绍</li>
+        </ul>
+    </nav>
+    <swiper class="main-list"  bindchange="changeSlider" current="{{current}}" duration="500">
+        <block>
+            <!--职位详情-->
+            <swiper-item class="position_detail">
+                <view class="position_name">{{position.job_name}}</view>
+                <view class="position_salary">{{position.salary}}</view>
+                <view class="position_company">{{position.company_name}}</view>
+                <ul class="position_box">
+                    <li class="time_" wx:if="{{position.update_time==''?false:true}}"><image class="image1" src="image/_01.png"></image>{{position.update_time}}</li>
+                    <li class="time_" wx:if="{{position.recruit_num==''?false:true}}"><image class="image1" src="image/_02.png"></image>招{{position.recruit_num}}人</li>
+                    <li class="time_" wx:if="{{position.education==''?false:true}}"><image class="image1" src="image/_03.png"></image>{{position.education}}</li>
+                    <li class="time_" wx:if="{{position.room_board==''?false:true}}"><image class="image1" src="image/_04.png"></image>{{position.room_board}}</li>
+                    <li class="time_" wx:if="{{position.conditions==''?false:true}}"><image class="image1" src="image/_05.png"></image>{{position.conditions}}</li>
+                </ul>
+                <ul class="p_d_box">
+                    <li><view>工作地点</view>{{position.work_place}}</li>
+                    <li><view>工作经验</view>{{position.exp}}</li>
+                    <li><view>工作性质</view>{{position.nature}}</li>
+                </ul>
+                <view class="p_d_detail">岗位描述</view>
+                <view class="p_description">
+                    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+                </view>
+                <!--举报职位-->
+                <view></view>
+                <!--其他推荐职位-->
+                <view class="p_d_detail">其他推荐职位</view>
+                <view class="remenList">
+                    <block wx:for="{{otherList}}">
+                        <view class="list" bindtap="goZhihiWeiList" data-c_userid="{{item.c_userid}}" data-job_id="{{item.job_id}}">
+                            <view class="left">
+                                <view class="positionName">
+                                    <image wx:if="{{item.is_urgent== 1 ?true:false}}" class="hotImg" src="../../image/jian_03.png"></image>
+                                    <view class="job_name">
+                                        {{item.job_name}}
+                                    </view>
+                                </view>
+                                <view class="conpany">{{item.company_name}}</view>
+                                <view class="time">{{item.update_time}}</view>
+                            </view>
+                            <view class="right">
+                                <view class="money">{{item.salary}}</view>
+                                <view>{{item.work_place}}</view>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+                
+            </swiper-item>
+            <view class="user_box">
+                <view class="left">
+                    <view bindtap="positionCollect" data-job_id="{{position.job_id}}" data-is_applied="{{has_favorited}}">
+                        <image class="image2" src="{{is_favorited}}"></image>
+                        收藏
+                    </view>
+                </view>
+                <view class="right">
+                    <button bindtap="positionApply" data-job_id="{{position.job_id}}" loading="{{showloding}}" disabled="{{is_applied}}">立即申请</button>
+                </view>
+            </view>
+            <!--企业介绍-->
+            <swiper-item data-company_id="{{c_user.company_id}}" class="position_intro">
+                <image mode="aspectFit" class="company_image" src="{{c_user.company_logo}}"></image>
+                <view class="p_name">{{c_user.company}}</view>
+                <view class="p_list_box">
+                    <ul>
+                        <li>
+                            行<text style="visibility:hidden">星级</text>业: <span>{{c_user.industry}}</span>
+                        </li>
+                        <li>
+                            性<text style="visibility:hidden">星级</text>质: <span>{{c_user.company_nature}}</span>
+                        </li>
+                        <li>
+                            规<text style="visibility:hidden">星级</text>模: <span>{{c_user.company_size}}</span>
+                        </li>
+                        <li>
+                            星<text style="visibility:hidden">星级</text>级: 
+                            <span wx:for="{{xingji}}">
+                                <image class="image3" src="image/_09.png"></image>
+                            </span>
+                        </li>
+                        <li class="zhishu">
+                            雇主指数: <span>{{c_user.employ_index}}</span>
+                        </li>
+                    </ul>
+                </view>
+                <view class="line"></view>
+                <view class="biaoqian">
+                    <view wx:for="{{biaoqian}}">{{item}}</view>
+                </view>
+                <!--企业简介-->
+                <view class="p_d_detail">企业简介</view>
+                <view class="company_industry">
+                    <template is="wxParse" data="{{wxParseData:description.nodes}}"/>
+                </view>
+                <!--联系我们-->
+                <view class="p_d_detail">联系我们</view>
+                <view class="contant_ours">
+                    <view>
+                        <span>联 系 人: </span>{{c_user.contact_name}}
+                    </view>
+                    <view  class="call">
+                        <span>联系电话: </span>{{c_user.contact_phone}}
+                        <image wx:if="{{c_user.contact_phone==''?false:true}}" data-number="{{c_user.contact_phone}}" bindtap="call" src="image/phone.png" ></image>
+                    </view>
+                    <view>
+                    <view class="call">
+                        <span>固定电话: </span>{{c_user.contact_tel}}
+                        <image wx:if="{{c_user.contact_tel==''?false:true}}" data-number="{{c_user.contact_tel}}" bindtap="call" src="image/phone.png" ></image>
+                    </view>
+                        <span>邮<a style="visibility:hidden;">地地</a>箱: </span>{{c_user.contact_email}}
+                    </view>
+                    <view>
+                        <span>地<a style="visibility:hidden;">地地</a>址: </span>{{c_user.address}}
+                        <image wx:if="{{c_user.latitude==''?false:true}}" data-latitude="{{c_user.latitude}}" data-longitude="{{c_user.longitude}}" bindtap="site_" src="image/site.png" ></image>
+                    </view>
+                </view>
+                <!--该企业其他职位-->
+                <view  wx:if="{{c_list==''?false:true}}" class="p_d_detail">该企业其他职位</view>
+                <view class="remenList">
+                    <block wx:for="{{c_list}}">
+                            <view class="list" data-id="{{item.c_userid}}">
+                                <view class="left">
+                                    <view class="positionName">{{item.job_name}}</view>
+                                    <view class="time">{{item.update_time}}</view>
+                                </view>
+                                <view class="right">
+                                    <view>{{item.salary}}</view>
+                                    <view>{{item.work_place}}</view>
+                                </view>
+                            </view>
+                    </block>
+                </view>
+                <!--<button disabled="" loading="" class="guanzhu"> <image class="image3" src="image/_10.png"></image> 加关注</button>-->
+            </swiper-item>
+        </block>
+    </swiper>
+</view>

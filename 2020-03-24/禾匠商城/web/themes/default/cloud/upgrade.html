@@ -1,0 +1,334 @@
+{template 'common/header'}
+<div class="upgrade-content" id="js-cloud-upgrade" ng-controller="CloudUpgradeCtrl" ng-cloak>
+	<div class="alert we7-page-alert">
+		<p><i class="wi wi-info-sign"></i>系统更新后，如果出现样式错误等，请自行更新缓存并“CTRL+F5”强行刷新</p>
+	</div>
+	<div class="upgrade-heading">
+		<img src="./resource/images/logo/logo-lg.png" alt="" class="we7-logo"/>
+		<h2 class="upgrade-version">系统当前版本: {IMS_FAMILY}{IMS_VERSION}（{IMS_RELEASE_DATE}）</h2>
+	</div>
+	<div ng-if="upgrade && upgrade.upgrade">	
+		<div class="upgrade-detail hidden" >
+			<div class="header">
+				{{upgrade.family}}{{upgrade.version}}【{{upgrade.release}}】版
+			</div>
+			<div class="info">
+				<div class="title">版本更新内容</div>
+				<div class="detail">
+					更新说明
+				</div>
+			</div>
+		</div>
+		<div class="upgrade-info">
+			<div class="item">
+				<div class="title">需要更新文件</div>
+				<div class="count"><span>{{upgrade.files.length > 0 ? upgrade.files.length + '个' : '暂无更新文件'}}</span> </div>
+				<a href="#upgrade-file" data-toggle="modal" >查看</a>
+			</div>
+			<div class="item">
+				<div class="title">需要更新数据库</div>
+				<div class="count"><span>{{upgrade.database.length > 0 ? upgrade.database.length  + '项' : '暂无更新数据库'}}</span> </div>
+				<a href="#upgrade-databases" data-toggle="modal" >查看</a>
+			</div>
+			<div class="item">
+				<div class="title">需要更新脚本</div>
+				<div class="count"><span>{{upgrade.scripts.length > 0 ? upgrade.scripts.length + '项' : '暂无更新脚本'}}</span> </div>
+				<a href="#upgrade-scripts" data-toggle="modal" >查看</a>
+			</div>
+		</div>
+		<div class="upgrade-info" ng-if="upgrade && upgrade.upgrade">
+			<div class="item">
+				<div class="title">更新协议事项</div>
+				<div class="we7-form">
+					<div class="upgrade-agree">
+						<input id='agreement_0' type="checkbox" name='agreement_0' autocomplete="off" />
+						<label for="agreement_0">确保您的系统文件官方文件保持一致，避免被非法篡改，远离盗版</label>
+					</div>
+					<div class="upgrade-agree">
+						<input id='agreement_1' type="checkbox" name='agreement_1' autocomplete="off"/>
+						<label for="agreement_1">已经做好了相关文件的备份工作，认同官方的更新行为并自愿承担更新所存在的风险</label>
+					</div>
+					<div class="upgrade-agree">
+						<input id='agreement_2' type="checkbox" name='agreement_2' autocomplete="off"/>
+						<label for="agreement_2">认同“购买系统商业授权后进行商业化运营”的协议</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text-center we7-margin-top">
+		<!--	<input type="button" name="" id="forward" value="一键更新" class="btn btn-primary we7-margin-right" ng-click="submit()"/>
+			<input name="rollback" type="button" value="撤回更新" class="btn btn-default" data-toggle="modal" data-target="#rollback-panel" />   -->
+		</div>
+	</div>
+	<form action="" class="form we7-form hidden" ng-if="upgrade && upgrade.upgrade">
+		<div class="upgrade-info we7-padding-bottom">
+			<div class="panel we7-panel">
+				<div class="panel-heading we7-padding ">
+					<span class="col-sm-2 we7-padding-none color-gray">最新版本</span>
+					<span class="col-sm-7 we7-padding-none">官方 {{upgrade.family}}{{upgrade.version}}【{{upgrade.release}}】版</span>
+				</div>
+				<div class="panel-body we7-padding">
+					<div class="form-group">
+						<label for="" class="control-label color-gray col-sm-2">需要更新文件</label>
+						<div class="form-controls col-sm-7 text-center form-control-static">{{upgrade.files.length > 0 ? upgrade.files.length : 0}} 个</div>
+						<span class="color-default col-sm-3 text-right"><a href="#upgrade-file" data-toggle="modal" >查看</a></span>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label color-gray col-sm-2">需要更新数据库</label>
+						<div class="form-controls col-sm-7 text-center form-control-static">{{upgrade.database.length > 0 ? upgrade.database.length  + '项' : '暂无更新数据库'}} </div>
+						<span class="color-default col-sm-3 text-right"><a href="#upgrade-databases" data-toggle="modal" >查看</a></span>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label color-gray col-sm-2">需要更新脚本</label>
+						<div class="form-controls col-sm-7 text-center form-control-static">{{upgrade.scripts.length > 0 ? upgrade.scripts.length : 0}} 项</div>
+						<span class="color-default col-sm-3 text-right"><a href="#upgrade-scripts" data-toggle="modal" >查看</a></span>
+					</div>
+					<div class="form-group  we7-padding-none">
+						<label for="" class="control-label color-gray col-sm-2">更新协议事项</label>
+						<div class="form-controls col-sm-10 form-control-static">
+							<div class="">
+								<input id='agreement_0' type="checkbox" name='agreement_0' autocomplete="off" />
+								<label for="agreement_0">确保您的系统文件官方文件保持一致，避免被非法篡改，远离盗版</label>
+							</div>
+							<div class="">
+								<input id='agreement_1' type="checkbox" name='agreement_1' autocomplete="off"/>
+								<label for="agreement_1">已经做好了相关文件的备份工作，认同官方的更新行为并自愿承担更新所存在的风险</label>
+							</div>
+							<div class="">
+								<input id='agreement_2' type="checkbox" name='agreement_2' autocomplete="off"/>
+								<label for="agreement_2">认同“购买系统商业授权后进行商业化运营”的协议</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="text-center">
+		<!--	<input type="button" name="" id="forward" value="一键更新" class="btn btn-primary we7-margin-right" ng-click="submit()"/>
+				<input name="rollback" type="button" value="撤回更新" class="btn btn-default" data-toggle="modal" data-target="#rollback-panel" />  -->
+			</div>
+		</div>
+	</form>
+	<div ng-if="!upgrade || !upgrade.upgrade">
+		<div class="upgrade-new">
+			当前版本为最新版本，您可以联系客服, 询问是否有新版本。
+		</div>
+		<div class="text-center">
+         	<!--   <button class="btn btn-primary we7-margin-right" ng-disabled="submitDisabled" ng-click="checkUpgrade()">{{showtext}}</button>
+            <button class="btn btn-default" data-toggle="modal" data-target="#rollback-panel" />撤回更新</button> -->
+		</div>
+	</div>
+
+	
+	<div class="upgrade-wechat">
+		<img src="../web/resource/images/logo/logo.png" alt="">
+		<div class="info">
+			<p class="title">更新说明和官方公告请关注"<span class="color-default">官网</span>"查看</p>
+			<p class="">赶快扫码赞助吧</p>
+		</div>
+	</div>
+	<div class="modal fade" id="error-file" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog we7-modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<div class="font-lg">安装/升级前检测</div>
+				</div>
+				<div class="modal-body">
+					<div class="we7-empty-blcok we7-margin-bottom-sm">
+						下列文件或目录无读写权限，导致无法进行更新。尝试将 <span class="color-red">写入权限设置为最高权限777</span>
+					</div>
+					<div class="we7-margin-bottom"><a href="javascript:;" class="color-default">如何设置服务器读写权限？</a></div>
+					<div class="upgrade-modal-box" ng-if="errorFile && errorFile.length">
+						<p class="color-gray" ng-repeat="line in errorFile track by $index" >{{line}}</p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="upgrade-file" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog we7-modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">更新文件</h4>
+				</div>
+				<div class="modal-body">
+					<div class="upgrade-modal-box" ng-if="upgrade.files && upgrade.files.length">
+						<p ng-repeat="line in upgrade.files track by $index" >{{line}}</p>
+					</div>
+					<div class="we7-empty-blcok" ng-if="!upgrade.files || !upgrade.files.length">
+						暂无更新文件
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"  data-dismiss="modal">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="upgrade-databases" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog we7-modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">更新数据库</h4>
+				</div>
+				<div class="modal-body color-dark">
+					<div class="upgrade-modal-box" ng-if="upgrade.database && upgrade.database.length">
+						<div class="" ng-repeat="database in upgrade.database" >
+							<div class="col-sm-2">表名:</div>
+							<div class="col-sm-4" ng-bind="database.tablename"></div>
+							<div class="col-sm-6" ng-if="database.new">New</div>
+							<div class="col-sm-6" ng-if="!database.new">
+								<span ng-if="database.fields">fields: {{database.fields}}</span>
+								<span ng-if="database.indexes">indexes: {{database.indexes}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="we7-empty-blcok" ng-if="!upgrade.database || !upgrade.database.length">
+						暂无更新数据库
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="upgrade-scripts" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog we7-modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">更新脚本</h4>
+				</div>
+				<div class="modal-body color-dark">
+					<div class="upgrade-modal-box" ng-if="upgrade.scripts && upgrade.scripts.length">
+						<p ng-repeat="scripts in upgrade.scripts" >
+							<span style="display:inline-block; width:100px;" ng-bind="scripts.release"></span>{{scripts.message}}
+						</p>
+					</div>
+					<div class="we7-empty-blcok" ng-if="!upgrade.scripts || !upgrade.scripts.length">
+						暂无更新脚本
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="rollback-panel" tabindex="-1" role="dialog" aria-labelledby="rollback-label">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">更新回滚列表</h4>
+				</div>
+				<div class="modal-body">
+					<div class="alert alert-danger">
+						如果要恢复更早的记录请直接查看 <b>/data/patch/</b> 目录
+					</div>
+					<div class="alert alert-success">
+						恢复时，请手动将此目录中的文件上传至网站即可（选中全部文件和目录直接上传）
+					</div>
+					{if !empty($patchs)}
+					<table class="table">
+						<tr>
+							<th style="width: 200px">日期</th>
+							<th >路径</th>
+						</tr>
+						{loop $patchs $path}
+						<tr>
+							<td>{php echo date('Y-m-d')} {php echo substr($path, 0, 2)}:{php echo substr($path, 2, 2)}</td>
+							<td>{$path}</td>
+						</tr>
+						{/loop}
+					</table>
+					{else}
+					今天暂无更新
+					{/if}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	angular.module('cloudUpgradeApp', []);
+	angular.module('cloudUpgradeApp').value('config', {
+		'links': {
+			'process': "{php echo url('cloud/process')}",
+			'getUpgradeInfo': "{php echo url('cloud/upgrade/get_upgrade_info')}",
+			'getErrorFileList': "{php echo url('cloud/upgrade/get_error_file_list')}",
+		}
+	});
+	angular.module('cloudUpgradeApp').controller('CloudUpgradeCtrl', ['$scope', '$http', 'config', function($scope, $http, config) {
+		$scope.upgrade = {};
+		$scope.showtext = '立即检查新版本';
+		$scope.submitDisabled = false;
+		$scope.checkUpgrade = function() {
+			$scope.showtext = '正在检查...';
+			$scope.submitDisabled = true;
+			$http.post(config.links.getUpgradeInfo)
+				.success(function (data) {
+					$scope.showtext = '立即检查新版本';
+					$scope.submitDisabled = false;
+					if (data.message.errno == 1) {
+						util.message(data.message.message, '', 'success');
+						return true;
+					}
+					if (data.message.errno == 0) {
+						$scope.upgrade = data.message.message;
+					} else {
+						util.message(data.message.message);
+					}
+				});
+		};
+
+		$scope.submit = function() {
+			var a = $("#agreement_0").is(':checked');
+			var b = $("#agreement_1").is(':checked');
+			var c = $("#agreement_2").is(':checked');
+			if (!a || !b || !c) {
+				util.message("抱歉，更新前请仔细阅读更新协议！", '', 'error');
+				return false;
+			}
+
+			$http.post(config.links.getErrorFileList)
+				.success(function (data) {
+					if (!data.message) {
+						if(confirm('更新将直接覆盖本地文件, 请注意备份文件和数据. \n\n**另注意** 更新过程中不要关闭此浏览器窗口.')) {
+							location.href = config.links.process;
+						}
+					} else {
+						$scope.errorFile = data.message.message;
+						if ($scope.errorFile) {
+							$('#error-file').modal('show');
+						} else {
+							if(confirm('更新将直接覆盖本地文件, 请注意备份文件和数据. \n\n**另注意** 更新过程中不要关闭此浏览器窗口.')) {
+								location.href = config.links.process;
+							}
+						}
+					}
+				})
+		};
+	}]);
+	angular.bootstrap($('#js-cloud-upgrade'), ['cloudUpgradeApp']);
+</script>
+{template 'common/footer'}

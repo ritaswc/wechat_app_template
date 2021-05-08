@@ -1,0 +1,5 @@
+<view class="share" 
+bindtap="share"
+wx:if="{{share == 1}}"
+>
+点击进入余味美食</view>

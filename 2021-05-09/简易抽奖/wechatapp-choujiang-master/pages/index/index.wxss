@@ -1,0 +1,53 @@
+.container{
+  position: relative;
+  height: 600rpx;
+  width: 650rpx;
+  background-color: #ddd;
+  margin: 20% auto;
+  border-radius: 5%;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, .4)
+}
+.point{
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+}
+.prizes{
+  position: absolute;
+  width: 580rpx;
+  height: 530rpx;
+  background-color: #BA52ED;
+  border-radius: 5%;
+}
+.startBtn{
+  position: absolute;
+  display: block;
+  padding: 12rpx;
+  top: 50%;
+  left: 40%;
+  height: 120rpx;
+  margin-top:-60rpx;
+  color: black;
+  text-align: center;
+  font-size: 55rpx;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 120rpx;
+  font-weight: bolder;
+  border-radius: 5%;
+}
+.prize{
+  position: relative;
+}
+.prizeImg{
+  position: absolute;
+  margin: auto;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 140rpx;
+  height: 140rpx;
+  background: green;
+}

@@ -1,0 +1,20 @@
+
+
+
+  
+  <view class="page-body">
+    <view class="page-body-wrapper">
+      <canvas canvas-id="canvas" animation="{{canvasAnimationData}}" class="canvas" style="width: 2250rpx; height: 3000rpx; position:fixed; left:{{canvasLeft}}rpx; top:{{canvasTop}}rpx;  background:url(../../image/wallpaper-1908939.jpg)"></canvas>
+      <!--<canvas canvas-id="canvas" class="canvas"></canvas>-->
+    </view>
+  </view>
+  <view class="direction-icon bc_green" catchtouchstart="curTouchStartEvent" catchtouchmove="controlDirection" catchtouchend="touchEndEvent">
+    <icon type="circle" size="45"  id="circle-icon" animation="{{rockerAnimationData}}" style="position:fixed;left:{{directionIconLeft}}rpx;top:{{directionIconTop}}rpx;"/>
+  </view>
+
+ <!--<view class="section section_gap" wx:for="{{array}}" wx:for-item="item">
+      <view class="section__title">{{item.text}}</view>
+      <view class="section__ctn">
+        <image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="{{item.mode}}" src="{{src}}"></image>
+      </view>
+    </view>-->

@@ -1,0 +1,180 @@
+{template 'common/header'}
+
+{if $_GPC['step'] == 1 || $_GPC['step'] == ''}
+<div class="account-list-add" id="js-account-post-step1" ng-controller="XzappPostStepOne" ng-cloak>
+	{if $_W['iscontroller']}
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href="{php echo url('account/manage')}"><i class="wi wi-back-circle"></i></a>
+		<li><a href="{php echo url('account/manage')}">平台列表</a></li>
+		<li>新建熊掌号</li>
+	</ol>
+	{/if}
+	<div class="panel we7-panel">
+		{if !$_W['isfounder']}
+		<div class="alert alert-warning hidden">
+			温馨提示：
+			<i class="fa fa-info-circle"></i>
+			Hi，<span class="text-strong">{$_W['username']}</span>，您所在的会员组： <span class="text-strong">{$account_info['group_name']}</span>，
+			账号有效期限：<span class="text-strong">{php echo date('Y-m-d', $_W['user']['starttime'])} ~~ {if empty($_W['user']['endtime'])}无限制{else}{php echo date('Y-m-d', $_W['user']['endtime'])}{/if}</span>，
+			可创建 <span class="text-strong">{$account_info['maxxzapp']} </span>个熊掌号，已创建<span class="text-strong"> {$account_info['xzapp_num']} </span>个，还可创建 <span class="text-strong">{$account_info['xzapp_limit']} </span>个熊掌号。
+		</div>
+		{/if}
+		<div class="panel-body we7-padding">
+			<div class="col-lg-6 list-item">
+				<span class="img img-pen"></span>
+				<div class="info">
+					<div class="title">
+						<a href="javascript:;">手动添加熊掌号</a>
+					</div>
+					<div class="con">
+						手动绑定需同步熊掌号接口，在熊掌号后台，基本设置可以获取ClientId和ClientSecret，绑定成功后，将获取的服务器配置接口绑定到熊掌号后台（切记：绑定过程中，一定要注意保持接口参数一致）
+					</div>
+					<div class="aciton">
+						<a href="{php echo url('account/create', array('sign' => 'xzapp'))}" class="btn btn-primary">手动添加熊掌号</a>
+						<!--<a href="{php echo url('xzapp/post-step', array('step' => 2))}" class="btn btn-primary">手动添加熊掌号</a>-->
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 list-item">
+				<span class="img img-tel"></span>
+				<div class="info">
+					<div class="title">
+						授权添加熊掌号
+					</div>
+					<div class="con">
+						熊掌号开发者平台-第三方平台开发 <a href="https://xiongzhang.baidu.com/open/thirdparty" class="color-default">熊掌号开发者平台</a>
+					</div>
+					<div class="action">
+						<a href="{$authurl}" class="btn btn-primary">授权添加熊掌号</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	angular.module('xzApp').value('config', {});
+	angular.bootstrap($('#js-account-post-step1'),['xzApp']);
+</script>
+
+{elseif $_GPC['step'] == 4}
+
+<div class="account-list-add-step">
+	{if $_W['iscontroller']}
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href="{php echo url('account/manage', array('account_type' => ACCOUNT_TYPE_XZAPP_NORMAL))}"><i class="wi wi-back-circle"></i> </a>
+		<li><a href="{php echo url('account/manage', array('account_type' => ACCOUNT_TYPE_XZAPP_NORMAL))}">熊掌号列表</a></li>
+		<li>新建熊掌号</li>
+	</ol>
+	{/if}
+	<div class="we7-step">
+		<ul>
+			<li>1 设置熊掌号信息</li>
+			{if !empty($_W['isfounder'])}
+			<li>2 设置权限</li>
+			<li class="active">3 引导页面</li>
+			{else}
+			<li class="active">2 引导页面</li>
+			{/if}
+		</ul>
+	</div>
+	<div class="we7-form" id="js-account-post-step4" ng-controller="XzappPostStepFour" ng-cloak>
+		<!--第四步:引导页面-->
+		<p class="alert alert-info">您绑定的熊掌号：<strong ng-bind="account.name"></strong>，请按照下列引导完成配置。</p>
+		<div class="panel we7-panel" ng-if="account.isconnect == 0">
+			<div class="panel-heading">
+				第一步
+			</div>
+			<div class="panel-body">
+				<div class="alert">
+					<i class="wi wi-info-sign"></i>
+					<span>登录 <a href="https://xiongzhang.baidu.com" class="color-default" target="_blank">熊掌号后台</a>，点击左侧菜单开发-开发设置，进入 [ <em class=" color-red">基本设置</em> ]</span>
+				</div>
+				<div class="form-group">
+					<div class="img"><img src="./resource/images/xz-guide-01.png"></div>
+				</div>
+			</div>
+		</div>
+		<div class="panel we7-panel" ng-if="account.isconnect == 0">
+			<div class="panel-heading">
+				第二步
+			</div>
+			<div class="panel-body">
+				<div class="alert">
+					<i class="wi wi-info-sign"></i>
+					<span>开发设置-基本设置中，找到［<em class="color-red"> 服务器配置</em> ］栏目下URL和Token设置</span>
+				</div>
+				<div class="form-group">
+					<div class="img"><img src="./resource/images/xz-guide-02.png"/></div>
+					<p># 将以下链接链接填入对应输入框：</p>
+					<div class="form-group clip">
+						<label class="col-sm-1 control-label">URL:</label>
+						<div class="col-sm-11 input-group">
+							<p class="form-control-static">
+								<a href="javascript:;">{$_W['siteroot']}api.php?id={$account['acid']}</a>
+								<a href="javascript:;" id="copy-0" class="color-default" clipboard supported="supported" text="url" on-copied="success('0')">&nbsp;&nbsp;点击复制</a>
+							</p>
+						</div>
+					</div>
+					<div class="form-group clip">
+						<label class="col-sm-1 control-label">Token:</label>
+						<div class="col-sm-11 input-group">
+							<p class="form-control-static">
+								<a href="javascript:;" ng-bind="account.token"></a>
+								<a href="javascript:;" id="copy-1" class="color-default" clipboard supported="supported" text="account.token" on-copied="success('1')">&nbsp;&nbsp;点击复制</a>
+							</p>
+						</div>
+					</div>
+					<div class="form-group clip">
+						<label class="col-sm-2 control-label">EncodingAESKey:</label>
+						<div class="col-sm-10 input-group">
+							<p class="form-control-static">
+								<a href="javascript:;" title="点击复制EncodingAESKey" ng-bind="account.encodingaeskey"></a>
+								<a href="javascript:;" id="copy-2" class="color-default" clipboard supported="supported" text="account.encodingaeskey" on-copied="success('2')">&nbsp;&nbsp;点击复制</a>
+							</p>
+						</div>
+					</div>
+					<p># 如果以前已填写过URL和Token，请点击[<em class=" color-red"> 修改配置 </em>] ，再填写上述链接</p>
+				</div>
+			</div>
+		</div>
+		<div class="panel we7-panel">
+			<div class="panel-heading">
+				第三步
+			</div>
+			<div class="panel-body">
+				<div class="alert">
+					<i class="wi wi-info-sign"></i>
+					<span class="color-red" ng-if="account.isconnect == 1">熊掌号 <span ng-bind="account.name"></span> 接入成功</span>
+					<span class="color-red" ng-if="account.isconnect == 0">熊掌号 <span ng-bind="account.name"></span> 正在等待接入……请及时按照以上步骤操作接入熊掌号</span>
+				</div>
+				<div class="form-group">
+					<div ng-if="account.isconnect == 0">
+						<p># 检查熊掌号配置</p>
+						<p># 编辑熊掌号 <a ng-href="{{links.post}}acid={{account.acid}}&uniacid={{account.uniacid}}">{$account['name']}</a></p>
+						<a ng-href="{{links.switch}}uniacid={{account.uniacid}}" class="btn btn-primary">完成</a>&nbsp;
+					</div>
+					<div ng-if="account.isconnect == 1">
+						<a ng-href="{{links.post}}acid={{account.acid}}&uniacid={{account.uniacid}}&account_type={{account.type}}" class="btn btn-primary">管理熊掌号</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	angular.module('xzApp').value('config', {
+		account: {php echo !empty($account) ? json_encode($account) : 'null'},
+		links: {
+			siteroot: "{$_W['siteroot']}",
+			post: "{php echo url('account/post')}",
+			manage: "{if $_W['isfounder']}{php echo url('account/manage')}{else}{php echo $_W['siteroot'].'web/home.php'}{/if}",
+			switch: "{php echo url('account/display/switch')}",
+		}
+	});
+	angular.bootstrap($('#js-account-post-step4'),['xzApp']);
+</script>
+
+{/if}
+
+{template 'common/footer'}

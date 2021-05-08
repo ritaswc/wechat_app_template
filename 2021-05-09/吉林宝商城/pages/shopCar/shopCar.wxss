@@ -1,0 +1,110 @@
+.product_list{
+    margin-bottom: 100px;
+}
+.product_item{
+    padding: 10rpx 20rpx;
+    margin-bottom: 20rpx;
+    background-color: white;
+}
+/*店铺名称*/
+.shop_msg{
+    font-size: 32rpx;
+    padding: 20rpx 0;
+    border-bottom: 1rpx solid #f3f3f3;
+}
+.shop_msg image{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.shop_msg .shop_jt{
+    width: 16rpx;
+    height:24rpx;
+}
+.shop_msg text{
+    margin-right: 120rpx;
+}
+/*商品信息*/
+.product_msg{
+    display: flex;
+    padding: 20rpx 0;
+    font-size: 30rpx;
+    border-top: 1rpx solid #f3f3f3;
+}
+.product_msg .msg_right{
+    flex: 1;
+}
+.product_msg .product_pic{
+    width: 200rpx;
+    height: 200rpx;
+    margin: 0 20rpx;
+}
+.product_msg .msg_right .num{
+    display: flex;
+    height: 40rpx;
+    width: 60%;
+    text-align: center;
+    line-height: 40rpx;
+    border: 1rpx solid #f3f3f3;
+}
+.product_msg .msg_right .num .nownum{
+    flex: 1;
+    border-left: 1rpx solid #f3f3f3;
+    border-right: 1rpx solid #f3f3f3;
+}
+.product_msg .msg_right .disnum,.product_msg .msg_right .addnum{
+    width: 40rpx;
+}
+.product_msg .msg_right .tit{
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.product_msg .msg_right .price{
+    color: #ff6662;
+    margin: 20rpx 0;
+}
+.product_msg .msg_right .delete{
+    float: right;
+    width: 34rpx;
+    height: 34rpx;
+    margin-top:-34rpx;
+}
+.footer{
+    display: flex;
+    text-align: center;
+    padding: 20rpx 20rpx;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #7a7a7a;
+}
+.footer .btn{
+    width: 30%;
+    background-color: #f12035;
+    text-align: center;
+    color: #fff;
+    font-size: 40rpx;
+    line-height: 46px;
+    font-weight: normal;
+    margin:0 40rpx;
+}
+.footer .all_money{
+    flex: 1;
+    font-size: 30rpx;
+}
+.footer .all_money .money{
+    float: right;
+    
+}
+.footer .all_money view.yf_msg{
+    float: right;
+    line-height: 30px;
+}
+.footer .select_all{
+    font-size: 32rpx;
+}

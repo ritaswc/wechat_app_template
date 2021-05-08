@@ -1,0 +1,13 @@
+<img src="{php echo tomedia('headimg_'.$phoneapp_info['acid'].'.jpg')}?time={php echo time()}" class="head-logo">
+<span class="wxapp-name">{$_W['account']['name']}</span>
+<span class="wxapp-version">{$version_info['version']}</span>
+<div class="pull-right">
+	<a href="{php echo url('miniapp/version/display')}" class="color-default"><i class="wi wi-cut-version"></i>切换版本</a>
+	{if in_array($role, array(ACCOUNT_MANAGE_NAME_OWNER, ACCOUNT_MANAGE_NAME_MANAGER)) || $_W['isfounder']}
+	<a href="{php echo url('account/post', array('uniacid' => $_W['account']['uniacid'], 'account_type' => $_W['account']['type']))}" class="color-default">
+		<i class="wi wi-manage " data-toggle="tooltip" data-placement="bottom" title="管理"></i>
+		管理
+	</a>
+	{/if}
+	<a href="{php echo url('account/display', array('type' => 'all'))}" class="color-default"><i class="wi wi-cut-account"></i>切换平台</a>
+</div>

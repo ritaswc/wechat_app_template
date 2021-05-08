@@ -1,0 +1,32 @@
+<!-- 加载公共扩展 -->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <!-- 页面内容 -->
+
+        <view a:if="{{!qrcode_pic}}" style="width: 100%;height: 100%;position: fixed;left: 0;top: 0;" class="flex flex-x-center flex-y-center">
+            <view style="text-align: center;font-size: 9pt;color: #888">
+                <image src="{{__wxapp_img.system.loading_black.url}}" style="width: 50rpx;height: 50rpx"></image>
+                <view>正在生成二维码</view>
+            </view>
+        </view>
+
+        <block a:else>
+            <view style="position: relative;text-align: center;padding-top: 140rpx;margin-bottom: 80rpx;z-index:10;">
+                <image class="header-bg" style="width: 100%;position: absolute;top: 0;left: 0;" mode="widthFix" src="{{header_bg}}"></image>
+                <image class="shop-logo" style="width: 200rpx;height: 200rpx;margin-bottom: 40rpx;border-radius: 16rpx;box-shadow: 0 0 16rpx rgba(0,0,0,.2);position:relative;" src="{{shop_logo}}"></image>
+                <view>{{shop_name}}</view>
+            </view>
+            <view style="text-align: center">
+                <image style="width: 400rpx;height: 400rpx;margin-bottom: 40rpx;box-shadow: 0 0 4rpx rgba(0,0,0,.05)" src="{{qrcode_pic}}"></image>
+                <view>扫一扫，进入店铺</view>
+                <view class='flex-x-center flex-y-center'>
+                    <view class="" style="padding: 12rpx 24rpx;background-color: #ff4544;color: #fff;margin-top: 12rpx;border-radius: 32rpx" onTap='saveQrcode'>保存二维码</view>
+                </view>
+            </view>
+        </block>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

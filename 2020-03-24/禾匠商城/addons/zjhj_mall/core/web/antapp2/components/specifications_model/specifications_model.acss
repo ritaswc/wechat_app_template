@@ -1,0 +1,115 @@
+#modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+    z-index: 9999;
+    color: #fff;
+}
+.modal-dialog {
+    width: 638rpx;
+    overflow: hidden;
+    position: fixed;
+    top: 40%;
+    left: 0;
+    background: #fff;
+    margin: -180rpx 60rpx;
+    border-radius: 16px;
+    z-index: 9999;
+}
+.close3 {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 87%;
+}
+.modal-title {
+    padding: 60rpx 90rpx 40rpx 90rpx;
+    color: #353535;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+.modal-content {
+    padding: 0rpx 32rpx;
+    font-size: 16px;
+    color: #959595;
+    height: 260rpx;
+}
+.attr-group {
+    margin-bottom: 20rpx;
+}
+.attr_name {
+    margin-top: 20rpx;
+    margin-right: 60rpx;
+    background: #f7f7f7;
+    display: inline-block;
+    padding: 0rpx 30rpx;
+    border-radius: 10rpx;
+    color: #000;
+}
+.attr_num_0 {
+    color: #959595;
+}
+
+.select_active {
+    color: #ff4544;
+    background: #fff5f5;
+}
+.modal-footer {
+    padding: 20rpx 0rpx;
+    height: 108rpx;
+    background: #f7f7f7;
+    justify-content: space-between;
+}
+.guigeprice {
+    height: 100%;
+    width: 30%;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ff4544;
+    display: flex;
+    margin-left: 32rpx;
+    align-items: center;
+}
+.btn-car_num {
+    height: 100%;
+    float: right;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32rpx;
+}
+.btn-car {
+    height: 100%;
+    width: 240rpx;
+    float: right;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32rpx;
+    margin-bottom: 20rpx;
+    border-radius: 8px;
+}
+
+.standard {
+    border-radius: 100%;
+    width: 50rpx;
+    height: 50rpx;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.good_num {
+    width:80rpx;
+    text-align:center;
+}

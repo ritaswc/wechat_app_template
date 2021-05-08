@@ -1,0 +1,2 @@
+/* pages/newjoke/newjoke.wxss */
+@import "../../weui-wxss/style/weui.wxss"

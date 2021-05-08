@@ -1,0 +1,43 @@
+
+.multiTitle{
+	width: 100%;
+}
+.multiTitle image {
+	width: 100%;
+	height: 116rpx;
+}
+
+.text {
+	padding: 60rpx;
+	font-size: 28rpx;
+	letter-spacing: 2rpx;
+	color: #666;
+}
+
+.navTitle {
+	padding: 20rpx 30rpx;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.navTitle .subnav {
+	color: #de0000;
+	padding: 6rpx 16rpx;
+	border: 2rpx solid #de0000;
+	border-radius: 30rpx;
+	font-size: 30rpx;
+
+}
+.slider {
+	/* padding: 10rpx; */
+}
+
+.navtitle {
+	padding-left: 30rpx;
+	font-size: 32rpx;
+	color: #de0000;
+}
+
+

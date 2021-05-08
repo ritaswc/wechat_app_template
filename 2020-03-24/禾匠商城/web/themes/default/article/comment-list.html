@@ -1,0 +1,30 @@
+{template 'common/header'}
+<ol class="breadcrumb we7-breadcrumb">
+    <a href="{php echo url('article/notice')}"><i class="wi wi-back-circle"></i> </a>
+    <li><a href="{php echo url('article/notice')}">公告列表</a></li>
+    <li><a href="javascript:;">留言列表</a></li>
+</ol>
+<div>
+    <div class="we7-page-search we7-padding-bottom clearfix">
+        <form action="" method="get" class="form-inline" role="form">
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" value="1" {if $_GPC['order']=='id'}checked{/if}>
+                    <a href="{php echo url('article/notice/comments', array('id'=>$id,'order' => 'id'))}">最新</a>
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" value="2" {if $_GPC['order']=='like_num'}checked{/if}>
+                    <a href="{php echo url('article/notice/comments', array('id'=>$id,'order' => 'like_num'))}">最多赞</a>
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="panel we7-panel">
+        <div class="panel-heading">
+            <span>全部留言</span>
+            <span class="pull-right">操作</span>
+        </div>
+        {template 'article/comments'}
+    </div>
+</div>
+{template 'common/footer'}

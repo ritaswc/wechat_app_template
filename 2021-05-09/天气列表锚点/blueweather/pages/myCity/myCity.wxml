@@ -1,0 +1,14 @@
+
+<!--index.wxml-->
+<view class="container">
+
+    <view wx:for="{{myCity}}" class="item">
+      <view class="item-city-container">
+        <text class="item-city">{{item}}</text>
+      </view>
+      <view class="delete-city-btn-container">
+        <button class="delete-city-btn" id="{{item}}" bindtap="deleteCityEvent">删除</button>
+      </view>
+    </view>
+    <button class="add-city-btn" bindtap="addCityEvent">添加城市</button>
+</view>

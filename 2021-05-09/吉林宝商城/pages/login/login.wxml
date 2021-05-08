@@ -1,0 +1,20 @@
+<view class="container">
+	<view class="wrap">
+		<view class="item"><view>手机号：</view><input/></view>
+		<view class="item"><view>密码：</view><input password="true"/></view>
+	</view>
+	<view class="login_other"><view>快速注册</view><view>短信登录</view></view>
+	<view class="login_btn">登录</view>
+
+
+	<view class="footer">
+		<view>
+			<image src="../../images/jlibomlogo.png"></image>
+		</view>
+		<text> Copyright@2016吉利宝 All Right Reserved </text>		
+	</view>
+
+
+
+
+</view>

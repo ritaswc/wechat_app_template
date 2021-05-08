@@ -1,0 +1,76 @@
+
+
+.title_style {
+  color: #000;
+  line-height: 28px;
+}
+
+.date_style, .distance_style {
+  color: #ccc;
+  font-size: 24rpx;
+  line-height: 14px;
+}
+
+.distance_style {
+  font-size: 20rpx;
+}
+
+.intro_info {
+  font-size: 32rpx;
+  color: #ccc;
+  line-height: 30px;
+}
+
+.container {
+  position: relative;
+}
+
+.setflex {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+
+.listItem {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 5px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.listItem .imgWrap {
+  width: 100rpx;
+  height: 100rpx;
+  border: 1px solid #ebebeb;
+  border-radius: 50%;
+  padding: 5px;
+  margin-top: 2px;
+}
+
+.listItem image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.listItem .intro {
+  width: 80%;
+  padding-top: 3px;
+}
+
+.listItem .intro text {
+  display: block;
+}
+
+.list {
+  position: relative;
+  background: #fff;
+  margin-top: 10px;
+}
+
+.list .lst {
+  padding: 20px 10px;
+  border-bottom: 1px solid #ccc;
+}

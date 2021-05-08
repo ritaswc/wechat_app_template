@@ -1,0 +1,68 @@
+/* pages/allrest/rest.wxss */
+@import "../style/commonrest.wxss";
+
+.nav_list {
+  background: #fff;
+  white-space: nowrap;
+  height: 80rpx;
+  overflow-x: scroll;
+  position: relative;
+}
+
+.label_name {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  line-height: 80rpx;
+  padding: 0 30rpx;
+  font-size: 32rpx;
+  color: #1a1a1a;
+}
+
+.active {
+  color: #ffa10d;
+}
+
+.content {
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0 22rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.item_cost {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.item_type {
+  display: inline-block;
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.xt {
+  width: 40%;
+  height: 2rpx;
+  background: #c6c6c6;
+}
+
+.num {
+  padding: 20rpx 0;
+}
+
+.num text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.num text:nth-child(2) {
+  width: 20%;
+  font-size: 26rpx;
+  color: #c6c6c6;
+  text-align: center;
+}

@@ -1,0 +1,32 @@
+
+<!--index.wxml-->
+<view class="container">
+<!--店铺头部信息-->
+  <view class="topMsg">
+    <view bindtap="toPartner" class="shop_msg">
+			<view class="shop_photo"><image src="../../images/chanpin.png"></image></view>
+			<view class="shop_msg_left">
+				<view class="shop_name">
+					<text>路路小朋友</text>
+          <view class="shop_lv">
+            <image src="../../images/member_bg02.png"></image><text class="shop_lv_num">1</text>
+          </view>
+          <text>★★</text>
+				</view>
+				<view class="shop_desc">你愁啥，瞅你咋地，再瞅试试！试试就试试！</view>
+				<view class="shop_label"><image src="../../images/label_quanqiu.png"></image></view>
+			</view>
+			<view class="shop_msg_right">
+				<view class="ul">
+					<view class="li"><text>粉丝</text><text class="strong">5</text></view>
+					<view class="li"><text>代卖</text><text class="strong">500</text></view>
+					<view class="li"><text>商品</text><text class="strong">50</text></view>
+				</view>
+			</view>
+		</view>
+  </view>   <!--shop信息end-->
+  <!--今日收入-->
+  <view class="today_income"><view>今日收入</view><view>1200</view></view>
+  <!--今日收入end-->
+
+</view>

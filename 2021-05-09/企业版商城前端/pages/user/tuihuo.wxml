@@ -1,0 +1,24 @@
+
+<!--pages/order/downline.wxml-->
+<view class="w100">
+  <view class="p_all">请认真填写好下面退货信息</view>
+  <view class="p_all01 mt10 bg">
+    <view class=" mt10">
+      <!-- <view class="c3">退货原因</view> -->
+      <input class="inputStyle" name="input" bindinput="reasonInput" placeholder="退货原因" value="{{reason}}" />
+    </view>
+    <view class=" mt10">
+      <!-- <view class="c3">退货描述</view> -->
+      <textarea class="min_60 inputStyle" auto-height name="remark" placeholder="退货描述" bindinput="remarkInput" value="{{remark}}"/> 
+    </view>
+    <view class=" mt10">
+      <view class="c3">图片凭证</view>
+      <button bindtap="uploadImgs">上传图片</button>
+    </view>
+  </view>
+  <view class="p_all01 mtt0">
+    <view class="btnGreen">
+      <button type="primary" id="btnPay" formType="submit" bindtap="submitReturnData">确定</button>
+    </view>
+  </view>
+</view>

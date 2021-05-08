@@ -1,0 +1,105 @@
+/* pages/toRegister/toRegister.wxss */
+.container{
+    background-color: #f4f4f4;
+    height: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    position: fixed;
+}
+
+.login{
+    margin-top: 10px;
+}
+
+.loginTel{
+    height: 50px;
+    width: 100%;
+    position: relative; 
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.loginPassw,.vipInvate{
+    height: 50px;
+    width: 100%;
+    position: relative; 
+}
+
+.user_text{
+    color: #000000;
+    font-size: 18px;
+    position: absolute;
+    z-index: 1001;
+    margin: 15px;
+}
+
+.user_input{
+    height: 50px;
+    background-color: #fff;
+    padding-left: 120px;
+}
+/*placeholder样式*/
+.placeholder{
+    font-size: 16px;
+    color: #999999;
+}
+
+.vipInvate{
+    margin-top: 10px;
+}
+
+.button{
+    margin: 30px auto;
+    width: 92%;
+    background-color: #00acff; 
+}
+
+.button_pressed{
+    background-color: #00a1e0;
+}
+
+.button_text{
+     color: #FFFFFF;
+}
+
+.registAgreement{ 
+     width: 92%;
+     position: relative;
+     left: 4%;
+}
+
+.registAgreement_text{
+    font-size: 12px;
+    color: #999999;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.userAgreement{
+    display: inline-block;
+    font-size: 12px; 
+    color: #00acff;
+    position: absolute;
+    left: 132px;
+    margin-top: -10px;
+}
+
+.footer{
+    position: absolute;
+    left: 22%;
+    bottom: 3.5rem;
+}
+
+.my_view{
+    display: inline-block;
+    margin: 0 1px;
+}
+
+.my_text{
+    font-size: 12px;
+    color: #999999;
+}
+
+.footer_text{
+    font-size: 12px;
+    color: #00acff;
+}

@@ -1,0 +1,160 @@
+<!--pages/myresume/myresume.wxml-->
+<view class="myresume_wrap">
+    <view class="m_title">
+        你当前简历的完整度: {{percent}}%
+        <progress percent="{{percent}}"stroke-width="10" color="#f18e2e" active />
+    </view>
+    <view class="middle">
+        <navigator url="../jobstatus/jobstatus?status={{job_status_text}}">
+            <view class="dingyue ">
+                <view class="left">
+                    求职状态
+                </view>
+                <view class="right">
+                    {{job_status_text}}
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <navigator url="../howPublic/howPublic?public={{privacy}}">
+            <view class="dingyue" style="border-bottom:none;">
+                <view class="left">
+                    公开程度
+                </view>
+                <view class="right">
+                    {{privacy}}
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <!--完整信息,让企业记住你-->
+    <view class="tuijian">
+        <view></view>
+        <text>完整信息,让企业记住你</text>
+        <view></view>
+    </view>
+    <view class="middle">
+        <navigator url="../basicInf/basicInf">
+            <view class="dingyue ">
+                <view class="left">
+                    基本信息
+                </view>
+                <view class="right">
+                    {{info_text}}
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <!--<navigator url="../objecTive/objecTive">
+            <view class="dingyue">
+                <view class="left">
+                    求职意向
+                </view>
+                <view class="right">
+                    完整
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>-->
+        <!--<navigator url="">
+            <view class="dingyue">
+                <view class="left">
+                    教育经历
+                </view>
+                <view class="right">
+                    {{education_text}}
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>-->
+        <navigator url="../experience/experience">
+            <view class="dingyue" style="border-bottom:none;">
+                <view class="left">
+                    工作经验
+                </view>
+                <view class="right">
+                    {{experience_text}}
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <!--加分信息,让企业对你更多心动-->
+    <!--<view class="tuijian">
+        <view></view>
+        <text>加分信息,让企业对你更多心动</text>
+        <view></view>
+    </view>
+
+    <view class="middle">
+        <navigator url="">
+            <view class="dingyue ">
+                <view class="left">
+                    语言能力
+                </view>
+                <view class="right">
+                    完整
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <navigator url="">
+            <view class="dingyue">
+                <view class="left">
+                    技能和特长
+                </view>
+                <view class="right">
+                    完整
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <navigator url="">
+            <view class="dingyue">
+                <view class="left">
+                    培训经历
+                </view>
+                <view class="right">
+                    完整
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <navigator url="">
+            <view class="dingyue">
+                <view class="left">
+                    证书
+                </view>
+                <view class="right">
+                    完整
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <navigator url="">
+            <view class="dingyue" >
+                <view class="left">
+                    其他<text>(自我评价,兴趣爱好等)</text>
+                </view>
+                <view class="right">
+                    完整
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <navigator url="">
+            <view class="dingyue" style="border-bottom:none;">
+                <view class="left">
+                    简历预览<text></text>
+                </view>
+                <view class="right">
+                    <image class="image2" src="../mycenter/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>
+    </view>-
+    <view class="last">
+        上传作品、附件请登录www.veryeast.cn 最佳东方官网完善。
+    </view>-->
+</view>

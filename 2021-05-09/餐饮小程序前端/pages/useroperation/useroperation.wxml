@@ -1,0 +1,205 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="user-opertaion">
+  <!--我的排单-->
+  <view wx:if="{{ operation == 'number' }}" class="number">
+    <view class="number-top">
+      <image src="{{ numberList.img }}"></image>
+      <view class="n-t-center">
+        <text>{{ numberList.name }}</text>
+        <text>{{ numberList.kind }}|人均{{ numberList.average }}元|<text class="iconfont icon-icglobaltitlebar48iconfontmap">{{ numberList.distance }}</text>m</text>
+      </view>
+    </view>
+    <view class="number-bottom">
+      <text class="iconfont icon-danren03"><text>{{ numberList.desk }}</text>等待{{ numberList.wait }}桌</text>
+      <text>请听到叫号立即到收银台</text>
+    </view>
+  </view>
+  <!--我的消息-->
+  <view wx:if="{{ operation == 'message' }}" class="message">
+    <view bindtap="chooseMessage" data-message="{{ index }}" class="message-wrap" wx:for="{{ message }}" wx:key="unique">
+      <view class="m-w-top iconfont icon-552cc4077f2ed triangle {{ showMessage === index ? 'triangle-animation' : '' }}">
+        {{ item.title }}
+      </view>
+      <view class="m-w-content">
+        <text class="m-w-c-text {{ showMessage !== index ? 'm-w-content-text' : '' }}">{{ item.content }}</text>
+        <text>{{ item.time }}</text>
+      </view>
+    </view>
+  </view>
+  <!--我的积分-->
+  <view wx:if="{{ operation == 'integral' }}" class="integral">
+    <view class="integral-wrap" wx:for="{{ integral }}" wx:key="unique">
+      <image src="{{ item.img }}"></image>
+      <view class="i-w-center">
+        <text>{{ item.name }}{{ item.delMoney }}元优惠券</text>
+        <text>满{{ item.useMoney }}元使用</text>
+        <text>{{ item.needIntegral }}积分兑换</text>
+        <text>节假日不限</text>
+      </view>
+      <view class="integral-change" data-integralid="{{ item.integralid }}">立即兑换</view>
+    </view>
+  </view>
+  <!--我的优惠券-->
+  <view wx:if="{{ operation == 'coupon' }}" class="coupon">
+    <!--顶部tab-->
+    <view class="coupon-top">
+        <view bindtap="chooseCouponTab" data-tabid="{{ index }}" class="coupon-top-item {{ currentCouponTab == index ? 'active' : '' }}" wx:for="{{ couponNumber }}">
+          {{ item.title }}({{ item.count }})
+        </view>
+    </view>
+    <view class="coupon-no-use" hidden="{{ currentCouponTab != 0 }}">
+      <block wx:for="{{ couponNoUseList }}">
+        <navigator class="coupon-list" url="../detail/detail?kind={{ item.id }}">
+            <view class="coupon-list-top">
+              <view class="c-l-t-left">
+                <text class="c-l-t-left-one" hidden="{{ !item.delMoney  }}"><text>￥</text>{{ item.delMoney }}</text>
+                <text class="c-l-t-left-one" hidden="{{ !item.discount  }}">{{ item.discount }} <text>折</text></text>
+              </view>
+              <view class="c-l-t-center">{{ item.useCondition }}</view>
+              <view class="c-l-t-right iconfont icon-youhuiquan">{{ item.name }}</view>
+            </view>
+            <!--圆圈-->
+            <view class="circle">
+              <view class="circle-item" wx:for="123456789qwertyuiopasdfghjklzxcvbnmqweqweq"></view>
+            </view>
+            <view class="time">
+              有效期　　{{ item.starTime }}-{{ item.endTime }}
+            </view>
+        </navigator>
+      </block>
+    </view>
+    <view class="coupon-use" hidden="{{ currentCouponTab != 1 }}">
+      <block wx:for="{{ couponUseList }}">
+        <view class="coupon-list">
+          <view class="coupon-list-top">
+            <view class="c-l-t-left">
+              <text class="c-l-t-left-one" hidden="{{ !item.delMoney  }}"><text>￥</text>{{ item.delMoney }}</text>
+              <text class="c-l-t-left-one" hidden="{{ !item.discount  }}">{{ item.discount }} <text>折</text></text>
+            </view>
+            <view class="c-l-t-center">{{ item.useCondition }}</view>
+            <view class="c-l-t-right iconfont icon-youhuiquan">{{ item.name }}</view>
+          </view>
+          <!--圆圈-->
+          <view class="circle">
+            <view class="circle-item" wx:for="123456789qwertyuiopasdfghjklzxcvbnmqweqweq"></view>
+          </view>
+          <view class="time">
+            有效期　　{{ item.starTime }}-{{ item.endTime }}
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="coupon-use-finish" hidden="{{ currentCouponTab != 2 }}">
+      <block wx:for="{{ couponNoUseList }}">
+        <view class="coupon-list">
+          <view class="coupon-list-top">
+            <view class="c-l-t-left">
+              <text class="c-l-t-left-one" hidden="{{ !item.delMoney  }}"><text>￥</text>{{ item.delMoney }}</text>
+              <text class="c-l-t-left-one" hidden="{{ !item.discount  }}">{{ item.discount }} <text>折</text></text>
+            </view>
+            <view class="c-l-t-center">{{ item.useCondition }}</view>
+            <view class="c-l-t-right iconfont icon-youhuiquan">{{ item.name }}</view>
+          </view>
+          <!--圆圈-->
+          <view class="circle">
+            <view class="circle-item" wx:for="123456789qwertyuiopasdfghjklzxcvbnmqweqweq"></view>
+          </view>
+          <view class="time">
+            有效期　　{{ item.starTime }}-{{ item.endTime }}
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!--我的订单-->
+  <view wx:if="{{ operation == 'order' }}" class="order">
+    <view class="coupon-top">
+      <view bindtap="chooseCouponTab" data-tabid="{{ index }}" class="coupon-top-item {{ currentCouponTab == index ? 'active' : '' }}" wx:for="{{ orderNumber }}">
+        {{ item }}
+      </view>
+    </view>
+    <view class="order-pend " hidden="{{ currentCouponTab != 0 }}">
+      <view class="go-pay" wx:for="{{ orderList.pay }}">
+        <view class="go-pay-top">
+          <image src="{{ item.img }}"></image>
+          <view class="g-p-t-center">
+            <text>{{ item.name }}</text>
+            <text>{{ item.code }}</text>
+            <text>{{ item.time }}</text>
+          </view>
+        </view>
+        <view class="go-pay-bottom">
+          <text>￥{{ item.money }}</text>
+          <view class="go-pay-btn" bindtap="goPay" data-id="{{ item.code }}">去支付</view>
+        </view>
+      </view>
+    </view>
+    <view class="order-all " hidden="{{ currentCouponTab != 1 }}">
+      <view class="go-pay" wx:for="{{ orderList.pay }}">
+        <view class="go-pay-top">
+          <image src="{{ item.img }}"></image>
+          <view class="g-p-t-center">
+            <text>{{ item.name }}</text>
+            <text>{{ item.code }}</text>
+            <text>{{ item.time }}</text>
+          </view>
+        </view>
+        <view class="go-pay-bottom">
+          <text>￥{{ item.money }}</text>
+          <view class="go-pay-btn">去支付</view>
+        </view>
+      </view>
+      <view class="go-finish" wx:for="{{ orderList.finish }}">
+        <view class="go-pay-top">
+          <image src="{{ item.img }}"></image>
+          <view class="g-p-t-center">
+            <text>{{ item.name }}</text>
+            <text>{{ item.code }}</text>
+            <text>{{ item.time }}</text>
+          </view>
+          <view class="iconfont icon-bhjyizhifu"></view>
+        </view>
+        <view class="go-pay-bottom">
+          <text>消费￥{{ item.money }}</text>
+          <text>优惠￥{{ item.delMoney }}</text>
+          <text>实付<text class="act-money">￥{{ item.actMoney }}</text></text>
+        </view>
+        <view class="show-btn">
+          <view data-restaurantid="{{ orderList.finish.restaurantId }}" data-kind="shop" bindtap="goGratuity">给店家打分</view>
+          <view data-waiterid="{{ orderList.finish.waiterId }}" data-kind="worker" bindtap="goGratuity">给服务员打赏</view>
+        </view>
+      </view>
+      <view class="cancel-pay" wx:for="{{ orderList.cancel }}">
+        <view class="go-pay-top">
+          <image src="{{ item.img }}"></image>
+          <view class="g-p-t-center">
+            <text>{{ item.name }}</text>
+            <text>{{ item.code }}</text>
+            <text>{{ item.time }}</text>
+          </view>
+          <view class="iconfont icon-tubiaoyiquxiao01"></view>
+        </view>
+        <view class="go-pay-bottom">
+          <text>消费￥{{ item.money }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--商家入驻-->
+  <view wx:if="{{ operation == 'merchant' }}" class="merchant">
+    <view class="img-wrap">
+      <image src="../../images/1.png"></image>
+    </view>
+    <view class="merchant-introduce">先简单介绍你的店铺吧</view>
+    <view class="merchant-input">
+      <input bindinput="shopNameInput" placeholder="请输入您的店铺名称"/>
+      <!--<view bindtap="chooseShopKind" class="triangle">{{ shopKind }}</view>-->
+      <picker class="triangle" bindchange="chooseShopKind" value="{{ index }}" range="{{ shopArray }}">
+        <view class="picker">
+          {{ shopArray[index] }}
+        </view>
+      </picker>
+    </view>
+    <button bindtap="startShop" class="start-shop">去开店</button>
+  </view>
+</view>

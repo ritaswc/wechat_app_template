@@ -1,0 +1,7 @@
+<view class="container">
+    <input value="{{value}}" bindinput="inputHandle" />
+    <view class="btn-wrapper">
+        <view class="cancel-btn" bindtap="backInfoPage">取消</view>
+        <view class="save-btn" bindtap="saveInfoHandle">保存</view>
+    </view>
+</view>

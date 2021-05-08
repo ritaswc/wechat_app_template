@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navBar": "/components/navBar/navBar",
+    "pulltorefresh-view": "../../components/wx-pulltorefresh-view/wx-pulltorefresh-view"
+  },
+    "enablePullDownRefresh": true
+}

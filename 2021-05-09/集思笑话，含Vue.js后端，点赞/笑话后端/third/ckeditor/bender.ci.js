@@ -1,0 +1,1 @@
+﻿var config=require("./bender");config.startBrowser="Chrome";config.mathJaxLibPath="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config\x3dTeX-AMS_HTML";module.exports=config;

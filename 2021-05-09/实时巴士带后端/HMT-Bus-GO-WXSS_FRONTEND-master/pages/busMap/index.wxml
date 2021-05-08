@@ -1,0 +1,101 @@
+<!-- HMT Bus GO! (WXSS VER.) -->
+<!-- 校巴地图页 -->
+
+<page>
+	<view class="page">
+
+		<map id="busMap" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" scale="{{scale}}" style="width: 100%;height: {{height}}px;" bindregionchange="regionChange" controls="{{controls}}" bindcontroltap="controlTap" bindmarkertap="markerTap" polyline="{{polyline}}" show-location></map>
+
+		<view class="page__bd">
+			<view class="weui-cells__title">显示线路（点按可在地图上标出）</view>
+			<view class="weui-cells weui-cells_after-title">
+				<block wx:for="{{lineList}}" wx:for-item="line">
+					<view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="showBusLine" id="{{line.line_id}}">
+						<view class="weui-cell__bd"><span style="color: {{line.poly_color}};">—</span> {{line.line_name}} [ {{line.line_start}} 开往 {{line.line_end}} ]</view>
+						<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+					</view>
+				</block>
+			</view>
+			<view class="weui-cells__title">终端信息</view>
+						<block wx:for="{{online}}" wx:for-item="online">
+				<view class="weui-form-preview">
+					<view class="weui-form-preview__hd">
+						<view class="weui-form-preview__label">车牌号</view>
+						<view class="weui-form-preview__value_in-hd">{{online.BUS_NUM}}</view>
+					</view>
+					<view class="weui-form-preview__bd">
+						<view class="weui-form-preview__item">
+							<view class="weui-form-preview__label">在线状态</view>
+							<view class="weui-form-preview__value text-primary">在线</view>
+						</view>
+						<view class="weui-form-preview__item">
+							<view class="weui-form-preview__label">执行线路</view>
+							<view class="weui-form-preview__value">
+								<block wx:if="{{online.LINE_NAME}}">{{online.LINE_NAME}}</block>
+								<block wx:else>未知</block>
+							</view>
+						</view>
+						<view class="weui-form-preview__item">
+							<view class="weui-form-preview__label">当前站</view>
+							<view class="weui-form-preview__value">
+								<block wx:if="{{online.CURRENT_STOP_NAME}}">{{online.CURRENT_STOP_NAME}}</block>
+								<block wx:else>未知</block>
+							</view>
+						</view>
+						<view class="weui-form-preview__item">
+							<view class="weui-form-preview__label">下一站</view>
+							<view class="weui-form-preview__value">
+								<block wx:if="{{online.NEXT_STOP_NAME}}">{{online.NEXT_STOP_NAME}}</block>
+								<block wx:else>未知</block>
+							</view>
+						</view>
+						<view class="weui-form-preview__item">
+							<view class="weui-form-preview__label">GPS最后更新时间</view>
+							<view class="weui-form-preview__value">{{online.UPDATE_TIME}}</view>
+						</view>
+					</view>
+				</view>
+			
+				<view class="wrap"></view>
+
+			</block>
+
+
+			<block wx:for="{{offline}}" wx:for-item="offline">
+				<view class="weui-form-preview">
+					<view class="weui-form-preview__hd">
+						<view class="weui-form-preview__label">车牌号</view>
+						<view class="weui-form-preview__value_in-hd">{{offline.BUS_NUM}}</view>
+					</view>
+					<view class="weui-form-preview__bd">
+						<view class="weui-form-preview__item">
+							<view class="weui-form-preview__label">在线状态</view>
+							<view class="weui-form-preview__value text-error">离线</view>
+						</view>
+						<view class="weui-form-preview__item">
+							<view class="weui-form-preview__label">执行线路</view>
+							<view class="weui-form-preview__value">不可用</view>
+						</view>
+						<view class="weui-form-preview__item">
+							<view class="weui-form-preview__label">当前站</view>
+							<view class="weui-form-preview__value">不可用</view>
+						</view>
+						<view class="weui-form-preview__item">
+							<view class="weui-form-preview__label">下一站</view>
+							<view class="weui-form-preview__value">不可用</view>
+						</view>
+						<view class="weui-form-preview__item">
+							<view class="weui-form-preview__label">GPS最后更新时间</view>
+							<view class="weui-form-preview__value">{{offline.UPDATE_TIME}}</view>
+						</view>
+					</view>
+				</view>
+
+				<view class="wrap"></view>
+
+			</block>
+		</view>
+
+	</view>
+	
+</page>

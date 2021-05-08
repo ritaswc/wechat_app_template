@@ -1,0 +1,53 @@
+
+<view class="content">
+    <view class="address">
+        <view class="address-item-top">
+            <view>
+                <text>收货人：{{userAddress.consignee}}</text>
+                <text class="pull-right">{{userAddress.tel}}</text>
+            </view>
+            <view>收货地址：{{userAddress.address}}</view>
+        </view>
+        <view class="address-item-right" bindtap="changeAddress"><image src="/asset/img/minearrow.png" ></image></view>
+    </view>
+    <view class="goods-info">
+        <image src="{{goodsInfo.order_img}}"></image>
+        <view class="goods-info-handler">
+            <view class="goods-info-name"><text>{{goodsInfo.goods_name}}</text></view>
+            <view class="goods-info-price">
+                <text>¥{{goodsInfo.goods_now_price}}</text>
+                <view class="calc">
+                    <text bindtap="optionNum" data-type="plus">+</text>
+                    <text>{{num}}</text>
+                    <text bindtap="optionNum" data-type="reduce">-</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="coupon">
+        <view><text>使用优惠券</text></view>
+        <view class="show-coupon">
+            <text wx:if="{{!hasCoupon}}">暂无优惠券</text> 
+            <image src="/asset/img/minearrow.png" wx:else bindtap="selectCoupon"></image>
+        </view>
+    </view>
+    <view class="coupon">
+        <text>支付方式</text>
+        <text>微信支付</text>
+    </view>
+    <view class="coupon">
+        <text>运费</text>
+        <text>免邮</text>
+    </view>
+    <view class="footer">
+        <view class="footer-left">
+            当前价格 
+            <text>¥ {{goodsAmount}}</text>
+        </view>
+        <view class="footer-right" bindtap="pay">支付</view>
+    </view>
+</view>
+
+
+<import src="/asset/template/backhome.wxml" />
+<template is="backhome"/>

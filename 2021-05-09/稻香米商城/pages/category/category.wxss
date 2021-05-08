@@ -1,0 +1,33 @@
+.item-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 100rpx;
+}
+
+.item {
+  width: 335rpx;
+  margin-bottom: 80rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.item image {
+  width: 335rpx;
+  height: 335rpx;
+  margin-bottom: 20rpx;
+}
+
+.item .first-line {
+  font-size: 25rpx;
+  margin-bottom: 20rpx;
+}
+
+.item .second-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

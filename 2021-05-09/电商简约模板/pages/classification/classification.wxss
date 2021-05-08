@@ -1,0 +1,32 @@
+/* pages/classification/classification.wxss */
+.title {
+	margin-top: 30rpx;
+}
+
+.line-red {
+	margin-left: 20rpx;
+}
+
+.line-name {
+	margin-left: 10rpx;
+}
+
+.content {
+	width: 100%;
+	margin-top: 80rpx;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+.content-cell {
+	text-align: center;
+	margin-top: 50rpx;
+}
+
+.content-cell image {
+	width: 200rpx;
+	height: 200rpx;
+	border-radius: 100rpx;
+	margin-bottom: 20rpx;
+}

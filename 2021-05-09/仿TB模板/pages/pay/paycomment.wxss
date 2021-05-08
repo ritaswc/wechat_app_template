@@ -1,0 +1,173 @@
+page {
+  background: #fff;
+}
+
+.container {
+  position: fixed;
+  bottom: 0;
+  width: 90%;
+  height: 100%;
+  padding: 0 20px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.pay-info {
+  width: 100%;
+  padding: 20px 0 0;
+  overflow: hidden;
+}
+
+.info-state {
+  margin:0 auto;
+  width:400rpx;
+  height:auto;
+  color: #ff7e01;
+  padding: 10rpx 4rpx 20rpx 4rpx;
+}
+.info-state icon{
+   vertical-align:text-bottom;
+}
+.state-h {
+  padding: 10px 0;
+  margin: 0;
+  text-align: center;
+  font-weight: normal;
+  font-size: 42rpx;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.state-b {
+  display: block;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 60rpx;
+  color: #333;
+  font-weight:800;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.title {
+  width: 100%;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.title:after {
+  top: 324rpx;
+  bottom: 0;
+  border-bottom: #dedede solid 1px;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  content: '';
+  overflow: hidden;
+}
+
+.title-h {
+  position: relative;
+  display: inline-block;
+  padding: 0 5px;
+  margin: 0;
+  background: #fff;
+  line-height: 21px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #999;
+  z-index: 2;
+}
+
+.star {
+  padding: 12px 0 0;
+  text-align: center;
+}
+
+.star-image {
+  top: 50rpx;
+  padding: 0 6rpx 0 6rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.item {
+  margin-top: -50rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.commemt {
+  padding: 0 20px;
+}
+
+.box {
+  padding-top: 20rpx;
+  overflow: hidden;
+  display: block;
+}
+
+.box-title {
+  width: 100%;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 15px;
+  color: #ff7e01;
+  overflow: hidden;
+}
+
+.box-ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.box-li {
+  float: left;
+  width: 30%;
+  height: 36px;
+  margin: 20rpx 14rpx 0 0;
+  border: #dedede solid 1px;
+  text-align: center;
+  line-height: 36px;
+  font-size: 14px;
+  color: #999;
+  border-radius: 17px;
+}
+
+.box-area {
+  width: 92%;
+  height: 110px;
+  margin: 12px 0 0;
+  padding: 5px 8px;
+  border: #dedede solid 1px;
+  line-height: 22px;
+  font-size: 14px;
+  color: #666;
+  border-radius: 6px;
+}
+
+.area {
+  padding-left: -10px;
+}
+
+.box-pic {
+  margin: 10px 10px 10px 0;
+  width: 100%;
+  max-height: 166px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.pic {
+  padding: 0 10rpx 10rpx 0;
+  width: 30%;
+  height: 180rpx;
+}
+
+.btn {
+  position: fixed;
+  bottom: 0;
+  width: 90%;
+}

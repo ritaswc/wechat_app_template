@@ -1,0 +1,15 @@
+<template name="card">
+  <image class="poster" src="{{item.thumbnail}}"></image>
+  <view class="meta">
+    <text class="title">{{item.title}}</text>
+    <view class="other clearfloat">
+      <view class="source">
+        <image wx:if="{{item.subscribe.logo}}" src="{{item.subscribe.logo}}" class="logo" />
+        <text wx:if="{{item.source}}" class="detail">{{item.source}}</text>
+      </view>
+      <text wx:if="{{item.commentsall}}" class="comment">{{item.commentsall}}</text>
+      <view wx:if="{{item.style.attribute}}" class="zhuanti">{{item.style.attribute}}</view>
+      <view wx:elif="{{item.type == 'sports_live'}}" class="comment" style="color: #de0000;">直播中  . . . </view>
+    </view>
+  </view>
+</template>

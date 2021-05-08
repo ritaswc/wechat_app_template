@@ -1,0 +1,222 @@
+.order-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    transform: translateY(100%);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.order-modal .modal-bg {
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: 350ms;
+}
+
+.order-modal .modal-dialog {
+    background: #fff;
+    width: 75vw;
+    border-radius: 16rpx;
+    box-shadow: 0 2rpx 10rpx rgba(0,0,0,.1);
+    opacity: .25;
+    transform: translateY(50%);
+    transition: 250ms;
+    overflow: hidden;
+}
+
+.order-modal .modal-header {
+    text-align: center;
+    padding: 40rpx 0;
+    font-weight: 400;
+}
+
+.order-modal .modal-body {
+}
+
+.order-modal .modal-footer {
+    border-top: 1rpx solid #eee;
+}
+
+.order-modal .modal-cancel,.order-modal .modal-confirm {
+    background: #fff;
+    font-weight: 11pt;
+    font-family: inherit;
+    height: 88rpx;
+    line-height: 88rpx;
+    padding: 0 0;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    color: #555;
+    position: relative;
+}
+
+.order-modal .modal-confirm {
+    color: #ff4544;
+}
+
+.order-modal .modal-cancel:after,.order-modal .modal-confirm:after {
+    display: none;
+}
+
+.order-modal .modal-split {
+    position: absolute;
+    right: 0;
+    top: 22rpx;
+    height: 44rpx;
+    width: 1rpx;
+    background: #e3e3e3;
+}
+
+.order-modal .modal-footer .button-hover {
+    opacity: .75;
+    background: #e3e3e3;
+}
+
+.order-modal.show {
+    transform: translateY(0%);
+}
+
+.order-modal.show .modal-bg {
+    opacity: 1;
+}
+
+.order-modal.show .modal-dialog {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.order-item-btn {
+    display: inline-block;
+    font-size: 9pt;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 0 24rpx;
+    margin-left: 24rpx;
+    border: 1rpx solid #ccc;
+    color: #555;
+    border-radius: 8rpx;
+    background: #fff;
+    margin-bottom: -10rpx;
+}
+
+.order-item-btn.button-hover {
+    opacity: .75;
+}
+
+.order-item-btn:after {
+    display: none;
+}
+
+.order-tab {
+}
+
+.order-tab .order-tab-item {
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-bottom: 1rpx solid #eee;
+}
+
+.order-tab .order-tab-item.active {
+    background: #ff4544;
+    color: #fff;
+    border-bottom-color: #ff4544;
+}
+
+.order-modal-btn {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 32rpx;
+    border: 1rpx solid #e2e2e2;
+    border-radius: 16rpx;
+    font-size: 11pt;
+    margin: 0 0;
+}
+
+.order-modal-btn.active {
+    background: #ff4544;
+    color: #fff;
+    border-color: #ff4544;
+}
+
+.order-input {
+    height: 88rpx;
+    line-height: 88rpx;
+    padding: 0;
+    border: none;
+    border-bottom: 1rpx solid #e3e3e3;
+}
+
+.goods-name {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 32rpx;
+    line-height: 36rpx;
+    height: 72rpx;
+    word-break: break-all;
+    color: #888;
+    margin-bottom: 12rpx;
+}
+
+.express-detail-list {
+}
+
+.express-detail-item {
+    position: relative;
+    padding-left: 24rpx;
+    font-size: 9pt;
+    margin-bottom: 32rpx;
+}
+
+.express-detail-item::before {
+    position: absolute;
+    left: -9rpx;
+    top: 16rpx;
+    content: " ";
+    display: inline-block;
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 999rpx;
+    background: #ccc;
+    z-index: 1;
+}
+
+.express-detail-item::after {
+    position: absolute;
+    left: 0;
+    top: 30rpx;
+    bottom: -50rpx;
+    content: " ";
+    display: inline-block;
+    width: 2rpx;
+    background: #ccc;
+    z-index: 0;
+}
+
+.express-detail-item:first-child::before {
+    background: #25ae5f;
+    width: 20rpx;
+    height: 20rpx;
+    left: -13rpx;
+    border: 5rpx solid #a5e2ad;
+}
+
+.express-detail-item:first-child {
+    color: #25ae5f;
+}
+
+.express-detail-item:last-child::after {
+    display: none;
+}

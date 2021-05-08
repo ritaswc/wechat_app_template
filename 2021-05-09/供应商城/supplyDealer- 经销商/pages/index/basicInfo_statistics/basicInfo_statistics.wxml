@@ -1,0 +1,80 @@
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<!--基础信息统计-->
+<view class="container">
+
+  <!--日订单统计-->
+  <view class="order-statistics">
+    <view class="statistics-title">单日订单统计</view>
+    <view class="statistics-detail">
+      <view class="re-table">
+        <view class="re-tr">
+          <view class="re-th">统计类别</view>
+          <view class="re-th">订单个数</view>
+          <view class="re-th">订单件数</view>
+          <view class="re-th">销售额</view>
+        </view>
+        <view class="re-tr">
+          <view class="re-td" style="color:#27b2eb" bindtap="goManageerStatistic" data-num="0">今日统计</view>
+          <view class="re-td">{{nowOrder.num}}
+            <text>个</text>
+          </view>
+          <view class="re-td">{{nowOrder.total_pkgs}}
+            <text>件</text>
+          </view>
+          <view class="re-td">
+            <text>￥</text>{{nowOrder.total_amount}}</view>
+        </view>
+        <view class="re-tr">
+          <view class="re-td" style="color:#27b2eb" bindtap="goManageerStatistic" data-num="1">昨日统计</view>
+          <view class="re-td">{{yesterOrder.num}}
+            <text>个</text>
+          </view>
+          <view class="re-td">{{yesterOrder.total_pkgs}}
+            <text>件</text>
+          </view>
+          <view class="re-td">
+            <text>￥</text>{{yesterOrder.total_amount}}</view>
+        </view>
+        <view class="re-tr">
+          <view class="re-td" style="color:#ff690f">明日预计</view>
+          <view class="re-td">{{order.num}}
+            <text>个</text>
+          </view>
+          <view class="re-td">{{order.total_pkgs}}
+            <text>件</text>
+          </view>
+          <view class="re-td">
+            <text>￥</text>{{order.total_amount}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--部门下单统计-->
+  <view class="order-statistics">
+    <view class="statistics-title">{{dept_id == null ? '部门下单统计' : '渠道下单统计'}}</view>
+    <view class="statistics-detail">
+      <!-- 内容为空样式 -->
+      <view class="empty-con" wx:if="{{emptyShow}}">
+        <image class="empty-image" src="{{imageCtx}}dealer/note.png"></image>
+        <text class="empty-text">暂无数据</text>
+      </view>
+      <view class="table table-4" wx:else>             
+        <view class="tr bg-w">
+          <view class="th">{{dept_id == null ? '部门' : '渠道'}}</view>
+          <view class="th">订单个数</view>
+          <view class="th">订单件数</view>
+          <view class="th">订单销售额</view>
+        </view>
+        <view class="tr" wx:for="{{deptOrder}}">
+          <view class="td">{{dept_id == null ? item.dept : item.manageer}}</view>
+          <view class="td">{{item.num}}</view>
+          <view class="td">{{item.total_pkgs}}</view>
+          <view class="td">{{item.total_amount}}</view>
+        </view>     
+      </view>
+    </view>
+  </view>
+</view>

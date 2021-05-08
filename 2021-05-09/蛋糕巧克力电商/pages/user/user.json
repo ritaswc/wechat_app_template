@@ -1,0 +1,7 @@
+{
+    "navigationBarBackgroundColor": "#576b95",
+    "navigationBarTitleText": "用户中心",
+    "navigationBarTextStyle": "#fff",
+    "backgroundColor": "#f0f0f0",
+    "enablePullDownRefresh":false
+}

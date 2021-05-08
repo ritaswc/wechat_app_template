@@ -1,0 +1,46 @@
+{
+	"pages": [
+		"pages/lineIndex/index",
+		"pages/lineInfo/index",
+		"pages/stopIndex/index",
+		"pages/stopInfo/index",
+		"pages/stopSearch/index",
+		"pages/busMap/index",
+		"pages/timetable/index"
+	],
+
+	"window": {
+		"navigationBarBackgroundColor": "#0099ff",
+		"navigationBarTextStyle": "white",
+		"backgroundColor": "#f8f8f8",
+		"navigationBarTitleText": "华农校巴GO!"
+	},
+
+	"tabBar": {
+		"list": [{
+			"pagePath": "pages/lineIndex/index",
+			"text": "实时校巴",
+			"iconPath": "/source/icon/line.png",
+			"selectedIconPath": "/source/icon/line-selected.png"
+		}, {
+			"pagePath": "pages/stopIndex/index",
+			"text": "站点查询",
+			"iconPath": "/source/icon/stop.png",
+			"selectedIconPath": "/source/icon/stop-selected.png"
+		}, {
+			"pagePath": "pages/busMap/index",
+			"text": "校巴地图",
+			"iconPath": "/source/icon/busmap.png",
+			"selectedIconPath": "/source/icon/busmap-selected.png"
+		}],
+		"selectedColor": "#0099ff",
+		"borderStyle": "black"
+	},
+
+	"networkTimeout": {
+		"request": 10000
+	},
+
+	"debug": false
+
+}

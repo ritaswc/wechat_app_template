@@ -1,0 +1,15 @@
+.page-section-ctn {
+  text-align: center;
+}
+
+.image {
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+.new-vote-btn {
+  z-index: 1;
+  margin-top:-74%;
+  width:91%;
+  background-color: #d9e67c;
+}

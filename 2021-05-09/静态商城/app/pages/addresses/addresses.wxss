@@ -1,0 +1,115 @@
+.hidden {
+    display: none;
+}
+
+.addresses {
+    width: 100%;
+    padding-top: 0.1rem;
+    padding-bottom: 3rem;
+}
+.addresses .btnBox {
+    position: fixed;
+    width: 100%;
+    padding: 0.75rem;
+    bottom:0;
+    box-sizing: border-box;
+}
+.addresses .add {
+    height: 1.7rem;
+    line-height: 1.7rem;
+    bottom: 0.5rem;
+    background-color: #FF2D4B;
+    color: #FFF;
+    text-align: center;
+    border-radius: 0.2rem;
+    font-size: 0.75rem;
+}
+.addresses .add:active {
+    background-color: #999;
+}
+.address {
+    padding: 0 0.4rem;
+    font-size: 0.6rem;
+    background: #FFF;
+    margin-top: 0.4rem;
+    display: block;
+}
+.address .addr {
+    margin-top: 0.2rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 0.55rem;
+    color: #353535;
+    line-height: 0.8rem;
+}
+.address .detail {
+    font-size: 0.7rem;
+    padding: 0.75rem 0.45rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #EFEFEF;
+}
+.address .customer {
+    overflow: hidden;
+    width: 100%;
+}
+.address .customer .reciver {
+    width: 9.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    float: left;
+}
+.address .customer .tel {
+    display: block;
+    float: right;
+}
+.address-wrap {
+    font-size: 28.12rpx;
+    height: 100%;
+}
+.addressesEmpty {
+    position: absolute;
+    top: 38.2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    text-align: center;
+    display:none;
+}
+.addressesEmpty .icon {
+    width: 4rem;
+    height: 4rem;
+    display: block;
+    margin: auto;
+}
+.addressesEmpty .text {
+    display: block;
+    margin: auto;
+    font-size: 0.6rem;
+    line-height: 1rem;
+    color: #A0A0A0;
+    padding: 0.8rem 0;
+}
+.addressesEmpty .btn-default {
+    width: 7.2rem;
+    height: 1.65rem;
+    line-height: 1.65rem;
+    margin: auto;
+    font-size: 0.65rem;
+    border-radius: 0.2rem;
+    background-color: #FF2D4B;
+    color: #FFF;
+    text-align: center;
+}
+.addressesEmpty .btn-default:active {
+    background-color: #666;
+}
+.operation .delete {
+    margin-left: 0.5rem;
+}
+.disb {
+    display:block;
+}

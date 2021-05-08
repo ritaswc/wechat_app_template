@@ -1,0 +1,188 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body">
+        <view class='order-detail-top flex-col flex-x-center'>
+            <view class='order-status flex-row'>
+                <text>{{order_info.status_name}}</text>
+                <block a:if='{{order_info.status==3&&order_info.is_send==0&&order_info.apply_delete==0}}'>
+                    <text class='ml-2'>请等待发货</text>
+                </block>
+                <block a:if='{{order_info.apply_delete==1&&order_info.status==1}}'>
+                    <text class='ml-2'>取消申请中</text>
+                </block>
+                <block a:if='{{order_info.status==3&&order_info.is_send==1&&order_info.is_confirm==0}}'>
+                    <text class='ml-2'>订单已发货</text>
+                </block>
+                <block a:if='{{order_info.status==3&&order_info.is_send==1&&order_info.is_confirm==1}}'>
+                    <text class='ml-2'>订单已完成</text>
+                </block>
+                <block a:if='{{order_info.apply_delete==1&&order_info.status == 3}}'>
+                    <text class='ml-2'>已申请售后</text>
+                </block>
+                <block a:if='{{order_info.apply_delete==2&&order_info.status == 3&&order_info.is_send==0}}'>
+                    <text class='ml-2'>取消申请中</text>
+                </block>
+            </view>
+            <view class='order-time flex-row' a:if="{{order_info.status==2}}">
+                {{limit_time.hours}}小时{{limit_time.mins}}分{{limit_time.secs}}秒 后自动取消订单
+            </view>
+        </view>
+        <navigator url="/pages/pt/express-detail/express-detail?id={{order_info.order_id}}" class='express-info flex-row flex-y-center' a:if='{{order_info.express_no&&order_info.is_send!==0}}'>
+            <view class='express-info-left flex-grow-1'>
+                <view class='express'>
+                    物流公司：{{order_info.express}}
+                </view>
+                <view class='express-no'>
+                    物流单号：{{order_info.express_no}}
+                </view>
+            </view>
+            <view class='express-info-right flex-grow-0'>
+                <image src='{{__wxapp_img.share.right.url}}'></image>
+            </view>
+        </navigator>
+        <view class='order-address'>
+            <view class='user-info flex-row'>
+                <view class='user-info-name flex-grow-1'>
+                    {{order_info.is_offline == 0 ? "联系人：" : "收货人："}}{{order_info.name}}
+                </view>
+                <view class='user-info-mobile flex-grow-1'>
+                    {{order_info.mobile}}
+                </view>
+            </view>
+            <view class='user-address-info' a:if="{{order_info.offline!=2}}">
+                收货地址：{{order_info.address}}
+            </view>
+        </view>
+
+        <block a:if="{{order_info.offline == 2}}">
+            <view class="order-address block flex-row">
+                <view class='flex-grow-1'>
+                    <view class="flex-grow-1 block-row">门店名称：{{order_info.shop.name}}</view>
+                    <view class="flex-grow-1 block-row">联系电话：{{order_info.shop.mobile}}</view>
+                    <view class="flex-grow-1">门店地址：{{order_info.shop.address}}</view>
+                </view>
+                <view class='flex-grow-0 flex-y-center' a:if='{{order_info.shop.longitude}}'>
+                    <text class='order-no-num-right flex-grow-0 flex-y-center flex-x-center' onTap='location'>导航</text>
+                </view>
+            </view>
+        </block>
+
+        <view class='order-no'>
+            <view class='order-no-num flex-row'>
+                <view class='order-no-num-left flex-grow-1'>
+                    订单编号：{{order_info.order_no}}
+                </view>
+                <view class='order-no-num-right flex-grow-0 flex-y-center flex-x-center' onTap="copyText" data-text="{{order_info.order_no}}">
+                    复制
+                </view>
+            </view>
+            <view class='order-add-time'>
+                下单时间：{{order_info.addtime}}
+            </view>
+        </view>
+
+        <view class='order-info'>
+            <view class='order-info-item flex-row'>
+                <view class='order-info-title flex-grow-1'>
+                    商品总额
+                </view>
+                <view class='order-info-val flex-grow-1'>
+                    ¥ {{order_info.goods_total_price}}
+                </view>
+            </view>
+            <view class='order-info-item flex-row'>
+                <view class='order-info-title flex-grow-1'>
+                    商品数量
+                </view>
+                <view class='order-info-val flex-grow-1'>
+                    {{order_info.num}}
+                </view>
+            </view>
+            <view class='order-info-item flex-row' a:if="{{order_info.colonel>0 && order_info.is_group==1}}">
+                <view class='order-info-title flex-grow-1'>
+                    团长优惠
+                </view>
+                <view class='order-info-val flex-grow-1'>
+                    ¥ {{order_info.colonel}}
+                </view>
+            </view>
+            <view class='order-info-item flex-row'>
+                <view class='order-info-title flex-grow-1'>
+                    运费
+                </view>
+                <view class='order-info-val flex-grow-1'>
+                    ¥ {{order_info.express_price}}
+                </view>
+            </view>
+            <view a:if='{{order_info.content}}'>
+                <view class='order-info-item flex-row'>
+                    <view class='order-info-title flex-grow-1'>买家留言</view>
+                    <view style='width:100%;overflow:auto;word-wrap:break-word;'>{{order_info.content}}</view>
+                </view>
+            </view>
+            <view a:if='{{order_info.words}}'>
+                <view>商家留言</view>
+                <view class='fs-sm' style='width:100%;overflow:auto;word-wrap:break-word;'>{{order_info.words}}</view>
+            </view>
+        </view>
+        <view class='order-total-price'>
+            合计：
+            <text style='color:#ff5c5c;'>¥ {{order_info.pay_price}}</text>
+        </view>
+        <view class='order-goods flex-row' a:for="{{order_info.goods_list}}">
+            <view class='flex-grow-0 goods-image'>
+                <image src='{{item.goods_pic}}'></image>
+            </view>
+            <view class="flex-grow-1 flex-col">
+                <view class="flex-grow-1">
+                    <view class="goods-name">{{item.name}}</view>
+                    <view class="attr-list flex-row">
+                        <block a:for="{{item.attr}}" a:for-item="attr">
+                            {{attr.attr_group_name}}:{{attr.attr_name}}
+                        </block>
+                    </view>
+                </view>
+                <view class="flex-grow-0 flex-row order-price">
+                    <view class="flex-grow-1 num">×{{item.num}}</view>
+                    <view class="flex-grow-0 price">￥:{{item.total_price}}</view>
+                </view>
+                <view a:if="{{item.order_refund_enable ==1 &&item.is_order_refund==1}}" class="flex-grow-0 flex-row" style='color:#ff5c5c;'>
+                <text class='flex-grow-1'></text>
+                <text class='flex-grow-0'>已申请售后</text>
+                </view>
+            </view>
+        </view>
+        <view class='order-footer flex-y-center flex-row'>
+            <view class='play-btn' onTap='goToGroup' a:if="{{order_info.status==2}}">
+                邀请参团
+            </view>
+
+            <view class='play-btn' onTap='toConfirm' a:if='{{order_info.apply_delete==0&&order_info.status==3 &&order_info.is_send==1&&order_info.is_confirm==0}}'>
+                确认收货
+            </view>
+
+            <!-- 到店自提核销二维码 -->
+            <view class=' play-btn flex-gorw-0 flex-y-center' a:if='{{order_info.offline==2&&order_info.is_confirm==0&&order_info.status==3&&order_info.apply_delete==0}}' onTap="getOfflineQrcode" data-id="{{order_info.order_no}}">
+                核销码
+            </view>
+            <navigator url='/pages/pt/order-refund/order-refund?id={{order_info.order_id}}' class='play-btn' a:if='{{order_info.apply_delete==0&&order_info.status == 3&&order_info["goods_list"][0].order_refund_enable==1&&order_info["goods_list"][0].is_order_refund==0&&order_info.is_send==1}}'>
+                申请售后
+            </navigator>
+
+            <view class='play-btn' a:if='{{order_info.apply_delete==0&&order_info.status == 3&&order_info.goods_list[0].order_refund_enable==1&&order_info.is_cancel==0&&order_info.is_send==0}}' onTap='orderRevoke'>
+                申请退款
+            </view>
+        </view>
+
+        <view class='flex-row flex-y-center modal {{hide==1?"hide":""}}' onTap='hide'>
+            <view class='flex-y-center' style='width:100%;height:800rpx;padding:100rpx;'>
+                <view style='background-color:#fff;width:100%;height:100%;border-radius:10rpx;padding:0 50rpx;'>
+                    <view class='flex-x-center' style='width:100%;height:50rpx;margin-top:50rpx;font-size:13pt;margin-bottom:20rpx'>核销二维码 </view>
+                    <image src='{{qrcode}}' style='width:450rpx;height:450rpx;'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

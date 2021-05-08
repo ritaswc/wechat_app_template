@@ -1,0 +1,52 @@
+{template 'header'}
+<div id="js-goods-seller">
+	<div class="we7-page-title">收入明细</div>
+	<form action="" class="we7-form" method="post">
+	<table class="table we7-table table-hover table-form">
+		<tr>
+			<th>订单号</th>
+			<th>日期</th>
+			<th>类型</th>
+			<th>商品</th>
+			<th>金额</th>
+		</tr>
+		{if !empty($payments_list)}
+		{loop $payments_list $payment}
+		<tr>
+			<td>
+				{$payment['orderid']}
+			</td>
+			<td>
+				{php echo date('Y-m-d', $payment['createtime'])}
+			</td>
+			<td>
+				{if $payment['type'] == 1}公众号应用
+				{elseif $payment['type'] == 2}公众号
+				{elseif $payment['type'] == 3}小程序
+				{elseif $payment['type'] == 4}小程序应用
+				{elseif $payment['type'] == 5}套餐
+				{elseif $payment['type'] == 6}应用访问量
+				{elseif $payment['type'] == 7}公众号续费
+				{elseif $payment['type'] == 8}小程序续费
+				{/if}
+			</td>
+			<td>
+				{$payment['title']}
+			</td>
+			<td>
+				{$payment['amount']}
+			</td>
+		</tr>
+		{/loop}
+		{else}
+		<tr>
+			<td colspan="4" class="text-center">暂无数据</td>
+		</tr>
+		{/if}
+	</table>
+	<div class="pull-right">
+		{$pager}
+	</div>
+		</form>
+</div>
+{template 'common/footer'}

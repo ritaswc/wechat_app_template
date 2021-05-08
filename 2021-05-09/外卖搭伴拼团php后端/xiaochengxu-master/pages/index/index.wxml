@@ -1,0 +1,56 @@
+<!--index.wxml-->
+
+<view class="content">
+  <!--导航-->
+  <view class="nav">
+    <scroll-view scroll-x="true" class="nav-left">
+      <view class="nav-left-category">
+        <view bindtap="loadGoods">
+          <i class="iCon" wx:if="{{currentCatId == 0}}" style="background:url('http://app.shizhencaiyuan.com/pintuan/img/recommend-tive.png');background-size:cover"></i>
+          <i class="iCon" wx:else style="background:url('http://app.shizhencaiyuan.com/pintuan/img/recommend.png');background-size:cover"></i>
+          推荐
+        </view>
+          <block wx:for="{{navData}}" wx:key>
+            <view bindtap="getCateGoods" data-catid="{{item.cat_id}}">
+              <i class="iCon" wx:if="{{item.cat_id == currentCatId}}" style="background:url({{item.order_img}});background-size:cover"></i>
+              <i class="iCon" wx:else style="background:url({{item.info_img}});background-size:cover"></i>
+              {{item.cat_name}}
+            </view>
+          </block>
+        </view>
+    </scroll-view>
+    <view class="nav-right">
+      <i class="iCon iCon-arrow"></i>
+    </view>
+  </view>
+  <!--轮播-->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" wx:if="{{!swiperStatus}}">
+    <block wx:for="{{swiperData}}" wx:key>
+      <swiper-item>
+        <image src="{{item.image}}" class="slide-image" bindtap="showGoods" id="{{item.goods_id}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--列表-->
+  <view class="list">
+    <block wx:for="{{goodsData}}" wx:key>
+      <view class="container-goods">
+        <image src="{{item.info_img}}"></image>
+        <view class="main-goods">
+          <view class="main-goods-title">{{item.goods_name}}</view>
+          <view class="main-goods-info">
+            <view><text>{{item.group_person}}件成团</text></view>
+            <view>已售 <text>{{item.goods_sale_num}}</text> 件</view>
+            <view>库存：<text>{{item.goods_num}}</text></view> 
+          </view>     
+          <view class="main-goods-price">
+            <view><text class="color-red">¥{{item.goods_now_price}}</text></view>
+            <view><text class="fontsize-12">原价：{{item.goods_price}}</text></view>
+            <view wx:if="{{item.goods_low_num > 0}}"><text class="color-red fontsize-12">{{item.goods_low_num}}件拼底价 ¥{{item.goods_low_price}}</text></view>
+            <view bindtap="showGoods" id="{{item.goods_id}}"><text>去开团</text></view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

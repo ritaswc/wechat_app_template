@@ -1,0 +1,44 @@
+<!--盘点明细-->
+<view class="order-statistics">
+    <text class="statistics-title">17-12-08盘点明细   <text class="title2">负责人:杨浩</text></text>
+    <view class="statistics-detail">
+        <view class="table table-5">
+            <view class="tr bg-w">
+                <view class="th">款式名称</view>
+                <view class="th">款式二级</view>
+                <view class="th">颜色</view>
+                <view class="th">尺码</view>
+                <view class="th">盘点数量</view>
+            </view>
+            <view class="tr">           
+                <view class="td">莱卡</view>
+                <view class="td">10</view>
+                <view class="td">白色</view>
+                <view class="td">L</view>
+                <view class="td">10000</view>
+            </view>
+            <view class="tr">
+                <view class="td">三合一冲锋衣</view>
+                <view class="td">10</view>
+                <view class="td">香蕉黄</view>
+                <view class="td">XL</view>
+                <view class="td">10000</view>
+            </view>
+            <view class="tr">
+                <view class="td">卫衣</view>
+                <view class="td">10</view>
+                <view class="td">藏青色</view>
+                <view class="td">XXL</view>
+                <view class="td">10000</view>
+            </view>
+            <view class="tr">
+                <view class="td">莱卡</view>
+                <view class="td">10</view>
+                <view class="td">红色</view>
+                <view class="td">XXXL</view>
+                <view class="td">10000</view>
+            </view>
+            
+        </view>
+    </view>
+</view>

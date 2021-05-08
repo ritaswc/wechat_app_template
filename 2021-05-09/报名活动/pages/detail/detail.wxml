@@ -1,0 +1,35 @@
+<view class="main">
+    <view class="container">
+        <view class="topHead">
+            <view class="imgwrap">
+                <image src="http://pics.sc.chinaz.com/files/pic/pic9/201510/apic15816.jpg"></image>
+            </view>
+            <view class="topTitle">
+                <text class="t">来场激情四射的比赛</text>
+                <text class="i">发布于：2017-01-18</text>
+            </view>
+        </view>
+        <view class="moreInfo">
+            <view class="item_li">
+                <view class="param_t">时间</view>
+                <view class="param_d">周五14:00</view>
+            </view>
+            <view class="item_li">
+                <view class="param_t">地点</view>
+                <view class="param_d">上海市普陀区xxx路xx弄xxxx</view>
+            </view>
+            <view class="item_li">
+                <view class="param_t">有效期</view>
+                <view class="param_d">2017-01-01至2017-01-10</view>
+            </view>
+            <view class="item_ct">
+                <view class="param_t">详情</view>
+                <view class="param_c">欢迎来到英雄联盟，敌军还有30秒到达战场</view>
+            </view>
+        </view>
+    </view>
+    <view class="btnWrap">
+        <button type="primary" bindtap="chatBtn">我要报名</button>
+    </view>
+    
+</view>

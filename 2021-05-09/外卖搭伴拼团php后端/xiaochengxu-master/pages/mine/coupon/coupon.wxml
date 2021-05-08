@@ -1,0 +1,22 @@
+<!--pages/coupon/coupon.wxml-->
+
+<view class="content">
+    <view class="coupon">
+        <block wx:for="{{couponList}}" wx:key>
+            <view class="coupon-item" bindtap="selectedCoupon" data-couponid="{{item.coupon_id}}">
+                <view class="coupon-item-top">
+                    <view class="coupon-fee">¥<text class="fontsize-40">{{item.type_money}}</text></view>
+                    <view class="coupon-time"><text class="fontsize-40">{{item.type_name}}</text><text>有效期至：{{item.use_end_time}}</text></view>
+                </view>
+                <view class="coupon-item-bottom">
+                    <text>1.本券需按照提示使用,结算时抵扣相应金额.</text>
+                    <text>2.每单限用一张,不可叠,不找零,不反现.</text>
+                    <text>温馨提示:如显示被使用...状态的优惠卷,请到 我的订单->待付款->取消该订单,可重新使用优惠卷.</text>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
+
+<import src="/asset/template/backhome.wxml" />
+<template is="backhome"/>

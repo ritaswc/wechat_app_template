@@ -1,0 +1,338 @@
+[2017-03-01 10:56:06.842] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 10:58:03.059] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 10:58:06.851] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 10:58:44.679] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 11:00:41.407] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 11:00:44.694] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 11:01:33.558] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 11:02:07.184] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 11:02:43.303] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 11:02:54.976] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 11:04:44.627] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 11:04:51.603] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 11:04:51.660] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 11:17:30.125] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 11:17:34.153] [WARN] console - Unhandled rejection TypeError: req.pack.setMg is not a function
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/purchased_service.js:126:22)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 11:29:21.204] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 11:34:00.995] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 11:39:11.597] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 11:39:20.492] [INFO] console - { id: 'a79628a0fe3011e6b5f087a1a120473a',
+  serviceid: '21313',
+  customerid: '4cd090f0fd8a11e6b80d7d4075714940',
+  salesmanid: 'leglesalesman',
+  buy_datetime: moment("2017-03-01T11:39:20.491"),
+  payment_status: 0,
+  body: undefined }
+[2017-03-01 11:41:31.687] [INFO] console - { id: 'f5c93b70fe3011e6b5f087a1a120473a',
+  serviceid: '21313',
+  customerid: '4cd090f0fd8a11e6b80d7d4075714940',
+  salesmanid: 'leglesalesman',
+  buy_datetime: moment("2017-03-01T11:41:31.687"),
+  payment_status: 0,
+  body: undefined }
+[2017-03-01 11:43:05.641] [INFO] console - { id: '2dc97990fe3111e6b5f087a1a120473a',
+  serviceid: undefined,
+  customerid: '4cd090f0fd8a11e6b80d7d4075714940',
+  salesmanid: 'leglesalesman',
+  buy_datetime: moment("2017-03-01T11:43:05.641"),
+  payment_status: 0,
+  body: '铁华-18826252271' }
+[2017-03-01 11:44:58.594] [INFO] console - { id: '711cbc20fe3111e6b5f087a1a120473a',
+  serviceid: '21313',
+  customerid: '4cd090f0fd8a11e6b80d7d4075714940',
+  salesmanid: 'leglesalesman',
+  buy_datetime: moment("2017-03-01T11:44:58.594"),
+  payment_status: 0,
+  body: '铁华-18826252271' }
+[2017-03-01 11:52:01.586] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-01 11:52:01.588] [INFO] BBMIS - ：第一次签名错误
+[2017-03-01 12:02:27.696] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-02-28 15:54:31  , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:496:26)
+[2017-03-01 13:32:17.809] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 14:20:36.048] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 14:35:45.443] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 14:40:00.735] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 14:52:01.806] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 15:15:12.714] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-03-01 15:15:28.874] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-03-01 15:15:40.691] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:286:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 15:15:55.206] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-03-01 17:17:26.332] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 17:34:08.757] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 17:40:43.975] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-03-01 17:41:25.889] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-03-01 17:44:46.824] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-03-01 18:03:40.963] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:286:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 18:04:42.507] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-03-01 18:05:24.660] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-03-01 18:06:55.534] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:286:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 18:08:30.625] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-03-01 18:08:41.280] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-03-01 18:09:32.994] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-03-01 18:10:34.845] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:286:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 18:22:01.766] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 18:23:52.191] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 18:25:10.002] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 18:32:54.954] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 18:37:18.331] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-03-01 18:37:29.854] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:286:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-01 18:37:56.699] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-03-01 19:20:31.759] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 19:25:42.265] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 19:27:29.886] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 19:32:59.877] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-03-01 19:30:42 , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:496:26)
+[2017-03-01 19:47:04.146] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 20:02:06.981] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-01 20:03:44.208] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}

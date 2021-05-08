@@ -1,0 +1,256 @@
+{template 'common/header'}
+<ol class="breadcrumb we7-breadcrumb">
+	<li><a href="javascript:;" onclick="javascript:history.go(-1);"><i class="wi wi-back-circle"></i> 权限设置</a></li>
+</ol>
+<form class="form-horizontal form we7-form" action="" method="post">
+
+
+	<table class="table we7-table table-hover we7-form account-and-wxapp">
+	{loop $menus $name $sections}
+		{if $name == XZAPP_TYPE_SIGN || $name == WEBAPP_TYPE_SIGN}
+			{php $menu_name = ACCOUNT_TYPE_SIGN}
+		{elseif $name == ALIAPP_TYPE_SIGN || $name == BAIDUAPP_TYPE_SIGN || $name == TOUTIAOAPP_TYPE_SIGN}
+			{php $menu_name = WXAPP_TYPE_SIGN}
+		{else}
+			{php $menu_name = $name}
+		{/if}
+		{if $sections['section'] && $name == $account_type_menu}
+			<div>{$account['type_name']}<span class="color-default font-sm"></span>
+			</div>
+			{loop $sections['section'] $section_id $section}
+				{if !in_array($section_id, array('platform_module')) && in_array($account['type'], $section['permission_display'])}
+					<thead>
+					<tr class="text-left">
+						<th colspan="4" class="text-left">
+							<div class="">
+								<input id="check-{$section_id}" type="checkbox" name="system_{$section_id}" onChange="selectall(this, 'system_{$section_id}')">
+								<label for="check-{$section_id}" class=" we7-margin-horizontal-none">{$section['title']}</label>
+							</div>
+						</th>
+					</tr>
+					</thead>
+
+					<tbody class="system_{$section_id}">
+					{php $i=1;}
+					{loop $section['menu'] $menu_id $menu}
+						{if is_array($menu['permission_display']) && !in_array($account['type'], $menu['permission_display'])}{php continue;}{/if}
+						{if $i%4 == 1 || $i == 1}<tr>{/if}
+						<td class="text-left vertical-middle" style="overflow:inherit;">
+							<div class="dropdown system-select-dropdown">
+								<span>
+									<input id="check-child-{$menu_id}" type="checkbox" we7-check-all="1" value="{$menu['permission_name']}" {if in_array($menu['permission_name'], $user_menu_permissions)}checked{/if} name="menus[]" autocomplete="off" />
+									<label for="check-child-{$menu_id}" class="we7-margin-horizontal-none" data-toggle="tooltip">{$menu['title']}{if !empty($menu['sub_permission'])}<span class="caret"></span>{/if}</label>
+								</span>
+								{if $menu['sub_permission']}
+								<ul class="dropdown-menu">
+									{loop $menu['sub_permission'] $sub_permission}
+									{if is_array($sub_permission['is_display']) && !in_array($account['type'], $sub_permission['is_display'])}{php continue;}{/if}
+									<li class="text-left">
+										<input id="check-child-{$sub_permission['permission_name']}"  we7-check-all="1" type="checkbox" value="{$sub_permission['permission_name']}" {if in_array($sub_permission['permission_name'], $user_menu_permissions)}checked{/if} name="menus[]">
+										<label class="we7-margin-horizontal-none" for="check-child-{$sub_permission['permission_name']}">
+											{$sub_permission['title']}
+										</label>
+									</li>
+									{/loop}
+								</ul>
+								{/if}
+							</div>
+
+						</td>
+						{if $i%4 == 0}</tr><tr>{/if}
+						{php $i++;}
+					{/loop}
+					{if ($i-1)%4 != 0}
+						<?php
+						for ($x=0; $x<4-($i-1)%4; $x++) {
+							echo "<td></td>";
+						}
+						?>
+						</tr>
+					{/if}
+					</tbody>
+				{/if}
+			{/loop}
+		{/if}
+	{/loop}
+	</table>
+
+	{if !empty($module)}
+	<table class="table we7-table table-hover vertical-middle we7-form">
+		<div>应用<span class="color-default font-sm"></span></div>
+		<thead>
+			<tr>
+				<th colspan="4" class="text-left">
+					<div class="">
+						<input id="check-module" type="checkbox" name="module_select"  we7-check-all="1" onChange="selectall(this, 'module_select')">
+						<label for="check-module" class=" we7-margin-horizontal-none">应用权限</label>
+					</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody class="module_select system-select-box">
+			{php $i=1;}
+			{loop $module $k $m}
+				{if !empty($m['issystem'])}{php continue;}{/if}
+				{if $i%4 == 1 || $i == 1}<tr>{/if}
+					<td  class="text-left vertical-middle" style="overflow:inherit;width:25%">
+						<div class="dropdown system-select-dropdown">
+							<span class="" data-id="{$k}">
+								<input id="check-module-{$k}" type="checkbox" value="{$k}" name="module[]" we7-check-all="1" {if in_array($k, $module_permission_keys)}checked{/if}>
+								<label for="check-module-{$k}" >{php echo mb_substr($m['title'], 0, 12, 'utf-8')}<span class="caret"></span></label>
+							</span>
+							<ul class="dropdown-menu" role="menu"></ul>
+							<input type="hidden" name="{$k}_select" value="0"/>
+						</div>
+					</td>
+				{if $i%4 == 0}</tr>{/if}
+				{php $i++;}
+			{/loop}
+			{if ($i-1)%4 != 0}
+				<?php 
+				for ($x=0; $x<4-($i-1)%4; $x++) {
+				  echo "<td></td>";
+				} 
+				?>
+				</tr>
+			{/if}
+		</tbody>
+	</table>
+	{/if}
+	<button type="submit" class="btn btn-primary span3" name="submit" value="提交">提交</button>
+	<input type="hidden" name="token" value="{$_W['token']}" />
+</form>
+<script>
+$(function(){
+
+	var uniacid = "{$_GPC['uniacid']}";
+	var module_permission_all = "{$module_permission_all}";
+
+	if (module_permission_all == 1) {
+		setTimeout(function () {
+			module_select = $('#check-module').click();
+		})
+	}
+
+	//公众号OR小程序下拉框
+	$('.account-and-wxapp .dropdown span').hover(function(){
+		$(this).parent().addClass('open').find('.dropdown-menu').show();
+		$(this).parent().find('.dropdown-menu').hover(
+			function(){$(this).show();$(this).parent().addClass('open')},
+			function(){$(this).hide();$(this).parent().removeClass('open');}
+		);
+	},function(){
+		$(this).parent().removeClass('open').find('.dropdown-menu').hide();
+	});
+	//模块下拉框
+	$('.module_select .dropdown span').hover(function(){
+		var _this = $(this);
+		var m = $(this).attr('data-id');
+		var uid = "{$uid}";
+		var length = $(this).next().find('li').size();
+		if(!length) {
+			_this.next().html('<div class="text-center"><i class="fa-spin wi wi-changing-over"></i> 获取子权限 </div>');
+			$.post("{php echo url('account/post-user/module')}", {'m' : m, 'uid' : uid, 'uniacid' : uniacid}, function(data) {
+				if(!data.message.errno) {
+					var li_nums = data.message.message.length;
+					var li_checked = 0;
+					var li_contents = '';
+					var html = '';
+					$.each(data.message.message, function(k, v){
+						var check = '';
+						if (v.checked) {
+							check = 'checked';
+							li_checked ++;
+						}
+						html += '<li><a href="javascript:;"><input id="check-moduledetail-'+m+'-'+k+'" we7-check-all="1"  type="checkbox" name="module_'+m+'[]" value="'+ v.permission +'" '+check+'/><label for="check-moduledetail-'+m+'-'+k+'" class="we7-padding-left we7-margin-horizontal-none checkbox-inline">'+ v.title +'</label></a></li>';
+					});
+					if (li_nums == li_checked) {
+						li_contents = '已全选';
+					} else {
+						li_contents = '已选' + li_checked + '项';
+					}
+					var _html = '<div><label class="checkbox-inline info">' + li_contents + '</label></div>';
+					html = _html + '<ul>' + html + '</ul>';
+					_this.next().html(html);
+				} else {
+					_this.next().html('<div class="text-center">无子权限</div>');
+				}
+			}, 'json');
+		}
+
+		$(this).parent().addClass('open').find('.dropdown-menu').show();
+		$(this).parent().find('.dropdown-menu').hover(
+			function(){$(this).show();$(this).parent().addClass('open')},
+			function(){$(this).hide();$(this).parent().removeClass('open');}
+		);
+	},function(){
+		$(this).parent().removeClass('open').find('.dropdown-menu').hide();
+	});
+
+	$('.dropdown span :checkbox').click(function(e){
+		var _parent = $(this).parents('.dropdown');
+		_parent.find('.dropdown-menu :checkbox').prop('checked', $(this).prop('checked'));
+		if($(this).prop('checked')) {
+			_parent.find('label.info').html('已全选');
+			_parent.find('input[type="hidden"]').val(1);
+		} else {
+			_parent.find('input[type="hidden"]').val(0);
+			_parent.find('label.info').html('已选0项');
+		}
+	});
+
+	$('.dropdown-menu').on('click', ':checkbox', function(){
+		if(!$(this).prop('checked')) {
+			var i = 0;
+			$.each($(this).parents('li').siblings(), function(){
+				if($(this).find(':checkbox').prop('checked')) {
+					i ++;
+				}
+			});
+			$(this).parents('.dropdown').find('input[type="hidden"]').val(0);
+			$(this).parents('.dropdown').find('label.info').html('已选' + i + '项');
+			if(!i) {
+				$(this).parents('.dropdown').find('span :checkbox').prop('checked', false);
+			}
+		} else {
+			var flag = 0;
+			var i = 1;
+			$.each($(this).parents('li').siblings(), function(){
+				if(!$(this).find(':checkbox').prop('checked')) {
+					flag = 1;
+				} else {
+					i ++;
+				}
+			});
+			if(!flag) {
+				$(this).parents('.dropdown').find('label.info').html('已全选');
+				$(this).parents('.dropdown').find('input[type="hidden"]').val(1);
+			} else {
+				$(this).parents('.dropdown').find('label.info').html('已选' + i + '项');
+				$(this).parents('.dropdown').find('input[type="hidden"]').val(0);
+			}
+			$(this).parents('.dropdown').find('span :checkbox').prop('checked', true);
+		}
+	});
+});
+//处理全选函数
+function selectall(obj, a){
+	$('.'+a+' input:checkbox').each(function() {
+		$(this)[0].checked = obj.checked ? true : false;
+	});
+}
+//当已经全选时，默认全选按钮选中
+$(function() {
+	$('.table>tbody').each(function() {
+		var a = true;
+		$(this).find('input:checkbox').each(function() {
+			if($(this)[0].checked != true) {
+				a = false;
+				return false;
+			}
+		});
+		if(a) $('input[name='+$(this).attr('class')+']:checkbox')[0].checked = true;
+	});
+});
+</script>
+{template 'common/footer'}

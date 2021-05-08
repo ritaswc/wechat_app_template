@@ -1,0 +1,16 @@
+<view class="mod-cart">
+    <scroll-view scroll-y="true">
+
+        <!--如果当前商品所属的仓库类型大于2个，则显示仓库类型-->
+        <view class="tabs" wx:if="{{tabs && tabs.length >= 2}}">
+            <!--当前活跃仓库添加一个active类-->
+            <view wx:key="1" wx:for="{{tabs}}" data-tab="{{tab.id}}" bindtap="changeTab" wx:for-item="tab" class="tab {{tab.id == activeTab ? 'active' : 'normal'}}">{{tab.name}}</view>
+        </view>
+
+        <!--渲染列表-->
+        <include src="../../common/itemList/itemList.wxml"/>
+
+        <!--如果商品列表为空-->
+        <view class="items-blank" wx:if="{{!itemList || itemList.length == 0}}">数据为空</view>
+    </scroll-view>
+</view>

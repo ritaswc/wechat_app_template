@@ -1,0 +1,55 @@
+.appeal-container {
+  font-family: PingFangSC-Regular, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+.appeal-title {
+  font-family: PingFangSC;
+  color: #1B4149;
+  font-size: 50rpx;
+  margin-left: 50rpx;
+  padding: 20rpx 0;
+  font-weight: bold;
+}
+
+.appeal-address {
+  color: #1B4149;
+  font-family: PingFangSC;
+  font-size: 80rpx;
+  font-weight: normal;
+  /*font-weight: lighter;*/
+  /*padding: 30rpx;*/
+  margin-left: 50rpx;
+  flex: 1;
+  line-height: 120rpx;
+}
+
+.appeal-address-city {
+  margin-right: 40rpx;
+  white-space:nowrap;
+}
+.appeal-address-detail {
+  font-weight: normal;
+}
+.appeal-address-detail-small {
+  font-weight: normal;
+  font-size: 50rpx;
+}
+
+
+.appeal-telephone-container {
+  display: flex;
+  width: 750rpx;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 200rpx;
+}
+
+.appeal-telephone {
+  height: 300rpx;
+  width: 300rpx;
+}

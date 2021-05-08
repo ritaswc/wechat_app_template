@@ -1,0 +1,98 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" circular="{{circular}}">
+    <block wx:for="{{imgUrl}}">
+      <swiper-item>
+        <image bindload="cusImageLoad" src="{{item}}" class="slide-image" style="width:{{imageWidth}};height:{{imageHeight}}"></image>
+      </swiper-item>
+    </block>
+  </swiper> 
+</view>
+<view class="headline">
+    <view class="headline-img"><image class="headimg" src="{{headImg}}"></image></view>
+    <view class="headline-text">缤纷圣诞季，圣诞节礼物送她颜值高的甜蜜礼盒吧</view>
+</view>
+
+
+<!--生鲜-->
+<view class="friuts">
+      <view class="classifytitle">{{goodclassify[0]}}</view>
+      <view class="goodclassifyimg">
+            <image class="classifyimg" src="{{goodclassifyimg[0]}}"></image>
+      </view>
+      <view class="goods">
+          <view class="gooditem" wx:for="{{friut}}">
+              <view class="goodview">
+                  <image class="goodimg" src="{{item.pic}}"></image>
+              </view>
+              <view class="goodprice">{{item.price}}</view>
+              <view class="goodtext">{{item.name}}</view>
+          </view>
+      </view>
+</view>
+<!--粮油-->
+<view class="grain ">
+      <view class="classifytitle">{{goodclassify[1]}}</view>
+      <view class="goodclassifyimg">
+            <image class="classifyimg" src="{{goodclassifyimg[1]}}"></image>
+      </view>
+      <view class="goods">
+          <view class="gooditem" wx:for="{{grain}}">
+              <view class="goodview">
+                  <image class="goodimg" src="{{item.pic}}"></image>
+              </view>
+              <view class="goodprice">{{item.price}}</view>
+              <view class="goodtext">{{item.name}}</view>
+          </view>
+      </view>
+</view>
+<!--特产-->
+<view class="local">
+      <view class="classifytitle">{{goodclassify[2]}}</view>
+      <view class="goodclassifyimg">
+            <image class="classifyimg" src="{{goodclassifyimg[2]}}"></image>
+      </view>
+      <view class="goods">
+          <view class="gooditem" wx:for="{{local}}">
+              <view class="goodview">
+                  <image class="goodimg" src="{{item.pic}}"></image>
+              </view>
+              <view class="goodprice">{{item.price}}</view>
+              <view class="goodtext">{{item.name}}</view>
+          </view>
+      </view>
+</view>
+<!--茶酒-->
+<view class="teawine">
+      <view class="classifytitle">{{goodclassify[3]}}</view>
+      <view class="goodclassifyimg">
+            <image class="classifyimg" src="{{goodclassifyimg[3]}}"></image>
+      </view>
+      <view class="goods">
+          <view class="gooditem" wx:for="{{teawine}}">
+              <view class="goodview">
+                  <image class="goodimg" src="{{item.pic}}"></image>
+              </view>
+              <view class="goodprice">{{item.price}}</view>
+              <view class="goodtext">{{item.name}}</view>
+          </view>
+      </view>
+</view>
+<!--进口-->
+<view class="imported">
+      <view class="classifytitle">{{goodclassify[4]}}</view>
+      <view class="goodclassifyimg">
+            <image class="classifyimg" src="{{goodclassifyimg[4]}}"></image>
+      </view>
+      <view class="goods">
+          <view class="gooditem" wx:for="{{imported}}">
+              <view class="goodview">
+                  <image class="goodimg" src="{{item.pic}}"></image>
+              </view>
+              <view class="goodprice">{{item.price}}</view>
+              <view class="goodtext">{{item.name}}</view>
+          </view>
+      </view>
+</view>
+
+<loading hidden="{{hiddening}}">正在加载</loading>

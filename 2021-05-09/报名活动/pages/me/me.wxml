@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="member setflex">
+    <view class="avator">
+      <image src="http://pics.sc.chinaz.com/files/pic/pic9/201510/apic15816.jpg"></image>
+    </view>
+    <view class="username">根号2的世界</view>
+  </view>
+  <view class="list">
+    <navigator url="../startAct/startAct" class="lst">
+      <text>发起活动</text>
+      <view  class="iconfont icon icon-xitongxiayibu"></view>
+    </navigator>
+    <navigator url="../sug/sug" class="lst">
+      <text>意见建议</text>
+      <view class="iconfont icon icon-xitongxiayibu"></view>
+    </navigator>
+  </view>
+  <view class="hasOrder">
+    <text class="title_tip">已发起的活动</text>
+    <view class="wrap">
+      <import src="../common/item_order.wxml" />
+      <template is="item_order" data="{{array}}" />
+    </view>
+  </view>
+  <view class="hasAttendAct">
+    <text class="title_tip">已参与的活动</text>
+    <view class="wrap">
+      <import src="../common/item_order.wxml" />
+      <template is="item_order" data="{{array}}" />
+    </view>
+  </view>
+</view>

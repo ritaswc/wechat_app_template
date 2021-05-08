@@ -1,0 +1,83 @@
+/**index.wxss**/
+@import "../../component/shop/shop.wxss";
+@import "../../component/category/category.wxss";
+/*广告轮播*/
+.banner{
+  width: 100%;
+  height: 300rpx;
+}
+
+.slide-image{
+  width: 100%;
+  height: 100%;
+}
+
+/*类目*/
+.category{
+  width: 100%;
+  margin-top: 10rpx;
+  padding-bottom: 20rpx;
+  background-color: #fff;
+}
+
+/*周边在吃啥*/
+.nearby{
+  width: 100%;
+  height: 70rpx;
+  border-top: 2rpx solid #eee;
+  border-bottom: 2rpx solid #eee;
+  font-size: 26rpx;
+  padding-right: 30rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.nearby-title{
+  float: left;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  color: #ee5511;
+  box-sizing: border-box;
+  margin-right: 30rpx;
+}
+
+.nearby-swiper{
+  float: left;
+  height: 100%;
+  width: 70%;
+}
+.nearby-swiper-item{
+  line-height: 70rpx;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  position: relative;
+}
+
+.nearby-swiper-img{
+  width: 44rpx;
+  height:44rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+  position: relative;
+  top: 10rpx;
+}
+
+/*猜你喜欢*/
+.recommend-list-title{
+  padding: 0 30rpx;
+  border-bottom: 2rpx solid #eee;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.recommend-icon{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+
+.recommend-title{
+  font-size: 26rpx;
+}

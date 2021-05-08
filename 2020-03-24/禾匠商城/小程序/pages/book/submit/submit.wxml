@@ -1,0 +1,144 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <form bindsubmit="booksubmit" reportSubmit="true">
+            <view class="population">
+                <view class="goods flex-row">
+                    <view class="goods-img flex-grow-0">
+                        <image src="{{goods.cover_pic}}"></image>
+                    </view>
+                    <view class="flex-grow-1 flex-col goods-info">
+                        <view class="flex-grow-1 goods-name">
+                            {{goods.name}}
+                        </view>
+                        <view class="flex-grow-1 goods-name" wx:for="{{attr}}">
+                            <view class="text-more-2" style="margin:5rpx 0;-webkit-line-clamp: 1;">
+                                <text>{{item['attr_group_name']}} :  </text>
+                                <text style="color:#ff6845">{{item['attr_name']}}</text>
+                            </view>
+                        </view>
+                        <view class="flex-gorw-0 flex-row money flex-y-bottom">
+                            <view class="original_price flex-grow-0">
+                                ¥{{goods.original_price}}
+                            </view>
+                            <view class="price flex-grow-0">
+                                ¥{{level_price}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="form">
+                    <view class="form-image">
+                        <image src="{{__wxapp_img.yy.form_title.url}}"></image>
+                    </view>
+                    <view class="group-form">
+                        <block wx:for="{{form_list}}">
+                            <view class="username flex-row input-shell flex-y-center" wx:if="{{item.type=='text'}}">
+                                <view class="flex-grow-0">
+                                        {{item.name}}：
+                                    </view>
+                                <view class="flex-grow-1">
+                                    <input bindinput="inputChenge" data-id="{{index}}" placeholder="{{item.tip}}" value="{{item.default}}"></input>
+                                </view>
+                            </view>
+                            <view class="group-radio flex-row input-shell flex-y-center" wx:if="{{item.type=='radio'}}">
+                                <view class="flex-grow-0">
+                                        {{item.name}}：
+                                    </view>
+                                <view class="flex-grow-1" style="padding-top:24rpx;">
+                                    <view bindtap="radioChange" class="checkbox group-radio-item {{de.selected?'active':''}} flex-y-center" data-id="{{idx}}" data-pid="{{index}}" wx:for="{{item.default}}" wx:for-index="idx" wx:for-item="de">
+                                        <checkbox checked="{{item.selected}}" data-id="0" style="display:none" value="{{de.name}}"></checkbox>{{de.name}}
+                                            </view>
+                                </view>
+                            </view>
+                            <view class="group-radio flex-row input-shell flex-y-center" wx:if="{{item.type=='checkbox'}}">
+                                <view class="flex-grow-0">
+                                        {{item.name}}：
+                                    </view>
+                                <view class="flex-grow-1" style="padding-top:24rpx;">
+                                    <view bindtap="checkboxChange" class="checkbox group-radio-item {{de.selected?'active':''}} flex-y-center" data-id="{{idx}}" data-pid="{{index}}" wx:for="{{item.default}}" wx:for-index="idx" wx:for-item="de">
+                                        <checkbox checked="{{item.selected}}" data-id="0" style="display:none" value="{{de.name}}"></checkbox>{{de.name}}
+                                            </view>
+                                </view>
+                            </view>
+                            <view class="username flex-row input-shell flex-y-center" wx:if="{{item.type=='time'}}">
+                                <view class="flex-grow-0">
+                                        {{item.name}}：
+                                    </view>
+                                <view class="flex-grow-1 flex-row picker-data flex-y-center">
+                                    <picker bindchange="inputChenge" class="flex-grow-0" data-id="{{index}}" mode="time" start="{{item.default}}" style="padding-right:20rpx;" value="{{item.default}}">
+                                        <view class="picker flex-y-center">
+                                                {{item.default}}
+                                            </view>
+                                    </picker>
+                                    <view class="flex-grow-0 picker-time flex-y-center">
+                                        <image src="{{__wxapp_img.share.right.url}}"></image>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="username flex-row input-shell flex-y-center" wx:if="{{item.type=='date'}}">
+                                <view class="flex-grow-0">
+                                        {{item.name}}：
+                                    </view>
+                                <view class="flex-grow-1 flex-row picker-data flex-y-center">
+                                    <picker bindchange="inputChenge" class="flex-grow-0" data-id="{{index}}" mode="date" start="{{item.default}}" style="padding-right:20rpx;" value="{{item.default}}" wx:if="{{is_date_start}}">
+                                        <view class="picker flex-y-center">
+                                                {{item.default}}
+                                            </view>
+                                    </picker>
+                                    <picker bindchange="inputChenge" class="flex-grow-0" data-id="{{index}}" mode="date" style="padding-right:20rpx;" value="{{item.default}}" wx:else>
+                                        <view class="picker flex-y-center">
+                                                {{item.default}}
+                                            </view>
+                                    </picker>
+                                    <view class="flex-grow-0 picker-time flex-y-center">
+                                        <image src="{{__wxapp_img.share.right.url}}"></image>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="username flex-row input-shell flex-y-top" style="padding:24rpx 0;" wx:if="{{item.type=='textarea'}}">
+                                <view class="flex-grow-0 flex-y-top">
+                                        {{item.name}}：
+                                    </view>
+                                <view class="flex-grow-1 flex-row flex-y-center">
+                                    <textarea bindinput="inputChenge" data-id="{{index}}" placeholder="{{item.tip}}" value="{{item.default}}"></textarea>
+                                </view>
+                            </view>
+                            <view class="username flex-row input-shell flex-y-center" style="padding:20rpx 0;" wx:if="{{item.type=='uploadImg'}}">
+                                <view class="flex-grow-0 flex-y-center">{{item.name}}：</view>
+                                <view bindtap="uploadImg" class="flex-grow-1 flex-y-center" data-id="{{index}}">
+                                    <input data-id="100" style="display:none" value="{{item.default}}"></input>
+                                    <view style="text-align: right;width: 100%;font-size: 0" wx:if="{{item.default}}">
+                                        <image mode="aspectFit" src="{{item.default}}" style="width:88rpx;"></image>
+                                    </view>
+                                    <view style="text-align:right;color:#c9c9c9;width:100%" wx:else>{{item.tip?item.tip:'请选择图片'}}</view>
+                                </view>
+                                <view class="flex-grow-0 flex-y-center">
+                                    <image src="{{__wxapp_img.balance.right.url}}" style="width:12rpx;height:18rpx;margin-left:18rpx;"></image>
+                                </view>
+                            </view>
+                        </block>
+                        <view class="group-radio flex-row input-shell flex-y-center">
+                            <view class="flex-grow-0">
+                                支付方式：
+                            </view>
+                            <view class="flex-grow-1" style="padding-top:24rpx;">
+                                <view bindtap="switch" class="checkbox group-radio-item {{pay_type=='WECHAT_PAY'?'active':''}} flex-y-cente" data-type="WECHAT_PAY" wx:if="{{wechat}}">
+                                    线上支付
+                                </view>
+                                <view bindtap="switch" class="checkbox group-radio-item {{pay_type=='BALANCE_PAY'?'active':''}} flex-y-cente" data-type="BALANCE_PAY" wx:if="{{balance}}">
+                                    余额支付
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <button class="submit-btn flex-row flex-y-center flex-x-center" formType="submit">
+                提交预约
+            </button>
+        </form>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

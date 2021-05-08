@@ -1,0 +1,25 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="poster">
+            <image bindtap="screen" src="{{img}}"></image>
+        </view>
+        <view class="choose">
+            <view class="share-title">选择模版</view>
+            <view class="share-bg">
+                <view bindtap="chooseImg" class="cross-left" data-id="1">
+                    <image src="../image/left.png" wx:if="{{left}}"></image>
+                </view>
+                <image bindtap="tagChoose" class="bg-item {{currentItem==item.id?'active':''}}" data-id="{{item.id}}" src="{{item.pic_url}}" wx:for="{{pic_list}}" wx:key="{{bg}}"></image>
+                <view bindtap="chooseImg" class="cross-right" data-id="2">
+                    <image src="../image/xi-right.png" wx:if="{{right}}"></image>
+                </view>
+            </view>
+            <button bindtap="saveImage" class="share-btn" wx:if="{{save}}">保存图片</button>
+            <button bindtap="openSetting" class="share-btn" wx:if="{{get}}">授予权限</button>
+            <view class="share-tip">保存至相册</view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

@@ -1,0 +1,62 @@
+@import "../../wxSortPickerView/wxSortPickerView.wxss";
+.nation-title {
+  height: 88rpx;
+  background-color: #f2f2f2;
+  text-align: center;
+  line-height: 88rpx;
+  border-bottom: 1px solid #ccc;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.info {
+  height: 88rpx;
+  width: 100%;
+  background-color: #f2f2f2;
+  line-height: 88rpx;
+  text-align: center;
+}
+
+.info-time {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.item {
+  height: 140rpx;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding-left: 30rpx;
+}
+
+.item-info {
+  font-size: 28rpx;
+  margin-top: 32rpx;
+  margin-bottom: 15rpx;
+  /*margin-left: 30rpx;*/
+}
+
+.item-info-period {
+  color: #666;
+  margin-right: 30rpx;
+}
+
+.item-info-time {
+  color: #999;
+}
+.code-num{
+    width: 50rpx;
+    height: 50rpx;
+    background-image: url('../../image/red.png');
+    background-size:cover;
+    color: white;
+    border-radius: 50px 50px;   
+    display: inline-block;
+    text-align: center;
+    line-height: 50rpx;
+}
+.item-span-down{
+   /*margin-left: 10rpx;
+  margin-bottom: 10rpx;*/
+  float: left;
+}

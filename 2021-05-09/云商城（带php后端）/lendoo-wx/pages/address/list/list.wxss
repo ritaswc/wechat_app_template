@@ -1,0 +1,80 @@
+/*page background*/
+page {
+	background: #eee;
+}
+
+/*that means a record*/
+.item {
+	margin-bottom: 20rpx;
+	background: #fff;
+	padding: 20rpx;
+}
+/*姓名与手机号码*/
+.item .header {
+	font-size: 36rpx;
+	color: #333;
+	line-height: 72rpx;
+}
+
+.item .header text {
+	margin-right: 40rpx;
+}
+
+.item .summary {
+	color: #999;
+	font-size: 32rpx;
+	line-height: 60rpx;
+}
+
+.item .footer {
+	border-top: 1px solid #ccc;
+	font-size: 30rpx;
+	color: #999;
+	padding-left: 10rpx;
+	padding-top: 10rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+/*设为默认地址*/
+.set-default {
+	display: flex;
+	align-items: center;
+}
+
+.set-default text {
+	margin-left: 10rpx;
+}
+
+/*编辑与删除操作*/
+.item .footer .operation {
+	width: 280rpx;
+	display: flex;
+}
+
+.item .footer .operation .container {
+	display: flex;
+	align-items: center;
+}
+
+.item .footer .operation .container image {
+	width: 60rpx;
+	height: 60rpx;
+}
+
+.item .footer .operation .container text {
+	margin-left: 10rpx;
+}
+
+/*地址列表包装容器*/
+.address-list {
+	margin-bottom: 56px;
+}
+
+/*添加地址按钮*/
+.address-add {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}

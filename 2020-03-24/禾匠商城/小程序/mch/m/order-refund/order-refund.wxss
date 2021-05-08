@@ -1,0 +1,51 @@
+.row-list>view {
+    margin-bottom: 8rpx;
+}
+
+.row-list>view:last-child {
+    margin-bottom: 0;
+}
+
+.row-list>view>.flex-grow-0 {
+    min-width: 180rpx;
+    text-align: right;
+}
+
+.goods-name {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.bottom-bar {
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1rpx solid #e3e3e3;
+    padding: 24rpx;
+}
+
+.order-item-btn {
+    display: inline-block;
+    font-size: 9pt;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 0 24rpx;
+    margin-left: 24rpx;
+    border: 1rpx solid #ccc;
+    color: #555;
+    border-radius: 8rpx;
+    background: #fff;
+}
+
+.order-item-btn.button-hover {
+    opacity: .75;
+}
+
+.order-item-btn:after {
+    display: none;
+}

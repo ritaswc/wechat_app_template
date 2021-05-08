@@ -1,0 +1,30 @@
+<!--pages/startAct/startAct.wxml-->
+<view class="container">
+    <view class="listWrap">
+        <view class="listWrap_child" bindtap = "uploadIMG">
+            <text class="title">活动图片</text>
+            <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1487507952946&di=10763899b51c93be380eae3749d454c1&imgtype=0&src=http%3A%2F%2Fkibey-sys-avatar.b0.upaiyun.com%2F2015%2F5%2F6b2d03a69c98f0a3b2f13ef6faa321bb1432775107.png"></image>
+            <view class="iconfont icon icon-xitongxiayibu"></view>
+        </view>
+        <navigator url = "../substartAct/substartAct?theam=ac_name" class="listWrap_child">
+            <text class = "sub_title">活动名称</text>
+            <view class="iconfont icons icon-xitongxiayibu"></view>
+        </navigator>
+        <navigator url = "../substartAct/substartAct?theam=ac_time" class="listWrap_child">
+            <text class = "sub_title">时间</text>
+            <view class="iconfont icons icon-xitongxiayibu"></view>
+        </navigator>
+        <navigator url = "../substartAct/substartAct?theam=ac_address" class="listWrap_child">
+            <text class = "sub_title">地点</text>
+            <view class="iconfont icons icon-xitongxiayibu"></view>
+        </navigator>
+        <navigator url = "../substartAct/substartAct?theam=ac_duration" class="listWrap_child">
+            <text class = "sub_title">有效期</text>
+            <view class="iconfont icons icon-xitongxiayibu"></view>
+        </navigator>
+        <navigator url = "../substartAct/substartAct?theam=ac_detail" class="listWrap_child">
+            <text class = "sub_title">详情</text>
+            <view class="iconfont icons icon-xitongxiayibu"></view>
+        </navigator>
+    </view>
+</view>

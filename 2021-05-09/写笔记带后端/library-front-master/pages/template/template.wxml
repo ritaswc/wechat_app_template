@@ -1,0 +1,11 @@
+<template name="button">
+    <view style="width: 98%;padding-top: 20rpx">
+        <button disabled="{{book_name == ''||loading ? true : false}}" style="color: white; background-color: {{bcolor}}; border: none; font-size: 32rpx; line-height: 80rpx; height: 80rpx;" bindtap="{{bindtapaction}}" loading="{{loading}}">{{ context }}</button>
+    </view>
+</template>
+
+<template name="button_choose_school">
+    <view style="width: 98%;padding-top: 20rpx">
+        <button style="color: {{fontcolor}}; background-color: {{bcolor}}; border: none; font-size: 32rpx; line-height: 80rpx; height: 80rpx;" bindtap="{{bindtapaction}}" loading="{{loading}}">{{ context }}</button>
+    </view>
+</template>

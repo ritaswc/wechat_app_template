@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container">
+  <navigator url="../details/details?id={{current_goods.goods_id}}">
+    <view class="current_goods goods">
+      <image class="goods_img" src="https://shop.llzg.cn/{{current_goods.goods_thumb}}"></image>
+      <view class="goods_cont">
+        <text class="title">{{current_goods.goods_name}}</text>
+        <text class="des">{{current_goods.xcxms}}</text>
+        <view class="inf">
+          <text class="price">￥{{current_goods.shop_price}}</text><text class="on_time">{{current_goods.xcxfs}}</text>
+        </view>
+      </view>
+    </view>
+  </navigator>
+  
+  <view class="history">
+    <view class="hs_title">
+      <text></text>往期产品<text></text>
+    </view>
+    <block wx:for="{{history_goods_list}}">
+      <navigator url="../details/details?id={{item.goods_id}}">
+        <view class="history_goods goods" id="{{(index+1) % 2 == 0 ? 'even_goods' : 'odd_goods'}}">
+          <image class="goods_img" src="https://shop.llzg.cn/{{item.goods_thumb}}"></image>
+          <view class="goods_cont">
+            <text class="title">{{item.goods_name}}</text>
+            <text class="des" wx:if="{{item.goods_brief}}">{{item.goods_brief}}</text>
+            <view class="inf">
+              <text class="price">￥{{item.shop_price}}</text><text class="on_time">已于{{item.add_time}}发售</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <view class="loading" hidden="{{loading}}">
+      <image src="../../images/loading.gif" mode="widthFix"></image>
+      <text>卖力加载中...</text>
+    </view>
+    <view wx:if="{{noMore}}" class="no_more">没有更多了(＞﹏＜)</view>
+  </view>
+</view>

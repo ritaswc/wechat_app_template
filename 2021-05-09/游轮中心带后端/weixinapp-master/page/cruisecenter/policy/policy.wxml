@@ -1,0 +1,294 @@
+<view class="page">
+    <view class="body">
+        <view class="widgets">
+            <view class="widgets__item">
+                <view id="view" class="widgets__info {{viewShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">边检政策</text>
+                    <image class="widgets__info-img" src="resources/kind/widget_1.jpg" background-size="cover" />
+                </view>
+                <view class="widgets__list {{viewShow ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets">
+                        <text class="page__header">一、自助查验系统</text>
+                        <text class="page__desc">目前，在吴淞口国际邮轮港建有16条自助查验通道，符合以下条件的中国公民乘坐邮轮出境可选择便捷的自助通关：持用电子普通护照同时在办理护照时已留取过指纹的内地旅客以及经边检机关备案的港澳台旅客（上海地区备案点在浦东机场）。</text>
+                        <text class="page__desc">如果大家不清楚自己的护照是不是电子护照，可以看下自己的护照正面下方是否有个金色方形的标记或是证件号码为字母“E”开头，如果有就说明是电子护照。</text>
+                        <text class="page__desc">在邮轮港一楼办票大厅大屏幕上循环播放自助查验系统使用方法的短片，大家在办票或排队等候安检时可以注意观看或者向领队索取宣传折页上面也会有使用说明。</text>
+                        <text class="page__desc">在自助通关时需要提醒大家注意的几个问题：一是不要用力推闸门，系统进行信息比对需要数秒时间，切莫着急，请耐心等候。二是结伴出行的旅客千万不要拿错同行人的护照，否则无法通过自助查验通道。三是通关时请摘掉眼镜、帽子、口罩等饰物，否则影响系统对于人像脸部的识别比对效率。四是当指纹因磨损等原因无法识别时，可换另一个手指指纹再试，确实无法识别可寻求边检工作人员帮助。</text>
+                        <text class="page__header">二、144小时过境免签政策</text>
+                        <text class="page__desc">自2016年1月30日起，上海各口岸及江苏南京、浙江杭州机场口岸对部分国家外国人实行144小时过境免签政策。</text>
+                        <text class="page__header">1.适用条件</text>
+                        <text class="page__desc">该政策的适用口岸范围为上海浦东国际机场、虹桥国际机场、上海港国际客运中心、吴淞口国际邮轮港、上海铁路口岸、南京禄口机场、杭州萧山机场。</text>
+                        <text class="page__desc">符合条件的外国人在上述任一口岸办理144小时过境免签手续后，可从其中任一口岸出境，停留范围限于上海市、江苏省和浙江省行政区域内。</text>
+                        <text class="page__desc">当前，适用144小时过境免签政策共51有个国家，这些国家的旅客可以凭本人有效国际旅行证件和144小时内已确定日期及座位前往第三国（地区）的联程客票办理过境手续（如从乘坐飞机从韩国首尔来上海，再乘坐邮轮前往济州不符合条件）。</text>
+                        <text class="page__header">2.注意事项</text>
+                        <text class="page__desc">一是144小时过境免签起算日期，是从入境后次日往后推算6天，（如：1月1日入境，应签发停留至1月7日）；二是如果旅客已办妥一次或二次有效签证，同时又符合144小时过境免签条件，且在国内逗留不超过6日的，可以不使用签证，向边检申请办理144小时过境免签手续。三是对部分免签入境国家，如日本、新加坡、文莱等国，还是给予免签入境政策。四是已办理144小时过境免签手续的旅客如遇不可抗力等原因需在上海市、江苏省和浙江省行政区域停留超过144小时的，或者超出准予停留行政区域范围的，应当到出入境管理部门办理相应签证。</text>
+                        <text class="page__header">三、邮轮口岸通关注意事项</text>
+                        <text class="page__desc">一是根据公安部推出的便利措施，内地居民乘坐母港邮轮出境后再入境不再加入境盖验讫章，出境时如果您选择走自助通道，也不加盖出境验讫章，所以有些旅客会发现乘坐邮轮出国旅游一趟回来，还是一本空白护照，这是正常现象。</text>
+                        <text class="page__desc">二是我们在工作中，经常发现有的旅客以为乘坐邮轮出境时已查验过护照，入境时不需要再查验护照，因而在入境前将自己的护照放进行李并交给船方托运，结果无法办理入境手续，为了从大堆的托运行李中寻找护照耽误了不少时间。在此，我们也要提醒广大旅客，乘坐邮轮入境通关时还是需要查验护照的，请将护照随身携带，切勿打包进托运行李，以免耽误您的行程。</text>
+                        <text class="page__desc">三是当前邮轮经济发展迅猛，2015年在上海营运的母港邮轮数量已达到9艘，经常会出现两艘邮轮同时靠泊一个码头的情况。我们也要提醒广大旅客，进入邮轮码头后务必看清现场各类提示标牌，切莫走错区域，甚至上错船，给自己带来不必要的麻烦。</text>
+                        <text class="page__desc">四是邮轮码头客运大楼场地有限，希望大家能够按照旅行社推荐的抵达时间错峰候检，以减少等候时间。同时，希望大家在兴奋之余不要忘记遵守《中国公民出国（境）旅游文明行为指南》，在通关候检时不要出现大声喧哗、拍照、越过黄线等不文明行为。</text>
+                    </view>
+                </view>
+            </view>
+            <view class="widgets__item">
+                <view id="content" class="widgets__info {{contentShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">海关政策</text>
+                    <image class="widgets__info-img" src="resources/kind/widget_2.jpg" background-size="cover" />
+                </view>
+                <view class="widgets__list {{contentShow ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets">
+                        <image class="page_w_img" mode="widthFix" src="http://www.cruisesh.com/upload/6247-1ot4bap.png" />
+                        <text class="page__header">海关政策告知（请旅客务必仔细阅读）</text>
+                        <text class="page__header">★关于申报</text>
+                        <text class="page__desc">进出境旅客携带有下面《申报单》所列的需向海关申报的物品的，应在《申报单》相应栏目内如实填报，在通关时选走申报通道，并将有关物品交海关验核，办理有关手续。</text>
+                        <text class="page__header">★关于免税额度</text>
+                        <text class="page__desc">海关总署公告2010年第54号（关于进境旅客所携行李物品验放标准有关事宜）</text>
+                        <text class="page__desc">为进一步增强海关执法透明度，方便旅客进出境，明确进境旅客行李物品征免税规定，规范和统一海关验放标准，现就有关事项公告如下</text>
+                        <text class="page__desc">一、进境居民旅客携带在境外获取的个人自用进境物品，总值在5000元人民币以内（含5000元）的；非居民旅客携带拟留在中国境内的个人自用进境物品，总值在2000元人民币以内（含2000元）的，海关予以免税放行，单一品种限自用、合理数量，但烟草制品、酒精制品以及国家规定应当征税的20种商品等另按有关规定办理。</text>
+                        <text class="page__desc">二、进境居民旅客携带超出5000元人民币的个人自用进境物品，经海关审核确属自用的；进境非居民旅客携带拟留在中国境内的个人自用进境物品，超出人民币2000元的，海关仅对超出部分的个人自用进境物品征税，对不可分割的单件物品，全额征税。</text>
+                        <text class="page__desc">三、有关短期内多次来往旅客行李物品征免税规定、验放标准等事项另行规定。</text>
+                        <text class="page__desc">特此公告。</text>
+                        <text class="page__desc">二○一○年八月十九日</text>
+                        <text class="page__header">★关于免税烟酒限量</text>
+                        <text class="page__desc">《海关总署令第58号》中规定：香港、澳门地区居民及因私往来香港、澳门地区的内地居民，免税香烟200支，或雪茄50支，或烟丝250克；免税12度以上酒精饮料限1瓶（0.75升以下）。其他旅客，免税香烟400支，或雪茄100支，或烟丝500克；免税12度以上酒精饮料限2瓶（1.5升以下）。不满16周岁者无上述免税额度。</text>
+                        <text class="page__header">★关于国家规定应当征税的20种商品</text>
+                        <text class="page__desc">《海关总署公告2004年第7号》中规定，根据《财政部关于重新明确不予减免税的20种商品税号范围的通知》（财关税〔2004〕6号），对电视机、摄像机、录像机、放像机、音响设备、空调器、电冰箱（电冰柜）、洗衣机、照相机、复印机、程控电话交换机、微型计算机及外设、电话机、无线寻呼系统、传真机、电子计数器、打字机及文字处理机、数码相机、数码复印机、IC卡读入器、闪烁存储器、移动硬盘和网络摄像头、家具、灯具和餐料等20种商品进口时，应严格按照《中华人民共和国进出口税则》税号进行认定，并征收进口关税和进口环节增值税。</text>
+                        <text class="page__header">★关于货币现钞限量</text>
+                        <text class="page__desc">中国公民出入境、外国人入出境每人每次携带的人民币限额为20000元。</text>
+                        <text class="page__desc">出境人员携带不超过等值5000美元（含5000美元）的外币现钞出境的，海关予以放行；携带外币现钞金额在等值5000美元以上至10000美元（含10000美元）的，应向外汇指定银行申领《携带证》，携带超过等值10000美元的外币现钞出境，应向外汇局申领《携带证》。</text>
+                        <text class="page__desc">海关总署根据国务院关税税则委员会《关于调整进境物品进口税有关问题的通知》（税委会〔2016〕2号）规定，自2016年4月8日起对进境物品进口税税目税率进行调整。</text>
+                    </view>
+                </view>
+            </view>
+            <view class="widgets__item">
+                <view id="form" class="widgets__info {{formShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">检验检疫政策</text>
+                    <image class="widgets__info-img" src="resources/kind/widget_3.jpg" background-size="cover" />
+                </view>
+                <view class="widgets__list {{formShow ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets">
+                        <text class="page__header">邮轮入境旅客须知</text>
+                        <text class="page__desc">当旅客乘邮轮由境外进入中华人民共和国国境时，依据《中华人民共和国国境卫生检疫法》及其实施细则、《中华人民共和国进出境动植物检疫法》及其实施条例，请旅客们配合检验检疫机关做到：</text>
+                        <text class="page__header">一、健康申报</text>
+
+                        <text class="page__desc">（一）有以下情况的出入境人员需主动口头向检疫官员申报，接受检验检疫。</text>
+
+                        <text class="page__desc">1.有发热、寒战、咳嗽、腹泻、呕吐、呼吸困难等体征或症状之一；</text>
+
+                        <text class="page__desc">2.患有传染病或精神病；</text>
+
+                        <text class="page__desc">3.携带特殊物品（微生物、人体组织、生物制品、血液及血液制品），骸骨、放射性物品等。</text>
+
+                        <text class="page__desc">（二）当国内外发生重大传染病疫情时，出入境人员应如实填写《入境检疫申明卡》。</text>
+
+                        <text class="page__desc">（三）来自黄热病疫区的人员，应主动出示黄热病预防接种证书。</text>
+
+                        <text class="page__header">二、禁止携带物品申报：</text>
+
+                        <text class="page__desc">1．携带猫、犬等伴侣动物者，需主动向检验检疫官员申报。</text>
+
+                        <text class="page__desc">2．携带动物及动物产品例如肉类、蛋、奶制品、水产品等；或植物及植物产品例如水果、蔬菜、鲜花、种苗等；其他类如生物材料、标本、土壤等《农业部国家质量监督检验检疫总局公告》（第1712号）所规定的禁止携带物入境者，需主动向检验检疫官员申报。</text>
+
+                        <text class="page__desc">关于1712号公告详细内容请访问：</text>
+
+                        <text class="page__desc">国家质检总局网站 http://www.gov.cn/zwgk/2012-03/02/content_2081510.htm</text>
+
+                    </view>
+                </view>
+            </view>
+            <view class="widgets__item">
+                <view id="interact" class="widgets__info {{interactShow ? 'widgets__info_show' : ''}}" bindtap="widgetsToggle">
+                    <text class="widgets__info-name">旅游局政策</text>
+                    <image class="widgets__info-img" src="resources/kind/widget_4.jpg" background-size="cover" />
+                </view>
+                <view class="widgets__list {{interactShow ? 'widgets__list_show' : ''}}">
+                    <view class="page__widgets">
+                        <text class="page__header">关于发布《上海市邮轮旅游经营规范》的通知</text>
+                        <text class="page__desc">各区（县）旅游行政管理部门，相关区交通行政管理部门，各有关单位：</text>
+                        <text class="page__desc">《上海市邮轮旅游经营规范》已经上海市旅游局、上海市交通委审议通过，现予发布，自2016年4月10日起施行。</text>
+                        <text class="page__desc">上海市旅游局</text>
+                        <text class="page__desc">上海市交通委员会    2016年3月6日</text>
+                        <text class="page__header">上海市邮轮旅游经营规范 </text>
+
+       <text class="page__header">第一条【目的】</text>
+
+       <text class="page__desc">为了规范本市邮轮旅游经营，维护邮轮旅游市场秩序，保障旅游者和邮轮公司、旅行社、国际船舶代理企业、邮轮码头的合法权益，根据《中华人民共和国旅游法》、《中华人民共和国港口法》、《中华人民共和国海商法》、  《中华人民共和国国际海运条例》、《上海市旅游条例》、《交通运输部关于促进我国邮轮运输业持续健康发展的指导意见》和有关规定，结合本市实际情况，制定本规范。</text>
+
+       <text class="page__header">第二条【邮轮旅游定义】</text>
+
+       <text class="page__desc">本规范所称邮轮旅游是指以海上船舶为旅游目的地和交通工具，为旅游者提供海上游览、住宿、交通、餐饮、娱乐或到岸观光等多种服务的出境旅游方式。</text>
+
+       <text class="page__header">第三条【适用范围】</text>
+
+       <text class="page__desc">本规范适用于邮轮公司、旅行社、国际船舶代理企业、邮轮码头等经营主体在本市行政区域内从事以上海港为母港的邮轮相关的邮轮旅游经营的行为。</text>
+
+       <text class="page__header">第四条【管理部门】</text>
+
+       <text class="page__desc">旅游行政管理部门负责旅行社经营邮轮旅游业务的监督管理，交通行政管理部门负责邮轮码头秩序维护、邮轮公司经营邮轮运输业务以及国际船舶代理企业代理邮轮船票行为的监督管理。</text>
+
+       <text class="page__desc">邮轮码头所在地的区人民政府负责本行政区域内邮轮旅游突发事件的应急处置工作，制定本区邮轮旅游应急处置预案。</text>
+
+       <text class="page__desc">海事、公安、口岸联检单位等相关行政管理部门按照各自职责做好邮轮旅游经营的服务和管理工作。</text>
+
+       <text class="page__header">第五条【行业协会】</text>
+
+       <text class="page__desc">本市邮轮旅游相关行业协会是依法维护和推进本地区邮轮行业发展的社会机构，应依照法律、法规及其章程开展工作，发挥与政府部门的沟通、协调作用，维护行业秩序，开展行业自律，引导邮轮公司、旅行社和国际船舶代理企业公平竞争、诚信经营，促进本地区邮轮旅游业健康、可持续的发展。</text>
+
+       <text class="page__desc">市旅游、交通行政管理等部门应加强工作指导。</text>
+
+       <text class="page__header">第六条【设施及服务标准】</text>
+
+       <text class="page__desc">邮轮上与旅游者安全相关的设施设备、安全标识、使用说明等有文字说明的，应当配置中文说明。</text>
+
+       <text class="page__desc">市旅游、交通行政管理部门牵头和推动制定邮轮旅游服务地方标准、团体标准和区域标准。</text>
+
+       <text class="page__desc">鼓励邮轮公司、旅行社、国际船舶代理企业、邮轮码头按照服务中国旅游者实际情况制定、完善邮轮旅游服务标准。</text>
+
+       <text class="page__header">第七条【经营资质】</text>
+
+       <text class="page__desc">经营出境包价邮轮旅游业务或者代理销售包价邮轮旅游产品的的，应当取得旅行社经营出境旅游业务许可。</text>
+
+       <text class="page__desc">代理销售邮轮船票的，应当取得国际船舶代理资格。外资企业应当取得《国际船舶代理经营资格登记证书》，内资企业应当向中国船舶代理及无船承运人协会办理相关备案手续。</text>
+
+       <text class="page__header">第八条【领队人员】</text>
+
+       <text class="page__desc">旅行社组织邮轮旅游委派的领队人员，应当具备领队证（含临时领队证），并参加邮轮旅游业务培训，具备邮轮旅游基本知识，掌握必要的紧急情况处理技能。</text>
+
+       <text class="page__desc">领队在邮轮旅游过程中应协同邮轮公司和接待社实施旅游行程计划，协助处理旅游行程中的突发事件、纠纷及其它问题。旅游者遇到特殊困难和安全问题时，领队应当及时向组团社和中国驻所在国家使领馆报告。</text>
+
+       <text class="page__header">第九条【保险】</text>
+
+       <text class="page__desc">市交通、旅游行政管理部门推行邮轮旅游经营方综合保险制度。邮轮公司、旅行社和邮轮码头经营者应积极参加本市邮轮旅游经营方综合保险统保。</text>
+
+<text class="page__desc">旅行社组织旅游者参加邮轮旅游应当以显著方式提示旅游者投保个人意外险。</text>
+
+       <text class="page__header">第十条【邮轮船票销售】</text>
+
+       <text class="page__desc">邮轮公司在国内设立的船务公司可以直接销售邮轮船票，也可以委托有资质的旅行社和国际船舶代理企业销售邮轮船票。</text>
+
+       <text class="page__desc">邮轮公司应当对外公布船票销售指导价。</text>
+
+       <text class="page__header">第十一条【邮轮船票】</text>
+
+       <text class="page__desc">邮轮公司、旅行社和国际船舶代理企业向旅游者销售邮轮船票的，应当在游客登船前向旅游者提供中文文本的船票。</text>
+
+       <text class="page__desc">船票应列明承运人名称、船名、航次、出发港、途径港、返回港、舱室等级、乘船日期、开船时间、上船地点（码头）等基本信息，应告知邮轮旅游的安全注意事项、风险警示、礼仪规范、民事责任与义务、因不可抗力导致的航程变更、取消后的风险分担标准、免责事项、投诉电话、法律救助渠道等事项和船上服务项目有关人数、身高、体重、年龄等的限制性要求。邮轮公司应当通过登轮手册、公告牌、网站告知等多种形式发布上述信息。</text>
+
+       <text class="page__desc">船票应从有利于解决邮轮消费纠纷角度出发，充分考虑连结点的关联性，按照便利中国旅游者维护合法权益的原则确定司法管辖地和适用的法律。</text>
+
+       <text class="page__desc">邮轮公司、旅行社和国际船舶代理企业应向旅游者送达可保留的纸质或电子文本形式船票及其他书面资料，用电子方式送达的应采用旅游者可确认的方式。</text>
+
+       <text class="page__desc">邮轮公司提供给旅游者的船票、服务说明等资料采用格式条款的，应当向市交通行政管理部门和其他有关部门备案。</text>
+
+       <text class="page__header">第十二条【邮轮船票销售、代理合同】</text>
+
+       <text class="page__desc">邮轮公司与旅行社、国际船舶代理企业应当就邮轮船票销售、代理签订书面合同，并对以下涉及旅游者权益的事项作出明确约定：</text>
+
+       <text class="page__desc">（一）因不可抗力导致的航程变更、取消后的风险分担标准；</text>
+
+       <text class="page__desc">（二）发生违约或者给旅游者造成人身损害、财产损失情形的责任分担；</text>
+
+       <text class="page__desc">（三）纠纷解决方式；</text>
+
+       <text class="page__desc">（四）向旅游者提供中文文本的船票、服务说明等资料的责任人；</text>
+
+       <text class="page__desc">（五）其他与旅游者权益相关的事项。</text>
+
+       <text class="page__header">第十三条【邮轮旅游合同】</text>
+
+       <text class="page__desc">旅行社将邮轮船票和岸上观光服务打包成包价旅游产品向旅游者销售的，应当与旅游者签订邮轮旅游合同，并提供船票，邮轮旅游合同应当包括以下内容：</text>
+
+       <text class="page__desc">（一）合同双方的基本信息：包括旅行社的名称、地址、联系电话、旅行社业务经营许可证编号；旅游者的身份信息、家庭住址、联系电话等；</text>
+
+       <text class="page__desc">（二）提供邮轮旅游服务的邮轮公司以及邮轮的基本信息；</text>
+
+       <text class="page__desc">（三）邮轮旅游行程：具体包括出发港、途经港和返回港；</text>
+
+       <text class="page__desc">（四）舱房等级等邮轮服务安排和标准；</text>
+
+       <text class="page__desc">（五）到岸观光行程安排；</text>
+
+       <text class="page__desc">（六）应当交纳的邮轮旅游费用及交纳的期限和方式；</text>
+
+       <text class="page__desc">（七）变更或者解除合同的条件和期限；</text>
+
+       <text class="page__desc">（八）违反合同的纠纷解决机制及应当承担的责任；</text>
+
+       <text class="page__desc">（九）赔偿标准；</text>
+
+       <text class="page__desc">（十）不可抗力等免责条款；</text>
+
+       <text class="page__desc">签订邮轮旅游合同可以参照、使用上海市工商局、上海市旅游局制定的《上海市邮轮旅游合同示范文本》。</text>
+
+       <text class="page__header">第十四条【特殊告知义务】</text>
+
+       <text class="page__desc">邮轮公司、旅行社、国际船舶代理企业向旅游者销售邮轮船票，旅行社与旅游者签订邮轮旅游合同时，应当向旅游者如实说明下列事项：</text>
+
+       <text class="page__desc">（一）邮轮上服务项目的限制性要求；</text>
+
+       <text class="page__desc">（二）邮轮上的禁止行为；</text>
+
+       <text class="page__desc">（三）船票费用包含的具体事项；</text>
+
+       <text class="page__desc">（四）邮轮旅游可能存在的特定风险、安全注意事项和安全避险措施；</text>
+
+       <text class="page__desc">（五）船长在船舶安全以及航行安全方面的处置权利；</text>
+
+       <text class="page__desc">（六）纠纷发生后的赔偿标准和手续；</text>
+
+       <text class="page__desc">（七）不可抗力及其他免责事项；</text>
+
+       <text class="page__desc">（八）应急联络方式；</text>
+
+       <text class="page__desc">（九）法律、法规规定应当向旅游者说明的其他情况。</text>
+
+       <text class="page__desc">对于上述特殊告知事项，邮轮码头应承担协助告知义务，应通过电子显示屏、广播、宣传资料等多种形式在码头区域向旅游者加强告知和宣传。</text>
+
+       <text class="page__header">第十五条【行前说明会】</text>
+
+       <text class="page__desc">旅行社组织旅游者参加邮轮旅游应在出发前召开行前说明会，引导旅游者正确认识邮轮旅游，避免安全问题及其他纠纷的发生。</text>
+
+       <text class="page__header">第十六条【邮轮航程变更】</text>
+
+       <text class="page__desc">邮轮公司应当按照合同上既定的航线行驶，并且提供承诺的相关服务，不得擅自改变航线或者减少服务项目和服务内容。</text>
+
+       <text class="page__desc">如遇不可抗力可能危及邮轮和旅游者人身安全的，邮轮船长有独立决定权，可以决定变更航线或者停止航行。邮轮公司、船员、邮轮码头、旅行社、旅游者均无权干涉，并应予配合。船长决定变更航线或者停止航行的，邮轮公司应当会同旅行社等有关单位做好后续处置工作。</text>
+
+       <text class="page__header">第十七条【航程变更处置】</text>
+
+       <text class="page__desc">在邮轮旅游行程开始前，因不可抗力等原因导致邮轮延误、不能靠港、变更停靠港等情况的，邮轮公司、旅行社和邮轮码头应第一时间向旅游者告知不可抗力的具体情形、邮轮航线变更情况、解决方案等内容。</text>
+
+       <text class="page__desc">在邮轮旅游行程中，因不可抗力等原因导致邮轮延误、不能靠港、变更停靠港等情况的，邮轮公司应当以中文等语种通过广播、公告屏、舱内电视、书面通知等形式向旅游者发布信息，告知不可抗力、客观原因的具体情形、邮轮航线变更情况、解决方案等内容，安排工作人员对旅游者进行解释、劝导。旅行社应当配合，并和邮轮公司一起制定和实施应急方案。</text>
+
+       <text class="page__header">第十八条【纠纷解决】</text>
+
+       <text class="page__desc">旅行社和国际船舶代理企业代理销售邮轮船票，因邮轮公司未按照合同约定提供相关服务产生的和旅游者之间的邮轮旅游纠纷，由邮轮公司负责纠纷解决；因旅行社和国际船舶代理企业在销售船票过程中未依法履行告知义务产生的纠纷，由旅行社和国际船舶代理企业负责纠纷解决。</text>
+
+       <text class="page__desc">旅行社把邮轮船票与岸上观光服务组合成包价旅游产品，违反邮轮旅游合同约定发生纠纷的，由组团社牵头负责纠纷解决。因邮轮公司的原因造成旅游者人身损害、财产损失的，或者因邮轮航程取消、变更发生纠纷的，由邮轮公司牵头负责纠纷解决，旅行社应当协助纠纷解决。</text>
+
+       <text class="page__desc">邮轮公司、旅行社和国际船舶代理企业应当积极与旅游者协商解决纠纷，并如实告知旅游者投诉方式及其他解决途径。</text>
+
+       <text class="page__desc">旅游者可以通过以下途径解决：与邮轮公司、旅行社和国际船舶代理企业协商；向消费者协会、市旅游质量监督所投诉；向交通、旅游、市场监督等行政管理部门投诉；合同中约定有仲裁条款或者事后达成书面仲裁协议的，申请仲裁机构仲裁；向人民法院提起诉讼。</text>
+
+       <text class="page__header">第十九条【信用管理】</text>
+
+       <text class="page__desc">市旅游、交通行政管理部门共同建立邮轮旅游信用档案。对经常无正当理由延误的邮轮降低信用等级。对邮轮公司、旅行社、国际船舶代理企业、邮轮码头、旅游者因违法经营和不文明行为受到的司法裁决承担责任、行政处罚和造成严重不良社会影响的事件等纳入信用记录。</text>
+
+       <text class="page__desc">邮轮旅游信用记录依法向社会公开，并且向公众提供查询服务。</text>
+
+       <text class="page__header">第二十条【应用解释部门】</text>
+
+       <text class="page__desc">市旅游局和市交通委按照各自职责可以对本规范的具体应用进行解释。</text>
+
+       <text class="page__header">第二十一条【国际船舶代理企业】</text>
+
+       <text class="page__desc">本规范所指的国际船舶代理企业是指从事国际邮轮船票代理业务的企业。</text>
+
+       <text class="page__header">第二十二条【施行日期】</text>
+
+       <text class="page__desc">本规范自2016年4月10日起施行。有效期五年。</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

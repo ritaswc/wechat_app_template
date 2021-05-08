@@ -1,0 +1,123 @@
+.info {
+    overflow-x: hidden;
+    padding-bottom: 20rpx;
+}
+
+.info .info-list {
+    margin-right: -10rpx;
+    margin-left: -10rpx;
+}
+
+.info-content {
+    padding: 0 10rpx;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 20rpx;
+}
+
+.info-content .info-bg {
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.info-content .info-video {
+    width: 100%;
+    height: 422rpx;
+    background-color: #fff;
+    position: relative;
+}
+
+.hide {
+    display: none;
+}
+
+.info-content .info-video .bg {
+    width: 100%;
+    height: 422rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.info-content .info-video .play {
+    width: 128rpx;
+    height: 128rpx;
+    position: absolute;
+    top: 137rpx;
+    left: 311rpx;
+    opacity: 0.8;
+}
+
+.info-content .info-video video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.info-content .info-label {
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding: 0 24rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,1);
+    z-index: 9999;
+}
+
+.modal video {
+    width: 100%;
+    height: 430rpx;
+}
+
+.no-scroll {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.info-content .content {
+    padding: 0 24rpx;
+}
+
+.info-content .content.more {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.info-content .left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0 20rpx;
+}
+
+.info-content .right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0 20rpx;
+}
+
+.info-content .right image {
+    width: 18rpx;
+    height: 10rpx;
+    margin-right: 16rpx;
+}

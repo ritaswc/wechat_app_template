@@ -1,0 +1,7 @@
+<template name="mineTop">
+   <view class="userinfo">
+    <image bindtap="aboutMe" class="settings" src="/image/customer/mine/19shezhi.png"></image>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{nickName}}</text>
+  </view>
+</template>

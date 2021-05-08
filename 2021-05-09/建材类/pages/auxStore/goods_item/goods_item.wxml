@@ -1,0 +1,26 @@
+<!--pages/auxStore/goods_item/goods_item.wxml-->
+<view class="nav">
+    <scroll-view class="scroll" scroll-x="true">
+         <block wx:for="{{navItem}}">
+              <view class="navItem {{hov}}" bindtap="selectEvent" data-index="{{item.cat_id}}">
+                      <text class="navText">{{item.cat_name}}</text>
+              </view>
+         </block>
+    </scroll-view>
+</view>
+<!--商品列表-->
+<view class="goods">
+    <block wx:for="{{goodsItem}}">
+         <view class="goodsItem">
+             <view>
+                  <image class="goodsImg" src="{{item.goods_img}}"></image>
+             </view>
+             <view>
+                  <text>{{item.goods_name}}</text> 
+             </view>
+             <view>
+                  <text>{{item.shop_price}}</text> 
+             </view>
+         </view>
+    </block>
+</view>

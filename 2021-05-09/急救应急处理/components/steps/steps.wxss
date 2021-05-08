@@ -1,0 +1,48 @@
+.steps {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 10rpx 50rpx;
+  box-sizing: content-box;
+}
+.steps-bar {
+  width: 100%;
+  background-color: #B2BEC1;
+  height: 10rpx;
+  border-radius: 10rpx;
+}
+.steps-bar-selected {
+  width: 100%;
+  background-color: #FA5834;
+  height: 10rpx;
+  border-radius: 10rpx;
+}
+
+.steps-dot {
+  height: 15rpx;
+  width: 15rpx;
+  flex-shrink: 0;
+  margin: 0 10rpx;
+  border-radius: 50%;
+  background-color: #B2BEC1;
+}
+.steps-dot-selected .steps-dot {
+  height: 15rpx;
+  width: 15rpx;
+  flex-shrink: 0;
+  margin: 0 10rpx;
+  border-radius: 50%;
+  background-color: #FA5834;
+}
+.steps-dot-selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30rpx;
+  width: 30rpx;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 2rpx solid #FA5834;
+}

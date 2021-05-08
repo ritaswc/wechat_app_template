@@ -1,0 +1,39 @@
+<view class="container">
+    <view class="user_inf_cont">
+        <image class="user_inf_bg" src="../../images/timg.jpg"></image>
+        <view class="user_inf">
+            <image src="{{userInf.avatarUrl}}"></image>
+            <text>{{userInf.nickName}}</text>
+        </view>
+    </view>
+    <view class="main">
+        <navigator url="../manageOrders/manageOrders?orderType=all">
+            <view class="all_orders main_item">
+                <text>全部订单</text>
+                <image src="../../images/arrow_right.png" class="arrow_r"></image>
+            </view>
+        </navigator>
+        
+        <navigator url="../manageOrders/manageOrders?orderType=waitpay">
+            <view class="all_orders main_item">
+                <text>待付款</text>
+                <image src="../../images/arrow_right.png" class="arrow_r"></image>
+            </view>
+        </navigator>
+        
+        <navigator url="../manageOrders/manageOrders?orderType=waitship">
+            <view class="all_orders main_item">
+                <text>待收货</text>
+                <image src="../../images/arrow_right.png" class="arrow_r"></image>
+            </view>
+        </navigator>
+        
+        <navigator url="../manageAddrList/manageAddrList">
+            <view class="all_orders main_item">
+                <text>地址管理</text>
+                <image src="../../images/arrow_right.png" class="arrow_r"></image>
+            </view>
+        </navigator>
+        
+    </view>  
+</view>

@@ -1,0 +1,156 @@
+.section{
+	font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+}
+.flex-wrp{
+	height: 98rpx;
+	display:flex;
+	background-color: #f6f6f6;
+	border-bottom: 1rpx solid #e5e5e5;
+	font-size:34rpx;
+	flex-direction:row;
+}
+.flex-item{
+	height: 94rpx;
+	color: #747474;
+	display:flex;
+	flex-grow: 1;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 4rpx solid #f6f6f6;
+}
+
+.flex-item.active{
+	border-bottom: 4rpx solid #2fa7e0;
+}
+
+.order-list{
+	background: #fff;
+	border-top: 1px solid #e3e3e3;
+	border-bottom: 1px solid #e3e3e3;
+	margin-top: 10rpx;
+}
+
+.order-info{
+	position: relative;
+	padding: 13rpx 34rpx 13rpx 32rpx;
+	font-size: 24rpx;
+	color: #a9a9a9;
+}
+
+.order-state{
+	font-size: 28rpx;
+	position: absolute;
+	right: 34rpx;
+	top: 35rpx;
+}
+
+
+.pro-info{
+	position: relative;
+	padding: 13rpx 34rpx 13rpx 32rpx;
+	background-color: #fff;
+	border-top: 1px solid #e3e3e3;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.pro-info image{
+	width: 227rpx;
+	height: 216rpx;
+	vertical-align: top;
+}
+
+.pro-detail{
+	position: absolute;
+	top: 37rpx;
+	left: 278rpx;
+	font-size: 30rpx;
+}
+
+.pro-name{
+	font-size: 34rpx;
+	font-weight: 500;
+	width: 445rpx;
+	position: relative;
+}
+
+.pro-desc{
+	margin-top: 21rpx;
+	font-size: 26rpx;
+	width: 445rpx;
+}
+
+.pro-number{
+	margin-top: 26rpx;
+	text-align: right;
+	font-size: 30rpx;
+	font-weight: 500;
+}
+
+.pro-price{
+	position: absolute;
+	right: 0;
+}
+
+.order-total{
+	padding: 13rpx 34rpx 13rpx 32rpx;
+	text-align: right;
+	font-size: 26rpx;
+}
+
+.total-price{
+	font-size: 36rpx;
+}
+
+.no-order{
+	text-align: center;
+	padding-top: 97rpx;
+	font-size: 34rpx;
+}
+
+.no-order image{
+	width: 231rpx;
+	height: 231rpx;
+}
+
+.no-order-tip{
+	margin-top: 108rpx;
+}
+
+.no-order-other{
+	margin-top: 40rpx;
+	color: #2fa7e0;
+	font-size: 26rpx;
+}
+
+.pay-wrap{
+	background: #fff;
+	border-bottom: 1px solid #e5e5e5;
+	padding: 14rpx;
+}
+
+.pay-wrap button{
+	background: #fff;
+	color: #2fa7e0;
+	font-size: 30rpx;
+	line-height: 52rpx;
+	height: 56rpx;
+	width: 166rpx;
+	border: 1px solid #2fa7e0;
+	margin-right: 20rpx;
+	padding: 0;
+}
+
+.pay-wrap button.wait_pay{
+	background: #2fa7e0;
+	color: #fff;
+}
+
+.hidden{
+	display: none;
+}
+
+.pro-goodname{
+	width: 320rpx;
+	display: inline-block;
+}

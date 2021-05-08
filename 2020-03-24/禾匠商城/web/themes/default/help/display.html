@@ -1,0 +1,27 @@
+{template 'common/header'}
+{if $do == 'system'}
+<div style="z-index: 1;" class="iframe-div">
+	<iframe src="//s.w7.cc/index.php?c=wiki&a=view&id=2&list=29&simple=1{if $_W['isfounder'] && !user_is_vice_founder()}&role=admin{/if}" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" allowTransparency="true"></iframe>
+</div>
+{/if}
+{if $do == 'custom'}
+<div style="z-index: 1;" class="iframe-div">
+	{if !empty($wiki_id)}
+	<iframe src="//s.w7.cc/index.php?c=wiki&a=view&id={$wiki_id}&simple=1" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" allowTransparency="true"></iframe>
+	{else}
+	<div class="we7-margin-vertical text-center font-lg">暂无内容</div>
+	{/if}
+</div>
+{/if}
+<script>
+    var targetOrigin = "{php echo $_W['sitescheme']}" + 's.w7.cc';
+    function _mainFrame() {
+        window.frames[0].postMessage('getHeight', targetOrigin);
+    }
+    window.addEventListener('message',function(e) {
+        var canvasHeight = e.data;
+        $('.iframe-div').css({'height': canvasHeight + 'px', 'overflow': 'hidden'});
+    })
+    window.setInterval("_mainFrame()", 100);
+</script>
+{template 'common/footer'}

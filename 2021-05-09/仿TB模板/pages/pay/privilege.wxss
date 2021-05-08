@@ -1,0 +1,146 @@
+.section {
+  background: #efefef;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 0 10px 10px 10px;
+  position: absolute;
+  top: 0;
+  width: 95%;
+  z-index: 2;
+}
+
+.scroll-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.scroll-li-zk {
+  border-bottom: #f5537a solid 3px;
+  margin-top: 10px;
+}
+
+.scroll-li-djq {
+  border-bottom: #ff7f05 solid 3px;
+  margin-top: 10px;
+}
+
+.scroll-li-mj {
+  border-bottom: #00b5ed solid 3px;
+  margin-top: 10px;
+}
+
+.scroll-label {
+  display: block;
+  width: 100%;
+}
+
+.scroll-box {
+  border-bottom: #f2f2f2 dashed 1px;
+  display: block;
+  height: 80px;
+  position: relative;
+  width: 100%;
+}
+
+.scroll-box.zk {
+  background: url(http://appuat.huihuishenghuo.com/img/pay/pg1.png) repeat-x top right / auto 100%;
+}
+
+.scroll-box.djq {
+  background: url(http://appuat.huihuishenghuo.com/img/pay/pg2.png) repeat-x top right / auto 100%;
+}
+
+.scroll-box.mj {
+  background: url(http://appuat.huihuishenghuo.com/img/pay/pg3.png) repeat-x top right / auto 100%;
+}
+
+.box-title {
+  color: #333;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  left: 50px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+.box-title.zk {
+  top: 31px;
+}
+
+.box-title.djq {
+  top: 22px;
+}
+
+.box-em {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.box-em-mj {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+
+.em-tx {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30rpx;
+}
+
+.scroll-icon {
+  display: block;
+  left: 15px;
+  position: absolute;
+  top: 33px;
+}
+
+.scroll-bottom {
+  background: #fff;
+  line-height: 20px;
+  overflow: hidden;
+  padding: 10px 60px 10px 50px;
+  width: 70%;
+}
+
+.bottom-span {
+  color: #555;
+  display: block;
+  float: left;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30rpx;
+}
+
+.bottom-b {
+  color: #333;
+  display: block;
+  float: right;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 38rpx;
+  font-weight: bold;
+}
+
+.box-time {
+  color: #666;
+  display: block;
+  font-size: 26rpx;
+  left: 50px;
+  position: absolute;
+  top: 108rpx;
+}
+
+.box-num {
+  color: #666;
+  display: block;
+  font-size: 26rpx;
+  left: 50px;
+  position: absolute;
+  top: 108rpx;
+}

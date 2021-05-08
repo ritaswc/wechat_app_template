@@ -1,0 +1,7 @@
+
+<!-- item.wxml -->
+<template name="msg">
+  <view class="widget-msg {{msgStatus || 'hide'}}">
+		<view bindtap="tapMsgClose" class="widget-msg-panel zoom-in">{{msgText}}</view>
+	</view>
+</template>

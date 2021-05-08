@@ -1,0 +1,136 @@
+.content {
+  width: 100%;
+  margin-top: 16rpx;
+  background: #fff;
+}
+
+.assess {
+  background: #fff;
+}
+
+.assess-ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.assess-li {
+  padding: 24rpx 30rpx 20rpx;
+  overflow: hidden;
+}
+
+.assess-li:after {
+  position: absolute;
+  margin-top: 18rpx;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1rpx;
+  background: #dedede;
+  content: '';
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+.head-img {
+  float: left;
+  width: 100rpx;
+}
+
+.portrait {
+  display: block;
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 50%;
+}
+
+.head-right {
+  position: relative;
+  width: 100%;
+  padding-left: 100rpx;
+  box-sizing: border-box;
+}
+
+.head-name {
+  height: 30rpx;
+  width: 100%;
+  overflow: hidden;
+}
+
+.name-h {
+  float: left;
+  margin: 0;
+  padding: 0;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.name-pic {
+  display: block;
+  float: left;
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+  background: url(http://appuat.huihuishenghuo.com/img/detail/vip_icon.png) no-repeat;
+  background-size: 30rpx auto;
+}
+
+.com-time {
+  width: 100%;
+  height: 20rpx;
+  padding: 16rpx 0;
+  overflow: hidden;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.assess-star {
+  display: inline-block;
+  float: left;
+  height: 26rpx;
+  width: 160rpx;
+  background: url(http://appuat.huihuishenghuo.com/img/store/star-icon.png) no-repeat -72px top / auto 12px;
+}
+
+.assess-starspan {
+  display: block;
+  width: 80%;
+  height: 26rpx;
+  background: url(http://appuat.huihuishenghuo.com/img/store/star-icon.png) no-repeat 0px top / auto 12px;
+}
+
+.assess-time {
+  float: right;
+  line-height: 24rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.assess-text {
+  line-height: 140%;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.assess-pic {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.assess-pic view {
+  width: 30%;
+  padding: 4rpx;
+}
+
+.assess-p {
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.assess-pimg {
+  width: 100%;
+  height: 160rpx;
+}

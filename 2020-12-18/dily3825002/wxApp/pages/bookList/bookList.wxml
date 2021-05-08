@@ -1,0 +1,29 @@
+
+  <scroll-view scroll-y="true" bindscrolltolower="pullLoad" style="height:{{windowHeight}}px">
+    <block wx:for="{{bookData.books}}">
+    <view class="book">
+        <image src="{{item.image}}" class="book-img"></image>
+        <view><text>书名：{{item.title}}</text></view>
+        <view><text>作者：{{item.author[0]}}</text></view>
+        <view><text>价格：{{item.price}}</text></view>
+        <view><text>出版社：{{item.publisher}}</text></view>
+        <view class="line"><text>装订：{{item.binding}}</text></view> 
+        <button type="primary">Buy it</button>
+    </view>  
+    </block>
+  <block wx:for="{{bookData}}">
+    <view class="book">
+        <image src="{{item.image}}" class="book-img"></image>
+        <view><text>书名：{{item.title}}</text></view>
+        <view><text>作者：{{item.author[0]}}</text></view>
+        <view><text>价格：{{item.price}}</text></view>
+        <view><text>出版社：{{item.publisher}}</text></view>
+        <view class="line"><text>装订：{{item.binding}}</text></view> 
+        <button type="primary">Buy it</button>
+    </view>  
+    </block>
+  <loading hidden="{{loading}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+   </scroll-view>
+   

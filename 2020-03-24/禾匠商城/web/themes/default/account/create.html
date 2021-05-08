@@ -1,0 +1,524 @@
+{template 'common/header'}
+<div id="js-account-create" ng-controller="commonCreateAccountCtrl" ng-cloak>
+	{if $_W['iscontroller']}
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href="{php echo url('account/manage')}"><i class="wi wi-back-circle"></i> </a>
+		<li><a href="{php echo url('account/manage')}">平台列表</a></li>
+		<li>新建{$account_all_type_sign[$sign]['title']}</li>
+	</ol>
+	{/if}
+	<ul class="we7-step">
+		<li ng-class="step == 'base_info' ? 'active' : ''"> <span class="content">1. 设置{$account_all_type_sign[$sign]['title']}信息</span> </li>
+		{if !empty($_W['isfounder'])}
+		<li ng-class="step == 'account_modules' ? 'active' : ''"> <span class="content">2. 设置权限</span></li>
+		{/if}
+		{if in_array($sign, array(ACCOUNT_TYPE_SIGN, XZAPP_TYPE_SIGN))}
+		<li ng-class="step == 'account_help' ? 'active' : ''"><span class="content">{if empty($_W['isfounder'])}2{else}3{/if} 引导页面</span></li>
+		{elseif in_array($sign, array(WXAPP_TYPE_SIGN, PHONEAPP_TYPE_SIGN, ALIAPP_TYPE_SIGN, BAIDUAPP_TYPE_SIGN, TOUTIAOAPP_TYPE_SIGN))}
+		<li ng-class="step == 'account_version' ? 'active' : ''"><span class="content">{if empty($_W['isfounder'])}2{else}3{/if} 新建版本</span></li>
+		{/if}
+	</ul>
+
+	<div ng-show="step == 'base_info'">
+		<div class="we7-form">
+			{if $sign == ACCOUNT_TYPE_SIGN}
+			<div id="account_base_info">
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">公众号名称</label>
+					<div class="form-controls col-sm-8">
+						<input type="text" name="name" class="form-control" ng-model="account.name" autocomplete="off" />
+						<span class="help-block">填写公众号的账号名称</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">描述</label>
+					<div class="form-controls col-sm-8">
+						<textarea style="height: 80px;" class="form-control" name="description" ng-bind="account.description"></textarea>
+						<span class="help-block">用于说明此公众号的功能及用途。</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">公众号账号</label>
+					<div class="form-controls col-sm-8">
+						<input type="text" name="account" class="form-control" ng-model="account.account" autocomplete="off" />
+						<span class="help-block">填写公众号的账号,一般为英文账号</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">原始ID</label>
+					<div class="form-controls col-sm-8">
+						<input type="text" name="original" class="form-control" ng-model="account.original" autocomplete="off" />
+						<span class="help-block">原始ID不能修改,请谨慎填写</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">类型</label>
+					<div class="form-controls col-sm-8">
+						<select name="level" ng-model="account.level">
+							<option value="1" ng-selected="account.level == 1">普通订阅号</option>
+							<option value="2" ng-selected="account.level == 2">普通服务号</option>
+							<option value="3" ng-selected="account.level == 3">认证订阅号</option>
+							<option value="4" ng-selected="account.level == 4">认证服务号/认证媒体/政府订阅号</option>
+						</select>
+						<span class="help-block">注意:即使公众平台显示为“未认证”, 但只要【公众号设置】/【账号详情】下【认证情况】显示资质审核通过, 即可认定为认证号.</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">AppId</label>
+					<div class="form-controls col-sm-8">
+						<input type="text" name="key" class="form-control" ng-model="account.key" autocomplete="off"/>
+						<span class="help-block">请填写微信公众平台后台的AppId</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">AppSecret</label>
+					<div class="form-controls col-sm-8">
+						<input type="text" name="secret" class="form-control" ng-model="account.secret" autocomplete="off"/>
+						<span class="help-block">请填写微信公众平台后台的AppSecret</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2">Oauth 2.0</label>
+					<div class="form-controls col-sm-8">
+						<p class="form-control-static">在微信公众号请求用户网页授权之前，开发者需要先到公众平台网站的【开发者中心】<b>网页服务</b>中配置授权回调域名。{if $_W['isfounder']}{/if}</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">头像</label>
+					<div class="form-controls col-sm-8">
+						<div class="input-more we7-input-img" ng-class="{'active': account.headimg}">
+							<img ng-src="{{account.headimg}}" width="150px" ng-if="account.headimg" ng-style="{'height': 'auto'}">
+							<a href="javascript:;" class="input-addon" ng-click="uploadMultiImage('headimg')" ng-hide="account.headimg"><span>+</span></a>
+							<input type="text" name="headimg" ng-model="account.headimg" ng-style="{'display' : 'none'}">
+							<div class="cover-dark">
+								<a href="javascript:;" class="cut" ng-click="uploadMultiImage('headimg')">更换</a>
+								<a href="javascript:;" class="del" ng-click="delMultiImage('headimg')"><i class="fa fa-times text-danger"></i></a>
+							</div>
+						</div>
+						<span class="help-block"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">二维码</label>
+					<div class="form-controls col-sm-8">
+						<div class="input-more we7-input-img" ng-class="{'active': account.qrcode}">
+							<img ng-src="{{account.qrcode}}" width="150px" ng-if="account.qrcode" ng-style="{'height': 'auto'}">
+							<a href="javascript:;" class="input-addon" ng-click="uploadMultiImage('qrcode')" ng-hide="account.qrcode"><span>+</span></a>
+							<input type="text" name="qrcode" ng-model="account.qrcode" ng-style="{'display' : 'none'}">
+							<div class="cover-dark">
+								<a href="javascript:;" class="cut" ng-click="uploadMultiImage('qrcode')">更换</a>
+								<a href="javascript:;" class="del" ng-click="delMultiImage('qrcode')"><i class="fa fa-times text-danger"></i></a>
+							</div>
+						</div>
+						<span class="help-block"></span>
+					</div>
+				</div>
+			</div>
+			{elseif $sign == WEBAPP_TYPE_SIGN}
+			<div id="webapp_base_info">
+				<div id="js-webapp">
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">PC名称</label>
+						<div class="form-controls col-sm-8">
+							<input type="text" name="name" ng-model="account.name" class="form-control" required autocomplete="off" />
+							<span class="help-block">填写PC名称</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">描述</label>
+						<div class="form-controls col-sm-8">
+							<textarea class="form-control" name="description" ng-model="account.description" style="height: 80px;"></textarea>
+							<span class="help-block">用于说明此PC的功能及用途。</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			{elseif $sign == PHONEAPP_TYPE_SIGN}
+			<div id="phoneapp_base_info">
+				<div id="js-phoneapp">
+					<div class="form-group">
+						<label class="control-label col-sm-2">APP名称</label>
+						<div class="form-controls col-sm-8">
+							<input type="text" name="name" class="form-control" ng-model="account.name" placeholder="APP名称" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2">APP描述</label>
+						<div class="form-controls col-sm-8">
+							<input type="text" name="description" ng-model="account.description" class="form-control" placeholder="版本描述">
+						</div>
+					</div>
+				</div>
+			</div>
+			{elseif $sign == XZAPP_TYPE_SIGN}
+			<div id="xzapp_base_info">
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">熊掌号名称</label>
+					<div class="form-controls col-sm-8">
+						<input type="text" name="name" class="form-control" ng-model="account.name" autocomplete="off" />
+						<span class="help-block">填写熊掌号的账号名称</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">描述（签名）</label>
+					<div class="form-controls col-sm-8">
+						<textarea style="height: 80px;" class="form-control" name="description" ng-bind="account.description"></textarea>
+						<span class="help-block"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">熊掌号ID</label>
+					<div class="form-controls col-sm-8">
+						<input type="text" name="original" class="form-control" ng-model="account.original" autocomplete="off" />
+						<span class="help-block">熊掌号ID不能修改,请谨慎填写</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">类型</label>
+					<div class="form-controls col-sm-8">
+						<select name="level" ng-model="account.level">
+							<option value="1" ng-selected="account.level == 1">个人</option>
+							<option value="2" ng-selected="account.level == 2">媒体</option>
+							<option value="3" ng-selected="account.level == 3">企业</option>
+							<option value="4" ng-selected="account.level == 4">政府</option>
+							<option value="4" ng-selected="account.level == 5">其他组织</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">ClientId</label>
+					<div class="form-controls col-sm-8">
+						<input type="text" name="key" class="form-control" ng-model="account.key" autocomplete="off"/>
+						<span class="help-block">请填写熊掌号后台的ClientId</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">ClientSecret</label>
+					<div class="form-controls col-sm-8">
+						<input type="text" name="secret" class="form-control" ng-model="account.secret" autocomplete="off"/>
+						<span class="help-block">请填写熊掌号后台的ClientSecret</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2">Oauth 2.0</label>
+					<div class="form-controls col-sm-8">
+						<p class="form-control-static">在熊掌号请求用户网页授权之前，开发者需要先到熊掌号后台的【开发设置】<b>基本设置</b>中配置授权回调域名。{if $_W['isfounder']}{/if}</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">头像</label>
+					<div class="form-controls col-sm-8">
+						<div class="input-more we7-input-img" ng-class="{'active': account.headimg}">
+							<img ng-src="{{account.headimg}}" width="150px" ng-if="account.headimg" ng-style="{'height': 'auto'}">
+							<a href="javascript:;" class="input-addon" ng-click="uploadMultiImage('headimg')" ng-hide="account.headimg"><span>+</span></a>
+							<input type="text" name="headimg" ng-model="account.headimg" ng-style="{'display' : 'none'}">
+							<div class="cover-dark">
+								<a href="javascript:;" class="cut" ng-click="uploadMultiImage('headimg')">更换</a>
+								<a href="javascript:;" class="del" ng-click="delMultiImage('headimg')"><i class="fa fa-times text-danger"></i></a>
+							</div>
+						</div>
+						<span class="help-block"></span>
+					</div>
+				</div>
+			</div>
+			{elseif in_array($sign, array(WXAPP_TYPE_SIGN, ALIAPP_TYPE_SIGN, BAIDUAPP_TYPE_SIGN, TOUTIAOAPP_TYPE_SIGN))}
+			<div id="miniapp_base_info">
+				<div class="form-defalut we7-form">
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">{$sign_title}名称</label>
+						<div class="form-controls col-sm-10">
+							<input type="text" name="name" ng-model="account.name" class="form-control wxapp-name" placeholder="{$account_all_type[$type]['title']}名称" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">{$sign_title}描述</label>
+						<div class="form-controls col-sm-10">
+							<input type="text" name="description" ng-model="account.description" class="form-control wxapp-name" placeholder="版本描述">
+						</div>
+					</div>
+					<div class="form-group" ng-if="account.sign == 'wxapp'">
+						<label for="" class="control-label col-sm-2">原始ID</label>
+						<div class="form-controls col-sm-10">
+							<input type="text" name="original" ng-model="account.original" value="" class="form-control wxapp-name" placeholder="原始ID">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">AppId</label>
+						<div class="form-controls col-sm-10">
+							<input type="text" name="appid" ng-model="account.appid" class="form-control wxapp-name" placeholder="AppId">
+						</div>
+					</div>
+					<div class="form-group" ng-if="account.sign == 'baiduapp' || account.sign == 'toutiaoapp'">
+						<label for="" class="control-label col-sm-2">AppKey</label>
+						<div class="form-controls col-sm-10">
+							<input type="text" name="key" ng-model="account.key" class="form-control wxapp-name" placeholder="AppKey">
+						</div>
+					</div>
+					<div class="form-group" ng-if="account.sign == 'wxapp' || account.sign == 'baiduapp' || account.sign == 'toutiaoapp'">
+						<label for="" class="control-label col-sm-2">AppSecret</label>
+						<div class="form-controls col-sm-10">
+							<input type="text" name="secret" ng-model="account.secret" class="form-control wxapp-name" placeholder="AppSecret">
+						</div>
+					</div>
+					<div class="form-group" ng-hide="newversion">
+						<label for="" class="control-label col-sm-2">头像</label>
+						<div class="form-controls col-sm-8">
+							<div class="input-more we7-input-img" ng-class="{'active': account.headimg}">
+								<img ng-src="{{account.headimg}}" width="150px" ng-if="account.headimg" ng-style="{'height': 'auto'}">
+								<a href="javascript:;" class="input-addon" ng-click="uploadMultiImage('headimg')" ng-hide="account.headimg"><span>+</span></a>
+								<input type="text" name="headimg" ng-model="account.headimg" class="hidden">
+								<div class="cover-dark">
+									<a href="javascript:;" class="cut" ng-click="uploadMultiImage('headimg')">更换</a>
+									<a href="javascript:;" class="del" ng-click="delMultiImage('headimg')"><i class="fa fa-times text-danger"></i></a>
+								</div>
+							</div>
+							<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="form-group" ng-hide="newversion">
+						<label for="" class="control-label col-sm-2">二维码</label>
+						<div class="form-controls col-sm-8">
+							<div class="input-more we7-input-img" ng-class="{'active': account.qrcode}">
+								<img ng-src="{{account.qrcode}}" width="150px" ng-if="account.qrcode" ng-style="{'height': 'auto'}">
+								<a href="javascript:;" class="input-addon" ng-click="uploadMultiImage('qrcode')" ng-hide="account.qrcode"><span>+</span></a>
+								<input type="text" name="qrcode" ng-model="account.qrcode"  class="hidden">
+								<div class="cover-dark">
+									<a href="javascript:;" class="cut" ng-click="uploadMultiImage('qrcode')">更换</a>
+									<a href="javascript:;" class="del" ng-click="delMultiImage('qrcode')"><i class="fa fa-times text-danger"></i></a>
+								</div>
+							</div>
+							<span class="help-block"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/if}
+			<div class="col-sm-offset-2">
+				<input type="submit" name="submit" value="下一步" class="btn btn-primary btn-submit" ng-click="submitBaseinfo()"/>
+			</div>
+		</div>
+	</div>
+
+	<div ng-show="step == 'account_modules'">
+		<div class="we7-form account-create-step">
+			<div class="we7-page-alert">
+				如果不选择主管理员，则默认创始人为该账号的主管理员
+			</div>
+			<div class="form-group">
+				<div class="control-label col-sm-2">主管理员</div>
+				<div class="form-controls col-sm-8">
+					<div class="input-group">
+						<input type="hidden" name="uid" value="" id="manager">
+						<input type="text" class="form-control" ng-model="owner.username" id="showname">
+						<span class="input-group-btn">
+							<a class="btn btn-default" href="javascript:;" ng-click="selectOwner($event)">选择管理员</a>
+						</span>
+					</div>
+					<span class="help-block">如果是新用户,请先 <a href="{url 'user/create'}" target="_blank" class="color-default">添加用户</a></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-2">平台过期时间</label>
+				<div class="form-controls col-sm-8">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<select name="" class="select-endtime" id="" ng-model="owner.endtime" ng-change="changeEndtime()" style="width: 75px">
+								<option value="1">设置</option>
+								<option value="0" >不限</option>
+							</select>
+						</span>
+						<div ng-show="owner.endtime == 1">
+							{php echo tpl_form_field_date('endtime', 0);}
+						</div>
+					</div>
+					<span class="help-block">平台有效期默认与主管理员一致，修改日期不可超过主管理员有效期的最大期限。未设置主管理员时，创始人默认为主管理员</span>
+				</div>
+			</div>
+			<div class="col-sm-offset-2 form-controls col-sm-8" ng-show="groupAll.groups">
+				<div class="we7-header" ng-show="owner.username">
+					主管理员应用/模板权限
+				</div>
+				<div class="we7-group-show" ng-if="owner.modules">
+					<input class="hidden" type="checkbox" name="package[]" checked ng-value="package">
+					<div class="name">
+						主管理员权限
+					</div>
+					<div class="group-app-list">
+						<div class="group-app-item" ng-repeat="module in owner.modules">
+							<img src="{{module.logo}}" class="module-img" alt="">
+							<div class="info">
+								<div class="title text-over">
+									{{module.title}}
+								</div>
+								<div class="type-list">
+									<i class="wi wi-{$account['type_sign']}"></i>
+								</div>
+							</div>
+						</div>
+						<div class="group-app-item" ng-if="owner.modules.length < 1">暂无应用</div>
+
+						<div class="group-app-item" ng-repeat="module in unigroups[package].templates">
+							<img src="{{module.logo}}" class="template-img" alt="">
+							<div class="info">
+								<div class="title">
+									{{module.title}}
+								</div>
+								<div class="type-list">
+									<i class="wi wi-template"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a class="action"></a>
+				</div>
+				<div class="we7-header">{$sign_title}附加应用权限组</div>
+				<div class="we7-group-show " ng-repeat="extend in groupAll.groups" ng-if="extend.checked == 1">
+					<div class="name">
+						{{extend.name}}
+					</div>
+					<div class="group-app-list">
+						<div class="group-app-item" ng-repeat="module in extend.modules_all">
+							<img src="{{module.logo}}" class="module-img" alt="">
+							<div class="info">
+								<div class="title text-over">
+									{{module.title}}
+								</div>
+								<div class="type-list">
+									<i ng-class="itme.icon" ng-repeat="itme in module.group_support | moduleInfo" ></i>
+								</div>
+							</div>
+						</div>
+						<div class="group-app-item" ng-repeat="module in extend.templates">
+							<img src="{{module.logo}}" class="template-img" alt="">
+							<div class="info">
+								<div class="title">
+									{{module.title}}
+								</div>
+								<div class="type-list">
+									<i class="wi wi-template"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a class="action"></a>
+					<a href="" class="remove" ng-click="extend.checked = 0"><i class="wi wi-error"></i></a>
+				</div>
+				<we7-modal-app module-list="groupAll" multiple="true" ng-init="loadGroups()" on-confirm="groupConfirm()">
+					<div class="add-new-block" >
+						<i class="wi wi-plus"></i> 添加应用权限组
+					</div>
+				</we7-modal-app>
+				<div class="we7-header">{$sign_title}附加应用</div>
+				<div class="group-post-mudules">
+					<div class="module-item" ng-repeat="module in modulesAll.modules" ng-if="module.checked == 1">
+						<div class="logo">
+							<img ng-src="{{module.logo}}" alt="">
+						</div>
+						<div class="info">
+							<div ng-bind="module.title" class="title text-over">1213</div>
+							<div class="icon">
+								<i class="{{module.support | moduleInfo:'icon'}}"></i>
+							</div>
+						</div>
+						<div class="delete">
+							<i class="wi wi-error" ng-click="module.checked = 0"></i>
+						</div>
+					</div>
+					<div class="module-item" ng-repeat="template in modulesAll.templates"  ng-if="template.checked == 1">
+						<div class="logo">
+							<img ng-src="{{template.logo}}" alt="">
+						</div>
+						<div class="info">
+							<div class="name text-over" ng-bind="template.title">1213</div>
+							<div class="icon">
+								<i class="wi wi-template"></i>
+							</div>
+						</div>
+						<div class="delete">
+							<i class="wi wi-error" ng-click="template.checked = 0"></i>
+						</div>
+					</div>
+					<we7-modal-app module-list="modulesAll" title="'添加应用'" multiple="true">
+						<div class="module-item add" >
+							<i class="wi wi-plus"></i> 添加应用
+						</div>
+					</we7-modal-app>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-sm-offset-2">
+				<input type="button" value="上一步" ng-click="step = 'base_info'" class="btn btn-primary btn-submit"/>
+				<input type="button" ng-click="submitAccountModules()" value="{if in_array($sign, array(WEBAPP_TYPE_SIGN))}完成{else}下一步{/if}" class="btn btn-primary btn-submit"/>
+			</div>
+		</div>
+	</div>
+
+	<div ng-show="step == 'account_version'">
+		<div class="wxapp-content tab-content" style="width: 100%;">
+			<div id="select">
+				<div class="form-defalut we7-form">
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">{$sign_title}名称</label>
+						<div class="form-controls col-sm-10">
+							<input type="text" name="name" ng-model="account.name" class="form-control wxapp-name" disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">版本描述</label>
+						<div class="form-controls col-sm-10">
+							<input type="text" name="description" ng-model="account.version_description" class="form-control wxapp-name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">版本号</label>
+						<div class="form-controls col-sm-10">
+							<input type="text" name="version" ng-model="account.version" class="form-control wxapp-name" placeholder="版本号，只能是数字、点，数字最多两位，例如 1.01 / 1.0.1">
+						</div>
+					</div>
+					<div class="form-group">
+						<input type="hidden" name="modules" value="">
+						<label class="control-label col-sm-2">添加应用</label>
+						<div class="form-controls col-sm-10">
+							<ul class="app-list" ng-click="resourceModule()">
+								<div class="app-info" ng-show="version_module.title">
+									<img ng-src="{{version_module.icon}}" />
+									<p>{{version_module.title}}</p>
+								</div>
+								<li class="select select-more"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-offset-2">
+			{if !empty($_W['isfounder'])}
+			<input type="button" value="上一步" ng-click="step = 'account_modules'" class="btn btn-primary btn-submit"/>
+			{else}
+			<input type="button" value="上一步" ng-click="step = 'base_info'" class="btn btn-primary btn-submit"/>
+			{/if}
+			<input type="submit" value="生成版本" ng-click="submitAccountVersion()" class="btn btn-primary btn-submit"/>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	angular.module('accountApp').value('config', {
+		token: "{$_W['token']}",
+		sign: "{$sign}",
+		sign_title: "{$sign_title}",
+		uid: "{$_W['uid']}",
+		isfounder: {php echo intval($_W['isfounder'])},
+		//设置权限
+		unigroups: {php echo !empty($unigroups) ? json_encode($unigroups) : 'null'},
+		modules: {php echo !empty($modules) ? json_encode($modules) : 'null'},
+		templates: {php echo !empty($templates) ? json_encode($templates) : 'null'},
+		links: {
+			userinfo: "{php echo url('account/create/get_user_info', array('sign' => $sign))}",
+			check_params: "{php echo url('account/create/check_params')}",
+			save_account: "{php echo url('account/create/save_account')}",
+            load_groups: "{php echo url('account/create/load_groups', array('sign' => $sign))}",
+		}
+	});
+	angular.bootstrap($('#js-account-create'),['accountApp']);
+</script>
+{template 'common/footer'}

@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/problems/problems",
+    "pages/categorys/categorys",
+    "pages/wrong/wrong"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "navigationBarTitleText": "考证通在线",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#f8f8f8"
+  }
+}

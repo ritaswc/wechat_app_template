@@ -1,0 +1,31 @@
+<view class="page__bd">
+  <view class="weui-panel weui-panel_access">
+    <view wx:if="{{spots_count != 0}}">
+      <view class="weui-panel__hd" style="font-size:20px">{{city_name}} ({{spots_count}})</view>
+        <view class="weui-panel__bd">
+          <block wx:for="{{spot_list}}" wx:for-item="spot" wx:key="*this">
+            <view class="weui-media-box weui-media-box_text" id="{{spot.id}}" bindtap="bindViewTap">
+              <view class="weui-media-box__title weui-media-box__title_in-text">{{spot.name}}</view>
+              <view wx:if="{{spot.commit_user_name}}" class="weui-media-box__desc">@{{spot.commit_user_name}}: {{spot.commit_message}}</view>
+            </view>
+          </block>
+        </view>
+        <view class="weui-panel__ft" hidden>
+          <view class="weui-cell weui-cell_access weui-cell_link">
+            <view class="weui-cell__bd">查看更多</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+        </view>
+    </view>
+
+    <view wx:else class="weui-panel__bd" style="font-size:20px">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text" style="text-align:center">暂无提交</view>
+        <view class="logo">
+          <image src="/image/logo.png" background-size="cover"></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

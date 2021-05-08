@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="prize">
+    <scroll-view scroll-y="true" style="height: 100%">
+      <view>
+        <view class="prize-li">
+          <view class="prize-title">
+            <text class="prize-h">华为5s荣耀手机一部</text>
+          </view>
+          <view class="prize-time">
+            <text class="time">中奖时间：2016-12-21 12:00</text>
+            <text class="time-type">未领取</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

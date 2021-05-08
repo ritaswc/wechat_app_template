@@ -1,0 +1,20 @@
+<import src="../../tpls/menu.wxml" />
+
+<swiper indicator-dots="true">
+        <swiper-item>
+            <view class="slide-view">
+               
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="slide-view">
+               
+            </view>
+        </swiper-item>
+        
+        <swiper-item>
+            <view class="slide-view">
+                <template is="menuList" data="{{menuList:list}}" />
+            </view>
+        </swiper-item>
+</swiper>

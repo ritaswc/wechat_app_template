@@ -1,0 +1,35 @@
+/**app.wxss**/
+.body {
+  position: relative;
+  opacity: 0;
+  font-family: "Microsoft YaHei",arial,verdana,sans-serif;
+  background-color: #1D2785;
+  overflow: hidden;
+  -webkit-transition: opacity .4s ease-in; 
+}
+.body.bodyShow {
+  opacity: 1;
+}
+
+/* 背景 */
+.bg_area {
+  width: 100%;
+}
+.bg_area .img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* logo */
+.logo_area {
+  position: absolute;
+  top: 1%;
+  left: 2%;
+  width: 16%;
+  height: 5%;
+}
+.logo_area .img {
+  width: 100%;
+  height: 100%;
+}

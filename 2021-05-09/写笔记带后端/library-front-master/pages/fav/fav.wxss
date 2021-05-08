@@ -1,0 +1,62 @@
+.fav_card {
+  /*height: 160rpx;*/
+  text-align: center;
+  background-color: #e64340;
+  color: white;
+  margin: 35rpx 35rpx;
+  border-radius: 10rpx;
+  -webkit-box-shadow: -1px 4px 9px 0px rgba(189, 189, 189, 1);
+  -moz-box-shadow: -1px 4px 9px 0px rgba(189, 189, 189, 1);
+  box-shadow: -1px 4px 9px 0px rgba(189, 189, 189, 1);
+}
+
+.fav_card_link {
+  padding: 30rpx 0;
+}
+
+.book-name {
+  color: #fff;
+  text-align: center;
+  font-size: 45rpx;
+  width: 96%;
+  padding-left: 2%;
+  font-weight: bolder;
+}
+
+.book-author {
+  color: #ffc6c5;
+  text-align: center;
+  font-size: 30rpx;
+  font-style: italic;
+  padding-top: 15rpx;
+}
+
+.book-code {
+  color: #ffc6c5;
+  text-align: center;
+  font-size: 20rpx;
+  padding-top: 20rpx;
+}
+
+.book-code-block {
+  border: 1rpx #ffc6c5 solid;
+  padding: 6rpx 7rpx;
+}
+
+.second-block {
+  margin-left: 10rpx;
+}
+
+.empty {
+  text-align: center;
+}
+
+.empty-tips {
+    color: #353535;
+    padding-top: 40rpx;
+    font-size:35rpx;
+}
+
+.footer {
+    padding-top:40rpx
+}

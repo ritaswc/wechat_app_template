@@ -1,0 +1,15 @@
+.container {
+  background: #4d8ad7;
+  color: #fff;
+  font-size: 90px;
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cell{
+  flex:0.1;
+}

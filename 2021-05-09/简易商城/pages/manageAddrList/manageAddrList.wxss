@@ -1,0 +1,14 @@
+/* pages/manageAddress/manageAddress.wxss */
+page{background:#eee;height:100%;position:relative;}
+.container{background:#fff;}
+.title{font-size:30rpx;line-height:80rpx;color:#353535;background:#fff;border-top:1px solid #eee;padding-left:20rpx;}
+.addr_item{background:#fff;padding:16rpx 100rpx 16rpx 0;position:relative;border-top:1px solid #eee;margin-left:20rpx;}
+.addr_item_cont{position:relative;padding-left:60rpx}
+.def_status{position:absolute;left:0;top:35%;}
+.status{position:absolute;left:0;top:35%;display:none}
+.user_inf{font-size:36rpx;line-height:50rpx;color:#353535;}
+.user_inf .fullname{margin-right:30rpx;}
+.user_addr{font-size:28rpx;line-height:44rpx;color:#666;}
+.addr_item .arrow_right{display:block;position:absolute;right:30rpx;top:20%;color:#e64340;font-size:32rpx;line-height:50rpx;padding:10rpx;}
+.add_address{position:absolute;left:0;bottom:0;width:100%;height:100rpx;}
+.add_address button{display:block;width:90%;height:80rpx;border-radius:10rpx;background:#e64340;margin:0 auto;color:#fff;font-size:40rpx;line-height:80rpx;text-align:center;}

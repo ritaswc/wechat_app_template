@@ -1,0 +1,5 @@
+<view class="container">
+<view class="cell">{{WechatAccount}}</view>
+<view class="cell">{{Zhihu}}</view>
+<view class="cell">{{programmer}}</view>
+</view>

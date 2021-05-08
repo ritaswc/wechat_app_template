@@ -1,0 +1,19 @@
+<!--pages/massageContant/massageContant.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+
+<view class="massageContant_wrap">
+    <view class="title">{{massage.subject}}</view>
+    <view class="detail">
+        <view class="left">
+            <image class="img1" src="image/_02.png"></image>
+            <text>{{massage.sender}}</text>
+        </view>
+        <view>
+            <image class="img1" src="image/_01.png"></image>
+            <text>{{massage.date}}</text>
+        </view>
+    </view>
+    <view class="contant">
+        <template is="wxParse" data="{{wxParseData:massageContent.nodes}}"/>
+    </view>
+</view>

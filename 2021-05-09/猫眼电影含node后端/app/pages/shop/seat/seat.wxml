@@ -1,0 +1,77 @@
+<view class="head">
+  <view class="st">
+    <view class="shop">{{shop.shop}}</view>
+    <view class="ts">
+      <text class="time">{{shop.time}}</text>
+      <text class="effects">{{shop.effects}}</text>
+    </view>
+  </view>
+  <view class="tips">
+    <view class="tip-item">
+      <image src="../../../img/photo/seat-w.png" class="img-h"></image>
+      <text>可选</text>
+    </view>
+    <view class="tip-item">
+      <image src="../../../img/photo/seat-r.png" class="img-h"></image>
+      <text>已售</text>
+    </view>
+    <view class="tip-item">
+      <image src="../../../img/photo/seat-s.png" class="img-h"></image>
+      <text>已选</text>
+    </view>
+    <view class="tip-item">
+      <image src="../../../img/photo/seat-cp.png" class="img-h-cp"></image>
+      <text>情侣座</text>
+    </view>
+  </view>
+</view>
+<view class="wrap">
+  <view class="room" style="transform: translateX({{deltaX}}px)">
+    <view class="roomL">{{shop.room}}</view>
+  </view>
+  <view class="columnN" style="transform: translateY({{deltaY}}px)">
+    <view class="columnNum" wx:for="{{columnArr}}">{{item}}</view>
+  </view>
+  <view class="map {{willChange?'willChange':''}}" bindtouchstart="scrollstart" bindtouchmove="scrollmove" bindtouchend="scrollend" style="transform: translate({{deltaX}}px,{{deltaY}}px)">
+    <view class="centerTips" style="margin-left:{{44*shop.center}}rpx">银幕中央</view>
+    <view class="" wx:for="{{map}}" wx:for-item="i" class="row" wx:for-index="ver">
+      <view class="" wx:for="{{i}}" wx:for-index="hor">
+        <view wx:if="{{item==0}}" class="seat-img"></view>
+        <image src="../../../img/photo/seat-w.png" wx:if="{{item==1}}" class="seat-img" catchtap="selectSeat" data-hor="{{hor}}" data-ver="{{ver}}"></image>
+        <image src="../../../img/photo/seat-r.png" wx:if="{{item==3}}" class="seat-img"></image>
+        <image catchtap="cancelSeat" src="../../../img/photo/seat-s.png" wx:if="{{item==2}}" class="seat-img" data-hor="{{hor}}" data-ver="{{ver}}"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="buy">
+  <view class="seats-detail">
+    <view class="seat-tips">已选座位</view>
+    <view class="seat-wrap">
+      <view class="seat-item" wx:for="{{seats}}">
+        <view class="seat-let">{{item}}</view>
+        <view class="seat-cancel"></view>
+      </view>
+    </view>
+  </view>
+  <view class="confirm" hidden="{{!seats.length}}">
+    <view class="total" >
+      <view class="price">
+        <view class="price-s">{{seats.length*shop.price}}</view>
+        <view class="price-y">元</view>
+      </view>
+      <view class="priceL">{{shop.price}}x{{seats.length}}</view>
+    </view>
+    <navigator url="../../book/book" class="confirm-s">确认选座</navigator>
+  </view>
+  <view class="confirm" hidden="{{seats.length}}">
+    <view class="total" >
+      <view class="price">
+        <view class="price-s">0</view>
+        <view class="price-y">元</view>
+      </view>
+      <view class="priceL">票价{{shop.price}}</view>
+    </view>
+    <view class="confirm-s plaseS">请先选座</view>
+  </view>
+</view>

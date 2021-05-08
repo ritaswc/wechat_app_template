@@ -1,0 +1,28 @@
+.tips{
+    box-sizing: border-box;
+    background-color: #E6E6E6;
+    line-height: 80rpx;
+    font-size:30rpx;
+    padding: 0 20rpx;
+    width: 750rpx;
+}
+.type-content{
+    padding: 25rpx 25rpx;
+    display: flex;
+    flex-flow:row wrap;
+}
+.type-item{
+    width:155rpx;
+    text-align: center;
+    font-size:30rpx;
+    line-height: 80rpx;
+    margin: 20rpx 10rpx;
+}
+.type-item-show{
+    background-color: #BE304D;
+    color:#ffffff;
+}
+.type-item-hide{
+    background-color: #E6E6E6;
+    color:#C4C4C4;
+}

@@ -1,0 +1,15 @@
+<view class="cell" wx:if="{{addressList.length == 0}}">
+	<text>地址</text>
+	<text class="area_select" bindtap="bindCreateNew">请先添加地址</text>
+</view>
+<view class="cell" wx:else>
+	<text>地址</text>
+	<picker bindchange="bindPickerChange" value="{{index}}" range="{{addressList}}">
+		{{addressList[addressIndex]}}
+	</picker>
+</view>
+<view class="cell">
+	<text>金额</text>
+	<text class="amount">{{amount}}</text>
+</view>
+<button class="submit" type="primary" bindtap="confirmOrder">提交订单</button>

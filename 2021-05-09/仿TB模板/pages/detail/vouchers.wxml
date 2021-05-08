@@ -1,0 +1,105 @@
+<view class="container">
+  <view class="voucher">
+    <form bindsubmit="formSubmit">
+      <view class="info">
+        <view class="price">
+          <text class="lt">100元代金劵</text>
+          <view class="rt">
+            <text class="num-lt">50个汇币</text>
+            <text class="num-rt">(50.5元)</text>
+          </view>
+        </view>
+        <view class="info-li">
+          <text class="lt">数量</text>
+          <view class="rt-vm">
+            <button type="default" size="mini" class="up-lt" id="1" bindtap="numTap">－</button>
+            <input class="box" type="number" value="{{number}}"></input>
+            <button type="default" size="mini" class="down-rt" id="2" bindtap="numTap">＋</button>
+          </view>
+        </view>
+        <view class="info-li">
+          <text class="lt">总计</text>
+          <view class="rt">
+            <text class="num-lt">50个汇币</text>
+            <text class="num-rt">(50.5元)</text>
+          </view>
+        </view>
+        <view class="info-li">
+          <text class="lt">使用条件</text>
+          <view class="rt">
+            <text class="num">消费满100元使用</text>
+          </view>
+        </view>
+        <view class="info-li">
+          <text class="lt">有效日期</text>
+          <view class="rt">
+            <text class="num">至2016.12.09</text>
+          </view>
+        </view>
+      </view>
+      <view class="pay">
+        <text class="pay-title">选择支付方式</text>
+        <view class="pay-ul">
+          <view class="pay-li {{checkhb==true?'check':''}}">
+            <view class="hb" data-id="1" bindtap="tapCheck">
+              <image class="hb-img" src="{{img_url}}detail/hb-icon.png"></image>
+              <text class="hb-title">汇币支付</text>
+              <text class="hb-num">剩余 999</text>
+              <icon wx:if="{{checkhb}}" class="icon" type="success" size="20" color="red" />
+            </view>
+          </view>
+          <view class="pay-li {{checkwx==true?'check':''}}">
+            <view class="hb" data-id="2" bindtap="tapCheck">
+              <image class="hb-img" src="{{img_url}}detail/wx-icon.png"></image>
+              <text class="hb-title">微信支付</text>
+              <icon wx:if="{{checkwx}}" class="icon" type="success" size="20" color="red" />
+            </view>
+          </view>
+          <view class="pay-li {{checkqb==true?'check':''}}">
+            <view class="hb" data-id="3" bindtap="tapCheck">
+              <image class="hb-img" src="{{img_url}}detail/qb-icon.png"></image>
+              <text class="hb-title">钱包支付</text>
+              <text class="hb-num">余额 999</text>
+              <icon wx:if="{{checkqb}}" class="icon" type="success" size="20" color="red" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="payPass" wx:if="{{pay}}">
+        <view class="pas-title">
+          <text>请输入支付密码</text>
+        </view>
+        <view class="pas-num">
+          <text>999汇币</text>
+        </view>
+        <view class="pas-box">
+          <view class="box-six">
+            <input class="pas-input" type="digit" maxlength="6" focus="false" bindinput="bindHideKeyboard"></input>
+            <view class="six">
+              <text class="i {{len==0?'active':''}}">
+                <text class="b" wx:if="{{len>0}}"></text>
+              </text>
+              <text class="i {{len==1?'active':''}}">
+                <text class="b" wx:if="{{len>1}}"></text>
+              </text>
+              <text class="i {{len==2?'active':''}}">
+                <text class="b" wx:if="{{len>2}}"></text>
+              </text>
+              <text class="i {{len==3?'active':''}}">
+                <text class="b" wx:if="{{len>3}}"></text>
+              </text>
+              <text class="i {{len==4?'active':''}}">
+                <text class="b" wx:if="{{len>4}}"></text>
+              </text>
+              <text class="i {{len==5?'active':''}}">
+                <text class="b" wx:if="{{len>5}}"></text>
+              </text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="paybg" wx:if="{{pay}}"></view>
+      <button class="subtn" type="warn" size="default" formType="submit" bindtap="bindButtonTap">确认支付</button>
+    </form>
+  </view>
+</view>

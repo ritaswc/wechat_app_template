@@ -1,0 +1,9 @@
+<view class="container column">
+    <view wx:for="{{pointList}}" wx:key="{{pointList}}" class="park-image  box-s br-10"  bindtap="bindViewTapPark" id="{{item.p_id}}" style="background: url({{item.POINT_logo}}) no-repeat;background-size: cover;">
+        <view class="park-image-layer"></view>
+        <view class="park-image-style">
+            <view class="park-image-view text-a">北京</view>
+            <view class="park-image-adress text-a">{{item.p_title}}</view>
+        </view>
+    </view>
+</view>

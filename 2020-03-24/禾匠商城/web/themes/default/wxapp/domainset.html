@@ -1,0 +1,44 @@
+{template 'common/header'}
+<!--小程序前端下载-->
+<div class="panel we7-panel panel-table">
+	<div class="panel-heading">小程序配置</div>
+	<div class="panel-body we7-padding">
+		<form
+			  action="./index.php?c=wxapp&a=domainset&version_id={$version_id}"
+			  class="we7-form" enctype="multipart/form-data"
+			  method="post">
+			<div class="form-group">
+				<label class="control-label col-sm-2">设置小程序URL</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="appurl" value="{$appurl}" placeholder="">
+					<label style="color: red;">https://域名/app/index.php</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">小程序业务域名校验文件</label>
+				<div class="col-sm-10">
+					<input type="file" class="form-control"
+						   name="file" value="" placeholder="没有可不传"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2"></label>
+				<div class="col-sm-10">
+					<button class="btn btn-primary" type="submit">更新</button>
+					<a href="{$appurl}?i={$uniacid}&c=utility&a=visit&do=health" class="btn btn-primary" target="_blank">https访问检测</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="wxapp-download-procedure">
+	<div class="title color-gray">设置小程序域名说明：</div>
+	<div class="step">1.设置链接域名，可以在系统后台设置操作小程序。设置完成后到小程序审核发布里点击下载后，域名更新。</div>
+	<div class="step">2.设置后的生效页面（<a href="#" class="color-default">站点管理</a><span class="color-default"><i
+			class="wi wi-angle-right"></i></span> <a href="#" class="color-default">站点设置</a>）
+	</div>
+	<div class="img">
+		<img src="/web/resource/images/wxapp/12.png" alt="" class="img-responsive">
+	</div>
+</div>
+{template 'common/footer'}

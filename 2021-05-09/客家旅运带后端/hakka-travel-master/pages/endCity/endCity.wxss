@@ -1,0 +1,37 @@
+/**endCity.wxss**/
+@import "../components/stationList/style.wxss";
+@import "../components/toast/toast.wxss";
+
+.title {
+	padding: 60rpx 0 0 40rpx;
+	font-size: 40rpx;
+	color: #333;
+}
+
+.city-list {
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+	padding: 40rpx 20rpx;
+}
+
+.city-item {
+	flex: 1;
+	min-width: 25%;
+	max-width: 25%;
+	height: 70rpx;
+	line-height: 70rpx;
+	text-align: center;
+	border: 2rpx solid #999;
+	border-radius: 10%;
+	margin-left: 20rpx;
+	margin-right: 20rpx;
+	margin-bottom: 20rpx;
+	color: #999;
+}
+
+.city-item.active {
+	background: url(../../images/station_select.png) no-repeat top right;
+	background-size: 32rpx;
+	border-color: #ed422f;
+}

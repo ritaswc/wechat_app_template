@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="tips">
+        点击可切换标签状态[深色显示，灰色为隐藏]
+    </view>
+    <view class="type-content">
+        <block wx:for="{{types}}" wx:for-item="type">
+            <view data-value="{{type.value}}" class="type-item {{type.is_show ? 'type-item-show' : 'type-item-hide'}}" bindtap="changeTypeStatus">
+                {{type.title}}
+            </view>
+        </block>
+    </view>
+</view>
+

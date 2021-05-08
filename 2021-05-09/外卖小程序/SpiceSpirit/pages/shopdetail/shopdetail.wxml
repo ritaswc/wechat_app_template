@@ -1,0 +1,24 @@
+<view class="detal-view">
+    <image src="{{good.pic}}" class="shop-pic"></image>
+    <view style="margin-top:20rpx;text-align:center">
+        <text style="font-size:34rpx;">{{good.name}}</text>
+    </view>
+    <view class="content-view">
+        <text style="font-size:22rpx;color:#888e97">{{good.name}}</text>
+        <text style="font-size:22rpx;color:#ed4040">{{good.price}}元/份</text>
+    </view>
+    <view class="buy-view">
+        <view class="add-tocar">
+            加入购物车
+        </view>
+    </view>
+    <view class="bottom-menu">
+        <block wx:for="{{icons}}">
+            <view class="tab-button" bindtap="tabClick" data-index="{{index}}">
+                <image src="{{icons[index]}}"></image>
+                <text>{{titles[index]}}</text>
+            </view>
+        </block>
+    </view>
+    
+</view>

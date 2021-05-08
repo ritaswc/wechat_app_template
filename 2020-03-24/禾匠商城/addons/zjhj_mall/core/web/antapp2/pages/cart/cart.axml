@@ -1,0 +1,161 @@
+<view class="page {{__page_classes}}">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class="bottom-bar flex-row">
+            <view class="flex-y-center flex-grow-1" style="padding: 0 24rpx">
+                <view onTap="cartCheckAll" class="flex-grow-0 flex-y-center" style="margin-right: 20rpx">
+                    <view class="cart-checkbox {{cart_check_all?'active':''}}" style="margin-right: 10rpx"></view>
+                    <text style="white-space: nowrap">全选</text>
+                </view>
+                <view class="flex-grow-1" style="color:#ff4544;white-space: nowrap">
+                    总计:￥{{total_price}}
+                </view>
+            </view>
+            <block a:if="{{show_cart_edit}}">
+                <view class="flex-y-center flex-grow-0 flex-x-center edit-btn" onTap="cartDone">完成</view>
+                <view class="flex-y-center flex-grow-0 flex-x-center submit-btn" onTap="cartDelete">删除</view>
+            </block>
+            <block a:else>
+                <view class="flex-y-center flex-grow-0 flex-x-center edit-btn" onTap="cartEdit">编辑</view>
+                <view class="flex-y-center flex-grow-0 flex-x-center submit-btn" onTap="cartSubmit">结算</view>
+            </block>
+        </view>
+
+        <view a:if="{{!cart_list.length && !mch_list.length && !loading}}" class="no-data-tip">
+            <view class="no-data-icon flex-y-center flex-x-center">
+                <image src="{{__wxapp_img.nav.cart.url}}" style="width: 81rpx;height: 81rpx"></image>
+            </view>
+            <view>购物车还是空的哦</view>
+        </view>
+        <block a:else>
+            <block a:if="{{cart_list && cart_list.length}}">
+                <view class="flex flex-row mch-header">
+                    <view data-type="self" data-index="0" onTap="checkGroup" class="flex-grow-0 flex-y-center" style="padding: 24rpx">
+                        <view class="cart-checkbox {{check_all_self?'active':''}}"></view>
+                    </view>
+                    <view class="flex-grow-1 flex-y-center">平台自营</view>
+                </view>
+                <view class="cart-list">
+                    <view class="cart-item flex-row" a:for="{{cart_list}}" a:key="{{item.id}}">
+
+                        <view a:if="{{item.disabled&&!show_cart_edit}}" class="flex-grow-0 flex-y-center" style="padding: 24rpx">
+                            <view style="width: 40rpx"></view>
+                        </view>
+
+                        <view a:else data-index="{{index}}" data-type="self" data-mch-index="0" onTap="cartCheck" class="flex-grow-0 flex-y-center" style="padding: 24rpx">
+                            <view class="cart-checkbox {{item.checked?'active':''}}"></view>
+                        </view>
+
+                        <view class="flex-grow-1">
+
+                            <view class="flex-grow-1 flex-row">
+                                <view class="flex-grow-0">
+                                    <navigator url="/pages/goods/goods?id={{item.goods_id}}">
+                                        <image class="goods-pic" mode="aspectFill" src="{{item.goods_pic}}" />
+                                    </navigator>
+                                </view>
+                                <view class="flex-grow-1 flex-col">
+                                    <view class="flex-grow-1">
+                                        <view class="goods-name">
+                                            <navigator url="/pages/goods/goods?id={{item.goods_id}}">{{item.goods_name}}</navigator>
+                                        </view>
+                                        <view class="attr-list">
+                                            <view class="attr-item" a:for="{{item.attr_list}}" a:for-item="attr" a:key="{{item.id}}">
+                                                {{attr.attr_group_name}}:{{attr.attr_name}}
+                                            </view>
+                                        </view>
+                                    </view>
+                                    <view class="flex-grow-0 flex-row">
+                                        <view class="flex-grow-1 price">￥{{item.unitPrice}}</view>
+                                        <view>
+                                            <view class="flex-row">
+                                                <image a:if="{{item.num>1}}" onTap="cartLess" id="{{item.cart_id}}" class="image1" src="{{__wxapp_img.cart.less.url}}" />
+                                                <image a:else class="image1" src="{{__wxapp_img.cart.no_less.url}}" />
+
+                                                <view class="row-data">{{item.num}}</view>
+
+                                                <image a:if="{{item.num==item.max_num}}" class="image1" src="{{__wxapp_img.cart.no_add.url}}" />
+                                                <image a:if="{{item.num!=item.max_num}}" onTap="cartAdd" id="{{item.cart_id}}" class="image1" src="{{__wxapp_img.cart.add.url}}" />
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view>
+                                <text a:if="{{item.num>item.max_num}}" class="cart-tag">库存不足</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+
+            <block a:if="{{mch_list && mch_list.length}}">
+                <block a:for="{{mch_list}}" a:for-index="mch_index" a:key="{{item.id}}">
+                    <view class="mch-item">
+                        <view class="flex flex-row mch-header">
+                            <view data-type="mch" data-index="{{mch_index}}" onTap="checkGroup" class="flex-grow-0 flex-y-center" style="padding: 24rpx">
+                                <view class="cart-checkbox {{item.checked_all?'active':''}}"></view>
+                            </view>
+                            <view class="flex-grow-1 flex-y-center">{{item.name}}</view>
+                        </view>
+                        <view class="cart-list">
+                            <view class="cart-item flex-row" a:for="{{item.list}}" a:key="{{item.id}}">
+
+                                <view a:if="{{item.disabled&&!show_cart_edit}}" class="flex-grow-0 flex-y-center" style="padding: 24rpx">
+                                    <view style="width: 40rpx"></view>
+                                </view>
+
+                                <view a:else data-index="{{index}}" data-type="mch" data-mch-index="{{mch_index}}" onTap="cartCheck" class="flex-grow-0 flex-y-center" style="padding: 24rpx">
+                                    <view class="cart-checkbox {{item.checked?'active':''}}"></view>
+                                </view>
+
+                                <view class="flex-grow-1">
+
+                                    <view class="flex-grow-1 flex-row">
+                                        <view class="flex-grow-0">
+                                            <image class="goods-pic" mode="aspectFill" src="{{item.goods_pic}}" />
+                                        </view>
+                                        <view class="flex-grow-1 flex-col">
+                                            <view class="flex-grow-1">
+                                                <view class="goods-name">
+                                                    <navigator url="/pages/goods/goods?id={{item.goods_id}}">{{item.goods_name}}</navigator>
+                                                </view>
+                                                <view class="attr-list">
+                                                    <view class="attr-item" a:for="{{item.attr_list}}" a:for-item="attr" a:key="{{item.id}}">
+                                                        {{attr.attr_group_name}}:{{attr.attr_name}}
+                                                    </view>
+                                                </view>
+                                            </view>
+                                            <view class="flex-grow-0 flex-row">
+                                                <view class="flex-grow-1 price">￥{{item.unitPrice}}</view>
+                                                <view>
+                                                    <view class="flex-row">
+                                                        <image a:if="{{item.num!=1}}" onTap="cartLess" data-type="mch" data-mch-index="{{mch_index}}" data-index="{{index}}" id="{{item.cart_id}}" class="image1" src="{{__wxapp_img.cart.less.url}}" />
+                                                        <image a:if="{{item.num==1}}" class="image1" src="{{__wxapp_img.cart.no_less.url}}" />
+
+                                                        <view class="row-data">{{item.num}}</view>
+
+                                                        <image a:if="{{item.num==item.max_num}}" class="image1" src="{{__wxapp_img.cart.no_add.url}}" />
+                                                        <image a:if="{{item.num!=item.max_num}}" onTap="cartAdd" data-type="mch" data-mch-index="{{mch_index}}" data-index="{{index}}" id="{{item.cart_id}}" class="image1" src="{{__wxapp_img.cart.add.url}}" />
+                                                    </view>
+                                                </view>
+                                            </view>
+                                        </view>
+                                    </view>
+                                    <view>
+                                        <text a:if="{{item.num>item.max_num}}" class="cart-tag">库存不足</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </block>
+
+            <view style="height: 109rpx"></view>
+        </block>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

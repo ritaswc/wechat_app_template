@@ -1,0 +1,105 @@
+/* step/friend/friend.wxss */
+.top{
+    margin: 24rpx 24rpx 20rpx;
+    background-color: #fff;
+    height: 200rpx;
+    position: relative;
+    color: #999999;
+    padding: 50rpx 0;
+    font-size: 9pt;
+    border-radius: 16rpx;
+}
+
+.title-right{
+    float: right;
+}
+
+.top-num{
+    font-size: 18pt;
+    color: #ff9d1e;
+    font-family: 'DIN';
+    margin-bottom: 5rpx;
+}
+
+.line{
+    position: absolute;
+    top: 50rpx;
+    left: 50%;
+    height: 100rpx;
+    width: 2rpx;
+    background-color: #e2e2e2;
+}
+
+.top-item{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.list{
+    background-color: white;
+    padding: 32rpx 32rpx 16rpx;
+    border-radius: 16rpx;
+    margin: 0 24rpx 24rpx; 
+}
+
+.list-title{
+    font-size: 14pt;
+    color: #353535;
+    margin-bottom: 38rpx;
+}
+
+.list-item{
+    padding-bottom: 38rpx;
+    height: 88rpx;
+    
+}
+
+.list-item .user-avatar{
+    height: 56rpx;
+    width: 56rpx;
+    margin-right: 24rpx;
+    float: left;
+}
+
+.user-avatar image{
+    height: 100%;
+    width: 100%;
+    border-radius: 28rpx;
+}
+
+.name{
+    float: left;    
+    font-size: 11pt;
+    color: #353535;
+    width: 350rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    height: 56rpx;    
+    line-height: 56rpx;
+}
+
+.time{
+    float: right;
+    font-size: 9pt;
+    color: #999999;
+    vertical-align: top;
+    height: 56rpx;    
+    line-height: 56rpx;
+}
+
+.no-friend{
+    margin-top: 120rpx;
+    text-align: center;
+}
+
+.loading {
+    font-size: 9pt;
+    color: #353535;
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+    background-color: white;
+}

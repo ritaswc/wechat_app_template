@@ -1,0 +1,60 @@
+<!--pages/index/index.wxml-->
+
+<view class="title-part">
+    星座运势
+</view>
+
+<view class="index-container">
+    <view class="single-view" data-name="白羊座" bindtap="showDetail">
+        <image src="../imgs/baiyang.png" mode="widthFix"></image>
+        <text>白羊座</text>
+    </view>
+    <view class="single-view" data-name="金牛座" bindtap="showDetail">
+        <image src="../imgs/jinniu.png" mode="widthFix"></image>
+        <text>金牛座</text>
+    </view>
+    <view class="single-view" data-name="双子座" bindtap="showDetail">
+        <image src="../imgs/shuangzi.png" mode="widthFix"></image>
+        <text>双子座</text>
+    </view>
+    <view class="single-view" data-name="巨蟹座" bindtap="showDetail">
+        <image src="../imgs/juxie.png" mode="widthFix"></image>
+        <text>巨蟹座</text>
+    </view>
+    <view class="single-view" data-name="狮子座" bindtap="showDetail">
+        <image src="../imgs/shizi.png" mode="widthFix"></image>
+        <text>狮子座</text>
+    </view>
+    <view class="single-view" data-name="处女座" bindtap="showDetail">
+        <image src="../imgs/chunv.png" mode="widthFix"></image>
+        <text>处女座</text>
+    </view>
+    <view class="single-view" data-name="天秤座" bindtap="showDetail">
+        <image src="../imgs/tianping.png" mode="widthFix"></image>
+        <text>天秤座</text>
+    </view>
+    <view class="single-view" data-name="天蝎座" bindtap="showDetail">
+        <image src="../imgs/tianxie.png" mode="widthFix"></image>
+        <text>天蝎座</text>
+    </view>
+    <view class="single-view" data-name="射手座" bindtap="showDetail">
+        <image src="../imgs/sheshou.png" mode="widthFix"></image>
+        <text>射手座</text>
+    </view>
+    <view class="single-view" data-name="摩羯座" bindtap="showDetail">
+        <image src="../imgs/mojie.png" mode="widthFix"></image>
+        <text>摩羯座</text>
+    </view>
+    <view class="single-view" data-name="水瓶座" bindtap="showDetail">
+        <image src="../imgs/shuiping.png" mode="widthFix"></image>
+        <text>水瓶座</text>
+    </view>
+    <view class="single-view"data-name="双鱼座" bindtap="showDetail">
+        <image src="../imgs/shuangyu.png" mode="widthFix"></image>
+        <text>双鱼座</text>
+    </view>
+</view>
+
+<view class="footer-part">
+    点击星座查看运势，仅供娱乐！
+</view>

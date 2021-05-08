@@ -1,0 +1,45 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="flex-row card-top">
+            <view class="flex-grow-1 flex-x-center">
+                <view bindtap="goto" class="flex-y-center {{status==2?'':'active'}}" data-status="1">未使用</view>
+            </view>
+            <view class="flex-grow-1 flex-x-center">
+                <view bindtap="goto" class="flex-y-center {{status==2?'active':''}}" data-status="2">已失效</view>
+            </view>
+        </view>
+        <view class="card-list" wx:if="{{list.length>0}}">
+            <view class="card-one flex-col" wx:for="{{list}}" wx:key="{{index}}">
+                <view class="flex-row flex-y-center flex-grow-1">
+                    <navigator class="flex-row flex-y-center flex-grow-1" openType="navigateTo" url="/pages/card-detail/card-detail?user_card_id={{item.id}}">
+                        <view class="flex-grow-0">
+                            <image class="img" src="{{item.card_pic_url}}"></image>
+                        </view>
+                        <view class="flex-grow-1">
+                            <view class="text-more-2">{{item.card_name}}</view>
+                        </view>
+                    </navigator>
+                    <view bindtap="getQrcode" class="flex-grow-0" data-index="{{index}}" wx:if="{{item.is_use==0}}">
+                        <image class="img-1" src="{{__wxapp_img.card.qrcode.url}}"></image>
+                    </view>
+                </view>
+                <view class="flex-row flex-grow-0 fs-sm" style="justify-content:flex-end;margin-bottom:20rpx;" wx:if="{{item.is_use==1}}">使用时间：{{item.clerk_time}}</view>
+            </view>
+        </view>
+        <view class="flex-x-center fs-sm" style="padding-top:140rpx" wx:else>暂无卡券</view>
+        <view bindtap="hide" class="flex-row flex-y-center modal {{show_qrcode?'':'hide'}}">
+            <view class="flex-y-center" style="width:100%;padding:100rpx;">
+                <view style="background-color:#fff;width:100%;height:100%;border-radius:10rpx;padding:50rpx 50rpx;">
+                    <view class="flex-x-center fs-b" style="width:100%;height:50rpx;margin-bottom:20rpx">卡券二维码</view>
+                    <image src="{{qrcode}}" style="width:450rpx;height:450rpx;"></image>
+                    <view class="w-100 flex-x-center">
+                        <view catchtap="save" class="save-btn flex-x-center flex-y-center">保存图片</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

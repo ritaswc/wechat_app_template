@@ -1,0 +1,29 @@
+
+<!--pages/car/car.wxml-->
+<view class="column car-column text-a item-box">
+  <view class="items">
+    <view wx:if="{{list!=null}}" class="content item br-b" wx:for="{{list}}" wx:key="{{index}}">
+      <view class="mg-b-20 inner txt bg-f overflow box-s"  style="{{item.txtStyle}}">
+      <view class="park-image-layer1"bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}"></view>
+
+        <image class="car-icon" src="{{item.brand_logo}}"></image>
+        <text style="line-height:50rpx">{{item.brand_name}}</text>
+     
+        <view>
+          <text>{{item.car_name}}</text>
+        </view>
+  
+      </view>
+      <view data-index="{{index}}" class="inner handle text-a color-f">
+        <text class="edit bg-e" bindtap="editItem" data-brand_id="{{item.brand_id}}" data-brand_name="{{item.brand_name}}" data-car_name="{{item.car_name}}" data-car_id="{{item.cars_id}}">编辑</text>
+        <text class="del" bindtap="delItem" data-car_id="{{item.cars_id}}">删除</text>
+      </view>
+    </view>
+    <view class="mg-t-80" wx:if="{{list==''}}">
+      您目前还没有车辆，去添加吧
+    </view>
+  </view>
+  <view class="content bg-pp addCar color-f mg-t-80" bindtap="bindSuccess">
+    <text>+添加车辆</text>
+  </view>
+</view>

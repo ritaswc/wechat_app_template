@@ -1,0 +1,39 @@
+<import src='../../components/star/star.wxml' />
+<import src='../../components/storeitem/storeitem.wxml'/>
+<view class='container'>
+  <view class='search'>
+    <icon type="search" color="#4c4c4c" size="18"></icon>
+    <input type="text" maxlength="100" placeholder="输入商户名、地名、找优惠" placeholder-style="color:#999999" />
+  </view>
+  <view class='navbtns'>
+    <view class='navitem nearby' bindtap='navitation' data-id='01'>
+      附近
+      <image src="{{selectedNav === '01' ? '../../images/arrow_up.png' : '../../images/arrow_down.png'}}"></image>
+    </view>
+    <view class='line'></view>
+    <view class='navitem sort' bindtap='navitation' data-id='02'>
+      全部分类
+      <image src="{{selectedNav === '02' ? '../../images/arrow_up.png' : '../../images/arrow_down.png'}}"></image>
+    </view>
+    <view class='line'></view>
+    <view class='navitem rank' bindtap='navitation' data-id='03'>
+      排序
+      <image src="{{selectedNav === '03' ? '../../images/arrow_up.png' : '../../images/arrow_down.png'}}"></image>
+    </view>
+  </view>
+  <view class='wrap'>
+    <scroll-view class='scroller' style="width:{{width}}px;" scroll-y="true" lower-threshold="800" bindscrolltolower="loadmore">
+      <block wx:for='{{storelist}}' wx:for-item='store' wx:key='*this'>
+      <template is="store" data="{{store}}"/>
+      
+      </block>
+    </scroll-view>
+    <view class='spinner' wx:if='{{showspinner}}'>
+      <view class='items'>
+        <block wx:for="{{spinners}}" wx:for-item='item' wx:key="item.id">
+          <view class='item' bindtap='spinnerclick'>{{item.name}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

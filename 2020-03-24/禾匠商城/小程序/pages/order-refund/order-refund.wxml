@@ -1,0 +1,8 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber" wx:if="{{isPageShow}}">
+        <include src="/components/goods/goods_refund.wxml"></include>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

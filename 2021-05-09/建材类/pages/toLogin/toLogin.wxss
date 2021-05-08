@@ -1,0 +1,100 @@
+/* pages/toLogin/toLogin.wxss */
+
+.contain{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    /*direction: flex;
+    flex-direction: column;*/
+}
+
+.top{
+    margin: 0 auto;
+    line-height: 250px;
+    text-align: center;
+}
+
+.top_image{
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.content{
+    
+}
+
+.user_logPhone{
+    position: relative;
+    width:92%;
+    left:4%;
+}
+
+.user_logPassword{
+    position: relative;
+    width:92%;
+    left:4%; 
+    margin-top: 15px;
+}
+
+.user_input{
+    border:1px solid #d1d1d1;
+    height: 40px;
+    background-color: #fff;
+    padding-left: 60px;
+}
+
+.placeholder{
+    color: #999999;
+    font-size: 15px;
+}
+
+.user_image{
+    width:15px;
+    height: 15px;
+    position: absolute;
+    left:20px;
+    top:13px;
+    z-index: 1001;
+    border-right: 1px solid #d1d1d1;
+    padding-right: 15px;
+}
+
+
+.button{
+    position: relative;
+    width: 92%;    
+    background-color: #00acff;
+    color:#FFFFFF;
+    margin-top: 30px;
+}
+
+.button_pressed{
+    background-color: #00a1e0;
+}
+
+.footer{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.footer_forgetPassw{
+    position: absolute;
+    left: 4%;  
+    margin-top: -5px;
+    color:#999999;
+    font-size:16px;
+}
+
+.footer_toRegist{   
+    position: absolute;
+    right: 4%;
+    margin-top: -5px;
+    color:#00acff;
+    font-size:16px;
+}
+

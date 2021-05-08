@@ -1,0 +1,15 @@
+.category-item{
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  padding-top: 20rpx;
+}
+
+.category-icon{
+  width: 70rpx;
+  height: 64rpx;
+}
+
+.category-text{
+  font-size: 26rpx;
+}

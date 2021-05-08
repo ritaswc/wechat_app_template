@@ -1,0 +1,44 @@
+{
+    "pages": [
+      "pages/index/index",
+      "pages/shake/shake",
+      "pages/me/me",
+      "pages/detail/detail",
+      "pages/chat/chat",
+      "pages/sug/sug",
+      "pages/startAct/startAct",
+      "pages/substartAct/substartAct"
+    ],
+    "window": {
+      "navigationBarBackgroundColor": "#393939",
+      "navigationBarTextStyle": "#fff",
+      "navigationBarTitleText": "活动",
+      "backgroundTextStyle": "light",
+      "enablePullDownRefresh": false
+    },
+    "networkTimeout": {
+      "request": 20000,
+      "connectSocket": 20000,
+      "uploadFile": 20000,
+      "downloadFile": 20000
+    },
+    "tabBar": {
+      "list": [{
+        "pagePath": "pages/index/index",
+        "text": "活动",
+        "iconPath": "pages/images/activity.png",
+        "selectedIconPath": "pages/images/activity_hover.png"
+      },{
+        "pagePath": "pages/shake/shake",
+        "text": "摇一摇",
+        "iconPath": "pages/images/shake.png",
+        "selectedIconPath": "pages/images/shake_hover.png"
+      },{
+        "pagePath": "pages/me/me",
+        "text": "我",
+        "iconPath": "pages/images/me.png",
+        "selectedIconPath": "pages/images/me_hover.png"
+      }]
+    },
+    "debug":false
+}

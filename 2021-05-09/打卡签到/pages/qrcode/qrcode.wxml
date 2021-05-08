@@ -1,0 +1,23 @@
+<!--pages/qrcode/qrcode.wxml-->
+
+
+<view class="code">
+    <view class="code-img">
+        <image src="{{codeUrl}}" mode="aspectFit" bindload="bindLoadCode"/>
+    </view>
+
+    <view class="name">
+        <text>{{name}}</text>
+    </view>
+
+    <view class="location">
+        <image src="/images/icons/location.png" />
+        <text>{{address}}</text>
+    </view>
+</view>
+
+<view class="info">
+    <text>该二维码用于员工打卡，用户可将其保存导出打印。</text>
+</view>
+
+

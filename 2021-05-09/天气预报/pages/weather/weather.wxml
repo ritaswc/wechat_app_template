@@ -1,0 +1,69 @@
+
+<!--pages/weather/weather.wxml-->
+<view class="page {{show}}">
+  <view class="ui-card {{todyWeather.style}}">
+    <view class="ui-card-header">
+      <image class="map-icon" src="{{mapIconSrc}}" background-size="cover" mode="aspectFit"></image>
+      {{todyWeather.city}}
+    </view>
+    <view class="ui-card-content">
+      <view class="today-info">
+        <text class="weather">{{todyWeather.weather}}</text>
+      </view>
+      <view class="ui-flex">
+        <view class="ui-flex-item text-center">
+          <view class="realtime-temperature">
+            {{todyWeather.realtimeTemperature}}
+          </view>
+        </view>
+        <view class="ui-flex-item text-center">
+          <image class="weather-icon-big" src="{{todyWeather.iconSrc}}" background-size="cover" mode="aspectFit"></image>
+        </view>
+      </view>
+      
+      <view class="ui-flex">
+        <view class="ui-flex-item">
+          <text class="line">{{todyWeather.temperature}}</text>
+          <text class="line">风力: {{todyWeather.wind}}</text>
+        </view>
+        <view class="ui-flex-item">
+          <view class="pm25">
+            <text>PM2.5: {{todyWeather.pm25}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="ui-card-footer"></view>
+  </view>
+  <view class="page-content">
+    <view class="ui-panel weather-future">
+      <view class="panel-title">未来三天</view>
+      <view class="panel-content">
+        <view class="ui-flex">
+          <view wx:for="{{futureThreeDay}}" wx:key="*this" class="ui-flex-item">
+            <view class="weather-item">
+              <view>{{item.date}}</view>
+              <view class="ui-flex">
+                <view class="ui-flex-item" wx:for="{{item.iconSrc}}" wx:key="*this" wx:for-item="iconItem">
+                  <image class="weather-icon" src="{{iconItem.src}}" background-size="cover" mode="aspectFit"></image>
+                </view>
+              </view>
+              <view>{{item.temperature}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="ui-panel weather-future">
+      <view class="panel-title">相关指数</view>
+      <view class="panel-content">
+          <view wx:for="{{variousIndex}}" wx:key="*this" class="ui-flex-item">
+            <view class="index-item">
+              <view class="index-item-title">{{item.title}}:{{item.value}}</view>
+              <view class="index-item-des">{{item.desc}}</view>
+            </view>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>

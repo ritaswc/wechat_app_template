@@ -1,0 +1,98 @@
+<view style="padding-bottom: 100rpx;">
+    <view class="flex-row bg-white mb-20 goods-info">
+        <view class="flex-grow-0">
+            <image style="width: 156rpx;height: 156rpx;margin-right:20rpx " mode="aspectFill" src="{{goods.goods_pic}}"></image>
+        </view>
+        <view class="flex-grow-1 flex-col">
+            <view class="flex-grow-1">{{goods.name}}</view>
+            <view class="flex-grow-0 flex-row" style="font-size: 9pt">
+                <view class="flex-grow-1">
+                    <view style="margin-right: 40rpx;display: inline-block" a:for="{{goods.attr}}" a:key="{{item.id}}">
+                        {{item.attr_group_name}}:{{item.attr_name}}
+                    </view>
+                </view>
+                <view class="flex-grow-0">×{{goods.num}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="flex-row bg-white switch-tab mb-20">
+        <view class="flex-grow-1 flex-x-center" onTap="switchTab" data-id="1">
+            <text class="flex-y-center {{switch_tab_1}}">退货退款</text>
+        </view>
+        <view class="flex-grow-1 flex-x-center" onTap="switchTab" data-id="2">
+            <text class="flex-y-center {{switch_tab_2}}">换货</text>
+        </view>
+    </view>
+    <view class="switch-body {{switch_tab_1}}">
+        <view class="flex-row bg-white form-row mb-20">
+            <view class="flex-grow-0">
+                <text class="form-label">退款原因</text>
+            </view>
+            <view class="flex-grow-1">
+                <textarea style="width: 100%;padding: 0;" rows="2" onInput="descInput" data-type="1" placeholder="请输入退款原因"></textarea>
+            </view>
+        </view>
+        <view class="flex-row bg-white form-row mb-20">
+            <view class="flex-grow-0">
+                <text class="form-label">退款金额</text>
+            </view>
+            <view class="flex-grow-1">
+                <text class="refund-price">￥{{goods.max_refund_price}}</text>
+            </view>
+        </view>
+        <view class="bg-white form-row mb-20">
+            <view class="mb-20">
+                <text class="form-label">上传凭证</text>
+            </view>
+            <view class="image-list">
+                <view class="image-preview" a:for="{{refund_data_1.pic_list}}" data-index="{{index}}" a:key="{{item.id}}">
+                    <text class="flex-x-center flex-y-center image-del" onTap="deleteImage" data-type="1" data-index="{{index}}">×
+                    </text>
+                    <image src="{{item}}" style="width: 160rpx;height: 160rpx" mode="aspectFill"></image>
+                </view>
+                <view a:if="{{!refund_data_1.pic_list||refund_data_1.pic_list.length<6}}" class="image-picker" onTap="chooseImage" data-type="1">
+                    <image style="width: 160rpx;height: 160rpx" src="{{__wxapp_img.store.image_picker.url}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+    <view class="switch-body {{switch_tab_2}}">
+        <view class="flex-row bg-white form-row mb-20">
+            <view class="flex-grow-0">
+                <text class="form-label">换货说明</text>
+            </view>
+            <view class="flex-grow-1">
+                <textarea style="width: 100%;padding: 0;" rows="2" onInput="descInput" data-type="2" placeholder="请输入换货说明"></textarea>
+            </view>
+        </view>
+        <view class="bg-white form-row mb-20">
+            <view class="mb-20">
+                <text class="form-label">上传凭证</text>
+            </view>
+            <view class="image-list">
+                <view class="image-preview" a:for="{{refund_data_2.pic_list}}" data-index="{{index}}" a:key="{{item.id}}">
+                    <text class="flex-x-center flex-y-center image-del" onTap="deleteImage" data-type="2" data-index="{{index}}">×
+                    </text>
+                    <image src="{{item}}" style="width: 160rpx;height: 160rpx" mode="aspectFill"></image>
+                </view>
+                <view a:if="{{!refund_data_2.pic_list||refund_data_2.pic_list.length<6}}" class="image-picker" onTap="chooseImage" data-type="2">
+                    <image style="width: 160rpx;height: 160rpx" src="{{__wxapp_img.store.image_picker.url}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<form a:if="{{switch_tab_1}}" data-type="1" report-submit="true" onSubmit="refundSubmit">
+    <button class='submit-btn' formType="submit">
+        <text>提交</text>
+    </button>
+</form>
+
+<form a:if="{{switch_tab_2}}" data-type="2" report-submit="true" onSubmit="refundSubmit">
+    <button class='submit-btn' formType="submit">
+        <text>提交</text>
+    </button>
+</form>

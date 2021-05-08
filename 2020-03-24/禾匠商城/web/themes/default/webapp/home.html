@@ -1,0 +1,56 @@
+{template 'common/header'}
+<div class="we7-page-search">
+	<form method="get" class="form-inline">
+		<input type="hidden" name="a" value="manage-account">
+		<input type="hidden" name="c" value="module">
+		<div class="input-group we7-margin-bottom col-sm-4">
+			<input class="form-control " name="keyword" value="{$_GPC['keyword']}" type="text" placeholder="名称" >
+			<span class="input-group-btn"><button class="btn btn-default"><i class="fa fa-search"></i></button></span>
+		</div>
+	</form>
+</div>
+<div class="js-module-display" ng-controller="ModuleMoreCtrl" ng-cloak>
+	<div we7-initial-searchbar we7-search-callback="searchModule(letter)"></div>
+	<div class="ext-apply-list clearfix">
+		{loop $modules $row}
+		<div class="ext-apply-item {if $row['shortcut']}apply-show{/if}" >
+			<img src="{$row['logo']}" class="apply-img {if !$row['enabled']}gray{/if}" />
+			<h2 class="apply-title">{$row['title']}</h2>
+			<span class="color-green">
+				{if $row['enabled']}
+					启用
+				{else}
+					禁用
+				{/if}
+			</span>
+			<div class="mask">
+
+				<a href="{url 'home/welcome/ext'  array('m' => $row['name'])}" class="entry">
+					进入应用 <i class="wi wi-angle-right"></i>
+				</a>
+				{if $row['shortcut']}
+				<a href="{php echo url('module/manage-account/shortcut', array('modulename' => $row['name'], 'shortcut' => STATUS_OFF))}" onclick="return ajaxopen(this.href);" class="cut-btn" title="移出菜单">
+					<i class="wi wi-remove"></i>
+				</a>
+				{else}
+				<a href="{php echo url('module/manage-account/shortcut', array('modulename' => $row['name'], 'shortcut' => STATUS_ON))}" onclick="return ajaxopen(this.href);" class="cut-btn" title="显示到菜单">
+					<i class="wi wi-eye"></i>
+				</a>
+				{/if}
+				<a href="{php echo url('module/manage-account/top', array('modulename' => $row['name']))}" class="stick">
+					<i class="wi wi-stick-sign" title="置顶1"></i>
+				</a>
+
+			</div>
+		</div>
+		{/loop}
+	</div>
+	<div class="text-right">{$pager}</div>
+</div>
+<script type="text/javascript">
+	angular.module('moduleApp').value('config', {
+		searchurl : "{php echo url('webapp/home/display')}"
+	});
+	angular.bootstrap($('.js-module-display'), ['moduleApp']);
+</script>
+{template 'common/footer'}

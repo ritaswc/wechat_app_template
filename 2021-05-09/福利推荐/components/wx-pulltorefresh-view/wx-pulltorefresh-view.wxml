@@ -1,0 +1,42 @@
+<view id="pulltorefresh-view" class="pulltorefresh-view">
+  <movable-area>
+    <movable-view id="pulltorefresh-view-container" out-of-bounds="{{true}}" y="{{-offsetY}}" direction="vertical" bindtouchend="touchend" bindchange="change">
+      <view class="header">
+        <view class="header-text" wx:if="{{pullDownStatus === 0 && !disablePullDown}}">
+          <icon class="iconfont icon-pull-down" space="nbsp"/>{{pullText}}
+        </view>
+        <view class="header-text" wx:if="{{pullDownStatus === 1 && !disablePullDown}}">
+          <icon class="iconfont icon-release-up" space="nbsp"/>{{releaseText}}
+        </view>
+        <view class="header-text" wx:if="{{pullDownStatus === 2 && !disablePullDown}}">
+          <icon class="iconfont icon-loading loading" space="nbsp"/>{{loadingText}}...
+        </view>
+        <view class="header-text" wx:if="{{pullDownStatus === 3 && !disablePullDown}}">
+          <icon class="iconfont icon-complete" space="nbsp"/>{{finishText}}
+        </view>
+      </view>
+      <scroll-view class="body" scroll-y>
+        <slot></slot>
+      </scroll-view>
+      <view class="loadmore">
+        <view wx:if="{{!nomore}}">
+          <view class="header-text" wx:if="{{pullUpStatus === 0 && !disablePullUp}}">
+            <icon class="iconfont icon-release-up" space="nbsp"/>{{pullUpText}}
+          </view>
+          <view class="header-text" wx:if="{{pullUpStatus === 1 && !disablePullUp}}">
+            <icon class="iconfont icon-pull-down" space="nbsp"/>{{pullUpReleaseText}}
+          </view>
+          <view class="header-text" wx:if="{{pullUpStatus === 2 && !disablePullUp}}">
+            <icon class="iconfont icon-loading loading" space="nbsp"/>{{loadmoreText}}...
+          </view>
+          <view class="header-text" wx:if="{{pullUpStatus === 3 && !disablePullUp}}">
+            <icon class="iconfont icon-complete" space="nbsp"/>{{loadmoreFinishText}}
+          </view>
+        </view>
+        <view class="header-text" wx:if="{{nomore}}">
+          <icon class="iconfont icon-complete" space="nbsp"/>{{nomoreText}}
+        </view>
+      </view>
+    </movable-view>
+  </movable-area>
+</view>

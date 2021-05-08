@@ -1,0 +1,10 @@
+/* pages/result/result.wxss */
+.result_area {
+  position: absolute;
+  top: 34%;
+  left: 10%;
+  width: 80%;
+}
+.result_area .img {
+  width: 100%;
+}

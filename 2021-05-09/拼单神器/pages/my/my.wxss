@@ -1,0 +1,98 @@
+/* pages/my/my.wxss */
+.cell {
+    padding: 20rpx 30rpx;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.cell_ft {
+    text-align: right;
+    color: #999999;
+}
+
+.cell_ft::after {
+    content: " ";
+    display: inline-block;
+    height: 20rpx;
+    width: 20rpx;
+    border-width: 4rpx 4rpx 0 0;
+    border-color: #C8C8CD;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    right: 30rpx;
+    top: 40%;
+}
+
+.click_list {
+    background-color: white;
+    border-bottom: 1rpx solid #C8C8CD;
+}
+
+.cell_line {
+    height: 1rpx;
+    width: 95%;
+    background-color: #C8C8CD;
+    position: absolute;
+    right: 1rpx;
+}
+
+.my_title {
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    padding-left: 10rpx;
+}
+
+.onmyoji_item {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  margin-bottom: 5rpx;
+  margin-top: 5rpx;
+  padding: 10rpx 30rpx;
+  background-color: #fff;
+}
+
+.hover_onmyoji {
+  background-color: #999999;
+}
+
+.item_image {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.item_info {
+  background-color: #fff;
+}
+
+.image_box {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.item_desc {
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  color: #999999;
+  font-size: medium;
+}
+
+.footer {
+  font-size: 25rpx;
+  color: #999999;
+  text-align: center;
+  margin-top: 30rpx;
+}

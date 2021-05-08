@@ -1,0 +1,7 @@
+<!--pages/sug/sug.wxml-->
+<view class="container">
+    <form bindsubmit="sendMsg">
+        <textarea maxlength="200" placeholder="直接发送建议给CJ吧" name="textarea"/>
+        <button form-type="submit" type="primary">提交</button>
+    </form>
+</view>

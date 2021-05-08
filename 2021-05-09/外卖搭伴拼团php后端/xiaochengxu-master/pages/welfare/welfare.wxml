@@ -1,0 +1,54 @@
+
+<view class="content">
+    <view class="goods-manager">
+        <view class="goods-manager-left">
+            <view class="brand">
+                <image src="{{userInfo.images}}"></image>
+            </view>
+            <text>{{userInfo.nickname}}</text>
+        </view>
+        <view>
+            <view>可用积分 <text wx:if="{{userInfo.point != null}}">积分 {{userInfo.point}} </text>
+            <text wx:else>积分 0 </text> <text class="goods-manager-right">兑换记录</text></view>
+        </view>
+    </view>
+    <!--列表-->
+  <view class="list">
+    <block wx:for="{{pointGoods}}" wx:key>
+      <view class="container-goods">
+        <image src="{{item.info_img}}"></image>
+        <view class="welfare-top">
+            <view class="rank">
+                <text wx:if="{{item.goods_level == 1}}">限 白银等级以上换购</text>
+                <text wx:elif="{{item.goods_level == 2}}">限 黄金等级以上换购</text>
+                <text wx:elif="{{item.goods_level == 3}}">限 白金等级以上换购</text>
+                <text wx:else>限 钻石等级以上换购</text>
+            </view>
+            <view class="title">
+                <text>{{item.goods_name}}</text>
+            </view>
+            <view class="rule">
+                <text>
+                    兑换规则\n
+                    {{item.goods_name}}\n
+                    兑换3日后，安排发货。\n
+                    兑换日期：2016/08/1-2016/12/31\n
+                    兑换成功后，请在"福利-兑换记录"查看信息。
+                </text>
+            </view>
+        </view>
+        <view class="welfare-bottom">
+            <view class="num">
+                <text>已售 {{item.goods_sale_num}} 份(不限购)</text>
+                <text>剩余数量：{{item.goods_num}}</text>
+            </view>
+            <view class="action"><text>正在进行中...</text>(抢完为止)</view>
+            <view class="point">
+                <view>使用 <text>{{item.goods_point}}</text> 积分</view>
+                <view bindtap="gotoPay">换购</view>
+            </view>
+        </view>
+      </view>
+     </block> 
+  </view>
+</view>

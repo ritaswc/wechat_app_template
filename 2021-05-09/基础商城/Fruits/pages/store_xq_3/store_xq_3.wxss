@@ -1,0 +1,13 @@
+/**index.wxss**/
+.slide-image{  
+    width: 100%; height: 150px; 
+} 
+.store_title{ background:#fff; margin-top:0.3em; padding:10px;}
+.store_title tesx{ width:100%; font-size:1.1em;}
+
+.store_nr{ background:#fff; color:#000;}
+.store_nr{ padding:10px;margin-top: 30px;}
+.store{  border-bottom:1px solid #ddd; background: #fff; overflow: hidden;padding-bottom: 10px;}
+.store-image{ height: 50px;width: 50px;}
+
+

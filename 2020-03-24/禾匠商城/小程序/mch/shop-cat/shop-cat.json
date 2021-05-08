@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "店铺分类",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

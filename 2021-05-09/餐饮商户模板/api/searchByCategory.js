@@ -1,0 +1,34 @@
+module.exports=[
+    {
+        title:'果蔬花卉',
+        src:'/image/wechat.png'
+    },
+    {
+        title:'商店超市',
+        src:'/image/wechat.png'
+    },
+    {
+        title:'美食营养',
+        src:'/image/wechat.png'
+    },
+    {
+        title:'生活服务',
+        src:'/image/wechat.png'
+    },
+    {
+        title:'家政服务',
+        src:'/image/wechat.png'
+    },
+    {
+        title:'展销展示',
+        src:'/image/wechat.png'
+    },
+    {
+        title:'社区服务',
+        src:'/image/wechat.png'
+    },
+    {
+        title:'其他服务',
+        src:'/image/wechat.png'
+    }
+]

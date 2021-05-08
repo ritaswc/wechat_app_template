@@ -1,0 +1,335 @@
+.container { width: 100%; }
+
+.voucher { overflow: hidden; width: 100%; }
+
+.info {
+  background: #fff;
+  border-bottom: #f2f2f2 solid 20rpx;
+  border-top: #f2f2f2 solid 20rpx;
+  list-style: none;
+  margin: 0;
+  padding: 0 24rpx;
+}
+
+.info-li {
+  background: #fff;
+  height: 96rpx;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.price {
+  height: 92rpx;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.info-li:after, .price:after {
+  background: #dedede;
+  bottom: 0rpx;
+  content: '';
+  height: 1rpx;
+  left: 0rpx;
+  opacity: 0.6;
+  position: absolute;
+  right: 0rpx;
+  width: 200%;
+}
+
+.lt {
+  color: #666;
+  float: left;
+  font-size: 32rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  padding-left: 4rpx;
+  width: 30%;
+}
+
+.rt {
+  color: #333;
+  float: right;
+  line-height: 92rpx;
+  text-align: right;
+  width: 65%;
+}
+
+.num { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30rpx; }
+
+.num-lt { color: #dd2a2a; font-size: 32rpx; font-weight: normal; }
+
+.num-rt { font-size: 28rpx; font-style: normal; }
+
+.rt-vm {
+  color: #333;
+  float: right;
+  font-size: 30rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  position: relative;
+  text-align: right;
+  width: 232rpx;
+}
+
+.rt-vm button[size="mini"] { font-size: 30rpx; font-weight: bold; padding: 2rpx 0 0 0; }
+
+.up-lt {
+  background: none;
+  border: #ccc solid 1rpx;
+  display: block;
+  height: 72rpx;
+  left: 0rpx;
+  line-height: 72rpx;
+  margin: 0;
+  padding: 0 0;
+  position: absolute;
+  top: 12rpx;
+  width: 72rpx;
+}
+
+.box {
+  background: none;
+  border-bottom: #ccc solid 1rpx;
+  border-left: none;
+  border-radius: 2rpx;
+  border-right: none;
+  border-top: #ccc solid 1rpx;
+  color: #dd2a2a;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 40rpx;
+  font-weight: bold;
+  height: 68rpx;
+  left: 68rpx;
+  line-height: 68rpx;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 12rpx;
+  width: 96rpx;
+}
+
+.down-rt {
+  background: none;
+  border: #ccc solid 1rpx;
+  display: block;
+  height: 72rpx;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0rpx;
+  top: 12rpx;
+  width: 72rpx;
+}
+
+.pay {
+  background: #fff;
+  height: 400rpx;
+  overflow: hidden;
+  width: 100%;
+}
+
+.subtn {
+  bottom: 0;
+  display: block;
+  font-size: 30rpx;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 88;
+}
+
+.pay text { text-align: center; }
+.pay-title {
+  color: #333;
+  font-size: 32rpx;
+  font-weight: normal;
+  height: 94rpx;
+  line-height:94rpx;
+  margin: 0;
+  padding: 30rpx 0;
+  position: absolute;
+  width: 100%;
+}
+
+.pay-ul {
+  list-style: none;
+  margin-top: 100rpx;
+  overflow: hidden;
+  padding: 0 24rpx;
+  width: 96%;
+}
+
+.pay-li {
+  border: #ddd solid 1rpx;
+  float: left;
+  height: 160rpx;
+  margin-right: -1rpx;
+  position: relative;
+  width: 32%;
+  z-index: 5;
+}
+
+.pay-li.check { border: #dd2a2a solid 1rpx; border-right: #dd2a2a solid 1rpx; z-index: 10; }
+
+.hb { display: block; padding: 16rpx 0; }
+
+.hb-img {
+  display: block;
+  height: 60rpx;
+  margin: 0 auto;
+  width: 60rpx;
+}
+
+.hb-title {
+  color: #666;
+  display: block;
+  font-size: 24rpx;
+  font-style: normal;
+  line-height: 32rpx;
+  margin-top: 4rpx;
+}
+
+.hb-num {
+  color: #999;
+  display: block;
+  font-size: 24rpx;
+  font-style: normal;
+  line-height: 32rpx;
+  text-align: center;
+}
+
+.icon {
+  color: #DD2A2A;
+  display: block;
+  position: absolute;
+  right: 8rpx;
+  top: 8rpx;
+}
+
+.paybg {
+  background: rgba(0, 0, 0, 0.5) !important;
+  background: #000;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.payPass {
+  background: #fff;
+  border-radius: 12rpx;
+  display: block;
+  height: 312rpx;
+  left: 7%;
+  margin-top: -160rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  width: 86%;
+  z-index: 100;
+}
+
+.pas-title {
+  color: #333;
+  font-size: 32rpx;
+  font-weight: normal;
+  height: 92rpx;
+  line-height: 92rpx;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.pas-title:after {
+  background: #DEDEDE;
+  bottom: 0;
+  content: '';
+  height: 1rpx;
+  left: 24rpx;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  width: 90%;
+}
+
+.pas-num {
+  color: #DD2A2A;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30rpx;
+  line-height: 90rpx;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  text-align: center;
+  width: 100%;
+}
+
+
+.pas-box {
+  display: block;
+  height: 72rpx;
+  overflow: hidden;
+  width: 100%;
+}
+
+.box-six {
+  display: block;
+  height: 72rpx;
+  overflow: hidden;
+  width: 100%;
+}
+
+.six {
+  border-bottom: 1rpx solid #ddd;
+  border-radius: 6rpx;
+  border-right: 1rpx solid #ddd;
+  border-top: 1rpx solid #ddd;
+  height: 68rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 432rpx;
+}
+
+.i {
+  border-left: 1rpx solid #ddd;
+  display: block;
+  float: left;
+  height: 68rpx;
+  padding: 10rpx 0 0 -4rpx;
+  width: 70rpx;
+}
+
+.i.active { background: url(http://appuat.huihuishenghuo.com/img/detail/blink.gif) no-repeat center center; }
+
+.b {
+  background: url(http://appuat.huihuishenghuo.com/img/detail/dot.png) no-repeat center center;
+  display: block;
+  height: 20rpx;
+  margin-top: 24rpx;
+}
+
+.pas-input {
+  border: 0;
+  color: #fff;
+  font-size: 24rpx;
+  height: 68rpx;
+  left: -200rpx;
+  margin: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 720rpx;
+  z-index: 8;
+}

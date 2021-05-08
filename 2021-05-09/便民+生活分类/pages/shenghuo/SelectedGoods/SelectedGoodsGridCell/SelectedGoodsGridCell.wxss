@@ -1,0 +1,63 @@
+/* pages/shenghuo/SelectedGoods/SelectedGoodsGridCell/SelectedGoodsGridCell.wxss */
+
+.selectedGoodsGridCell-container {
+  width: 48%;
+  background: #fff;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 1.4%;
+  margin-left: 1.3%;
+}
+
+.cell-img {
+  vertical-align: middle;
+  text-align: center;
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.prdName {
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  /*max-height:40px;
+  height: 40px;*/
+  height: 30px;
+  padding-left: 4px;
+  margin-bottom: 6px;
+  word-break: break-all;
+}
+
+
+.selectedGoodsGridCell-container .list-item-price {
+  color: #0164a6;
+  font-size: 14px;
+  margin-left: 4px;
+  margin-bottom: 2px;
+}
+
+.lowestPrice{
+  font-size: 18px;
+  font-weight: bold;
+
+}
+.price-decimal {
+
+  font-weight: normal;
+  font-size: 12px;
+}
+.originalPrice {
+  color: #aaaaaa;
+  text-decoration: line-through;
+  margin-left: 4px;
+
+}

@@ -1,0 +1,65 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body">
+        <view class="page {{__page_classes}}">
+            <view class="body after-navber w-100 h-100">
+                <view style="height:566rpx;position:relative;z-index:10">
+                    <image src="{{__wxapp_img.register.head.url}}" style="width:100%;height:566rpx;position:absolute;z-index:0;top:0;left:0"></image>
+                    <view class="calendarSignDay" style="position:relative;" wx:if="{{status==1}}">
+                        <view class="lianxu">已连续签到</view>
+                        <view class="tianshu">
+                            <text style="font-size:40px;font-weight:bolder;color:#ffde00;">{{continuation}}</text>天</view>
+                    </view>
+                    <image bindtap="calendarSign" class="registre-img" src="{{__wxapp_img.register.sign_in.url}}" style="position:relative;" wx:else></image>
+                    <view class="rntegral-font" style="font-size:15px;position:relative">
+                        <text>今</text>日签到获得
+                        <text style="font-weight:bolder;color:#ffde00;">{{register.register_integral}}</text>积分</view>
+                    <view class="rntegral-font" style="font-size:13px;position:relative">连续签到{{register.register_continuation}}天有惊喜哦</view>
+                    <view bindtap="register_rule" class="register-rule">规则</view>
+                </view>
+                <view class="content">
+                    <view class="register">
+                        <include src="/components/calendar/calendar"></include>
+                    </view>
+                </view>
+                <view bindtap="hideModal" catchtouchmove="preventTouchMove" id="modal-mask" wx:if="{{register_rule}}"></view>
+                <block wx:if="{{register_rule}}">
+                    <block wx:if="{{status_show==1}}">
+                        <view class="register_success" wx:if="{{jiangli==1}}">
+                            <image src="{{__wxapp_img.store.jiangli.url}}" style="width:100%;height:100%;"></image>
+                            <view class="register_bac">
+                                <view class="register_font">连续签到
+                                        <text style="color:red;">{{continuation}}</text>天</view>
+                                <view class="register_font">今日获得
+                                        <text style="color:red;">{{register.register_integral}}</text>+
+                                        <text style="color:red;">{{register.register_reward}}</text>积分</view>
+                                <view bindtap="hideModal" class="zhidaolo">
+                                    <view>知道咯</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="register_success" wx:else>
+                            <image src="{{__wxapp_img.integralMall.register.register_bg.url}}" style="width:100%;height:100%;"></image>
+                            <view class="register_bac">
+                                <view class="register_font">连续签到
+                                        <text style="color:red;">{{continuation}}</text>天</view>
+                                <view class="register_font">今日获得
+                                        <text style="color:red;">{{register.register_integral}}</text>积分</view>
+                                <view bindtap="hideModal" class="zhidaolo">
+                                    <view>知道咯</view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <view class="register_rule" wx:else>
+                        <image bindtap="hideModal" class="close" src="{{__wxapp_img.register.close.url}}"></image>
+                        <view class="rule">签到规则</view>
+                        <view class="rule-detail" wx:for="{{register.register_rule}}" wx:key="{{item.id}}">{{item}}</view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

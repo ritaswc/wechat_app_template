@@ -1,0 +1,96 @@
+/* pages/scan/scan.wxss */
+
+page {
+    background-color: #fafafa;
+}
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 80rpx 40rpx 0 40rpx;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.avatar image {
+    width: 168rpx;
+    height: 168rpx;
+    border-radius: 50%;
+}
+
+.name {
+    margin-top: 20rpx; 
+    margin-bottom: 40rpx;
+	line-height: 32px;
+	font-size: 17.25pt;
+	color: #000000;
+}
+
+.time-section {
+    margin-top: 110rpx;
+
+}
+
+.time {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.hourminuts {
+    line-height: 154rpx;
+    font-size: 41.25pt;
+    color: rgba(0, 0, 0, 0.87);
+
+}
+
+.seconds {
+    line-height: 72rpx;
+    font-size: 18.75pt;
+    color: #f5a623;
+    margin: auto 0rpx 20rpx 0rpx;
+}
+
+.date {
+    margin-top: 12rpx;
+    text-align: center;
+    font-weight: 500;
+    line-height: 22px;
+    font-size: 12pt;
+    color: rgba(0, 0, 0, 0.54);
+    margin-bottom: 120rpx; 
+}
+
+.footer {
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;*/
+    /*align-items: center;*/
+    margin: 0 auto;
+    width: 80%;
+}
+
+.to-clock {
+    background-color: #22a1e0;
+    color: #ffffff;
+    margin-bottom: 40rpx; 
+}
+
+.hover-to-clock {
+    opacity: 0.7;
+}
+
+.to-list {
+    color: rgba(0, 0, 0, 0.54);
+    margin-bottom: 40rpx;
+}
+
+.hover-to-list {
+    opacity: 0.7;
+}
+
+
+
+

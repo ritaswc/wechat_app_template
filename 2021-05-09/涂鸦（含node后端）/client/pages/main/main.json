@@ -1,0 +1,7 @@
+{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "涂鸦",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true
+}

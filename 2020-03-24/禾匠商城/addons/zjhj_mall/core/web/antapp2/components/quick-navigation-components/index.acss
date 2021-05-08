@@ -1,0 +1,77 @@
+/* components/quick-navigation-components/index.wxss */
+
+.quick-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    transition: 200ms;
+}
+
+.quick-modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.quick-modal .quick-modal-bg {
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.quick-modal .quick-modal-pic {
+    background: rgba(0, 0, 0, 0.25);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.quick-modal .quick-modal-close image {
+    width: 50rpx;
+    height: 50rpx;
+    margin-top: 50rpx;
+}
+.quick-text {
+	color:#ffffff;
+	font-size:9pt;
+}
+.quick-bg {
+	background-color:rgba(0,0,0,0.7);
+	border-radius: 50%;
+	height:80rpx;
+	width:80rpx;
+}
+.quick-zfb {
+    display:inline;
+    opacity:0;
+    position:absolute;
+    bottom:0;
+}
+.quick-icon {
+    position:fixed;
+    z-index:99;
+    right:50rpx;
+    bottom:140rpx;
+}
+.quick-dial {
+    width:80rpx;
+    height:80rpx;
+    border-radius:50%;
+    display:block;
+}
+.float-icon{
+    bottom: 170rpx !important;
+}
+
+.quick-head > .device_iphone_x {
+    padding-bottom: 65rpx;
+}

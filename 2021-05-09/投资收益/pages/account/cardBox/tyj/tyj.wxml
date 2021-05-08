@@ -1,0 +1,15 @@
+<view class="tyj_top">
+    <image src="../../../../images/account/tyj_04.jpg"></image>
+</view>
+
+<view class="tyj_bd">
+    <view class="title"><image src="../../../../images/account/tyb_gz.png"></image> 体验金规则</view>
+    <view class="content">
+        <view>1、 体验金是由普汇云通用平台自有资金设立的一个专门用于提供给平台用户进行投资体验的投资体验基金</view>
+        <view>2、体验金仅限一次性投资于新手专享体验标，享有 3 天的年利率15%的利息收益</view>
+        <view>3、体验金投资收益由用户自行支配，可用于投资普汇云通其它项目标的</view>
+        <view>4、体验金有效期为15天，过期未使用平台将会收回</view>
+        <view>5、用户使用体验金投资项目到期后，本金部分由平台收回</view>
+        <view>本活动规则解释权归普汇云通所有，如有疑问请联系 <text>在线客服</text> 或 <text>拨打400-888-9787</text></view>
+    </view>
+</view>

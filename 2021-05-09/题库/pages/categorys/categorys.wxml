@@ -1,0 +1,10 @@
+<view class="category-container">
+  <view>选择您要报考的证书</view>
+  <picker-view indicator-style="height: 50px;" class="picker" value="{{value}}" bindchange="handlePickerChange">
+    <picker-view-column>
+      <view wx:for="{{categorys}}" wx:key="{{item._id}}" style="line-height: 50px">{{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+  <view class="picker-bottom"></view>
+  <button type="primary" class="button-large" loading="{{submitLoading}}" bindtap="handleSubmit">确定</button>
+</view>

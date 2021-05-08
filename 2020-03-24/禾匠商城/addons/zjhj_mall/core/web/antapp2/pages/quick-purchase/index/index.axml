@@ -1,0 +1,119 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navbar">
+        <include src="/components/common/navbar" />
+        <include src="/components/shopping_cart/shopping_cart" />
+        <include src="/components/specifications_model/specifications_model" />
+        <view class="quick_purchase {{_navbar ? 'shopping-cart' : '' }}">
+            <!-- 分类开始  -->
+            <view class="{{__device}} left_nav">
+                <block a:if="{{quick_list}}" a:key="id">
+                    <scroll-view scroll-y="true" style="height: 100%;width:100%">
+                        <block a:if="{{quick_hot_goods_lists.length > 0}}">
+                            <view class="cat_name {{cat_checked?'cat_name_active':''}}" data-tag="hot_cakes" onTap="selectMenu">
+                                <image src='{{__wxapp_img.store.quick_hot.url}}' class="quick-hot"></image>
+                                <view style="float:left; height:30px;display:flex;align-items:center;justify-content:center;">热销</view>
+                            </view>
+                        </block>
+
+                        <block a:for="{{quick_list}}" a:key="{{item.id}}">
+                            <view class="cat_name {{item.cat_checked?'cat_name_active':''}}" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;" data-id="{{quick_list.id}}" data-tag="{{'aa'+index}}" onTap="selectMenu" data-index="{{index}}">{{item.name}}</view>
+                        </block>
+                    </scroll-view>
+                </block>
+            </view>
+
+            <!--商品开始  -->
+            <view class="{{__device}} r_goods">
+                <scroll-view scroll-y="true" style="height: 100%;padding: 10rpx" scroll-into-view="{{toView}}">
+                    <!-- 热销商品开始  -->
+                    <block a:if="{{quick_hot_goods_lists.length > 0}}">
+                        <view class="navname" id="hot_cakes">热销</view>
+                        <block a:for="{{quick_hot_goods_lists}}" a:for-item="goods" a:key="{{goods.id}}">
+                            <view class="goodsall">
+                                <view class="goods" data-id="{{goods.id}}" onTap='get_goods_info'>
+                                    <view class="goods_pic">
+                                        <image src="{{goods.cover_pic}}" id="goods_pic" lazy-load="true"></image>
+                                    </view>
+                                    <view class="goods_info">
+                                        <view class="goods_name" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{goods.name}}</view>
+                                        <view a:if='{{__is_sales}}' style="font-size:24rpx;color:#666666;margin-top:14rpx;">销量 {{goods.virtual_sales}}</view>
+                                        <view style="font-size:16px;color:#ff4544;margin-top:22rpx;width:63%;">￥{{goods.price}}</view>
+                                    </view>
+                                </view>
+
+                                <!-- 无规格开始 -->
+                                <block a:if="{{goods.use_attr == 0}}">
+                                    <view class="purchase">
+                                        <view id="jia" class="standard" onTap="jia" data-id="{{goods.id}}">
+                                            <image src="{{__wxapp_img.store.jia.url}}" class="standard" style="width:100%;"></image>
+                                        </view>
+                                        <block a:if="{{goods.num > 0}}">
+                                            <input onInput='goodNumChange' type='number' class="standard good_num" id="num" data-id="{{goods.id}}" maxlength='999' value='{{goods.num}}'></input>
+                                            <view class="standard" id="jian" onTap="jian" data-id="{{goods.id}}">
+                                                <image src="{{__wxapp_img.store.jian.url}}" class="standard"></image>
+                                            </view>
+                                        </block>
+                                    </view>
+                                </block>
+                                <!-- 无规格结束 -->
+                                <!-- 规格商品开始 -->
+                                <block a:if="{{goods.use_attr == 1}}">
+                                    <view class="guigepurchase" onTap="showDialogBtn" data-id="{{goods.id}}">选规格
+                                        <view a:if="{{goods.num > 0}}" class="guigenum">{{goods.num}}</view>
+                                    </view>
+
+                                </block>
+                                <!-- 规格商品结束 -->
+                            </view>
+                        </block>
+                        <!-- 热销商品结束  -->
+                    </block>
+                    <block a:for="{{quick_list}}" a:key="id" a:for-item="goods_list" a:key="{{goods_list.id}}">
+                        <view class="navname" id="{{'aa'+index}}">{{goods_list.name}}</view>
+                        <block a:for="{{goods_list.goods}}" a:for-item="goods" a:key="{{goods.id}}">
+                            <view class="goodsall">
+                                <view class="goods" data-id="{{goods.id}}" onTap='get_goods_info'>
+                                    <view class="goods_pic">
+                                        <image src="{{goods.cover_pic}}" id="goods_pic"></image>
+                                    </view>
+                                    <view class="goods_info">
+                                        <view class="goods_name" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{goods.name}}</view>
+                                        <view a:if='{{__is_sales}}' style="font-size:24rpx;color:#666666;margin-top:14rpx;">销量 {{goods.virtual_sales}}</view>
+                                        <view style="font-size:16px;color:#ff4544;margin-top:22rpx;width:63%;">￥{{goods.price}}</view>
+                                    </view>
+                                </view>
+                                <!-- 无规格开始 -->
+                                <block a:if="{{goods.use_attr == 0}}">
+                                    <view class="purchase">
+                                        <view class="standard" id="jia" onTap="jia" data-id="{{goods.id}}">
+                                            <image src="{{__wxapp_img.store.jia.url}}" class="standard" lazy-load="true"></image>
+                                        </view>
+
+                                        <block a:if="{{goods.num > 0}}">
+                                            <input onInput='goodNumChange' type='number' class="standard good_num" id="num" data-id="{{goods.id}}" maxlength='999' value='{{goods.num}}'></input>
+                                            <view class="standard" id="jian" onTap="jian" data-id="{{goods.id}}">
+                                                <image src="{{__wxapp_img.store.jian.url}}" class="standard"></image>
+                                            </view>
+                                        </block>
+                                    </view>
+                                </block>
+                                <!-- 无规格结束 -->
+                                <!-- 规格商品开始 -->
+                                <block a:if="{{goods.use_attr == 1}}">
+                                    <view class="guigepurchase" id="guige" onTap="showDialogBtn" data-index="{{index}}" data-id="{{goods.id}}" data-cid="{{goods_list.id}}">选规格
+                                        <view a:if="{{goods.num > 0}}" class="guigenum">{{goods.num}}</view>
+                                    </view>
+                                </block>
+                                <!-- 规格商品结束 -->
+                            </view>
+                        </block>
+                    </block>
+                </scroll-view>
+            </view>
+            <!-- 商品结束 -->
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

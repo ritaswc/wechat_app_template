@@ -1,0 +1,20 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="no-content" wx:if="{{!list||list.length==0}}">暂无中奖记录</view>
+        <block wx:for="{{list}}">
+            <view class="prize-top">
+                <view class="prize-cen">
+                    <view class="prize-goods">{{item['name']}}</view>
+                    <view class="prize-time">{{item['create_time']}}</view>
+                </view>
+                <view bindtap="submit" class="prize-start" data-attr="{{item.attr}}" data-gift="{{item.gift_id}}" data-id="{{item.id}}" wx:if="{{item['status']==1&&item['type']==4}}">立即兑换</view>
+                <view class="prize-end" wx:if="{{item['status']==2&&item['type']==4}}">已兑换</view>
+                <view class="prize-end" wx:if="{{item['status']==2&&item['type']!=4}}">已发放</view>
+            </view>
+            <view class="prize-line"></view>
+        </block>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

@@ -1,0 +1,148 @@
+.search-btn {
+  margin: 16rpx 2rpx;
+  color: white;
+  background-color: #04be02;
+  border: none;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+}
+
+.choose_school_box {
+  transition: all 2s linear;
+}
+
+.search-btn-view {
+  width: 98%;
+}
+
+.help-text {
+  margin: 30rpx 15rpx 15rpx 15rpx;
+  color: #888;
+  font-size: 25rpx;
+  text-align: left;
+  width: 96%;
+}
+
+.right {
+  float: right;
+  padding-left: 20rpx;
+}
+
+.green_link {
+  color: #55a6e1;
+  font-weight: bold;
+}
+
+.input-cell {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  width: 100%;
+  padding: 10rpx 0;
+}
+
+.input-cell-hd {
+  padding-left: 20rpx;
+  width: 120rpx;
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.input-cell-bd {
+  width: 100%;
+}
+
+.input-box {
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  width: 100%;
+  color: #555;
+}
+
+.search-result {
+  width: 100%;
+}
+
+.book-links {
+  background-color: #fff;
+  line-height: 1.41176471;
+  font-size: 28rpx;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid #d9d9d9;
+}
+
+.book-link {
+  padding: 0 15px;
+  padding-left: 0px;
+  margin-left: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.book-navigator {
+  padding: 10px 0;
+  width: 99%;
+}
+
+.book_description{
+  padding-left: 3rpx;
+  padding-top: 3rpx;
+}
+
+
+.book_description_press {
+  font-style: italic;
+  font-size: 22rpx;
+  color: #b2b2b2;
+  padding-left: 10rpx;
+}
+
+.book_description_author {
+  font-style: italic;
+  font-size: 22rpx;
+  color: #b2b2b2;
+}
+
+.link-icon {
+  content: " ";
+  display: inline-block;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  position: relative;
+  top: -2px;
+  top: -1px;
+  margin-left: 0.3em;
+  text-align: right;
+  color: #888;
+}
+
+.error {
+  text-align: center;
+  width: 100%;
+  padding-top: 200rpx;
+}
+
+.error icon {
+  width: 100%;
+  padding-bottom: 30rpx;
+}
+
+.error text {
+  font-size: 30rpx;
+  color: #555;
+}

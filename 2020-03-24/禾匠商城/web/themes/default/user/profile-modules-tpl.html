@@ -1,0 +1,169 @@
+{template 'common/header'}
+<div id="js-user-edit-modulestpl" ng-controller="UserEditModules" ng-cloak>
+	<div class="panel we7-panel user-permission">
+		<div class="panel-heading">
+			<span>所属用户组：<span ng-bind="group_info.name"></span></span>
+		</div>
+		<div class="panel-body" ng-repeat="(packid, pack) in group_info.package_detail">
+			<div class="permission-heading">
+				<span ng-bind="pack.name"></span>
+				<span ng-if="packid == '-1'">所有服务</span>
+				<div class="pull-right permission-edit" ng-style="{'width': 'auto'}">
+					<a href="javascript:;" class="color-default js-unfold" data-toggle="collapse" data-target="#demo-{{packid}}" ng-click="changeText($event)">展开</a>
+				</div>
+			</div>
+			<div class="we7-group-app collapse we7-padding-horizontal" id="demo-{{pack.id}}" ng-if="packid != '-1'">
+				<div class="item media" ng-repeat="module in pack.modules_all">
+					<div class="media-left media-middle">
+						<a href="#">
+							<img class="media-object module-img logo" ng-src="{{ module.logo }}" alt="...">
+						</a>
+					</div>
+					<div class="media-body media-middle">
+						<h4 class="media-heading title" ng-bind="module.title"></h4>
+						<div class="support-list">
+							<i class="wi wi-account" ng-if="module.account_support == 2"></i>
+							<i class="wi wi-wxapp" ng-if="module.wxapp_support == 2"></i>
+							<i class="wi wi-pc" ng-if="module.webapp_support == 2"></i>
+							<i class="wi wi-app" ng-if="module.phone_support == 2"></i>
+							<i class="wi wi-xzapp" ng-if="module.xzapp_support == 2"></i>
+							<i class="wi wi-aliapp" ng-if="module.aliapp_support == 2"></i>
+						</div>
+					</div>
+				</div>
+				<div class="item media" ng-repeat="module in pack.templates">
+					<div class="media-left media-middle">
+						<a href="#">
+							<img class="media-object template-img logo" ng-src="{{ module.logo }}" alt="...">
+						</a>
+					</div>
+					<div class="media-body media-middle">
+						<h4 class="media-heading title" ng-bind="module.title"></h4>
+						<div class="support-list">
+							<i class="wi wi-template"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="we7-group-app collapse we7-padding-horizontal" id="demo-{{pack.id}}" ng-if="packid != '-1'">
+				<div class="item media ">
+					<span class="title">应用：系统所有应用</span>	
+				</div>
+				<div class="item media ">
+					<span class="title">模板：系统所有模板</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="panel we7-panel user-permission">
+		<div class="panel-heading">
+			<span>应用权限组</span>
+		</div>
+		<div class="panel-body" ng-repeat="(packid, pack) in uni_groups">
+			<div class="permission-heading">
+				<span ng-bind="pack.name"></span>
+				<div class="pull-right permission-edit" ng-style="{'width': 'auto'}">
+					<a href="javascript:;" class="color-default js-unfold" data-toggle="collapse" data-target="#demo-uni-{{packid}}" ng-click="changeText($event)">展开</a>
+				</div>
+			</div>
+			<div class="we7-group-app collapse we7-padding-horizontal" id="demo-uni-{{packid}}" >
+				<div class="item media" ng-repeat="module in pack.modules_all">
+					<div class="media-left media-middle">
+						<a href="#">
+							<img class="media-object module-img logo" ng-src="{{ module.logo }}" alt="...">
+						</a>
+					</div>
+					<div class="media-body media-middle">
+						<h4 class="media-heading title" ng-bind="module.title"></h4>
+						<div class="support-list">
+							<i class="wi wi-account" ng-if="module.account_support == 2"></i>
+							<i class="wi wi-wxapp" ng-if="module.wxapp_support == 2"></i>
+							<i class="wi wi-pc" ng-if="module.webapp_support == 2"></i>
+							<i class="wi wi-app" ng-if="module.phone_support == 2"></i>
+							<i class="wi wi-xzapp" ng-if="module.xzapp_support == 2"></i>
+							<i class="wi wi-aliapp" ng-if="module.aliapp_support == 2"></i>
+						</div>
+					</div>
+				</div>
+				<div class="item media" ng-repeat="module in pack.templates">
+					<div class="media-left media-middle">
+						<a href="#">
+							<img class="media-object template-img logo" ng-src="{{ module.logo }}" alt="...">
+						</a>
+					</div>
+					<div class="media-body media-middle">
+						<h4 class="media-heading title" ng-bind="module.title"></h4>
+						<div class="support-list">
+							<i class="wi wi-template"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel we7-panel user-permission">
+		<div class="panel-heading">
+			<span>附加权限</span>
+		</div>
+		<div class="panel-body" >
+			<div class="we7-group-app we7-padding-horizontal"  >
+				<div class="item media" ng-repeat="module in extend.modules">
+					<div class="media-left media-middle">
+						<a href="#">
+							<img class="media-object module-img logo" ng-src="{{ module.logo }}" alt="...">
+						</a>
+					</div>
+					<div class="media-body media-middle">
+						<h4 class="media-heading title" ng-bind="module.title"></h4>
+						<div class="support-list">
+							<i class="wi wi-account" ng-if="module.account_support == 2"></i>
+							<i class="wi wi-wxapp" ng-if="module.wxapp_support == 2"></i>
+							<i class="wi wi-pc" ng-if="module.webapp_support == 2"></i>
+							<i class="wi wi-app" ng-if="module.phone_support == 2"></i>
+							<i class="wi wi-xzapp" ng-if="module.xzapp_support == 2"></i>
+							<i class="wi wi-aliapp" ng-if="module.aliapp_support == 2"></i>
+						</div>
+					</div>
+				</div>
+				<div class="item media" ng-repeat="module in extend.templates">
+					<div class="media-left media-middle">
+						<a href="#">
+							<img class="media-object template-img logo" ng-src="{{ module.logo }}" alt="...">
+						</a>
+					</div>
+					<div class="media-body media-middle">
+						<h4 class="media-heading title" ng-bind="module.title"></h4>
+						<div class="support-list">
+							<i class="wi wi-template"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	angular.module('userManageApp').value('config', {
+		user: {php echo !empty($user) ? json_encode($user) : 'null'},
+		profile: {php echo !empty($profile) ? json_encode($profile) : 'null'},
+		group_info: {php echo !empty($group_info) ? json_encode($group_info) : 'null'},
+		groups: {php echo !empty($groups) ? json_encode($groups) : 'null'},
+		extend: {php echo !empty($extend) ? json_encode($extend) : 'null'},
+    	user_modules: {php echo !empty($user_modules) ? json_encode($user_modules) : 'null'},
+    	source_templates: {php echo !empty($templates) ? json_encode($templates) : 'null'},
+    	extend_modules: {php echo !empty($extend_permission['modules']) ? json_encode($extend_permission['modules']) : 'null'},
+		uni_groups: {php echo !empty($uni_groups) ? json_encode($uni_groups) : 'null'},
+
+		links: {
+			editGroup: "{php echo url('user/edit/edit_modules_tpl')}",
+			editUsersPermission: "{php echo url('user/edit/edit_users_permission')}",
+			recycleUser: "{php echo url('user/display/operate', array('type' => 'recycle'))}",
+		},
+	});
+
+	angular.bootstrap($('#js-user-edit-modulestpl'), ['userManageApp']);
+</script>
+{template 'common/footer'}

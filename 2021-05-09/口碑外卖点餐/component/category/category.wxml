@@ -1,0 +1,11 @@
+<template name="category-item">
+    <navigator url="../list/list?categoryId={{item.categoryId}}" class="category-item">
+          <view>
+            <image src="{{item.icon}}" class="category-icon"></image>
+          </view>
+          <view>
+            <text class="category-text">{{item.name}}</text>
+          </view> 
+        </navigator>
+    
+</template>

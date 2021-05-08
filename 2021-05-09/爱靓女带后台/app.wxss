@@ -1,0 +1,5 @@
+/**app.wxss**/
+scroll-view,view,image{
+	margin: 0;
+	padding: 0;
+}

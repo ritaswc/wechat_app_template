@@ -1,0 +1,22 @@
+<view class="notice">
+    安全提醒：为确保安全，登录密码请不要与安全密码相同
+</view>
+<view class="grzx_bd">
+    <view class="grzx_con">
+        <view class="grzx_con_list">
+            <input type="text" placeholder="请输入当前的安全密码"></input>
+        </view>
+        <view class="grzx_con_list">
+            <input type="text" placeholder="请输入新的安全密码"></input>
+        </view>
+        <view class="grzx_con_list border_none">
+            <input type="text" placeholder="请再次输入新的安全密码"></input>
+        </view>
+    </view>
+</view>
+<view class="error">
+    当前密码长度必须在6~16之间
+</view>
+<view class="grzx_btn">
+    <button size="default" type="primary" bindtap="change">确认修改</button>
+</view>

@@ -1,0 +1,34 @@
+</div>
+<div class="container-fluid footer text-center" role="footer">	
+	<span class="friend-link">
+		{if empty($_W['setting']['copyright']['footerright'])}
+			<a href="/">站点设置</a>
+			<a href="/">底部右侧</a>
+			<a href="/">信息（上）</a>
+			<a href="/">更改内容</a>
+		{else}
+			{$_W['setting']['copyright']['footerright']}
+		{/if}
+	</span>
+	<span>
+		{if empty($_W['setting']['copyright']['footerleft'])}Powered by <a href="/"><b>/</b></a> v{IMS_VERSION} &copy; 2014-2018 <a href="/">/</a>
+		{else}
+		{$_W['setting']['copyright']['footerleft']}
+		{/if}
+	</span>
+    {if !empty($_W['setting']['copyright']['icp'])}
+    备案号：<a href="http://beian.miit.gov.cn/" target="_blank">{$_W['setting']['copyright']['icp']}</a>
+    {/if}
+	{if !empty($_W['setting']['copyright']['policeicp']['policeicp_location']) && !empty($_W['setting']['copyright']['policeicp']['policeicp_code'])}
+	<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={php echo $_W['setting']['copyright']['policeicp']['policeicp_code']}">
+		&nbsp;&nbsp;<img src="./resource/images/icon-police.png">
+		{php echo $_W['setting']['copyright']['policeicp']['policeicp_location']} {php echo $_W['setting']['copyright']['policeicp']['policeicp_code']}号
+	</a>
+	{/if}
+</div>
+{template 'common/footer-base'}
+			</div>
+		</div>
+	</div>
+</div>
+</div>

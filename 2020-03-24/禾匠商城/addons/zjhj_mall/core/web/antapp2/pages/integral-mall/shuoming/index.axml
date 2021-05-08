@@ -1,0 +1,13 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body">
+        <block a:for="{{integral_shuoming}}" a:key="{{item.id}}" a:for-item="title">
+            <view style="padding:36rpx 24rpx 0rpx 24rpx;">
+                <view class="title">{{title.title}}</view>
+                <text style="color:#353535;">{{title.content}}</text>
+            </view>
+        </block>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

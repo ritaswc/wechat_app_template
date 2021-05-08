@@ -1,0 +1,26 @@
+<import src="../../template/calendar_item.wxml" />
+<view style="height: {{winHeight}}px; width: {{winWidth}}px;background-color: #fafafa">
+  <view class="vChangename" bindtap="ToChangeName">
+    <text>修改备注</text>
+  </view>
+  <view class="vLabel">
+    <picker class="vDatelabel" bindchange="changeDate" mode="date" start="2015-09-01" end="2017-09-01" value="{{date}}" range="{{array}}">
+      <view class="tDate">
+        {{date}}
+      </view>
+    </picker>
+    <button class="bClearstaff">移除员工</button>
+  </view>
+  <view class="vCalendar">
+    <view class="vCalendarPadding">
+      <view class="vItem" data-type="{{item.time}}" data-msg="{{item.week}}" wx:for="{{calendars}}" bindtap="day_click">
+        <view class="{{item.TYPE}}">
+          {{item.week}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<modal class="mModal" title="{{modalTime}}" hidden="{{!modalHidden}}" confirm-text="确定" no-cancel bindconfirm="modal_click" bindcancel="modal_click">
+  <view class="tModalMsg">{{modalDate}}</view>
+</modal>

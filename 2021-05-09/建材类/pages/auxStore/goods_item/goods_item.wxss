@@ -1,0 +1,51 @@
+/* pages/auxStore/goods_item/goods_item.wxss */
+.nav{
+    position: fixed;
+    left: 0;
+    top:0;
+    background-color: #f4f4f4;
+    width: 100%;
+    z-index:1001;
+}
+
+.scroll{
+    white-space: nowrap;
+    
+}
+
+::-webkit-scrollbar{
+    width:0;
+    height:0;
+    color: transparent;
+}
+
+.navItem{
+    display: inline-block;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    padding: 10px 25px;
+    margin: 5px;
+    background-color: #FFFFFF;
+}
+
+.hovClass{
+    background-color: #00acff;
+}
+
+.navText{
+    
+}
+
+/*商品列表*/
+.goods{
+    margin-top: 60px;
+}
+
+.goodsItem{
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.goodsImg{
+    width: 30px;
+    height: 30px;
+}

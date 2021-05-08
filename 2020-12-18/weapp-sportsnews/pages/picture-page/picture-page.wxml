@@ -1,0 +1,22 @@
+<import src="../common/swiper-card.wxml"/>
+
+<loading hidden="{{!loading}}">加载中...</loading>
+
+<scroll-view scroll-y="true" class="background">
+		<swiper class="slide">
+			<block wx:for="{{slides}}" wx:for-index="index" wx:key="index">
+				<swiper-item class="swiper-item" bindtap="tapSwiper">
+				    <image src="{{item.image}}" class="slide-image" mode="widthFix"/>
+				    <view hidden="{{hiddenInfo}}" class="info">
+				    	<view class="left">
+					    	<view wx:if="{{index == 0}}" class="title">{{item.title}}</view>
+					    	<text class="desc">{{item.description}}</text>
+				    	</view>
+				    	<view class="right">
+				    		<text class="current">{{index + 1}}</text>/<text class="total">{{slides.length}}</text>
+				    	</view>
+				    </view>
+			  	</swiper-item>
+			</block>
+		</swiper>
+</scroll-view>

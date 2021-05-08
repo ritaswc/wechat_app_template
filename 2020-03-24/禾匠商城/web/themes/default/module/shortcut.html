@@ -1,0 +1,44 @@
+{template 'common/header'}
+<div id="js-module-shortcut" ng-controller="userModuleShortcutCtrl">
+<div class="clearfix we7-margin-bottom">
+	<a href="./index.php?c=module&a=shortcut&do=post&m={$module_name}&uniacid={$uniacid}" class="btn btn-primary pull-right">添加快捷入口</a>
+</div>
+<table class="tbble we7-table">
+	<tr>
+		<th>快捷入口列表</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr ng-repeat="item in lists" ng-if="!(lists | we7IsEmpty)">
+		<td>
+			<img ng-src="{{ attachurl}}{{ item.icon }}" class="module-img logo" alt="">
+		</td>
+		<td>
+			<span class="title" ng-bind="item.title"></span>
+		</td>
+		<td>
+			<div class="link-group">
+				<a href="javascript:void(0);" ng-click="edit(item.id)">编辑</a>
+				<a href="javascript:void(0);" ng-click="delete(item.id)">删除</a>
+			</div>
+		</td>
+	</tr>
+	<tr ng-if="lists | we7IsEmpty">
+		<td colspan="3">
+			暂无快捷入口
+		</td>
+	</tr>
+</table>
+</div>
+<script>
+	angular.module('moduleApp').value('config', {
+		'lists' : {php echo !empty($list['lists']) ? json_encode($list['lists']) : 'null'},
+		'attachurl' : "{$_W['attachurl']}",
+		'links' : {
+			'post_url' : "{php echo url('module/shortcut/post', array('uniacid' => $uniacid, 'm' => $module_name))}",
+			'delete_url' : "{php echo url('module/shortcut/delete', array('uniacid' => $uniacid, 'm' => $module_name))}",
+		}
+	});
+	angular.bootstrap($('#js-module-shortcut'), ['moduleApp']);
+</script>
+{template 'common/footer'}

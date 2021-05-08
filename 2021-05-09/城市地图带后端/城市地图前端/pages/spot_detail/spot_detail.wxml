@@ -1,0 +1,83 @@
+<view class="page" style="margin-bottom:60px">
+  <view class="page__bd">
+    <view class="weui-form-preview">
+      <view class="weui-form-preview__hd">
+          <view class="weui-form-preview__label" hidden>{{spot_data.city}}</view>
+          <view class="weui-form-preview__value_in-hd">{{spot_data.name}}</view>
+      </view>
+      <view class="weui-form-preview__bd">
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">城市</view>
+              <view class="weui-form-preview__value">{{spot_data.city}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">下载速度</view>
+              <view class="weui-form-preview__value">{{spot_data.download_speed}}</view>
+          </view>
+          <view class="weui-form-preview__item" hidden>
+              <view class="weui-form-preview__label">Speedtest 链接</view>
+              <view class="weui-form-preview__value"><a href="{{spot_data.speed_test_link}}">{{spot_data.speed_test_link}}</a></view>
+          </view>
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">参考价格</view>
+              <view class="weui-form-preview__value">{{spot_data.price_indication}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">洗手间</view>
+              <view class="weui-form-preview__value" wx:if="{{spot_data.bathroom == False}}">无</view>
+              <view class="weui-form-preview__value" wx:else>有</view>
+          </view>
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">评论</view>
+              <view class="weui-form-preview__value">@{{spot_data.commit_user_name}}: {{spot_data.commit_message}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">提交日期</view>
+              <view class="weui-form-preview__value">{{spot_data.commit_date}}</view>
+          </view>
+      </view>
+      <view>
+        <map id="map" longitude="{{spot_data.longitude}}" latitude="{{spot_data.latitude}}" scale="14" markers="{{markers}}" bindmarkertap="markertap" show-location style="width: 100%; height: 280px;"></map>
+      </view>
+      <view class="weui-form-preview__ft">
+        <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="bindCommentViewTap" id="{{spot_id}}@{{spot_data.name}}">评论</view>
+        <view wx:if="{{checked_or_not == 'checked'}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">已签到</view>
+        <view wx:else class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="bindCheckViewTap" id="{{spot_id}}@{{spot_data.name}}">{{checked_text}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="page__bd" style="margin-top:20px">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd" style="font-size:20px; color:black; border: 1rpx solid #fff">评论和签到</view>
+      <view wx:if="{{spot_comment_list != '1'}}" class="weui-panel__bd" id="{{spot_data.id}}">
+        <block wx:for="{{spot_comment_list}}" wx:for-item="comment" wx:key="*this">
+          <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" id="{{comment.id}}" bindtap="bindViewTap">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+              <image class="weui-media-box__thumb userinfo-avatar" src="{{comment.comment_user_avatarurl}}"/>
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+              <view class="weui-media-box__title weui-media-box__title_in-text">@{{comment.comment_user_name}}</view>
+              <view wx:if="{{comment.comment_mark == 'comment'}}" class="weui-media-box__desc">在 {{comment.comment_date}} 评论: {{comment.comment_message}}</view>
+              <view wx:else class="weui-media-box__desc">在 {{comment.comment_date}} 签到</view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view wx:else class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text" style="text-align:center">暂无评论</view>
+          <view class="logo">
+            <image src="/image/logo.png" background-size="cover"></image>
+          </view>
+        </view>
+      </view>
+      <view class="weui-panel__ft">
+        <view class="weui-cell weui-cell_access weui-cell_link">
+          <view class="weui-cell__bd" bindtap="bindAllCommentViewTap" id="{{spot_id}}@{{spot_data.name}}">查看更多</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+<view class="container">
+    <scroll-view scroll-y="true" scroll-x="true" style="width:100%; height:100%;" scroll-into-view="scImg">  
+        <image id="scImg" src="{{icon}}"  bindload = "imgload"  style="width:{{ scaleWidth }}px; height:{{ scaleHeight }}px" bindtouchend="endtap" bindtouchmove="movetap" />
+    </scroll-view> 
+    <audio src="{{audioSrc}}" id="myAudio" controls></audio>
+</view>

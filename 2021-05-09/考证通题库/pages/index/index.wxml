@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="category-link-container">
+  <text bindtap="handleChangeCategory" class="category-link">切换证书</text>
+</view>
+<view class="userinfo-container">
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  <view class="title">{{title}}</view>
+  <button size="mini" bindtap="handleWrongClick" class="wrong-button">错题本</button>
+</view>
+<view wx:for="{{chapters}}" bindtap="handleChapterClick" wx:key="{{item._id}}" id="{{item._id}}" class="chapter-container">
+  <text class="chapter-name">{{item.name}}</text>
+  <progress class="chapter-progress" percent="{{item.done ? item.done/item.count*100: 0}}" stroke-width="5" color="#47C577" active />
+  <text class="chapter-rate">正确率：{{item.rate ? item.rate : 0}}%</text>
+  <text class="chapter-count">{{item.done ? item.done: 0}}/{{item.count}}</text>
+</view>

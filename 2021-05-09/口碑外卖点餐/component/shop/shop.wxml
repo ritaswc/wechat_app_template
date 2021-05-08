@@ -1,0 +1,41 @@
+<template name="shop-item">
+    <navigator class="shop-info" url="/pages/detail/detail?shopId={{item.shopId}}">
+              <image class="shop-info-img" src="{{item.shopImg}}" ></image>
+              <view class="shop-info-detail">
+                <view class="shop-info-detail-name">{{item.shopName}}{{item.branchName ? "（"+item.branchName+"）":""}}</view>
+                <view class="shop-info-detail-middle">
+                  <text class="star-gray">
+                      <text class="star star-{{item.score}}"></text>
+                  </text>
+                  <text class="shop-info-detail-sales">月销{{item.salesCount}}笔</text>
+                </view>
+                
+                <view class="shop-info-detail-other">
+                    <view class="shop-info-detail-other-left">
+                        <text>起送 ￥{{item.startingFee}}</text> 
+                        <text class="shop-info-detail-other-middle"> | </text> 
+                        <text>配送 ￥{{item.distributePrice}}</text>
+                    </view>
+                    <view class="shop-info-detail-other-right">
+                        <text>{{item.duration}}</text> 
+                        <text class="shop-info-detail-other-middle"> | </text> 
+                        <text>{{item.distance}}</text>
+                    </view>
+                </view>
+              </view>
+    </navigator>
+    <view class="shop-activity" data-shopid="{{item.shopId}}" bindtap="{{item.noticeList.length > 2 ? 'toggleShopActivity' : ''}}">
+        <view class="shop-activity-list {{ showAll ? '':'shop-activity-list-hide'}}">
+            <view wx:for="{{item.noticeList}}"  wx:key="id" class="shop-activity-item">
+                <image class="shop-activity-icon" src="{{activityIconMap[item.typeId]}}"></image>
+                <text>{{item.title}}</text>
+                
+            </view>
+        </view>
+        
+        <view wx:if="{{item.noticeList.length > 2}}" class="shop-activity-control">
+            <text >共{{item.noticeList.length}}个</text>
+            <image class="shop-activity-arrow" src="{{showAll ? '../../images/arrow-top.png ': '../../images/arrow-bottom.png'}}"></image>
+        </view>
+    </view>
+</template>

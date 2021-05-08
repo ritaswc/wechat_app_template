@@ -1,0 +1,137 @@
+<view class="container">
+
+  <!--商品列表-->
+  <view class="product_list">
+
+    <!--店铺列表-->
+    <view class="product_item">
+
+      <!--店铺名称-->
+      <view class="shop_msg">
+        <checkbox></checkbox>
+        <image src="http://ojhq3mgil.bkt.clouddn.com/453/20161020/201610201729004898.jpg"></image>
+        <text>迷你小店</text>
+        <image class="shop_jt" src="../../images/shop_jt.png"></image>
+      </view><!--/店铺名称end-->
+
+      <!--商品信息-->
+      <view class="product_msg">
+        <checkbox></checkbox>
+        <image class="product_pic" src="http://ojhq3mgil.bkt.clouddn.com/442/20160822/201608221341146251.jpg"></image>
+        <view class="msg_right">
+          <view class="tit">白色长袖卫衣</view>
+          <view class="price">￥526.00</view>
+          <view class="num">
+            <view class="disnum" data-alpha-beta="0" bindtap="changeNum">-</view>
+            <view class="nownum">{{buynum}}</view>
+            <view class="addnum" data-alpha-beta="1" bindtap="changeNum">+</view>
+          </view>
+          <image class="delete" src="../../images/shop_sc.png"></image>
+        </view>
+      </view><!--/商品信息end-->
+    </view><!--/店铺列表end-->
+
+    <!--店铺列表-->
+    <view class="product_item">
+
+      <!--店铺名称-->
+      <view class="shop_msg">
+        <checkbox></checkbox>
+        <image src="http://ojhq3mgil.bkt.clouddn.com/453/20161020/201610201729004898.jpg"></image>
+        <text>迷你小店</text>
+        <image class="shop_jt" src="../../images/shop_jt.png"></image>
+      </view><!--/店铺名称end-->
+
+      <!--商品信息-->
+      <view class="product_msg">
+        <checkbox></checkbox>
+        <image class="product_pic" src="http://ojhq3mgil.bkt.clouddn.com/442/20160822/201608221341146251.jpg"></image>
+        <view class="msg_right">
+          <view class="tit">白色长袖卫衣</view>
+          <view class="price">￥526.00</view>
+          <view class="num">
+            <view class="disnum" data-alpha-beta="0" bindtap="changeNum">-</view>
+            <view class="nownum">{{buynum}}</view>
+            <view class="addnum" data-alpha-beta="1" bindtap="changeNum">+</view>
+          </view>
+          <image class="delete" src="../../images/shop_sc.png"></image>
+        </view>
+      </view><!--/商品信息end-->
+
+      <!--商品信息-->
+      <view class="product_msg">
+        <checkbox></checkbox>
+        <image class="product_pic" src="http://ojhq3mgil.bkt.clouddn.com/442/20160822/201608221341146251.jpg"></image>
+        <view class="msg_right">
+          <view class="tit">白色长袖卫衣</view>
+          <view class="price">￥526.00</view>
+          <view class="num">
+            <view class="disnum" data-alpha-beta="0" bindtap="changeNum">-</view>
+            <view class="nownum">{{buynum}}</view>
+            <view class="addnum" data-alpha-beta="1" bindtap="changeNum">+</view>
+          </view>
+          <image class="delete" src="../../images/shop_sc.png"></image>
+        </view>
+      </view><!--/商品信息end-->
+    </view><!--/店铺列表end-->
+
+    <!--店铺列表-->
+    <view class="product_item">
+
+      <!--店铺名称-->
+      <view class="shop_msg">
+        <checkbox></checkbox>
+        <image src="http://ojhq3mgil.bkt.clouddn.com/453/20161020/201610201729004898.jpg"></image>
+        <text>迷你小店</text>
+        <image class="shop_jt" src="../../images/shop_jt.png"></image>
+      </view><!--/店铺名称end-->
+
+      <!--商品信息-->
+      <view class="product_msg">
+        <checkbox></checkbox>
+        <image class="product_pic" src="http://ojhq3mgil.bkt.clouddn.com/442/20160822/201608221341146251.jpg"></image>
+        <view class="msg_right">
+          <view class="tit">白色长袖卫衣</view>
+          <view class="price">￥526.00</view>
+          <view class="num">
+            <view class="disnum" data-alpha-beta="0" bindtap="changeNum">-</view>
+            <view class="nownum">{{buynum}}</view>
+            <view class="addnum" data-alpha-beta="1" bindtap="changeNum">+</view>
+          </view>
+          <image class="delete" src="../../images/shop_sc.png"></image>
+        </view>
+      </view><!--/商品信息end-->
+
+      <!--商品信息-->
+      <view class="product_msg">
+        <checkbox></checkbox>
+        <image class="product_pic" src="http://ojhq3mgil.bkt.clouddn.com/442/20160822/201608221341146251.jpg"></image>
+        <view class="msg_right">
+          <view class="tit">白色长袖卫衣</view>
+          <view class="price">￥526.00</view>
+          <view class="num">
+            <view class="disnum" data-alpha-beta="0" bindtap="changeNum">-</view>
+            <view class="nownum">{{buynum}}</view>
+            <view class="addnum" data-alpha-beta="1" bindtap="changeNum">+</view>
+          </view>
+          <image class="delete" src="../../images/shop_sc.png"></image>
+        </view>
+      </view><!--/商品信息end-->
+    </view><!--/店铺列表end-->
+  </view><!--/商品列表end-->
+
+  <!--底部结算信息-->
+  <view class="footer">
+    <view class="select_all"><checkbox></checkbox>全选</view>
+    <view class="all_money">
+      <view>
+        <text>总计：</text>
+        <text class="money">￥0.00</text>
+      </view>
+      <view class="yf_msg">不含运费</view>
+    </view>
+    <view bindtap="accountOrder" class="btn">
+      立即结算
+    </view>
+  </view><!--/底部结算信息end-->
+</view>

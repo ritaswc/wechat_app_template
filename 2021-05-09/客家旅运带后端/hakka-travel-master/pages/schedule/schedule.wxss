@@ -1,0 +1,77 @@
+/**schedule.wxss**/
+
+.top-wrapper {
+	display: flex;
+	flex-flow: row nowrap;
+	padding: 5rpx 10rpx;
+	border-bottom: 2rpx solid;
+}
+
+.top-wrapper view {
+	position: relative;
+	flex: 1;
+	height: 70rpx;
+	line-height: 70rpx;
+	text-align: center;
+	font-size: 28rpx;
+}
+
+.top-wrapper .date-title {
+	flex: 3;
+}
+
+.top-wrapper .date-title::before, .top-wrapper .date-title::after {
+	content: '';
+	position: absolute;
+	width: 2rpx;
+	height: 100%;
+	color: #999;
+}
+
+.date-title .icon-cal {
+	left: 40rpx;
+}
+
+
+.schedule-list {
+	display: flex;
+	padding: 10rpx 20rpx;
+	margin-top: 20rpx;
+	border-bottom: 2rpx dashed;
+}
+
+.line-msg {
+	flex: 3;
+}
+
+.ticket-msg {
+	flex: 2;
+}
+
+.line-msg view {
+	position: relative;
+	height: 45rpx;
+	line-height: 45rpx;
+	margin-bottom: 20rpx;
+}
+
+.line-msg text {
+	text-align: center;
+	margin-left: 60rpx;	
+}
+
+.ticket-msg view {
+	height: 55rpx;
+	line-height: 35rpx;
+	margin-top: 20rpx;
+	margin-bottom: 20rpx;
+	text-align: center;
+	padding: 10rpx 0;
+	border-bottom: 10rpx;
+	background: linear-gradient(to right, #999, #333);
+	color: #fff;
+}
+
+.ticket-msg view.active {
+	background: linear-gradient(to right, orange, red);
+}

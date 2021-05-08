@@ -1,0 +1,63 @@
+.wraper{
+    width: 100%;
+}
+.wraper .banner{
+    width: 100%;
+    height: 500rpx;
+}
+.wraper .title{
+    width: 100%;
+    height: 116rpx;
+}
+.wraper image{
+    width: 100%;
+    height: 100%;
+}
+.wraper .content{
+    background: #fff;
+    width: 100%;
+}
+.wraper .content .listItems{
+    width: 88%;
+    margin: 0 auto;
+    height: 150rpx;
+    border-bottom: 1px dashed #ededed;
+}
+.wraper .content .listItems .leftImg{
+    width: 120rpx;
+    height:120rpx;
+    margin-top: 15rpx;
+    float: left;
+}
+.wraper .content .listItems .rightTxt{
+    width: 500rpx;
+    float: left;
+    margin-left: 30rpx;
+    margin-top: 15rpx;
+    display: flex;
+    flex-direction: column;
+}
+.wraper .content .listItems .rightTxt .red{
+    color: #ff6662;
+}
+.wraper .content .listItems .rightTxt .orange{
+    color: #ff8e62;
+}
+.wraper .content .listItems .rightTxt .yellow{
+    color: #ffbe62;
+}
+.wraper .content .listItems .rightTxt .txtDesc{
+    font-size: 26rpx;
+    color: #888;
+}
+.wraper .content .btnGroup{
+    padding: 30rpx 0;
+}
+.wraper .content .btnGroup .btn{
+    width: 88%;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 50rpx;
+    background: #ff6662;
+    color: #fff;
+}

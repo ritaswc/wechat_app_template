@@ -1,0 +1,40 @@
+<!--pages/classification/classification.wxml-->
+<view class="page">
+	<view class="title">
+		<!-- <view class="line-red" style="background-color:red; width: 6rpx; height: 50rpx;"></view> -->
+		<text class="line-red" style="background-color: red; color: red;">|</text>
+		<text class="line-name" style="color:#353535; font-weight: bold; font-size: 10pt;">品牌</text>
+	</view>
+
+	<view class="content">
+		<block wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8]}}">
+			<view class="content-cell" bindtap="goProduct">
+				<image src="http://oalppxaqn.bkt.clouddn.com/%E8%BD%BB%E5%A5%A2%E7%A4%BC%E7%89%A9%E8%AF%B4.png" />
+				<view class="content-cell-title" style="color: #353535; font-size: 9pt;">礼物</view>
+			</view>
+		</block>
+	</view>
+	
+
+
+
+
+
+
+
+	<view class="title">
+		<!-- <view class="line-red" style="background-color:red; width: 6rpx; height: 50rpx;"></view> -->
+		<text class="line-red" style="background-color: red; color: red;">|</text>
+		<text class="line-name" style="color:#353535; font-weight: bold; font-size: 10pt;">风格</text>
+	</view>
+
+	<view class="content">
+		<block wx:for="{{[0, 1, 2, 3, 4, 5, 6, 7, 8]}}">
+			<view class="content-cell" bindtap="goProduct">
+				<image src="http://oalppxaqn.bkt.clouddn.com/%E8%BD%BB%E5%A5%A2%E7%A4%BC%E7%89%A9%E8%AF%B4.png" />
+				<view class="content-cell-title" style="color: #353535; font-size: 9pt;">礼物</view>
+			</view>
+		</block>
+	</view>
+
+</view>

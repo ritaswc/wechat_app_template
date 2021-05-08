@@ -1,0 +1,4 @@
+<template name="index-tpl">
+    <view class="index-name">{{idx}}-{{item.name}}：{{item.index}}</view>
+    <view class="index-detail">{{item.details}}</view>
+</template>

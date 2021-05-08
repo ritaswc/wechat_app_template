@@ -1,0 +1,50 @@
+<view wx:if="{{bind}}">
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">用户信息</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__hd">
+          <image src="{{user.avatar_url}}" class="weui-media-box__thumb"></image>
+        </view>
+        <view class="weui-media-box__bd">
+          <view class="weui-media-box__title">{{user.loginname}}</view>
+          <view class="weui-media-box__desc topic-summary">注册时间:{{user.create_at_forread}}</view>
+          <view class="weui-media-box__desc topic-summary">积分:{{user.score}}</view>
+          <view class="weui-media-box__desc topic-summary">
+            <button class="weui-btn weui-btn_mini weui-btn_warn" bindtap="logout">退出登录</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">最近回复</view>
+    <view class="weui-panel__bd">
+      <view wx:for="{{user.recent_replies}}" wx:for-item="topic" wx:key="key" class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__hd">
+          <image src="{{topic.author.avatar_url}}" class="weui-media-box__thumb"></image>
+        </view>
+        <view class="weui-media-box__bd">
+          <view class="weui-media-box__title" bindtap="showDetail" data-id="{{topic.id}}">{{topic.title}}</view>
+          <view class="weui-media-box__desc topic-summary">发布于:{{topic.create_at_forread}} 分类: {{topic.tab}} 点击数: {{topic.visit_count}} 回复数:{{topic.reply_count}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">最近帖子</view>
+    <view class="weui-panel__bd">
+      <view wx:for="{{user.recent_topics}}" wx:for-item="topic" wx:key="key" class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__hd">
+          <image src="{{topic.author.avatar_url}}" class="weui-media-box__thumb"></image>
+        </view>
+        <view class="weui-media-box__bd">
+          <view class="weui-media-box__title" bindtap="showDetail" data-id="{{topic.id}}">{{topic.title}}</view>
+          <view class="weui-media-box__desc topic-summary">发布于:{{topic.create_at_forread}} 分类: {{topic.tab}} 点击数: {{topic.visit_count}} 回复数:{{topic.reply_count}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<button wx:else class="weui-btn weui-btn_default" bindtap="scan">扫一扫</button>
+<view class="weui-footer">2017 © NUTZ.CN</view>

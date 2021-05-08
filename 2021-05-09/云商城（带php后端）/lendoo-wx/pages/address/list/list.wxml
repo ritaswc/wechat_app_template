@@ -1,0 +1,26 @@
+<view class="address-list">
+	<view class="item" wx:for="{{addressObjects}}" wx:key="">
+		<!-- first row -->
+		<view class="header">
+			<text class="realname">{{item.realname}}</text>
+			<text class="mobile">{{item.mobile}}</text>
+		</view>
+		<!-- second row -->
+		<view class="summary">{{item.province}}{{item.city}}{{item.region}}{{item.town}}{{item.detail}}</view>
+		<!-- third row -->
+		<view class="footer">
+			<!-- is default switch -->
+			<view class="set-default" data-index="{{index}}" bindtap="setDefault">
+				<!-- circle or success type -->
+				<icon type="{{item.isDefault == true ? 'success_circle' : 'circle'}}"/>
+				<text>默认地址</text>
+			</view>
+			<!-- edit and delete button -->
+			<view class="operation">
+				<view class="container" data-index="{{index}}" bindtap="edit"><image src="../../../images/icon_edit.png" /><text>编辑</text></view>
+				<view class="container" data-index="{{index}}" bindtap="delete"><image src="../../../images/icon_delete.png" /><text>删除</text></view>
+			</view>
+		</view>
+	</view>
+</view>
+<button bindtap="add" type="primary" class="address-add">添加</button>

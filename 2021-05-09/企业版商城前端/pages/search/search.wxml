@@ -1,0 +1,28 @@
+<!--pages/search/search.wxml-->
+<view class="search df">
+    <input class="df_1" placeholder="请输入你有搜索的内容" auto-focus focus="{{focus}}" value="{{searchValue}}" bindinput="searchValueInput"/>
+    <button bindtap="doSearch"><image class="searchcion" src="/images/search.png"></image></button>
+</view>
+<view class="cont" wx:if="{{hotKeyShow}}">
+    <text class="font_14">热门搜索</text>
+    <view class="w100">
+        <button wx:for="{{hotKeyList}}" bindtap="doKeySearch" data-key="{{item.keyword}}">{{item.keyword}}</button>
+    </view>
+    <text class="font_14 mt10">历史搜索</text>
+    <view class="w100">
+        <button wx:for="{{historyKeyList}}" bindtap="doKeySearch" data-key="{{item.keyword}}">{{item.keyword}}</button>
+    </view>
+</view>
+<view class="search_no" wx:if="{{!!searchValue && !productData.length}}">
+    <view class="font_14"><image class="scimg" src="/images/search_no.png"></image></view>
+    <text>没有找到您要的宝贝/(ㄒoㄒ)/~~</text>
+</view>
+<view class="shop" wx:for="{{productData}}"> 
+    <navigator url="../product/detail?productId={{item.id}}" hover-class="changestyle">      
+        <image class="sh_slt" src="{{item.photo_x}}"></image>
+        <view class="sp_text">
+            <view class="sp_tit ovh1">{{item.name}}</view>
+            <view class="sp_jg">￥：{{item.price_yh}}</view>
+        </view>
+    </navigator>
+</view>

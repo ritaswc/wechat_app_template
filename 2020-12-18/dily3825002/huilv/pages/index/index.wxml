@@ -1,0 +1,46 @@
+<!--index.wxml-->
+
+<view class="main">
+  <view class="topPanel">
+
+<view wx:for="{{hv}}">
+
+<view class="render" id="{{index}}" bindtap="clickCountryItemFun" >
+      <image class="country" id="{{index}}" bindtap="clickCountryFun" src="../../images/country/{{item.code}}.png"></image>
+      <image class="line" src="../../images/line.png"></image>
+      <text class="text">{{item.name}}</text>
+      <text class="input1">{{item.m}}</text>
+    </view>
+</view>
+
+   
+  </view>  
+  <view class="panel">
+    <view class="row1" style="flex-direction:row;">
+        <button class="button" id="7" bindtap="clickNumFun">7</button>
+        <button class="button" id="8" bindtap="clickNumFun">8</button>
+        <button class="button" id="9" bindtap="clickNumFun">9</button>
+        <button class="buttonClear" id="C" bindtap="clickNumFun">C</button>
+        
+    </view>
+    <view class="row1" style="flex-direction:row;">
+        <button class="button" id="4" bindtap="clickNumFun">4</button>
+        <button class="button" id="5" bindtap="clickNumFun">5</button>
+        <button class="button" id="6" bindtap="clickNumFun">6</button>
+        
+    </view>
+    <view class="row1" style="flex-direction:row;">
+        <button class="button" id="1" bindtap="clickNumFun">1</button>
+        <button class="button" id="2" bindtap="clickNumFun">2</button>
+        <button class="button" id="3" bindtap="clickNumFun">3</button>
+        <button class="buttonPlus" id="d" bindtap="clickNumFun">←</button>
+    </view>
+    <view class="row1" style="flex-direction:row;">
+        <button class="buttonZero" id="0" bindtap="clickNumFun">0</button>
+        <button class="button" id="." bindtap="clickNumFun">·</button>
+    </view>
+  </view>
+
+
+
+</view>

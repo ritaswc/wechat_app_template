@@ -1,0 +1,40 @@
+<view class="wraper">
+	<!-- 物流信息 -->
+	<view class="kuaidiInfo">
+		<view class="kuaidiIcon">
+			<image src="../../../images/icon_logistics.png"></image>
+		</view>
+		<view class="kuaidiDetails">
+			<view>物流状态: <text class="satus">签收</text></view>
+			<view class="company">承运来源: <text>百世</text></view>
+			<view class="number">运单编号: <text>211200439374</text></view>
+		</view>
+	</view>
+
+	<!-- 物流跟踪 -->
+	<view class="kuaidi_follow">
+		<view class="follow_title">物流跟踪</view>
+		<view class="follow_satus">
+			<view class="follow_address">
+				<view class="label default"></view>
+				<view class="address default">上海市|签收|上海市【宝山顾村】，拍照签收 已签收</view>
+				<view class="date">2016-08-30 <text class="time">11:31:44</text></view>
+			</view>
+			<view class="follow_address">
+				<view class="label"></view>
+				<view class="address">上海市|派件|上海市【宝山顾村】，【冯师傅/18917596580】正在派件</view>
+				<view class="date">2016-08-30 <text class="time">11:31:44</text></view>
+			</view>
+			<view class="follow_address">
+				<view class="label"></view>
+				<view class="address">上海市|发件|上海市【上海转运中心】，正发往【上海嘉定转运中心】</view>
+				<view class="date">2016-08-30 <text class="time">11:31:44</text></view>
+			</view>
+			<view class="follow_address">
+				<view class="label"></view>
+				<view class="address">上海市|发件|上海市【上海转运中心】，正发往【上海嘉定转运中心】</view>
+				<view class="date">2016-08-30 <text class="time">11:31:44</text></view>
+			</view>
+		</view>
+	</view>
+</view>

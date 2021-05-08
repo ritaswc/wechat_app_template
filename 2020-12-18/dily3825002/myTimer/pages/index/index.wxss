@@ -1,0 +1,28 @@
+/**index.wxss**/
+.page{
+  margin-top: 150px;
+  pading: 20px;
+ 
+}
+.pagetitle{
+  text-align: center;
+  font-size: 25px;
+  margin-top: 170px;
+}
+.font{
+  font-size: 40px;
+  text-align: center;
+}
+.buttonsyle{
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 10px;
+}
+.buttonstyle{
+  margin-top: 50px;
+  display: block;
+}
+.buttongroup{
+ margin-top: 40px; 
+ justify-content: space-around;    
+}

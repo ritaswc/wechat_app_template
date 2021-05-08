@@ -1,0 +1,105 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body">
+        <view class='order-address'>
+            <view class='user-info flex-row'>
+                <view class='user-info-name flex-grow-1'>
+                    {{order_info.is_offline == 0 ? "联系人：" : "收货人："}}{{order_info.name}}
+                </view>
+                <view class='user-info-mobile flex-grow-1'>
+                    {{order_info.mobile}}
+                </view>
+            </view>
+            <view a:if="{{order_info.is_offline == 0}}">{{order_info.address}}</view>
+        </view>
+        <block a:if="{{order_info.is_offline == 2}}">
+            <view class="order-address block flex-row">
+                <view class='flex-grow-1'>
+                    <view class="flex-grow-1 block-row">门店名称：{{order_info.shop.name}}</view>
+                    <view class="flex-grow-1 block-row">联系电话：{{order_info.shop.mobile}}</view>
+                    <view class="flex-grow-1">门店地址：{{order_info.shop.address}}</view>
+                </view>
+                <view class='flex-grow-0 flex-y-center' a:if='{{order_info.shop.longitude}}'>
+                    <text class='order-no-num-right flex-grow-0 flex-y-center flex-x-center' onTap='location'>导航</text>
+                </view>
+            </view>
+        </block>
+        <view class='order-no'>
+            <view class='order-no-num flex-row'>
+                <view class='order-no-num-left flex-grow-1'>
+                    订单编号：{{order_info.order_no}}
+                </view>
+                <view class='order-no-num-right flex-grow-0 flex-y-center flex-x-center' onTap="copyText" data-text="{{order_info.order_no}}">
+                    复制
+                </view>
+            </view>
+            <view class='order-add-time'>
+                下单时间：{{order_info.addtime}}
+            </view>
+        </view>
+
+        <view class='order-info'>
+            <view class='order-info-item flex-row'>
+                <view class='order-info-title flex-grow-1'>
+                    商品总额
+                </view>
+                <view class='order-info-val flex-grow-1'>
+                    {{order_info.integral}}积分
+                    <block a:if="{{order_info.total_price > 0}}">+ ¥ {{order_info.total_price}}</block>
+                </view>
+            </view>
+            <view class='order-info-item flex-row'>
+                <view class='order-info-title flex-grow-1'>
+                    商品数量
+                </view>
+                <view class='order-info-val flex-grow-1'>
+                    {{order_info.detail.num}}
+                </view>
+            </view>
+            <view class='order-info-item flex-row'>
+                <view class='order-info-title flex-grow-1'>
+                    运费
+                </view>
+                <view class='order-info-val flex-grow-1'>
+                    ¥ {{order_info.express_price}}
+                </view>
+            </view>
+        </view>
+        <view class='order-total-price'>
+            合计：
+            <text style='color:#ff5c5c;'>{{order_info.integral}}积分<block a:if="{{order_info.total_price > 0}}">+ ¥ {{order_info.total_price}}</block></text>
+        </view>
+
+        <view class='order-goods flex-row'>
+            <view class='flex-grow-0 goods-image'>
+                <image src='{{order_info.detail.pic}}'></image>
+            </view>
+            <view class="flex-grow-1 flex-col">
+                <view class="flex-grow-1">
+                    <view class="goods-name">{{order_info.detail.goods_name}}</view>
+                    <view class="attr-list flex-row">
+                        <block a:for="{{order_info.detail.attr}}" a:key="{{item.id}}">
+                            {{item.attr_group_name}}:{{item.attr_name}}
+                        </block>
+                    </view>
+                </view>
+                <view class="flex-grow-0 flex-row order-price">
+                    <view class="flex-grow-1 num">×{{order_info.detail.num}}</view>
+                    <view class="flex-grow-0 price">{{order_info.integral}}积分
+                        <block a:if="{{order_info.total_price > 0}}">+ ¥ {{order_info.total_price}}</block>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <block a:if="{{status != 1}}">
+            <view class='order-footer flex-y-center flex-row'>
+                <view class='play-btn' onTap='clerkOrder'>
+                    核销订单
+                </view>
+            </view>
+        </block>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

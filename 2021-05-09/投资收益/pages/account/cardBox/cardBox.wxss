@@ -1,0 +1,9 @@
+.cardBox {background: #fff;margin-top: 20rpx;}
+.list {border-bottom: 2rpx #ccc solid;padding: 30rpx 40rpx;}
+.list .left {font-size: 34rpx;display: inline-block;width: 50%;}
+.list .left image {height: 50rpx; width: 50rpx;vertical-align: sub;margin-right: 10rpx;}
+.right {display: inline-block;width: 50%;text-align: right;font-size: 34rpx;}
+.right navigator {display: inline-block;}
+.right text {color: #ff4d06;}
+.right image {width: 30rpx;height: 30rpx;}
+.right image.opacity0 {opacity: 0;}

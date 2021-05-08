@@ -1,0 +1,60 @@
+{template 'common/header'}
+<style>
+.color-error {
+	color: #f15333;
+}
+.color-warning {
+	color: #f2af5a;
+}
+</style>
+<div class="we7-page-title">短信管理</div>
+<div class="sms-sign" ng-controller="smsSign" ng-cloak>
+	<div class="alert we7-page-alert">
+		<p> <i class="wi wi-info"></i>发送短信内容时必须带签名，未创建签名。系统自动默认签名为【微擎】</p>
+		<p> <i class="wi wi-info"></i>创建签名前请去应用市场购买签名，并提交审核。审核未通过，自动退款至用户交易币</p>
+		<p> <i class="wi wi-info"></i>提交签名审核，预计2小时完成审核。审核时间为周一至周六9:00-18:00（不包含法定节假日）</p>
+	</div>
+	<div class="search-box we7-margin-bottom">
+		<div class="search-form"></div>
+		<a href="//s.w7.cc/goods-7.html?type=1" class="btn btn-primary" target="_blank">购买签名</a>
+	</div>
+	<table class="table we7-table">
+		<tr>
+			<th>签名</th>
+			<th>状态</th>
+			<th>时间</th>
+		</tr>
+		<tr ng-repeat="smssign in smsSigns">
+			<td>{{smssign.sign}}</td>
+			<td>
+				<span ng-class="smssign.status == -1 ? 'color-error' : (smssign.status == 2 ? 'color-warning' : 'color-green')">{{statusText[smssign.status]}}</span>
+				<i title="{{'拒绝原因：' + smssign.refuse_reason}}" data-toggle="tooltip" data-placement="bottom"  ng-show="smssign.status == -1" class="wi wi-info color-error"></i>
+			</td>
+			<td>{{smssign.createtime}}</td>
+		</tr>
+		<tr ng-if="smsSigns | we7IsEmpty">
+			<td colspan="100">
+				<div class="text-center">暂无数据</div>
+			</td>
+		</tr>
+	</table>
+	<we7-page conf="page2"></we7-page>
+</div>
+
+<script>
+	require(['moment'], function() {
+		angular.module('smsApp').value('config', {
+			apiUrl: "{php echo url('cloud/sms-sign')}do=",
+			smsSettingUrl: "{php echo url('cloud/sms/settingSign')}",
+			changeUrl: "{php echo url('cloud/sms/change_setting')}",
+			cloudSmsSigns: {php echo json_encode($cloud_sms_signs)},
+			settingSmsSign: {php echo json_encode($setting_sms_sign)},
+			userExpire: {php echo json_encode($user_expire)},
+			accountSmsExpire: {php echo json_encode($account_sms_expire)},
+			apiSmsExpire: {php echo json_encode($api_sms_expire)},
+			smsInfo: {php echo json_encode($sms_info)},
+		});
+		angular.bootstrap($('.sms-sign'), ['smsApp']);
+	})
+</script>
+{template 'common/footer'}

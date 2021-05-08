@@ -1,0 +1,47 @@
+/**index.wxss**/
+.food {
+
+}
+
+.food__swiper {
+  width: 100%;
+  height: 100%;
+}
+
+
+.food__cover {
+  box-sizing: border-box;
+  width: 100%;
+  /*height: 50vw;*/
+  /*width: 50vw;*/
+}
+
+.food__body {
+  padding: 25px;
+}
+
+
+.food__title {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.food__description {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.food__action {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  right: 20px;
+
+  background-color: #008987;
+  color: #fff;
+}
+
+.food__action--hover {
+  background-color: #005E5D;
+  color: #fff;
+}

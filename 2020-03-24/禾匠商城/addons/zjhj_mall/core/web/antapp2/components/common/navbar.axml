@@ -1,0 +1,46 @@
+<block a:if="{{_navbar && _navbar.navs && _navbar.navs.length>0}}">
+    <view class="navbar flex-row {{__device}}" style="background:{{_navigation_bar_color.bottomBackgroundColor}}">
+        <block a:for="{{_navbar.navs}}" a:key="{{item.id}}">
+            <navigator class="flex-grow-1 flex-y-center" url="{{item.url}}" open-type="navigate" a:if='{{item.open_type == "wxapp"}}' app-id='{{item.params.appid}}' path='{{item.params.path}}' data-open_type='{{item.open_type}}' target="miniProgram">
+                <view>
+                    <image class="navbar-icon" src="{{item.active?item.active_icon:item.icon}}"></image>
+                    <view class="navbar-text" style="color: {{item.active?item.active_color:item.color}};">{{item.text}}
+                    </view>
+                </view>
+            </navigator>
+            <navigator class="flex-grow-1 flex-y-center" url="{{item.url}}" open-type="tel" a:elif='{{item.open_type == "tel"}}' onTap='navigatorClick' data-tel='{{item.params.tel}}' data-open_type='{{item.open_type}}'>
+                <view>
+                    <image class="navbar-icon" src="{{item.active?item.active_icon:item.icon}}"></image>
+                    <view class="navbar-text" style="color: {{item.active?item.active_color:item.color}};">{{item.text}}
+                    </view>
+                </view>
+            </navigator>
+            <block a:elif='{{item.open_type == "contact"}}'>
+                <view class='flex-grow-1 flex-y-center' style='width:1%;padding-top:8rpx;'>
+                    <view style='width:100%;'>
+                        <button open-type="contact" session-from="{{_user_info.nickname}}|">
+                            <image class="navbar-icon" src="{{item.active?item.active_icon:item.icon}}"></image>
+                            <view class="navbar-text" style="color: {{item.active?item.active_color:item.color}};">{{item.text}}
+                            </view>
+                        </button>
+                    </view>
+                </view>
+            </block>
+            <navigator class="flex-grow-1 flex-y-center" url="/pages/web/web?url={{item.params.web}}" open-type="navigate" a:elif='{{item.open_type == "web"}}'>
+                <view>
+                    <image class="navbar-icon" src="{{item.active?item.active_icon:item.icon}}"></image>
+                    <view class="navbar-text" style="color: {{item.active?item.active_color:item.color}};">{{item.text}}
+                    </view>
+                </view>
+            </navigator>
+
+            <navigator class="flex-grow-1 flex-y-center" url="{{item.new_url}}" open-type="redirect" data-open_type='{{item.open_type}}' a:else>
+                <view>
+                    <image class="navbar-icon" src="{{item.active?item.active_icon:item.icon}}"></image>
+                    <view class="navbar-text" style="color: {{item.active?item.active_color:item.color}};">{{item.text}}
+                    </view>
+                </view>
+            </navigator>
+        </block>
+    </view>
+</block>

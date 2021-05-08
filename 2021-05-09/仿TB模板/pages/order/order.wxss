@@ -1,0 +1,191 @@
+.container {
+  height: 100%;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+  height: 4%;
+}
+
+.section {
+  margin-bottom: 0rpx;
+  padding:20rpx 0 20rpx 0;
+
+}
+
+.header_rt {
+  font-size: 30rpx;
+  font-weight: 300;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #666;
+  z-index: 12;
+  float: right;
+  margin-right: 50rpx;
+  padding:4rpx 0 4rpx 0;
+}
+
+.body {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 92%;
+  padding: 0;
+  margin: 0;
+  background: none;
+  list-style: none;
+}
+
+.order_list {
+  position: relative;
+  width: 100%;
+  padding: 0 30rpx;
+  height: 300rpx;  
+  background: #fff;
+  margin-top: 8px;
+}
+
+.order_lists{
+  position: relative;
+  padding: 0 30rpx;
+  background: #fff;
+  margin-top: 16rpx;
+  width: 84%;
+}
+
+.del{
+    position: absolute;
+    right: -56rpx;
+    bottom: 0px;
+    width: 120rpx;
+    height: 100%;
+    background: #E64340;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+}
+
+.del-pic{
+    display: block;
+    padding-top: 64rpx;
+    padding-left: 36rpx;
+    width:50rpx;
+    height: 50rpx;
+}
+
+.del-title{
+display: block;
+    padding-top: 12rpx;
+    font-size: 32rpx;
+}
+
+.box {
+  width: 100%;
+}
+
+.box:after {
+  content: " ";
+  float: left;
+  width: 92%;
+  margin-top: -4rpx;
+  height: 1rpx;
+  background: #dedede;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+.top {
+  width: 100%;
+  padding: 6px 0;
+  overflow: hidden;
+}
+
+.top:after {
+  position: relative;
+}
+
+.img {
+  float: left;
+  width: 80rpx;
+  height: 80rpx;
+  background: url(http://appuat.huihuishenghuo.com/img/store/grey.gif) no-repeat center / auto 42px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.title {
+  float: left;
+  width: 60%;
+  padding: 4rpx 16rpx;
+  margin: 0;
+  line-height: 78rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #333;
+}
+
+.icon {
+  width: 80rpx;
+  height: 80rpx;
+  float: right;
+  margin-right: 44rpx;
+}
+
+.info {
+  width: 93%;
+  margin-top: 6rpx;
+  padding: 16rpx 0 12rpx;
+  line-height: 36rpx;
+  overflow: hidden;
+}
+
+.info-left {
+  float: left;
+  padding-left: 6rpx;
+}
+
+.info-right {
+  float: right;
+  padding-right: 20rpx;
+  text-align: right;
+}
+
+.span {
+  display: block;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.time {
+  display: block;
+  padding-top: 8rpx;
+  font-size: 28rpx;
+  color: #999;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.price {
+  display: block;
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.evaluate {
+  color: #ff7e01;
+  display: block;
+  padding-top: 8rpx;
+  font-size: 26rpx;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.comment-btn {
+    width: 93%;
+    overflow: hidden;
+    text-align: right;
+}
+

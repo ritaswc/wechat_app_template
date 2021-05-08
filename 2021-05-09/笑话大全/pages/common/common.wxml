@@ -1,0 +1,24 @@
+<!--joke列表项-->
+<template name="jokeItem">
+    <view class="item-view">
+        <text class="content">{{item.content}}</text>
+        <text class="date">{{item.updatetime}}</text>
+    </view>
+</template>
+
+<!--picture列表项-->
+<template name="pictureItem">
+    <view class="item-view">
+        <text class="content">{{item.content}}</text>
+        <image src="{{item.url}}" mode="aspectFit" bindtap="preview" data-url="{{item.url}}"/>
+        <text class="date">{{item.updatetime}}</text>
+    </view>
+</template>
+
+<!--加载更多页脚-->
+<template name="loadindFooter">
+    <view class="loading-view" hidden="{{hideFooter}}">
+        <image src="../../image/loading.gif" style="height:26px;width:26px"/>
+        <text style="font-size:20px">正在加载</text>
+    </view>
+</template>

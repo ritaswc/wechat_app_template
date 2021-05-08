@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/result/result"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#1d215c",
+    "navigationBarTitleText": "泰九智投",
+    "navigationBarTextStyle":"#fff"
+  }
+}

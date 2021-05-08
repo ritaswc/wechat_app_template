@@ -1,0 +1,36 @@
+/* pages/coupon/coupon.wxss */
+
+.coupon{
+    padding: 30rpx;
+}
+.coupon-item{
+    background: white;
+    padding: 30rpx;
+    margin-bottom: 20rpx;
+    color: #999;
+}
+.coupon-item .coupon-item-top{
+    display: flex;
+    height: 200rpx;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2rpx solid #ba77ff;
+}
+.coupon-item .coupon-item-top .coupon-fee{
+    color: #ba77ff;
+}
+.coupon-item .coupon-item-top .coupon-time{
+    display: flex;
+    flex-direction: column;
+}
+.coupon-item .coupon-item-top .coupon-time text:first-child{
+    color: #000;
+}
+.coupon-item .coupon-item-bottom{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20rpx;
+}
+.coupon-item .coupon-item-bottom text{
+    line-height: 50rpx;
+}

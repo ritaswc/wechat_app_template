@@ -1,0 +1,29 @@
+/* pages/auxStore/cityChoose/cityChoose.wxss */
+
+.localCity{
+    display: block;
+    background-color: #f4f4f4;
+    line-height: 35px;
+    padding-left: 10px;
+}
+
+.myCity{
+    background-color: #FFFFFF;
+    line-height: 50px;
+    padding-left: 20px;
+}
+
+.allCity{
+    display: block;
+    background-color: #f4f4f4;
+    line-height: 35px;
+    padding-left: 10px;   
+}
+
+.item_city{
+    display: block;
+    background-color: #FFFFFF;
+    line-height: 50px;
+    padding-left: 20px;
+    border-bottom: 1px solid #f4f4f4;
+}

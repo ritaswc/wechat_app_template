@@ -1,0 +1,3 @@
+<!--pages/order/order.wxml-->
+<import src="../../component/empty/empty.wxml" />
+<template is="empty" data="{{msg:'您没有订单哦~'}}"></template>

@@ -1,0 +1,16 @@
+.mine-pic {
+    background-color: #ffffff;
+    padding: 19rpx 30rpx;
+    margin-top: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mine-pic image{
+    width: 100rpx;
+    height: 100rpx;
+}
+.close-btn {
+    background-color: #bfbfbf;
+    margin: 40rpx 30rpx;
+}

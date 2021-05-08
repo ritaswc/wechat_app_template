@@ -1,0 +1,51 @@
+<!--index.wxml-->
+
+<!--导入公告模块的header-->
+<include src="../../common/header/header.wxml"/>
+
+<view class="mod-home">
+
+  <!--滚动视图-->
+  <scroll-view scroll-y="true" bindscroll="scrollChangeBgColor" class="scroll-view" bindscrolltolower="scrollBottom">
+
+    <!--滚动banner-->
+    <view class="section slider">
+      <!--滑块视图-->
+      <swiper indicator-dots="true" autoplay="true" interval="3000">
+        <block wx:key="1" wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slider-image" mode="scaleToFill" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!--推荐分类列表-->
+    <view class="section cates">
+      <block wx:key="1" wx:for="{{cateList}}" wx:for-index="index" wx:for-item="cate">
+        <view data-index="{{index}}" class="cate">
+          <image src="{{cate.url}}" class="img" mode="aspectFit" />
+          <text class="name">{{cate.name}}</text>
+        </view>
+      </block>
+    </view>
+    
+    <!--活动banner-->
+    <view class="section banners">
+      <block wx:key="1" wx:for="{{bannerList}}" wx:for-item="banner">
+        <view class="banner">
+          <image src="{{banner}}" class="img" mode="scaleToFill" />
+        </view>
+      </block>
+    </view>
+
+    <!--单品推荐-->
+    <!--渲染列表-->
+    <include src="../../common/itemList/itemList.wxml"/>
+    
+    <!--分组推荐-->
+    <view class="section group-sku"></view>
+
+  </scroll-view>
+</view>
+<!--<include src="../../common/footer/footer.wxml"/>-->

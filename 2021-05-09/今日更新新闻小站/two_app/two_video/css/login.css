@@ -1,0 +1,166 @@
+html{
+    height: 100%;
+}
+body{
+/*    background-image:url(../image/login.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;*/
+    background:linear-gradient(45deg,#7FD7D2 ,#64CFC9)
+        /*linear-gradient(45deg,#82E8FE ,#6DB6FF)*/
+    /*linear-gradient(45deg,#86F3BD ,#8DDAE8 )*/;
+    font-family: 'Oleo Script', cursive;
+    display: -moz-box;
+    display: -webkit-box;
+    -moz-box-pack: center;
+    -webkit-box-pack: center;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+
+}
+
+.lg-container{
+    width: 100%;
+    max-width:275px;
+    padding:20px 40px;
+    height: 300px;
+    background:rgba(255,255,255,.5);
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-box-shadow: 3px 8px 10px  #5FB6B0;
+    -moz-box-shadow: 3px 8px 10px  #5FB6B0;
+    box-sizing:	content-box;
+    -webkit-transition: all .6s;
+    -moz-transition: all .6s ;
+    -ms-transition: all .6s ;
+    -o-transition: all .6s ;
+    transition: all .6s ;
+    border: none;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.lg-container h1{
+    font-size:40px;
+    text-align:center;
+    margin-top: 7px;
+    color:#fff;
+    text-shadow: 0 4px 10px #3681a5;
+}
+#lg-form > div {
+    margin:20px 5px;
+    padding:10px 0;
+}
+#lg-form label{
+    display: none;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+#lg-form input[type="text"]{
+    /*background-image: url("../image/account.png");*/
+}
+
+
+#lg-form input[type="password"]{
+    /*background-image: url("../image/password.png");*/
+}
+#lg-form input[type="text"],
+#lg-form input[type="password"]{
+    background-color: /*rgba(255,255,255,.1)*/#fff;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 20px;
+    width: 100%;
+    font-family: 'Oleo Script', cursive;
+    text-align:center;
+    background-position: 20px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    font-family: "微软雅黑";
+    border: none;
+}
+
+
+#lg-form input[type="text"]::-webkit-input-placeholder { color:#94BDD4; }
+#lg-form input[type="password"]::-webkit-input-placeholder { color:#94BDD4; }
+
+
+.a-color{
+    color: #91C2DD;
+}
+
+#lg-form input[type="text"]:focus,
+#lg-form input[type="password"]:focus {
+    color:#000;
+}
+
+#lg-form div:nth-child(3) {
+    text-align:center;
+}
+#lg-form button{
+    color: #3681a5;
+    font-family: 'Oleo Script', cursive;
+    font-size: 18px;
+    padding: 8px 30px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.01);
+    border:2px solid #fff;
+    transition: all .6s;
+}
+#lg-form button:active{
+    -webkit-box-shadow: 0px 0px 1px #aaa;
+    -moz-box-shadow: 0px 0px 1px #aaa;
+}
+#lg-form button:hover{
+    background:#fff;
+    color:#71C5B0;
+}
+#message{
+    width:100%;
+    text-align:center;
+}
+.success {
+    color: #3EB0AA;
+    font-size: 32px;
+    margin-top: 60px;
+}
+.error {
+    color: red;
+}
+.line1{
+    position: relative;
+}
+
+
+.form-control-feedback {
+    position: absolute;
+    top: 8px;
+    left: 18px;
+    transition:all 0.5s;
+}
+
+@media screen and (max-width: 500px) and (max-device-width: 500px) {
+    .lg-container{
+        width: auto;
+        padding:20px 40px;
+        height: 300px;
+        background:rgba(255,255,255,.5);
+        -webkit-border-radius:10px;
+        -moz-border-radius:10px;
+        -webkit-box-shadow: 0 0 2px #aaa;
+        -moz-box-shadow: 0 0 2px #aaa;
+    }
+    .lg-container h1 {
+        font-size: 33px;
+        text-align: center;
+    }
+}

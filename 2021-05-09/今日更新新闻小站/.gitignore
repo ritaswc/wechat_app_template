@@ -1,0 +1,7 @@
+.svn/
+node_modules/
+.idea/
+.project
+npm-debug.log
+public/
+two_app/scripts/

@@ -1,0 +1,34 @@
+{template 'common/header'}
+{if $do == 'home' || $do == 'profile'}
+{if $do == 'home'}
+<div class="panel panel-warning">
+	<div class="panel-body">
+		当前使用的风格为：{$style['name']}，模板文件为：{$template['title']}（/app/themes/{$template['name']}）。{if !empty($template['sections'])}此模板提供 <span class="label label-warning">{$template['sections']}</span> 个导航位置，您可以指定导航在特定的位置显示，未指位置的导航将无法显示{else}此模板未提供导航位置功能{/if}
+	</div>
+</div>
+{/if}
+
+<table class="table we7-table table-hover">
+	<col width="130px" />
+	<col width="150px" />
+	<col width="350px" />
+	<col width="" />
+	<tr>
+		<th>标题</th>
+		<th>图标</th>
+		<th>链接</th>
+		<th>操作</th>
+	</tr>
+	{loop $entries $menu}
+	<tr ng-repeat="menu in homeMenu">
+		<td class="title">{$menu['title']}</td>
+		<td><i class="{$menu['icon']}"></i></td>
+		<td><a href="javascript:;" class="js-clip" data-url="{$menu['url']}">{$menu['url']}</a></td>
+		<td class="edit">
+			<a href="{php echo url('site/multi')}">跳转至“微官网”设置</a>
+		</td>
+	</tr>
+	{/loop}
+</table>
+{/if}
+{template 'common/footer'}

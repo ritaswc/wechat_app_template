@@ -1,0 +1,106 @@
+<!--首页-->
+<view class="container">
+    <!--顶部搜索-->
+    <view class="search">
+        <!--退出-->
+        <view class="exit" wx:if="{{merchant != ''}}">
+            <text class="companyName">{{merchant}}</text>
+            <text class="companyBtn" bindtap="loginOut">退出</text>
+        </view>
+        <view class="exit" wx:else>
+            <text class="companyName">游客</text>
+            <text class="companyBtn" bindtap="login">登录</text>
+        </view>
+        <view class="message-tip" bindtap="goMessage">
+            <image class="message-image" src="{{imageCtx}}dealer/message.png"></image>
+            <!--有消息时显示小红点-->
+            <text class="message-icon" wx:if="{{hasMessage}}"></text>
+        </view>
+        
+        <input class="search-ipt" bindinput="searchInput" value="{{search}}" maxlength="30" type="text" placeholder="请输入订单名称或单号" bindconfirm="bindSearchTap" placeholder-class="placeholder-color"/>
+        <text class="search-btn" bindtap="bindSearchTap">搜索</text>
+    </view>
+
+    <view class="order-detail">
+        <!--订单-->
+        <view class="order">
+            <text class="order-title">订单</text>
+            <view class="order-con" bindtap="goPrintOrder">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl01.png"></image>
+                    <text class="orders-text" >印花订单</text>
+                </view>
+            </view>
+            <view class="order-con" bindtap="goDraftOrder">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl02.png"></image>
+                    <text class="orders-text">草稿箱</text>
+                </view>
+            </view>
+            <view class="order-con" bindtap="goInOutOrder">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl03.png"></image>
+                    <text class="orders-text">进货订单</text>
+                </view>
+            </view>
+        </view>
+
+        <!--统计-->
+        <view class="order">
+            <text class="order-title">统计</text>
+            <view class="order-con" bindtap="goNormal">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl04.png"></image>
+                    <text class="orders-text">基础信息统计</text>
+                </view>
+            </view>
+            <view class="order-con" bindtap="goManageer">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl05.png"></image>
+                    <text class="orders-text">渠道下单统计</text>
+                </view>
+            </view>
+            <view class="order-con" bindtap="goOrderSell">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl06.png"></image>
+                    <text class="orders-text">订单销售统计</text>
+                </view>
+            </view>
+            <view class="order-con" bindtap="goCustomer">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl07.png"></image>
+                    <text class="orders-text">客户信息统计</text>
+                </view>
+            </view>
+            <view class="order-con" bindtap="goSource">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl08.png"></image>
+                    <text class="orders-text">订单来源统计</text>
+                </view>
+            </view>
+            <view class="order-con" bindtap="goStyleSell">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}/dealer/s_dzl09.png"></image>
+                    <text class="orders-text">款式销售统计</text>
+                </view>
+            </view>
+            <view class="order-con" bindtap="goDesign">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl10.png"></image>
+                    <text class="orders-text">设计费用统计</text>
+                </view>
+            </view>
+        </view>
+
+        <!--库存-->
+        <view class="order">
+            <text class="order-title">库存</text>
+            <view class="order-con" bindtap="goStore">
+                <view class="orders">
+                    <image class="orders-image" src="{{imageCtx}}dealer/s_dzl11.png"></image>
+                    <text class="orders-text">库存中心</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

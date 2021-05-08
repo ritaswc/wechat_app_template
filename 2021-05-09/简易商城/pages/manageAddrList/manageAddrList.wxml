@@ -1,0 +1,22 @@
+<view class="container">
+    <!--<view class="title">收货地址</view>-->
+    <view class="addr_item" wx:for="{{userAddrList}}">
+        <view class="addr_item_cont" data-index="{{index}}" data-def="{{curIdx==index ? 1:0}}" data-id="{{item.address_id}}" catchtap="defAddr">
+            <view class="{{curIdx==index?'def_status':'status'}}">
+                <icon type="success_circle" size="25"/>
+            </view>
+            <view class="user_inf">
+                <text class="fullname">{{item.consignee}}</text><text class="phonenum">{{item.mobile}}</text>
+            </view>
+            <view class="user_addr">{{item.address}}</view> 
+        </view>
+        <text class="arrow_right" data-id="{{item.address_id}}" bindtap="edit_addr">编辑</text>
+    </view>
+    
+</view>
+<view class="add_address" bindtap="add_addr">
+    <button>添加新地址</button>
+    <!--<navigator url="../manageAddr/manageAddr?add_address=true">
+        
+    </navigator>-->
+</view>

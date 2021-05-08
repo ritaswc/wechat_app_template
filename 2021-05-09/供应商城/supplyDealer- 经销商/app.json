@@ -1,0 +1,44 @@
+{
+    "pages":[
+      
+     "pages/index/index",
+	   "pages/login/login",
+     "pages/index/search/search",  
+     "pages/index/message/message",  
+
+     "pages/index/orderlist1/orderlist1",
+     "pages/index/orderlist1/orderDetail1/orderDetail1",
+     "pages/index/orderlist1/orderDetail1/changeStatus1/changeStatus1",
+     "pages/index/orderlist2/orderlist2",
+     "pages/index/orderlist2/orderDetail2/orderDetail2",
+     "pages/index/orderlist2/orderDetail2/changeStatus2/changeStatus2",
+     "pages/index/invoiceInfo/invoiceInfo",
+     "pages/index/logistics/logistics",
+     "pages/index/drafts/drafts",
+     
+     "pages/index/basicInfo_statistics/basicInfo_statistics",
+     "pages/index/channelOrder_statistics/channelOrder_statistics",
+     "pages/index/channelOrder_statistics/department/department",
+     "pages/index/channelOrder_statistics/department/personal/personal",
+     "pages/index/orderSell_statistics/orderSell_statistics",
+     "pages/index/clientMes_statistics/clientMes_statistics",
+     "pages/index/clientMes_statistics/clientMes-city/clientMes-city",
+     "pages/index/orderSource_statistics/orderSource_statistics",
+     "pages/index/styleSell_statistics/styleSell_statistics",
+     "pages/index/styleSell_statistics/styleColor/styleColor",
+     "pages/index/designCost_statistics/designCost_statistics",
+     "pages/index/designCost_statistics/designCost_department/designCost_department",
+     "pages/index/designCost_statistics/designCost_detail/designCost_detail",
+
+     "pages/index/repertoryCentre/repertoryCentre"
+  ],
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "定制链",
+    "navigationBarTextStyle":"white"
+  }
+  ,
+  "debug":true
+}

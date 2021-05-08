@@ -1,0 +1,71 @@
+/* pages/boss/boss.wxss */
+
+page {
+  background-color: #fafafa;
+}
+
+.header {
+  font-size: 9.75pt;
+  color: rgba(0, 0, 0, 0.38);
+  padding: 40rpx 40rpx 18rpx 40rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.content {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 40rpx;
+  padding: 20rpx 40rpx 20rpx 0;
+}
+
+.item-left {
+  padding-right: 20rpx;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 12.75pt;
+  line-height: 24px;
+}
+
+.item-right {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 12.75pt;
+  color: rgba(0, 0, 0, 0.54);
+  line-height: 24px;
+}
+
+.bottom {
+  border-bottom: 1px solid #eee;
+}
+
+.content-bottom {
+  margin-top: 40rpx;
+  background: #fff;
+  border-bottom: 2rpx solid #eee;
+  border-top: 2rpx solid #eee;
+}
+
+.arrow {
+  border-top: 2px solid #c7c7c7;
+  border-right: 2px solid #c7c7c7;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+}
+
+.feedback {
+  position: absolute;
+  bottom: 80rpx;
+  left: 42%;
+  font-size: 9.75pt;
+  color: #576b95;
+}

@@ -1,0 +1,15 @@
+<view class="container">
+    <image src="http://o7iblkvul.bkt.clouddn.com/cover.png" ></image>
+    <!-- <text class="about">I am an Android developer,but also interested in other technology. </text> -->
+
+    <view class="website">
+        <view class="item">
+            <text >GitHub:</text>
+            <text class="github">https://github.com/zhijieeeeee </text>
+        </view>
+        <view class="item">
+            <text >CSDN:</text>
+            <text class="github">http://blog.csdn.net/u013155862</text>
+        </view>
+    </view>
+</view>

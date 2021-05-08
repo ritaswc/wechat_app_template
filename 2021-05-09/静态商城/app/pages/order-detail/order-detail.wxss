@@ -1,0 +1,77 @@
+@import "../../templates/default-address/default-address.wxss";
+@import "../../templates/item-cell/item-cell.wxss";
+
+.order-detail {
+  height: 100%;
+  position: relative;
+  padding-bottom: 2rpx
+}
+
+.item-list {
+  padding: 0 18.75rpx;
+  background: #fff;
+  margin-top: 23.44rpx;
+}
+.item-amount {
+  margin: 23.44rpx 0 150rpx;
+  background: #fff;
+  padding: 0rpx 18.75rpx;
+  font-size: 28.12rpx;
+}
+.item-amount view {
+  border-bottom: 1px solid #efefef;
+  padding: 35.15rpx 16.41rpx;
+}
+.item-amount text {
+  float: right;
+}
+.order-detail .boder-none {
+  border: none;
+}
+
+.btn-line {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  background: #efefef;
+  padding: 23.44rpx 0;
+  width: 100%;
+  font-size: 35.15rpx;
+  overflow: hidden;
+}
+.btn-size {
+  width: 182.80rpx;
+  float: right;
+  margin-right: 16.41rpx;
+  padding: 20rpx 15rpx;
+  font-size: 36rpx;
+  line-height: 36rpx;
+}
+.order-detail-params{
+    float: left;
+}
+
+.order-detail-price {
+    position: relative;
+    float: right;
+    width: 92rpx;
+}
+.order-detail-price text{
+    display: block;
+}
+.order-detail-price .content-amount{
+    float: left;
+    width: 92rpx;
+    text-align: center;
+}
+.item-amount .last-child {
+  border-bottom: none;
+}
+.item-amount .last-child text {
+  display: block;
+  float: none;
+  margin-bottom: 7rpx;
+}
+.colora0{
+  color: #a0a0a0;
+}

@@ -1,0 +1,28 @@
+<view class="container">
+    <view wx:if="{{mycourseList.length === 0}}" class="no-searchlist">
+        您还没有添加课程 ☺
+    </view>
+    <view class="course-content">
+        <block wx:for="{{mycourseList}}" wx:key="{{index}}">
+            <navigator url="../coursedetail/index?id={{item._id}}">
+                <view class="course-item" style="width: {{(winWidth - (10 * 3)) / 2}}px;">
+                    <view class="course-image-wrapper">
+                        <image class="course-image" src="{{imageRoot}}{{item.img}}" />
+                    </view>
+                    <view class="course-info">
+                        <view class="course-name">{{item.name}}</view>
+                        <view class="course-group">学组: {{item.specialObj}}</view>
+                        <view class="course-status">
+                            <view class="course-rating">
+                                评分: {{item.averageScore ? item.averageScore : 0}}
+                            </view>
+                            <view class="course-study-num">
+                                {{item.count ? item.count : 0}}人学习过
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </block>
+    </view>
+</view>

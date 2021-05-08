@@ -1,0 +1,20 @@
+<import src="../../wxSortPickerView/wxSortPickerView.wxml" />
+<view class="nation-title">
+  {{tag}}
+</view>
+<loading class="loading" hidden="{{isHidden}}">正在加载</loading>
+<scroll-view>
+  <view wx:for="{{nationRstInfo}}" wx:for-item="item" wx:for-index="index">
+    <view class="item" wx:for="{{item}}" wx:for-item="one">
+      <view class="item-info">
+        <text class="item-info-period">{{one.issue}}期</text>
+        <text class="item-info-time">{{dates[index]}} [{{weeks[index]}}]</text>
+      </view>
+      <view wx:if="{{hisId == 4 || hisId == 5 || hisId == 17 || hisId == 23}}">
+        <view class="item-span-down" wx:for="{{ openCodes[index]}}" wx:for-index="id" wx:for-item="one">
+          <template is="standard_1" data="{{one}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

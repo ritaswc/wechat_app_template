@@ -1,0 +1,72 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="info">
+            <image class="bg" src="{{setting.pic_url}}"></image>
+            <view class="flex-row">
+                <view class="flex-grow-1" style="position:relative;">
+                    <view class="info-1">
+                        <view class="flex-row">
+                            <view class="flex-grow-1 flex-x-center">账户余额(元)</view>
+                        </view>
+                    </view>
+                    <view class="info-2 flex-x-center">{{user_info.money}}</view>
+                    <view class="info-3 flex-x-center">
+                        <navigator hoverClass="none" url="/pages/recharge/recharge">
+                            <view class="info-btn flex-x-center flex-y-center">充值</view>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="click" style="position:absolute;right:0;top:48rpx;">
+                <image class="info-img" src="{{setting.p_pic_url}}"></image>
+            </view>
+        </view>
+        <view class="modal-h flex-y-center flex-x-center {{show?'':'hidden'}}">
+            <view>
+                <view class="w-100 body-h">
+                    <view class="flex-x-center">充值说明</view>
+                    <scroll-view scrollY="true" style="color:#666;max-height:250rpx;margin-top:40rpx;">
+                        <text>{{setting.help}}</text>
+                    </scroll-view>
+                    <view bindtap="close" class="flex-x-center">
+                        <view class="btn-h flex-x-center flex-y-center">我知道了</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="ad">
+            <navigator class="ad" hoverClass="none" openType="navigate" url="{{setting.page_url}}">
+                <image src="{{setting.ad_pic_url}}"></image>
+            </navigator>
+        </view>
+        <view class="record">
+            <view class="record-time flex-x-center flex-y-center">
+                <view class="flex-row">
+                    <view bindtap="dateDown" class="flex-grow-0">
+                        <image class="record-img" src="{{__wxapp_img.balance.left.url}}" style="margin:0 84rpx;"></image>
+                    </view>
+                    <picker bindchange="dateChange" class="flex-grow-1" fields="month" mode="date" value="{{date_1}}">
+                        <view>{{date}}</view>
+                    </picker>
+                    <view bindtap="dateUp" class="flex-grow-0">
+                        <image class="record-img" src="{{__wxapp_img.balance.right.url}}" style="margin:0 84rpx;"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="record-list">
+                <view bindtap="GoToDetail" class="record-one flex-row" data-index="{{index}}" wx:for="{{list}}" wx:key="{{item.id}}">
+                    <view class="flex-grow-1">
+                        <view style="width:500rpx;text-align:left">
+                            <view class="record-1 text-more">{{item.content}}</view>
+                            <view class="record-2">{{item.date}}</view>
+                        </view>
+                    </view>
+                    <view class="flex-grow-0 flex-y-center {{item.flag!=1?'record-3':'record-4'}}">{{item.price}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

@@ -1,0 +1,103 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="join-bg" wx:if="{{join||success}}">
+            <view class="success" wx:if="{{success}}">
+                <view class="content">
+                    <image class="banner" src="../image/submit.png"></image>
+                    <view class="banner-text">恭喜您</view>
+                    <image class="success-tip" src="../image/success.png"></image>
+                    <view>成功提交步数</view>
+                    <view>奖金将于24点结算后自动发放</view>
+                    <view class="tip">奖金可至“我的{{store.option.step.currency_name?store.option.step.currency_name:'活力币'}}”查看</view>
+                    <button bindtap="success" class="success-btn">我知道了</button>
+                </view>
+            </view>
+            <view class="join-success" wx:if="{{join}}">
+                <image class="join-img" src="../image/participation.png"></image>
+                <image bindtap="close" class="join-close" src="../image/pond-details.png"></image>
+                <view>报名成功，记得{{open_date}}来参加哦</view>
+                <button class="invite" openType="share">邀请好友</button>
+            </view>
+        </view>
+        <view class="bg">
+            <image src="{{store.option.step.activity_pic?store.option.step.activity_pic:__wxapp_img.step.dare_bg.url}}"></image>
+        </view>
+        <view class="icon">
+            <form bindsubmit="_formIdSubmit" data-type="navigate" data-url="../log/log" reportSubmit="true">
+                <button formType="submit" id="_formIdSubmit">
+                    <image src="../image/log.png"></image>
+                </button>
+            </form>
+            <form bindsubmit="_formIdSubmit" data-type="navigate" data-url="../rules/rules?rules=activity_rule" reportSubmit="true">
+                <button formType="submit" id="_formIdSubmit">
+                    <image src="../image/rule.png"></image>
+                </button>
+            </form>
+        </view>
+        <view class="dare" wx:if="{{space==false}}">
+            <view class="join" wx:for="{{activity_data}}" wx:key="{{activity}}">
+                <view class="join-title">
+                    <view class="title-left">{{item.open_date}}期</view>
+                    <view class="msg" wx:if="{{item.date!==time}}">已有{{item.people_num?item.people_num:0}}人报名</view>
+                    <view class="not" wx:if="{{item.date==time&&item.log.length==0}}">未参赛</view>
+                    <view class="already" wx:if="{{item.date==time&&item.log.length>0}}">已参赛</view>
+                </view>
+                <view class="activity-name">{{item.name}}</view>
+                <view class="activity-step" wx:if="{{item.date==time&&item.log.length==0}}">目标{{item.step_num}}步</view>
+                <view class="join-info" wx:if="{{item.date==time&&item.log.length>0}}">
+                    <view class="target">目标
+                        <text>{{item.step_num}}</text>步，已完成
+                        <text>{{step}}</text>步</view>
+                    <view wx:if="{{item.log_status!=2}}">请于今日24点前，更新并提交步数</view>
+                    <view wx:if="{{item.log_status==2}}">奖金将于24点后结算自动发放</view>
+                    <button bindtap="submit" class="submit" data-id="{{item.id}}" data-step="{{item.step_num}}" wx:if="{{item.log_status!=2}}">提交成绩</button>
+                    <button class="submit-end" wx:if="{{item.log_status==2}}">已提交成绩</button>
+                </view>
+                <view class="dare-item" wx:if="{{item.date==time}}">
+                    <view class="item">
+                        <view class="total">{{item.currency_num?item.currency_num:0}}</view>
+                        <view>奖金池总额</view>
+                    </view>
+                    <view class="item">
+                        <view class="total">{{item.award_num?item.award_num:0}}</view>
+                        <view>达标人数</view>
+                    </view>
+                </view>
+                <view wx:if="{{item.date!==time}}">
+                    <view class="money">{{item.currency_num?item.currency_num:0}}</view>
+                    <view>奖金池总额</view>
+                    <view class="info">参与满
+                        <text>{{item.step_num}}</text>步起平分奖池金额</view>
+                    <form bindsubmit="_formIdSubmit" class="join-btn" data-type="navigate" data-url="../join/join?id={{item.id}}" reportSubmit="true" wx:if="{{item.log.length==0}}">
+                        <button formType="submit" id="_formIdSubmit">
+                            <button class="join-btn">参与比赛</button>
+                        </button>
+                    </form>
+                    <button class="finish-btn" openType="share" wx:if="{{item.log.length>0}}">已参赛,邀请好友</button>
+                </view>
+            </view>
+            <view class="temp" wx:if="{{ad}}"></view>
+            <view class="loading" wx:if="{{loading}}">正在加载中...</view>
+            <view class="temp" wx:if="{{ad}}">
+                <ad binderror="adError" unitId="{{unit_id}}" wx:if="{{unit_id}}"></ad>
+            </view>
+        </view>
+        <view class="space" wx:if="{{space==true}}">
+            <image src="../image/none.png"></image>
+            <view>暂无挑战赛哦</view>
+            <view class="temp" style="margin-top:120rpx;" wx:if="{{ad}}">
+                <ad binderror="adError" unitId="{{unit_id}}" wx:if="{{unit_id}}"></ad>
+            </view>
+        </view>
+        <view class="ad">
+            <ad binderror="adError" unitId="{{unit_id}}" wx:if="{{unit_id}}"></ad>
+        </view>
+        <view class="over-screen" wx:if="{{authorize==false}}">
+            <view class="window">为确保您的正常使用，请完善授权操作</view>
+            <view bindtap="openSetting" class="get-setting">确认</view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

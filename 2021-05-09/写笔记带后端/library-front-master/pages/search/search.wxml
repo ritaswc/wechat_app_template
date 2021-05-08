@@ -1,0 +1,85 @@
+<import src="../template/template.wxml"  />
+<view wx:if='{{choose_school}}' class='container choose_school_box'>
+  <view class="help-text">
+    <text>请选择学校</text>
+  </view>
+  <view class="input-cell">
+    <view class="input-cell-hd">
+      <text>省份</text>
+    </view>
+    <view class="input-cell-bd">
+      <picker bindchange="bindProvinceChange" class="input-box" value="{{province_index}}" range="{{provinces}}">
+        <view class="picker">{{provinces[province_index]}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="spacing"></view>
+  <view class="input-cell">
+    <view class="input-cell-hd">
+      <text>学校</text>
+    </view>
+    <view class="input-cell-bd">
+      <picker bindchange="bindSchoolChange" class="input-box" value="{{school_index}}" range="{{schools}}">
+        <view class="picker">{{schools[school_index]}}</view>
+      </picker>
+    </view>
+  </view>
+  <view class="spacing"></view>
+  <template is="button_choose_school"
+            data="{{bindtapaction:'confirmChooseSchool',fontcolor:'white',bcolor:'#1296db', loading: false, context:'确定'}}"  />
+  <template wx:if='{{ has_school }}' is="button_choose_school"
+            data="{{bindtapaction:'cancelChangeSchool', bcolor:'#fbfafc', loading: false, context:'放弃修改'}}"  />
+</view>
+<view wx:if='{{!choose_school}}' class="container">
+  <view class="help-text">
+    <text>请输入图书名</text>
+    <text class="right green_link" bindtap="changeSchoolRequest">更换学校</text>
+    <text class="right">{{school_name}}</text>
+  </view>
+  <view class="input-cell">
+    <view class="input-cell-hd">
+      <text>书名</text>
+    </view>
+    <view class="input-cell-bd">
+      <input bindinput="bindSearchInput" bindblur="searchBooks" type="text" class="input-box" value="{{book_name}}"  />
+    </view>
+  </view>
+  <template is="button" data="{{bindtapaction:'searchBooks', bcolor:button_bcolor, loading: loading, context:'搜索'}}"  />
+  <view class="search-result">
+    <view wx:if="{{book_count == 0 }}" class="error">
+      <icon type="safe_warn" size="70" color="orange"  />
+      <text>没有找到与关键词“{{book_name}}”有关的图书</text>
+    </view>
+    <view wx:if="{{is_alot}}">
+      <view class="help-text">
+        <text>关键词搜索结果 {{ book_count }} 个，仅显示前200条。</text>
+      </view>
+    </view>
+    <view wx:elif="{{book_count > 0}}">
+      <view class="help-text">
+        <text>关键词搜索结果 {{ book_count }} 个。</text>
+      </view>
+    </view>
+    <view wx:if="{{book_count > 0 }}" class="book-links">
+      <scroll-view scroll-y="true" style="height: {{ scroll_height }}px;">
+        <block wx:for="{{books}}" wx:for-item="book" wx:key="marc_no">
+          <view class="book-link">
+            <navigator class="book-navigator" open-type="navigate"
+                       url="../detail/detail?marc_no={{book.marc_no}}&school={{school}}&ctrl_no={{book.ctrl_no}}"
+                       hover-class="navigator-hover">
+              {{book.title}}
+              <view class="book_description">
+              <text class="book_description_author">{{book.description.author}}</text>
+              <text class="book_description_press">{{book.description.press}}</text>
+            </view>
+          </navigator>
+          <view class="link-icon"></view>
+        </view>
+      </block>
+      <view class="help-text">
+        <text>以上内容来自{{school_name}}图书馆系统搜索数据</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+</view>

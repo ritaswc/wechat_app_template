@@ -1,0 +1,112 @@
+<view class="acc_hd">
+    <view class="banner">
+        <view class="banner_top">
+            <view class="banner_left">
+                <navigator url="grzx/grzx">
+                    <image src="{{userInfo.avatarUrl}}"></image>
+                </navigator>
+                <view class="banner_user">
+                    <view>您好：<text>{{userInfo.nickName}}</text></view>
+                    <view>积分：<text>96435</text></view>
+                </view>
+
+                <!--<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>-->
+
+            </view>
+            <view class="banner_right">
+                <navigator url="grzx/grzx">
+                    <image src="../../images/account/setting.png"></image>
+                </navigator>
+            </view>
+        </view>
+        <view class="banner_money">
+            <view class="money">0.00</view>
+            <navigator url="asset/asset">
+                <view>总资产(元)<image src="../../images/account/arr_right.png"></image></view>
+            </navigator>
+        </view>
+        <view class="banner_bottom">
+            <view class="bottom_left">
+                账户余额：<text>0.00</text>
+            </view>
+            <view class="bottom_right">
+                累计收益：<text>0.00</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="wdzh_center">
+        <view class="wdzh_center_left">
+            <navigator url="extract/extract">
+                <image src="../../images/account/tixian.png"></image>提现
+            </navigator>
+        </view>
+        <view class="wdzh_center_right">
+            <navigator url="recharge/recharge">
+                <image src="../../images/account/chongzhi.png"></image>充值
+            </navigator>
+        </view>
+    </view>
+
+    <view class="wdzh_bottom">
+        <view class="wdzh_bottom_list">
+            <view class="wdzh_bottom_img">
+                <image src="../../images/account/new_01.jpg"></image>
+            </view>
+            <view class="wdzh_bottom_content">
+            <navigator url="invest/invest">
+                <text>投资记录</text>
+                <image src="../../images/account/arrowright.png"></image>
+            </navigator>
+            </view>
+        </view>
+        <view class="wdzh_bottom_list">
+            <view class="wdzh_bottom_img">
+                <image src="../../images/account/new_02.jpg"></image>
+            </view>
+            <view class="wdzh_bottom_content">
+                <navigator url="refund/refund">
+                    <text>回款记录</text>
+                    <image src="../../images/account/arrowright.png"></image>
+                </navigator>
+            </view>
+        </view>
+        <view class="wdzh_bottom_list">
+            <view class="wdzh_bottom_img">
+                <image src="../../images/account/new_03.jpg"></image>
+            </view>
+            <view class="wdzh_bottom_content no_bottom">
+                <navigator url="incomeExpense/incomeExpense">
+                    <text>资金流水</text>
+                    <image src="../../images/account/arrowright.png"></image>
+                </navigator>
+            </view>
+        </view>
+    </view>
+
+    <view class="wdzh_bottom">
+        <view class="wdzh_bottom_list">
+            <view class="wdzh_bottom_img">
+                <image src="../../images/account/new_04.jpg"></image>
+            </view>
+            <view class="wdzh_bottom_content">
+                <navigator url="userShare/userShare">
+                    <text>邀请好友</text>
+                    <image src="../../images/account/arrowright.png"></image>
+                </navigator>
+            </view>
+        </view>
+        <view class="wdzh_bottom_list">
+            <view class="wdzh_bottom_img">
+                <image src="../../images/account/new_05.jpg"></image>
+            </view>
+            <view class="wdzh_bottom_content no_bottom">
+                <navigator url="cardBox/cardBox">
+                    <text>理财宝箱</text>
+                    <image src="../../images/account/arrowright.png"></image>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view> 

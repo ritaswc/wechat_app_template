@@ -1,0 +1,151 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body">
+        <view style="overflow-x: hidden">
+            <view class="status-bar">
+                <image src="{{__wxapp_img.store.order_status_bar.url}}" mode="aspectFill"></image>
+                <text>{{order.status}}</text>
+            </view>
+
+            <navigator url="/pages/miaosha/express-detail/express-detail?id={{order.order_id}}" class="block flex-row" a:if="{{order.express_no && order.is_send==1}}">
+                <view class="flex-grow-1">
+                    <view class="mb-10">快递公司：{{order.express}}</view>
+                    <view class="">快递单号：{{order.express_no}}</view>
+                </view>
+                <view class="flex-grow-0 flex-y-center">
+                    <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+                </view>
+
+                <view class="block-row flex-row" a:if="{{false}}">
+                    <view class="flex-grow-1">快递单号：{{order.express_no}}</view>
+                    <view class="flex-grow-0">
+                        <text class="copy-text-btn" onTap="copyText" data-text="{{order.express_no}}">复制</text>
+                    </view>
+                </view>
+            </navigator>
+
+            <view class="block">
+                <view class="flex-row block-row">
+                    <view class="flex-grow-1">
+                        {{order.is_offline == 0 ? "联系人：" : "收货人："}}{{order.name}}
+                    </view>
+                    <view class="flex-grow-0">
+                        {{order.mobile}}
+                    </view>
+                </view>
+                <view a:if='{{order.address}}'>地址：{{order.address}}</view>
+            </view>
+            <block a:if="{{order.is_offline == 1}}">
+                <view class="block flex-row">
+                    <view class='flex-grow-1'>
+                        <view class="flex-grow-1">门店名称：{{order.shop.name}}</view>
+                        <view class="flex-grow-1">联系电话：{{order.shop.mobile}}</view>
+                        <view class="flex-grow-1">门店地址：{{order.shop.address}}</view>
+                    </view>
+                    <view class='flex-grow-0 flex-y-center' a:if='{{order.shop.longitude}}'>
+                        <text class='copy-text-btn' onTap='location'>导航</text>
+                    </view>
+                </view>
+            </block>
+
+            <view class="block">
+                <view class="block-row flex-row">
+                    <view class="flex-grow-1">订单编号：{{order.order_no}}</view>
+                    <view class="flex-grow-0">
+                        <text class="copy-text-btn" onTap="copyText" data-text="{{order.order_no}}">复制</text>
+                    </view>
+                </view>
+                <view>下单时间：{{order.addtime}}</view>
+                <view class='pay-type' a:if='{{order.pay_type==0}}'>支付方式：未支付</view>
+                <view class='pay-type' a:if='{{order.pay_type==1}}'>支付方式：线上支付</view>
+                <view class='pay-type' a:if='{{order.pay_type==2}}'>支付方式：货到付款</view>
+            </view>
+
+            <view class="block">
+                <view class="flex-row block-row">
+                    <view class="flex-grow-1">商品总额</view>
+                    <view class="flex-grow-0" a:if="{{order}}">￥{{order.goods_total_price}}</view>
+                    <view class="flex-grow-0" a:else>￥0.00</view>
+                </view>
+                <view class="flex-row block-row">
+                    <view class="flex-grow-1">商品数量</view>
+                    <view class="flex-grow-0">{{order.num}}</view>
+                </view>
+                <view class="flex-row block-row" a:if='{{user_coupon_id}}'>
+                    <view class="flex-grow-1">优惠券优惠</view>
+                    <view class="flex-grow-0">-￥{{order.coupon_sub_price}}</view>
+                </view>
+                <view class="flex-row block-row" a:if='{{order.discount<10 && order.discount}}'>
+                    <view class="flex-grow-1">会员折扣</view>
+                    <view class="flex-grow-0">{{order.discount}}折</view>
+                </view>
+                <view class="flex-row block-row" a:if="{{order.before_update}}">
+                    <view class="flex-grow-1">{{order.before_update}}</view>
+                    <view class="flex-grow-0">￥{{order.money}}</view>
+                </view>
+                <view class="flex-row block-row">
+                    <view class="flex-grow-1">运费</view>
+                    <view class="flex-grow-0">￥{{order.express_price}}</view>
+                </view>
+                <view a:if='{{order.content}}'>
+                    <view>买家留言</view>
+                    <view class='fs-sm' style='width:100%;overflow:auto;word-wrap:break-word;'>{{order.content}}</view>
+                </view>
+                <view a:if='{{order.words}}'>
+                    <view>商家留言</view>
+                    <view class='fs-sm' style='width:100%;overflow:auto;word-wrap:break-word;'>{{order.words}}</view>
+                </view>
+                <view class="block-footer">合计：
+                    <text style="color: #ff4544">￥{{order.pay_price}}</text>
+                </view>
+            </view>
+
+            <view class="block">
+                <view a:for="{{order.goods_list}}" a:key="{{item.id}}" class="flex-row goods-item">
+                    <view class="flex-grow-0">
+                        <navigator url="/pages/miaosha/details/details?id={{item.goods_id}}" style="font-size: 0">
+                            <image mode="aspectFill" style="width: 156rpx;height: 156rpx" src="{{item.goods_pic}}"></image>
+                        </navigator>
+                    </view>
+                    <view class="flex-grow-1" style="padding-left: 20rpx">
+                        <view style="margin-bottom: 10rpx">
+                            <navigator url="/pages/miaosha/details/details?goods_id={{item.goods_id}}">{{item.name}}</navigator>
+                        </view>
+                        <view class="flex-row">
+                            <view class="flex-grow-1">
+                                <view style="font-size: 9pt;color: #888;margin-right: 20rpx;display: inline-block" a:for="{{item.attr}}" a:key="{{item.id}}">
+                                    {{item.attr_group_name}}：{{item.attr_name}}
+                                </view>
+                            </view>
+                            <view class="flex-grow-0" style="text-align: right">
+                                <view>×{{item.num}}</view>
+                                <view style="color: #ff4544">￥：{{item.total_price}}</view>
+                            </view>
+                        </view>
+                        <view a:if="{{item.order_refund_enable==1}}">
+                            <navigator a:if="{{item.is_order_refund==0}}" class="flex-y-center refund-btn" url="/pages/miaosha/order-refund/order-refund?id={{order.order_id}}">申请售后
+                            </navigator>
+                            <text class="refund-text" a:else="{{item.is_order_refund==1}}">已申请售后</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view a:if="{{order.is_send==0 && order.apply_delete==1}}" class='order-footer flex-y-center flex-x-right flex-row'>
+                <view class="play-btn">
+                    <view>退款申请中</view>
+                </view>
+            </view>
+
+            <view a:if="{{order.is_send==0 && order.is_pay == 1}}" class='order-footer flex-y-center flex-x-right flex-row'>
+                <view class="play-btn">
+                    <view onTap="orderRevoke" data-id="{{order.order_id}}">申请退款
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

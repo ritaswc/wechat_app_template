@@ -1,0 +1,55 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <include src="/components/quick-navigation/quick-navigation.wxml"></include>
+    <view class="body after-navber">
+        <swiper autoplay="true" circular="true" duration="300" indicatorDots="true" interval="5000" style="height:280rpx" wx:if="{{banner_list.length>0}}">
+            <swiper-item wx:for="{{banner_list}}" wx:key="{{item.id}}">
+                <navigator appId="{{item.appId}}" bindtap="navigatorClick" data-open-type="{{item.open_type?item.open_type:'navigator'}}" data-open_type="{{item.open_type}}" data-url="{{item.page_url}}" hoverClass="none" path="{{item.path}}" target="{{item.open_type=='wxapp'?'miniProgram':''}}" url="{{item.page_url}}">
+                    <image mode="aspectFill" src="{{item.pic_url}}" style="width:100%;height:280rpx"></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+        <view class="no-content" wx:if="{{!new_list||new_list.length==0}}">暂无记录</view>
+        <view style="padding-bottom:96rpx;" wx:else>
+            <view style="background:#fff" wx:for="{{new_list}}" wx:key="{{item.id}}">
+                <view style="height:20rpx;background:#f7f7f7"></view>
+                <view class="flex-row" style="position:relative;padding:24rpx">
+                    <navigator hoverClass="navigator-hover" style="display:inline" url="/lottery/goods/goods?id={{item.id}}">
+                        <image class="flex-grow-0" src="{{item.goods.cover_pic}}" style="display:block;width:220rpx;height:220rpx"></image>
+                        <view class="flex-x-center flex-y-center lottery-num">{{item.num}}人参与</view>
+                    </navigator>
+                    <view class="flex-col flex-grow-1" style="padding-left:24rpx;">
+                        <navigator hoverClass="navigator-hover" style="display:inline" url="/lottery/goods/goods?id={{item.id}}">
+                            <view class="text-more-2">{{item.goods.name}}</view>
+                            <view class="flex-row flex-y-center font-minor">
+                                <image src="/lottery/images/lottery_time.png" style="margin-right:12rpx;width:24rpx;height:24rpx;display:block"></image>距活动结束：
+                                        <text wx:if="{{time_list[index].day>0||time_list[index].hour>0}}">
+                                    <text class="red">{{time_list[index].day}}</text>天</text>
+                                <text wx:if="{{time_list[index].day>0||time_list[index].hour>0}}">
+                                    <text class="red">{{time_list[index].hour}}</text>小时</text>
+                                <text wx:if="{{time_list[index].day==0&&time_list[index].hour==0}}">
+                                    <text class="red">{{time_list[index].minute}}</text>分</text>
+                                <text wx:if="{{time_list[index].day==0&&time_list[index].hour==0}}">
+                                    <text class="red">{{time_list[index].second}}</text>秒</text>
+                            </view>
+                            <view class="font-minor" style="padding-top:10rpx;padding-right:10rpx">共{{item.stock}}份</view>
+                        </navigator>
+                        <view class="flex-row flex-y-center">
+                            <view class="flex-grow-0 red">￥0</view>
+                            <view class="flex-grow-1 font-minor" style="text-decoration:line-through;padding-left:12rpx">原价￥{{item.original_price}}</view>
+                            <form bindsubmit="submit" data-lottery_id="{{item.id}}" data-type="navigate" reportSubmit="true" wx:if="{{item.status}}">
+                                <button formType="submit" id="lotterySubmit">
+                                    <view class="flex-y-center flex-x-center flex-grow-0 lottery-btn">立即抽奖</view>
+                                </button>
+                            </form>
+                            <view class="flex-y-center flex-x-center flex-grow-0 lottery-err btn-disabled" wx:else>已参与</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/lottery/commons/naver/naver"></include>
+    <include src="/components/footer/footer"></include>
+</view>

@@ -1,0 +1,43 @@
+<view class="sec-kill">
+    <view class="header">
+        <view class="header-wrapper" style="width: {{length *300}}rpx">
+            <view class="single" wx:for="{{product}}" wx:for-index="index" data-index="{{index}}" bindtap="switchTab">
+                <text class="text-detail {{curNav == index ? 'active' : ''}}">{{item.title}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="main-container">
+        <block wx:if="{{list.goodsList == null}}">
+            <view class="wait-more">敬请期待...</view>
+        </block>
+        <block wx:if="{{list.goodsList != null}}">
+            <view class="top-slider">
+                <swiper class="slider-sec" indicator-dots="{{indicatorDots}}"
+                        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                    <block wx:for="{{list.imageList}}">
+                        <swiper-item>
+                            <image src="{{item}}" class="slide-image" width="355" height="150"
+                                   bindtap="goBanner"/>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+            <view class="list-detail" wx:for="{{list.goodsList}}" wx:for-item="item"
+                  data-value="{{item}}" bindtap="getDetail">
+                <view class="list-sec">
+                    <view class="left-sec">
+                        <image class="sec-img" src="{{item.goodsImg}}" background-size="cover"></image>
+                    </view>
+                    <view class="right-sec">
+                        <view class="title">{{item.goodsName}}</view>
+                        <view class="description">{{item.tagline}}</view>
+                        <view class="pirce-wrapper">
+                            <view class="inline-block now">￥{{item.sellPrice}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="inline-block go-buy">查看详情</view>
+            </view>
+        </block>
+    </view>
+</view>

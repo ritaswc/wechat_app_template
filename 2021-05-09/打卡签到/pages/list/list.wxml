@@ -1,0 +1,10 @@
+<import src="../../template/company-item.wxml" />
+<view class="vFull-page" style="width: {{winWidth}}px; height: {{winHeight}}px">
+  <view class="vLabel">
+    <text>请选择要加入的公司</text>
+  </view>
+  <view class="vLine"></view>
+  <view class="vCompanylist" wx:for="{{lists}}" bindtap="item_click" data-companyid="{{item._id}}">
+    <template is="company-item" data="{{item}}"></template>
+  </view>
+</view>

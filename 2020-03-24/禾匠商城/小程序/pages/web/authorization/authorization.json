@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "绑定公众号",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

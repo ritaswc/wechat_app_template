@@ -1,0 +1,8 @@
+/**index.wxss**/
+.more{
+  /*浅灰色*/
+	color: #aaa;
+	font-size: 14px;
+	position:fixed;
+	bottom: 20px;
+}

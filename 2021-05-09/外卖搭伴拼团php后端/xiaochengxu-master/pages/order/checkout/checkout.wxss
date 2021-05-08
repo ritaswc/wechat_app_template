@@ -1,0 +1,90 @@
+/* pages/order/checkout/checkout.wxss */
+
+.address{
+    height:194rpx;
+    background: url('http://app.shizhencaiyuan.com/pintuan/img/address.png') no-repeat;
+    background-size: cover;
+    margin-bottom: 20rpx;
+    display: flex;
+}
+.address .address-item-top{
+    width: 90%;
+    padding: 30rpx 0 30rpx 30rpx;
+    box-sizing: border-box;
+}
+.address .address-item-top view:first-child{
+    padding-bottom: 30rpx;
+}
+.address .address-item-right{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.address .address-item-right image{
+    width: 26rpx;
+    height: 48rpx;
+}
+.goods-info{
+    padding: 30rpx;
+    background: white;
+    display: flex;
+    margin-bottom: 20rpx;
+}
+.goods-info image{
+  width:70px;
+  height:70px;
+  display:inline-block;
+  overflow:hidden;
+}
+.goods-info .goods-info-handler{
+    padding-left: 20rpx;
+    width: 80%;
+}
+.goods-info .goods-info-handler .goods-info-name{
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.goods-info .goods-info-handler .goods-info-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30rpx;
+}
+.goods-info .goods-info-handler .goods-info-price .calc{
+    width: 160rpx;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #ddd;
+    align-items: center;
+    /*padding: 0 20rpx;*/
+    box-sizing: border-box;
+}
+.goods-info .goods-info-handler .goods-info-price .calc text{
+    display: block;
+    height: 100%;
+    width: 160rpx;
+    text-align: center;
+    line-height: 60rpx;
+}
+.coupon{
+    padding: 30rpx;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+.coupon .show-coupon{
+    display: flex;
+    align-items: center;
+}
+.coupon .show-coupon image{
+    width: 22rpx;
+    height: 44rpx;
+    padding-left: 10rpx;
+}

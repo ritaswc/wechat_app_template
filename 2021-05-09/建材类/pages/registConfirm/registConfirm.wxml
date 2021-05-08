@@ -1,0 +1,19 @@
+<!--pages/registConfirm/registConfirm.wxml-->
+<view class="container">
+      <view class="top">
+             <text class="top_text">我们已经发送验证码短信到这个号码</text>
+             <text class="top_mobile">{{mobile}}</text>
+      </view>
+     
+      <view class="content">
+          <text class="my_text">验证码</text>
+          <input class="my_input" type="number" maxlength="6" bindinput="getCheckCode" placeholder="请输入短信验证码"/>
+          <button class="my_button" bindtap="getEvrCode" disabled="{{disabled}}">
+              <!--<text class="my_button_text"> 重新获取</text>-->
+         </button>
+         <text class="new_text  {{new_text}}">{{buttonText}}</text>
+      </view>
+      <button class="button" hover-class="button_pressed" bindtap="registSuccess">
+            <text class="button_text">完成</text>
+      </button>
+</view>

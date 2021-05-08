@@ -1,0 +1,126 @@
+.tab-bar {
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.tab-bar~.order-list {
+    padding-top: 100rpx;
+}
+
+.tab-bar navigator {
+    display: block;
+    padding: 0 24rpx;
+    text-align: center;
+}
+
+.tab-bar navigator text {
+    height: 100rpx;
+    line-height: 100rpx;
+    display: inline-block;
+}
+
+.tab-bar navigator.active text {
+    color: #f00;
+    border-bottom: 2rpx solid #f00;
+}
+
+.order-list .order-item {
+    background: #fff;
+    padding: 32rpx 24rpx;
+    margin-bottom: 20rpx;
+    border-bottom: 1rpx solid #e3e3e3;
+}
+
+.order-list .order-info {
+    font-size: 9pt;
+    color: #888;
+}
+
+.goods-item {
+    background: #fff;
+    border-bottom: 1rpx solid #e3e3e3;
+    padding: 32rpx 0;
+    border-bottom: 1rpx solid #eee;
+    margin: 20rpx 0;
+}
+
+.goods-item:first-child {
+    border-top: 1rpx solid #eee;
+}
+
+.goods-item .goods-pic {
+    width: 156rpx;
+    height: 156rpx;
+    margin-right: 20rpx;
+}
+
+.goods-item .goods-name {
+    margin-bottom: 10rpx;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.goods-item .attr-list,.goods-item .num {
+    font-size: 9pt;
+    color: #888;
+}
+
+.goods-item .attr-list .attr-item {
+    display: inline-block;
+    margin-right: 36rpx;
+}
+
+.goods-item .attr-list .attr-item:last-child {
+    margin-right: 0;
+}
+
+.goods-item .price {
+    color: #ff4544;
+}
+
+.order-option-btn {
+    border: 1rpx solid #bbb;
+    background: #fff;
+    border-radius: 10rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    color: inherit;
+    margin-left: 30rpx;
+    padding: 0 30rpx;
+}
+
+.order-option-btn::after {
+    display: none;
+}
+
+.return-index-btn {
+    position: fixed;
+    right: 0;
+    bottom: 100rpx;
+    display: inline-block;
+    background: rgba(157,157,157,0.5);
+    padding: 10rpx 20rpx;
+    z-index: 1000;
+    border-radius: 10rpx 0 0 10rpx;
+}
+
+.hide {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+}

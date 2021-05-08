@@ -1,0 +1,104 @@
+<!--pages/deliver/deliver.wxml-->
+
+<view class="deliver-wrap">
+     <nav class="deliver-nav">
+        <ul>
+            <li class="{{current == 0 ? 'avtivity' :''}}" catchtap="switchSlider" data-index="0">投递成功</li>
+            <li class="{{current == 1 ? 'avtivity' :''}}" catchtap="switchSlider" data-index="1">公司已查看</li>
+            <li class="{{current == 2 ? 'avtivity' :''}}" catchtap="switchSlider" data-index="2">面试邀请</li>
+            <li class="{{current == 3 ? 'avtivity' :''}} last" catchtap="switchSlider" data-index="3">暂不合适</li>
+        </ul>
+    </nav>
+    <swiper class="main-list" current="{{current}}" bindchange="changeSlider" duration="500">
+        <block>
+            <!--投递成功-->
+            <swiper-item >
+                <!--没有数据-->
+                <view wx:if="{{nodeliver}}" class="no_data">
+                    <image class="img3" src="image/deliver_01.png"></image>
+                    <text>快去投递简历吧,获取更多机会!</text>
+                </view>
+                <view class="deliver_list" bindtap="goZhihiWeiList"  wx:for="{{deliver_success}}" data-job_id="{{item.job_id}}" >
+                    <view class="left">
+                        <view class="name">{{item.job_name}}</view>
+                        <view class="hotal_name">{{item.company_name}}</view>
+                        <view class="time">{{item.time}}投递</view>
+                    </view>
+                    <view class="right">
+                        <view class="clock" catchtap="remindHr" data-click="{{item.clickable}}" data-job_id="{{item.job_id}}" data-company_id="{{item.company_id}}">
+                            <image mode="aspectFill"  src="{{item.clickable == 1 ? 'image/clock_01.png' :'image/Clock.png'}}"></image>
+                            <text>提醒HR</text>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+
+
+            <!--公司已查看-->
+            <swiper-item >
+                <!--<image hidden="false" src="image/jieshu.png"></image>-->
+                <view wx:if="{{nolook}}" class="no_data">
+                    <image class="img3" src="image/deliver_01.png"></image>
+                    <text>快去投递简历吧,获取更多机会!</text>
+                </view>
+                
+                <view class="have_look_list" bindtap="goZhihiWeiList" wx:for="{{have_look}}" data-job_id="{{item.job_id}}">
+                    <view class="person_name {{item.is_click_user == 1 ? 'has_click':''}}">
+                        <image wx:if="{{item.is_stop}}" src="image/jieshu.png"></image>
+                        {{item.job_name}}
+                    </view>
+                    <view class="company_name">{{item.company_name}}</view>
+                    <view class="bottom">
+                        <view>{{item.work_place}}</view>
+                        <view class="look {{item.is_click_user == 1 ? 'has_look':''}}">{{item.time}}查看</view>
+                    </view>
+                </view>
+            </swiper-item>
+
+            <!--面试邀请-->
+            <swiper-item class="swiper-item_3">
+                <view wx:if="{{nointerview}}" class="no_data">
+                    <image class="img3" src="image/deliver_01.png"></image>
+                    <text>快去投递简历吧,获取更多机会!</text>
+                </view>
+                <view class="interview" bindtap="goZhihiWeiList" wx:for="{{interview}}" data-job_id="{{item.job_id}}">
+                    <view class="person_name {{item.is_click_user == 1 ? 'has_click':''}}">
+                        <image wx:if="{{item.is_stop}}" src="image/jieshu.png"></image>
+                        {{item.job_name}}
+                    </view>
+                    <view class="company_name">{{item.company_name}}</view>
+                    <view class="bottom">
+                        <view>{{item.work_place}}</view>
+                        <view class=" look {{item.is_click_user == 1 ? 'has_look_two':''}}">{{item.time}}邀请</view>
+                    </view>
+                    <view catchtap="inappropriate" class="examine" data-message_id="{{item.message_id}}">
+                        查看详情
+                    </view>
+                </view>
+            </swiper-item>
+            <!--暂不合适-->
+            <swiper-item class="swiper-item_3">
+                <view wx:if="{{noinappropriate}}" class="no_data">
+                    <image class="img3" src="image/deliver_01.png"></image>
+                    <text>快去投递简历吧,获取更多机会!</text>
+                </view>
+
+                <view class="inappropriate" bindtap="goZhihiWeiList" wx:for="{{inappropriate}}" data-job_id="{{item.job_id}}">
+                    <view class="person_name {{item.is_click_user == 1 ? 'has_click':''}}">
+                        <image wx:if="{{item.is_stop}}" src="image/jieshu.png"></image>
+                        {{item.job_name}}
+                    </view>
+                    <view class="company_name">{{item.company_name}}</view>
+                    <view class="bottom">
+                        <view>{{item.work_place}}</view>
+                        <view class=" look {{item.is_click_user == 1 ? 'has_look_two':''}}">{{item.time}}回复</view>
+                    </view>
+                    <view catchtap="inappropriate"  class="examine" data-message_id="{{item.message_id}}">
+                        查看详情
+                    </view>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+
+</view>

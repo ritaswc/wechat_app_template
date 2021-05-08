@@ -1,0 +1,163 @@
+/* pages/rdetail/rdetail.wxss */
+
+.banner {
+  width: 100%;
+  height: 400rpx;
+}
+
+.banner image {
+  width: 100%;
+  height: 100%;
+}
+
+.rest_name {
+  padding: 20rpx 0;
+  text-align: center;
+  font-size: 40rpx;
+  color: #1a1a1a;
+}
+
+.rest_desc {
+  height: 119rpx;
+  font-size: 28rpx;
+  color: #505050;
+  padding: 0 2% 20rpx;
+  text-indent: 5px;
+  line-height: 48rpx;
+  overflow: hidden;
+}
+
+.show {
+  height: auto;
+}
+
+.rest_icon {
+  text-align: center;
+  font-size: 26rpx;
+  color: #909090;
+  margin: 20rpx 0;
+}
+
+.rest_icon image {
+  width: 20rpx;
+  height: 20rpx;
+  transform: rotate(90deg);
+  transition: 0.3s;
+  margin-left: 10rpx;
+}
+
+.show image {
+  transition: 0.3s;
+  transform: rotate(-90deg);
+}
+
+.introduction {
+  width: 94%;
+  padding: 20rpx 0;
+  margin: 0 auto;
+  position:relative;
+}
+.introduction::before{
+  content:"";
+  display:block;
+  position: absolute;
+  width:100%;
+  height:1px;
+  top:0;
+  background:#dcdcdc;
+  transform: scaleY(.5)
+}
+.introduction::after{
+  content:"";
+  display:block;
+  position: absolute;
+  width:100%;
+  height:1px;
+  bottom:0;
+  background:#dcdcdc;
+  transform: scaleY(.5)
+}
+
+.address {
+  width: 90%;
+}
+
+.bg {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.bg image {
+  width: 100%;
+  height: 100%;
+}
+
+.call {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10rpx 0;
+  color: #868686;
+  font-size: 28rpx;
+}
+
+.call view {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10rpx;
+  color: blue;
+}
+
+.in_con text:nth-child(2) {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10rpx 0;
+  color: #868686;
+  font-size: 28rpx;
+}
+
+.title {
+  text-align: center;
+  font-size: 32rpx;
+  color: #282828;
+  margin: 36rpx 0;
+}
+
+.list {
+  width: 94%;
+  margin: 0 auto;
+  padding: 20rpx 10rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.img {
+  width: 40%;
+  height: 216rpx;
+  float: left;
+}
+
+.img image {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  width: 55%;
+  float: right;
+  padding-top: 20rpx;
+}
+
+.item_name {
+  color: #505050;
+  font-size: 32rpx;
+  margin-bottom: 54rpx;
+}
+
+.item_sum {
+  color: #818181;
+  font-size: 28rpx;
+}

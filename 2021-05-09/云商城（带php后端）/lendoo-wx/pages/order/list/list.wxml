@@ -1,0 +1,30 @@
+<view class="order-item" wx:for="{{orders}}" wx:key="">
+	<view wx:for="{{mappingData[index]}}" wx:for-item="mapping" wx:key="" class="carts-item" bindtap="showGoods" data-object-id="{{mapping.objectId}}">
+		<view>
+			<!-- 缩略图 -->
+			<image class="carts-image" src="{{mapping.avatar}}" mode="aspectFill"/>
+		</view>
+		<view class="carts-text">
+			<!-- 商品标题 -->
+			<text class="carts-title">{{mapping.title}}</text>
+			<view class="carts-subtitle">
+				<!-- 价格 -->
+				<text class="carts-price">{{mapping.price}}</text>
+				<text>x{{mapping.quantity}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="order-footer">
+		<text>实付金额 {{item.amount}}</text>
+		<text bindtap="pay" data-object-id="{{item.objectId}}" data-total-fee="{{item.amount}}" class="{{status != 0 ? 'hidden': ''}}">支付</text>
+		<text bindtap="receive" data-object-id="{{item.objectId}}" class="{{status != 2 ? 'hidden': ''}}">确认收货</text>
+<!-- 		
+		<text>再次购买</text>
+ -->		<text>{{item.createdAt}}</text>
+	</view>
+	<view class="order-footer">
+		<text>收货地址</text>
+		<text>{{addressArray[index].detail}}</text>
+	</view>
+
+</view>

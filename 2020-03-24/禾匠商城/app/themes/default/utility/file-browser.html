@@ -1,0 +1,69 @@
+{if $type=='image'}
+	<div class="clearfix file-browser">
+		<style type="text/css">
+			.modal-dialog .file-browser .breadcrumb i{ font-size:1em;}
+		</style>
+		<ol class="breadcrumb">
+			<li><a herf="javascript:;" onclick="imageBrowser.browser('');"><i class="fa fa-home">&nbsp;</i></a></li>
+			{if empty($option['global'])}
+				{if $year}
+				<li><a herf="javascript:;" onclick="imageBrowser.browser('images/{$_W['uniacid']}/{$year}');">{$year}</a></li>
+				{/if}
+				{if $month}
+				<li><a herf="javascript:;" onclick="imageBrowser.browser('images/{$_W['uniacid']}/{$year}/{$month}');">{$month}</a></li>
+				{/if}
+			{/if}
+		</ol>
+		{loop $files $file}
+			{if $file['is_dir']} 
+				{if $file['filename'] == '..'}
+				{if empty($_GPC['path']) || ($_GPC['path'] == 'images/'.$_W['uniacid']) || !empty($option['global'])}
+				{else}
+					<div title="上一级" onclick="{$callback}.browser('{php echo $parentbrowser;}');" class="thumbnail">
+						<i class="fa fa-folder"></i>
+						<span class="text-center">{$file['filename']}</span>
+					</div>
+				{/if}
+				{else}
+				<div title="{$file['filename']}" onclick="{$callback}.browser('{php echo $browser.'/'.$file['filename'];}');" class="thumbnail">
+					<i class="fa fa-folder"></i>
+					<span class="text-center">{$file['filename']}</span>
+				</div>
+				{/if}
+			{else}
+				<div title="{$file['filename']}" class="thumbnail{if $currentimage==$file['filename']} active{/if}">
+					<em><img src="{$file['url']}" onclick="{$callback}.select({$file['entry']});" class="img-responsive"></em>
+					<span class="text-center">{$file['filename']}</span>
+					{if empty($option['global']) || (!empty($option['global']) && $_W['isfounder'])}
+					<em class="close" title="删除这张图片" onclick="{$callback}.delete('{$file['attachment']}');return false;">×</em>
+					{/if}
+				</div>
+			{/if}
+		{/loop}
+	</div>
+{else}
+	<div class="clearfix file-browser">
+		<style type="text/css">
+			.modal-dialog .file-browser .breadcrumb i{ font-size:1em;}
+		</style>
+		<ol class="breadcrumb"></ol>
+		{loop $files $file}
+		{if $file['is_dir']}
+		{if $file['filename'] == '..'}
+		<div title="上一级" onclick="{$callback}.browser('{php echo str_replace('\\', '/', dirname($path));}');" class="thumbnail">
+		{else}
+		<div title="{$file['filename']}" onclick="{$callback}.browser('{$path}{$file['filename']}');" class="thumbnail">
+		{/if}
+			<i class="fa fa-folder"></i>
+			<span class="text-center">{$file['filename']}</span>
+		</div>
+		{else}
+		<div title="{$file['filename']}" class="thumbnail">
+			<em><img src="./resource/images/nopic.jpg" onclick="{$callback}.select({$file['entry']});" class="img-responsive"></em>
+			<span class="text-center">{$file['filename']}</span>
+			<em class="close" title="删除这首音乐" onclick="{$callback}.delete('{$file['attachment']}', '{$path}');return false;">×</em>
+		</div>
+		{/if}
+		{/loop}
+	</div>
+{/if}

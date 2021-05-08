@@ -1,0 +1,32 @@
+.star {
+  display: flex;
+  align-items: center;
+}
+
+.star .star-img-box {
+  display: flex;
+  height: 22rpx;
+}
+
+.star .star-img {
+  position: relative;
+  height: 100%;
+  width: 24rpx;
+}
+
+.star .star-img image {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.star .star-img + .star-img {
+  margin-left: 6rpx;
+}
+
+.star text {
+  margin-left: 22rpx;
+  font-size: 22rpx;
+  color: #98d361;
+}

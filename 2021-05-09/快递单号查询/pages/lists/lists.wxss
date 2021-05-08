@@ -1,0 +1,260 @@
+page{
+  word-break: break-all;
+  background-color: #eee; 
+}
+
+.showError{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 70rpx;
+  background-color: #E64340;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 70rpx;
+}
+
+.header-search{
+  position: relative;
+  width: 750rpx;
+}
+.header-search .header-title{
+  position: absolute;
+  top: 140rpx;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 750rpx;
+  height: 110rpx;
+}
+.header-search .header-title .h1,
+.header-search .header-title .h2{
+  width: 670rpx;
+  text-align: center;
+}
+.header-search .header-title .h1{
+  margin-bottom: 10rpx;
+  line-height: 67rpx;
+  font-size:48rpx;
+}
+.header-search .header-title .h2{
+  line-height: 33rpx;
+  font-size:24rpx;
+}
+.header-search .header-input{
+  width: 670rpx;
+  height: 68rpx;
+  padding-top: 160rpx;
+}
+.header-search .input-wrap{
+  position: relative;
+  width: 760rpx;
+  height: 68rpx;
+}
+.header-search .header-input input{
+  width: 600rpx;
+  height: 68rpx;
+  background: #fff;
+  border-radius: 34rpx;
+  padding: 0 35rpx;
+  font-size: 28rpx;
+  color: #222;
+}
+.header-search .header-input .placeholder{
+  font-size: 26rpx;
+  color: #AAAAAA;
+}
+.header-search .header-input .placeholderHide{
+  font-size: 26rpx;
+  color: #fff;
+}
+.header-search .clear-input-img{
+  position: absolute;
+  z-index: 100;
+  top: 0rpx;
+  right: 170rpx;
+  letter-spacing: 0.27rpx;
+  text-align: right;
+  width: 70rpx;
+  height: 68rpx;
+}
+.header-search .clear-input-img icon{
+  margin-top: 19rpx;
+}
+
+.header-input .input-code {
+  position: absolute;
+  z-index: 80;
+  top: 0rpx;
+  right: 100rpx;
+  letter-spacing: 0.27rpx;
+  width: 70rpx;
+  height: 68rpx;
+}
+.header-input .input-code image{
+  width: 32rpx;
+  height: 30rpx;
+  margin-top: 19rpx;
+  margin-left: 20rpx;
+}
+
+.type{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #fff;
+  margin-top: -10rpx;
+  padding: 27rpx 0;
+}
+.type .type-wrap{
+  position: relative;
+  display: flex;
+  width: 710rpx;
+  justify-content: center;
+  align-items: center;
+}
+.type .type-wrap .text{
+  width: 620rpx;
+  height: 40rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  color: #222;
+  font-size: 32rpx;
+  line-height: 40rpx;
+  letter-spacing: 0.34rpx;
+}
+.type .type-wrap .loading{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: -6rpx;
+}
+.type .type-wrap .loading image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.type .type-wrap .icon {
+  width: 55rpx;
+  height: 40rpx;
+  text-align: right;
+  line-height: 40rpx;
+}
+.type .type-wrap .icon image{
+  width: 28rpx;
+  height: 20rpx;
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  color: #aaa;
+  font-size: 26rpx;
+  height: 75rpx;
+  padding-top: 26rpx;
+  padding-bottom: 17rpx;
+  margin-top: 2rpx;
+  background: #fff;
+}
+.title view{
+  display: block;
+  width: 680rpx;
+  height: 34rpx;
+  box-sizing: border-box;
+  padding-top: 5rpx;
+}
+
+.types-wrap {
+  display: flex;
+  justify-content: center;
+  width: 750rpx;
+  background-color: #fff;
+}
+.types-wrap .wrap{
+  width: 710rpx;
+}
+.types-wrap .wrap .item{
+  display: flex;
+  justify-content: center;
+  width: 710rpx;
+  height: 84rpx;
+  line-height: 90rpx;
+  border-bottom: 1px solid #eee;
+  color: #131313;
+  font-size: 32rpx;
+}
+.types-wrap .wrap .img{
+  width: 58rpx;
+  padding-top: 13rpx;
+}
+.types-wrap .wrap image{
+  width: 58rpx;
+  height: 58rpx;
+}
+.types-wrap .wrap .text{
+  width: 638rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  padding-left: 14rpx;
+  padding-top: 13rpx;
+}
+
+.more-company{
+  display: flex;
+  justify-content: center;
+  width: 750rpx;
+  background-color: #fff;
+  padding-bottom: 24rpx;
+  padding-top: 17rpx;
+}
+.more-company .more-wrap{
+  display: flex;
+  width: 704rpx;
+  justify-content: center;
+  align-items: center;
+}
+.more-company .more-wrap .text{
+  width: 654rpx;
+  text-align: left;
+  color: #222;
+  font-size: 32rpx;
+  left: 0.34rpx;
+}
+.more-company .more-wrap .icon{
+  width: 50rpx;
+  text-align: right;
+}
+.more-company .more-wrap .icon image{
+  width: 16rpx;
+  height: 25rpx;
+}
+
+.btn-lg{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 40rpx;
+}
+.btn-lg button{
+  box-sizing: border-box;
+  width: 690rpx;
+  padding: 6rpx 0;
+  background-color: #09bb07;
+  color: #fff;
+  font-size: 34rpx;
+}
+.btn-lg .btn{
+   opacity: 0.3;
+}
+
+.footer{
+  width: 100%;
+  height: 20rpx;
+}

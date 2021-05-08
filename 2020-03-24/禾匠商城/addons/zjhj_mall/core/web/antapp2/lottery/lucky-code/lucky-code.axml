@@ -1,0 +1,49 @@
+<view class="page"> 
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber flex-col flex-y-center"> 
+
+        <view a:if="{{award.status==2 || award.status==3}}" class="flex-row flex-y-center lucky-head">
+            <image style="position:absolute;top:0;left:0;width:84rpx;height:84rpx" src="/lottery/images/lottery-code.png"/>
+
+            <image class="flex-grow-0" style="width:64rpx;margin-left:40rpx;margin-right:32rpx;border-radius:50%;height:64rpx" src="{{award.user.avatar_url}}"/>
+            <view class="flex-grow-1 lucky-name">{{award.user.nickname}}</view>
+            <view class="flex-col flex-grow-0 flex-y-center" style="margin-right:40rpx">
+                <text>{{award.lucky_code}}</text>
+                <text class="fs-sm">获赠幸运码</text>
+            </view>
+        </view>
+        <view style="background:#ffffff;margin-top:40rpx;border-radius:16rpx;width:702rpx;">
+            <view class="flex-x-center flex-y-center" style="height:88rpx;border-bottom:1rpx solid #e2e2e2"> 
+                <block a:if="{{award.status==2 || award.status==3}}">其他</block><block a:else>持有</block>{{num}}个幸运码
+            </view>
+            <view style="margin-top:32rpx">
+
+                <view a:if="{{own.status==1 || own.status==0}}" class="flex-row flex-y-center lucky-parent-list">  
+                    <image class="flex-grow-0"  src="{{own.user.avatar_url}}"/>
+                    <view class="flex-grow-1 lucky-name">{{own.user.nickname}}</view>
+
+                    <view class="flex-col flex-grow-0 flex-y-center" style="margin-right:40rpx">
+                        <text>{{own.lucky_code}}</text>
+                        <text class="fs-sm">幸运码</text>
+                    </view>
+                </view>
+
+                <block a:for="{{parent}}" a:key="{{item.id}}">
+                    <view class="flex-row flex-y-center lucky-parent-list">  
+                        <image class="flex-grow-0"  src="{{item.avatar_url}}"/>
+                        <view class="flex-grow-1 lucky-name">{{item.nickname}}</view>
+
+                        <view class="flex-col flex-grow-0 flex-y-center" style="margin-right:40rpx">
+                            <text>{{item.lucky_code}}</text>
+                            <text class="fs-sm">获赠幸运码</text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <view a:if="{{parent.length>=9}}" class="font-minor lucky-parent-list font-minor flex-x-center" onTap="userload">加载更多</view>              
+        </view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

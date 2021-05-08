@@ -1,0 +1,108 @@
+<view class="attr-picker" a:if="{{show_attr_picker}}">
+    <view class="content-box">
+        <view class="flex-row" style="border-bottom: 1rpx solid #e3e3e3;padding: 24rpx 28rpx">
+            <view class="flex-grow-0">
+                <view class="goods-pic-box">
+                    <block a:if="{{goods.attr_pic}}">
+                        <image onTap="previewImage" data-url='{{goods.attr_pic}}' mode="aspectFill" src="{{goods.attr_pic}}"></image>
+                    </block>
+                    <block a:else>
+                        <image onTap="previewImage" data-url='{{goods.cover_pic}}' mode="aspectFill" src="{{goods.cover_pic}}"></image>
+                    </block>
+                </view>
+            </view>
+            <view class="flex-grow-1" style="padding: 0 24rpx">
+
+                <!-- 积分商城 -->
+                <block a:if='{{pageType === "INTEGRAL"}}'>
+                    <view style="color:#ff4544;margin-bottom: 12rpx;font-weight: bold">
+                        <block a:if="{{status == 'attr'}}">
+                            {{attr_integral}}积分
+                            <block a:if="{{attr_price > 0}}">+￥{{attr_price}}</block>
+                        </block>
+                        <block a:else>
+                            {{goods.integral}}积分
+                            <block a:if="{{goods.price > 0}}">+￥{{goods.price}}</block>
+                        </block>
+                    </view>
+                </block>
+                <!-- 步数宝 -->
+                <block a:elif='{{pageType === "STEP"}}'>
+                    <view style="color:#ff4544;margin-bottom: 12rpx;font-weight: bold">
+                      {{goods.price}}{{ store.option.step.currency_name?store.option.step.currency_name:'活力币' }}
+                    </view>
+
+                    <view style="font-size:9pt">
+                        库存{{goods.num}}
+                    </view>
+                </block>
+                <block a:else>
+                    <block a:if="{{pageType === 'PINTUAN'}}">
+                        <view style="color:#ff4544;margin-bottom: 12rpx;font-weight: bold">
+                            ￥{{groupNum ? goods.group_price : goods.single_price}}
+                            <text a:if="{{goods.is_member_price === true && groupNum === true}}" class='is_member_price'>会员价</text>
+                        </view>
+                    </block>
+                    <block a:else>
+                        <view style="color:#ff4544;margin-bottom: 12rpx;font-weight: bold">￥{{goods.price}}
+                            <text a:if="{{goods.is_member_price === true}}" class='is_member_price'>会员价</text>
+                        </view>
+                    </block>
+
+                    <view style="font-size:9pt">
+                        库存{{goods.num}}
+                    </view>
+                </block>
+            </view>
+            <view class="flex-grow-0">
+                <view onTap="hideAttrPicker" class="flex-x-center flex-y-center" style="width: 100rpx;height: 100rpx">
+                    <image style="width: 30rpx;height: 30rpx" src="{{__wxapp_img.store.close.url}}" />
+                </view>
+            </view>
+        </view>
+        <scroll-view scroll-y="true" style="max-height: 650rpx;">
+            <view style="padding: 24rpx 28rpx">
+                <view>
+                    <view class="attr-group" a:if="{{groupNum && !oid}}">
+                        <view class="attr-group-name">{{attr_group_num.attr_group_name}}</view>
+                        <view class="attr-list">
+                            <text class="attr-item {{group_checked?'':'active'}}" onTap="groupCheck">{{goods.group_num}}人团</text>
+                            <text class="attr-item {{item.checked?'active':''}}" a:if="{{attr_group_num.attr_list.length>0}}" a:for="{{attr_group_num.attr_list}}" a:key="{{item.id}}" data-id="{{item.id}}" onTap="attrNumClick">{{item.group_num}}人团
+                            </text>
+                        </view>
+                    </view>
+
+                    <view class="attr-group" a:for="{{attr_group_list}}" a:for-item="attr_group" a:key="{{item.id}}" a:if="{{attr_group.attr_list.length>0}}">
+                        <view class="attr-group-name">{{attr_group.attr_group_name}}</view>
+                        <view class="attr-list">
+                            <text class="attr-item {{item.checked?'active':''}} {{item.attr_num_0 ? 'attr_num_0' : ''}}" a:for="{{attr_group.attr_list}}" a:key="{{item.id}}" data-group-id="{{attr_group.attr_group_id}}" data-id="{{item.attr_id}}" onTap="storeAttrClick">{{item.attr_name}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view style="height: 0;border-bottom: 1rpx solid #e3e3e3;margin-bottom: 40rpx"></view>
+
+                <!-- 积分商品详情隐藏购买数量 -->
+                <block a:if="{{pageType !== 'INTEGRAL' && pageType!== 'BOOK'}}">
+                    <view style="padding-bottom: 40rpx">
+                        <view class="flex-row flex-y-center mb-20">
+                            <view class="flex-grow-1">数量</view>
+                            <view class="flex-grow-0">
+
+                                <view class="flex-row number-input-box">
+                                    <view style='margin-right:0.01rem;' class="flex-grow-0 flex-x-center flex-y-center number-btn number-sub {{form.number<=1?'disabled':''}}" onTap="numberSub">-
+                                    </view>
+                                    <view class="flex-grow-0">
+                                        <input style='padding:0' class="flex-grow-1 number-input" value="{{form.number}}" type="number" step="1" min="1" onBlur="numberBlur" />
+                                    </view>
+                                    <view class="flex-grow-0 flex-x-center flex-y-center number-btn number-add" onTap="numberAdd">+
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+
+            </view>
+        </scroll-view>
+    </view>
+</view>

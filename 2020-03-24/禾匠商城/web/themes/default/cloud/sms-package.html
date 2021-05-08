@@ -1,0 +1,55 @@
+{template 'common/header'}
+<style>
+.color-error {
+	color: #f15333;
+}
+.color-warning {
+	color: #f2af5a;
+}
+</style>
+<div class="we7-page-title">购买短信包</div>
+<div class="sms-trade" ng-controller="smsTrade" ng-cloak>
+	<div class="we7-head-info">
+		<div class="info">
+			当前可用短信：<span  class="color-default">{{smsInfo.sms_count}}</span>条
+		</div>
+		<a href="//s.w7.cc/goods-7.html" class="btn btn-primary" target="_blank">购买短信</a>
+	</div>
+	<table class="table we7-table">
+		<tr>
+			<th>订单编号</th>
+			<th>短信名称</th>
+			<th>交易价格</th>
+			<th>购买时间</th>
+		</tr>
+		<tr ng-repeat="smslog in smslogs">
+			<td>{{smslog.sn}}</td>
+			<td>{{smslog.title}}</td>
+			<td>{{smslog.amount}}</td>
+			<td>{{smslog.createtime}}</td>
+		</tr>
+		<tr ng-if="smslogs | we7IsEmpty">
+			<td colspan="100">
+				<div class="text-center">暂无数据</div>
+			</td>
+		</tr>
+	</table>
+	<we7-page conf="page1"></we7-page>
+</div>
+<script>
+	require(['moment'], function() {
+		angular.module('smsApp').value('config', {
+			apiUrl: "{php echo url('cloud/sms-package')}do=",
+			smsSettingUrl: "{php echo url('cloud/sms/settingSign')}",
+			changeUrl: "{php echo url('cloud/sms/change_setting')}",
+			cloudSmsSigns: {php echo json_encode($cloud_sms_signs)},
+			settingSmsSign: {php echo json_encode($setting_sms_sign)},
+			userExpire: {php echo json_encode($user_expire)},
+			accountSmsExpire: {php echo json_encode($account_sms_expire)},
+			apiSmsExpire: {php echo json_encode($api_sms_expire)},
+			smsInfo: {php echo json_encode($sms_info)},
+		});
+		angular.bootstrap($('.sms-trade'), ['smsApp']);
+	})
+</script>
+{template 'common/footer'}

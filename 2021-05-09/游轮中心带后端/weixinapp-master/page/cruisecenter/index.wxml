@@ -1,0 +1,77 @@
+<view class="page page_white">
+    <view class="page__bd">
+        <view class="section section_gap swiper">
+            <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+                    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                <block wx:for-items="{{img}}">
+                    <swiper-item>
+                        <image class="img_swiper" mode="widthFix" src="http://www.cruisesh.com/src/image/bg{{item}}.jpg" />
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view class="section">
+        <view class="flex-wrp" style="flex-direction:row;">
+            <view class="flex-item">
+                <view class="flex-wrp" style="flex-direction:column;">
+                        <navigator url="query/query" >
+                            <view class="flex-itemzi">
+                                <image src="http://www.cruisesh.com/src/image/service_1.png" />
+                                <text>船票查询</text>
+                            </view>
+                        </navigator>
+                        <navigator url="guide/guide" >
+                            <view class="flex-itemzi">
+                                <image src="http://www.cruisesh.com/src/image/service_4.png" />
+                                <text>港口指南</text>
+                            </view>
+                        </navigator>
+                        <navigator url="vip/vip" >
+                            <view class="flex-itemzi">
+                                <image src="http://www.cruisesh.com/src/image/service_7.png" />
+                                <text>贵宾服务</text>
+                            </view>
+                        </navigator>
+                </view>
+            </view>
+            <view class="flex-item">
+                <view class="flex-wrp" style="flex-direction:column;">
+                    <view class="flex-itemzi">
+                        <image src="http://www.cruisesh.com/src/image/service_2.png" />
+					    <text>航班查询</text>
+                    </view>
+                        <navigator url="policy/policy" >
+                            <view class="flex-itemzi">
+                                <image src="http://www.cruisesh.com/src/image/service_5.png" />
+                                <text>相关政策</text>
+                            </view>
+                        </navigator>
+                        <navigator url="wifi/wifi" >
+                            <view class="flex-itemzi">
+                                <image src="http://www.cruisesh.com/src/image/service_8.png" />
+                                <text>WIFI租赁</text>
+                            </view>
+                        </navigator>
+                </view>
+            </view>
+            <view class="flex-item">
+                <view class="flex-wrp" style="flex-direction:column;">
+                        <navigator url="note/note" >
+                            <view class="flex-itemzi">
+                                <image src="http://www.cruisesh.com/src/image/service_3.png" />
+                                <text>注意事项</text>
+                            </view>
+                        </navigator>
+                    <view class="flex-itemzi">
+                        <image src="http://www.cruisesh.com/src/image/service_6.png" />
+					    <text>邮轮产品</text>
+                    </view>
+                    <view class="flex-itemzi">
+                        
+                    </view>
+                </view>
+            </view>
+        </view>
+        </view>
+    </view> 
+</view>

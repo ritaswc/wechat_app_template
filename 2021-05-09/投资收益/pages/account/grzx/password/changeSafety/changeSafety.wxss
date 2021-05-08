@@ -1,0 +1,8 @@
+.notice {font-size: 28rpx;padding:60rpx 40rpx;line-height: 1.8em;text-align: center;}
+.grzx_con {background: #fff;padding-left: 40rpx;border-bottom: 2rpx solid #ccc;border-top:2rpx solid #ccc; }
+.grzx_con_list {padding: 30rpx 40rpx 30rpx 0;border-bottom: 2rpx solid #ccc;font-size: 30rpx;}
+.border_none {border-bottom: none;}
+
+.error {font-size: 26rpx;text-align: center;color: #ff5304;margin-top: 40rpx;display: none;}
+.grzx_btn {padding:60rpx 40rpx;}
+.grzx_btn button {background: #ff5304;}

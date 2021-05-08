@@ -1,0 +1,80 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="flex-col h-100">
+            <view class="flex-grow-0 flex-row tab-bar">
+                <view bindtap="tabSwitch" class="flex-grow-1" data-index="0" style="text-align: center">
+                    <view class="tab-name {{swiper_current==0?'active':''}}">商品</view>
+                </view>
+                <view bindtap="tabSwitch" class="flex-grow-1" data-index="1" style="text-align: center">
+                    <view class="tab-name {{swiper_current==1?'active':''}}">专题</view>
+                </view>
+            </view>
+            <view class="flex-grow-1 wh-100" style="position: absolute;top: 0;left: 0;z-index:0;padding-top: 100rpx">
+                <swiper bindchange="swiperChange" class="h-100" current="{{swiper_current}}" duration="300">
+                    <swiper-item>
+                        <scroll-view bindscrolltolower="goodsScrollBottom" class="h-100" lowerThreshold="1" scrollY="true">
+                            <view class="goods-list">
+                                <navigator class="goods-item" openType="navigate" url="/pages/goods/goods?id={{item.goods_id}}" wx:for="{{goods.list}}" wx:key="{{item.id}}">
+                                    <image class="goods-pic" mode="aspectFill" src="{{item.goods_pic}}"></image>
+                                    <view class="goods-info">
+                                        <text class="goods-name">{{item.name}}</text>
+                                        <text class="goods-price">
+                                            <block wx:if="{{!item.is_negotiable}}">￥</block>{{item.price}}</text>
+                                    </view>
+                                </navigator>
+                            </view>
+                            <view class="no-content" wx:if="{{goods.list.length==0}}">
+                                暂无收藏的商品
+                            </view>
+                            <view class="loading-more {{topic.is_loading?'active':''}}">
+                                <image src="{{__wxapp_img.system.loading.url}}"></image>
+                            </view>
+                        </scroll-view>
+                    </swiper-item>
+                    <swiper-item>
+                        <scroll-view bindscrolltolower="topicScrollBottom" class="h-100" lowerThreshold="1" scrollY="true">
+                            <view class="list">
+                                <block wx:for="{{topic.list}}" wx:key="{{item.id}}">
+                                    <navigator class="item layout-0" url="/pages/topic/topic?id={{item.id}}" wx:if="{{item.layout==0}}">
+                                        <view class="flex-row">
+                                            <view class="flex-grow-1 flex-col">
+                                                <view class="flex-grow-1">
+                                                    <view class="title">{{item.title}}</view>
+                                                </view>
+                                                <view class="flex-grow-0 read-count">{{item.read_count}}</view>
+                                            </view>
+                                            <view class="flex-grow-0" style="position: relative">
+                                                <image class="cover-pic" mode="aspectFill" src="{{item.cover_pic}}"></image>
+                                                <view class="goods-count" wx:if="{{item.goods_count}}">{{item.goods_count}}
+                                                </view>
+                                            </view>
+                                        </view>
+                                    </navigator>
+                                    <navigator class="item layout-1" url="/pages/topic/topic?id={{item.id}}" wx:if="{{item.layout==1}}">
+                                        <view class="title" style="font-weight: 600;font-size: 12pt">{{item.title}}</view>
+                                        <image class="cover-pic" mode="aspectFill" src="{{item.cover_pic}}"></image>
+                                        <view class="flex-row">
+                                            <view class="flex-grow-1 read-count">{{item.read_count}}</view>
+                                            <view class="flex-grow-0 goods-count" wx:if="{{item.goods_count}}">
+                                                {{item.goods_count}}
+                                            </view>
+                                        </view>
+                                    </navigator>
+                                </block>
+                            </view>
+                            <view class="no-content" wx:if="{{topic.list.length==0}}">
+                                暂无收藏的专题
+                            </view>
+                            <view class="loading-more {{topic.is_loading?'active':''}}">
+                                <image src="{{__wxapp_img.system.loading.url}}"></image>
+                            </view>
+                        </scroll-view>
+                    </swiper-item>
+                </swiper>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

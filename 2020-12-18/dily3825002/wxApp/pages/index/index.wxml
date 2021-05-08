@@ -1,0 +1,57 @@
+
+<view class="top-title" wx:if="{{flag}}">{{topTitle}}</view>
+<view class="top-title" wx:else>CHAPING BLACKMARKET</view>
+<!--swiper-->
+<swiper indicator-dots="{{swiper.indicatorDots}}"
+ autoplay="{{swiper.autoplay}}"
+ interval="{{swiper.interval}}" duration="{{swiper.duration}}">
+   <block wx:for="{{imgUrls}}">
+     <swiper-item>
+        <image src="{{item}}" style="width:100%"/>
+     </swiper-item>
+   </block>
+</swiper>
+<!--catalogue-->
+<view class="catalogue">
+  <view>
+    <navigator url="../allblackGood/allblackGood" >
+     所有黑货
+    </navigator>
+  </view>
+  <view>
+    <navigator url="../hotGoods/hotGoods" >
+     热销黑货
+    </navigator>
+  </view>
+  <view>
+    <navigator url="../recommend/recommend" >
+     往期推荐
+    </navigator>
+  </view>
+  <view>
+    <navigator url="../blackGift/blackGift" >
+     黑市福利
+    </navigator>
+  </view>
+</view>
+<!--search-->
+<view class="search"> 
+  <input type="text" bindchange="search" placeholder="请输入书名" placeholder-style="font-size:24rpx"/> 
+</view>
+<!--books-->
+   <view class="recommend">
+      <text class="re-book">今日推荐</text>
+      <view class="init-layout">
+      <block wx:for="{{initBookData.books}}">
+          <view>
+              <image src="{{item.image}}" class="init-img"></image>
+              <text>书名:{{item.title}}</text>
+              <text>作者:{{item.author[0]}}</text>
+              <text>价格:{{item.price}}</text>
+          </view>
+       </block>  
+          <loading hidden="{{loading}}" bindchange="loadingChange">
+    加载中...
+  </loading>
+      </view>   
+   </view> 

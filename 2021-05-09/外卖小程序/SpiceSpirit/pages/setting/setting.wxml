@@ -1,0 +1,6 @@
+<view class = "option-view">
+    <view class = "option-item" bindtap="chooseOption" data-index="1">
+        <image src="../../images/phoneNum.png"></image>
+        <text style="font-size:30rpx;">更改手机号</text>
+    </view>
+</view>

@@ -1,0 +1,41 @@
+/* pages/cardetail/cardetail.wxss */
+.container{
+    padding: 32rpx;
+}
+
+.car-wrap{
+    display: flex;
+    display: -webkit-flex;
+}
+.left{
+    flex: 2;
+    -webkit-flex: 2;
+    -webkit-box-flex: 2;
+}
+.left text{
+    display: block;
+    line-height: 70rpx;
+    text-align: right;
+}
+.right{
+    flex: 5;
+    -webkit-flex: 5;
+    -webkit-box-flex: 5;
+}
+.right .common{
+    display: block;
+    line-height: 70rpx;
+    padding-left: 32rpx;
+}
+
+.car-record{
+    padding: 0 32rpx 32rpx 32rpx;
+}
+.title{
+    text-align: center;
+    font-weight: 700;
+    line-height: 70rpx;
+}
+.list{
+    margin-top: 32rpx;
+}

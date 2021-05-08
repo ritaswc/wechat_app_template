@@ -1,0 +1,124 @@
+{template 'common/header'}
+{template 'article/common'}
+{if $do == 'category'}
+<div id="js-article-category" ng-controller="articleCategoryCtrl" ng-cloak>
+	<div class="search-box we7-margin-bottom">
+		<div class="search-form"></div>
+		<a href="{php echo url('article/news/category_post');}" class="btn btn-primary pull-right">添加分类</a>
+	</div>
+	<table class="table we7-table table-hover">
+		<col width="150px"/>
+		<col />
+		<col width="150px"/>
+		<tr>
+			<th>排序</th>
+			<th>分类名称</th>
+			<th class='text-right'>操作</th>
+		</tr>
+		<tr ng-repeat="item in categorys">
+			<td ng-bind="item.displayorder"></td>
+			<td ng-bind="item.title"></td>
+			<td>
+				<div class="link-group">
+					<a href="javascript:void(0);" class="del" ng-click="editCategory(item)">编辑</a>
+					<a href="javascript:void(0);" class="del" ng-click="deleteCategory(item.id)">删除</a>
+				</div>
+			</td>
+		</tr>
+		<tr ng-if="categorys | we7IsEmpty">
+			<td colspan="100">
+				<div class="we7-empty-block">暂无新闻分类</div>
+			</td>
+		</tr>
+	</table>
+	<div class="modal fade bs-example-modal-sm" id="editCateform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog we7-modal-dialog ">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title">编辑分类</h4>
+				</div>
+				<div class="modal-body we7-form form">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">分类名称</label>
+						<div class="col-sm-10">
+							<input type="text" ng-model="current_category.title" class="form-control">
+							<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">排序</label>
+						<div class="col-sm-10">
+							<input type="text"  min="0" ng-model="current_category.displayorder" class="form-control">
+							<span class="help-block">数字越大，越靠前</span>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" name="submit" value="保存" ng-click="saveCategory()">保存</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	angular.module('articleApp').value('config', {
+		'token': "{$_W['token']}",
+		'edit_url': "{php echo url('article/news/category')}",
+		'delete_url': "{php echo url('article/news/category_del')}",
+		'categorys': {php echo empty($data) ? json_encode(array()) : json_encode($data)},
+	});
+	angular.bootstrap($('#js-article-category'), ['articleApp']);
+</script>
+
+{elseif $do == 'category_post'}
+<div class="clearfix">
+	<form action="{php echo url('article/news/category_post');}" method="post" class="form-horizontal" role="form">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div id="tpl">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-2 col-md-2 control-label">分类名称</label>
+						<div class="col-sm-8 col-lg-9 col-xs-12">
+							<input type="text" class="form-control" name="title[]" vlaue="" placeholder="分类名称"/>
+							<div class="help-block">请填写分类名称</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-2 col-md-2 control-label">排序</label>
+						<div class="col-sm-8 col-lg-9 col-xs-12">
+							<input type="text" class="form-control" name="displayorder[]" vlaue="" placeholder="排序"/>
+							<div class="help-block">数字越大，越靠前</div>
+						</div>
+					</div>
+					<hr/>
+				</div>
+				<div id="container"></div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-2 col-md-2 col-lg-1 control-label"></label>
+					<div class="col-sm-8 col-lg-9 col-xs-12">
+						<a href="javascript:;" id="category-add"><i class="fa fa-plus-circle"></i> 继续添加分类</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-8 col-lg-9 col-xs-12">
+				<input type="submit" class="btn btn-primary" name="submit" value="提交" />
+				<input type="hidden" name="token" value="{$_W['token']}" />
+			</div>
+		</div>
+	</form>
+</div>
+<script>
+	$(function(){
+		$('#category-add').click(function(){
+			var html = $('#tpl').html();
+			$('#container').append(html);
+			return false;
+		});
+	});
+</script>
+{/if}
+{template 'common/footer'}

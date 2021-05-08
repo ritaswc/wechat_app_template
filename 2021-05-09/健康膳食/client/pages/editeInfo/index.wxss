@@ -1,0 +1,39 @@
+.container {
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+
+input {
+    padding-left: 20rpx;
+    height: 80rpx;
+    background-color: #fff;
+    font-size: 26rpx;
+    color: #7fabfd;
+    border-radius:8rpx;
+}
+
+.btn-wrapper {
+    display: flex;
+    width:100%;
+    padding: 30rpx 0;
+    justify-content: space-around;
+    margin-top: 30rpx;
+}
+
+
+.cancel-btn,
+.save-btn {
+    padding: 20rpx 30rpx;
+    font-size: 28rpx;
+    border-radius: 10rpx;
+}
+
+.cancel-btn {
+    background-color: #999;
+    color: #fff;
+}
+
+.save-btn {
+    color: #fff;
+    background-color: #7fabfd;
+}

@@ -1,0 +1,25 @@
+/* pages/newperson/newperson.wxss */
+page{
+    height: 100%;
+}
+.newperson_wrap{
+    height: 100%;
+}
+.img_01{
+    height: 100%;
+}
+.newperson_wrap swiper{
+    height: 100%;
+}
+.newperson_wrap swiper swiper-item{
+    height: 100%;
+    background-position: center center;
+    background-size: contain;
+}
+.tiyan_naw {
+    position: absolute;
+    left: 170rpx;
+    bottom: 40rpx;
+    width: 400rpx;
+    height: 90rpx;
+}

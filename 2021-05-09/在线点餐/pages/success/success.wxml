@@ -1,0 +1,7 @@
+<icon type="success" size="70"></icon>
+<text class="t1">点单成功</text>
+<text class="t2">稍后服务员将为您服务，请稍等</text>
+<view class="bt-area">
+    <view class="bt-return" bindtap="returnClick">继续点餐</view>
+    <view class="bt-ok" bindtap="okClick">确认付款</view>
+</view>

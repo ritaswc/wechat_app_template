@@ -1,0 +1,50 @@
+
+.cart-list{
+    margin-top: 10px;
+}
+.content{
+    border-bottom: dotted 1px #cccccc;
+     padding:12px 12px 8px 12px;
+}
+.goods-text{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.goods-name{
+    font-size:14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 20px;
+    overflow: hidden;
+}
+.goods-price{
+    font-size: 14px;
+    color:#FF6537;
+}
+.des{
+    width:40px;
+    height:50x;   
+    font-size: 20px;
+    text-align: center;
+}
+.add{
+    width:40px;
+    height:50x;   
+    font-size: 20px;
+    text-align: center;
+}
+.numInput{
+    width:40px;
+    box-sizing: border-box;
+    text-align:center;
+    border-left:1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.remove{
+    display:flex;
+    flex-direction:row;
+    width:30%;
+    margin-top:16px
+}

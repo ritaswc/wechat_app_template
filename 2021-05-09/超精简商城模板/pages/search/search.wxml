@@ -1,0 +1,3 @@
+<view class="mod-search">
+    {{text}}
+</view>

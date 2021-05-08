@@ -1,0 +1,97 @@
+form {
+    border-top: 1rpx solid #eee;
+    display: block;
+    padding-bottom: 32rpx;
+}
+
+.block {
+    border-bottom: 1rpx solid #e3e3e3;
+    background: #fff;
+    padding: 32rpx 24rpx;
+}
+
+.user-money {
+    font-size: 15pt;
+}
+
+.cash-max-day {
+    font-size: 9pt;
+    margin-top: 18rpx;
+    color: #888;
+}
+
+.cash-cny {
+    font-size: 19pt;
+    color: #ff4544;
+    line-height: 1.7;
+}
+
+.cash-input {
+    height: 100%;
+    width: 100%;
+    padding: 0 32rpx;
+}
+
+.cash-min {
+    font-size: 9pt;
+}
+
+.cash-btn {
+    width: 100%;
+    height: 100rpx;
+    background-color: #ff4544;
+    color: #fff;
+    text-align: center;
+    font-size: 13pt;
+    line-height: 100rpx;
+}
+
+.cash-max-detail {
+    border: 1rpx solid #bbb;
+    padding: 4rpx 8rpx;
+    border-radius: 5rpx;
+    margin-left: 24rpx;
+}
+
+.pay-title {
+    font-size: 13pt;
+    color: #353535;
+    margin-bottom: 30rpx;
+}
+
+.pay {
+    border: 1rpx #666 solid;
+    padding: 16rpx 32rpx;
+    position: relative;
+}
+
+.pay-img {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 16rpx;
+}
+
+.active {
+    border: 2rpx #ff4544 solid;
+}
+
+.selected {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.required::after {
+    content: '*';
+    vertical-align: top;
+    color: #ff4544;
+}
+
+.tixian {
+    width: 200rpx;
+    display: inline-block;
+    margin-left: 32rpx;
+    margin-top: 10rpx;
+}

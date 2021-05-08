@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="voucher">
+    <view class="list-ul">
+      <view class="list-li">
+        <view class="list-a">
+          <view class="li-title">
+            <text class="li-h">一品百年旗舰店</text>
+            <text class="li-em">未使用</text>
+          </view>
+          <text class="li-time">使用期限2016-04-25至2016-10-29</text>
+          <view class="li-price">
+            <text class="pri-icon">¥</text>
+            <text class="pri-b">188</text>
+          </view>
+          <text class="pri-span">代金券</text>
+          <text class="pri-p">消费满300元使用</text>
+        </view>
+      </view>
+       <view class="list-li">
+        <view class="list-a">
+          <view class="li-title">
+            <text class="li-h">一品百年旗舰店</text>
+            <text class="li-em">未使用</text>
+          </view>
+          <text class="li-time">使用期限2016-04-25至2016-10-29</text>
+          <view class="li-price">
+            <text class="pri-icon">￥</text>
+            <text class="pri-b">188</text>
+          </view>
+          <text class="pri-span">代金券</text>
+          <text class="pri-p">消费满300元使用</text>
+        </view>
+      </view>
+       <view class="list-li">
+        <view class="list-a">
+          <view class="li-title">
+            <text class="li-h">一品百年旗舰店</text>
+            <text class="li-em">未使用</text>
+          </view>
+          <text class="li-time">使用期限2016-04-25至2016-10-29</text>
+          <view class="li-price">
+            <text class="pri-icon">￥</text>
+            <text class="pri-b">188</text>
+          </view>
+          <text class="pri-span">代金券</text>
+          <text class="pri-p">消费满300元使用</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

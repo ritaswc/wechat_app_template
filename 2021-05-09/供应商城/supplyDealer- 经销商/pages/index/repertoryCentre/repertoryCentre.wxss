@@ -1,0 +1,100 @@
+/* pages/index/repertoryCentre/repertoryCentre.wxss */
+.search{
+    width:100%;
+    height: 130rpx;
+    background-color:#27b2eb;
+}
+
+.search-ipt{
+    width:610rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    background-color:#f2f2f2;
+    float:left;
+    margin-left: 20rpx;
+    margin-top:31rpx;
+    padding-left:20rpx;
+    border-radius:10rpx;
+}
+
+.search-text{
+    float:right;
+    margin-top:31rpx;
+    width:100rpx;
+    height: 68rpx;
+    color:#fff;
+    text-align: center;
+    line-height: 68rpx;
+}
+
+.placeholder-color{
+    color:#999;
+}
+
+.choose{
+    width:710rpx;
+    background-color:#fff;
+    padding:0 20rpx;
+}
+
+.order-con{
+    width:100%;
+    display: inline-block;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-bottom: 2rpx dashed #e5e5e5;
+    position: relative
+}
+
+.order-con:last-child{
+    border-bottom: none;
+}
+
+.text1{
+    color:#999;
+    height: 80rpx;
+    line-height: 80rpx;
+    float: left;
+}
+
+.text2{
+    position: absolute;
+    top:0;
+    right: 0;
+    width:100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    float: right;
+    text-align: right;
+    color:#27b2eb;
+}
+
+.re-table{
+    width:100%;
+    margin-top: 20rpx;
+}
+
+.re-tr{
+    width:100%;
+    border-bottom: 2rpx solid #e5e5e5;
+    height: 60rpx;
+    background-color:#fff;
+}
+
+.re-tr:first-child{
+    background-color:#e6e6e6;
+}
+
+.re-th,.re-td{
+    height: 60rpx;
+    line-height: 60rpx;
+    float: left;
+    width:185rpx;
+    text-align: center;
+    border-right: 2rpx solid #cfcfcf;
+}
+
+.re-tr .re-th:last-child,.re-tr .re-td:last-child{
+    border-right:none;
+    width:187rpx;
+}

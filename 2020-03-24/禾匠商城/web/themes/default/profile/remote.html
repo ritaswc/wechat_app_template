@@ -1,0 +1,388 @@
+{template 'common/header'}
+{template 'profile/common'}
+<div id="js-profile-remtoe" ng-controller="remoteCtrl" ng-cloak>
+	<div class="alert we7-page-alert">
+		<p><i class="wi wi-info-sign"></i> 远程附件的类型仅能生效一种配置。</p>
+		<p><i class="wi wi-info-sign"></i> 平台单独开启远程附件后，以平台内设置的远程附件为准，否则以站点设置里全局设置的为准。</p>
+	</div>
+	<div style="height:64px">
+		<div class="pull-right">
+			<button name="button" type="button" class="btn btn-primary" ng-click="oneKeyUpload()">一键上传</button>
+		</div>
+	</div>
+
+	<div class="form-files-box">
+		<div class="form-file header">远程附件设置</div>
+		<div class="form-file">
+			<div class="form-label">七牛云存储</div>
+			<div class="form-value" ng-if="setting_type == 3">已开启</div>
+			<div class="form-value" ng-if="setting_type != 3">未开启</div>
+			<div class="form-edit">
+				<a class="javascript:;" data-toggle="modal" data-target="#showEditQiniu" ng-click="remote.type = setting_type">修改</a>
+			</div>
+		</div>
+		<div class="form-file">
+			<div class="form-label">阿里云OSS</div>
+			<div class="form-value" ng-if="setting_type == 2">已开启</div>
+			<div class="form-value" ng-if="setting_type != 2">未开启</div>
+			<div class="form-edit">
+				<a class="javascript:;" data-toggle="modal" data-target="#showEditAlioss" ng-click="remote.type = setting_type">修改</a>
+			</div>
+		</div>
+		<div class="form-file">
+			<div class="form-label">腾讯云存储</div>
+			<div class="form-value" ng-if="setting_type == 4">已开启</div>
+			<div class="form-value" ng-if="setting_type != 4">未开启</div>
+			<div class="form-edit">
+				<a class="javascript:;" data-toggle="modal" data-target="#showEditCos" ng-click="remote.type = setting_type">修改</a>
+			</div>
+		</div>
+		<div class="form-file">
+			<div class="form-label">FTP服务器</div>
+			<div class="form-value" ng-if="setting_type == 1">已开启</div>
+			<div class="form-value" ng-if="setting_type != 1">未开启</div>
+			<div class="form-edit">
+				<a class="javascript:;" data-toggle="modal" data-target="#showEditFtp" ng-click="remote.type = setting_type">修改</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade store-status-show" id="showEditQiniu" role="dialog">
+		<div class="we7-modal-dialog modal-dialog we7-form">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">七牛设置</div>
+				</div>
+				<div class="modal-body overflow-auto">
+					<div class="alert alert-info">
+						启用七牛云存储后，请把/attachment目录（不包括此目录）下的子文件及子目录上传至七牛云存储, 相关工具：
+						<a href="https://portal.qiniu.com/signin">七牛云存储</a>
+					</div>
+					<div class="form-group">
+						<div class="control-label col-sm-2">
+							开启七牛
+						</div>
+						<div class="col-sm-8 form-control-static" >
+							<div class="switch" ng-class="{'switchOn': remote.type == 3}" ng-click="remote.type = remote.type == 3 ? 0 : 3"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Accesskey</label>
+						<div class="col-sm-9">
+							<input type="text" name="qiniu[accesskey]" class="form-control" ng-model="remote.qiniu.accesskey"/>
+							<span class="help-block">用于签名的公钥</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Secretkey</label>
+						<div class="col-sm-9">
+							<input type="text" name="qiniu[secretkey]" class="form-control encrypt" ng-model="remote.qiniu.secretkey"/>
+							<span class="help-block">用于签名的私钥</span>
+						</div>
+					</div>
+					<div class="form-group" id="qiniubucket">
+						<label class="col-sm-2 control-label">Bucket</label>
+						<div class="col-sm-9">
+							<input type="text" name="qiniu[bucket]" class="form-control" ng-model="remote.qiniu.bucket"/>
+							<span class="help-block">请保证bucket为可公共读取的</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Url</label>
+						<div class="col-sm-9">
+							<input type="text" name="qiniu[url]" class="form-control" ng-model="remote.qiniu.url"/>
+							<span class="help-block">七牛支持用户自定义访问域名。注：url开头加http://或https://结尾不加 ‘/’例：http://abc.com</span>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" ng-click="testSetting(3)">测试配置（无需开启）</button>
+					<button type="button" class="btn btn-primary" ng-click="saveSetting(3)">提交</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade store-status-show" id="showEditAlioss" role="dialog">
+		<div class="we7-modal-dialog modal-dialog we7-form">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">阿里云OSS</div>
+				</div>
+				<div class="modal-body overflow-auto">
+					<div class="alert alert-info">
+						启用阿里oss后，请把/attachment目录（不包括此目录）下的子文件及子目录上传至阿里云oss, 相关工具：<br>
+						<ul class="link-list">
+							<li><a target="_blank" href="http://market.aliyun.com/products/52738003/cmgj000304.html?spm=5176.383663.9.21.faitxp" class="product-grey-font" data-spm-anchor-id="5176.383663.9.21">cloudfs4oss(ECS挂载文件盘工具)</a></li>
+							<li><a target="_blank" href="http://market.aliyun.com/products/53690006/cmgj000281.html?spm=5176.383663.9.22.faitxp" class="product-grey-font" data-spm-anchor-id="5176.383663.9.22">官方推荐OSS客户端工具（Windows版）</a></li>
+							<li><a target="_blank" href="http://market.aliyun.com/products/53690006/cmgj000282.html?spm=5176.383663.9.23.faitxp" class="product-grey-font" data-spm-anchor-id="5176.383663.9.23">官方推荐OSS客户端工具（Mac版）</a></li>
+							<li><a target="_blank" href="http://market.aliyun.com/products/53690006/cmgj000208.html?spm=5176.383663.9.24.faitxp" class="product-grey-font" data-spm-anchor-id="5176.383663.9.24">Ftp4ossServer（OSS的FTP云工具）</a></li>
+							<li><a target="_blank" href="http://bbs.aliyun.com/read/239565.html?spm=5176.383663.9.25.faitxp&amp;pos=2" class="product-grey-font" data-spm-anchor-id="5176.383663.9.25">OSS图片服务Demo工具</a></li>
+							<li><a target="_blank" href="http://docs.aliyun.com/?spm=5176.383663.9.26.faitxp#/pub/oss/utilities/osscmd&amp;install" class="product-grey-font" data-spm-anchor-id="5176.383663.9.26">批量上传工具(Python)版</a></li>
+							<li><a target="_blank" href="https://docs.aliyun.com/?spm=5176.383663.9.27.faitxp#/pub/oss/utilities/oss-import&amp;index" class="product-grey-font" data-spm-anchor-id="5176.383663.9.27">OSS数据迁移工具-OSS Import</a></li>
+							<li><a target="_blank" href="http://market.aliyun.com/products/52738004/cmfw000394.html?spm=5176.383663.9.28.faitxp" class="product-grey-font" data-spm-anchor-id="5176.383663.9.28">海量数据迁移至OSS服务</a></li>
+							<li><a target="_blank" href="http://bbs.aliyun.com/read/247023.html?spm=5176.383663.9.29.faitxp" class="product-grey-font" data-spm-anchor-id="5176.383663.9.29">更多官方推荐工具</a></li>
+						</ul>
+					</div>
+					<div class="form-group">
+						<div class="control-label col-sm-2">
+							开启阿里云OSS
+						</div>
+						<div class="col-sm-8 form-control-static">
+							<div class="switch" ng-class="{'switchOn': remote.type == 2}" ng-click="remote.type = remote.type == 2 ? 0 : 2"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Access Key ID</label>
+						<div class="col-sm-9">
+							<input type="text" name="alioss[key]" class="form-control" ng-model="remote.alioss.key"/>
+							<span class="help-block">Access Key ID是您访问阿里云API的密钥，具有该账户完全的权限，请您妥善保管。</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Access Key Secret</label>
+						<div class="col-sm-9">
+							<input type="text" name="alioss[secret]" class="form-control encrypt" ng-model="remote.alioss.secret" ng-blur="getOssBuckets()"/>
+							<span class="help-block">
+								Access Key Secret是您访问阿里云API的密钥，具有该账户完全的权限，请您妥善保管。(填写完Access Key ID 和 Access Key Secret 后请选择bucket)
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">内网上传</label>
+						<div class="col-sm-9">
+							<input type="radio" name="alioss[internal]" id="type-12" value="1" ng-model="remote.alioss.internal">
+							<label class="radio-inline" for="type-12">是</label>
+							<input type="radio" name="alioss[internal]" id="type-13" value="0" ng-model="remote.alioss.internal">
+							<label class="radio-inline" for="type-13">否</label>
+							<span class="help-block">
+								如果此站点使用的是阿里云ecs服务器，并且服务器与bucket在同一地区（如：同在华北一区），您可以选择通过内网上传的方式上传附件，以加快上传速度、节省带宽。
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Bucket选择</label>
+						<div class="col-sm-9">
+							<select name="alioss[bucket]" class="form-control" ng-model="remote.alioss.bucket">
+								<option ng-value="">请选择Bucket</option>
+								<option ng-repeat="bucket in ossBuckets" ng-value="bucket.name" ng-bind="bucket.loca_name" ng-selected="remote.alioss.bucket == bucket.name"></option>
+							</select>
+							<span class="help-block">
+								完善Access Key ID和Access Key Secret资料后可以选择存在的Bucket(请保证bucket为可公共读取的)，否则请手动输入。
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">自定义URL</label>
+						<div class="col-sm-9">
+							<input type="text" name="alioss[url]" class="form-control" ng-model="remote.alioss.url" placeholder="默认URL不需要填写（默认包含 aliyuncs.com 的URL不显示）"/>
+							<span class="help-block">
+								阿里云oss支持用户自定义访问域名，如果自定义了URL则用自定义的URL，如果未自定义，则用系统生成出来的URL。注：自定义url开头加http://或https://结尾不加 ‘/’例：http://abc.com
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" ng-click="testSetting(2)">测试配置（无需开启）</button>
+					<button type="button" class="btn btn-primary" ng-click="saveSetting(2)">提交</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade store-status-show" id="showEditCos" role="dialog">
+		<div class="we7-modal-dialog modal-dialog we7-form">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">腾讯云存储</div>
+				</div>
+				<div class="modal-body overflow-auto">
+					<div class="alert alert-info">
+						启用腾讯云cos对象存储后，请把/attachment目录（不包括此目录）下的子文件及子目录上传至腾讯云存储, 相关工具：<br>
+						<ul class="link-list">
+							<li><a target="_blank" href="https://console.qcloud.com/cos/bucket" class="product-grey-font" >腾讯云存储</a></li>
+						</ul>
+					</div>
+					<div class="form-group">
+						<div class="control-label col-sm-2">
+							开启腾讯云存储
+						</div>
+						<div class="col-sm-8 form-control-static">
+							<div class="switch" ng-class="{'switchOn': remote.type == 4}" ng-click="remote.type = remote.type == 4 ? 0 : 4"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">APPID</label>
+						<div class="col-sm-9">
+							<input type="text" name="cos[appid]" class="form-control" ng-model="remote.cos.appid"/>
+							<span class="help-block">APPID 是您项目的唯一ID</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">SecretID</label>
+						<div class="col-sm-9">
+							<input type="text" name="cos[secretid]" class="form-control" ng-model="remote.cos.secretid"/>
+							<span class="help-block">SecretID 是您项目的安全密钥，具有该账户完全的权限，请妥善保管</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">SecretKEY</label>
+						<div class="col-sm-9">
+							<input type="text" name="cos[secretkey]" class="form-control encrypt" ng-model="remote.cos.secretkey"/>
+							<span class="help-block">SecretKEY 是您项目的安全密钥，具有该账户完全的权限，请妥善保管</span>
+						</div>
+					</div>
+					<div class="form-group" id="cosbucket">
+						<label class="col-sm-2 control-label">Bucket</label>
+						<div class="col-sm-9">
+							<input type="text" name="cos[bucket]" class="form-control" ng-model="remote.cos.bucket"/>
+							<span class="help-block">请保证bucket为可公共读取的</span>
+						</div>
+					</div>
+					<div class="form-group" id="cos_local">
+						<label class="col-xs-12 col-sm-3 col-md-2 control-label">bucket所在区域</label>
+						<div class="col-sm-9 col-xs-12">
+							<select class="form-control" name="cos[local]" ng-model="remote.cos.local">
+								<option value="">无</option>
+								<option value="tj">华北</option>
+								<option value="sh">华东</option>
+								<option value="gz">华南</option>
+								<option value="cd">西南</option>
+								<option value="bj">北京</option>
+								<option value="cq">重庆</option>
+								<option value="sgp">新加坡</option>
+								<option value="hk">香港</option>
+								<option value="ca">多伦多</option>
+								<option value="ger">法兰克福</option>
+							</select>
+							<span class="help-block">选择bucket对应的区域，如果没有选择无</span>
+						</div>
+					</div>
+					<div class="form-group" >
+						<label class="col-sm-2 control-label">Url</label>
+						<div class="col-sm-9">
+							<input type="text" name="cos[url]" class="form-control" ng-model="remote.cos.url"/>
+							<span class="help-block">腾讯云支持用户自定义访问域名。注：url开头加http://或https://结尾不加 ‘/’例：http://abc.com</span>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" ng-click="testSetting(4)">测试配置（无需开启）</button>
+					<button type="button" class="btn btn-primary" ng-click="saveSetting(4)">提交</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade store-status-show" id="showEditFtp" role="dialog">
+		<div class="we7-modal-dialog modal-dialog we7-form">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">FTP服务器</div>
+				</div>
+				<div class="modal-body overflow-auto">
+					<div class="form-group">
+						<div class="control-label col-sm-2">
+							开启FTP服务器
+						</div>
+						<div class="col-sm-8 form-control-static">
+							<div class="switch" ng-class="{'switchOn': remote.type == 1}" ng-click="remote.type = remote.type == 1 ? 0 : 1"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">启用SSL连接</label>
+						<div class="col-sm-9">
+							<input type="radio" id="ftp[ssl]-1" name="ftp[ssl]" value=1  ng-model="remote.ftp.ssl">
+							<label class="radio-inline" for="ftp[ssl]-1">是</label>
+							<input type="radio" id="ftp[ssl]-0" name="ftp[ssl]" value=0  ng-model="remote.ftp.ssl">
+							<label class="radio-inline" for="ftp[ssl]-0">否</label>
+							<span class="help-block">注意：选择是后，FTP 服务器必须开启了 SSL，一般情况选择否即可</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">FTP服务器地址</label>
+						<div class="col-sm-9">
+							<input type="text" name="ftp[hostname]" class="form-control" ng-model="remote.ftp.hostname" />
+							<span class="help-block">可以是 FTP 服务器的 IP 地址或域名</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">FTP服务器端口</label>
+						<div class="col-sm-9">
+							<input type="text" name="ftp[port]" class="form-control" ng-model="remote.ftp.port" />
+							<span class="help-block">默认为21</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">FTP帐号</label>
+						<div class="col-sm-9">
+							<input type="text" name="ftp[username]" class="form-control" ng-model="remote.ftp.username" />
+							<span class="help-block">该帐号必须具有以下权限：读取文件、写入文件、删除文件、创建目录、子目录继承</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">FTP密码</label>
+						<div class="col-sm-9">
+							<input type="text" name="ftp[password]" class="form-control encrypt" ng-model="remote.ftp.password" />
+							<span class="help-block">基于安全考虑将只显示 FTP 密码的第一位和最后一位，中间显示八个 * 号</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">被动模式(pasv)连接</label>
+						<div class="col-sm-9">
+							<input type="radio" id="ftp[passive]-1" value="1"  ng-model="remote.ftp.passive">
+							<label class="radio-inline" for="ftp[passive]-1">是</label>
+							<input type="radio" id="ftp[passive]-0" value="0"  ng-model="remote.ftp.passive">
+							<label class="radio-inline" for="ftp[passive]-0">否</label>
+							<span class="help-block">一般情况下非被动模式即可，如果存在上传失败问题，可尝试打开此设置</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">远程附件目录</label>
+						<div class="col-sm-9">
+							<input type="text" name="ftp[rootdir]" class="form-control" ng-model="remote.ftp.rootdir" />
+							<span class="help-block">远程附件目录的绝对路径或相对于 FTP 主目录的相对路径，结尾不要加斜杠 "/" , 例如：/attachment</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">远程访问URL</label>
+						<div class="col-sm-9">
+							<input type="text" name="ftp[url]" class="form-control" ng-model="remote.ftp.url" />
+							<span class="help-block">
+								支持 HTTP 和 FTP 协议，结尾不要加斜杠 "/" ; 例如：http://mydomin.com/attachment 如果使用 FTP 协议，FTP 服务器必须支持 PASV 模式，为了安全起见，使用 FTP 连接的帐号不要设置可写权限和列表权限
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">FTP传输超时时间</label>
+						<div class="col-sm-9">
+							<input type="text" name="ftp[timeout]" class="form-control" ng-model="remote.ftp.timeout" />
+							<span class="help-block">单位：秒，0为服务器默认</span>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" ng-click="testSetting(1)">测试配置（无需开启）</button>
+					<button type="button" class="btn btn-primary" ng-click="saveSetting(1)">提交</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	angular.module('profileApp').value('config', {
+		'remote' : {php echo empty($remote) ? json_encode(array()): json_encode($remote)},
+		'token' : "{$_W['token']}",
+		'save_url' : "{php echo url('profile/remote/save')}",
+		'test_setting_url' : "{php echo url('profile/remote/test_setting')}",
+		'one_key_upload_url' : "{php echo url('profile/remote/upload_remote')}",
+		'oss_buckets_url' : "{php echo url('system/attachment/buckets')}",
+	});
+	angular.bootstrap($('#js-profile-remtoe'), ['profileApp']);
+</script>
+{template 'common/footer'}

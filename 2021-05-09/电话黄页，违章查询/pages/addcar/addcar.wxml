@@ -1,0 +1,21 @@
+<!--pages/addcar/addcar.wxml-->
+<import src="../../components/blackTip/blackTip.wxml" />
+<template is="blackTip" data="{{...blackTip}}"/>
+<view class="container">
+    <view class="title">输入您的车辆信息</view>
+    <view class="addcar-wrap">
+        
+        <view class="left">
+            <text>车牌号：</text>
+            <text>车架号：</text>
+            <text>发动机号：</text>
+        </view>
+        <view class="right">
+            <input placeholder="请输入车牌号码" maxlength="7" bindinput="setCarnumber" bindblur="testcarnumber" />
+            <input placeholder="车架号(车辆识别代号)后6位" maxlength="6" bindinput="setCarcode" bindblur="testcarcode" />
+            <input placeholder="请输入发动机号后6位" maxlength="6" bindinput="setCardrivenumber" bindblur="testcardrivenumber"/>
+        </view>
+    </view>
+
+    <button bindtap="confirm" disabled="{{btn.disabled}}" loading="{{btn.loading}}">确认</button>
+</view>

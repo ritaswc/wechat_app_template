@@ -1,0 +1,41 @@
+<!--pages/toRegister/toRegister.wxml-->
+
+<view class="container">
+     <view class="login">
+           <view class="loginTel">
+                <text class="user_text">手机号码</text>
+                <input class="user_input" type="number" placeholder="支持中国大陆手机号" placeholder-class="placeholder" maxlength="11"  bindinput="userTel"/>
+           </view>
+           <view class="loginPassw">
+                <text class="user_text">登录密码</text>
+                <input class="user_input" type="text" password="true" placeholder="6-16位数字、字符或符号" placeholder-class="placeholder" bindinput="userPassw"/>
+           </view>
+     </view>
+     <view class="invateCode">
+           <view class="vipInvate">
+                <text class="user_text">会员邀请码</text> 
+                <input class="user_input" type="text" placeholder="请输入邀请码(选填)" placeholder-class="placeholder" maxlength="6" bindinput="inviteCode"/>
+           </view>
+     </view>
+     <button  class="button"  hover-class="button_pressed"  bindtap="toRegist">
+         <text class="button_text">注册</text>
+     </button>
+     <view class="registAgreement">
+        <text class="registAgreement_text">点击“注册”表示您同意</text>
+        <navigator url="../userAgreement/userAgreement">
+             <text class="userAgreement">《用户注册协议》</text>
+        </navigator>
+     </view>
+     <view class="footer">
+            <view class="my_view">
+                 <text class="my_text">请致电</text>
+            </view> 
+            <view class="my_view" bindtap="telEvent">
+                <text class="footer_text">400-600-2063</text>
+            </view>
+             <view class="my_view">
+                 <text class="my_text">,获得会员邀请码</text>
+            </view>
+            
+     </view>
+</view>

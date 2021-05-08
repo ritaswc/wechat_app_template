@@ -1,0 +1,148 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body">
+        <view class="page {{__page_classes}}">
+            <view class="body after-navber">
+                <view class="head">
+                    <image class="head-img" src="{{__wxapp_img.integral.head.url}}"></image>
+                    <view class="w-100" style="position:relative;margin-bottom:36rpx;">
+                        <view class="flex-row flex-x-center integral">
+                            <view class="flex-grow-0">我的积分</view>
+                            <view class="flex-grow-0">
+                                <image bindtap="shuoming" src="{{__wxapp_img.store.shuoming.url}}" style="width:30rpx;height:30rpx;margin-left:20rpx;"></image>
+                            </view>
+                        </view>
+                        <view class="flex-row flex-x-center my-integral">{{integral?integral:0}}</view>
+                    </view>
+                    <view class="flex-row my-exchange">
+                        <view bindtap="exchange" class="flex-grow-1 flex-x-center">
+                            <view class="flex-row">
+                                <view class="flex-grow-0">
+                                    <image src="{{__wxapp_img.store.my_exchange.url}}"></image>
+                                </view>
+                                <view class="flex-grow-1">我的兑换</view>
+                            </view>
+                        </view>
+                        <view bindtap="detail" class="flex-grow-1 flex-x-center">
+                            <view class="flex-row">
+                                <view class="flex-grow-0">
+                                    <image src="{{__wxapp_img.integral.detail.url}}"></image>
+                                </view>
+                                <view class="flex-grow-1">积分明细</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flex-row flex-x-center" style="position:relative">
+                        <image bindtap="register" src="{{__wxapp_img.register.is_register.url}}" style="width:376rpx;height:96rpx;margin-bottom:-48rpx;" wx:if="{{register_day==1}}"></image>
+                        <image bindtap="register" src="{{__wxapp_img.register.register.url}}" style="width:376rpx;height:96rpx;margin-bottom:-48rpx;" wx:else></image>
+                    </view>
+                </view>
+                <view class="rotation-chart" style="width:100%;" wx:if="{{banner_list.length>0}}">
+                    <swiper autoplay="true" circular="true" class="swiper" duration="1000" indicatorDots="true" interval="5000">
+                        <swiper-item wx:for="{{banner_list}}" wx:key="{{item.id}}">
+                            <navigator appId="{{item.appId}}" path="{{item.path}}" target="miniProgram" url="{{item.page_url}}" wx:if="{{item.open_type=='wxapp'}}">
+                                <image class="slide-image" mode="aspectFill" src="{{item.pic_url}}"></image>
+                            </navigator>
+                            <navigator bindtap="navigatorClick" data-open_type="{{item.open_type}}" data-url="{{item.page_url}}" openType="{{item.open_type?item.open_type:'navigator'}}" url="{{item.page_url}}" wx:else>
+                                <image class="slide-image" mode="aspectFill" src="{{item.pic_url}}"></image>
+                            </navigator>
+                        </swiper-item>
+                    </swiper>
+                </view>
+                <block wx:if="{{coupon_list.length>0}}">
+                    <view class="exchange-coupon">
+                        <view class="coupon-head">兑换优惠券</view>
+                        <view style="margin-left:24rpx;">
+                            <scroll-view class="scroll-view-x" scrollWithAnimation="true" scrollX="true">
+                                <view class="flex-row coupon_list">
+                                    <view bindtap="couponInfo" class="flex-row flex-grow-0 scroll-view-item" data-id="{{item.id}}" style="z-index:3" wx:for="{{coupon_list}}" wx:key="{{item.id}}">
+                                        <view class="flex-grow-1" style="z-index:1">
+                                            <view>
+                                                <view class="flex-row flex-x-center flex-y-center" style="height:80rpx;">
+                                                    <view style="margin-right:6rpx;">￥</view>
+                                                    <view style="font-size:15pt;line-height:0.8">{{item.sub_price}}</view>
+                                                </view>
+                                                <view class="flex-x-center flex-y-center" style="height:50rpx;font-size:7pt">满{{item.min_price}}元可用</view>
+                                            </view>
+                                        </view>
+                                        <block wx:if="{{item.type==0}}">
+                                            <image src="{{__wxapp_img.coupon.index.url}}" style="height:100%;width:100%;position:absolute;z-index:0;left:0;top:0"></image>
+                                            <view class="flex-grow-0 flex-x-center flex-y-center duihuan" style="z-index:1">立即兑换</view>
+                                        </block>
+                                        <block wx:else>
+                                            <image src="{{__wxapp_img.coupon.no.url}}" style="height:100%;width:100%;position:absolute;z-index:0;left:0;top:0"></image>
+                                            <view class="flex-grow-0 flex-x-center flex-y-center duihuan" style="z-index:1">已兑换</view>
+                                        </block>
+                                    </view>
+                                </view>
+                            </scroll-view>
+                        </view>
+                    </view>
+                    <view style="height:24rpx;background:#F7F7F7;"></view>
+                </block>
+                <view>
+                    <view class="coupon-head">优惠购专区</view>
+                    <view style="height:120rpx;border-top:1rpx solid #e2e2e2;border-bottom:1rpx solid #e2e2e2;">
+                        <scroll-view class="scroll-view-x" scrollWithAnimation="true" scrollX="true">
+                            <view class="flex-row">
+                                <view bindtap="catGoods" class="scroll-view flex-grow-0" data-cat-id="0" data-index="{{-1}}" id="{{cat_checked?'cat_name_active':''}}">
+                                    <image class="item-image" src="{{__wxapp_img.integral.all.url}}"></image>
+                                    <view>全部</view>
+                                </view>
+                                <view bindtap="catGoods" class="scroll-view flex-grow-0" data-cat-id="{{item.id}}" data-index="{{index}}" id="{{item.cat_checked?'cat_name_active':''}}" wx:for="{{catList}}" wx:key="{{item.id}}">
+                                    <image class="item-image" src="{{item.pic_url}}"></image>
+                                    <view>{{item.name}}</view>
+                                </view>
+                            </view>
+                        </scroll-view>
+                    </view>
+                    <view class="flex-row" style="flex-wrap:wrap;justify-content:space-between;background-color:#f7f7f7;margin-left:-10rpx;" wx:if="{{goods_list.length>0}}">
+                        <view bindtap="goodsInfo" class="goods" data-goods-id="{{item.id}}" wx:for="{{goods_list}}" wx:key="{{item.id}}">
+                            <image class="goods-img" src="{{item.cover_pic}}"></image>
+                            <view class="goods-name text-more-2">{{item.name}}</view>
+                            <view class="goods-price">{{item.integral}}积分
+                                        <block wx:if="{{item.price>0}}">+￥{{item.price}}</block>
+                            </view>
+                            <view class="goods-font">
+                                <view style="float:left;text-decoration:line-through; ">￥{{item.original_price}}</view>
+                                <view style="float:right;">仅剩{{item.goods_num}}{{item.unit}}</view>
+                            </view>
+                            <view class="goods-buy" data-index="{{index}}">立即兑换</view>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="hideModal" catchtouchmove="preventTouchMove" id="modal-mask" wx:if="{{showModel}}"></view>
+                <view class="ci_shibai" wx:if="{{showModel}}">
+                    <view bindtap="hideModal" class="ci_close">
+                        <image src="{{__wxapp_img.integral.close.url}}" style="width:100%;height:100%;"></image>
+                    </view>
+                    <block wx:if="{{status==1}}">
+                        <view class="ci_shibai_pic">
+                            <image src="{{__wxapp_img.integral.shibai.url}}" style="width:100%;height:100%;"></image>
+                        </view>
+                        <view class="ci_shibai_font">
+                            <view style="font-size:23px;font-weight: bolder;margin-bottom:10rpx;">兑换失败!</view>
+                            <view style="font-size:15px;">{{content}}</view>
+                        </view>
+                    </block>
+                    <block wx:if="{{status==4}}">
+                        <view class="ci_success_pic">
+                            <image src="{{__wxapp_img.integral.success.url}}" style="width:100%;height:100%;"></image>
+                        </view>
+                        <view class="ci_success_font">{{content}}</view>
+                        <view class="ci_success_btn">
+                            <navigator style="display:inline" url="/pages/coupon/coupon">
+                                <view class="success_btn" style="float:left;color:#353535;border: 1rpx #999999 solid;">去卡券包</view>
+                            </navigator>
+                            <navigator style="display:inline" url="/pages/index/index">
+                                <view class="success_btn" style="float:right;color:#ffffff;background:#ff4544;">立即使用</view>
+                            </navigator>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

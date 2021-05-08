@@ -1,0 +1,50 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/me/me",
+    "pages/aboutus/aboutus",
+    "pages/setting/setting",
+    "pages/address/address",
+    "pages/cphone/cphone",
+    "pages/ecard/ecard",
+    "pages/coupon/coupon",
+    "pages/order/order",
+    "pages/shopdetail/shopdetail",
+    "pages/buycar/buycar",
+    "pages/addAddress/addAddress",
+    "pages/editarea/editarea"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#4ba8b1",
+    "navigationBarTitleText": "麻小外卖",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#f5f4f4",
+    "list": [
+      {
+      "pagePath": "pages/index/index",
+      "text": "美食",
+      "iconPath": "images/food_nor.png",
+      "selectedIconPath": "images/food_sel.png"
+      },{
+      "pagePath":"pages/me/me",
+      "text":"我的",
+      "iconPath":"images/me_nor.png",
+      "selectedIconPath":"images/me_sel.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "color": "#8a8a8a",
+    "selectedColor": "#1296db",
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  },
+  "debug":true
+}

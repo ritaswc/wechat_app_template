@@ -1,0 +1,64 @@
+.hide{
+    display: none!important;
+}
+
+.widget-msg {
+    position: fixed;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+	width: 100%;
+	height: 100%;
+	left:0;
+	top: 0;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.widget-msg-panel {
+    border-radius: 20rpx;
+    font-size: 32rpx;
+    padding: 30rpx;
+    color: #fff;
+    line-height: 48rpx;
+    max-width: 80%;
+    background-color: rgba(0,0,0,.7);
+    box-sizing: border-box;
+    text-align: center;
+    user-select: none; 
+}
+
+.zoom-in {  
+    animation-name: zoomIn;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+
+    -webkit-animation-name: zoomIn;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+}
+
+@-webkit-keyframes zoomIn {
+    0% {
+        opacity: 0;
+        
+        transform:  scale3d(0.3,.3,.3)
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        
+        transform: scale3d(0.3,.3,.3)
+    }
+
+    100% {
+        opacity: 1
+    }
+}

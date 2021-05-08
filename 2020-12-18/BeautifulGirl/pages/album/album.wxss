@@ -1,0 +1,17 @@
+.image-list-wrap{
+    width: 100%;
+}
+.albumCount{
+    width: 120rpx;
+    height:120rpx;
+    border-radius: 50%;
+    background-color: #BE304D;
+    color:#ffffff;
+    position: fixed;
+    right:30rpx;
+    top:30rpx;
+    font-size:35rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

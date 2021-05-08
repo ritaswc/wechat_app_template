@@ -1,0 +1,98 @@
+<!--order.wxml-->
+<view class="container">
+	<!-- top wrapper -->
+	<view class="top-wrapper">
+		<view class="order-datetime">
+			{{order.datetime}}
+		</view>
+		<view class="order-city">
+			<text>{{order.startCity}}</text>
+			<text>=====></text>
+			<text>{{order.endCity}}</text>
+		</view>
+		<view class="order-station">
+			<text>{{order.startStation}}</text>
+			<text>{{order.endStation}}</text>
+		</view>
+	</view>
+	
+  <!-- type number -->
+  <view class="order-ticket">
+  	<view class="ticket-type benefit-ticket" bindtap="chooseTicketType" data-ticket-type="1">
+  		<text>优惠票：</text>
+  		<text>{{order.benefitLeavings > 0? '充足': '已抢光'}}</text>
+  		<text wx:if="{{order.benefitLeavings > 0}}">{{order.benefitPrice}}</text>
+  		<image wx:if="{{order.benefitLeavings > 0}}" class="absolute-center-Y img-small-icon img-right-20" 
+  			src="{{order.ticketType == 1? '../../images/selected.png': '../../images/no_selected.png'}}"></image>
+  	</view>
+  	<view class="ticket-type normal-ticket" bindtap="chooseTicketType" data-ticket-type="0">
+  		<text>正价票：</text>
+  		<text>{{order.normalLeavings > 0? '充足': '已抢光'}}</text>
+  		<text>{{order.normalPrice}}</text>
+  		<image class="absolute-center-Y img-small-icon img-right-20" 
+  			src="{{order.ticketType == 0? '../../images/selected.png': '../../images/no_selected.png'}}"></image>
+  	</view>
+  	<view class="ticket-number order-ticket-number-adult">
+  		<view>成人票数量（最多三张）</view>
+  		<view class="number-select">
+  			<image class="absolute-center-Y img-small-icon img-left-10" src="../../images/btn_diff.png"
+          bindtap="sub" data-type="0"></image>
+  			<text class="absolute-center-XY">{{order.adultTicketNum}}</text>
+  			<image class="absolute-center-Y img-small-icon img-right-10" src="../../images/btn_add.png"
+          bindtap="add" data-type="0"></image> 
+  		</view>
+  	</view>
+  	<view class="ticket-number order-ticket-number-children">
+  		<view>儿童票数量（最多三张）</view>
+  		<view class="number-select">
+  			<image class="absolute-center-Y img-small-icon img-left-10" src="../../images/btn_diff.png"
+          bindtap="sub" data-type="1"></image>
+  			<text class="absolute-center-XY">{{order.childrenTicketNum}}</text>
+  			<image class="absolute-center-Y img-small-icon img-right-10" src="../../images/btn_add.png"
+          bindtap="add" data-type="1"></image>
+  		</view>
+  	</view>
+  </view>
+  
+  <view class="order-tip">
+  	交通部新规：儿童乘车必须占位置，请携带0.6米以上的乘客自觉购买儿童车票（正价票价50%）预订位置。
+  </view>
+  
+  <!-- contact -->
+  <text class="contact-title">联系方式</text>
+  <view class="order-contact">
+  	<view class="contact-item">
+  		<image class="absolute-center-Y img-small-icon img-left-20" src="../../images/mine.png"></image>
+  		<view>
+  			<input type="text" placeholder="联系人姓名" bindinput="bindInputPassenger" />
+  		</view>
+  	</view>
+  	<view class="contact-item">
+  		<image class="absolute-center-Y img-small-icon img-left-20" src="../../images/mine.png"></image>
+  		<view>
+  			<input type="text" placeholder="联系人手机" bindinput="bindInputPassengerPhone" />
+  		</view>
+  	</view>
+  </view>
+  
+  <!-- pay type--> 
+  <view class="order-pay-type">
+  	<text class="pay-type-title">请选择支付方式</text>
+  	<view bindtap="choosePayType" data-pay-type="1">
+  		<image class="absolute-center-Y pay-type-icon img-left-10" src="../../images/get_on_pay.png"></image>
+  		<text>上车支付</text>
+  		<image class="absolute-center-Y img-small-icon img-right-20" src="{{order.payType === 1? '../../images/selected.png': '../../images/no_selected.png'}}"></image>
+  	</view>
+  	<view bindtap="choosePayType" data-pay-type="0">
+  		<image class="absolute-center-Y pay-type-icon img-left-10" src="../../images/wechat.png"></image>
+  		<text>微信支付</text>
+  		<image class="absolute-center-Y img-small-icon img-right-20" src="{{order.payType === 0? '../../images/selected.png': '../../images/no_selected.png'}}"></image>
+  	</view>
+  </view>
+  
+  <!-- pay -->
+  <view class="order-pay">
+  	<text class="total-price">总计：<text>{{order.totalPrice}}</text> 元</text>
+  	<text class="pay-btn" bindtap="goPay">去结算</text>
+  </view>
+</view>

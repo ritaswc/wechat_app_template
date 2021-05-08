@@ -1,0 +1,72 @@
+/* pages/shenghuo/AllServiceclassify/ServiceDetailInfo/ServiceDetailInfo.wxss */
+
+.ServiceDetailInfo-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ServiceDetailInfo-image {
+  width: 100%;
+  height: 206px;
+}
+
+.goodServersDetail-company-name {
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top: none;
+  padding-bottom: 10px;
+  padding: 10px;
+}
+
+.titleName {
+  font-size: 15px;
+  max-width: 90%; /** 限制宽度 & 省略 */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.img {
+  width: 20px;
+  height: 20px;
+}
+
+.bottom {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #9b9b9b;
+  width: 90%;
+  height: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.bottom-left {
+  width: 60%;
+  position: absolute;
+  left: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom-right {
+  width: 40%;
+  position: absolute;
+  right: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
+.textcc {
+  margin-left: 2px;
+  margin-top: 4px;
+}
+
+.goodServersDetail-company-address{
+  font-size:16px;
+  color:#0164a6;
+  margin-bottom: 6px;
+  font-weight:bold;
+}

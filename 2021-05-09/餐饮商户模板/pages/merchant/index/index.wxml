@@ -1,0 +1,83 @@
+<!--<import src="../../../components/guide/guide" />-->
+<view wx:if="{{showContent}}">
+    <view class="shop-name-status">
+        <text class="name f1 c5">名称名称</text>
+        <view class="status f6 {{shopOpened ? 'status-rest' : 'status-open'}}">{{!shopOpened?'已开张':'休息中'}}</view>
+    </view>
+    <view class="shop-info">
+        <view class="shop-info-left">
+            <view class="item">
+                <view class="item-half">
+                    <image src="/image/merchant/index/33shouye.png"></image>
+                    <view class="title f2 c4">商品</view>
+                    <text class="f2 c4">4/6</text>
+                </view>
+                <view class="item-half">
+                    <image src="/image/merchant/index/34shouye.png"></image>
+                    <view class="title f2 c4">服务</view>
+                    <text class="f2 c4">4/6</text>
+                </view>
+            </view>
+            <view class="item">
+                <view class="item-half">
+                    <image src="/image/merchant/index/35shouye.png"></image>
+                    <view class="title f2 c4">关注</view>
+                    <text class="f2 c4">4/6</text>
+                </view>
+                <view class="item-half">
+                    <image src="/image/merchant/index/36shouye.png"></image>
+                    <view class="title f2 c4">会员</view>
+                    <text class="f2 c4">4/6</text>
+                </view>
+            </view>
+            <view class="item">
+                <view class="item-half">
+                    <image src="/image/merchant/index/37shouye.png"></image>
+                    <view class="f2 c4">优惠券</view>
+                    <text class="discount f2 c4">已领20/剩余80/一共100</text>
+                </view>
+            </view>
+        </view>
+        <view class="shop-info-right {{shopOpened ? 'hide' : ''}}">
+            <view class="rest" bindtap="rest">休息</view>
+            <view class="close" bindtap="close">打烊</view>
+        </view>
+        <view bindtap="openShop" class="shop-info-right2 bgc {{!shopOpened ? 'hide' : ''}}">
+            <image src="/image/merchant/index/38shouye.png"></image>
+            <view class="open">开张</view>
+        </view>
+    </view>
+    <view class="blank"></view>
+    <!--公告-->
+    <view class="notice-info" bindtap="editNotice">
+        <view class="notice-title-wrap">
+            <image src="/image/merchant/index/39shouye.png"></image>
+            <text class="f1 c5">商户公告</text>
+        </view>
+        <view class="notice-content f2 c4">
+            商户公告商户公告商户公告商户公告商户公告商户公告商户公告商户公告商户公告商户公告商户公告商户公告商户公告商户公告商户公告商户公告
+        </view>
+    </view>
+    <view class="blank"></view>
+    <view class="pic-title-btn-wrap">
+        <view class="pic-title-btn" bindtap="goMineControl" >
+            <image src="/image/merchant/index/40shouye.png"></image>
+            <text class="f1 c5">我的信息</text>
+        </view>
+        <view class="pic-title-btn" bindtap="goServiceControl">
+            <image src="/image/merchant/index/41shouye.png"></image>
+            <text class="f1 c5">服务管理</text>
+        </view>
+        <view class="pic-title-btn" bindtap="goProductControl">
+            <image src="/image/merchant/index/42shouye.png"></image>
+            <text class="f1 c5">商品管理</text>
+        </view>
+        <view class="pic-title-btn" bindtap="goDiscountControl">
+            <image src="/image/merchant/index/43shouye.png"></image>
+            <text class="f1 c5">优惠券管理</text>
+        </view>
+    </view>
+</view>
+<!--<template wx:else is="guide"></template>-->
+
+

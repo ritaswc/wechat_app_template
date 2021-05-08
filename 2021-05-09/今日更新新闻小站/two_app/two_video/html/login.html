@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>arpt官方后台</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../public/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="../css/login.css">
+
+</head>
+<body>
+    <!--<div class="login-box">-->
+        <!--<div class="title">Arpt</div>-->
+        <!--<div class="input"><input type="text" id="user" placeholder="用户名"></div>-->
+        <!--<div class="input"><input type="text" id="pass" placeholder="密码"></div>-->
+        <!--<div><button id="login">登陆</button></div>-->
+    <!--</div>-->
+    <div class="lg-container animated zoomIn">
+        <h1>arpt official</h1>
+        <form  id="lg-form" name="lg-form" method="post">
+
+            <div class="line1">
+                <label for="username">Username:</label>
+                <a class="a-color"><i class="glyphicon glyphicon-user form-control-feedback"></i></a>
+                <input type="text" class="form-control" name="username" id="username" placeholder="用户名"/>
+            </div>
+
+            <div class="line1">
+                <label for="password">Password:</label>
+                <a class="a-color"><i class="glyphicon glyphicon-lock form-control-feedback"></i></a>
+                <input type="password"  class="form-control" name="password" id="password" placeholder="密码" />
+            </div>
+
+            <div>
+                <button type="button" id="login" class="btn btn-default">Login</button>
+            </div>
+
+        </form>
+        <div id="message"></div>
+    </div>
+<script src="../script/jquery.min.js"></script>
+<script src="../script/bbmis.js"></script>
+<script src="../js/login.js"></script>
+<script>
+        $('#lg-form input').focus(function () {
+            $(this).siblings('.a-color').css({color:'#000'})
+            $('.lg-container').css({boxShadow:"5px 10px 20px #57ABA6"})
+        })
+        $('#lg-form input').blur(function () {
+            $(this).siblings('.a-color').css({color:'#91C2DD'})
+            $('.lg-container').css({boxShadow:"3px 6px 10px  #5FB6B0"})
+        })
+
+
+        $("#lg-form").keyup(function(e){
+            var e = e || event,
+                keycode = e.which || e.keyCode;
+            if (keycode==13) {
+                $("#login").trigger("click");
+            }
+        });
+
+    </script>
+</body>
+</html>

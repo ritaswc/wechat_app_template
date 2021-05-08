@@ -1,0 +1,149 @@
+{php define('MUI', true);}
+{template 'common/header'}
+<script>
+	$(function(){
+		$(document).on('input propertychange', '.js-mobile-val', function(){
+			var inputVal = $(this).val();
+			var register_mode = $("#register_mode").val();
+			var isMobile = /^1[34578]\d{9}$/.test(inputVal);
+			var isEmail = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(inputVal);
+			if (register_mode == 'mobile' && !isMobile) {
+				$('.js-check-mobile').addClass('send-code');
+			}
+			if (register_mode == 'email' && !isEmail) {
+				$('.js-check-mobile').addClass('send-code');
+			}
+			if (register_mode == 'random' && !(!isMobile || isEmail)) {
+				$('.js-check-mobile').addClass('send-code');
+			}
+			if (isMobile) {
+				$.post("{php echo url('auth/login/mobile_exist')}", {'mobile' : inputVal, 'find_mode':register_mode}, function(data) {
+					data = $.parseJSON(data);
+					if (data.message.errno == '1') {
+						$('.js-check-mobile').addClass('send-code');
+					} else if (data.message.errno == '2'){
+						$('.js-check-mobile').removeClass('send-code');
+						util.toast('账号不存在', '', 'error');
+						return;
+					}
+				});
+			}
+		});
+		$(document).on('click', '.send-code', function(){
+			var username = $('#sendcode input[name="username"]').val();
+			option = {
+				'btnElement' : $('.send-code'),
+				'showElement' : $('.js-timer'),
+				'btnTips' : '<a class="send-code">重新获取验证码</a>',
+				'successCallback' : function(ret, message){
+					if (ret == '0') {
+						util.toast(message);
+						$('#sendcode').hide();
+						$('#codeverify').show();
+						$('#reset .js-reset').text(username);
+					} else {
+						util.toast(message);
+						$('#sendcode').show();
+						$('#codeverify').hide();
+						return;
+					}
+				}
+			};
+			util.sendCode(username, option);
+		});
+		$(document).on('click', '.resetpassword', function(){
+			var code = $('#codeverify input[name="code"]').val();
+			if (!code) {
+				util.toast('未填写验证码', '', 'error');
+				return;
+			}
+			if (code.length < 6) {
+				util.toast('验证码少于六位', '', 'error');
+				return;
+			}
+
+			var password = $('#codeverify input[name="password"]').val();
+			var repassword = $('#codeverify input[name="repassword"]').val();
+			if(password == '' || repassword == '') {
+				util.toast('请填写密码', '', 'error');
+				return;
+			}
+			if(password.length < 6) {
+				util.toast('密码不能少于六位数', '', 'error');
+				return ;
+			}
+			if(password != repassword) {
+				util.toast('两次密码输入不一致', '', 'error');
+				return ;
+			}
+
+			var username = $('#sendcode input[name="username"]').val();
+
+			$.post("{php echo url('auth/forget/reset')}", {'username' : username, 'code': code, 'password' : password, 'repassword' : repassword}, function(dat){
+				dat = $.parseJSON(dat);
+				if(dat.type != 'success') {
+					util.toast(dat.message, '', 'error');
+				} else {
+					util.toast('设置密码成功');
+					location.href = "{url 'auth/login' array('forward' => $_GPC['forward'])}#wechat_redirect";
+					return;
+				}
+			});
+		});
+	});
+</script>
+<div class="mui-content">
+	<input type="hidden" value="{$register_mode}" id="register_mode">
+	<div id="sendcode">
+		<div class="mui-content-padded mui-text-muted">请输入{if $register_mode == 'mobile'}手机号{elseif $register_mode == 'email'}邮箱{else}手机号/邮箱{/if},以收取验证码</div>
+		<div class="mui-input-group mui-mt15">
+			<div class="mui-input-row mui-help">
+				<input name="username" type="text" class="js-mobile-val" placeholder="{if $register_mode == 'mobile'}手机号{elseif $register_mode == 'email'}邮箱{else}手机号/邮箱{/if}"/>
+			</div>
+		</div>
+		<div class="mui-content-padded">
+			<button class="mui-btn mui-btn-success mui-btn-block js-check-mobile" uniacid="{$_W['uniacid']}">下一步</button>
+		</div>
+	</div>
+	<div id="codeverify" style="display:none;">
+		<div class="mui-content-padded mui-text-muted">您的{if $register_mode == 'mobile'}手机号{elseif $register_mode == 'email'}邮箱{else}手机号/邮箱{/if}<span class="mui-text-success"></span>会收到一条含有数字验证码的短息</div>
+		<div class="mui-content-padded mui-text-muted">请为你的账号<span class="mui-ml5 mui-mr5 js-reset"></span>设置密码,以保证下次正常登录</div>
+		<div class="mui-input-group">
+			<div class="mui-input-row">
+				<input name="password" type="password" placeholder="请设置密码"/>
+			</div>
+			<div class="mui-input-row">
+				<input name="repassword" type="password" placeholder="确认新密码"/>
+			</div>
+		</div>
+		<div class="mui-content-padded mui-text-muted">密码为6~16位数字或字母</div>
+		<div class="mui-input-group mui-mt15">
+			<div class="mui-input-row mui-help">
+				<input type="text" placeholder="请输入验证码" name="code"/>
+			</div>
+		</div>
+		<div class="mui-content-padded mui-text-center">
+			<button class="mui-btn mui-btn-success mui-btn-block resetpassword">确认</button>
+			<div class="mui-mt15 mui-text-center">
+				<span class="mui-text-muted js-timer">
+
+				</span>
+			</div>
+		</div>
+	</div>
+	<!--<div id="reset" style="display:none;">-->
+		<!--<div class="mui-content-padded mui-text-muted">请为你的账号<span class="mui-ml5 mui-mr5 js-reset"></span>设置密码,以保证下次正常登录</div>-->
+		<!--<div class="mui-input-group">-->
+			<!--<div class="mui-input-row">-->
+				<!--<input name="password" type="password" placeholder="请设置密码"/>-->
+			<!--</div>-->
+			<!--<div class="mui-input-row">-->
+				<!--<input name="repassword" type="password" placeholder="确认新密码"/>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--<div class="mui-content-padded mui-text-muted">密码为6~16位数字或字母</div>-->
+		<!--<div class="mui-content-padded">-->
+			<!--<button class="mui-btn mui-btn-success mui-btn-block resetpassword">确认</button>-->
+		<!--</div>-->
+	<!--</div>-->
+</div>

@@ -1,0 +1,73 @@
+
+<!--进货订单-->
+
+<!--搜索结果页-->
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="{{hasMore ? 'bindDownLoad' : ''}}" bindscroll="scroll">
+
+  <!--状态-->
+  <scroll-view class="state" scroll-x="true">
+    <view class="state-text {{item.state == state ? 'state-active' : ''}}" data-state="{{item.state}}" wx:for="{{stateList}}" bindtap="getOrders">{{item.name}}</view>
+  </scroll-view>
+
+  <!--时间选择器-->
+  <view class="screen-time">
+    <view class="time-style">
+      <text class="time1 section__title">起始时间</text>
+      <picker mode="date" value="{{start}}" start="2015-01-01" end="2030-12-31" bindchange="bindStartChange">
+        <view class="picker">{{start}}</view>
+      </picker>
+    </view>
+    <view class="time-style">
+      <text class="time1 section__title">结束时间</text>
+      <picker mode="date" value="{{end}}" start="2015-01-01" end="2030-12-31" bindchange="bindEndChange">
+        <view class="picker">{{end}}</view>
+      </picker>
+    </view>
+    <button class="screen-btn" bindtap="getOrders">筛选</button>
+  </view>
+  <view class="search-container">
+    <view class="consequence" wx:for="{{list}}">
+
+      <!-- 订单编号、日期 -->
+      <view class="order-num">
+        <text class="num1">{{item.order_no}}</text>
+        <text class="num2">{{item.order_time}}</text>
+      </view>
+
+      <!-- 订单详情 -->
+      <view class="order-detail">
+        <text class="detail-title">{{item.order_name}}</text>
+        <text class="detail-text">总计：{{item.total_pkgs}}件</text>
+        <text class="detail-text">总额：￥{{item.total_amount}}</text>
+      </view>
+
+      <!-- 物流详情按钮 -->
+      <view class="order-btn">
+        <navigator class="btn-nav" url="/pages/index/orderlist2/orderDetail2/orderDetail2?orderNo={{item.order_no}}">订单详情</navigator>
+        <navigator class="btn-nav" url="/pages/index/logistics/logistics?express_code={{item.express_code}}&express_no={{item.express_no}}" wx:if="{{item.express_no != ''}}">查看物流</navigator>
+      </view>
+    </view>
+  </view>
+
+  <!-- 内容为空样式 -->
+  <view class="empty-con" wx:if="{{emptyShow}}">
+    <image class="empty-image" src="{{imageCtx}}dealer/note.png"></image>
+    <text class="empty-text">暂无数据</text>
+  </view>
+
+  <!-- 上拉加载-->
+  <view class="tips" wx:if="{{scrollTop > scrollHeight && list.length>0}}">
+    <image class="tipsImg" wx:if="{{hasMore}}" src="{{imageCtx}}dealer/loaddingpro.gif"></image>
+    <view class="tipsText" wx:else>
+      <text>没有更多内容了</text>
+    </view>
+  </view>
+
+  <!-- 回到顶部-->
+  <view class="toTop" wx:if="{{scrollTop > 500}}" bindtap="goTop">
+    <image src="{{imageCtx}}dealer/s_top.png"></image>
+  </view>
+</scroll-view>

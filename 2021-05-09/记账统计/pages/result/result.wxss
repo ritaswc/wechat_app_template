@@ -1,0 +1,51 @@
+/* pages/result/result.wxss */
+
+.list {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 40rpx;
+  margin-top: 40rpx;
+  line-height: 50rpx;
+}
+
+.list-title {
+  color: #5e81bf;
+}
+
+.list-date {
+  font-size: 24rpx;
+  color: #ccc;
+  margin: 10rpx 0;
+}
+
+.list-date-week {
+  padding-left: 20rpx;
+}
+
+.list-remark {
+  color: #333;
+}
+
+.list-tag {
+  color: #ff5722;
+}
+
+.list-image {
+  width: 50%;
+}
+
+.bottom-line {
+  text-align: center;
+  color: #ccc;
+  padding-bottom: 40rpx;
+  font-size: 24rpx;
+}
+
+.no-result {
+  text-align: center;
+  color: #ddd;
+}
+
+.no-result-image {
+  height: 128rpx;
+  width: 128rpx;
+}

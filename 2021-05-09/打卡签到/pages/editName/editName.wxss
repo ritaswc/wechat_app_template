@@ -1,0 +1,25 @@
+.vLine {
+  background-color: #fafafa;
+  height: 1rpx;
+}
+
+.vLocation {
+  height: 88rpx;
+  border-top: 2rpx solid #e5e5e5;
+  border-bottom: 2rpx solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+
+.vLocation input {
+  margin: 20rpx auto 20rpx 20rpx;
+}
+
+.tLabel {
+  margin: 10rpx auto 10rpx 20rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.38);
+}

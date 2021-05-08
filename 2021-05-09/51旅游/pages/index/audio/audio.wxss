@@ -1,0 +1,14 @@
+.container {
+  overflow: hidden;
+  text-align: center; }
+
+image {
+  width: 100%;
+  height: 100%; }
+
+audio {
+  z-index: 9;
+  position: absolute;
+  left: 50%;
+  margin-left: -152px;
+  bottom: 10rpx; }

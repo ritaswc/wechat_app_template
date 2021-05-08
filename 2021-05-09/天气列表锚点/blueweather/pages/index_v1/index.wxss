@@ -1,0 +1,85 @@
+.temp {
+  display: flex;
+  flex-direction: row;
+}
+
+.now {
+  display: flex;
+  flex-direction: row;
+  background-color: skyblue;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+.now-tmp-condition {
+  display: flex;
+  flex-direction: column;
+  background-color:  brown;
+  width: 50%;
+  font-size: 30pt;
+}
+
+.daily-tmp-condition {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.temperature {
+  background-color: royalblue;
+  font-size: 50pt;
+  font-style: normal;
+  text-align: center;
+}
+
+.condition {
+  background-color:  cornflowerblue;
+  height: 100%;
+  text-align: center;
+}
+
+.dailyWeather {
+  flex-direction: row;
+  background-color: blueviolet;
+}
+
+.daily {
+  width: 33%;
+  float: left;
+  margin-bottom: 5%;
+}
+
+.life-index {
+  background-color: cornflowerblue;
+  clear: both;
+}
+
+.now-img-container {
+  text-align: center;
+  width: 50%;
+}
+
+.daily-img-container {
+  text-align: center;
+}
+
+.now-img {
+  width: 100%;
+  height: 100%;
+}
+
+.daily-img {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+}
+
+swiper {
+  height: 500px;
+}
+
+.daily-date view{
+  text-align: center;
+  float:left;
+  width:33%;
+}

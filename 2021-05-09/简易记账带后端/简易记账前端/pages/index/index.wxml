@@ -1,0 +1,36 @@
+
+<!--index.wxml-->
+<view class="content-view">
+  <view class="ui-flex  ui-p20">
+    <text>今日</text>
+    <text class="text-expend">总支出：</text>
+    <text class="text-today-expend-num">￥{{todayExpend}}</text>
+  </view>
+  <view class="ui-flex  ui-p20">
+    <text>本月</text>
+    <text class="text-expend">总支出：</text>
+    <text class="text-month-expend-num">￥{{monthExpend}}</text>
+  </view>
+  <view class="ui-flex  ui-p20">
+    <text>本年</text>
+    <text class="text-expend">总支出：</text>
+    <text class="text-year-expend-num">￥{{yearExpend}}</text>
+  </view>
+  <view class=" ui-p20">
+    <button class="blue-button" hover-class="blue-button-p" bindtap="recodeExpend">我又花钱了</button>
+  </view>
+  <view class=" ui-p20">
+    <button class="blue-button" hover-class="blue-button-p" bindtap="">查看历史账单</button>
+  </view>
+  <view class="today-bill">
+    今日账单
+  </view>
+  <view wx:for="{{todayRecord}}" catchlongtap="onTodayBillItemClick" catchlongtap="ononTodayBillLongItemClick" data-index="{{index}}">
+    <view class="line"></view>
+    <view class="ui-flex ui-p20">
+      <image class="spend-way-icon" src="{{item.spendWayImg}}"></image>
+      <text class="item-remarks">{{item.remarks}}</text>
+      <text>{{item.spendMoney}}</text>
+    </view>
+  </view>
+</view>

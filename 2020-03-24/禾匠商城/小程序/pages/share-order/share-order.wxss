@@ -1,0 +1,155 @@
+.info {
+    width: 100%;
+    border-top: 1rpx #e3e3e3 solid;
+}
+
+.width {
+    width: 25%;
+    text-align: center;
+}
+
+.info-title .active {
+    color: #ff4544;
+    border-bottom: 4rpx #ff4544 solid;
+}
+
+.info-title .info-text {
+    height: 100%;
+    line-height: 100rpx;
+}
+
+.info .info-title {
+    height: 100rpx;
+    padding: 0 24rpx;
+    border-bottom: 1rpx #e3e3e3 solid;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.info .info-content {
+    width: 100%;
+    padding-top: 100rpx;
+}
+
+.info .info-content .info-block {
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 26rpx;
+    padding: 0 24rpx;
+}
+
+.info-block .info-label {
+    width: 100%;
+    height: 90rpx;
+    border-bottom: 2rpx #e3e3e3 solid;
+    font-size: 9pt;
+    line-height: 90rpx;
+}
+
+.info-block .info-label .info-left {
+    width: 50%;
+}
+
+.info-block .info-label .info-right {
+    width: 50%;
+    text-align: right;
+}
+
+.info-block .info-label .info-status {
+    color: #ff4544;
+}
+
+.info-left .info-img {
+    width: 30%;
+}
+
+.info-left .info-img .img {
+    width: 64rpx;
+    height: 64rpx;
+}
+
+.info-left .info-name {
+    margin-right: 36rpx;
+    overflow: hidden;
+}
+
+.info-block .height-164 {
+    height: 164rpx;
+}
+
+.info .info-block .info-label .width-90 {
+    width: 90%;
+}
+
+.info-left .info-img .img-size-120 {
+    width: 104rpx;
+    height: 104rpx;
+}
+
+.info-label .info-left .info-count {
+    width: 70%;
+}
+
+.info-count .info-detail {
+    width: 100%;
+    height: 80rpx;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.info-right .info-money {
+    text-align: right;
+    float: right;
+}
+
+.red {
+    color: #ff4544;
+    font-size: 9pt;
+}
+
+.info-block .info-label:last-child {
+    border: none;
+}
+
+.info .info-footer {
+    color: #bbb;
+    text-align: center;
+    width: 100%;
+    padding: 0 100rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.info .info-footer .info-t {
+    height: 60rpx;
+    margin: 0 20rpx;
+}
+
+.info .info-footer .info-before {
+    width: 168rpx;
+    height: 60rpx;
+}
+
+.info .info-footer .info-after {
+    width: 168rpx;
+    height: 60rpx;
+}
+
+.info .info-footer .info-border {
+    border-bottom: 1rpx #e3e3e3 solid;
+    padding-bottom: 30rpx;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

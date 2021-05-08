@@ -1,0 +1,83 @@
+<import src="../../wxParse/wxParse.wxml"></import>
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body">
+        <include src="/components/specifications_model/specifications_model.wxml"></include>
+        <include src="/components/goods/specifications_model.wxml"></include>
+        <include src="/components/quick-navigation/quick-navigation"></include>
+        <view class="{{show_attr_picker||show||no_scroll?'no-scroll':''}}">
+            <view style="padding-bottom: 120rpx">
+                <include src="/components/goods/goods_banner.wxml"></include>
+                <include src="/components/goods/goods_info.wxml"></include>
+                <view class="tab-group">
+                    <view class="flex-row tab-group-header">
+                        <view bindtap="tabSwitch" class="flex-grow-1 flex-x-center tab-group-item {{tab_detail}}" data-tab="detail">
+                            <text class="flex-y-center">商品详情</text>
+                        </view>
+                        <view bindtap="tabSwitch" class="flex-grow-1 flex-x-center tab-group-item {{tab_comment}}" data-tab="comment" wx:if="{{__is_comment}}">
+                            <text class="flex-y-center">评价</text>
+                        </view>
+                    </view>
+                    <view class="tab-group-body">
+                        <view class="tab-group-item {{tab_detail}}">
+                            <view class="goods-detail">
+                                <template is="wxParse" data="{{wxParseData:detail.nodes}}"></template>
+                            </view>
+                        </view>
+                        <view class="tab-group-item {{tab_comment}}">
+                            <view class="comment-count flex-row">
+                                <view class="comment-count-item flex-grow-1 flex-x-center flex-col">
+                                    <view>全部</view>
+                                    <view>({{comment_count.score_all>999?'999+':comment_count.score_all}})</view>
+                                </view>
+                                <view class="comment-count-item flex-grow-1 flex-x-center flex-col">
+                                    <view>好评</view>
+                                    <view>({{comment_count.score_3>999?'999+':comment_count.score_3}})</view>
+                                </view>
+                                <view class="comment-count-item flex-grow-1 flex-x-center flex-col">
+                                    <view>中评</view>
+                                    <view>({{comment_count.score_2>999?'999+':comment_count.score_2}})</view>
+                                </view>
+                                <view class="comment-count-item flex-grow-1 flex-x-center flex-col">
+                                    <view>差评</view>
+                                    <view>({{comment_count.score_1>999?'999+':comment_count.score_1}})</view>
+                                </view>
+                            </view>
+                            <view class="comment-list">
+                                <view class="comment-item flex-row" wx:for="{{comment_list}}" wx:key="{{item.id}}">
+                                    <view class="flex-grow-0" style="overflow: visible">
+                                        <image mode="aspectFill" src="{{item.avatar_url}}" style="width: 70rpx;height: 70rpx;border-radius: 1000rpx"></image>
+                                    </view>
+                                    <view class="flex-grow-1">
+                                        <view class="flex-row mb-20">
+                                            <view class="flex-grow-1 flex-y-center nickname">{{item.nickname}}</view>
+                                            <view class="flex-grow-0 flex-y-center addtime">{{item.addtime}}</view>
+                                        </view>
+                                        <view class="mb-20">{{item.content}}</view>
+                                        <view class="pic-list" wx:if="{{item.pic_list&&item.pic_list.length>0}}">
+                                            <image bindtap="commentPicView" class="pic-item" data-index="{{index}}" data-pic-index="{{pic_index}}" mode="aspectFill" src="{{item}}" wx:for="{{item.pic_list}}" wx:for-index="pic_index" wx:key="{{item.id}}"></image>
+                                        </view>
+                                        <view class="reply" wx:if="{{item.reply_content}}">商家:
+                                            <view class="reply-content">{{item.reply_content}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <include src="/components/goods/goods_recommend"></include>
+            </view>
+            <include src="/components/shopping_cart/shopping_cart" wx:if="{{quick==1}}"></include>
+            <block wx:else>
+                <navigator class="cart-nav" openType="redirect" url="/pages/cart/cart">
+                    <image src="{{__wxapp_img.nav.cart.url}}"></image>
+                </navigator>
+                <include src="/components/goods/goods_buy"></include>
+            </block>
+            <include src="/components/common/get-coupon.wxml"></include>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

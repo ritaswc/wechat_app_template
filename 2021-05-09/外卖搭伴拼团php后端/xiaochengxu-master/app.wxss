@@ -1,0 +1,89 @@
+/**app.wxss**/
+
+page{
+    position: relative;
+    height: 100%;
+    background: #f0eff5;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+image{
+    width: 100%;
+    height: 100%;
+    display:inline-block;
+    overflow:hidden;
+}
+.content{
+  font-size: 30rpx;
+  font-family : Arial, Helvetica, sans-serif;
+}
+.pull-right{
+    float: right;
+}
+.text-center{
+  text-align: center;
+}
+.color-red{
+  color: #f00;
+}
+.color-ba{
+    color: #ba77ff;
+}
+/*回到首页*/
+.home{
+  width: 90rpx;
+  height: 90rpx;
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/bachome.png') no-repeat;
+  background-size: cover;
+  position: fixed;
+  left: 20rpx;
+  bottom: 100rpx;
+}
+/*底部*/
+.footer{
+    width: 100%;
+    position: fixed;
+    left:0;
+    bottom: 0;
+    height: 80rpx;
+    line-height: 80rpx;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    border-top: 1px solid #ba77ff;
+}
+.footer view:first-child{
+    flex-grow: 2;
+    text-align: center
+}
+.footer view:first-child text{
+    color: #ba77ff;
+}
+.footer view:last-child{
+    flex-grow: 1;
+    text-align: center;
+    background: #ba77ff;
+    color: white;
+}
+.hide{
+    display: none;
+}
+.fontsize-12{
+  font-size: 24rpx;
+}
+.fontsize-40{
+  font-size: 80rpx;
+}
+.iCon{
+  display:block;
+  width:36rpx;
+  height: 36rpx;
+  margin-right: 4rpx;
+}
+
+view{
+    word-break:break-all; 
+}
+
+.brand image{
+    border-radius: 50%;
+}

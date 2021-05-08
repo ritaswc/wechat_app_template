@@ -1,0 +1,31 @@
+{
+  "pages":[
+        "pages/index/index",
+     "pages/history-bill/history-bill",
+
+     "pages/record-expend/record-expend",
+   
+    "pages/mine/mine"
+   
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#10AEFF",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+       "iconPath":"img/home.jpg",
+      "selectedIconPath":"img/home_p.jpg",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/mine/mine",
+      "iconPath":"img/mine.jpg",
+      "selectedIconPath":"img/mine_p.jpg",
+      "text": "我的"
+    }]
+  }
+ 
+}

@@ -1,0 +1,44 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<import src="../template/template" />
+<view class="detail">
+  <!--carousel-->
+  <template is="carousel" data="{{ imgUrls }}"></template>
+  <!--restaurant-wait-info-->
+  <view class="d-wait">
+    <!--wait info-->
+    <view wx:for="{{ waitInfo }}" wx:key="unique">
+      <view class="kind">
+        {{ item.kind }}
+      </view>
+      <view class="desk" wx:if="{{ index == 0 }}">
+        {{ item.desk }}
+      </view>
+      <view class="desk" wx:if="{{ item.number }}">
+        <text>{{ item.number }}</text>{{ item.desk }}
+      </view>
+      <view class="desk" wx:if="{{ !item.number && index != 0 }}">
+          无需等待
+      </view>
+      <view class="time">
+        {{ item.time }}
+      </view>
+    </view>
+    <!--restaurant rulers-->
+    <text>{{ detailRules }}</text>
+  </view>
+  <!--restaurant-info-->
+  <view class="restaurant-info">
+    <view class="top">
+      <image src="{{ restaurant.img }}"></image>
+      <view class="top-center">
+        <text class="top-center-name">{{ restaurant.name }}</text>
+        <text class="restaurant-grade {{ restaurant.grade }} iconfont icon-wuxing"></text>
+      </view>
+      <view class="distance">距离{{ restaurant.distance }}m</view>
+    </view>
+    <view class="r-i-address iconfont icon-icglobaltitlebar48iconfontmap">{{ restaurant.address }}</view>
+    <view bindtap="callPhone" class="r-i-tel iconfont icon-dianhua triangle">{{ restaurant.tel }}</view>
+    <view class="r-i-time iconfont icon-shijian">营业时间：{{ restaurant.time }}</view>
+  </view>
+</view>
+<navigator open-type="redirect" url="../ordering/ordering?shopId={{ restaurant.id }}" hover-class="none" class="take-number">立即取号</navigator>

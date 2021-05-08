@@ -1,0 +1,380 @@
+page {
+  background-color: #eee;
+}
+.number {
+  background-color: #fff;
+  padding: 35rpx 20rpx 27rpx 20rpx;
+}
+.number .number-top {
+  display: flex;
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 27rpx;
+}
+.number .number-top image {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+}
+.number .number-top .n-t-center {
+  margin-left: 70rpx;
+  color: #666;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.number .number-top .n-t-center text:nth-child(1) {
+  color: #333;
+  font-size: 24rpx;
+}
+.number .number-top .n-t-center text:nth-child(2) {
+  font-size: 20rpx;
+  color: #666;
+}
+.number .number-bottom {
+  display: flex;
+  line-height: 76rpx;
+  border-bottom: 2rpx solid #eee;
+}
+.number .number-bottom .iconfont {
+  font-size: 24rpx;
+  color: #333;
+}
+.number .number-bottom .iconfont text {
+  font-size: 36rpx;
+  margin: 0 27rpx 23rpx;
+}
+.number .number-bottom .iconfont::before {
+  font-size: 40rpx;
+  color: #ed4d30;
+}
+.number .number-bottom text:nth-child(2) {
+  color: #999;
+  font-size: 20rpx;
+  flex: 1;
+  text-align: right;
+}
+.message {
+  padding: 26rpx 20rpx 0;
+}
+.message .message-wrap {
+  background-color: #fff;
+  padding: 0 20rpx;
+  border-radius: 10rpx;
+  margin-bottom: 25rpx;
+}
+.message .message-wrap .m-w-top {
+  font-size: 40rpx;
+  line-height: 107rpx;
+  border-bottom: 3rpx solid #eee;
+}
+.message .message-wrap .m-w-top::before {
+  color: #be8e59;
+}
+.message .message-wrap .triangle::after {
+  color: #999;
+  right: 10rpx;
+  transition: all 0.1s linear;
+}
+.message .message-wrap .triangle-animation::after {
+  border-color: #0094ff;
+  transform: translateY(-50%) rotateZ(135deg);
+}
+.message .message-wrap .m-w-content {
+  display: flex;
+  flex-direction: column;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+.message .message-wrap .m-w-content .m-w-content-text {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.integral .integral-wrap {
+  margin-top: 15rpx;
+  height: 262rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 25rpx;
+  position: relative;
+}
+.integral .integral-wrap image {
+  width: 192rpx;
+  height: 192rpx;
+  border-radius: 50%;
+}
+.integral .integral-wrap .i-w-center {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20rpx;
+  flex-direction: column;
+}
+.integral .integral-wrap .i-w-center text {
+  margin: 10rpx 0;
+}
+.integral .integral-wrap .i-w-center text:nth-child(1) {
+  font-size: 28rpx;
+  color: #333;
+}
+.integral .integral-wrap .i-w-center text:nth-child(2) {
+  font-size: 24rpx;
+  color: #999;
+}
+.integral .integral-wrap .i-w-center text:nth-child(3) {
+  width: 123rpx;
+  background-color: #ff9400;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 16rpx;
+  color: #fff;
+}
+.integral .integral-wrap .i-w-center text:nth-child(4) {
+  font-size: 24rpx;
+  color: #999;
+}
+.integral .integral-wrap .integral-change {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  width: 170rpx;
+  text-align: center;
+  line-height: 55rpx;
+  font-size: 24rpx;
+  color: #ed4d30;
+  border: 2rpx solid #f73;
+  border-radius: 10rpx;
+}
+.coupon .coupon-no-use,
+.coupon .coupon-use,
+.coupon .coupon-use-finish {
+  padding: 20rpx;
+}
+.coupon .coupon-list {
+  width: 100%;
+  height: 184rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+.coupon .coupon-list .coupon-list-top {
+  padding: 0 40rpx;
+  line-height: 123rpx;
+  background-image: linear-gradient(#fd9251, #fc7308);
+  display: flex;
+  color: #fff;
+}
+.coupon .coupon-list .coupon-list-top .c-l-t-left {
+  font-size: 45rpx;
+}
+.coupon .coupon-list .coupon-list-top .c-l-t-left .c-l-t-left-one {
+  font-weight: 700;
+}
+.coupon .coupon-list .coupon-list-top .c-l-t-left .c-l-t-left-one text {
+  font-weight: 400;
+  font-size: 28rpx;
+}
+.coupon .coupon-list .c-l-t-center {
+  margin-left: 50rpx;
+  font-size: 24rpx;
+}
+.coupon .coupon-list .c-l-t-right {
+  flex: 1;
+  text-align: right;
+  font-weight: 700;
+  font-size: 34rpx;
+  position: relative;
+}
+.coupon .coupon-list .icon-youhuiquan::before {
+  font-size: 80rpx;
+  position: absolute;
+  font-weight: 500;
+  color: rgba(248, 133, 13, 0.76);
+  right: -60rpx;
+}
+.coupon .coupon-list .circle {
+  display: flex;
+  margin-top: -7rpx;
+}
+.coupon .coupon-list .circle .circle-item {
+  width: 15rpx;
+  height: 15rpx;
+  margin-right: 5rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.coupon .coupon-list .time {
+  padding-left: 20rpx;
+  padding-top: 10rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.coupon-top {
+  display: flex;
+  background-color: #fff;
+}
+.coupon-top-item {
+  text-align: center;
+  width: 33.33%;
+  line-height: 95rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+.active {
+  color: #f23030;
+  font-weight: 700;
+  border-bottom: 1rpx solid #f23030;
+}
+.order .coupon-top-item {
+  width: 50%;
+}
+.order .go-pay,
+.order .go-finish,
+.order .cancel-pay {
+  padding: 20rpx;
+  padding-bottom: 0;
+  margin-top: 20rpx;
+}
+.order .go-pay .go-pay-top,
+.order .go-finish .go-pay-top,
+.order .cancel-pay .go-pay-top {
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 10rpx;
+}
+.order .go-pay .go-pay-top image,
+.order .go-finish .go-pay-top image,
+.order .cancel-pay .go-pay-top image {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  border: 1rpx solid #eee;
+}
+.order .go-pay .go-pay-top .g-p-t-center,
+.order .go-finish .go-pay-top .g-p-t-center,
+.order .cancel-pay .go-pay-top .g-p-t-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 70rpx;
+}
+.order .go-pay .go-pay-top .g-p-t-center text,
+.order .go-finish .go-pay-top .g-p-t-center text,
+.order .cancel-pay .go-pay-top .g-p-t-center text {
+  font-size: 24rpx;
+  color: #999;
+}
+.order .go-pay .go-pay-top .g-p-t-center text:nth-child(1),
+.order .go-finish .go-pay-top .g-p-t-center text:nth-child(1),
+.order .cancel-pay .go-pay-top .g-p-t-center text:nth-child(1) {
+  color: #333;
+  font-weight: 700;
+}
+.order .go-pay .go-pay-bottom,
+.order .go-finish .go-pay-bottom,
+.order .cancel-pay .go-pay-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+.order .go-pay .go-pay-bottom text,
+.order .go-finish .go-pay-bottom text,
+.order .cancel-pay .go-pay-bottom text {
+  font-size: 24rpx;
+  color: #333;
+}
+.order .go-pay .go-pay-bottom .go-pay-btn,
+.order .go-finish .go-pay-bottom .go-pay-btn,
+.order .cancel-pay .go-pay-bottom .go-pay-btn {
+  width: 130rpx;
+  line-height: 47rpx;
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+  border-radius: 30rpx;
+  background-color: #f00;
+}
+.order .go-pay .go-pay-bottom .act-money,
+.order .go-finish .go-pay-bottom .act-money,
+.order .cancel-pay .go-pay-bottom .act-money {
+  color: #f00;
+}
+.order .order-all > view,
+.order .order-pend > view {
+  background-color: #fff;
+}
+.order .icon-bhjyizhifu {
+  font-size: 120rpx;
+  padding-left: 100rpx;
+  color: #b5f9d5;
+}
+.order .icon-tubiaoyiquxiao01 {
+  font-size: 80rpx;
+  padding-left: 100rpx;
+  color: #d3d3d3;
+  transform: translateY(-30rpx) rotateZ(35deg);
+}
+.show-btn {
+  display: flex;
+  justify-content: space-around;
+}
+.show-btn view {
+  padding: 5rpx 20rpx;
+  margin-bottom: 15rpx;
+  background-color: #f00;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  color: #fff;
+  text-align: center;
+  border-radius: 30rpx;
+}
+.merchant {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.merchant .triangle::after {
+  top: 70%;
+  right: 30rpx;
+  border-color: #999;
+}
+.merchant .img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.merchant image {
+  margin: 30rpx 0;
+  width: 300rpx;
+  height: 300rpx;
+}
+.merchant .merchant-introduce {
+  margin: 50rpx 0;
+  text-align: center;
+  font-size: 36rpx;
+  color: #333;
+}
+.merchant .merchant-input {
+  padding-left: 30rpx;
+}
+.merchant .merchant-input input {
+  height: 70rpx;
+  line-height: 50rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.merchant .merchant-input view {
+  line-height: 70rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.merchant picker {
+  height: 50rpx;
+}

@@ -1,0 +1,85 @@
+.header-swiper {
+  height: 500rpx;
+  width: 100%;
+  line-height: 500rpx;
+}
+
+.header-list-nav {
+  height: 120rpx;
+  line-height: 120rpx;
+  padding: 10px;
+}
+.wait-header{
+   height: 50rpx;
+   line-height: 50rpx;
+  font-size:30rpx;
+  margin: 20rpx 0;
+}
+.wait-text {
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 10rpx;
+  margin: 0 40rpx;
+  border-bottom: 1px solid #fff;
+  overflow: hidden;
+  font-size:30rpx;
+}
+.wait-text:last-child{
+  border-bottom:none;
+}
+.wait-text text:first-child{
+  float: left;
+}
+.wait-text text:last-child{
+  float: right;
+}
+
+.header-list-nav image {
+  width: 50rpx;
+  height: 50rpx;
+  margin: 35rpx 0 0 35rpx;
+}
+
+.header-list-nav text {
+  margin-left: 50rpx;
+}
+
+.header-list-nav view {
+  margin-left: 280rpx;
+}
+
+.phone {
+  display: table;
+  text-align: center;
+}
+
+.phone-icon {
+  background-image: url(../../images/more2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.park-icon {
+  /*display: table-cell;*/
+  margin-top: 35rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.column:last-child {
+  margin-bottom: 10px;
+}
+.precess-into{
+ width:193rpx;
+height:60rpx;
+border-radius:26rpx;
+line-height:60rpx;
+font-size:35rpx;
+margin-top:38rpx;
+color:#00a598;
+
+}
+.color-h{
+  color: rgb(222,124,58);
+  margin-left: 10rpx;
+}

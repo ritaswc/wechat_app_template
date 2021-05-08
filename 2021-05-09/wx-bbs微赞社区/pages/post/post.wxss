@@ -1,0 +1,20 @@
+.submit-wrap{display: inline; }
+.post-title-wrap{height: 45px; width: 100%; min-height: 0px;border-top: 10px solid rgb(245, 245, 245); }
+.post-title{height: 25px; line-height: 25px; font-family: monospace; white-space: pre-wrap;font: 13.3333px Arial;padding: 10px 6px 0px 6px;}
+.post-mainbody-wrap{height: 200px; border-width: 1px; border-style: none; border-top-style: solid; }
+.post-mainbody{height: 200px;padding: 6px; font-family: monospace; white-space: pre-wrap;font: 13.3333px Arial; }
+.post-submit-container{height: 45px; min-height: 0px; position: relative; right: 0px; }
+.post-position-wrap{height: 30px; width: 120px; min-height: 0px; margin-left: 20px; margin-top: 7px; padding-top: 7px; padding-bottom: 7px; display: inline-block; margin-bottom: auto; left: 0px; right: 0px; top: 0px; bottom: 0px; position: relative; border-width: 0px; border-style: none; background-color: rgb(247, 247, 247); border-radius: 20px; }
+.post-position-text{position: absolute; right: 2px; margin-top: auto; margin-bottom: 0px; display: inline-block; height: 16px; font-size: 12px; text-align: center; text-indent: 0px; line-height: 16px; z-index: 0; width: 100px; }
+.post-position-icon{height: 16px; width: 16px; margin-left: 10px; }
+.post-submit{display: inline-block; height: 30px; min-height: 0px; width: 60px; margin-top: 7px; position: absolute; right: 20px; line-height: 30px; text-align: center; font-size: 12px; background-size: initial; }
+.post-icon-container{width: 100%; height: 60px; min-height: 0px; padding-top: 0px; display: flex; margin-left: 0px; position: relative; border-style: solid none none; border-right-color: rgb(214, 214, 214); border-width: 1px; border-top-color: rgb(214, 214, 214); border-bottom-color: rgb(214, 214, 214); border-bottom-style: solid; }
+.post-icon-emoj-wrap{height: 60px; width: 20%; min-height: 0px; padding: 10px 25px 0px; display: inline-block; position: relative; background-color: rgba(245,245,245,1); }
+.post-icon-emoj{background: url(http://i.pengxun.cn//content/images/imgpost2/01/post-big-pic-01.png) no-repeat 0 -234px; background-size: 100%; height: 26px; width: 26px; }
+.post-icon-desc{font-size: 12px; width: 32px; text-align: center; }
+.post-icon-img{background: url(http://i.pengxun.cn//content/images/imgpost2/01/post-big-pic-01.png) no-repeat 0 -286px; background-size: 100%; height: 26px; width: 26px; }
+.post-icon-voice{background: url(http://i.pengxun.cn//content/images/imgpost2/01/post-big-pic-01.png) no-repeat 0 -338px; background-size: 100%; height: 26px; width: 26px;}
+.post-icon-vedio{background: url(http://i.pengxun.cn//content/images/imgpost2/01/post-big-pic-01.png) no-repeat 0 -390px; background-size: 100%; height: 26px; width: 26px;}
+.post-icon-reward{background: url(http://i.pengxun.cn//content/images/imgpost2/01/post-big-pic-01.png) no-repeat 0 -442px; background-size: 100%; height: 26px; width: 26px;}
+.post-type-wrap{display: inline-block; margin-left: 10px; margin-top: 10px; margin-bottom: 10px; font-size: 12px; padding: 5px 10px; border-width: 1px; border-style: solid; border-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; border-top-right-radius: 2px; border-top-left-radius: 2px; }
+.post-type-container{border-width: 1px 1px 10px; border-style: none none solid; border-bottom-color: rgb(245, 245, 245); border-bottom-width: 10px; }

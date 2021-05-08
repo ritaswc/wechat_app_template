@@ -1,0 +1,20 @@
+<swiper class="goods-image-swiper" autoplay="{{autoplay}}" interval="5000" duration="300" indicator-dots="true" circular="true" onChange="hide" indicator-active-color="#ff5c5c">
+    <block a:for="{{goods.pic_list}}" a:key="{{item.id}}">
+        <swiper-item>
+            <image onTap="onGoodsImageClick" data-index="{{index}}" class="goods-image" src="{{item}}" />
+            <block a:if="{{goods.video_url}}">
+                <image class="play {{img_hide}}" src="{{__wxapp_img.store.video_play.url}}" data-url="{{goods.video_url}}" onTap="play"></image>
+            </block>
+            
+            
+            <view a:if='{{__user_info.is_distributor == 1 && __is_share_price && goods.max_share_price > 0 && goods.is_negotiable != 1 && goods.is_share}}' class='flex-row flex-y-center share_commission'>
+                <image class='img' src='{{__wxapp_img.store.share_commission.url}}'></image>
+                <view class='flex-col text_box'>
+                    <text class='text1'>分销最高可赚</text>
+                    <text class='text2'>￥{{goods.max_share_price}}</text>
+                </view>
+            </view>
+
+        </swiper-item>
+    </block>
+</swiper>

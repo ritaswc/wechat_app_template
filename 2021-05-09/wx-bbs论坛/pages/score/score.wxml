@@ -1,0 +1,41 @@
+<view class="page-container">
+    <view class="tabbar-container">
+        <view class="tabbar-wrap {{selected==1?'tabbar-wrap-selected':''}}" catchtap="showList" data-id="1">积分记录</view>
+        <view class="tabbar-wrap {{selected==2?'tabbar-wrap-selected':''}}" catchtap="showList" data-id="2">兑换记录</view>
+    </view>
+    <!-- 积分 -->
+    <view wx:if="{{selected == 1}}" class="center-container">
+        <view class="show-rule">查看积分获取规则</view>
+        <view class="score-container">
+            <view class="score-head">
+                <view class="score-head-num-warp">积分数</view>
+                <view class="score-head-opera-wrap">操作</view>
+                <view class="score-head-data-wrap">日期</view>
+            </view>
+            <view >
+                <block wx:for="{{scoreList}}" wx:for-item="score">
+                    <view class="score-body">
+                        <view class="score-num-warp score-data-wrap">{{score.Score}}</view>
+                        <view wx:if="{{score.TypeId==1}}" class="score-head-opera-wrap score-data-wrap">发帖</view>
+                        <view wx:if="{{score.TypeId==2}}" class="score-head-opera-wrap score-data-wrap">回复</view>
+                        <view wx:if="{{score.TypeId==3}}" class="score-head-opera-wrap score-data-wrap">点赞</view>
+                        <view wx:if="{{score.TypeId==4}}" class="score-head-opera-wrap score-data-wrap">分享</view>
+                        <view wx:if="{{score.TypeId==5}}" class="score-head-opera-wrap score-data-wrap">签到</view>
+                        <view wx:if="{{score.TypeId==6}}" class="score-head-opera-wrap score-data-wrap">扣积分</view>
+                        <view class="score-head-data-wrap score-data-wrap">{{score.CreateDate}}</view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <!-- 兑换记录 -->
+    <view wx:if="{{selected == 2}}" class="center-container"> 
+        <block wx:if="{{exchangeList && exchangeList.length > 0}}" wx:for="{{exchangeList}}" wx:for-item="item">
+
+        </block>
+        <block wx:if="{{!exchangeList || exchangeList.length == 0}}">
+            <view class="exchange-empty">亲，您当前并没有积分记录哦！</view>
+        </block>
+    </view>
+
+</view>

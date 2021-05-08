@@ -1,0 +1,65 @@
+
+<view class="content">
+    <!--<view class="info-title">
+        <text>订单详情</text>
+    </view>-->
+    <view class="goods-info">
+        <image src="{{orderInfo.order_img}}"></image>
+        <view class="goods-info-handler">
+            <text>{{orderInfo.goods_name}}</text>
+            <view class="goods-info-price">
+                <text>¥{{orderInfo.goods_amount}}</text>
+            </view>
+            <view class="group-state">
+                <text>数量：{{orderInfo.group_num}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="order-state">
+        <view>
+            <text>订单号</text>
+            <text>{{orderInfo.order_sn}}</text>
+        </view>
+        <view>
+            <text>支付方式</text>
+            <text>微信支付</text>
+        </view>
+        <view>
+            <text>订单状态</text>
+            <view class="order-status" wx:if="{{orderInfo.pay_status == 1}}">
+                {{orderInfo.group_status}} 
+                <text wx:if="{{orderInfo.shipping_status == 1}}">已发货</text>
+                <text wx:else>未发货</text>
+            </view>
+            <view class="order-status" wx:else>
+            <text>未付款</text>
+            </view>
+        </view>
+    </view>
+    <view class="order-state">
+        <view>
+            <text>支付金额</text>
+            <text>总计：¥{{orderInfo.money_paid}}</text>
+        </view>
+        <view class="order-fee">
+            <text>优惠 ¥{{orderInfo.coupon}}</text>
+            <text wx:if="{{orderInfo.shipping_fee > 0}}">运费 ¥{{orderInfo.shipping_fee}}</text>
+            <text>商品 ¥{{orderInfo.goods_amount}}</text>
+        </view>
+    </view>
+    <view class="order-state">
+        <view>
+            <text>收货信息</text>
+        </view>
+        <view>
+            <text>{{orderInfo.consignee}}</text>
+            <text>{{orderInfo.tel}}</text>
+        </view>
+        <view>
+            <text>{{orderInfo.address}}</text>
+        </view>
+    </view>
+</view>
+
+<import src="/asset/template/backhome.wxml" />
+<template is="backhome"/>

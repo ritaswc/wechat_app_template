@@ -1,0 +1,44 @@
+<view id="page-detail">
+  <image id="goods-pic" style="height:{{picWidth}}px;width:{{picWidth}}px;" src="{{couponInfo.ItemPic}}"></image>
+  <view id="good-info">
+    <view id="good-name">{{couponInfo.ItemName}}</view>
+    <view>
+      <view id="good-price">在售价: ￥{{couponInfo.ItemPrice}}</view>
+      <view id="good-price-coupon">券后价: ￥{{couponInfo.QuanHouJia}}</view>
+    </view>
+  </view>
+  <view id="coupon-info">
+    <view class="coupon-info-item coupon-info-item-first">
+      <view id="coupon-denomination">{{couponInfo.CouponDenomination}}</view>
+      <view id="coupon-coin">
+        <image src="../../images/coupon.png"></image>￥{{couponInfo.Jian}}</view>
+      <view id="goods-sales">月销量: {{couponInfo.MonthlySales}}</view>
+    </view>
+    <view class="coupon-info-item-des">
+      <view class="coupon-des">优惠券ID: {{couponInfo.CouponID}}</view>
+      <view class="coupon-des">剩余优惠券: {{couponInfo.CouponRemaining}}</view>
+      <view class="coupon-des">优惠券结束时间: {{couponInfo.CouponEndTime}}</view>
+    </view>
+  </view>
+  <view id="shop">
+    <view id="platform-type">
+      <image src="{{platformTypeUrl}}"></image>{{couponInfo.PlatformType}}</view>
+    <view id="shop-name">店铺名称：{{couponInfo.ShopName}}</view>
+  </view>
+  <view id="get-coupon">
+    <button bindtap="getCoupon" type="warn" loading="{{loadingBtn}}">淘口令购买</button>
+  </view>
+  <view hidden="{{showStatus ? false : true}}" id="mask">
+    <view id="tao-kou-ling">
+      <view id="tao-kou-ling-title">淘口令购买
+        <icon id="closed" type="cancel" size="30" color="#fff" bindtap="hideView" />
+      </view>
+      <view id="tao-kou-ling-content">
+        <view id="copy-method">点击文本后，长按选择“全部复制”</view>
+        <input id="tao-kou-ling-text" value="{{taoKouLing}}" maxlength="{{maxLength}}" />
+      </view>
+      <view id="explain">复制之后，请打开【手机淘宝】购买！</view>
+    </view>
+  </view>
+  <view id="clear"></view>
+</view>

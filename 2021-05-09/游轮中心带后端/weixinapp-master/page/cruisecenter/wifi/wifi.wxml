@@ -1,0 +1,13 @@
+<!--<import src="../../wxParse/wxParse.wxml"/>
+<template is="wxParse" data="{{wxParseData:article.nodes}}"/>-->
+<view class="page">
+    <view class="page__hd">
+        <text class="page__title">WIFI租赁</text>
+        <text class="page__header">租赁地点</text>
+        <text class="page__desc">1）上海吴淞口国际邮轮港客运大厅1号门旁</text>
+        <text class="page__desc">2）上海吴淞口国际邮轮港客运大厅3号帐篷内</text>
+        <text class="page__header">收费标准</text>
+        <text class="page__desc">1）押金：500元/台</text>
+        <text class="page__desc">2）收费标准：单个国家20元/天/台；两国通用30元/天/台</text>
+    </view>
+</view>

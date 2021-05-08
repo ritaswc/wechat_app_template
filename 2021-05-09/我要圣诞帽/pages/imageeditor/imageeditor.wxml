@@ -1,0 +1,30 @@
+
+<!--index.wxml-->
+<view  wx:if="{{!combine}}">
+    <view class="container" 
+          id="container"
+          bind:touchstart="touchStart" 
+          bind:touchend="touchEnd"
+          bind:touchmove="touchMove">
+    <image class="bg" src="{{bgPic}}"></image>
+    <icon type="cancel" class="cancel" id="cancel"
+            style="top:{{cancelCenterY-10+'px'}};left:{{cancelCenterX-10+'px'}}"></icon>
+    <icon type="waiting" class="handle"  id="handle"  color="green"
+            style="top:{{handleCenterY-10+'px'}};left:{{handleCenterX-10+'px'}}"></icon>
+    <image class="hat" id='hat' src="../../image/{{currentHatId}}.png"
+    style="top:{{hatCenterY-hatSize/2-2+'px'}};left:{{hatCenterX-hatSize/2-2+'px'}};transform:rotate({{rotate+'deg'}}) scale({{scale}})"
+    ></image>
+    </view>
+    
+  <button bind:tap="combinePic">确定</button>
+   <scroll-view class="scrollView" scroll-x="true" >
+    <image class="imgList" 
+        wx:for="...imgList" wx:key="{{index+1}}" 
+        src="../../image/{{index+1}}.png"
+        data-hat-id="{{index+1}}"
+        bind:tap="chooseImg"></image>
+  </scroll-view> 
+</view>
+
+
+

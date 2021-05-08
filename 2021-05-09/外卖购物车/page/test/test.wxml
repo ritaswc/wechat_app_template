@@ -1,0 +1,19 @@
+<scroll-view class="goods-container" scroll-y="true" scroll-into-view="{{classifyViewed}}" bindscroll="onGoodsScroll">
+  <view wx:for="{{goodsList}}" wx:for-item="classify" wx:key="id" id="{{classify.id}}">
+    <view class="title">{{classify.classifyName}}</view>
+    <view class="goods" wx:for="{{classify.goods}}" wx:for-item="id" wx:key="*this">
+      <image class="pic" src="{{goods[id].pic}}"></image>
+      <view class="name ellipsis">{{goods[id].name}}</view>
+      <view class="sold">月售{{goods[id].sold}}</view>
+      <view class="price">￥{{goods[id].price}}</view>
+      <view class="addCart" bindtap="tapAddCart" data-id="{{id}}">
+        <image src="/imgs/shop/plus.png"></image>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<form bindsubmit="submit" report-submit="true">
+
+  <!--<view formType="submit" class="submit">去结算</view>-->
+  <button class="yellow {{cart.count?'':'disabled'}}" formType="submit" disabled="{{!cart.count}}">去结算</button>
+</form>

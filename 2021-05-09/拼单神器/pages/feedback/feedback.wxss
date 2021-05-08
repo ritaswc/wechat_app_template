@@ -1,0 +1,58 @@
+.radio_item {
+    display: block;
+    line-height: 20rpx;
+    padding: 20rpx 30rpx;
+    position: relative;
+    align-items: center;
+}
+
+.radio_list {
+    background-color: #fff;
+    border-top: 1rpx solid #C8C8CD;
+    border-bottom: 1rpx solid #C8C8CD;
+}
+
+.cell_line {
+    height: 1rpx;
+    width: 95%;
+    background-color: #C8C8CD;
+    position: absolute;
+    right: 1rpx;
+}
+
+.title {
+    padding-bottom: 20rpx;
+    padding-top: 20rpx;
+    padding-left: 10rpx;
+}
+
+.title_item {
+    padding-bottom: 20rpx;
+    padding-top: 20rpx;
+    border-top: 1rpx solid #C8C8CD;
+    border-bottom: 1rpx solid #C8C8CD;
+    background-color: #fff;
+    padding-left: 30rpx;
+    margin-top: 20rpx;
+}
+
+.textarea {
+    background-color: #fff;
+    width: 100%;
+    height: 300rpx;
+    border-top: 1rpx solid #C8C8CD;
+    border-bottom: 1rpx solid #C8C8CD;
+    padding: 10rpx;
+}
+
+.button {
+    background-color: #e53927;
+    color: #fff;
+    height: 100rpx;
+}
+
+.button_area {
+    margin-top: 30rpx;
+    width: 90%;
+    margin-left: 5%;
+}

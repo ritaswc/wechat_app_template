@@ -1,0 +1,11 @@
+<view>
+  <view class="header">
+    <checkbox-group bindchange="checkboxChange" class="column">
+      <label class="checkbox " wx:for="{{reaons}}">
+        <checkbox value="{{item.id}}"  />{{item.name}}
+      </label>
+    </checkbox-group>
+   
+  </view>
+   <button class="prome bg-pp" bindtap="bindSure">申请赔付</button>
+</view>

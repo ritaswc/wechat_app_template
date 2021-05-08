@@ -1,0 +1,192 @@
+view{
+    font-family:微软雅黑,-apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+.class1{
+    background-color:#0ACB7C;
+    height: 280rpx;
+    width: 100%;
+}
+.class1_1{
+    padding-left:50rpx;
+    color: white;
+    font-size:60rpx;
+    height: 150rpx;
+    line-height: 150rpx;
+    width: 650rpx;
+}
+.class1_1 .left{
+    float: left;
+}
+.class1_1 .right{
+    float: right;
+}
+.class1_2{
+    margin-top: 20rpx;
+    color: white;
+    height: 50rpx;
+    line-height: 50rpx;
+    width: 100%;
+    font-size: 26rpx;
+}
+.class1_2 .left{
+    float: left;
+    margin-left: 30rpx;
+    height: 100%;
+    text-align: center;
+    width: 150rpx;
+}
+.class1_2 .center{
+    float: left;
+    margin-left: 100rpx;
+    height: 100%;
+    width: 200rpx;
+    text-align: center;
+}   
+.class1_2 .right{
+    float: right;
+    margin-right: 30rpx;
+    height: 100%;
+    width: 150rpx;
+    text-align: center;
+}
+.class1_3{
+    color: white;
+    height: 40rpx;
+    line-height: 40rpx;
+    width: 100%;
+    font-size: 26rpx;
+}
+.class1_3 .left{
+    float: left;
+    margin-left: 30rpx;
+    height: 100%;
+    text-align: center;
+    width: 150rpx;
+    font-size: 35rpx;
+}
+.class1_3 .center{
+    float: left;
+    margin-left: 100rpx;
+    height: 100%;
+    width: 200rpx;
+    text-align: center;
+    font-size: 35rpx;
+}   
+.class1_3 .right{
+    float: right;
+    margin-right: 30rpx;
+    height: 100%;
+    width: 150rpx;
+    text-align: center;
+    font-size: 35rpx;
+}
+.class2{
+    background-color:#03AB01;
+    color: white;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 28rpx;
+    padding-left: 30rpx;
+}
+.class3{
+    width: 100%;
+}
+.contentArea{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    margin-top:30rpx;
+}
+.class3_1{
+    width: 720rpx;
+    padding-top: 30rpx;
+    margin-left: 30rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    font-size: 26rpx;
+    color: #ccc;
+}
+.class3_1 .left{
+    float: left;
+    width: 50%;
+    height: 100%;
+    text-align: left;
+}
+.class3_1 .center{
+    float: left;
+    height: 100%;
+    width: 20%;
+    text-align: center;
+}   
+.class3_1 .right{
+    float: right;
+    height: 100%;
+    width: 20%;
+    text-align: center;
+}
+.class3_2{
+    width: 720rpx;
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    font-size: 35rpx;
+    color: #FF6702;
+}
+.class3_2 .left{
+    float: left;
+    width: 50%;
+    height: 100%;
+    text-align: left;
+}
+.class3_2 .center{
+    float: left;
+    height: 100%;
+    width: 20%;
+    text-align: center;
+}   
+.class3_2 .right{
+    float: right;
+    height: 100%;
+    width: 20%;
+    text-align: center;
+}
+.class3_3{
+    width: 690rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    border-top: 1rpx solid #ccc;
+    height: auto;
+    margin-top: 20rpx;
+    overflow: auto;
+}
+.class3_3_1{
+    font-size: 42rpx;
+    line-height: 60rpx;
+    padding-top: 10rpx;
+}
+.class3_3_2{
+    color: #ccc;
+    font-size: 32rpx;
+    width: 100%;
+    height: auto;
+    line-height: 50rpx;
+    padding-top: 20rpx;
+}
+.class3_4{
+    width: 100%;
+    height: 10rpx;
+}
+.contactButton{
+    font-size: 40rpx;
+}
+.class4{
+    width: 100%;
+    height: 100rpx;
+    background-color: white;
+    text-align: center;
+    margin-top: 30rpx;
+    padding-top: 40rpx;
+    color: red;
+    font-weight: bold;
+}

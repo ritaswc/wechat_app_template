@@ -1,0 +1,53 @@
+@import "../index/HotNewsCell/HotNewsCell.wxss";
+
+.scroll-view_container {
+  white-space: nowrap;
+  position: fixed;
+  top: 0rpx;
+  background-color: white;
+  line-height: 60rpx;
+  height: 60rpx;
+  background: #fff;
+  text-align: center;
+  border-bottom: 1px solid #d9d9d9;
+  font-size: 30rpx;
+}
+
+.selected {
+  border-bottom: 1px solid #d9d9d9;
+  color: black;
+}
+
+.selected view {
+  border-bottom: 1px solid #d9d9d9;
+  color: black;
+}
+
+.selected view.active {
+  color: #0164a6;
+  border-bottom: 4px solid #0164a6;
+}
+
+.scroll-view_H {
+  white-space: nowrap;
+}
+
+.flex-sub-box-5 {
+  display: inline-block;
+  width: 25%;
+  height: 58rpx;
+  align-items: center;
+}
+
+.bianmin-container {
+  flex-direction: column;
+  display: flex;
+  margin-top: 60rpx;
+  height: 100% - 60rpx;
+  width: 100%;
+}
+
+.hotNewsList-container {
+  flex-direction: column;
+  display: flex;
+}

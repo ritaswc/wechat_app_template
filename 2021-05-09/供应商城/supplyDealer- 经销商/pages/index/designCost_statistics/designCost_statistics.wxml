@@ -1,0 +1,66 @@
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+
+<!--设计费用统计-->
+<scroll-view scroll-y="true" style="margin-bottom:120rpx;">
+
+  <!--时间选择器-->
+  <view class="screen-time">
+    <view class="time-style">
+      <text class="time1 section__title">起始时间</text>
+      <picker mode="date" value="{{start}}" start="2015-01-01" end="2030-12-31" bindchange="bindStartChange">
+        <view class="picker">
+          {{start}}
+        </view>
+      </picker>
+    </view>
+    <view class="time-style">
+      <text class="time1 section__title">结束时间</text>
+      <picker mode="date" value="{{end}}" start="2015-01-01" end="2030-12-31" bindchange="bindEndChange">
+        <view class="picker">
+          {{end}}
+        </view>
+      </picker>
+    </view>
+    <text class="screen-btn" bindtap="filtrate">筛选</text>
+  </view>
+  <view class="order-statistics">
+    <view class="statistics-detail">
+
+      <!-- 内容为空样式 -->
+      <view class="empty-con" wx:if="{{emptyShow}}">
+        <image class="empty-image" src="{{imageCtx}}dealer/note.png"></image>
+        <text class="empty-text">暂无数据</text>
+      </view>
+      <view class="table table-5" wx:else style="border-bottom:2rpx solid #e5e5e5;">
+        <view class="tr bg-w">
+          <view class="th">{{adminDept == null ? '部门' : '渠道'}}</view>
+          <view class="th">订单个数</view>
+          <view class="th">件数</view>
+          <view class="th">销售额</view>
+          <view class="th">设计费用</view>
+        </view>
+        <view class="tr" wx:for="{{list}}">
+          <view class="td">
+            <view class="order-nav" bindtap="go" data-id="{{adminDept == null ? item.dept_id : item.m_id}}" data-name="{{adminDept == null ? item.dept : item.manageer}}">{{adminDept == null ? item.dept : item.manageer}}</view>
+          </view>
+          <view class="td">{{item.count}}</view>
+          <view class="td">{{item.total_pkgs}}</view>
+          <view class="td">{{item.total_amount}}</view>
+          <view class="td">{{item.design}}</view>
+        </view>
+        
+
+        <!--总计-->
+        <view class="tr total">
+          <view class="td">总计</view>
+          <view class="td">{{total.count}}</view>
+          <view class="td">{{total.total_pkgs}}</view>
+          <view class="td">{{total.total_amount}}</view>
+          <view class="td">{{total.design}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

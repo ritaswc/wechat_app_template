@@ -1,0 +1,215 @@
+<!--bargain/activity/activity.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class='main {{show_modal ? "no-scroll" : ""}}'>
+            <image class='bg' src='{{__wxapp_img.bargain.activity.bg.url}}'></image>
+            <block a:if="{{show}}">
+                <view class='block flex-row'>
+                    <view class='flex-grow-0' style='z-index: 12;'>
+                        <navigator url='/pages/index/index' open-type='redirect' hover-class='none' class='rule flex-row flex-x-center flex-y-center'>
+                            <image class='flex-grow-0 back-img' src='{{__wxapp_img.bargain.list.right.url}}'></image>
+                            <view class='flex-grow-1'>回到首页</view>
+                        </navigator>
+                    </view>
+                    <view class='flex-grow-1'></view>
+                    <view class='flex-grow-0' style='z-index: 12;'>
+                        <navigator url='/bargain/rule/rule' hover-class='none' class='rule flex-x-center flex-y-center'>活动规则</navigator>
+                    </view>
+                </view>
+
+                <view class='block'>
+                    <view class='goods-info'>
+                        <image class='user-img' src='{{order_user_avatar}}'></image>
+                        <view style='margin-top:16rpx;color:#999;' class='flex-x-center flex-y-center'>{{order_user_name}}</view>
+                        <view class='flex-x-center flex-y-center' style='margin:16rpx 0;'>{{content}}</view>
+                        <view class='goods flex-row'>
+                            <image src='{{cover_pic}}' class='flex-grow-0'></image>
+                            <view class='flex-grow-1 flex-col'>
+                                <view class='flex-grow-1' style='margin-top:8rpx'>
+                                    <view class='text-more-2'>{{goods_name}}</view>
+                                    <block a:if="{{reset_time > 0}}">
+                                        <view class='flex-row' style='margin-top:16rpx;'>
+                                            <block a:if="{{time_list.d > 0}}">
+                                                <view class='time flex-y-center'>{{time_list.d}}</view>
+                                                <view style='padding:0 6rpx'>天</view>
+                                            </block>
+                                            <view class='time flex-y-center'>{{time_list.h}}</view>
+                                            <view>：</view>
+                                            <view class='time flex-y-center'>{{time_list.m}}</view>
+                                            <view>：</view>
+                                            <view class='time flex-y-center' style='margin-right:10rpx;'>{{time_list.s}}</view>
+                                            <view>后结束</view>
+                                        </view>
+                                    </block>
+                                    <block a:else>
+                                        <view style='margin-top:16rpx;color:#ccc'>已结束</view>
+                                    </block>
+                                </view>
+                                <view class='flex-grow-0' style='color:#ff5c5c;font-size:13pt;' a:if="{{status == 0}}">当前价 ￥{{price}}</view>
+                                <view class='flex-grow-0' style='color:#ff5c5c;font-size:13pt;' a:if="{{status == 1}}">砍价成功</view>
+                                <view class='flex-grow-0' style='color:#ff5c5c;font-size:13pt;' a:if="{{status == 2}}">砍价失败</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+
+                <view class='block'>
+                    <view class='flex-x-center'>
+                        <view style='margin-top:32rpx;width:600rpx;'>
+                            <view class='flex-row' style='width:100%;margin-top:32rpx;position:relative;height:40rpx;'>
+                                <view class='flex-grow-0' style='position:absolute;top:0;{{money_per >= 600 ? "right:0;" : "left:"+money_per_t+"rpx;"}}'>
+                                    <view class='tip flex-y-center'>已砍{{money}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='flex-x-center'>
+                        <view style='margin-bottom:40rpx;'>
+                            <view class='progress-box flex-y-center'>
+                                <image src='{{__wxapp_img.bargain.activity.progress.url}}'></image>
+                                <view class='progress-view' style='width:{{money_per}}rpx'>
+                                    <view class='progress-img'></view>
+                                </view>
+                            </view>
+                            <view class='flex-row' style='color:#fff'>
+                                <view class='flex-grow-1'>原价￥{{original_price}}</view>
+                                <view class='flex-grow-0'>底价￥{{min_price}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+
+                <block a:if="{{reset_time > 0}}">
+                    <block a:if="{{is_owner}}">
+                        <block a:if="{{min_price >= price}}">
+                            <view class='block'>
+                                <view style='width:680rpx;height:112rpx;' class='flex-x-center' onTap='buyNow' animation="{{animationData}}">
+                                    <image style='width:100%;height:100%;' src='{{__wxapp_img.bargain.activity.buy_b.url}}'></image>
+                                </view>
+                            </view>
+                        </block>
+                        <block a:else>
+                            <view class='block flex-row'>
+                                <view class='flex-grow-1 flex-x-center flex-y-center' onTap='buyNow'>
+                                    <image class='buy-btn' src='{{__wxapp_img.bargain.activity.buy.url}}'></image>
+                                </view>
+                                <view class='flex-grow-1 flex-x-center flex-y-center'>
+                                    <button class='share-btn' open-type="share">
+                                        <image class='buy-btn' src='{{__wxapp_img.bargain.activity.continue.url}}'></image>
+                                    </button>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+
+                    <view class='block' a:else>
+                        <view style='width:680rpx;height:112rpx;' class='flex-x-center' onTap='orderSubmit' animation="{{animationData}}">
+                            <image style='width:100%;height:100%;' src='{{__wxapp_img.bargain.activity.join.url}}'></image>
+                        </view>
+                    </view>
+                </block>
+                <block a:else>
+                    <view class='block'>
+                        <view class='flex-x-center' onTap='goToList'>
+                            <image style='width:680rpx;height:112rpx;' src='{{__wxapp_img.bargain.activity.more.url}}'></image>
+                        </view>
+                    </view>
+                </block>
+
+                <view class='block'>
+                    <view class='user-info'>
+                        <view class='flex-row flex-x-center flex-y-center'>
+                            <view class='one-border'></view>
+                            <view style='margin:0 34rpx;font-size:13pt;'>砍价记录</view>
+                            <view class='one-border'></view>
+                        </view>
+                        <view class='user-list'>
+                            <block a:for='{{bargain_info}}' a:if="{{show_more || (!show_more && index < 3)}}" a:key="{{item.id}}">
+                                <view class='user-one flex-row flex-y-center'>
+                                    <view class='flex-grow-1 flex-row flex-y-center'>
+                                        <image class='flex-grow-0 item-img' src='{{item.avatar}}'></image>
+                                        <view class='flex-grow-1 text-more'>{{item.nickname}}</view>
+                                    </view>
+                                    <view class='flex-grow-0 flex-row flex-y-center'>
+                                        <image style='width:72rpx;height:50rpx;margin-right:16rpx;' class='flex-grow-0' src='{{__wxapp_img.bargain.activity.used.url}}'></image>
+                                        <view class='flex-grow-1'>{{item.price_content}}</view>
+                                    </view>
+                                </view>
+                            </block>
+                        </view>
+                        <block a:if="{{bargain_info.length >= 3}}">
+                            <block a:if="{{show_more_btn}}">
+                                <view class='flex-row flex-x-center flex-y-center' onTap='showMore'>
+                                    <image style='width:18rpx;height:18rpx;margin-right:16rpx;' src='{{__wxapp_img.bargain.activity.down.url}}'></image>
+                                    <view>查看更多</view>
+                                </view>
+                            </block>
+                            <block a:else>
+                                <view class='flex-row flex-x-center flex-y-center' onTap='hideMore'>
+                                    <image style='width:18rpx;height:18rpx;margin-right:16rpx;' src='{{__wxapp_img.bargain.activity.up.url}}'></image>
+                                    <view>收起</view>
+                                </view>
+                            </block>
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </view>
+
+        <view class='new-modal' a:if="{{show_modal}}">
+            <view class='flex-x-center'>
+                <view a:if="{{show_modal_a}}">
+                    <view class='modal-header flex-x-center flex-y-center'>
+                        <image class='header-bg' src='{{__wxapp_img.bargain.activity.header_bg.url}}'></image>
+                        <view class='x' onTap='close'>
+                            <image src='{{__wxapp_img.bargain.activity.x.url}}'></image>
+                        </view>
+                        <view class='header-bg-1' animation="{{animationDataHead}}">
+                            <image style='width:100%;height:100%;' src='{{__wxapp_img.bargain.activity.header_bg_1.url}}'></image>
+                        </view>
+                    </view>
+                    <view class='modal-body'>
+                        <view class='flex-x-center' style='padding-top:64rpx;'>
+                            <block a:if="{{is_owner}}">
+                                <view>
+                                    <view>你一出手就帮自己砍了
+                                        <text style='color:#ff5c5c'>{{bargain_price}}</text>元</view>
+                                    <view style='margin-top:20rpx;'>快邀请好友帮你一起砍价吧</view>
+                                </view>
+                            </block>
+                            <block a:else>
+                                <view>
+                                    <view style='padding:0 24rpx;'>你一出手就帮{{order_user_name}}砍了
+                                        <text style='color:#ff5c5c'>{{bargain_price}}</text>元</view>
+                                </view>
+                            </block>
+                        </view>
+                        <view class='flex-x-center modal-btn'>
+                            <block a:if="{{is_owner}}">
+                                <view animation="{{animationData}}">
+                                    <button class='share-btn' open-type='share'>
+                                        <image src='{{__wxapp_img.bargain.activity.help.url}}'></image>
+                                    </button>
+                                </view>
+                            </block>
+                            <view animation="{{animationData}}" a:else>
+                                <image src='{{__wxapp_img.bargain.activity.join_m.url}}' onTap='orderSubmit'></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view a:else>
+                    <view class='modal-header-2 flex-x-center flex-y-center'>
+                        <view style='width:0;height:0' animation="{{animationDataT}}">
+                            <image style='width:100%;height:100%;' src='{{__wxapp_img.bargain.activity.header_bg_2.url}}'></image>
+                        </view>
+                        <image class='header-bg-3' src='{{__wxapp_img.bargain.activity.header_bg_3.url}}'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

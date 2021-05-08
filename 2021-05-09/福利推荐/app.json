@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/topline/topline",
+    "pages/index/technology/technology",
+    "pages/index/recommond/recommond",
+    "pages/index/leisure/leisure",
+    "pages/index/entertain/entertain",
+    "pages/index/detail/detail"
+   
+  ],
+  "window": {
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "black",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true
+  },
+  "usingComponents": {
+    "navBar": "/components/navBar/navBar"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

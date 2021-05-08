@@ -1,0 +1,15 @@
+/* pages/feedback/feedback.wxss */
+page {
+    background: #fafafa;
+}
+
+.feedback {
+    text-align: center;
+    margin-top: 200rpx; 
+
+}
+
+.feedback image {
+        box-shadow: 4px 4px 4px #eee;
+
+}

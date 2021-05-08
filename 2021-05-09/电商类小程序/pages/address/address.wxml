@@ -1,0 +1,44 @@
+<view class="container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section">
+      <input type="text" hidden="true" value="{{mid}}" name="user_id"/>
+      <input type="text" name="name" placeholder="收货人姓名" />
+    </view>
+    <view class="section">
+      <input type="text" name="phone" placeholder="电话号码" />
+    </view>
+    <view class="section">
+      <picker bindchange="bindPickerChangeshengArr" value="{{shengIndex}}" range="{{shengArr}}" data-id="{{shengId[shengIndex]}}">
+        <view class="picker">
+          选择省份：{{shengArr[shengIndex]}}
+          <input hidden="true" name="province" value="{{shengArr[shengIndex]}}"/>
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <picker bindchange="bindPickerChangeshiArr" value="{{shiIndex}}" range="{{shiArr}}">
+        <view class="picker">
+          选择城市：{{shiArr[shiIndex]}}
+          <input hidden="true" name="city" value="{{shiArr[shiIndex]}}"/>
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <picker bindchange="bindPickerChangequArr" value="{{quIndex}}" range="{{quArr}}">
+        <view class="picker">
+          选择地区：{{quArr[quIndex]}}
+          <input hidden="true" name="town" value="{{quArr[quIndex]}}"/>
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <input type="text" name="address" placeholder="详细地址" />
+    </view>
+    <view>
+      <label></label>
+    </view>
+    <view class="btn-area">
+      <button formType="submit">保存地址</button>
+    </view>
+  </form>
+</view>

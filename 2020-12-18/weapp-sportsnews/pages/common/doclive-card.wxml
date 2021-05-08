@@ -1,0 +1,43 @@
+<!-- 文字直播向导 -->
+
+<import src="card.wxml"/>
+
+<template name="score">
+	<view class="team clearfloat">
+		<view class="left">
+			<image class="logo" src="{{item.sportsLiveExt.leftLogo}}" mode="widthFix"></image>
+			<text class="score">{{item.sportsLiveExt.leftScore}}</text>
+		</view>
+		<view class="right">
+			<text class="score">{{item.sportsLiveExt.rightScore}}</text>
+			<image class="logo" src="{{item.sportsLiveExt.rightLogo}}" mode="widthFix"></image>
+		</view>
+	</view>
+	<view class="name clearfloat">
+		<view class="leftname">{{item.sportsLiveExt.leftName}}</view>
+		<view class="rightname">{{item.sportsLiveExt.rightName}}</view>
+	</view>
+</template>
+
+<template name="doclive-card">
+	<view bindtap='navToDocLive' wx:if="{{item.type != 'web'}}" 
+		  data-LiveExt="{{item.sportsLiveExt}}" >
+		<block wx:if="{{item.id}}"><!--主页里要用到的--> 
+			 <view class="newitem">
+    			<template is="card" data="{{item}}"/>
+    		</view>
+		</block>	
+		<block wx:else><!--直播专题页要用到的-->
+			<view class="livelist">
+	  		<view class="head">
+	  			<text class="dotted">· </text><text class="zhibo">直播</text> | <text class="tag">{{item.sportsLiveExt.tag}}</text>
+	  		</view>
+	  		<view class="livetitle">{{item.title}}</view>
+			<template is="score" data="{{item}}"></template>
+		</view>
+		</block>
+  	</view>
+</template>
+
+
+

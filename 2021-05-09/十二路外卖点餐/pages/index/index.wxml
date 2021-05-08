@@ -1,0 +1,163 @@
+<view>
+  <swiper class="swiper-menu" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item class="swiper-imgs">
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="nav">
+  <view class="search-btn">
+    <image src="/images/search_ico.png"></image>
+  </view>
+  <view class="menu-info">
+    <view class="default active">默认</view>
+    <view class="new">最新</view>
+    <view class="hot">最热</view>
+  </view>
+</view>
+<view class="aslide-menu">
+  <scroll-view class="aslide-box" scroll-y="true" scroll-x="false">
+    <view class="{{status==0 ? 'in' : ''}}" data-index="0" bindtap="changeMenu">推荐</view>
+    <view class="{{status==1 ? 'in' : ''}}" data-index="1" bindtap="changeMenu">粤菜</view>
+    <view class="{{status==2 ? 'in' : ''}}" data-index="2" bindtap="changeMenu">汤水</view>
+    <view class="{{status==3 ? 'in' : ''}}" data-index="3" bindtap="changeMenu">套餐</view>
+  </scroll-view>
+  <view class="aslide-content-section">
+    <scroll-view class="aslide-content" scroll-y="false" scroll-x="true" scroll-into-view="{{currentPosition}}" scroll-with-animation="true" bindscrolltolower="scrollBottom">
+      <view id="order0" class="aslide-item">
+        <text class="aslide-item-title">推荐</text>
+        <view class="aslide-item-info">
+          <view class="aslide-item-img" bindtap="previewImages">
+            <image src="/images/food.jpg"></image>
+          </view>
+          <view class="cart-info-container">
+            <text class="food-name">澳洲牛排</text>
+            <text class="red">￥88.00</text>
+            <image class="cart-add" src="/images/add.png"></image>
+          </view>
+        </view>
+        <view class="aslide-item-info">
+          <view class="aslide-item-img" bindtap="previewImages">
+            <image src="/images/food.jpg"></image>
+          </view>
+          <view class="cart-info-container">
+            <text class="food-name">澳洲牛排</text>
+            <text class="red">￥88.00</text>
+            <image class="cart-add" src="/images/add.png"></image>
+          </view>
+        </view>
+        <view class="aslide-item-info">
+          <view class="aslide-item-img">
+            <image src="/images/food.jpg"></image>
+          </view>
+          <view class="cart-info-container">
+            <text class="food-name">澳洲牛排</text>
+            <text class="red">￥88.00</text>
+            <image class="cart-add" src="/images/add.png"></image>
+          </view>
+        </view>
+      </view>
+      <view id="order1" class="aslide-item">
+        <text class="aslide-item-title">粤菜</text>
+        <view class="aslide-item-info">
+          <view class="aslide-item-img" bindtap="previewImages">
+            <image src="/images/food.jpg"></image>
+          </view>
+          <view class="cart-info-container">
+            <text class="food-name">澳洲牛排</text>
+            <text class="red">￥88.00</text>
+            <image class="cart-add" src="/images/add.png"></image>
+          </view>
+        </view>
+        <view class="aslide-item-info">
+          <view class="aslide-item-img">
+            <image src="/images/food.jpg"></image>
+          </view>
+          <view class="cart-info-container">
+            <text class="food-name">澳洲牛排</text>
+            <text class="red">￥88.00</text>
+            <image class="cart-add" src="/images/add.png"></image>
+          </view>
+        </view>
+        <view class="aslide-item-info">
+          <view class="aslide-item-img">
+            <image src="/images/food.jpg"></image>
+          </view>
+          <view class="cart-info-container">
+            <text class="food-name">澳洲牛排</text>
+            <text class="red">￥88.00</text>
+            <image class="cart-add" src="/images/add.png"></image>
+          </view>
+        </view>
+      </view>
+      <view id="order2" class="aslide-item">
+        <text class="aslide-item-title">汤水</text>
+        <view class="aslide-item-info">
+          <view class="aslide-item-img">
+            <image src="/images/food.jpg"></image>
+          </view>
+          <view class="cart-info-container">
+            <text class="food-name">澳洲牛排</text>
+            <text class="red">￥88.00</text>
+            <image class="cart-add" src="/images/add.png"></image>
+          </view>
+        </view>
+      </view>
+      <view id="order3" class="aslide-item">
+        <text class="aslide-item-title">套餐</text>
+        <view class="aslide-item-info">
+          <view class="aslide-item-img">
+            <image src="/images/food.jpg"></image>
+          </view>
+          <view class="cart-info-container">
+            <text class="food-name">澳洲牛排</text>
+            <text class="red">￥88.00</text>
+            <image class="cart-add" src="/images/add.png"></image>
+          </view>
+        </view>
+        <view class="aslide-item-info">
+          <view class="aslide-item-img">
+            <image src="/images/food.jpg"></image>
+          </view>
+          <view class="cart-info-container">
+            <text class="food-name">澳洲牛排</text>
+            <text class="red">￥88.00</text>
+            <image class="cart-add" src="/images/add.png"></image>
+          </view>
+        </view>
+        <view class="aslide-item-info">
+          <view class="aslide-item-img">
+            <image src="/images/food.jpg"></image>
+          </view>
+          <view class="cart-info-container">
+            <text class="food-name">澳洲牛排</text>
+            <text class="red">￥88.00</text>
+            <image class="cart-add" src="/images/add.png"></image>
+          </view>
+        </view>
+        <view class="aslide-item-info">
+          <view class="aslide-item-img">
+            <image src="/images/food.jpg"></image>
+          </view>
+          <view class="cart-info-container">
+            <text class="food-name">澳洲牛排</text>
+            <text class="red">￥88.00</text>
+            <image class="cart-add" src="/images/add.png"></image>
+          </view>
+        </view>
+        <view class="aslide-item-info">
+          <view class="aslide-item-img">
+            <image src="/images/food.jpg"></image>
+          </view>
+          <view class="cart-info-container">
+            <text class="food-name">澳洲牛排</text>
+            <text class="red">￥88.00</text>
+            <image class="cart-add" src="/images/add.png"></image>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

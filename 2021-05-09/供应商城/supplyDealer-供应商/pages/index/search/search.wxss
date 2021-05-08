@@ -1,0 +1,133 @@
+.search{
+    width:100%;
+    height: 130rpx;
+    background-color:#fff;
+    position:fixed;
+    top:0;
+    left:0;
+}
+
+.search-ipt{
+    width:520rpx;
+    height: 68rpx;
+    background-color:#f2f2f2;
+    float:left;
+    margin-left: 20rpx;
+    margin-top:31rpx;
+    padding-left:40rpx;
+}
+
+.search-text{
+    float:right;
+    margin-right: 20rpx;
+    margin-top:31rpx;
+    width:140rpx;
+    height: 68rpx;
+    background-color:#27b2eb;
+    color:#fff;
+    text-align: center;
+    line-height: 68rpx;
+}
+
+.placeholder-color{
+    color:#999;
+}
+
+.search-container{
+    margin-top:150rpx;
+}
+
+.consequence{
+    width:710rpx;
+    background-color:#fff;
+    padding:0 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.order-num{
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: 2rpx solid #e5e5e5;
+}
+
+.num1{
+    float: left;
+    font-size:26rpx;
+}
+
+.num2{
+    float: right;
+    font-size:24rpx;
+    color:#999;
+}
+
+.order-detail{
+    height: 220rpx;
+    border-bottom:1rpx solid #e5e5e5;
+
+}
+
+.detail-image{
+    width:336rpx;
+    height: 180rpx;
+    float:left;
+    margin:20rpx 0;
+}
+
+.detail-noimage{
+    width:336rpx;
+    height: 180rpx;
+    float:left;
+    margin:20rpx 0;
+}
+
+.noimage-text{
+    display: block;
+    width:160rpx;
+    height: 120rpx;
+    border:1px solid #f2f2f2;
+    color:#ccc;
+    text-align: center;
+    line-height: 120rpx;
+    margin-top:30rpx;
+}
+
+.detail-title{
+    width:310rpx;
+    font-size:32rpx;
+    float:right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    margin-top:48rpx;
+}
+
+.detail-text{
+    width:310rpx;
+    float:right;
+    font-size:26rpx;
+    color:#666;
+    text-align: left;
+}
+
+.order-btn{
+    width:100%;
+    height: 98rpx;
+}
+
+.btn-text{
+    line-height: 98rpx;
+}
+
+.btn-nav{
+    float: right;
+    width:140rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    text-align: center;
+    color:#27b2eb;
+    border:1px solid #27b2eb;
+    margin-left: 20rpx;
+    margin-top:20rpx;
+}

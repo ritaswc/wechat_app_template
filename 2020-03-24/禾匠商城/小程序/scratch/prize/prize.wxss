@@ -1,0 +1,59 @@
+.prize-start {
+    float: right;
+    border-radius: 28rpx;
+    color: #ff4544;
+    font-size: 12pt;
+    border: 1px solid #ff4544;
+    text-align: center;
+    margin-top: 50rpx;
+    line-height: 56rpx;
+    width: 200rpx;
+    margin-right: 24rpx;
+}
+
+.prize-end {
+    float: right;
+    background: #cdcdcd;
+    border-radius: 28rpx;
+    color: #ffffff;
+    font-size: 12pt;
+    text-align: center;
+    margin-top: 50rpx;
+    line-height: 56rpx;
+    width: 200rpx;
+    margin-right: 24rpx;
+}
+
+.prize-line {
+    border: 1rpx solid #e2e2e2;
+}
+
+.prize-time {
+    font-size: 11pt;
+    color: #666666;
+}
+
+.prize-goods {
+    padding: 20rpx 0 22rpx 0;
+    font-size: 12pt;
+    color: #353535;
+    max-width: 480rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.prize-top {
+    padding-left: 24rpx;
+    margin-bottom: 20rpx;
+}
+
+.prize-cen {
+    display: inline-block;
+}
+
+.no-content {
+    color: #888;
+    padding: 100rpx 0 0 0;
+    text-align: center;
+}

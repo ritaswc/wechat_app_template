@@ -1,0 +1,30 @@
+<!--pages/shenghuo/AllServiceclassify/HeaderSection/HeaderSection.wxml-->
+<!--<text>pages/shenghuo/AllServiceclassify/HeaderSection/HeaderSection.wxml</text>-->
+
+<import src="../AllServiceclassifyCell/AllServiceclassifyCell.wxml" />
+
+<template name="HeaderSection">
+  <view class="listtitle" bindtap="goToSecondaryService" data-section-index="{{index}}">
+    <view class="blue-bd-left"></view>
+    <view class="listTitle-content"> {{name}} </view>
+
+    <block wx:if = "{{index != null}}">
+      <view class="pindao">进入频道</view>
+      <image class="rightArrow" src="img/dongt.png"></image>
+    </block>
+
+  </view>
+
+  <view class="fuwufl-box">
+    <view class="fuwufl">
+      <scroll-view scroll-y="true">
+
+        <block wx:for="{{childServiceType}}" wx:for-item="item" wx:key="key">
+          <!--<view class="CouponSearchListCell">{{item.doorName}}</view>-->
+          <template is="AllServiceclassifyCell" data="{{...item}}"></template>
+
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</template>

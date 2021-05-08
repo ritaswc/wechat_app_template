@@ -1,0 +1,5 @@
+
+<!--pages/index/temp/temp.wxml-->
+<view class="classname">
+  <text>跳转页面测试</text>
+</view>

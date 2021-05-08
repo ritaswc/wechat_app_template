@@ -1,0 +1,26 @@
+.section {
+  margin-top: 30rpx;
+  background-color: #ffffff;
+}
+.section .section-item{
+  margin:0 30rpx;
+  height: 96rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+.section .section-item:last-child {
+  border: none;
+}
+.section .section-item .section-item-left{
+  background-color: #ffffff;
+}
+.section .section-item .section-item-right{
+  width: 420rpx;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

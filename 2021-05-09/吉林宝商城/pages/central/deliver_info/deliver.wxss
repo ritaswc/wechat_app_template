@@ -1,0 +1,52 @@
+page{
+	background: #f3f3f3;
+}
+/*收货地址*/
+.address{
+	background: #fff;
+	height: 160rpx;
+	padding-left: 30rpx;
+	margin-top: 30rpx;
+}
+.address .name{
+	line-height: 90rpx;
+	padding-left: 50rpx;
+	background: url(../../../images/member_list_character.png) no-repeat 0 center;
+	background-size: 35rpx 35rpx;
+}
+.address .number{
+	line-height: 90rpx;
+	padding-left: 50rpx;
+	margin-left: 80rpx;
+	background: url(../../../images/member_list_tel.png) no-repeat 0 center;
+	background-size: 35rpx 35rpx;
+}
+
+/*发货信息*/
+.deliverInfo{
+	background: #fff;
+	padding-left: 30rpx;
+	margin-top: 30rpx;
+}
+.deliverInfo>view{
+	height: 100rpx;
+	line-height: 100rpx;
+	border-bottom: 1rpx solid #f3f3f3;
+	background: url(../../../images/member_list_arrow.png) no-repeat 95% center;
+	background-size: 40rpx 40rpx;
+}
+.deliverInfo .listLeft{
+	height: 52rpx;
+	float: left;
+	width: 170rpx;
+}
+.deliverInfo #number{
+	float: left;
+	width: 400rpx;
+	margin-top: 25rpx;
+}
+.deliverInfo #text{
+	width: 400rpx;
+	float: left;
+	margin-top: 25rpx;
+}

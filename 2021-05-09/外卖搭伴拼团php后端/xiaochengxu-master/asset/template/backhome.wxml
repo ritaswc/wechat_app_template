@@ -1,0 +1,5 @@
+
+<template name="backhome">
+    <!--返回首页-->
+    <view class="home" bindtap="backHome"></view>
+</template>

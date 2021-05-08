@@ -1,0 +1,32 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="bottom-bar" style="display: none">
+            <navigator url="/pages/address-edit/address-edit">添加新地址</navigator>
+        </view>
+        <view class="address-list">
+            <view style="margin-bottom: 32rpx">
+                <view style="color: #888;text-align: center;padding: 32rpx 0;" wx:if="{{address_list.length==0}}">暂无收货地址</view>
+                <block wx:else>
+                    <view bindtap="pickAddress" class="address-item" data-index="{{index}}" wx:for="{{address_list}}" wx:key="{{index}}">
+                        <view class="userinfo flex-row">
+                            <view class="flex-grow-1">收货人：{{item.name}}</view>
+                            <view class="flex-grow-0">{{item.mobile}}</view>
+                        </view>
+                        <view class="address-detail">收货地址：{{item.address}}</view>
+                    </view>
+                </block>
+            </view>
+            <view class="flex-row">
+                <view class="flex-grow-1 px-24">
+                    <navigator class="btn btn-red" url="/pages/address-edit/address-edit">手动添加地址</navigator>
+                </view>
+                <view class="flex-grow-1 px-24" wx:if="{{__platform=='wx'}}">
+                    <button bindtap="getWechatAddress" class="btn btn-green">一键获取地址</button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

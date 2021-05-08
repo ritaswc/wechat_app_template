@@ -1,0 +1,80 @@
+{template 'common/header'}
+{if $do == 'display'}
+	<div class="mui-content mc-we7-home">
+		<div class="mui-banner" style="background-image:url({if !empty($ucpage['params'][0]['params']['bgImage'])}'{$ucpage['params'][0]['params']['bgImage']}'{else}'resource/images/head-bg.png'{/if}); background-repeat:no-repeat;background-size:cover;">
+			<div class="setting"><a href="{php echo url('mc/bond/settings') . 'wxref=mp.weixin.qq.com#wechat_redirect'}">设 置</a></div>
+			<img src="{if !empty($profile['avatar'])}{php echo tomedia($profile['avatar']);}{else}./resource/images/member-header.png{/if}" alt="" class="mui-logo mui-img-circle" />
+			<div class="mui-banner-info">
+				<div class="mui-big">{if !empty($profile['nickname'])}<span style="color:white">{$profile['nickname']}</span>{else}<a href="{php echo url('mc/profile') . 'wxref=mp.weixin.qq.com#wechat_redirect'}" style="color:red;">设置昵称</a>{/if}</div>
+				<div class="mui-mt5">{if !empty($profile['mobile'])}<span style="color:white">{$profile['mobile']}</span>{else}<a href="{php echo url('mc/bond/mobile', array('op' => 'mobilechange'))}" class="mui-btn mui-btn-outlined">绑定手机</a>{/if}</div>
+			</div>
+			<div class="mui-row banner-nav">
+				<div class="mui-col-xs-6 mui-text-center">
+					<a href="{php echo url('mc/bond/credits', array('credittype' => 'credit2', 'type' => 'record', 'period' => '1'))}">
+						<span class="fa fa-rmb"></span>
+						{$creditnames[$behavior['currency']]['title']}: <span class="mui-ml5 mui-big">{$credits[$behavior['currency']]}</span>
+					</a>
+				</div>
+				<div class="mui-col-xs-6 mui-text-center">
+					<a href="{php echo url('mc/bond/credits', array('credittype' => 'credit1', 'type' => 'record', 'period' => '1'))}">
+						<span class="fa fa-database"></span>
+						{$creditnames[$behavior['activity']]['title']}: <span class="mui-ml5 mui-big">{$credits[$behavior['activity']]}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="mui-table mui-table-inline mui-mt15 nav-action">
+			<div class="mui-table-cell">
+				<a href="{php echo url('entry', array('m' => 'recharge', 'do' => 'pay'));}" class="mui-block">
+					<img src="resource/images/sum-recharge.png" alt="" />
+					余额充值
+				</a>
+			</div>
+			<div class="mui-table-cell">
+				<a href="javascript:;" id="scanqrcode">
+					<img src="resource/images/scan-pay.png" alt="" />
+					扫码付款
+				</a>
+			</div>
+		</div>
+		{if !empty($others) || !empty($groups)}
+		<ul class="mui-table-view mui-table-view-chevron">
+		{if !empty($others)}
+			{loop $others $nav}
+			<li class="mui-table-view-cell">
+				<a href="{php echo $nav['url']}" class="mui-navigate-right">
+					{$nav['name']}
+				</a>
+			</li>
+			{/loop}
+		{/if}
+		{loop $groups $name $navs}
+			{loop $navs $nav}
+			<li class="mui-table-view-cell">
+				<a href="{php echo $nav['url']}" class="mui-navigate-right">
+					{$nav['name']}
+				</a>
+			</li>
+			{/loop}
+		{/loop}
+		</ul>
+		{/if}
+		<?php echo template_design($ucpage['html'])?>
+	</div>
+{/if}
+
+<script type="text/javascript">
+	wx.ready(function(){
+		$('#scanqrcode').click(function(){
+			wx.scanQRCode({
+				needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+				scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+				success: function (res) {
+					var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+				}
+			});
+		});
+	});
+</script>
+{template 'common/footer'}

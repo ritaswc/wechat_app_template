@@ -1,0 +1,47 @@
+.product-list{
+    background-color: white;
+    box-sizing: border-box;
+    padding: 2rpx;
+}
+.product-group{
+    margin: 5rpx;
+    padding:2rpx;
+    display: block;
+    overflow: hidden;
+}
+.product{
+    width:350rpx;
+    border: 1px solid #e2e2e2;
+    float: left;
+    margin: 6rpx;
+}
+.product image {
+    height: 300rpx;
+    width: 100%;
+}
+.product-name {
+    height: 60rpx;
+    padding-bottom: 5rpx;
+    border-bottom: 1px solid #efefef;
+    font-size: 25rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.product-content  {
+    margin: 15rpx;
+    overflow: hidden;
+}
+.product-price {
+    margin-top: 15rpx;
+    color: red;
+    margin-bottom: 15rpx;
+    font-size: 28rpx;
+    font-weight: 1rpx;
+}
+.product-market {
+    margin:10rpx;
+    color: darkgray;
+    font-size: 24rpx;
+    font-weight: 1rpx;
+    text-decoration:line-through;
+}

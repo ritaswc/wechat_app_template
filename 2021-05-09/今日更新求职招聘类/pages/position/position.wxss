@@ -1,0 +1,334 @@
+/* pages/position/position.wxss */
+@import "../../wxParse/wxParse.wxss";
+page{
+    height: 100%;
+}
+
+.image1{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 5rpx;
+}
+.position_wrap{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main-list{
+    flex: 1;
+    height: 100%;
+    margin-top: 60rpx;
+}
+swiper-item {
+    position: relative;
+    overflow: scroll;
+    height: 100%;
+}
+.position_nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+.position_nav ul{
+    height: 70rpx;
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: space-around;
+}
+.position_nav ul li{
+    text-align: center;
+    width: 50%;
+    line-height: 70rpx;
+}
+.position_nav ul .active{
+    background-color: #fff;
+    border-bottom: 2px solid #e58026;
+}
+
+.position_name,.position_salary,.position_company{
+    margin: 20rpx auto 0;
+    width: 94%;
+}
+.position_salary,.position_company{
+    font-size: 13pt;
+}
+.position_salary{
+    color: #e58026;
+}
+.position_company{
+    color: #666666;
+}
+
+.position_box{
+    width: 94%;
+    margin: 16rpx auto 0;
+    font-size: 11pt;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    color: #666666;
+}
+.position_box .time_{
+    width: 33%;
+}
+
+.position_box li{
+    text-align: left;
+    height: 50rpx;
+    line-height: 50rpx;
+    width: 170rpx;
+    display: flex;
+    align-items: center;
+}
+.p_d_box{
+    margin-top: 16rpx;
+    font-size: 12pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+.p_d_box li{
+    width: 33.33%;
+    text-align: center;
+    border-right: 1px solid #e5e5e5;
+    line-height: 180%;
+}
+.p_d_box li view{
+    color: #666666;
+}
+.p_d_detail{
+    color: #666666;
+    margin: 30rpx 0;
+    font-size: 12pt;
+    padding-left: 3%;
+    line-height: 180%;
+    background-color: #e5e5e5;
+    text-align: left;
+}
+.p_description{
+    width: 93%;
+    margin: 0 auto;
+    min-height: 100rpx;
+    word-break:break-all;
+}
+.user_box{
+    background-color: #e5e5e5;
+    height: 100rpx;
+    width: 100%;
+    font-size: 10pt;
+    color: #f6f6f6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+.user_box .left{
+    color: #666666;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.user_box .left view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user_box .right{
+    width: 100%;
+    font-size: 12pt;
+    text-align: center;
+    color: #fff;
+    height: 70rpx;
+    line-height: 70rpx;
+    display: flex;
+    justify-content: center;
+}
+ button{
+    color: #fff;
+    line-height: 70rpx;
+    width: 97%;
+    float: left;
+    background-color: #e58026;
+    border-radius: 6rpx; 
+}
+.image2{
+    width: 40rpx;
+    height: 40rpx;
+}
+
+
+/*其他职位*/
+.remenList{
+    margin-bottom: 100rpx;
+}
+.remenList .list{
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  text-align: left;
+}
+.remenList .list .hotImg{
+display: inline-block;
+width: 40rpx;
+height: 40rpx;
+margin-right: 10rpx;
+}
+.remenList .list .left{
+  width: 70%;
+}
+.remenList .list .left .positionName{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.positionName .job_name{
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.remenList .list .left .conpany{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12pt;
+  color: #aaa;
+  padding-top: 10rpx;
+}
+.remenList .list .left .time{
+  font-size: 12pt;
+  color: #aaa;
+  padding-top: 10rpx;
+}
+
+
+.remenList .list .right{
+  margin-top: 30rpx;
+  text-align: right;
+}
+.remenList .list .right view{
+  padding-top: 10rpx;
+  font-size: 12pt;
+  color: #aaa;
+}
+.remenList .list .right .money{
+  color: #fc9a39;
+}
+/*企业介绍*/
+.position_intro{
+    /*border: 1px solid green;*/
+    text-align: center;
+    position: relative;
+}
+.company_image{
+    margin-top: 45rpx;
+    margin-bottom: 20rpx;
+    width: 50%;
+    height: 240rpx;
+    border: 1px solid #e5e5e5;
+}
+.p_name{
+    width: 94%;
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.p_list_box{
+    /*border: 1px solid green;*/
+    width: 93%;
+    margin: 16rpx auto 0;
+    text-align: left;
+    color: #666666;
+    font-size: 12pt;
+    line-height: 180%;
+}
+.p_list_box ul{
+    display: flex;
+    flex-direction: column;
+}
+.p_list_box ul span{
+    color: #333;
+}
+.zhishu span{
+    color: #e58026 !important;
+}
+.image3{
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 10rpx;
+}
+.guanzhu{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #e58026;
+    height: 90rpx;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.position_intro .line{
+    width: 94%;
+    margin: 0 auto;
+    padding-top: 3%;
+    border-bottom: #b2b2b2 dashed 1px; 
+}
+.biaoqian {
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    color: #f18e2e;
+    font-size: 12pt;
+    font-weight: 500;
+}
+.biaoqian view{
+    border: 1px solid #f18e2e;
+    padding: 5rpx 0;
+    border-radius: 5rpx;
+    margin-left: 35rpx;
+    margin-top: 20rpx;
+    width: 200rpx;
+}
+.company_industry{
+    text-align: justify;
+    text-indent:80rpx;
+    padding: 20rpx 3% 0;
+}
+
+
+.contant_ours{
+    text-align: left;
+    width: 94%;
+    margin: 8px auto;
+    font-size: 14pt;
+    line-height: 150%;
+}
+.contant_ours span{
+    display: inline-block;
+    color: #999;
+    width: 68pt;
+}
+.contant_ours image{
+    width: 15px;
+    height: 20px;
+}
+.contant_ours .call image{
+    width: 15px;
+    height: 15px;
+}

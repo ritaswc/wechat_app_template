@@ -1,0 +1,74 @@
+<view class="userinfo">
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <text class="userinfo-nickname">{{baye_rank ? baye_rank : ''}}</text>
+</view>
+
+<view class="separate"></view>
+
+<view wx:if="{{needBindMobile}}">
+  <view wx:if="{{useCodeToLogIn}}">
+    <view class="login-title">关联手机号</view>
+    <form bindsubmit="bindLoginMobilecode">
+      <form bindsubmit="bindGetPassCode">
+        <view class="login">
+          <view class="first-line"><input type="digit" name="mobile" bindinput="bindInputMobile" placeholder="输入手机号" value="{{mobile}}"></input></view>
+          <view class="second-line">
+            <input type="digit" name="code" placeholder="四位验证码"></input>
+            <button formType="submit" disabled="{{disableGetMobileCode}}">{{getCodeButtonText}}</button>
+          </view>
+        </view>
+      </form>
+      <view class="third-line"><button formType="submit" disabled="{{disableSubmitMobileCode}}">提交</button></view>
+    </form>
+    <view class="login-type" bindtap="changeLoginType"><text>使用密码登录</text></view>
+  </view>
+  <view class="login" wx:else>
+    <view class="login-title">使用密码登录</view>
+    <form bindsubmit="bindLoginPassword">
+      <view class="first-line"><input type="digit" name="mobile" bindinput="bindInputMobile" placeholder="输入手机号" value="{{mobile}}"></input></view>
+      <view class="password-second-line"><input type="password" name="password" placeholder="密码"></input></view>
+      <view class="third-line"><button formType="submit">登录</button></view>
+    </form>
+    <view class="login-type" bindtap="changeLoginType"><text>使用验证码绑定手机</text></view>
+  </view>
+</view>
+<view wx:else>
+  <view class="zichan">
+    <view class="first-line">
+      <view>巴爷资产</view>
+      <view></view>
+    </view>
+    <view class="second-line">
+      <scroll-view scroll-x="true">
+        <view class="long-view">
+          <block wx:for="{{zichan_slides}}" wx:for-item="slide" wx:key="id">
+            <view class="item" data-sku="{{slide.sku}}">
+              <view class="image">
+                <image class="slide-img" src="../../{{slide.image}}"/>
+              </view>
+              <view class="desc">
+                <view class="desc-line"><text>{{slide.name}}</text></view>
+                <view class="desc-line asset-count"><text>{{slide['asset-count']}}</text></view>
+                <view class="desc-line"><text>{{slide.inventory}}</text></view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+    <!--<view class="third-line">
+      <view>巴爷定制</view>
+      <view>》</view>
+    </view>-->
+  </view>
+</view>
+
+<view class="separate"></view>
+
+<view wx:if="{{!needBindMobile}}" class="profile-button-container">
+  <view class="profile-button" catchtap="bindLogout">
+    <view><image src="../../images/icon-tihuo-close.png" mode='aspectFit'></image></view>
+    <view><text>登出</text></view>
+  </view>
+</view>

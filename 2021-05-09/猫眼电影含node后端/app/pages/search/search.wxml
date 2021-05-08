@@ -1,0 +1,49 @@
+
+<view>
+  <view class="search">
+    <view class="input-wrap">
+      <icon type="search" size="14"></icon>
+      <input class="input" placeholder="{{search.placeholder}}" placeholder-class="placeholderclass" bindinput="searchinput" />
+    </view>
+    <navigator url="../movies/index" class="cancel" open-type="switchTab">取消</navigator>
+  </view>
+  
+  <view class="history" wx:if="{{!theater.length}}">
+    <view wx:for="{{search.his}}" data-theater="{{item}}" class="history-item {{index=='search.his.lenght-1'?'no-bottom':''}}" bindtap="navWanda">
+      <icon type="waiting_circle" size="14" color="#999999" class="waiting_circle"></icon>
+      <view class="search-title">{{item}}</view>
+      <icon type="clear" size="13" color="#ABABAB" class="clear" data-clear="{{index}}" catchtap="clearHis"></icon>
+    </view>
+  </view>
+</view>
+
+<view class="body">
+  <view wx:for="{{theater}}" >
+    <navigator url="../shop/shop" class="theater">
+      <view class="shop">
+        <view class="theName">{{item.shop[0]}}</view>
+        <view class="lower">
+          <text class="lowerN">{{item.shop[1]}}</text>
+          <text class="lowerL">元起</text>
+        </view>
+      </view>
+      <view class="adress">{{item.adress}}</view>
+      <view class="tips">
+        <view wx:for="{{item.tips.blue}}" class="blue tipC">{{item}}</view>
+        <view wx:for="{{item.tips.orang}}" class="orang tipC">{{item}}</view>
+      </view>
+      <view class=" des" wx:if="{{item.hui}}">
+        <view class="huiL letter">惠</view>
+        <view>{{item.hui}}</view>
+      </view>
+      <view class=" des" wx:if="{{item.ka}}">
+        <view class="kaL letter">卡</view>
+        <view>{{item.ka}}</view>
+      </view>
+      <view class="times" wx:if="{{item.times}}">
+        <view>近期场次:</view>
+        <view>{{item.times}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>

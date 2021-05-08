@@ -1,0 +1,285 @@
+/**index.wxss**/
+@import "../../wxSortPickerView/wxSortPickerView.wxss";
+
+.swiper-tab {
+  width: 100%;
+  border-bottom: 1rpx solid #ccc;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 33.33%;
+  color: #666;
+}
+
+.on {
+  color: #ed292a;
+  border-bottom: 5rpx solid #ed292a;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  /*background-color: #fafafa;*/
+}
+
+.item {
+  height: 180rpx;
+  border-bottom: 1px solid #e6e6e6;
+  word-wrap: break-word;
+  word-break: normal;
+}
+
+.item-left {
+  width: 180rpx;
+  float: left;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 90rpx;
+  height: 180rpx;
+  color: #808080;
+  border-right: 1px solid #e6e6e6;
+}
+
+.item-right {
+  height: 180rpx;
+  font-size: 26rpx;
+  color: #808080;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  padding-left: 20rpx;
+}
+
+.item-span {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1.5;
+  /*padding-left: 20rpx;*/
+  padding-top: 30rpx;
+  margin-bottom: 25rpx;
+  font-size: 28rpx;
+}
+
+.item-span-2 {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1.5;
+  /*padding-left: 20rpx;*/
+  padding-top: 15rpx;
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+}
+
+.item-span-down {
+  /*padding-left: 9rpx;*/
+  font-size: 32rpx;
+  color: red;
+  white-space: nowrap;
+}
+
+/*logo集合*/
+
+.lottery_logo {
+  height: 100%;
+  max-width: 100%;
+  background-size: cover;
+  margin-top: 30rpx ;
+  position: relative;
+}
+.lottery_logo view{
+margin: 0;
+/*border: solid 2rpx #ccc;*/
+border-radius: 50%;
+
+}
+
+.lottery_logo.logo1 {
+  background-image: url("http://119.29.198.75/img/1.png");
+}
+
+.lottery_logo.logo2 {
+  background-image: url("http://119.29.198.75/img/1.png");
+}
+
+.lottery_logo.logo3 {
+  background-image: url("http://119.29.198.75/img/1.png");
+}
+
+.lottery_logo.logo4 {
+  background-image: url("http://119.29.198.75/img/4.png");
+  
+}
+
+.lottery_logo.logo5 {
+  background-image: url("http://119.29.198.75/img/5.png");
+}
+
+.lottery_logo.logo6 {
+  background-image: url("http://119.29.198.75/img/6.png");
+}
+
+.lottery_logo.logo7 {
+  background-image: url("http://119.29.198.75/img/1.png");
+}
+
+.lottery_logo.logo8 {
+  background-image: url("http://119.29.198.75/img/8.png");
+}
+
+.lottery_logo.logo9 {
+  background-image: url("http://119.29.198.75/img/8.png");
+}
+
+.lottery_logo.logo10 {
+  background-image: url("http://119.29.198.75/img/6.png");
+}
+
+.lottery_logo.logo11 {
+  background-image: url("http://119.29.198.75/img/11.png");
+}
+
+.lottery_logo.logo12 {
+  background-image: url("http://119.29.198.75/img/11.png");
+}
+
+.lottery_logo.logo13 {
+  background-image: url("http://119.29.198.75/img/11.png");
+}
+
+.lottery_logo.logo14 {
+  background-image: url("http://119.29.198.75/img/1.png");
+}
+
+.lottery_logo.logo15 {
+  background-image: url("http://119.29.198.75/img/15.png");
+}
+
+.lottery_logo.logo16 {
+  background-image: url("http://119.29.198.75/img/1.png");
+}
+
+.lottery_logo.logo17 {
+  background-image: url("http://119.29.198.75/img/17.png");
+}
+
+.lottery_logo.logo20 {
+  background-image: url("http://119.29.198.75/img/8.png");
+}
+
+.lottery_logo.logo21 {
+  background-image: url("http://119.29.198.75/img/11.png");
+}
+
+.lottery_logo.logo22 {
+  background-image: url("http://119.29.198.75/img/8.png");
+}
+
+/*江苏快三*/
+
+.lottery_logo.logo23 {
+  background-image: url("http://119.29.198.75/img/23.png");
+}
+
+.lottery_logo.logo24 {
+  background-image: url("http://119.29.198.75/img/23.png");
+}
+
+.lottery_logo.logo25 {
+  background-image: url("http://119.29.198.75/img/23.png");
+}
+
+/*北京pk10*/
+
+.lottery_logo.logo27 {
+  background-image: url("http://119.29.198.75/img/27.png");
+}
+
+.lottery_logo.logo33 {
+  background-image: url("http://119.29.198.75/img/10.png");
+}
+
+.lottery_logo.logo42 {
+  background-image: url("http://119.29.198.75/img/23.png");
+}
+
+.lottery_logo.logo43 {
+  background-image: url("http://119.29.198.75/img/23.png");
+}
+
+/*台湾果缤纷快乐彩*/
+
+.lottery_logo.logo45 {
+  background-image: url("http://119.29.198.75/img/1.png");
+}
+
+/*新加坡快乐彩*/
+
+.lottery_logo.logo61 {
+  background-image: url("http://119.29.198.75/img/1.png");
+}
+
+/*东京快乐彩*/
+
+.lottery_logo.logo64 {
+  background-image: url("http://119.29.198.75/img/1.png");
+}
+
+/*俄罗斯快乐彩*/
+
+.lottery_logo.logo90 {
+  background-image: url("http://119.29.198.75/img/1.png");
+}
+
+/*新西兰快乐彩*/
+
+.lottery_logo.logo95 {
+  background-image: url("http://119.29.198.75/img/1.png");
+}
+
+/*加拿大快乐彩*/
+
+.lottery_logo.logo99 {
+  background-image: url("http://119.29.198.75/img/1.png");
+}
+
+.img-size {
+  display: block;
+  height: 94rpx;
+  max-width: 94rpx;
+  /*width: 40px;
+    height: 40px;*/
+  margin: 0 auto;
+}
+
+.img-size_2 {
+  display: block;
+  height: 83rpx;
+  max-width: 120rpx;
+  margin: 0 auto;
+}
+
+.areaTop {
+  background-color: #eee;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 5px;
+}
+
+.names {
+  color: #808080;
+  font-size: 24rpx;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 46rpx;
+}

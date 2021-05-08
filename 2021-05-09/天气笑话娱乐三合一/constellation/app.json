@@ -1,0 +1,33 @@
+{
+  "pages":[
+    "pages/history/index",
+    "pages/qq/index",
+    "pages/index/index",
+    "pages/constellation-detail/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#99322d",
+    "navigationBarTitleText": "综合小娱乐",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "selectedColor": "#99322d",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "星座运势",
+      "iconPath": "pages/imgs/xz2.png",
+      "selectedIconPath": "pages/imgs/xz1.png"
+    }, {
+      "pagePath": "pages/history/index",
+      "text": "历史今天",
+      "iconPath": "pages/imgs/history2.png",
+      "selectedIconPath": "pages/imgs/history1.png"
+    }, {
+      "pagePath": "pages/qq/index",
+      "text": "QQ吉凶",
+      "iconPath": "pages/imgs/qq2.png",
+      "selectedIconPath": "pages/imgs/qq1.png"
+    }]
+  }
+}

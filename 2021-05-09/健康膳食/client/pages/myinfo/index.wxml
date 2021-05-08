@@ -1,0 +1,212 @@
+<view class="container">
+    <view class="menu-list">
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                用户名
+            </view>
+            <navigator url="../editeInfo/index?key=username&value={{user.username}}&label=用户名">
+                <view class="menu-item-title">
+                    {{user.username}}
+                </view>
+                <image class="next-icon" src="../../images/rightArrow.png" />
+            </navigator>
+        </view>
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                昵称
+            </view>
+            <navigator url="../editeInfo/index?key=name&value={{user.name}}&label=昵称">
+                <view class="menu-item-title">
+                    {{user.name}}
+                </view>
+                <image class="next-icon" src="../../images/rightArrow.png" />
+            </navigator>
+        </view>
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                性别
+            </view>
+            <view class="menu-item-title" bindtap="showGenderDialog">
+                {{user.sex}}
+            </view>
+            <image class="next-icon" src="../../images/rightArrow.png"  bindtap="showGenderDialog"/>
+        </view>
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                邮箱
+            </view>
+            <navigator url="../editeInfo/index?key=email&value={{user.email}}&label=邮箱">
+                <view class="menu-item-title">
+                    {{user.email}}
+                </view>
+                <image class="next-icon" src="../../images/rightArrow.png" />
+            </navigator>
+        </view>
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                手机
+            </view>
+            <navigator url="../editeInfo/index?key=phone&value={{user.phone}}&label=手机">
+                <view class="menu-item-title">
+                    {{user.phone}}
+                </view>
+                <image class="next-icon" src="../../images/rightArrow.png" />
+            </navigator>
+        </view>
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                省市
+            </view>
+            <view class="menu-item-title" bindtap="showCityPickerDialog">
+                {{user.province}} {{user.city}}
+            </view>
+            <image class="next-icon" src="../../images/rightArrow.png"  bindtap="showCityPickerDialog"/>
+        </view>
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                通讯地址
+            </view>
+            <navigator url="../editeInfo/index?key=address&value={{user.address}}&label=详细地址">
+                <view class="menu-item-title">
+                    {{user.address}}
+                </view>
+                <image class="next-icon" src="../../images/rightArrow.png" />
+            </navigator>
+        </view>
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                邮编
+            </view>
+            <navigator url="../editeInfo/index?key=code&value={{user.code}}&label=邮编">
+                <view class="menu-item-title">
+                    {{user.code}}
+                </view>
+                <image class="next-icon" src="../../images/rightArrow.png" />
+            </navigator>
+        </view>
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                证件类型
+            </view>
+            <view class="menu-item-title" bindtap="showCertificateCategoryDialog">
+                {{user.certificate_category}}
+            </view>
+            <image class="next-icon" src="../../images/rightArrow.png" />
+        </view>
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                证件号码
+            </view>
+            <navigator url="../editeInfo/index?key=certificate_code&value={{user.certificate_code}}&label=证件号码">
+                <view class="menu-item-title">
+                    {{user.certificate_code}}
+                </view>
+                <image class="next-icon" src="../../images/rightArrow.png" />
+            </navigator>
+        </view>
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                科室
+            </view>
+            <view class="menu-item-title" bindtap="showDepartmentPickerDialog">
+                {{user.department_first}} {{user.department_second}}
+            </view>
+            <image class="next-icon" src="../../images/rightArrow.png" bindtap="showDepartmentPickerDialog" />
+        </view>
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                职称
+            </view>
+            <navigator url="../editeInfo/index?key=title&value={{user.title}}&label=职称">
+                <view class="menu-item-title">
+                    {{user.title}}
+                </view>
+                <image class="next-icon" src="../../images/rightArrow.png" />
+            </navigator>
+        </view>
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                工作单位
+            </view>
+            <navigator url="../editeInfo/index?key=unit&value={{user.unit}}&label=工作单位">
+                <view class="menu-item-title">
+                    {{user.unit}}
+                </view>
+                <image class="next-icon" src="../../images/rightArrow.png" />
+            </navigator>
+        </view>
+        <view class="my-setting menu-item">
+            <view class="menu-item-label">
+                医生资格证编号
+            </view>
+            <navigator url="../editeInfo/index?key=doctor_certificate_code&value={{user.doctor_certificate_code}}&label=医生资格证编号">
+                <view class="menu-item-title">
+                    {{user.doctor_certificate_code}}
+                </view>
+                <image class="next-icon" src="../../images/rightArrow.png" />
+            </navigator>
+        </view>
+    </view>
+    <view wx:if="{{genderDialogStatus}}">
+        <view class="gender-dialog">
+            <view class="gender-content">
+                <radio-group class="radio-group" bindchange="genderRadioChange">
+                    <label wx:key="{{index}}" class="radio" wx:for="{{genders}}">
+                        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                        </label>
+                </radio-group>
+            </view>
+        </view>
+    </view>
+    <!-- 地址选择器 -->
+    <view wx:if="{{cityPickerDialogStatus}}">
+        <view class="city-picker-dialog">
+            <view class="city-picker-btns-container">
+                <view class="city-picker-cancel-btn" bindtap="hideCityPickerDialog">取消</view>
+                <view class="city-picker-enter-btn" bindtap="saveCity">确认</view>
+            </view>
+            <picker-view class="picker-view" indicator-style="height: 50px;" value="{{value}}" bindchange="bindCityChange">
+                <picker-view-column class="picker-view-column">
+                  <view wx:key="{{index}}" wx:for="{{provinces}}" style="line-height: 50px">{{item}}</view>
+                </picker-view-column>
+                <picker-view-column class="picker-view-column">
+                  <view wx:key="{{index}}" wx:for="{{citys}}" style="line-height: 50px">{{item}}</view>
+                </picker-view-column>
+                <!--
+                <picker-view-column class="picker-view-column">
+                  <view wx:key="{{index}}" wx:for="{{areas}}" style="line-height: 50px">{{item}}</view>
+                </picker-view-column>
+                -->
+            </picker-view>
+        </view>
+    </view>
+    <!-- 证件类型选择器  -->
+    <view wx:if="{{certificateCategoryDialogStatus}}">
+        <view class="gender-dialog">
+            <view class="gender-content">
+                <radio-group class="radio-group" bindchange="certificateCategoryRadioChange">
+                    <label wx:key="{{index}}" class="radio" wx:for="{{certificateCategories}}">
+                        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                        </label>
+                </radio-group>
+            </view>
+        </view>
+    </view>
+    <!-- 科室类型选择器 -->
+    <view wx:if="{{departmentPickerDialogStatus}}">
+        <view class="city-picker-dialog">
+            <view class="city-picker-btns-container">
+                <view class="city-picker-cancel-btn" bindtap="hideDepartmentPickerDialog">取消</view>
+                <view class="city-picker-enter-btn" bindtap="saveDepartment">确认</view>
+            </view>
+            <picker-view class="picker-view" indicator-style="height: 50px;" value="{{departmentValue}}" bindchange="bindDepartmentChange">
+                <picker-view-column class="picker-view-column">
+                  <view wx:key="{{index}}" wx:for="{{departmentFirsts}}" style="line-height: 50px">{{item}}</view>
+                </picker-view-column>
+                <picker-view-column class="picker-view-column">
+                  <view wx:key="{{index}}" wx:for="{{departmentSeconds}}" style="line-height: 50px">{{item}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+</view>

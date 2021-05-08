@@ -1,0 +1,46 @@
+<!--index_index_scroll-->
+<template name="index_index_scroll_tmpl">
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+                autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+    <block wx:for="{{images}}">
+      <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
+
+<!--index_index_navs-->
+<template name="index_index_navs_tmpl">
+  <block wx:for="{{navs}}">
+    <view class="l-c-c" catchtap="go" data-type="{{item.text}}">
+      <image src="{{item.image}}" class="slide-image"/>
+      <text>{{item.text}}</text>
+    </view>
+  </block>
+</template>
+
+<!--index_index_items-->
+<template name="index_index_items_tmpl">
+  <block wx:for="{{items}}">
+    <view class="item">
+      <image src="{{item.image}}" class="slide-image"/>
+    </view>
+  </block>
+</template>
+
+<!--list_index_items-->
+<template name="list_index_items_tmpl">
+  <block wx:for="{{items}}">
+    <view class="l-r l-c item">
+      <view class="image">
+        <image src="{{item.imgs[0]}}!/fwfh/330x330/quality/80"/>
+      </view>
+      <view class="l_auto item-right">
+        <view class="title"><text>{{item.title}}</text></view>
+        <text>{{item.quantity}}{{item.unit}}/份</text>
+        <text class="c-1">￥{{item.price/100}}</text>
+      </view>
+    </view>
+  </block>
+</template>

@@ -1,0 +1,234 @@
+<view class="tz_head">
+    <view class="hd_title">
+        <view bindtap="change" id="shd" class="tab {{shdShow ? 'active_show' : 'active_hide'}}">商行贷</view>
+        <view bindtap="change" id="sdd" class="tab {{sddShow ? 'active_show' : 'active_hide'}}">商低贷<image src="../../images/tz/yed_new.png"></image></view>
+        <view bindtap="change" id="sqd" class="tab {{sqdShow ? 'active_show' : 'active_hide'}} border_none">商企贷</view>
+    </view>
+</view>
+
+<view class="content">
+<!-- 商行贷 -->
+    <view class="tab_list shd_list {{shdShow ? 'show' : 'hide'}}">
+        <view class="shd_list" wx:for="{{shdList}}">
+            <navigator url="shd/shd?sid={{item.id}}"><view class="tab_title">商行贷<text>{{item.conSn}}</text>系列之{{item.last}} <text class="bao">保</text><text class="fan">返利2.6%</text></view></navigator>
+            <view class="tab_con">
+                <view class="left">
+                    <text>{{item.rate}}</text>%
+                    <view>预期年化收益率</view>
+                </view>
+                <view class="right">
+                    <view class="clear">
+                        <view class="right_l">
+                            <text>{{item.deadlineStr}}</text>个月
+                            <view>{{item.amount}}</view>
+                        </view>
+                        <view class="right_r">
+                            <navigator url="invest/invest">开始投资</navigator>
+                        </view>
+                    </view>
+                    <view class="progress">
+                        <progress percent="{{item.percent}}" show-info active color="#ff723f" />
+                    </view>
+                </view>
+            </view>
+        </view>
+<!--{{item.raisedAmount}}/{{item.amount}}-->
+        <!--<view class="shd_list">
+            <navigator url="project/project"><view class="tab_title">商行贷1607151系列之1 <text class="bao">保</text><text class="fan">返利2.6%</text></view></navigator>
+            <view class="tab_con">
+                <view class="left">
+                    <text>15.0</text>%
+                    <view>预期年化收益率</view>
+                </view>
+                <view class="right">
+                    <view class="clear">
+                        <view class="right_l">
+                            <text>8</text>个月
+                            <view>800000元</view>
+                        </view>
+                        <view class="right_r">
+                            <navigator url="invest/invest">开始投资</navigator>
+                        </view>
+                    </view>
+                    <view class="progress">
+                        <progress percent="60" show-info active color="#ff723f" />
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="shd_list">
+            <navigator url="project/project"><view class="tab_title">商行贷1607151系列之1 <text class="bao">保</text><text class="fan">返利2.6%</text></view></navigator>
+            <view class="tab_con">
+                <view class="left">
+                    <text>15.0</text>%
+                    <view>预期年化收益率</view>
+                </view>
+                <view class="right">
+                    <view class="clear">
+                        <view class="right_l">
+                            <text>8</text>个月
+                            <view>800000元</view>
+                        </view>
+                        <view class="right_r">
+                            <navigator url="invest/invest">开始投资</navigator>
+                        </view>
+                    </view>
+                    <view class="progress">
+                        <progress percent="60" show-info active color="#ff723f" />
+                    </view>
+                </view>
+            </view>
+        </view>-->
+    </view>
+
+<!-- 商抵贷 -->
+    <view class="tab_list {{sddShow ? 'show' : 'hide'}}">
+        <view class="shd_list" wx:for="{{sddList}}">
+            <navigator url="sdd/sdd?sid={{item.id}}"><view class="tab_title">商抵贷<text>{{item.conSn}}</text>系列之{{item.last}} <text class="bao">保</text><text class="fan">返利2.6%</text></view></navigator>
+            <view class="tab_con">
+                <view class="left">
+                    <text>{{item.rate}}</text>%
+                    <view>预期年化收益率</view>
+                </view>
+                <view class="right">
+                    <view class="clear">
+                        <view class="right_l">
+                            <text>{{item.deadlineStr}}</text>个月
+                            <view>{{item.amount}}</view>
+                        </view>
+                        <view class="right_r">
+                            <navigator url="invest/invest">开始投资</navigator>
+                        </view>
+                    </view>
+                    <view class="progress">
+                        <progress percent="{{item.percent}}" show-info active color="#ff723f" />
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <!--<view class="shd_list">
+            <view class="tab_title">商抵贷1607151系列之1 <text class="bao">保</text><text class="fan">返利2.6%</text></view>
+            <view class="tab_con">
+                <view class="left">
+                    <text>15.0</text>%
+                    <view>预期年化收益率</view>
+                </view>
+                <view class="right">
+                    <view class="clear">
+                        <view class="right_l">
+                            <text>8</text>个月
+                            <view>800000元</view>
+                        </view>
+                        <view class="right_r">
+                            <navigator url="">开始投资</navigator>
+                        </view>
+                    </view>
+                    <view class="progress">
+                        <progress percent="60" show-info active color="#ff723f" />
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="shd_list">
+            <view class="tab_title">商抵贷1607151系列之1 <text class="bao">保</text><text class="fan">返利2.6%</text></view>
+            <view class="tab_con">
+                <view class="left">
+                    <text>15.0</text>%
+                    <view>预期年化收益率</view>
+                </view>
+                <view class="right">
+                    <view class="clear">
+                        <view class="right_l">
+                            <text>8</text>个月
+                            <view>800000元</view>
+                        </view>
+                        <view class="right_r">
+                            <navigator url="">开始投资</navigator>
+                        </view>
+                    </view>
+                    <view class="progress">
+                        <progress percent="60" show-info active color="#ff723f" />
+                    </view>
+                </view>
+            </view>
+        </view>-->
+    </view>
+
+<!-- 商企贷 -->
+<view class="tab_list {{sqdShow ? 'show' : 'hide'}}">
+        <view class="shd_list" wx:for="{{sqdList}}">
+            <navigator url="sqd/sqd?sid={{item.id}}"><view class="tab_title">商企贷<text>{{item.conSn}}</text>系列之{{item.last}} <text class="bao">保</text><text class="fan">返利2.6%</text></view></navigator>
+            <view class="tab_con">
+                <view class="left">
+                    <text>{{item.rate}}</text>%
+                    <view>预期年化收益率</view>
+                </view>
+                <view class="right">
+                    <view class="clear">
+                        <view class="right_l">
+                            <text>{{item.deadlineStr}}</text>个月
+                            <view>{{item.amount}}</view>
+                        </view>
+                        <view class="right_r">
+                            <navigator url="invest/invest">开始投资</navigator>
+                        </view>
+                    </view>
+                    <view class="progress">
+                        <progress percent="{{item.percent}}" show-info active color="#ff723f" />
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <!--<view class="shd_list">
+            <view class="tab_title">商企贷1607151系列之1 <text class="bao">保</text><text class="fan">返利2.6%</text></view>
+            <view class="tab_con">
+                <view class="left">
+                    <text>15.0</text>%
+                    <view>预期年化收益率</view>
+                </view>
+                <view class="right">
+                    <view class="clear">
+                        <view class="right_l">
+                            <text>8</text>个月
+                            <view>800000元</view>
+                        </view>
+                        <view class="right_r">
+                            <navigator url="">开始投资</navigator>
+                        </view>
+                    </view>
+                    <view class="progress">
+                        <progress percent="60" show-info active color="#ff723f" />
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="shd_list">
+            <view class="tab_title">商企贷1607151系列之1 <text class="bao">保</text><text class="fan">返利2.6%</text></view>
+            <view class="tab_con">
+                <view class="left">
+                    <text>15.0</text>%
+                    <view>预期年化收益率</view>
+                </view>
+                <view class="right">
+                    <view class="clear">
+                        <view class="right_l">
+                            <text>8</text>个月
+                            <view>800000元</view>
+                        </view>
+                        <view class="right_r">
+                            <navigator url="">开始投资</navigator>
+                        </view>
+                    </view>
+                    <view class="progress">
+                        <progress percent="60" show-info active color="#ff723f" />
+                    </view>
+                </view>
+            </view>
+        </view>-->
+    </view>
+</view>

@@ -1,0 +1,8 @@
+<view class="hbq_hd">
+    <navigator url="hbqRule/hbqRule">红包卷使用规则<image src="../../../../images/account/arrowright.png"></image></navigator>
+</view>
+
+<view class="hbq_con">
+    <image src="../../../../images/account/jxj_wu.png"></image>
+    <view class="">没有更多的券了</view>
+</view>

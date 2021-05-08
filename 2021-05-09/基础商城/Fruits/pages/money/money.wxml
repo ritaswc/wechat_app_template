@@ -1,0 +1,9 @@
+<!--显示我的钱包页面-->
+<view class="ph" wx:for="{{cate_src}}" wx:for-item="item" style="">
+<view class="image">
+<image class="ph_image" mode="{{item.mode}}" src="{{item.picture}}"></image>
+</view>  
+  <view class="section__title1">
+  {{item.text}}
+  </view>
+</view>

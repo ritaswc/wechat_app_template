@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="carts">
+    <view class="weui-tab" id="tab">
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content">
+          <view class=" padding-wrap">
+
+
+            <view class="weui-cell weui-cell__access bg_color items-container" wx:for="{{listgoods}}">
+              <view class="weui-cell_hd">
+                <image src="{{item.goods_img}}" alt class="carts-image"></image>
+              </view>
+              <view class="weui-cell_bd carts-content">
+                <view class="carts-title">
+                  <text >{{item.goods_name}}</text>
+                </view>
+                <view class="carts-price">
+                 <text >¥{{item.market_price}}</text>
+                 <button class="downbtn" bindtap="upgood" data-id="{{item.id}}" data-status="{{item.is_on_sale}}" wx:if="{{item.is_on_sale}}" >上架</button>
+                 <button class="upbtn" bindtap="upgood" data-id="{{item.id}}" data-status="{{item.is_on_sale}}" wx:if="{{!item.is_on_sale}}"  >下架</button>
+                 <button bindtap="delgood" data-id="{{item.id}}">删除</button>
+                </view>
+               
+              </view>
+            </view>
+          </view>
+          <!--<view class=" padding-wrap">
+
+
+            <view class="weui-cell weui-cell__access bg_color items-container">
+              <view class="weui-cell_hd">
+                <image src="../../images/music/xuwei.jpg" alt class="carts-image"></image>
+              </view>
+              <view class="weui-cell_bd">
+                <text class="carts-title">抱枕靠垫卡通沙发抱枕办公室靠枕床头靠背可爱汽车靠垫腰枕</text>
+                <text class="carts-price">¥3500</text>
+              </view>
+            </view>
+            
+          </view>-->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

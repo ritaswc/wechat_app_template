@@ -1,0 +1,110 @@
+.info-cont{
+    border-top:solid 1px #f0f0f0;
+    padding-top: 30rpx;
+    display: flex;
+    flex-direction: column;
+
+}
+.infoMain{
+    border-bottom:solid 1px #f0f0f0;
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    margin-bottom: 30rpx;
+}
+.info-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20rpx 40rpx;
+    border-top:solid 1px #f0f0f0;
+
+}
+.infotext{
+    display: flex;
+    align-items: center;
+}
+.infotext input{
+  width:419rpx;
+  text-align:right;
+
+
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 0 20rpx;
+  border-radius: 50%;
+}
+.info-motto{
+     margin: 0 20rpx;
+     color:#888;
+     font-size:30rpx;
+
+}
+
+
+page {
+  background: #eee;
+}
+
+.container {
+  margin: 10rpx;
+}
+
+.user-data {
+  height: 360rpx;
+  margin-bottom: 20rpx;
+}
+
+.user-data image {
+  margin-top: 70rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.user-data text {
+  font-size: 26rpx;
+  margin-top: 30rpx;
+}
+
+.user-order {
+  height: 200rpx;
+}
+
+.user-order-data {
+  margin-top: 50rpx;
+  width: 180rpx;
+}
+
+.user-order-data image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 15rpx;
+}
+
+.user-order-data text {
+  font-size: 24rpx;
+}
+.phone {
+  display: table;
+  text-align: center;
+}
+
+
+.phone-icon {
+  /*background-position: 0 -172rpx;*/
+  background-image: url(../../images/more2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.park-icon {
+vertical-align:middle;
+width:50rpx;
+height:54rpx;
+margin-left:27rpx;
+
+}
+

@@ -1,0 +1,93 @@
+
+<view class="content">
+     <!--轮播-->
+  <swiper indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#ba77ff" autoplay="true" style="height:640rpx">
+    <block wx:key wx:for="{{groupInfo.goodsinfo.original_img}}">
+      <swiper-item>
+        <image src="{{item}}" mode="widthFix"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="container-goods">
+      <view class="main-goods">
+        <view class="main-goods-title">{{groupInfo.goodsinfo.goods_name}}</view>
+        <view class="main-goods-info">
+          <view><text>{{groupInfo.goodsinfo.group_person}}件成团</text></view>
+          <view>已售 <text>{{groupInfo.goodsinfo.goods_sale_num}}</text> 件</view>
+          <view>库存：<text>{{groupInfo.goodsinfo.goods_num}}</text></view> 
+        </view>     
+        <view class="main-goods-price">
+          <view><text>¥{{groupInfo.goodsinfo.goods_now_price}}</text></view>
+          <view><text>原价：{{groupInfo.goodsinfo.goods_price}}</text></view>
+          <view wx:if="{{groupInfo.goodsinfo.group_low_person > 0}}"><text class="color-red">{{groupInfo.goodsinfo.group_low_person}}件拼底价 ¥{{groupInfo.goodsinfo.goods_low_price}}</text></view> 
+        </view>
+        <view class="hr"></view>
+        <view class="main-goods-ship">
+            <view><i class="iCon-ship"></i><text>北京地区</text> 配送</view>
+            <view><i class="iCon-ship"></i>截团后 <text>48小时内</text> 发送</view>
+        </view>
+      </view>
+   </view>
+    <view class="goods-manager">
+        <view class="goods-manager-left">
+            <view class="brand">
+                <image src="{{groupInfo.goodsinfo.logo}}"></image>
+            </view>
+            <text>{{groupInfo.goodsinfo.business_name}}</text>
+        </view>
+        <view class="goods-manager-right" bindtap="showTenant" data-mid="{{groupInfo.goodsinfo.mid}}">
+            <text>TA的主页</text>
+        </view>
+    </view>
+   <view class="group-state">
+      <view><text>离截团结束</text></view>
+      <view class="group-state-time">
+        <view class="bg1"></view>
+        <view class="bg2" animation="{{animationData}}"></view>
+        <view class="bg3"></view>
+        <text wx:if="{{groupInfo.goodsinfo.group_end_time !== false}}">{{groupInfo.goodsinfo.group_end_time}}</text>
+        <text wx:else>已结束</text>
+      </view>
+      <view class="group-state-person" wx:if="{{groupInfo.goodsinfo.group_low_person > groupInfo.goodsinfo.group_already_person}}">
+        还差<text>{{groupInfo.goodsinfo.has_person}}</text>件拼底价
+        <text>¥{{groupInfo.goodsinfo.goods_low_price}}</text>
+      </view>
+   </view>
+   <view class="group-member">
+      <view><text>TA们在拼</text></view>
+      <block wx:for="{{groupInfo.groupUser}}" wx:key>
+      <view class="goods-member-manager">
+          <view class="goods-member-manager-left">
+              <view class="brand">
+                  <image src="{{item.images}}"></image>
+              </view>
+              <view class="group-time">
+              <view>
+                <text>{{item.nickname}}</text>
+              <text class="group-header" wx:if="{{item.is_leader == 1}}">团长</text>
+              </view>
+              <view>
+              <text>下单时间:{{item.group_time}}</text>
+              </view>
+              </view>
+          </view>
+          <view>
+              <text>{{item.number}}件</text>
+          </view>
+      </view>
+      </block>
+   </view>
+   <view class="group-notice">
+      <text>您参与的团购如未能在团购时间内达到成团件数，我们将在48小时内将支付货款退还到您的付款账户；\n\n成团后，如您开团支付的价格与截团时的底价存在价差，我们将在48小时内将价差返还到您的付款账户。</text>
+      <view class="group-share">
+        <text>点击右上角分享给小伙伴吧</text>
+      </view>
+    </view>
+    <view class="footer">
+        <view class="footer-left">当前价格 <text>¥{{groupInfo.goodsinfo.goods_now_price}}</text></view>
+        <view class="footer-right" bindtap="pay">立即参团</view>
+    </view>
+</view>
+
+<import src="/asset/template/backhome.wxml" />
+<template is="backhome"/>

@@ -1,0 +1,31 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="info">
+            <view class="info-list">
+                <view class="info-content" wx:for="{{video_list}}" wx:key="{{item.id}}">
+                    <view class="info-bg">
+                        <view class="info-video">
+                            <video autoplay="true" controls="controls" id="video_{{index}}" src="{{item.url}}" wx:if="{{show_video==index}}"></video>
+                            <block wx:else>
+                                <image bindtap="play" class="bg" data-index="{{index}}" src="{{item.pic_url}}"></image>
+                                <image bindtap="play" class="play" data-index="{{index}}" src="{{__wxapp_img.store.video_play.url}}"></image>
+                            </block>
+                        </view>
+                        <view class="info-label">{{item.title}}</view>
+                        <view class="content {{item.show!=-1?'':'more'}}">{{item.content}}</view>
+                        <view class="flex-y-center flex-x-center" style="position:relative;height:80rpx;font-size:9pt;color:#afafaf">
+                            <text class="flex-y-center left">{{item.time}}</text>
+                            <view bindtap="more" class="right flex-y-center" data-index="{{index}}">
+                                <image animation="{{animationData}}" src="{{item.show!=-1?__wxapp_img.store.up.url:'/images/icon-down.png'}}"></image>
+                                <text data-index="{{index}}">展开</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

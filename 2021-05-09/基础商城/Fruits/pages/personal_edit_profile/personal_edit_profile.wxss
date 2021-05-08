@@ -1,0 +1,15 @@
+.name{
+    padding-left:50px; 
+}
+
+.psw{
+    padding-left:50px; 
+}
+
+.username{
+    padding-left:50px; 
+}
+
+.email{
+    padding-left:50px; 
+}

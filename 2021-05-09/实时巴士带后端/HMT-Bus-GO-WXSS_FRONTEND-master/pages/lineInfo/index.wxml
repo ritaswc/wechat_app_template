@@ -1,0 +1,51 @@
+<!-- HMT Bus GO! (WXSS VER.) -->
+<!-- 线路详情页 -->
+
+<page>
+	<view class="page">
+		<view class="page__hd">
+			<view class="page__title">{{lineInfo[0].line_name}} [ {{lineInfo[0].line_start}} 开往 {{lineInfo[0].line_end}} ]</view>
+			<view class="page__desc">发班时间：{{lineInfo[0].first_bus}} ~ {{lineInfo[0].last_bus}}</view>
+		</view>
+
+		<view class="page__bd">
+			<view class="weui-cells weui-cells_after-title">
+				<view class="weui-cell weui-cell_switch">
+					<view class="weui-cell__bd">自动刷新</view>
+					<view class="weui-cell__ft">
+						<switch checked="{{switchChecked}}" bindchange="autoRefresh" id="{{lineInfo[0].line_id}}"></switch>
+					</view>
+				</view>
+			</view>
+			<view class="wrap"></view>
+			<view class="page__bd page__bd_spacing">
+				<button class="weui-btn" type="primary" id="{{lineInfo[0].line_id}}" bindtap="refresh">刷新数据</button>
+			</view>
+
+			<view class="weui-cells__title">途经站点</view>
+			<view class="weui-cells weui-cells_after-title">
+				<block wx:for="{{stops}}" wx:for-item="stop">
+					<navigator class="weui-cell weui-cell_access" url="/pages/stopInfo/index?id={{stop.stop_id}}" hover-class="weui-cell_active">
+						<view class="weui-cell__bd">{{stop.stop_name}}</view>
+						<view class="weui-cell__ft weui-cell__ft_in-access">
+							<block wx:if="{{stop.have_bus}}">
+								<view class="weui-badge">{{stop.have_bus}} 辆车已到达</view>
+							</block>
+						</view>
+					</navigator>
+				</block>
+			</view>
+			<view class="weui-cells__title">发车时刻表</view>
+			<view class="weui-cells weui-cells_after-title">
+				<navigator class="weui-cell weui-cell_access" url="/pages/timetable/index?id={{lineInfo[0].line_id}}&type=weekday" hover-class="weui-cell_active">
+					<view class="weui-cell__bd">查看工作日时刻表</view>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+				</navigator>
+				<navigator class="weui-cell weui-cell_access" url="/pages/timetable/index?id={{lineInfo[0].line_id}}&type=weekend" hover-class="weui-cell_active">
+					<view class="weui-cell__bd">查看周末节假日时刻表</view>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+				</navigator>
+			</view>
+		</view>
+	</view>
+</page>

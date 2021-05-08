@@ -1,0 +1,45 @@
+.body{z-index: 0;}
+page{background-color: #f0f0f0;}
+.tab{border-bottom: 1rpx solid #ddd;background-color: #fff;margin-bottom: 20rpx;}
+.tab .tit{border-bottom: 1rpx solid #eee;padding: 10rpx 25rpx;font-size:11pt; color: #999;}
+.tab .con{padding:20rpx 25rpx;font-size: 13pt;}
+
+.dt{display:flex;}
+.dt-item{flex: 1;padding:20rpx 60rpx;}
+
+.pos{position: relative;}
+.pos:after{content: " "; display:block;position: absolute; width: 0;height: 0;border-top:15rpx solid #576b95;border-left:10rpx solid transparent;border-right:10rpx solid transparent; left: 25rpx;top: 35rpx;}
+
+.arrow{position: relative;}
+.arrow:after{content: ""; display:block;position: absolute;width: 20rpx;height: 20rpx;border-top:5rpx solid #ddd;border-right:5rpx solid #ddd;transform:rotateZ(45deg); top: 27rpx; right:30rpx;}
+
+.item{display:flex;padding:20rpx 20rpx;}
+.item .label{width: 200rpx;font-size: 12pt;}
+.item .content{flex: 1;}
+
+
+.pro{display:flex;justify-content: center;align-items: center; height: 160rpx; padding: 0 25rpx; border-bottom: 1rpx dotted #eee}
+.pro .pimg{width: 150rpx;height: 120rpx;}
+.pro .pname{flex: 1;padding:0 20rpx;}
+.pro .pprice{flex: 1;color: #666;}
+.pro .ptprice{width:100rpx;}
+
+.tool{position: fixed;left: 0;bottom: 0; padding: 20rpx 0; display: flex; width: 750rpx;border-top: 1rpx solid #ddd;box-shadow: 0 -1px 5px 0 #eee;background-color: #fff; }
+.tool .sub{background-color: #576b95;border: 1rpx solid #576b95; color: #fff;flex:1;margin: 0 20rpx;height: 40px;line-height: 40px; text-align: center;border-radius: 3px;}
+
+/*我的地址css*/
+.addr_box{height:350px;width:100%;background:#fff;position:fixed;bottom:0; z-index:10; }
+.addr_box_add{position:absolute;bottom:0;border-top:1px solid #eee;width:100%;padding-left:35%;padding-top:10px;background:#fff;font-size: 18px;height: 40px;}
+.addr_head{display: flex;border-bottom:1px solid #eee;height: 40px;background:#fff;}
+.addr_head_cancel{font-size: 14px;margin:15px 1px;}
+.addr_head_title{font-size: 18px;margin:15px 30%;}
+.addr_body{display: flex;border-bottom:1px dashed #000;margin:10px;opacity: 0.9}
+.addr_body_edit{width:9%;padding:10px;font-size:14px;}
+.addr_body_my{width:75%;font-size:14px;color:#666;}
+.addr_body_my_det{font-size:14px; font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;color:#000;}
+.addr_body_sel{padding-top:15px;}
+.addr_lbl_add{margin:5px;color:green;font-size:18px;font-weight: bold;}
+.hiddenbox{height:100%;width:100%;position: fixed;background:#666;opacity: 0.5;z-index: 1;top:0;}
+
+.addr_sel_m{font-size:16px;color:#666;width:80%;}
+.addr_sel_a{font-size:16px;color:#000;width:80%;}

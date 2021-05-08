@@ -1,0 +1,73 @@
+{template 'common/header'}
+<ul class="we7-page-tab">
+    <li class="active">小程序访问统计</li>
+</ul>
+<div id="js-statistics-display" ng-controller="StatisticeCtrl" ng-cloak>
+    <div class="welcome-container">
+        <div class="panel we7-panel wxapp-target">
+            <div class="panel-heading">昨日概况</div>
+            <div class="panel-body we7-padding-vertical">
+                <div class="col-sm-3 text-center">
+                    <div class="title">打开次数</div>
+                    <div>
+                        <span class="today">{$yesterday_stat['session_cnt']}</span>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <div class="title">访问次数/人数</div>
+                    <div>
+                        <span class="today">{$yesterday_stat['visit_pv']}</span><span class="today">/ {$yesterday_stat['visit_uv']}</span>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <div class="title">新访问用户数</div>
+                    <div>
+                        <span class="today">{$yesterday_stat['visit_uv_new']}</span>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <div class="title">人均/次均停留时长(秒)</div>
+                    <div>
+                        <span class="today">{php echo round($yesterday_stat['stay_time_uv'],2);}</span>
+                        <span class="today">/ {php echo round($yesterday_stat['stay_time_session'],2);}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel we7-panel">
+        <div class="panel-heading tab">
+            <a href="javascript:;">关键指标</a>
+            <a href="javascript:;" ng-class="{'active': visitDivideType == 'session_cnt'}" ng-click="changeDivideType('session_cnt')">打开次数</a>
+            <a href="javascript:;" ng-class="{'active': visitDivideType == 'visit_pv'}" ng-click="changeDivideType('visit_pv')">访问次数</a>
+            <a href="javascript:;" ng-class="{'active': visitDivideType == 'visit_uv'}" ng-click="changeDivideType('visit_uv')">访问人数</a>
+            <a href="javascript:;" ng-class="{'active': visitDivideType == 'visit_uv_new'}" ng-click="changeDivideType('visit_uv_new')">新用户数</a>
+            <a href="javascript:;" ng-class="{'active': visitDivideType == 'stay_time_uv'}" ng-click="changeDivideType('stay_time_uv')">人均停留</a>
+            <a href="javascript:;" ng-class="{'active': visitDivideType == 'stay_time_session'}" ng-click="changeDivideType('stay_time_session')">次均停留</a>
+        </div>
+        <div class="panel-body data-view">
+            <div class="tab-bar-time clearfrix">
+                <span class="we7-margin-right">时间</span>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" ng-class="{'active': visitTimeType == 'week'}" ng-click="getVisitApi('week')">周统计</button>
+                    <button type="button" class="btn btn-default" ng-class="{'active': visitTimeType == 'month'}" ng-click="getVisitApi('month')">月统计</button>
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-default daterange daterange-date" we7-date-range-picker ng-model="dateRange"><span>{{dateRange.startDate}} </span>至<span> {{dateRange.endDate}}</span> <i class="fa fa-calendar"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12" id="chart-line" style="height:500px"></div>
+        </div>
+    </div>
+</div>
+<script>
+    require(['daterangepicker'], function() {
+        angular.module('wxApp').value('config', {
+            'links': {
+                'visitApi': "{php echo url('wxapp/statistics/get_visit_api')}",
+            },
+        });
+
+        angular.bootstrap($('#js-statistics-display'), ['wxApp']);
+    })
+</script>
+{template 'common/footer'}

@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/new_task/new_task",
+    "pages/task_context/task_context",
+    "pages/task_list/task_list"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#261a31",
+    "navigationBarTitleText": "滴打卡",
+    "backgroundColor": "#cce7e3",   "navigationBarTextStyle":"white"
+  }
+}

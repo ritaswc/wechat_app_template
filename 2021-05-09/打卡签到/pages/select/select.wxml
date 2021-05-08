@@ -1,0 +1,15 @@
+<!--pages/select/select.wxml-->
+
+<view class="select">
+    <view class="title">
+        <text>— 选择身份登录 —</text>
+    </view>
+    <view class="company" bindtap="handleCreateBtn">
+        <image src="/images/icons/company.png" mode="aspectFit" />
+        <text>企业</text>
+    </view>
+    <view class="staff" bindtap="handleJoinBtn">
+        <image src="/images/icons/staff.png" mode="aspectFit" />
+        <text>员工</text>
+    </view>
+</view>

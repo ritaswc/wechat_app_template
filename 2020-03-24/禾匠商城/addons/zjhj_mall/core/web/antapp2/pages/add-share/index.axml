@@ -1,0 +1,110 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class="{{show_modal?'no-scroll':''}}">
+            <view class="step1" a:if="{{__user_info.is_distributor==0}}">
+                <view class="info-bg">
+                    <image src="{{share_setting.pic_url_1}}" class="bg" />
+                </view>
+
+                <form onSubmit="formSubmit" report-submit='true'>
+                    <view class="info">
+                        <view class="info-label flex-row">
+                            <view class="flex-y-center">
+                                欢迎加入
+                                <view class="info-red" style="width:260rpx; overflow: hidden;-webkit-line-clamp: 1;display: -webkit-box;-webkit-box-orient: vertical;">{{store.name}}</view>请填写申请信息
+                            </view>
+                        </view>
+
+                        <view class="info-label info-content flex-row">
+                            <view class="info-left flex-y-center">邀请人</view>
+                            <view class="info-right flex-row">
+                                <view class="info-red flex-grow-0 flex-y-center">{{__user_info.parent}}</view>
+                                <view class="info-gray flex-group-1 flex-y-center">(请核对)</view>
+                            </view>
+                        </view>
+
+                        <view class="info-label info-content flex-row">
+                            <view class="info-left flex-grow-0 flex-y-center required">姓名</view>
+                            <view class="info-right flex-grow-1 flex-row flex-y-center">
+                                <input class="name-input" style='width:100%' name="name" placeholder="请填写真实姓名" value="{{form.name}}" />
+                            </view>
+                        </view>
+
+                        <view class="info-label info-content flex-row">
+                            <view class="info-left flex-grow-0 flex-y-center required">手机号码</view>
+                            <view class="info-right flex-grow-1 flex-row flex-y-center">
+                                <input class="mobile-input" style='width:100%' type="number" name="mobile" placeholder="请填写手机号码" value="{{form.mobile}}" />
+                            </view>
+                        </view>
+                        <view class="info-label info-content flex-row">
+                            <view class="info-agree flex-row flex-y-center" onTap="agree">
+                                <input style='display:none' name="agree" value="{{agree}}" />
+                                <image src="{{img}}" style="width:32rpx;height:32rpx;"></image>
+                                <text style="margin-left:10rpx;">我已经阅读并了解</text>
+                                <view style="color:#014c8c" onTap="agreement">【{{share_name}}申请协议】</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="info-btn flex-row">
+                        <button class="flex-y-content info-btn-content" formType="submit">申请成为{{share_name}}</button>
+                    </view>
+                </form>
+                <view class="info">
+                    <view class="info-label flex-row">
+                        <view class="flex-y-center">{{share_name}}特权</view>
+                    </view>
+
+                    <view class="info-label info-height flex-row" a:if="{{false}}">
+                        <view class="flex-y-center">
+                            <image src="{{__wxapp_img.share.shop.url}}" class="info-icon"></image>
+                        </view>
+                        <view class="info-block">
+                            <view class="info-top bold">独立小店</view>
+                            <view class="info-bottom">拥有自己的小店及二维码</view>
+                        </view>
+                    </view>
+
+                    <view class="info-label info-height flex-row">
+                        <view class="flex-y-center">
+                            <image src="{{__wxapp_img.share.money.url}}" class="info-icon"></image>
+                        </view>
+                        <view class="info-block">
+                            <view class="info-top bold">销售拿佣金</view>
+                            <view class="info-bottom">成为{{share_name}}后卖出商品，您可以获得佣金</view>
+                        </view>
+                    </view>
+
+                    <view class="info-label info-height flex-row">
+                        <view class="flex-y-center info-block">{{share_name}}的商品销售统一由厂家直接收款、直接发货，并提供产品的售后服务，分销佣金由厂家统一设置。</view>
+                    </view>
+                </view>
+            </view>
+            <view class="step2" a:else>
+                <view class="info-bg" style="height:300rpx">
+                    <image src="{{share_setting.pic_url_2}}" class="bg" />
+                </view>
+                <view class="info">
+                    <view class="info-title">
+                        <image class="info-images" src="{{__wxapp_img.share.info.url}}"></image>
+                    </view>
+                    <view class="info-content">谢谢您的支持，请等待审核！</view>
+                    <view class="flex-row info-btn1">
+                        <navigator open-type="redirect" url="/pages/index/index" class="flex-y-content btn">去商城逛逛</navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='agree-modal flex-x-center flex-y-center {{show_modal?"":"hidden"}}'>
+            <view style='width:600rpx;background-color:#fff;border-radius:20rpx;'>
+                <view class='agree-head flex-x-center flex-y-center' style='height:100rpx;'>分销协议</view>
+                <view class='agree-body'>
+                    <text>{{share_setting.agree}}</text>
+                </view>
+                <view class='agree-footer flex-x-center flex-y-center' style='' onTap='close'>我已阅读</view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

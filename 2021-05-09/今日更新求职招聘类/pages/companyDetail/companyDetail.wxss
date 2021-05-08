@@ -1,0 +1,168 @@
+/* pages/companyDetail/companyDetail.wxss */
+.p_d_detail{
+    color: #b2b2b2;
+    margin: 30rpx 0;
+    font-size: 12pt;
+    padding-left: 3%;
+    line-height: 180%;
+    background-color: #e5e5e5;
+    text-align: left;
+}
+.position_intro{
+    /*border: 1px solid green;*/
+    text-align: center;
+    position: relative;
+}
+.company_image{
+    margin: 20rpx 0;
+    width: 50%;
+    height: 240rpx;
+    border: 1px solid #e5e5e5;
+}
+.p_name{
+    width: 94%;
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.p_list_box{
+    /*border: 1px solid green;*/
+    width: 93%;
+    margin: 16rpx auto 0;
+    text-align: left;
+    color: #666666;
+    font-size: 12pt;
+    line-height: 180%;
+}
+.p_list_box ul{
+    display: flex;
+    flex-direction: column;
+}
+.p_list_box ul span{
+    color: #333;
+}
+.zhishu span{
+    color: #e58026 !important;
+}
+.image3{
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 10rpx;
+}
+.guanzhu{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #e58026;
+    height: 90rpx;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.position_intro .line{
+    width: 94%;
+    margin: 0 auto;
+    padding-top: 3%;
+    border-bottom: #b2b2b2 dashed 1px; 
+}
+.biaoqian {
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    color: #f18e2e;
+    font-size: 12pt;
+    font-weight: 500;
+}
+.biaoqian view{
+    border: 1px solid #f18e2e;
+    padding: 5rpx 0;
+    border-radius: 5rpx;
+    margin-left: 35rpx;
+    margin-top: 20rpx;
+    width: 200rpx;
+}
+.company_industry{
+    text-align: justify;
+    text-indent:80rpx;
+    padding: 20rpx 3% 0;
+}
+
+
+.contant_ours{
+    text-align: left;
+    width: 94%;
+    margin: 8px auto;
+    font-size: 14pt;
+    line-height: 150%;
+}
+.contant_ours span{
+    display: inline-block;
+    color: #999;
+    width: 68pt;
+}
+.contant_ours image{
+    width: 15px;
+    height: 20px;
+}
+.contant_ours .call image{
+    width: 15px;
+    height: 15px;
+}
+
+.remenList {
+    margin-bottom: 100rpx;
+}
+.remenList .list{
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  text-align: left;
+}
+.remenList .list .hotImg{
+position: absolute;
+right: 0;
+top: 0;
+width: 55rpx;
+height: 55rpx;
+}
+.remenList .list .left{
+  width: 70%;
+}
+.remenList .list .left .positionName{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.remenList .list .left .conpany{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12pt;
+  color: #aaa;
+  padding-top: 10rpx;
+}
+.remenList .list .left .time{
+  font-size: 12pt;
+  color: #aaa;
+  padding-top: 10rpx;
+}
+
+
+.remenList .list .right{
+  margin-top: 30rpx;
+  text-align: right;
+}
+.remenList .list .right view{
+  padding-top: 10rpx;
+  font-size: 12pt;
+  color: #aaa;
+}
+.remenList .list .right .money{
+  color: #fc9a39;
+}

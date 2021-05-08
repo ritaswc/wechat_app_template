@@ -1,0 +1,53 @@
+<view>
+    <view class="goods-qrcode-modal {{qrcode_active}}" a:if="{{qrcode_active == 'active'}}">
+        <view class="goods-qrcode-body flex-col">
+            <view class="flex-grow-1" style="position: relative">
+                <view style="position: absolute;left: 0;top:0;width: 100%;height: 100%;padding: 100rpx 100rpx 60rpx">
+                    <view class="goods-qrcode-box">
+                        <view a:if="{{!goods_qrcode}}" class="goods-qrcode-loading flex-x-center flex-y-center">
+                            <view class="flex-x-center flex-y-center flex-col">
+                                <cover-image class="an" style="width: 80rpx;height: 80rpx" src="/images/qrcode_close.gif"></cover-image>
+                                <view style="color: #888">海报生成中</view>
+                            </view>
+                        </view>
+                        <cover-image a:else onTap="qrcodeClick" mode="widthFix" class="goods-qrcode {{goods_qrcode?'active':''}}" data-src="{{goods_qrcode}}" src="{{goods_qrcode}}" onLoad="imgLoad" onError="imgError"></cover-image>
+                    </view>
+                </view>
+            </view>
+            <view class="flex-grow-0 flex-col flex-x-center" style="padding: 0 60rpx 80rpx">
+                <view style="margin-bottom: 20rpx;padding: 0 40rpx">
+                    <button a:if="{{goods_qrcode}}" onTap="saveQrcode" style="background: #ff4544;color: #fff;">
+                        保存图片
+                    </button>
+                    <button a:else style="opacity: .4">保存图片</button>
+                </view>
+                <view style="color: #888;font-size: 9pt;text-align: center">保存至相册可以分享给朋友</view>
+            </view>
+            <view class="goods-qrcode-close" onTap="qrcodeClose">
+                <cover-image src="{{__wxapp_img.store.close2.url}}" style="width: 50rpx;height: 50rpx;display: block"></cover-image>
+            </view>
+        </view>
+    </view>
+    
+    <view class="share-modal {{share_modal_active}}" a:if="{{share_modal_active == 'active'}}">
+        <view class="share-modal-body">
+            <view class="flex-row">
+                <view class="flex-grow-1 flex-x-center">
+                    <button open-type="share" class="share-bottom" style="height:100%">
+                        <cover-image src="{{__wxapp_img.share.friend.url}}"></cover-image>
+                        <view>分享给朋友</view>
+                    </button>
+                </view>
+                <view class="flex-grow-1 flex-x-center">
+                    <view onTap="getGoodsQrcode" class="share-bottom">
+                        <cover-image src="{{__wxapp_img.share.qrcode.url}}"></cover-image>
+                        <view>生成海报</view>
+                    </view>
+                </view>
+            </view>
+            <view onTap="shareModalClose" class="share-modal-close flex-y-center flex-x-center">
+                <view>关闭</view>
+            </view>
+        </view>
+    </view>  
+</view>

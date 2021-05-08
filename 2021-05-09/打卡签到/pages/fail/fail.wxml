@@ -1,0 +1,10 @@
+<view style="width: {{winWidth}}px; height: {{winHeight}}px; background-color: #fafafa">
+<view class="vIcon-style">
+  <image class="iIcon" src="/images/icons/error.png"></image>
+</view>
+<view class="vSuccessMsg">
+  <text>打卡失败</text>
+</view>
+<view class="info"> {{info}}</view>
+<button bindtap="back_click" class="bBack">返回</button>
+</view>

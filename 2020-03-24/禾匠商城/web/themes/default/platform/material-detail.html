@@ -1,0 +1,25 @@
+{template 'common/header'}
+<div class="notice-show">
+    <div class="article-page">
+        <ol class="breadcrumb we7-breadcrumb container">
+            <a href="{php echo url('platform/material')}"><i class="wi wi-back-circle"></i></a>
+            <li class="active"><a href="{php echo url('platform/material')}">素材库</a></li>
+            <li class="active">{$news['title']}</li>
+        </ol>
+        <div class="container">
+            <div class="article-box">
+                <h2 class="title">
+                    {$news['title']}
+                </h2>
+                <div class="info">
+                    <span>作者：{$news['author']}</span>
+                    <span>时间：{php echo date('Y年m月d', $attachment['createtime'])}</span>
+                </div>
+                <div class="article">
+                    {php echo html_entity_decode($news['content'], ENT_QUOTES)}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{template 'common/footer'}

@@ -1,0 +1,48 @@
+<view class="user_head">
+  <view class="user_img">
+    <image src="{{userInfo.avatarUrl}}"></image>
+    <view class="user_name">{{userInfo.nickName}}</view>
+  </view>
+</view>
+<view class="order_title">
+  <text>我的订单</text>
+</view>
+<view class="order_section">
+  <view class="order_box">
+    <view>
+      <view class="sub_order_header no_pay">
+        <text class="z fs32 fw">未支付</text>
+        <text>倒计时:</text>
+        <text id="textCounter">{{timeCounter}}</text>
+        <text class="y">2017-4-5</text>
+      </view>
+      <view class="sub_order_content">
+        <view class="sub_order_img z">
+          <image src="/images/food.jpg"></image>
+        </view>
+        <view class="sub_order_img_detail z">
+          <text class="order_img_name">挪威深海三文鱼</text>
+          <view>
+            <text class="m30">共计:￥188.00</text>
+            <view class="pay_btn" bindtap="payBtn">立即支付</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <view class="sub_order_header payed">
+        <text class="z fs32 fw">已支付</text>
+        <text class="y">2017-4-5</text>
+      </view>
+      <view class="sub_order_content">
+        <view class="sub_order_img z">
+          <image src="/images/food.jpg"></image>
+        </view>
+        <view class="sub_order_img_detail z">
+          <text class="order_img_name">挪威深海三文鱼</text>
+          <text class="m30">共计:￥188.00</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

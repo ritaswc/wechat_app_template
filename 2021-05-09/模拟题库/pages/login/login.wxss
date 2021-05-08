@@ -1,0 +1,110 @@
+.container {
+	background: url('../../image/background.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.content{
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+	width: 100%;
+}
+
+.logo {
+	width: 100%;
+	height: 60px;
+	background: url('../../image/logo.png') center center no-repeat;
+	background-size: 180px 60px;
+}
+
+.version {
+	margin: 10px 0;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.content .info{
+	height: 300px;
+	margin: 20px auto 0;
+	display: block;
+}
+
+.content .loginForm button{
+	width: 85%;
+	margin: 20px auto 0;
+	background: #00a5cf;
+	color: #FFF;
+	font-size: 16px;
+	border: 0px;
+	border-radius: 5px;
+	display: block;
+}
+
+/* 输入框 */
+.inputGroup{
+	width: 100%;
+	height: 40px;
+	border-top: 1px solid #CCC;
+	background: #fff;
+}
+
+.inputGroup::first-child{
+	border-top: 0px;
+}
+
+.inputGroup .fa {
+  color: #00a5cf;
+}
+
+.inputGroup label{
+	width: 15%;
+	height: 40px;
+	font-size: 16px;
+	line-height: 40px;
+	overflow-x: hidden;
+	float: left;
+	text-align: center;
+	display: block;
+}
+
+.inputGroup input{
+	width: 85%;
+	height: 40px;
+	padding: 0;
+	border: 0;
+	font-size: 16px;
+	line-height: 40px;
+	float: right;
+}
+
+.tips {
+	width: 85%;
+	margin: 20px auto 0;
+	line-height: 20px;
+	font-size: 12px;
+	color: red;
+	word-break: break-all;
+	display: block;
+}
+
+button {
+	margin-top: 10px;
+}
+
+
+/* 底部栏  */
+.bottom-bar {
+	border-top: 0px;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.bottom1 .bottom-list{
+	color: #000;
+	width: 100%;
+}
+
+.bottom2 .bottom-list{
+	color: #000;
+	width: 50%;
+}

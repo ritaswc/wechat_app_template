@@ -1,0 +1,46 @@
+/**
+ * stationList component stylesheet
+ * @author liangkun
+ * */
+
+.station-list {
+	padding: 40rpx;
+}
+
+.station-wrapper {
+	width: 100%;
+	margin-bottom: 40rpx;
+}
+
+.station-title {
+	text-align: center;
+	margin-bottom: 40rpx;
+}
+
+.station-item {
+	display: inline-block;
+	width: 40%;
+	margin: 20rpx;
+	border: 2rpx solid #c3c3c3;
+	border-radius: 10%;
+/*	color: #999;*/
+	font-size: 32rpx;
+	padding: 20rpx 10rpx;
+	text-align: center;
+}
+
+/*.station-active {
+	background: url(../../../images/station_select.png) no-repeat top right;
+	border-color: #ed422f;
+}*/
+
+.station-item.active {
+	background: url(../../../images/station_select.png) no-repeat top right;
+	background-size: 44rpx;
+	border-color: #ed422f;
+}
+
+.station-chosen {
+	background: url(../../../images/station_select.png) no-repeat top right;
+	border-color: #ed422f;
+}

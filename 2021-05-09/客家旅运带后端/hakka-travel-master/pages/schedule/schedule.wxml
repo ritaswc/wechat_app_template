@@ -1,0 +1,33 @@
+<!--schedule.wxml-->
+<view class="container">
+  <view class="top-wrapper">
+  	<view class="date-btn">前一天</view>
+  	<view class="date-title">
+  		<image class="absolute-center-Y img-small-icon icon-cal" src="../../images/calander.png"></image>
+  		<text>{{curDate}}</text>
+  	</view>
+  	<view class="date-btn">后一天</view>
+  </view>
+  
+  <view wx:for="{{scheduleList}}" wx:key="{{index}}" bindtap="booking" data-schedule="{{item}}"
+  	class="schedule-list">
+  	<view class="line-msg">
+  		<view>
+  			<image class="absolute-center-Y img-small-icon img-left-10" src="../../images/alarm.png"></image>
+  			<text>{{item.time}}</text>
+  		</view>
+  		<view>
+  			<image class="absolute-center-Y img-small-icon img-left-10" src="../../images/location_start.png"></image>
+  			<text>{{item.startStation}}</text>
+  		</view>
+  		<view>
+  			<image class="absolute-center-Y img-small-icon img-left-10" src="../../images/location_end.png"></image>
+  			<text>{{item.endStation}}</text>
+  		</view>
+  	</view>
+  	<view class="ticket-msg">
+  		<view >{{item.benefitTicket}}</view>
+  		<view class="active">{{item.normalTicket}}</view>
+  	</view>
+  </view>
+</view>

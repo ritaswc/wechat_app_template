@@ -1,0 +1,137 @@
+{template 'common/header'}
+{template 'profile/common'}
+
+<div id="js-profile-passport" ng-controller="oauthCtrl" ng-cloak>
+	<table class="table we7-table table-form">
+		<col width="180px " />
+		<col />
+		<col width="100px" />
+		<tr>
+			<th>公众平台oAuth设置</th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<td class="text-left">
+				选择公众号
+			</td>
+			<td class="text-left color-gray" ng-bind="oauthtitle"></td>
+			<td >
+				<div class="link-group"><a href="javascript:;" data-toggle="modal" data-target="#oauth">修改</a></div>
+			</td>
+		</tr>
+		<tr>
+			<td class="text-left">
+				oAuth独立域名
+			</td>
+			<td class="text-left color-gray" ng-bind="originalHost"></td>
+			<td >
+				<div class="link-group"><a href="javascript:;" data-toggle="modal" data-target="#host">修改</a></div>
+			</td>
+		</tr>
+	</table>
+	<div class="modal fade" id="oauth" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">选择公众号</div>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<select ng-model="oauthAccount" class="we7-select">
+							<option value="" ng-selected="oauthAccount == ''">不借用任何权限</option>
+							{loop $oauth_accounts $key $account}
+							<option value="{php echo $key}">{php echo $account}</option>
+							{/loop}
+						</select>
+						<span class="help-block">在微信公众号请求用户网页授权之前，开发者需要先到公众平台网站的【开发者中心】<b>网页服务</b>中配置授权回调域名.</span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveOauth('oauth')">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="host" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">oAuth独立域名</div>
+				</div>
+				<div class="modal-body">
+					<div class="form-group we7-form">
+						<input type="text"  name="host" ng-model="oauthHost" class="form-control" placeholder="oAuth独立域名">
+						<span class="help-block">适用于您的微站或是活动有多个域名的情况下，由此域名做统一的oauth授权用。例如：http://www.baidu.com 注意：结尾没有/ </span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveOauth('oauth')">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="recover()">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<table class="table we7-table table-form">
+		<col width="180px " />
+		<col />
+		<col width="100px" />
+		<tr>
+			<th>借用 JS 分享设置</th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<td class="text-left">
+				选择公众号
+			</td>
+			<td class="text-left color-gray" ng-bind="jsOauthtitle"></td>
+			<td >
+				<div class="link-group"><a href="javascript:;" data-toggle="modal" data-target="#jsauth_acid">修改</a></div>
+			</td>
+		</tr>
+	</table>
+	<div class="modal fade" id="jsauth_acid" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="we7-modal-dialog modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<div class="modal-title">选择公众号</div>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<select name="jsauth_acid" ng-model="jsOauthAccount" class="we7-select">
+							<option value="" ng-selected="jsOauthAccount == ''">不借用任何权限</option>
+							{loop $jsoauth_accounts $key $jsaccount}
+							<option value="{php echo $key}">{php echo $jsaccount}</option>
+							{/loop}
+						</select>
+						<span class="help-block">在系统中使用微信分享接口前，开发者需要先到公众平台网站的【公众号设置】 / 【功能设置】中配置 【JS 接口安全域名】。<a href="http://www.w7.cc/manual/dev:v0.6:qa:jsauth" target="_black">查看详情</a></span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveOauth('jsoauth')">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	angular.module('profileApp').value('config', {
+		'oauthAccount' : "{php echo empty($oauth['account']) ? '' : $oauth['account']}",
+		'oauthHost' : "{php echo empty($oauth['host']) ? '' : $oauth['host']}",
+		'jsOauth' : "{$jsoauth}",
+		'oauthAccounts' : {php echo json_encode($oauth_accounts)},
+		'jsOauthAccounts' : {php echo json_encode($jsoauth_accounts)},
+		'oauth_url' : "{php echo url('profile/passport/save_oauth')}",
+		'get_setting_url' : "{php echo url('profile/passport/get_setting')}"
+	});
+	angular.bootstrap($('#js-profile-passport'), ['profileApp']);
+</script>
+{template 'common/footer'}

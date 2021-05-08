@@ -1,0 +1,23 @@
+<import src="../../templates/default-address/default-address.wxml"></import>
+<import src="../../templates/item-cell/item-cell.wxml"></import>
+
+<scroll-view scroll-y="true" class="order-detail">
+  <template is="default-address" data="{{...address}}"></template>
+  <view class="item-list">
+    <block wx:for="{{goods}}">
+      <template is="item-cell" data="{{...item}}"></template>
+    </block>
+  </view>
+
+  <view class="item-amount">
+    <view>商品总额<text>￥{{order.order_amount}}</text></view>
+    <view class="colora0">+运费<text>￥{{order.shipping_price}}</text></view>
+    <view>实付款(含运费)<text style="color: #ff2d4b;font-size: 35.15rpx;">￥{{order.total_amount}}</text></view>
+    <view class="last-child colora0"><text>订单编号：{{order.order_sn}}</text><text>创建时间：{{order.created_at}}</text></view>
+  </view>
+
+  <view class="btn-line" wx:if="{{order.order_status != '订单取消'}}">
+    <button hover-class="none" class="btn-solid-red btn-size" catchtap="payOrder">去支付</button>
+    <button hover-class="none" class="btn-hollow-gray btn-size" catchtap="cancleOrder">取消订单</button>
+  </view>
+</scroll-view>

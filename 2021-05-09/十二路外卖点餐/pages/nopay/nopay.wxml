@@ -1,0 +1,105 @@
+<view class="nopay_header">
+    <view class="mb30 flex orderInfo">
+        <view>订单:<text class="ml10">80225155656</text></view>
+        <view>金额:<text class="color_red ml10">201.00元</text></view>
+    </view>
+    <view>
+        <view class="">倒计时:<text class="ml10" id="timeCounter">00:30:00</text></view>
+    </view>
+</view>
+
+<view class="ma_beizhu cl">
+	<text class="z">备注：</text>
+    <input class="ma_beizhu_txt z" type="text" placeholder="请输入你对菜品的要求" />
+</view>
+
+<scroll-view class="cart-list ma_pay_list" scroll-y="true" scroll-x="false">
+    <view class="sub-cart-list">
+        <view class="sub-cart-img">
+            <view class="sub-cart-img-inner">
+                <image src="/images/food.jpg"></image>
+            </view>
+        </view>
+        <view class="sub-cart-middle w4">
+            <view class="sub-cart-title">
+                <view>挪威深海三文鱼</view>
+                <view class="fs20 tr">x1</view>
+                <view class="tr fs20">￥181.00</view>
+            </view>
+        </view>
+    </view>
+    <view class="sub-cart-list">
+        <view class="sub-cart-img">
+            <view class="sub-cart-img-inner">
+                <image src="/images/food.jpg"></image>
+            </view>
+        </view>
+        <view class="sub-cart-middle w4">
+            <view class="sub-cart-title">
+                <view>挪威深海三文鱼</view>
+                <view class="fs20 tr">x1</view>
+                <view class="tr fs20">￥181.00</view>
+            </view>
+        </view>
+    </view>
+    <view class="sub-cart-list">
+        <view class="sub-cart-img">
+            <view class="sub-cart-img-inner">
+                <image src="/images/food.jpg"></image>
+            </view>
+        </view>
+        <view class="sub-cart-middle w4">
+            <view class="sub-cart-title">
+                <view>挪威深海三文鱼</view>
+                <view class="fs20 tr">x1</view>
+                <view class="tr fs20">￥181.00</view>
+            </view>
+        </view>
+    </view>
+    <view class="sub-cart-list">
+        <view class="sub-cart-img">
+            <view class="sub-cart-img-inner">
+                <image src="/images/food.jpg"></image>
+            </view>
+        </view>
+        <view class="sub-cart-middle w4">
+            <view class="sub-cart-title">
+                <view>挪威深海三文鱼</view>
+                <view class="fs20 tr">x1</view>
+                <view class="tr fs20">￥181.00</view>
+            </view>
+        </view>
+    </view>
+    <view class="sub-cart-list">
+        <view class="sub-cart-img">
+            <view class="sub-cart-img-inner">
+                <image src="/images/food.jpg"></image>
+            </view>
+        </view>
+        <view class="sub-cart-middle w4">
+            <view class="sub-cart-title">
+                <view>挪威深海三文鱼</view>
+                <view class="fs20 tr">x1</view>
+                <view class="tr fs20">￥181.00</view>
+            </view>
+        </view>
+    </view>
+    <view class="sub-cart-list">
+        <view class="sub-cart-img">
+            <view class="sub-cart-img-inner">
+                <image src="/images/food.jpg"></image>
+            </view>
+        </view>
+        <view class="sub-cart-middle w4">
+            <view class="sub-cart-title">
+                <view>挪威深海三文鱼</view>
+                <view class="fs20 tr">x1</view>
+                <view class="tr fs20">￥181.00</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+
+<view class="ma_pay_btn">
+	<button type="default">微信支付</button>
+</view>

@@ -1,0 +1,47 @@
+<view class="wraper">
+	<view class="companyList">
+		<view class="orderId">A</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+		<view class="orderId">B</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+		<view class="orderId">C</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+		<view class="orderId">D</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+		<view class="orderId">E</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+		<view class="orderId">F</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+		<view class="orderId">G</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+		<view class="orderId">H</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+		<view class="orderId">I</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+		<view class="orderId">G</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+		<view class="orderId">K</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+		<view class="orderId">L</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+		<view class="orderId">M</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+		<view class="orderId">N</view>
+		<view>Aramex</view>
+		<view>澳大利亚邮政</view>
+	</view>
+
+</view>

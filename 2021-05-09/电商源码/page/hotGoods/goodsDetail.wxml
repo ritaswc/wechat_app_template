@@ -1,0 +1,76 @@
+<view class="sec-detail">
+    <view class="sec-outer">
+        <view class="top-slider">
+            <swiper class="slider-sec" indicator-dots="{{indicatorDots}}"
+                    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                <block wx:for="{{imgUrls}}">
+                    <swiper-item>
+                        <image src="{{item}}" class="slide-image" width="355" height="150"/>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view class="list-detail" bindtap="getDetail">
+            <view class="list-sec">
+                <view class="top-title">{{item.title}}</view>
+                <view class="pirce-wrapper">
+                    <view class="inline-block now">{{item.sellPrice}}元</view>
+                    <view class="inline-block origin">原价{{item.oldPrice}}</view>
+                </view>
+            </view>
+
+            <view class="list-choice">
+                <view class="color" wx:for="{{item.property}}" wx:for-item="item">
+                    <view class="inline-block title">{{item.name}}</view>
+                    <view class="inline-block choice-detail" wx:for-index="idx"  wx:for="{{item.value}}" wx:for-item="per">
+                        <view wx:if="{{idx == (item.value.length - 1)}}" class="inline-block"> {{ per }} </view>
+                        <view wx:if="{{idx != (item.value.length - 1)}}" class="inline-block"> {{ per }} /</view>
+                    </view>
+                </view>
+            </view>
+            <view class="item-detail">
+                <view class = "detail-title">商品详情</view>
+                <view class="detail-goods">
+                    <image wx:for="{{item.details}}" wx:for-item="det" class="detail-img" src="{{det}}"
+                           background-size="cover" mode="widthFix"></image>
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+    <view class="buy-now">
+        <button class="rush" bindtap = "checkGoods">立即抢购</button>
+    </view>
+    <view class = "bottom-check" wx:if = "{{isShow}}">
+        <view class="check-top" bindtap = "closeBanner"></view>
+        <view class="check-bottom">
+            <view wx:if = "{{warning}}" class = "warning">{{warnDes}}</view>
+            <view class="check-banner">
+                <view class="banner-left inline-block">
+                    <image src="{{imgUrls[0]}}" class="check-image"/>
+                </view>
+                <view class="banner-right inline-block">
+                    <view class="banner-price">{{item.sellPrice}}元</view>
+                    <view class="banner-storage">库存：{{item.storeTotal}}</view>
+                    <view class="banner-checked">已选：{{haveCheckedProp}}</view>
+                </view>
+            </view>
+            <view class="check-center">
+                <view class="color check-sec" wx:for="{{item.property}}" wx:for-item="item">
+                    <view class="inline-block title">{{item.name}}</view>
+                    <view data-property = "{{item.ano}}"  data-value = "{{per}}" data-index = "{{index}}" class="inline-block choice-detail {{per == postData[item.ano]? 'active' : ''}}" wx:for="{{item.value}}" wx:for-item="per" wx:for-index="index" data-code="{{index}}" bindtap = "getChecked">{{per}} </view>
+                </view>
+                <view class="color check-sec">
+                    <view class="inline-block title">数量</view>
+                    <view class="inline-block choice-slider">
+                        <view class="minus" bindtap = "minusNum">-</view>
+                        {{number}}
+                        <view class="add" bindtap = "addNum">+</view>
+                    </view>
+                </view>
+            </view>
+            <button class="confirm" bindtap = "checkGoods" bindtap = "goToCounter">确定</button>
+        </view>
+    </view>
+</view>

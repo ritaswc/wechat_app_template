@@ -1,0 +1,41 @@
+.order-detail{
+    width:710rpx;
+    padding:0 20rpx;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.order-con{
+    width:100%;
+    display: inline-block;
+    border-bottom: 2rpx solid #e5e5e5;
+}
+
+.order-con:last-child{
+    border-bottom: none;
+}
+
+.text1{
+    color:#999;
+    height: 80rpx;
+    line-height: 80rpx;
+    float: left;
+}
+
+.text2{
+    height: 80rpx;
+    line-height: 80rpx;
+    float: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.text3{
+    width:620rpx;
+    line-height: 50rpx;
+    float:right;
+    margin-top:18rpx;
+    margin-bottom: 20rpx;
+}

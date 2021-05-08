@@ -1,0 +1,53 @@
+<view>
+  <view class="line" />
+  <view class="line_top12" />
+  <view class="more_clounme">
+    <view>
+      <image src="/images/icon_more_xszy.png" class="more_imges" />
+      <text class="more_text">新手指引</text>
+    </view>
+    <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+  </view>
+  <view class="line_margin_left32" />
+  <view class="more_clounme">
+    <view>
+      <image src="/images/icon_more_aqbz.png" class="more_imges" />
+      <text class="more_text">安全保障</text>
+    </view>
+    <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+  </view>
+  <view class="line_margin_left32" />
+  <view class="more_clounme">
+    <view>
+      <image src="/images/icon_more_bzzx.png" class="more_imges" />
+      <text class="more_text">帮助中心</text>
+    </view>
+    <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+  </view>
+  <view class="line_margin_left32" />
+  <view class="more_clounme">
+    <view>
+      <image src="/images/icon_more_kfdh.png" class="more_imges" />
+      <text class="more_text">客服电话</text>
+    </view>
+    <text style="font-size:14px;color:#ff7460;margin-right:12px">4000-858-308</text>
+  </view>
+  <view class="line_margin_left32" />
+  <view class="more_clounme">
+    <view>
+      <image src="/images/icon_more_gywm.png" class="more_imges" />
+      <text class="more_text">关于我们</text>
+    </view>
+    <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+  </view>
+  <view class="line" />
+  <view class="line_top12" />
+  <view class="more_clounme" bindtap="gotosuggest">
+    <view>
+      <image src="/images/icon_more_yjfk.png" class="more_imges" />
+      <text class="more_text">意见反馈</text>
+    </view>
+    <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+  </view>
+  <view class="line" />
+</view>

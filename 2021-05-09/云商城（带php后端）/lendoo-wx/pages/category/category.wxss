@@ -1,0 +1,76 @@
+/*页面背景*/
+page {
+	background-color: #f3f5f7;
+}
+
+/*容器总体布局为左右两列*/
+.container {
+	display: flex;
+	flex-direction: row;
+}
+
+/*侧边栏顶级分类给予固定宽度*/
+.sidebar {
+	width: 120px;
+	border-top: 1px solid #e5e5e5;
+}
+
+/*text块状布局独占一行*/
+.sidebar text {
+	display: block;
+	border: 1px solid #e5e5e5;
+	border-top: 0;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #232626;
+	font-size: 14px;
+	background-color: #fff;
+}
+
+/*hight light*/
+.sidebar text.highlight {
+	background-color: #f3f5f7;
+	color: #f23131;
+	border-right: 0;
+}
+
+.main {
+	width: 100%;
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+/*category banner*/
+.banner {
+	width: 100%;
+	margin: 20rpx 0;
+}
+
+/*网格布局子类九宫格分布*/
+.gridview {
+	background-color: #fff;
+	height: 80%;
+}
+
+/*向左流动*/
+.gridview dl {
+	float: left;
+	margin: 5px;
+}
+
+/*图片*/
+.gridview dt image {
+	width: 75px;
+	height: 75px;
+}
+
+/*文字*/
+.gridview dd text {
+	color: #6c6c6c;
+	font-size: 12px;
+	text-align: center;
+	display: block;
+	line-height: 20px;
+}

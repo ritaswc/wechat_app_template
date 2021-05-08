@@ -1,0 +1,66 @@
+/*轮播图*/
+
+.slide-image {
+  width: 750rpx;
+  height: 450rpx;
+}
+
+/*商品基本信息*/
+
+.shopping_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*align-items: center;*/
+  white-space: between;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 20rpx;
+}
+
+.title {
+  font-size: 11pt;
+  font-weight: 900;
+}
+
+.price {
+  background-color: #09bb07;
+  font-size: 9pt;
+  padding: 4px;
+  color: #fff;
+}
+
+.recommand {
+  font-size: 10pt;
+  color: #888;
+}
+
+/*.title, .price, .recommand {
+  margin: 18rpx 0;
+}*/
+
+/*价格*/
+
+.carts-price {
+  width: 50%;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+/* 单价 */
+
+.origin {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+/*总价*/
+
+.discount {
+  color: #6cf;
+  flex: 1;
+}
+.Freight {
+  color: #999;
+}

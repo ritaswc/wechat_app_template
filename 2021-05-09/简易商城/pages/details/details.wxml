@@ -1,0 +1,53 @@
+<view class="container">
+    <view class="goods_inf">
+      <image class="goods_img" src="https://shop.llzg.cn/{{goodsInf.goods_thumb}}"></image>
+      <view class="goods_cont">
+        <text class="title">{{goodsInf.goods_name}}</text>
+        <text class="des" wx:if="{{goodsInf.goods_brief}}">{{goodsInf.goods_brief}}</text>
+        <view class="inf">
+          当前价格  <text class="price">￥{{goods_price?goods_price:goodsInf.shop_price}}</text>
+          <contact-button type="default-light" size="20" session-from="weapp" class="service"></contact-button>
+        </view>
+      </view>
+    </view>
+    <view class="goods_size">
+        <text class="title">选择商品规格</text>
+        <view class="goods_specs" wx:for="{{specifications}}" wx:for-index="idx" wx:for-item="attrObj">
+            <text class="gw_title">{{attrObj.attr_name}}</text>
+            <view class="gw_options">
+                <block wx:for="{{attrObj.data}}" wx:for-index="curIndex">
+                    <text class="{{attrValIdx[idx]==curIndex?'selected':''}}" data-attrid="{{item.goods_attr_id}}" data-num="{{idx}}" data-val="{{item.attr_value}}"  data-index="{{curIndex}}" data-price="{{item.attr_price}}" bindtap="specsTap"  >{{item.attr_value}}</text>
+                </block>
+            </view>
+        </view>
+        <view class="goods_count">
+            <text class="gc_title">数量</text>
+            <view class="gc_cont">
+                <view class="minus" bindtap="bindMinus"><image mode="widthFix" src="{{minusStatus?'../../images/minus_yes.jpg':'../../images/minus_no.jpg'}}"></image></view>
+                <text class="num">{{count}}</text>
+                <view class="plus" bindtap="bindPlus"><image mode="widthFix" src="../../images/plus.jpg"></image></view>
+            </view>
+        </view>
+    </view>
+    <view class="goods_details">
+        <view class="gd_text">
+            商品详情描述
+        </view>
+        <view class="loading" hidden="{{loading}}">
+            <image src="../../images/loading.gif" mode="widthFix"></image>
+            <text>卖力加载中...</text>
+        </view>
+        <view class="noDesc" hidden="{{noDesc}}">该商品还没有详情描述(＞﹏＜)</view>
+        <view class="gd_img" hidden="{{showDesc}}">
+            <block wx:for="{{goodsDesc}}">
+                <image src="https://shop.llzg.cn{{item}}" mode="widthFix" data-index="{{index}}" bindload="imgLoad"></image>
+            </block>  
+        </view>
+    </view>
+    <view class="detail_btn" bindtap="preOrder">
+        <text>立即购买</text>
+        <!--<navigator url="../myOrder/myOrder?id={{goodsInf.goods_id}}&weight={{weight}}&count={{count}}">
+            
+        </navigator>-->
+    </view>
+</view>

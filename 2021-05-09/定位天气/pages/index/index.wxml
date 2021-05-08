@@ -1,0 +1,40 @@
+<view class="msgCard">
+
+  <view class="msgPanel">
+
+    <!--第一个面板-->
+    <image src="{{now.nowPic + now.code + '.png'}}" mode="aspectFit"></image>
+    <!--第一个面板-->
+
+    <!--第二个面板-->
+    <view class="nowPanel">
+      <view class="searchLoc"><icon bindtap="changeLoc" type="search" color="gray"></icon></view>
+      <view class="nowTime">
+        <text>{{location.name}} </text>
+        <text>{{now.text}} </text>
+        <text>{{last_update}} </text>
+      </view>
+      <view class="nowText">
+        <text>{{now.temperature}}℃</text>        
+      </view>
+    </view>
+    <!--第二个面板-->
+
+  </view>
+
+  <text bindtap="autoLoc">当前地点</text>
+  <icon type=""></icon>
+
+</view>
+
+<!--<view class="msgCard">
+  <text>天气预报：</text>
+  <button bindtap="refreashDaily">点击刷新</button>
+  <button bindtap="changeLocation">切换地点</button>
+</view>
+
+<view class="msgCard">
+  <text>生活指数：</text>
+  <button bindtap="refreashSuggestion">点击刷新</button>
+  <button bindtap="changeLocation">切换地点</button>
+</view>-->

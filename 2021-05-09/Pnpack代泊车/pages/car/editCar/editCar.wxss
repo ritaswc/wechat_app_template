@@ -1,0 +1,10 @@
+/* pages/car/addCar/addCar.wxss */
+.row{
+   padding:30rpx;
+}
+.row:last-child{
+   height:40rpx;
+   line-height: 40rpx;
+   width:80%;
+   margin: 230rpx auto 0;
+}

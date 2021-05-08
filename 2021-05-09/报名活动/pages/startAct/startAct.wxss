@@ -1,0 +1,44 @@
+/* pages/startAct/startAct.wxss */
+@import "../common/font.wxss";
+page{
+    background: #ccc;
+}
+
+.listWrap{
+    padding: 0 10px;
+    background: #fff;
+}
+
+.listWrap_child{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+.listWrap_child image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    padding: 5px;
+    border:1px solid #ccc;
+    margin-top: 5px;
+}
+
+.listWrap_child .title{
+    line-height: 72px;
+    width: 75%;
+    font-size: 16px;
+}
+.listWrap_child .sub_title{
+    line-height: 45px;
+    font-size: 16px;
+}
+.listWrap_child .icon{
+    width: 5%;
+    line-height: 72px;
+}
+.listWrap_child .icons{
+     width: 5%;
+    line-height: 45px;
+}

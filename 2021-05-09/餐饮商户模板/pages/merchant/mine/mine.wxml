@@ -1,0 +1,20 @@
+<import src="../../../components/mine-top/mine-top.wxml"/>
+<import src="../../../components/section/section.wxml"/>
+<view>
+   <!--<view  class="userinfo">
+    <image class="settings" src="../../../image/customer/mine/19shezhi.png"></image>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+   </view>-->
+   <template is="mineTop" data="{{userInfo:userInfo}}"></template>
+
+   <template is="section" data="{{info:shopInfo}}"></template>
+   <template is="section" data="{{info:shopTag}}"></template>
+   <view class="mine-pic">
+        <text class="section-item-left f1 c5">常用位置</text>
+        <image src="/image/common/icon_add_pic.png"></image>
+   </view>
+   <template is="section" data="{{info:positionInfo}}"></template>
+   <button class="btn bgc" bindtap="alterMineInfo">修改信息</button>
+   <button class="btn close-btn">休业</button>
+</view>

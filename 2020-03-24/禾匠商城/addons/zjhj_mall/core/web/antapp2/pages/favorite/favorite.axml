@@ -1,0 +1,84 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class="flex-col h-100">
+            <view class="flex-grow-0 flex-row tab-bar">
+                <view style="text-align: center" class="flex-grow-1" onTap="tabSwitch" data-index="0">
+                    <view class="tab-name {{swiper_current==0?'active':''}}">商品</view>
+                </view>
+                <view style="text-align: center" class="flex-grow-1" onTap="tabSwitch" data-index="1">
+                    <view class="tab-name {{swiper_current==1?'active':''}}">专题</view>
+                </view>
+            </view>
+            <view class="flex-grow-1 wh-100" style="position: absolute;top: 0;left: 0;z-index:0;padding-top: 100rpx">
+                <swiper class="h-100" onChange="swiperChange" current="{{swiper_current}}" duration="300">
+                    <swiper-item>
+                        <scroll-view class="h-100" scroll-y="true" onScrolltolower="goodsScrollBottom" lower-threshold="1">
+
+                            <view class="goods-list">
+                                <navigator url="/pages/goods/goods?id={{item.goods_id}}" open-type="navigate" a:for="{{goods.list}}" a:key="{{item.id}}" class="goods-item">
+                                    <image class="goods-pic" src="{{item.goods_pic}}" mode="aspectFill" />
+                                    <view class="goods-info">
+                                        <text class="goods-name">{{item.name}}</text>
+                                        <text class="goods-price"><block a:if="{{!item.is_negotiable}}">￥</block>{{item.price}}</text>
+                                    </view>
+                                </navigator>
+                            </view>
+                            <view class="no-content" a:if="{{goods.list.length == 0}}">
+                                暂无收藏的商品
+                            </view>
+                            <view class="loading-more {{topic.is_loading?'active':''}}">
+                                <image src="{{__wxapp_img.system.loading.url}}"></image>
+                            </view>
+                        </scroll-view>
+                    </swiper-item>
+
+                    <swiper-item>
+                        <scroll-view class="h-100" scroll-y="true" onScrolltolower="topicScrollBottom" lower-threshold="1">
+                            <view class="list">
+                                <block a:for="{{topic.list}}" a:key="{{item.id}}">
+
+                                    <navigator a:if="{{item.layout==0}}" class="item layout-0" url="/pages/topic/topic?id={{item.id}}">
+                                        <view class="flex-row">
+                                            <view class="flex-grow-1 flex-col">
+                                                <view class="flex-grow-1">
+                                                    <view class="title">{{item.title}}</view>
+                                                </view>
+                                                <view class="flex-grow-0 read-count">{{item.read_count}}</view>
+                                            </view>
+                                            <view class="flex-grow-0" style="position: relative">
+                                                <image class="cover-pic" mode="aspectFill" src="{{item.cover_pic}}"></image>
+                                                <view class="goods-count" a:if="{{item.goods_count}}">{{item.goods_count}}
+                                                </view>
+                                            </view>
+                                        </view>
+                                    </navigator>
+
+                                    <navigator a:if="{{item.layout==1}}" class="item layout-1" url="/pages/topic/topic?id={{item.id}}">
+                                        <view class="title" style="font-weight: 600;font-size: 12pt">{{item.title}}</view>
+                                        <image class="cover-pic" mode="aspectFill" src="{{item.cover_pic}}"></image>
+                                        <view class="flex-row">
+                                            <view class="flex-grow-1 read-count">{{item.read_count}}</view>
+                                            <view class="flex-grow-0 goods-count" a:if="{{item.goods_count}}">
+                                                {{item.goods_count}}
+                                            </view>
+                                        </view>
+                                    </navigator>
+
+                                </block>
+                            </view>
+                            <view class="no-content" a:if="{{topic.list.length == 0}}">
+                                暂无收藏的专题
+                            </view>
+                            <view class="loading-more {{topic.is_loading?'active':''}}">
+                                <image src="{{__wxapp_img.system.loading.url}}"></image>
+                            </view>
+                        </scroll-view>
+                    </swiper-item>
+                </swiper>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

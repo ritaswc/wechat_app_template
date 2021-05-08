@@ -1,0 +1,21 @@
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ececec;
+}
+
+.comment{
+	background-color: #ececec;
+  padding: 2px 5px 2px 8px;
+}
+
+.comment_name{
+	color:#4266af;
+  padding-right: 4px;
+}
+
+.comment_content{
+	color:rgba(0,0,0,0.6);
+}

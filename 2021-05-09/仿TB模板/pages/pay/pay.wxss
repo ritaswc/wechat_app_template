@@ -1,0 +1,306 @@
+.container { height: 100%; margin: 0; overflow-x: hidden; }
+
+.header {
+  background: #fff;
+  height: 96rpx;
+  left: 0;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.home {
+  display: block;
+  height: 48rpx;
+  margin: 24rpx 30rpx;
+  position: absolute;
+  width: 48rpx;
+  z-index: 12;
+}
+
+.title {
+  color: #333;
+  font-size: 34rpx;
+  font-weight: 500;
+  height: 98rpx;
+  left: 0px;
+  line-height: 96rpx;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  width: 100%;
+  z-index: 11;
+}
+
+.sbtn {
+  display: block;
+  font-size: 30rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+  z-index: 9;
+}
+
+.wrapper { width: 100%; }
+
+.content {
+  height: 100%;
+  overflow-y: auto;
+  padding: 20rpx 30rpx 468rpx;
+  width: 95%;
+}
+
+.top {
+  background: #fff;
+  border: #dedede solid 1rpx;
+  border-radius: 12rpx;
+  height: 80rpx;
+  overflow: hidden;
+  padding: 0px 20rpx;
+  width: 92%;
+}
+
+.top-price {
+  color: #333;
+  display: block;
+  float: left;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  padding: 16rpx 0;
+  width: 48%;
+}
+
+.top input {
+  color: #dd2a2a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: right;
+}
+
+.top-num {
+  border: none;
+  float: right;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0;
+  padding-right: 10rpx;
+  width: 320rpx;
+}
+
+.box-check {
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-top: 20rpx;
+  width: 100%;
+}
+
+.box-check icon { float: left; margin-top: 2rpx; }
+
+.check-tx {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30rpx;
+  margin-left: 60rpx;
+  margin-top: 10rpx;
+  position: absolute;
+}
+
+.box {
+  background: #fff;
+  border: #dedede solid 1rpx;
+  border-radius: 12rpx;
+  height: 80rpx;
+  margin-top: -10rpx;
+  overflow: hidden;
+  padding: 0px 20rpx;
+  width: 92%;
+}
+
+.box-price {
+  color: #333;
+  display: block;
+  float: left;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  padding: 16rpx 0;
+  width: 48%;
+}
+
+.box-num {
+  border: none;
+  float: right;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0;
+  padding-right: 10rpx;
+  width: 320rpx;
+}
+
+.box input {
+  color: #dd2a2a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: right;
+}
+
+.payment {
+  background: #fff;
+  border: #dedede solid 1rpx;
+  border-radius: 12rpx;
+  height: 100rpx;
+  margin-top: 24rpx;
+  overflow: hidden;
+  padding: 0 20rpx;
+  width: 92%;
+}
+
+.left {
+  float: left;
+  height: 96rpx;
+  line-height: 40rpx;
+  padding-top: 8rpx;
+  text-align: center;
+  width: 50%;
+}
+
+.lt-span {
+  color: #333;
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 28rpx;
+}
+
+.lt-em { font-style: normal; }
+
+.lt-b {
+  color: #dd2a2a;
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.right {
+  float: left;
+  height: 96rpx;
+  line-height: 40rpx;
+  padding-top: 8rpx;
+  text-align: center;
+  width: 50%;
+}
+
+.right::before {
+  border-left: #DEDEDE solid 1rpx;
+  bottom: 0;
+  content: '';
+  float: left;
+  height: 70%;
+  margin-top: 10rpx;
+  overflow: hidden;
+  width: 1;
+}
+
+.rt-span {
+  color: #333;
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 28rpx;
+}
+
+.rt-b {
+  color: #dd2a2a;
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.other-privilege {
+  display: block;
+  line-height: 48rpx;
+  margin-top: 20rpx;
+  position: relative;
+  text-align: center;
+}
+
+.pri-tx { color: #666; font-size: 28rpx; margin-left: -64rpx; }
+
+.pri-img {
+  color: #999;
+  height: 50rpx;
+  line-height: 50rpx;
+  position: absolute;
+  width: 50rpx;
+}
+
+.footer {
+  background: #fff;
+  left: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+.pay-type { width: 100%; }
+
+.pay-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.pay-li {
+  float: left;
+  height: 152rpx;
+  left: 0;
+  text-align: center;
+  top: 0;
+  width: 50%;
+}
+
+.pay-li:after {
+  background: #DEDEDE;
+  bottom: 26rpx;
+  content: '';
+  height: 60%;
+  position: absolute;
+  right: 50%;
+  width: 1px;
+}
+
+.pay-a {
+  display: block;
+  height: 152rpx;
+  margin: 0 auto;
+  padding: 40rpx 0;
+  position: inherit;
+  text-align: center;
+  width: 192rpx;
+}
+
+.pay-img {
+  display: inline-block;
+  float: left;
+  height: 72rpx;
+  width: 72rpx;
+}
+
+.pay-tx {
+  color: #888;
+  display: block;
+  display: inline-block;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  line-height: 72rpx;
+  text-align: center;
+}
+
+

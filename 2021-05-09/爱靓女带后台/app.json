@@ -1,0 +1,11 @@
+{
+    "pages": [
+        "pages/girls/girls"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#f37bb3",
+        "navigationBarTitleText": "爱靓女",
+        "navigationBarTextStyle": "#fff"
+    }
+}

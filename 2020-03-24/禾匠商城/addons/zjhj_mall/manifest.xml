@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.we7.cc" versionCode="">
+    <application setting="false">
+        <name><![CDATA[禾匠小程序商城]]></name>
+        <identifie><![CDATA[zjhj_mall]]></identifie>
+        <version><![CDATA[3.1.49]]></version>
+        <type><![CDATA[business]]></type>
+        <ability><![CDATA[禾匠小程序商城]]></ability>
+        <description><![CDATA[禾匠小程序商城]]></description>
+        <author><![CDATA[淘宝柠檬鱼科技]]></author>
+        <url><![CDATA[https://shop486845690.taobao.com]]></url>
+    </application>
+    <platform>
+        <supports>
+            <item type="wxapp"/>
+        </supports>
+    </platform>
+    <bindings>
+        <page>
+            <entry title="主页" do="/pages/index/index" state="" direct=""/>
+        </page>
+    </bindings>
+    <permissions>
+    </permissions>
+    <install><![CDATA[]]></install>
+    <uninstall><![CDATA[]]></uninstall>
+    <upgrade><![CDATA[]]></upgrade>
+</manifest>

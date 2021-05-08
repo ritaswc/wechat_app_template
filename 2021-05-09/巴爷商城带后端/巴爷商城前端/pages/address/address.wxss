@@ -1,0 +1,48 @@
+.btn-area {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.btn-area button {
+  border-radius: 0;
+}
+
+.section {
+  display: flex;
+  margin: 15rpx;
+}
+
+.section__title {
+  width: 200rpx;
+  padding: 15rpx;
+}
+
+.picker-view {
+  border: 1rpx solid lightgrey;
+  display: flex;
+  flex-direction: row;
+  padding: 15rpx;
+  width: 440rpx;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.detail-address {
+  margin: 15rpx;
+}
+
+.detail-address .section_title {
+  padding: 15rpx;
+}
+
+.detail-address input {
+  margin: 15rpx;
+  padding: 15rpx;
+  border: 1rpx solid lightgrey;
+}
+
+.select-icon {
+  height: 20rpx;
+  width: 34rpx;
+}

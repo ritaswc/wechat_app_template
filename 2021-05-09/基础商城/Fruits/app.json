@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/goods/goods_details",
+    "pages/cart/cart",
+    "pages/store_list/store_list",
+    "pages/store_xq/store_xq",
+    "pages/store_xq_1/store_xq_1",
+    "pages/store_xq_2/store_xq_2",
+    "pages/store_xq_3/store_xq_3",
+    "pages/list/list",
+    "pages/center/center",
+    "pages/model/model",
+    "pages/money/money",
+    "pages/personal_coupon/personal_coupon",
+    "pages/personal_edit_profile/personal_edit_profile",
+    "pages/personal_address/personal_address",
+    "pages/personal_add_address/personal_add_address"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "会员商城"
+    }, {
+      "pagePath": "pages/store_list/store_list",
+      "text": "实体店铺"
+    }, {
+      "pagePath": "pages/list/list",
+      "text": "分销商城"
+    }, {
+      "pagePath": "pages/center/center",
+      "text": "会员中心"
+    }]
+  }
+}

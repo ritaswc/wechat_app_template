@@ -1,0 +1,33 @@
+<img src="{php echo tomedia('headimg_'.$_W['account']['acid'].'.jpg')}?time={php echo time()}" class="head-logo">
+<span class="font-lg">{$_W['account']['name']}</span>
+
+{if $_W['account']['level'] == 1}
+	<span class="label label-primary">个人</span>
+{elseif $_W['account']['level'] == 2}
+	<span class="label label-primary">媒体</span>
+{elseif $_W['account']['level'] == 3}
+	<span class="label label-primary">企业</span>
+{elseif $_W['account']['level'] == 4}
+	<span class="label label-primary">政府</span>
+{elseif $_W['account']['level'] == 5}
+	<span class="label label-primary">其他组织</span>
+{/if}
+
+{if $_W['uniaccount']['isconnect'] == 0}
+	<span class="tips-danger">
+		<i class="wi wi-warning-sign"></i>未接入熊掌号
+		<a href="{php echo url('account/post', array('uniacid' => $_W['account']['uniacid'], 'acid' => $_W['acid'], 'account_type' => ACCOUNT_TYPE_XZAPP_NORMAL))}">立即接入</a>
+	</span>
+{/if}
+
+<span class="pull-right">
+	<a href="{php echo url('account/display', array('type' => 'all'))}" class="color-default we7-margin-left">
+		<i class="wi wi-cut color-default"></i>切换平台
+	</a>
+</span>
+
+{if permission_account_user_role($_W['uid'], $_W['uniacid']) != ACCOUNT_MANAGE_NAME_OPERATOR}
+	<span class="pull-right"><a href="{php echo url('account/post', array('uniacid' => $_W['account']['uniacid'], 'acid' => $_W['acid'], 'account_type' => ACCOUNT_TYPE_XZAPP_NORMAL))}">
+		<i class="wi wi-appsetting"></i>熊掌号设置</a>
+	</span>
+{/if}

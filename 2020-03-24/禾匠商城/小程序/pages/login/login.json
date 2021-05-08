@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "授权登录",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

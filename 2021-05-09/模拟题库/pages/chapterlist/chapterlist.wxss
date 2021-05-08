@@ -1,0 +1,78 @@
+/* chapterlist.wxss */
+.content {
+	width: 96%;
+	margin: 0 auto;
+}
+
+.content .chapter-list{
+	height: 40px;
+	margin: 15px auto;
+	color: #999999;
+	background: #FFF;
+	font-size: 14px;
+	line-height: 40px;
+	border: 1px solid #CCC;
+}
+
+.content .chapter-list text{
+	margin-left: 20px;
+	display: block;
+}
+
+.content .chapter-list.selected{
+	height: 150px;
+	color: #000;
+}
+
+.content .chapter-list .col-menu{
+	width: 100%;
+	margin: 20px auto 0;
+	display: none;
+}
+
+.content .chapter-list.selected .col-menu{
+	display: block;
+}
+
+.content .chapter-list .col-menu .progress-bar{
+	position: relative;
+	width: 65%;
+	height: 6px;
+	margin: 0 auto;
+	line-height: 6px; /* 保证与DIV水平 */
+
+    /* 左移半个数字宽度 */
+    transform: translateX(-10px);
+	-webkit-transform: translateX(-10px);
+	-moz-transform: translateX(-10px);
+	-o-transform: translateX(-10px);
+}
+
+.content .chapter-list .col-menu .progress-bar view{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 100%;
+	transform: translateX(125%);
+	-webkit-transform: translateX(125%);
+	-moz-transform: translateX(125%);
+	-o-transform: translateX(125%);
+	font-size: 16px;
+}
+
+.content .chapter-list .col-menu .menu{
+	width: 100%;
+	height: 53px;
+	line-height: 53px;
+	margin-top: 30px;
+	border-top: 1px solid #CCC; 
+}
+
+.content .chapter-list .col-menu navigator{
+	width: 100%;
+	float: left;
+    color: #28a54c;
+	list-style: none;
+    text-align: center;
+}

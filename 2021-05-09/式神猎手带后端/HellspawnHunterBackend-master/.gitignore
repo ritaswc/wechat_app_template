@@ -1,0 +1,8 @@
+.idea/
+*.pyc
+*.pyo
+fabfile.py
+.DS_Store
+.coverage
+00*_*.py
+db.sqlite3

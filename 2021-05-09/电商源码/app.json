@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "page/hotGoods/hotGoods",
+    "page/hotGoods/goodsDetail",
+    "page/hotGoods/counter",
+    "page/special/special",
+    "page/personal/personal",
+    "page/personal/address",
+    "page/personal/editAddr",
+    "page/order/order"
+  ],
+  "window": {
+    "navigationBarTextStyle": "#fff",
+    "navigationBarTitleText": "小程序商城",
+    "navigationBarBackgroundColor": "#black",
+    "backgroundColor": "#fbf9fe"
+  },
+  "tabBar": {
+    "color": "#7f8389",
+    "selectedColor": "#2fa7e0",
+    "borderStyle": "white",
+    "backgroundColor": "#f2f2f2",
+    "list": [{
+      "pagePath": "page/hotGoods/hotGoods",
+      "iconPath": "image/1.png",
+      "selectedIconPath": "image/active.png",
+      "text": "精彩活动"
+    }, {
+      "pagePath": "page/special/special",
+      "iconPath": "image/2.png",
+      "selectedIconPath": "image/active.png",
+      "text": "特色商品"
+    }, {
+      "pagePath": "page/personal/personal",
+      "iconPath": "image/3.png",
+      "selectedIconPath": "image/active.png",
+      "text": "个人中心"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

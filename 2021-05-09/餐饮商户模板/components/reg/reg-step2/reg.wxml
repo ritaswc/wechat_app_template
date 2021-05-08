@@ -1,0 +1,30 @@
+<template name="regStep2">
+    <view class="container">
+        <view class="step-tips">
+            <image class="step-img" src="/image/merchant/reg/25jibenh.png"></image>
+            <text class="f2 c">基本信息</text>
+            <image class="step-tips-arrow" src="/image/merchant/reg/28jibeno.png"></image>
+            <image class="step-img" src="/image/merchant/reg/26jibeno.png"></image>
+            <text class="f2 c3">详细信息</text>
+            <image class="step-tips-arrow" src="/image/merchant/reg/28jibeno.png"></image>
+            <image class="step-img" src="/image/merchant/reg/27jibeno.png"></image>
+            <text class="f2 c3">等待审核</text>
+        </view>
+        <view class="form">
+            <view class="form-item">
+                <text class="f1 c5">店名</text>
+                <input placeholder="请输入您的店面名称" placeholder-class="ph-class" />
+            </view>
+            <view class="form-item">
+                <text class="f1 c5">手机</text>
+                <input placeholder="请输入您的手机号码" placeholder-class="ph-class" />
+            </view>
+            <view class="form-item">
+                <text class="f1 c5">验证码</text>
+                <input placeholder="请输入短信验证码" placeholder-style="padding-left:16rpx;" placeholder-class="ph-class"/>
+                <button class="msg-btn f2 bgc">发送</button>
+            </view>
+        </view>
+        <button class="reg-quick bgc">下一步</button>
+    </view>
+</template>

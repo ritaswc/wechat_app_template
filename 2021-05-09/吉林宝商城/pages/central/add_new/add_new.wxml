@@ -1,0 +1,26 @@
+<!--添加收货地址-->
+<view class="wraper">
+    <view class="listItems">
+        <text class="listLeft">收货人姓名: </text>
+        <input id="name" class="listRight" type="number" value=" " name=""/>
+    </view>
+     <view class="listItems">
+        <text class="listLeft">手机号码: </text>
+        <input id="name" class="listRight" type="number" value=" " name=""/>
+    </view>
+     <view class="listItems">
+        <text class="listLeft">邮政编码: </text>
+        <input id="name" class="listRight" type="number" value=" " name=""/>
+    </view>
+     <view class="listItems">
+        <text class="listLeft">所在地区: </text>
+        <input id="name" class="listRight" type="number" value=" " name=""/>
+    </view>
+     <view class="listItems">
+        <text class="listLeft">详细地址: </text>
+        <input id="name" class="listRight" type="number" value=" " name=""/>
+    </view>
+    <view class="btnGroup">
+        <button class="btn">确认添加</button>
+    </view>
+</view>

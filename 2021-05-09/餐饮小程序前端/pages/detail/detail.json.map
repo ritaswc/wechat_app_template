@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["pages/detail/detail.json"],"sourcesContent":["// Window configuration\n// https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html#window\n{\n  \"navigationBarTitleText\": \"餐厅详情\"\n}\n"],"file":"detail.json"}

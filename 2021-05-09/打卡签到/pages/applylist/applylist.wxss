@@ -1,0 +1,82 @@
+/* pages/applylist/applylist.wxss */
+
+page {
+  background: #fafafa;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  height: 110rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 42rpx 36rpx 20rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.avatar {
+}
+
+.avatar image {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+}
+
+.name {
+  margin-left: 20rpx;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+}
+
+.refuse {
+  border-radius: 5px;
+  border: solid 1px rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 52rpx;
+  color: rgba(0, 0, 0, 0.54);
+  text-align: center;
+  margin-right: 22rpx;
+}
+
+.accept {
+  border-radius: 5px;
+  border: solid 1px rgba(0, 0, 0, 0.12);
+  background-color: #22a1e0;
+  font-size: 14px;
+  line-height: 52rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.noquick {
+  display: flex;
+  flex-direction: column;
+}
+
+.noquick image {
+  width: 344rpx;
+  height: 344rpx;
+  margin: 224rpx auto 0rpx auto;
+}
+
+.noquick text {
+  margin: 66rpx auto 0rpx auto;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 34rpx;
+  letter-spacing: -0.8rpx;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.38);
+}

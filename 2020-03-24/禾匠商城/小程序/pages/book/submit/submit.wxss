@@ -1,0 +1,113 @@
+.population {
+    padding: 20rpx 24rpx 120rpx 24rpx;
+}
+
+.goods {
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    padding: 24rpx;
+    border-radius: 16rpx;
+    box-shadow: 0px 0px 10px #dddddd;
+}
+
+.goods-img {
+    margin-right: 24rpx;
+}
+
+.goods-img image {
+    width: 208rpx;
+    height: 208rpx;
+}
+
+.goods-info {
+    margin: 8rpx 0;
+}
+
+.goods-name {
+    font-size: 11pt;
+    color: #353535;
+}
+
+.original_price {
+    font-size: 10pt;
+    color: #a4a4a4;
+    text-decoration: line-through;
+    margin-right: 40rpx;
+}
+
+.price {
+    color: #ff4544;
+    font-size: 12pt;
+}
+
+.money {
+    justify-content: flex-end;
+}
+
+.form {
+    background-color: #fff;
+    border-radius: 16rpx;
+    box-shadow: 0px 0px 10px #dddddd;
+}
+
+.form image {
+    width: 702rpx;
+    height: 96rpx;
+}
+
+.group-form {
+    padding: 0 24rpx;
+    font-size: 12pt;
+    color: #353535;
+}
+
+.input-shell {
+    min-height: 96rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.picker-time image {
+    width: 16rpx;
+    height: 26rpx;
+}
+
+.picker-data {
+    justify-content: flex-end;
+}
+
+.group-radio-item {
+    color: #666666;
+    line-height: 56rpx;
+    border-radius: 28rpx;
+    border: 1rpx solid #cccccc;
+    padding: 0 24rpx;
+    display: inline-block;
+    margin-bottom: 24rpx;
+    margin-right: 24rpx;
+}
+
+.active.group-radio-item {
+    background-color: #ff6845;
+    color: #fff;
+}
+
+.input-shell textarea {
+    height: 120rpx;
+}
+
+.submit-btn {
+    height: 100rpx;
+    background-color: #ff4544;
+    font-size: 13pt;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+}
+
+button::after {
+    content: normal;
+    border: 0;
+}

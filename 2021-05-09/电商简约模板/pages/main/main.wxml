@@ -1,0 +1,63 @@
+<!--pages/main/main.wxml-->
+<view class="page">
+	<view class="search">
+		<input class="wx-input" placeholder="🔍 寻找称心礼物" placeholder-style="color: #bfbfbf; font-size: 30rpx; text-align:center;" />
+	</view>
+
+	<view class="banner">
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+		  <block wx:for="{{imgUrls}}">
+		    <swiper-item bindtap="goDetail">
+		      <image src="{{item}}" class="slide-image" />
+		    </swiper-item>
+		  </block>
+		</swiper>
+	</view>
+	
+	<view class="title-line">
+		<view class="title-name">- BOUTIQUE RECOMMEND -</view>
+		<view class="title-name-bottom">精选推荐</view>
+	</view>
+	
+	<view class="content">
+		<block wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}}">
+			<view class="content-cell">
+				<image src="http://oalppxaqn.bkt.clouddn.com/%E8%BD%BB%E5%A5%A2%E7%A4%BC%E7%89%A9%E8%AF%B4.png" mode="scaleToFill" binderror="imageError"/>
+				<text class="describe">照明台灯 钟表 小床</text>
+				<view style="color: red; font-size: 8pt;" class="price-now">$ 120.00</view>
+			</view>
+		</block>
+	</view>
+
+	<view class="title-line">
+		<view class="title-name">- NEW TODAY -</view>
+		<view class="title-name-bottom">今日上新</view>
+	</view>
+
+	<view class="content">
+		<block wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}}">
+			<view class="content-cell">
+				<image src="http://oalppxaqn.bkt.clouddn.com/%E8%BD%BB%E5%A5%A2%E7%A4%BC%E7%89%A9%E8%AF%B4.png" mode="scaleToFill" binderror="imageError"/>
+				<text class="describe">照明台灯 钟表 小床</text>
+				<view style="color: red; font-size: 8pt;" class="price-now">$ 120.00</view>
+			</view>
+		</block>
+	</view>
+
+	<view class="title-line">
+		<view class="title-name">- HOT NEW -</view>
+		<view class="title-name-bottom">热卖新品</view>
+	</view>
+
+	<view class="content">
+		<block wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}}">
+			<view class="content-cell">
+				<image src="http://oalppxaqn.bkt.clouddn.com/%E8%BD%BB%E5%A5%A2%E7%A4%BC%E7%89%A9%E8%AF%B4.png" mode="scaleToFill" binderror="imageError"/>
+				<text class="describe">照明台灯 钟表 小床</text>
+				<view style="color: red; font-size: 8pt;" class="price-now">$ 120.00</view>
+			</view>
+		</block>
+	</view>
+
+	<view class="footer" bindtap="goIndexPage">北京合水商贸有限公司</view>
+</view>

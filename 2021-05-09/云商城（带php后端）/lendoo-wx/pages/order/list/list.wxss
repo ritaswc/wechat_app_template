@@ -1,0 +1,77 @@
+page {
+	background: #eee;
+}
+
+.order-item {
+	margin-bottom: 10px;
+	background: #fff;
+}
+
+.order-item:last-child {
+	margin-bottom: 0;
+}
+
+.order-footer {
+	padding: 3px 0;
+}
+
+.order-footer text {
+	font-size: 12px;
+	margin: 0 5px;
+}
+
+/*每行单元格*/
+.carts-item {
+	display: flex;
+	flex-direction: row;
+	height:150rpx;
+	/*width属性解决标题文字太短而缩略图偏移*/
+	width:100%;
+	border-bottom: 1px solid #eee;
+	padding: 30rpx 0;
+}
+
+/*左部图片*/
+.carts-image {
+	width:150rpx;
+	height:150rpx;
+}
+
+
+/*右部描述*/
+.carts-text {
+	margin-left: 10rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/*右上部分标题*/
+.carts-title {
+	font-size: 28rpx;
+	color: #444;
+	line-height: 38rpx;
+}
+
+/*右下部分价格与数量*/
+.carts-subtitle {
+	font-size: 25rpx;
+	color:darkgray;
+	padding: 0 20rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+}
+
+/*价格*/
+.carts-price {
+	color: #f60;
+	font-size:14px;
+	line-height: 22px;
+}
+
+/*隐藏元素*/
+.hidden {
+	display: none;
+}

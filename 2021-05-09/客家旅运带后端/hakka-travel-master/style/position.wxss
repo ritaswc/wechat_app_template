@@ -1,0 +1,24 @@
+/**
+ *   absolute-center-Y: 垂直居中
+ *   absolute-center-X: 水平居中
+ *  absolute-center-XY: 水平垂直居中 
+ * */
+ 
+.absolute-center-Y {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%); 
+}
+
+.absolute-center-X {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.absolute-center-XY {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

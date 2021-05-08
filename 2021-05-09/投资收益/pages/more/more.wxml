@@ -1,0 +1,54 @@
+<view class="more">
+    <view class="more_title">
+        <image src="../../images/more/more_logo.png"></image>
+    </view>
+    
+    <view class="more_con">
+        <view class="more_list">
+            <view class="more_ltem">
+                <view class="more_info" id="wechat" bindtap="change">
+                    <view class="more_info_name">
+                        <image src="../../images/more/icon_01.png"></image>关注官方微信
+                    </view>
+                    <view class="more_info_img">
+                        <image src="../../images/more/{{wechatShow ? 'arrowbottom.png' : 'arrowright.png'}}"></image>
+                    </view>
+                </view>
+                <view class="more_hide {{ wechatShow ? 'more_show' : '' }}">
+                    <image src="../../images/more/gd_weixin.jpg"></image>
+                    <image src="../../images/more/gd_dingyue.jpg"></image>
+                </view>
+            </view>
+
+            <view class="more_ltem">
+                <view class="more_info" id="call_center" bindtap="change">
+                    <view class="more_info_name">
+                        <image src="../../images/more/phone.png"></image>联系客服
+                    </view>
+                    <view class="more_info_img">
+                        <image src="../../images/more/{{call_centerShow ? 'arrowbottom.png' : 'arrowright.png'}}"></image>
+                    </view>
+                </view>
+                <view class="more_hide bg_color {{call_centerShow?'more_show':''}}">
+                    <view class="more_phone">400-888-9787</view>
+                    <view class="more_p">周一到周六：9:00-22:00</view>
+                    <view class="more_p">或直接添加普汇云通官方微信服务号：</view>
+                    <view class="more_p"><text>phyt88-Ann</text><text>phyt-mell</text></view>
+                </view>
+            </view>
+
+            <view class="more_ltem">
+                <navigator class="widget" url="news/news">
+                    <view class="more_info" id="wechat">
+                        <view class="more_info_name">
+                            <image src="../../images/more/volume.png"></image>平台动态/公告
+                        </view>
+                        <view class="more_info_img">
+                            <image src="../../images/more/arrowright.png"></image>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

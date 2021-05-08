@@ -1,0 +1,21 @@
+.waiting-logo {
+    margin-top: 30rpx;
+    width: 690rpx;
+    border-top: 1rpx solid #f2f2f2;
+}
+.waiting-logo image{
+    width: 690rpx;
+    height: 466rpx;
+    display: block;
+}
+.waiting-logo .logo-des{
+    text-indent: 2em;
+    color: #999999;
+    background-color: #ffffff;
+    padding: 0 30rpx;
+    line-height: 45rpx;
+}
+
+
+
+

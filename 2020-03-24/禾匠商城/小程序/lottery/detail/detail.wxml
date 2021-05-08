@@ -1,0 +1,126 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="no-content" wx:if="{{list.status!=0&&list.status!=1&&list.status!=2&&list.status!=3}}">暂无记录</view>
+        <block wx:if="{{list.status==0}}">
+            <view class="flex-row" style="padding:64rpx 0 0rpx 160rpx">
+                <image src="/lottery/images/lottery-go.png" style="display:block;width:88rpx;height:88rpx"></image>
+                <view class="flex-col flex-x-center" style="color:#ffffff;margin-left:48rpx">
+                    <view>参加成功，等待开奖</view>
+                    <view style="height:10rpx"></view>
+                    <view style="font-size:9pt">{{list.time}}</view>
+                </view>
+            </view>
+            <view class="flex-x-center flex-y-center" style="color:#ffffff;padding:32rpx 0rpx">您的幸运码为{{list.lucky_code}}</view>
+            <view style="background:#ffffff;width:702rpx;border-radius:16rpx;margin:0 auto;padding:32rpx 0">
+                <navigator hoverClass="navigator-hover" style="display:inline" url="/lottery/goods/goods?id={{list.lottery_id}}">
+                    <view class="flex-row" style="padding:0 32rpx">
+                        <image class="flex-grow-0" src="{{list.gift.cover_pic}}" style="display:block;width:280rpx;height:280rpx"></image>
+                        <view class="flex-col" style="padding-left:24rpx;">
+                            <view class="text-more-2" style="-webkit-line-clamp: 3;font-size:13pt;">{{list.gift.name}}</view>
+                            <view style="color:#999999;margin-top:20rpx;margin-bottom:30rpx">共<text style="color:#ff4544;font-size:13pt;font-weight:bold;padding:0 8rpx">{{list.lottery.stock}}</text>份</view>
+                            <view class="flex-row flex-y-center">
+                                <view class="flex-grow-0 red">￥0</view>
+                                <view class="flex-grow-1 font-minor" style="text-decoration:line-through;padding-left:12rpx">原价￥{{list.gift.original_price}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </navigator>
+                <view class="flex-row flex-y-center" style="background:#fff7e7;margin-top:32rpx;padding:26rpx 32rpx">
+                    <view class="flex-col flex-grow-1">
+                        <view class="font-normal" style="font-size:10pt">邀请好友参与，增加中奖概率哦！</view>
+                        <view style="color:#353535;padding-top:10rpx">已成功邀请<text class="red"> {{list.parent_num}} </text>位好友</view>
+                    </view>
+                    <navigator hoverClass="navigator-hover" style="display:inline" url="/lottery/lucky-code/lucky-code?id={{list.id}}">
+                        <view class="flex-grow-0 flex-row flex-y-center">
+                            <view style="font-size:10pt">详情</view>
+                            <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width:16rpx;height:30rpx;margin-left:16rpx"></image>
+                        </view>
+                    </navigator>
+                </view>
+                <view class="flex-row flex-x-center" style="padding:0 32rpx;margin:40rpx 0 64rpx 0;">
+                    <navigator class="flex-grow-0" hoverClass="navigator-hover" openType="reLaunch" style="padding-right:32rpx" url="/lottery/index/index">
+                        <view class="btn-normal flex-x-center flex-y-center" style="border:1rpx solid #ff4544;height:72rpx;width:300rpx;border-radius:32rpx">参与更多抽奖</view>
+                    </navigator>
+                    <button class="share-bottom flex-x-center flex-y-center " id="_sum" openType="share">
+                        <view class="btn-main flex-x-center flex-y-center" style="height:72rpx;border-radius:32rpx;width:300rpx">邀请好友参与</view>
+                    </button>
+                </view>
+                <view style="padding:0 32rpx">
+                    <view style="height:1rpx;background:#e2e2e2"></view>
+                    <view style="margin:40rpx 0 32rpx 0;text-align:center">已有{{num}}人参与</view>
+                    <view class="flex " style="flex-wrap:wrap">
+                        <image class="flex-grow-0" src="{{item.user.avatar_url}}" style="display:block;width:56rpx;height:56rpx;margin:0 3rpx 20rpx 4rpx" wx:for="{{user_list}}" wx:key="{{item.id}}"></image>
+                    </view>
+                </view>
+                <view style="color:#999999;text-align:center">仅显示最近参与30人</view>
+            </view>
+        </block>
+        <block wx:if="{{list.status==1||list.status==2||list.status==3}}">
+            <view class="flex-row" style="padding:64rpx 0 0rpx 160rpx">
+                <block wx:if="{{list.status==1}}">
+                    <image src="/lottery/images/lottery-error.png" style="display:block;width:88rpx;height:88rpx"></image>
+                    <view class="flex-col flex-x-center" style="color:#ffffff;margin-left:48rpx">
+                        <view style="font-size:11pt">很遗憾，您未中奖</view>
+                    </view>
+                </block>
+                <block wx:if="{{list.status==2||list.status==3}}">
+                    <image src="/lottery/images/lottery-success.png" style="display:block;width:88rpx;height:88rpx"></image>
+                    <view class="flex-col flex-x-center" style="color:#ffffff;margin-left:48rpx">
+                        <view style="font-size:11pt">恭喜你，中奖啦！</view>
+                        <view style="font-size:11pt">中奖幸运码为 {{list.lucky_code}}</view>
+                    </view>
+                </block>
+            </view>
+            <navigator class="flex-x-center flex-y-center" hoverClass="navigator-hover" style="padding:32rpx 0rpx" url="/lottery/lucky-code/lucky-code?id={{list.id}}">
+                <view style="color:#ffffff;">查看我的幸运码</view>
+                <image src="/lottery/images/lottery-right.png" style="width:16rpx;height:30rpx;margin-left:16rpx"></image>
+            </navigator>
+            <view style="background:#ffffff;width:702rpx;border-radius:16rpx;margin:0 auto;padding:32rpx">
+                <navigator hoverClass="navigator-hover" style="display:inline" url="/lottery/goods/goods?id={{list.lottery_id}}">
+                    <view class="flex-row">
+                        <image class="flex-grow-0" src="{{list.gift.cover_pic}}" style="display:block;width:280rpx;height:280rpx"></image>
+                        <view class="flex-col" style="padding-left:24rpx;">
+                            <view class="text-more-2" style="-webkit-line-clamp: 3;font-size:13pt;">{{list.gift.name}}</view>
+                            <view style="color:#999999;margin-top:20rpx;margin-bottom:30rpx">共<text style="color:#ff4544;font-size:13pt;font-weight:bold;padding:0 8rpx">{{list.lottery.stock}}</text>份</view>
+                            <view class="flex-row flex-y-center">
+                                <view class="flex-grow-0 red" style="">￥0</view>
+                                <view class="flex-grow-1 font-minor" style="text-decoration:line-through;padding-left:12rpx">原价￥{{list.gift.original_price}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </navigator>
+                <navigator hoverClass="navigator-hover" openType="reLaunch" style="display:inline" url="/lottery/index/index" wx:if="{{list.status==1}}">
+                    <view class="flex-row flex-x-center" style="margin:55rpx 0 ">
+                        <view class="btn-normal flex-x-center flex-y-center" style="border:1rpx solid #ff4544;height:80rpx;width:500rpx;border-radius:32rpx">参与更多抽奖</view>
+                    </view>
+                </navigator>
+                <view class="flex-row flex-x-center" style="margin:64rpx 0 " wx:if="{{list.status==2||list.status==3}}">
+                    <navigator hoverClass="navigator-hover" openType="reLaunch" style="display:inline" url="/lottery/index/index">
+                        <view class="btn-normal flex-x-center flex-y-center" style="border:1rpx solid #ff4544;height:72rpx;width:300rpx;border-radius:32rpx">参与更多抽奖</view>
+                    </navigator>
+                    <view style="width:32rpx"></view>
+                    <view bindtap="submit" class="btn-main flex-x-center flex-y-center" style="height:72rpx;border-radius:32rpx;width:300rpx" wx:if="{{list.status==2}}">立即兑换</view>
+                    <view class="btn-disabled flex-x-center flex-y-center" style="height:72rpx;border-radius:32rpx;width:300rpx" wx:if="{{list.status==3}}">已兑换</view>
+                </view>
+                <view style="background:#f7f7f7">
+                    <view style="color:#353535;width:638rpx;">
+                        <view class="flex-x-center flex-y-center" style="height:88rpx;">已有{{num}}人参与  {{list.pe_num}}人中奖</view>
+                        <view style="height:1px;background:#e2e2e2;margin-bottom:32rpx"></view>
+                        <view class="flex-row flex-y-center" style="padding-bottom:32rpx" wx:for="{{user_list}}" wx:key="{{item.id}}">
+                            <image class="flex-grow-0" src="{{item.user.avatar_url}}" style="display:block;width:64rpx;height:64rpx;margin:0 32rpx 0 40rpx;border-radius:50%"></image>
+                            <view class="flex-grow-1">{{item.user.nickname}}</view>
+                            <view class="flex-col flex-grow-0 flex-y-center" style="margin-right:40rpx">
+                                <text>{{item.lucky_code}}</text>
+                                <text class="fs-sm">中奖幸运码</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="userload" style="text-align:center;color:#999999;" wx:if="{{list.pe_num>3}}">加载更多</view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

@@ -1,0 +1,29 @@
+<template>
+    <view class="card" style="z-index:{{zIndex}}">
+        <slot></slot>
+    </view>
+</template>
+
+<script>
+export default {
+    properties: {
+        zIndex: {
+            type: Number,
+            value: 1
+        }
+    }
+}
+</script>
+
+<style lang='less'>
+.card {
+  height: 100%;
+  background-color: #fff;
+//   color: #fff;
+  margin-top: 30rpx;
+//   padding: 20rpx 50rpx;
+  border: 1rpx solid #e5e5e5;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 5rpx 2rpx #e5e5e5;
+}
+</style>

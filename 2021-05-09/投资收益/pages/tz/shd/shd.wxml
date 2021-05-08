@@ -1,0 +1,162 @@
+<!--商行贷-->
+<view wx:for="{{shdList}}">
+    <view class="project_hd" wx:if="{{item.id == sid}}">
+        <view class="title">
+            商行贷{{item.conSn}}系列之{{item.last}}<text class="bao">保</text><text class="fan">返利2.60%</text>
+        </view>
+        
+        <view class="top">
+            <view class="left">
+                <view class="percent">{{item.rate}}<text>%</text></view>
+                <view class="yield">预期年化收益率</view>
+            </view>
+            <view class="right">
+                {{item.deadlineStr}}<text></text>
+                <view>
+                    <progress percent="{{item.percent}}" show-info active color="#ff723f" />
+                </view>
+            </view>
+        </view>
+
+        <view class="content">
+            <view class="content_top">
+                <view class="left">
+                    融资金额：<text>{{item.amount}}</text>
+                </view>
+                <view class="right">
+                    剩余金额：<text>{{item.amount - item.raisedAmount}}</text>
+                </view>
+            </view>
+            <view>
+                回款方式：<text>按月付息</text>
+            </view>
+            <view >
+                起 息 日：投资后下一日
+            </view>
+            <view>
+                担保公司：金鼎投资担保有限公司
+            </view>
+            <!--判断积分-->
+            <view wx:if="{{item.reward == 0}}" >
+                额外收益：积分
+            </view>
+            <view wx:else>
+                额外收益：<text>返利{{item.reward}}(红包)+</text>积分
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="project_bd">
+    <view class="pro_list">
+        <view class="tab tab0 {{tab0Show ? 'tab_info_show' : ''}}" id="tab0" bindtap="change">项目详情</view>
+        <view class="tab tab1 {{tab1Show ? 'tab_info_show' : ''}}" id="tab1" bindtap="change">投资记录</view>
+        <view class="tab tab2 {{tab2Show ? 'tab_info_show' : ''}}" id="tab2" bindtap="change">风控手段</view>
+    </view>
+
+    <view class="pro_con_list">
+        <view class="pro_con_tab {{tab0Show ? 'tab_con_show' : 'tab_con_hide'}}">
+            <view class="pro_item">
+                <view class="item_title" bindtap="ShowHide" id="massage"><text>基本信息</text></view>
+                <view class="item_con {{massageShow ? 'first_con_show' : 'first_con_hide'}}">
+                    <view>债务人：<text>绍兴某汽车配件制造有限公司</text></view>
+                    <view>资金用途：<text>资金周转</text></view> 
+                    <view>成立时间：<text>2006年</text></view>
+                    <view>注册资本：<text>20000000.00</text></view>
+                    <view>企业类型：<text>有限责任公司</text></view>
+                    <view>经营范围：</view>
+                    <view><text>生产、加工、销售：汽车配件、机械配件；货物进出口。</text></view>
+                    <view>资质介绍：</view>
+                    <view><text>该公司是专业生产汽车配件、机械配件的企业；通过了ISO/TS16949国际质量管理体系认证。生产的产品经国家汽车质量监督检验中心检测，均为达标产品，公司被核定省级产品技术中心、产品检测中心、国家级高新技术企业、浙江省科技型企业。公司一直致力于汽车制动系统研发，生产国内外各种系列汽车制动调整臂、汽车制动凸轮轴专业化厂家，产品质量过硬，在业内极富盛名。一直来和国内东风汽车集团、江淮汽车、上汽南京跃进汽车、江铃汽车、庆铃汽车、华菱汽车、北汽福田、北京戴姆勒、湖南中联重科、湖南三一重工、青特车桥等知名企业保持着可靠的配套供货关系，在欧、美、中东部分地区均建立了良好的合作伙伴。年产销量达300万套，发展前景广阔。此次借款用途真实，信用良好，且具备足够的还款能力。</text></view>
+                </view>
+            </view>
+
+            <view class="pro_item">
+                <view class="item_title" bindtap="ShowHide" id="refund"><text>债务还款保障</text></view>
+                <view class="item_con {{refundShow ? 'first_con_show' : 'first_con_hide'}}">
+                    <view>借款方提供足额应收账款及资产</view>
+                    <view>金鼎投资担保有限公司担保本金收益</view>
+                </view>
+            </view>
+
+            <view class="pro_item">
+                <view class="item_title" bindtap="ShowHide" id="from"><text>债务人还款来源</text></view>
+                <view class="item_con {{fromShow ? 'first_con_show' : 'first_con_hide'}}">
+                    <view>第一还款来源：应收账款及资产</view>
+                    <view>第二还款来源：担保公司本金收益代偿保障</view>
+                </view>
+            </view>
+
+            <view class="pro_item">
+                <view class="item_title" bindtap="ShowHide" id="investor"><text>投资人投资权益保障</text></view>
+                <view class="item_con {{investorShow ? 'first_con_show' : 'first_con_hide'}}">
+                    <view class="h4">1重保障：严格的项目准入机制</view>
+                    <view>根据公司战略，普汇云通联合核心企业、第三方担保公司对融资方资质和偿还能力进行严格的审查，确保融资方均达到或超过平台的项目准入标准。</view>
+                    <view class="h4">2重保障：详尽的全链条追踪</view>
+                    <view>核心企业实时掌握上下游产品交割信息及资金流，并实时信息监控上下游订单产品，确保项目真实安全。</view>
+                    <view class="h4">3重保障：第三方担保公司</view>
+                    <view>如融资方到期未还款，第三方担保公司将按协议约定代为垫付本金和收益。</view>
+                </view>
+            </view>
+
+            <view class="pro_item">
+                <view class="item_title" bindtap="ShowHide" id="course"><text>项目进程</text></view>
+                <view class="item_con {{courseShow ? 'first_con_show' : 'first_con_hide'}}">
+                    <view class="h4">项目上线</view>
+                    <view>上线时间：<text>2016-07-25</text></view>
+                    <view class="h4">项目融资</view>
+                    <view>开始时间：<text>2016-10-25</text></view>
+                    <view class="h4">项目打款</view>
+                    <view>完成时间：<text>2016-07-25</text></view>
+                    <view class="h4">项目还款</view>
+                    <view>已还款</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="pro_con_tab {{tab1Show ? 'tab_con_show' : 'tab_con_hide'}}">
+            <view class="record">
+                <view class="record_title">
+                    <text class="record_left">投资人</text>
+                    <text class="record_center">投资时间</text>
+                    <text class="record_right">金额</text>
+                </view>
+                <view class="record_con">
+                    <view wx:for="{{investList}}">
+                        <text class="record_left">{{item.userName}}</text>
+                        <text class="record_center">{{item.time}}</text>
+                        <text class="record_right">{{item.money}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="pro_con_tab {{tab2Show ? 'tab_con_show' : 'tab_con_hide'}}">
+            <view class="pro_item">
+                <view class="item_title" bindtap="ShowHide" id="describe"><text>风控概述</text></view>
+                <view class="item_con {{describeShow ? 'first_con_show' : 'first_con_hide'}}">
+                    <view>普汇云通为保障投资人利益不受损失，从全链条追踪、第三方担保、实时监管、资金分离、电子合同、账户安全、隐私保护等多个方面层层把关，确保在为投资人创造收益的同时将安全最大化、风险最小化。</view>
+                    <view>普汇云通为保障投资人的权益，从融资方筛选、代偿、电子合同、账户安全、隐私保护等多个方面同步发力，并通过第三方公司，保障投资人投资权益。</view>
+                </view>
+            </view>
+
+            <view class="pro_item">
+                <view class="item_title" bindtap="ShowHide" id="more"><text>多重保障层层设防</text></view>
+                <view class="item_con {{moreShow ? 'first_con_show' : 'first_con_hide'}}">
+                    <view class="h4">详尽的全链条追踪</view>
+                    <view>核心企业实时掌握上下游产品生产及资金结转，确保借款需求及企业真实安全可靠。</view>
+                </view>
+            </view>
+
+        </view>
+
+    </view>
+</view>
+
+
+
+<view class="footer_btn">
+    <navigator url="../invest/invest">
+        <button size="default" type="primary" hover-class="none">立即投资</button>
+    </navigator>
+</view>

@@ -1,0 +1,42 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<import src="../template/template"></import>
+<view class="serach-wrap">
+  <!--顶部搜索-->
+  <view class="search">
+    <!--当前位置-->
+    <input bindinput="searchInput" confirm-type="search" bindconfirm="searchShop" focus="true" class="search-in iconfont icon-sousuo_sousuo" placeholder="请输入餐厅、 菜系、 商圈" />
+    <view data-type="btn" bindtap="searchShop" class="search-btn">搜索</view>
+  </view>
+  <!--搜索历史-->
+  <view class="search-history">
+    <view class="search-operation" wx:if="{{ searchShow }}">
+      <view>搜索记录</view>
+      <view bindtap="cleanHistory">清空记录</view>
+    </view>
+    <view class="menu2-comment">
+      <view bindtap="chooseTip" data-choose="{{ index }}" class="menu2-comment-item {{ chooseHistory == index ?  'active' : '' }}" wx:for="{{ history }}" wx:key="unique">
+        {{ item }}
+      </view>
+    </view>
+  </view>
+  <!--商店结果展示-->
+  <view class="near-shop">
+    <view class="slide ">搜索结果</view>
+    <!--<view class="near-shop-wrap">-->
+      <!--<navigator url="../ordering/ordering?shopId={{ item.id }}" hover-class="none" class="near-shop-content" wx:for="{{ nearShop }}" wx:key="unique">-->
+        <!--<image class="near-shop-img" src="{{ item.img }}"></image>-->
+        <!--<view class="near-shop-detail">-->
+          <!--<veiw class="n-s-c-name">{{ item.name }}</veiw>-->
+          <!--<view class="n-s-c-price {{ item.grade }} iconfont icon-wuxing"> ￥{{ item.price }}/人</view>-->
+          <!--<view class="n-s-c-kind">{{ item.kind }}  {{ item.distance }}</view>-->
+          <!--<view class="n-s-c-status">-->
+            <!--<text class="n-s-c-s-left">排队</text>-->
+            <!--<text class="n-s-c-s-center">当前排队状况</text>-->
+            <!--<text class="n-s-c-s-right">{{ item.status }}</text>-->
+          <!--</view>-->
+        <!--</view>-->
+      <!--</navigator>-->
+    <!--</view>-->
+    <template is="shopList" data="{{ nearShop }}"></template>
+  </view>
+</view>

@@ -1,0 +1,353 @@
+{template 'header'}
+<div id="js-goods-post" ng-controller="goodsPostCtrl" ng-cloak>
+	<!--编辑模块-->
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href="javascript:history.back()"><i class="wi wi-back-circle"></i> </a>
+		<li><a href="javascript:history.back()">商品列表 </a></li>
+		<li>编辑设置</li>
+	</ol>
+	<form action="" class="we7-form" method="post">
+		<input type="hidden" name="type" value="{$type}">
+		{if $type == STORE_TYPE_API}
+			<table class="table we7-table table-hover table-form">
+				<col width="140px"/>
+				<col />
+				<col width="140px"/>
+				<tr>
+					<th colspan="3">编辑API商品信息</th>
+				</tr>
+				<tr>
+					<td class="table-label">API商品价格</td>
+					<td><span ng-bind="goodsInfo.price"></span> 元 / <span ng-bind="goodsInfo.api_num"></span>万次</td>
+					<td class="text-right">
+						<div class="link-group">
+							<a href="javascript:;" data-toggle="modal" data-target="#add_api">修改</a>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div class="modal fade" id="add_api" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="we7-modal-dialog modal-dialog we7-form">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<div class="modal-title">编辑API商品</div>
+						</div>
+						<div class="modal-body">
+
+							<div class="form-group">
+								<label class="control-label col-sm-2">商品名称</label>
+								<div class="col-sm-10">
+									<div class="input-group">
+										<input type="text" class="form-control" value="应用访问流量(API)" readonly>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2">浏览次数</label>
+								<div class="col-sm-10">
+									<div class="input-group">
+										<input type="text" name="api_num" ng-model="goodsInfo.api_num" class="form-control">
+										<span class="input-group-addon">万次</span>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2">设置价格</label>
+								<div class="col-sm-10">
+									<div class="input-group">
+										<input type="text" name="price" ng-model="goodsInfo.price" class="form-control">
+										<span class="input-group-addon">元</span>
+									</div>
+								</div>
+							</div>
+                            <div class="user-group-price-content"></div>
+                            <div class="form-group" ng-if="userGroups">
+                                <label class="control-label col-sm-2"></label>
+                                <div class="col-sm-8 form-controls">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default" style="color: #999;border-style: dashed" ng-click="addGroupPrice()">
+                                            + 添加用户组价格
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+						<div class="modal-footer">
+							<input type="hidden" name="token" value="{$_W['token']}">
+							<input type="submit" class="btn btn-primary" name="submit" value="保存">
+						</div>
+					</div>
+				</div>
+			</div>
+		{else}
+			{if !in_array($type, array(STORE_TYPE_PACKAGE, STORE_TYPE_USER_PACKAGE, STORE_TYPE_ACCOUNT_PACKAGE))}
+			<div class="form-group" ng-if="goodsInfo.type_info.group == 'module'">
+				<label class="control-label col-sm-2">应用logo</label>
+				<div class="col-sm-8 form-controls">
+					<we7-file-up class="we7-input-img" global="{{true}}" style="width: 100px; height: 100px;" ng-class="{active: goodsInfo.logo}" we7-file="test" on-confirm="fileLogo">
+						<img ng-src="{{goodsInfo.logo}}" class="module-img" alt="{{goodsInfo.logo}}">
+						<a  href="javascript:;" ng-if="!goodsInfo.logo" class="input-addon"> </a>
+						<div class="cover-dark">
+							<a href="javascript:;" class="cut" >更换</a>
+						</div>
+					</we7-file-up>
+				</div>
+				<input type="text" name="logo" ng-model="goodsInfo.logo" hidden>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">
+					{if empty($all_type_info[$goods_info['type']])}
+					商品名称
+					{else}
+					{$all_type_info[$goods_info['type']]['title']}
+					{/if}
+				</label>
+				<div class="col-sm-3">
+					{if $type == STORE_TYPE_ACCOUNT}
+					<select name="type" class="form-control ">
+						{loop $all_type_info['account_num'] $type_info}
+						<option value="{$type_info['type']}" {if $goods_info['type'] == $type_info['type']}selected{/if}>{$type_info['title']}</option>
+						{/loop}
+					</select>
+					{elseif in_array($type, array_keys($all_type_info['renew']))}
+					<select name="type" class="form-control">
+						{loop $all_type_info['renew'] $renew_type_info}
+						<option value="{$renew_type_info['type']}" {if $goods_info['type'] == $renew_type_info['type']}selected{/if}>{$renew_type_info['title']}</option>
+						{/loop}
+					</select>
+					{else}
+					<input type="text" name="title" class="form-control" ng-model="goodsInfo.title">
+					{/if}
+				</div>
+			</div>
+			{/if}
+			<div class="form-group">
+				<label class="control-label col-sm-2">设置价格</label>
+				<div class="col-sm-3 form-controls">
+					<div class="input-group">
+						<input type="number" class="form-control" min="0" name="price" ng-model="goodsInfo.price" step="0.01">
+						<span class="input-group-addon">
+							元 / <span ng-if="goodsInfo.is_wish == 1">月</span>
+						</span>
+						<div class="input-group-btn">
+							<input type="hidden" name="unit" value="{$goods_info['unit']}">
+							{if !empty($goods_info)}
+								{if in_array($goods_info['type'], array_keys($all_type_info['renew']))}
+								<input name="{$all_type_info['renew'][$goods_info['type']]['num_sign']}" class="form-control" value="{$goods_info[$all_type_info['renew'][$goods_info['type']]['num_sign']]}" ng-model="num">
+								{/if}
+							{else}
+								{if $type == STORE_TYPE_ACCOUNT_RENEW}
+									<input name="account_num" class="form-control" value="" ng-model="num">
+								{/if}
+							{/if}
+
+							{if !in_array($type, array(STORE_TYPE_ACCOUNT, STORE_TYPE_WXAPP, STORE_TYPE_ACCOUNT_PACKAGE))}
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-if="goodsInfo.is_wish != 1">
+								<span ng-if="unit == 'day'">日</span>
+								<span ng-if="unit == 'month'">月</span>
+								<span ng-if="unit == 'year'">年</span>
+								<span class="caret"></span>
+							</button>
+							{/if}
+							{if !in_array($type, array(STORE_TYPE_ACCOUNT, STORE_TYPE_WXAPP, STORE_TYPE_ACCOUNT_PACKAGE))}
+							<ul class="dropdown-menu dropdown-menu-right" style="min-width: 60px;">
+								<li><a href="#" ng-click="changeUnit('day')">日</a></li>
+								<li><a href="#" ng-click="changeUnit('month')">月</a></li>
+								<li><a href="#" ng-click="changeUnit('year')">年</a></li>
+							</ul>
+							{/if}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="user-group-price-content"></div>
+			{if $type != STORE_TYPE_USER_PACKAGE}
+			<div class="form-group" ng-if="userGroups && goodsInfo.is_wish != 1">
+				<label class="control-label col-sm-2"></label>
+				<div class="col-sm-8 form-controls">
+					<div class="input-group-btn">
+					<button type="button" class="btn btn-default" style="color: #999;border-style: dashed" ng-click="addGroupPrice()">
+						+ 添加用户组价格
+					</button>
+					</div>
+				</div>
+			</div>
+			{/if}
+			{if in_array($type, array(STORE_TYPE_MODULE, STORE_TYPE_WXAPP_MODULE, STORE_TYPE_WEBAPP_MODULE, STORE_TYPE_PHONEAPP_MODULE, STORE_TYPE_XZAPP_MODULE, STORE_TYPE_ALIAPP_MODULE, STORE_TYPE_BAIDUAPP_MODULE, STORE_TYPE_TOUTIAOAPP_MODULE))}
+			<div class="form-group">
+				<label class="control-label col-sm-2">幻灯片</label>
+				<div class="col-sm-8 form-controls">
+					<div class="panel we7-panel">
+						<div class="panel-body">
+							<div class="batch-img">
+								<div class="img-container" ng-repeat="slide in slideLists" ng-if="slideLists">
+									<input type="hidden" name="slide[]" value="{{slide}}">
+									<img ng-src="{{slide}}" >
+									<div class="del" ng-click="delSlide($index)">删除</div>
+								</div>
+								<div class="img-container add" ng-click="addSlide()" ng-if="slideLists.length < 10">
+									<span class="wi wi-registersite"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2">应用详情</label>
+				<div class="col-sm-8 form-controls">
+					{php echo tpl_ueditor('description', $goods_info['description'], array('uniacid' => 0, 'global' => 'global'));}
+				</div>
+			</div>
+			{elseif in_array($type, array(STORE_TYPE_ACCOUNT, STORE_TYPE_WXAPP))}
+			<div class="form-group">
+				<label class="control-label col-sm-2">账号个数</label>
+				<div class="col-sm-8 form-controls">
+					<div class="input-group">
+						{if $goods_info['type'] == STORE_TYPE_ACCOUNT}
+						<input type="number" class="form-control" name="account_num" ng-value="goodsInfo.account_num">
+						{elseif $goods_info['type'] == STORE_TYPE_WXAPP}
+						<input type="number" class="form-control" name="wxapp_num" ng-value="goodsInfo.wxapp_num">
+						{else}
+						<input type="number" class="form-control" name="platform_num" ng-value="goodsInfo.platform_num">
+						{/if}
+						<span class="input-group-addon">个</span>
+					</div>
+				</div>
+			</div>
+			{elseif $type == STORE_TYPE_PACKAGE}
+			<div class="form-group">
+				<label class="control-label col-sm-2">应用权限组</label>
+				<div class="col-sm-8 form-controls">
+					<div class="input-group">
+						<select class="" name="module_group">
+							{loop $module_groups $group}
+							<option value="{$group['id']}" {if !empty($goods_info) && $goods_info['module_group'] == $group['id']}selected{/if}>
+								{$group['name']}
+							</option>
+							{/loop}
+						</select>
+					</div>
+				</div>
+			</div>
+			{elseif $type == STORE_TYPE_ACCOUNT_PACKAGE}
+			<div class="form-group">
+				<label class="control-label col-sm-2">账号权限组</label>
+				<div class="col-sm-8 form-controls">
+					<div class="input-group">
+						<select class="" name="account_group">
+							{loop $account_groups $group}
+							<option value="{$group['id']}" {if !empty($goods_info) && $goods_info['module_group'] == $group['id']}selected{/if}>
+							{$group['group_name']}
+							</option>
+							{/loop}
+						</select>
+					</div>
+				</div>
+			</div>
+			{elseif $type == STORE_TYPE_USER_PACKAGE}
+			<div class="form-group">
+				<label class="control-label col-sm-2">用户权限组</label>
+				<div class="col-sm-8 form-controls ">
+					<div class="input-group">
+						<select class="" ng-model="user_group" ng-change="showGroupInfo()" name="user_group">
+							<option value="" {if empty($goods_info) || !$goods_info['user_group']}selected{/if}>
+								请选择用户组
+							</option>
+							{loop $user_groups $group}
+								<option value="{$group['id']}" {if !empty($goods_info) && $goods_info['user_group'] == $group['id']}selected{/if}>
+									{$group['name']}
+								</option>
+							{/loop}
+						</select>
+						<div class="help-block">
+							添加系统已创建的用户权限组。<a class="color-default" href="{php echo url('user/group/post')}">创建用户权限组 > </a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div ng-show="userGroupInfo.id" class="user-create-permission">
+				<!--应用权限组-->
+				<div class="form-group">
+					<div class="col-sm-offset-2">
+						<div class="we7-header">应用权限组</div>
+						<div class="we7-group-show ">
+							<div class="name">
+								{{userGroupInfo['name']}}
+							</div>
+							<div class="group-app-list">
+								<div class="group-app-item" ng-repeat="module in userGroupInfo['group_module_all']">
+									<img src="{{module.logo}}" alt="">
+									<div class="info">
+										<div class="title text-over">
+											{{module.title}}
+										</div>
+										<div class="type-list">
+											<i ng-class="itme.icon" ng-repeat="itme in module.group_support | moduleInfo" ></i>
+										</div>
+									</div>
+								</div>
+								<div class="group-app-item" ng-repeat="module in userGroupInfo['group_tempate_all']">
+									<img src="{{module.logo}}" alt="">
+									<div class="info">
+										<div class="title">
+											{{module.title}}
+										</div>
+										<div class="type-list">
+											<i class="wi wi-template"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a class="action"></a>
+						</div>
+					</div>
+				</div>
+				<!-- 账号权限组 -->
+				<div class="form-group">
+					<div class="col-sm-offset-2">
+						<div class="we7-header">账号权限组</div>
+						<div class="we7-account-show we7-padding" >
+							<div class="name">{{userGroupInfo['name']}}</div>
+							<div class="account-num-list">
+							<span class="account-num-item" ng-repeat="(index,type) in account_text" ng-show="userGroupInfo['max' + index] > 0">
+								<i ng-class="type.icon" ></i> {{userGroupInfo['max' + index]}}个
+							</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--附加天数-->
+				<div class="form-group">
+					<div class="col-sm-offset-2">
+						<div class="we7-header">有效时间</div>
+						<div class="day-show">
+							<div class="day">{{userGroupInfo['timelimit'] == 0 ? '永久有效' : userGroupInfo['timelimit']}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/if}
+			<div class="form-group">
+				<label class="control-label col-sm-2"></label>
+				<div class="col-sm-8 form-controls">
+					<input type="hidden" name="token" value="{$_W['token']}">
+					<input type="submit" class="btn btn-primary" name="submit" value="仅保存">
+					<input type="submit" class="btn btn-primary" name="submit" value="保存并上架">
+				</div>
+			</div>
+		{/if}
+	</form>
+</div>
+<script>
+	angular.module('storeApp').value('config', {
+		'groupInfoUrl': "{php echo url('user/create/get_user_group_detail_info')}",
+		'renew': {php echo !empty($all_type_info['renew']) ? json_encode($all_type_info['renew']) : 'null'},
+		'goodsInfo': {php echo !empty($goods_info) ? json_encode($goods_info) : 'null'},
+		'userGroups': {php echo !empty($user_groups) ? json_encode($user_groups) : 'null'},
+	});
+	angular.bootstrap($('#js-goods-post'), ['storeApp']);
+
+</script>
+{template 'common/footer'}

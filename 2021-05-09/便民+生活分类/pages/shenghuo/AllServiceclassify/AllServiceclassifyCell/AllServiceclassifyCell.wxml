@@ -1,0 +1,9 @@
+<!--pages/shenghuo/AllServiceclassify/AllServiceclassifyCell/AllServiceclassifyCell.wxml-->
+<!--<text>pages/shenghuo/AllServiceclassify/AllServiceclassifyCell/AllServiceclassifyCell.wxml</text>-->
+
+<template name="AllServiceclassifyCell">
+  <view class="gridCell-container" bindtap="tapGridCell" data-Category-id="{{id}}">
+    <image class="gridCell-image" src="http://m.jointem.com/{{imgUrl}}"></image>
+    <view class="titleName">{{name}}</view>
+  </view>
+</template>

@@ -1,0 +1,36 @@
+/* pages/newsItem/newsItem.wxss *//*新闻列表*/
+.news{
+  margin-top: 40px;
+}
+.news-item{
+  padding: 0.5rem;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.news-item-info{
+  height: 100%;
+  padding-right:10px; 
+  flex:5;
+}
+.news-item-header{
+  
+}
+.title{
+  font-size: 15px;
+  font-weight: 500;
+}
+.channelName,.source,.time{
+  font-size: 12px;
+  color: #999;
+  padding-right: 0.5rem;
+}
+.news-item-image{
+  flex:2;
+  height: 80px;
+}
+.news-item-image3{
+  display: block;
+  width: 100%;
+}

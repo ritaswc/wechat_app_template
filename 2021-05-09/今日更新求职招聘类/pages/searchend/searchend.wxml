@@ -1,0 +1,73 @@
+<!--pages/searchend/searchend.wxml-->
+<view class="searchend_wrap">
+    <view class="search_nav">
+        <ul>
+            <li bindtap="workYear" class="{{showYear?'li_show':''}}">
+                <view>工作年限<image class="image_jiantou {{showYear?'rotate':''}}" src="{{showYear?'image/_100.png':'image/_103.png'}}"></image></view>
+                <text>{{workYear}}</text>
+            </li>
+            <li bindtap="treatment" class="{{showTreatment?'li_show':''}}">
+                <view>薪资待遇<image class="image_jiantou {{showTreatment?'rotate':''}}" src="{{showTreatment?'image/_100.png':'image/_103.png'}}"></image></view>
+                <text>{{treatment_s}}</text>
+            </li>
+            <li bindtap="more" class="{{showMore?'li_show':''}} last_li">
+                <view>更多条件<image class="image_jiantou {{showMore?'rotate':''}}" src="{{showMore?'image/_100.png':'image/_103.png'}}"></image></view>
+            </li>
+        </ul>
+
+        <!--工作年限-->
+        <view  class="{{showYear?'show':''}} s_flowindow">
+        </view>
+        <view class="{{showYear?'show':''}} s_content">
+            <view bindtap="selectYear" wx:for="{{year}}" class="{{yearId == item.id ? 'active' :''}} s_list" data-year="{{item.year}}" data-id="{{item.id}}">
+                {{item.year}} <image wx:if="{{yearId == item.id ? 'true' :''}}" class="image_duihao" src="image/_109.png"></image>
+            </view>
+        </view>
+
+        <!--薪资待遇-->
+        <view  class="{{showTreatment?'show':''}} s_flowindow">
+        </view>
+        <view class="{{showTreatment?'show':''}} s_content">
+            <view bindtap="selectTreatment" wx:for="{{treatment}}" class="{{treatmentId == item.id ? 'active' :''}} s_list" data-treatment="{{item.treatment}}" data-id="{{item.id}}">
+                {{item.treatment}} <image wx:if="{{treatmentId == item.id ? 'true' :''}}" class="image_duihao" src="image/_109.png"></image>
+            </view>
+        </view>
+
+        <!--更多条件-->
+        <view  class="{{showMore?'show':''}} s_flowindow">
+        </view>
+        <view class="{{showMore?'show':''}} s_more">
+            <view class="left">
+                <view wx:for="{{moreChild}}" bindtap="sec_child" data-id="{{item.id}}" class="{{moreId == item.id?'li_show':''}} left_list">
+                    <view>{{item._type}} <text>{{item.text}}</text></view>
+                    <image class="image_jiantou_two" src="../workplace/image/jiantou_tou.png"></image>
+                </view>
+            </view>
+            <view class="right">
+                <view wx:for="{{moreChildList}}" bindtap="sec_child_list" data-val="{{item.post}}" data-id="{{item.id}}" class="right_list">
+                    <view>
+                        {{item.post}}
+                    </view>
+                    <image wx:if="{{listId == item.id ? 'true' :''}}" class="image_jiantou_two" class="image_duihao" src="image/_109.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!--搜索结果列表-->
+    <view class="s_job_list remenList">
+        <block wx:for="{{searchList}}">
+                <view class="list" bindtap="goZhihiWeiList" data-company_id="{{item.company_id}}" data-job_id="{{item.job_id}}">
+                    <view class="left">
+                        <view class="positionName"><image wx:if="{{item.is_urgent == 1?true:false}}" class="hotImg" src="image/hot.png"></image>{{item.job_name}}</view>
+                        <view class="conpany">{{item.company_name}}</view>
+                        <view class="time">{{item.update_time}}</view>
+                    </view>
+                    <view class="right">
+                        <view class="money">{{item.salary}}</view>
+                        <view>{{item.job_area}}</view>
+                    </view>
+                </view>
+        </block>
+    </view>
+</view>

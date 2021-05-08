@@ -1,0 +1,60 @@
+/* pages/mine/group/info/info.wxss */
+
+.info-title{
+    padding: 30rpx;
+    background: white;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.goods-info{
+    padding: 30rpx;
+    background: white;
+    display: flex;
+    margin-bottom: 20rpx;
+}
+.goods-info image{
+  width:200rpx;
+  height:200rpx;
+  display:inline-block;
+  overflow:hidden;
+}
+.goods-info .goods-info-handler{
+    padding-left: 20rpx;
+    width: 80%;
+}
+.goods-info .goods-info-handler .goods-info-price{
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx 0;
+}
+.order-state{
+    padding: 20rpx 30rpx;
+    background: white;
+    margin-bottom: 20rpx;
+}
+.order-state view{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2rpx solid #ddd;
+    padding: 20rpx;
+}
+.order-state .order-status{
+    padding: 0;
+}
+.order-state .order-status text{
+    padding-left: 20rpx;
+}
+.order-state view.order-fee{
+    display: flex;
+    flex-direction: column;
+}
+.order-state view.order-fee text{
+    padding-bottom: 20rpx;
+}
+.order-state view.order-fee text:last-child{
+    padding: 0;
+}
+.order-state view:last-child,.order-state:last-child view:nth-child(2){
+    border: none;
+}

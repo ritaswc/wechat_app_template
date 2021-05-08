@@ -1,0 +1,91 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <form bindsubmit="formSubmit" reportSubmit="true">
+            <view class="block">
+                <view class="user-money">账户剩余金额：{{price}}元</view>
+                <view class="flex-row cash-max-day" wx:if="{{cash_max_day!=-1}}">
+                    <view class="flex-y-center">今日剩余提现金额{{cash_max_day}}元</view>
+                    <view bindtap="showCashMaxDetail" class="cash-max-detail">详情</view>
+                </view>
+            </view>
+            <view class="flex-row block">
+                <view class="flex-grow-0 flex-y-center cash-cny">￥</view>
+                <view class="flex-grow-1 flex-y-center">
+                    <input class="cash-input" name="cash" placeholder="输入{{custom.words.cash_money.name}}" placeholderStyle="color:#bbb;font-size:13pt" type="digit"></input>
+                </view>
+            </view>
+            <view class="block" style="background: none;border: none">
+                <view class="cash-min">{{custom.words.cash_money.name}}不能小于{{share_setting.min_money}}元</view>
+                <view class="cash-min" wx:if="{{service_content}}">{{service_content}}</view>
+            </view>
+            <view class="block">
+                <view class="pay-title">{{custom.words.cash_type.name}}</view>
+                <view class="withdraw_type">
+                    <view bindtap="select" class="tixian" data-index="{{index}}" wx:if="{{item.is_show==true}}" wx:for="{{pay_type_list}}" wx:key="{{item.id}}">
+                        <view class="pay flex-row  {{selected==index?'active':''}}">
+                            <view class="flex-grow-0">
+                                <image class="pay-img" src="{{item.icon}}"></image>
+                            </view>
+                            <view class="flex-grow-0">{{item.name}}</view>
+                            <image class="selected" src="{{__wxapp_img.share.selected.url}}" wx:if="{{selected==index}}"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <block wx:if="{{selected==0}}">
+                <view class="block flex-row" style="margin-top:20rpx">
+                    <view class="flex-grow-0 flex-y-center required">姓名</view>
+                    <view class="flex-grow-1 flex-y-center">
+                        <input class="cash-input" name="name" placeholder="请输入正确的姓名" placeholderStyle="color:#ccc;font-size:13pt" value="{{name}}"></input>
+                    </view>
+                </view>
+                <view class="block flex-row" style="margin-top:20rpx">
+                    <view class="flex-grow-0 flex-y-center required">账号</view>
+                    <view class="flex-grow-1 flex-y-center">
+                        <input class="cash-input" name="mobile" placeholder="请输入正确微信账号" placeholderStyle="color:#ccc;font-size:13pt" value="{{mobile}}"></input>
+                    </view>
+                </view>
+            </block>
+            <block wx:elif="{{selected==1}}">
+                <view class="block flex-row" style="margin-top:20rpx">
+                    <view class="flex-grow-0 flex-y-center required">姓名</view>
+                    <view class="flex-grow-1 flex-y-center">
+                        <input class="cash-input" name="name" placeholder="请输入正确的姓名" placeholderStyle="color:#ccc;font-size:13pt" value="{{name}}"></input>
+                    </view>
+                </view>
+                <view class="block flex-row" style="margin-top:20rpx">
+                    <view class="flex-grow-0 flex-y-center required">账号</view>
+                    <view class="flex-grow-1 flex-y-center">
+                        <input class="cash-input" name="mobile" placeholder="请输入正确支付宝账号" placeholderStyle="color:#ccc;font-size:13pt" value="{{mobile}}"></input>
+                    </view>
+                </view>
+            </block>
+            <block wx:elif="{{selected==2}}">
+                <view class="block flex-row" style="margin-top:20rpx">
+                    <view class="flex-grow-0 flex-y-center required">开户人</view>
+                    <view class="flex-grow-1 flex-y-center">
+                        <input class="cash-input" name="name" placeholder="请输入正确的姓名" placeholderStyle="color:#ccc;font-size:13pt" value="{{name}}"></input>
+                    </view>
+                </view>
+                <view class="block flex-row" style="margin-top:20rpx">
+                    <view class="flex-grow-0 flex-y-center required">开户行</view>
+                    <view class="flex-grow-1 flex-y-center">
+                        <input class="cash-input" name="bank_name" placeholder="请输入正确的银行名称" placeholderStyle="color:#ccc;font-size:13pt" value="{{bank_name}}"></input>
+                    </view>
+                </view>
+                <view class="block flex-row" style="margin-top:20rpx">
+                    <view class="flex-grow-0 flex-y-center required">账号</view>
+                    <view class="flex-grow-1 flex-y-center">
+                        <input class="cash-input" name="mobile" placeholder="请输入正确银行卡账号" placeholderStyle="color:#ccc;font-size:13pt" value="{{mobile}}"></input>
+                    </view>
+                </view>
+            </block>
+            <view class="block" style="background: none;border: none;margin-top:68rpx;">
+                <button class="cash-btn" formType="submit">提交申请</button>
+            </view>
+        </form>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

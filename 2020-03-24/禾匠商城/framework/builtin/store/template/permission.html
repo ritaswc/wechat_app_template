@@ -1,0 +1,188 @@
+{template 'header'}
+<div class="store-permission-page" id="js-store-permission" ng-controller="storePermissionCtrl" ng-cloak>
+	<div class="we7-head-info">
+		<div class="logo">
+			<i class="wi wi-appjurisdiction "></i>
+		</div>
+		<div class="info">
+			<div class="title">
+				商城访问权限
+				<span class="permission-type" ng-show="permissionStatus.close">全部可访问</span>
+				<span class="permission-type" ng-show="permissionStatus.whitelist">白名单可访问</span>
+				<span class="permission-type" ng-show="permissionStatus.blacklist">黑名单不可访问</span>
+			</div>
+		</div>
+		<a href="#permission" data-toggle="modal" data-target="#permission" class="btn btn-primary">修改 </a>
+	</div>
+	<ul class="we7-page-tab">
+		<li ng-class="{active: type == 'white'}" ng-click="changeType('white')"><a href="javascript:;">白名单</a></li>
+		<li  ng-class="{active: type == 'black'}" ng-click="changeType('black')"><a href="javascript:;" >黑名单</a></li>
+	</ul>
+	<div class="white"></div>
+	<div class="search-box we7-margin-bottom">
+		<div class="search-form">
+			<div class="input-group">
+				<input type="text" class="form-control" ng-model="keyword" placeholder="请输入要搜索的用户名称">
+				<span class="input-group-btn" ng-click=filterList()>
+					<a href="javascript:;" class="btn btn-default"><i class="wi wi-search"></i></a>
+				</span>
+			</div>
+		</div>
+		<a href="" class="btn btn-primary" data-toggle="modal" data-target="#balck">添加{{type == 'white' ? '白' : '黑'}}名单</a>
+	</div>
+	<table class="table we7-table table-hover site-list">
+		<col width=""/>
+		<col width="90px"/>
+		<tr>
+			<th >用户名</th>
+			<th >操作</th>
+		</tr>
+		<tr ng-repeat="list in permissionList" ng-show="permissionList.length">
+			<td class="vertical-middle">
+				<span ng-bind="list"></span>
+			</td>
+			<td >
+				<div class="link-group ">
+					<a href="javascript:;" ng-click="deleteUser(list)">删除</a>
+				</div>
+			</td>
+		</tr>
+		<tr ng-show="!permissionList.length">
+			<td colspan="2" class="text-center">暂无数据</td>
+		</tr>
+	</table>
+	<div class="modal fade" id="permission" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="{url 'site/entry/permission' array('operation' => 'change_status', 'direct' => 1, 'm' => 'store')}" method="post">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">商城访问权限</h4>
+					</div>
+					<div class="modal-body we7-padding">
+						<div class="we7-form">
+							<div class="form-group">
+								<div class="col-sm-2 control-label">访问权限</div>
+								<div class="col-sm-8 form-controls">
+									<select name="status_type">
+										<option value="1" ng-selected="permissionStatus.close">全部可访问</option>
+										<option value="2" ng-selected="permissionStatus.whitelist">白名单可访问</option>
+										<option value="3" ng-selected="permissionStatus.blacklist">黑名单不可访问</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<input type="hidden" name="token" value="{$_W['token']}"/>
+						<input type="submit" name="submit" value="确定" class="btn btn-primary"/>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="balck" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" ng-show="type == 'black'">添加黑名单用户</h4>
+					<h4 class="modal-title" ng-show="type == 'white'">添加白名单用户</h4>
+				</div>
+				<div class="modal-body we7-form">
+					<div class="form-group">
+						<label class="control-label col-sm-2">用户名：</label>
+						<div class="col-sm-8 form-controls">
+							<input type="text" ng-model="addUsername" class="form-control" placeholder="请填写用户名">
+							<span class="help-block">输入用户名，点击确定即可。</span>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary" ng-click="addUser()">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	angular.module('storeApp').value('config', {
+		type: "{php echo !empty($_GPC['type']) ? $_GPC['type'] : 'black'}",
+		blacklist : {php echo json_encode($blacklist)},
+		whitelist : {php echo json_encode($whitelist)},
+		permissionStatus: {php echo json_encode($permission_status)},
+		links: {
+			addUser: "{php echo $this->createWebUrl('permission', array('operation' => 'post', 'direct' =>1))}",
+			deleteUser: "{php echo $this->createWebUrl('permission', array('operation' => 'delete', 'direct' =>1))}",
+			changeStatus: "{php echo $this->createWebUrl('permission', array('operation' => 'change_status', 'direct' =>1))}",
+		}
+	});
+	angular.module('storeApp').controller('storePermissionCtrl', ['$scope', '$http', 'config', function($scope, $http, config) {
+		$scope.blacklist = config.blacklist;
+		$scope.whitelist = config.whitelist;
+		$scope.permissionStatus = config.permissionStatus;
+		$scope.permissionClose  =  config.permissionStatus.close;
+		$scope.permissionType = !config.blacklist ? (!config.whitelist ? 3 : 1 ): 2;
+		console.log(!config.whitelist)
+		$scope.addUsername = '';
+		$scope.type = 'white';
+		$scope.changeType = function(type) {
+			$scope.type = type;
+			$scope.filterList();
+		};
+		$scope.filterList = function(item) {
+			$scope.permissionList = []
+			for(var i in $scope[$scope.type + 'list']) {
+				if($scope[$scope.type + 'list'][i].indexOf($scope.keyword) !== -1 || !$scope.keyword) {
+					$scope.permissionList.push($scope[$scope.type + 'list'][i])
+				}
+			}
+		}
+		$scope.filterList();
+		$scope.changeStatus = function() {
+			var type = 'close';
+			if(!$scope.permissionClose) {
+				type = $scope.permissionType == 1 ? 'white' : 'black';
+			}
+			$('#permission').modal('hide');
+			$http.post(config.links.changeStatus, {'type': type})
+				.success(function(data) {
+					if (data.message.errno == 0) {
+						$scope.permissionStatus.whitelist = $scope.permissionType == 1 ? true : false;
+						$scope.permissionStatus.blacklist = $scope.permissionType == 1 ? false : true;
+						$scope.permissionStatus.close = $scope.permissionClose;
+						console.log($scope.permissionStatus)
+						util.message(data.message.message);
+					} else {
+						util.message(data.message.message);
+					}
+				})
+		};
+		$scope.addUser = function() {
+			$http.post(config.links.addUser, {'type': $scope.type, 'username': $scope.addUsername})
+				.success(function(data) {
+					$scope.addUsername = '';
+					if (data.message.errno == 0) {
+						util.message(data.message.message, data.redirect, 'success');
+					} else {
+						util.message(data.message.message);
+					}
+				});
+			
+		};
+		$scope.deleteUser = function(user) {
+			$http.post(config.links.deleteUser, {'type': $scope.type, 'username': user})
+				.success(function(data) {
+					if (data.message.errno == 0) {
+						util.message(data.message.message, data.redirect, 'success');
+					} else {
+						util.message(data.message.message);
+					}
+				});
+		};
+	}]);
+	angular.bootstrap($('#js-store-permission'), ['storeApp']);
+</script>
+{template 'common/footer'}

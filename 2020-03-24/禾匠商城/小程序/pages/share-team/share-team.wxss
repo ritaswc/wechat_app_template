@@ -1,0 +1,124 @@
+.info {
+    width: 100%;
+}
+
+.width {
+    width: 33.33333333%;
+    text-align: center;
+}
+
+.width-50 {
+    width: 50%;
+    text-align: center;
+}
+
+.info .info-title .info-text.active {
+    color: #ff4544;
+    border-bottom: 4rpx #ff4544 solid;
+}
+
+.info .info-title {
+    width: 100%;
+    height: 100rpx;
+    padding: 0 24rpx;
+    border-bottom: 1rpx #e3e3e3 solid;
+    font-size: 13pt;
+    background-color: #fff;
+    line-height: 80rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.info-title .info-text {
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.info .info-content {
+    width: 100%;
+    margin-bottom: 12rpx;
+    padding-top: 100rpx;
+}
+
+.info .info-content .info-label {
+    width: 100%;
+    background-color: #fff;
+    padding: 0 24rpx;
+    height: 240rpx;
+    margin-bottom: 20rpx;
+}
+
+.info-label .info-up {
+    width: 100%;
+    height: 160rpx;
+    border-bottom: 1rpx #eeeeee solid;
+}
+
+.info-label .info-down {
+    width: 100%;
+    height: 80rpx;
+    color: #666;
+}
+
+.info-label .info-up .info-img {
+    margin-right: 24rpx;
+}
+
+.info-up .info-img .img {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.info-up .info-text .info-name {
+    color: #353535;
+    margin-bottom: 16rpx;
+}
+
+.info-up .info-text .info-time {
+    font-size: 9pt;
+    color: #666666;
+}
+
+.info-down .info-left {
+    width: 50%;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.info-down .info-right {
+    float: right;
+    height: 80rpx;
+    width: 50%;
+    line-height: 80rpx;
+    text-align: right;
+}
+
+.info .info-footer {
+    color: #bbb;
+    text-align: center;
+    width: 100%;
+    padding: 0 100rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.info .info-footer .info-t {
+    height: 60rpx;
+    margin: 0 20rpx;
+}
+
+.info .info-footer .info-before {
+    width: 168rpx;
+    height: 60rpx;
+}
+
+.info .info-footer .info-after {
+    width: 168rpx;
+    height: 60rpx;
+}
+
+.info .info-footer .info-border {
+    border-bottom: 1rpx #e3e3e3 solid;
+    padding-bottom: 30rpx;
+}

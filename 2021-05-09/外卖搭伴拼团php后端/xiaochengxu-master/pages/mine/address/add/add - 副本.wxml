@@ -1,0 +1,104 @@
+
+<view class="content">
+    <form bindsubmit="formSubmit">
+        <view class="section">
+            <view>收货人</view>
+            <input name="consignee" placeholder="请填写收货人姓名"/>
+        </view>
+        <view class="section">
+            <view>联系方式</view>
+            <input name="tel" placeholder="请填写联系方式"/>
+        </view>
+        <view class="section">
+            <view>所在区域</view>
+            <input name="province" placeholder="请选择" bindtap="cascadePopup" value="{{areaSelectedStr}}"/>
+        </view>
+        <view class="section">
+            <view>详细地址</view>
+            <input name="address" placeholder="请填写到街道门牌号"/>
+        </view>
+        <view class="btn-area">
+            <button formType="submit">确认提交信息</button>
+        </view>
+    </form>
+</view>
+
+<view class="modal">
+    <view class="modal-mask {{maskVisual}}" bindtap="cascadeDismiss"></view>
+    <view animation="{{animationData}}" class="modal-content">
+        <view class="modal-header">
+            <text class="modal-title">所在地区</text>
+            <text class="modal-close" bindtap="cascadeDismiss">X</text>
+        </view>
+        <view class="modal-body">
+
+<text class="viewpager-title" bindtap="changeCurrent" data-current="0">
+                <text wx:if="{{current == 0}}" class="area-selected">{{provinceName}}</text>
+                <text wx:else>{{provinceName}}</text>
+            </text>
+            <text class="viewpager-title" bindtap="changeCurrent" data-current="1">
+                <text wx:if="{{current == 1}}" class="area-selected">{{cityName}}</text>
+                <text wx:else>{{cityName}}</text>
+            </text>
+            <text class="viewpager-title" bindtap="changeCurrent" data-current="2">
+                <text wx:if="{{current == 2}}" class="area-selected">{{regionName}}</text>
+                <text wx:else>{{regionName}}</text>
+            </text>
+            <text class="viewpager-title" bindtap="changeCurrent" data-current="3">
+                <text wx:if="{{current == 3}}" class="area-selected">{{townName}}</text>
+                <text wx:else>{{townName}}</text>
+            </text>
+
+            <view class="viewpager-divider"></view>
+
+            <swiper class="swiper-area" current="{{current}}" bindtap="currentChanged" >
+            <block wx:if="{{province.length>0}}">
+                <swiper-item>
+                    <scroll-view scroll-y="true" class="viewpager-listview">
+                        <view wx:for="{{province}}" wx:key="index" data-index="{{index}}" bindtap="provinceTapped">
+                   <text wx:if="{{index == provinceIndex}}" class="area-selected">{{item}}</text>
+                                <text wx:else>{{item}}</text>
+                        </view>
+                    </scroll-view>
+                </swiper-item>
+            </block>
+            <block wx:if="{{city.length>0}}">
+                <swiper-item>
+                    <scroll-view scroll-y="true" class="viewpager-listview">
+                        <view wx:for="{{city}}" wx:key="index" data-index="{{index}}" bindtap="cityTapped">
+                   
+                        <text wx:if="{{index == cityIndex}}" class="area-selected">{{item}}</text>
+                                <text wx:else>{{item}}</text>
+                        </view>
+                    </scroll-view>
+                </swiper-item>
+            </block>
+            <block wx:if="{{region.length>0}}">
+                <swiper-item>
+                    <scroll-view scroll-y="true" class="viewpager-listview">
+                        <view wx:for="{{region}}" wx:key="index" data-index="{{index}}" bindtap="regionTapped">
+                   
+                        <text wx:if="{{index == regionIndex}}" class="area-selected">{{item}}</text>
+                                <text wx:else>{{item}}</text>
+                        </view>
+                    </scroll-view>
+                </swiper-item>
+            </block>
+            <block wx:if="{{town.length>0}}">
+                <swiper-item>
+                    <scroll-view scroll-y="true" class="viewpager-listview">
+                        <view wx:for="{{town}}" wx:key="index" data-index="{{index}}" bindtap="townTapped">
+                   
+                        <text wx:if="{{index == townIndex}}" class="area-selected">{{item}}</text>
+                                <text wx:else>{{item}}</text>
+                        </view>
+                    </scroll-view>
+                </swiper-item>
+            </block>
+            </swiper>
+        </view>
+    </view>
+</view>
+
+<import src="/asset/template/backhome.wxml" />
+<template is="backhome"/>

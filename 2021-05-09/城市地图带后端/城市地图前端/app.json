@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/city/city",
+    "pages/spot_detail/spot_detail",
+    "pages/all_comment/all_comment",
+    "pages/comment/comment",
+    "pages/logs/logs",
+    "pages/new/new"
+  ],
+  "window": {
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "AwesomeCoffice",
+    "navigationBarTextStyle":"black"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

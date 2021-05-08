@@ -1,0 +1,51 @@
+<scroll-view class="detail-container" scroll-y="true">
+    <view class="title">{{name}}</view>
+
+    <view class="today">
+        <view class="name">今日运势（{{today.datetime}}）</view>
+        <view class="index">
+            <text>综合指数：</text><progress percent="{{today.all}}" color="#0070ff" show-info stroke-width="12" active="true"/>
+        </view>
+
+        <view class="index">
+            <text>健康指数：</text><progress percent="{{today.health}}" show-info stroke-width="12" active="true"/>
+        </view>
+        <view class="index">
+            <text>爱情指数：</text><progress percent="{{today.love}}" show-info stroke-width="12" active="true"/>
+        </view>
+        <view class="index">
+            <text>财运指数：</text><progress percent="{{today.money}}" show-info stroke-width="12" active="true"/>
+        </view>
+        <view class="index">
+            <text>工作指数：</text><progress percent="{{today.work}}" show-info stroke-width="12" active="true"/>
+        </view>
+
+        <view class="index">
+            <text>幸运颜色：</text><text class="value">{{today.color}}</text>
+        </view>
+        <view class="index">
+            <text>幸运数字：</text><text class="value">{{today.number}}</text>
+        </view>
+
+        <view class="summary">{{today.summary}}</view>
+    </view>
+
+    <view class="year">
+        <view class="name">年度运势（{{year.date}}）</view>
+        <view class="con"><text>年度密码：</text>{{year.mima.info}}</view>
+        <view class="con">{{year.mima.text}}</view>
+
+        <view class="con"><text>事业运：</text>{{year.career[0]}}</view>
+
+        <view class="con"><text>情感运：</text>{{year.love[0]}}</view>
+
+        <view class="con"><text>财运：</text>{{year.finance[0]}}</view>
+
+        <view class="con"><text>健康运：</text>{{year.health[0]}}</view>
+
+    </view>
+
+    <button bindtap="goBack" type="primary" size="mini">返回首页</button>
+
+    
+</scroll-view>

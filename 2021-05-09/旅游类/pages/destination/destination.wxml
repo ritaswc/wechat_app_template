@@ -1,0 +1,51 @@
+
+<!--pages/destination/destination.wxml-->
+<view class="top">
+  <view class="bg">
+  </view>
+  <view class="img">
+    <image src="/images/destination/bg.png"></image>
+  </view>
+  <view class="pos">
+    <text>大理</text>
+    <text class="icon"> </text>
+  </view>
+  <view class="search">
+    <input type="text" placeholder="搜索目的地/景点/酒店等..." placeholder-class="placeholderClass" />
+    <text class="icon"></text>
+  </view>
+  <view class="city">
+    <text wx:for="{{hotcity}}" class="{{active==index?'active':''}}" wx:key="{{index}}" data-index="{{index}}" bindtap="activeClick">{{item}}</text>
+    <text class="line"></text>
+    <text class="icon"></text>
+  </view>
+</view>
+<view class="divider"></view>
+<view class="hot-view hot">
+  <view class="title">
+    <text></text>
+    <text>周边热门景区</text>
+    <text></text>
+  </view>
+  <view class="img-box">
+    <view class="img" wx:for="{{hotView}}" wx:key="{{index}}" bindtap="enterDetail" data-id="{{item.sid}}">
+      <image src="{{item.imgUrl}}"></image>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+  </view>
+  <view class="divider"></view>
+  <view class="hot-city hot">
+    <view class="title">
+      <text></text>
+      <text>周边热门城市</text>
+      <text></text>
+    </view>
+    <view class="city-box">
+      <text class="city" wx:for="{{nearbyCity}}" wx:key="{{index}}" bindtap="enterCity" data-cityname="{{item}}">{{item}}</text>
+    </view>
+    <view class="nearby">
+      <text class="icon"></text>
+      <text>我的附近</text>
+    </view>
+  </view>

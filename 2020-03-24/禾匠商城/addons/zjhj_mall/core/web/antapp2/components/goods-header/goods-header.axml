@@ -1,0 +1,24 @@
+<view a:if="{{goods.content}}">
+    <view class="goods-block" onTap='contentOpen'>
+        <view class='goods-info flex-row flex-y-center'>
+            <image class='flex-grow-0' src='{{__wxapp_img.goods.goods.address.url}}' style='width:96rpx;height:32rpx;margin-right:16rpx;'></image>
+            <view class='flex-grow-1'>
+                <view>
+                    <view class='text-more'>{{goods.content}}</view>
+                </view>
+            </view>
+            <image src='{{__wxapp_img.shop.down.url}}' class='flex-grow-0 goods-img'></image>
+        </view>
+    </view>
+    <view class='content-modal flex-row flex-x-center flex-y-center' a:if="{{show_content}}">
+        <view>
+            <view class='content-body'>
+                <view class='flex-x-center' style='font-size:13pt;margin-top:20rpx;'>限区域购买</view>
+                <view class='content-img' onTap='contentClose'>
+                    <image style='width:32rpx;height:32rpx;' src='{{__wxapp_img.store.close.url}}'></image>
+                </view>
+                <view style='margin-top:40rpx;max-height:600rpx;overflow-y:auto;'>{{goods.content}}</view>
+            </view>
+        </view>
+    </view>
+</view>

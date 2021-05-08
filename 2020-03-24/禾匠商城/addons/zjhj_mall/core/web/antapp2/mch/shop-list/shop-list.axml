@@ -1,0 +1,67 @@
+<!-- 加载公共扩展 -->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <!-- 页面内容 -->
+        <view class="search-bar flex flex-row">
+            <view class="flex-grow-1">
+                <view style="padding: 18rpx 0 18rpx 24rpx">
+                    <input name="keyword" confirm-type="search" onConfirm="searchSubmit" placeholder="搜索" />
+                </view>
+            </view>
+            <view a:if="{{show_cat_list}}" onTap="hideCatList" class="flex-grow-0" style="padding: 33rpx 24rpx;font-size: 0">
+                <image src="/mch/images/shop-cat.png" style="width: 38rpx;height: 30rpx;"></image>
+            </view>
+            <view a:else onTap="showCatList" class="flex-grow-0" style="padding: 33rpx 24rpx;font-size: 0">
+                <image src="/mch/images/shop-cat.png" style="width: 38rpx;height: 30rpx;"></image>
+            </view>
+        </view>
+        <view class="cat-list {{show_cat_list?'show':''}}">
+            <block a:if="{{cat_list && cat_list.length}}">
+                <navigator open-type="redirect" a:for="{{cat_list}}" a:key="{{item.id}}" url="/mch/shop-list/shop-list?cat_id={{item.id}}">
+                    {{item.name}}
+                </navigator>
+            </block>
+            <view a:else style="text-align: center;color: #888;font-size: 9pt;padding-bottom: 24rpx;">暂无店铺类目</view>
+        </view>
+        <view class="shop-list">
+            <view class="shop-item" a:for="{{list}}" a:key="{{item.id}}">
+                <view class="flex flex-row" style="padding: 24rpx;border-bottom: 1rpx solid #e3e3e3">
+                    <view class="flex-grow-0">
+                        <image src="{{item.logo}}" style="width: 100rpx;height: 100rpx;border: 1rpx solid #eee"></image>
+                    </view>
+                    <view class="flex-grow-1" style="padding: 0 24rpx">
+                        <view style="padding-top:2rpx;margin-bottom: 8rpx;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                            {{item.name}}
+                        </view>
+                        <view class="flex" style="color: #888;font-size: 9pt;">
+                            <view style="margin-right: 30rpx">商品数:{{item.goods_count}}</view>
+                            <view a:if='{{__is_sales}}'>已售:{{item.sell_goods_count}}</view>
+                        </view>
+                    </view>
+                    <view class="flex-grow-0 flex-y-center">
+                        <navigator style="display: inline-block;border: 1rpx solid #e3e3e3;border-radius: 8rpx;padding: 8rpx 16rpx;color: #666;font-size: 9pt" url="/mch/shop/shop?mch_id={{item.id}}">进店逛逛
+                        </navigator>
+                    </view>
+                </view>
+                <view class="goods-list">
+                    <block a:if="{{item.goods_list && item.goods_list.length}}">
+                        <scroll-view scroll-x style="width:100%;white-space: nowrap;">
+                            <navigator a:for="{{item.goods_list}}" a:key="{{item.id}}" class="goods-item" url="/pages/goods/goods?id={{item.id}}">
+                                <image src="{{item.cover_pic}}" style="width: 220rpx;height: 220rpx;"></image>
+                                <view>￥{{item.price}}</view>
+                            </navigator>
+                        </scroll-view>
+                    </block>
+                    <view a:else style="padding: 24rpx;color: #888;font-size: 9pt;text-align: center;">暂无商品</view>
+                </view>
+            </view>
+        </view>
+        <view a:if="{{no_more}}" style="text-align: center;padding: 24rpx;color: #888;font-size: 9pt;">没有店铺了</view>
+        <view class="loading-bar {{loading?'show':''}}">
+            <image src="{{__wxapp_img.system.loading_black.url}}" style="width: 50rpx;height: 50rpx;"></image>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

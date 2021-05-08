@@ -1,0 +1,49 @@
+<view class="page-body">
+<!--导航操作栏-->
+    <view class = "nav-view">
+        <view class="mycard category" bindtap="selectCategory" data-index="1">
+            <text>我的e卡</text>
+            <block wx:if="{{current_id == 1}}">
+            <view class="select-line"></view>
+            </block>
+        </view>
+        <view class="sendcard category" bindtap="selectCategory" data-index="2">
+            <text>转赠卡</text>
+            <block wx:if="{{current_id == 2}}">
+            <view class="select-line"></view>
+            </block>
+        </view>
+        <view class="waitforpay category" bindtap="selectCategory" data-index="3">
+            <text>待支付</text>
+            <block wx:if="{{current_id == 3}}">
+            <view class="select-line"></view>
+            </block>
+        </view>
+    </view>
+    <!--e卡列表-->
+    <view class="content-view">
+        <block wx:for="{{ecards}}" wx:for-item="card" wx:key="{{id}}">
+            <view class= "card-item">
+                <image src="../../images/my_ecard_bg.png" mode="scaleToFill"></image>
+                <text class="price">{{card.price}}</text>
+                <text class="left">{{card.left}}</text>
+                <text class="date_validity">{{card.date_validity}}</text>
+            </view>
+        </block>
+    </view>
+    <!--添加新卡按钮-->
+    <view class="addcard-button" bindtap="addCard">
+        <text>+添加新卡</text>
+    </view>
+</view>
+<!--添加新卡的视图-->
+<block wx:if="{{show_addcard}}">
+    <view class="toast-view" bindtap="cancal_add">
+        <image src="../../images/guigeClose.png"></image>
+        <view class="option-view" catchtap="option_tap">
+            <input placeholder="请输入礼品卡密码" placeholder-style="font-size:28rpx;color:#d4d4d4" />
+            <view class="line"></view>
+            <button>确定</button>
+        </view>
+    </view>
+</block>

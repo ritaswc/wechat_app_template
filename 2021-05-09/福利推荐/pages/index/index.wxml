@@ -1,0 +1,105 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view> -->
+<!-- 导入刷新面板 -->
+<import src="/components/wx-pulltorefresh-view/wx-pulltorefresh-view.wxml"/>
+
+<view class='main-wraper'>
+    <navBar title='福利推荐' background='#fff' back="{{true}}" home="{{true}}" bindback="handlerGobackClick" bindhome="handlerGohomeClick"></navBar>
+</view>
+<!--开始获取轮播图-->
+<view class="swiper-container">
+<!-- 增加图片右上角的文字，便于用户理解 -->
+  <swiper class="swiper" autoplay="true" circular="true" 
+    interval="3000" easing-function="easeOutCubic" 
+    current="{{swiperCurren}}" 
+    bindchange="swiperChange">
+    <!-- 轮播图图片 -->
+    <swiper-item class="swiperItem" data-pagesourceWithTitle="{{item['pagesourceWithTitle']}}" bindtap="toPagedetail" wx:for="{{imgList}}" wx:key="index">
+      <!-- 加上widthFix可以使图片自适应 -->
+      <image src="{{item['imgSrc'][0]}}"></image>
+      <view>
+       <text class="swiper-text">{{item['title']}}</text>
+      </view>
+    </swiper-item>
+  
+
+  </swiper>
+  <!-- 为了和喜马拉雅一致，自己需定制轮播图dots -->
+  <view class="dots">
+    <block wx:for="{{imgList.length}}" wx:key="index">
+      <!-- 根据index判断是否选中 -->
+      <view class="dotsItem{{index == swiperCurrent ? ' active' : ''}}"></view>
+    </block>
+  </view>
+</view>
+
+<!-- 宫格导航 -->
+<view class="nav">
+  <block>  
+    <view class="navItem" bindtap="{{item.events}}" wx:for="{{navList}}"  wx:key="index">
+      <!-- 
+        
+        因为没有合适的图，所以全部使用的一样的 
+        并且因为界面都是一致的就是内容不同，这里为了简单，使用的都是统一界面
+
+        解决办法：你可以通过页面传参的方式来进行区分
+        -->
+      <image class="navIcon" src="{{item.icon}}" mode="widthFix" lazy-load="false"></image>
+      <text class="navText">{{item.text}}</text>
+    </view>
+  </block>
+</view>
+
+<!--列表页-->
+
+<!-- 有数据的时候显示 -->
+<block wx:if="{{showitem}}">
+  <view class="contentList">
+    <block wx:for="{{articleList}}" wx:key="index">
+      <view class="content" bindtap="toPagedetail" data-pagesourceWithTitle="{{item['pagesourceWithTitle']}}" data-title="{{item['title']}}">
+        <view class="contentImg">
+           <image src="{{item['imgSrc'][0]}}" mode="widthFix" lazy-load="true"></image>
+        </view>
+        <view class="content-right">
+          <view class="title">
+            <view class="titleText">{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+    </block>  
+    <block>  
+  <view class="pageUp" >
+    <image class="goupimg" src="{{upicon}}" mode="widthFix" lazy-load="false" bindtap="topageup"></image>
+  </view>
+</block>
+  </view>
+
+</block>
+
+
+
+<block wx:else>
+  <view class="dataNotip">
+    <view class="tip">
+      网络暂时走丢了，正在重试
+    </view>  
+  </view>
+</block>
+
+
+
+  <pulltorefresh-view  style="height:100%" nomore="{{nomore}}" refreshing="{{refreshing}}" bindpulldownrefresh="refreshData" bindloadmore="loadmoreData">
+  </pulltorefresh-view>
+
+<view>
+	<contact-button class="img-plus-style zindex100 yc"></contact-button>
+	<image src="../../image/kefu.png" class="img-plus-style"></image>
+</view>

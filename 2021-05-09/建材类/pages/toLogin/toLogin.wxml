@@ -1,0 +1,30 @@
+<!--pages/toLogin/toLogin.wxml-->
+<view  class="contain">
+     <view class="top">
+         <image class="top_image" mode="scaleToFill" src="../../images/banner.png"></image>
+     </view>
+     <view class="content">
+          <view class="user_logPhone">
+            <image class="user_image" src="../../images/user_phonenum.png"></image>
+            <input class="user_input" maxlength="11" bindinput="bindUserTel" value="{{userTel}}"  type="text" placeholder="手机号/用户名" placeholder-class="placeholder"/>  
+          </view>
+          <view class="user_logPassword">
+            <image class="user_image" src="../../images/user_passw.png"></image>
+            <input class="user_input" bindinput="bindUserPassw" value="{{userPassw}}" type="text" password="true" placeholder="请输入密码" placeholder-class="placeholder"/> 
+          </view>
+     </view>
+     
+     <button class="button" hover-class="button_pressed" bindtap="loginAction">
+          <text class="button_text">登录</text>
+     </button>
+              
+     <view class="footer">
+          <navigator url="../forgetPassw/forgetPassw">
+              <text class="footer_forgetPassw">忘记密码？</text>            
+          </navigator>
+           <navigator url="../toRegister/toRegister">
+              <text class="footer_toRegist">注册</text>
+          </navigator>
+     </view>    
+   
+</view>

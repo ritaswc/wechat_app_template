@@ -1,0 +1,23 @@
+<view>
+  <view wx:if="{{coupons.length === 0}}">
+    <view class="no-coupon"><text>没有可使用的优惠券</text></view>
+  </view>
+  <view wx:else>
+    <block wx:for="{{coupons}}" wx:for-item="coupon" wx:key="id">
+      <view class="coupon-container" data-id="{{coupon.id}}" bindtap="bindUseCoupon">
+        <view class="left-image">
+          <image src="{{coupon['left-image']}}" mode="aspectFit"></image>
+        </view>
+        <view class="mall_coupon_ab">
+          <view class="value"><text>¥{{coupon['coupon-value']}}</text></view>
+          <view class="mall_coupon_more">
+            <view><text>{{coupon['sub-title']}}</text></view>
+            <view class="grey"><text>{{coupon.title}}</text></view>
+            <view class="grey"><text>{{coupon['product-category-title']}}</text></view>
+            <view class="grey"><text>• 有效期至: {{coupon['end-time']}}</text></view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

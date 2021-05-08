@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+	<view class="tabs" wx:if="{{subjectTab}}">
+		<view class="row-subject">
+			<text class="title">选择科目</text>
+			<text class="close" bindtap="hideTab">关闭</text>
+			<view wx:for="{{subjects}}" wx:key="subjectId" class="{{item.isSelected?'selected':''}}" data-subject="{{item}}" bindtap="subjectSelect">{{item.title}}</view>
+			
+		</view>
+	</view><!-- tabs结束 -->
+	<swiper class="ad" indicator-dots="true" autoplay="true" interval="{{delay}}" >
+		<block wx:for="{{ads}}" wx:key="url">
+			<swiper-item>
+				<image mode="scaleToFill" src="{{item.url}}"></image>
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class="showTab" bindtap="showTab"><text>点击选择科目：{{subjectName}}</text><icon type="search" style="float:right"></icon></view>
+	<view class="slider-wrapper">
+		<navigator wx:for="{{sliders}}" wx:key="url" class="slider" url="{{item.url}}">
+			<view class="card">
+				<image src="{{item.image}}"></image>
+				<view class="title">{{item.title}}</view>
+				<text class="intro">{{item.intro}}</text>	
+			</view>		
+		</navigator>
+	</view>
+</view>

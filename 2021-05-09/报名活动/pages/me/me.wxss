@@ -1,0 +1,58 @@
+.container {
+  background: #eee;
+}
+
+.member {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+}
+
+.avator {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.avator image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.username {
+  width: 90%;
+  padding-left: 10px;
+  line-height: 52px;
+  font-size: 36rpx;
+}
+
+.hasOrder {
+  margin-top: 10px;
+}
+@import '../common/font.wxss';
+.hasOrder .wrap, .hasAttendAct .wrap {
+  background: #fff;
+}
+
+.hasAttendAct {
+  margin-top: 10px;
+}
+
+.title_tip {
+  padding-left: 10px;
+  line-height: 28px;
+  color: #888;
+}
+
+.list .lst{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+
+.icon{
+  width: 10%;
+  text-align: right;
+}

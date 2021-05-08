@@ -1,0 +1,36 @@
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  保存中...
+</loading>
+
+<!--修改订单状态-->
+<view class="container">
+  <view class="order-detail">
+    <view class="order-con">
+      <text class="text1">订单状态</text>
+      <picker class="text2" bindchange="bindPickerChange" range-key="name" value="{{index}}" range="{{stateName}}">
+        <view class="picker">
+          {{stateName[index].name}}
+          <image class="see-icon" src="{{imageCtx}}dealer/s_change.png"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="order-con" wx:if="{{expressShow}}">
+      <text class="text1">物流类型</text>
+      <picker class="text2" bindchange="bindPickerChange2" range-key="name" value="{{expressIndex}}" range="{{express}}">
+        <view class="picker">
+          {{express[expressIndex].name}}
+          <image class="see-icon" src="{{imageCtx}}dealer/s_change.png"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="order-con" wx:if="{{expressShow}}">
+      <text class="text1">物流单号</text>
+      <input class="logistics-num" type="text" maxlength="20" value="{{express_no}}" bindinput="expressInput" bindblur="trim" placeholder="请输入物流单号" placeholder-class="logistics-pla" />
+    </view>
+    <view class="order-con" wx:if="{{reasonShow}}">
+      <text class="text1">原因</text>
+      <input class="logistics-num" type="text" placeholder="请说明原因" maxlength="30" bindinput="reason"/>
+    </view>
+  </view>
+  <button class="save-btn" bindtap="updateState">保存</button>
+</view>

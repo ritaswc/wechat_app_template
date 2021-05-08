@@ -1,0 +1,32 @@
+<!--pages/template/template.wxml-->
+<template name="onmyoji">
+        <navigator url="../onmyoji/onmyoji?id={{ id }}" open-type="navigate" class="onmyoji_item">
+      <view class="item_image">
+        <image src="{{icon}}" class="image_box"></image>
+      </view>
+      <view class="item_info">
+      <view class="item_title">{{ name }}</view>
+      <view class="item_desc" wx:if="{{ clue2 }}">神秘线索: {{ clue1 }}/{{ clue2 }}</view>
+      <view class="item_desc" wx:elif="{{ clue1 }}">神秘线索: {{ clue1 }}</view>
+      </view>
+    </navigator>
+</template>
+
+<template name="scene">
+    <view class="scene_item">
+      <view class="item_image">
+        <image src="{{icon}}" class="image_box"></image>
+      </view>
+      <view class="item_info">
+      <view class="item_title">{{ name }}<text class="text_red">({{ hellspawn_info.name }} X {{ hellspawn_info.count }})</text><navigator url="../feedback/feedback?type=1&id={{id}}&name={{name}}" class="report">报错</navigator></view>
+      <view class="item_desc" >
+        <view class="item_text" wx:for="{{ team_list }}" wx:key="id">{{ item.name }}: 
+        <text wx:for="{{ item.monsters }}" wx:key="id" wx:for-item="itm"> 
+        <text wx:if="{{ itm.name == hellspawn_info.name }}" style="color: #e53927;"> {{ itm.name }}X{{ itm.count }}</text>
+        <text wx:else> {{ itm.name }}X{{ itm.count }}</text>
+        </text>
+        </view>
+      </view>
+      </view>
+    </view>
+</template>

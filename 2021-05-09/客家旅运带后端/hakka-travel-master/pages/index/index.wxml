@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<import src="../components/toast/toast.wxml"></import>
+
+<view class="container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoPlay}}"  interval="3000" duration="700">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="silde-image"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  
+  <!-- outer view -->
+  <view class="content-wrapper">
+    <!-- city selection wrapper -->
+    <view class="city-selection-wrapper">
+        <view class="city-selection">
+          <view class="start-city" bindtap="selectStartCity">
+            <image src="../../images/location_start.png" class="absolute-center-Y img-small-icon "></image>
+            <text>{{startCity}}</text>
+            <image src="../../images/right_dot.png" class="absolute-center-Y img-small-icon img-right-20"></image>
+          </view>
+          <view class="end-city" bindtap="selectEndCity">
+            <image src="../../images/location_end.png" class="absolute-center-Y img-small-icon"></image>
+            <text>{{endCity}}</text>
+            <image src="../../images/right_dot.png" class="absolute-center-Y img-small-icon img-right-20"></image>
+          </view>
+        </view>
+        <view class="exchange-btn" bindtap="exchangeCity">
+          <image src="../../images/change_icon.png" class="absolute-center-XY img-default-size"></image>
+        </view>
+    </view>
+
+    <!-- date -->
+    <view class="date-selection-wrapper">
+      <image src="../../images/alarm.png" class="absolute-center-Y img-small-icon"></image>
+      <picker class="date-picker" mode="date" value="{{selectedDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="changeDate">
+        <view class="selected-date">
+          {{selectedDate}}
+        </view>
+      </picker>
+      <image src="../../images/right_dot.png" class="absolute-center-Y img-small-icon img-right-20"></image>
+    </view>
+  </view>
+  
+  <view class="default-btn" bindtap="checkSchedule">立即查询</view>
+
+  <template is="toast" data="{{...toast}}"></template>
+</view>

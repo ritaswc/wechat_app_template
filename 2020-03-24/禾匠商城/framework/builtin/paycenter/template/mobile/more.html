@@ -1,0 +1,28 @@
+{php define(MUI, true);}
+{template 'common/header'}
+<header class="mui-bar mui-bar-nav">
+	<h1 class="mui-title">{$_W['user']['store_name']}</h1>
+</header>
+{template 'nav'}
+<div class="mui-content paycenter-more">
+	<ul class="mui-table-view mui-table-view-chevron">
+		<li class="mui-table-view-cell mui-media store-info">
+			<a class="mui-navigate-right" href="javascript:;">
+				<img class="mui-media-object mui-pull-left mui-img-rounded" src="./resource/images/avatar.png">
+				<div class="mui-media-body">
+					{$clerk_name}
+					<div class="tel">{$clerk_info['mobile']}</div>
+				</div>
+			</a>
+		</li>
+		<li class="mui-table-view-cell">
+			<a href="javascript:;" class="mui-navigate-right">
+				{$store_name}
+			</a>
+		</li>
+	</ul>
+	<div class="mui-content-padded">
+		<a href="{php echo $this->createMobileUrl('logout')}" class="mui-btn mui-btn-block mui-btn-danger mui-btn-outlined">退出登录</a>
+	</div>
+</div>
+{template 'common/footer'}

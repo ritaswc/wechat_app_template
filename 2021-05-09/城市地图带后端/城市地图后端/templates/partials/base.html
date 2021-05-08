@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>
+      {% block title %}
+        awesomecoffice
+      {% endblock %}
+    </title>
+    <meta charset="utf-8">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "css/helper.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/carousel.css" %}">
+    <link rel="stylesheet" href="{% static "css/notie.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/nprogress.css" %}">
+
+    <script src="{% static "js/jquery-3.1.1.min.js" %}"></script>
+    <script src="{% static "js/tether.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/notie.min.js" %}"></script>
+    <script src="{% static "js/nprogress.js" %}"></script>
+
+    {% block head %}
+    {% endblock %}
+  </head>
+
+  <body>
+    {% include "partials/navbar.html" %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block pagejs %}
+    {% endblock %}
+  </body>
+</html>

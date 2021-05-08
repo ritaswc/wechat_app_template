@@ -1,0 +1,14 @@
+<!--
+	@component toast
+	@author liangkun
+-->
+<template name="toast">
+	<view class="toast-wrapper {{showToast? 'toast-show': 'toast-hide'}}">
+		<view class="toast-icon-wrapper">
+			<image class="img-large-size toast-icon" src="{{iconUrl}}"></image>
+		</view>
+		<view class="toast-content">
+			{{content}}
+		</view>
+	</view>
+</template>

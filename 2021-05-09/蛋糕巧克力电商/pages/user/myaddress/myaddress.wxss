@@ -1,0 +1,50 @@
+/* pages/user/myaddress/myaddress.wxss */
+
+.body {
+  margin: 10px 0;
+  background-color: #fff;
+  box-shadow: 5px 0 #f7f7f7;
+  font-size: 13px;
+  font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+}
+
+ .shdz {
+  display: block;
+  height: 2.777em;
+  line-height: 2.777em;
+  margin: 10px auto;
+  width: 80%;
+  text-align: center;
+  background: #ff6000;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.333em;
+}
+ .m_box {
+    width: 80%;
+    margin: 12px auto;
+    background: #eee;
+    border-radius: 10px;
+    box-shadow: 0 3px  #f7f7f7;
+}
+ .m_box .m_address_list {
+    padding: 1.1111em;
+    line-height: 2em;
+}
+.m_address_list .m_control {
+    display: flex;padding:  10px 0 ;
+}
+.m_address_list .m_control .m_box_control  {
+  padding: 5px 10px ; 
+  margin:5px 5px;
+  background:#fff;
+   border-radius: 10px;
+}
+.m_address_list .m_control .m_box_control_select  {
+  padding: 5px 10px ; 
+  margin:5px 5px;
+  background:#fff3e8;
+  color:#ff6000;
+   border-radius: 10px;
+}

@@ -1,0 +1,450 @@
+<template name="diy-video">
+    <!-- 视频板块 开始 -->
+    <view class='user-block' onTap='play' data-index='{{param.id}}'>
+        <view a:if="{{play == param.id}}">
+            <video class='video' direction='' style='width:750rpx;height:400rpx;' autoplay='true' src='{{param.url}}' controls='true' loop='true' onFullscreenchange='fullscreenchange'></video>
+        </view>
+        <view style='position:relative;' a:else>
+            <image lazy-load='true' mode="aspectFill" src='{{param.pic_url}}' style='width:750rpx;height:400rpx;display:block'></image>
+            <image lazy-load='true' class='video-play' src='{{__wxapp_img.store.video_play.url}}'></image>
+        </view>
+    </view>
+    <!-- 视频板块 结束 -->
+</template>
+
+<template name="line">
+    <view style="width:100%;height:{{param.height*2}}rpx;background-color:{{param.backgroundColor}}"></view>
+</template>
+
+<template name="ad">
+    <ad unit-id="{{param.id}}"></ad>
+</template>
+
+<template name="link">
+    <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-bind="navigatorClick" data-url="{{param.open_type == 'wxapp' ? '' : param.url}}">
+        <button formType="submit" id="_formIdSubmit">
+            <navigator hover-class='none' data-url="{{param.url}}" data-open_type="{{param.open_type}}" target="{{param.open_type == 'wxapp' ? 'miniProgram' : ''}}" path="{{param.path}}" app-id="{{param.appId}}" open-type="{{param.open_type == 'wxapp' ? 'navigate' : param.open_type}}"
+                style="z-index:9;position:relative;">
+                <view class='link flex-row flex-y-center' style='background-color:{{param.backgroundColor}};color:{{param.color}}'>
+                    <view class='flex-row flex-grow-0 link-img flex-y-center' style="background-image:url({{param.is_icon == 1 ? param.icon : ''}});background-position:{{param.position}}rpx;">
+                        <view class='text-more flex-grow-1 link-text' style="padding-left:{{param.left}}rpx;">{{param.name}}</view>
+                        <image class="flex-y-center flex-grow-0 img" lazy-load='true' src="{{__wxapp_img.store.jiantou_r.url}}" a:if="{{param.is_jiantou == 1}}" />
+                    </view>
+                </view>
+            </navigator>
+        </button>
+    </form>
+</template>
+
+<template name="diy-nav">
+    <!-- 导航图标 开始 -->
+    <scroll-view scroll-x="{{param.is_slide == 'true' ? 'true' : 'false'}}">
+        <view class='nav-icon-list flex-row' style="overflow:{{param.is_slide == 'true' ? 'auto' : 'hidden'}};background-color:{{param.backgroundColor}}" a:if="{{param.nav_list&&param.nav_list.length>0}}">
+            <block a:for="{{param.nav_list}}" a:for-item="value" a:for-index="key" a:key="{{value.id}}">
+                <view class="flex-row flex-grow-0" style="flex-wrap:{{param.col > 1 ? 'wrap' : ''}};width:auto;max-width:100%;">
+                    <view class="flex-grow-0 nav-icon nav-icon-{{param.count >= 5 ? 5 : param.count}}" a:for="{{value}}" a:key="{{item.id}}">
+                        <form report-submit="true" onSubmit="_formIdSubmit" data-bind="navigatorClick" data-type="navigate" data-url="{{item.open_type == 'wxapp' ? '' : item.url}}">
+                            <button formType="submit" id="_formIdSubmit">
+                                <navigator hover-class='none' data-url="{{item.url}}" data-open_type="{{item.open_type}}" target="{{item.open_type == 'wxapp' ? 'miniProgram' : ''}}" path="{{item.path}}" app-id="{{item.appId}}" open-type="{{item.open_type == 'wxapp' ? 'navigate' : item.param.open_type}}">
+                                    <image lazy-load='true' mode="aspectFill" src="{{item.pic_url}}"></image>
+                                    <view>{{item.name}}</view>
+                                </navigator>
+                            </button>
+                        </form>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+    <!-- 导航图标 结束 -->
+</template>
+
+<template name="rubik">
+    <!-- 图片魔方 -->
+    <view class='user-block m-0 rubik-list' style="min-height:{{param.style == 0 ? 0 : (param.n_minHeight ? param.n_minHeight : (param.new_minHeight - param.space) + 'rpx')}};margin:-{{param.space}}rpx;width:calc(100% + {{param.space}}rpx);height:calc(100% + {{param.space}}rpx);">
+        <block a:for="{{param.list}}" a:key="{{item.id}}">
+            <view class="rubik-one" style="width:{{item.n_width ? item.n_width : item.new_width + 'rpx'}};{{param.style == 0 ? 'height:auto;position:relative;' : 'height:' + (item.n_height ? item.n_height : item.new_height + 'rpx')}};left:{{item.n_left ? item.n_left : item.new_left + 'rpx'}};top:{{item.n_top ? item.n_top : item.new_top + 'rpx'}};">
+                <form report-submit="true" onSubmit="_formIdSubmit" data-type="{{item.open_type == 'wxapp' ? '' : 'navigate'}}" data-url="{{item.page_url}}">
+                    <button formType="submit" id="_formIdSubmit">
+                        <navigator hover-class="none" class='fs-0' style="display:block;width: 100%;z-index:9;position:relative;{{param.style == 0 ? 'height:auto;' : 'height:' + (item.n_height ? item.n_height : item.new_height + 'rpx')}};" onTap="navigatorClick" data-url="{{item.url}}" open-type="navigate" url="{{item.url}}"
+                            target="{{item.open_type=='wxapp' ? 'miniProgram' : ''}}" app-id="{{item.appId}}" path="{{item.path}}">
+                            <image lazy-load='true' mode="{{param.style == 0 ? 'widthFix' : 'aspectFill'}}" src='{{item.pic_url}}' style='width:100%;height:100%;display:block'></image>
+                        </navigator>
+                    </button>
+                </form>
+            </view>
+        </block>
+    </view>
+</template>
+
+<template name="diy-cat">
+    <scroll-view class='diy-cat-{{param.cat_position}} flex-grow-0' scroll-x="param.cat_position == 0" scroll-y="param.cat_position == 1" scroll-with-animation="true" scroll-into-view="cat-{{param.cat_index >= 2 ? param.cat_index - 2 : 0}}" a:if="{{param.list.length > 1 || param.cat_position == 1}}">
+        <view class="{{param.cat_position == 0 ? 'flex-row' : ''}}">
+            <block a:for="{{param.list}}" a:key="{{item.id}}">
+                <form report-submit="true" onSubmit="_formIdSubmit" data-bind="catBind" data-template="{{template_index}}" data-index="{{index}}" id="cat-{{index}}" class="flex-grow-0">
+                    <button formType="submit" id="_formIdSubmit">
+                        <view class="diy-cat-one-{{param.cat_position == 1 ? 2 : param.cat_style}} {{index == param.cat_index ? 'active' : ''}} flex-y-center flex-x-center" onTap="catBind">
+                            <view class='text-more text-center'>{{item.name}}</view>
+                        </view>
+                    </button>
+                </form>
+            </block>
+        </view>
+    </scroll-view>
+</template>
+
+<template name="cat-position-1">
+    <scroll-view scroll-y="true" scroll-into-view="cat-{{param.cat_index}}" style='width:550rpx;max-height:{{WindowHeight}}px;'>
+        <view class="diy-goods-list-1">
+            <block a:for="{{param.list}}" a:key="{{item.id}}">
+                <view class="diy-cat-name" id="cat-{{index}}">
+                    <view class='text-more' style="width:170rpx;">{{item.name}}</view>
+                </view>
+                <block a:for="{{item.goods_list}}" a:for-item="value" a:for-index="key" a:key="{{value.id}}">
+                    <view class="diy-goods-1 flex-row">
+                        <view class='flex-grow-1'>
+                            <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="/pages/goods/goods?id={{value.goods_id}}">
+                                <button formType="submit" id="_formIdSubmit">
+                                    <view class='flex-row'>
+                                        <view class='flex-grow-0 diy-goods-img'>
+                                            <image lazy-load='true' mode="aspectFill" src="{{value.pic_url}}"></image>
+                                            <image class='diy-goods-mark' a:if="{{param.mark == 1}}" lazy-load='true' mode="aspectFill" src='{{param.mark_url}}'></image>
+                                        </view>
+                                        <view class='flex-grow-1 ml-24 flex-col' style="justify-content:space-between;">
+                                            <view class='text-more-2' a:if="{{param.name == 1}}">{{value.name}}</view>
+                                            <view class='red' style="margin-top:10rpx;" a:if="{{param.price == 1}}">￥{{value.price}}</view>
+                                        </view>
+                                    </view>
+                                </button>
+                            </form>
+                        </view>
+                        <view class='flex-grow-0 flex-y-bottom'>
+                            <form report-submit="true" onSubmit="_formIdSubmit" data-bind="modalShowGoods" data-goods="{{key}}" data-template="{{template_index}}" data-cat="{{index}}">
+                                <button formType="submit" id="_formIdSubmit">
+                                    <view class="buy-btn" a:if="{{param.buy == 1}}">
+                                        <view class='text-more buy-btn-{{param.buy_list}}' a:if="{{param.buy_list >= 2}}">{{param.buy_content ? param.buy_content : '购买'}}</view>
+                                        <image a:else src="{{param.buy_content}}" mode='aspectFill' lazy-load='true'></image>
+                                    </view>
+                                </button>
+                            </form>
+                        </view>
+                    </view>
+                </block>
+            </block>
+        </view>
+    </scroll-view>
+</template>
+
+<template name="cat-position-0">
+    <scroll-view scroll-x="{{param.list_style != 4 ? 'false' : 'true'}}">
+        <view class='flex-row diy-goods-list-0 flex-grow-0' style="{{param.list_style != 4 ? 'flex-wrap:wrap' : 'overflow:auto'}};">
+            <block a:for="{{param.list[param.cat_index].goods_list}}" a:for-index="key" a:for-item="value" a:key="{{value.id}}">
+                <view class='flex-grow-0 diy-goods-one diy-goods-one-{{param.list_style}} flex-row diy-goods-border diy-goods-border-{{param.style}}'>
+                    <view class='flex-grow-0 diy-goods-img-{{param.list_style}}' style="position:relative;{{(param.list_style == 0 && param.per == 1) ? 'height: 466rpx;' : ''}}">
+
+                        <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="{{value.page_url}}">
+                            <button formType="submit" id="_formIdSubmit">
+                                <image lazy-load='true' mode="{{param.fill == 1 ? 'aspectFill' : 'aspectFit'}}" src='{{value.pic_url}}' class='diy-goods-img-{{param.list_style}}' style="{{(param.list_style == 0 && param.per == 1) ? 'height: 466rpx;' : ''}}"></image>
+                            </button>
+                        </form>
+
+                        <image class='diy-goods-mark' a:if="{{param.mark == 1}}" lazy-load='true' src='{{param.mark_url}}'></image>
+                        <view class="miaosha-time flex-row flex-y-center flex-x-center miaosha-time-{{param.list_style}}" a:if="{{param.list_style != 1 && (type == 'miaosha' || type == 'bargain' || type == 'lottery') && param.time == 1}}">
+                            <view class="fs-b flex-grow-1" style='text-align:left' a:if="{{param.list_style == 0}}">{{param.type_name}}</view>
+                            <view class="fs-sm">{{time_all[type + '_' +template_index].param.list[param.cat_index].goods_list[key].time_content}}{{time_all[type+'_'+template_index].param.list[param.cat_index].goods_list[key].time_list.content_ms}}</view>
+                        </view>
+                    </view>
+                    <view class='flex-row flex-grow-0 diy-goods-content diy-goods-content-{{param.list_style}}'>
+
+                        <block a:if="{{param.list_style == 1 && (type == 'miaosha' || type == 'bargain' || type == 'lottery') && param.time == 1}}">
+                            <navigator url="{{value.page_url}}" style="text-align:left" hover-class='none' class="w-100">
+                                <view class="pt-24 text-more {{param.style >= 2 && param.list_style != 1 ? 'text-center' : ''}}" style="width:100%;height:auto;" a:if="{{param.name == 1}}">{{value.name}}</view>
+                            </navigator>
+                            <view class="flex-row flex-y-center w-100 miaosha-time-{{param.list_style}}">
+                                <view class="fs-b flex-grow-0" style='text-align:left'>
+                                    <image src="{{__wxapp_img.lottery.time.url}}" style="width:24rpx;height:24rpx;margin-right:12rpx;"></image>
+                                </view>
+                                <view class="fs-sm flex-grow-0">{{time_all[type + '_' +template_index].param.list[param.cat_index].goods_list[key].time_content}}
+                                    <text class="red">{{time_all[type+'_'+template_index].param.list[param.cat_index].goods_list[key].time_list.content_ms}}</text>
+                                </view>
+                            </view>
+                        </block>
+                        <block a:else>
+                            <navigator url="{{value.page_url}}" style="text-align:left" hover-class='none' class="w-100">
+                                <view style="height: 3.6em">
+                                    <view class="pt-24 {{param.list_style == 0 ? 'text-more' : 'text-more-2'}} {{param.style >= 2 && param.list_style != 1 ? 'text-center' : ''}}" style="width:{{param.price == 0 && param.buy == 1 && param.list_style == 0 ? 'calc(100% - 50rpx)' : '100%'}};"
+                                        a:if="{{param.name == 1}}">{{value.name}}</view>
+                                </view>
+                            </navigator>
+                        </block>
+
+                        <block a:if="{{param.price == 1}}">
+                            <navigator hover-class='none' url="{{value.page_url}}" class="flex-grow-1">
+                                <block a:if="{{type == 'goods' || type == 'book'}}">
+                                    <view class="pt-24 diy-goods-price flex-grow-1 flex-y-bottom {{param.style >= 2 ? 'flex-x-center' : ''}}">{{value.price_content}}</view>
+                                </block>
+
+                                <block a:elif="{{type == 'lottery'}}">
+                                    <block a:if="{{param.list_style == 0}}">
+                                        <view class='pt-24 diy-goods-price flex-grow-1 flex-y-bottom flex-row fs-sm {{param.style >= 2 ? "flex-x-center" : ""}}'>
+                                            <view class="fs-b">免费</view>
+                                            <view class="font-default fs-sm" a:if="{{param.style < 2}}" style="text-decoration: line-through">￥{{value.original_price}}</view>
+                                        </view>
+                                    </block>
+                                    <block a:if="{{param.list_style == 1}}">
+                                        <view class='diy-goods-price flex-grow-1 flex-y-bottom flex-row fs-sm' style='width:100%;'>
+                                            <view class="fs-b">免费</view>
+                                        </view>
+                                        <view class="font-default fs-sm flex-y-bottom flex-grow-1">{{value.original_price_content}}￥{{value.original_price}}</view>
+                                    </block>
+                                    <block a:if="{{param.list_style == 2}}">
+                                        <view class='diy-goods-price flex-y-bottom flex-row fs-sm {{param.style >= 2 ? "flex-x-center" : ""}}' style='width:100%;'>
+                                            <view class="fs-b">免费</view>
+                                        </view>
+                                        <view class="font-default fs-sm flex-y-bottom {{param.style >= 2 ? 'flex-x-center' : ''}}" style='width:100%;'>{{value.original_price_content}}￥{{value.original_price}}</view>
+                                    </block>
+                                </block>
+
+                                <block a:elif="{{type == 'integral'}}">
+                                    <block a:if="{{param.list_style == 0}}">
+                                        <view class='pt-24 diy-goods-price flex-grow-1 flex-y-bottom flex-row {{param.style >= 2 ? "flex-x-center" : ""}}'>
+                                            <view style='font-size:11pt;'>{{value.integral_content}}</view>
+                                        </view>
+                                    </block>
+                                    <block a:if="{{param.list_style == 1}}">
+                                        <view class='diy-goods-price flex-grow-1 flex-y-bottom flex-row' style='width:100%;'>
+                                            <view style='font-size:11pt;'>{{value.integral_content}}</view>
+                                        </view>
+                                        <view class="font-default fs-sm flex-y-bottom flex-grow-1">{{value.original_price_content}}</view>
+                                    </block>
+                                    <block a:if="{{param.list_style == 2}}">
+                                        <view class='diy-goods-price flex-y-bottom flex-row' style='width:100%;'>
+                                            <view class="" style='font-size:11pt;'>{{value.integral_content}}</view>
+                                        </view>
+                                        <view class="font-default fs-sm flex-y-bottom" style='width:100%;'>{{value.original_price_content}}</view>
+                                    </block>
+                                </block>
+                                <block a:else>
+                                    <block a:if="{{param.list_style == 0}}">
+                                        <view class='pt-24 diy-goods-price flex-grow-1 flex-y-bottom flex-row fs-sm {{param.style >= 2 ? "flex-x-center" : ""}}'>
+                                            <view>{{value.price_content}}￥
+                                                <text class="fs-b">{{value.price}}</text>
+                                            </view>
+                                            <view class="font-default fs-sm" style="text-decoration: line-through" a:if="{{param.style < 2}}">￥{{value.original_price}}</view>
+                                        </view>
+                                    </block>
+                                    <block a:if="{{param.list_style == 1}}">
+                                        <view class='diy-goods-price flex-grow-1 flex-y-bottom flex-row fs-sm' style='width:100%;'>{{value.price_content}}￥
+                                            <text class="fs-b">{{value.price}}</text>
+                                        </view>
+                                        <view class="font-default fs-sm flex-y-bottom flex-grow-1">{{value.original_price_content}}￥{{value.original_price}}</view>
+                                    </block>
+                                    <block a:if="{{param.list_style == 2}}">
+                                        <view class='diy-goods-price flex-y-bottom flex-row fs-sm {{param.style >= 2 ? "flex-x-center" : ""}}' style='width:100%;'>{{value.price_content}}￥
+                                            <text class="fs-b">{{value.price}}</text>
+                                        </view>
+                                        <view class="font-default fs-sm flex-y-bottom {{param.style >= 2 ? 'flex-x-center' : ''}}" style='width:100%;'>{{value.original_price_content}}￥{{value.original_price}}</view>
+                                    </block>
+                                </block>
+                            </navigator>
+                        </block>
+
+
+                        <block a:if="{{(param.list_style != 2 || type == 'goods' || type == 'book') && value.is_negotiable == 0 && param.buy == 1 && param.list_style < 3 && (param.style < 2 || param.list_style == 1)}}">
+                            <form class="flex-y-bottom" report-submit="true" onSubmit="_formIdSubmit" data-bind="modalShowGoods" data-goods="{{key}}" data-template="{{template_index}}" data-cat="{{param.cat_index}}">
+                                <button formType="submit" id="_formIdSubmit">
+                                    <view class='flex-grow-0 flex' style="justify-content: flex-end;width:{{(param.price == 0 && (param.list_style == 1 || param.list_style == 2)) ? '100%' : 'auto'}}">
+                                        <view class='text-more buy-btn-cat buy-btn-{{param.buy_list}}' a:if="{{param.buy_list >= 2}}">{{param.buy_content ? param.buy_content : '购买'}}</view>
+                                        <image a:else style="width:50rpx;height:50rpx;" src="{{param.buy_content}}" lazy-load='true' mode='aspectFill'></image>
+                                    </view>
+                                </button>
+                            </form>
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+</template>
+
+<template name="goods-modal">
+    <view class='new-modal' a:if="{{show_attr_picker && goods}}" catchTouchmove='true'>
+        <view class='new-modal-content'>
+            <image onTap="modalCloseGoods" src="{{__wxapp_img.store.close3.url}}" style="position:absolute;right:0;top:0;width:72rpx;height:72rpx;"></image>
+            <view class='new-modal-header text-more'>{{goods.name}}</view>
+            <view class='new-modal-body mb-24' style="min-height:0;padding:0 32rpx;">
+                <block a:for="{{attr_group_list}}" a:key="{{item.id}}">
+                    <view class="font-minor mb-20">{{item.attr_group_name}}</view>
+                    <view class='flex-row' style="flex-wrap:wrap">
+                        <block a:for="{{item.attr_list}}" a:for-index="key" a:for-item="value" a:key="{{value.id}}">
+                            <view class="flex-grow-0 attr-item {{value.checked ? 'active' : ''}} {{value.attr_num_0 ? 'attr_num_0' : ''}}" data-group-id="{{item.attr_group_id}}" data-id="{{value.attr_id}}" onTap="storeAttrClick">{{value.attr_name}}</view>
+                        </block>
+                    </view>
+                </block>
+                <view class="flex-row flex-y-center bit pt-20">
+                    <view class='flex-grow-1'>购买数量</view>
+                    <view class='flex-grow-0 attr-picker'>
+                        <view class="flex-row number-input-box">
+                            <view style='margin-right:0.01rem;' class="flex-grow-0 flex-x-center flex-y-center number-btn number-sub {{form.number<=1?'disabled':''}}" onTap="numberSub">-
+                            </view>
+                            <view class="flex-grow-0">
+                                <input style='padding:0' class="flex-grow-1 number-input" value="{{form.number}}" type="number" step="1" min="1" onBlur="numberBlur" />
+                            </view>
+                            <view class="flex-grow-0 flex-x-center flex-y-center number-btn number-add" onTap="numberAdd">+
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='new-modal-footer flex-row'>
+                <view class='flex-y-center flex-grow-1 pl-20 red'>￥{{goods.price}}</view>
+                <view class='flex-grow-0 flex-y-center pr-20' onTap='modalConfirmGoods'>
+                    <view class="goods-modal-btn">加入购物车</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+
+<!-- 倒计时 -->
+<template name="time">
+    <view class='user-block'>
+        <form report-submit="true" onSubmit="_formIdSubmit" data-url="{{param.url}}" data-type="{{param.open_type}}">
+            <button formType="submit" id="_formIdSubmit">
+                <view class="w-100" a:if="{{param.pic_url}}">
+                    <image class="w-100" style="display:block" mode="widthFix" src="{{param.pic_url}}"></image>
+                </view>
+                <view class="time-block">
+                    <view a:if="{{time_all['time_'+template_index].param.start_time > 0}}">距离活动开始还有</view>
+                    <view a:elif="{{time_all['time_'+template_index].param.end_time > 0}}">距离活动结束还有</view>
+                    <view a:else>活动已结束</view>
+                    <view>{{time_all['time_'+template_index].param.time_list.content}}</view>
+                    <image mode="aspectFill" src="{{param.pic_url_1}}"></image>
+                </view>
+            </button>
+        </form>
+    </view>
+</template>
+
+<template name="shop">
+    <view class='shop-list w-100'>
+        <block a:for='{{param ? param.list : list}}' a:for-index='index' a:key="{{index}}" a:for-item='item'>
+            <view class='shop-one flex-row' onTap='go' data-template='{{template_index}}' data-index="{{index}}">
+                <view class='flex-grow-0 flex-y-center'>
+                    <form report-submit="true" onSubmit="_formIdSubmit" data-url="/pages/shop-detail/shop-detail?shop_id={{param.id}}" data-type="{{param.open_type}}">
+                        <button formType="submit" id="_formIdSubmit">
+                            <image src='{{item.pic_url}}' style='width:150rpx;height:150rpx;border-radius:150rpx;'></image>
+                        </button>
+                    </form>
+                </view>
+                <view class='w-100 flex-grow-1' style='margin:0 20rpx;'>
+                    <view class='text-more' style='color:#353535;' a:if="{{!param || param.name == 1}}">{{item.name}}</view>
+                    <view class='fs-sm flex-row mt-20' a:if="{{!param || param.score == 1}}">
+                        <view class='flex-grow-0' style='margin-right:12rpx;'>评分：</view>
+                        <view class='flex-grow-1'>
+                            <block a:for='{{item.score}}' a:key="{{index}}" a:for-index='idx' a:for-item='itemn' a:if='{{idx <= (item.score-1)}}'>
+                                <image src='{{__wxapp_img.shop.love.url}}' style='margin-right:4rpx;width:20rpx;height:18rpx;'></image>
+                            </block>
+                        </view>
+                    </view>
+                    <view class='fs-sm mt-20' a:if="{{!param || param.mobile == 1}}">电话：{{item.mobile}}</view>
+                    <view class='fs-sm mt-20' a:if="{{item.distance}}">距离：{{item.distance==-1?"无":item.distance}}</view>
+                </view>
+                <view class='flex-grow-0 flex-y-center'>
+                    <view catchTap='goto' data-index='{{index}}' data-template="{{template_index}}">
+                        <view class='flex-row flex-x-center'>
+                            <image src="{{__wxapp_img.shop.nav_one.url}}" style='width:50rpx;height:50rpx;margin-bottom:16rpx;'></image>
+                        </view>
+                        <view class='fs-sm flex-x-center'>一键导航</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</template>
+
+<template name="mch-1">
+    <view class="mch-list">
+        <view class="mch-item" a:for="{{mch_list}}" a:key="{{item.id}}">
+            <view class="flex flex-row bob p-24">
+                <view class="flex-grow-0">
+                    <image src="{{item.logo}}" class="bi" style="width:100rpx;height:100rpx;display:block"></image>
+                </view>
+                <view class="flex-grow-1" style="padding: 0 24rpx">
+                    <view class="text-more" style="padding-top:2rpx;margin-bottom: 8rpx;">{{item.name}}</view>
+                    <view class="flex fs-sm" style="color: #888;">
+                        <view style="margin-right: 30rpx">商品数:{{item.goods_count}}</view>
+                        <view a:if='{{__is_sales}}'>已售:{{item.sell_goods_count}}</view>
+                    </view>
+                </view>
+                <view class="flex-grow-0 flex-y-center">
+                    <form report-submit="true" onSubmit="_formIdSubmit" data-url="/mch/shop/shop?mch_id={{item.id}}" data-type="navigate">
+                        <button formType="submit" id="_formIdSubmit">
+                            <view class='mch-btn'>进店逛逛</view>
+                        </button>
+                    </form>
+                </view>
+            </view>
+            <view class="mch-goods-list">
+                <block a:if="{{item.goods_list && item.goods_list.length}}">
+                    <scroll-view scroll-x style="width:100%;white-space: nowrap;">
+                        <navigator a:for="{{item.goods_list}}" a:for-index="key" a:for-item="value" a:key="{{value.id}}" class="mch-goods-item" url="{{value.page_url}}">
+                            <image src="{{value.cover_pic}}" style="width: 220rpx;height: 220rpx;"></image>
+                            <view class="text-more fs-sm" a:if="{{param.price == 1}}">￥{{value.price}}</view>
+                        </navigator>
+                    </scroll-view>
+                </block>
+                <view a:else style="padding: 24rpx;color: #888;font-size: 9pt;text-align: center;">暂无商品</view>
+            </view>
+        </view>
+    </view>
+</template>
+
+<template name="topic-1">
+    <scroll-view class='diy-cat-0 flex-grow-0' scroll-x="true" scroll-with-animation="true" scroll-into-view="cat-{{param.cat_index >= 2 ? param.cat_index - 2 : 0}}" a:if="{{param.list.length > 1}}" style="margin-bottom: 10rpx;height: 104rpx;">
+        <view class="flex-row">
+            <block a:for="{{param.list}}" a:key="{{item.id}}">
+                <form report-submit="true" onSubmit="_formIdSubmit" data-bind="catBind" data-template="{{template_index}}" data-index="{{index}}" id="cat-{{index}}" class="flex-grow-0">
+                    <button formType="submit" id="_formIdSubmit">
+                        <view class="diy-cat-one-0 {{index == param.cat_index ? 'active' : ''}} flex-y-center flex-x-center" onTap="catBind">
+                            <view class='text-more'>{{item.name}}</view>
+                        </view>
+                    </button>
+                </form>
+            </block>
+        </view>
+    </scroll-view>
+    <view class='topic-list'>
+        <block a:for="{{param.list[param.cat_index].goods_list}}" a:key="{{item.id}}">
+            <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="{{item.page_url}}">
+                <button formType="submit" id="_formIdSubmit">
+                    <view class='topic-one layout-{{item.layout}}'>
+                        <block a:if="{{item.layout == 0}}">
+                            <view class='flex-row'>
+                                <view class='flex-grow-1 flex-col'>
+                                    <view class='flex-grow-1'>
+                                        <view class="topic-title text-more-2">{{item.title}}</view>
+                                    </view>
+                                    <view class="flex-grow-0 font-minor fs-sm">{{item.read_count}}人浏览</view>
+                                </view>
+                                <view class='flex-grow-0'>
+                                    <image class="topic-cover-pic" mode="aspectFill" src="{{item.cover_pic}}"></image>
+                                </view>
+                            </view>
+                        </block>
+                        <block a:else>
+                            <view class='topic-title' style="font-weight: 600">
+                                <view class="text-more-2">{{item.title}}</view>
+                            </view>
+                            <image class="topic-cover-pic" mode="aspectFill" src="{{item.cover_pic}}"></image>
+                            <view class="flex-row">
+                                <view class="flex-grow-1 font-minor fs-sm">{{item.read_count}}人浏览</view>
+                            </view>
+                        </block>
+                    </view>
+                </button>
+            </form>
+        </block>
+    </view>
+    <view class="text-center" style="padding-top:100rpx;" a:if="{{param.list[param.cat_index].goods_list.length == 0}}">暂无内容</view>
+</template>

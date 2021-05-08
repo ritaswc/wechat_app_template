@@ -1,0 +1,133 @@
+<view class="page-container">
+    <view class="user-info-container">
+        <view class="user-info-wrap">
+            <view class="user-img-wrap">
+                <image class="user-img"
+                 mode="scaleToFill" 
+                 src="http://wx.qlogo.cn/mmopen/tZOqj4KIx0gVsjW8sHq7fXrbibrXyCsvicHsF2TFCVm6GibF097Q6zxJeZwDqEibgibicD9987xibDR7LMxQXoibcoHZl6Y0PTEJtRvk/0" 
+                 style="background-size: 100% 100%; background-position: 0% 0%; background-repeat: no-repeat; background-image: url(http://wx.qlogo.cn/mmopen/tZOqj4KIx0gVsjW8sHq7fXrbibrXyCsvicHsF2TFCVm6GibF097Q6zxJeZwDqEibgibicD9987xibDR7LMxQXoibcoHZl6Y0PTEJtRvk/0); "/>
+            </view>
+            <view class="user-info-text-wrap">
+                <text class="c-block user-text-name">江夏$《收藏》</text>
+                <text class="c-block user-text-time">2小时前  浏览64</text>
+            </view>
+            <view class="arrow-wrap">
+                <view class="arrow"/>
+            </view>
+        </view>
+    </view>
+    <view class="art-content-container">
+        <view class="art-title-wrap">
+            <text class="art-title">【企业直播】新增礼物商城功能</text>
+        </view>
+        <view class="art-content-dec-container">
+            <text class="art-content-dec">1、直播间管理后台新增礼物管理功能</text>
+            <image class="art-content-img"
+             mode="aspectFit" 
+             src="http://oss.vzan.cc/image/jpg/2016/8/27/1543491ac65e55f7514229ad461e3cbd8b5503.jpg"
+            
+            />
+        </view>
+        <view class="reward-container">
+            <view class="reward-btn-wrap" >
+                <button class="reward-btn" style="background-color:#5bc3ff" hover-class="button-hover" size="default" type="default">
+                    赏
+                </button>
+                <text class="reward-text-num">共1人, 1次赞赏</text>
+                <view class="reward-img-wrap">
+                    <image style="width:35px; height:35px; margin:2px 2px" src="http://oss.vzan.cc/image/jpg/2016/8/27/1543491ac65e55f7514229ad461e3cbd8b5503.jpg"/>
+                    <image style="width:35px; height:35px; margin:2px 2px" src="http://oss.vzan.cc/image/jpg/2016/8/27/1543491ac65e55f7514229ad461e3cbd8b5503.jpg"/>
+                    <image style="width:35px; height:35px; margin:2px 2px" src="http://oss.vzan.cc/image/jpg/2016/8/27/1543491ac65e55f7514229ad461e3cbd8b5503.jpg"/>
+                    <image style="width:35px; height:35px; margin:2px 2px" src="http://oss.vzan.cc/image/jpg/2016/8/27/1543491ac65e55f7514229ad461e3cbd8b5503.jpg"/>
+                    <image style="width:35px; height:35px; margin:2px 2px" src="http://oss.vzan.cc/image/jpg/2016/8/27/1543491ac65e55f7514229ad461e3cbd8b5503.jpg"/>
+                    <image style="width:35px; height:35px; margin:2px 2px" src="http://oss.vzan.cc/image/jpg/2016/8/27/1543491ac65e55f7514229ad461e3cbd8b5503.jpg"/>
+                    <image style="width:35px; height:35px; margin:2px 2px" src="http://oss.vzan.cc/image/jpg/2016/8/27/1543491ac65e55f7514229ad461e3cbd8b5503.jpg"/>
+                    
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="art-write-container">
+        <view class="art-write-wrap">
+            <text class="art-write-text">写评论</text>
+            <view class="art-write-icon"></view>
+        </view>
+    </view>
+    <view class="art-comment-container">
+        <view class="art-comment-head-wrap">
+            <text class="art-comment-head-text">全部评论</text>
+            <view class="art-comment-order-wrap">
+                <view class="art-comment-order-icon"/>
+                <text class="wx-text_mWnZB8">顺序</text>
+            </view>
+        </view>
+
+        <view>
+            <!-- 回复信息 -->
+            <view class="art-comment-text-container">
+                <view class="comment-u-img">
+                    <image style="width:35px; height:35px;" src="http://wx.qlogo.cn/mmopen/tZOqj4KIx0h38nWLib7mmria960D5zTvzyUFMAgNv6r6KQl2x25IpuXlf98jLrLsk0aBnGPpOjC26IrmZXXkfEbFJwJJjHn76T/0" />
+                </view>
+                <view class="comment-content-container">
+                    <view class="comment-text-name-wrap">
+                        <view>
+                            <text class="comment-text-name">小东</text>
+                            <text class="comment-text-level">V.1</text>
+                        </view>
+                        <view class="comment-text-time-wrap">
+                            <text class="comment-text-time">8-27 1楼</text>
+                        </view>
+                    </view>
+                    <!-- 回复 -->
+                    <view class="comment-text-wrap">
+                        <!--  语音回复 -->
+                        <view  class="comment-voice-container">
+                            <view class="audio-wrap" catchtap="playAudio" data-v-id="{{comment.Voice.Id}}">
+                                <image style="width:22px; height:22px;margin-left:4px" src="{{audioIcon}}"></image>            
+                                <audio  class="audio" id="{{comment.Voice.Id}}" 
+                                poster="http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000" 
+                                src="{{comment.Voice.TransFilePath}}"></audio>
+                            </view>
+                            <view class="audio-time-wrap"><text>{{comment.Voice.VoiceTime}}"</text></view>
+                        </view>
+                    </view>
+                    <view style="clear:both"></view>
+                    <!-- 文字回复 -->
+                    <view class="res-content">
+                      <text wx:if="{{comment.DUser}}">回复<text style="color:#5a85ce;max-width:110px;">@{{comment.DUser.NickName}} : </text></text>
+                      <text>购买企业版后，可以让别人，很多人在我的企业版里直播吗</text>
+                    </view>
+                     <!-- 评论图片 -->
+                    <view class="comment-image" >
+                      <block  wx:for-item="comImages" wx:key="Id">
+                      <view><image style="width:66px;height:66px; display:inline-block" src="http://oss.vzan.cc/image/jpg/2016/9/23/1404016c9ecf7dcf034b988d4d61281b39baf0.jpg"></image> </view>
+                      <view><image style="width:66px;height:66px; display:inline-block" src="http://oss.vzan.cc/image/jpg/2016/9/23/1404016c9ecf7dcf034b988d4d61281b39baf0.jpg"></image> </view>
+                      <view><image style="width:66px;height:66px; display:inline-block" src="http://oss.vzan.cc/image/jpg/2016/9/23/1404016c9ecf7dcf034b988d4d61281b39baf0.jpg"></image> </view>
+                      <view><image style="width:66px;height:66px; display:inline-block" src="http://oss.vzan.cc/image/jpg/2016/9/23/1404016c9ecf7dcf034b988d4d61281b39baf0.jpg"></image> </view>
+                      <view><image style="width:66px;height:66px; display:inline-block" src="http://oss.vzan.cc/image/jpg/2016/9/23/1404016c9ecf7dcf034b988d4d61281b39baf0.jpg"></image> </view>
+                      <view><image style="width:66px;height:66px; display:inline-block" src="http://oss.vzan.cc/image/jpg/2016/9/23/1404016c9ecf7dcf034b988d4d61281b39baf0.jpg"></image> </view>
+                      <view><image style="width:66px;height:66px; display:inline-block" src="http://oss.vzan.cc/image/jpg/2016/9/23/1404016c9ecf7dcf034b988d4d61281b39baf0.jpg"></image> </view>
+                      <view><image style="width:66px;height:66px; display:inline-block" src="http://oss.vzan.cc/image/jpg/2016/9/23/1404016c9ecf7dcf034b988d4d61281b39baf0.jpg"></image> </view>
+                      </block>
+                    </view>
+                    <view class="art-pinglun-container">
+                        <view class="reward-icon-container">
+                            <view class="icon-reward"></view>
+                            <em class="em">赏 {{item.CommentCount}}</em>
+                        </view>
+                        <view class="reward-icon-container">
+                            <view class="icon-ping"></view>
+                            <em class="em">评 {{item.CommentCount}}</em>
+                        </view>
+                        <view class="reward-icon-container">
+                            <view class="icon-zan"></view>
+                            <em class="em">赞 {{item.CommentCount}}</em>
+                        </view>
+                    </view>
+                </view>
+                 
+            </view>
+           
+        </view>
+    </view>
+</view>

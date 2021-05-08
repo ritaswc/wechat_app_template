@@ -1,0 +1,65 @@
+page{
+    background-color: #f8f8f8;
+}
+#tel-binding {
+    color: #a0a0a0;
+    font-size: 24rpx;
+}
+#tel-binding .p {
+    margin: 0;
+    padding: 0 28rpx;
+    line-height: 60rpx;
+}
+#tel-binding .tel-input-wrapper {
+    position: relative;
+}
+#tel-binding .tel-input {
+    height: 88rpx;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    background-color: white;
+}
+#tel-binding .tel-input image {
+    float: left;
+    width: 24rpx;
+    height: 32rpx;
+    margin: 26rpx 16rpx 0 28rpx ;
+}
+
+#tel-binding .tel-input input {
+    float: right;
+    border: none;
+    outline: none;
+    font-size: 24rpx;
+    width: 660rpx;
+    margin: 18rpx 20rpx 0 0;
+}
+
+#tel-binding button {
+    height: 64rpx;
+    font-size: 30rpx;
+    border-radius: 10rpx;
+    margin: 0 28rpx;
+}
+
+.mm-checkbox{
+   padding: 0 28rpx; 
+}
+.text-primary {
+    color: #fc3151;
+}
+.mm-checkbox .labelCheck {
+    display: block;
+    line-height: 70rpx;
+    position: relative;
+}
+button.btn-primary {
+    border-radius: 10rpx;
+    background-color: #fc3151;
+    color: white;
+    height: 64rpx;
+    font-size: 30rpx;
+}
+button.disabled {
+    background-color: #d6d6d6;
+}

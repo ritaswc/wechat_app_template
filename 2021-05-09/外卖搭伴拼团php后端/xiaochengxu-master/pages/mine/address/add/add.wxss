@@ -1,0 +1,29 @@
+/* pages/mine/address/add/add.wxss */
+.content form .section{
+    display: flex;
+    padding: 30rpx;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+.content form .section .name{
+    width: 25vw;
+}
+.btn-area{
+    margin-top: 40rpx;
+}
+.location{
+    background: #ba77ff;
+    padding: 10rpx;
+    color: white;
+    /*position: absolute;*/
+    /*right: 30rpx;*/
+    margin: 0 auto;
+    display: inline-block;
+}
+.address-detail{
+    width: 80%;
+}
+.address-detail textarea{
+    width: 100%;
+}

@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="header"></view>
+  <view class="weui-panel weui-panel_access">
+    <navigator url="/view/delivery/index?is_select=true" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg" style="height: 41px;">
+        <view class="weui-media-box__title">{{is_delivery ? delivery.delivery_name : ''}} {{is_delivery ? delivery.delivery_phone : ''}}</view>
+        <view class="weui-media-box__desc address">{{is_delivery ? delivery.delivery_address : ''}}</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">{{is_delivery ? '' : '请选择快递地址'}}</view>
+    </navigator>
+  </view>
+  <view class="weui-panel weui-panel_access">
+    <view url="" class="weui-media-box weui-media-box_appmsg" wx:for="{{product_list}}" wx:for-item="product" wx:key="{{product.product_id}}">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb image" src="{{product.product_image}}" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">{{product.product_name}}</view>
+        <view class="weui-media-box__desc">×  {{product.product_quantity.quantity}}</view>
+      </view>
+      <view class="weui-cell__ft">￥{{product.product_total_price}}</view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title margin-top">
+    <view url="/view/order/index" class="weui-cell weui-cell_access">
+      <view class="weui-cell__bd">商品金额</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access order-info">￥399.00</view>
+    </view>
+    <view url="/view/order/index" class="weui-cell weui-cell_access">
+      <view class="weui-cell__bd">运费</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access order-info">￥{{freight}}</view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title margin-top">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="请输入买家留言" style="height: 3.3em" />
+                </view>
+            </view>
+        </view>
+  <view class="footer">
+    <view class="footer-total">
+      <view class="footer-total-checkbox" bindtap="handleAll">
+      </view>
+      <view class="footer-total-text">
+        总计: ￥{{total}}
+      </view>
+    </view>
+    <view class="footer-pay" style="background-color: {{is_play ? '#1AAD19;' : '#dddddd;'}}" bindtap="handlePay">
+      立即支付
+    </view>
+  </view>
+</view>

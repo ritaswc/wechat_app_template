@@ -1,0 +1,163 @@
+{template 'common/header'}
+<ol class="breadcrumb we7-breadcrumb">
+	<a href="{php echo url('account/manage')}"><i class="wi wi-back-circle"></i> </a>
+	<li><a href="{php echo url('account/manage')}">平台管理</a></li>
+	<li>APP设置</li>
+</ol>
+<div class="media media-wechat-setting">
+	<a class="media-left">
+		<span class="icon"><i class="wi wi-wxapp"></i></span>
+		<img src="{php echo tomedia('headimg_'.$_GPC['acid'].'.jpg')}?time={php echo time()}" class="wechat-img">
+	</a>
+	<div class="media-body media-middle ">
+		<h4 class="media-heading color-dark">{$account['name']}</h4>
+	</div>
+	{if $state == ACCOUNT_MANAGE_NAME_FOUNDER || $state == ACCOUNT_MANAGE_NAME_OWNER}
+	<div class="media-right media-middle">
+		<a href="{php echo url('account/manage/delete', array('uniacid' => $account['uniacid'], 'account_type' => ACCOUNT_TYPE_PHONEAPP_NORMAL))}" class="btn btn-primary" onclick="return confirm('确认放入回收站吗？')">停  用</a>
+	</div>
+	{/if}
+</div>
+<div class="clearfix"></div>
+<div class="btn-group we7-btn-group wechat-edit-group">
+	
+		{if $state == ACCOUNT_MANAGE_NAME_FOUNDER || $state == ACCOUNT_MANAGE_NAME_OWNER || $state == ACCOUNT_MANAGE_NAME_VICE_FOUNDER}
+		<a href="{php echo url('account/post/base', array('uniacid' => $account['uniacid'], 'account_type' => ACCOUNT_TYPE_PHONEAPP_NORMAL))}" class="btn btn-default {if $do == 'base'} active{/if}">基础信息</a>
+		{/if}
+	
+
+	
+
+	<a href="{php echo url('account/post-user/edit', array('uniacid' => $account['uniacid'], 'account_type' => ACCOUNT_TYPE_PHONEAPP_NORMAL))}" class="btn btn-default {if $action == 'post-user' && $do == 'edit'} active{/if}">使用者管理</a>
+	<a href="{php echo url('phoneapp/manage/display', array('uniacid' => $account['uniacid'], 'account_type' => ACCOUNT_TYPE_PHONEAPP_NORMAL))}" class="btn btn-default {if $action == 'manage' && $do == 'display'} active{/if}">版本管理</a>
+	<a href="{php echo url('account/post/modules_tpl', array('uniacid' => $account['uniacid'], 'account_type' => ACCOUNT_TYPE_PHONEAPP_NORMAL))}" class="btn btn-default {if $action == 'post' && $do == 'modules_tpl'} active{/if}">可用应用模板/模块</a>
+</div>
+
+<div id="js-account-manage-phoneapp" ng-controller="AccountManagePhoneappCtrl" ng-cloak>
+	<!--版本管理-->
+	<div class="text-right we7-margin-bottom">
+		<a href="{php echo url('phoneapp/manage/create_display', array('uniacid' => $account['uniacid']))}" class="btn btn-primary" target="_blank">添加新版本</a>
+	</div>
+	<table class="table we7-table vertical-middle wxapp-version-table">
+		<col width="180px"/>
+		<col />
+		<col width="330px"/>
+		<tr>
+			<th class="text-left">版本号</th>
+			<th class="text-left">应用</th>
+			<th class="text-right">操作</th>
+		</tr>
+		<tr ng-if="version_exist" ng-repeat="version in phoneapp_version_lists">
+			<td class="text-left">
+				<div class="version" ng-bind="version.version"></div>
+				<div class="color-gray" ng-bind="version.description"></div>
+			</td>
+			<td class="clearfix">
+				<div class="item col-sm-6" ng-if="version.modules" ng-repeat="module in version.modules">
+					<img src="{{module.logo}}" class="icon"/>
+					<div class="name" ng-bind="module.title"></div>
+					<div ng-bind="module.version"></div>
+				</div>
+			</td>
+			<td class="text-right">
+				<div class="link-group">
+					<a href="./index.php?c=phoneapp&a=version&do=home&version_id={{version.id}}">进入</a>
+					<a href="./index.php?c=phoneapp&a=manage&do=create_display&uniacid={{version.uniacid}}&version_id={{version.id}}" >修改</a>
+					<a href="javascript:;" class="del" ng-click="delPhoneappVersion(version.id)">删除</a>
+				</div>
+			</td>
+		</tr>
+		<tr ng-if="!version_exist">
+			<td colspan="3" class="text-center">暂无数据</td>
+		</tr>
+	</table>
+	<div class="modal fade" id="modal_edit_versioninfo"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog we7-modal-dialog" style="width:800px">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title">修改信息</h4>
+				</div>
+				<div class="modal-body">
+					<table class="table we7-table table-hover table-form">
+						<col width="120px">
+						<col />
+						<tr>
+							<td class="table-label">模块版本</td>
+							<td><input type="text" class="form-control" ng-model="activeVersion.version"></td>
+						</tr>
+						<tr>
+							<td class="table-label">模块描述</td>
+							<td><input type="text" class="form-control" ng-model="activeVersion.description"></td>
+						</tr>
+						<tr>
+							<td class="table-label">应用模块</td>
+							<td class="wxapp-module-list">
+								<div class="col-sm-6" ng-if="activeVersion.modules" ng-repeat="module in activeVersion.modules">
+									<div class="item">
+										<img src="{{module.logo}}" class="icon"/>
+										<div class="name" ng-bind="module.title"></div>
+										<div ng-bind="module.version"></div>
+										<div class="cover-dark"><a href="javascript:;" class="cover-delect" ng-click="delModule(module);"><i class="fa fa-minus-circle"></i>删除</a></div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="add" ng-click="showEditModuleModal()" ng-style="{'display': 'none'}">+</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="modal-footer" ng-if="phoneapp_modules">
+					<button type="button" class="btn btn-primary" ng-click="editVersionInfo()">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancelVersionInfo()">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modal_edit_module"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog we7-modal-dialog" style="width:800px">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title">选择APP</h4>
+				</div>
+				<!--<div class="modal-body">-->
+					<!--<div class="panel-body we7-padding">-->
+						<!--<div class="row">-->
+							<!--<div class="col-sm-2 text-center we7-margin-bottom select-module-wxapp" ng-repeat="module in phoneapp_modules" ng-if="phoneapp_modules">-->
+								<!--<a href="javascript:;" ng-click="selectedPhoneModule(module, $event)">-->
+									<!--<img src="{{module.logo}}" style="width:50px;height:50px;">-->
+									<!--<p class="text-over">{{module.title}}</p>-->
+								<!--</a>-->
+								<!--<span id="module-{{module.name}}" class="selected hide" style="position:absolute;width:82%;height:100%;left:10px;top:0;opacity:0.8;cursor:pointer;background:#e7e8eb; vertical-align:middle;font-size:30px"><i class="wi wi-right-sign color-green" style="margin-top:25px"></i></span>-->
+							<!--</div>-->
+							<!--<div class="text-center" ng-if="!phoneapp_modules">-->
+								<!--<span>暂无可用模块</span>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+				<div class="modal-footer" ng-if="phoneapp_modules">
+					<button type="button" class="btn btn-primary" ng-click="changePhoneModules()">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--end 版本管理-->
+</div>
+<script>
+	angular.module('phoneApp').value('config', {
+		'account': {php echo !empty($account) ? json_encode($account) : 'null'},
+		'phoneapp_version_lists': {php echo !empty($phoneapp_version_lists) ? json_encode($phoneapp_version_lists) : 'null'},
+		'phoneapp_modules' : {php echo !empty($phoneapp_modules) ? json_encode($phoneapp_modules) : 'null'},
+		'version_exist': {php echo !empty($version_exist) ? json_encode($version_exist) : 'null'},
+		'links': {
+			'edit_version': "{php echo url('phoneapp/manage/edit_version', array('uniacid' => $account['uniacid'], 'account_type' => ACCOUNT_TYPE_PHONEAPP_NORMAL))}",
+			'del_version': "{php echo url('phoneapp/manage/del_version', array('uniacid' => $account['uniacid'], 'account_type' => ACCOUNT_TYPE_PHONEAPP_NORMAL))}",
+		},
+	});
+	angular.bootstrap($('#js-account-manage-phoneapp'), ['phoneApp']);
+</script>
+{template 'common/footer'}

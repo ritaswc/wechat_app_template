@@ -1,0 +1,212 @@
+/**index.wxss**/
+page {
+  background-color: #000;
+}
+
+.swiper-tab{
+	width: 100%;
+	text-align: center;
+	line-height: 80rpx;}
+.swiper-tab-list{
+    font-size: 30rpx;
+    display: inline-block;
+	  width: 33.33%;
+	  color: #777777;
+}
+.on { color: #da7c0c;
+	border-bottom: 5rpx solid #da7c0c;}
+
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden; }
+.swiper-box view{
+	text-align: center;
+}
+/*播放列表页*/
+.playlist {
+    width: 100%;
+    height: 230px;
+    position: relative;
+    text-align: center;
+}
+
+.show {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.cover {
+    width: 100%;
+    position: relative;
+}
+
+.hover {
+   text-align: center;
+    position: absolute;
+    width: 100%;
+    top:0px;
+    height:100%;
+    line-height:30px;
+    background: black;
+    opacity: 0.3;
+}
+
+.title {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top:100px;
+    height:30px;
+    line-height:30px;
+    color: white;
+}
+/*播放器页*/
+#playingpage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#playingpage .blurbg{
+  position: absolute;
+  left: 0;
+  bottom:0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  filter: blur(30px) brightness(.8);
+  background-repeat: no-repeat;
+}
+#playingpage .playing-wrap {
+  position: absolute;
+  left: 0;
+  bottom:0;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+#playingpage .playing-wrap .contents {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#playingpage .playing-wrap .actions {
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.nowPlayingTitle {
+  margin-top: 10px;
+  position:relative;
+  z-index:2;
+
+}
+
+.nowPlayingArtist {
+  margin-top: 20px;
+  position:relative;
+  z-index:2;
+}
+#playing-zz{text-align: center;position: absolute;z-index:20;width: 100%;top:0;left: 0;}
+#playing-zz image{width: 222rpx;height:366rpx;margin:-60rpx 0 0 60px; transform-origin:60rpx 60rpx; transform: rotate(-20deg);
+transition: all linear .5s }
+
+
+
+#playing-main{
+  animation-delay: .5s;animation: circle 20s linear infinite; animation-play-state: paused;
+}
+#playingmainbg{
+  width:596rpx;
+  height: 596rpx;
+  position: relative;
+  z-index: 1
+}
+#pmaincover{width: 100%;height: 100%;left:104rpx ;top:104rpx;
+border-radius: 50%;overflow: hidden;}
+
+#playing-actwrap{
+  position: absolute;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  box-sizing:border-box;
+  overflow: hidden;
+  z-index: 10;
+}
+#playing-info{display: flex;margin:0 80rpx}
+.pi-act{flex: 1;text-align: center;width: 100%;position: relative}
+.pi-act image{width:120rpx;height: 120rpx;}
+
+
+#playingaction{margin: 10rpx 10rpx 30rpx;display: flex}
+.pa-baction,.pa-maction,.pa-saction{flex: 1;text-align: center;width: 100%}
+.pa-baction image{width:110rpx;height:110rpx; vertical-align: middle }
+.pa-maction image{width:80rpx;height:80rpx;vertical-align: middle;margin-top: 15rpx}
+.pa-saction image{width:120rpx;height:120rpx; vertical-align: middle;}
+
+
+.playing #playing-main{animation-play-state: running !important;}
+.playing #playing-zz image{transform: rotate(-0deg) }
+
+/*弹出播放列表*/
+.music_list{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 4;
+}
+
+.item_music{
+  background-color: white;
+  padding: 0.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.list_ava{
+    float: left;
+    height: 2.8rem;
+    margin-right: 10px;
+}
+.list_avaimg{
+    margin-left: 0.1rem;
+    margin-top: 0.1rem;
+    width: 2.8rem;
+    height: 2.8rem;
+}
+.list_music_info{
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+}
+.list_title{
+  display: block;
+  font-size: 14px;
+  color: #000;
+  margin-top: 5px;
+  text-align: left;
+}
+.list_author{
+  margin-top: 5px;
+  display: block;
+  font-size: 12px;
+  color: #666;
+  text-align: left;
+}
+.list_control{
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0.4rem;
+}

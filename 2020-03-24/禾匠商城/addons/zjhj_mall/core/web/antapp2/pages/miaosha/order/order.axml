@@ -1,0 +1,144 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body">
+        <navigator class="return-index-btn" open-type="redirect" a:if="{{show_index}}" url="/pages/index/index">
+            <image src="{{__wxapp_img.nav.index.url}}" style="width: 50rpx;height: 50rpx"></image>
+        </navigator>
+        <view class="flex-row tab-bar">
+            <view class="flex-grow-1">
+                <navigator class="{{status==0?'active':''}}" url="/pages/miaosha/order/order?status=0" open-type="redirect">
+                    <text>待付款</text>
+                </navigator>
+            </view>
+            <view class="flex-grow-1">
+                <navigator class="{{status==1?'active':''}}" url="/pages/miaosha/order/order?status=1" open-type="redirect">
+                    <text>待发货</text>
+                </navigator>
+            </view>
+            <view class="flex-grow-1">
+                <navigator class="{{status==2?'active':''}}" url="/pages/miaosha/order/order?status=2" open-type="redirect">
+                    <text>待收货</text>
+                </navigator>
+            </view>
+            <view class="flex-grow-1">
+                <navigator class="{{status==3?'active':''}}" url="/pages/miaosha/order/order?status=3" open-type="redirect">
+                    <text>已完成</text>
+                </navigator>
+            </view>
+            <view class="flex-grow-1">
+                <navigator class="{{status==4?'active':''}}" url="/pages/miaosha/order/order?status=4" open-type="redirect">
+                    <text>售后</text>
+                </navigator>
+            </view>
+        </view>
+        <view class="order-list">
+            <view a:if="{{show_no_data_tip}}" class="no-data-tip">暂无相关订单</view>
+            <view class="order-item" a:for="{{order_list}}" a:for-item="order" a:key="{{item.id}}">
+                <navigator url="{{status==4?'/pages/miaosha/order-refund-detail/order-refund-detail?id='+order.order_refund_id:'/pages/miaosha/order-detail/order-detail?id='+order.order_id}}">
+                    <view class="flex-row order-info">
+                        <view class="flex-grow-1">订单号:{{order.order_no}}</view>
+                        <view class="flex-grow-0">{{order.addtime}}</view>
+                    </view>
+
+                    <view class="goods-list">
+                        <view class="goods-item flex-row" a:for="{{order.goods_list}}" a:for-item="goods" a:key="{{item.id}}">
+                            <view class="flex-grow-0" style="overflow: visible">
+                                <image class="goods-pic" mode="aspectFill" src="{{goods.goods_pic}}" />
+                            </view>
+                            <view class="flex-grow-1 flex-col">
+                                <view class="flex-grow-1">
+                                    <view class="goods-name">{{goods.goods_name}}</view>
+                                    <view class="attr-list">
+                                        <view class="attr-item" a:for="{{goods.attr_list}}" a:for-item="attr" a:key="{{item.id}}">
+                                            {{attr.attr_group_name}}:{{attr.attr_name}}
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="flex-grow-0 flex-row">
+                                    <view class="flex-grow-1 num">×{{goods.num}}</view>
+                                    <view class="flex-grow-0 price">￥:{{goods.price}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </navigator>
+
+                <view class="flex-row">
+                    <view class="flex-grow-1 flex-y-center">
+                        <block a:if="{{status==4}}">
+                            <block a:if="{{order.refund_type==1}}">
+                                退货退款：
+                                <text style="color: #ff4544">￥{{order.refund_price}}</text>
+                            </block>
+                            <block a:if="{{order.refund_type==2}}">
+                                换货
+                            </block>
+                        </block>
+                        <block a:else>合计：￥{{order.pay_price}}</block>
+                    </view>
+                    <view class="flex-grow-0 flex-y-center flex-row">
+                        <block a:if="{{status==4}}">
+                            <view a:if="{{order.refund_status==0}}">
+                                <block a:if="{{order.refund_type==1}}">
+                                    <block a:if="{{order.is_agree==0}}">等待处理</block>
+                                    <block a:else>
+                                        <block a:if="{{order.is_user_send==0}}">待买家发货</block>
+                                        <block a:else>等卖家待处理</block>
+                                    </block>
+                                </block>
+                                <block a:else>等卖家待处理</block>
+                            </view>
+                            <view style="color: #36ba75" a:if="{{order.refund_status==1}}">已同意并退款</view>
+                            <view style="color: #36ba75" a:if="{{order.refund_status==2}}">已同意换货</view>
+
+                            <block a:if="{{order.refund_status==3}}">
+                                <view style="color: #ff4544" a:if="{{order.refund_type==1}}">已拒绝退货退款</view>
+                                <view style="color: #ff4544" a:if="{{order.refund_type==2}}">已拒绝换货</view>
+                            </block>
+                        </block>
+                        <block a:else>
+                            <view class="flex-grow-1" a:if="{{order.is_send==0}}">
+                                <text a:if="{{order.apply_delete==1}}">取消申请中</text>
+                                <button a:else class="order-option-btn" onTap="orderRevoke" data-id="{{order.order_id}}">取消
+                                </button>
+                            </view>
+                            <view class="flex-grow-1" a:if="{{order.is_pay==0 && order.pay_type != 2}}">
+                                <button class="order-option-btn" onTap="orderPay" data-id="{{order.order_id}}" data-index='{{index}}'>付款</button>
+                            </view>
+                            <view class="flex-grow-1" a:if="{{(order.is_pay == 1 || order.pay_type == 2) && order.is_offline == 1 && order.is_send == 0 && order.apply_delete==0}}">
+                                <view class="order-option-btn clerk flex-y-center" onTap="orderQrcode" data-index="{{index}}">
+                                    <image src="{{__wxapp_img.store.clerk.url}}" style='width:26rpx;height:26rpx;margin-right:10rpx' data-index="{{index}}" /> 核销码
+                                </view>
+                            </view>
+                            <view class="flex-grow-1 flex-row" a:if="{{order.is_send==1&&order.is_confirm==0}}">
+                                <view class="flex-grow-0" a:if='{{order.express}}'>
+                                    <navigator class="order-option-btn" url="/pages/miaosha/express-detail/express-detail?id={{order.order_id}}">物流
+                                    </navigator>
+                                </view>
+                                <view class="flex-grow-0">
+                                    <button class="order-option-btn" onTap="orderConfirm" data-id="{{order.order_id}}">确认收货
+                                    </button>
+                                </view>
+                            </view>
+                            <view class="flex-grow-1" a:if="{{order.is_send==1&&order.is_confirm==1&&order.is_comment==0&&__is_comment}}">
+                                <navigator a:if='{{__is_comment}}' class="order-option-btn" url="/pages/miaosha/order-comment/order-comment?id={{order.order_id}}">评价
+                                </navigator>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+        <view class='flex-row flex-y-center modal {{hide==1?"hide":""}}' onTap='hide'>
+            <view class='flex-y-center' style='width:100%;height:800rpx;padding:100rpx;'>
+                <view style='background-color:#fff;width:100%;height:100%;border-radius:10rpx;padding:0 50rpx;'>
+                    <view class='flex-x-center' style='width:100%;height:50rpx;margin-top:50rpx;font-size:13pt;margin-bottom:20rpx'>核销二维码</view>
+                    <image src='{{qrcode}}' style='width:450rpx;height:450rpx;'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

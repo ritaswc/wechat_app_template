@@ -1,0 +1,19 @@
+.section{ position: absolute; width: 100%; height: 100% ; overflow: hidden;}
+.left{ position: absolute; left: 0; top: 0; height: 100%; width: 90px; background: #F6F6F6; text-align: center;font-size:28rpx;}
+.left::before{ content: ""; position: absolute; background: #dcdcdc; right: 0; top: 0; height: 100%; border-right: 1rpx solid #dcdcdc;}
+.left view.active{ background: #FFF; position: relative; z-index: 2;}
+.left view{ display: block; height: 60px; line-height: 60px; border-bottom: 1px solid #dcdcdc;}
+
+.right{ margin-left: 90px; height: 100%; overflow: hidden; width: auto;background: #fff;}
+.right text{ font-size: 13px}
+.typeTree{ padding: 10px 20px;width: 100%}
+.typeTree .item{  text-align: center; display: inline-block; vertical-align: top;}
+.typeTree .brand,
+.typeTree .category{ flex-wrap: wrap; overflow: hidden;display: inline-block;width: 40%}
+.typeTree .title{ padding: 10px 0; display: block; color: #333;}
+.typeTree image { width: 75px; margin: 0 auto;}
+.typeTree .brand image{ height: 75px;}
+.typeTree .category image{ height: 85px;}
+.typeTree .category{ padding-bottom: 10px;}
+.item text{ padding-bottom: 10px; display: block;}
+

@@ -1,0 +1,11 @@
+<scroll-view class="scroll" scroll-y="true" bindscrolltolower="loadMore">
+<view wx:for="{{list}}" class="item" >
+<view url="{{item.url}}" id="{{item.id}}" catchtap="showDetail">
+<view class="author">
+<image class="author-avatar" src="{{item.member.avatar_normal}}"></image>
+{{item.member.username}}
+</view>
+<view class="title">{{item.title}}</view>
+</view>
+</view>
+</scroll-view>

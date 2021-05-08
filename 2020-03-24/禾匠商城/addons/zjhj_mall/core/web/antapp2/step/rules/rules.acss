@@ -1,0 +1,17 @@
+/* step/rules/rules.wxss */
+
+page {
+    padding-top: 40rpx;
+    color: #353535;
+    font-size: 11pt;
+    background-color: white;
+}
+
+.top {
+    margin-left: 40rpx;
+}
+
+.rules{
+    width: 100%;
+    padding: 20rpx 40rpx;
+}

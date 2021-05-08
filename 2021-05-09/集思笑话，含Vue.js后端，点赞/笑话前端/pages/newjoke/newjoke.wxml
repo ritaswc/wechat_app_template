@@ -1,0 +1,38 @@
+<view class="page">
+<form bindsubmit="bindFormSubmit">
+    <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="写一个笑话" style="height: 6.6em" name="content" />
+                    
+                </view>
+            </view>
+     </view>  
+
+
+<view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <view class="weui-uploader__file" wx:for="{{images}}">
+                                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                </view>
+                                
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+     <button class="weui-btn" type="primary" form-type="submit">确定</button>
+  </form>
+</view> <!--page-->

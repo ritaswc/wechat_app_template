@@ -1,0 +1,44 @@
+<!--main.wxml--> 
+<view class="container">
+  <view class="canvas_area">
+    <canvas canvas-id="myCanvas" class="myCanvas"
+        disable-scroll="false"
+        bindtouchstart="touchStart"
+        bindtouchmove="touchMove"
+        bindtouchend="touchEnd">
+    </canvas>
+  </view>
+  <view class="canvas_tools">
+    <view bindtap="penSelect" class="box pencil" data-param="2"></view>
+    <view bindtap="penSelect" class="box pen" data-param="7"></view>
+    <view bindtap="penSelect" class="box brush" data-param="15"></view>
+    <view bindtap="clearCanvas" class="box eraser"></view>
+    <view bindtap="palette" class="box palette" animation="{{animPalette}}">
+      <image bindtap="colorSelect" class="colorbox box01" data-param="#ffc0cb" animation="{{animC01}}"></image>
+      <image bindtap="colorSelect" class="colorbox box02" data-param="#ff1493" animation="{{animC02}}"></image>
+      <image bindtap="colorSelect" class="colorbox box03" data-param="#ff0000" animation="{{animC03}}"></image>
+      <image bindtap="colorSelect" class="colorbox box04" data-param="#990000" animation="{{animC04}}"></image>
+      <image bindtap="colorSelect" class="colorbox box05" data-param="#ffa500" animation="{{animC05}}"></image>
+      <image bindtap="colorSelect" class="colorbox box06" data-param="#ffff00" animation="{{animC06}}"></image>
+      <image bindtap="colorSelect" class="colorbox box07" data-param="#ffff90" animation="{{animC07}}"></image>
+      <image bindtap="colorSelect" class="colorbox box08" data-param="#adff2f" animation="{{animC08}}"></image>
+      <image bindtap="colorSelect" class="colorbox box09" data-param="#00ff00" animation="{{animC09}}"></image>
+      <image bindtap="colorSelect" class="colorbox box10" data-param="#008000" animation="{{animC10}}"></image>
+      <image bindtap="colorSelect" class="colorbox box11" data-param="#00fa9a" animation="{{animC11}}"></image>
+      <image bindtap="colorSelect" class="colorbox box12" data-param="#00ffff" animation="{{animC12}}"></image>
+      <image bindtap="colorSelect" class="colorbox box13" data-param="#00bfff" animation="{{animC13}}"></image>
+      <image bindtap="colorSelect" class="colorbox box14" data-param="#0000ff" animation="{{animC14}}"></image>
+      <image bindtap="colorSelect" class="colorbox box15" data-param="#9932cc" animation="{{animC15}}"></image>
+      <image bindtap="colorSelect" class="colorbox box16" data-param="#800080" animation="{{animC16}}"></image>
+      <image bindtap="colorSelect" class="colorbox box17" data-param="#000000" animation="{{animC17}}"></image>
+      <image bindtap="colorSelect" class="colorbox box18" data-param="#999999" animation="{{animC18}}"></image>
+  <!--<image bindtap="colorSelect" class="colorbox box19" data-param="#0000ff" animation="{{animC19}}"></image>
+      <image bindtap="colorSelect" class="colorbox box20" data-param="#ff0000" animation="{{animC20}}"></image>
+      <image bindtap="colorSelect" class="colorbox box21" data-param="#ff0000" animation="{{animC21}}"></image>
+      <image bindtap="colorSelect" class="colorbox box22" data-param="#ff0000" animation="{{animC22}}"></image>
+      <image bindtap="colorSelect" class="colorbox box23" data-param="#ff0000" animation="{{animC23}}"></image>
+      <image bindtap="colorSelect" class="colorbox box24" data-param="#ff0000" animation="{{animC24}}"></image>
+      <image bindtap="colorSelect" class="colorbox box25" data-param="#ff0000" animation="{{animC25}}"></image>-->
+    </view>
+  </view>
+</view>

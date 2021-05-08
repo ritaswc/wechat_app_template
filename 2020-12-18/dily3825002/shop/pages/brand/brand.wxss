@@ -1,0 +1,39 @@
+@import "../../resource/css/font-awesome.min.css";
+@import "../template/goodsList/list.wxss";
+.brand_img{
+    width:100%;
+    height:auto;
+}
+.brand_info{
+    margin:-1.5rem .8rem .5rem .8rem;
+}
+.brand_info .brand_opts{
+    display: flex;
+    align-items: flex-end;
+}
+.brand_info .brand_opts .img{
+    width:3rem;
+    height:3rem;
+    border:#f1f1f1 solid 1px;
+}
+.brand_info .brand_opts .title{
+    flex:1;
+    font-size:.8rem;
+    margin-left:.5rem;
+}
+.brand_info .brand_opts .follow_btn{
+    width:4rem;
+    font-size: .65rem;
+    background: #ffca00;
+    border-radius: .8rem;
+    color:#fff;
+    text-align: center;
+    padding:.35rem 0;
+}
+.brand_desc{
+    margin-top:.8rem;
+    font-size:.65rem;
+    color:#999;
+    line-height: 1rem;
+    font-weight:300;
+}

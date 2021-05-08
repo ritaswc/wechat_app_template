@@ -1,0 +1,6 @@
+<template name="joke-tpl">
+    <view class="single-joke">
+        <view><view class="num">{{index+1}}</view>{{item.updatetime}}</view>
+        <text>{{item.content}}</text>
+    </view>
+</template>

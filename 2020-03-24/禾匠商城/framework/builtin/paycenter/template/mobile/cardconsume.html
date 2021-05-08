@@ -1,0 +1,39 @@
+{php define(MUI, true);}
+{template 'common/header'}
+<header class="mui-bar mui-bar-nav">
+	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">卡券核销</h1>
+</header>
+{template 'nav'}
+<div class="mui-content">
+	<form action="" method="post" class="mui-mt15">
+		<div class="mui-input-group">
+			<div class="mui-input-row">
+				<input type="text" name="code" value="{$qrcode}" placeholder="请输入序列号"/>
+			</div>
+		</div>
+		<div class="mui-content-padded">
+			<button class="mui-btn mui-btn-success mui-btn-block syscard-check">核 销</button>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+	$('.syscard-check').click(function(){
+		var code = $.trim($('input[name="code"]').val());
+		if(!code) {
+			alert('code号错误');
+			return false;
+		}
+		$.post("{php echo $this->createMobileUrl('cardconsume', array('op' => 'consume'));}", {code:code}, function(data) {
+			var data = $.parseJSON(data);
+			if(data.message.errno == -1) {
+				alert(data.message.message);
+			} else {
+				alert('核销成功');
+				location.href = "{php echo $this->createMobileUrl('home')}";
+			}
+		});
+		return false; 
+	});
+</script>
+{template 'common/footer'}

@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>AR</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="public/bootstrap.min.css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/base.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><!--<script src="../../assets/js/ie8-responsive-file-warning.js"></script>--><![endif]-->
+    <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="script/moment.min.js"></script>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html" id="__project__name__"></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav" id="__menu__">
+
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Welcome Accessing to AR Plastic Tutor Official Operation System！</h1>
+        <a class="btn btn-info" id="changePassword">修改密码</a>
+        <div class="pass hidden" id="pass">
+            <div class="form-group">
+                <input type="text" style="width: 300px;margin: 0 auto;margin-top: 20px;" placeholder="旧密码" class="form-control" id="password1">
+                <input type="text" style="width: 300px;margin: 0 auto;margin-top: 20px;" placeholder="新密码" class="form-control" id="password">
+                <a class="btn btn-success" id="passbtn" style="margin-top: 10px">完成</a>
+            </div>
+
+        </div>
+        <p class="lead">现在时间为：<br> <span id="__now__"></span></p>
+    </div>
+
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="script/jquery.min.js"></script>
+<script src="script/bbmis.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="script/bootstrap.min.js"></script>
+
+<script src="script/configure.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+<script>
+    if(checklogin()){
+        $('#changePassword').click(function () {
+            $("#pass").toggleClass("hidden")
+        })
+        $('#passbtn').click(function () {
+            var data =JSON.parse(sessionStorage.data);
+            if($("#password").val()){
+                if($("#password1").val()==data.password){
+                    data.password=$("#password").val()
+                    sessionStorage.setItem("data",data)
+                    req("/sys_member/changePassword",data,function (d) {
+                        if(d.status){
+                            success("更新成功")
+                        }
+                    })
+                }else{
+                    error("旧密码错误")
+                }
+
+            }else{
+                error("密码不能为空")
+            }
+        })
+    }else{
+        location.href=location.origin+"/arpt-official/html/login.html"
+    }
+</script>
+</body>
+</html>

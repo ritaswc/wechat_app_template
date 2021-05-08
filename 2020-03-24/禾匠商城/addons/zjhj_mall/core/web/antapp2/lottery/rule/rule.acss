@@ -1,0 +1,4 @@
+/* pages/pond/rule/rule.wxss */
+.rule {
+	padding:30rpx;
+}

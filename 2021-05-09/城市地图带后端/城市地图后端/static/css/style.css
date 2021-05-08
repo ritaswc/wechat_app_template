@@ -1,0 +1,174 @@
+/*html and body*/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding-top: 50px;
+  font-family: "San Francisco", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+
+
+/*singin and login form*/
+
+.form-signin {
+  max-width: 380px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.form-signin .form-control {
+  font-size: 16px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type='email'] {
+  margin-bottom: -2px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type='password'] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin-heading-inline {
+  display: inline;
+}
+
+#error_1_id_captcha {
+  float: right;
+  margin-top: 10px;
+}
+
+img.captcha {
+  float: left;
+  width: 80px;
+  height: 35px;
+}
+
+#id_captcha_1 {
+  float: left;
+  margin-left: 5px;
+  display: block;
+  width: 75%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #464a4c;
+  background-color: #fff;
+  background-image: none;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+}
+
+
+#id_captcha_1::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+#id_captcha_1:focus {
+  color: #464a4c;
+  background-color: #fff;
+  border-color: #5cb3fd;
+  outline: none;
+}
+
+#id_captcha_1::-webkit-input-placeholder {
+  color: #636c72;
+  opacity: 1;
+}
+
+#id_captcha_1::-moz-placeholder {
+  color: #636c72;
+  opacity: 1;
+}
+
+#id_captcha_1:-ms-input-placeholder {
+  color: #636c72;
+  opacity: 1;
+}
+
+#id_captcha_1::placeholder {
+  color: #636c72;
+  opacity: 1;
+}
+
+#id_captcha_1:disabled, #id_captcha_1[readonly] {
+  background-color: #eceeef;
+  opacity: 1;
+}
+
+#id_captcha_1:disabled {
+  cursor: not-allowed;
+}
+
+select#id_captcha_1:not([size]):not([multiple]) {
+  height: calc(2.25rem + 2px);
+}
+
+select#id_captcha_1:focus::-ms-value {
+  color: #464a4c;
+  background-color: #fff;
+}
+
+#div_id_captcha {
+  float: left
+}
+
+/* 404 page*/
+
+.centerh {
+  color: #555;
+  font-size: 2em;
+  font-weight: 400;
+  text-align: center;
+  padding-top: 120px
+}
+
+.centerp {
+  margin: 0 auto;
+  width: 280px;
+}
+
+.markdown-body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 40px
+}
+
+div.alert ul {
+  margin-bottom: 0px important!;
+}
+
+.notie-textbox {
+  margin-top: 52px;
+}
+
+.datatable th {
+  width: 52px;
+}
+

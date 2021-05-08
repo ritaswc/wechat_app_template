@@ -1,0 +1,40 @@
+<view id="modal-mask" onTap="hideModal" catchTouchmove="preventTouchMove" a:if="{{showModal}}"></view>
+ <view class="modal-dialog" a:if="{{showModal}}">
+    <view onTap='close_box'>
+    <image src="{{__wxapp_img.store.close3.url}}" class="close3"></image>
+    </view>
+    <view class="modal-title" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{goods_name}}</view>
+    <scroll-view scroll-y="true" style="height: 100%;">
+        <view class="modal-content">
+        <view>
+            <view class="attr-group" a:for="{{attr_group_list}}" a:for-item="attr_group" a:key='{{attr_group.id}}'
+                    a:if="{{attr_group.attr_list.length>0}}">
+                <view class="attr-group-name" >{{attr_group.attr_group_name}} :</view>
+                <view class="attr-list">
+                    <block a:for="{{attr_group.attr_list}}" a:key='{{item.id}}'>
+                    <text class="attr_name {{item.checked?'select_active':''}} {{item.is_attr_num ? 'attr_num_0' : ''}}" data-group-id="{{attr_group.attr_group_id}}" data-id="{{item.attr_id}}" onTap="attrClick">{{item.attr_name}}</text> 
+                    </block>
+                </view>
+            </view>
+        </view>     
+        </view> 
+    </scroll-view>
+    <view class="modal-footer">
+        <block a:if="{{check_goods_price}}">
+        <view class="guigeprice">￥{{check_goods_price}}</view>
+        </block>
+        <block a:else>
+        <view class="guigeprice">￥{{temporaryGood.price}}</view>  
+        </block>
+        <block a:if="{{check_num}}">
+            <view class="btn-car_num">
+                <image class="carStandard" src="{{__wxapp_img.store.jian.url}}" onTap="guigejian" ></image>
+                <input onInput='goodNumChange' type='number' class="carStandard good_num" id="num" maxlength='999' value='{{check_num}}'></input>
+                <image class="carStandard" src="{{__wxapp_img.store.jia.url}}" onTap="onConfirm"></image>
+            </view>
+        </block>
+        <block a:else>
+            <view class="btn-car" style="background:#FF4544;color:#FFFFFF;" onTap="onConfirm" data-status="confirm">加入购物车</view>
+        </block>
+    </view> 
+</view> 

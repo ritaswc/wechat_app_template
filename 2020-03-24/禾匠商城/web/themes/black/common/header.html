@@ -1,0 +1,241 @@
+{template 'common/header-base'}
+<div class="skin-black {if !$_W['iscontroller']}skin-black--full{/if}" data-skin="black">
+<div class="head">
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container {if !empty($frames['section']['platform_module_menu']['plugin_menu'])}plugin-head{/if}">
+			{if !$_W['iscontroller']}
+			<div class="header-info-common pull-left">
+				<a class="header-info-common__logo" href="{php echo $_W['siteroot'] . 'web/home.php'}">
+					<img src="{if !empty($_W['setting']['copyright']['blogo'])}{php echo to_global_media($_W['setting']['copyright']['blogo'])}{else}./resource/images/logo/logo.png{/if}" class="logo" style="max-height: 40px;max-width: 100px;">
+				</a>
+				{if $_W['breadcrumb']}
+				<div class="header-info-common__breadcrumb">
+					<a href="{$_W['siteroot']}web/home.php" class="home">
+						<i class="wi wi-home"></i>
+					</a>
+					<span class="separator"> <i class="wi wi-angle-right"></i> </span>
+					<div class="item">{$_W['breadcrumb']}</div>
+				</div>
+				{/if}
+			</div>
+			{/if}
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{php echo url('home/welcome/system', array('page' => 'home'));}">
+					<img src="{if !empty($_W['setting']['copyright']['blogo'])}{php echo to_global_media($_W['setting']['copyright']['blogo'])}{else}./resource/images/logo/logo.png{/if}" class="pull-left" style="max-height: 40px;max-width: 100px;">
+				</a>
+			</div>
+			{if !empty($_W['uid'])}
+			<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav navbar-left">
+                    {template 'common/header-topnav'}
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					{template 'common/header-user'}
+				</ul>
+			</div>
+			{else}
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="{php echo url('user/register');}">注册</a></li>
+					<li class="dropdown"><a href="{php echo url('user/login');}">登录</a></li>
+				</ul>
+			</div>
+			{/if}
+		</div>
+	</nav>
+</div>
+<div class="main">
+{if !defined('IN_MESSAGE')}
+<div class="container">
+	{if $frames['dimension'] == 3 && in_array(FRAME, array('account', 'system', 'advertisement', 'wxapp', 'site', 'webapp', 'phoneapp', 'xzapp')) && !in_array($_GPC['a'], array('news-show', 'notice-show', 'notice-news'))}
+	<div class="panel panel-content main-panel-content {if !empty($frames['section']['platform_module_menu']['plugin_menu'])}panel-content-plugin{/if}">
+	<div class="panel-body clearfix main-panel-body {if !empty($_W['setting']['copyright']['leftmenufixed'])}menu-fixed{/if}">
+		<div class="left-menu">
+			{if empty($frames['section']['platform_module_menu']['plugin_menu'])}
+			<div class="left-menu-content">
+				<div class="left-menu-top skin-black">
+					{if !empty($_GPC['m']) && !in_array($_GPC['m'], array('keyword', 'special', 'welcome', 'default', 'userapi', 'service', 'apply')) || defined('IN_MODULE')}
+						{template 'common/header-module'}
+					{else}
+						{template 'common/header-' . FRAME}
+					{/if}
+				</div>
+				{loop $frames['section'] $frame_section_id $frame_section}
+				{if !isset($frame_section['is_display']) || !empty($frame_section['is_display'])}
+				<div class="panel panel-menu">
+					{if $frame_section['title']}
+					<div class="panel-heading">
+						<span class="" data-toggle="collapse" data-target="#frame-{$frame_section_id}" onclick="util.cookie.set('menu_fold_tag:{$frame_section_id}', util.cookie.get('menu_fold_tag:{$frame_section_id}') == 1 ? 0 : 1)">{$frame_section['title']}<i class="wi wi-down-sign-s pull-right"></i></span>
+					</div>
+					{/if}
+					<ul class="list-group collapse {if $_GPC['menu_fold_tag:'.$frame_section_id] == 0}in{/if}" id="frame-{$frame_section_id}">
+						{loop $frame_section['menu'] $menu_id $menu}
+						{if !empty($menu['is_display'])}
+							{if $menu_id == 'platform_module_plugin_more' || $menu_id == 'platform_module_more'}
+							<li class="list-group-item list-group-more">
+								<a href="{php echo $menu['url']}" {if FRAME != 'webapp'}target="_blank"{/if}><span class="label label-more">更多应用</span></a>
+							</li>
+							{else}
+								{if $menu['active']}{php $active_sub_permission = $menu['sub_permission']}{/if}
+								{if (in_array($_W['role'], array(ACCOUNT_MANAGE_NAME_OWNER, ACCOUNT_MANAGE_NAME_FOUNDER, ACCOUNT_MANAGE_NAME_VICE_FOUNDER)) && $menu_id == 'front_download' || $menu_id != 'front_download') && !($menu_id == 'platform_menu' && $_W['account']['level'] == ACCOUNT_SUBSCRIPTION)}
+									<li class="list-group-item {if $menu['multilevel']}list-group-item-more{/if} {if $menu['active']}active{/if}">
+										<a href="{if $menu['multilevel']}javascript:;{else}{$menu['url']}{/if}" {if $menu['multilevel']}data-toggle="collapse" data-target="#frame-child-{$frame_section_id}-{$menu_id}"{/if} class="text-over" {if $frame_section_id == 'platform_module'}target="_blank"{/if}>
+											{if $frame_section_id == 'platform_module' || $frame_section_id == 'platform_module_plugin'}
+												<img src="{$menu['icon']}"/>
+											{else}
+												<i class="{$menu['icon']}"></i>
+											{/if}
+											{$menu['title']}{if $menu['multilevel']}<i class="wi wi-down-sign-s setting pull-right "></i>{/if}
+										</a>
+										{if $menu['multilevel'] && !empty($menu['childs'])}
+										<ul class="list-child collapse in" id="frame-child-{$frame_section_id}-{$menu_id}">
+											{loop $menu['childs'] $module_menu_child}
+											<li class="list-child-item {if $module_menu_child['active']}active{/if}">
+												<a href="{$module_menu_child['url']}" class="text-over">
+													<span class="nav-title">{$module_menu_child['title']}</span>
+												</a>
+											</li>
+											{/loop}
+										</ul>
+										{/if}
+									</li>
+								{/if}
+							{/if}
+						{/if}
+						{/loop}
+					</ul>
+				</div>
+				{/if}
+				{/loop}
+			</div>
+			{else}
+				<div class="plugin-menu clearfix">
+					<div class="plugin-menu-main pull-left">
+						<ul class="list-group">
+							<li class="list-group-item{if $_W['current_module']['name'] == $frames['section']['platform_module_menu']['plugin_menu']['main_module']} active{/if}">
+								<a href="{php echo url('home/welcome/ext', array('m' => $frames['section']['platform_module_menu']['plugin_menu']['main_module'], 'version_id' => intval($_GPC['version_id'])))}">
+									<i class="wi wi-main-apply"></i>
+									<div>主应用</div>
+								</a>
+							</li>
+							<li class="list-group-item">
+								<div>插件</div>
+							</li>
+							{loop $frames['section']['platform_module_menu']['plugin_menu']['menu'] $plugin_name $plugin}
+							<li class="list-group-item{if $_W['current_module']['name'] == $plugin_name} active{/if}">
+								<a href="{php echo url('home/welcome/ext', array('m' => $plugin_name, 'version_id' => intval($_GPC['version_id'])))}">
+									<img src="{$plugin['icon']}" alt="" class="img-icon" />
+									<div>{$plugin['title']}</div>
+								</a>
+							</li>
+							{/loop}
+						</ul>
+						{php unset($plugin_name);}
+						{php unset($plugin);}
+					</div>
+					<div class="plugin-menu-sub pull-left">
+						{loop $frames['section'] $frame_section_id $frame_section}
+						{if !isset($frame_section['is_display']) || !empty($frame_section['is_display'])}
+							<div class="panel panel-menu">
+								{if $frame_section['title']}
+								<div class="panel-heading">
+									<span class="collapsed" data-toggle="collapse" data-target="#frame0-{$frame_section_id}" aria-expanded="true" aria-controls="frame0-{$frame_section_id}">{$frame_section['title']}<i class="wi wi-down-sign-s pull-right"></i></span>
+								</div>
+								{/if}
+								<ul class="list-group panel-collapse collapse in" id="frame0-{$frame_section_id}">
+									{loop $frame_section['menu'] $menu_id $menu}
+									{if !empty($menu['is_display'])}
+									{if $menu_id == 'platform_module_more'}
+									<li class="list-group-item list-group-more">
+										<a href="{url 'module/manage-account'}" target="_blank"><span class="label label-more">更多应用</span></a>
+									</li>
+									{else}
+									<li class="list-group-item {if $menu['active']}active{/if}">
+										<a href="{$menu['url']}" class="text-over" {if $frame_section_id == 'platform_module'}target="_blank"{/if}>
+										{if $menu['icon']}
+											{if $frame_section_id == 'platform_module'}
+											<img src="{$menu['icon']}"/>
+											{else}
+											<i class="{$menu['icon']}"></i>
+											{/if}
+										{/if}
+										{$menu['title']}
+										</a>
+									</li>
+									{/if}
+									{/if}
+									{/loop}
+								</ul>
+							</div>
+						{/if}
+						{/loop}
+					</div>
+				</div>
+			{/if}
+		</div>
+		<div class="right-content">
+			<div class="content">
+	{/if}
+
+    {if $frames['dimension'] == 2}
+    <div class="panel panel-content main-panel-content">
+        <div class="panel-body clearfix main-panel-body {if !empty($_W['setting']['copyright']['leftmenufixed'])}menu-fixed{/if}">
+            <div class="right-content">
+                <div class="content">
+    {/if}
+                    <!--系统提示-->
+                    {if $_COOKIE['private_app_notice']}
+                    <div class="system-tips we7-body-alert">
+                        <div class="container text-right">
+						<span class="alert-info">
+							<a href="javascript:;">
+								{$_COOKIE['private_app_notice']}
+							</a>
+							<span class="tips-close" onclick="check_setmeal_hide();" ><i class="wi wi-error-sign"></i></span>
+						</span>
+                        </div>
+                    </div>
+                    {php setcookie('private_app_notice', '', -1);}
+                    {/if}
+                    <!--end  系统提示-->
+                    {template 'common/header-renew-account'}
+					{if !empty($_W['page']['title']) && $frames['title'] != '首页' && !empty($frames['title']) && !defined('IN_MODULE')}
+						<div class="we7-page-title">{$_W['page']['title']}</div>
+					{/if}
+
+					{if $frames['dimension'] == 2}
+						<!-- start用户管理菜单和消息管理菜单特殊,走自己的we7-page-tab,故加此if判断;平台/应用/我的账户无we7-page-table -->
+						{if !in_array(FRAME, array('user_manage', 'message', 'platform', 'module', 'myself', 'workorder'))}
+						<ul class="we7-page-tab">
+							{php $have_right_content_menu = 0;}
+							{loop $frames['section'][FRAME]['menu'] $menu_id $menu}
+							{if in_array(FRAME, array('account_manage', 'permission'))}
+							{if permission_check_account_user('see_' . $menu['permission_name'])}
+							<li class="{if $menu['active']}active{/if}"><a href="{$menu['url']}">{$menu['title']}</a></li>
+							{/if}
+							{else}
+							<li class="{if $menu['active']}active{/if}">
+								<a href="{$menu['url']}">
+									{$menu['title']}
+									<!-- start应用管理中未安装应用数量 -->
+									{if FRAME == 'module_manage' && $menu_id == 'module_manage_not_installed'}<span class="color-red"> ({$module_uninstall_total}) </span>{/if}
+									<!-- end应用管理中未安装应用数量 -->
+								</a>
+							</li>
+							{/if}
+							{if $menu['active']}{php $have_right_content_menu = 1;}{/if}
+							{/loop}
+						</ul>
+						<script>
+							$(function(){
+								{if empty($have_right_content_menu)}
+								$('.we7-page-tab, .we7-page-title').addClass('hidden');
+								{/if}
+								});
+						</script>
+						{/if}
+						<!-- end用户管理菜单和消息管理菜单特殊,走自己的we7-page-tab;平台/应用/我的账户无we7-page-table -->
+					{/if}
+{/if}

@@ -1,0 +1,36 @@
+<view class="msgCard">
+  <!--天气实况-->
+  <view class="msgPanel">
+    <!--第一个面板-->
+    <image src="{{now.nowPic + now.code + '.png'}}" mode="aspectFit"></image>
+    <!--https://www.seniverse.com/api-->
+    <!--第一个面板-->
+
+    <!--第二个面板-->
+    <view class="nowPanel">
+      <view class="searchLoc">
+        <icon bindtap="changeLoc" type="search" color="gray"></icon>
+        <image mode="aspectFit" bindtap="autoLoc" src="http://omh7cqphx.bkt.clouddn.com/NAVIGATION_32px.png"></image>
+      </view>
+      <!--https://portal.qiniu.com/-->  
+      <view class="nowTime">
+        <text>{{location.name}} </text>
+        <text>{{now.text}} </text>
+        <text>{{last_update}} </text>
+      </view>
+      <view class="nowText">
+        <text>{{now.temperature}}℃</text>        
+      </view>
+    </view>
+    <!--第二个面板-->
+  </view>
+  <!--天气实况-->
+
+  <!--天气预报-->
+  <view class="msgPanel">
+    <button bindtap="">点击刷新</button>
+    <button bindtap="">切换地点</button>
+  </view>
+  <!--天气预报-->
+
+</view>

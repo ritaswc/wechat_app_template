@@ -1,0 +1,94 @@
+.page-body{
+    background-color: #f5f4f4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    width: 100%;
+    height: 380rpx;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header .userheadImg{
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 90rpx;
+    margin-top: 70rpx;
+    margin-bottom: 30rpx;
+    
+}
+.option-view{
+    width: 100%;
+    height: 400rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    position: relative;
+    
+}
+.option-view .option-item{
+    width: 250rpx;
+    height: 200rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item-icon{
+    width: 40px;
+    height: 40px;
+    margin-top: 45rpx;
+    margin-bottom: 15rpx;
+}
+
+.line_h_1{
+    position: absolute;
+    top: 200rpx;  
+    left: 0;
+}
+.line_h_2{
+    position: absolute;
+    top: 399rpx;
+    left: 0;
+}
+.line_v_1{
+    position: absolute;
+    left: 249.5rpx; 
+    top: 0;
+    bottom: 0; 
+    width: 1rpx;
+    background-color: #dedede;
+}
+.line_v_2{
+    position: absolute;
+    left: 499.5rpx;
+    top: 0;
+    bottom: 0; 
+}
+.line_h{
+    width: 100%;
+    height: 1rpx;
+    background-color: #dedede;
+}
+.line_v{
+    width: 1rpx;
+    background-color: #dedede;
+}
+.tel-view{
+    position: absolute;
+    bottom: 40rpx;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80rpx;
+    left: 0;
+    right: 0;
+}

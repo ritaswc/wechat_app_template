@@ -1,0 +1,231 @@
+/* 购物车样式 */
+.goods_car {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background: #565656;
+    opacity: 0.9;
+    z-index: 8888; 
+}
+
+.shopping_cart {
+    bottom: 115rpx;
+}
+
+.buy {
+    height: 100%;
+    width: 66%;
+    float: left;
+    margin-left: 4%;
+}
+.car_pic {
+    position: relative;
+    bottom: 15%;
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 100%;
+    float: left;
+}
+.car_png {
+    width: 100%;
+    height: 100%;
+}
+.weixuan {
+    font-size: 15px;
+    font-weight: bold;
+    color: #b5b5b5;
+    height: 100%;
+    width: 40%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.goumai {
+    height: 100%;
+    width: 30%;
+    float: right;
+    font-size: 33rpx;
+    font-weight: bold;
+    color: #959595;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #686868;
+}
+.total_num {
+    font-size: 20rpx;
+    color: #f1d1dd;
+    background: #ef503c;
+    width: 39%;
+    height: 25%;
+    border-radius: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 45%;
+    bottom: 100%;
+}
+.price {
+    font-size: 17px;
+    color: #fff;
+    margin-left: 25rpx;
+    height: 100%;
+    width: 40%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pay {
+    height: 100%;
+    width: 30%;
+    float: right;
+    font-size: 33rpx;
+    font-weight: bold;
+    color: #f1d1dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fa5c51;
+}
+
+
+
+/* 购物车商品列表样式 */
+.carHeader {
+    width: 100%;
+    height: 30rpx;
+    margin: 20rpx 0rpx;
+}
+
+.shopping-cart-list {
+    position: fixed;
+    bottom: 10%;
+    width: 100%;
+    background: #f9f9f9;
+    z-index: 3333;
+}
+
+.shopping-cart-list2 {
+    bottom: 20%;
+}
+
+.yixuan {
+    float: left;
+    width: 180rpx;
+    height: 100%;
+    color: #a7a7a7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25rpx;
+    font-size: 31rpx;
+    border-left: 6rpx solid #f76766;
+}
+
+.clearAll {
+    float: right;
+    height: 100%;
+    margin-right: 5%;
+}
+
+.hr {
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.carGood {
+    width: 100%;
+    height: 100rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.goodsname {
+    width: 47%;
+    height: 100%;
+    float: left;
+    line-height: 100rpx;
+    margin-left: 25rpx;
+    font-size: 30rpx;
+    color: #585858;
+}
+
+.goodsNumPrice {
+    width: 47%;
+    height: 100%;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goodsTotalPrice {
+    float: left;
+    width: 50%;
+    color: #ff4544;
+    font-size: 30rpx;
+    line-height: 100rpx;
+}
+
+.goodsNum {
+    float: right;
+    width: 48%;
+    margin-right: 2%;
+    line-height: 100rpx;
+}
+
+.carStandard {
+    border-radius: 100%;
+    width: 44rpx;
+    height: 44rpx;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#carStandard_num {
+    width: 65rpx;
+}
+
+.goods_attr_name {
+    width: 49%;
+    height: 100%;
+    float: left;
+    margin-left: 25rpx;
+}
+
+.cargood_name {
+    width: 100%;
+    height: 50%;
+    font-size: 30rpx;
+    color: #585858;
+}
+
+.cargood_attr_name {
+    width: 100%;
+    height: 50%;
+    font-size: 25rpx;
+    color: #585858;
+}
+
+.goods_car.device_iphone_x {
+    bottom: 65rpx;
+}
+
+.blank.navbar_no.device_iphone_x {
+    height: 65rpx;
+    width: 100%;
+    bottom: -64rpx;
+    position: absolute;
+    background: #fff;
+}
+.blank.navbar_yes.device_iphone_x {
+    height: 0;
+}
+
+.shopping_cart.device_iphone_x {
+    bottom: 181rpx;
+}

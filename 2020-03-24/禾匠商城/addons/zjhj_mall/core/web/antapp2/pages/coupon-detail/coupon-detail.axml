@@ -1,0 +1,61 @@
+<view class="page"> 
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+
+        <view class="no-content" a:if="{{!list || list.length==0}}">暂无记录</view>
+        <view a:else style="padding:24rpx 24rpx 0 24rpx;">
+            <view class="flex-col flex-y-center detail-head">
+                <view style="color:#666666;">{{list.name}}</view>
+                <view style="color:#353535;font-weight:bold;font-size:25pt;padding:10rpx 0">￥{{list.sub_price}}</view>
+                <view style="color:#353535;fs-b">{{list.min_price_desc}}</view>
+
+                <view a:if="{{list.is_receive == 0}}" onTap='receive' data-index='{{list.id}}' style="background:#ff4544;color:#ffffff;" class="flex-x-center detail-bu">立即领取</view>
+                <view a:if="{{list.is_receive == 1}}" style="border:1rpx solid #ff4544;background:#ffffff;color:#ff4544;" class="flex-x-center detail-bu">已领取</view>
+                <view a:if="{{list.status == 0}}" class="flex-x-center detail-bu">未使用</view>
+                <view a:if="{{list.status == 1}}" class="flex-x-center detail-bu">已使用</view>
+                <view a:if="{{list.status == 2}}" class="flex-x-center detail-bu">已过期</view>
+            </view>
+
+        	<image  src='/images/coupon-details.png' style="display:block;height:48rpx;width:100%;" />
+
+            <view class="detail-prize">
+                <view class="detail-name">有效期</view>
+                <view class="detail-manual">
+        		    <text a:if='{{list.expire_type == 2}}'>{{list.begin_time}} ~ {{list.end_time}}</text>
+        		    <text a:if="{{list.expire_type == 1}}">领取{{list.expire_day}}天内有效</text>
+                </view>
+            
+                <view class="detail-name">使用规则</view>
+                <view class="detail-manual">
+                    <block a:if="{{list.appoint_type == 1 && (list.cat.length == 0 || list.goods==null)}}">
+                        <text class="user_coupon_font">全场通用</text>
+                    </block>
+                    <block a:if="{{list.appoint_type == 2 && (list.goods.length == 0 || list.goods==null)}}">
+                        <text class="user_coupon_font">全场通用</text>
+                    </block>
+                    <block a:if="{{list.appoint_type == null}}">
+                        <text class="user_coupon_font">全场通用</text>
+                    </block>
+                    <block a:if="{{list.appoint_type == 1 &&  list.cat.length > 0}}">
+                        <view class="user_coupon_font" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:87%;">
+                        仅限<block a:for="{{list.cat}}" a:for-item="cat" a:key="id">
+                            <text>{{cat.name}}、</text>
+                        </block>产品使用
+                        </view>
+                    </block>
+                    <block a:if="{{list.appoint_type == 2 &&  list.goods.length > 0}}">
+                        <view data-goods_id="{{list.goods}}" data-id="{{list.id}}" onTap='goodsList' class="user_coupon_font" style="height:50rpx;">指定商品使用 点进去查看指定商品</view>
+                    </block>
+                </view>
+        		<block a:if="{{list.rule}}">
+                <view class="detail-name">使用说明</view>
+                <view class="detail-manual">{{list.rule}}</view>
+                </block>
+            </view>
+        </view>
+
+    </view>
+    <include src="/components/get-coupon/get-coupon.axml" />
+    <include src="/components/footer/footer" />
+</view>

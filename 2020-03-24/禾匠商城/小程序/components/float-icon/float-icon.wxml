@@ -1,0 +1,25 @@
+<view class="float-icon" direction="all">
+    <view bindtap="to_dial" class="dial" style="background-image:url('{{store.dial_pic}}'); background-size: 100rpx 100rpx;" wx:if="{{store.dial==1&&store.dial_pic}}"></view>
+    <navigator hoverClass="none" openType="navigate" url="/pages/web/web?url={{store.option.web_service_url}}" wx:if="{{store.option.web_service}}">
+        <image class="dial" src="{{store.option.web_service}}"></image>
+    </navigator>
+    <block wx:if="{{store.show_customer_service&&store.show_customer_service==1&&store.service}}">
+        <button class="float-icon-btn" openType="contact" sessionFrom="{{__user_info.nickname}}|" style="height:100%" wx:if="{{__platform=='wx'}}">
+            <image class="dial" src="{{store.service}}"></image>
+        </button>
+        <view class="float-icon-btn" style="position: relative" wx:if="{{__platform=='my'}}">
+            <view style="z-index:2;width: 100%;height: 100%;position: absolute;left: 0;top:0;opacity: 0">
+                <contact-button scene="{{__alipay_mp_config.cs_scene}}" tntInstId="{{__alipay_mp_config.cs_tnt_inst_id}}"></contact-button>
+            </view>
+            <image class="dial" src="{{store.service}}" style="z-index:1"></image>
+        </view>
+    </block>
+    <block wx:if="{{store.option.wxapp.pic_url}}">
+        <navigator appId="{{store.option.wxapp.appid}}" data-open_type="wxapp" hoverClass="none" openType="navigate" path="{{store.option.wxapp.path}}" target="miniProgram" wx:if="{{__platform=='wx'}}">
+            <image class="dial" src="{{store.option.wxapp.pic_url}}"></image>
+        </navigator>
+        <view bindtap="openWxapp" data-app-id="{{store.option.wxapp.appid}}" data-path="{{store.option.wxapp.path}}" wx:if="{{__platform=='my'}}">
+            <image class="dial" src="{{store.option.wxapp.pic_url}}"></image>
+        </view>
+    </block>
+</view>

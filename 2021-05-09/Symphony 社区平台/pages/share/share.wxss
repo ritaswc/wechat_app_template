@@ -1,0 +1,40 @@
+.share {
+  height: 100vh;
+  overflow: auto;
+  padding-bottom: 66px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 20px;
+  margin: 50rpx 0;
+  display: block;
+  font-weight: 600;
+}
+
+.content image {
+  max-width: 100%;
+  margin-bottom: 50rpx;
+}
+
+.content > view {
+  margin-bottom: 50rpx;
+  line-height: 20px;
+}
+
+.h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 30rpx;
+  display: block;
+}
+
+.bottom-btn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 50rpx;
+}

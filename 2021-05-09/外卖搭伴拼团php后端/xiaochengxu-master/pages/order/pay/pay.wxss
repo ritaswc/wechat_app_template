@@ -1,0 +1,14 @@
+/* pages/order/pay/pay.wxss */
+
+.pay{
+    background: #fff;
+    margin-top: 40rpx;
+    /*display: flex;
+    flex-direction: column;*/
+    padding: 40rpx;
+}
+.pay text{
+    padding-bottom: 30rpx;
+    text-align: center;
+    display: block;
+}

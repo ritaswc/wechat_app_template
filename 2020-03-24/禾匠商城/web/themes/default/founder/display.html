@@ -1,0 +1,96 @@
+{template 'common/header'}
+{template 'user/user-header'}
+<div class="search-box clearfix we7-margin-bottom">
+	<form action="" class="search-form" method="get">
+		<input type="hidden" name="c" value="founder">
+		<input type="hidden" name="a" value="display">
+		<select name="groupid" class="pull-left we7-margin-right">
+			<option value="0" data-url="{php echo filter_url('groupid:0');}">副创始人组</option>
+			{loop $founder_groups $group}
+			<option value="{$group['id']}" data-url="{php echo filter_url('groupid:'.$group['id']);}" {if $group['id'] == $_GPC['groupid']} selected="selected"{/if}>{$group['name']}</option>
+			{/loop}
+		</select>
+		<div class="input-group  col-sm-3">
+			<input type="text" name="search" id="" value="{$_GPC['search']}" class="form-control"  placeholder="搜索副创始人或手机号" />
+			<span class="input-group-btn"><button class="btn btn-default"><i class="fa fa-search"></i></button></span>
+		</div>
+	</form>
+	<a href="{php echo url('founder/create')}" class="btn btn-primary">添加副创始人</a>
+</div>
+<table class="table we7-table table-hover table-manage vertical-middle" id="js-users-display" ng-controller="UsersDisplay" ng-cloak>
+	<col width="90px"/>
+	<col width="150px"/>
+	<col width="170px"/>
+	<col width=""/>
+	<col width="180px"/>
+	<col width="180px"/>
+	<col width="150px"/>
+	<tr>
+		<th></th>
+		<th class="text-left">用户名</th>
+		<th>用户权限组</th>
+		<th>创建平台总数</th>
+		<th>注册时间</th>
+		<th>到期时间</th>
+		<th class="text-right">操作</th>
+	</tr>
+	<tr ng-repeat="user in users" ng-if="users">
+		<td class="td-link">
+			<a ng-href="{{links.edit}}uid={{user.uid}}">
+				<img src="{{user.avatar}}" alt="" class="img-responsive icon"/>
+			</a>
+		</td>
+		<td><span ng-bind="user.username"></span><br/><span ng-bind="user.mobile"></span></td>
+		<td>
+			<span class="color-default" ng-if="user.founder">管理员</span>
+			<span class="color-default" ng-if="user.groupname && !user.founder" ng-bind="user.groupname"></span>
+			<span class="color-default" ng-if="!user.groupname && !user.founder">未分配</span>
+		</td>
+		<td class="color-default" ng-bind="user.account_nums.max_total"></td>
+		<td>
+			<span ng-bind="user.joindate"></span>
+		</td>
+		<td>
+			<span ng-bind="user.endtime"></span>
+		</td>
+		<td class="vertical-middle table-manage-td">
+			<div class="link-group" ng-if="!user.founder">
+				<a ng-href="{{links.edit}}uid={{user.uid}}" ng-if="type == 'display'">编辑</a>
+				<a href="javascript:;" ng-click="deleteUser(user.uid, '')" class="del" ng-if="type == 'display'">删除</a>
+			</div>
+			<div class="manage-option text-right" ng-if="!user.founder">
+				<a href="{{links.edit}}uid={{user.uid}}">基础信息</a>
+				<a href="{{links.edit}}&do=edit_modules_tpl&uid={{user.uid}}">应用模板权限</a>
+				<a href="{{links.user_edit}}&do=edit_create_account_list&uid={{user.uid}}">帐号创建权限</a>
+				<a href="{{links.user_edit}}&do=edit_account_dateline&uid={{user.uid}}">帐号使用期限</a>
+				<a href="{{links.edit}}&do=edit_account&uid={{user.uid}}">使用账号列表</a>
+			</div>
+		</td>
+	</tr>
+	<tr style="height: 52px;"></tr>
+	<tr ng-if="!users">
+		<td colspan="100" >
+			<div class="we7-empty-block">暂无数据</div>	
+		</td>
+	</tr>
+</table>
+<div class="text-right">
+	{$pager}
+</div>
+<script type="text/javascript">
+	$(function(){
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+	angular.module('userManageApp').value('config', {
+		type: "{php echo !empty($_GPC['type']) ? $_GPC['type'] : 'display'}",
+		users: {php echo !empty($users) ? json_encode($users) : 'null'},
+		usergroups: {php echo !empty($usergroups) ? json_encode($usergroups) : 'null'},
+		links: {
+			link: "{php echo url('founder/display/del')}",
+			edit: "{php echo url('founder/edit')}",
+			user_edit: "{php echo url('user/edit')}",
+		},
+	});
+	angular.bootstrap($('#js-users-display'), ['userManageApp']);
+</script>
+{template 'common/footer'}

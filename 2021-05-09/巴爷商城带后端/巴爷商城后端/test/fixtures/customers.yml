@@ -1,0 +1,30 @@
+gehao:
+  id: 4491
+  name: baye
+  mobile: "13901234567"
+  reference_code: "CU8X"
+  referenced_code: "ZV0J"
+  referenced_customer_id: 579
+  coin_balance: 100
+  created_at: "2016-07-05 03:17:23"
+  updated_at: "2016-12-07 14:52:09"
+  pinyin_of_name: "ba-ye"
+  uid: "282dba002bb3365de29e3d15af0074ee"
+  nickname: "baye"
+  level: 10
+  encrypted_password: "$2a$10$d3JizEoeFFisKpQFeWSmN.RTh58YK4FK/Mf7ehWJE6SzsHL8KUaz."
+  gender: "男"
+  recommend_amount: 10
+  salesforce_id: "0012800000jECRpAAO"
+  synchronized_at: "2016-10-11 07:27:27"
+  account_type: "巴爷"
+  is_seller_at: "2016-09-09 10:56:58"
+  liker_notifications_count: 8
+  reply_notifications_count: 5
+  follower_notifications_count: 1
+  notifications_count: 0
+  baye_rank: "巴爷"
+  easemob_account_created_at: "2016-10-19 09:05:17"
+  mobile_visible_scope: 1
+  namecard_visible_scope: 1
+  free_coin_balance: 0

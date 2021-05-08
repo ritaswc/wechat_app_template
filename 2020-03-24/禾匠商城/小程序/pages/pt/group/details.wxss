@@ -1,0 +1,437 @@
+.goods {
+    background-color: #fff;
+    padding: 24rpx 24rpx 0 24rpx;
+    position: relative;
+}
+
+.pt-status-pic image {
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.pt-status-pic {
+    position: absolute;
+    top: 112rpx;
+    right: 24rpx;
+    z-index: 999;
+}
+
+.goods-pic image {
+    width: 260rpx;
+    height: 260rpx;
+    margin-right: 24rpx;
+}
+
+.goods-info-title {
+    font-size: 11pt;
+    color: #353535;
+}
+
+.goods-price {
+    font-size: 10pt;
+    color: #ff5c5c;
+}
+
+.goods-price text {
+    font-size: 18pt;
+}
+
+.goods-original-price {
+    font-size: 9pt;
+    color: #a4a4a4;
+    text-decoration: line-through;
+    margin-left: 10rpx;
+}
+
+.goods-money {
+    margin-top: 20rpx;
+    line-height: 1;
+}
+
+.goods-label {
+    margin: 10rpx 0;
+    color: #ff5c5c;
+    font-size: 9pt;
+}
+
+.goods-limit {
+    padding: 0 12rpx;
+    background-color: #feeeee;
+    margin-right: 8rpx;
+}
+
+.goods-omit {
+    background-color: #feeeee;
+    padding: 0 12rpx;
+}
+
+.pt-group {
+    width: 702rpx;
+    position: relative;
+    background-color: #ffe7e7;
+    min-height: 214rpx;
+}
+
+.pt-group-shell {
+    margin-top: 24rpx;
+    padding: 0 24rpx;
+}
+
+.top-title {
+    font-size: 10pt;
+    color: #353535;
+    padding-top: 52rpx;
+}
+
+.top-title text {
+    color: #ff5c5c;
+}
+
+.head-pic {
+    padding: 34rpx 40rpx 0 40rpx;
+    flex-wrap: wrap;
+}
+
+.head-pic-item {
+    position: relative;
+    margin: 10rpx 8rpx;
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.head-pic image {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 35rpx;
+}
+
+.group-frist {
+    width: 56rpx;
+    height: 26rpx;
+    background-color: #ff5c5c;
+    color: #fff;
+    font-size: 6pt;
+    border-radius: 13rpx;
+    position: absolute;
+    top: 56rpx;
+    left: 7rpx;
+}
+
+.play-btn {
+    margin: 24rpx 24rpx 32rpx 24rpx;
+}
+
+.play-btn .pt_btn {
+    height: 88rpx;
+    background-color: #ff5c5c;
+    border-radius: 10rpx;
+    color: #fff;
+    font-size: 13pt;
+}
+
+.button::after {
+    content: normal!important;
+}
+
+.group-notice,.goods-more {
+    height: 90rpx;
+    padding: 0 24rpx;
+    background-color: #fff;
+}
+
+.group-notice-left {
+    font-size: 10pt;
+    color: #353535;
+}
+
+.group-notice-info {
+    font-size: 9pt;
+    color: #919191;
+}
+
+.goods-right image {
+    width: 16rpx;
+    height: 26rpx;
+    margin-left: 20rpx;
+}
+
+.goods-more {
+    margin-top: 20rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.list-item {
+    padding: 24rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+    background-color: #fff;
+}
+
+.list-item .corver-pic image {
+    width: 220rpx;
+    height: 220rpx;
+    border-radius: 5rpx;
+    margin-right: 24rpx;
+}
+
+.goods-title {
+    color: #353535;
+    font-size: 11pt;
+}
+
+.list-item .group-item image {
+    width: 34rpx;
+    height: 34rpx;
+    border: 1rpx solid #fff;
+    border-radius: 17rpx;
+}
+
+.list-item .group-item view {
+    float: left;
+    width: 24rpx;
+}
+
+.goods-sales {
+    font-size: 10pt;
+    color: #ff5c5c;
+}
+
+.list-item .price {
+    color: #ff5c5c;
+    font-size: 14pt;
+    margin-right: 16rpx;
+    line-height: 1;
+}
+
+.list-item .price .unit {
+    font-size: 9pt;
+}
+
+.list-item .old-price {
+    font-size: 10pt;
+    color: #919191;
+    text-decoration: line-through;
+    line-height: 1;
+}
+
+.list-item .group-btn {
+    height: 66rpx;
+    width: 180rpx;
+    color: #fff;
+    font-size: 12pt;
+    border-radius: 10rpx;
+    background-color: #ffa360;
+    background: -webkit-gradient(linear,left top,right bottom,color-stop(0%,#ffa360),color-stop(140%,#ff5c5c));
+    background-image: linear-gradient(140deg,#ffa360,#ff5c5c);
+}
+
+.attr-picker {
+    position: fixed;
+    bottom: 0rpx;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.attr-picker .content-box {
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    bottom: 0rpx;
+}
+
+.attr-picker .attr-group {
+    margin-bottom: 6rpx;
+}
+
+.attr-picker .attr-group-name {
+    margin-bottom: 20rpx;
+}
+
+.attr-picker .attr-item {
+    display: inline-block;
+    margin: 0 30rpx 30rpx 0;
+    background: #f7f7f7;
+    border-radius: 10rpx;
+    padding: 15rpx 30rpx;
+}
+
+.attr-picker .attr-item.active {
+    background: #ff4544;
+    color: #fff;
+}
+
+.attr-picker .goods-pic-box {
+    position: relative;
+    width: 200rpx;
+}
+
+.attr-picker .goods-pic-box image {
+    position: absolute;
+    top: -90rpx;
+    border: 5rpx solid #fff;
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 5rpx;
+    box-shadow: 0 1rpx 2rpx rgba(0,0,0,0.2);
+}
+
+.number-input-box {
+    height: 70rpx;
+}
+
+.number-input-box .number-input {
+    height: 70rpx!important;
+    border: none;
+    text-align: center;
+    width: 120rpx;
+    background: #eee;
+    margin: 0 4rpx!important;
+}
+
+.number-input-box .number-btn {
+    height: 100%!important;
+    width: 70rpx;
+    background: #eee;
+}
+
+.number-input-box .number-btn.disabled {
+    background: #f6f6f6;
+    color: #aaa;
+}
+
+.buy-confirm {
+    height: 90rpx;
+    background-color: #ff5c5c;
+    color: #fff;
+    font-size: 12pt;
+}
+
+share-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.0);
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: background 250ms;
+}
+
+.share-modal .share-modal-body {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #f2f2f2;
+    padding-top: 60rpx;
+    transform: translateY(100%);
+    transition: transform 250ms;
+}
+
+.share-modal.active {
+    background: rgba(0,0,0,0.5);
+}
+
+.share-modal.active .share-modal-body {
+    transform: translateY(0);
+}
+
+.share-modal .share-bottom {
+    text-align: center;
+    font-size: 9pt;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 60rpx;
+    line-height: inherit;
+    border: none;
+    background: none;
+    color: inherit;
+    font-family: inherit;
+    display: inline-block;
+}
+
+.share-modal .share-bottom:after {
+    display: none;
+}
+
+.share-modal .share-bottom image {
+    width: 120rpx;
+    height: 120rpx;
+    margin-bottom: 12rpx;
+    border-radius: 999rpx;
+    border: 1rpx solid #eee;
+}
+
+.share-modal .share-bottom:active image {
+    opacity: 0.7;
+}
+
+.share-modal .share-modal-close {
+    background: #fff;
+    height: 100rpx;
+    border-top: 1rpx solid #eee;
+}
+
+.goods-qrcode-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: rgba(0,0,0,0.5);
+    padding: 40rpx;
+    transform: translateY(100%);
+    opacity: 0.5;
+    transition: opacity 250ms;
+}
+
+.goods-qrcode-modal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.goods-qrcode-body {
+    background: #fff;
+    height: 100%;
+    border-radius: 10rpx;
+    z-index: 99999;
+}
+
+.goods-qrcode-modal .goods-qrcode-box {
+    height: 100%;
+    position: relative;
+    box-shadow: 0 0 15rpx rgba(0,0,0,0.15);
+}
+
+.goods-qrcode-modal .goods-qrcode-loading {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.goods-qrcode-modal .goods-qrcode {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: none;
+}
+
+.goods-qrcode-modal .goods-qrcode.active {
+    display: block;
+}
+
+.goods-qrcode-modal .goods-qrcode-close {
+    position: absolute;
+    top: 40rpx;
+    right: 40rpx;
+    padding: 15rpx;
+}

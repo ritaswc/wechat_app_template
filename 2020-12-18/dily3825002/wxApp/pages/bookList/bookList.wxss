@@ -1,0 +1,5 @@
+.book{padding:32rpx 32rpx 0 32rpx}
+.book-img{width:640rpx;height:100px;box-shadow:2px 2px 4px black;margin:0 auto;display:block}
+.book text{font-family:arial;font-size:16rpx}
+.loading{margin:10px 0 20px 40%}
+

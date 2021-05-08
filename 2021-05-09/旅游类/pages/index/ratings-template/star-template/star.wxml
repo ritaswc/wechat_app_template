@@ -1,0 +1,14 @@
+
+<!--评分组件-->
+<template name="star">
+  <view class="star">
+    <view class="star-img-box">
+      <view class="star-img" wx:for="{{ratings.stars}}" wx:key="{{index}}">
+       <image src="/images/home/all_star.png" wx:if="{{item==2}}"></image>
+        <image src="/images/home/half_star.png" wx:if="{{item==1}}"></image>
+        <image src="/images/home/no_star.png" wx:if="{{item==0}}"></image>
+      </view>
+    </view>
+    <text>{{ratings.score}}</text>
+  </view>
+</template>

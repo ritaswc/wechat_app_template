@@ -1,0 +1,111 @@
+page {
+  background: #efeff4;
+}
+
+.weui_avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 4rpx;
+  vertical-align: middle;
+}
+
+.weui_nickname {
+  font-weight: 400;
+  display: block;
+}
+
+.weui_nickname, .weui_tel {
+  font-size: 30rpx;
+  color: #ccc;
+}
+
+.weui_icon {
+  width: 45rpx;
+  height: 45rpx;
+  vertical-align: middle;
+  margin-right: 28rpx;
+}
+
+.weui_font {
+  font-size: 34rpx;
+  color: #6d6d6d;
+}
+
+.weui-cells_access .weui-cell:not(.no_access) {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.weui-cells_access .weui-cell__ft:after {
+  content: " ";
+  display: inline-block;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  position: relative;
+  top: -2px;
+  top: -1px;
+  margin-left: 0.3em;
+}
+
+.user-phone {
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 16rpx;
+  vertical-align: middle;
+  display:none;
+}
+
+
+.user {
+  width: 730rpx;
+  background: #b6aaec;
+  padding: 30rpx 25rpx 30rpx 0;
+  border-bottom: 1px solid #dcdcdc;
+  box-shadow: 0 2px 5px #eee;
+}
+
+.user .userinfo-avatar {
+  flex: 1;
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 80rpx;
+}
+
+.user .user-info {
+  flex: 5;
+  text-align: left;
+}
+
+.user .user-info text {
+  display: block;
+}
+
+.user .user-info .userinfo-nickname, .user .user-info .userinfo-telephone {
+  padding: 8rpx 0 10rpx 0;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.user .user-vip .edit, .user .user-info .user-tel {
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 34rpx;
+}
+
+.user-vip .edit {
+  padding: 5rpx 15rpx;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.user-vip view:last-child {
+  margin-bottom: 0;
+}

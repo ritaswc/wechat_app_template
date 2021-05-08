@@ -1,0 +1,103 @@
+.info {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 0 12rpx;
+    border-top: 1rpx solid #e2e2e2;
+}
+
+.info-t {
+    color: #999;
+    margin: 24rpx 12rpx;
+    line-height: 1;
+    padding: 0 24rpx;
+    border-left: 6rpx solid #ff4544;
+}
+
+.list {
+    margin-bottom: 16rpx;
+    flex-wrap: wrap;
+}
+
+.one {
+    width: 218rpx;
+    border: 1rpx solid #ccc;
+    border-radius: 16rpx;
+    padding: 32rpx 0;
+    margin-right: 12rpx;
+    margin-left: 12rpx;
+    margin-bottom: 24rpx;
+    position: relative;
+}
+
+.one-1 {
+    color: #666;
+}
+
+.one-2 {
+    color: #999;
+}
+
+.one.active .one-1 {
+    color: #ff4544;
+}
+
+.one.active .one-2 {
+    color: #ff4544;
+}
+
+.recharge-btn {
+    width: 702rpx;
+    height: 96rpx;
+    margin: 56rpx 12rpx 0 12rpx;
+    border-radius: 48rpx;
+    background-color: #ff4544;
+    color: #fff;
+}
+
+.r-input {
+    height: 88rpx;
+    border-radius: 16rpx;
+    color: #666;
+    line-height: 88rpx;
+    padding: 0 28rpx;
+    width: 650rpx;
+}
+
+.r-input-p {
+    line-height: 88rpx;
+    color: #ddd;
+}
+
+.active {
+    border-color: #ff4544;
+    background-color: #fff6f6;
+}
+
+.info-account {
+    margin: 8rpx 12rpx 32rpx 12rpx;
+    width: 702rpx;
+    height: 160rpx;
+    position: relative;
+    padding: 0 56rpx 0 40rpx;
+    color: #666;
+    z-index: 10;
+}
+
+.info-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.one-type {
+    width: 702rpx;
+    height: 100rpx;
+    margin: 0 12rpx;
+    border: 1rpx solid #ccc;
+    border-radius: 16rpx;
+    color: #666;
+}

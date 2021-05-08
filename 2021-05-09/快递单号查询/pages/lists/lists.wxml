@@ -1,0 +1,54 @@
+<view animation="{{animationError}}" class="showError" hidden="{{!errorShow}}"><text>{{errorText}}</text></view>
+<scroll-view scroll-y="true">
+  <view class="header-search">
+     <view><image src="../../images/header-banner.png" style="width: 750rpx;height: 375rpx;"></image></view>
+     <view class="header-title">
+        <!--<view class="h1">快递查询</view>
+        <view class="h2">快速查找您的快递</view> -->
+        <view class="header-input">
+          <view class="input-wrap">
+             <input bindconfirm="changeExpressNum"
+                    type="text" 
+                    placeholder="在此输入单号，查找您的快递" 
+                    placeholder-class="placeholder" 
+                    value="{{obj.num}}"/>
+             <view hidden="{{!(obj.num.length > 0)}}" class="clear-input-img" bindtap="clearNum"><icon type="clear" size="14" color="#B2B2B2"/></view>
+             <view class="input-code" bindtap="scanCode"><image src="../../images/code.png"></image></view>
+          </view>
+        </view>
+     </view>
+  </view>
+
+  <view class="type">
+    <view class="type-wrap">
+      <view class="loading" wx:if="{{showLoadingImg}}"><image src="../../images/loading.gif"/></view>
+      <view class="loading" wx:else>
+        <icon wx:if="{{isFind}}" size="23" type="success"></icon>
+        <icon wx:else size="23" type="info"></icon>
+      </view>
+      <view class="text"><text>{{(radioValue === 'AUTO' && !isFind && isNoFind) ? '暂未查到相应物流' : checkedRadioName}}</text></view>
+      <view class="icon"></view>
+    </view>
+  </view>
+
+  <view class="title">
+    <view><text>或在以下热门快递中勾选</text></view>
+  </view>
+
+  <view class="types-wrap">
+    <view class="wrap">
+      <view class="item" bindtap="radioChange" wx:for="{{shortList}}" wx:key="{{pinyin}}" data-index="{{index}}">
+        <view class="img"><image src="http://7xtwf5.com1.z0.glb.clouddn.com/{{item.image}}.png"></image></view>
+        <view class="text"><text>{{item.name}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="more-company">
+    <view class="more-wrap" bindtap="goToCompany">
+      <view class="text"><text>以上没有？查找我的快递公司</text></view>
+      <view class="icon"><image src="../../images/arrow-right1.png"/></view>
+    </view>
+  </view>
+
+  <view class="footer"></view>
+</scroll-view>

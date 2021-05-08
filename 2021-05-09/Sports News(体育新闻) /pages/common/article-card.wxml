@@ -1,0 +1,7 @@
+<import src="card.wxml"/>
+
+<template name="article-card">
+  <view bindtap='navToArticle' data-id="{{item.link.url}}" class="newitem">
+    <template is="card" data="{{item}}"/>  
+  </view>
+</template>

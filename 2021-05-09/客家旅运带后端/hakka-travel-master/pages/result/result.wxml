@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="result-wrapper">
+  	<image src="{{resultImg}}"></image>
+  	<text>恭喜您！成功预订车票！</text>
+  	<text>对不起，预订不成功，请重新操作！</text>
+  </view>
+	
+  <view class="default-btn" wx:if="{{}}" bindtap="goPay">继续支付</view>
+  <view class="default-btn" bindtap="orderDetail">订单详情</view>
+</view>

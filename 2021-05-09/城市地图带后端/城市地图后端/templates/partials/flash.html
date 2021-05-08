@@ -1,0 +1,33 @@
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">{{ message|safe }}</div>
+  {% endfor %}
+{% endif %}
+
+{% if form.errors %}
+  <div class="alert alert-warning">
+    {% for field in form %}
+      {% if field.errors %}
+        {% for error in field.errors %}
+          {% if error != '认证码错误' and error != '这个字段是必须的' %}
+            <li clas="#id_{{ field.name }}">{{ error|escape }}</li>
+          {% elif error == '这个字段是必须的' %}
+            <li clas="#id_{{ field.name }}">必须输入验证码！</li>
+          {% else %}
+            <li clas="#id_{{ field.name }}">验证码输入错误，请重新输入！</li>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+    {% if form.non_field_errors %}
+      {{ form.non_field_errors }}
+    {% endif %}
+  </div>
+{% endif %}
+
+
+<!-- {% if form.captcha.errors %}
+  <div class="alert alert-danger mt20" role="alert">
+    验证码必须输入
+  </div>
+{% endif %} -->

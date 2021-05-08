@@ -1,0 +1,22 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="list">
+            <view class="item flex flex-row" wx:for="{{list}}" wx:key="{{item.id}}">
+                <view class="flex-grow-1">
+                    <view wx:if="{{item.status==0}}">待审核</view>
+                    <view style="color:#3fc24c;" wx:elif="{{item.status==1}}">已转账</view>
+                    <view style="color:#ff4544;" wx:else>已拒绝</view>
+                    <view style="font-size: 9pt;color: #888;margin-top: 12rpx">{{item.addtime}}</view>
+                </view>
+                <view class="flex-grow-0 flex-y-center" style="color: #ff4544;">{{item.money}}</view>
+            </view>
+        </view>
+        <view style="text-align: center;color: #888;font-size: 9pt;height: 74rpx;line-height: 74rpx" wx:if="{{no_more}}">
+            没有记录了~
+        </view>
+        <include src="/components/list-loading/list-loading"></include>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

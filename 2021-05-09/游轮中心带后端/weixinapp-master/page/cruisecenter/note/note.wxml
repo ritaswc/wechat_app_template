@@ -1,0 +1,58 @@
+<view class="page">
+    <view class="page__hd">
+        <text class="page__title">注意事项</text>
+    </view>
+    <view class="page__bd">
+        <view class="section">
+            <view class="section__title">请选择邮轮</view>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="picker">
+                    当前选择：{{array[index]}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="widgets__list {{index ==0 ? 'widgets__list_show' : ''}}">
+        <view class="page__whole">
+            <image class="page_note_img" mode="widthFix" src="http://www.cruisesh.com/upload/27768-d3blgf.png" background-size="cover" />
+            <image class="page_note_img" mode="widthFix" src="http://www.cruisesh.com/upload/27768-1pt7bkj.png" background-size="cover" />
+            <image class="page_note_img" mode="widthFix" src="http://www.cruisesh.com/upload/27768-jorezn.png" background-size="cover" />
+            <image class="page_note_img" mode="widthFix" src="http://www.cruisesh.com/upload/27768-y1vvmr.png" background-size="cover" />
+        </view>
+    </view>
+    <view class="widgets__list {{index ==1 ? 'widgets__list_show' : ''}}">
+        <view class="page__hd">
+            <text class="page__title">{{array[1]}}</text>
+        </view>
+    </view>
+    <view class="widgets__list {{index ==2 ? 'widgets__list_show' : ''}}">
+        <view class="page__hd">
+            <text class="page__title">{{array[2]}}</text>
+        </view>
+    </view>
+    <view class="widgets__list {{index ==3 ? 'widgets__list_show' : ''}}">
+        <view class="page__hd">
+            <text class="page__title">{{array[3]}}</text>
+        </view>
+    </view>
+    <view class="widgets__list {{index ==4 ? 'widgets__list_show' : ''}}">
+        <view class="page__hd">
+            <text class="page__title">{{array[4]}}</text>
+        </view>
+    </view>
+    <view class="widgets__list {{index ==5 ? 'widgets__list_show' : ''}}">
+        <view class="page__hd">
+            <text class="page__title">{{array[5]}}</text>
+        </view>
+    </view>
+    <view class="widgets__list {{index ==6 ? 'widgets__list_show' : ''}}">
+        <view class="page__hd">
+            <text class="page__title">{{array[6]}}</text>
+        </view>
+    </view>
+    <view class="widgets__list {{index ==7 ? 'widgets__list_show' : ''}}">
+        <view class="page__hd">
+            <text class="page__title">{{array[7]}}</text>
+        </view>
+    </view>
+</view>

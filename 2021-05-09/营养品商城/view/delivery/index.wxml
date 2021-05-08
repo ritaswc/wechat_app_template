@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="header"></view>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{delivery_list}}" wx:for-item="delivery" wx:key="{{delivery.delivery_id}}" id="{{delivery.delivery_id}}"  bindtap="handleClick">
+      <view class="delivery-list-checkbox" wx:if="{{is_select}}">
+        <icon class="checkbox" type="{{delivery.is_select ? 'success' : 'circle'}}" color="{{delivery.is_select ? color : '#dddddd'}}" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg {{is_select ? 'delivery-list-box' : ''}}">
+        <view class="weui-media-box__title">{{delivery.delivery_name}} {{delivery.delivery_phone}}</view>
+        <view class="weui-media-box__desc address">{{delivery.delivery_address}}</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+  </view>
+  <view class="footer">
+    <navigator url="/view/delivery/detail" class="footer-add">
+      新增收货地址
+    </navigator>
+  </view>
+</view>

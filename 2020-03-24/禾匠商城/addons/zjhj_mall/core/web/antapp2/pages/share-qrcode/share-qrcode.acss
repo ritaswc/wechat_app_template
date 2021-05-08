@@ -1,0 +1,10 @@
+/* pages/share-qrcode/share-qrcode.wxss */
+.i-qrcode{
+  width: 100%;
+  height: 1200rpx;
+}
+.i-qrcode .img{
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+}

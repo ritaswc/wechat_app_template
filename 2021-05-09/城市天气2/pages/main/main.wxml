@@ -1,0 +1,12 @@
+<!--pages/main/main.wxml-->
+<view class="container">
+    <text>{{info.cityInfo.c3}}</text>
+    <text>{{info.now.aqiDetail.quality}}</text>
+    <text>pm2.5 {{info.now.aqiDetail.pm2_5}}</text>
+    <text>风向 {{info.now.wind_direction}}</text>
+    <text>更新时间: {{info.now.temperature_time}}</text>
+    <text>空气质量: {{info.now.aqi}}</text>
+    <text>天气: {{info.now.weather}}</text>
+    <image src="{{info.now.weather_pic}}" mode="widthFix" class="pic"></image>
+    <text>温度: {{info.now.temperature}}</text>
+</view>

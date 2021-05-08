@@ -1,0 +1,97 @@
+page {
+    background-color: #fe6b2e;
+}
+
+.background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fe6b2e;
+    z-index: -1;
+    background-size: 100% auto;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.background image {
+    width: 100%;
+    height: 100%;
+}
+
+.rule-btn {
+    position: fixed;
+    right: 0;
+    top: 32rpx;
+    background: rgba(0,0,0,.5);
+    color: rgba(255,255,255,0.85);
+    padding: 16rpx 24rpx 16rpx 32rpx;
+    border-radius: 999rpx 0 0 999rpx;
+    font-size: 9pt;
+}
+
+.rule-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background: rgba(0,0,0,.65);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.rule-bg.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.rule-content {
+    position: fixed;
+    z-index: 10;
+    left: 100rpx;
+    right: 100rpx;
+    top: 200rpx;
+    max-height: calc(100vh - 400rpx);
+    background: #fff;
+    border-radius: 10rpx;
+    padding: 24rpx;
+    opacity: 0;
+    visibility: hidden;
+    transition: 150ms;
+}
+
+.rule-content.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.rule-close {
+    padding: 25rpx;
+    position: absolute;
+    font-size: 0;
+    bottom: -100rpx;
+    left: 50%;
+    margin-left: -50rpx;
+}
+
+.rule-close image {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 999rpx;
+}
+
+.rule-text {
+    max-height: calc(100vh - 400rpx - 24rpx * 2);
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 9pt;
+    line-height: 1.5;
+}
+
+.rule-title {
+    text-align: center;
+    margin-bottom: 12rpx;
+}

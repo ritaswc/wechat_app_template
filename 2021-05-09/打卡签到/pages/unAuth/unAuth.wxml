@@ -1,0 +1,11 @@
+<!--pages/unAuth/unAuth.wxml-->
+
+<view class="unauth">
+    <view class="warn">
+        <icon type="warn" size="108"></icon>
+    </view>
+    <view class="introduction">
+        <text>该小程序需允许授权才能正常使用</text>
+        <text>请退出之后再试</text>
+    </view>
+</view>

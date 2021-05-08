@@ -1,0 +1,95 @@
+.s_input{
+    background-color: #e58026;
+    padding:0 0 15rpx 15rpx;
+}
+.inputbox{
+  display: flex;
+  background-color: #df6f00;
+  border-radius:8rpx; 
+  padding: 8rpx;
+  width:94%;
+  /*display: table;*/
+}
+.inputbox icon{
+    /*display: table-cell;*/
+    /*vertical-align: middle;*/
+    padding-right: 8rpx;
+    margin-top: 6rpx;
+}
+.inputbox input{
+  color:  #fff;
+}
+.placeholder{
+  color: #fff;
+  font-size: 12pt;
+}
+.image_jiantou{
+  width: 30rpx;
+  height: 30rpx;
+}
+.iamge_search{
+  width: 30rpx;
+  height: 30rpx;
+  padding-right: 10rpx;
+}
+.s_s_list{
+  width: 94%;
+  margin: 0 auto;
+}
+.s_s_list .title{
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+.s_s_list .title .s_til{
+  width: 25%;
+}
+.s_cont{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.has_select{
+  font-size: 13pt;
+  color: #888888;
+  max-width: 92%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.s_search{
+  background-color: #e58026;
+  color: #fff;
+  margin-top: 30rpx;
+}
+.s_his{
+  margin-top: 30rpx;
+  background-color: #efefef;
+  font-size: 12pt;
+  color: #b2b2b2;
+  padding: 16rpx;
+  display: flex;
+  align-items: center;
+}
+.s_his_box{
+  /*border: 1px solid red;*/
+  width: 94%;
+  margin: 0 auto;
+  font-size: 12pt;
+}
+.s_his_box .title{
+  padding: 10rpx 0;
+  color: #b2b2b2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clear_his{
+  font-size: 12pt;
+  text-align: center;
+  color: #888888;
+  margin: 15rpx auto;
+}

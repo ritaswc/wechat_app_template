@@ -1,0 +1,12 @@
+/* pages/commonSelect/commonSelect.wxss */
+page{
+    /*background-color: #efefef;*/
+}
+.commonSelect_wrap{
+    width: 94%;
+    margin: 0 auto;
+    padding: 20rpx 0;
+}
+.commonSelect_wrap textarea{
+    width: 100%;
+}

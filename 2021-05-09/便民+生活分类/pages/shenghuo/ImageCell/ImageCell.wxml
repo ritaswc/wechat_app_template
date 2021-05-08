@@ -1,0 +1,6 @@
+
+<template name="ImageCell">
+<view class="ImageCell-container">
+  <image class="imageCell-image" src="{{iconUrl}}"></image>
+  </view>
+</template>

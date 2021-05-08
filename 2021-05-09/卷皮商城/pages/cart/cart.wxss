@@ -1,0 +1,16 @@
+page {
+  height: 100%;
+}
+.container {
+  display: flex;
+  height: 100%;
+  align-items: center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
+  background-color: #F2f2f2;
+  color: #939393;
+  font-size: 30rpx;
+}
+.container .cart-image {
+  width: 120px;
+  height: 120px;
+}

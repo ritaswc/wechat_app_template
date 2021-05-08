@@ -1,0 +1,34 @@
+<import src="/wxParse/wxParse.wxml"/>
+
+<view calss='wxParse'>
+<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+<!-- 添加回到主页 -->
+<view class='main-wraper'>
+    <navBar title='福利推荐' background='#fff' back="{{true}}" home="{{true}}" bindback="handlerGobackClick" bindhome="handlerGohomeClick"></navBar>
+</view>
+<!--列表页-->
+<!-- 有数据的时候显示 -->
+<block wx:if="{{showitem}}">
+  <view class="contentList">
+    <block wx:for="{{articleList}}" wx:key="index">
+      <view class="content" bindtap="toPagedetail" data-pagesourceWithTitle="{{item['pagesourceWithTitle']}}" data-title="{{item['title']}}">
+        <view class="contentBigImg">
+           <image src="{{item['imgSrc'][0]}}" mode="widthFix" lazy-load="false"></image>
+        </view>
+        <view class="content-title">
+          <view class="title">
+            <view class="titleText">{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</block>
+<block wx:else>
+  <view class="dataNotip">
+    <view class="tip">
+      网络暂时走丢了，请稍后再试
+    </view>  
+  </view>
+</block>

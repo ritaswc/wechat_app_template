@@ -1,0 +1,25 @@
+
+<!--pages/login/login.wxml-->
+<view class="top-bgimage">
+  <view class="container">
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="../../images/login.png" background-size="cover"></image>
+      <text class="userinfo-nickname">请登录</text>
+    </view>
+  </view>
+</view>
+<view class="main-body">
+  <form bindsubmit="formLogin">
+    <view>
+      <input name="inputName" bindinput="bindNameInput" class="input-login" placeholder="输入用户名" />
+    </view>
+    <view class="hs20"></view>
+    <view>
+      <input name="inputPwd" password="true" bindinput="bindPwdInput" class="input-login" placeholder="输入口令" bindconfirm="bindInputLogin"  />
+    </view>
+    <view class="hs20"></view>
+    <view>
+      <button class="btn-login" hover-class="btn-login-hover" form-type="submit">进入账本</button>
+    </view>
+  </form>
+</view>

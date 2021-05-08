@@ -1,0 +1,45 @@
+.header {
+	width: 220rpx;
+	height: 220rpx;
+	padding-top: 120rpx;
+	margin-left: 265rpx;
+}
+
+.header image {
+	width: 220rpx;
+	height: 220rpx;
+	border: 1px solid #fff;
+	border-radius: 110rpx;
+	box-shadow: 2rpx 2rpx 2rpx #625c52;
+	line-height: 220rpx;
+}
+
+.title {
+	font-size: 50rpx;
+	padding-top: 50rpx;
+	text-align: center;
+	color: #303030;
+}
+
+.content {
+	margin-top: 150rpx;
+	color: #37444b;
+	text-align: center;
+}
+
+.content .num0 {
+	padding-top: 20rpx;
+}
+
+.content .num1 {
+	margin-top: 45rpx;
+}
+
+.footer {
+	color: #e1dbcd;
+	font-size: 25rpx;
+	margin-top: 400rpx;
+	text-align:center;
+}
+
+

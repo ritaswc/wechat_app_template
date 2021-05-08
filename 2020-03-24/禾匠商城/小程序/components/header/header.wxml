@@ -1,0 +1,5 @@
+<view class="header">
+    <view wx:if="{{__platform=='wx'&&store.is_official_account==1&&__is_offical_account}}">
+        <official-account binderror="relevanceError" bindload="relevanceSuccess"></official-account>
+    </view>
+</view>

@@ -1,0 +1,97 @@
+
+<!--pages/destination/cityView/cityView.wxml-->
+<view class="tab">
+  <view>
+    <text>推荐排序</text>
+    <text class="icon"></text>
+  </view>
+  <view>
+    <text>全部分类</text>
+    <text class="icon"></text>
+  </view>
+  <view>
+    <text>筛选</text>
+    <text class="icon"></text>
+  </view>
+</view>
+
+<!--景点-->
+<view class="view-box">
+
+  <!--此处应循环数据-->
+  <view class="view">
+    <image src="/images/destination/view.png" class="img"></image>
+    <view class="info">
+      <text class="title">丘北普者黑风景区</text>
+      <text class="desc">位于云南省文山壮族苗族自治州丘北县境内，距县城13公里，是国家级风景名胜区。</text>
+      <view class="price">
+        <text class="new-price">￥218</text>
+        <view class="old-price">
+          <text>￥250</text>
+          <text class="line"></text>
+        </view>
+        <text class="seller">已售500</text>
+      </view>
+    </view>
+  </view>
+  <view class="view">
+    <image src="/images/destination/view.png" class="img"></image>
+    <view class="info">
+      <text class="title">丘北普者黑风景区</text>
+      <text class="desc">位于云南省文山壮族苗族自治州丘北县境内，距县城13公里，是国家级风景名胜区。</text>
+      <view class="price">
+        <text class="new-price">￥218</text>
+        <view class="old-price">
+          <text>￥250</text>
+          <text class="line"></text>
+        </view>
+        <text class="seller">已售500</text>
+      </view>
+    </view>
+  </view>
+  <view class="view">
+    <image src="/images/destination/view.png" class="img"></image>
+    <view class="info">
+      <text class="title">丘北普者黑风景区</text>
+      <text class="desc">位于云南省文山壮族苗族自治州丘北县境内，距县城13公里，是国家级风景名胜区。</text>
+      <view class="price">
+        <text class="new-price">￥218</text>
+        <view class="old-price">
+          <text>￥250</text>
+          <text class="line"></text>
+        </view>
+        <text class="seller">已售500</text>
+      </view>
+    </view>
+  </view>
+  <view class="view">
+    <image src="/images/destination/view.png" class="img"></image>
+    <view class="info">
+      <text class="title">丘北普者黑风景区</text>
+      <text class="desc">位于云南省文山壮族苗族自治州丘北县境内，距县城13公里，是国家级风景名胜区。</text>
+      <view class="price">
+        <text class="new-price">￥218</text>
+        <view class="old-price">
+          <text>￥250</text>
+          <text class="line"></text>
+        </view>
+        <text class="seller">已售500</text>
+      </view>
+    </view>
+  </view>
+  <view class="view">
+    <image src="/images/destination/view.png" class="img"></image>
+    <view class="info">
+      <text class="title">丘北普者黑风景区</text>
+      <text class="desc">位于云南省文山壮族苗族自治州丘北县境内，距县城13公里，是国家级风景名胜区。</text>
+      <view class="price">
+        <text class="new-price">￥218</text>
+        <view class="old-price">
+          <text>￥250</text>
+          <text class="line"></text>
+        </view>
+        <text class="seller">已售500</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/show_product/show_product",
+    "pages/address/address",
+    "pages/cart/cart",
+    "pages/cart/coupon",
+    "pages/mine/mine",
+    "pages/category/category"
+  ],
+  "window":{
+    "backgroundColor": "#f2f2f2",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "巴爷供销社",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "#BF8600",
+    "borderStyle": "white",
+    "backgroundColor": "white",
+    "position": "top",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/ba.png",
+      "selectedIconPath": "images/ba_active.png",
+      "text": "首页"
+    },
+    {
+      "pagePath": "pages/category/category",
+      "iconPath": "images/cart.png",
+      "selectedIconPath": "images/cart_active.png",
+      "text": "分类"
+    },
+    {
+      "pagePath": "pages/cart/cart",
+      "iconPath": "images/cart.png",
+      "selectedIconPath": "images/cart_active.png",
+      "text": "购物车"
+    }]
+  }
+}

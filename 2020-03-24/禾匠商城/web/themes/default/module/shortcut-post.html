@@ -1,0 +1,50 @@
+{template 'common/header'}
+<div id="js-module-shortcut-post" ng-controller="userModuleShortcutPostCtrl">
+<ol class="breadcrumb we7-breadcrumb">
+	<a href="./index.php?c=module&a=shortcut&do=display&m={$module_name}&uniacid={$uniacid}"><i class="wi wi-back-circle"></i> </a>
+	<li><a href="./index.php?c=module&a=shortcut&do=display&m={$module_name}&uniacid={$uniacid}">快捷入口列表</a></li>
+	<li>添加快捷入口</li>
+</ol>
+
+<form action="{php echo url('module/shortcut/post', array('uniacid' => $uniacid, 'm' => $module_name, 'id' => $id))}" method="post" class="form we7-form">
+	<div class="form-group">
+		<label class="col-sm-2 control-label">快捷入口名称</label>
+		<div class="form-controls col-sm-8">
+			<input type="text" name="title" ng-model="info.title" class="form-control" placeholder="快捷入口名称">
+			<span class="help-block"></span>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">快捷入口链接</label>
+		<div class="form-controls col-sm-8">
+			<input type="text" name="url" ng-model="info.url" class="form-control" placeholder="快捷入口链接">
+			<span class="help-block"></span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">快捷入口图标</label>
+		<div class="form-controls col-sm-8">
+			<div class="we7-input-img input-more" ng-class="{'active': shorcutImage.attachment}" >
+				<img ng-src="{{shorcutImage.url}}" ng-if="shorcutImage.attachment" >
+				<a href="javascript:;" class="input-addon" ng-click="changeImage()" ng-hide="shorcutImage.attachment"><span>+</span></a>
+				<input type="text" name="icon" ng-model="shorcutImage.attachment" style="display: none;">
+				<div class="cover-dark">
+					<a href="javascript:;" class="cut" ng-click="changeImage()">更换</a>
+					<a href="javascript:;" class="del" ng-click="delImage()"><i class="fa fa-times text-danger"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button class="btn btn-primary we7-padding-horizontal col-sm-offset-2">提交</button>
+</form>
+</div>
+<script>
+	angular.module('moduleApp').value('config', {
+		'info' : {php echo !empty($shortcut_info) ? json_encode($shortcut_info) : 'null'},
+		'attachurl' : "{$_W['attachurl']}",
+	});
+	angular.bootstrap($('#js-module-shortcut-post'), ['moduleApp']);
+</script>
+
+{template 'common/footer'}

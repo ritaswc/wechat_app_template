@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "订单核销",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

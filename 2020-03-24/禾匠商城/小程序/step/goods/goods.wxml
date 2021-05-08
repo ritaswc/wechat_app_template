@@ -1,0 +1,34 @@
+<import src="../../wxParse/wxParse.wxml"></import>
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body">
+        <include src="/components/specifications_model/specifications_model.wxml"></include>
+        <include src="/components/goods/specifications_model.wxml"></include>
+        <include src="/components/quick-navigation/quick-navigation"></include>
+        <view class="{{show_attr_picker||show||no_scroll?'no-scroll':''}}">
+            <view style="padding-bottom: 120rpx">
+                <include src="/components/goods/goods_banner.wxml"></include>
+                <include src="/components/goods/goods_info.wxml"></include>
+                <view class="tab-group">
+                    <view class="flex-row tab-group-header">
+                        <view class="good-detail">
+                            <text>商品详情</text>
+                        </view>
+                    </view>
+                    <view class="tab-group-body">
+                        <view class="tab-group-item {{tab_detail}}">
+                            <view class="goods-detail">
+                                <template is="wxParse" data="{{wxParseData:detail.nodes}}"></template>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <include src="/components/shopping_cart/shopping_cart" wx:if="{{quick==1}}"></include>
+            <include src="/components/goods/goods_buy" wx:else></include>
+            <include src="/components/common/get-coupon.wxml"></include>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

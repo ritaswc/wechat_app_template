@@ -1,0 +1,265 @@
+.shop-top {
+  border-top: 20rpx solid #eee;
+  display: flex;
+}
+.shop-top view {
+  width: 200rpx;
+  font-size: 32rpx;
+  color: #333;
+  line-height: 80rpx;
+  text-align: center;
+  font-weight: 700;
+  margin-right: 20rpx;
+}
+.shop-top .input-txt {
+  flex: 1;
+  padding-left: 20rpx;
+  border-bottom: 1rpx solid #eee;
+  height: 80rpx;
+}
+.shop-top .triangle::after {
+  right: 30rpx;
+}
+.shop-center {
+  margin-top: 10rpx;
+}
+.shop-center input {
+  border-bottom: 1rpx solid #eee;
+  height: 80rpx;
+  padding-left: 20rpx;
+}
+.add-map {
+  color: #ed4d30;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-bottom: 20rpx solid #eee;
+}
+.lxr,
+.tel,
+.addpic,
+.name,
+.id-number,
+.license-name,
+.license-number,
+.license-site,
+.restaurant-license-name,
+.restaurant-license-number,
+.restaurant-license-site {
+  display: flex;
+  margin: 20rpx 0;
+  padding: 0 20rpx;
+  font-size: 32rpx;
+}
+.lxr input,
+.tel input,
+.addpic input,
+.name input,
+.id-number input,
+.license-name input,
+.license-number input,
+.license-site input,
+.restaurant-license-name input,
+.restaurant-license-number input,
+.restaurant-license-site input {
+  flex: 1;
+  text-align: right;
+  font-size: 24rpx;
+}
+.license-name,
+.license-number,
+.license-site,
+.restaurant-license-name,
+.restaurant-license-number,
+.restaurant-license-site {
+  border-bottom: 1rpx solid #eee;
+}
+.lxr {
+  padding: 0;
+  margin: 20rpx 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.addpic text:nth-child(2) {
+  flex: 1;
+  text-align: right;
+  margin-right: 20rpx;
+  color: #999;
+}
+.add-shop-pic {
+  background-color: #efeff4;
+}
+.add-shop-pic .pic {
+  font-size: 26rpx;
+  color: #666;
+  padding: 33rpx 45rpx 22rpx 46rpx;
+}
+.face,
+.bottom,
+.license-img,
+.restaurant-license {
+  background-color: #fff;
+  border-bottom: 30rpx solid #eee;
+  display: flex;
+  padding: 35rpx 34rpx;
+}
+.face .face-left,
+.bottom .face-left,
+.license-img .face-left,
+.restaurant-license .face-left,
+.face .face-right,
+.bottom .face-right,
+.license-img .face-right,
+.restaurant-license .face-right,
+.face .bottom-left,
+.bottom .bottom-left,
+.license-img .bottom-left,
+.restaurant-license .bottom-left,
+.face .bottom-right,
+.bottom .bottom-right,
+.license-img .bottom-right,
+.restaurant-license .bottom-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.face .face-left,
+.bottom .face-left,
+.license-img .face-left,
+.restaurant-license .face-left,
+.face .bottom-left,
+.bottom .bottom-left,
+.license-img .bottom-left,
+.restaurant-license .bottom-left {
+  margin-right: 26rpx;
+}
+.face .face-left image,
+.bottom .face-left image,
+.license-img .face-left image,
+.restaurant-license .face-left image,
+.face .bottom-left image,
+.bottom .bottom-left image,
+.license-img .bottom-left image,
+.restaurant-license .bottom-left image {
+  width: 294rpx;
+  height: 226rpx;
+}
+.face .face-right text,
+.bottom .face-right text,
+.license-img .face-right text,
+.restaurant-license .face-right text,
+.face .bottom-right text,
+.bottom .bottom-right text,
+.license-img .bottom-right text,
+.restaurant-license .bottom-right text {
+  margin-top: 48rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.face .face-right button,
+.bottom .face-right button,
+.license-img .face-right button,
+.restaurant-license .face-right button,
+.face .bottom-right button,
+.bottom .bottom-right button,
+.license-img .bottom-right button,
+.restaurant-license .bottom-right button {
+  width: 252rpx;
+  line-height: 72rpx;
+  color: #fff;
+  background-color: #ed4d30;
+}
+.zizhi .face {
+  border-bottom-width: 1rpx;
+}
+.zizhi .text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.zizhi .text-wrap text:nth-child(2) {
+  margin-top: 0rpx;
+}
+.zizhi .name,
+.zizhi .id-number {
+  margin: 0 20rpx;
+  line-height: 80rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+}
+.zizhi .id-number {
+  margin: 0;
+  padding: 0 40rpx;
+  border-bottom: 20rpx solid #eee;
+}
+.zizhi .license-kind,
+.zizhi .license-time,
+.zizhi .restaurant-license-time {
+  height: 80rpx;
+  font-size: 30rpx;
+  align-items: center;
+  display: flex;
+  margin: 0 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.zizhi .license-kind .radio-group,
+.zizhi .license-time .radio-group,
+.zizhi .restaurant-license-time .radio-group {
+  flex: 1;
+  text-align: right;
+}
+.zizhi .license-img,
+.zizhi .restaurant-license {
+  border-bottom: none;
+}
+.zizhi .license-time,
+.zizhi .restaurant-license-time {
+  margin: 0;
+  padding: 0 20rpx;
+  border-bottom: 20rpx solid #eee;
+}
+.shenhe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shenhe .iconfont {
+  position: relative;
+  margin-top: 400rpx;
+}
+.shenhe .iconfont::before {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -300rpx);
+  font-size: 200rpx;
+  color: #999;
+}
+/* S 省市区 */
+.citybody {
+  position: fixed;
+  bottom: 0px;
+  z-index: 3;
+  background: #fff;
+}
+.cityheader {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 4;
+}
+.city-cancel {
+  float: left;
+  margin: 20rpx;
+  color: #818181;
+}
+.city-true {
+  float: right;
+  margin: 20rpx;
+  color: #2FB42E;
+}
+.section .picker {
+  background-color: #fff;
+  border-bottom: 1px #d9d9d9 solid;
+  border-top: 1px #d9d9d9 solid;
+  padding: 20rpx;
+}
+/* E 省市区 */

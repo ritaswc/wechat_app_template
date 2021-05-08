@@ -1,0 +1,249 @@
+.wxSortPickerViewTemTags{
+  position: fixed;
+  top: 10rpx;
+  right: 0;
+  background-color: #666666;
+  color: cornflowerblue;
+}
+.wxSortPickerViewTemTag{
+  text-align: center;
+  padding: 3rpx;
+  font-size: 12rpx;
+}
+.wxSortPickerViewFixedTag{
+  position: fixed;
+  width: 100%;
+}
+.wxSortPickerViewTag{
+  background-color: #f2f2f2;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #666666;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 5rpx;
+  padding-left: 25rpx;
+}
+.clear{
+  clear: both;
+}
+/*大图标*/
+.code-num{
+    width: 50rpx;
+    height: 50rpx;
+    /*background-color: red;*/
+    background-size:cover;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    line-height: 50rpx;
+    font-size: 24rpx;
+    margin-right: 6rpx;
+    /*margin-top: 10rpx;*/
+    float: left;
+    margin-bottom: 10rpx;
+    
+}
+.code-num.red{
+    background-image: url('http://119.29.198.75/img/red1.png');
+}
+.code-num.green {
+    background-image: url('http://119.29.198.75/img/yellow.png');
+}
+.code-num.blue{
+    background-image: url('http://119.29.198.75/img/blue.png');
+}
+/*小图标*/
+.code-num2{
+    margin-right: 10rpx;
+    width: 44rpx;
+    height: 44rpx;
+    /*background-color: red;*/
+    background-size:cover;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    line-height: 50rpx;
+    font-size: 24rpx;   
+    margin-bottom: 5rpx;
+    /*margin-top: 10rpx;*/
+    float: left;
+}
+
+.code-num4{
+    /*margin-left: 5rpx;*/
+    width: 44rpx;
+    height: 44rpx;
+    /*background-color: red;*/
+    background-size:cover;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    line-height: 44rpx;
+    font-size: 24rpx;   
+    /*margin-bottom: 10rpx;*/
+    float: left;
+    margin-right: 6rpx;
+    margin-bottom:8rpx;
+}
+.code-num4.red{
+    background-image: url('http://119.29.198.75/img/red1.png');
+}
+
+.code-num4.blue{
+   float: left; 
+    background-image: url('http://119.29.198.75/img/blue.png');
+}
+
+.code-num4.yellow{
+    float: left;
+    background-image: url('http://119.29.198.75/img/yellow.png');
+}
+
+
+.code-num.dice_01{
+    background-image: url('http://119.29.198.75/img/dice_1.png');
+}
+.code-num.dice_02{
+    background-image: url('http://119.29.198.75/img/dice_2.png');
+}
+.code-num.dice_03{
+    background-image: url('http://119.29.198.75/img/dice_3.png');
+}
+.code-num.dice_04{
+    background-image: url('http://119.29.198.75/img/dice_4.png');
+}
+.code-num.dice_05{
+    background-image: url('http://119.29.198.75/img/dice_5.png');
+}
+.code-num.dice_06{
+    background-image: url('http://119.29.198.75/img/dice_6.png');
+}
+
+.code-num.dice_1{
+    background-image: url('http://119.29.198.75/img/dice_1.png');
+}
+.code-num.dice_2{
+    background-image: url('http://119.29.198.75/img/dice_2.png');
+}
+.code-num.dice_3{
+    background-image: url('http://119.29.198.75/img/dice_3.png');
+}
+.code-num.dice_4{
+    background-image: url('http://119.29.198.75/img/dice_4.png');
+}
+.code-num.dice_5{
+    background-image: url('http://119.29.198.75/img/dice_5.png');
+}
+.code-num.dice_6{
+    background-image: url('http://119.29.198.75/img/dice_6.png');
+}
+
+
+.code-num2.pk_01{
+    background-image: url('http://119.29.198.75/img/pk1.png');
+}
+.code-num2.pk_02{
+    background-image: url('http://119.29.198.75/img/pk2.png');
+}
+.code-num2.pk_03{
+    background-image: url('http://119.29.198.75/img/pk3.png');
+}
+.code-num2.pk_04{
+    background-image: url('http://119.29.198.75/img/pk4.png');
+}
+.code-num2.pk_05{
+    background-image: url('http://119.29.198.75/img/pk5.png');
+}
+.code-num2.pk_06{
+    background-image: url('http://119.29.198.75/img/pk6.png');
+}
+.code-num2.pk_07{
+    background-image: url('http://119.29.198.75/img/pk7.png');
+}
+.code-num2.pk_08{
+    background-image: url('http://119.29.198.75/img/pk8.png');
+}
+.code-num2.pk_09{
+    background-image: url('http://119.29.198.75/img/pk9.png');
+}
+.code-num2.pk_10{
+    background-image: url('http://119.29.198.75/img/pk10.png');
+}
+/*农场*/
+.code-num3{
+    margin-left: 10rpx;
+    width: 57rpx;
+    height: 59rpx;
+    /*background-color: red;*/
+    background-size:cover;
+    color: white; 
+    display: inline-block;
+    text-align: center;
+    line-height: 58rpx;
+    font-size: 30rpx;
+    mmargin-top: 10rpx;
+    float: left;
+}
+
+.code-num3.fm_01{  
+    background-image: url('http://119.29.198.75/img/fm1.png');
+}
+.code-num3.fm_02{
+    background-image: url('http://119.29.198.75/img/fm2.png');
+}
+.code-num3.fm_03{
+    background-image: url('http://119.29.198.75/img/fm3.png');
+}
+.code-num3.fm_04{
+    background-image: url('http://119.29.198.75/img/fm4.png');
+}
+.code-num3.fm_05{
+    background-image: url('http://119.29.198.75/img/fm5.png');
+}
+.code-num3.fm_06{
+    background-image: url('http://119.29.198.75/img/fm6.png');
+}
+.code-num3.fm_07{
+    background-image: url('http://119.29.198.75/img/fm7.png');
+}
+.code-num3.fm_08{
+    background-image: url('http://119.29.198.75/img/fm8.png');
+}
+.code-num3.fm_09{
+    background-image: url('http://119.29.198.75/img/fm9.png');
+}
+.code-num3.fm_10{
+    background-image: url('http://119.29.198.75/img/fm10.png');
+}
+
+.code-num3.fm_11{
+    background-image: url('http://119.29.198.75/img/fm11.png');
+}
+.code-num3.fm_12{
+    background-image: url('http://119.29.198.75/img/fm12.png');
+}
+.code-num3.fm_13{
+    background-image: url('http://119.29.198.75/img/fm13.png');
+}
+.code-num3.fm_14{
+    background-image: url('http://119.29.198.75/img/fm14.png');
+}
+.code-num3.fm_15{
+    background-image: url('http://119.29.198.75/img/fm15.png');
+}
+.code-num3.fm_16{
+    background-image: url('http://119.29.198.75/img/fm16.png');
+}
+.code-num3.fm_17{
+    background-image: url('http://119.29.198.75/img/fm17.png');
+}
+.code-num3.fm_18{
+    background-image: url('http://119.29.198.75/img/fm18.png');
+}
+.code-num3.fm_19{
+    background-image: url('http://119.29.198.75/img/fm19.png');
+}
+.code-num3.fm_20{
+    background-image: url('http://119.29.198.75/img/fm20.png');
+}

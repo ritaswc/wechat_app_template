@@ -1,0 +1,51 @@
+
+<!--pages/rdetail/rdetail.wxml-->
+<include src="../template/share.wxml"/>
+<view class="banner">
+  <image src="{{rest.imgs[0]}}"></image>
+</view>
+<view class="rest_detail">
+  <view class="rest_name">{{rest.name}}</view>
+  <view class="rest_desc  {{mark == true?'show':''}}" wx:if="{{rest.desc != ''}}">{{rest.desc}}</view>
+  <view class="rest_desc  {{mark == true?'show':''}}" wx:else>{{rest.reason}}</view>
+  <view class="rest_icon  {{mark == true?'show':''}}" bindtap="showMore" wx:if="{{numbers > 70}}">
+    <text wx:if="{{mark == false}}">查看更多</text>
+    <text wx:if="{{mark == true}}">收起</text>
+    <image src="../image/arrowright.png"></image>
+  </view>
+  <view class="introduction border2">
+    <view class="in_con">
+      <view class="bg bgone">
+        <image src="../image/1.png"></image>
+      </view>
+      <text>人均: {{rest.cost}}元</text>
+    </view>
+    <view class="in_con" >
+      <view class="bg bgtwo">
+        <image src="../image/2.png"></image>  
+      </view>
+      <view wx:if="{{rest.phones != ''}}" 
+      class="call"> 电话:<view style="margin-left:10rpx" wx:for="{{rest.phones}}" bindtap = "call" id="{{item}}">{{item}}</view> </view>
+      <text wx:else>电话: 暂无</text>
+    </view>
+    <view class="in_con" >
+      <view class="bg bgthree" >
+        <image src="../image/3.png"></image>      
+      </view>
+      <text class="address" wx:if = "{{rest.address !=''}}" bindtap="watchAddress">地址: {{rest.address}}</text>
+      <text wx:else>地址：暂无</text>
+    </view>
+  </view>
+  <view wx:if="{{list != ''}}">
+    <view class="title">- 餐厅美食推荐 -</view>
+    <navigator class="list border" wx:for="{{list}}" url="../dish/dish?id={{item.id}}">
+      <view class="img">
+        <image src="{{item.cover}}"></image>
+      </view>
+      <view class="content">
+        <view class="item_name">{{item.name}}</view>
+        <view class="item_sum">{{item.summary}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>

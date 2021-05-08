@@ -1,0 +1,20 @@
+page{background-color: #f3f3f3;padding: 55px 0 0;}
+.fm{width: 700rpx;display: flex; border: 1rpx solid #ddd;background-color: #fff; margin: 20rpx auto 0;border-radius:3px;height:50px;line-height: 50px;}
+.fm input{flex: 1;padding: 0 10px; height: 100%;}
+
+.phone .label{width: 100rpx; border-right: 1rpx solid #eee;text-align: center;}
+.code .label{width: 300rpx; border-left: 1rpx solid #eee;text-align: center;}
+
+.btn-ok{background-color:#ff6a00;color: #fff;}
+.btn-dis{background-color:#ddd;color: #333;}
+.btn-dis text{color:#ff6a00; padding: 0 5rpx; }
+
+
+.sub{width: 700rpx;height: 50px;line-height: 50px; text-align: center;border-radius:3px; margin:30rpx auto; }
+.sub-ok{background-color:#576b95;color: #fff;}
+.sub-dis{background-color: #d0d0d0;color: #333;}
+
+.tab{width: 720rpx; position: fixed;z-index: 100; left: 14rpx; top:10rpx;border:1px solid #576b95;height: 40px; line-height:40px;border-radius: 5px;display: flex;font-size: 13pt;}
+.tab-layer{width: 750rpx;height: 50px; background: #fff;opacity: 0.9;left: 0;top: 0; position: fixed;z-index: 99; }
+.tab .tab-on{background-color: #576b95;text-align: center; color: #fff;flex: 1;}
+.tab .tab-out{text-align: center;flex: 1;}

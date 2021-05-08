@@ -1,0 +1,12 @@
+<template name="item-cell">
+    <view class="item-cell">
+        <image class="good-thumb" src="{{thumb_url}}" alt="item"/>
+        <view class="item-content">
+            <view class="order-detail-params">
+            	<view class="content-name">{{goods_name}}</view>
+            	<view class="content-attr">{{goods_attr}}</view>
+            </view>
+            <view class="content-count order-detail-price"><text>￥{{sum_price}}</text><view class="content-amount">×{{goods_number}}</view></view>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,165 @@
+/* pages/miaosha/miaosha.wxss */
+@import "../../components/quick-navigation/quick-navigation.acss";
+.top-bar{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1rpx solid #eee;
+    z-index: 100
+}
+
+.top-bar > scroll-view{
+    overflow: auto !important;
+}
+.start-time-list{
+    overflow-y: visible !important;
+    padding-bottom: 20rpx;
+}
+
+.start-time-item {
+    background: #30353c;
+    color: #bbb;
+    font-weight: bold;
+    width: 150rpx;
+    text-align: center;
+    height: 120rpx;
+}
+
+
+.start-time-item>view{
+    width: 100%;
+}
+
+.start-time-item .start-time{
+    text-align: center;
+    line-height: 1;
+}
+
+.start-time-item .start-status{
+    font-size: 9pt;
+    line-height: 1;
+    font-weight: normal;
+    text-align: center;
+}
+.start-time-item.active{
+    background: #ff4544;
+    color: #fff;
+    position: relative;
+}
+
+.start-time-item.active .start-time-item-icon{
+    position: absolute;
+    z-index: 999;
+    bottom: -15rpx;
+    left: 50%;
+    margin-left: -12rpx;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 20rpx solid #ff4544;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-bottom-width: 0;
+}
+
+.start-time-item.active .start-time{
+    font-size: 12pt;
+}
+
+.time-over-bar{
+    background: #fff;
+    margin-top: -20rpx;
+    height: 80rpx;
+    padding: 0 20rpx;
+    border-left: 6rpx solid #ff4544;
+}
+
+.goods-list{
+    padding-top: 220rpx;
+}
+.goods-list .item{
+    background: #fff;
+    border-bottom: 1rpx solid #eee;
+}
+
+.goods-list .cover-pic{
+    width: 262rpx;
+    height: 262rpx;
+    display: block;
+}
+
+.goods-list .goods-name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 16rpx;
+}
+
+.goods-list .progress-bar{
+    background: #ffb7b7;
+    border-radius: 999rpx;
+    overflow: hidden;
+    height: 24rpx;
+    margin-bottom: 12rpx;
+}
+
+.goods-list .progress{
+    background: #ff4544;
+    border-radius: 999rpx;
+    height: 100%;
+    width: 0%;
+}
+
+.goods-list .statue-text{
+    font-size: 9pt;
+    color: #888;
+    margin-bottom: 28rpx;
+}
+
+.goods-list .miaosha-price{
+    color: #ff4544;
+    font-size: 13pt;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.goods-list .price{
+    color: #888;
+    text-decoration: line-through;
+    font-size: 9pt;
+    line-height: 1;
+}
+
+.goods-list .btn{
+    font-size: 9pt;
+    display: block;
+    padding: 10rpx 24rpx;
+    border: 1rpx solid #ff4544;
+    color: #ff4544;
+    border-radius: 10rpx;
+}
+
+.goods-list .btn.btn-buy{
+    background: #ff4544;
+    color: #fff;
+}
+
+.load-more-bar{
+    text-align: center;
+    visibility: hidden;
+}
+
+.load-more-bar.active{
+    visibility: visible;
+}
+
+.load-more-bar image{
+    width: 200rpx;
+    height: 100rpx;
+}
+
+.load-more-bar.device_iphone_x {
+    padding-bottom: 65rpx;
+}

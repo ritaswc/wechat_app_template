@@ -1,0 +1,11 @@
+<view class="page-view">
+    <image src="../../images/logo.png" class="logo"></image>
+    <view class = "text-view">
+        <text>麻辣诱惑集团成立于2002年，总部位于北京，是中国最具发展潜力、值得信赖的餐饮食品服务集团。产品口味以辣为主，目前在京津经济区长江三角经济区及西北地区拥有28家直营连锁分店，每日接待顾客数万人，目前员工总数2500多人。2014年5月麻小外卖退出之际，麻辣诱惑在北京开展了新的业务模式：外卖模式。成立专门的事业部，通过线上平台和其他第三方平台百度、大众点评外卖、美团外卖、淘点点等和4008-166-188电话来统一接受订单、统一生产、全城配送的方式为顾客提供餐桌解决方案。</text>
+    </view>
+    <view class = "pic-view">
+        <block wx:for="{{pics}}" wx:key="*this">
+            <image src="{{pics[index]}}" mode="scaleToFill"></image>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,91 @@
+<ol class="breadcrumb we7-breadcrumb">
+    <a href="javascript:history.back()"><i class="wi wi-back-circle"></i> </a>
+    <li><a href="javascript:history.back()">应用列表 </a></li>
+    <li>编辑应用</li>
+</ol>
+<div class="form we7-form wish-goods-edit" ng-controller="wishEdit" ng-cloak>
+    <div class="form-group">
+        <label for="" class="form-label col-sm-2">应用logo</label>
+        <div class="form-controls col-sm-8">
+            <we7-file-up class="we7-input-img " global="{{true}}" style="width: 100px; height: 100px;" ng-class="{active: cloudGoods.logo}" we7-file="test" on-confirm="fileLogo">
+                <img ng-src="{{cloudGoods.logo}}" alt="{{cloudGoods.logo}}">
+                <a  href="javascript:;" ng-if="!cloudGoods.logo" class="input-addon"> </a>
+                <div class="cover-dark">
+                    <a href="javascript:;" class="cut" >更换</a>
+                </div>
+            </we7-file-up>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="form-label col-sm-2">模块名称</label>
+        <div class="form-controls col-sm-8">
+            {{cloudGoods.title}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="form-label col-sm-2">应用分支</label>
+        <div class="form-controls col-sm-8">
+            <div class="wish-goods-edit" >
+                <button class="btn btn-default" ng-disabled="cloudGoods.wish_branch > 0" ng-class="{active: key == branch}" ng-repeat="(key, itembranch) in cloudGoods.branchs"  ng-click="changeBranch(key)">{{itembranch.name}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="form-label col-sm-2">使用类别</label>
+        <div class="form-controls col-sm-8">
+            <div class="wish-goods-edit">
+                <button class="btn btn-default" ng-show="!item.disabled" ng-class="{active: item.checked}" ng-repeat="(key, item) in prices" ng-if="we7TypeDefault[key]" ng-click="changeSupport(item)">{{we7TypeDefault[key]}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="form-group" >
+        <label for="" class="form-label col-sm-2">价格</label>
+        <div class="form-controls col-sm-3">
+            <div class="input-group we7-margin-bottom-sm" ng-repeat="(key, item) in prices" ng-show="item.checked && !item.disabled">
+                <span class="input-group-addon">{{we7TypeDefault[key]}}</span>
+                <input type="text" ng-model="item.price" class="form-control">
+                <span class="input-group-addon">元 / 月</span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class="form-label col-sm-2">幻灯片</label>
+        <div class="form-controls col-sm-8">
+            <div class="panel we7-panel">
+				<div class="panel-body">
+                    <div class="batch-img">
+                        <div class="img-container" ng-repeat="slide in slideLists" ng-if="slideLists">
+                            <input type="hidden" name="slide[]" value="{{slide}}">
+                            <img ng-src="{{slide}}" >
+                            <div class="del" ng-click="delSlide($index)">删除</div>
+                        </div>
+                        <div class="img-container add" we7-file-up global="{{true}}" we7-file="test" on-confirm="fileChange" ng-if="slideLists.length < 10">
+                            <span class="wi wi-registersite"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class='form-label col-sm-2'>商品详情</label>
+        <div class="form-controls col-sm-8">
+            <we7-editor global="{{true}}" we7-my-value="content"></we7-editor>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="" class='form-label col-sm-2'></label>
+        <div class="form-controls col-sm-8">
+            <button class="btn btn-primary" ng-click="submit(1)">保存并上架</button>
+            <button class="btn btn-default we7-margin-left-sm" ng-click="submit(0)">仅保存</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    angular.module('we7wish').value('config', {
+        'cloudGoods': {php echo json_encode($cloud_goods)},
+        'saveWishGoodsUrl': "{php echo url('site/entry/storeApi', array('m' => 'store', 'direct' => 1, 'op' => 'save_wish_goods'))}",
+    })
+    angular.bootstrap($('.wish-goods-edit'), ['we7wish'])
+</script>

@@ -1,0 +1,22 @@
+{
+  "name": "hakka-travel-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.3",
+    "express": "^4.15.2",
+    "jade": "^1.11.0",
+    "morgan": "^1.8.1",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.2"
+  }
+}

@@ -1,0 +1,42 @@
+<view class="container column">
+  <view class="banner">
+    <image class="box-shadow br-5" src="{{pointInfo.info.pic}}"></image>
+  </view>
+  <view class="content box-shadow column bg-f br-5 ">
+    <view class="content-number-price column br-b p-b-24">
+      <text class="content-text-1">{{pointInfo.info.p_title}}</text>
+      <text class="content-text-2">{{pointInfo.info.address}}</text>
+      <view class="content-number-data row">
+        <view class="font-size-24">
+          <block wx:for="{{avg_score}}" wx:key="{{avg_score}}">
+            <image class="star" src="../../../images/star.png"></image>
+          </block>
+        </view>
+        <text class="font-size-24">{{pointInfo.avg_score}}</text>
+        <text class="font-size-24">已经有{{pointInfo.info.persons}}人在此泊车</text>
+      </view>
+    </view>
+    <view class="content-number-price column br-b p-b-24 ma-b-15">
+      <view class="content-text-2">收费标准</view>
+      <text class="content-text-1 color-pp">{{pointInfo.standards[0].price}}／{{pointInfo.standards[0].unit}}</text>
+      <text class="font-size-24">每次可停3小时</text>
+    </view>
+    <view class="column comment-content">
+      <view class="content-text-2 ma-b-15">评论</view>
+      <view wx:if="{{comment==''}}" class="comment">暂无评论</view>
+      <view wx:if="{{comment!=''}}" class="column p-20 br-b" wx:for="{{comment}}" wx:key="comment">
+        <view class="row font-size-24">
+          <image class="avatar-images mg-r-10" src="{{item.headImg}}"></image>
+          <view class=" middle">
+            <view>{{item.nickname}}</view>
+            <view>{{item.created_time}}</view>
+          </view>
+        </view>
+        <text class="font-size-24 mg-t-10">{{item.c_content}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="form-btn bottom">
+  <a class="bttn btn-refer" bindtap="bindSuccess" data-id="{{point_id}}">预约</a> 
+</view>

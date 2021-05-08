@@ -1,0 +1,13 @@
+<!--列表模版-->
+<template name="item">
+  <navigator url="../detail/detail?id=1" wx:for="{{array}}" wx:key="{{item.key}}" wx:for-index="idx" class="listItem">
+      <view class="imgWrap">
+        <image src="http://pics.sc.chinaz.com/files/pic/pic9/201510/apic15816.jpg"></image>
+      </view>
+      <view class="intro">
+        <text class="title_style">来场激情四射的比赛吧</text>
+        <text class="date_style">时间：本周五14:00</text>
+        <text class="distance_style">距您0.5km</text>
+      </view>
+  </navigator>
+</template>

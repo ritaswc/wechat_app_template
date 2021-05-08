@@ -1,0 +1,51 @@
+<scroll-view class="page"  bindscrolltolower="lower" scroll-y="true" style="height:100%" scroll-into-view="{{toView}}"
+upper-threshold="10"
+>
+ <view class="section swiper-container">
+    <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" duration="{{300}}">
+      <block wx:for="{{banners}}" wx:for-item="banner">
+        <swiper-item   data-activity-id="{{banner.link_id}}" data-activity-type="{{banner.type}}"
+    data-activity-url="{{banner.link_url}}"
+    bindtap="navigateToActivity">
+          <image mode="aspectFill" src="{{banner.image_src}}"
+          ></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="section activity-list">
+    <view class="activity" wx:for="{{activities}}" wx:for-item="activity"
+    data-activity-id="{{activity.link_id}}" data-activity-type="{{activity.type}}"
+    data-activity-url="{{activity.link_url}}"
+    bindtap="navigateToActivity">
+      <image mode="aspectFill" src="{{activity.image_src}}"></image>
+      <label>{{activity.title}}</label>
+    </view>
+  </view>
+
+  <view  class="section feature-list" >
+    <view class="feature-header">
+      <icon><image  class="header-img" src="./images/feature.png"></image></icon>
+      <text>{{shop_info.index_recommend_title}}</text>
+    </view>
+   <block  wx:for="{{features}}" wx:for-item="feature" >
+      <view wx:if="{{feature.is_sold_out}}" class="feature clearfix" data-goods-id="{{feature.goods_id}}">
+        <image mode="aspectFill" src="{{feature.image_url}}"></image>
+        <view  class="sold-out-overlay">
+         <text class="sold-out-tag">已售罄</text>
+           </view>
+        <view class="title-wrapper">
+        <label class="title">{{feature.goods_name}}</label>
+       </view>
+         <label class="sold-out-price">¥ {{feature.goods_price}}</label>
+        </view>
+      <view wx:else class="feature clearfix" data-goods-id="{{feature.goods_id}}" bindtap="navigateToProduct">   
+       <image mode="aspectFill" src="{{feature.image_url}}"></image>
+        <view class="title-wrapper">
+        <label class="title">{{feature.goods_name}}</label>
+      </view>
+      <label class="price">¥ {{feature.goods_price}}</label>
+    </view>
+    </block>
+  </view>
+</scroll-view>

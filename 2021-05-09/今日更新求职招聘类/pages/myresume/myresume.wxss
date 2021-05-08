@@ -1,0 +1,66 @@
+/* pages/myresume/myresume.wxss */
+page{
+    background-color: #efefef;
+}
+.image2{
+    width: 30rpx;
+    height: 30rpx;
+}
+.m_title{
+    width: 94%;
+    margin: 20rpx auto;
+    color: #666666;
+}
+.m_title progress{
+    margin-top: 10rpx;
+}
+.middle{
+    background-color: #fff;
+    /*margin-top: 30rpx;*/
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    padding: 0 0 0 3%;
+}
+.middle .dingyue{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 78rpx;
+    padding-right: 3%;
+    border-bottom: 1px solid #e5e5e5;
+}
+.middle .dingyue .left text{
+    font-size: 12pt;
+    color: #999999;
+}
+.middle .dingyue .right{
+    color: #999999;
+}
+
+
+
+
+.tuijian{
+  text-align: center;
+  background-color: #efefef;
+  padding: 16rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12pt;
+  color: #b2b2b2;
+  white-space: nowrap;
+}
+.tuijian view{
+  border-bottom: 1px dashed #ccc;
+  width: 25%;
+}
+.last{
+    text-align: center;
+    line-height: 78rpx;
+    height: 78rpx;
+    color: #ff2e2f;
+    font-size: 10pt;
+    background-color: #fff;
+    white-space: nowrap;
+}

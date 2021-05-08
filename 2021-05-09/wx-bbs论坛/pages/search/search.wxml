@@ -1,0 +1,50 @@
+<import src="/template/postlist" />
+<view class="page-container">
+
+  <!-- 搜索框 -->
+  <view class="fixed-searched-container">
+    <view class="search-wrap">
+      <form bindsubmit="search">
+        <view class="search-form-wrap">
+          <input name="keyWord" class="search-input font-13rem" placeholder="{{keyWord}}" />
+        </view>
+        <view class="search-btn-wrap">
+          <button class="search-btn font-13rem" form-type="submit">搜索</button>
+        </view>
+      </form>
+    </view>
+  </view>
+
+  <!-- 搜索框 -->
+  <view class="searched-container">
+    <view class="search-wrap">
+      <form bindsubmit="search">
+        <view class="search-form-wrap">
+          <view name= class="search-input font-13rem" ></view>
+        </view>
+        <view class="search-btn-wrap">
+          <button class="search-btn font-13rem" form-type="submit">搜索</button>
+        </view>
+      </form>
+    </view>
+  </view>
+
+  <!-- 帖子内容 -->
+  <view class="art-content" data-page-index="{{pageIndex}}" style="width:100%;">
+    <block wx:for="{{articles}}" wx:for-index="idx" wx:for-item="article" wx:key="Id">
+      <view class="border-slice">
+
+        <!-- 贴主信息-->
+        <template is="post-head" data="{{...article}}" />
+        <view style="clear:both"></view>
+        <template is="post-content" data="{{...article}}" />
+      </view>
+    </block>
+  </view>
+
+  <!-- 正在加载 -->
+  <view class="loading" style="display:{{loading?'block':'none'}}">
+    <image style="height:16px; width:16px;" src="http://i.pengxun.cn/content/images/loading.gif"></image>
+    <view class="loading">正在加载...</view>
+  </view>
+</view>

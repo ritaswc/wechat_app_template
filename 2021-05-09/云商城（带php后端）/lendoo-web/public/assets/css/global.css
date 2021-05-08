@@ -1,0 +1,11 @@
+.btn-margin {
+	margin: 2px;
+}
+
+.content-header > .breadcrumb {
+	position: relative;
+	top: 0;
+	right: 0;
+	float: none;
+	padding-left: 10px;
+}

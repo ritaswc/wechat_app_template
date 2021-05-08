@@ -1,0 +1,33 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="goods-comment" wx:if="{{__is_comment}}">
+            <view class="goods-comment-item flex-col" wx:for="{{comment}}" wx:for-index="ckey" wx:key="{{item.id}}">
+                <view class="goods-comment-user flex-grow-0 flex-row flex-y-center">
+                    <view class="comment-user-pic flex-grow-0">
+                        <image src="{{item.avatar_url}}"></image>
+                    </view>
+                    <view class="comment-user-name flex-grow-0">
+                        {{item.nickname}}
+                    </view>
+                </view>
+                <view class="goods-comment-conent flex-grow-1">
+                    {{item.content}}
+                </view>
+                <view class="goods-comment-ginfo">
+                    {{item.addtime}}
+                    <block wx:for="{{item.attr}}" wx:for-item="attr" wx:key="{{item.id}}">
+                        {{attr.attr_group_name}}:{{attr.attr_name}}
+                    </block>
+                </view>
+                <view class="goods-comment-piclist">
+                    <view class="comment-pic-shell" wx:for="{{item.pic_list}}" wx:for-item="pic" wx:key="{{item.id}}">
+                        <image bindtap="bigToImage" data-index="{{ckey}}" data-url="{{pic}}" src="{{pic}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

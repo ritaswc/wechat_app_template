@@ -1,0 +1,4 @@
+<text class="desc">
+	可以加上你的uid作为参数，得到如下的二维码；你可以邀请朋友扫这个二维码安装小程序，不用加微信好友也可以，另外也可将它打印出来挂门店墙上。
+</text>
+<image src="https://lendoo.leanapp.cn/index.php/WXPay/getQRCode?uid={{123456}}" mode="widthFix" />

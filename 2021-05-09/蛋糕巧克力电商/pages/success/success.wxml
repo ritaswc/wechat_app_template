@@ -1,0 +1,19 @@
+<view>
+  <view class="success_tb">
+    <icon type="success" size="50"></icon>
+  </view>
+  <view>
+    <view class="p_font">您的订单已经提交成功。</view>
+    <view class="p_font">感谢您的预定!</view>
+    <view class="p_font">如需取消或修改订单，请务必在配送前一天</view>
+    <view class="p_font">(PM 21:00)前联系客服(400 627 5757)。</view>
+  </view>
+  <view class="success_tz p_font">
+    <view>订单号：{{oid}}</view>
+    <view class="p_href" bindtap="go">查 看</view>
+  </view>
+  <view class="p_gocake p_font p_href">
+    <view class="p_jt"></view>
+    <navigator url="../cake/cake" open-type="switchTab" hover-class="other-navigator-hover">继续购物</navigator>
+  </view>
+</view>

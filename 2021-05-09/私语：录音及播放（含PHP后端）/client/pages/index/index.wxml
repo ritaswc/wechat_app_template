@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="record-view">
+    <view class="record-status" animation="{{recAnimation}}">
+      <text class="dot">●</text>
+      <text>REC</text>
+    </view>
+    <view class="record-timer">
+      <text class="duration">00:{{maxDuration - duration}}</text>
+    </view>
+    <view class="record-content" animation="{{contentAnimation}}">
+      <view bindtap="play" class="content-wripper">
+        <text class="t">{{duration}}〞</text>
+        <image src="{{isPlaying?playUi.playing:playUi.play}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="record-form">
+    <view class="record-switch">
+      <view class="big-btn" bindlongtap="startRecord" bindtouchend="stopRecord" bindtouchcancel="stopRecord">
+        <image class="record-start" mode="scaleToFill" src="{{isRecording?recordUi.recording:recordUi.record}}"></image>
+      </view>
+      <view class="tip">
+        <text>按住向我私语</text>
+      </view>
+    </view>
+    <view class="record-post">
+      <input class="record-tag" placeholder="完善简签，千里传音" bindconfirm="whisper" />
+    </view>
+  </view>
+</view>

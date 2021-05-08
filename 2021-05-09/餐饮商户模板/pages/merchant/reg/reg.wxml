@@ -1,0 +1,9 @@
+<import src="../../../components/reg/reg-step1/reg.wxml"/>
+<import src="../../../components/reg/reg-step2/reg.wxml"/>
+<import src="../../../components/reg/reg-step3/reg.wxml"/>
+<import src="../../../components/reg/reg-step4/reg.wxml"/>
+
+<template wx:if="{{step==1}}" is="regStep1" data="{{step:1}}"/>
+<template wx:if="{{step==2}}" is="regStep2" data="{{step:2}}"/>
+<template wx:if="{{step==3}}" is="regStep3" data="{{step:3}}"/>
+<template wx:if="{{step==4}}" is="regStep4" data="{{step:4}}"/>

@@ -1,0 +1,84 @@
+@import "../../wxSortPickerView/wxSortPickerView.wxss";
+.time-info {
+  height: 88rpx;
+  width: 100%;
+  line-height: 88rpx;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+.time-info-text {
+  color: #666;
+  font-size: 28rpx;
+  margin-right: 22rpx;
+}
+.time-info-time {
+  font-size: 28rpx;
+}
+.info {
+  height: 88rpx;
+  width: 100%;
+  background-color: #f2f2f2;
+  line-height: 88rpx;
+  text-align: center;
+}
+.info-time {
+  color: #666;
+  font-size: 28rpx;
+}
+.item {
+  height: 170rpx;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding-left: 30rpx;
+  overflow: hidden;
+}
+.item-1 {
+  height: 230rpx;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding-left: 30rpx;
+  overflow: hidden;
+}
+.item-info {
+  font-size: 28rpx;
+  margin-top: 32rpx;
+  margin-bottom: 15rpx;
+}
+
+.item-info-period {
+  color: #666;
+  margin-right: 30rpx;
+}
+.item-info-time {
+  color: #999;
+}
+.itme-child{
+  padding-left: 10rpx;
+}
+.item-span-down{
+  /*margin-left: 10rpx;*/
+  margin-bottom: 30rpx;
+  float: left;
+}
+
+.item-span-down-2{
+  margin-right: 10rpx;
+}
+
+.award-time-info{
+  color: #666666;
+  font-size: 28rpx;
+}
+
+.award-time-date{
+  padding-left: 22rpx;
+  color: #666666;
+  font-size: 28rpx;
+}
+
+.icon{
+  width: 26rpx;
+  height: 38rpx;
+  margin-bottom:-10rpx;
+}
+

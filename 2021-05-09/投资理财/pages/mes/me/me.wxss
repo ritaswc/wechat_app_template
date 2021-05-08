@@ -1,0 +1,35 @@
+/* pages/me/me.wxss */
+.me_clounme{
+    height: 38px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.me_clounme .me_icon{
+        height: 46px;
+}
+.me_imges{
+    height: 24px;
+    width: 24px;
+    margin-left: 16px;
+    vertical-align: middle;
+ 
+}
+.me_img_row{
+    height: 18px;
+    width: 12px;
+    vertical-align: middle;
+    margin-right: 12px;
+    
+    margin-left: 4px
+}
+.me_text{
+    font-size: 14px;
+    color: #333333;
+    margin-left: 16px;
+    padding: 0px;
+    
+}
+

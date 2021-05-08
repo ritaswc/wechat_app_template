@@ -1,0 +1,123 @@
+<view class="status-bar">
+    <image src="{{order_refund.order_refund_status_bg}}"></image>
+    <view>
+        <!-- 退货 -->
+        <block a:if="{{order_refund.refund_type==1}}">
+            <block a:if="{{order_refund.refund_status==0}}">
+                <block a:if="{{order_refund.is_agree==0}}">等待审核中</block>
+                <block a:else>
+                    <block a:if="{{order_refund.is_user_send==0}}">已同意退货，请及时发货</block>
+                    <block a:else>已发货，待平台确认</block>
+                </block>
+            </block>
+            <block style="color:#36ba75" a:if="{{order_refund.refund_status==1}}">已同意退货并已退款</block>
+            <block style="color:#ff4544" a:if="{{order_refund.refund_status==3}}">已拒绝退货</block>
+        </block>
+
+        <!-- 换货 -->
+        <block a:else>
+            <block a:if="{{order_refund.refund_status==0}}">等待审核中</block>
+            <block style="color:#36ba75" a:if="{{order_refund.refund_status==2}}">已同意换货</block>
+            <block style="color:#ff4544" a:if="{{order_refund.refund_status==3}}">已拒绝换货</block>
+        </block>
+
+    </view>
+</view>
+
+<view a:if="{{(order_refund.refund_type==1 && order_refund.refund_status==0 && order_refund.is_agree!=0) || order_refund.refund_status==2}}" style="padding-left:24rpx;margin-bottom:20rpx;background:#fff">
+    <text style="font-size:10pt;color:#999999">收件人信息</text>
+    <view class="flex-row flex-y-center">
+        <view class="flex-col flex-grow-1">
+            <view class="flex-row address-info">
+                <view>{{order_refund.re_name}}</view>
+                <view>{{order_refund.re_mobile}}</view>
+            </view>
+            <view style="margin-right:40rpx">{{order_refund.re_address}}</view>
+        </view>
+        <view class="flex-grow-0 flex-x-center flex-y-center copy-fz">
+            <text onTap="copyinfo" data-info="{{order_refund.re_name}}/{{order_refund.re_mobile}}/{{order_refund.re_address}}">一键\n复制</text>
+        </view>
+    </view>
+    <view style="height:1rpx;background:#e2e2e2;margin:20rpx 0"></view>
+    <view style="font-size:10pt;color:#bbbbbb">· 未与卖家协商一致情况下，请勿寄到付或平邮</view>
+    <view style="height:5rpx"></view>
+    <view style="font-size:10pt;color:#bbbbbb;padding-bottom:24rpx">· 请填写真实有效物流信息</view>
+</view>
+
+<form onSubmit="sendFormSubmit" report-submit="true">
+    <block a:if="{{order_refund.is_agree==1}}">
+        <view a:if="{{order_refund.is_user_send==0}}" class="express-block">
+            <view class="flex flex-row" style="border-bottom: 3rpx solid #eee;">
+                <view class="flex-grow-0 flex-y-center" style="margin-right: 32rpx">快递公司：</view>
+                <view class="flex-grow-1">
+                    <picker name="express" onChange="bindExpressPickerChange" value="{{express_index}}" range="{{order_refund.express_list}}" range-key="name" style="padding: 24rpx 0">
+                        <view class="flex flex-row">
+                            <view class="flex-grow-1">
+                                <view a:if="{{express_index!==null}}">
+                                    {{order_refund.express_list[express_index].name}}
+                                </view>
+                                <view a:else style="color: #888">请选择快递公司</view>
+                            </view>
+                            <view class="flex-grow-0">
+                                <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx;"></image>
+                            </view>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+            <view class="flex flex-row">
+                <view class="flex-grow-0 flex-y-center" style="margin-right: 32rpx">快递单号：</view>
+                <view class="flex-grow-1">
+                    <input name="express_no" placeholder="请填写快递单号" style="padding: 24rpx 0;height: auto" />
+                </view>
+            </view>
+        </view>
+        <view a:else class="express-block" style="padding: 32rpx 24rpx">
+            <view class="flex flex-row" style="margin-bottom: 18rpx">
+                <view class="flex-grow-0" style="margin-right: 32rpx">快递公司：</view>
+                <view class="flex-grow-1">{{order_refund.user_send_express}}</view>
+            </view>
+            <view class="flex flex-row">
+                <view class="flex-grow-0" style="margin-right: 32rpx">快递单号：</view>
+                <view class="flex-grow-1">{{order_refund.user_send_express_no}}</view>
+            </view>
+        </view>
+    </block>
+
+    <view class="flex-row bg-white mb-20 data-row">
+        <view class="flex-grow-0">
+            <image style="width: 156rpx;height: 156rpx;margin-right:20rpx " mode="aspectFill" src="{{order_refund.goods_pic}}"></image>
+        </view>
+        <view class="flex-grow-1 flex-col">
+            <view class="flex-grow-1 mb-20">{{order_refund.name}}</view>
+            <view class="flex-grow-0 flex-row" style="font-size: 9pt">
+                <view class="flex-grow-1">
+                    <view style="margin-right: 40rpx;display: inline-block" a:for="{{order_refund.attr}}" a:key="{{item.id}}">
+                        {{item.attr_group_name}}:{{item.attr_name}}
+                    </view>
+                </view>
+                <view class="flex-grow-0">×{{order_refund.num}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="bg-white mb-20 data-row">
+        <view class="mb-20">售后类型：{{order_refund.refund_type==1?'退货退款':'换货'}}</view>
+        <view class="mb-20">退款金额：
+            <text style="color:#ff4544">￥{{order_refund.refund_price}}</text>
+        </view>
+        <view class="mb-20">申请原因：{{order_refund.refund_desc}}</view>
+        <view a:if='{{order_refund.refund_status == 3}}' class="mb-20">拒绝原因：
+            <text style='color:#ff4544'>{{order_refund.refuse_desc}}</text>
+        </view>
+        <view class="pic-list mb-20">
+            <image onTap="viewImage" data-index="{{index}}" a:for="{{order_refund.refund_pic_list}}" mode="aspectFill" style="width: 160rpx;height: 160rpx" src="{{item}}" a:key="{{item.id}}"></image>
+        </view>
+    </view>
+
+    <block a:if="{{order_refund.is_agree==1 && order_refund.is_user_send==0}}">
+        <view style="padding: 24rpx 24rpx 48rpx">
+            <button formType="submit" class='goods_send'>确认发货
+            </button>
+        </view>
+    </block>
+</form>

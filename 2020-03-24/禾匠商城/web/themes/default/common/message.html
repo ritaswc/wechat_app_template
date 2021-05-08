@@ -1,0 +1,86 @@
+{if empty($tips)}
+	{php define('IN_MESSAGE', true)}
+	{template 'common/header'}
+		<div class="container message-noexist text-center">
+			<span class="error-icon"><i class="wi text-{$label} wi-{if $label=='success'}right-sign{/if}{if $label=='danger'}warning-sign{/if}{if $label=='info'}info-sign{/if}{if $label=='warning'}error-sign{/if}"></i></span>
+			{if is_array($msg)}
+				<h2>MYSQL 错误：</h2>
+				<div class="tips">{php echo cutstr($msg['sql'], 300, 1);}</div>
+				<div class="state"><b>{$msg['error'][0]} {$msg['error'][1]}：</b>{$msg['error'][2]}</div>
+			{else}
+				<div class="tips">{$caption}</div>
+				<div class="state">{$msg}</div>
+			{/if}
+			{if $redirect && $type != 'expired'}
+			<div class="btn-group">
+				<a class="btn btn-link" href="{$redirect}">如果你的浏览器没有自动跳转，请点击此链接</a>
+				<script type="text/javascript">
+					setTimeout(function () {
+						location.href = "{$redirect}";
+					}, 3000);
+				</script>
+			</div>
+			{else}
+				<p>
+					{if $type != 'expired'}
+					<a href="javascript:history.go(-1);" class="btn btn-primary">点击这里返回上一页</a>
+					<a href="{php echo url('home/welcome/system', array('page' => 'home'))}" class="btn btn-default">首页</a>
+					{/if}
+					{loop $extend $button}
+						<a href="{$button['url']}" class="{$button['class']}" target="{if !empty($button['target'])}{$button['target']}{else}_self{/if}">{$button['title']}</a>
+					{/loop}
+				</p>
+			{/if}
+		</div>
+
+		{if $redirect == url('home/welcome/ext', array('m' => 'store')) && $type == 'expired'}
+			<script type="text/javascript">
+				setTimeout(function () {
+					location.href = "{$redirect}";
+				}, 5000);
+			</script>
+		{/if}
+	{template 'common/footer'}
+{else}
+	{template 'common/header-base'}
+	<script type="text/javascript">
+		function setCookie(cname,cvalue,exdays){
+			var d = new Date();
+			d.setTime(d.getTime()+(exdays*24*60*60*1000));
+			var expires = "expires="+d.toGMTString();
+			document.cookie = cname+"="+cvalue+"; "+expires;
+		}
+		//设置cookie
+		var modal = new Object();
+			{if is_array($msg)}
+				modal.title = 'MYSQL 错误';
+				modal.msg = '{php echo cutstr($msg['sql'], 300, 1);}';
+			{else}
+				modal.title = '{$caption}';
+				modal.msg = '<i class="wi text-{$label} wi-{if $label=='success'}right-sign{/if}{if $label=='danger'}warning-sign{/if}{if $label=='info'}info-sign{/if}{if $label=='warning'}error-sign{/if}"></i>{$msg}';
+			{/if}
+			{if $redirect}
+				modal.redirect = "{$redirect}";
+				
+			{else}
+				modal.redirect = "";
+			{/if}
+		setCookie("modal",JSON.stringify(modal),30000);
+		
+		//跳转
+		{if $redirect}
+			setTimeout(function(){
+				window.location.href= "{$redirect}"; 
+			},0)	
+		{else}
+			setTimeout(function(){
+				window.history.back(-1);
+			},0)
+		{/if}
+		
+	</script>
+	<div class="hidden">
+		<div>
+		{template 'common/footer-base'}
+	</div>
+{/if}

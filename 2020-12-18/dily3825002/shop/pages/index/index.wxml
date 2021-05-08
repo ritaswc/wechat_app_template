@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<import src="../template/favorites/favorites.wxml"/>
+
+<scroll-view class="container" style="height:{{systemInfo.windowHeight}}px; display: {{loading.isViewHidden ? 'none' : 'block'}}" scroll-y="true" lower-threshold="300" bindscrolltolower="loadMoreGoods">
+  <view class="swiper-view">
+    <swiper indicator-dots="{{swiperData.indicatorDots}}" duration="{{swiperData.duration}}" autoplay="{{swiperData.autoplay}" interval="{{swiperData.interval}}" class="index-swiper">
+      <block wx:for-items="{{swiperData.data}}">
+        <swiper-item class="index-swiper-item">
+            <image class="swiper-item-view" src="{{item.imgUrl}}" mode="{{swiperData.imgMode}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="index-goods-list">
+    <block wx:for-items="{{goodsData}}">
+
+      <block wx:if="{{item.id}}">
+        <view class="index-goods-item">
+          <view data-id="{{item.id}}" bindtap="showGoodsDetailPage">
+            <image src="{{item.goods_img}}" mode="aspectFit"  class="index-goods-img"></image>
+          </view>
+          <text class="index-goods-title">{{item.goods_title}}</text>
+          <text class="index-goods-desc">{{item.goods_desc}}</text>
+          <view class="index-goods-btns">
+            <text class="pirce" data-id="{{item.id}}" bindtap="showGoodsDetailPage">购买 ¥{{item.goods_price}}</text>
+            <text class="del_pirce" wx:if="{{item.goods_del_price == 0}}"> </text>
+            <text class="del_pirce" wx:else>¥{{item.goods_del_price}}</text>
+            <view class="add_heart" catchtap="showCollect" data-id="{{item.id}}" data-index="{{index}}" data-isCollect="{{item.isCollect}}"><text class="fa heart {{item.isCollect == 0 ? 'fa-heart-o' : 'fa-heart'}}"></text></view>
+          </view>
+        </view> 
+      </block>
+    </block>
+  </view>
+
+
+<text class="curPageNumber">当前页面：{{curPageNumber}}</text>
+<!-- 收藏夹 -->
+<template is="collect" data="{{...collect}}"></template>
+
+</scroll-view>
+<!-- loaading -->
+<loading hidden="{{loading.hidden}}">{{loading.msg}}</loading>
+<toast hidden="{{toast.hidden}}" icon="{{toast.icon}}" duration="3000" bindchange="toastChange">{{toast.msg}}</toast>

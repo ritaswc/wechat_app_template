@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/jinri/jinri",
+    "pages/lastcrazy/lastcrazy",
+    "pages/cart/cart",
+    "pages/my/my"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0068C4",
+    "navigationBarTitleText": "卷皮",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "color": "#626567",
+    "selectedColor": "red",
+    "backgroundColor": "#FBFBFB",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/jinri/jinri",
+        "text": "今日上新",
+        "iconPath": "images/jinri.png",
+        "selectedIconPath": "images/sjinri.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "images/shopcart.png",
+        "selectedIconPath": "images/sshopcart.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的卷皮",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/smine.png"
+      }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

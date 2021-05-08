@@ -1,0 +1,74 @@
+#result {
+    font-size: 30rpx;
+    text-align: center;
+}
+
+#result .feedback {
+    background: #fff;
+    width: 100%;
+    height: 110rpx;
+    margin-top: 20rpx;
+    padding-top: 50rpx;
+}
+
+#result .feedback view {
+    margin: auto;
+    font-size: 34rpx;
+    color: #FF2D4B;
+    line-height: 50rpx;
+    display: inline-block;
+}
+
+#result .feedback view image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+#result .feedback view text {   
+    position: relative;
+    top: -10rpx;
+    margin-left: 16rpx;
+}
+
+#result .feedback .hint {
+    display: block;
+    margin-top: 24rpx;
+    font-size: 26rpx;
+}
+
+#result .next {
+    background: #fff;
+    margin-top: 20rpx;
+    padding: 50rpx 30rpx;
+}
+
+#result .next .price {
+    text-align: left;
+    padding-bottom: 60rpx;
+    font-size: 28rpx;
+}
+
+#result .next .price text {
+    font-size: 34rpx;
+    color: #FF2D4B;
+}
+
+#result .next .button {
+    overflow: hidden;
+    display: inline-block;
+}
+
+#result .next .button navigator {
+    float: left;
+    border: 1px solid #FF2D4B;
+    width: 280rpx;
+    height: 68rpx;
+    border-radius: 8rpx;
+    line-height: 68rpx;
+    color: #FF2D4B;
+}
+
+#result .next .button .to-home {
+    text-align: center;
+}
+

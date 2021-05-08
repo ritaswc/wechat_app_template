@@ -1,0 +1,12 @@
+<!--guide.wxml-->
+<template name="guide">
+<view class="container">
+  <view class="navigator" id="merchant" bindtap="chooseRole">
+    <image class="" src="/image/common/guide/merchant.png" background-size="cover"></image>
+  </view>
+  <view class="navigator" id="customer" bindtap="chooseRole">
+    <image class="" src="/image/common/guide/customer.png" background-size="cover"></image>
+  </view>
+</view>
+</template>
+

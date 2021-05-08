@@ -1,0 +1,51 @@
+{template 'common/header'}
+<style>
+.category{display:block; overflow:hidden; background:#FACE9C; border-top:1px #DDD solid;border-bottom:1px #DDD solid;}
+.category a{display:inline-block; overflow:hidden; height:30px; width:33.33%; text-align:center; color:#103667; font-size:14px; float:left; padding:5px;}
+.list li{padding: 5px 5px 0 5px;}
+.list li a{display:block; padding:5px; background:#FFF; border:1px #DDD solid; border-radius:3px;color:#333; overflow:hidden; text-decoration:none !important; position:relative;}
+.list li a .title{font-size:14px;}
+.list li a .createtime{font-size:12px; color:#999;}
+.head{height:40px; line-height:40px; background:#945305; padding:0 5px; color:#FFF;}
+.head .bn{display:inline-block; height:30px; line-height:30px; padding:0 10px; margin-top:4px; font-size:20px; background:transparent; color:#FFF; text-decoration:none;}
+.head .bn.pull-left{border-right:1px solid #FACE9C;}
+.head .bn.pull-right{position:absolute; right:5px; top:0; border-left:1px solid #FACE9C;}
+.head .title{font-size:14pt;display:block;padding-left:10px;font-weight:bolder;margin-right:49px;text-align:center;height:40px;line-height:40px;text-overflow:ellipsis;white-space:nowrap;overflow: hidden;}
+.head .order{background:#EC870E; position:absolute; z-index:9999; right:0;}
+.head .order li > a{display:block; padding:0 10px; min-width:100px; height:35px; line-height:35px; font-size:16px; color:#FFF; text-decoration:none; border-top:1px #EEE solid;}
+.head .order li.fa-caret-up{font-size:20px;color:#EC870E;position:absolute;top:-11px;right:16px;}
+.pager-position{width:100%;margin:0 auto;text-align:center;}
+</style>
+<div class="head">
+	<a href="javascript:history.go(-1);" class="bn pull-left"><i class="fa fa-reply"></i></a>
+	<span class="title">{$title}</span>
+	<a href="javascript:;" id="category_show" class="bn pull-right"><i class="fa fa-reorder"></i></a>
+	<ul class="list-unstyled order hide">
+		<li class="fa fa-caret-up"></li>
+		{data module="site" func="site_category"}
+			<li>
+				<a href="{$row['linkurl']}">
+					{$row['name']}
+				</a>
+			</li>
+		{/data}
+	</ul>
+</div>
+<div class="category">
+	{data module="site" func="site_category" parentid="$cid"}
+	<a href="{$row['linkurl']}">{$row['name']}</a>
+	{/data}
+</div>
+<ul class="list list-unstyled">
+	{data module="site" func="site_article" cid="$cid" assign="result" return="true"}
+	{loop $result['list'] $row}
+	<li>
+		<a href="{$row['linkurl']}">
+			<div class="title">{php echo cutstr($row['title'],40,1);}</div>
+			<div class="createtime">{php echo date('Y-m-d H:i:s', $row['createtime'])}</div>
+		</a>
+	</li>
+	{/loop}
+</ul>
+<div class="pager-position">{$result['pager']}</div>
+{template 'common/footer'}

@@ -1,0 +1,127 @@
+page{
+    background-color: #f8f8f8;
+}
+.user {
+    width: 100%;
+    height: 100%;
+}
+
+.list {
+    background: #f8f8f8;
+    height: 100.77rpx;
+    line-height: 100.77rpx;
+    padding: 0 35.15rpx;
+    border: 1px solid #f8f8f8;
+    background: #fff;
+    font-size: 32.81rpx;
+}
+.list-info{
+    display: inline-block;
+    position:absolute;
+    right:70rpx;
+    font-size: 26rpx;
+    color: #999;
+}
+.avatar image {
+    margin-top:10rpx;
+    width:80rpx;
+    height:80rpx;
+    border-radius:50%;
+}
+.info {
+    height: 421.85rpx;
+    background: url(images/bg.png);
+    margin-bottom: 23.44rpx;
+}
+
+.info-wrap{
+    margin: auto;
+    text-align: center;
+}
+
+.info-icon {
+    width: 164rpx;
+    height: 164rpx;
+    border: 4.69rpx solid #fff;
+    border-radius: 82rpx;
+    margin-top: 105.46rpx;
+    margin-bottom: 29.29rpx;
+}
+
+.list-icon-wrap {
+    float: left;
+    height: 100.77rpx;
+    line-height: 100.77rpx;
+}
+
+.list-icon {
+    width: 42.18rpx;
+    height: 39.84rpx;
+    margin-top: 30rpx;
+}
+
+.arrow-wrap {
+    float: right;
+    color: #999;
+    line-height: 100.77rpx;
+    font-size: 23.44rpx;
+}
+
+.list-arrow {
+    width: 11.72rpx;
+    height: 25.78rpx;
+    margin: 35rpx 0 0 18.75rpx;
+
+}
+
+.list-text {
+    float: left;
+    font-size: 32.81rpx;
+    text-indent: 29.29rpx;
+}
+
+.order {
+    overflow: hidden;
+    display: -webkit-box;
+    background: #fff;
+    margin-bottom: 23.44rpx;
+    font-size: 25.78rpx;
+    height: 166.40rpx;
+}
+
+.order-cell {
+    text-align: center;
+    -webkit-box-flex: 1;
+    margin-top: 42.18rpx;
+    position: relative;
+}
+
+.order-cell-icon-big {
+    width: 51.56rpx;
+    height: 46.87rpx;
+    margin-bottom: 11.72rpx;
+}
+
+.order-cell-icon-small {
+    width: 44.53rpx;
+    height: 46.87rpx;
+    margin-bottom: 11.72rpx;
+}
+
+.badge {
+    position: absolute;
+    left: 52%;
+    top: -6%;
+    display: inline-block;
+    padding: .1rem .25rem;
+    font-size: .6rem;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: .4rem;
+    background-color: #fc3151;
+    color: white;
+    box-sizing: border-box;
+    -webkit-transition: all .4s ease-out;
+}

@@ -1,0 +1,82 @@
+<!--index.wxml-->
+<swiper class="home-swiper" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+  <block wx:for="{{imgUrls}}" >
+    <swiper-item>
+    <navigator>
+      <image src="{{item}}" class="slide-image"/>
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="special-choose">
+  <view class="special-item">
+    <text class="icon star"></text>
+    <text class="title">明星单品</text>
+  </view>
+      <view class="special-item">
+    <text class="icon new"></text>
+    <text class="title">今日新品</text>
+  </view>
+      <view class="special-item">
+    <text class="icon tejia"></text>
+    <text class="title">特价清仓</text>
+  </view>
+      <view class="special-item">
+    <text class="icon coupon"></text>
+    <text class="title">购物券</text>
+  </view>
+</view>
+<form class="search-form">
+  <view class="search-goods">
+    <input type="text" placeholder="请输入您要搜索的商品"/>
+  </view>
+  <view class="btn-area">
+    <button formType="submit">搜索</button>
+  </view>
+</form>
+<view class="top-cate">
+  <block wx:for="{{topPicData}}" >
+    <navigator class="cate-item">
+     <image src="{{item.pic}}" mode="aspectFit"></image>
+    </navigator>
+  </block>
+</view>
+<view class="main-cate">
+  <block wx:for="{{mainPicData}}" >
+  <view class="each-item-wrapper">
+    <view class="each-header clearfix">
+      <text class="title">{{item.cname}}</text>
+      <navigator>
+       <text class="more">MORE+</text>
+      </navigator>
+    </view>
+    <view class="cate-wrapper">
+    <block wx:for="{{item.cates}}" >
+      <view class="each-cate">
+        <navigator>
+          <image src="{{item.pic}}"></image>
+        </navigator>
+      </view>
+      </block>
+    </view>
+    <view class="goods-wrapper">
+     <block wx:for="{{item.goods}}" >
+      <view class="each-good">
+        <navigator>
+          <image src="{{item.pic}}"></image>
+          <text class="title">{{item.title}}</text>
+          <text class="old-price">{{item.oprice}}</text>
+          <text class="new-price">{{item.nprice}}</text>
+        </navigator>
+      </view>
+     </block>
+    </view>
+    </view>
+  </block>
+</view>
+
+
+
+
+

@@ -1,0 +1,30 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/setting/setting",
+    "pages/setting/about"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#4078C0",
+    "navigationBarTitleText": "好天气",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#888",
+    "selectedColor": "#4078C0",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "天气",
+      "iconPath": "image/weather.png",
+      "selectedIconPath": "image/weather.png"
+    }, {
+      "pagePath": "pages/setting/setting",
+      "text": "设置",
+      "iconPath": "image/setting.png",
+      "selectedIconPath": "image/setting.png"
+    }]
+  }
+}

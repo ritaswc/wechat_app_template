@@ -1,0 +1,19 @@
+.body {
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+    min-height: 100%;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.wrapper {
+    padding: 0 50rpx;
+}
+
+.ft-center {
+    text-align: center;
+}
+
+.ft-warn {
+    font-weight: 600;
+    color: #d23f31;
+}

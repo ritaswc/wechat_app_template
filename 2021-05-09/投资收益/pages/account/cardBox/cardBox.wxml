@@ -1,0 +1,46 @@
+<view class="cardBox">
+    <view class="list">
+        <view class="left">
+            <image src="../../../images/account/hbj_01.png"></image>红包券
+        </view>
+        <view class="right">
+            <navigator url="hbq/hbq">
+                <text>0</text>张
+                <image src="../../../images/account/arrowright.png"></image>
+            </navigator>
+        </view>
+    </view>
+    <view class="list">
+        <view class="left">
+            <image src="../../../images/account/jxj_01.png"></image>加息券
+        </view>
+        <view class="right">
+            <navigator url="jxq/jxq">
+                <text>0</text>张
+                <image src="../../../images/account/arrowright.png"></image>
+            </navigator>
+        </view>
+    </view>
+    <view class="list">
+        <view class="left">
+            <image src="../../../images/account/wdzh_ye06.png"></image>体验金
+        </view>
+        <view class="right">
+            <navigator url="tyj/tyj">
+                <text>0.00</text>元
+                <image src="../../../images/account/arrowright.png"></image>
+            </navigator>
+        </view>
+    </view>
+    <view class="list">
+        <view class="left">
+            <image src="../../../images/account/wdzh_ye02.png"></image>投资红包
+        </view>
+        <view class="right">
+            <!--<navigator url="">-->
+                <text>0.00</text>元
+                <image src="../../../images/account/arrowright.png" class="opacity0"></image>
+            <!--</navigator>-->
+        </view>
+    </view>
+</view>

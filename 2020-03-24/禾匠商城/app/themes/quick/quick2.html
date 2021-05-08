@@ -1,0 +1,55 @@
+<style>
+	.quick.quick-quick2 a{text-decoration:none;}
+	.quick.quick-quick2 {margin:0; padding:0; position:fixed; z-index:200; bottom:0; left:0; width:100%; list-style:none; display: -webkit-box; display: -moz-box; -webkit-box-orient: horizontal; -moz-box-orient: horizontal; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;}
+	.quick.quick-quick2 li{border:1px solid #b5b5b8; width:25%; height:45px; border-bottom:0; border-right:0; position:relative; -webkit-box-shadow:inset 0 0 3px #fff;}
+	.quick.quick-quick2 li:nth-of-type(1){border-left:none;}
+	.quick.quick-quick2 li>a{-webkit-box-sizing:border-box; box-sizing:border-box; border-bottom:0; display:block; line-height:45px; text-align:center; background:-webkit-gradient(linear, 0 0, 0 100%, from(#e7e4e7), to(#bebdbe));}
+	.quick.quick-quick2 li>a.on + dl{display: block;}
+	.quick.quick-quick2 li>a span{color:#4f4d4f; display:inline-block; text-align:center; -webkit-background-size:16px 16px; background-size:14px 14px; text-shadow:0 0 1px #fff; overflow:hidden;}
+	.quick.quick-quick2 li>a:only-child span{background:none!important;padding-left:0;}
+	.quick.quick-quick2 dl{display:none; position:absolute; z-index:220; bottom:45px; left:50%; min-width:80px; margin-left:-50px; background:red; min-height:100px; background:#e4e3e2; border:1px solid #afaeaf; border-radius:5px; -webkit-box-shadow:inset 0 0 3px #fff;}
+	.quick.quick-quick2 dl:before, .quick.quick-quick2 dl:after{content:""; display:inline-block; position:absolute; z-index:240; bottom:0;left:50%; width:0; height:0; border:8px solid red; border-color:#afaeaf transparent transparent transparent; margin-left:-8px; margin-bottom:-16px;}
+	.quick.quick-quick2 dl:after{z-index:241; border-color:#e4e3e2 transparent transparent transparent; margin-bottom:-15px;}
+	.quick.quick-quick2 dl dd{margin:0; line-height:50px; text-align:center;}
+	.quick.quick-quick2 dl dd:last-of-type{background:none;}
+	.quick.quick-quick2 dl dd a{display:block; color:#4f4d4f; text-shadow:0 0 1px #fff;}
+	.quick.quick-quick2 > * {-webkit-box-flex: 1; -moz-box-flex: 1;}
+	@-moz-document url-prefix(){
+		.quick.quick-quick2{clear:both;background:#D4D2D4;}
+		.quick.quick-quick2 li{width:25%; float:left;}
+	}
+</style>
+<div class="top_bar footer_bar">
+	<div class="quick quick-quick2">
+		{php $i = 1;$k = 0;}
+		{loop $_W['quickmenu']['menus'] $nav}
+		{if $i < 4}
+		<li>
+			<a href="{$nav['url']}" style="{$nav['css']['icon']['style']}">
+				<span style="{$nav['css']['name']}">{$nav['name']}</span>
+			</a>
+		</li>
+		{/if}
+		{if $i==4}
+		{php $k = 1;}
+		<li>
+			<a href="javascript:;" onclick="this.classList.toggle('on');">
+				<span>更多</span>
+			</a>
+			<dl>
+				{/if}
+				{if $i>3}
+				<dd>
+					<a href="{$nav['url']}">
+						<span style="{$nav['css']['name']}">{$nav['name']}</span>
+					</a>
+				</dd>
+				{/if}
+				{php $i++;}
+				{/loop}
+				{if $k==1}
+			</dl>
+		</li>
+		{/if}
+	</div>
+</div>

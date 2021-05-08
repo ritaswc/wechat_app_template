@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/create/create",
+    "pages/index/index",
+    "pages/list/list",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+          {
+      "pagePath": "pages/create/create",
+      "text": "创建会议",
+      "iconPath": "icons/meeting.jpg",
+      "selectedIconPath": "icons/meeting-selected.jpg"
+    },{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "icons/home.jpg",
+      "selectedIconPath": "icons/home-selected.jpg"
+    },
+    {
+      "pagePath": "pages/list/list",
+      "text": "会议记录",
+      "iconPath": "icons/list.jpg",
+      "selectedIconPath": "icons/list-selected.jpg"
+    }]
+  }
+}

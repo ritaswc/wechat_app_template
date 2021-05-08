@@ -1,0 +1,160 @@
+    {loop $nav_top_tiled_other $other}
+    {if $other['is_system']}{php continue;}{/if}
+    <li ><a href="{$other['url']}" target="_blank"><i class="{$other['icon']}"></i><span>{$other['title']}</span></a></li>
+    {/loop}
+    {if $_W['iscontroller']}
+        <li><a href="{php echo $_W['siteroot'] . 'web/home.php'}" ><i class="wi wi-caozuotai"></i><span>客户端</span></a></li>
+    {else}
+    {if $_W['isfounder']}
+        <li ><a href="{php echo url('account/manage', array('iscontroller' => 1))}"><i class="wi wi-kongzhitai"></i><span>控制台</span></a></li>
+    {/if}
+    {/if}
+    {loop $nav_top_tiled_other $other}
+    {if !$other['is_system']}{php continue;}{/if}
+    {if $other['name'] == 'workorder' && (!permission_check_account_user('see_workorder') || !$_W['iscontroller'])}{php continue;}{/if}
+    {if $other['name'] == 'store' && $_W['iscontroller']}{php continue;}{/if}
+    <li class="js-header-user" data-toggle="tooltip" data-placement="bottom" title="{$other['title']}">
+        <a href="{$other['url']}"><i class="{$other['icon']}"></i></a>
+    </li>
+    {/loop}
+
+    {template 'common/header-notice'}
+    
+    <!-- 用户信息 -->
+    <li class="dropdown user" >
+        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" ><i class="wi wi-user"></i><span class="caret"></span></a>
+        <ul class="dropdown-menu color-gray dropdown-menu-right" role="menu">
+            <li>
+                <a href="{url 'user/profile'}{if !$_W['iscontroller']}iscontroller=0{/if}" target="_blank">用户名： {$_W['username']}</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="{url 'user/profile'}{if !$_W['iscontroller']}iscontroller=0{/if}" target="_blank"><i class="wi wi-money color-gray"></i> 我的账号</a>
+            </li>
+            <li class="divider"></li>
+
+            {if permission_check_account_user('see_system_upgrade') && $_W['iscontroller']}
+            <li><a href="{url 'cloud/upgrade'}" target="_blank"><i class="wi wi-update color-gray"></i> 自动更新</a></li>
+            {/if}
+
+            {if permission_check_account_user('see_system_updatecache') && $_W['iscontroller']}
+            <li><a href="{url 'system/updatecache'}" target="_blank"><i class="wi wi-cache color-gray"></i> 更新缓存</a></li>
+            <li class="divider"></li>
+            {/if}
+
+            <li>
+                <a href="{url 'user/logout'}"><i class="fa fa-sign-out color-gray"></i> 退出系统</a>
+            </li>
+        </ul>
+    </li>
+    <!-- end用户信息 -->
+
+    <li class="dropdown-star {if !in_array(FRAME, array('account', 'wxapp')) || 'store' == $_GPC['m']}hidden{/if}">
+        <a href="javascript:;" class="star-info">
+            <img src="{if defined('IN_MODULE')}{$_W['current_module']['logo']}{else}{$_W['account']['logo']}{/if}" class="account-img" alt="">
+            <span class="name text-over">{if defined('IN_MODULE')}{$_W['current_module']['title']}{else}{$_W['account']['name']}{/if}</span>
+            <span class="caret"></span>
+        </a>
+        <div class="star-box">
+            <div class="star-box__header">
+                切换平台/应用
+                <ul class="nav nav-tabs pull-right" role="tablist">
+                    <li role="presentation" class="" data-toggle="tooltip" data-placement="bottom" title="我的星标"><a href="#star-star" data-star="star" aria-controls="star-star" role="tab" data-toggle="tab"><i class="wi wi-star"></i></a></li>
+                    <li role="presentation" data-toggle="tooltip" data-placement="bottom" title="历史查看"><a href="#star-history" data-star="history" aria-controls="star-history" role="tab" data-toggle="tab"><i class="wi wi-waiting"></i></a></li>
+                    {if ACCOUNT_MANAGE_NAME_CLERK != $_W['highest_role']}<li role="presentation" data-toggle="tooltip" data-placement="bottom" title="所有平台"><a href="#star-platform" data-star="platform" aria-controls="star-platform" role="tab" data-toggle="tab"><i class="wi wi-platform"></i></a></li>{/if}
+                    <li role="presentation" data-toggle="tooltip" data-placement="bottom" title="所有应用"><a href="#star-modules" data-star="modules" aria-controls="star-modules" role="tab" data-toggle="tab"><i class="wi wi-apply"></i></a></li>
+                </ul>
+            </div>
+            <div class="tab-content star-box__content">
+                <div role="tabpanel" class="tab-pane" id="star-star"></div>
+                <div role="tabpanel" class="tab-pane" id="star-history">2</div>
+                <div role="tabpanel" class="tab-pane" id="star-platform">3</div>
+                <div role="tabpanel" class="tab-pane" id="star-modules">4</div>
+            </div>
+        </div>
+    </li>
+
+    <script>
+        $(function() {
+            // 加border
+            if($('.js-header-user').length && $($('.js-header-user')[0]).prev().length) {
+                $($('.js-header-user')[0]).prev().after('<li><a class="header-user-border"></a></li>')
+            }
+            $('.dropdown-star .star-info').click(function(e) {
+                $('.dropdown-star').toggleClass('active')
+            })
+            $('.dropdown').on('show.bs.dropdown', function () {
+                $('.dropdown-star').removeClass('active')
+            })
+            $(document).click(function(e){
+                if($(e.target).parents(".dropdown-star").length == 0){
+                    $('.dropdown-star').removeClass('active')
+                }
+            });
+
+            test = function(e) {
+                console.log(e)
+                return true;
+            }
+            $('.dropdown-star [data-toggle="tab"]').on('show.bs.tab', function (e) {
+                console.log(e)
+                var star = $(e.target).data('star')
+                window.localStorage.setItem('we7StarHeader', $(e.target).data('star'))
+                var menuList = {
+                    star: {
+                        apiUrl: './index.php?c=account&a=display&do=list_star&',
+                        name: '星标',
+                        url: './home.php#/mystar'
+                    },
+                    history: {
+                        apiUrl: './index.php?c=account&a=display&do=history&',
+                        name: '历史',
+                        url: './home.php#/history'
+                    },
+                    platform: {
+                        apiUrl: './index.php?c=account&a=display&do=list&type=all',
+                        name: '平台',
+                        url: './home.php#/platform'
+                    },
+                    modules: {
+                        apiUrl: './index.php?c=module&a=display&do=own&',
+                        name: '应用',
+                        url: './home.php#/modules'
+                    }
+                }
+                $('#star-' + star).html('<div class="loading star-header-list"><i class="fa fa-spinner fa-spin"></i>加载中</div>')
+                $.get(menuList[star]['apiUrl'], {
+                    limit_num: 5,
+                    page: 1
+                } , function(res) {
+                    if(res.message && res.message.errno == 0) {
+                        let html = '<div class="star-header-list">'
+                        for(var i in res.message.message) {
+                            var item = res.message.message[i];
+                            html = html + '<a href="' + item.switchurl + '" class="star-header-item star-item--account">' +
+                                    '<img src="'+ item.logo +'"  alt="" class="star-header-item__logo ' + (item.list_type == 'account' ? 'account-img' : 'module-img') + '"/>' +
+                                    '<div class="star-header-item__info">' +
+                                        '<div class="star-header-item__name text-over">' + (item.list_type == 'account' ? item.name : item.title) + '</div>' +
+                                        '<div class="star-header-item__desc text-over">' + (item.list_type == 'account' ? (item.type_name + (item.level ? ('/' + item.level) : '')) : ('所属平台：' + (item.default_account ? item.default_account.name : ''))) + '</div>' +
+                                    '</div>' +
+                                    '<div class="star-header-item__go">' +
+                                        '<i class="wi wi-angle-right"></i>' +
+                                    '</div>' +
+                                '</a>'
+                        }
+                        html = html + '</div>' +
+                            '<div class="star-go"><a href="'+ menuList[star]['url'] + '">查看全部' + menuList[star]['name'] + '</a></div>'
+                        $('#star-' + star).html(html)
+                    }
+                }, 'json')
+            })
+            var headerStar = window.localStorage.getItem('we7StarHeader');
+            if(!headerStar) {
+                headerStar = 'star';
+            }
+            if($('.dropdown-star').length && !$('.dropdown-star').hasClass('.hide')) {
+                $('[data-star="' + headerStar + '"]').tab('show')
+            }
+        })
+    </script>
+</ul>

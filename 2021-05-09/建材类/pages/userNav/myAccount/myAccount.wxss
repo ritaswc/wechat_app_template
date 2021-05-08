@@ -1,0 +1,17 @@
+/* pages/userNav/myAccount/myAccount.wxss */
+
+.container{
+
+}
+
+.button{
+    background-color: #00acff;
+    color:#FFFFFF;
+    width: 92%;
+    margin: 0 auto;
+}
+
+.button_pressed{
+    background-color: #00a1e0;
+}
+

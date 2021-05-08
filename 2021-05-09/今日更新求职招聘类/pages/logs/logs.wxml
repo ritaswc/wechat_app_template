@@ -1,0 +1,21 @@
+<view class="logs_wrap">
+    <form bindsubmit="log">
+        <view class="logs_user_name">
+            <input name="username" placeholder-class="placeholder" placeholder="手机号/邮箱/用户名" />
+        </view>
+        <view class="logs_user_password">
+            <input name="password" placeholder-class="placeholder" type="{{ hidden_password === true ? 'password':'text'}}" placeholder="密码:"/>
+            <image bindtap="change_password" class="logs_img1" src="{{close_img === false ? 'image/yingchang.png' : 'image/xiansi_01.png'}}">
+            </image>
+        </view>
+        <!--忘记密码-->
+        <view class="logs_gorget_password">
+            <!--<navigator url="../forgetPass/forgetPass">
+                忘记密码?
+            </navigator>-->
+        </view>
+        <!--登录-->
+        <button formType="submit" class="logs" loading="{{loding}}" >绑定</button>
+        
+    </form>
+</view>

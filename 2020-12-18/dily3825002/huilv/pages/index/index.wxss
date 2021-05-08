@@ -1,0 +1,117 @@
+/**index.wxss**/
+
+.main {
+    width: 100%;
+    height: 700rpx;
+    background-color: #30353b;
+}
+
+.topPanel {
+    position: absolute;
+    margin-top: 0rpx;
+    background-color: #30353b;
+}
+
+.render {
+    padding: 10rpx;
+    height: 100rpx;
+}
+
+.country {
+    margin-left: 30rpx;
+    width: 90rpx;
+    height: 90rpx;
+    float: left;
+}
+
+.line {
+    margin-left: 20rpx;
+    margin-top: 10rpx;
+    width: 30rpx;
+    height: 70rpx;
+    line-height: 90rpx;
+    float: left;
+}
+
+.text {
+    float: left;
+    margin-left: 20rpx;
+    width: 250rpx;
+    height: 90rpx;
+    font-size: 40rpx;
+    color: #ffffff;
+    line-height: 90rpx;
+}
+
+.input1 {
+    width: 250rpx;
+    height: 90rpx;
+    font-size: 40rpx;
+    color: #8b9096;
+    text-align: right;
+    line-height: 90rpx;
+}
+
+.input2 {
+    width: 250rpx;
+    height: 90rpx;
+    font-size: 40rpx;
+    color: #ff9096;
+    text-align: right;
+    line-height: 90rpx;
+}
+
+.panel {
+    position: absolute;
+    width: 100%;
+    bottom: 0rpx;
+    background-color: #30353b;
+}
+
+.row1 {
+    /*float: left;*/
+    overflow: hidden;
+}
+
+.button {
+    width: 25%;
+    height: 160rpx;
+    line-height: 160rpx;
+    float: left;
+    font-size: 55rpx;
+    color: #ffffff;
+    background-color: #363b41;
+}
+
+.buttonClear {
+    width: 25%;
+    height: 320rpx;
+    float: right;
+    line-height: 320rpx;
+    font-size: 55rpx;
+    color: #ffffff;
+    background-color: #363b41;
+    position: absolute;
+    right: 0rpx;
+}
+
+.buttonPlus {
+    width: 25%;
+    height: 320rpx;
+    float: right;
+    line-height: 320rpx;
+    font-size: 55rpx;
+    color: #ffffff;
+    background-color: #363b41;
+    position: absolute;
+    right: 0rpx;
+}
+
+.buttonZero {
+    width: 50%;
+    height: 160rpx;
+    float: left;
+    font-size: 55rpx;
+    color: #ffffff;
+    background-color: #363b41;
+}

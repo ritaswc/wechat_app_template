@@ -1,0 +1,82 @@
+
+<!--pages/record-expend/record-expend.wxml-->
+<view class="ui-height-100" bindtap="hiddenCaculator">
+
+
+  <!--用途-->
+  <view class="select-consumption-patterns ui-pt20">
+    <view class="consumption-patterns-item" wx:for="{{consumpPatternsList}}">
+      <view class=" ui-flex-ver ui-flex-center ui-p10" data-index="{{index}}" bindtap="onConsumptionItemClick">
+        <image class="consumption-patterns-item-icon" src="{{item.isSelect ? item.iconSel : item.icon}}"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!--横线-->
+  <view class="line ui-mt20">
+  </view>
+  <view class="pay-money">
+    <image class="money-icon" src="/../img/date.png"></image>
+    <text class="ui-ml20">日期</text>
+    <picker class="date-text" mode="date" value="{{date}}" end="{{todayDate}}" bindchange="onDateChange">
+      <view>{{date}}
+      </view>
+    </picker>
+  </view>
+
+  <!--横线-->
+  <view class="line">
+  </view>
+  <view class="pay-money" catchtap="showCaculator">
+    <image class="money-icon" src="/../img/money.png"></image>
+    <text class="ui-ml20">花费</text>
+    <text class="money-text">{{spendMoney}}</text>
+  </view>
+
+  <!--横线-->
+  <view class="line">
+  </view>
+  <view class="pay-money">
+    <image class="money-icon" src="/../img/remarks.png"></image>
+    <input class="ui-ml20 ui-flex-1" bindinput="onInputRemarks" value = "{{remarksText}}" type="text" placeholder="备注：{{selectName}}" />
+  </view>
+
+  <!--横线-->
+  <view class="line">
+  </view>
+
+  <button class="blue-button ui-mt20" hover-class="blue-button-p"  bindtap="confirmData">完成</button>
+
+<block wx:if = "{{isShowCaculator}}">
+  <view class="calculator" >
+    <view class="calculator-number">
+      <view class="calculator-number-item">
+        <view hover hover-class="number-hover" class="number" data-num = "1" catchtap="touchNum">1</view>
+        <view hover hover-class="number-hover" class="number" data-num = "2"  catchtap="touchNum">2</view>
+        <view hover hover-class="number-hover" class="number" data-num = "3"  catchtap="touchNum">3</view>
+      </view>
+       <view class="calculator-number-item">
+      <view hover hover-class="number-hover" class="number" data-num = "4"  catchtap="touchNum">4</view>
+      <view hover hover-class="number-hover" class="number" data-num = "5"  catchtap="touchNum">5</view>
+      <view hover hover-class="number-hover" class="number" data-num = "6"  catchtap="touchNum">6</view>
+       </view>
+       <view class="calculator-number-item">
+      <view hover hover-class="number-hover" class="number" data-num = "7"  catchtap="touchNum">7</view>
+      <view hover hover-class="number-hover" class="number" data-num = "8"  catchtap="touchNum">8</view>
+      <view hover hover-class="number-hover" class="number" data-num = "9"  catchtap="touchNum">9</view>
+       </view>
+       <view class="calculator-number-item">
+      <view hover hover-class="number-hover" class="number" data-num = "."  catchtap="touchNum">.</view>
+      <view hover hover-class="number-hover" class="number" data-num = "0"  catchtap="touchNum">0</view>
+      <view hover hover-class="number-hover" class="number" catchtap="touchClear">←</view>
+      </view>
+    </view>
+    <view class="calculator-operator">
+      <view hover hover-class="number-hover" class="operator" data-num = "+"  catchtap="touchNum">+</view>
+      <view hover hover-class="number-hover" class="operator" catchtap="touchResult">=</view>
+    </view>
+  </view>
+  </block>
+
+</view>

@@ -1,0 +1,37 @@
+.amount:before {
+	content: '￥';	
+}
+
+.submit {
+	margin: 8px;
+}
+
+/*单元格*/
+.cell {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items:center;
+	margin: 4px;
+	border-bottom: 1px solid #eee;
+	line-height: 28px;
+}
+
+.cell:last-child {
+	border-bottom: 0;
+}
+
+/*label显示字符*/
+.cell text:first-child {
+	width: 50px;
+}
+
+/*请先填写地址*/
+.area_select {
+	width: 100%;
+}
+
+/*选择器*/
+picker {
+	width: 60%;
+}

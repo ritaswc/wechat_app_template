@@ -1,0 +1,39 @@
+.vFull-page {
+  background-color: #fafafa;
+}
+
+.vLine {
+  height: 2rpx;
+  background-color: #e5e5e5;
+  margin-left: 40rpx;
+}
+
+.vLabel {
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+.vLabel text {
+  color: rgba(0,0,0,0.38);
+  font-size: 35rpx;
+  margin-left: 40rpx;
+}
+
+.vCompanylist {
+  background-color: #fff;
+}
+
+.companyName {
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 40rpx;
+  border-bottom: 1rpx solid rgba(200, 200, 200, 0.5);
+}
+
+.companyName text {
+  color: rgba(0,0,0,0.54);
+  font-size: 35rpx;
+}

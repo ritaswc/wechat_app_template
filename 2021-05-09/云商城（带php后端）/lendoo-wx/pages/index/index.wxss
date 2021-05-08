@@ -1,0 +1,110 @@
+page {
+	background: #eee;
+}
+
+.swiper-image {
+	width: 100%;
+	height: 100%;
+}
+
+/*功能区*/
+.func-area {
+	display: flex;
+	flex-direction: row;
+	margin: 20rpx 0;
+	padding-top: 30rpx;
+	background: white;
+}
+
+.func-area view {
+	width: 50%;
+	text-align: center;
+}
+
+.func-area text{
+	display: block;
+	color: #333;
+	font-size: 36rpx;
+	line-height: 90rpx;
+}
+
+.func-area image {
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 20rpx;
+}
+
+.orange {
+	background: #f60;
+}
+
+.blue {
+	background: #09f;
+}
+
+/*主商品区*/
+.container-goods {
+	background: white;
+}
+
+.container-goods .caption {
+	font-size: 32rpx;
+	width: 100%;
+	line-height: 60rpx;
+	text-indent: 20rpx;
+	padding: 10rpx;
+}
+
+.main-goods {
+/*	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+*/	border-top: 1px solid #eee;
+	background: white;
+	display: inline-block;
+}
+
+.main-goods .single-goods {
+	display: block;
+	float: left;
+	width: 50%;
+}
+
+.main-goods image {
+	width: 220rpx;
+	height: 220rpx;
+	display: block;
+	margin: 20rpx auto;
+}
+
+.main-goods .title {
+	display: block;
+	width: 90%;
+	color: #999;
+	font-size: 28rpx;
+	margin: 10rpx 6rpx;
+	height: 60rpx;
+	line-height: 32rpx;
+	overflow: hidden;
+}
+
+.main-goods .summary {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.main-goods .summary text {
+	font-size: 28rpx;
+	margin: 10rpx 20rpx;
+}
+
+.main-goods .summary .price {
+	color: red;
+}
+
+.main-goods .summary .sale {
+	color: gray;
+}
+

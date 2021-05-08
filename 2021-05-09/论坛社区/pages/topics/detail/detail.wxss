@@ -1,0 +1,21 @@
+.page-footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    color: #eee;
+}
+
+.to-reply {
+    display:block; 
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.weui-label{
+    width: 75px;
+}
+.reply_area{
+    background-color: #aaa
+}

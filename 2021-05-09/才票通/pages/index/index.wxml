@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<import src="../../wxSortPickerView/wxSortPickerView.wxml" />
+<!--tab选项卡-->
+<view class="swiper-tab">
+  <!--<view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">我的关注</view>-->
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">高频彩</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">全国彩</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">地方彩</view>
+</view>
+<loading class="loading" hidden="{{isHidden}}">正在加载</loading>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight}}px" bindchange="bindChange">
+  <!-- 我的关注 -->
+
+  <!-- 高频彩 (模板后期) -->
+  <swiper-item>
+    <view>
+      <template is="wxSortPickerView" data="{{wxSortPickerData}}" />
+    </view>
+  </swiper-item>
+
+    <!-- 全国彩 (模板后期) -->
+  <swiper-item>
+    <view class="nationwide">
+      <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" class="list">
+        <!--将开奖的结果组合成一个数组的形式-->
+        <view wx:for="{{nationInfo}}" wx:for-item="item">
+          <navigator url="../nationResult/nationResult?id={{item[0].lottery_id}}&length={{nationCodeLen[index]-1}}&name={{ nationNamesArr[index]}}&tag={{nationTag[index]}}">
+            <view class="item">
+              <view class="item-left">
+                <view class="img-size">
+                  <view class="lottery_logo">
+                    <view class="lottery_logo logo{{item[0].lottery_id}}">
+                    </view>
+                  </view>
+                </view>
+                <view class="names"> {{ nationNamesArr[index]}}</view>
+              </view>
+              <view class="item-right">
+                <span class="item-span">
+                  {{item[0].issue}}期 {{nationDate[index]}} [{{nationDay[index]}}] 
+                </span> 
+                <span>
+            <!--数据的填充-->
+            <view wx:if="{{item[0].lottery_id == 4 || item[0].lottery_id == 5 || item[0].lottery_id == 17 || item[0].lottery_id == 23}}">
+              <view class="item-span-down" wx:for="{{ nationCode[index]}}" wx:for-index="id" wx:for-item="one" >               
+                    <template is="standard_1" data="{{one}}"  />                           
+              </view>
+            </view>          
+            </span> 
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </scroll-view>
+    </view>
+  </swiper-item>
+  <!-- 地方彩 (模板后期) -->
+  <swiper-item>
+    <template class="hrcd" is="wxSortPickerView" data="{{wxSortPickerData}}" />
+  </swiper-item>
+</swiper>

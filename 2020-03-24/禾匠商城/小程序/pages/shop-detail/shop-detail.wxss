@@ -1,0 +1,69 @@
+@import "../../wxParse/wxParse.wxss";
+
+.banner {
+    width: 100%;
+    height: 360rpx;
+}
+
+.banner image {
+    height: 360rpx;
+}
+
+.block {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1rpx solid #e2e2e2;
+    color: #353535;
+}
+
+.block:last-child {
+    border: 0;
+}
+
+.block_1 {
+    padding: 24rpx 24rpx 30rpx 24rpx;
+}
+
+.title {
+    color: #353535;
+    font-size: 13pt;
+}
+
+.middle {
+    margin: 24rpx 0 18rpx 0;
+}
+
+.block_2 {
+    padding: 34rpx 0 34rpx 24rpx;
+}
+
+.shop-img {
+    width: 120rpx;
+    padding: 16rpx 0;
+}
+
+.shop-v {
+    width: 100%;
+    height: 40rpx;
+    border-left: 1rpx solid #e2e2e2;
+}
+
+.shop-img image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.block_3 {
+    width: 100%;
+    height: 72rpx;
+    padding: 0 24rpx;
+    color: #353535;
+    background-color: #fff;
+    margin-top: 20rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.detail {
+    padding: 24rpx;
+    background-color: #fff;
+}

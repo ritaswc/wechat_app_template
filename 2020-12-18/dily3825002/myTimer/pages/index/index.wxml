@@ -1,0 +1,9 @@
+<view class="pagetitle">
+    
+            <text class>计时器：   {{hour}}:{{min}}:{{sec}}:{{mill}}</text>
+        </view>
+        <view class= "buttongroup">
+        <button class = "buttonsyle" type="primary" disabled="{{status_star}}"   bindtap="time_s">{{txt_start}}</button>
+        <button class = "buttonsyle" type="default" bindtap="status_pause" disabled="{{status_pause}}">{{txt_pause}}</button>
+        <button class = "buttonsyle" type="warn" bindtap="status_stop" disabled="{{status_reset}}">{{txt_stop}}</button>
+        </view>

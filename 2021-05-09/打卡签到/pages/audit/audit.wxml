@@ -1,0 +1,5 @@
+<view class="vTitle" style="height: {{winHeight}}px; width: {{winWidth}}px">
+<image src="/images/icons/sent.png" mode="aspectFit"></image>
+<text class="tLabel">{{message}}</text>
+<text class="tMessage">请等待 {{companyName}} 审核</text>
+</view>

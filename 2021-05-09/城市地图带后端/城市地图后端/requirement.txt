@@ -1,0 +1,47 @@
+# Django
+Django==1.10.6
+
+# auth middleware
+django-simple-captcha==0.5.3
+
+# image processing
+django-imagekit==4.0
+
+# jinja2 template engine for generate email
+jinja2==2.9.5
+
+# email party api
+django-anymail==0.8
+python-postmark==0.4.12
+
+# API
+djangorestframework==3.6.2
+djangorestframework-jwt==1.9.0
+
+# debug-toolbar
+django-debug-toolbar==1.6
+
+# custom management extensions
+django-extensions==1.7.6
+
+# redis
+redis==2.10.5
+
+# job queue
+rq==0.7.1
+schedule==0.4.2
+
+# django-activity-stream
+django-activity-stream==0.6.3
+
+# utils
+fuzzywuzzy==0.14.0
+requests==2.13.0
+simplejson==3.10.0
+VerbalExpressions==0.0.1
+shortuuid==0.4.3
+uuid==1.30
+maya==0.1.8
+arrow==0.10.0
+pendulum==0.8.0
+timeago==1.0.7

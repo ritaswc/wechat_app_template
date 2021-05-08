@@ -1,0 +1,70 @@
+<view>
+    <view class="line_top12" />
+  <view class="me_clounme"  bindtap="gotsafecenter">
+    <view  style="display: flex;align-items: center;flex-direction:row;">
+      <image src="/images/icon_defult_image.png" class="me_imges" />
+      <view style="display: flex;flex-direction:column;justify-content:flex-start;text-align:left">
+        <text class="me_text" >熊**</text>
+        <text class="me_text">156******1256</text>
+      </view>
+    </view>
+    <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+  </view>
+  <view class="line" />
+  <view class="line_top12" />
+  <view class="me_clounme">
+    <view>
+      <image src="/images/icon_me_youhua_juan.png" class="me_imges" />
+      <text class="me_text">我的优惠卷</text>
+    </view>
+    <view>
+      <text class="me_text">0</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line_margin_left32" />
+  <view class="me_clounme" bindtap="gotoproperty">
+    <view>
+      <image src="/images/icon_me_zi_chang.png" class="me_imges" />
+      <text class="me_text">我的资产</text>
+    </view>
+    <view>
+      <text class="me_text">0.0元</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line" />
+  <view class="line_top12" />
+  <view class="me_clounme">
+    <view>
+      <image src="/images/icon_me_message.png" class="me_imges" />
+      <text class="me_text">我的消息</text>
+    </view>
+    <view>
+      <text class="me_text">0.0元</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line" />
+  <view class="line_top12" />
+  <view class="me_clounme">
+    <view>
+      <image src="/images/icon_me_tuijian.png" class="me_imges" />
+      <text class="me_text">推荐有奖</text>
+    </view>
+    <view>
+      <text class="me_text">一个好友=22元</text>
+      <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+    </view>
+  </view>
+  <view class="line" />
+  <view class="line_top12" />
+  <view class="me_clounme" bindtap="gotomore">
+    <view>
+      <image src="/images/icon_me_tuijian.png" class="me_imges" />
+      <text class="me_text">更多</text>
+    </view>
+    <image src="/images/icon_rigth_row.png" class="img_rigth_row" />
+  </view>
+  <view class="line" />
+</view>

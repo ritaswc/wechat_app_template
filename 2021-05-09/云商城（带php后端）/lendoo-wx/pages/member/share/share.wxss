@@ -1,0 +1,17 @@
+page {
+	display: flex;
+	flex-direction: column;
+}
+
+.desc {
+	line-height: 40px;
+	color: #333;
+	text-align: center;
+	display: block;
+	padding: 0 20px;
+}
+
+image {
+	width: 70%; 
+	margin: 0 auto;
+}

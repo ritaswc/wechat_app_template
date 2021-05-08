@@ -1,0 +1,149 @@
+page {
+    background-color: #fff;
+}
+
+.coupon {
+    height: 270rpx;
+}
+
+.coupon image {
+    width: 100%;
+    height: 270rpx;
+    position: absolute;
+    z-index: -1;
+}
+
+.ci_price {
+    width: 52%;
+    float: left;
+}
+
+.ci_price view {
+    margin-top: 70rpx;
+    float: right;
+    color: #353535;
+    font-weight: bolder;
+}
+
+.ci_right {
+    float: right;
+    margin-top: 76rpx;
+    width: 48%;
+    padding-left: 40rpx;
+}
+
+.ci_font {
+    float: left;
+}
+
+.ci_font view {
+    color: #353535;
+}
+
+.ci_integral {
+    height: 140rpx;
+    color: #353535;
+    display: flex;
+    align-items: center;
+    padding-left: 24rpx;
+    border-bottom: 1rpx solid #ededed;
+}
+
+.ci_shuoming {
+    margin: 40rpx 24rpx;
+    color: #353535;
+    font-size: 13px;
+    border-left: 6rpx solid #ff4544;
+    padding-left: 8rpx;
+}
+
+.ci_shuoming2 {
+    color: #666;
+    font-size: 13px;
+}
+
+.ci-btn-view {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 120rpx;
+    width: 100%;
+    border-top: 1rpx solid #ededed;
+}
+
+.ci-btn {
+    width: 702rpx;
+    height: 80rpx;
+    background-color: #ff4544;
+    color: #fff;
+    border-radius: 40rpx;
+    font-size: 13pt;
+}
+
+#modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    overflow: hidden;
+    z-index: 7777;
+    color: #fff;
+}
+
+.modal {
+    width: 574rpx;
+    height: auto;
+    background-color: #fff;
+    border-radius: 16rpx;
+    position: relative;
+}
+
+.modal-head {
+    width: 100%;
+    height: 332rpx;
+}
+
+.modal-body {
+    margin: 40rpx 0 48rpx 0;
+    color: #353535;
+    font-size: 13pt;
+}
+
+.modal-footer {
+    width: 100%;
+    margin-bottom: 48rpx;
+}
+
+.modal-btn-1 {
+    width: 228rpx;
+    height: 64rpx;
+    border-radius: 64rpx;
+    border: 1rpx solid #999;
+    color: #353535;
+    font-size: 11pt;
+    padding: 10rpx;
+}
+
+.modal-btn-2 {
+    width: 228rpx;
+    height: 64rpx;
+    border-radius: 64rpx;
+    color: #fff;
+    font-size: 11pt;
+    background-color: #ff4544;
+    padding: 10rpx;
+}
+
+.modal-close {
+    position: absolute;
+    right: 16rpx;
+    top: 16rpx;
+}
+
+.modal-left {
+    width: 124rpx;
+    height: 134rpx;
+    width: 50%;
+}

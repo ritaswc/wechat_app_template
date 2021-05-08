@@ -1,0 +1,4 @@
+@import "../../../components/reg/reg-step1/reg.wxss";
+@import "../../../components/reg/reg-step2/reg.wxss";
+@import "../../../components/reg/reg-step3/reg.wxss";
+@import "../../../components/reg/reg-step4/reg.wxss";

@@ -1,0 +1,154 @@
+<template name="post-head">
+
+  <!-- 贴主信息-->
+  <view>
+    <view style="padding:30rpx 24rpx 16rpx; float:left" catchtap="navicateToUser" data-id="{{user.Id}}">
+      <image style="width:40px;height:40px;overflow:hidden;" src="{{user.Headimgurl}}">{{articles}}</image>
+    </view>
+    <view style="padding:30rpx 0px 0px; overflow:hidden; height:110rpx;">
+      <view class="aricle-user-wrap">
+        <text class="index-poster-name">{{user.NickName}}</text>
+        <text class="index-poster-kind">V.{{user.Level}}</text>
+        <view class="index-poster-arrow" catchtap="openArrow" data-art-id="{{Id}}" data-user-id="{{user.Id}}"></view>
+      </view>
+      <view style="height:40rpx">
+        <text class="index-post-info">{{CreateDate}}</text>
+        <text class="index-post-info">浏览{{Click}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 帖子正文 -->
+<template name="post-content">
+  <view class="article-content-container" catchtap="toArticleDetail" data-article-id="{{Id}}">
+    <view href="../logs" class="article-content-title">{{Title == null?'':Title}}</view>
+    <view>
+      <a class="section-theme" wx:if="{{ArticleTypeName}}" bindtap="toBankuai">{{ArticleTypeName == null?'':ArticleTypeName}}</a> 
+      <a class="article-content">{{ContentDesc == null?'':ContentDesc}}</a> 
+    </view>
+
+    <!-- 语音 -->
+    <view wx:if="{{Voice}}" class="comment-voice-container">
+      <view class="audio-wrap" catchtap="playAudio" data-v-id="{{Voice.Id}}" data-v-src="{{Voice.TransFilePath}}">
+        <image style="width:22px; height:22px;margin-left:4px" src="http://i.pengxun.cn/content/images/voice/voiceplaying.png"></image>
+        <audio class="audio" id="{{Voice.Id}}" poster="http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000" src="{{Voice.TransFilePath}}"></audio>
+      </view>
+      <view class="audio-time-wrap">
+        <text>{{Voice.VoiceTime}}"</text>
+      </view>
+      <view style="clear:both"></view>
+    </view>
+
+    <!-- 图片 -->
+    <view wx:if="{{Images && Images.length>0}}" class="comment-imgs-container">
+      <block wx:for="{{Images}}" wx:for-item="image" wx:key="thumbnail">
+        <view>
+          <image catchtap="showBigImg" data-src="{{image.filepath}}" mode="left" style="max-height:200px; max-width:100%" src="{{image.thumbnail}}" class="article-image"></image>
+        </view>
+      </block>
+    </view>
+
+    <!-- 视频 -->
+    <block wx:if="{{VideoList || Video}}">
+      <view>
+      <video style="width:100%;" src="{{VideoList || Video.ConvertFilePath}}" controls="false"></video>
+      </view>
+    </block>
+  </view>
+</template>
+<template name="share">
+  <view>
+
+    <!-- 转发 -->
+    <view class="fr res" catchtap="praise" data-id="{{Id}}">
+      <view class="{{IsPraise == 0?'icon-zan':'zaned'}}"></view>
+      <em style="color:{{ (IsPraise == 0)?'':'#5a85ce'}}" class="em">赞 {{Praise}}</em>  </view>
+    <view class="fr res" catchtap="showReComment" data-id="{{Id}}">
+      <view class="icon-ping"></view><em class="em">评 {{CommentCount}}</em>  </view>
+
+    <!--<view class="fr res" catchtap="zhuan" data-id="{{item.Id}}"><view class="icon-zhuan"></view><em class="em">转</em>   </view>-->
+    <view class="fr res" catchtap="reward" data-id="{{Id}}">
+      <view class="icon-reward"></view><em class="em">赏 {{Reward}}</em>  </view>
+    <view style="clear:both"></view>
+  </view>
+</template>
+
+<!-- 赏头像 -->
+<template name="rewardimgs">
+  <view wx:if="{{RewardUsers}}" class="reward-logo">
+    <view style="width:7%">
+      <view class="reward-logo-icon"></view>
+    </view>
+    <view class="praise-logo-container">
+      <block wx:for="{{RewardUsers}}" wx:for-item="rewardUser" wx:key="Id">
+        <view class="reward-logo-img-container" catchtap="navicateToUser" data-id="{{rewardUser.Id}}">
+          <image style="width:35px; height:35px;" src="{{rewardUser.Headimgurl}}"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+</template>
+
+<!-- 点赞头像 -->
+<template name="praiseimgs">
+  <view wx:if="{{PraiseUsers}}" class="praise-logo">
+    <view style="width:7%">
+      <view class="praise-logo-icon"></view>
+    </view>
+    <view class="praise-logo-container">
+      <block wx:for="{{PraiseUsers}}" wx:for-item="praiseUser" wx:key="Id">
+        <view class="praise-logo-img-container" catchtap="navicateToUser" data-id="{{praiseUser.Id}}">
+          <image style="width:35px; height:35px;" src="{{praiseUser.Headimgurl}}"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+</template>
+
+<!-- 评论信息 -->
+<template name="commentcontent">
+  <view>
+    <view class="res-content-name">{{ComUser.NickName || ComUser.Nickname}}</view>
+    <view class="res-content-time">{{CreateDate}}</view>
+    <view style="clear:both"></view>
+  </view>
+
+  <!-- 文字回复 -->
+  <view class="res-content">
+    <text wx:if="{{DUser}}">回复
+      <text style="color:#5a85ce;max-width:110px;">@{{DUser.NickName}} : </text>
+    </text>
+    <text>{{Content}}</text>
+  </view>
+
+  <!-- 语音 -->
+  <view wx:if="{{Voice}}" class="comment-voice-container">
+    <view class="audio-wrap" catchtap="playAudio" data-v-id="{{Voice.Id}}">
+      <image style="width:22px; height:22px;margin-left:4px" src="http://i.pengxun.cn/content/images/voice/voiceplaying.png"></image>
+      <audio class="audio" id="{{Voice.Id}}" poster="http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000" src="{{Voice.TransFilePath}}"></audio>
+    </view>
+    <view class="audio-time-wrap">
+      <text>{{Voice.VoiceTime}}"</text>
+    </view>
+    <view style="clear:both;"></view>
+  </view>
+
+  <!-- 评论图片 -->
+  <view class="comment-image">
+    <block wx:for="{{Images}}" wx:for-item="comImages" wx:key="Id">
+      <view>
+        <image style="width:66px;height:66px;" src="{{comImages.filepath || comImages.Filepath}}"></image>
+      </view>
+    </block>
+  </view>
+</template>
+
+<!-- 评论头像 -->
+<template name="commentimg">
+
+  <!-- 头像 -->
+  <view class="comment-content-image-wrap" catchtap="navicateToUser" data-id="{{ComUser.Id}}">
+    <image style="width:47px;height:47px;padding:6px" src="{{ComUser.Headimgurl}}"></image>
+  </view>
+</template>

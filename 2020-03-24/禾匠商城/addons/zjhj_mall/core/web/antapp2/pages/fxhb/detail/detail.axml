@@ -1,0 +1,205 @@
+<view class="page {{__page_classes}}">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+
+        <view class="after-navber" style="background-image: url('{{page_img.bg}}')">
+            <!-- 页面内容 -->
+            <view class="rule-btn" onTap="showRule">活动规则</view>
+            <navigator class="return-index" url='/pages/index/index' open-type='redirect'>返回首页</navigator>
+
+            <view class="rule-bg {{showRule?'show':''}}"></view>
+            <view class="rule-content {{showRule?'show':''}}">
+                <view class="rule-close" onTap="closeRule">
+                    <image src="{{page_img.close}}"></image>
+                </view>
+                <view class="rule-text">
+                    <view class="rule-title">-拆红包活动规则-</view>
+                    <text>{{rule}}</text>
+                </view>
+            </view>
+            <view class="main-content">
+                <!-- 红包未拆完，分享提示模态框 -->
+                <view a:if="{{is_my_hongbao && hongbao.is_finish==0 && hongbao.is_expire==0}}" class="share-modal {{showShareModal?'show':''}}">
+                    <view class="modal-bg" onTap="closeShareModal"></view>
+                    <view class="modal-box" style="background-image: url('{{page_img.share_modal_bg}}')">
+                        <view class="modal-text">还差
+                            <text>{{rest_user_num}}</text> 个人即可拆红包
+                        </view>
+                        <view class="modal-text">一起瓜分
+                            <text>{{coupon_total_money}}</text> 元！
+                        </view>
+                        <view class="flex flex-row flex-x-center hongbao-info-btn">
+                            <view class="flex-y-center">
+                                <image src="{{page_img.wechat}}"></image>
+                            </view>
+                            <view class="flex-y-center">邀请好友一起拆</view>
+                            <button class="share-btn" open-type="share"></button>
+                        </view>
+                        <view class="modal-close" onTap="closeShareModal">
+                            <image src="{{page_img.close}}"></image>
+                        </view>
+                    </view>
+                </view>
+
+                <!-- 红包未拆完，当前已参与用户列表 -->
+                <view a:if="{{hongbao.is_finish==0 && hongbao.is_expire==0}}" class="hongbao-info">
+                    <view class="user-list">
+                        <block a:if="{{hongbao_list}}" a:for="{{hongbao_list}}" a:key="{{index}}">
+                            <view class="user-item" a:if="{{item}}">
+                                <image src="{{item.avatar_url}}"></image>
+                            </view>
+                            <view class="user-item none" a:else></view>
+                        </block>
+                    </view>
+                    <view class="hongbao-info-text">还差{{rest_user_num}}人即可瓜分{{coupon_total_money}}元红包,快邀请好友来拆</view>
+                    <view class="hongbao-info-text">{{rest_time_str}}后结束</view>
+                    <block a:if="{{is_my_hongbao}}">
+                        <view class="flex flex-row flex-x-center hongbao-info-btn">
+                            <view class="flex-y-center">
+                                <image src="{{page_img.wechat}}"></image>
+                            </view>
+                            <view class="flex-y-center">邀请好友一起拆</view>
+                            <button class="share-btn" open-type="share"></button>
+                        </view>
+                    </block>
+                    <block a:else>
+                        <form report-submit="true" onSubmit="detailSubmit">
+                            <view class="flex flex-row flex-x-center hongbao-info-btn" style="margin-bottom: 32rpx">
+                                <view class="flex-y-center">一起拆红包</view>
+                                <button class="share-btn" formType="submit"></button>
+                            </view>
+                        </form>
+                        <navigator url="/pages/fxhb/open/open" open-type="redirect" class="flex flex-row flex-x-center hongbao-info-btn hongbao-info-btn-org">
+                            <view class="flex-y-center">拆一个新红包</view>
+                            <view class="flex-y-center">
+                                <image class="pointer-r" src="{{page_img.pointer_r}}"></image>
+                            </view>
+                        </navigator>
+                    </block>
+                </view>
+
+                <!-- 红包已超时 -->
+                <view a:if="{{hongbao.is_expire==1}}" class="hongbao-info">
+                    <view class="hongbao-info-text">超过规定时间，该红包不能拆了</view>
+                    <view class="hongbao-info-text" style="text-align: center">
+                        <image src="{{page_img.cry}}" style="width: 190rpx;height: 168rpx;margin: 24rpx 0"></image>
+                    </view>
+                    <navigator url="/pages/fxhb/open/open" open-type="redirect" class="flex flex-row flex-x-center hongbao-info-btn">
+                        <view class="flex-y-center">拆一个新红包</view>
+                    </navigator>
+                </view>
+
+                <!-- 红包已拆分完成，我不在其中 -->
+                <view a:if="{{hongbao.is_finish==1 && !my_coupon}}" class="hongbao-info">
+                    <view class="user-list">
+                        <block a:if="{{hongbao_list}}" a:for="{{hongbao_list}}" a:key="{{index}}">
+                            <view class="user-item" a:if="{{item}}">
+                                <image src="{{item.avatar_url}}"></image>
+                            </view>
+                            <view class="user-item none" a:else></view>
+                        </block>
+                    </view>
+                    <view class="hongbao-info-text">很遗憾，该红包已被瓜分完了</view>
+                    <navigator url="/pages/fxhb/open/open" open-type="redirect">
+                        <view class="flex flex-row flex-x-center hongbao-info-btn">
+                            <view class="flex-y-center">拆一个新红包</view>
+                        </view>
+                    </navigator>
+                </view>
+
+                <!-- 红包已拆分完成，我在其中，优惠券信息 -->
+                <view a:if="{{hongbao.is_finish==1 && my_coupon}}" class="hongbao-info">
+                    <view style="text-align: center;margin-bottom: 24rpx">恭喜您，已成功瓜分红包</view>
+                    <view class="flex flex-row flex-y-center coupon" style="background-image: url('{{page_img.coupon}}')">
+                        <view class="flex-grow-1">
+                            <view class="coupon-title">满减券</view>
+                            <view class="coupon-desc">满{{my_coupon.use_minimum}}可用</view>
+                        </view>
+                        <view class="flex-grow-0 flex-row flex-y-bottom" style="min-width: 200rpx">
+                            <view class="coupon-unit">￥</view>
+                            <view class="coupon-money">{{my_coupon.money}}</view>
+                        </view>
+                    </view>
+                    <navigator url="/pages/list/list" open-type="redirect">
+                        <view class="flex flex-row flex-x-center hongbao-info-btn" style="margin-bottom: 32rpx">
+                            <view class="flex-y-center">立即使用</view>
+                        </view>
+                    </navigator>
+                    <navigator url="/pages/fxhb/open/open" open-type="redirect">
+                        <view class="flex flex-row flex-x-center hongbao-info-btn hongbao-info-btn-org">
+                            <view class="flex-y-center">拆一个新红包</view>
+                            <view class="flex-y-center">
+                                <image class="pointer-r" src="{{page_img.pointer_r}}"></image>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+
+                <!-- 红包已拆分完成，我在其中 -->
+                <view a:if="{{hongbao.is_finish==1}}" class="hongbao-info">
+                    <view class="flex flex-row">
+                        <view class="flex-grow-1 flex-y-center">
+                            <view style="width: 100%;height: 2rpx;background: #dbdbdb"></view>
+                        </view>
+                        <view class="flex-grow-0" style="padding: 0 50rpx">看看大家手气</view>
+                        <view class="flex-grow-1 flex-y-center">
+                            <view style="width: 100%;height: 2rpx;background: #dbdbdb"></view>
+                        </view>
+                    </view>
+                    <view class="flex flex-row flex-y-center user-hongbao" a:for="{{hongbao_list}}" a:key="{{index}}">
+                        <view class="flex-grow-0">
+                            <image class="user-avatar" src="{{item.avatar_url}}"></image>
+                        </view>
+                        <view class="flex-grow-1">
+                            <view class="user-nickname">{{item.nickname}}</view>
+                        </view>
+                        <view class="flex-grow-0">{{item.coupon_money}}元</view>
+                        <view class="best-icon flex flex-row flex-y-center" a:if="{{item.is_best}}">
+                            <view>
+                                <image src="{{page_img.best_icon}}"></image>
+                            </view>
+                            <view>手气最佳</view>
+                        </view>
+                    </view>
+                </view>
+
+                <!-- 推荐商品 -->
+                <view class="more-goods" a:if="{{goods_list}}">
+
+                    <view class="flex flex-row" style="margin: 0 10rpx 32rpx 10rpx">
+                        <view class="flex-grow-1 flex-y-center">
+                            <image style="height: 4rpx;width: 100%" src="{{page_img.more_l}}"></image>
+                        </view>
+                        <view class="flex-grow-0" style="padding: 0 64rpx;color: #fff">更多商品推荐</view>
+                        <view class="flex-grow-1 flex-y-center">
+                            <image style="height: 4rpx;width: 100%" src="{{page_img.more_r}}"></image>
+                        </view>
+                    </view>
+
+                    <view class="goods-list">
+                        <view class="goods-item-box" a:for="{{goods_list}}" a:key="{{index}}">
+                            <navigator class="goods-item" url="/pages/goods/goods?id={{item.id}}">
+                                <image src="{{item.pic_url}}" mode="aspectFill"></image>
+                                <view style="padding: 20rpx 24rpx">
+                                    <view class="goods-name-box">
+                                        <view class="goods-name">{{item.name}}</view>
+                                    </view>
+                                    <view class="flex flex-row flex-y-bottom">
+                                        <view class="flex-grow-1 goods-price">￥{{item.price}}</view>
+                                        <view class="flex-grow-0 goods-original-price">￥{{item.original_price}}</view>
+                                    </view>
+                                    <view class="buy-btn">去抢购</view>
+                                </view>
+                            </navigator>
+                        </view>
+                    </view>
+
+                </view>
+            </view>
+
+        </view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

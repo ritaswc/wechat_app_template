@@ -1,0 +1,80 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body">
+        <view>
+            <view class="search-column flex-row flex-y-center">
+                <view class="search-column-left flex-grow-1 flex-y-center">
+                    <view class="search-column-icon flex-y-center">
+                        <image src="{{__wxapp_img.pt.search.url}}"></image>
+                    </view>
+                    <view class="search-column-input flex-y-center">
+                        <input bindconfirm="toSearch" bindfocus="newSearch" confirmType="搜索" focus="true" value="{{keyword}}"></input>
+                    </view>
+                </view>
+                <view bindtap="cancelSearchValue" class="cancel-search flex-grow-0 flex-y-center flex-x-center">
+                    取消
+                </view>
+            </view>
+            <view style="height:100rpx;"></view>
+            <view class="history" wx:if="{{history_show}}">
+                <view class="history-top flex-row">
+                    <view class="history-top-left flex-grow-1">
+                        历史搜索
+                    </view>
+                    <view bindtap="clearHistoryInfo" class="history-top-right flex-grow-0">
+                        <image src="{{__wxapp_img.pt.search_clear.url}}"></image>
+                    </view>
+                </view>
+                <view class="history-info">
+                    <view bindtap="historyItem" class="history-item" data-keyword="{{item}}" wx:for="{{history_info}}" wx:key="{{item.id}}">
+                        {{item}}
+                    </view>
+                </view>
+            </view>
+            <view class="goods" wx:if="{{!history_show}}">
+                <navigator class="list-item flex-row" openType="navigate" url="/pages/pt/details/details?gid={{item.id}}" wx:for="{{list}}" wx:key="{{item.id}}">
+                    <view class="flex-grow-0 corver-pic">
+                        <image src="{{item.cover_pic}}"></image>
+                    </view>
+                    <view class="flex-grow-1 flex-col">
+                        <view class="flex-grow-1 goods-title">
+                                {{item.name}}
+                            </view>
+                        <view class="flex-grow-0 flex-row">
+                            <view class="group-item" wx:if="{{item.groupList[0]}}">
+                                <view wx:for="{{item.groupList}}" wx:for-item="group" wx:key="{{item.id}}">
+                                    <image src="{{group.avatar_url}}"></image>
+                                </view>
+                            </view>
+                            <view class="goods-sales">
+                                    已团 {{item.virtual_sales}}
+                                </view>
+                        </view>
+                        <view class="flex-grow-0 flex-row flex-y-bottom">
+                            <view class="flex-grow-0 price flex-row flex-y-bottom">
+                                <view class="unit flex-grow-0 flex-y-bottom">
+                                        ¥
+                                    </view>
+                                <view class="flex-grow-1 flex-y-bottom">{{item.price}}</view>
+                            </view>
+                            <view class="flex-grow-1 old-price flex-y-bottom">
+                                    ¥ {{item.original_price}}
+                                </view>
+                            <view class="flex-grow-0 group-btn flex-x-center flex-y-center">
+                                    去开团
+                                </view>
+                        </view>
+                    </view>
+                </navigator>
+                <view class="loading-bar {{show_loading_bar?'active':''}}" style="text-align: center;">
+                    <image src="{{__wxapp_img.system.loading.url}}" style="width: 160rpx;height: 80rpx"></image>
+                </view>
+                <view class="empty-bar flex-row flex-x-center" style="{{emptyGoods?'':'display:none'}}">
+                    没有更多商品了~
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

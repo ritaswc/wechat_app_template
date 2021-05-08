@@ -1,0 +1,18 @@
+<template name="search">
+<view>
+  <view class="search">
+    <view class="input-wrap">
+      <icon type="search" size="14"></icon>
+      <input class="input" placeholder="{{placeholder}}" placeholder-class="placeholderclass" />
+    </view>
+    <view class="cancel">取消</view>
+  </view>
+  <view class="history">
+    <view wx:for="{{his}}" class="history-item">
+      <icon type="waiting_circle" size="14" color="#999999" class="waiting_circle"></icon>
+      <view class="search-title {{index==his.lenght-1?'no-bottom':''}}">{{item}}</view>
+      <icon type="clear" size="13" color="#ABABAB" class="clear"></icon>
+    </view>
+  </view>
+</view>
+</template>

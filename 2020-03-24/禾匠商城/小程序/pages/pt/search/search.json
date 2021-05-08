@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "搜索",
+    "backgroundColor": "#f7f7f7",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

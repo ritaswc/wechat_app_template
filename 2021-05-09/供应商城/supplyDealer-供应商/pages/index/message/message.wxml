@@ -1,0 +1,40 @@
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  {{info}}
+</loading>
+<!--我的消息-->
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="{{hasMore ? 'bindDownLoad' : ''}}" bindscroll="scroll">
+  <view class="consequence" wx:for="{{list}}">
+    <view class="mes-num">
+      <text class="num1">{{item.title}}</text>
+      <text class="num2">{{item.create_time}}</text>
+    </view>
+    <view class="mes-detail">
+      <text class="details">{{item.content}}</text>
+    </view>
+    <view class="mes-btn" wx:if="{{item.friends_id != ''}}">
+      <text class="btn-nav" wx:if="{{item.state == 1}}" bindtap="updateMessage" data-state="3" data-id="{{item.id}}" data-friendsid="{{item.friends_id}}" data-relevance="{{item.relevance}}">拒绝</text>
+      <text class="btn-nav" wx:if="{{item.state == 1}}" bindtap="updateMessage" data-state="2" data-id="{{item.id}}" data-friendsid="{{item.friends_id}}" data-relevance="{{item.relevance}}">同意</text>
+      <text class="btn-nav-alr" wx:if="{{item.state == 2}}">已同意</text>
+      <text class="btn-nav-alr" wx:if="{{item.state == 3}}">已拒绝</text>
+    </view>
+  </view>
+
+  <!-- 内容为空样式 -->
+  <view class="empty-con" wx:if="{{emptyShow}}">
+    <image class="empty-image" src="{{imageCtx}}dealer/note.png"></image>
+    <text class="empty-text">暂无消息</text>
+  </view>
+
+  <!-- 上拉加载-->
+  <view class="tips" wx:if="{{scrollTop > scrollHeight && list.length>0}}">
+    <image class="tipsImg" wx:if="{{hasMore}}" src="{{imageCtx}}dealer/loaddingpro.gif"></image>
+    <view class="tipsText" wx:else>
+      <text>没有更多消息了</text>
+    </view>
+  </view>
+
+  <!-- 回到顶部-->
+  <view class="toTop" wx:if="{{scrollTop > 500}}" bindtap="goTop">
+    <image src="{{imageCtx}}dealer/s_top.png"></image>
+  </view>
+</scroll-view>

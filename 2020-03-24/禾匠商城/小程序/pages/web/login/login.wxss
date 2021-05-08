@@ -1,0 +1,10 @@
+.login-btn {
+    height: 88rpx;
+    line-height: 88rpx;
+    padding: 0 0;
+    border: none;
+    background: #ff4544;
+    color: #fff;
+    border-radius: 15rpx;
+    font-size: 11pt;
+}

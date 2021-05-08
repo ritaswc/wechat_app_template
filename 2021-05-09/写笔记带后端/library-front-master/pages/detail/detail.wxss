@@ -1,0 +1,174 @@
+page {
+    /*background-color: f2f2f2;*/
+    height: 100%;
+}
+
+.book-intro{
+    background-color: #000000;
+    padding-top: 100rpx;
+    padding-bottom: 50rpx;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.book-name{
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 50rpx;
+    width:96%;
+    padding-left: 2%;
+}
+
+.book-author{
+    color: #949494;
+    text-align: center;
+    font-size: 30rpx;
+    font-style: italic;
+    padding-top: 20rpx;
+}
+
+.fav_image {
+    width: 64rpx;
+    height: 59rpx;
+    padding-top: 40rpx;
+}
+
+.detail-cells {
+    font-size: 30rpx;
+    margin-top:20rpx;
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+    background-color: white;
+    width: 100%;
+}
+
+
+.detail-cell {
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+    margin-left: 30rpx;
+}
+
+.book-code {
+    font-size: 25rpx;
+    font-weight: bolder;
+    color: #999999;
+}
+
+.empty-book {
+    font-size: 25rpx;
+    font-weight: bolder;
+    color: orangered;
+}
+
+.book-place {
+    font-weight: 400;
+    font-size: 32rpx;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    padding-bottom: 15rpx;
+}
+
+.book-status {
+    color: #999999;
+    font-size: 25rpx;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+
+.detail-bd {
+    border-top: 1px solid #E5E5E5;
+}
+.detail-image{
+    margin-top:30rpx;
+    text-align: center;
+}
+.detail-image image{
+    max-width: 75%;
+}
+.detail-summary{
+    text-align:justify;
+}
+.detail-summary .title{
+    display: block;
+    text-align: center;
+    width:15%;
+    margin:10rpx auto;
+    padding:15rpx 0;
+    font-size: 40rpx;
+    line-height: 40rpx;
+    font-weight: bold;
+    color:#949494;
+    border-bottom: 2rpx green solid;
+}
+.detail-summary .content{
+    word-spacing: 30rpx;
+}
+.loading {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: #999999;
+    font-size: 32rpx;
+    background-color: #000000
+}
+
+.loading-image {
+    width:100%; 
+    padding-top:50%;
+}
+
+.loading-image image {
+    width: 200rpx; 
+    height: 200rpx;
+}
+
+.result-list {
+    width: 100%;
+    align-items: center;
+}
+
+.return-btn{
+  color: white;
+  background-color: #04BE02;
+  border: none;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+}
+
+.return-to-index {
+  align-items: center;
+  width: 98%;
+  padding-left:1%;
+  padding-top: 20rpx
+}
+.swiper-tab{
+    display:flex;
+    justify-content:space-around;
+    width:100%;
+    text-align:center;
+    line-height: 80rpx;
+}
+.swiper-tab-list{
+    flex:1;
+    font-size:30rpx;
+    color:#777777;
+}
+.on{
+    color:#1296db;
+    border-bottom:5rpx solid #1296db;
+}
+.swiper-box{
+    display:block;
+    height:100%;
+    width:100%;
+    overflow: hidden;
+}
+

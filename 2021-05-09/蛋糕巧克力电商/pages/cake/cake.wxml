@@ -1,0 +1,33 @@
+<view class="tab">
+  <view class="{{tab==0?'tab-on':'tab-out'}}" data-index="0" catchtap="changeTab">经典系列</view>
+  <view class="{{tab==1?'tab-on':'tab-out'}}" data-index="1" catchtap="changeTab">吉致系列</view>
+</view>
+<view class="tab-layer"></view>
+<view wx:if="{{tab==0}}">
+  <view class="item itemjd" data-pname="{{p.name}}" data-brand="0" bindtap="goDetail" wx:for="{{list}}" wx:key="name" wx:for-item="p">
+    <view class="img">
+      <image src="{{p.imgUrl}} " mode="aspectFit" />
+    </view>
+    <view class="con">
+      <view class="nm">{{p.name}}</view>
+      <view class="des">{{p.des}}</view>
+      <view class="sub">￥
+        <text>{{p.price}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{tab==1}}">
+  <view class="item itemjz" bindtap="goDetail" data-pname="{{p.name}}" data-brand="1" data-price="{{p.price}}" wx:for="{{listJz}}" wx:key="name" wx:for-item="p">
+    <view class="img">
+      <image src="{{p.imgUrl}}" mode="aspectFit" />
+    </view>
+    <view class="con">
+      <view class="nm">{{p.name}}</view>
+      <view class="des">{{p.des}}</view>
+      <view class="sub">￥
+        <text>{{p.price}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,2 @@
+<import src="../../component/empty/empty.wxml" />
+<template is="empty" data="{{msg:'您还没有会员卡哦~'}}"></template>

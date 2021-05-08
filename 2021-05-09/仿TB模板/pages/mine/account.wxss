@@ -1,0 +1,166 @@
+.container {
+  width: 100%;
+}
+
+.list-account {
+  width: 100%;
+}
+
+.list-top {
+  width: 92%;
+  padding: 0px 15px;
+  margin: 16rpx 0 0;
+  list-style: none;
+  background: #fff;
+}
+
+.list-li {
+  position: relative;
+  height: 90rpx;
+  line-height: 90rpx;
+  overflow: hidden;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+.list-pto {
+  line-height: 110rpx;
+  overflow: hidden;
+  position: relative;
+  height: 110rpx;
+  padding: 24rpx 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+.list-pto:after, .list-li:after {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  content: '';
+  bottom: 0;
+  border-bottom: #dedede solid 1px;
+  opacity: 0.5;
+}
+
+.span {
+  display: block;
+  float: left;
+  font-size: 14px;
+  color: #666;
+}
+
+.rt {
+  position: absolute;
+  right: 22px;
+  height: 60px;
+  font-weight: 500;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.rts {
+  position: absolute;
+  right: -10px;
+  height: 60px;
+}
+.photo {
+  float: right;
+  padding-right: 6rpx;
+}
+
+.pto {
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 0;
+}
+
+.lt {
+  display: block;
+  float: right;
+  margin-top: 10rpx;
+  width: 70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  opacity: 0.5;
+}
+
+.lts {
+  display: block;
+  float: right;
+  width: 70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  opacity: 0.5;
+}
+
+.lt.pto {
+  display: block;
+  float: right;
+  margin-top: 26rpx;
+  width: 70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  opacity: 0.5;
+}
+
+.list-bom {
+  width: 100%;
+  padding: 0px 15px;
+  margin: 8px 0 0;
+  list-style: none;
+  background: #fff;
+}
+
+.bom-li {
+  position: relative;
+  width: 95%;
+  padding: 5px 0;
+  height: 70rpx;
+  line-height: 70rpx;
+  overflow: hidden;
+}
+
+.bspan {
+  display: block;
+  float: left;
+  font-size: 14px;
+  color: #666;
+}
+
+.brt {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 10rpx;
+    width: 50%;
+    height: 70rpx;
+    padding: 6rpx 60rpx 0 0;
+}
+
+.pwdbtn {
+  display: block;
+  position: absolute;
+  width: 91%;
+  text-align: right;
+  font-size: 14px;
+  color: #dd2a2a;
+}
+
+.pic {
+    display: block;
+    float: right;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.btn {
+  display: block;
+  width: 90%;
+  height: 40px;
+  margin: 40px auto 0;
+  background: #dd2a2a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+}

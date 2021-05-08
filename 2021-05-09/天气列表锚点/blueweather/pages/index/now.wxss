@@ -1,0 +1,39 @@
+.now {
+  display: flex;
+  flex-direction: row;
+  background-color:rgb(38,157,128) ;
+ 
+}
+
+.now-tmp-condition {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  font-size: 80rpx;
+}
+
+.temperature {
+  background-color: rgb(6,128,67);
+  font-size: 180rpx;
+  font-style: normal;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+}
+
+.condition {
+  background-color: rgb(174,221,129);
+  height: 100%;
+  font-size: 80rpx;
+  padding: 20rpx;
+  text-align: center;
+}
+
+.now-img-container {
+  text-align: center;
+  width: 50%;
+}
+
+.now-img {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,26 @@
+<view wx:if="{{is_empty}}" class="container">
+  <view class="empty">
+    <image style="width: 100px; height: 100px; padding-top:100rpx;" mode="aspectFit" src="../../src/img/empty.png"></image>
+    <view class="empty-tips">
+      <text> 当前没有收藏任何图书 </text>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <view wx:for="{{favs}}" wx:for-item="fav" wx:key="*this">
+    <view class="fav_card">
+      <navigator class="fav_card_link" url="../detail/detail?marc_no={{fav.marc_no}}&school={{fav.school}}&ctrl_no={{fav.ctrl_no}}">
+        <view class="book-name">
+          <text>{{fav.book_name}}</text>
+        </view>
+        <view class='book-author'>
+          <text>{{fav.book_author}}</text>
+        </view>
+        <view class='book-code'>
+           <text class='book-code-block'>{{fav.school_name}}</text>  <text class='book-code-block second-block'>{{fav.code}}</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="footer"></view>
+</view>

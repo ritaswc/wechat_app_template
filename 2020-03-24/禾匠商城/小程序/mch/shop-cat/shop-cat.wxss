@@ -1,0 +1,47 @@
+.cat-item {
+    height: 100rpx;
+    line-height: 100rpx;
+    padding: 0 24rpx;
+    background: #fff;
+    position: relative;
+}
+
+.cat-item::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 24rpx;
+    right: 0;
+    height: 0;
+    border-bottom: 1rpx solid #e3e3e3;
+}
+
+.cat-item .pointer {
+    width: 12rpx;
+    height: 22rpx;
+}
+
+.sub-cat-list {
+    background: #fff;
+    overflow: hidden;
+    margin: -3rpx -3rpx;
+}
+
+.sub-cat-item {
+    background: #eee;
+    width: 376rpx;
+    display: inline-block;
+    float: left;
+    margin: 3rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding: 0 24rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cat-item.active,.sub-cat-item.active {
+    color: #ff4544;
+}

@@ -1,0 +1,286 @@
+page {
+  background: #eee;
+  font-family: "Microsoft Yahei";
+}
+
+.star {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.park-icon {
+  background: url(/images/park-icon.png) no-repeat;
+  background-size: 500rpx 500rpx;
+  text-indent: -9999px;
+  display: block;
+}
+
+a:hover, a:visited, a:link {
+  color: #fff;
+  text-decoration: none;
+}
+.right{
+  float: right;
+}
+.bttn {
+  display: block;
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  z-index: 99;
+}
+
+.btn-refer {
+  color: #fff;
+  background: #00a598;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/**图片蒙层**/
+
+.park-image-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.park-image-layer1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.text-a {
+  text-align: center;
+}
+
+.park-image-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.content-text-1 {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.content-text-2 {
+  font-size: 32rpx;
+}
+
+.text-a {
+  text-align: center;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.mg-0 {
+  margin: 0 auto;
+}
+
+.overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/**阴影**/
+
+.box-s {
+  box-shadow: 0 2px 3px hsla(0, 0%, 4%, 0.1), 0 0 0 1px hsla(0, 0%, 4%, 0.1);
+}
+
+/**flext布局**/
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.column-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.row-jb {
+  justify-content: space-between;
+}
+
+.row-jc {
+  justify-content: center;
+}
+
+/**常用颜色**/
+
+.color-9 {
+  color: #909090;
+}
+
+.color-f {
+  color: #fff;
+}
+
+.color-e {
+  color: #eee;
+}
+
+.color-pp {
+  color: #00a598;
+}
+
+.bg-f {
+  background: #fff;
+}
+
+.bg-e {
+  background: #eee;
+}
+
+.bg-pp {
+  background: #00a598;
+}
+
+/**边框**/
+
+.br-b {
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+.br-b1 {
+  border: 1rpx solid #e5e5e5;
+}
+
+.br-half {
+  border-radius: 50%;
+}
+
+.br-5 {
+  border-radius: 5rpx;
+}
+
+.br-10 {
+  border-radius: 10rpx;
+}
+
+.font-size-24 {
+  font-size: 24rpx;
+}
+
+.mg-5 {
+  margin: 5rpx;
+}
+
+.mg-10 {
+  margin: 10rpx;
+}
+
+.mg-15 {
+  margin: 15rpx;
+}
+
+.mg-20 {
+  margin: 20rpx;
+}
+
+.mg-t-80 {
+  margin-top: 80rpx;
+}
+.mg-t-120 {
+  margin-top: 120rpx;
+}
+
+.mg-t-10 {
+  margin-top: 10rpx;
+}
+
+.mg-r-10 {
+  margin-right: 10rpx;
+}
+
+.mg-t-15 {
+  margin-top: 15rpx;
+}
+
+.mg-t-20 {
+  margin-top: 20rpx;
+}
+
+.mg-t-50 {
+  margin-top: 50rpx;
+}
+
+.mg-b-5 {
+  margin-bottom: 5rpx;
+}
+
+.mg-b-10 {
+  margin-bottom: 10rpx;
+}
+
+.mg-b-15 {
+  margin-bottom: 15rpx;
+}
+
+.mg-b-20 {
+  margin-bottom: 20rpx;
+}
+
+.p-20 {
+  padding: 20rpx;
+}
+
+.p-t-5 {
+  padding-top: 5rpx;
+}
+
+.p-b-5 {
+  padding-bottom: 5rpx;
+}
+
+.p-b-24 {
+  padding-bottom: 24rpx;
+}
+
+.car-icon {
+width:50rpx;
+height:50rpx;
+margin-right:20rpx;
+border-radius:50%;
+
+
+}
+
+
+/*按钮*/
+
+.column .sure {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  width: 80%;
+  margin: 100rpx auto 0;
+}

@@ -1,0 +1,15 @@
+<!-- index.wxml -->
+<form bindsubmit="onSubmit">
+    <view class="container">
+        <view class='title'>
+            <input name="title" placeholder-class="placeholder" placeholder="在此输入标题（可选）" value=""  />
+        </view>
+        <view class='row' catchtap="onFocus">
+            <textarea class='text' maxlength="5000" auto-height="true" placeholder-class="placeholder" name="content"
+                      focus="{{focus}}" auto-focus="true" value="" placeholder="点击添加文本"  />
+        </view>
+        <view class='bottom'>
+            <button formType="submit" class='btn success'>保存</button>
+        </view>
+    </view>
+</form>

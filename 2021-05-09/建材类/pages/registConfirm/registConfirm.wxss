@@ -1,0 +1,93 @@
+/* pages/registConfirm/registConfirm.wxss */
+
+.container{
+     height: 100%;
+     width: 100%;
+     background-color: #f4f4f4;
+     position: fixed;
+     box-sizing: border-box;
+}
+
+.top{
+    text-align: center;
+}
+
+.top_text{
+    white-space: nowrap;
+    display: block;
+    padding: 20px;
+}
+
+.top_mobile{
+    white-space: nowrap;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.content{
+     width: 100%;
+     line-height: 45px;
+     position: relative;
+}
+
+.my_text{
+     position: absolute;
+     z-index: 1001;
+     padding:0 15px;
+}
+
+.my_input{
+    background-color: #FFFFFF;
+    height: 45px;
+    padding-left: 85px;
+}
+
+.my_button{
+    position: absolute;
+    z-index: 1002;
+    width: 25%;
+    right: 0;
+    margin-top: -45px;
+    height: 45px;
+    background-color: #999;
+    opacity: 0;
+}
+
+.my_button_text{
+    white-space: nowrap;
+    color:#00acff;
+}
+
+.new_text{
+    white-space: nowrap;
+    color:blue;
+    position: absolute;
+    z-index: 1001;
+    right: 15px;
+    margin-top: -35px;
+    border-left: 1px solid #d1d1d1;
+    line-height: 25px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+
+.button{
+     background-color: #00acff;
+     width:92%;
+     color: #FFFFFF;
+     margin-top: 20px;
+}
+
+.button_pressed{
+     background-color: #00a1e0;
+} 
+
+.button_text{
+     color: #FFFFFF; 
+}
+
+.new_style{
+    color: #999999; 
+}
+

@@ -1,0 +1,127 @@
+{template 'common/header'}
+<div class="alert we7-page-alert">
+	<p><i class="wi wi-info-sign"></i>本PC可操作的模块中，仅显示可进行同步的模块；</p>
+	<p><i class="wi wi-info-sign"></i>可以把小程序应用或公众号应用的会员、数据等信息同步至PC应用当中；</p>
+	<p><i class="wi wi-info-sign"></i>一个模块，同步了小程序则不可再同步公众号，同步了公众号则不可再同步小程序；</p>
+	<p><i class="wi wi-info-sign"></i>若小程序A应用已同步本PC，则本PC同步小程序应用时，无法选择小程序A且小程序A不会显示在同步列表中，即两者不可相互同步,公众号同理。</p>
+</div>
+<div class="we7-page-title">关联设置</div>
+<div id="js-webapp-module-link-uniacid" ng-controller="webappModuleLinkUniacidCtrl" ng-cloak>
+	<table class="table we7-table table-hover vertical-middle">
+		<col width="180px" />
+		<col width="140px"/>
+		<col width="140px" />
+		<tr>
+			<th class="text-left">模块</th>
+			<th class="text-left">公众号或小程序</th>
+			<th class="text-right">操作</th>
+		</tr>
+		<tr ng-repeat="module in modules" ng-if="modules">
+			<td class="text-left">
+				<img ng-src="{{module.logo}}" style="width:50px;height:50px;">
+				{{module.title}}
+			</td>
+			<td class="text-left" ng-if="module.config.link_uniacid">
+				<img ng-src="{{module.link_uniacid_info.logo}}" style="width:50px;height:50px;">
+				<span>{{module.link_uniacid_info.name}}</span>
+			</td>
+			<td class="text-left" ng-if="!module.config.link_uniacid && !module.other_link">
+				<span>暂无</span>
+			</td>
+			<td class="text-left" ng-if="!module.config.link_uniacid && module.other_link">
+				<span>已被<span ng-if="module.other_link.type == 1 || module.other_link.type == 3">公众号：<span class="color-default" ng-bind="module.other_link.name"></span></span><span ng-if="module.other_link.type == 4">小程序：<span class="color-default" ng-bind="module.other_link.name"></span></span>同步</span>
+			</td>
+			<td>
+				<div class="link-group" ng-if="module.config.link_uniacid">
+					<a href="javascript:;" ng-click="searchLinkAccount(module.name, 'wxapp')">修改</a>
+					<a href="javascript:;" ng-click="module_unlink_uniacid(module.name)">删除</a>
+				</div>
+				<div class="link-group" ng-if="!module.config.link_uniacid && !module.other_link">
+					<a href="javascript:;" ng-click="searchLinkAccount(module.name, 'wxapp')">添加</a>
+				</div>
+				<div class="link-group" ng-if="!module.config.link_uniacid && module.other_link">
+					<a href="javascript:;">---</a>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div class="modal fade uploader-modal module" id="show-account" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog we7-modal-dialog" style="width:800px">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">选择</h4>
+				</div>
+				<div class="modal-body material-content">
+					<div class="material-nav">
+						<a href="javascript:;" ng-click="tabChange(0)"  ng-class="{true:'active',false:''}[jurindex==0]" >小程序</a>
+						<a href="javascript:;" ng-click="tabChange(1)" ng-class="{true:'active',false:''}[jurindex==1]">公众号</a>
+					</div>
+					<div class="panel-body we7-padding material-body" ng-show="jurindex==0" id="account-wxapp">
+						<div class="alert bg-light-gray">
+							<p><i class="wi wi-info-sign color-default"></i>该应用必须同时支持小程序应用</p>
+							<p><i class="wi wi-info-sign color-default"></i>小程序必须安装有该应用.</p>
+							<p><i class="wi wi-info-sign color-default"></i>必须有PC和小程序的主管理员及以上权限</p>
+						</div>
+						<div class="form-group we7-padding" ng-show="loadingWxappData">
+							<span class="help-block text-center"><img src="./resource/images/loading.gif" alt="" width="45px"> 拼命加载中。。。</span>
+						</div>
+						<div class="row js-show-account-content" ng-show="!loadingWxappData">
+							<div class="col-sm-2" ng-repeat="account in linkWxappAccounts" ng-if="linkWxappAccounts">
+								<div class="item" ng-click="selectLinkAccount(account, $event)">
+									<img ng-src="{{account.logo}}" class="icon" alt="">
+									<div class="name">{{account.name}}</div>
+									<div class="mask">
+										<span class="wi wi-right"></span>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 text-center" ng-if="linkWxappAccounts.length == 0">没有可以关联的小程序</div>
+						</div>
+					</div>
+					<div class="material-body" ng-show="jurindex==1" id="account-app">
+						<div class="alert bg-light-gray">
+							<p><i class="wi wi-info-sign color-default"></i>该应用必须同时支持公众号应用</p>
+							<p><i class="wi wi-info-sign color-default"></i>公众号必须安装有该应用.</p>
+							<p><i class="wi wi-info-sign color-default"></i>必须有公众号和PC的主管理员及以上权限</p>
+						</div>
+						<div class="form-group we7-padding" ng-show="loadingAppData">
+							<span class="help-block text-center"><img src="./resource/images/loading.gif" alt="" width="45px"> 拼命加载中。。。</span>
+						</div>
+						<div class="row js-show-account-content" ng-show="!loadingAppData">
+							<div class="col-sm-2" ng-repeat="account in linkAppAccounts" ng-if="linkAppAccounts">
+								<div class="item" ng-click="selectLinkAccount(account, $event)">
+									<img ng-src="{{account.logo}}" class="icon">
+									<div class="name">{{account.name}}</div>
+									<div class="mask">
+										<span class="wi wi-right"></span>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 text-center" ng-if="linkAppAccounts.length == 0">没有可以关联的公众号</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="moduleLinkUniacid()">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	angular.module('webApp').value('config', {
+		'modules': {php echo !empty($modules) ? json_encode($modules) : 'null'},
+		'token': "{php echo $_W['token']}",
+		'wxapp': "{php echo ACCOUNT_TYPE_APP_NORMAL}",
+		'app': "{php echo ACCOUNT_TYPE_OFFCIAL_NORMAL}",
+		'links' : {
+			'search_link_account': "{php echo url('webapp/module-link-uniacid/search_link_account')}",
+			'module_link_uniacid': "{php echo url('webapp/module-link-uniacid')}",
+			'module_unlink_uniacid':"{php echo url('webapp/module-link-uniacid/module_unlink_uniacid')}"
+		},
+	});
+	angular.bootstrap($('#js-webapp-module-link-uniacid'), ['webApp']);
+</script>
+{template 'common/footer'}

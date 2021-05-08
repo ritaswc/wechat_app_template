@@ -1,0 +1,29 @@
+<template name="list">
+    <view class="list" hover-class="none" data-tip="{{tip}}" data-url="{{url}}" catchtap='navigateTo'>
+        <view class="list-icon-wrap"><image src="{{icon}}" class="list-icon"></image></view>
+        <view class="list-text">{{text}}</view>
+        <view class="arrow-wrap">{{tip}}<image src="images/accessory.png" class="list-arrow"></image></view>
+    </view>
+    <view hidden="{{!cut?true:false}}" style="height: 23.44rpx;"></view>
+</template>
+
+<scroll-view scroll-y="trues" class="user">
+    <view class="info">
+        <view class="info-wrap">
+            <image class="info-icon" src="{{userInfo.avatarUrl}}" catchtap="navigateTo" data-url-type="userinfo"></image>
+            <view class="info-name">{{userInfo.nickName}}</view>
+        </view>
+    </view>
+
+    <template is="list" data="{{...order}}"></template>
+    <view class="order">
+        <block wx:for="{{orderCell}}">
+            <navigator hover-class="none" url="{{item.url}}" class="order-cell">
+                <image class="{{item.class}}" src="{{item.icon}}"></image>
+                <view class="badge" wx:if="{{ item.count > 0 }}">{{item.count}}</view>
+                <view>{{item.text}}</view>
+            </navigator>
+        </block>
+    </view>
+    <template wx:for="{{list}}" is="list" data="{{...item}}"></template>
+</scroll-view>

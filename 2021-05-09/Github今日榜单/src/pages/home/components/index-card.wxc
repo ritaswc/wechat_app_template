@@ -1,0 +1,180 @@
+<template>
+    <view class="wrap">
+        <card>
+
+           <view class="box">
+                <view class="body">
+                   <view class="body-left" bind:tap="handleInfo" data-ns="{{data.ns}}" data-name="{{data.name}}">
+                       <view class="body-title-box">
+                           <text class="body-title">{{data.name}}</text>
+                       </view>
+                       <view class="body-desc-box">
+                           <wxc-elip class="body-desc" line="3">{{data.desc}}</wxc-elip>
+                       </view>
+                   </view>
+                   <view class="body-right">
+                        <view>
+                            <image mode="aspectFit" class="img" src="{{data.author_avatar}}" />
+                        </view>
+                        <view class="author">
+                            <text>{{data.ns}}</text>
+                        </view>
+                   </view>
+                </view>
+                <view class="footer">
+                     <view class="footer-item" wx:if="{{data.lang !== ''}}">
+                            <my-icon type="pen"></my-icon>
+                            <text class="footer-text">{{data.lang}}</text>
+                        </view>
+
+                        <view class="footer-item">
+                            <my-icon type="star"></my-icon>
+                            <text class="footer-text">{{data.star}}</text>
+                        </view>
+
+                        <view class="footer-item">
+                            <my-icon type="fork"></my-icon>
+                            <text class="footer-text">{{data.fork}}</text>
+                        </view>
+
+                        <view class="footer-item">
+                            <my-icon type="star"></my-icon>
+                            <text class="footer-text">{{data.since_star}} stars today</text>
+                        </view>
+                </view>
+           </view>
+
+        </card>
+        
+    </view>
+</template>
+
+<script>
+export default {
+  config: {
+    usingComponents: {
+      "wxc-flex": "@minui/wxc-flex",
+      "wxc-elip": "@minui/wxc-elip",
+      card: "components/card",
+      "my-icon": "components/icon",
+      
+    }
+  },
+  properties: {
+    data: {
+      type: Object,
+      value: []
+    }
+  },
+  data: {
+      
+  },
+  methods: {
+      handleInfo: function(event) {
+        let ns = event.currentTarget.dataset.ns.trim()
+        let name = event.currentTarget.dataset.name.trim()
+        wx.navigateTo({
+            url: `info?ns=${ns}&name=${name}`
+        })
+    }
+  }
+}
+</script>
+
+<style lang="less">
+
+    @card-height: 280rpx;
+    @body-height: 200rpx;
+    @footer-height: 80rpx;
+    @margin: 20rpx;
+
+    .wrap {
+        height: @card-height;
+        margin-bottom: 50rpx;
+    }
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+        margin-left: @margin;
+    }
+
+    .body {
+        height: @body-height;
+        width: 100%;
+        display: flex;
+        .body-left {
+            flex-grow: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-left: @margin; 
+            .body-title-box {
+                // background-color: darkslateblue;
+                width: 100%;
+                height: 80rpx;
+                line-height: 80rpx;
+                overflow: hidden;
+                .body-title {
+                    font-size: 40rpx;
+                    font-weight: 700;
+                }
+            }
+            .body-desc-box {
+                // background-color: rgb(25, 112, 153);
+                width: 100%;
+                flex-grow: 1;
+                font-size: 30rpx;
+                line-height: 40rpx;
+                .body-desc {
+                    
+                }
+            }
+        }
+        .body-right {
+            // background-color: rgba(110, 194, 32, 0.5);
+            width: 150rpx;
+            height: 100%;
+            padding: @margin;
+            .img {
+                width: 150rpx;
+                height: 150rpx;
+                border-radius: 10rpx;
+            }
+            .author {
+                text-align: center;
+                overflow: hidden;
+                font-size: 25rpx;
+                color: #888;
+            }
+        }
+    }
+
+    .footer {
+        // background-color: rgba(194, 32, 121, 0.5);
+        flex-grow: 1;
+        height: @footer-height;
+        font-size: 25rpx;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .footer-item {
+            display: inline-block;
+            margin-left: 20rpx;
+            &:nth-child(1) {
+                margin-left: @margin;
+            }
+            &:nth-last-child(2) {
+                flex-grow: 0.8;
+            }
+            .footer-text {
+                display: inline-block;
+                margin-left: 5rpx;
+            }
+        }
+    }
+
+    
+
+</style>

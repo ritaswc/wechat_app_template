@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<!--<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>-->
+
+<view class="body {{bodyShow ? 'bodyShow' : ''}}">
+  <view class="bg_area" style="height: {{windowHeight}}px">
+    <image class="img" src="{{bgImg}}" mode="aspectFill"></image>
+  </view>
+  <view class="title_area">
+    <image class="img" src="{{imgTitle}}" mode="aspectFit"></image>
+  </view>
+
+  <image src="../../image/meteor.png" class="meteor1" mode="aspectFix"></image>
+  <image src="../../image/meteor.png" class="meteor2" mode="aspectFix"></image>
+
+  <view class="toast_area {{toastShow ? '' : 'hide'}}">
+    <view class="toast_icon {{toastIcon}}" wx:if="{{toastIcon}}">
+      <image class="img" wx:if="{{toastIcon == 'loading'}}" mode="aspectFit" src="../../image/iconLoading.png" ></image>
+    </view>
+    {{toastTitle}}
+  </view>
+  <view class="toast_mask" wx:if="{{toastMask}}"></view>
+
+  <view class="form_area">
+    <view class="form_item form_itemInput">
+      <input placeholder-style="color:#ddd" style="font-family: 'Microsoft YaHei',arial,verdana,sans-serif;" placeholder="请输入手机号" class="input" type="number" bindinput="bindPhoneNumber" maxlength="11" value="{{phoneNumberInit}}"/>
+    </view>
+    <view class="form_item form_itemInput">
+      <input placeholder-style="color:#ddd" placeholder="请输入姓名" class="input" bindinput="bindUserName" value="{{userNameInit}}"/>
+    </view>
+    <view class="form_item form_itemSubmit">
+      <view bindtap="onSubmit" class="form_submit" hover="true" hover-class="form_submit_hover">马上购买预约</view>
+    </view>
+  </view>
+
+  <view class="bottomTitle_area" style="height: {{windowHeight > 450 ? 18 : 13}}%; top: {{windowHeight > 450 ? 80: 85}}%">
+    <image class="img" src="{{imgBottomText}}" mode="aspectFit"></image>
+  </view>
+
+  <view class="logo_area">
+    <image class="imgT9Logo img" src="{{imgT9Logo}}" mode="aspectFit"></image>
+  </view>
+</view>

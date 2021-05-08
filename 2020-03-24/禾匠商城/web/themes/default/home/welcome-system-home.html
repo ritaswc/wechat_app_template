@@ -1,0 +1,352 @@
+{template 'common/header'}
+
+<!--start 系统管理首页 普通用户-->
+<div class="welcome-container welcome-system-home" ng-controller="systemWelcomeCtrl" ng-cloak>
+	<!-- 平台数量统计 start -->
+	<div class="panel we7-panel">
+		<div class="panel-heading">
+			<h4>可创建平台</h4>
+			<a href="javascript:;" data-toggle="modal" data-target="#owner-modal" class="more" ng-if="max_create_num > 0">创建平台</a>
+		</div>
+		<div class="panel-body">
+			<div class="account-num-statistics">
+				<div class="item">
+					<div class="num">
+						{if $user_founder_info}
+						{{account_num.max_total - account_num.founder_limit_total > 0 ? account_num.founder_limit_total + account_num.created_total : account_num.max_total}}
+						{else}
+						{{account_num.max_total > 0 ? account_num.max_total : 0}}
+						{/if}
+					</div>
+					<div class="title">可创建平台总数</div>
+				</div>
+				<div class="item">
+					{if !$user_founder_info}
+					<div class="num ">
+						{{account_num.created_total < 0 ? 0 : account_num.created_total}}
+					</div>
+					{else}
+					<div class="num ">
+						{{account_num.current_vice_founder_user_created_total < 0 ? 0 : account_num.created_total}}
+					</div>
+					{/if}
+					<div class="title">已创建平台数</div>
+				</div>
+				<div class="item">
+					<div class="num">
+						{if $user_founder_info}
+							{{account_num.limit_total - account_num.founder_limit_total > 0 ? account_num.founder_limit_total : account_num.limit_total}}
+						{else}
+							{{account_num.limit_total > 0 ? account_num.limit_total : 0}}
+						{/if}
+					</div>
+					<div class="title">剩余可创建平台数</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 平台数量统计 end -->
+
+	<!-- 可使用平台 start -->
+	<div class="panel we7-panel">
+		<div class="panel-heading">
+			<h4 >可使用平台</h4>
+			<a href="{php echo url('account/display')}" class="more">查看全部</a>
+			<we7-modal-account-list account-list="account_list" multiple="true" title="'添加平台'" on-confirm="selectCommonAccount()" class="more"><a href="javascript:;">添加平台</a></we7-modal-account-list>
+		</div>
+		<div class="panel-body">
+			<div class="account-used-statistics">
+				<div class="empty" ng-if="!last_accounts">
+					<we7-modal-account-list account-list="account_list" title="'添加平台'" on-confirm="selectCommonAccount()"><a href="javascript:;" class="btn btn-primary">添加平台</a></we7-modal-account-list>
+				</div>
+				<div ng-if="last_accounts" class="item" ng-repeat="list in last_accounts">
+					<a href="{{list.account.switchurl}}" class="item-box">
+						<div class="info">
+							<img ng-src="{{list.account.logo}}" alt="">
+							<span class="" ng-if="list.account.current_user_role == 'owner'">主管理员</span>
+							<span class="" ng-if="list.account.current_user_role == 'manager'">管理员</span>
+							<span class="" ng-if="list.account.current_user_role == 'opeartor'">操作员</span>
+							<span class="" ng-if="list.account.current_user_role == 'clerk'">店员</span>
+						</div>
+						<div class="name text-over">{{list.account.name}}</div>
+						<div class="type" ng-if="list.account.type ==1 || list.account.type==3">
+							<i class="wi wi-account"> </i><span>公众号</span>
+							<span ng-if="list.account.need_upload == 1" class="new-version">新版本 </span>
+						</div>
+						<div class="type" ng-if="list.account.type == 4 || list.account.type == 7">
+							<i class="wi wi-account"> </i><span>小程序</span>
+							<span ng-if="list.account.need_upload == 1" class="new-version">新版本 </span>
+						</div>
+						<div class="type" ng-if="list.account.type == 5">
+							<i class="wi wi-pc"> </i><span>pc</span>
+							<span ng-if="list.account.need_upload == 1" class="new-version">新版本 </span>
+						</div>
+						<div class="type" ng-if="list.account.type == 6">
+							<i class="wi wi-phone"> </i><span>app</span>
+							<span ng-if="list.account.need_upload == 1" class="new-version">新版本 </span>
+						</div>
+						<!--<div class="version">版本1.1.0</div>-->
+					</a>
+					<div class="action-up">
+						<a href="javascript:;" ng-click="setTop(list.id)" data-toggle="tooltip" data-placement="bottom" title="置顶">
+							<i class="wi wi-stick-sign"></i>
+						</a>
+					</div>
+					<div class="action-delete" >
+						<a href="javascript:;" ng-click="removeCommonAccount(list.account.uniacid)" data-toggle="tooltip" data-placement="bottom" title="删除">
+							<i class="wi wi-delete"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 可使用平台 end -->
+
+	<!-- 常用应用 start -->
+	<div class="panel we7-panel">
+		<div class="panel-heading">
+			<h4>常用应用</h4>
+			 <a href="{php echo url('module/display')}" class="more">查看全部</a>
+			<we7-modal-app module-list="moduleList" title="'添加应用'" multiple="true" on-confirm="addCommonModule()" class="more"><a href="javascript:;" >添加到常用应用</a></we7-modal-app>
+		</div>
+		<div class="panel-body">
+			<div class="common-used-statistics">
+				<div class="empty" ng-if="!last_modules">
+					<we7-modal-app module-list="moduleList" title="'添加到常用应用'" multiple="false" on-confirm="addCommonModule()"><a href="javascript:;" class="btn btn-primary">添加到常用应用</a></we7-modal-app>
+				</div>
+				<div ng-if="last_modules" class="item" ng-repeat="module in last_modules">
+					<a href="javascript:void(0);" ng-click="commonModuleSwitch(module)" class="item-box">
+						<img ng-src="{{ module.module.logo }}" alt="" class="logo">
+						<div class="name text-over">{{ module.module.title }}</div>
+						<div class="account">
+							<img ng-if="!module.default_account_info" ng-src="{{ module.account.logo }}" alt="" class="account-logo">
+							<img ng-if="module.default_account_info" ng-src="{{ module.default_account_info.logo }}" alt="" class="account-logo">
+							<span ng-if="module.default_account_name">{{ module.default_account_name }}</span>
+							<span ng-if="!module.default_account_name">{{ module.account.name }}</span>
+						</div>
+					</a>
+
+					<a ng-if="module.uniacid == 0" href="{{ module.module.switchurl }}" class="item-box">
+						<img ng-src="{{ module.module.logo }}" alt="" class="logo">
+						<div class="name text-over">{{ module.module.title }}</div>
+						<div class="account">
+							<img ng-src="{{ module.account.logo }}" alt="" class="account-logo"> {{ module.account.name }}
+						</div>
+					</a>
+
+					<div class="action">
+						<div class="dropdown action-cut">
+							<a data-target="" ng-click="showAccounts(module.module.name)" class="" data-toggle="dropdown">
+								<i class="wi wi-wxapp" data-toggle="tooltip" data-placement="bottom" ng-if="is_empty_modules != 1" data-title="设置默认账号"></i>
+							</a>
+							<div class="dropdown-menu ">
+								<div class="dropdown-menu-arrow"></div>
+								<a href="javascript:;" ng-click="setDefault(module.modulename, module_account.uniacid)" class="account-item text-over" ng-repeat="module_account in module_accounts">
+									<img ng-src="{{ module_account.logo }}" onerror="this.src='./resource/images/nopic-107.png'" class="account-logo" alt="">
+									<span class="account-name">{{ module_account.account_name }}</span>
+								</a>
+							</div>
+						</div>
+						<a href="javascript:;" ng-click="setTop(module.id)" class="action-up" data-toggle="tooltip" data-placement="bottom" title="置顶"><i class="wi wi-stick-sign"></i></a>
+					</div>
+					<div class="action-delete" ng-if="is_empty_modules != 1">
+						<a href="javascript:;" ng-click="remoteCommonModule(module.modulename, module.uniacid)" title="删除"  data-toggle="tooltip" data-placement="bottom" title="删除"><i class="wi wi-delete"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 常用应用 end -->
+
+	<!-- 登陆跳转 start -->
+	<div class="panel we7-panel">
+		<div class="panel-heading">
+			<h4>登陆后跳转页面</h4>&nbsp;&nbsp;&nbsp;&nbsp;
+			<span ng-if="user_welcome_link"> {{ user_welcome_link.name }} </span>
+			<span ng-if="user_welcome_link.name == null"> 用户欢迎页 </span>
+			<a href="javascript:;" class="more" text="'设置'" we7-modal-form type="'select'" label="'跳转链接'" key="'name'" value="user_welcome_link.name ? user_welcome_link : redirect_urls[0]" on-confirm="saveSetting(formValue, 'welcome_link')" options="redirect_urls">
+			</a>
+		</div>
+	</div>
+	<!-- 登陆跳转 end -->
+
+	<!-- 公告 start -->
+	<div class="panel we7-panel">
+		<div class="panel-heading">
+			<h4>公告</h4>
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active" >
+					<a href="#notice" aria-controls="notice" role="tab" data-toggle="tab" >系统公告</a>
+				</li>
+				
+			</ul>
+		</div>
+		<div class="panel-body">
+			<div class="tab-content" >
+				<div class="tab-pane active"  id="notice">
+					<ul class="list-group notice-statistics">
+						{if !empty($notices)}
+						{loop $notices $notice}
+						<li class="list-group-item" >
+							<a href="{$notice['url']}" style="{if !empty($notice['style'])}{if !empty($notice['style']['color'])}color: {php echo $notice['style']['color']};{/if}{if !empty($notice['style']['bold'])}font-weight:bold;{/if}{/if}">{$notice['title']}</a>
+							<span class="pull-right color-gray">
+								{$notice['createtime']}
+							</span>
+						</li>
+						{/loop}
+						{else} 
+						<div class="we7-empty-block">
+							暂无公告
+						</div>
+						{/if}
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- 公告 end -->
+
+	<!-- 推荐应用 start -->
+	
+	<!-- 推荐应用 end -->
+
+	<!-- 创建账号弹窗 start -->
+	<div class="modal fade modal-type" tabindex="-1" role="dialog" id="owner-modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header clearfix">
+					新建
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<div class="type-list">
+						{if !empty($account_num['account_limit']) && (!empty($account_num['founder_account_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<a class="item" href="./index.php?c=account&a=post-step">
+							<i class="wi wi-wx-circle"></i>
+							<div class="name">新建公众号</div>
+							<div class="mark">
+								去新建
+							</div>
+						</a>
+						{/if}
+
+						{if !empty($account_num['wxapp_limit']) && (!empty($account_num['founder_wxapp_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<a href="{php echo url('wxapp/post/design_method')}" class="item">
+							<i class="wi wi-wxapp"></i>
+							<div class="name">新建微信小程序</div>
+							<div class="mark">
+								去新建
+							</div>
+						</a>
+						{/if}
+
+						{if !empty($account_num['webapp_limit']) && (!empty($account_num['founder_webapp_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<a href="{php echo url('account/create', array('sign' => WEBAPP_TYPE_SIGN))}" class="item">
+							<i class="wi wi-pc-circle"></i>
+							<div class="name">新建PC</div>
+							<div class="mark">
+								去新建
+							</div>
+						</a>
+						{/if}
+
+						{if !empty($account_num['phoneapp_limit']) && (!empty($account_num['founder_phoneapp_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<a href="{php echo url('account/create', array('sign' => PHONEAPP_TYPE_SIGN))}" class="item">
+							<i class="wi wi-app"></i>
+							<div class="name">新建APP</div>
+							<div class="mark">
+								去新建
+							</div>
+						</a>
+						{/if}
+
+						{if !empty($account_num['xzapp_limit']) && (!empty($account_num['founder_xzapp_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<a href="{php echo url('xzapp/post-step')}" class="item">
+							<i class="wi wi-xzapp"></i>
+							<div class="name">新建熊掌号</div>
+							<div class="mark">
+								去新建
+							</div>
+						</a>
+						{/if}
+
+						{if !empty($account_num['aliapp_limit']) && (!empty($account_num['founder_aliapp_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<a href="{php echo url('account/create', array('sign' => ALIAPP_TYPE_SIGN))}" class="item">
+							<i class="wi wi-aliapp"></i>
+							<div class="name">新建支付宝小程序</div>
+							<div class="mark">
+								去新建
+							</div>
+						</a>
+						{/if}
+
+						{if !empty($account_num['baiduapp_limit']) && (!empty($account_num['founder_baiduapp_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<a href="{php echo url('account/create', array('sign' => BAIDUAPP_TYPE_SIGN))}" class="item">
+							<i class="wi wi-baiduapp"></i>
+							<div class="name">新建百度小程序</div>
+							<div class="mark">
+								去新建
+							</div>
+						</a>
+						{/if}
+
+						{if !empty($account_num['toutiaoapp_limit']) && (!empty($account_num['founder_toutiaoapp_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<a href="{php echo url('account/create', array('sign' => TOUTIAOAPP_TYPE_SIGN))}" class="item">
+							<i class="wi wi-toutiaoapp"></i>
+							<div class="name">新建头条小程序</div>
+							<div class="mark">
+								去新建
+							</div>
+						</a>
+						{/if}
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default"  data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 创建账号弹窗 end -->
+</div>
+<!--end 系统管理首页 普通用户-->
+
+<script>
+	angular.module('homeApp').value('config', {
+	    family: "{php echo IMS_FAMILY}",
+		account_num: {php echo !empty($account_num) ? json_encode($account_num) : 'null'},
+		message_list: {php echo !empty($messages) ? json_encode($messages) : 'null'},
+		last_accounts : {php echo !empty($last_accounts) ? json_encode($last_accounts) : 'null'},
+		last_modules : {php echo !empty($last_modules) ? json_encode($last_modules) : 'null'},
+		user_info : {php echo !empty($user_info) ? json_encode($user_info) : 'null'},
+		redirect_urls : {php echo !empty($redirect_urls) ? json_encode($redirect_urls) : 'null'},
+		'apiLink' : '//api.w7.cc',
+		'user_modules' : {php echo !empty($user_modules) ? json_encode($user_modules['modules']) : 'null'},
+		'own_account_modules_all' : {php echo !empty($own_account_modules_all) ? json_encode($own_account_modules_all['modules']) : 'null'},
+		is_empty_accounts : "{$is_empty_accounts}",
+		is_empty_modules : "{$is_empty_modules}",
+		'account_types' : {
+			'account_normal' : "{ACCOUNT_TYPE_OFFCIAL_NORMAL}",
+			'account_auth' : "{ACCOUNT_TYPE_OFFCIAL_AUTH}",
+			'wxapp_normal' : "{ACCOUNT_TYPE_APP_NORMAL}",
+			'wxapp_auth' : "{ACCOUNT_TYPE_APP_AUTH}",
+			'webapp' : "{ACCOUNT_TYPE_WEBAPP_NORMAL}",
+			'phoneapp' : "{ACCOUNT_TYPE_PHONEAPP_NORMAL}",
+			'xzapp' : "{ACCOUNT_TYPE_XZAPP_NORMAL}",
+			'aliapp' : "{ACCOUNT_TYPE_ALIAPP_NORMAL}",
+		},
+		links: {
+			'setTop' : "{php echo url('home/welcome/set_top')}",
+			'setDefaultUrl' : "{php echo url('home/welcome/set_default')}",
+			'moduleAccounts': "{php echo url('module/display/have_permission_uniacids')}",
+			'getAccountListUrl' : "{php echo url('account/display')}",
+			'addWelcomeShortcutUrl' : "{php echo url('home/welcome/add_welcome_shortcut')}",
+			'removeWelcomeShortcutUrl' : "{php echo url('home/welcome/remove_welcome_shortcut')}",
+			'userPost' : "{php echo url('user/profile/post')}",
+		},
+	});
+	angular.bootstrap($('.welcome-system-home'), ['homeApp']);
+</script>
+{template 'common/footer'}

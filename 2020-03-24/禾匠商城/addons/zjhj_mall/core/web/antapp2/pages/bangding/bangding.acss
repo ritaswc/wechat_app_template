@@ -1,0 +1,96 @@
+/* pages/user-onIng/user-onIng.wxss */
+
+.onIng-header {
+    height: 88rpx;
+    background: #fff;
+}
+
+.empower {
+    color: #353535;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.onIng-phone {
+    height: 100%;
+    width: 38%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.onIng-main {
+    height: 100rpx;
+    background: #fff;
+    margin-bottom: 80rpx;
+}
+
+.onIng-main2 {
+    height: 200rpx;
+    background: #fff;
+    margin-bottom: 80rpx;
+}
+
+.onIng-btn {
+    height: 56rpx;
+    padding: 0 40rpx 0rpx 40rpx;
+    border-radius: 0rpx;
+    background: #fff;
+    line-height: 56rpx;
+}
+
+.onIng-btn::after {
+    border: 0;
+}
+
+.input-placeholder {
+    color: #c9c9c9;
+}
+
+.onIng-btn.active {
+    color: #353535;
+}
+
+.onIng-footer {
+    height: 88rpx;
+    background: #ff4544;
+    border-radius: 44rpx;
+    margin: 0rpx 24rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 15px;
+}
+
+.onIng-phone.gainPhone {
+    border-bottom: 4rpx solid #ff4544;
+    color: #ff4544;
+}
+
+.onIng-phone.handPhone {
+    border-bottom: 4rpx solid #ff4544;
+    color: #ff4544;
+}
+
+.binding_pic {
+    height: 288rpx;
+    margin: 64rpx 0rpx 56rpx 0rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.binding_num {
+    margin-bottom: 64rpx;
+}
+
+.number-input {
+    margin: 0 16rpx 0 24rpx;
+    background-color: #f7f7f7;
+    padding: 12rpx 24rpx;
+    height: 80rpx;
+    color: #353535;
+}

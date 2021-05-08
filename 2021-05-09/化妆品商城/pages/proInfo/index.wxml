@@ -1,0 +1,50 @@
+<view class="container">
+    <view class="pro-head">
+        <text class="pro-title">{{title}}</text>
+        <view class="pro-price flex">
+            <view >
+               <text class="pro-real-t">体验价</text>
+               <text class="pro-real-l">¥</text>
+               <text class="pro-real-m">{{onePrice}}</text>
+            </view>
+            <view style="margin-left:40rpx;text-decoration:line-through;"> 
+                <text class="pro-old-t">市场价¥{{truePrice}}</text>
+            </view>
+        </view>
+    </view>
+    <swiper indicator-dots="{{indicatorDots}}"  
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
+        <block wx:for="{{imgUrls}}" >  
+            <swiper-item class="center-image" >  
+                <image  src="{{item.url}}"  mode="widthFix" style="width:80%;"   />    
+            </swiper-item>
+        </block>  
+    </swiper>
+     <view class="pro-section">
+        <text class="sect-title">规格:</text> 
+        <view class="spe-lst">
+            <button wx:for="{{specLst}}" data-value="{{item.value}}" class="spec-btn" bindtap="querySpec">{{item.text}}</button>
+        </view>
+    </view>
+        <view class="pro-section">
+            <text class="sect-title">数量:</text>
+            <view class="spe-lst">
+                <button class="add-btn spec-btn" bindtap="cut">-</button>
+                <input  class="num-ipnut" type="number" value="{{num}}" bindinput="inputVl"  />
+                <button class="cut-btn spec-btn" bindtap="add">+</button>
+            </view>
+        </view >
+        <view class="pro-section" style="border-bottom: 1rpx #cccccc solid;">
+            <text>总价：</text>
+            <text class="pro-real-m">{{morePrice ?  morePrice: onePrice }}</text>
+        </view>
+        <view class="pro-all-info">
+            <text>{{info}}</text>
+        </view>
+        <image wx:for="{{infoImgs}}" src="{{item.url}}" style="width:100%;" mode="widthFix"></image>
+        <view style="height:128rpx;width:100%;">
+        </view>
+</view>
+ <view class="fix-btns">
+    <button class="buy-btn" bindtap="">立即购买</button>
+</view>

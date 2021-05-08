@@ -1,0 +1,43 @@
+<view class="container">
+
+  <!-- login success -->
+  <view>
+    <block wx:if="{{hasLogin === true}}">
+      <!-- list -->
+      <view class="index-bd">
+        <view class="kind-list">
+          <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+            <view class="kind-list-item">
+              <navigator url="{{item.toUrl}}">
+                <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}">
+                  <view class="kind-list-text">{{item.title}}</view>
+                  <image class="kind-list-img" src="../resources/kind/{{item.id}}.png"></image>
+                </view>
+              </navigator>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+  <view class="page-body">
+    <view class="page-section">
+
+      <block wx:if="{{hasLogin === false}}">
+        <block wx:if="{{hasUserInfo === false}}">
+          <text class="page-body-text">未获取到微信用户信息</text>
+        </block>
+
+        <block wx:if="{{hasUserInfo === true}}">
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </block>
+        <button class="page-body-button" type="primary" bindtap="login">确认登录</button>
+      </block>
+
+    </view>
+  </view>
+
+</view>

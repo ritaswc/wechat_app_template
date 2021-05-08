@@ -1,0 +1,36 @@
+/* pages/mine/login/login.wxss */
+
+.content{
+  width: 100vw;
+  height: 100vh;
+  background: url('/asset/img/bg.png') repeat-x;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10%;
+  box-sizing: border-box;
+}
+.content form{
+    background: white;
+    padding: 60rpx;
+}
+.content form .section{
+    display: flex;
+    padding: 30rpx 0;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+.content form .section .code{
+    background:#ba77ff;
+    border: 2rpx solid #ba77ff;
+    color: white;
+    padding: 10rpx;
+}
+.btn-area{
+    margin-top: 40rpx;
+
+}

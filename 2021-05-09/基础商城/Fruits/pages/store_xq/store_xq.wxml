@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<!-- 轮播图-->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{lunbo_src}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 轮播图-->
+<view class="store_title">
+<text>联系电话：010-12345678\n</text>
+<text>营业时间：06:00-18:00</text>
+</view>
+<view >
+<view style=" float:left;border-bottom:1px solid red;" class="store">
+<navigator url="../store_xq/store_xq" >
+<text style="padding-left:30px;padding-right:15px;color:red;">门店描述</text>
+</navigator>
+</view >
+<view style=" float:left;" class="store">
+<navigator url="../store_xq_1/store_xq_1" >
+<text style="padding-left:15px;padding-right:15px;">店内照片</text>
+</navigator>
+</view >
+<view style=" float:left;" class="store">
+<navigator url="../store_xq_2/store_xq_2" >
+<text style="padding-left:15px;padding-right:15px;">地图</text>
+</navigator>
+</view >
+<view style=" float:left;" class="store">
+<navigator url="../store_xq_3/store_xq_3" >
+<text style="padding-left:15px;padding-right:30px;">评价</text>
+</navigator>
+</view >
+
+</view>
+<view class="store_nr">
+        	<text>店描述店描述店描述店描述店描述店描述店描述店描述店描述店描述店描述店描述店描述店
+            描述店描述店描述店描述店描述店描述店描述店描述店描述店描述店描述店描述店描述店描
+            描述店描述店描述店描述店描述店描述店描述店描述店描述店描述店描述店描述店描述店描
+            店描述店描述店描述店描述店描述店描述</text>
+
+</view>
+
+
+

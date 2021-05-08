@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/lists/lists",
+    "pages/details/details",
+    "pages/company/company"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#2E3238",
+    "navigationBarTitleText": "我的快递",
+    "navigationBarTextStyle":"#FFF"
+  },
+  "networkTimeout":{
+   "request": 10000,
+   "connectSocket": 10000,
+   "uploadFile": 10000,
+   "downloadFile": 10000
+  },
+  "debug": true
+}

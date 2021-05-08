@@ -1,0 +1,262 @@
+{template 'common/header'}
+
+<!--新建弹窗-->
+<div class="modal" id="owner-modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h3 class="modal-title">新建</h3>
+			</div>
+			<div class="modal-body">
+				<div class="mask-creat">
+					<ul>
+						{if !empty($account_info['uniacid_limit']) && (!empty($account_info['founder_uniacid_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<li><i class="wi wi-wx-circle"></i><br/><a href="./index.php?c=account&a=post-step" class="name" title="新建公众号"></a></li>
+						{/if}
+
+						{if !empty($account_info['wxapp_limit']) && (!empty($account_info['founder_wxapp_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<li><i class="wi wi-wxapp"></i><br/><a href="{php echo url('wxapp/post/design_method')}" class="name" title="新建小程序"></a></li>
+						{/if}
+
+						{if !empty($account_info['webapp_limit']) && (!empty($account_info['founder_webapp_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<li><i class="wi wi-pc-circle"></i><br/><a href="./index.php?c=webapp&a=manage&do=create_display" class="name" title="新建PC"></a></li>
+						{/if}
+
+						{if !empty($account_info['phoneapp_limit']) && (!empty($account_info['founder_phoneapp_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<li><i class="wi wi-app"></i><br/><a href="{php echo url('phoneapp/manage/create_display')}" class="name" title="新建APP"></a></li>
+						{/if}
+					</ul>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="panel panel-cut" id="js-account-privileges" ng-controller="privilegesDisplay" ng-cloak>
+	<!--选项卡-->
+	<div class="panel-heading mixMenu-panel-heading">
+		<ul class="navbar-nav">
+			{loop $nav_top_fold $nav}
+			<li {if $type == $nav['name']} class="on-tab" {/if}>
+				<a href="{if empty($nav['url'])}{php echo url('home/welcome/' . $nav['name']);}{else}{php echo url('account/privileges/', array('type'=>$nav['name'], 'title'=>$nav['title']))}{/if}" {if !empty($nav['blank'])}target="_blank"{/if}>
+					{$nav['title']}
+				</a>
+			</li>
+			{/loop}
+		</ul>
+	</div>
+	<!--主体内容-->
+	<div class="panel-body mixMenu-panel-body" >
+		<!--全部应用-->
+		<div class="cut-list ">
+			<!--搜索、新建、管理-->
+			<div class="we7-page-search cut-header">
+
+				<div ng-if="searchShow">
+					<form action="./index.php" method="get">
+						<input type="hidden" name="c" value="account">
+						<input type="hidden" name="a" value="privileges">
+						<input type="hidden" name="do" value="display" ng-if="type == 'all'">
+						<input type="hidden" name="type" value="{{type}}">
+						<input type="hidden" name="title" value="{{title}}">
+						<input type="text" name="letter" ng-model="activeLetter" ng-style="{'display': 'none'}">
+						<div class="cut-search">
+							<div class="input-group pull-left">
+								<input type="text" class="form-control" name="keyword" value="{$_GPC['keyword']}" placeholder="请输入{{title}}名称">
+								<span class="input-group-btn"><button class="btn btn-default button"><i class="wi wi-search"></i></button></span>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<div class="font-default pull-right">
+					
+					<div class="creat" ng-switch="type">
+						<a ng-switch-when="all" href="javascript:;" data-toggle="modal" data-target="#owner-modal" class="color-default"><i class="wi wi-registersite"></i>新增应用</a>
+
+						{if !empty($account_info['uniacid_limit']) && (!empty($account_info['founder_uniacid_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<a ng-switch-when="account" href="./index.php?c=account&a=post-step" class="color-default">
+							<i class="fa fa-plus"></i>新增公众号
+						</a>
+						{/if}
+
+						{if !empty($account_info['wxapp_limit']) && (!empty($account_info['founder_wxapp_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<a ng-switch-when="wxapp" href="{php echo url('wxapp/post/design_method')}" class="color-default"><i class="wi wi-registersite"></i>新建小程序</a>
+						{/if}
+
+						{if !empty($account_info['webapp_limit']) && (!empty($account_info['founder_webapp_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<a ng-switch-when="webapp" href="./index.php?c=webapp&a=manage&do=create_display" class="color-default">
+							<i class="fa fa-plus"></i>新增PC
+						</a>
+						{/if}
+
+						{if !empty($account_info['phoneapp_limit']) && (!empty($account_info['founder_phoneapp_limit']) && $_W['user']['owner_uid'] || empty($_W['user']['owner_uid'])) || $_W['isfounder'] && !user_is_vice_founder()}
+						<a ng-switch-when="phoneapp" href="{php echo url('phoneapp/manage/create_display')}" class="color-default"><i class="wi wi-registersite"></i>新建APP</a>
+						{/if}
+					</div>
+					{/if}
+					<!-- xsend -->
+
+					
+
+					<div class="setting" ng-switch="type">
+						{if in_array($_W['highest_role'], array(ACCOUNT_MANAGE_NAME_FOUNDER, ACCOUNT_MANAGE_NAME_VICE_FOUNDER, ACCOUNT_MANAGE_NAME_OWNER,ACCOUNT_MANAGE_NAME_MANAGER))}
+						<a ng-switch-when="account" href="{php echo url('account/manage', array('account_type' => ACCOUNT_TYPE_OFFCIAL_NORMAL))}" class="color-default">
+							<i class="wi wi-wechatstatistics"></i>
+							公众号管理
+						</a>
+
+						<a ng-switch-when="webapp" href="{php echo url('account/manage', array('account_type' => ACCOUNT_TYPE_WEBAPP_NORMAL))}" class="color-default">
+							<i class="wi wi-wechatstatistics"></i>
+							PC管理
+						</a>
+						{/if}
+
+						<a ng-switch-when="wxapp" href="{php echo url('account/manage', array('account_type' => ACCOUNT_TYPE_APP_NORMAL))}" class="color-default">
+							<i class="wi wi-wechatstatistics"></i>小程序管理
+						</a>
+
+						<a ng-switch-when="phoneapp" href="{php echo url('account/manage', array('account_type' => ACCOUNT_TYPE_PHONEAPP_NORMAL))}" class="color-default">
+							<i class="wi wi-wechatstatistics"></i>
+							APP管理
+						</a>
+					</div>
+
+				</div>
+			</div>
+
+			<!--首字母检索-->
+			<div class="clearfix"></div>
+			<ul class="letters-list" ng-if="searchShow">
+				<li ng-repeat="letter in alphabet" ng-style="{'background-color': letter == activeLetter ? '#ddd' : 'none'}" ng-class="{'active': letter == activeLetter}" ng-click="searchModule(letter)" class="ng-scope">
+					<a href="javascript:;" ng-bind="letter" class="ng-binding"></a>
+				</li>
+			</ul>
+
+			<!--列表数据-->
+			<!--add-->
+			<div class="mixMenu-list clearfix" ng-if="list" infinite-scroll='loadMore()' infinite-scroll-disabled='busy' infinite-scroll-distance='0' infinite-scroll-use-document-bottom="true">
+			<!--add-->
+				<div class="item module-list-item ng-scope" ng-repeat="detail in list" ng-if="list" style="">
+					<div class="content">
+						<img class="item-logo" ng-src="{{detail.logo}}" onerror="this.src='./resource/images/nopic-107.png'">
+						<div class="item-footer">
+
+							<div class="item-icon">
+								<i ng-if="detail.type == types.account_normal || detail.type == types.account_auth" class="wi wi-wechat"></i>
+								<i ng-if="detail.type == types.account_auth" class="wi wi-wechat"></i>
+								<i ng-if="detail.type == types.wxapp_normal" class="wi wi-wxapp"></i>
+								<i ng-if="detail.type == types.wxapp_auth" class="wi wi-wxapp"></i>
+								<i ng-if="detail.type == types.webapp" class="wi wi-pc"></i>
+								<i ng-if="detail.type == types.phoneapp" class="wi wi-app"></i>
+							</div>
+							<div class="info">
+								<div class="name" ng-bind="detail.name"></div>
+								<div class="type" ng-if="detail.type == types.account_normal || detail.type == types.account_auth">
+									<span ng-if="detail.level == 1">类型：普通订阅号</span>
+									<span ng-if="detail.level == 2">类型：普通服务号</span>
+									<span ng-if="detail.level == 3">类型：认证订阅号</span>
+									<span ng-if="detail.level == 4">类型：认证服务号</span>
+								</div>
+
+								<div class="type" ng-if="detail.type == types.wxapp_normal || detail.type == types.wxapp_auth || detail.type == types.phoneapp">
+									<span>版本：{{detail.current_version.version}}</span>
+								</div>
+
+								<div class="type" ng-if="detail.type == types.webapp">
+									<span>类型：PC应用</span>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+					<!--鼠标悬停遮罩效果-->
+					<div class="mask">
+						<!-- 进入公众号/PC -->
+						<a href="{{detail.switchurl}}" class="entry" ng-if="detail.type == types.account_normal || detail.type == types.account_auth"><div>进入 公众号 <i class="wi wi-angle-right"></i></div></a>
+
+						<!-- 进入PC -->
+						<a href="{{detail.switchurl}}" class="entry" ng-if="detail.type == types.webapp"><div>进入PC <i class="wi wi-angle-right"></i></div></a>
+
+						<!-- 进入小程序 -->
+						<a ng-href="{{links.switch}}&uniacid={{detail.uniacid}}&multiid={{detail.current_version.multiid}}&version_id={{detail.current_version.id}}&type={{detail.type}}" class="entry" ng-if="detail.type == types.wxapp_normal || detail.type == types.wxapp_auth"><div>进入小程序 <i class="wi wi-angle-right"></i></div></a>
+
+						<!-- 进入 APP -->
+						<a ng-href="{{links.switch}}&uniacid={{detail.uniacid}}&version_id={{detail.current_version.id}}&type={{detail.type}}" class="entry" ng-if="detail.type == types.phoneapp">
+							<div>进入APP <i class="wi wi-angle-right"></i></div>
+						</a>
+
+						<!-- 小程序/APP 查看版本 -->
+						<a href="javascript:;" class="cut-btn" ng-click="showVersions($event)" ng-if="detail.type == types.wxapp_normal || detail.type == types.wxapp_auth || detail.type == types.phoneapp">
+							<i class="wi wi-changing-over"></i>
+						</a>
+
+						<!-- 添加到首页 -->
+						{if !permission_check_account_user('see_user_profile_account_num')}
+						<a ng-href="{{links.welcome}}uniacid={{detail.uniacid}}" onclick="return ajaxopen(this.href);" class="home-show" title="添加到首页常用功能">
+							<i class="wi wi-eye"></i>
+						</a>
+						{/if}
+
+						<!-- 置顶 -->
+						<a href="javascript:;" class="stick" ng-click="stick(detail.uniacid, detail.type)" title="置顶">
+							<i class="wi wi-stick-sign"></i>
+						</a>
+					</div>
+					<!-- 小程序/APP版本查看 -->
+					<div class="cut-select" ng-mouseleave="hideSelect($event)" ng-if="detail.versions">
+						<div class="arrow-left"></div>
+						<div class="cut-item">
+							<a href="javascript:;">
+								<div class="detail" ng-repeat="version in detail.versions">
+									<div class="text-over"><span class="wi wi-small-routine"></span>{{version.version}}</div>
+									<a class="cut-select-mask" href="{{links.switch}}&uniacid={{detail.uniacid}}&multiid={{version.multiid}}&version_id={{version.id}}&type={{detail.type}}">
+										<div class="entry">选择进入 <i class="wi wi-angle-right"></i></div>
+									</a>
+								</div>
+							</a>
+						</div>
+						<div class="cut-select-pager">
+							<a href="{{links.wxapp_more_version}}&uniacid={{detail.uniacid}}" class="more color-default" ng-if="detail.type == types.wxapp_normal || detail.type == types.wxapp_auth">更多 >></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script>
+	angular.module('accountApp').value('config', {
+		'list' : {php echo !empty($list) ? json_encode($list) : 'null'},
+		'type' : "{$type}",
+		'title' : "{$title}",
+		'keyword' : "{$keyword}",
+		'letter' : "{$letter}",
+		'links' : {
+			'rank' : "{php echo url('account/privileges/rank')}",
+			'switch' : "{php echo url('account/privileges/switch')}",
+			'welcome' : "{php echo url('home/welcome/add_welcome')}",
+			'wxapp_more_version' : "{php echo url('wxapp/version/display')}",
+			'phoneapp_more_version' : "{php echo url('phoneapp/version/display')}"
+		},
+		'types' : {
+			'account_normal' : "{ACCOUNT_TYPE_OFFCIAL_NORMAL}",
+			'account_auth' : "{ACCOUNT_TYPE_OFFCIAL_AUTH}",
+			'wxapp_normal' : "{ACCOUNT_TYPE_APP_NORMAL}",
+			'wxapp_auth' : "{ACCOUNT_TYPE_APP_AUTH}",
+			'webapp' : "{ACCOUNT_TYPE_WEBAPP_NORMAL}",
+			'phoneapp' : "{ACCOUNT_TYPE_PHONEAPP_NORMAL}"
+		},
+		scrollUrl : "{php echo url('account/privileges', array('type'=>$type))}"
+	});
+	angular.bootstrap($('#js-account-privileges'), ['accountApp']);
+</script>
+
+{template 'common/footer'}

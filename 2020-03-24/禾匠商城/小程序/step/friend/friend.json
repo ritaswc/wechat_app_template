@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "助力列表",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

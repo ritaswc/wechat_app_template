@@ -1,0 +1,61 @@
+.head-img {
+  width: 100%;
+}
+
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin: 20rpx;
+  font-size: 30rpx;
+}
+
+#quantity {
+  width: 80rpx;
+  border: 1rpx solid lightgrey;
+}
+
+.price {
+  margin-left: 20rpx;
+  width: 50%;
+  margin-right: auto; 
+}
+
+#price {
+  color: #FF0000;
+}
+
+.btn-area button {
+  width: 100%;
+  border-radius: 0;
+  border-width: 0;
+}
+
+.product-name {
+  font-size: 25rpx;
+  margin: 20rpx;
+}
+
+.btn-area {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.desc-container {
+  border-top: 1rpx solid lightgrey;
+  margin-top: 40rpx;
+  margin-bottom: 90rpx;
+}
+
+.desc-image {
+  width: 100%;
+}

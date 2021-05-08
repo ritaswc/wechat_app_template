@@ -1,0 +1,41 @@
+.search {
+    width: 100%;
+    height: 90rpx;
+}
+
+.search-input {
+    width: 100%;
+    height: 56rpx;
+    border-radius: 10rpx;
+    margin: 0 24rpx;
+    background-color: #fff;
+}
+
+.input-pp {
+    line-height: 56rpx;
+    height: 100%;
+}
+
+.input {
+    padding-left: 30rpx;
+    line-height: 56rpx;
+    height: 100%;
+}
+
+.search-btn {
+    background-color: #ddd;
+    border-radius: 0 10rpx 10rpx 0;
+    padding: 0 20rpx;
+}
+
+.shop-one {
+    background-color: #fff;
+    width: 100%;
+    padding: 26rpx 24rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+    color: #707070;
+}
+
+.shop-one:last-child {
+    border: 0;
+}

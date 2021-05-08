@@ -1,0 +1,21 @@
+{template 'header'}
+{if !in_array($op, array('post', 'edit'))}<div class="we7-page-title">添加预购应用</div>{/if}
+{if $op == 'edit'}
+	<!-- 编辑 -->
+	{template 'wish/edit'}
+
+{elseif $op == 'post'}
+	<!-- 添加应用 -->
+	{template 'wish/post'}
+{else}
+	{template 'wish/list'}
+{/if}
+
+<script>
+$(document).ready(function() {
+	if($('select').niceSelect) {
+		$('select').niceSelect();
+	}
+});
+</script>
+{template 'common/footer'}

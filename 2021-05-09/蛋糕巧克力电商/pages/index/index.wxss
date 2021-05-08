@@ -1,0 +1,11 @@
+/**index.wxss**/
+page{background-color: #fff;}
+.cityselect{position: fixed;width: 150rpx;height: 30px;line-height: 30px; font-size: 12pt; z-index: 1000;background-color: #000;text-align: center;box-shadow: 0 0 5px 0 #fff;border:1rpx solid #fff;  border-radius: 15px;opacity: 0.5;left:20rpx;top: 20rpx;color: #fff;}
+
+.m{background-color: #fff;margin: 0 0 20rpx;}
+.m .mg{height: 750rpx;width: 750rpx;}
+.m .mg-1{height:540rpx;width:100%;}
+.m .mg-2{margin: 15rpx 20rpx 45rpx; height: 140rpx;}
+.m .mg-3{height:500rpx;width:100%;}
+
+

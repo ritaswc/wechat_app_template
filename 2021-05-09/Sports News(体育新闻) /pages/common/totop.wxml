@@ -1,0 +1,4 @@
+<template name="toTop">
+    <view wx:if="{{showGoTop}}" class="toTop" bindtap="toTop">
+    </view>
+</template>

@@ -1,0 +1,5 @@
+<import src="../../component/shop/shop.wxml" />
+
+ <view wx:for="{{shopInfoList}}"  wx:key="id"  class="shop-list-item" >
+      <template is="shop-item" data="{{item:item,activityIconMap:activityIconMap,showAll:show[item.shopId]}}"/>     
+  </view>

@@ -1,0 +1,105 @@
+{template 'common/header'}
+<div class="new-keyword">
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href="{url 'user/fields/display'}"><i class="wi wi-back-circle"></i> </a>
+		<li><a href="{url 'user/fields/display'}">用户属性设置</a></li>
+		<li>编辑字段</li>
+	</ol>
+	<div class="we7-form" id="js-field-post" ng-controller="FieldsPost" ng-cloak>
+		<form method="post">
+			<input type="hidden" name="id" value="{$item['id']}">
+			<div class="form-group">
+				<label for="" class="control-label col-sm-2">字段</label>
+				<div class="form-controls col-sm-8">
+<!--					<input type="text" id="" name="field" class="form-control" ng-blur="verifyField()" ng-model="item.field" readonly ng-if="!item" placeholder="请使用字母或数字或下划线组合字段名">-->
+					<input type="text" id="" name="field" class="form-control" ng-blur="verifyField()" ng-model="item.field" placeholder="请使用字母或数字或下划线组合字段名">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-2">字段长度</label>
+				<div class="form-controls col-sm-8">
+					<select name="length" ng-model="item.field_length">
+						<option value="64">64</option>
+						<option value="128" ng-selected="item.field_length == 128">128</option>
+						<option value="255" ng-selected="item.field_length == 255">255</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-2">排序</label>
+				<div class="form-controls col-sm-8">
+					<input type="text" name="displayorder" class="form-control" ng-model="item.displayorder">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-2">名称</label>
+				<div class="form-controls col-sm-8">
+					<input type="text" id="" name="title" class="form-control" ng-model="item.title">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="" class="control-label col-sm-2">描述</label>
+				<div class="form-controls col-sm-8">
+					<textarea name="description" rows="4" class="form-control" ng-bind="item.description"></textarea>
+			
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-2">是否启用</label>
+				<div class="form-controls col-sm-8">
+					<input type="radio" name="available" ng-model="item.available" id="radio-1" value="1">
+				    <label for="radio-1">是</label>
+				    <input type="radio" name="available" ng-model="item.available" id="radio-2" value="0">
+				    <label for="radio-2">否</label>
+					<span class="help-block"></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-2">是否必填</label>
+				<div class="form-controls col-sm-8">
+					<input id='radio-3' type="radio" ng-model="item.required" name="required" value="1">
+				    <label for="radio-3">是</label>
+				    <input id='radio-4' type="radio" ng-model="item.required" name="required"  value="0">
+				    <label for="radio-4">否</label>
+					<span class="help-block"></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-2">提交后不可修改</label>
+				<div class="form-controls col-sm-8">
+					<input id='radio-5' type="radio" ng-model="item.unchangeable" name="unchangeable" value="1">
+				    <label for="radio-5">是</label>
+				    <input id='radio-6' type="radio" ng-model="item.unchangeable" name="unchangeable" value="0">
+				    <label for="radio-6">否</label>
+					<span class="help-block"></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-sm-2">在注册页面显示</label>
+				<div class="form-controls col-sm-8">
+					<input id='radio-7' type="radio" ng-model="item.showinregister" name="showinregister"  value="1" >
+				    <label for="radio-7">是</label>
+				    <input id='radio-8' type="radio" ng-model="item.showinregister"  name="showinregister" value="0" >
+				    <label for="radio-8">否</label>
+					<span class="help-block"></span>
+				</div>
+			</div>
+			<div class="col-sm-offset-2">
+				<button type="button" class="btn btn-primary" ng-click="saveInfo(item)">保存</button>
+				<input type="hidden" name="token" value="{$_W['token']}" />
+			</div>
+	</form>
+	</div>
+</div>
+<script>
+	angular.module('userManageApp').value('config', {
+		fields: {php echo !empty($fields) ? json_encode($fields) : 'null'},
+		links: {
+			fieldPost: "{php echo url('user/fields/post')}",
+			fieldDisplay: "{php echo url('user/fields/display')}",
+		},
+	});
+	angular.bootstrap($('#js-field-post'), ['userManageApp']);
+</script>
+{template 'common/footer'}

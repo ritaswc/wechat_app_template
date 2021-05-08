@@ -1,0 +1,52 @@
+<!--login.wxml-->
+<view class="container">
+	<view class="content">
+		<view class="logo"></view>
+		<view class="info">
+			<form class="loginForm" bindsubmit="login" wx:if="{{pageType==0}}">
+				<view class="inputGroup">
+					<label><text class="fa fa-user"></text></label>
+					<input type="text" name="username" placeholder="请输入用户名" value="root" />
+				</view>
+				<view class="inputGroup">
+					<label><text class="fa fa-unlock-alt"></text></label>
+					<input type="password" name="password" placeholder="请输入密码" value="rootpass" />
+				</view>
+				<button type="primary" formType="submit">登陆</button>
+				<text class="tips">{{tips}}</text>
+			</form>
+			<form class="loginForm" bindsubmit="register" wx:if="{{pageType==1}}">
+				<view class="inputGroup">
+					<label><text class="fa fa-user"></text></label>
+					<input type="text" name="username" placeholder="请输入用户名" />
+				</view>
+				<view class="inputGroup">
+					<label><text class="fa fa-envelope-o"></text></label>
+					<input type="text" name="email" placeholder="请输入邮箱" />
+				</view>			
+				<view class="inputGroup">
+					<label><text class="fa fa-unlock-alt"></text></label>
+					<input type="password" name="password" placeholder="请输入密码" />
+				</view>
+				<view class="inputGroup">
+					<label><text class="fa fa-unlock-alt"></text></label>
+					<input type="password" name="rePassword" placeholder="请再次输入密码" />
+				</view>			
+				<button type="primary" formType="submit">注册</button>
+				<text class="tips">{{tips}}</text>
+			</form>		
+			<view class="version" wx:if="{{pageType==2}}">版本：{{version}}</view>
+		</view>
+	</view>
+
+	<view wx:if="{{pageType==0}}" class="bottom-bar bottom2">
+		<view data-page="2" class="bottom-list" bindtap="turnPage">关于</view>
+		<view data-page="1" class="bottom-list" bindtap="turnPage">注册</view>
+	</view>
+	<view wx:if="{{pageType==1}}" class="bottom-bar bottom1">
+		<view data-page="0" class="bottom-list" bindtap="turnPage">已有账号？直接登陆</view>
+	</view>
+	<view wx:if="{{pageType==2}}" class="bottom-bar bottom1">
+		<view data-page="0" class="bottom-list" bindtap="turnPage">返回登陆</view>
+	</view>		
+</view>

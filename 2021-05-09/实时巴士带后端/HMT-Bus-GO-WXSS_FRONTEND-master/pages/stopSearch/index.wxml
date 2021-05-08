@@ -1,0 +1,23 @@
+<!-- HMT Bus GO! (WXSS VER.) -->
+<!-- 站点搜索结果页 -->
+
+<page>
+	<view class="page">
+		<view class="page__hd">
+			<view class="page__title">站点检索结果</view>
+			<view class="page__desc">共找到 {{totalResult}} 个站点</view>
+		</view>
+
+		<view class="page__bd">
+			<view class="weui-cells weui-cells_after-title">
+				<block wx:for="{{result}}" wx:for-item="list">
+					<navigator class="weui-cell weui-cell_access" url="/pages/stopInfo/index?id={{list.stop_id}}" hover-class="weui-cell_active">
+						<view class="weui-cell__bd">{{list.stop_name}}</view>
+						<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+					</navigator>
+				</block>
+			</view>
+		</view>
+
+	</view>
+</page>

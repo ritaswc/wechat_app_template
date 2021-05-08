@@ -1,0 +1,53 @@
+/**index.wxss**/
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 93%;
+}
+
+scroll-view {
+}
+
+.item {
+  background-color: whitesmoke;
+  padding: 20rpx;
+  margin: 0 auto;
+  margin-bottom: 5rpx;
+}
+
+.city {
+  margin-left: 20rpx;
+}
+
+.sideBar {
+  width: 7%;
+  margin-top: 20px;
+}
+
+.sideBar-item {
+  height: 15px;
+  text-align: center;
+}
+
+.sideBar-item text {
+  font-size: 25rpx;
+  color: #ccc;
+}
+
+.index {
+  /*list中的index*/
+}
+
+.scroll-item-hover {
+  background-color: steelblue;
+}
+
+.sidebar-item-hover {
+  background-color: aqua;
+}

@@ -1,0 +1,153 @@
+.title-area-wrap {
+    padding: 30rpx 30rpx;
+    background-color: #ffffff;
+
+}
+.title-area-wrap textarea {
+    margin-top: 20rpx;
+    width: 670rpx;
+    height: 200rpx;
+    background-color: #eeeeee;
+    padding-left: 0rpx;
+    padding-top: 0rpx;
+}
+.choice-tag-wrap {
+    margin: 30rpx 30rpx 0;
+    height: 96rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1rpx solid #f2f2f2;
+    position: relative;
+}
+.choice-tag-wrap .address {
+    width: 400rpx;
+    margin-left: 90rpx;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.choice-tag-wrap .choice-tag-right {
+
+}
+
+.choice-tag-wrap .choice-tag-right image{
+    margin-left: 10rpx;
+}
+
+
+
+
+.title-area-wrap .open-time {
+    height: 88rpx;
+    padding-left: 0rpx;
+    padding-top: 0rpx;
+}
+
+
+
+.close-btn {
+    margin: 40rpx 30rpx;
+}
+/*标签选择*/
+/*.tag-wrap {
+    background-color: #ffffff;
+    height: 640rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 30rpx;
+}
+.tag-wrap .title {
+    height: 80rpx;
+    color: #ffffff;
+    width: 100%;
+    line-height: 80rpx;
+    text-align: center;
+}
+.tag-wrap .tag-list {
+    margin-top: 20rpx;
+    height: 360rpx;
+    width: 100%;
+}
+.tag-wrap .tag-list .tag-item {
+    height: 80rpx;
+    margin: 0 20rpx;
+    border-bottom: 1rpx solid #f2f2f2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.tag-wrap .tag-list .tag-item image {
+    width: 41rpx;
+    height: 41rpx;
+    margin-right: 30rpx;
+}
+.tag-wrap .confirm-btn {
+    color: #ffffff;
+    height: 88rpx;
+    display: flex;
+    width: 650rpx;
+    margin: 60rpx 20rpx 0;
+    justify-content: center;
+    align-items: center;
+}*/
+
+/*地址位置选择*/
+.position-content {
+    background-color: #ffffff;
+    margin: 0 30rpx;
+    margin-top:-200rpx;
+    height: 510rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10003;
+}
+.position-content .title {
+    height: 80rpx;
+    color: #ffffff;
+    width: 100%;
+    line-height: 80rpx;
+    text-align: center;
+}
+.position-content textarea {
+    margin-top: 20rpx;
+    background-color: #eeeeee;
+    padding: 20rpx 0 0 20rpx;
+    height: 166rpx;
+}
+.position-content .address-tips {
+    text-align: left;
+    width: 690rpx;
+    margin-left: 70rpx;
+    margin-top: 20rpx;
+}
+.position-content .btn-wrap {
+    width: 612rpx;
+    margin-top: 66rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.position-content .btn-wrap .rechoice {
+    background-color: #5080ef;
+    flex: 1;
+    height: 88rpx;
+    color: #ffffff;
+}
+.position-content .btn-wrap .ok {
+    flex: 1;
+    height: 88rpx;
+    color: #ffffff;
+}
+.ok, .rechoice {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+

@@ -1,0 +1,46 @@
+.msgCard {
+  border-radius: 2pt;
+  /*background-image: linear-gradient(white, deepskyblue);*/
+}
+
+.msgPanel {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.msgPanel > image {
+  width: 160pt;
+}
+.nowPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  color: black;
+  text-shadow: 2pt 2pt 2pt lightgray;
+}
+
+.searchLoc {
+  padding: 2pt;
+}
+.searchLoc image {
+  width: 20pt;
+  height: 20pt;
+  opacity: 0.6;
+  margin-left: 5pt;
+  border-left: 1pt solid lightgray;
+  padding-left: 3pt;
+}
+
+.nowTime {
+  padding-top: 20pt;
+  padding-right: 10pt;
+  font-size: 14pt;
+}
+.nowText {
+  padding: 20pt;
+  font-size: 50pt;
+}
+
+/*.
+*/

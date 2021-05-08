@@ -1,0 +1,9 @@
+<view class="main" style="flex-direction:row;">
+
+<view wx:for="{{cos}}">
+  <view class="render" style="flex-direction:column;">
+      <image class="country" id="{{item.code}}" bindtap="clickCountryFun" src="../../images/country/{{item.code}}.png"></image>
+      <view class="text"><text class="country-en">{{item.code}}</text></view>
+      <view class="text"><text class="country-cn">{{item.name}}</text></view>
+  </view>
+</view>

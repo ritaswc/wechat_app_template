@@ -1,0 +1,82 @@
+<!--index.wxml-->
+<import src='../../wxParse/wxParse.wxml' />
+<view class="container">
+  <view  bindtap="getusefromserver" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  
+
+<view class="page">
+ <view wx-if="{{showloading}}">
+ 正在加载数据，预计需要3-5秒....
+ </view>
+
+  <view class="page__bd"  wx:for="{{replyTemArray}}" wx:for-index="index" wx:key="">
+  <view class="weui-cells weui-cells_after-title" >
+            <view class="weui-cell" style="align-items:flex-start;padding:5px">
+                <view class="weui-cell__hd" style="position: relative;margin-left:2px;margin-right:10px; ">
+                    <image src="{{jokes[index].author[0].avatar}}" style="width: 40px; height: 40px; display: block"/>
+                    
+                </view>
+                <view class="weui-cell__bd">
+                    <view>{{jokes[index].author[0].nickname||jokes[index].author[0].username}}</view>
+                    <view style="font-size: 13px;color: #888888;">{{jokes[index].createdate}}</view>
+                    <!-- jokes content -->
+                    <view style="margin-top:10px; margin-bottom:10px; line-height:150%;">
+                      <template is="wxParse" data="{{wxParseData:item}}"/>
+                    </view> 
+
+                      <view class="weui-form-preview__ft">
+                       <navigator  data-id="{{jokes[index]._id}}" data-index = "{{index}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="bindjoke">
+                       👍  {{jokes[index].joke}}</navigator>
+                       <navigator data-id="{{jokes[index]._id}}" data-index = "{{index}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="bindcomment">评论</navigator>
+                        <navigator data-id="{{jokes[index]._id}}"  data-index="{{index}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="bindunjoke">👎 {{jokes[index].unjoke}}</navigator>
+                     
+                     </view> <!-- preview__ft -->
+
+                     <!--comment-->
+                     <view wx:for="{{jokes[index].comments}}" wx:for-index="cinx" wx:for-item="c" wx:key="" >
+                     <view class="triangle-up" style="margin-left:15px;" wx:if="{{cinx===0}}"></view>
+                     <view class="comment"> <font class="comment_name">{{c.author.nickname||c.author.username}}:</font><font class="comment_contents">{{c.content}}</font></view>
+                     </view>
+                     <view style="margin-bottom:15px;"></view>
+                    
+                    <!--comment end -->
+
+                </view><!--weui-cell__bd-->
+            </view><!--weui-cell-->
+       
+   </view> <!--  weui-cells weui-cells_after-title-->
+  
+  </view> <!--page_bd for end-->
+
+    <scroll-view scroll-y="true" style="height: 200px;"  bindscrolltolower="lower" >
+    
+        <view>
+          <view style="padding:30px;">
+          <text >
+          除了生活、工作；我们还有欢笑。
+          </text>
+          <image src="/images/asmcos.jpg"></image>
+          </view>
+        </view>
+
+    <navigator bindtap="lower">
+      <view class="weui-footer">
+      <view class="weui-footer__text">版权所有</view>  
+      <view class="weui-footer__text">滑动获取更多</view>
+      <view class="weui-footer__text"><image src="/images/load.png" style="width:72rpx;height:72rpx;"></image></view>
+      <view class="weui-footer__text">点击获取更多</view>
+      <view class="weui-footer__text">..</view>
+      <view class="weui-footer__text">..</view>
+      
+       <view class="weui-footer" style="height:30px;"> 
+        <view class="weui-footer__text">2017 @集思笑话</view> 
+       </view>
+
+     </view>
+    </navigator>
+    </scroll-view>
+ </view> <!--page-->
+</view>

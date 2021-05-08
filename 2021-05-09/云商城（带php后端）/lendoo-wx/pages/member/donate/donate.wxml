@@ -1,0 +1,10 @@
+<text class="desc">
+	灵动电商系统免费+开源的，如果您觉得它有帮助，表示一下支持吧。
+</text>
+<text class="value">{{value}}</text>
+<scroll-view scroll-x="true" bindscroll="bindscroll" scroll-left="{{scrollLeft}}">
+	<canvas canvas-id="canvas-ruler" id="canvas-ruler" style="height: {{canvasHeight}}px; width: {{canvasWidth}}px;"></canvas>
+</scroll-view>
+<canvas canvas-id="canvas-cursor" id="canvas-cursor"></canvas>
+
+<button type="primary" bindtap="donateButtonTapped">赞赏</button>

@@ -1,0 +1,27 @@
+{
+  "name": "album-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "nodemon app.js",
+    "start": "pm2 start process.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "file-type": "^3.8.0",
+    "lodash": "^4.16.1",
+    "morgan": "^1.7.0",
+    "multiparty": "^4.1.2",
+    "qcloud_cos": "^1.0.6",
+    "read-chunk": "^2.0.0",
+    "shortid": "^2.2.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.10.2"
+  }
+}

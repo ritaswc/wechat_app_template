@@ -1,0 +1,27 @@
+<!--step/share.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class='poster'>
+            <image src='{{img}}' onTap='screen'></image>
+        </view>
+        <view class='choose'>
+            <view class='share-title'>选择模版</view>
+            <view class='share-bg'>
+                <view class='cross-left' onTap='chooseImg' data-id='1'>
+                    <image src='../image/left.png' wx-if="{{left}}"></image>
+                </view>
+                <image a:for="{{pic_list}}" a:key="{{bg}}" src='{{item.pic_url}}' class="bg-item {{currentItem==item.id?'active':''}}" data-id="{{item.id}}" onTap="tagChoose"></image>
+                <view class='cross-right' onTap='chooseImg' data-id='2'>
+                    <image src='../image/xi-right.png' wx-if="{{right}}"></image>
+                </view>
+
+            </view>
+            <button class='share-btn' onTap='saveImage' wx-if="{{save}}">保存图片</button>
+            <button class='share-btn' onTap='openSetting' wx-if="{{get}}">授予权限</button>
+            <view class='share-tip'>保存至相册</view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

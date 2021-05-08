@@ -1,0 +1,44 @@
+<view class="container">
+  <!--顶部头像-->
+  <view class="top">
+    <navigator url="../login/login" hover-class="navigator-hover" class="photo">
+      <image src="http://ojhq3mgil.bkt.clouddn.com/478/20161227/201612271616015049.jpg"></image>
+    </navigator>
+    <view class="phone_num">13166292893</view>
+  </view>
+  <!--/顶部头像end-->
+<!--个人中心列表项-->
+<view class="item_list">
+    <!-- <navigator url="../login/login" hover-class="navigator-hover">点击登录</navigator> -->
+    
+    <view bindtap="toOrder" class="item_list_msg">
+        <view class="list_icon"><image src="../../images/icon_wddd.png"></image></view>
+        <text>我的订单</text>
+    </view>
+    <view class="line_x"></view>
+    <view bindtap="toAddress" class="item_list_msg">
+        <view class="list_icon"><image src="../../images/icon_shdz.png"></image></view>
+        <text>收货地址</text>
+    </view>
+    <view class="line_x"></view>
+    <view bindtap="toclllectProduct" class="item_list_msg">
+        <view class="list_icon"><image src="../../images/icon_wdsc.png"></image></view>
+        <text>收藏的商品</text>
+    </view>
+    <view class="line_x"></view>
+    <view bindtap="tocollectStore" class="item_list_msg">
+        <view class="list_icon"><image src="../../images/icon_SCdianpu.png"></image></view>
+        <text>收藏的店铺</text>
+    </view>
+    <view class="line_x"></view>
+    <view bindtap="toBuyerOrder" class="item_list_msg">
+        <view class="list_icon"><image src="../../images/icon_spdd.png"></image></view>
+        <text>商铺订单管理</text>
+    </view>
+    
+</view>
+<!--/个人中心列表项end-->
+
+
+
+</view>  <!--/container  end-->

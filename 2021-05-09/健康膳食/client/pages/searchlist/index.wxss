@@ -1,0 +1,11 @@
+.container {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.no-searchlist {
+    color: #7fabfd;
+    text-align: center;
+    font-size: 28rpx;
+    font-weight: 700;
+}

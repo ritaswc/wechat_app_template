@@ -1,0 +1,83 @@
+/* pages/mine/mine.wxss */
+page{
+    background: white;
+}
+.content .mine-top{
+    text-align: center;
+    padding: 60rpx;
+    box-sizing: border-box;
+    background: url('http://app.shizhencaiyuan.com/pintuan/img/mineheadbg2x.png');
+    color: white;
+}
+.content .mine-top image{
+  width:120rpx;
+  height: 120rpx;
+  display:inline-block;
+  overflow:hidden;
+  border-radius: 50%;
+}
+.content .mine-top view{
+    margin-bottom: 40rpx;
+}
+.content .mine-top view:last-child text{
+    padding-right: 20rpx;
+}
+.content .mine-list{
+    padding: 0 30rpx;
+}
+.content .mine-list view{
+    padding: 40rpx 0 30rpx 20rpx;
+    /*border-bottom: 1px solid #f2f2f2;*/
+    border-bottom: 1px solid #ddd;
+    display: flex;
+}
+.content .mine-list view:last-of-type{
+    border: none;
+}
+.content .mine-list view .iCon{
+  display:block;
+  width:36rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+}
+.iCon-tuan{
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/mine-tuan.png') center center;
+  background-size: cover;
+}
+.iCon-orderform{
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/mine-orderform.png') no-repeat;
+  background-size:contain;
+}
+.iCon-coupon{
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/mine-coupon.png') center center;
+  background-size: cover;
+}
+.iCon-address{
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/mine-address.png') no-repeat;
+  background-size:contain;
+}
+.iCon-buyingpro{
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/mine-buyingpro.png') center center;
+  background-size: cover;
+}
+.iCon-afetsel{
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/mine-afetsel.png') no-repeat;
+  background-size:contain;
+}
+.iCon-recommend{
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/recommend.png') no-repeat;
+  background-size:contain;
+}
+.kefu{
+  width: 90rpx;
+  height: 90rpx;
+  position: fixed;
+  right: 20rpx;
+  bottom: 20rpx;
+  border: 1px solid #ba77ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ba77ff;
+  border-radius: 50%;
+}

@@ -1,0 +1,54 @@
+<view class="container">
+    <view class="search-field-wrapper">
+        <view class="search-field">
+          <input placeholder="请输入关键字" placeholder-style="color: #c8c8c8" focus="{{false}}" bindinput="bindKeyInput"/>
+          <!--<image src="../../images/whiteBg.png" class="bg-image" />-->
+          <image src="../../images/seach.png" class="search-btn"/>
+        </view>
+        <view class="search-submit-btn" bindtap="submitSearch">
+            搜索
+        </view>
+    </view>
+    <view class="college-group-wrapper">
+        <view class="college-group-title">
+            学组：
+        </view>
+        <view class="college-group-list" style="height: {{ showMoreCollegeGroup ? 'auto' : '140rpx' }};">
+            <block wx:for="{{specializedObjs}}" wx:key="{{index}}">
+                <view class="college-group-item {{item.active ? 'active' : ''}}" data-typeid="{{item.id}}" bindtap="toggleActive">
+                    {{item.name}}
+                </view>
+            </block>
+        </view>
+        <!--
+        <view class="more-college-group-btn" bindtap="toggleShowMore">
+            {{showMoreCollegeGroup ? "收起" : "更多"}}
+        </view>
+        -->
+    </view>
+    <!--
+    <view class="course-content">
+        <block wx:for="{{searchList}}" wx:key="{{index}}">
+            <navigator url="../coursedetail/index?id={{item._id}}">
+                <view class="course-item" style="width: {{(winWidth * 2 - 90) / 2}}rpx;">
+                    <view class="course-image-wrapper">
+                        <image class="course-image" src="../../images/kecheng.jpg" />
+                    </view>
+                    <view class="course-info">
+                        <view class="course-name">{{item.name}}</view>
+                        <view class="course-group">学组: {{item.specialObj}}</view>
+                        <view class="course-status">
+                            <view class="course-rating">
+                                评分: {{item.averageScore ? item.averageScore : 0}}
+                            </view>
+                            <view class="course-study-num">
+                                {{item.count ? item.count : 0}}人学习过
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </block>
+    </view>
+    -->
+</view>

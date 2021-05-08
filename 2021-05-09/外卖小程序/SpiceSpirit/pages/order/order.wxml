@@ -1,0 +1,12 @@
+<view class="order-view">
+    <view class="nav-view">
+        <block wx:for="{{orderSates}}" wx:key="*this">
+            <view class="nav-item" bindtap="selectSection" data-index="{{index}}">
+                <text>{{item}}</text>
+                <block wx:if="{{current_id ==index}}">
+                <view class="nav-line"></view>
+                </block>
+            </view>
+        </block>
+    </view>
+</view>

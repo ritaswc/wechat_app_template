@@ -1,0 +1,34 @@
+<block wx:if="{{list.length == 0}}">
+  <view class="noquick">
+    <image src="/images/icons/noquick.png"></image>
+    <text>暂没有申请者</text>
+  </view>
+</block>
+
+
+<block wx:else >
+    <view class="applylist">    
+        <block wx:for="{{list}}" >
+            <view class="list-item">
+                <view class="user">
+                    <view class="avatar">
+                        <image src="{{item.img}}"></image>
+                    </view>
+                    <view class="name">
+                        <text>{{item.wxName}}</text>
+                    </view>
+                </view>
+                
+   
+                <form bindsubmit="submitForm" report-submit>
+                <view class="button">
+                    <button class="refuse" data-id="{{item._id}}" data-apply-type="nopass" form-type="submit">拒绝</button>
+                    <button class="accept" data-id="{{item._id}}" data-apply-type="pass" form-type="submit">接受</button>
+                </view>
+                </form>
+
+
+          </view>  
+      </block>
+  </view>
+</block>

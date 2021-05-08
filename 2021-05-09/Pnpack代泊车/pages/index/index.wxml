@@ -1,0 +1,40 @@
+
+<!--index.wxml-->
+<view class="column mg-20">
+
+  <view wx:if="{{order_data==''}}"class="header-swiper text-a color-f br-10 bg-pp">
+  您现在没有预约的代泊
+  
+  </view>
+  <view class="header-swiper text-a color-f br-10 bg-pp" wx:if="{{order_data!=''}}">
+    <view class="wait-header">
+      <text>代泊中</text>
+    </view>
+    <view class="wait-text">
+      <text>订单号:</text>
+      <text>{{order_data.o_ordercode}}</text>
+    </view>
+    <view class="wait-text">
+      <text>泊车点:</text>
+      <text>{{order_data.point_name}}</text>
+    </view>
+    <view class="wait-text">
+      <text>开始时间：</text>
+      <text>{{order_data.o_starttime}}<text class="color-h"></text></text>
+    </view>
+    <view class="wait-text">
+      <text>结束时间:</text>
+      <text>{{order_data.o_endtime}}<text class="color-h"></text></text>
+    </view>
+    <button class="precess-into" bindtap="gotoOrder" data-id="{{order_data.o_id}}" data-ordercode="{{order_data.o_ordercode}}">进入行程</button>
+  </view>
+  <view class="column" wx:for="{{pnPark}}" wx:key="{{pnPark}}" wx:for-item="item">
+    <view class="header-list-nav br-10 bg-f color-9 row mg-t-15 box-s " bindtap="bindViewTapPark" data-page="{{item.page}}">
+      <image src="{{item.img}}"></image>
+      <text>{{item.title}}</text>
+      <view class="phone">
+        <image class="phone-icon park-icon" src="../../images/more2.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

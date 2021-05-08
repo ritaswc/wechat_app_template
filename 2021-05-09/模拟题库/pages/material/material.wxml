@@ -1,0 +1,30 @@
+<!--material.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+    <view class="loading" wx:if="{{!materials.length}}"></view>
+		<view wx:else>
+			<view class="content" wx:if="{{!isDetail}}">	
+				<view wx:for="{{materials}}" wx:key="materialId" id="{{item.materialId}}" class="card" bindtap="detailGet">
+					<image src="{{item.avatar}}"></image>
+					<view class="title">{{item.title}}</view>
+					<text class="m-content">{{item.content}}</text>
+				</view>
+			</view>		
+
+			<view class="detail" wx:else>
+				<view wx:for="{{details}}" wx:key="materialId" class="detail-card">
+					<image src="{{item.avatar}}" class="icon"></image>
+					<view class="title">{{item.title}}</view>
+					<!--<view class="detail-content">{{item.content}}</view>-->
+					<view class="detail-content">
+						<template is="wxParse" data="{{wxParseData:item.content.nodes}}"/>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="bottom-bar" wx:if="{{showBottom}}">
+			<view data-is-detail="false" bindtap="pageSwitch" class="bottom-list {{!isDetail?'selected':''}}">资料列表</view>
+			<view data-is-detail="true" bindtap="pageSwitch" class="bottom-list {{isDetail?'selected':''}}">资料详细</view>
+		</view><!-- bottom-bar结束 -->
+</view>

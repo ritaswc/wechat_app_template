@@ -1,0 +1,86 @@
+<view class="quick-head" wx:if="{{setnavi.type==='0'}}">
+    <view class="quick-modal " wx:if="{{quick_icon}}">
+        <view class="quick-modal-bg"></view>
+        <view class="quick-head quick-modal-pic flex-y-center flex-x-center">
+            <view class="quick-icon {{__device}}" direction="all">
+                <view style="position:relative;">
+                    <view animation="{{animationPlus}}" class="quick-zfb" wx:if="{{!home_icon}}">
+                        <navigator hoverClass="none" openType="reLaunch" url="/pages/index/index">
+                            <image class="quick-dial" src="{{setnavi.home_img}}"></image>
+                        </navigator>
+                    </view>
+                    <view animation="{{animationMapPlus}}" bindtap="map_power" class="quick-dial quick-zfb" style="background-image:url('{{store.option.quick_map.icon}}'); background-size: 80rpx 80rpx;" wx:if="{{store.option.quick_map.status==1}}"></view>
+                    <view animation="{{animationPic}}" bindtap="to_dial" class="quick-dial quick-zfb" style="background-image:url('{{store.dial_pic}}'); background-size: 80rpx 80rpx;" wx:if="{{store.dial==1&&store.dial_pic}}"></view>
+                    <navigator hoverClass="none" openType="navigate" url="/pages/web/web?url={{store.option.web_service_url}}" wx:if="{{store.option.web_service_status==1}}">
+                        <view animation="{{animationcollect}}" class="quick-zfb">
+                            <image class="quick-dial" src="{{store.option.web_service}}"></image>
+                        </view>
+                    </navigator>
+                    <block wx:if="{{store.show_customer_service&&store.show_customer_service==1&&store.service}}">
+                        <button class="float-icon-btn" openType="contact" sessionFrom="{{__user_info.nickname}}|" style="border:0rpx solid #ffffff;padding:0px;display:inline;background-color:transparent;" wx:if="{{__platform=='wx'}}">
+                            <view animation="{{animationTranspond}}" class="quick-zfb" style="display:inline-block;top:0;">
+                                <image class="quick-dial" src="{{store.service}}"></image>
+                            </view>
+                        </button>
+                        <view class="float-icon-btn" wx:if="{{__platform=='my'}}">
+                            <view animation="{{animationTranspond}}" class="quick-zfb">
+                                <view class="flex-x-center flex-y-center" style="z-index:2;width: 100%;border-radius:50%;height: 100%;position: absolute;left: 0;top:0;opacity: 0">
+                                    <contact-button scene="{{__alipay_mp_config.cs_scene}}" size="40" tntInstId="{{__alipay_mp_config.cs_tnt_inst_id}}"></contact-button>
+                                </view>
+                                <image class="quick-dial" src="{{store.service}}"></image>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:if="{{store.option.wxapp.status==1}}">
+                        <navigator appId="{{store.option.wxapp.appid}}" data-open_type="wxapp" hoverClass="none" openType="navigate" path="{{store.option.wxapp.path}}" target="miniProgram" wx:if="{{__platform=='wx'}}">
+                            <view animation="{{animationInput}}" class="quick-zfb">
+                                <image class="quick-dial" src="{{store.option.wxapp.pic_url}}"></image>
+                            </view>
+                        </navigator>
+                        <view animation="{{animationInput}}" class="quick-zfb" data-app-id="{{store.option.wxapp.appid}}" data-path="{{store.option.wxapp.path}}" onTap="openWxapp" wx:if="{{__platform=='my'}}">
+                            <image class="quick-dial" src="{{store.option.wxapp.pic_url}}"></image>
+                        </view>
+                    </block>
+                    <view bindtap="cutover" class="flex-col flex-y-center flex-x-center quick-bg" style="z-index:20;position:relative;bottom:0">
+                        <text class="quick-text">收起</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="quick-icon {{__device}}" direction="all" wx:else>
+        <view bindtap="cutover" class="flex-col flex-y-center flex-x-center quick-bg">
+            <text class="quick-text">快捷</text>
+            <text class="quick-text">导航</text>
+        </view>
+    </view>
+</view>
+<view class="float-icon" direction="all" wx:if="{{setnavi.type==='1'}}">
+    <navigator hoverClass="none" openType="reLaunch" url="/pages/index/index" wx:if="{{!home_icon}}">
+        <image class="dial" src="{{setnavi.home_img}}"></image>
+    </navigator>
+    <view bindtap="map_power" class="dial" style="background-image:url('{{store.option.quick_map.icon}}'); background-size: 80rpx 80rpx;" wx:if="{{store.option.quick_map.status==1}}"></view>
+    <view bindtap="to_dial" class="dial" style="background-image:url('{{store.dial_pic}}'); background-size: 80rpx 80rpx;" wx:if="{{store.dial==1&&store.dial_pic}}"></view>
+    <navigator hoverClass="none" openType="navigate" url="/pages/web/web?url={{store.option.web_service_url}}" wx:if="{{store.option.web_service_status==1}}">
+        <image class="dial" src="{{store.option.web_service}}"></image>
+    </navigator>
+    <block wx:if="{{store.show_customer_service&&store.show_customer_service==1&&store.service}}">
+        <button class="float-icon-btn" openType="contact" sessionFrom="{{__user_info.nickname}}|" style="height:100%" wx:if="{{__platform=='wx'}}">
+            <image class="dial" src="{{store.service}}"></image>
+        </button>
+        <view class="float-icon-btn" style="position: relative" wx:if="{{__platform=='my'}}">
+            <view style="z-index:2;width: 100%;height: 100%;position: absolute;left: 0;top:0;opacity: 0">
+                <contact-button scene="{{__alipay_mp_config.cs_scene}}" tntInstId="{{__alipay_mp_config.cs_tnt_inst_id}}"></contact-button>
+            </view>
+            <image class="dial" src="{{store.service}}" style="z-index:1"></image>
+        </view>
+    </block>
+    <block wx:if="{{store.option.wxapp.status==1}}">
+        <navigator appId="{{store.option.wxapp.appid}}" data-open_type="wxapp" hoverClass="none" openType="navigate" path="{{store.option.wxapp.path}}" target="miniProgram" wx:if="{{__platform=='wx'}}">
+            <image class="dial" src="{{store.option.wxapp.pic_url}}"></image>
+        </navigator>
+        <view bindtap="openWxapp" data-app-id="{{store.option.wxapp.appid}}" data-path="{{store.option.wxapp.path}}" wx:if="{{__platform=='my'}}">
+            <image class="dial" src="{{store.option.wxapp.pic_url}}"></image>
+        </view>
+    </block>
+</view>

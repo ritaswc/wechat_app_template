@@ -1,0 +1,69 @@
+/* pages/shenghuo/AllServiceclassify/ServiceCategoryList/ServiceCategoryListCell/ServiceCategoryListCell.wxss */
+
+.serviceCategoryListCell-container {
+  width: 100%;
+  height: 98px;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-bottom: 1px solid #efefef;
+  vertical-align: middle;
+}
+
+.left-container {
+  width: 90px;
+  height: 90px;
+}
+
+.left-image {
+  margin-top: 8px;
+  margin-left: 8px;
+  width: 85px;
+  height: 85px;
+}
+
+.right-container {
+  margin: 16px 12px 12px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceTitle {
+  background-color: #fff;
+  font-size: 15px;
+  border: none;
+}
+
+.right-bottom-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bottomTitle {
+  margin-top: 12px;
+  color: gray;
+  font-size: 13px;
+  border: none;
+  max-width: 340rpx;
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+  overflow: hidden;
+}
+
+.vip {
+  position: absolute;
+  right: 50px;
+  width: 30px;
+  height: 22px;
+  border-right: 1px solid #efefef;
+}
+
+.call {
+  position: absolute;
+  border: none;
+  right: 0px;
+  width: 26px;
+  height: 26px;
+  padding: 0 10px;
+}

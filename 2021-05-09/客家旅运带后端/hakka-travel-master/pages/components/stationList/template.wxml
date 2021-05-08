@@ -1,0 +1,19 @@
+<!--
+	@component stationList
+	@author liangkun
+-->
+
+<template name="stationList">
+	<view class="station-list">
+		<!-- end station-->
+		<view class="station-wrapper">
+			<view class="station-title">
+				----- {{stationTitle}}------
+			</view> 
+			<view class="station-item {{chosenIndex == index? 'active': ''}}" 
+				wx:for="{{stationList}}" bindtap="chooseStation" data-index="{{index}}">
+				{{item.name}}
+			</view>
+		</view>
+	</view>
+</template>

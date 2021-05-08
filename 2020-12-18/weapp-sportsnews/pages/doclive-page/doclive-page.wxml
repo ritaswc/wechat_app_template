@@ -1,0 +1,48 @@
+<import src="../common/doclive-card.wxml"/>
+
+
+<template name="live-chat">
+	<view class="item clearfloat">
+		<view class="itemleft">
+			<image class="logo" src="{{item.liverimg ? item.liverimg : (item.userimg != '' ? item.userimg : '../../images/nouser.png')}}"></image>
+			<view wx:if="{{item.liverimg}}" class="uname">{{item.livername}}</view><!--直播用，聊天不用-->
+		</view>
+		<view class="itemright">
+			<view wx:if="{{item.uname}}" class="uname">{{item.uname}}</view><!--聊天用直播不用-->
+			<view class="chatbox">
+				<image wx:if="{{item.picurl}}" src="{{item.picurl}}" mode="widthFix"></image><!--直播用聊天不用-->
+				<text>{{item.content}}</text>
+			</view>
+		</view>
+	</view>
+</template>
+
+<loading hidden="{{!loading}}">加载中...</loading>
+<scroll-view scroll-y="true" class="doclive">
+	<view class="livehead">
+		<view class="livetitle">[{{item.sportsLiveExt.tag}}]</view>
+			<template is="score" data="{{item}}"></template>
+		<view class="bottomline"></view>
+	</view>
+	<view class="livenav">
+		<text bindtap="toggleTab" class="{{current == 0 ? 'active' : ''}}" data-id="0">直播</text>
+		<text bindtap="toggleTab" class="{{current == 1 ? 'active' : ''}}" data-id="1">聊天</text>
+		<text bindtap="toggleTab" class="{{current == 2 ? 'active' : ''}}" data-id="2">新闻</text>
+	</view>
+	<swiper current="{{current}}" class="swiper-box" duration="300" bindchange="slideSwiper" style="height: {{winHeight}}px">
+		<swiper-item class="swiper-item"><!--直播页-->
+			<view wx:for="{{lives}}" wx:key="chats" class="livelist">
+				<template is="live-chat" data="{{item}}" />
+			</view>	
+		</swiper-item>
+		<swiper-item class="swiper-item"><!--聊天也-->
+			<view wx:for="{{chats}}" wx:key="chats" class="livelist">
+				<template is="live-chat" data="{{item}}" />
+			</view>	
+		</swiper-item>
+		<swiper-item class="swiper-item"><!--新闻页-->
+			<view>暂时没有数据</view>
+		</swiper-item>
+
+	</swiper>
+</scroll-view>

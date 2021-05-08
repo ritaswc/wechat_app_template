@@ -1,0 +1,225 @@
+@import "/asset/wxParse/wxParse.wxss";
+.content{
+  padding-bottom: 80rpx;
+}
+.container-goods{
+  margin-bottom: 20rpx;
+}
+.container-goods .main-goods{
+  padding: 28rpx 30rpx 0rpx;
+  background: white;
+}
+.hr{
+    position: relative;
+}
+.hr::after{
+    content:'';
+    width: 100%;
+    height: 2rpx;
+    background: #ddd;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    bottom: 2rpx;
+}
+.container-goods .main-goods .main-goods-info{
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+}
+.container-goods .main-goods .main-goods-info view text{
+  color: #ba77ff;
+}
+.container-goods .main-goods .main-goods-info view:first-of-type{
+  border: 1px solid #ba77ff;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+.container-goods .main-goods .main-goods-info view:nth-of-type(2){
+  text-align: left;
+  flex-grow: 2;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.container-goods .main-goods .main-goods-price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+  padding-bottom: 20rpx;
+}
+.container-goods .main-goods .main-goods-price view:first-of-type{
+  color: #f00;
+}
+.container-goods .main-goods .main-goods-price view:nth-of-type(2){
+  text-align: left;
+  flex-grow: 2;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  text-decoration: line-through;
+}
+.container-goods .main-goods .main-goods-ship{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx 0;
+    height: 60rpx;
+    color:#999;
+}
+.container-goods .main-goods .main-goods-ship view{
+    display: flex;
+}
+.container-goods .main-goods .main-goods-ship view .iCon-ship{
+  display:block;
+  width:50rpx;
+  margin-right: 6rpx;
+}
+.container-goods .main-goods .main-goods-ship view:nth-of-type(1) .iCon-ship{
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/car.png') no-repeat 0 0rpx;
+  background-size:contain;
+}
+.container-goods .main-goods .main-goods-ship view:nth-of-type(2) .iCon-ship{
+  width:40rpx;
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/time.png') no-repeat 0 0rpx;
+  background-size: contain;
+}
+.container-goods .main-goods .main-goods-ship view text{
+    color: #ba77ff;
+}
+.goods-brief{
+    color: #999;
+    padding: 20rpx 0;
+}
+/*品牌*/
+.goods-manager{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    background: white;
+}
+.goods-manager .goods-manager-left{
+    display: flex;
+    align-items: center;
+}
+.goods-manager .goods-manager-left .brand{
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 20rpx;
+}
+.goods-manager .goods-manager-left .brand image{
+    width: 100%;
+    height: 100%;
+}
+.goods-manager .goods-manager-right{
+  border: 1px solid #ba77ff;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  color: #ba77ff;
+}
+.goods-info {
+    padding: 20rpx 0;
+    text-align: center;
+    vertical-align: middle;
+}
+.goods-info-image{
+    padding: 0;
+}
+.goods-info .show-detail{
+    width: 160rpx;
+    padding: 4rpx 20rpx;
+    border: 2rpx solid #ba77ff;
+    color: #ba77ff;
+    border-radius: 40rpx;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+}
+.goods-info .show-detail view{
+    height: 100%;
+    padding-top: 4rpx;
+    box-sizing: border-box;
+}
+.goods-info-image .goods-image image{
+  height:100vh;
+  margin-top: -6rpx;
+}
+.choose-goods-time{
+    padding: 20rpx;
+    background: white;
+    display: flex;
+    font-size: 26rpx;
+    color: #999;
+}
+.choose-goods-time .time-type text{   
+    padding: 4rpx 10rpx;
+    border: 2rpx solid #ba77ff;
+    color: #ba77ff;
+    border-radius: 40rpx;
+    margin-right: 10rpx;
+}
+.choose-goods-time .time-type text.checked{
+    background: #ba77ff;
+    color: white;
+} 
+.group-detail {
+    padding: 20rpx;
+    font-size: 26rpx;
+    color:#999;
+}
+.group-detail .group-nolow{
+    padding: 4rpx 20rpx;
+    box-sizing: border-box;
+    border: 2rpx dashed #ba77ff;
+    color: #ba77ff;
+    border-radius: 60rpx;
+    background: #e6cffd;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.group-detail .group-nolow text:first-child{
+    color:#000;
+}
+.group-detail .group-nolow text:last-child{
+    color: #ba77ff;
+}
+.group-detail .group-low{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.group-detail .group-low .group-nolow{
+    flex-grow: 2;
+}
+.iCon-gt{
+  margin-right: 0rpx;
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/dayu.png') no-repeat;
+  background-size:contain;
+}
+.group-tip{
+    padding: 20rpx;
+    font-size: 26rpx;
+    background: white;
+    text-align: center;
+}
+.group-tip text:first-of-type{
+    color: #999;
+}
+.group-tip .group-tip-action{
+    display: flex;
+    padding: 20rpx 0;
+}
+.group-tip .group-tip-action view{
+    display: flex;
+    flex-direction: column;
+    padding: 10rpx;
+}
+.group-tip .group-tip-action view:nth-child(2n){
+    border: 1px dashed #ba77ff;
+}
+.group-tip .group-tip-action view text:first-of-type{
+    color: #ba77ff;
+}

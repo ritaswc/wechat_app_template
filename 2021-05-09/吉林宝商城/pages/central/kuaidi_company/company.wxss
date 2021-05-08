@@ -1,0 +1,13 @@
+page{
+	background: #fff;
+}
+.companyList>view{
+	width: 100%;
+	height: 100rpx;
+	line-height: 100rpx;
+	border-bottom: 1rpx solid #f3f3f3;
+	padding-left: 30rpx;
+}
+.companyList .orderId{
+	background: #f3f3f3;
+}

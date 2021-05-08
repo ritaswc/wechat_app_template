@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "选择收货地址",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

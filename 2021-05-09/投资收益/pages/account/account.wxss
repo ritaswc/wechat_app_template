@@ -1,0 +1,30 @@
+.banner {background: url(../../images/account/zhsy_new_bg.jpg) center center no-repeat;padding: 40rpx 0 0 0;background-size: 100%;}
+.banner_top {padding: 0 40rpx;}
+.banner_left {display: inline-block;}
+.banner_left navigator {display: inline-block;float: left;}
+.banner_left navigator image {width: 100rpx;height: 100rpx;margin-right: 20rpx;border-radius: 50%;}
+.banner_left .banner_user {float: left;font-size: 28rpx;line-height: 1.5em;padding-top: 14rpx;color: #fff;}
+
+.banner_right {display: inline-block;float: right;}
+.banner_right image {width: 50rpx;height: 50rpx;margin-top: 25rpx;}
+
+.banner_money {text-align: center;color: #fff;font-size: 30rpx;margin-top:20rpx;}
+.money {font-size: 100rpx;}
+.banner_money image {width: 28rpx;height: 28rpx;}
+
+.banner_bottom {width: 100%;background: rgba(0,0,0,0.4);margin-top: 60rpx;font-size: 26rpx;color: #fff;line-height: 2.4em;}
+.banner_bottom .bottom_left {display: inline-block;width: 50%;text-align: center;}
+.banner_bottom .bottom_right{display: inline-block;width: 50%;text-align: center;}
+
+.wdzh_center {background: #fff;font-size: 40rpx;padding: 20rpx 0;}
+.wdzh_center image {width: 50rpx;height: 50rpx;vertical-align: sub;margin-right: 10rpx;}
+.wdzh_center .wdzh_center_left {width: 50%;text-align: center;display: inline-block;border-right: 2rpx solid #ccc;box-sizing: border-box;}
+.wdzh_center .wdzh_center_right {width: 50%;text-align: center;display: inline-block;}
+
+.wdzh_bottom {margin-top: 20rpx;}
+.wdzh_bottom_list {background: #fff;padding: 30rpx 0 0 20rpx;}
+.wdzh_bottom_list .wdzh_bottom_img {display: inline-block;width: 10%;}
+.wdzh_bottom_list .wdzh_bottom_img image {width: 60rpx;height: 60rpx;vertical-align: middle;}
+.wdzh_bottom_content {font-size: 32rpx;display: inline-block;width: 90%;border-bottom: 2rpx solid #ccc;padding-bottom: 16rpx;}
+.wdzh_bottom_content image {width: 30rpx;height: 30rpx;float: right;margin-right: 40rpx;}
+.no_bottom {border-bottom: none;padding-bottom: 30rpx;}

@@ -1,0 +1,85 @@
+<!-- 购物车商品列表 -->
+<view a:if="{{shoppingCartModel}}" class="shopping-cart-list {{_navbar ? 'shopping-cart-list2' : ''}}">
+    <view class="carHeader">
+        <view class="yixuan">已选商品</view>
+        <view class="clearAll" onTap='clearShoppingCart'>
+            <image src="{{__wxapp_img.store.clear.url}}" style="width:22rpx; height:22rpx;margin-right:10rpx; "></image>
+            <text style="font-size:27rpx;color:#BDBDBD;">清空</text>
+        </view>
+    </view>
+    <view class="hr"></view>
+    <scroll-view scroll-y="true" style="max-height: 500rpx;width:100%">
+        <block a:for="{{carGoods}}" a:key="{{item.id}}" a:for-item="cargood">
+            <block a:if="{{cargood.attr == ''}}">
+                <block a:if="{{cargood.num > 0}}">
+                    <view class="carGood">
+                        <view class="goodsname" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{cargood.goods_name}}</view>
+                        <view class="goodsNumPrice">
+                            <view class="goodsTotalPrice" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">￥{{cargood.goods_price}}</view>
+                            <view class="goodsNum">
+                                <view class="carStandard" onTap='jia' data-index="{{index}}" data-id="{{cargood.goods_id}}">
+                                    <image src="{{__wxapp_img.store.jia.url}}" class="carStandard"></image>
+                                </view>
+                                <view class="carStandard" id="carStandard_num">{{cargood.num}}</view>
+                                <view class="carStandard" onTap='jian' data-index="{{index}}" data-id="{{cargood.goods_id}}">
+                                    <image src="{{__wxapp_img.store.jian.url}}" class="carStandard"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </block>
+            <block a:else>
+                <block a:if="{{cargood.num > 0}}">
+                    <view class="carGood">
+                        <view class="goods_attr_name">
+                            <view class="cargood_name" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{cargood.goods_name}}</view>
+                            <view class="cargood_attr_name" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;float:left;">
+                                <text a:for="{{cargood.attr}}" a:key="{{item.id}}">{{item.attr_group_name}}:{{item.attr_name}}</text>
+                            </view>
+                        </view>
+                        <view class="goodsNumPrice">
+                            <view class="goodsTotalPrice">￥{{cargood.goods_price}}</view>
+                            <view class="goodsNum">
+                                <view class="carStandard" onTap='jia' data-index="{{index}}" data-id="{{cargood.goods_id}}">
+                                    <image src="{{__wxapp_img.store.jia.url}}" class="carStandard"></image>
+                                </view>
+                                <view class="carStandard" id="carStandard_num">{{cargood.num}}</view>
+                                <view class="carStandard" onTap='jian' data-index="{{index}}" data-id="{{cargood.goods_id}}">
+                                    <image src="{{__wxapp_img.store.jian.url}}" class="carStandard"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </block>
+        </block>
+    </scroll-view>
+</view>
+
+<view class="modal-mask" onTap="hideShoppingCart" a:if="{{shoppingCartModel}}"></view>
+
+
+<!-- 购物车 -->
+<view class='goods_car {{_navbar ? "shopping_cart" : ""}} {{__device}}'>
+    <block a:if="{{total.total_num == 0}}">
+        <view class="buy">
+            <view class="car_pic">
+                <image class="car_png" src="{{__wxapp_img.store.car.url}}"></image>
+            </view>
+            <view class="weixuan">未选购商品</view>
+        </view>
+        <view class="goumai">立即购买</view>
+    </block>
+    <block a:if="{{total.total_num > 0}}">
+        <view class="buy" onTap="shoppingCartListModel">
+            <view class="car_pic">
+                <image class="car_png" src="{{__wxapp_img.store.yougoods.url}}"></image>
+                <view class="total_num">{{total.total_num}}</view>
+            </view>
+            <view class="price">￥{{total.total_price}}</view>
+        </view>
+        <view class="pay" onTap='buynow'>立即购买</view>
+    </block>
+    <view class="blank {{_navbar ? 'navbar_yes' : 'navbar_no'}} {{__device}}"></view>
+</view>

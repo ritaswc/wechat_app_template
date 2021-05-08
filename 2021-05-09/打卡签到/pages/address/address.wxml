@@ -1,0 +1,11 @@
+<!--pages/address/address.wxml-->
+
+
+<view class="address">
+    <view class="header">
+        <text>修改公司地址</text>
+        <button type="primary" size="mini" bindtap="bindChangeAddressBtn">保存</button>
+    </view>
+    <input type="text" value="{{originAddress}}" bindinput="bindInputOnchange" auto-focus/>
+
+</view>

@@ -1,0 +1,4 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\Utils\bin\Debug\Utils.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\Utils\bin\Debug\Utils.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\Utils\obj\Debug\Utils.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\Utils\obj\Debug\Utils.pdb

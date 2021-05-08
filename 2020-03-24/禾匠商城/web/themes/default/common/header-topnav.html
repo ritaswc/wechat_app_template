@@ -1,0 +1,35 @@
+{php global $top_nav}
+{php $top_nav_shortcut = array()}
+{php $nav_top_fold=array()}
+{php $platform_url=url('account/display')}
+{php $nav_top_fold[] = array('name' => 'all', 'title'=>'全部类型', 'type' => 'all', 'url' => $platform_url)}
+{loop $top_nav $nav}
+    {if in_array($nav['name'], array(ACCOUNT_TYPE_SIGN, WXAPP_TYPE_SIGN, WEBAPP_TYPE_SIGN, PHONEAPP_TYPE_SIGN, XZAPP_TYPE_SIGN, ALIAPP_TYPE_SIGN, BAIDUAPP_TYPE_SIGN, TOUTIAOAPP_TYPE_SIGN))}
+        {php $nav_top_fold[]=$nav}
+    {elseif in_array($nav['name'], array('store', 'help', 'workorder', 'custom_help')) || !$nav['is_system']}
+        {php $nav_top_tiled_other[] = $nav}
+        {if in_array($nav['name'], array('workorder'))}
+            {php $top_nav_shortcut[] = $nav}
+        {/if}
+    {elseif $nav['name'] =='message'}
+        {php $nav_top_message = $nav}
+        {php $top_nav_shortcut[] = $nav}
+    {else}
+        {php $nav_top_tiled_system[] = $nav}
+        {if !in_array($nav['name'], array('system', 'site', 'appmarket'))}
+            {php $top_nav_shortcut[] = $nav}
+        {/if}
+    {/if}
+    {if 'store' == $nav['name'] && user_is_founder($_W['uid'], true)}{php $nav_top_tiled_system[] = $nav}{/if}
+{/loop}
+{if $_W['iscontroller']}
+{loop $nav_top_tiled_system $key $nav}
+<!-- start应用入口和平台入口特殊处理active-->
+{if (FRAME == 'account' && $nav['name'] == 'platform') && !defined('IN_MODULE')}{php $nav['name'] = FRAME}{/if}
+{if defined('IN_MODULE') && $nav['name'] == 'module'}{php $nav['name'] = 'account'}{/if}
+<!-- end应用入口和平台入口特殊处理active-->
+<li class="js-w7-menu-{$nav_top_tiled_system[$key]['name']} {if FRAME == $nav['name']}active{/if}">
+    <a href="{if empty($nav['url'])}{php echo url('home/welcome/' . $nav['name']);}{else}{$nav['url']}{if $nav['title'] != '市场'}&iscontroller=1{/if}{/if}" {if !empty($nav['blank'])}target="_blank"{/if}><i class="{$nav['icon']}"></i>{$nav['title']}</a>
+</li>
+{/loop}
+{/if}

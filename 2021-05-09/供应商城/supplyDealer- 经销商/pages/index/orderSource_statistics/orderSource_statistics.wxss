@@ -1,0 +1,67 @@
+/*时间筛选*/
+.screen-time{
+    width:750rpx;
+    height: 166rpx;
+    background-color:#fff;
+    margin-bottom:20rpx;
+}
+
+.time-style{
+    width:750rpx;
+    height: 62rpx;
+    line-height: 62rpx;
+}
+
+.time-style:first-child{
+    margin-top:22rpx;
+}
+
+.time1{
+    color:#999;
+    margin:0 20rpx;
+    float: left;
+}
+
+.time2{
+    margin-left: 20rpx;
+    float: left;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.time2 text{
+    float: left;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.screen-btn{
+    position: absolute;
+    width:160rpx;
+    height: 54rpx;
+    line-height: 54rpx;
+    border:none!important;
+    border-radius: 0!important;
+    padding-left:0;
+    padding-right: 0;
+    margin:0;
+    top:56rpx;
+    right: 20rpx;
+    background-color:#27b2eb;
+    color:#fff;
+    font-size:26rpx;
+}
+/*时间筛选*/
+
+
+
+
+/*绘图*/
+
+
+canvas {
+    width: 750rpx;
+    height: 400px;
+}
+
+

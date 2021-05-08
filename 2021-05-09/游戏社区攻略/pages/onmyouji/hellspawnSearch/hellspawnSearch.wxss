@@ -1,0 +1,31 @@
+/* pages/onmyouji/hellspawnSearch/hellspawnSearch.wxss */
+
+.hot {
+  height: 210rpx;
+  background-color: #17212C;
+  padding: 10rpx;
+}
+
+.hot_title {
+  color: white;
+  font-size: medium;
+  display: block;
+}
+
+.hot_list {
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}
+
+.hot_item {
+  display: inline-block;
+  color: #99DDFF;
+  line-height: 50rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  background-color: #242E3F;
+  border-radius: 15rpx;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+  border:1px solid #67809F;
+}

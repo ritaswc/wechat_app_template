@@ -1,0 +1,94 @@
+@import "../../static/icon.wxss";
+page {
+    background-color: #f0f0f0;
+    -webkit-text-size-adjust: 100%;
+}
+.mod-my {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.mod-my .item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 80rpx;
+    padding: 0 30rpx;
+    background-color: #fff;
+    border-bottom: 1rpx solid #d2d2d2;
+}
+.mod-my .item .icon-main {
+    width: 52rpx;
+    height: 52rpx;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.mod-my .item .name {
+    font-size: 28rpx;
+    margin-left: 18rpx;
+    flex: 1;
+}
+.mod-my .item .info {
+    color: #ff8347;
+    font-size: 20rpx;
+    flex: 2;
+}
+
+/** 订单状态栏 **/
+.mod-my .orders .order-name {
+    font-size: 24rpx;
+    line-height: 50rpx;
+    border-color: #d2d2d2;
+    position: relative;
+    overflow: visible;
+}
+.mod-my .orders .order-count {
+    position: absolute;
+    top: -14rpx;
+    right: -14rpx;
+    color: #fff;
+    width: 32rpx;
+    height: 32rpx;
+    line-height: 34rpx;
+    font-size: 17rpx;
+    background-color: #FF8347;
+    border-radius: 32rpx;
+    border-bottom-left-radius: 0;
+}
+.mod-my .item .i-arrow-r {
+    font-size: 20rpx;
+}
+
+/** 账户 **/
+.mod-my .count .i-arrow-r {
+    display: none;
+}
+.mod-my .count .info {
+    text-align: right;
+    font-size: 28rpx;
+    color: rgb(81, 81, 81);
+}
+
+.mod-my .about,
+.mod-my .count {
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
+}
+
+.mod-my .count,
+.mod-my .about,
+.mod-my .collection {
+    border-bottom: none;
+}
+
+.mod-my .log-out {
+    height: 80rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    font-size: 28rpx;
+    color: #ff8347;
+}

@@ -1,0 +1,74 @@
+
+<view class="content">
+  <view class="group-title">
+    <view>
+      <text bindtap="changeType" data-type="group" wx:if="{{active == 0}}" class="active">拼团</text>
+      <text bindtap="changeType" data-type="group" wx:else>拼团</text>
+      <text bindtap="changeType" data-type="lowPrice" wx:if="{{active == 1}}" class="active">拼底价</text>
+      <text bindtap="changeType" data-type="lowPrice" wx:else>拼底价</text>
+    </view>
+  </view>
+    <!--导航-->
+  <view class="nav">
+    <scroll-view scroll-x="true" class="nav-left">
+      <view class="nav-left-category">
+        <view bindtap="loadGroupList" data-catid="0">
+          <i class="iCon" wx:if="{{currentCatId == 0}}" style="background:url('http://app.shizhencaiyuan.com/pintuan/img/recommend-tive.png');background-size:cover"></i>
+          <i class="iCon" wx:else style="background:url('http://app.shizhencaiyuan.com/pintuan/img/recommend.png');background-size:cover"></i>
+          全部
+        </view>
+          <block wx:for="{{navData}}" wx:key>
+            <view bindtap="loadGroupList" data-catid="{{item.cat_id}}">
+              <i class="iCon" wx:if="{{item.cat_id == currentCatId}}" style="background:url({{item.order_img}});background-size:cover"></i>
+              <i class="iCon" wx:else style="background:url({{item.info_img}});background-size:cover"></i>
+              {{item.cat_name}}
+            </view>
+          </block>
+        </view>
+    </scroll-view>
+    <view class="nav-right">
+      <i class="iCon iCon-arrow"></i>
+    </view>
+  </view>
+  <!--列表-->
+  <view class="list">
+    <block wx:for="{{goodsData}}" wx:key>
+      <view class="container-goods">
+        <view class="goods-manager">
+            <view class="goods-manager-left">
+                <view class="brand">
+                    <image src="{{item.images}}"></image>
+                </view>
+                <text>{{item.nickname}}</text>
+                <text class="group">团长</text>
+                <text>成团次数</text>
+                <text class="color-ba">{{item.groupnum}}</text>
+            </view>
+        </view>
+        <image src="{{item.info_img}}"></image>
+        <view class="main-goods">
+          <view class="main-goods-title">{{item.goods_name}}</view>
+          <view class="main-goods-info">
+            <view><text>TA</text> 的团 <text>已成团</text></view>
+            <view wx:if="{{item.group_end_time !== false}}">还差 <text>{{item.group_end_time}}</text> 结束</view>
+            <view wx:else><text>已结束</text></view>
+          </view>     
+          <view class="group-price">
+            <view>
+            <text>当前价格</text>
+            <text class="color-ba">¥{{item.goods_now_price}}</text>
+            <text>原价:{{item.goods_price}}</text>
+            </view>
+            <view bindtap="offered" data-groupid="{{item.group_id}}">
+            <text>去参团</text>
+            </view>
+          </view>   
+          <view class="group-state">
+            <view>已团出 <text class="color-ba">{{item.group_already_person}}</text> 件  </view>
+            <view wx:if="{{item.group_no_person > 0}}">成团还差 <text class="color-ba">{{item.group_no_person}}</text> 件</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

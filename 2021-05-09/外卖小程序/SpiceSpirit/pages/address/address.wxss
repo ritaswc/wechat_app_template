@@ -1,0 +1,57 @@
+page{
+    background-color: #f5f4f4;
+}
+.address-view{
+    margin-top: 20rpx;
+    border-bottom: solid #d8d8d8 1rpx;
+}
+.address-item{
+    width: 100%;
+    height: 130rpx;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-top: solid #d8d8d8 1rpx;
+}
+.select-view{
+    width: 80rpx;
+    height: 100%;
+}
+.select-view image{
+    width: 30rpx;
+    height: 30rpx;
+    margin: 50rpx 5rpx  50rpx 40rpx ;
+}
+.content-view{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    justify-content: center;
+    font-size: 30rpx;
+}
+.content-view .top{
+    margin-bottom: 5rpx;
+}
+.content-view .name{
+    font-size: 36rpx;
+}
+.content-view .phone{
+    color: #4a5054;
+    margin-left: 20rpx;
+}
+.content-view .address{
+    width: 550rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #4a5054
+}
+.edit-view{
+    width: 120rpx;
+    height: 100%;
+}
+.edit-view image{
+    width: 30rpx;
+    height: 30rpx;
+    margin: 50rpx 40rpx  50rpx;
+}

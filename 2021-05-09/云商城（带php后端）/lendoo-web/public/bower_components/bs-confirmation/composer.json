@@ -1,0 +1,32 @@
+{
+	"name": "tavicu/bs-confirmation",
+	"type": "library",
+	"keywords": ["bootstrap", "bootstrap dialog", "bootstrap confirmation", "confirmation"],
+	"description": "Confirmation plugin compatible with Twitter Bootstrap 3 extending Popover",
+	"homepage": "https://github.com/tavicu/bs-confirmation",
+	"version": "1.0.5",
+	"authors": [
+		{
+			"name": "Tavicu",
+			"homepage": "https://github.com/tavicu"
+		},
+		{
+			"name": "Nimit Suwannagate",
+			"homepage": "https://github.com/ethaizone"
+		},
+		{
+			"name": "jibe914",
+			"homepage": "https://github.com/jibe914"
+		}
+	],
+	"license": "MIT",
+	"suggest": {
+		"components/jquery": "1.8.*",
+		"twbs/bootstrap": "3.*"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.0-dev"
+		}
+	}
+}

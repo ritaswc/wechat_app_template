@@ -1,0 +1,70 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="block">
+            <view class="flex-row block-row">
+                <view class="flex-grow-1">
+                    收货人：{{order.name}}
+                </view>
+                <view class="flex-grow-0">
+                    {{order.mobile}}
+                </view>
+            </view>
+            <view>下单时间：{{order.addtime}}</view>
+        </view>
+        <view class="block">
+            <view class="flex-row block-row">
+                <view class="flex-grow-1">商品总额</view>
+                <view class="flex-grow-0" wx:if="{{order}}">￥{{order.goods_total_price}}</view>
+                <view class="flex-grow-0" wx:else>￥0.00</view>
+            </view>
+            <view class="flex-row block-row">
+                <view class="flex-grow-1">商品数量</view>
+                <view class="flex-grow-0">×{{order.num}}</view>
+            </view>
+            <view class="flex-row block-row">
+                <view class="flex-grow-1">优惠券优惠</view>
+                <view class="flex-grow-0">-￥{{order.coupon_sub_price}}</view>
+            </view>
+            <view class="flex-row block-row">
+                <view class="flex-grow-1">运费</view>
+                <view class="flex-grow-0">￥{{order.express_price}}</view>
+            </view>
+            <view class="flex-row block-row">
+                <view class="flex-grow-1">买家留言</view>
+                <view class="flex-grow-0">{{order.content}}</view>
+            </view>
+            <view class="block-footer">合计：
+                <text style="color: #ff4544">￥{{order.pay_price}}</text>
+            </view>
+        </view>
+        <view class="block" style="margin-bottom:200rpx;">
+            <view class="flex-row goods-item" wx:for="{{order.goods_list}}" wx:key="{{index}}">
+                <view class="flex-grow-0">
+                    <image mode="aspectFill" src="{{item.goods_pic}}" style="width: 156rpx;height: 156rpx"></image>
+                </view>
+                <view class="flex-grow-1" style="padding-left: 20rpx">
+                    <view style="margin-bottom: 10rpx">
+                        {{item.name}}
+                    </view>
+                    <view class="flex-row">
+                        <view class="flex-grow-1">
+                            <view style="font-size: 9pt;color: #888;margin-right: 20rpx;display: inline-block" wx:for="{{item.attr}}" wx:key="{{index}}">
+                                {{item.attr_group_name}}：{{item.attr_name}}
+                            </view>
+                        </view>
+                        <view class="flex-grow-0" style="text-align: right">
+                            <view>×{{item.num}}</view>
+                            <view style="color: #ff4544">￥：{{item.total_price}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="clerk" class="block flex-x-center" style="position:fixed;width:100%;bottom:-20rpx">
+            <view class="flex-y-center flex-x-center" style="width:100%;padding:10rpx 0;background:#ff4544;color:#fff;border-radius:10rpx;height:100rpx;">核销订单</view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>-->
+<!-- <view wx:for="{{src}}">
+<image class="" src="{{item}}" background-size="cover"></image>
+</view> -->
+<!-- 轮播图-->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{lunbo_src}}">
+    <swiper-item>
+      <image src="{{item}}" style="padding-left:25px;"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 轮播图-->
+
+<!-- 八个分类菜单-->
+<view class="section__ctn" wx:for="{{cate_src}}" wx:for-item="item" style=" float:left; padding-left:27px; padding-top:15px;">
+  <image style="width: 46px; height: 46px; float:left;" mode="{{item.mode}}" src="{{item.picture}}"></image>
+  <view class="section__title" style="font-size:15px;">{{item.text}}</view>
+</view>
+<!-- 八个分类菜单-->
+
+<!-- 广告-->
+<image src="{{ad_src1}}" style="width:370px;height:145px; padding-top:15px;"></image>
+<image src="{{ad_src2}}" style="width:370px;height:145px; padding-top:15px;"></image>
+<image src="{{ad_src3}}" style="width:370px;height:145px; padding-top:15px;"></image>
+<!-- 广告-->
+
+<view style="padding-top:15px; padding-bottom:15px; padding-left:25px;">热门分类</view>
+
+<!-- 轮播图-->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{lunbo_src2}}">
+    <swiper-item>
+      <image src="{{item}}" style="width:375px;"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 轮播图-->
+
+<view class="tc" wx:for="{{result}}" wx:for-item="item" >
+<!--  <view class="tc_name">{{item.text}}</view>-->
+<navigator url="../goods/goods_details" hover-class="navigator-hover">
+<!-- <navigator url="../goods/goods_details" redirect hover-class="other-navigator-hover">-->
+<image class="tc_image" src="{{item.src}}"></image>
+</navigator>
+</view>
+
+<!-- 新品上市 -->
+<text style="margin-top:65px; padding-bottom:15px; padding-left:25px;">新品上市</text>
+<image class="new_goods" src="{{new_src}}"></image>
+<view wx:for="{{new_srcs}}" wx:for-item="item">
+  <image src="{{item}}" class="new_src"></image>
+</view>
+
+<image src="{{end_src1}}" class="end_src1"></image>
+<image src="{{end_src2}}" class="end_src2"></image>
+<image src="{{end_src3}}" class="end_src3"></image>
+
+<image src="{{footer_src}}"class="footer_src"></image>

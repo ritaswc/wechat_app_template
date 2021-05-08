@@ -1,0 +1,24 @@
+/* pages/unAuth/unAuth.wxss */
+
+.unauth {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.warn {
+    padding-top: 200rpx;
+}
+
+.introduction {
+
+    width: 100%;
+    line-height: 1.5em;
+    margin-top: 360rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+

@@ -1,0 +1,39 @@
+<!--step/detail/detail.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class='top'>
+            <image src='{{__wxapp_img.step.detail_bg.url}}'></image>
+            <view class='detail-name'>账户{{store.option.step.currency_name?store.option.step.currency_name:'活力币'}}</view>
+            <view class='detail-number'>{{number}}
+                <text>个</text>
+            </view>
+        </view>
+        <view class='tab'>
+            <view class='tab-list'>
+                <text onTap="tab" data-num='1' class="{{_num==1?'active':''}}">收入</text>
+            </view>
+            <view class='tab-list'>
+                <text onTap="tab" data-num='2' class="{{_num==2?'active':''}}">支出</text>
+            </view>
+        </view>
+        <view class='list' a:for="{{list}}" a:key="{{item}}">
+            <view class='list-left'>
+                <view class='name' a:if="{{item.type == 0}}">步数兑换</view>
+                <view class='name' a:if="{{_num == 2 && item.type == 1}}">{{item.name}}</view>
+                <view class='name' a:if="{{_num == 1 && item.type == 1}}">订单取消</view>
+                <view class='name' a:if="{{item.type == 2}}">{{item.activity.name}}</view>
+                <view>{{item.create_time}}</view>
+            </view>
+            <view class='list-right'>
+                <text wx-if="{{_num == 1}}">+</text>
+                <text wx-if="{{_num == 2}}">-</text>
+                <text>{{item.step_currency}}</text>
+            </view>
+        </view>
+        <view class='loading' wx-if="{{loading}}">正在加载中...</view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

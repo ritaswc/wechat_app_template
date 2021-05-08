@@ -1,0 +1,33 @@
+page {
+	background:#ff4544;
+}
+.lottery-btn {
+	color:#ffffff;
+	background:#ff4544;
+	height:56rpx;
+	width:160rpx;
+	border-radius:28rpx;
+}
+.no-content{
+    color: #888;
+    padding: 100rpx 0 0 0;
+    text-align: center;
+}
+button#_sum {
+    background: none !important;
+    height: auto !important;
+    width: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: inherit !important;
+    font-family: inherit !important;
+    color: inherit !important;
+    text-align: inherit;
+}
+
+button#_sum:before, button#_sum:after {
+    border-radius: 0 !important;
+    border: none !important;
+}

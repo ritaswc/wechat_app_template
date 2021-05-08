@@ -1,0 +1,74 @@
+<view class="container">
+	<view class="course-basic-info">
+		<view class="course-info-text">
+			<view class="course-name">
+				{{course.name}}
+			</view>
+			<view class="course-type">
+				分类: {{course.category}}
+			</view>
+			<view class="course-group">
+				学组：{{course.specialObj}}
+			</view>
+		</view>
+		<view class="course-image">
+			<image src="../../images/kecheng.jpg" />
+		</view>
+	</view>
+	<view class="study-course-btn-wrapper">
+		<view class="study-course-btn" bindtap="playFirstVideo">
+			学习课程
+		</view>
+	</view>
+	<view class="tab-wrapper">
+	    <view class="swiper-tab tab-list">
+            <view class="swiper-tab-list2 tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="switchNav">课程简介</view>
+            <view class="swiper-tab-list2 tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="switchNav">课程目录</view>
+            <!--
+            <view class="swiper-tab-list2 tab-item  {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="switchNav">课程评分</view>
+            -->
+        </view>
+        <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 200}}px" bindchange="bindChange">
+            <swiper-item>
+				<view class="course-summary">
+					{{course.content}}
+				</view>
+            </swiper-item>
+            <swiper-item>
+				<scroll-view scroll-y="true" style="height:{{winHeight - 200}}px">
+					<view class="courseware-list">
+					    <block wx:for="{{course.courseware}}" wx:key="{{index}}">
+							<navigator url="../videoplayer/index?videoUrl={{item.mp4}}&name={{item.name}}&content={{item.content}}&unit={{item.unit}}&teacher={{item.teacher}}">
+								<view class="courseware-item">
+									<view class="courseware-info">
+										<view class="courseware-name">
+											课件：{{item.name}}
+										</view>
+										<view class="courseware-teacher">
+											讲师：{{item.teacher}}
+										</view>
+									</view>
+									<!--
+									<view class="courseware-study-btn" data-index="{{index}}" bindtap="playVideo">
+										进入学习
+									</view>
+									-->
+								</view>
+							</navigator>
+					    </block>
+					</view>
+				</scroll-view>
+            </swiper-item>
+            <!--
+            <swiper-item>
+                <view class="star-rating">
+                    <block class="star-list" wx:for="{{starImages}}" wx:key="{{index}}">
+                        <image class="star-item" data-gindex="{{index}}" src="{{item}}" bindtap="changeStar" />
+                    </block>
+                    <view class="star-rating-btn" bindtap="submitRating">确认</view>
+                </view>
+            </swiper-item>
+            -->
+        </swiper>
+    </view>
+</view>

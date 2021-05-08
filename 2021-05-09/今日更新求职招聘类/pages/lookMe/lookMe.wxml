@@ -1,0 +1,27 @@
+<!--pages/lookMe/lookMe.wxml-->
+<view class="lookMe_wrap">
+    <block wx:for="{{company}}">
+        <view class="wrap" bindtap="goCompanyList" data-c_userid="{{item.c_userid}}">
+            <view class="left">
+                <image class="img1" src="{{item.company_logo}}"></image>
+            </view>
+            <view class="middle">
+                <view class="top">{{item.company_name}}</view>
+                <view class="bottom">
+                    <view><image class="img3"  src="img/_01.png"></image><text>{{item.current_location}}</text></view>
+                    <view><image class="img3"  src="img/_03.png"></image><text>{{item.company_industry}}</text></view>
+                    <view><image class="img3"  src="img/_02.png"></image><text>{{item.star}}</text></view>
+                </view>
+            </view>
+            <view class="right">
+                <image class="img2" src="{{lookimg}}"></image>
+                <view>企业详情</view>
+            </view>
+        </view>
+    </block>
+</view>
+<!--没有数据-->
+<view wx:if="{{nodeliver}}" class="no_data">
+    <image class="img4" src="../deliver/image/deliver_01.png"></image>
+    <text>快去投递简历吧,获取更多机会!</text>
+</view>

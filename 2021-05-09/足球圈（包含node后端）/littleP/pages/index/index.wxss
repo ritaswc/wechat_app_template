@@ -1,0 +1,142 @@
+/**index.wxss**/
+
+@import 'iconfont.wxss'
+
+
+.container{
+  background: #0dc441;
+  width: 100%;
+  height: 103rpx;
+  text-align: center;
+  position: fixed;
+  z-index: 20;
+}
+.container .left,.container .right{
+    width: 50%;
+    float: left;
+}
+.container text{
+    display: inline-block;
+    width: 134rpx;
+    height: 56rpx;
+    background: #3dd067;
+    color: #a3e9b7;
+    float: right;
+    font-size: 26rpx;
+    margin-top: 23rpx;
+    text-align: center;
+    line-height: 56rpx;
+    border-bottom-left-radius: 26rpx;
+    border-top-left-radius:  26rpx;
+}
+.container .head_select{
+    background: #64d985;
+    color: #fff;
+}
+.container .right text{
+    float: left;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 26rpx;
+    border-top-right-radius: 26rpx;  
+}
+.nav{
+    width: 100%;
+    height: 82rpx;
+    display: flex;
+    font-size: 30rpx;
+    position: fixed;
+    top: 103rpx;
+    z-index: 20;
+    background: #fff;
+}
+.nav view{
+    flex:1;
+    float: left;
+    line-height: 82rpx;
+    text-align: center;
+    color: #666;
+    border-bottom: 1rpx solid #d9d9d9;
+}
+.nav .nav_select{
+    color: #0dc441;
+    border-bottom: 5rpx solid #0dc441;
+}
+.main{
+    position: absolute;
+    top: 185rpx;
+    bottom: 0;
+    width: 100%;
+}
+
+.main view text{
+   border-top: 1rpx solid #e5e5e5;
+   color: #333;
+   font-size: 27rpx;
+   line-height: 42rpx;
+   text-align: center;
+   padding: 12rpx 24rpx;
+}
+.main view image{
+    width: 369rpx;
+    height: 300rpx;
+    display: block;
+}
+
+swiper{
+    height: 100%;
+}
+swiper-item{
+    /*overflow: auto;*/
+    height: 100%;
+    padding-bottom: 120rpx;
+    box-sizing: border-box;
+}
+.iScroll .list{
+    float: left;
+    border:1rpx solid #e5e5e5;
+    margin-top: 12rpx;
+    width: 369rpx;
+}
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 102rpx;
+    border-top: 1rpx solid #d9d9d9;
+    color: #d1d1d1;
+    font-size: 27rpx;
+    background: #fff;
+    z-index: 20;
+}
+.footer text{
+   text-decoration: none;
+   color: #ccc;
+}
+.footer>view{
+    margin-top: 12rpx;
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+.footer #camera{
+    height: 119rpx;
+    width: 119rpx;
+    margin-top: -22rpx;
+    border:2rpx solid #dedede;
+    border-radius: 50%;
+    line-height: 105rpx;
+    background: #fff;
+}
+.footer #camera view{
+    font-size: 62rpx;
+}
+.footer>view icon:first-child{
+    font-size: 37rpx;
+}
+.footer .foo_select{
+    color: #0dc441;
+}
+.footer .foo_select a{
+    color: #0dc441;
+}

@@ -1,0 +1,38 @@
+{% extends "partials/base.html" %}
+
+{% block content %}
+  <div class="container mt20">
+    {% include "partials/flash.html" %}
+  </div>
+
+  <div class="container mt40" style="margin-bottom: 100px">
+    <form class="form-signin" action="/signup/" method="post">
+      {% csrf_token %}
+      <h4 class="form-signin-heading">注册</h4>
+      <input autofocus="autofocus" class="textinput textInput form-control" id="id_email" name="email" placeholder="邮箱(必填)" type="email" required="" {% if form.email.value %} value={{ form.email.value }} {% endif %} >
+      <input class="textinput textInput form-control" id="id_password" name="password" placeholder="密码(必填)" type="password" required="" {% if form.password.value %} value={{ form.password.value }} {% endif %}>
+
+      <div class="form-group mt10">
+        <label for={{ form.captcha.auto_id }}></label>
+        {{ form.captcha }}
+        <small id="hint_id_captcha" class="text-muted">如果看不清验证码，请点击图片刷新</small>
+      </div>
+
+      <div class="form-group mt10">
+        <button type="submit" class="btn btn-lg btn-primary btn-block"><span class="fa fa-user-plus mr10"></span>注册</button>
+        <input type="hidden" name="submit" value="submit" />
+      </div>
+    </form>
+  </div>
+
+  <script>
+    $('img.captcha').on('click', function () {
+      var $form = $(this).parents('form')
+      $.getJSON('/captcha/refresh/', {}, function (json) {
+        $form.find('input[name="captcha_0"]').val(json.key)
+        $form.find('img.captcha').attr('src', json.image_url)
+      })
+      return false
+    });
+  </script>
+{% endblock content %}

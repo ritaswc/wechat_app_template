@@ -1,0 +1,8 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\jianyuejizhang\bin\jianyuejizhang.dll.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\jianyuejizhang\bin\jianyuejizhang.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\jianyuejizhang\bin\jianyuejizhang.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\jianyuejizhang\bin\Utils.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\jianyuejizhang\bin\Utils.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\jianyuejizhang\obj\Debug\jianyuejizhang.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\jianyuejizhang\obj\Debug\jianyuejizhang.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\jianyuejizhang\obj\Debug\jianyuejizhang.pdb

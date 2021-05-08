@@ -1,0 +1,47 @@
+<view class="search_wrap">
+    <view class="s_input">
+        <view class="inputbox">
+            <icon color="#fff" type="search" size="20"/>
+            <input auto-focus="true"  bindinput="user_import" placeholder-class="placeholder" placeholder="请输入职位名或者公司名" />
+        </view>
+    </view>
+    <view class="s_s_list">
+        <navigator url="../workplace/workplace">
+            <view class="title">
+                <view class="s_til">工作地点</view>
+                <view class="s_cont">
+                    <text class="has_select">{{action}}</text>
+                    <image class="image_jiantou" src="image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <navigator url="../worktype/worktype">
+            <view class="title">
+                <view class="s_til">职位类别</view>
+                <view class="s_cont">
+                    <text class="has_select">{{position_type}}</text>
+                    <image class="image_jiantou" src="image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </navigator>
+        <button bindtap="search" class="s_search">搜索</button>
+    </view>
+
+
+
+    <view class="s_his"><image class="iamge_search" src="image/_03.png"></image>最进搜索记录</view>
+    <view wx:if="{{search_history.length==0?false:true}}" class="s_his_box">
+        <block wx:for="{{search_history}}">
+            <view class="title" bindtap="history_search" data-search_id="{{item.search_id}}">
+                <view class="s_til">
+                {{item.position_name}}
+                </view>
+                <view class="s_cont">
+                    <text class="has_select">约{{item.company_num}}个职位</text>
+                    <image class="image_jiantou" src="image/jiantou_tou.png"></image>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view wx:if="{{search_history.length==0?false:true}}" bindtap="clear_his" class="clear_his">清空搜索记录</view>
+</view>

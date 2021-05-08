@@ -1,0 +1,32 @@
+<swiper indicator-dots="true"
+  autoplay="true" interval="5000" duration="1000" style="height:{{bannerHeight}}px;">
+  <block wx:for="{{banner}}" wx:key="">
+    <swiper-item>
+      <image src="{{item}}" mode="aspectFill" class="swiper-image" bindtap="showGoods"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="func-area">
+	<view bindtap="showCategories">
+		<image src="../../images/icon_all.png" mode="aspectFill" class="orange" />
+		<text>全部分类</text>
+	</view>
+	<view bindtap="showOrders">
+		<image src="../../images/icon_shopping.png" mode="aspectFill" class="blue" />
+		<text>我的订单</text>
+	</view>
+</view>
+<!-- hot goods -->
+<view class="container-goods">
+	<text class="caption">热卖推荐</text>
+	<view class="main-goods">
+		<view class="single-goods" wx:for="{{goods}}" wx:key="" bindtap="showDetail" data-index="{{index}}">
+			<image class="avatar" src="{{item.avatar}}" mode="aspectFill" />
+			<text class="title">{{item.title}}</text>
+			<view class="summary">
+				<text class="price">￥{{item.price}}</text>
+				<text class="sale">已售99件</text>
+			</view>
+		</view>
+	</view>
+</view>

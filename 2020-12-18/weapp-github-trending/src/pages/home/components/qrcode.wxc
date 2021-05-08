@@ -1,0 +1,70 @@
+<template>
+     <wxc-popup class="J_Popup" animation-mode="left" align="center">
+        <view class="box">
+            <view class="right" bind:tap="handleShowQrcode">
+                <view class="qrcode"></view>
+            </view>
+            <view class="left">
+                <text>科技 | 技术</text>
+            </view>
+        </view>
+    </wxc-popup>
+</template>
+
+<script>
+export default {
+config: {
+    usingComponents: {
+      'wxc-popup': '@minui/wxc-popup'
+    }
+  },
+  data: {},
+  methods: {
+    show() {
+      let popupComponent = this.selectComponent('.J_Popup');
+      popupComponent && popupComponent.show();
+    },
+    hide() {
+      let popupComponent = this.selectComponent('.J_Popup');
+      popupComponent && popupComponent.hide();
+    },
+    handleShowQrcode () {
+        wx.previewImage({
+            urls: ['https://mmbiz.qpic.cn/mmbiz_jpg/Ziac3JNhwAiamZicnibjSQaxlO5KzHECIc6XPaVb3pUywUrLWMgvSenzFqwgWCIkibj5oemxTxXp3M5o44ojj0x54icw/0?wx_fmt=jpeg']
+        })
+    }
+  }
+}
+</script>
+
+<style lang="less">
+    .box {
+        display: flex;
+        width: 100%;
+        height: 300rpx;
+        background-color: #fff;
+        .right {
+            height: 100%;
+            width: 300rpx;
+            .qrcode {
+                margin: 50rpx;
+                background-image: url('https://mmbiz.qpic.cn/mmbiz_jpg/Ziac3JNhwAiamZicnibjSQaxlO5KzHECIc6XPaVb3pUywUrLWMgvSenzFqwgWCIkibj5oemxTxXp3M5o44ojj0x54icw/0?wx_fmt=jpeg');
+                background-size: cover;
+                height: 200rpx;
+                width: 200rpx;
+            }
+        }
+        .left {
+            flex-grow: 1;
+            position: relative;
+            text {
+                position: absolute;
+                font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+                font-size: 40rpx;
+                top: 40%;
+                left: 40%;
+            }
+        }
+    }
+
+</style>

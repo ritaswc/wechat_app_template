@@ -1,0 +1,62 @@
+<scroll-view style="height:{{wHeight}}px" scroll-y="{{true}}">
+
+  <view class="search-items">
+    <view class="items">
+      <view class="img"><image src="{{imageUrl}}"/></view>
+      <view class="detail">
+        <view class="detail-title" wx:if="{{title != ''}}">{{title}}</view>
+        <view class="detail-express">
+          <text class="{{title != '' ? '' : 'type-text'}}">{{expressType ? expressType : '自动匹配'}}</text>
+        </view>
+        <view class="detail-express">
+          <text>快递单号：</text>
+          <text class="number">{{expressNumber}}</text>
+        </view>
+        <view class="detail-express">
+          <!-- <text>商品数量：</text>
+          <text class="number">共{{amount}}件</text> -->
+          <text>管理状态：</text>
+          <text class="number">{{expressChangeList[0].list[0].time}}  {{expressChangeList[0].list[0].acceptStation}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view class="mar"></view>
+
+  <view class="items-list">
+    <view class="lists-title {{state === 1 ? 'bg-green' : (state === 3 ? 'bg-gray' : 'bg-yellow')}}">
+      <image src="../../images/{{state === 1 ? 'green' : (state === 3 ? 'gray' : 'yellow')}}.png"></image>
+      <text>{{expressStatusText[state]}}</text>
+    </view>
+
+    <view class="lists" wx:for="{{expressChangeList}}" wx:key="{{items.date}}" wx:for-item="items" wx:for-index="indexs">
+      <view class="list" wx:for="{{items.list}}" wx:key="{{item.time}}" wx:for-item="item" wx:for-index="index">
+        <view class="time"><text wx:if="{{index === 0}}">{{items.date}}</text><text style="color: #999;line-height: 36rpx;" wx:if="{{index === 0}}">{{items.week}}</text></view>
+        <view class="{{(index === 0 && indexs === 0) ? 'bg text' : 'text'}}"><text>{{item.time}}  </text><text>  {{item.acceptStation}}</text></view>
+      </view>
+    </view>
+
+    <view class="lists">
+      <view class="list">
+        <view class="time"> </view>
+        <view class="text ouer-msg">
+            <text>本信息由</text>
+            <text class="ouer">偶尔公司</text>
+            <text>提供</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="mar"></view>
+  <view class="setTop">
+    <view class="wrap">
+      <view class="text"><text>置顶此快递</text></view>
+      <view class="switch"><switch checked="{{isTop}}" type="switch" bindchange="markTop"/></view>
+    </view>
+  </view>
+  <view class="mar" style="height: 40rpx;"></view>
+  
+</scroll-view>

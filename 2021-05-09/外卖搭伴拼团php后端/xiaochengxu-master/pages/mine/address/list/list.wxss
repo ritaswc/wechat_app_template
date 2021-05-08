@@ -1,0 +1,31 @@
+/* pages/mine/address/address.wxss */
+
+.content {
+    background: #f0eff5;
+    height: 100vh;
+}
+.content .address-title{
+    padding: 20rpx 30rpx;
+    text-align: center;
+    background: white;
+    margin-bottom: 20rpx;
+}
+.content .address-list .address-item{
+    margin-bottom: 20rpx;
+    background: white;   
+}
+.content .address-list .address-item .address-item-top{
+    padding: 20rpx;
+    border-bottom: 2rpx solid #ddd;
+}
+.content .address-list .address-item .address-item-top view:first-child{
+    padding-bottom: 20rpx;
+}
+.content .address-list .address-item .address-item-bottom{
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx;
+}
+.content .address-list .address-item .address-item-bottom .address-item-bottom-right text{
+    padding-left: 20rpx;
+}

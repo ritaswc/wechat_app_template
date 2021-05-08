@@ -1,0 +1,319 @@
+<!--经营性损失统计-->
+<view class="container">
+    <!--状态-->
+    <view class="state2">
+        <view class="state2-text {{day ? 'state2-active' :''}}" bindtap="clickDay">日损失统计</view>
+        <view class="state2-text {{detail ? 'state2-active' :''}}" bindtap="clickDetail">损失详细统计</view>
+    </view>
+
+    <!--时间选择器-->
+    <view class="screen-time">
+        <view class="time-style">
+            <text class="time1 section__title">起始时间</text>
+            <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                <view class="picker">
+                {{date}}
+                </view>
+            </picker>
+        </view>
+        <view class="time-style">
+            <text class="time1 section__title">结束时间</text>
+            <picker mode="date" value="{{date2}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange2">
+                <view class="picker">
+                {{date2}}
+                </view>
+            </picker>
+        </view>
+        <button class="screen-btn">筛选</button>
+    </view>
+
+    <view class="order-statistics">
+        <!--日损失统计-->
+        <view class="statistics-detail daystatis" wx:if="{{day}}">
+            <view class="table table-6">
+                <view class="tr bg-w">
+                    <view class="th">日期</view>
+                    <view class="th">盘点数</view>
+                    <view class="th">盘点件数</view>
+                    <view class="th">损失</view>
+                    <view class="th">收益</view>
+                    <view class="th">合计收益</view>
+                </view>
+                <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                 <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                 <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td">17-12-28</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                
+                            
+                <!--空行-->
+                <view class="tr hrline"></view>
+                <!--总计-->
+                <view class="tr total">
+                    <view class="td">总计</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+            </view>
+        </view>
+        <!--损失详细统计-->
+        <scroll-view class="statistics-detail detailstatis" style="border-bottom:2rpx solid #ccc"  wx:else>
+            <view class="table table-6">
+                <view class="tr bg-w">
+                    <view class="th">日期</view>
+                    <view class="th">盘点编号</view>
+                    <view class="th">盘点数量</view>
+                    <view class="th">损失</view>
+                    <view class="th">收益</view>
+                    <view class="th">合计收益</view>
+                </view>
+                <view class="tr">
+                    <view class="td">
+                        <navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator>
+                    </view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td"><navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator></view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td"><navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator></view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td"><navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator></view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td"><navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator></view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td"><navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator></view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td"><navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator></view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td">
+                        <navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator>
+                    </view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td"><navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator></view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td"><navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator></view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td"><navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator></view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td"><navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator></view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td"><navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator></view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+                <view class="tr">
+                    <view class="td"><navigator class="order-nav" url="/pages/index/loss_statistics/check_detail/check_detail">17-12-28</navigator></view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+            
+                <!--空行-->
+                <view class="tr hrline"></view>
+                <!--总计-->
+                <view class="tr total">
+                    <view class="td">总计</view>
+                    <view class="td">1</view>
+                    <view class="td">10</view>
+                    <view class="td">100</view>
+                    <view class="td">1000</view>
+                    <view class="td">10000</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

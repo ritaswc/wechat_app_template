@@ -1,0 +1,36 @@
+.page-view{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.page-view .logo{
+    width: 300rpx;
+    height: 70rpx;
+    margin-top: 45rpx;
+    margin-bottom: 60rpx;
+}
+.text-view{
+    margin-left:35rpx;
+    margin-right: 35rpx;
+    text-indent: 50rpx;
+}
+.text-view text{
+    font-size: 28rpx;
+    line-height: 45rpx;
+}
+
+.pic-view{
+    margin-left: 30rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20rpx;
+}
+.pic-view image{
+    background-color: blue;
+    width: 200rpx;
+    height: 150rpx;
+    margin-left:20rpx;
+    margin-top:20rpx;  
+}

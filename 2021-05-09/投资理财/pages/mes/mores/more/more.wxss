@@ -1,0 +1,24 @@
+/* pages/me/me.wxss */
+.more_clounme{
+    height: 38px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.more_imges{
+    height: 24px;
+    width: 24px;
+    margin-left: 16px;
+    vertical-align: middle;
+ 
+}
+
+.more_text{
+    font-size: 14px;
+    color: #333333;
+    margin-left: 16px;
+    padding: 0px;
+}
+

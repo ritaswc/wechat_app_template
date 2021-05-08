@@ -1,0 +1,128 @@
+/* step/log/log.wxss */
+
+.top {
+    height: 408rpx;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 9pt;
+    position: relative;
+}
+
+.top image {
+    height: 408rpx;
+    width: 100%;
+}
+
+.total {
+    position: absolute;
+    top: 80rpx;
+    width: 100%;
+}
+
+.total-num {
+    font-size: 27pt;
+    font-family: 'DIN';
+    margin-bottom: 18rpx;
+}
+
+.data {
+    position: absolute;
+    bottom: 80rpx;
+    width: 100%;
+}
+
+.location {
+    float: left;
+    width: 33.33%;
+}
+
+.data-num {
+    font-size: 16pt;
+    font-family: 'DIN';
+    margin-bottom: 9rpx;
+}
+
+.log {
+    height: 64rpx;
+    color: #999;
+    font-size: 11pt;
+    padding-left: 24rpx;
+    background-color: #f7f7f7;
+    line-height: 64rpx;
+}
+
+.list {
+    height: 254rpx;
+    width: 100%;
+    background-color: white;
+    color: #999;
+    font-size: 11pt;
+    padding: 28rpx 24rpx;
+    margin-bottom: 20rpx;
+}
+
+.list-title {
+    height: 48rpx;
+    width: 100%;
+}
+
+.title-left {
+    float: left;
+    color: #353535;
+    font-size: 11pt;
+}
+
+.wait {
+    height: 48rpx;
+    width: 94rpx;
+    background-color: #feeeee;
+    color: #ff4544;
+    font-size: 9pt;
+    line-height: 48rpx;
+    text-align: center;
+    float: right;
+}
+
+.finish {
+    height: 48rpx;
+    width: 94rpx;
+    background-color: #fff2e2;
+    color: #ff9d1e;
+    font-size: 9pt;
+    line-height: 48rpx;
+    text-align: center;
+    float: right;
+}
+
+.loser {
+    height: 48rpx;
+    width: 94rpx;
+    background-color: #eee;
+    color: #999;
+    font-size: 9pt;
+    line-height: 48rpx;
+    text-align: center;
+    float: right;
+}
+
+.list-body {
+    width: 50%;
+    padding: 40rpx 0 50rpx;
+    float: left;
+    text-align: center;
+}
+
+.list-num {
+    font-size: 17pt;
+    color: #ff9d1e;
+    font-family: 'DIN';
+    margin-bottom: 16rpx;
+}
+
+.loading {
+    color: #353535;
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+}

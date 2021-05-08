@@ -1,0 +1,16 @@
+
+<scroll-view class="list" scroll-y="true" style="height: {{windowHeight - 50}}px;" bindscrolltolower="loadMore" enable-back-to-top="true">
+	
+    <view class="{{index % 2 ? 'item-right' : 'item'}}" wx:for="{{list}}">
+    	<view class="img-wrap">
+    		<image bindtap="previewImage" data-src="{{item.imgs[0]}}" data-imgs="{{item.imgs}}" src="{{item.imgs[0]}}?imageView2/1/w/176/h/240"></image>
+        	<view class="count">共{{item.imgs.length}}张</view>
+    	</view>
+        <view class="name"><text>{{item.name}}</text></view>
+    </view>
+    <view class="loading">{{hasMore ? '加载中...' : '已全部加载'}}</view>
+</scroll-view>
+
+<scroll-view bindtap="changeType" scroll-x="true" class="menu">
+	<view wx:for="{{typeMap}}" class="menu-item {{currentType == index ? 'active' : ''}}" data-type="{{index}}">{{item}}</view>
+</scroll-view>

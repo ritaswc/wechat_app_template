@@ -1,0 +1,5 @@
+<view class="header">
+    <view a:if="{{__platform == 'wx' && store.is_official_account == 1 && __is_offical_account}}">
+        <official-account onLoad='relevanceSuccess' onError='relevanceError'></official-account>
+    </view>
+</view>

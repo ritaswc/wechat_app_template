@@ -1,0 +1,178 @@
+<template name="wxSortPickerView">
+  <scroll-view class="wxSortPickerViewList" scroll-y="true" style="height: {{wxSortPickerData.view.scrollHeight}}px;" bindscrolltoupper="wxSortPickerViewUpper" bindscrolltolower="wxSortPickerViewLower" bindscroll="wxSortPickerViewScroll" scroll-into-view="{{wxSortPickerData.wxSortPickerViewtoView}}"
+  scroll-top="{{wxSortPickerData.wxSortPickerViewScrollTop}}">
+    <block wx:for="{{wxSortPickerData.textData}}" wx:for-item="item" wx:key="">
+      <view id="{{item.tag}}" class="wxSortPickerViewTag">
+
+        <!--进行判断-->
+        {{item.tag}}
+      </view>
+      <template is="wxSortPickerViewItem" data="{{item}}" />
+
+      <!--这边就可以进行数据样式的编写-->
+    </block>
+
+    <!--</view>-->
+  </scroll-view>
+  <template is="wxSortPickerViewTemTags" />
+</template>
+<template name="wxSortPickerViewItem">
+  <block wx:for="{{item.textArray}}" wx:for-item="child" wx:for-index="i">
+    <navigator url="../result/result?id={{child[0].lottery_id}}&name={{child[0].area}}&tag={{child[0].tag}}">
+      <view class="item">
+        <view class="item-left">
+
+          <!--logo大小修改-->
+          <view wx:if="{{child[0].lottery_id == 27}}">
+            <view class="img-size_2">
+              <view class="lottery_logo">
+                <view class="lottery_logo logo{{child[0].lottery_id}}">
+                </view>
+              </view>
+            </view>
+          </view>
+          <view wx:else>
+            <view class="img-size">
+              <view class="lottery_logo">
+                <view class="lottery_logo logo{{child[0].lottery_id}}">
+                </view>
+              </view>
+            </view>
+          </view>
+          <view data-id="{{child[0].lottery_id}}" class="names">{{child[0].area}}</view>
+        </view>
+        <view class="item-right">
+          <view wx:if="{{child[0].lottery_id != 15 }}">
+            <span class="item-span">
+                    {{child[0].issue}}期     {{child[0].date}} [{{child[0].week}}]
+                  </span> 
+          </view>
+          <view wx:else>
+            <span class="item-span-2">
+                    {{child[0].issue}}期     {{child[0].date}} [{{child[0].week}}]
+                  </span> 
+          </view>
+          <view class="item-span-down">
+            <view wx:if="{{child[0].lottery_id == 4 || child[0].lottery_id == 5 || child[0].lottery_id == 17 || child[0].lottery_id == 23}}">
+              <view class="item-span-down" wx:for="{{  child[0].codes}}" wx:for-index="id" wx:for-item="one">
+                <template is="standard_1" data="{{one}}" />
+              </view>
+            </view>
+            <view wx:if="{{child[0].lottery_id == 11 || child[0].lottery_id == 12 || child[0].lottery_id == 13 }}">
+              <view class="item-span-down" wx:for="{{  child[0].codes}}" wx:for-index="id" wx:for-item="one">
+
+                <!--{{one}}-->
+                <template is="standard_2" data="{{one}}" />
+              </view>
+            </view>
+            <view wx:if="{{child[0].lottery_id == 10 || child[0].lottery_id == 14 || child[0].lottery_id == 20 || child[0].lottery_id == 22 || child[0].lottery_id == 3 ||child[0].lottery_id == 6|| child[0].lottery_id == 7 || child[0].lottery_id == 9 || child[0].lottery_id == 1  }}">
+              <view class="item-span-down" wx:for="{{  child[0].codes}}" wx:for-index="id" wx:for-item="one">
+                <template is="standard_3" data="{{one}}" />
+              </view>
+            </view>
+            <view wx:if="{{child[0].lottery_id == 24 || child[0].lottery_id == 42 || child[0].lottery_id == 43   }}">
+              <view class="item-span-down" wx:for="{{  child[0].codes}}" wx:for-index="id" wx:for-item="one">
+                <template is="standard_4" data="{{one}}" />
+              </view>
+            </view>
+            <view wx:if="{{child[0].lottery_id == 27 }}">
+              <view class="item-span-down" wx:for="{{  child[0].codes}}" wx:for-index="id" wx:for-item="one">
+                <template is="standard_5" data="{{one}}" />
+              </view>
+            </view>
+            <view wx:if="{{child[0].lottery_id == 21 }}">
+              <view class="item-span-down" wx:for="{{  child[0].codes}}" wx:for-index="id" wx:for-item="one">
+                <template is="standard_6" data="{{one}}" />
+              </view>
+            </view>
+            <view wx:if="{{child[0].lottery_id == 15 }}">
+              <view class="item-span-down" wx:for="{{  child[0].codes}}" wx:for-index="id" wx:for-item="one">
+              
+
+                <template is="standard_7" data="{{id,one}}" />
+               
+             
+
+
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</template>
+<template name="wxSortPickerViewTemTags">
+  <scroll-view style="width:20px;height: {{wxSortPickerData.view.scrollHeight}}px;" class="wxSortPickerViewTemTags">
+  </scroll-view>
+</template>
+
+<!--17,23,4,5-->
+<template name="standard_1" class="code-num">
+  <span class="code-num red"> {{one}} </span> 
+</template>
+
+<!--11,12,13-->
+<template name="standard_2" class="code-num">
+  <span wx:if="{{one != 19 && one != 20}}">
+    <span class="code-num blue">{{one}}</span> 
+  </span> 
+  <span wx:else>
+    <span class="code-num red">{{one}}</span> 
+  </span> 
+</template>
+
+<!--10,14,20,22,3,6,7,9,1-->
+<template name="standard_3" class="code-num">
+  <span class="code-num blue">{{one}}</span> 
+</template>
+
+<!--24,42,43-->
+<template name="standard_4" class="code-num">
+  <span class="code-num dice_{{one}}">
+    </span> 
+</template>
+
+<!--pk-->
+<template name="standard_5" class="code-num2">
+  <span class="code-num2 pk_{{one}}">
+    </span> 
+</template>
+
+<!--农场-->
+<template name="standard_6" class="code-num3">
+  <span class="code-num3 fm_{{one}}">
+    </span> 
+</template>
+
+<!--北京快乐8 15-->
+
+<!--进行数据的判断（两排的数据）两排数据的抓取：将第一排(最后一个)的的样式进行清除的操作-->
+<template name="standard_7" class="code-num4">
+  <view wx:if="{{id <= 9}}" class="code-num4 blue">{{one}}
+  </view>
+  <block wx:if="{{id == 9}}">
+    <view class="clear">
+    </view>
+  </block>
+  <view wx:if="{{id > 9 && id < 20}}" class="code-num4 blue">{{one}}
+  </view>
+  <view wx:if="{{id == 20}}">
+    <view class="code-num4 yellow">{{one}}</view>
+  </view>
+</template>
+
+
+<template name="standard_8" class="code-num">
+  <view wx:if="{{id <= 9}}" class="code-num blue">{{one}}
+  </view>
+  <block wx:if="{{id == 9}}">
+    <view class="clear">
+    </view>
+  </block>
+  <view wx:if="{{id > 9 && id < 20}}" class="code-num blue">{{one}}
+  </view>
+  <view wx:if="{{id == 20}}">
+    <view class="code-num yellow">{{one}}</view>
+  </view>
+</template>

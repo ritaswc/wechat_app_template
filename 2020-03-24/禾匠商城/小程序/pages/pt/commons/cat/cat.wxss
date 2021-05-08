@@ -1,0 +1,30 @@
+.scroll-view-x {
+    background-color: #fff;
+    white-space: nowrap;
+}
+
+.scroll-view-x .scroll-view-item {
+    display: inline-block;
+    margin: 16rpx 0rpx 16rpx 46rpx;
+    padding: 0 24rpx;
+    font-size: 13pt;
+    color: #666666;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.scroll-view-y {
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+
+swiper {
+    height: 304rpx;
+}
+
+.scroll-view-x .active {
+    color: #fff;
+    border-radius: 30rpx;
+    background: -webkit-gradient(linear,left top,right bottom,color-stop(0%,#ffa360),color-stop(140%,#ff5c5c));
+    height: 60rpx;
+}

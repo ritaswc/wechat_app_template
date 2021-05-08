@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/pictures/main"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#deab00",
+    "navigationBarTitleText": "笑语大全",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#888",
+    "selectedColor": "#444",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "笑话",
+      "iconPath": "pages/imgs/joke.png",
+      "selectedIconPath": "pages/imgs/joke2.png"
+    }, {
+      "pagePath": "pages/pictures/main",
+      "text": "趣图",
+      "iconPath": "pages/imgs/pic.png",
+      "selectedIconPath": "pages/imgs/pic2.png"
+    }]
+  }
+}

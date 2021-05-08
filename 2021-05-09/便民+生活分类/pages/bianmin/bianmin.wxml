@@ -1,0 +1,35 @@
+<import src="../index/HotNewsCell/HotNewsCell.wxml" />
+
+<view>
+  <scroll-view class="scroll-view_container selected" scroll-x="true" bindscroll="scroll" style="width: 100%">
+
+    <block wx:for="{{newsTagList}}" wx:for-item="item" wx:key="key">
+      <!--<block wx:if="{{currentTabIndex == item.id}}">
+        <view class="flex-sub-box-5 active" bindtap="clickOrderTab" data-index="{{item.id}}"> {{item.tagName}}</view>
+      </block>
+      <block wx:else>
+        <view class="flex-sub-box-5" bindtap="clickOrderTab" data-index="{{item.id}}"> {{item.tagName}} </view>
+      </block>-->
+      <view class="flex-sub-box-5 {{ currentTabIndex == item.id ? 'active' : '' }}" bindtap="clickOrderTab" data-index="{{item.id}}">{{item.tagName}}</view>
+    </block>
+
+    <!--<view class="flex-sub-box-5 {{ currentTabIndex == '1' ? 'active' : '' }}" bindtap="clickOrderTab" data-index="1" >aa</view>
+      <view class="flex-sub-box-5 {{ currentTabIndex == '2' ? 'active' : '' }}" bindtap="clickOrderTab" data-index="2" >bb</view>
+      <view class="flex-sub-box-5 {{ currentTabIndex == '3' ? 'active' : '' }}" bindtap="clickOrderTab" data-index="3" >cc</view>
+      <view class="flex-sub-box-5 {{ currentTabIndex == '4' ? 'active' : '' }}" bindtap="clickOrderTab" data-index="4" >dd</view>
+      <view class="flex-sub-box-5 {{ currentTabIndex == '5' ? 'active' : '' }}" bindtap="clickOrderTab" data-index="5" >ee</view>
+      <view class="flex-sub-box-5 {{ currentTabIndex == '6' ? 'active' : '' }}" bindtap="clickOrderTab" data-index="6" >ff</view>
+      <view class="flex-sub-box-5 {{ currentTabIndex == '7' ? 'active' : '' }}" bindtap="clickOrderTab" data-index="7" >gg</view>-->
+
+  </scroll-view>
+
+<block wx:for="{{newsTagList}}" wx:for-item="item" wx:key="key">
+  <view class="bianmin-container" hidden="{{currentTabIndex != item.id}}">
+    <block wx:for="{{list[item.id]}}" wx:for-item="item" wx:key="key">
+      <view class="hotNewsList-container" catchtap="tapHotNewsCell">
+        <template is="HotNewsCell" data="{{...item}}"></template>
+      </view>
+    </block>
+  </view>
+  </block>
+</view>

@@ -1,0 +1,66 @@
+<!--bargain/order_list/order_list.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class='list'>
+            <block a:if="{{list.length < 1}}">
+                <view class='no-data-tip'>
+                    <view>你还没有进行中的砍价</view>
+                    <view>去会场逛逛！</view>
+                </view>
+            </block>
+            <block a:for='{{list}}' a:key="{{item.id}}">
+                <view class='one flex-row'>
+                    <view class='flex-grow-0' style='width:216rpx;height:216rpx;margin-right:20rpx;'>
+                        <image src='{{item.cover_pic}}'></image>
+                    </view>
+                    <view class='flex-grow-1 flex-col'>
+                        <view class='flex-grow-0'>
+                            <view class='text-more-2' style='font-size:9pt'>{{item.goods_name}}</view>
+                        </view>
+                        <view class='flex-grow-1 flex-col'>
+                            <block a:if='{{item.reset_time > 0}}'>
+                                <view class='flex-row flex-grow-1 flex-y-center'>
+                                    <block a:if="{{time_list.day > 0}}">
+                                        <view class='time flex-y-center'>{{item.time_list.d}}</view>
+                                        <view style='margin: 0 10rpx;'>天</view>
+                                    </block>
+                                    <view class='time flex-y-center'>{{item.time_list.h}}</view>
+                                    <view class=' flex-y-center'>：</view>
+                                    <view class='time flex-y-center'>{{item.time_list.m}}</view>
+                                    <view class=' flex-y-center'>：</view>
+                                    <view class='time flex-y-center'>{{item.time_list.s}}</view>
+                                    <view class=' flex-y-center' style='margin-left:16rpx'> 后结束</view>
+                                </view>
+                                <view class='flex-grow-0 flex-row'>
+                                    <view class='flex-grow-1'>
+                                        <view a:if="{{item.price > 0}}">
+                                            <view class='a'>离最低￥{{item.min_price}}</view>
+                                            <view class='b'>还差￥{{item.price}}</view>
+                                        </view>
+                                        <view a:else>
+                                            <view class='a'>已砍至最低</view>
+                                            <view class='b'>￥{{item.min_price}}</view>
+                                        </view>
+                                    </view>
+                                    <view class='flex-grow-0 flex-y-bottom'>
+                                        <navigator url='/bargain/activity/activity?order_id={{item.order_id}}' hover-class='none' class='list-btn flex-x-center flex-y-center' a:if='{{item.price > 0}}'>继续砍价</navigator>
+                                        <view class='list-btn flex-x-center flex-y-center' onTap='submit' data-index='{{item.order_id}}' a:else>立即购买</view>
+                                    </view>
+                                </view>
+                            </block>
+                            <block a:else>
+                                <view class='flex-grow-1' style='margin-top:40rpx;color:#666;'>已结束</view>
+                                <view class='flex-grow-0' style='{{item.status == 1 ? "color:#ff5c5c;" : "color:#999;"}}'>{{item.content}}</view>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+
+        <include src="/bargain/commons/naver/naver" />
+    </view>
+    <include src="/components/footer/footer" />
+</view>

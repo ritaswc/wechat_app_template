@@ -1,0 +1,98 @@
+/* pages/order/done/done.wxss */
+
+.done-top{
+    padding: 0 40rpx 40rpx;
+}
+.done-top image{
+  width:200rpx;
+  height:200rpx;
+  display:block;
+  overflow:hidden;
+  margin: 70rpx auto 30rpx;
+}
+.success{
+    background: white;
+    margin-top: 30rpx;
+    padding: 30rpx;
+}
+.goods-info{
+    background: white;
+    display: flex;
+    margin-bottom: 20rpx;
+}
+.goods-info image{
+  width:200rpx;
+  height:200rpx;
+  display:inline-block;
+  overflow:hidden;
+  margin: 0;
+}
+.goods-info .goods-info-handler{
+    padding-left: 20rpx;
+    width: 80%;
+}
+.goods-info .goods-info-handler .goods-info-price{
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx 0;
+}
+.group-member{
+    width: 100%;
+    background: white;
+    color: #999;
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+.group-member .goods-manager{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx 0;
+    border-bottom:2rpx solid #ddd;
+}
+.group-member .goods-manager:last-child{
+    border: none;
+}
+.goods-manager .goods-manager-left{
+    display: flex;
+    align-items: center;
+}
+.goods-manager .goods-manager-left .brand{
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 20rpx;
+}
+.goods-manager .goods-manager-left .brand image{
+    width: 100%;
+    height: 100%;
+}
+.goods-manager .goods-manager-left .group-time{
+    height: 100rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+.goods-manager .goods-manager-left .group-header{
+  border: 1px solid #ba77ff;
+  background: #ba77ff;
+  padding: 10rpx;
+  color: #fff;
+  margin-left: 20rpx;
+}
+.success .done-time{
+    border-top: 1px solid #ddd;
+    padding: 30rpx 0;
+    text-align: center;
+}
+.success .done-time:last-child{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+.success .done-time:last-child text{
+    padding: 30rpx 0;
+}
+.success .done-time:last-child text:last-child{
+    background: #ba77ff;
+    color: white;
+}

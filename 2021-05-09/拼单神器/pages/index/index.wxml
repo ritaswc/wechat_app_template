@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<import src="../template/template.wxml" />
+<view>
+  <view class="hot">
+  <text class="hot_title">热门搜索</text>
+  <view class="hot_list">
+  <navigator url="../onmyoji/onmyoji?id={{item.id}}" wx:for="{{ popularList }}" wx:key="name" class="hot_item">{{ item.name }}</navigator> 
+  </view>
+  </view>
+  <view class="search_view">
+    <input placeholder="输入神秘线索或式神名称" type="text" value="{{ searchText }}" class="search_input" bindinput="bindSearch" />
+  </view>
+  <view class="">
+    <block wx:for="{{ hellspawnList }}" wx:key="id">
+      <template is="onmyoji" data="{{ ...item }}" />
+    </block>
+  </view>
+  <view class="footer">
+    <text>Copyright © 2017 RaPoSpectre.com</text>
+  </view>
+</view>

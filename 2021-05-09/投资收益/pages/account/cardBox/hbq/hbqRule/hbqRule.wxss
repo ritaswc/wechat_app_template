@@ -1,0 +1,4 @@
+.hbq {padding: 40rpx 30rpx; background: #fff;margin-top: 20rpx;border-top: 2rpx solid #ccc;border-bottom: 2rpx solid #ccc;}
+.title {font-size: 40rpx;text-align: center}
+.content {font-size: 30rpx;line-height: 1.7em;margin-top: 20rpx;color: #b1b1b1}
+.content text {color: #ff4b38;}

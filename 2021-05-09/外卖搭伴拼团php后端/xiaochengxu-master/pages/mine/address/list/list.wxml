@@ -1,0 +1,36 @@
+
+<view class="content">
+    <view class="address-title">
+        <text>我的地址</text>
+        <text class="pull-right" bindtap="addAddress">添加</text>
+    </view>
+    <view class="address-list">
+        <block wx:for="{{addressList}}" wx:key>
+            <view class="address-item">
+                <view class="address-item-top">
+                    <view>
+                        <text>{{item.consignee}}</text>
+                        <text class="pull-right">{{item.tel}}</text>
+                    </view>
+                    <view>{{item.address}}</view>
+                </view>
+                <view class="address-item-bottom">
+                    <view>
+                        <checkbox-group bindchange="setDefaultAddress">
+                            <label class="checkbox">
+                                <checkbox value="{{item.address_id}}" checked="{{item.selected > 0}}"/>设为默认地址
+                            </label>
+                        </checkbox-group>
+                    </view>
+                    <view class="address-item-bottom-right">
+                        <text bindtap="addAddress" data-id="{{item.address_id}}">编辑</text>
+                        <text bindtap="delAddress" data-id="{{item.address_id}}">删除</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
+
+<import src="/asset/template/backhome.wxml" />
+<template is="backhome"/>

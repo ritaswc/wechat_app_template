@@ -1,0 +1,86 @@
+/* pages/chew/chew.wxss */
+
+.goods-manager{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    background: white;
+}
+.goods-manager .goods-manager-left{
+    display: flex;
+    align-items: center;
+}
+.goods-manager .goods-manager-left .brand{
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 20rpx;
+}
+.goods-manager .goods-manager-right{
+  padding: 10rpx;
+  color: #f00;
+}
+/*列表*/
+.list{
+  padding: 30rpx 20rpx;
+  background: #f0eff5;
+}
+.list .container-goods{
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.list .container-goods:last-child{
+  margin-bottom: 0;
+}
+.list .container-goods image{
+  margin: 0;
+  width:100%;
+  height:150px;
+  display:inline-block;
+  overflow:hidden;
+}
+.list .container-goods .main-goods{
+  padding: 28rpx 30rpx 30rpx;
+}
+.list .container-goods .main-goods .main-goods-info{
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+}
+.list .container-goods .main-goods .main-goods-info view text{
+  color: #ba77ff;
+}
+.list .container-goods .main-goods .main-goods-info view:first-of-type{
+  border: 1px solid #ba77ff;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+.list .container-goods .main-goods .main-goods-info view:nth-of-type(2){
+  text-align: left;
+  flex-grow: 2;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.list .container-goods .main-goods .main-goods-price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+}
+.list .container-goods .main-goods .main-goods-price view:nth-of-type(2){
+  text-align: left;
+  flex-grow: 2;
+  padding-left: 5rpx;
+  box-sizing: border-box;
+  text-decoration: line-through;
+}
+.list .container-goods .main-goods .main-goods-price view:last-child{
+  border: 1px solid #ba77ff;
+  padding: 5rpx;
+  box-sizing: border-box;
+  background: #ba77ff;
+  color: #fff;
+  margin-left: 5rpx;
+}

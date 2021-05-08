@@ -1,0 +1,54 @@
+.property_head_view{
+    background: #ff7460 ;
+    display: flex;
+    justify-content: center;
+    flex-direction: column ;
+}
+.property_w_btn , .property_c_btn{
+    width: 100%;
+    height: 72rpx;
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    text-align: center
+}
+.property_w_btn{
+    color: #ff7460;
+    margin-left: 36rpx
+}
+.property_c_btn{
+    color: white;
+    margin-left: 36rpx;
+    margin-right: 36rpx;
+    background: red;
+}
+
+.property_clounme{
+    height: 38px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.propertyclounme .me_icon{
+        height: 46px;
+}
+.property_imges{
+    height: 24px;
+    width: 24px;
+    margin-left: 16px;
+    vertical-align: middle;
+ 
+}
+.property_text, .property_text_title{
+    font-size: 14px;
+    color: #333333;
+    margin-left: 16px;
+    padding: 0px;
+    
+}
+
+.property_text_title{
+    color:  #ff7460
+    
+}

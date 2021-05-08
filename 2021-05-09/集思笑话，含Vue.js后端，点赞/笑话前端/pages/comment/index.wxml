@@ -1,0 +1,72 @@
+<!--index.wxml-->
+<import src='../../wxParse/wxParse.wxml' />
+
+ 
+  
+
+<view class="page">
+
+
+ <button type="default" bindtap="goHome"> ⬅️ 首页 </button>
+
+ <view wx-if="{{showloading}}">
+ 正在加载数据，预计需要3-5秒....
+ </view>
+
+  <view class="page__bd"  wx:for="{{replyTemArray}}" wx:for-index="index" wx:key="">
+  <view class="weui-cells weui-cells_after-title" >
+            <view class="weui-cell" style="align-items:flex-start;padding:5px">
+                <view class="weui-cell__hd" style="position: relative;margin-left:2px;margin-right:10px; ">
+                    <image src="{{jokes[index].author[0].avatar}}" style="width: 40px; height: 40px; display: block"/>
+                    
+                </view>
+                <view class="weui-cell__bd">
+                    <view>{{jokes[index].author[0].nickname||jokes[index].author[0].username}}</view>
+                    <view style="font-size: 13px;color: #888888;">{{jokes[index].createdate}}</view>
+                    <!-- jokes content -->
+                    <view style="margin-top:10px; margin-bottom:10px; line-height:150%;">
+                      <template is="wxParse" data="{{wxParseData:item}}"/>
+                    </view> 
+
+                      <view class="weui-form-preview__ft">
+                       <navigator  data-id="{{jokes[index]._id}}" data-index = "{{index}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="bindjoke">{{jokes[index].joke}}</navigator>
+                       <navigator class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">评论</navigator>
+                        <navigator data-id="{{jokes[index]._id}}"  data-index="{{index}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="bindunjoke">{{jokes[index].unjoke}}</navigator>
+                        
+                     
+                     </view> <!-- preview__ft -->
+
+                     <!--comment-->
+                     <view wx:for="{{comments}}" wx:for-index="cinx" wx:for-item="c" wx:key="">
+                     <view class="triangle-up" style="margin-left:15px;" wx:if="{{cinx===0}}"></view>
+                     <view class="comment"> <font class="comment_name">{{c.author.nickname||c.author.username}}:</font><font class="comment_contents">{{c.content}}</font></view>
+                     </view>
+                    <view style="margin-bottom:15px;"></view>
+                    <!--comment end -->
+
+                </view><!--weui-cell__bd-->
+            </view><!--weui-cell-->
+       
+   </view> <!--  weui-cells weui-cells_after-title-->
+  
+  </view> <!--page_bd for end-->
+
+ 
+    <view class="weui-footer" style="height:120px;"> 
+       <view class="weui-footer__text">2017 @集思笑话</view> 
+       <view class="weui-footer__text">代码开放asmcos@github</view> 
+     </view>
+  <form bindsubmit="bindFormSubmit">
+    <view class="page-section" style="position:fixed;bottom:0px;width:100%;">
+      
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" auto-focus placeholder="评论..." name="content" value="{{inputval}}"/>
+        </view>
+        <button class="weui-btn" type="primary" form-type="submit">确定</button>
+      </view>
+    </view>
+  </form>
+ </view> <!--page-->
+
+

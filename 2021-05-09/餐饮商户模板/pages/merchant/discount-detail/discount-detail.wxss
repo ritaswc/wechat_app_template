@@ -1,0 +1,27 @@
+.text-input-wrap {
+    background-color: #ffffff;
+    margin-top: 30rpx;
+}
+.text-input-wrap .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 96rpx;
+    margin: 0 30rpx;
+    border-bottom: 1rpx solid #f2f2f2;
+}
+.text-input-wrap .item:last-child {
+    border: none;
+}
+.text-input-wrap .item input {
+    text-align: right;
+}
+.text-textarea-wrap {
+    margin-top: 30rpx;
+}
+.cancel-after-verification {
+    background-color: #c60e16;
+}
+.close-btn {
+    margin-bottom: 40rpx;
+}

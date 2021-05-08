@@ -1,0 +1,7 @@
+<import src="card.wxml"/>
+
+<template name="video-card">
+  <view bindtap="navToVideo" data-id="{{item.mp4 ? item.mp4 : item.links[0].url}}" class="newitem videoitem">
+    <template is="card" data="{{item}}"/>  
+  </view>
+</template>

@@ -1,0 +1,11 @@
+
+<!--index.wxml-->
+<import src="../common/template.wxml" />
+<view class="container">
+  <swiper>
+    <swiper-item wx:for="{{pageDataArray}}" wx:for-item="item">
+      <template is="cityWeather" data="{{item}}"></template>
+    </swiper-item>
+    
+  </swiper>
+</view>

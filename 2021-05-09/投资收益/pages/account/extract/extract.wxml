@@ -1,0 +1,67 @@
+<view class="extract_bd">
+    <view class="extract_con">
+        <view class="extract_con_list">
+            <view class="left">
+                修改登录密码
+            </view>
+            <view class="right">
+                797999.05
+            </view>
+        </view>
+        <view class="extract_con_list">
+            <view class="left">
+                真实姓名
+            </view>
+            <view class="right">
+                李***
+            </view>
+        </view>
+        <view class="extract_con_list border_none">
+            <view class="left">
+                提现银行卡
+            </view>
+            <view class="right">
+                工商银行(尾号0000)
+            </view>
+        </view>
+    </view>
+
+    <view class="extract_con mt20">
+        <view class="extract_con_list">
+            <view class="left_text">
+                <text>提现金额</text>
+                <input type="number" placeholder="请输入金额"></input>
+            </view>
+        </view>
+        <view class="extract_con_list">
+            <view class="left">
+                提现手续费
+            </view>
+            <view class="right">
+                3.00
+            </view>
+        </view>
+        <view class="extract_con_list">
+            <view class="left">
+                合计金额
+            </view>
+            <view class="right">
+                795743
+            </view>
+        </view>
+        <view class="extract_con_list border_none">
+            <view class="left_text">
+                <text>安全密码</text>
+                <input type="password" placeholder="请输入安全密码"></input>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="error">提现金额不能为空</view>
+<view class="extract_btn">
+    <button size="default" type="primary" bindtap="change">确认提现</button>
+</view>
+
+<view class="notice">
+    提示：提现银行开户名必须与认证的普汇云通账户真实姓名一致才能提现成功
+</view>

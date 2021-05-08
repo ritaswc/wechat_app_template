@@ -1,0 +1,109 @@
+{template 'common/header'}
+<div class="message-info" id="js-profile-message-info" ng-controller="mcMessageInfoCtrl" ng-cloak>
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href="{php echo url('mc/message')}"><i class="wi wi-back-circle"></i> </a>
+		<li>
+			<a href="{php echo url('mc/message')}">留言管理</a>
+		</li>
+		<li>
+			<a href="">留言详情</a>
+		</li>
+	</ol>
+	<div class="we7-page-search we7-padding-bottom clearfix">
+		<form action="" method="post" class="form-inline" role="form">
+			<div class="form-group">
+				<div class="form-controls">
+					<select ng-model="selectedType" ng-options="t.typeValue as t.typeName for t in types" ng-change="searchComment()">
+						<option value=""></option>
+					</select>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="panel we7-panel">
+		<div class="panel-heading">
+			全部留言
+			<span class="pull-right">操作</span>
+		</div>
+		<div class="panel-body">
+			<div class="article-reply-item icon-selection" ng-repeat="comment in comments">
+				<div class="media ">
+					<div class="media-left">
+						<a href="javascript:;">
+							<img class="media-object reply-logo" ng-src="{{ comment.fans_info.avatar }}">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading reply-people">{{comment.fans_info.nickname}}</h4>
+						<p class="reply-content">{{comment.content}}</p>
+						<p class="reply-time">{{comment.create_time}}</p>
+					</div>
+					<div class="media-right reply-action">
+						<a href="javascript:;" ng-click="mark(comment)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="取消精选" class="active" ng-if="comment.comment_type">
+							<i class="wi wi-star"></i>
+						</a>
+						<a href="javascript:;" ng-click="mark(comment)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="精选" ng-if="!comment.comment_type">
+							<i class="wi wi-star"></i>
+						</a>
+
+						<a href="javascript:;" ng-click="replyarticle(comment)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="回复" ng-show="!comment.reply">
+							<i class="wi wi-reply" ng-disabled="true"></i>
+						</a>
+
+						<a href="javascript:;" ng-click="del(comment)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="删除留言">
+							<i class="wi wi-delete2"></i>
+						</a>
+					</div>
+				</div>
+				<div class="reply-list">
+					<div class="reply-item">
+						<div class="reply-item-head">
+							<div class="media-body">
+								{{comment.reply.content}}
+							</div>
+							<div class="media-right reply-action" ng-show="comment.reply">
+								<a href="javascript:;" ng-click="del_reply(comment)" title="删除回复">
+									<i class="wi wi-delete2"></i>
+								</a>
+							</div>
+					</div>
+
+				</div>
+	
+				<div class="reply-editor" ng-init="comment.replying=false" ng-show="comment.replying">
+					<div class="reply-editor-head">
+						回复该评论
+					</div>
+					<div class="reply-editor-content">
+						<textarea ng-model="comment.replycontent" cols="30" rows="10" class="form-control replaycontent" contenteditable></textarea>
+					</div>
+					<div class="reply-editor-action">
+						<button class="btn btn-primary" ng-click="send(comment)">发送 </button>
+						<button class="btn btn-default" ng-click="cancel(comment)">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="text-right we7-margin-top">
+		{$pager}
+	</div>
+</div>
+
+<script>
+	angular.module('profileApp').value('config', {
+		'comments' : {php echo json_encode($comments)},
+		'type' : {$type},
+		'index' : {$index},
+		'msg_data_id' : {$msg_data_id},
+		'getMessageInfoUrl' : "{php echo url('mc/message/message_info')}",
+		'replyMessageUrl' : "{php echo url('mc/message/message_reply')}",
+		'markMessageUrl' : "{php echo url('mc/message/message_mark')}",
+		'delMessageUrl' : "{php echo url('mc/message/message_del')}",
+		'delMessageReplyUrl' : "{php echo url('mc/message/message_reply_del')}",
+	});
+	angular.bootstrap($('#js-profile-message-info'), ['profileApp']);
+</script>
+
+{template 'common/footer'}

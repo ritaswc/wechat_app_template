@@ -1,0 +1,37 @@
+
+<view class="content">
+    <view class="mine-top">
+        <view class="classname"><image src="{{userInfo.images}}"></image></view>
+        <view class="classname"><text>{{userInfo.nickname}}</text></view>
+        <view class="classname">
+            <text>身份：{{userInfo.identy}}</text>
+            <text wx:if="{{userInfo.point != null}}">积分 {{userInfo.point}}</text>
+            <text wx:else>积分 0</text>
+            <text>成团次数 {{userInfo.groupnum}}</text>
+        </view>
+    </view>
+    <view class="mine-list">
+        <view bindtap="mineGroup">
+            <i class="iCon iCon-tuan"></i><text>我的团</text>
+        </view>
+        <view bindtap="mineOrder">
+            <i class="iCon iCon-orderform"></i><text>我的订单</text>
+        </view>
+        <view bindtap="mineCoupon">
+            <i class="iCon iCon-coupon"></i><text>优惠卷</text>
+        </view>
+        <view bindtap="showAddress" data-index="1">
+            <i class="iCon iCon-address"></i><text>收货地址</text>
+        </view>
+        <view bindtap="showFlow">
+            <i class="iCon iCon-buyingpro"></i><text>购买流程</text>
+        </view>
+        <view bindtap="showService">
+            <i class="iCon iCon-afetsel"></i><text>售后服务</text>
+        </view>
+    </view>
+</view>
+
+<view class="kefu">
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+</view>

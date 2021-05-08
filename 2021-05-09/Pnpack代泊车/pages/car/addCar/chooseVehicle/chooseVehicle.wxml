@@ -1,0 +1,17 @@
+<view class="column">
+  <text class="title">您的车牌号是</text>
+  <form bindsubmit="formSubmit" data-index="{{index}}">
+    <view class="row carVehicle">
+      <text class="chooseProvince">{{province}}</text>
+      <input name="input" placeholder="A8888" />
+    </view>
+    <radio-group class="radio-group" name="radioValue" bindchange="radioChange">
+      <label name="radio" wx:for="{{successdata}}">
+        <radio value="{{item.title}}" />{{item.title}}
+      </label>
+    </radio-group>
+    <view class="header-list-nav sure">
+      <button formType="submit" class="bg-pp color-f" > 确定</button>
+    </view>
+  </form>
+</view>

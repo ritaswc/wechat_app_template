@@ -1,0 +1,56 @@
+page {
+  background: #fff;
+}
+
+.addCar {
+  line-height: 150rpx;
+}
+.item-box {
+  width: 700rpx;
+  margin: 0 auto;
+}
+.items {
+  width: 100%;
+}
+.item {
+  position: relative;
+  height: 220rpx;
+  line-height: 90rpx;
+
+  margin-top: 40rpx;
+}
+.item:last-child {
+  border-bottom: none;
+}
+.inner {
+  position: absolute;
+  top: 0;
+}
+.inner.txt {
+  width: 100%;
+  z-index: 5;
+  height:180rpx;
+  transition: left 0.2s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.inner.handle {
+  width: 200rpx;
+  height: 180rpx;
+  line-height: 180rpx;
+  z-index: 4;
+  right: 0;
+  color: #fff;
+}
+.edit, .del {
+  display: inline-block;
+  height: 180rpx;
+  width: 100rpx;
+}
+.edit {
+  background-color: #eee;
+}
+.del {
+  background-color: #e64340;
+}

@@ -1,0 +1,37 @@
+{% extends "partials/base.html" %}
+
+{% block content %}
+  <div class="container mt20">
+    {% include "partials/flash.html" %}
+  </div>
+
+  <div class="container mt40" style="margin-bottom: 100px">
+    <form class="form-signin" action="/login/" method="post">
+      {% csrf_token %}
+      <h4 class="form-signin-heading">登录</h4>
+      <input autofocus="autofocus" class="textinput textInput form-control" id="id_email" name="email" placeholder="邮箱(必填)" type="email" required="">
+      <input class="textinput textInput form-control" id="id_password" name="password" placeholder="密码(必填)" type="password" required="">
+
+      <div class="form-group" style="display: none">
+        <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0" for='remember_checkbox'>
+          <input type="checkbox" class="custom-control-input" id="remember_checkbox" name="remember">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">记住我</span>
+        </label>
+      </div>
+
+      <div class="form-group mt10">
+        <button type="submit" class="btn btn-lg btn-primary btn-block"><span class="fa fa-sign-in mr10"></span>登录</button>
+        <input type="hidden" name="submit" value="submit" />
+      </div>
+
+      <div class="form-group mt10">
+        <a href="" style="text-decoration: none">我忘记密码了？</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    $('#remember_checkbox').prop('checked', true)
+  </script>
+{% endblock content %}

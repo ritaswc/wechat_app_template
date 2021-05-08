@@ -1,0 +1,65 @@
+<import src="../template/template.wxml"  />
+<view wx:if='{{!mounted}}' class='loading'>
+	<view class='loading-image'>
+		<image mode="aspectFit" src="../../src/img/loading-details.gif"></image>
+	</view>
+	<text>正在为你玩儿命地找书</text>
+</view>
+<view wx:if='{{mounted}}' class='container'>
+	<view class='book-intro'>
+		<view class='book-name'>
+			<text>{{book_name}}</text>
+		</view>
+		<view class='book-author'>
+			<text>{{book_author}}</text>
+		</view>
+		<view wx:if='{{is_faved}}'>
+			<image class="fav_image" mode="aspectFill" src="../../src/img/faved.png" bindtap="unfavBook"></image>
+		</view>
+		<view wx:else>
+			<image class="fav_image" mode="aspectFill" src="../../src/img/fav.png" bindtap="favBook"></image>
+		</view>
+	</view>
+	<view class="swiper-tab">
+		<view class="swiper-tab-list {{currentTab==0?'on':''}}" data-current="0" bindtap="swichNav">馆藏详情</view>
+		<view class="swiper-tab-list {{currentTab==1?'on':''}}" data-current="1" bindtap="swichNav">图书详情</view>
+	</view>
+	<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{ scroll_height }}px;"
+	        bindchange="bindChange">
+		<swiper-item>
+			<scroll-view scroll-y="true" style="height: {{ scroll_height }}px;">
+				<view class='detail-cells'>
+					<view wx:if="{{!code}}" class='detail-cell detail-hd'>
+						<text class='empty-book'>此书刊可能正在订购中或者处理中</text>
+					</view>
+					<view wx:else>
+						<view class='detail-cell detail-hd'>
+							<text class='book-code'>索书号：{{code}}</text>
+						</view>
+						<block wx:for="{{books}}" wx:key='*this' wx:for-item="book">
+							<view class='detail-cell detail-bd'>
+								<view class='book-place'>
+									<text>{{book.place}}</text>
+								</view>
+								<view class='book-status'>
+									<text>{{book.status}}</text>
+								</view>
+							</view>
+						</block>
+					</view>
+				</view>
+			</scroll-view>
+		</swiper-item>
+		<swiper-item>
+			<scroll-view scroll-y="true" style="height: {{ scroll_height }}px;">
+				<view class="detail-image">
+					<image src="{{description.image_url}}"></image>
+				</view>
+				<view class="detail-summary">
+					<text class="detail-summary title">简介</text>
+					<text class="detail-summary content">{{description.summary}}</text>
+				</view>
+			</scroll-view>
+		</swiper-item>
+	</swiper>
+</view>

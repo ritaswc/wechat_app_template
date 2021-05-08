@@ -1,0 +1,23 @@
+.lucky-head {
+   border:1rpx solid #ff4544;
+   position:relative;
+   background:#ffffff;
+   margin-top:40rpx;
+   border-radius:16rpx;
+   height:140rpx;
+   width:702rpx;
+}
+.lucky-parent-list {
+   margin-bottom:32rpx;
+}
+.lucky-parent-list image {
+    display:block;
+    width:64rpx;
+    height:64rpx;
+    margin:0 32rpx 0 40rpx;
+    border-radius:50%;
+}
+
+.lucky-name {
+    color:#353535;
+}

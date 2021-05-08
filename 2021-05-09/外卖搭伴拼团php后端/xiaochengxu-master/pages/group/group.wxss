@@ -1,0 +1,151 @@
+/* pages/group/group.wxss */
+
+.group-title{
+    padding: 40rpx;
+    background: #000;
+    color: #666;
+}
+.group-title view{
+    border: 1px solid #666;
+    display: flex;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.group-title view text{
+    flex-grow: 1;
+    height: 100%;
+    text-align: center;
+}
+.group-title view text.active{
+    background: white;
+    color: #666;
+}
+.content .nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  box-sizing: border-box;
+  height: 80rpx;
+  line-height: 45rpx;
+  align-items: center;
+  background: white;
+}
+.content .nav .nav-left{
+  width: 88%;
+  height: 100%;
+  display: flex;
+  white-space: nowrap;
+}
+.content .nav .nav-left .nav-left-category{
+  display: flex;
+  width: 150%; 
+  height: 100%;
+}
+.content .nav .nav-left .nav-left-category view{
+  display: flex;
+  float:left;
+  padding: 0 10rpx;
+}
+.iCon-arrow{
+  margin-right: 0rpx;
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/back@2x.png') no-repeat;
+  background-size:contain;
+}
+/*列表*/
+.list{
+  padding: 30rpx 20rpx;
+  background: #f0eff5;
+}
+.list .container-goods{
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.list .container-goods:last-child{
+  margin-bottom: 0;
+}
+.list .container-goods image{
+  margin: 0;
+  height: 300rpx;
+}
+.list .container-goods .main-goods{
+  padding: 28rpx 30rpx 30rpx;
+}
+.list .container-goods .main-goods .main-goods-info{
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+}
+.list .container-goods .main-goods .main-goods-info view text{
+  color: #ba77ff;
+}
+
+.list .container-goods .main-goods .main-goods-price{
+  display: flex;
+  align-items: center;
+  color: #999;
+  border: 2rpx solid #ba77ff;
+}
+
+
+.goods-manager{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    background: white;
+}
+.goods-manager .goods-manager-left{
+    display: flex;
+    align-items: center;
+}
+.goods-manager .goods-manager-left .brand{
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 20rpx;
+}
+.goods-manager .goods-manager-left .brand image{
+    width: 100%;
+    height: 100%;
+}
+.goods-manager .goods-manager-left text{
+  margin-right: 10rpx;
+}
+.goods-manager .goods-manager-left text.group{
+  background: #ba77ff;
+  color: #fff;
+  text-align: center;
+  display: block;
+  padding: 10rpx;
+}
+
+.group-price{
+    height: 80rpx;
+    line-height: 80rpx;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    border: 1px solid #ba77ff;
+}
+.group-price view:first-child{
+    flex-grow: 2;
+    color: #999;
+}
+.group-price view:first-child text{
+  padding: 0 20rpx;
+}
+.group-price view:first-child text:last-child{
+  text-decoration: line-through;
+}
+.group-price view:last-child{
+    flex-grow: 1;
+    text-align: center;
+    background: #ba77ff;
+    color: white;
+}
+.group-state{
+  padding-top: 20rpx;
+  color: #999;
+  display: flex;
+}

@@ -1,0 +1,63 @@
+<import src="../../templates/toast/toast.wxml" />
+<scroll-view class="main" scroll-y="true" class="{{!loading ? '':'hidden'}} order-confirm">
+    <view class="">
+        <view class="address" bindtap="navigateToAddress">
+            <image class="top-line" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA8AAAAAJBAMAAAAP91hJAAAAGFBMVEXL2/DovMXv7/Tt7PLQ3vHs1t3pwsvd5fIjChGoAAAAaklEQVRYw2PADliMlBBAVRAXEENSpuzAgAsUKdHKtECchiUjqTLBaRb7UHAY5W7DBM5K1HXsSIsTKjmMcreNZuDB77DRDDz44mQ0Aw/zOBnNwMM7TkYz8DCPk9EMPLzjZDQDD/M4GVQZGADFzTTgbQo27gAAAABJRU5ErkJggg=="></image>
+            <view class="content">
+                <image class="address_icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAzCAMAAADWxGo6AAAAPFBMVEUAAAA1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTXZGDj+AAAAE3RSTlMApITvI3IWBAzeyluYafu4NkVSae+KEgAAAadJREFUSMeFVe2SgCAILM38oqnc93/XaxoP9NBufyHispDY8gfbsUY8iOuxLR/w+Q2zMdo3PPtZ5G2B9JBV+gTYexgYCKCtE0MABR25R8RNKX+cu4q0ID9QT7B/YkOEGRdgEHsNBFJB460b0U87GHE3K4uPfm+wwpM7oaG44w6d3Mx2hFS5E15Q40KUDGeTDdaUYiwaTSfbB7IQwPlXvoOkyjiqtYrzhPs1HU4hWFmqpE9STRIJiGwIU5HQwhmETKjolcJpiRPo0BNLA5w61P7HasFcnrVmCc2s1TO/wcUdiF6uCXfgguF75USBkS9P0phb8S/BgkKdNPsYrFDM0IwYyDlCM1QBpxTQVOMdXjg/3A5I7bW/SuluekKQBX1OAdcn3dCQXgos51AIsN36wKFi1BYf9ZPZrgnVVGpkGKUIfkgKBF3nMVZqdKHq+Nxr4LTTVVJFoF/dSqoZSD+YbtbBq/dcqtvqlVUvq8YK1ytaP64bttlKV5ba9G75QJJtw8emEq5aPaefoQB7bX4R7/yXpn55046lEBL36Qt+xYNVfabJNA3b9AMxcxcGcyvZQgAAAABJRU5ErkJggg=="></image>
+                <view class="address_text">
+                    <view class="adr">
+                        <text>{{address.consignee}} {{address.mobile}}</text>
+                    </view>
+                    <view class="ddress">
+                        <text>{{address.address}}</text>
+                    </view>
+                </view>
+                <image class="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAtBAMAAACzED1lAAAAJ1BMVEUAAABhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFz0jeiAAAADHRSTlMAFE2vB2yMJfbjN8sDf6kTAAAAmUlEQVQoz2PYIcAAB3MmItg1px3gbK4zBggJnWMINuuZAAQn5xCCzXxmAZzNMuc4QkLiBMI+9jNbEBJrDiPYTGcSEJyYowg22xkFBMfmFILtfaYAzmac04hk30kHhH24vMGE7A2bA5jiCPUIcxDmI+zFdA/CnQj3I/yF8C9mOCDCBxFuiPBEhDO28GfFcDgiHhHxiy3ekdMDACnzNDtn0cBHAAAAAElFTkSuQmCC"></image>
+            </view>
+            <image class="bottom-line" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA8AAAAAJBAMAAAAP91hJAAAAGFBMVEXL2/DovMXv7/Tt7PLQ3vHs1t3pwsvd5fIjChGoAAAAaklEQVRYw2PADliMlBBAVRAXEENSpuzAgAsUKdHKtECchiUjqTLBaRb7UHAY5W7DBM5K1HXsSIsTKjmMcreNZuDB77DRDDz44mQ0Aw/zOBnNwMM7TkYz8DCPk9EMPLzjZDQDD/M4GVQZGADFzTTgbQo27gAAAABJRU5ErkJggg=="></image>
+        </view>
+        <view class="items-list">
+            <view wx:for="{{cartList}}" wx:for-item="product" class="product">
+                <view class="img">
+                    <image class="image" src="{{product.thumb_url}}" mode="scaleToFill"></image>
+                </view>
+                <view class="param">
+                    <view class="title">
+                        <text>{{product.goods_name}}</text>
+                    </view>
+                    <view class="type">
+                        <text>{{product.goods_attr}}</text>
+                    </view>
+                    <view class="price">
+                        <view class="real">￥ {{product.real_price}}
+                            <view class="num">x{{product.goods_number}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="statistics">
+            <view class="border-bottom"> 商品总额
+                <text> ￥ {{totalPay}}</text>
+            </view>
+            <view>运费
+                <text>￥ {{freight}}</text>
+            </view>
+        </view>
+        <view class="wechat">
+            <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RUUxQTkzNjc2RDM2MTFFNjlEREI5QzYzQjdDQTFGN0MiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RUUxQTkzNjg2RDM2MTFFNjlEREI5QzYzQjdDQTFGN0MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFRENFQkFFOTZEMzYxMUU2OUREQjlDNjNCN0NBMUY3QyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFRENFQkFFQTZEMzYxMUU2OUREQjlDNjNCN0NBMUY3QyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqnYZZwAAAPZSURBVHja1JpZbExRGMfP3LQlQRtBLYmgVVIaKVW1hKC8EUoilgdaW1q1JB5EagslhDQoIoTwQKXRBzSiYkmFakNoLBVFhUSE1GgbNKGM/2e+24zJnTvnLjNz55/80jsz586c/z3b951Tl8fjESRXnUtYVAaYAEaBoaAf6AO68Oc/wFfwETSCp+A+eCRskMuikSlgCZgBkkzW4TWoAmXgXriNLALrwHhhr2pAKbhg9EbFYPmZoBacD4EJ0kRuGepy2aEwQs11HFwHWSL0ood0Axy108hw8BysFuFXAXgGUqwamcqzS6qInEaCJzyxmDJCffQ2iBWRV1dQDaYbNTKG+6jTdBOkyxrpwe6dqsc8bv9TjEbBa6C7Q0385Kn/VzAjBTyXO9HAEVACPgRb2alLtUWbAa0W2RNlBvJBX7Cjs0XQGgm4bokSA9RzDoI8fk11b1NnrZUOMFDCEfRGHRMLwCsfE6Tlvi3SEKHVW3YMJIJDYKHGZxQ+pbkQy9JTeOPUQQzlcleK1ymTHMOhuawOg/fgQBgMDOLcZLbE92aTkUwDFanjBekFKAfdQmCAVAj2c4wlo0wa7MMMGFnKf69yVFpr0yBWlcrxVKkBE/9SDTLS38ANlJv34ut3vNmwzwYDpE2gQS/C1dEAGuxuXPQ0cNNmsNfvvdGcxydyZc5JVp40llvASurcTEbaDTYjtcRgm2avYlBkw/e0K9wNjIhmk8kWf1jNPItseiAdZKTVxI0bTP5gLK8JlHmm2bgutZCRZhM3zuMYx4hmgZdgfQgW2GYy8tbkzXmS5cjwaXAFDAlRpNBERupN3lwoUWax8G6J5oY45KlXLOTnSTpT5kBQwdNw7zDEbtVk5K6FzDA/QEs18jgKh6juNYony/OHn54ZUVg9DsSBaeCOifDCqi6C32o+ks7bLGb1idPOSIiiinrfzYc6frrRpAdqnRWDs5DTtFa9UPzcVUaRiUrOj0Rnzs5dS3A6+UVo70A6SR2cTrRptYg6leVEQWvk+C8ZSoAm2+lgE8VaQyDQscJ2cMqBJqhOW7U+0DvoWQGOOcjECa6TMGqEtAZsMZF82a1tIsgZpsxh6G5wJkIGaAadA3YFKyh7PB0fARNnhfc097JMYVkjGWE0UMU5/TLh/d8VKcksfL10MjtKmmglTbahC13iWanGzBfIGEkJUO4kWMXX8zmMp+3XESL4GeR34d1FfwhucSt8s/IkZIz4b6m6OaEq93mvwienSeDsMZFD+zh+n2a+z0yTsPlgScbIJJ/rMo6S3TrlWy3mNqYkO9gpdZ3LmwluJ8YtfwUYAFjN7UocXomPAAAAAElFTkSuQmCC"></image>
+            <text>微信支付</text>
+        </view>
+        <view class="settlement"> 
+            <view class="text"><text>合计：</text>
+            <text class="price">￥ {{totalPay}}</text>
+            </view>
+            <button bindtap="postOrder">去付款</button>
+        </view>
+    </view>
+     <template is="toast" data="{{...toast}}" />
+</scroll-view>
+<loading hidden="{{!loading}}">正在加载中...</loading>
+<loading hidden="{{!exec}}">正在处理中...</loading>

@@ -1,0 +1,22 @@
+<!--pages/systemMassage/systemMassage.wxml-->
+<view class="systemMassage_wrap">
+    <block wx:for="{{massage}}">
+        <view class="wrap" bindtap="gomassage" data-message_id="{{item.message_id}}">
+            <view class="left">
+                <image class="img1" src="{{item.imgUrl}}"></image>
+            </view>
+            <view class="right">
+                <view class="top">{{item.subject}}</view>
+                <view class="bottom">
+                    <view class="name">{{item.sender}}</view>
+                    <view>{{item.date}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>
+<!--没有数据-->
+<view wx:if="{{nodelLIst}}" class="no_data">
+    <image class="img4" src="../deliver/image/deliver_01.png"></image>
+    <text>快去投递简历吧,获取更多机会!</text>
+</view>

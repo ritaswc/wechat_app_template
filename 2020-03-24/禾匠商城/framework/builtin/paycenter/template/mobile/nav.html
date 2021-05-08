@@ -1,0 +1,30 @@
+<nav class="mui-bar mui-bar-footer mui-table">
+	<div class="mui-table-cell">
+		<a class="{if $_GPC['do'] == 'home'}mui-active{/if}" href="{php echo $this->createMobileUrl('home');}">
+			<span class="mui-icon-img"><img src="./resource/images/{if $_GPC['do'] == 'home'}icon-home-active.png{else}icon-home.png{/if}" alt="" /></span>
+			<span class="mui-block">首页</span>
+		</a>
+	</div>
+	{if $_W['account']['level'] == ACCOUNT_SERVICE_VERIFY}
+	<div class="mui-table-cell">
+		<a class="{if $_GPC['do'] == 'scanpay'}mui-active{/if}" href="{php echo $this->createMobileUrl('scanpay');}">
+			<span class="mui-icon-img"><img src="./resource/images/{if $_GPC['do'] == 'scanpay'}icon-money-active.png{else}icon-money.png{/if}" alt="" /></span>
+			<span class="mui-block">收款</span>
+		</a>
+	</div>
+	{/if}
+	{if $_W['user']['clerk_type'] == 2 || ($_W['user']['clerk_type'] == 3 && in_array('coupon_consume', $user_permission))}
+	<div class="mui-table-cell">
+		<a class="{if $_GPC['do'] == 'cardconsume'}mui-active{/if}" href="{php echo $this->createMobileUrl('cardconsume', array('op' => 'consume'));}">
+			<span class="mui-icon-img"><img src="./resource/images/{if $_GPC['do'] == 'cardconsume'}icon-cancel-active.png{else}icon-cancel.png{/if}" alt="" /></span>
+			<span class="mui-block">核销</span>
+		</a>
+	</div>
+	{/if}
+	<div class="mui-table-cell">
+		<a class="{if $_GPC['do'] == 'more'}mui-active{/if}" href="{php echo $this->createMobileUrl('more');}">
+			<span class="mui-icon-img"><img src="./resource/images/{if $_GPC['do'] == 'more'}icon-more-active.png{else}icon-more.png{/if}" alt="" /></span>
+			<span class="mui-block">更多</span>
+		</a>
+	</div>
+</nav>

@@ -1,0 +1,701 @@
+[2017-03-06 09:55:38.182] [WARN] console - Unhandled rejection SequelizeConnectionRefusedError: connect ECONNREFUSED 127.0.0.1:3306
+    at Handshake._callback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/connection-manager.js:80:20)
+    at Handshake.Sequence.end (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Sequence.js:86:24)
+    at Protocol.handleNetworkError (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:364:14)
+    at Connection._handleNetworkError (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/Connection.js:428:18)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at emitErrorNT (net.js:1253:8)
+    at doNTCallback2 (node.js:439:9)
+    at process._tickCallback (node.js:353:17)
+[2017-03-06 09:56:06.697] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 09:56:06.708] [WARN] console - Unhandled rejection SequelizeConnectionRefusedError: connect ECONNREFUSED 127.0.0.1:3306
+    at Handshake._callback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/connection-manager.js:80:20)
+    at Handshake.Sequence.end (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Sequence.js:86:24)
+    at Protocol.handleNetworkError (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:364:14)
+    at Connection._handleNetworkError (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/Connection.js:428:18)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at emitErrorNT (net.js:1253:8)
+    at doNTCallback2 (node.js:439:9)
+    at process._tickCallback (node.js:353:17)
+[2017-03-06 09:56:45.607] [WARN] console - Unhandled rejection SequelizeConnectionRefusedError: connect ECONNREFUSED 127.0.0.1:3306
+    at Handshake._callback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/connection-manager.js:80:20)
+    at Handshake.Sequence.end (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Sequence.js:86:24)
+    at Protocol.handleNetworkError (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:364:14)
+    at Connection._handleNetworkError (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/Connection.js:428:18)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at emitErrorNT (net.js:1253:8)
+    at doNTCallback2 (node.js:439:9)
+    at process._tickCallback (node.js:353:17)
+[2017-03-06 09:56:49.394] [INFO] BBMIS - 用户信息:{"errcode":40001,"errmsg":"invalid credential, access_token is invalid or not latest, hints: [ req_id: BorNpA0409s110 ]"}
+[2017-03-06 09:56:49.394] [WARN] console - Unhandled rejection openid不能为空
+[2017-03-06 09:57:35.175] [INFO] BBMIS - 用户信息:{"errcode":40001,"errmsg":"invalid credential, access_token is invalid or not latest, hints: [ req_id: 5N8CqA0455ns90 ]"}
+[2017-03-06 09:57:35.179] [WARN] console - Unhandled rejection openid不能为空
+[2017-03-06 09:57:35.209] [INFO] BBMIS - 用户信息:{"errcode":40001,"errmsg":"invalid credential, access_token is invalid or not latest, hints: [ req_id: E5rBIa0455ns88 ]"}
+[2017-03-06 09:57:35.209] [WARN] console - Unhandled rejection openid不能为空
+[2017-03-06 09:57:40.744] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 09:57:44.971] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 09:57:45.624] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 09:57:45.819] [INFO] console - data::{"access_token":"0zlnIRFOfhHeBgD0R2Phhdv201xz99Pzp2O4Vrt0yPMgeq5N8e55FfrZk-yhLsMfAnyANidh6dEe32BJcECLvYFCHYqPoyaKZ0vJymNs5vF78CNp_BIvbh2qSrWDtgdKLUVbACAWFG","expires_in":7200}
+[2017-03-06 09:57:46.022] [INFO] console - data:::[object Object]
+[2017-03-06 09:57:46.023] [INFO] BBMIS - JSSDK签名:42f6db02f63f0a796df8340099eb82cedfa275f7
+[2017-03-06 09:57:48.514] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-03-04 19:07:12 , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:21:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:504:26)
+[2017-03-06 10:07:36.207] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 10:07:36.654] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:07:36.836] [INFO] BBMIS - JSSDK签名:bfe57c10fb9f8de3439b365387b57a89e0caa421
+[2017-03-06 10:07:52.981] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-06 10:07:53.200] [INFO] BBMIS - JSSDK签名:2d88709862ec31db218c2e0b73df6693de6542b6
+[2017-03-06 10:08:32.275] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 10:08:32.719] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:08:32.939] [INFO] BBMIS - JSSDK签名:279913638e649a446cd8a9d438e16bc7f6d0291e
+[2017-03-06 10:10:42.199] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-06 10:10:42.401] [INFO] BBMIS - JSSDK签名:57513160df6b54dcac5ca7d86d8826a19848b82d
+[2017-03-06 10:10:51.313] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-06 10:10:51.539] [INFO] BBMIS - JSSDK签名:b1fb74de51fe7085e0a00639172da8ec02a1edd8
+[2017-03-06 10:11:10.203] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 10:11:10.645] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:11:10.792] [INFO] BBMIS - JSSDK签名:1e1dc68175bb474fc5fa3f6ce9fb77376fd6bbc9
+[2017-03-06 10:11:29.413] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-06 10:11:29.602] [INFO] BBMIS - JSSDK签名:2ec0d19f9cf6be1456dc9fa866f6b2d9d6ca0a93
+[2017-03-06 10:12:37.635] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 10:12:38.130] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:12:38.318] [INFO] BBMIS - JSSDK签名:4ef868102f5b5e7ea9dfd2d66c4fd4f091b08568
+[2017-03-06 10:24:11.295] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:24:11.528] [INFO] BBMIS - JSSDK签名:98ca31e9321f0851c67704a169af0444692c0763
+[2017-03-06 10:24:18.447] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 10:24:18.984] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:24:19.158] [INFO] BBMIS - JSSDK签名:a0b9e0e1699be79a8cbad35bfd5c3536c99b4415
+[2017-03-06 10:26:23.634] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:26:23.830] [INFO] BBMIS - JSSDK签名:ec174949d106cecd42d1992cd0b6ba42be0f17df
+[2017-03-06 10:28:06.753] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:28:06.976] [INFO] BBMIS - JSSDK签名:8381346d970e0930e2a057b8b96cb77c859f2d29
+[2017-03-06 10:31:19.628] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:31:19.835] [INFO] BBMIS - JSSDK签名:71356eb9b29d0d9bca033f26b8ec75306b653e6e
+[2017-03-06 10:31:26.124] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 10:31:26.642] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:31:26.826] [INFO] BBMIS - JSSDK签名:886957e8b19fb5e0448d60a3ed7f514d187fffdf
+[2017-03-06 10:32:40.031] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:32:40.243] [INFO] BBMIS - JSSDK签名:9eebfdf31e31de585d067863fa1736933985efb0
+[2017-03-06 10:33:46.422] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:33:46.615] [INFO] BBMIS - JSSDK签名:dc6bf0e3517eea8229d5ad28f8031be1e5d4c72e
+[2017-03-06 10:35:45.947] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:35:46.170] [INFO] BBMIS - JSSDK签名:64fd0072efdb0edf7c558e02c0b6f6c61498283a
+[2017-03-06 10:36:06.917] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:36:07.115] [INFO] BBMIS - JSSDK签名:cba9913c1148f58a451f7818628d3f8d09f5fdf3
+[2017-03-06 10:37:32.467] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:37:32.716] [INFO] BBMIS - JSSDK签名:55e741fa9d0171ae3455085df18eff0a5b1f2d45
+[2017-03-06 10:48:50.190] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-06 10:48:50.426] [INFO] BBMIS - JSSDK签名:1e596d9845ef4a9e2d103b514ddcd775b54e327a
+[2017-03-06 10:48:57.928] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 10:48:58.450] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:48:58.646] [INFO] BBMIS - JSSDK签名:af4cc68cd4488d96660e8665520d19c334792dd5
+[2017-03-06 10:58:23.640] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 10:58:23.863] [INFO] console - data::{"access_token":"If8jy5rQggyPlWv8sCIn1-egLNlgycxt2dul99miMQOW6NCug3imximcDM-J08gJyhuzmhAMHh1EYZWmxUuTYdM0uUoWfY-VYTptKuP0ct4OqYTApoluSvjv7Nbo8j_9ETRgAEAMBZ","expires_in":7200}
+[2017-03-06 10:58:24.040] [INFO] console - data:::[object Object]
+[2017-03-06 10:58:24.040] [INFO] BBMIS - JSSDK签名:901ba774c24f4dcb58a42b5e9fdb8a6945c0b346
+[2017-03-06 11:00:04.656] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 11:00:04.656] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 11:01:48.189] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:286:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-06 11:01:49.646] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:286:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-06 11:06:21.285] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 11:06:21.740] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:06:21.963] [INFO] BBMIS - JSSDK签名:928790e174adeb3d118e4cf6396f0117d974aa34
+[2017-03-06 11:22:45.320] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:22:45.548] [INFO] BBMIS - JSSDK签名:21f12f14b3a50e50efebf1e16608c4c5fa92c952
+[2017-03-06 11:32:29.802] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:32:30.049] [INFO] BBMIS - JSSDK签名:90b1733b136a6dc223e44ccbe198fe4e9e07c5de
+[2017-03-06 11:36:14.198] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:36:14.451] [INFO] BBMIS - JSSDK签名:8e72bfca05a80c95dbf516e44ba51c876a724806
+[2017-03-06 11:37:56.422] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:37:56.642] [INFO] BBMIS - JSSDK签名:8dd2dc08f9f39b0dac8a2712b54a7b6a0cf7840d
+[2017-03-06 11:50:34.326] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:50:34.565] [INFO] BBMIS - JSSDK签名:aad563bcaf84af2bcad5e761413da71499a5095d
+[2017-03-06 11:50:54.246] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:50:54.442] [INFO] BBMIS - JSSDK签名:4a145a65586cf412d3cb39b0fb8e2df2c725e2b9
+[2017-03-06 11:51:27.996] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:51:28.218] [INFO] BBMIS - JSSDK签名:7ce8672988075b66ac8afd09ce75247d30389d07
+[2017-03-06 11:52:29.062] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:52:29.281] [INFO] BBMIS - JSSDK签名:13784a6949e72a142cd1cd443b671b225dc10382
+[2017-03-06 11:53:15.397] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:53:15.592] [INFO] BBMIS - JSSDK签名:20549525dc1131d5c84e47e1dbd97a18ed87b1c9
+[2017-03-06 11:53:57.939] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:53:58.158] [INFO] BBMIS - JSSDK签名:2cc5bfb687a70e213ecaa6f14673fa2fa62e6afb
+[2017-03-06 11:54:56.623] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:54:56.823] [INFO] BBMIS - JSSDK签名:073ae4c7e06f8d6203ce646b6610ae94042f54d6
+[2017-03-06 11:55:42.566] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 11:55:43.073] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:55:43.262] [INFO] BBMIS - JSSDK签名:9d67b395833a56050eb1b2bc97841638dbf4dd3b
+[2017-03-06 11:56:14.323] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:56:14.532] [INFO] BBMIS - JSSDK签名:36cea08fe165d760832b233f86493f8561de926f
+[2017-03-06 11:57:31.925] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 11:57:32.482] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 11:57:32.644] [INFO] BBMIS - JSSDK签名:fe77d0d19969c0393e2b63bd00661abfec69c7a5
+[2017-03-06 11:57:57.077] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 11:57:57.078] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 11:59:57.366] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 11:59:57.366] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 14:02:54.447] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-06 14:02:54.658] [INFO] console - data::{"access_token":"piR4h_3zK31djD8tCXB-PWgBbWP-WNIYQiwXR8zre1yZUn_9XTrhUhEvUA3hcScSFDwCWo9BIPjMwkD0buZJJwzidd_4culjvQ_jBnsBjRraehqNIOfMT-83KeAnem7IMYAgADACOQ","expires_in":7200}
+[2017-03-06 14:02:54.854] [INFO] console - data:::[object Object]
+[2017-03-06 14:02:54.855] [INFO] BBMIS - JSSDK签名:9215838882ed2ceeedca3ad1108f522782b19bea
+[2017-03-06 14:03:21.355] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 14:03:21.836] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 14:03:22.062] [INFO] BBMIS - JSSDK签名:9381c96ba2a46c6e3e072332f3898556ec350139
+[2017-03-06 14:05:46.927] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-06 14:05:47.167] [INFO] BBMIS - JSSDK签名:11fee4afeb3ae2677e76a17d83bdfbc2d9cc50e1
+[2017-03-06 14:07:50.679] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 14:07:51.166] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 14:07:51.373] [INFO] BBMIS - JSSDK签名:882d1b508b6367867a50346f9cf66eba3779064c
+[2017-03-06 14:07:58.975] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-06 14:07:59.170] [INFO] BBMIS - JSSDK签名:7ed2649d375db222bc4c5ff98ff7da2f496e68b1
+[2017-03-06 14:08:08.945] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 14:08:09.395] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 14:08:09.574] [INFO] BBMIS - JSSDK签名:88c3605c8863b0952d46442664758db94ff6e4d3
+[2017-03-06 14:09:26.625] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 14:09:27.097] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 14:09:27.276] [INFO] BBMIS - JSSDK签名:86f512cc018f55ba54358552c77ccdeb5087df4d
+[2017-03-06 14:09:34.990] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 14:09:35.392] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 14:09:35.589] [INFO] BBMIS - JSSDK签名:9bfb77599fac1a888a2a22839c06536a897e0dd9
+[2017-03-06 14:16:16.972] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 14:16:17.196] [INFO] BBMIS - JSSDK签名:593346747ca7517e3de95fc1c2135b1f71dee8d0
+[2017-03-06 14:32:56.614] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-06 14:32:56.867] [INFO] BBMIS - JSSDK签名:2267c16ba72b3661f27f605e5beaf258be51f382
+[2017-03-06 14:35:12.443] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/?salesmanid=leglesalesman
+[2017-03-06 14:35:12.685] [INFO] BBMIS - JSSDK签名:1bc6a3c78cc03129a0859db4f341cff78789046a
+[2017-03-06 14:47:36.762] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 14:47:37.709] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 14:47:37.919] [INFO] BBMIS - JSSDK签名:d4e18473d19eef685a354c7213a27fa3fd2f1204
+[2017-03-06 16:13:40.470] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 16:13:41.053] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:13:41.229] [INFO] console - data::{"access_token":"48P6DYX5XH5en9Up7EKgS2-ctrD_ba5_zDfO2-1q85a3omyEIUG86FsaKVDoyqukhaEeLi8yzR7kXeRVqy7F0QH4FRP2k8mogPFKf1IdyujdXnptq4mradqKouk2ztMdJNVhABAEIQ","expires_in":7200}
+[2017-03-06 16:13:41.444] [INFO] console - data:::[object Object]
+[2017-03-06 16:13:41.444] [INFO] BBMIS - JSSDK签名:2e0519dd67f3713bcb72eaebc36a9d55e2409f66
+[2017-03-06 16:13:48.163] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 16:13:48.703] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:13:48.905] [INFO] BBMIS - JSSDK签名:4ed854a841445c7ffa23adbcf1496532aa80043b
+[2017-03-06 16:13:55.953] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 16:13:56.410] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:13:56.596] [INFO] BBMIS - JSSDK签名:c2ccea5631da1149a1dff9acf0afcad367863e7a
+[2017-03-06 16:14:04.034] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 16:14:04.515] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:14:04.691] [INFO] BBMIS - JSSDK签名:beffb10675ee108e3d22991eb371d4cc2a3407a1
+[2017-03-06 16:15:24.989] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 16:15:25.470] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:15:25.663] [INFO] BBMIS - JSSDK签名:af5163f2fd31d66f233562f7b42081edae24a461
+[2017-03-06 16:17:15.095] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:17:15.327] [INFO] console - data::{"access_token":"cF58I1Lg9_Ebpi-h6S6DeNLJD2Ya86KVclkKZclJOuzik4wFVNqLnldxDMkeFkeUiBMl3rPbQ87loeOU6vdJV-L1b-NmFuLNLIpY2Ib1MkQWBTcAIAEJB","expires_in":7200}
+[2017-03-06 16:17:15.529] [INFO] console - data:::[object Object]
+[2017-03-06 16:17:15.530] [INFO] BBMIS - JSSDK签名:37fe380261ba6d90d3b4b19addaa414d0e91e547
+[2017-03-06 16:17:25.716] [INFO] console - { code: '00138nYj1a0ONi03jx0k1QDqYj138nYa', state: 'STATE' }
+[2017-03-06 16:17:25.719] [INFO] console - 00138nYj1a0ONi03jx0k1QDqYj138nYa
+[2017-03-06 16:17:26.114] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 16:17:26.602] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:17:26.825] [INFO] BBMIS - JSSDK签名:6c9f28c3f2c4076764f4a3ee678714752633c6fc
+[2017-03-06 16:22:07.639] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:22:07.863] [INFO] BBMIS - JSSDK签名:f176c51900d97e80e0922f19db58addd35fc7b5b
+[2017-03-06 16:22:13.267] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:22:13.267] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:22:22.197] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:22:22.197] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:25:09.411] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:25:09.618] [INFO] BBMIS - JSSDK签名:120a1a54b5ec31ddcacb415a9a1cf3241d846589
+[2017-03-06 16:26:38.629] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:26:38.863] [INFO] BBMIS - JSSDK签名:ee3caf14899b57d06524e8cd66a7fd3a301a1549
+[2017-03-06 16:27:01.984] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:27:02.171] [INFO] BBMIS - JSSDK签名:a2977098b5ecf633a972e7da07ddd6bdd3827745
+[2017-03-06 16:27:19.488] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:27:19.689] [INFO] BBMIS - JSSDK签名:51fb98dfc83f54cecc2776636a7205f528b1dd2d
+[2017-03-06 16:42:05.613] [INFO] console - { code: '021nsK611gpXc22S3Y511vRK611nsK6D', state: 'STATE' }
+[2017-03-06 16:42:05.614] [INFO] console - 021nsK611gpXc22S3Y511vRK611nsK6D
+[2017-03-06 16:42:06.032] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 16:42:06.583] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:42:06.802] [INFO] BBMIS - JSSDK签名:c16e7835fc812273d1602cf41667e6e23aae39ac
+[2017-03-06 16:43:18.020] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:43:18.249] [INFO] BBMIS - JSSDK签名:417fffd4c861e4aaab9f03c37e461dfeeb59ecc7
+[2017-03-06 16:43:22.035] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:43:22.035] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:43:22.042] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:43:22.043] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:23.085] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:23.086] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:23.102] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:23.103] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:23.104] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:23.105] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:23.245] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:23.245] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:23.248] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:23.248] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:23.272] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:23.272] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:24.808] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:24.808] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:24.814] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:24.814] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:47.244] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:44:47.437] [INFO] BBMIS - JSSDK签名:5a8aa5e68b7dabdf33af458180cabfbc52c8c42b
+[2017-03-06 16:44:50.353] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:50.353] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:50.358] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:50.359] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:50.367] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:50.368] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:50.374] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:50.375] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:50.381] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:50.382] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:50.392] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:50.392] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:50.536] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:50.537] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:50.547] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:50.548] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:50.613] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:50.613] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:50.615] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:50.615] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:50.616] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:50.616] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:50.617] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:50.617] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:50.747] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:50.747] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:52.040] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:52.041] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:52.094] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:52.095] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:52.103] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:52.104] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:52.113] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:52.113] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:52.122] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:52.122] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:52.134] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:52.135] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:52.202] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:52.202] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:52.247] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:44:52.247] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:52.248] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:44:52.249] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:52.271] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:44:52.271] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:52.279] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:52.280] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:44:52.301] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:44:52.301] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:18.980] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:45:19.165] [INFO] BBMIS - JSSDK签名:d1ac0fe87b6f49e7782d43726bcc6bc2a44cf6fb
+[2017-03-06 16:45:34.553] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:45:34.773] [INFO] BBMIS - JSSDK签名:a01e04d40c21c89ba48980f4b6ca10182edd93a6
+[2017-03-06 16:45:39.267] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:39.267] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:39.277] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:39.277] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:39.314] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:39.314] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:39.412] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:39.414] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:39.433] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:39.433] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:39.461] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:39.461] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:39.853] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:39.853] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:39.856] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:39.857] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:39.866] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:39.866] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:39.888] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:39.888] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:39.891] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:39.891] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:39.904] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:39.905] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.010] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.010] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.035] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.035] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.037] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.037] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.050] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.050] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.062] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.063] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.075] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.075] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.151] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:40.151] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.206] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.206] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.208] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.208] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.209] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.210] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.237] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.237] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.252] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.252] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.324] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.324] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.417] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.417] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.434] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.435] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.440] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.442] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.448] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.448] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.462] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.462] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.474] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:40.475] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.582] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:40.583] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.595] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:40.595] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.609] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:40.610] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.632] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.632] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.655] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.655] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.663] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:40.663] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:40.723] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:40.723] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.632] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:41.633] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.636] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:41.636] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.717] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:41.717] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.722] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:41.723] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.727] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:41.729] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.751] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:41.751] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.816] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:41.816] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.818] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:41.819] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.862] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:41.862] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.866] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:41.867] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.869] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:41.869] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.888] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:41.889] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.928] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:41.928] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:41.950] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:41.951] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.031] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.032] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.039] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.039] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.048] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.048] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.054] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.055] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.056] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.056] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.088] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.088] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.198] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:42.198] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.206] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.206] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.212] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.213] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.217] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.218] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.233] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:42.234] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.247] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:45:42.247] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.349] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.350] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.369] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.370] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.383] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.384] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.385] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.385] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.387] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.387] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.394] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.394] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.468] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.468] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.515] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.515] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.547] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.547] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.549] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.549] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.557] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.558] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:42.563] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:42.564] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:45.756] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:45.756] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:45.770] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:45.770] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:45.905] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:45.905] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:45.917] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:45.917] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:45.924] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:45.924] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:45.974] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:45.974] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:45.976] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:45.976] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:45.989] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:45.989] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.065] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.065] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.071] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.071] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.074] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.074] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.140] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.140] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.157] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.157] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.178] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.178] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.218] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.219] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.229] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.229] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.236] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.236] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.276] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.276] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.321] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.322] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.324] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.324] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.369] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.369] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.375] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.375] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.394] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.394] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.455] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.455] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.467] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.467] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.472] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.472] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.509] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.510] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.525] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.525] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.526] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.526] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.594] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.595] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.609] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.609] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.629] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.629] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.653] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.653] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.656] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.656] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.664] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.664] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.704] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.705] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:45:46.720] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"你的无效请求过多"}
+[2017-03-06 16:45:46.720] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:47:47.046] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:47:47.227] [INFO] BBMIS - JSSDK签名:71575da49c1cd4dd7579b0616318263f2aa280de
+[2017-03-06 16:52:23.807] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:52:24.051] [INFO] console - data::{"access_token":"ZTMPD4rQPIgb7FWd6CnlPWJdPm3lOGm03_Xz0EgRe6qsqmCvC93grNysRyPSmxO-JtgfK8gAYfEqhTGd0bFi0Z2KhPRd0JtaRnEQTVHvHPmRBqU86lOBAs-QF26FwDFmDSIfADALAQ","expires_in":7200}
+[2017-03-06 16:52:24.238] [INFO] console - data:::[object Object]
+[2017-03-06 16:52:24.239] [INFO] BBMIS - JSSDK签名:08dd71c2b5d5f20e93db64b83f773fd47989b567
+[2017-03-06 16:52:38.365] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:52:38.365] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:53:39.223] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:53:39.224] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:53:39.230] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:53:39.230] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 16:54:44.832] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:54:45.033] [INFO] BBMIS - JSSDK签名:108138aef91e489cad6a8eabc77f5b42b38b3941
+[2017-03-06 16:54:53.803] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:54:53.978] [INFO] BBMIS - JSSDK签名:4937514ce2bb1bd013178d5fa966a23aaa5eb35e
+[2017-03-06 16:58:26.563] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:58:26.765] [INFO] BBMIS - JSSDK签名:ba7c902ef1278e07243644610e39a6124dc34b0c
+[2017-03-06 16:59:02.746] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 16:59:02.929] [INFO] BBMIS - JSSDK签名:31520e5066e2d386157463cc50fa3a7986887f2d
+[2017-03-06 16:59:26.624] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 16:59:26.625] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 17:00:12.951] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:00:13.150] [INFO] BBMIS - JSSDK签名:3ad63feda27c10771b7ea40c56b81dd91809ee19
+[2017-03-06 17:00:17.924] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 17:00:17.924] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 17:02:19.824] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:02:20.043] [INFO] BBMIS - JSSDK签名:0173c6c350b65479a3bacaf938d727a5546ec3fa
+[2017-03-06 17:04:09.074] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:04:09.295] [INFO] BBMIS - JSSDK签名:d062ee909b98415226ebd6fae88e10e1f1ebc2d5
+[2017-03-06 17:04:34.706] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:04:34.902] [INFO] BBMIS - JSSDK签名:ace6c5afc84caf2fe0483a5b6a25388f234d66ed
+[2017-03-06 17:06:33.601] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:06:33.806] [INFO] BBMIS - JSSDK签名:88740500752965d31dde88d75e51ffde03a04399
+[2017-03-06 17:07:32.081] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:07:32.270] [INFO] BBMIS - JSSDK签名:c7ec9019344e635560c3783f74772fb5974a806a
+[2017-03-06 17:07:46.882] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:07:47.074] [INFO] BBMIS - JSSDK签名:66cd4ab15e555f5fb7ca0639bddbda1151bc9cf0
+[2017-03-06 17:08:10.038] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:08:10.263] [INFO] BBMIS - JSSDK签名:efb2e3f149acd218bc8b25cad0f10453266d7943
+[2017-03-06 17:08:55.770] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:08:55.958] [INFO] BBMIS - JSSDK签名:5d6beb3fee2d23a9e3788fed377a96e3fbe4c17d
+[2017-03-06 17:09:38.382] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:09:38.602] [INFO] BBMIS - JSSDK签名:06e52dda2cdcab4435a2edc99c8e63e35528ef80
+[2017-03-06 17:10:28.946] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:10:29.112] [INFO] BBMIS - JSSDK签名:66fdb61cf0d32b8e359a02b345c20b22ccfbb95c
+[2017-03-06 17:10:38.574] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:10:38.801] [INFO] BBMIS - JSSDK签名:7a99d21d025c4c1e05b362bb12509074a1b26455
+[2017-03-06 17:13:08.153] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:13:08.359] [INFO] BBMIS - JSSDK签名:8f383d600004bceff16fd7eaa9d37120b40daeff
+[2017-03-06 17:14:22.567] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:14:22.788] [INFO] BBMIS - JSSDK签名:6882204c03dbe82d8ec77c0f16ca303aebff6f98
+[2017-03-06 17:14:39.502] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:14:39.738] [INFO] BBMIS - JSSDK签名:0913089e67b62bcb9143563972ca803604cbb1c6
+[2017-03-06 17:24:01.105] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:24:01.345] [INFO] BBMIS - JSSDK签名:78272695c558d0fbf0ed265c54328a0f09f6d656
+[2017-03-06 17:24:14.157] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:24:14.350] [INFO] BBMIS - JSSDK签名:fb8e2296aea55a7a93846bede620ac12a0064a64
+[2017-03-06 17:24:22.674] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:24:22.874] [INFO] BBMIS - JSSDK签名:df2eac3e530a4edf95aba19a6aed18f61438ae5b
+[2017-03-06 17:24:42.825] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:24:43.033] [INFO] BBMIS - JSSDK签名:a32abe39765067c1e10128f20bcfa8395859032e
+[2017-03-06 17:25:10.107] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:25:10.346] [INFO] BBMIS - JSSDK签名:deac73ee41ad8eb3e0477904f2d734952316a0b9
+[2017-03-06 17:27:03.106] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:27:03.343] [INFO] BBMIS - JSSDK签名:ea69ebd4159373436f90afe582700fb09caf4cc5
+[2017-03-06 17:27:10.061] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 17:27:10.062] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 17:27:14.506] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 17:27:14.506] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 17:27:46.780] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 17:27:46.780] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 17:29:25.657] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:29:25.894] [INFO] BBMIS - JSSDK签名:160eb3322f71dfb3ca2e2f33daac654df172e12f
+[2017-03-06 17:37:08.888] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 17:37:09.138] [INFO] BBMIS - JSSDK签名:07569f06d1f00b510128119b1b9d34dcc664b481
+[2017-03-06 18:16:26.766] [INFO] console - { code: '0318DyY02csz501n1W012fbxY028DyY1', state: 'STATE' }
+[2017-03-06 18:16:26.773] [INFO] console - 0318DyY02csz501n1W012fbxY028DyY1
+[2017-03-06 18:16:27.158] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-06 18:16:27.862] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 18:16:28.040] [INFO] console - data::{"access_token":"R4-BH8vAHjY_pFYciR4m5_ZA9CrXpZgAZ6HColIewS-HJhu3TJuG24GL0bT2ixEJRlXmEh0I7FaLms_jNaHY8SmDjKW9o437fA-g1Ft08L_xI7KpyYocKmcFPzc8aF3CRDTeACABND","expires_in":7200}
+[2017-03-06 18:16:28.242] [INFO] console - data:::[object Object]
+[2017-03-06 18:16:28.242] [INFO] BBMIS - JSSDK签名:7f55ad9b55e2eaf177daa0fcc159ce3568995b17
+[2017-03-06 18:21:46.251] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 18:21:46.455] [INFO] BBMIS - JSSDK签名:45db643d3ca0d20dfd80cc114cbab10bd710f886
+[2017-03-06 18:22:59.496] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 18:22:59.677] [INFO] BBMIS - JSSDK签名:d10259c9a862453f4c9502dc204d83c33c9d3d51
+[2017-03-06 18:25:23.841] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 18:25:24.042] [INFO] BBMIS - JSSDK签名:f407da9f0a278fdbe161745f96245b3158938a4c
+[2017-03-06 18:25:42.833] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 18:25:42.833] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 18:25:46.547] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 18:25:46.547] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 18:25:46.548] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 18:25:46.548] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 19:00:03.761] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 19:00:03.975] [INFO] BBMIS - JSSDK签名:39c7b696b2004f3e572d74e0eee2b5df05a7a9a5
+[2017-03-06 19:02:20.666] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 19:02:20.898] [INFO] BBMIS - JSSDK签名:52b61834abbde1464da4ecc9676be55c390b3654
+[2017-03-06 19:04:43.497] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 19:04:43.717] [INFO] BBMIS - JSSDK签名:48f740a45da16a74b9d653031d34bd2925148c8c
+[2017-03-06 19:05:08.583] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 19:05:08.771] [INFO] BBMIS - JSSDK签名:b8af11334398abfa962b1b012b15a17357b13875
+[2017-03-06 19:05:57.166] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 19:05:57.166] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 19:05:57.173] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 19:05:57.173] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 19:05:57.175] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 19:05:57.175] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 19:06:21.778] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 19:06:21.963] [INFO] BBMIS - JSSDK签名:e78d24a424518bf59c2858a3781664792844f102
+[2017-03-06 19:08:37.711] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 19:08:37.934] [INFO] BBMIS - JSSDK签名:fb24b7717a9c8bb84605f2931a597e0fde510024
+[2017-03-06 19:08:59.665] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 19:08:59.873] [INFO] BBMIS - JSSDK签名:5453e0285f4de83231e9bfd371055bb8440758f3
+[2017-03-06 19:09:38.474] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 19:09:38.681] [INFO] BBMIS - JSSDK签名:4bf72e8751817c051d4f2b4927de9f8dacd66fe8
+[2017-03-06 19:11:13.982] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 19:11:14.234] [INFO] BBMIS - JSSDK签名:fab309e4c2b07d6a2485320e91c55a1fde6bdb71
+[2017-03-06 19:11:30.284] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/
+[2017-03-06 19:11:30.480] [INFO] BBMIS - JSSDK签名:36c372a91cde2dea33b8b9aa2ccd56a225a7cc21
+[2017-03-06 19:12:57.375] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 19:12:57.377] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 19:13:04.901] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 19:13:04.901] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 19:13:04.923] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 19:13:04.924] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 19:13:42.164] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 19:13:42.165] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 19:13:47.154] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 19:13:47.156] [INFO] BBMIS - ：第一次签名错误
+[2017-03-06 19:14:20.531] [INFO] BBMIS - 第一次签名:{"return_code":"FAIL","return_msg":"商户号mch_id与appid不匹配"}
+[2017-03-06 19:14:20.531] [INFO] BBMIS - ：第一次签名错误

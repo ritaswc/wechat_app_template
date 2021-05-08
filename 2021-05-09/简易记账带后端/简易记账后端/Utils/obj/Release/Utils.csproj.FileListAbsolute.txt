@@ -1,0 +1,5 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\Utils\bin\Release\Utils.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\Utils\bin\Release\Utils.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\Utils\obj\Release\Utils.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\Utils\obj\Release\Utils.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\jianyuejizhang\Utils\obj\Release\Utils.pdb

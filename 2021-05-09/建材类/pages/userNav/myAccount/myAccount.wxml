@@ -1,0 +1,6 @@
+<!--pages/userNav/myAccount/myAccount.wxml-->
+<view class="container">
+      <button class="button" hover-class="button_pressed" bindtap="logoutAction">
+           <text>退出账号</text>
+      </button>
+</view>

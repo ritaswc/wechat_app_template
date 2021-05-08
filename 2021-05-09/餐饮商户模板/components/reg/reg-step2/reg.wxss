@@ -1,0 +1,50 @@
+.step-tips {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.step-tips-arrow {
+    width: 39rpx;
+    height: 19rpx;
+    margin: 0 30rpx;
+}
+.step-tips {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 150rpx;
+
+}
+.step-tips .step-img {
+    width: 31rpx;
+    height: 29rpx;
+    margin-right: 10rpx;
+}
+
+.form {
+    width: 100%;
+    background-color: #ffffff;
+}
+.form .form-item {
+    margin: 0 30rpx;
+    height: 96rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 1rpx solid #f2f2f2;
+}
+.form .form-item text {
+    width: 200rpx;
+}
+.msg-btn {
+    width: 180rpx;
+    height: 70rpx;
+    color: #ffffff;
+}
+.form .form-item:last-child {
+    border:none;
+}

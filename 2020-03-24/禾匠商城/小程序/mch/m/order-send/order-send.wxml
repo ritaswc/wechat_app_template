@@ -1,0 +1,43 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <form bindsubmit="formSubmit" wx:if="{{order}}">
+            <view class="flex flex-row form-row">
+                <view class="flex-grow-0 flex-y-center">
+                    <view>快递公司</view>
+                </view>
+                <view class="flex-grow-1" style="padding: 0">
+                    <view class="flex flex-row" style="height: 100%">
+                        <view class="flex-grow-1 flex-y-center" style="padding-left: 36rpx">
+                            <input bindinput="expressInput" disabled="true" name="express" placeholder="请输入快递公司名称" value="{{order.default_express}}"></input>
+                        </view>
+                        <view class="flex-grow-0" style="min-width: 0">
+                            <picker bindchange="expressChange" class="flex-y-center flex-x-center" range="{{order.express_list}}" rangeKey="express" style="height: 100%;width: 88rpx">
+                                <image src="/mch/images/icon-jiantou-xia.png" style="width: 26rpx;height: 26rpx"></image>
+                            </picker>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="flex flex-row form-row">
+                <view class="flex-grow-0 flex-y-center">
+                    <view>快递单号</view>
+                </view>
+                <view class="flex-grow-1">
+                    <input bindinput="expressNoInput" name="express_no" placeholder="请输入快递单号" value="{{order.express_no}}"></input>
+                </view>
+            </view>
+            <view class="flex flex-row form-row" style="margin-bottom: 88rpx">
+                <view class="flex-grow-0 flex-y-center">
+                    <view>商家留言</view>
+                </view>
+                <view class="flex-grow-1">
+                    <input bindinput="wordsInput" name="words" placeholder="选填" value="{{order.words}}"></input>
+                </view>
+            </view>
+            <button class="order-item-btn" formType="submit" style="height: 88rpx;margin: 0 36rpx;background: #ff4544;color: #fff;border-color: #ff4544">提交</button>
+        </form>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

@@ -1,0 +1,215 @@
+{template 'common/header'}
+<ol class="breadcrumb we7-breadcrumb">
+	<a href="{php echo url('site/category')}"><i class="wi wi-back-circle"></i> </a>
+	<li><a href="{php echo url('site/category')}">文章分类管理</a></li>
+	<li>
+		{if empty($id)}<a href="{php echo url('site/category/post')}">分类添加</a>{/if}
+		{if !empty($id)}<a href="{php echo url('site/category/post', array('id' => $id))}">分类编辑</a>{/if}
+	</li>
+</ol>
+<form action="./index.php?c=site&a=category&do=post" method="post" class="article-post">
+	<input type="hidden" name="parentid" value="{$parent['id']}" />
+	<input type="hidden" name="id" value="{$id}" />
+	<div class="we7-form" id="js-wesite-category-post" ng-controller="WesiteCategoryPost" ng-cloak>
+		<div class="form-group" ng-if="category.name">
+			<label class="control-label col-sm-2">访问地址</label>
+			<div class="form-controls col-sm-8">
+				<div class="form-control-static"><a href="{$_W['siteroot']}/app/index.php?c=site&a=site&cid={$category['id']}&i={$_W['uniacid']}" target="_blank">/app/index.php?c=site&a=site&cid={{category.id}}&i={$_W['uniacid']}</a></div>
+				<span class="help-block">您可以根据此地址，添加回复规则，设置访问。</span>
+			</div>
+		</div>
+		<div class="form-group" ng-if="parentid">
+			<label class="control-label col-sm-2">上级分类</label>
+			<div class="form-controls col-sm-8">
+				<div class="form-control-static" ng-bind="parent.name"></div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="control-label col-sm-2">排序</label>
+			<div class="form-controls col-sm-8">
+				<input type="text" name="displayorder" class="form-control" ng-model="category.displayorder" ng-style="{'width' : '680px'}">
+				<span class="help-block">分类的显示顺序，越大则越靠前 </span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="control-label col-sm-2">分类名称</label>
+			<div class="form-controls col-sm-8">
+				<input type="text" name="cname" class="form-control" ng-model="category.name" ng-style="{'width' : '680px'}">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="control-label col-sm-2">分类描述</label>
+			<div class="form-controls col-sm-8">
+				<textarea name="description" class="form-control" rows="5" ng-bind="category.description" ng-style="{'width' : '680px'}"></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="control-label col-sm-2">是否启用</label>
+			<div class="form-controls col-sm-8">
+				<input id='enabled1' type="radio" name='enabled' value="1" ng-model="category.enabled" ng-checked="enabled"/>
+				<label for="enabled1">是</label>
+				<input id='enabled2' type="radio" name='enabled' value="0" ng-model="category.enabled" ng-checked="!enabled"/>
+				<label for="enabled2">否</label>
+				<span class="help-block"></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="control-label col-sm-2">是否添加微站首页导航</label>
+			<div class="form-controls col-sm-8">
+				<input id='isnav_1' type="radio" name='isnav' value="1" ng-model="category.nid" ng-checked="category.nid != 0" ng-click="showWesite()"/>
+				<label for="isnav_1">是</label>
+				<input id='isnav_2' type="radio" name='isnav' value="0" ng-model="category.nid" ng-checked="category.nid == 0" ng-click="hideWesite()"/>
+				<label for="isnav_2">否</label>
+				<span class="help-block">开启此选项后,系统在微站首页导航自动生成以分类名称为导航名称的记录.关闭此选项后,系统将删除对应的导航记录</span>
+			</div>
+		</div>
+		<div class="form-group form-inline js-site-selector" ng-style="{'display' : category.nid == 0 ? 'none' : ''}">
+			<label class="control-label col-sm-2">分配到微站</label>
+			<div class="form-controls col-sm-8">
+				<select class="we7-select" name="multiid">
+					{loop $multis $multi}
+						<option value="{$multi['id']}" {if $category['nav']['multiid'] == $multi['id'] || $_GPC['mtid'] == $multi['id']}selected{/if}>{$multi['title']}{if $multi['id'] == $default_site}[默认微站]{/if}</option>
+					{/loop}
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="control-label col-sm-2">是否作为首页使用</label>
+			<div class="form-controls col-sm-8">
+				<input id='ishomepage-1' type="radio" name='ishomepage' value="1" ng-model="category.ishomepage" ng-checked="category.ishomepage != 0" />
+				<label for="ishomepage-1">是</label>
+				<input id='ishomepage-2' type="radio" name='ishomepage' value="0" ng-model="category.ishomepage" ng-checked="category.ishomepage == 0"/>
+				<label for="ishomepage-2">否</label>
+				<span class="help-block">注意：该选项仅对父级分类有效。开启此选项后，分类模板将直接引用首页模板（home.html[注:该文件在home文件夹下面]]），分类的二级分类将作为导航显示</span>
+				<span class="help-block " style="color:red" ng-if="site_template.sections > 0">当前默认微站对应的模板有导航位置限制。如果您希望将该导航链接作为"首页使用"使用,请选择其他分类风格</span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="control-label col-sm-2">分类风格</label>
+			<div class="form-controls col-sm-8">
+				<p class="form-control-static" id="current-title" ng-bind="category.style.name"></p>
+				<div class="we7-input-img input-more active">
+					<img src="{$_W['siteroot']}app/themes/{{category.style.tname}}/preview.jpg" id="current-preview" class="img-rounded">
+					<div class="cover-dark">
+						<a href="javascript:;" class="cut" data-toggle="modal" data-target="#ListStyle">更换</a>
+					</div>
+				</div>
+				<input type="text" name="styleid" id="styleid" ng-model="category.styleid" ng-style="{'display' : 'none'}"/>
+				<div class="help-block">
+					新建分类风格时，请在您选择的风格对应的模板目录下新建“site”文件夹，默认的列表页面为list.html，默认的内容页面为detail.html。
+				</div>
+			</div>
+		</div>
+		<!-- 风格列表 -->
+		<div class="modal fade" id="ListStyle" aria-hidden="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title">微站模板风格列表</h4>
+					</div>
+					<div class="modal-body template clearfix overflow-auto">
+						<div class="item item-style" ng-class="{'active': style.id == category.styleid}" ng-repeat="style in styles" ng-style="{'width': '20%', 'height': '290px', 'padding': '10px 10px', 'float': 'left'}">
+							<div class="title">
+								<div class="title-{{style.id}}" style="overflow:hidden; height:40px;">{{style.name}} ({{style.tname}})</div>
+								<a href="javascript:;" ng-click="changeStyle(style.id)">
+									<img src="../app/themes/{{style.tname}}/preview.jpg" class="img-rounded img-responsive preview-{{style.id}}" ng-style="{'height': '225px'}">
+								</a>
+							</div>
+							<div class="btn-group  btn-group-justified">
+								<a href="javascript:;" class="btn btn-default btn-xs" ng-click="changeStyle(style.id)">选择风格</a>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="control-label col-sm-2">直接链接</label>
+			<div class="form-controls col-sm-8">
+				<input type="text" class="form-control" name="linkurl" ng-model="category.linkurl" ng-style="{'width' : '680px'}">
+				<span class="help-block">链接必须是以http://或是https://开头。没有直接链接，请留空 </span>
+			</div>
+		</div>
+
+		<div class="penel we7-panel">
+			<div class="panel-heading">
+				导航样式
+			</div>
+			<div class="panel-body we7-margin">
+				<div class="we7-form">
+					<div class="form-group">
+						<label for="" class="control-label col-sm-2">图标类型</label>
+						<div class="form-controls col-sm-8">
+							<input id='icontype-1' type="radio" name='icontype' value="1" ng-model="category.icontype" ng-checked='icontype' />
+							<label for="icontype-1">系统内置</label>
+							<input id='icontype-2' type="radio" name='icontype' value="2" ng-model="category.icontype" ng-checked="category.icontype == 2"/>
+							<label for="icontype-2">自定义上传</label>
+						</div>
+					</div>
+					<div class="form-group" ng-if="category.icontype != 2">
+						<label for="" class="control-label col-sm-2">系统图标</label>
+						<div class="form-controls col-sm-8" >
+							<div class="input-group">
+								<input type="text" name='icon[icon]' class="form-control" ng-model="category.css.icon.icon"/>
+								<span class="input-group-addon" style="width:35px; border-left:none" ng-style="{'background-color' : colorValue}"><i class="{{category.css.icon.icon}}" ng-init="category.css.icon.icon = category.css.icon.icon ? category.css.icon.icon : 'fa fa-external-link'"></i></span>
+								<span class="input-group-btn" ng-click="selectIcon()"> <a href="" class="btn btn-default">&nbsp;选择图标</a></span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group" ng-if="category.icontype != 2">
+						<label for="" class="control-label col-sm-2">图标颜色</label>
+						<div class="form-controls col-sm-8 input-group">
+							<input type="text" class="form-control" name="icon[color]" ng-model="category.css.icon.color" ng-style="{'display' : 'none'}">
+							<div we7-colorpicker we7-my-color="category.css.icon.color" we7-my-default-color="'#2B2D30'"></div>
+						</div>
+					</div>
+					<div class="form-group" ng-if="category.icontype != 2">
+						<label for="" class="control-label col-sm-2">图标大小</label>
+						<div class="form-controls col-sm-8" >
+							<div class="input-group col-sm-2">
+								<input class="form-control" type="text" name="icon[size]" ng-model="category.css.icon.width" ng-init="category.css.icon.width = category.css.icon.width ? category.css.icon.width : 35">
+								<span class="input-group-addon">PX</span>
+							</div>
+							
+							<span class="help-block">图标的尺寸大小，单位为像素，上传图标时此设置项无效</span>
+						</div>
+					</div>
+					<div class="form-group" ng-if="category.icontype == 2">
+						<label for="" class="control-label col-sm-2">上传图标</label>
+						<div class="form-controls col-sm-8">
+							<div class="we7-input-img input-more input-img" ng-class="{'active': category.icon}">
+								<img src="{{category.icon}}" ng-if="category.icon">
+								<a href="javascript:;" class="input-addon" ng-click="uploadImage()" ng-hide="category.icon"><span>+</span></a>
+								<input type="text" name="iconfile" ng-model="category.icon" ng-style="{'display' : 'none'}">
+								<div class="cover-dark">
+									<a href="" class="cut" ng-click="uploadImage()">更换</a>
+									<a href="" class="del" ng-click="delImage()"><i class="fa fa-times text-danger"></i></a>
+								</div>
+							</div>
+							<span class="help-block">自定义上传图标图片，“系统图标”优先于此项</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input type="hidden" name="token" value="{$_W['token']}" />
+		<input name="submit" value="发布" class="btn btn-primary btn-submit" type="submit">
+	</div>
+</form>
+<script>
+angular.module('wesiteApp').value('config', {
+	id: {php echo !empty($id) ? json_encode($id) : 'null'},
+	category: {php echo !empty($category) ? json_encode($category) : 'null'},
+	parentid: {php echo !empty($parentid) ? json_encode($parentid) : 'null'},
+	parent: {php echo !empty($parent) ? json_encode($parent) : 'null'},
+	multis: {php echo !empty($multis) ? json_encode($multis) : 'null'},
+	site_template: {php echo !empty($site_template) ? json_encode($site_template) : 'null'},
+	styles: {php echo !empty($styles) ? json_encode($styles) : 'null'}
+});
+angular.bootstrap($('#js-wesite-category-post'), ['wesiteApp']);
+</script>
+{template 'common/footer'}

@@ -1,0 +1,118 @@
+page{
+   width: 100%;
+  height: 100%;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: "幼圆"
+}
+
+.menu_list {
+  margin-top: 20rpx;
+  background: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.menu_item {
+  display: flex;
+  width: 100%;
+  height: 100rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.menu_left_icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 20rpx;
+}
+
+.menu_right {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.typeList {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.typeTitle {
+  box-sizing:border-box;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #eee;
+  padding-left: 20rpx;
+}
+
+.typeItem {
+  box-sizing:border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 200rpx;
+  border-bottom: 1px solid #acacac;
+  padding: 0 20rpx;
+}
+
+.typeItem .pro_img {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+}
+
+.typeItem .msg {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+
+.typeItem .msg view {
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+
+.typeItem .msg view image {
+  width: 25rpx;
+  height: 25rpx;
+  position: relative;
+}
+
+.typeItem .msg view .half::after {
+  content: "";
+  position: absolute;
+  width: 25rpx;
+  height: 25rpx;
+  background: rgba(255, 255, 255, 0.5);
+  left: 50%;
+  top: 0;
+}
+
+.typeItem .msg text:nth-child(1) {
+  font-size: 40rpx;
+}
+
+.typeItem .msg text:nth-child(3) {
+  font-size: 34rpx;
+  color: #FFA500;
+}
+
+.tips{
+  height:50rpx;
+  text-align:center;
+}
+
+.tips image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.tips text{
+  font-size: 30rpx;
+}

@@ -1,0 +1,35 @@
+page{
+	background-color: rgba(245,245,245,1);
+}
+.box-container{
+	padding: 15px;
+	background-color: #ffffff;
+}
+.user-info-container{
+	height: 60px;
+	margin: 0 10px;
+	background-color: #ffffff;
+
+}
+.u-img-wrap {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.u-info-wrap {
+	margin-left:10px; 
+	display: inline-block;
+	vertical-align: middle;
+}
+.focus-wrap{
+	height: 60px;
+	padding: 17px 0; 
+}
+.focus {
+	height: 26px;
+	line-height: 26px;
+	background-color: #17b5ee;
+	color: #ffffff;
+	border-radius: 5px;
+}

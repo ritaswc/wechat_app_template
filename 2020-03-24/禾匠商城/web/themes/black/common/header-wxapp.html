@@ -1,0 +1,9 @@
+<div class="text-center"><img src="{php echo tomedia('headimg_'.$_W['account']['acid'].'.jpg')}?time={php echo time()}" class="head-logo account-img"></div>
+<div class="text-center wxapp-name font-lg">{$_W['account']['name']}</div>
+<div class="text-center wxapp-version">{$version_info['version']}</div>
+<div class="text-center operate">
+	<a href="{php echo url('miniapp/version/display', array('iscontroller' => 0))}"><i class="wi wi-cut-version" data-toggle="tooltip" data-placement="bottom" title="切换版本"></i></a>
+	{if in_array($_W['role'], array(ACCOUNT_MANAGE_NAME_OWNER, ACCOUNT_MANAGE_NAME_MANAGER)) || $_W['isfounder']}
+		<a href="{php echo $_W['account']['manageurl'] . '&iscontroller=0'}"><i class="wi wi-manage" data-toggle="tooltip" data-placement="bottom" title="管理设置"></i></a>
+	{/if}
+</div>

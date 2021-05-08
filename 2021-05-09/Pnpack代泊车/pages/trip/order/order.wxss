@@ -1,0 +1,178 @@
+page {
+  background: #fff;
+}
+
+.wait-header {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 35rpx;
+  padding: 10rpx;
+  padding-left: 10%;
+  margin: 0 40rpx;
+}
+
+.wait-text {
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 10rpx;
+  margin: 0 40rpx;
+  font-size: 30rpx;
+}
+.wait-text2 {
+height:40rpx;
+padding:5rpx 10rpx;
+margin:0 40rpx;
+font-size:30rpx;
+}
+
+.wait-text1 {
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 10rpx;
+  margin: 15rpx 40rpx;
+  font-size: 30rpx;
+}
+
+.content {
+  overflow: hidden;
+  margin-top: 10rpx;
+  border: 1px solid #eee;
+
+}
+
+.right {
+width:97%;
+background-color:#fff;
+border-left:20px solid #de7c3a;
+  padding-bottom:50px;
+
+}
+
+.unorder {
+  width: 595rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 35rpx;
+  margin-top: 78rpx;
+  color: #fff;
+  background: rgb(153, 153, 153);
+}
+
+.prome {
+  width: 595rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 35rpx;
+  margin-top: 38rpx;
+  color: #fff;
+}
+
+.big-text {
+  font-size: 40rpx;
+}
+
+.content image {
+  width: 75px;
+  height: 50px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.content .avater {
+  width: 70px;
+  height: 70px;
+  margin-left: 48rpx;
+  margin-top: 10rpx;
+  margin-right: 40rpx;
+}
+
+.swiper-tab {
+  width: 100%;
+  border-bottom: 2rpx solid #777;
+  text-align: center;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 25%;
+  color: #777;
+  margin-top: 20rpx;
+}
+
+.on {
+  color: #da7c0c;
+  border-bottom: 5rpx solid #da7c0c;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-box view {
+  text-align: center;
+}
+
+.content .callphone {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  overflow: hidden;
+  margin-left: 43rpx;
+  margin-top: 47rpx;
+}
+
+.content .imagedata {
+  margin-top: 30rpx;
+  width: 44%;
+  height: 287rpx;
+  margin-right: 20rpx;
+}
+
+.prome1 {
+  width: 595rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 35rpx;
+  margin-top: 38rpx;
+  color: #fff;
+
+  text-align: center;
+}
+
+.prome2 {
+  width: 282rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 35rpx;
+  margin-top: 38rpx;
+  color: #fff;
+}
+
+.swiper-tab image {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 80rpx;
+  padding-bottom: 10rpx;
+}
+
+.waiting {
+    margin-bottom: 80rpx;
+}
+.jinxing{
+   border-left: 17px solid #de7c3a;
+}
+.wancheng{
+     border-left: 17px solid #00a598;
+}
+.color-h{
+  color: rgb(222,124,58);
+  margin-left: 10rpx;
+}

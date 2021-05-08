@@ -1,0 +1,46 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background: #d4d4d4;
+}
+
+.line_top12 {
+  height: 1px;
+  width: 100%;
+  margin-top: 12px;
+  background: #d4d4d4;
+}
+
+.line_margin_left32 {
+  height: 1px;
+  width: 100%;
+  margin-left: 56px;
+  background: #d4d4d4;
+}
+
+.img_rigth_row {
+  height: 14px;
+  width: 10px;
+  vertical-align: middle;
+  margin-right: 12px;
+  margin-left: 4px;
+}
+.btn_theme{
+  background: #ff7460;
+  color: white
+}
+.other-button-hover {
+  background-color: red;
+}

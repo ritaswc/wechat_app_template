@@ -1,0 +1,88 @@
+/* @import "../../wxParse/wxParse.acss";pages/topic/topic.wxss */
+@import "./../../components/quick-navigation/quick-navigation.acss";
+@import "/components/save_qrcode/save_qrcode.acss";
+@import "./../../wxParse/wxParse.acss";
+.new-body{
+    background: #fff;
+    padding: 32rpx 0 110rpx;
+    overflow-x: hidden;
+    border-top: 1rpx solid #e3e3e3;
+}
+.new-body .title{
+    font-weight: bold;
+    margin-bottom: 42rpx;
+}
+.new-body .info{
+    color: #888;
+    margin-bottom: 34rpx;
+}
+
+.bar{
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1rpx solid #e3e3e3;
+}
+
+.bar .btn{
+    color: #555;
+    text-align: center;
+    padding: 10rpx 30rpx;
+    display: inline-block;
+    background: none;
+    line-height: inherit;
+}
+
+.bar .btn:after{
+    display: none;
+}
+
+.bar .btn cover-image,
+.bar .btn image{
+    width: 42rpx;
+    height: 42rpx;
+    display: block;
+    margin: 0 auto 10rpx;
+}
+.wxParse-p{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.goods-link{
+    overflow: hidden;
+    height: 220rpx !important;
+    position: relative;
+    margin-bottom: 10rpx;
+}
+
+.goods-link image{
+    width: 184rpx !important;
+    height: 184rpx !important;
+    background: #fff;
+    top: 16rpx;
+    left: 16rpx;
+    position: absolute;
+    display: block;
+}
+
+.goods-link .goods-info{
+    padding: 32rpx 24rpx 24rpx 232rpx !important;
+    height: 100%;
+}
+
+.goods-link .goods-name{
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 16rpx;
+}
+
+.wxParse-p image{
+    margin-left: 0;
+    margin-right: 0;
+}

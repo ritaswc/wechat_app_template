@@ -1,0 +1,172 @@
+page{
+  word-break: break-all;
+  background-color: #eee; 
+}
+.showError{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 70rpx;
+  background-color: #E64340;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 70rpx;
+}
+.cover-word{
+  position: fixed;
+  right: 0rpx;
+  top: 200rpx;
+  z-index: 99;
+  width: 100rpx;
+  color: #999;
+  font-size: 24rpx;
+}
+.cover-word view text{
+  display: block;
+  width: 20rpx;
+  height: 25rpx;
+  text-align: center;
+  margin-left: 60rpx;
+}
+.cover-word view text.big{
+  color: #09bb07;
+}
+.modal{
+  position: fixed;
+  z-index: 101;
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 46rpx;
+  background: rgba(0, 0 ,0 , 0.3);
+  color: #fff;
+  border-radius: 50rpx;
+}
+
+.search-wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  height: 94rpx;
+  box-sizing: border-box;
+  padding-top: 21rpx;
+  padding-bottom: 17rpx;
+}
+.search-number{
+  position: relative;
+  width: 718rpx;
+}
+.search-number image{
+  width: 26rpx;
+  height: 26rpx;
+}
+.search-number input{
+  background: #f4f4f4;
+  border-radius: 10rpx;
+  height: 60rpx;
+  box-sizing: border-box;
+  padding-left: 66rpx;
+  font-size: 26rpx;
+  color: #222;
+  letter-spacing: 0.27rpx;
+}
+.search-number .clear-input-img{
+  position: absolute;
+  z-index: 100;
+  top: -5rpx;
+  right: 20rpx;
+  letter-spacing: 0.27rpx;
+  text-align: right;
+  width: 70rpx;
+  height: 68rpx;
+}
+.search-number .clear-input-img icon{
+  margin-top: 19rpx;
+}
+
+.search-number input .holder{
+  font-size: 26rpx;
+  color: #999;
+}
+.search-number .search,
+.search-number .tiaoma{
+  position: absolute;
+  z-index: 100;
+  letter-spacing: 0.27rpx;
+}
+.search-number .search{
+  top: 8rpx;
+  left: 20rpx;
+}
+.search-number .tiaoma{
+  top: 23rpx;
+  right: 10rpx;
+}
+.search-number .tiaoma image{
+  width: 80rpx;
+  height: 32rpx;
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  color: #aaa;
+  font-size: 24rpx;
+  padding-top: 12rpx;
+  padding-bottom: 10rpx;
+}
+.title view{
+  display: block;
+  width: 680rpx;
+  box-sizing: border-box;
+  padding-top: 5rpx;
+}
+
+.types-wrap {
+  display: flex;
+  justify-content: center;
+  width: 750rpx;
+  background-color: #fff;
+}
+.types-wrap .wrap{
+  width: 700rpx;
+}
+.types-wrap .wrap .item{
+  display: flex;
+  justify-content: center;
+  width: 700rpx;
+  height: 87rpx;
+  line-height: 90rpx;
+  border-bottom: 1px solid #eee;
+  color: #131313;
+  font-size: 32rpx;
+}
+.types-wrap .wrap .img{
+  width: 58rpx;
+  padding-top: 13rpx;
+}
+.types-wrap .wrap image{
+  width: 58rpx;
+  height: 58rpx;
+}
+.types-wrap .wrap .text{
+  width: 628rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  padding-left: 26rpx;
+  padding-top: 13rpx;
+}
+
+.footer{
+  width: 100%;
+  height: 20rpx;
+}

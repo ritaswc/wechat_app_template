@@ -1,0 +1,35 @@
+<!-- HMT Bus GO! (WXSS VER.) -->
+<!-- 线路详情页 -->
+
+<page>
+	<view class="page">
+		<view class="page__hd">
+			<view class="page__title">{{lineName}} [ {{lineStart}} 开往 {{lineEnd}} ]</view>
+			<view class="page__desc">{{type}}发车时刻表</view>
+		</view>
+
+		<view class="page__bd">
+			<view class="weui-cells weui-cells_after-title">
+				<block wx:if="{{tableCount == 0}}">
+					<block wx:if="{{typeNum == 1}}">
+						<view class="weui-cell">
+							<view class="weui-cell__bd">数据暂缺</view>
+						</view>
+					</block>
+					<block wx:else>
+						<view class="weui-cell">
+							<view class="weui-cell__bd">维持工作日的时刻表</view>
+						</view>
+					</block>
+				</block>
+				<block wx:else>
+					<block wx:for="{{timetable}}" wx:for-item="time">
+						<view class="weui-cell">
+							<view class="weui-cell__bd">{{time}}</view>
+						</view>
+					</block>
+				</block>
+			</view>
+		</view>
+	</view>
+</page>

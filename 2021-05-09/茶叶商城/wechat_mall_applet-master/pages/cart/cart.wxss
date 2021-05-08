@@ -1,0 +1,152 @@
+.button {
+  border-radius: 0;
+}
+
+.address-container {
+  margin: 15rpx;
+  padding-bottom: 10rpx;
+}
+
+.receiver {
+  display: flex;
+  justify-content: space-between;
+}
+
+.address {
+  margin-top: 15rpx
+}
+
+.items-container {
+  padding-bottom: 200rpx;
+  min-height: 700rpx;
+}
+
+.item {
+  height: 180rpx;
+  padding: 15rpx;
+  padding-left: 10rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #e4e4e4;
+  color: #333;
+  display:flex;
+  justify-content: space-between;
+}
+
+.item text {
+  font-size: 28rpx;
+}
+
+.item image {
+  display: block;
+  width: 280rpx;
+  max-height: 180rpx;
+}
+
+.item-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 430rpx;
+}
+
+.title {
+  height: 70%;
+}
+
+.title text {
+  font-size: 29rpx;
+  color: #333;
+  white-space: no-wrap;
+  line-height: 34rpx;
+}
+
+.address-container text {
+  font-size: 34rpx;
+  color: #444;
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.numbers text, input {
+  display: block;
+}
+
+.quantity {
+  margin-left: auto;
+  font-size: 26rpx;
+  display: flex;
+}
+
+.quantity .op {
+  border: 1rpx solid lightgrey;
+  width: 70rpx;
+  font-size: 32rpx;
+  font-weight: 800;
+  line-height: 50rpx;
+  height: 50rpx;
+  text-align: center;
+}
+
+.quantity .number {
+  z-index: 1;
+  border-top: 1rpx solid lightgrey;
+  border-bottom: 1rpx solid lightgrey;
+  line-height: 50rpx;
+  height: 50rpx;
+  text-align: center;
+}
+
+.quantity .input {
+  width: 80rpx;
+  text-align: center;
+  height: 50rpx;
+}
+
+.numbers .price {
+  color: red;
+  padding-top: 15rpx;
+}
+
+.billing-btn {
+  z-index:2;
+  position: fixed;
+  bottom: 100rpx;
+  width: 100%;
+}
+
+.billing-btn .total {
+  background-color: #eee;
+}
+
+.billing-btn .button {
+  border-radius: 0;
+}
+
+.billing-btn view {
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-left: 15rpx;
+  font-size: 30rpx;
+}
+
+.use-coupon {
+  font-size: 33rpx;
+  line-height: 70rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.use-coupon .red {
+  color: red;
+}
+
+.bottom-blank {
+
+}

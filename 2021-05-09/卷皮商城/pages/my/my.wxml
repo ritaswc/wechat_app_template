@@ -1,0 +1,86 @@
+
+<view class="mine_head">
+  <view class="mine_login back">
+    <text>登录</text>
+    <text class="center">|</text>
+    <text>注册</text>
+  </view>
+
+  <view class="order back">
+    <view class="orderText">我的订单
+      <text>全部订单></text>
+    </view>
+  </view>
+
+  <view class="service_list back">
+    <view class="mine_icon">
+      <view>
+        <a class="fa fa-credit-card fa-2x"></a>
+        <text>待付款</text>
+      </view>
+      <view>
+        <a class="fa fa-user-circle-o fa-2x"></a>
+        <text>待成团</text>
+      </view>
+      <view>
+        <a class="fa fa-bus fa-2x"></a>
+        <text>待收货</text>
+      </view>
+      <view>
+        <a class="fa fa-jpy fa-2x "></a>
+        <text>退款/售后</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="list_top">
+    <view class="my-item mylist back">
+      <view class="myitem-name flex-item">
+        <text>我的收藏</text>
+        <text class="fa fa-angle-right fa-2x"></text>
+      </view>
+    </view>
+    <view class="my-item mylist back">
+      <view class="myitem-name flex-item">
+        <text>我的优惠券</text>
+        <text class="fa fa-angle-right fa-2x"></text>
+      </view>
+    </view>
+    <view class="my-item mylist back">
+      <view class="myitem-name flex-item">
+        <text>我的拼图</text>
+        <text class="fa fa-angle-right fa-2x"></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="list_down">
+    <view class="my-item mylist back">
+      <view class="myitem-name flex-item">
+        <text>客服中心</text>
+        <text class="fa fa-angle-right fa-2x"></text>
+      </view>
+    </view>
+    <view class="my-item mylist back">
+      <view class="myitem-name flex-item">
+        <text>关于卷皮</text>
+        <text class="fa fa-angle-right fa-2x"></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer back">
+    <view class="footbar">
+      <text>返回首页</text>
+      <text>电脑版</text>
+      <text>客户端</text>
+    </view>
+
+    <view class="copyright">
+      <text class="line"></text>
+      <text class="center">copyright © 武汉奇米网络科技有限公司</text>
+      <text class="line"></text>
+    </view>
+  </view>
+
+</view>

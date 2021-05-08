@@ -1,0 +1,61 @@
+.default-address {
+  height: 140.62rpx;
+  position: relative;
+  line-height: 140.62rpx;
+  background: #fff;
+}
+
+.bg-line {
+  width: 100%;
+  height: 7.03rpx;
+  display: block;
+  position: absolute;
+}
+.pos-icon {
+  width: 29.29rpx;
+  height: 41.01rpx;
+  margin-top: 49.80rpx;
+  margin-left: 35.15rpx;
+  float: left;
+}
+.address-arrow {
+  width: 14.06rpx;
+  height: 35.15rpx;
+  margin-top: 52.74rpx;
+  margin-right: 35.15rpx;
+  float: right;
+}
+
+.address-detail {
+  display: inline-block;
+  width: 585.90rpx;
+  margin-left: 35.15rpx;
+}
+.address-user {
+  line-height: 56.25rpx;
+  font-size: 28.12rpx;
+  font-weight: bold;
+  margin-top: 26rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.address-address {
+  line-height: 32.81rpx;
+  font-size: 23.44rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.address-empty {
+  display: inline-block;
+  width: 585.90rpx;
+  margin-left: 35.15rpx;
+  color: red;
+}
+
+.display-none{
+  display: none;
+}

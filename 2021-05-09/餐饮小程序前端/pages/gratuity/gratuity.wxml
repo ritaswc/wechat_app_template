@@ -1,0 +1,34 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="gratuity">
+  <!--服务员信息-->
+  <view class="waiter">
+    <image src="{{ waiter.img }}"></image>
+    <view class="waiter-info">
+      <view class="name">
+        {{ waiter.name }}
+      </view>
+      <view class="iconfont icon-wuxing {{ waiter.grade }}">
+        {{ waiter.score }}分
+      </view>
+    </view>
+  </view>
+  <!--服务员大标签-->
+  <view class="waiter-title">
+    <text wx:for="{{ waiter.title }}">{{ item }}</text>
+  </view>
+  <!--评分-->
+  <view class="give-star">
+    打分：
+    <text bindtap="chooseStar" data-star="{{ index }}" wx:for="12345" class="iconfont icon-star {{ currentStar >= index ? 'active' : '' }}"></text>
+  </view>
+  <!--底部标签-->
+  <view class="tip">
+    标签
+  </view>
+  <view class="menu2-comment">
+    <view bindtap="choosetip" data-choose="{{ index }}" class="menu2-comment-item {{ chooseArr[index] ?  'active' : '' }}" wx:for="{{ waiter.comment}}" wx:key="unique">
+      {{ item }}
+    </view>
+  </view>
+  <view class="btn" bindtap="send">提交信息</view>
+</view>

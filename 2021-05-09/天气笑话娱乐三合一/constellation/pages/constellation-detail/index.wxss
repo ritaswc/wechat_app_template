@@ -1,0 +1,44 @@
+page {
+    height:100%;
+}
+.detail-container {
+    height:100%; background: url("../imgs/xzbg.jpg"); background-size: cover; color:#FFF; padding: 8px;
+}
+.detail-container .title {
+    width:100%; text-align: center; padding-bottom:15px;
+}
+
+
+.name {
+    font-size:28rpx; color:#FFFF00; font-weight: bold;
+}
+.index {
+    display: flex; flex-direction: row; margin-top:18rpx;
+}
+.summary {
+    font-size:26rpx; text-indent: 2em; line-height:38rpx; margin-top:8px;
+}
+
+.index text {
+    font-size:22rpx;
+}
+.index text.value {
+    font-size:28rpx; color: #FFFF00;
+}
+
+.index progress {
+    flex-grow: 1;
+}
+
+.today {
+    margin-right:10px;
+}
+.year {
+    margin-top:18px; margin-right:10px;
+}
+.year .con {
+    font-size:26rpx; text-indent: 2em; line-height:38rpx; margin-top:8px;
+}
+.year .con text {
+    font-weight:bold;
+}

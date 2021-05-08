@@ -1,0 +1,13 @@
+{template 'common/header'}
+<script type="text/javascript" language="javascript">
+	if(window.addEventListener) {
+		window.addEventListener('message', function(e){
+			$('#iframepage').height(e.data.height+200); //选中图片导致高度又变高了
+		});
+	}
+</script>
+<iframe src="{$iframe_url}" frameborder="0" width="100%"  id="iframepage" scrolling="no">
+
+</iframe>
+
+{template 'common/footer'}

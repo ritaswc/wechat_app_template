@@ -1,0 +1,37 @@
+/**
+ *  image default size
+ */
+.img-large-size {
+	width: 132rpx;
+    height: 132rpx;
+}
+
+.img-default-size {
+    width: 88rpx;
+    height: 88rpx;
+}
+
+.img-small-icon {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+
+/**
+ *  image position
+ * */
+.img-left-10 {
+	left: 10rpx;
+}
+
+.img-left-20 {
+	left: 20rpx;
+}
+
+.img-right-10 {
+	right: 10rpx;
+}
+
+.img-right-20 {
+	right: 20rpx;
+}

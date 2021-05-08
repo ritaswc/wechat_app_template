@@ -1,0 +1,200 @@
+
+swiper image{
+  width:100vw;
+  height:100vh;
+  display:inline-block;
+  overflow:hidden;
+}
+.container-goods{
+  margin-bottom: 20rpx;
+}
+.container-goods .main-goods{
+  padding: 28rpx 30rpx 0rpx;
+  background: white;
+}
+.container-goods .main-goods .hr{
+    position: relative;
+}
+.container-goods .main-goods .hr::after{
+    content:'';
+    width: 100%;
+    height: 4rpx;
+    background: #ddd;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    bottom: -4rpx;
+}
+.container-goods .main-goods .main-goods-info{
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+}
+.container-goods .main-goods .main-goods-info view text{
+  color: #ba77ff;
+}
+.container-goods .main-goods .main-goods-info view:first-of-type{
+  border: 1px solid #ba77ff;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+.container-goods .main-goods .main-goods-info view:nth-of-type(2){
+  text-align: left;
+  flex-grow: 2;
+  padding-left: 50rpx;
+  box-sizing: border-box;
+}
+.container-goods .main-goods .main-goods-price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+  padding-bottom: 20rpx;
+}
+.container-goods .main-goods .main-goods-price view:first-of-type{
+  color: #f00;
+}
+.container-goods .main-goods .main-goods-price view:nth-of-type(2){
+  text-align: left;
+  flex-grow: 2;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  text-decoration: line-through;
+}
+.container-goods .main-goods .main-goods-ship{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx 0;
+    height: 60rpx;
+    color:#999;
+}
+.container-goods .main-goods .main-goods-ship view{
+    display: flex;
+}
+.container-goods .main-goods .main-goods-ship view .iCon-ship{
+  display:block;
+  width:50rpx;
+  margin-right: 6rpx;
+}
+.container-goods .main-goods .main-goods-ship view:nth-of-type(1) .iCon-ship{
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/car.png') no-repeat 0 0rpx;
+  background-size:contain;
+}
+.container-goods .main-goods .main-goods-ship view:nth-of-type(2) .iCon-ship{
+  width:40rpx;
+  background: url('http://app.shizhencaiyuan.com/pintuan/img/time.png') no-repeat 0 0rpx;
+  background-size: contain;
+}
+.container-goods .main-goods .main-goods-ship view text{
+    color: #ba77ff;
+}
+.group-state{
+    background: white;
+    color: #999;
+    padding: 30rpx;
+    margin-bottom: 20rpx;
+}
+.group-state .group-state-time text,.group-state .group-state-person text{
+    color: #ba77ff;
+}
+.group-state .group-state-time{
+    width: 400rpx;
+    height: 400rpx;
+    display: flex;
+    flex-direction: column;
+    line-height: 60rpx;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+}
+.group-state .group-state-time .bg1{
+    width: 400rpx;
+    height: 400rpx;
+    background: #ba77ff;
+    opacity: 0.6;
+    position: absolute;
+    top:0;
+    border-radius: 50%;
+}
+.group-state .group-state-time .bg2{
+    width: 400rpx;
+    height: 400rpx;
+    background: rgba(255,255,255,.6);
+    position: absolute;
+    top:0;
+    border-radius: 50%;
+    clip: rect(auto,auto,auto,200rpx);
+}
+.group-state .group-state-time .bg3{
+    width: 300rpx;
+    height: 300rpx;
+    background: white;
+    position: absolute;
+    top:50rpx;
+    left: 50rpx;
+    border-radius: 50%;
+}
+.group-state .group-state-time text{
+    z-index: 999;
+}
+.group-state .group-state-person{
+    text-align: center;
+    padding-top: 20rpx;
+}
+.group-member{
+    width: 100%;
+    background: white;
+    color: #999;
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+.group-member .goods-manager{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx 0;
+    border-bottom:2rpx solid #ddd;
+}
+.group-member .goods-manager:last-child{
+    border: none;
+}
+.goods-manager .goods-manager-left{
+    display: flex;
+    align-items: center;
+}
+.goods-manager .goods-manager-left .brand{
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 20rpx;
+}
+.goods-manager .goods-manager-left .brand image{
+    width: 100%;
+    height: 100%;
+}
+.goods-manager .goods-manager-left .group-time{
+    height: 100rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+.goods-manager .goods-manager-left .group-header{
+  border: 1px solid #ba77ff;
+  background: #ba77ff;
+  padding: 10rpx;
+  color: #fff;
+  margin-left: 20rpx;
+}
+.group-notice{
+    padding: 30rpx;
+    color: #999;
+}
+.group-notice .group-share{
+    border: 2rpx solid #ba77ff;
+    text-align: center;
+    padding: 30rpx 0;
+    margin-top: 20rpx;
+}

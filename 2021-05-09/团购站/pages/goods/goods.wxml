@@ -1,0 +1,84 @@
+<import src='../../components/star/star.wxml' />
+<import src='../../components/comment/comment.wxml' />
+<view>
+  <view class='top'>
+    <swiper class='banners' indicator-dots="true" autoplay="true" interval="4000" duration="1000" indicator-color="#60ffffff" indicator-active-color="#fff">
+      <block wx:for="{{goods.photo}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item}}" class="banner" mode="aspectFill" bindtap='banner' data-index='{{index}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='marsk'></view>
+    <view class='info'>
+      <view class='name'>{{goods.name}}</view>
+      <view class='dec'>{{goods.describe}}</view>
+    </view>
+  </view>
+  <view class='services'>
+    <view class='serve'>
+      <block wx:for='{{goods.service}}' wx:key='item'>
+        <view class='service'>
+          <icon type="success_circle" color="#65c07a" size="16"></icon>{{item}}</view>
+      </block>
+    </view>
+    <view class='selled'>
+      <icon type="success_circle" color="#999999" size="16"></icon>已售{{goods.selled}}</view>
+  </view>
+  <view class='store'>
+    <view class='title'>适用商户</view>
+    <view class='storeinfo'>
+      <view class='storemain'>
+        <view class='name'>{{goods.store.name}}</view>
+        <view class='km'>
+          <template is='star' data="{{count:goods.store.star}}"></template>
+          <view class='distance'>{{goods.store.km}}</view>
+        </view>
+      </view>
+      <view class='verticalline'></view>
+      <image src="../../images/phone_orange.png" class='call' bindtap='callPhone'></image>
+    </view>
+    <view class='location' bindtap='location'>
+      <image src="../../images/position.png" mode="aspectFill" class='icon'></image>
+      <view class='info'>{{goods.store.address}}</view>
+      <image src="../../images/arrow_left.png" class='arrow_left'></image>
+    </view>
+  </view>
+  <view class='grounp border_top_bottom'>
+    <view class='title'>团购详情</view>
+    <block wx:for='{{goods.group.goods}}' wx:for-item='good' wx:key='good.id'>
+      <view class='grounp_item'>
+        <view class='name'>{{good.name}}</view>
+        <view class='count'>{{good.count}}</view>
+        <view class='value'>{{good.value}}</view>
+      </view>
+    </block>
+    <view class='oldvalue'>
+      <view class='name'>总价值</view>
+      <view class='value'>{{goods.group.oldValue}}元</view>
+    </view>
+    <view class='nowvaule'>
+      <view class='name'>团购价</view>
+      <view class='value'>{{goods.group.grounpValue}}元</view>
+    </view>
+    <view class='describe'>
+      <text>{{goods.group.describe}}</text>
+    </view>
+  </view>
+  <view class='notice border_top_bottom'>
+    <view class='title'>购买须知</view>
+    <block wx:for='{{goods.guide}}' wx:for-item='gguid' wx:key='gguid.id'>
+      <view class='name'>{{gguid.name}}</view>
+      <block wx:for='{{gguid.info}}' wx:key='*this'>
+        <view class='info'>
+          <view class='point'></view>{{item}}</view>
+      </block>
+    </block>
+  </view>
+  <template is='comment' data='{{comments:goods.comments,count:goods.comments.length}}' />
+</view>
+<view class='buy'>
+  <view class='price'>￥{{goods.group.grounpValue}}</view>
+  <view class='oldprice'>￥{{goods.group.oldValue}}</view>
+  <view class='gobuy' bindtap='gobuy'>立即抢购</view>
+</view>

@@ -1,0 +1,205 @@
+/*外部容器*/
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+} 
+
+/*整体列表*/
+.carts-list {
+	display: flex;
+	flex-direction: column;
+	padding-left: 40rpx;
+	margin-bottom: 80rpx;
+}
+
+/*每行单元格*/
+.carts-item {
+	display: flex;
+	flex-direction: row;
+	height:150rpx;
+	/*width属性解决标题文字太短而缩略图偏移*/
+	width:100%;
+	border-bottom: 1px solid #eee;
+	padding: 30rpx 0;
+	margin-right: 40rpx;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: white;
+	z-index: 99;
+}
+
+/*item与button的容器*/
+.carts-container {
+	position: relative;
+	width: 100%;
+	height: 90px;
+}
+
+/*左部图片*/
+.carts-image {
+	width:150rpx;
+	height:150rpx;
+}
+
+
+/*右部描述*/
+.carts-text {
+	margin-left: 10rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/*右上部分标题*/
+.carts-title {
+	font-size: 28rpx;
+	color: #444;
+	line-height: 38rpx;
+}
+
+/*右下部分价格与数量*/
+.carts-subtitle {
+	font-size: 25rpx;
+	color:darkgray;
+	padding: 0 20rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+}
+
+/*价格*/
+.carts-price {
+	color: #f60;
+	font-size:14px;
+	line-height: 22px;
+}
+
+/*人民币符号*/
+.carts-price:before, .select-and-amount text:last-child:before {
+	content: '￥';	
+}
+
+/*商品加减按钮*/
+/*stepper容器*/
+.stepper {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	width: 70px;
+	height: 26px;
+	margin:0 auto;
+}
+
+
+/*加号与减号*/
+.stepper text {
+	width: 19px;
+	line-height: 26px;
+	text-align: center;
+	float: left;
+}
+
+/*数值*/
+.stepper input {
+	color: black;
+	float: left;
+	margin: 0 auto;
+	width: 30px;
+	height: 26px;
+	text-align: center;
+	font-size: 12px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+/*普通样式*/
+.stepper .normal{
+	color: black;
+}
+
+/*禁用样式*/
+.stepper .disabled{
+	color: #ccc;
+}
+
+/*复选框样式*/
+.carts-list icon {
+	margin-top: 60rpx;
+	margin-right: 20rpx;
+}
+
+/*底部按钮*/
+.carts-footer {
+	width: 100%;
+	height: 80rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: fixed;
+	bottom: 0;
+	border-top: 1px solid #eee;
+	background: white;
+}
+
+.select-and-amount {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+/*复选框*/
+.carts-footer icon {
+	margin-left: 20rpx;
+	display: block;
+}
+
+/*全选字样*/
+.carts-footer text {
+	font-size: 30rpx;
+	margin-left: 8rpx;
+	/*line-height: 10rpx;*/
+	display: block;
+}
+
+/*立即结算按钮*/
+.carts-footer .button {
+	line-height: 80rpx;
+	text-align: center;
+	width:220rpx;
+	height: 80rpx;
+	background-color: #f60;
+	color: white;
+	font-size: 36rpx;
+	border-radius: 0;
+	border: 0;
+}
+
+/*删除按钮*/
+.carts-footer .delete {
+	height: 80rpx;
+	width: 200rpx;
+	text-align: right;
+	line-height: 80rpx;
+	color: #fc9326;
+}
+
+/*删除按钮*/
+.delete-button {
+	width: 60px;
+	font-size: 16px;
+	height: 99%;
+	line-height: 90px;
+	border: 0;
+	border-radius: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.delete-button:before {
+	border: 0;
+}

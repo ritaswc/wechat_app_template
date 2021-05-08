@@ -1,0 +1,43 @@
+<!--pages/manageAddr/manageAddr.wxml-->
+<view class="main">
+    <view class="addr_item">
+        <label>收货人</label><input placeholder="姓名" type="text" value="{{consignee}}" bindblur="consigneeBlur"/>
+    </view>
+    <view class="addr_item">
+        <label>联系方式</label><input placeholder="手机号码" type="number" maxlength="11" value="{{mobile}}" bindblur="mobileBlur"/>
+    </view>
+    <view class="picker_item">
+        <text>省</text>
+        <picker range="{{provinces}}" range-key="name" value='1' data-value="province" data-code="{{province.code?province.code:'00'}}" bindchange="change" class="{{provinceClass?provinceClass:''}}">
+            {{province.name?province.name:'请选择省'}}
+        </picker>
+    </view>
+    <view class="picker_item">
+        <text>市</text>
+        <picker range="{{citys}}" range-key="name" value='1' data-value="city" data-code="{{city.code?city.code:'0000'}}" bindchange="change" class="{{cityClass?cityClass:''}}">
+            {{city.name?city.name:'请选择市'}}
+        </picker>
+    </view>
+    <view class="picker_item">
+        <text>区</text>
+        <picker range="{{areas}}" range-key="name" value='1' data-value="area" data-code="{{area.code?area.code:'000000'}}" bindchange="change" class="{{areaClass?areaClass:''}}">
+            {{area.name?area.name:'请选择区'}}
+        </picker>
+    </view>
+    <view class="addr_item full_addr">
+        <label>详细地址</label><input placeholder="街道地址" type="text" value="{{address}}" bindblur="addrBlur"/>
+    </view>
+</view>
+<view class="main2">
+    <!--<view class="set_default">
+        <text>设为默认</text>
+        <view class="{{def_addr?'icon-switch icon-switch-active':'icon-switch'}}" bindtap="switchIcon">
+</view>
+    </view>-->
+    <button class="preserve_addr" bindtap='keepTap'>保存</button>
+    <button hidden="{{add_address==true}}" class="delete_addr" bindtap='deleteTap'>删除地址</button>
+</view>
+<view hidden="{{warnInf?false:true}}" class="mytoast">
+    <icon type="warn" size="40" color="white"/>
+    <view>{{warnInf}}</view>
+</view>

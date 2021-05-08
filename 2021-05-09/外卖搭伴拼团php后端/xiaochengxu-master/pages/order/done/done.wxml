@@ -1,0 +1,60 @@
+
+<view class="content">
+    <view class="done-top">
+        <image src="/asset/img/opensecss.png"></image>
+        <view class="text-center">
+            <text wx:if="{{!pinsucess}}">开团成功</text>
+            <text wx:else>参团成功</text>
+        </view>
+        <view class="success">
+            <view class="goods-info">
+                <image src="{{groupInfo.goods.order_img}}"></image>
+                <view class="goods-info-handler">
+                    <text>{{groupInfo.goods.goods_name}}</text>
+                    <view class="goods-info-price">
+                        <text>¥{{groupInfo.order.goods_amount}}</text>
+                    </view>
+                    <view class="group-state">
+                        <text>开团时间：{{groupInfo.group.group_time}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="done-time">
+                <text>离截团时间还有：{{groupInfo.group.group_end_time}}</text>
+            </view>
+            <view class="done-time" wx:if="{{groupInfo.group.is_low == 1}}">
+                <text>集齐3件拼底价</text>
+                <text>邀请小伙伴一起拼底价</text>
+            </view>
+            <view class="done-time" wx:else>
+                <text>邀请小伙伴一起拼团</text>
+            </view>
+        </view>
+    </view>
+    <view class="group-member">
+      <block wx:for="{{groupInfo.user}}" wx:key>
+      <view class="goods-manager">
+          <view class="goods-manager-left">
+              <view class="brand">
+                  <image src="{{item.images}}"></image>
+              </view>
+              <view class="group-time">
+              <view>
+                <text>{{item.nickname}}</text>
+              <text class="group-header" wx:if="{{item.is_leader == 1}}">团长</text>
+              </view>
+              <view>
+              <text>下单时间:{{item.group_time}}</text>
+              </view>
+              </view>
+          </view>
+          <view>
+              <text>{{item.number}}件</text>
+          </view>
+      </view>
+      </block>
+   </view>
+</view>
+
+<import src="/asset/template/backhome.wxml" />
+<template is="backhome"/>

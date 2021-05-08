@@ -1,0 +1,17 @@
+
+/**
+ *  button default style
+ * */
+.default-btn {
+	display: block;
+	width: 90%;
+	height: 88rpx;
+	line-height: 88rpx;
+	text-align: center;
+	margin-top: 60rpx;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10rpx;
+	color: #fff;
+	background: linear-gradient(to right, orange, red);
+}

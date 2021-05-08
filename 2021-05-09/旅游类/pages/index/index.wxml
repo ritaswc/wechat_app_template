@@ -1,0 +1,89 @@
+
+<!--index.wxml-->
+<import src="view-list-template/view-list.wxml" />
+<view class="home">
+  <view class="img">
+    <image src="/images/home/banner.png"></image>
+  </view>
+  <view class="category">
+    <view class="view box" bindtap="enterViewList">
+      <image src="/images/home/view.png"></image>
+      <view class="icon">
+        <view>
+          <text></text>
+        </view>
+      </view>
+      <text class="title">景点</text>
+    </view>
+    <view class="view box">
+      <image src="/images/home/ticket.png"></image>
+      <view class="icon">
+        <view>
+          <text></text>
+        </view>
+      </view>
+      <text class="title">门票</text>
+    </view>
+    <view class="view box">
+      <image src="/images/home/hotel.png"></image>
+      <view class="icon">
+        <view>
+          <text></text>
+        </view>
+      </view>
+      <text class="title">酒店</text>
+    </view>
+    <view class="view box">
+      <image src="/images/home/food.png"></image>
+      <view class="icon">
+        <view>
+          <text></text>
+        </view>
+      </view>
+      <text class="title">美食</text>
+    </view>
+  </view>
+
+  <!--目的地推荐-->
+  <view class="slide">
+    <view class="title">
+      <text>目的地推荐 </text>
+      <text>精选推荐好玩的景区、城市</text>
+    </view>
+    <swiper autoplay="true" interval="3000" duration="500" indicator-dots="true" circular="true">
+      <swiper-item wx:for="{{viewHot}}" wx:key="{{index}}" wx:for-item="imgs">
+        <view class="slide-image">
+          <view class="image-wrapper">
+            <view wx:for="{{imgs}}" wx:key="{{index}}" bindtap="enterDetail">
+              <image src="{{item.imgurl}}"></image>
+              <text>{{item.title}}</text>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+    <view class="tag">
+      <text wx:for="{{cityHot}}" wx:key="{{index}}">{{item.cityName}}</text>
+      <text>更多</text>
+    </view>
+  </view>
+  <view class="hot-view">
+    <view class="tab">
+      <view bindtap="getaroundView">
+        <text wx:if="{{active}}" class="active" >周边游</text>
+        <text wx:else>周边游</text>
+      </view>
+      <view bindtap="getcountryView">
+        <text wx:if="{{!active}}" class="active">国内热门</text>
+        <text wx:else>国内热门</text>
+      </view>
+    </view>
+    <view>
+      <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1486064564067&di=11f3984717e07faa110d19fa7deb2f85&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01462d574eb05e32f875a429a7f9ec.gif"  wx:if="{{loading}}"></image>
+        <view wx:for="{{viewList }}" wx:key="{{index}}" wx:if="{{!loading}}" animation="{{animationData}}" class="animationData">
+          <template is="viewList" data="{{...item}}"></template>
+        <view class="fill"></view>
+      </view>
+    </view>
+  </view>
+</view>

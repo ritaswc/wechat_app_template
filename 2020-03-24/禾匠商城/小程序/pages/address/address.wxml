@@ -1,0 +1,46 @@
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="bottom-bar">
+            <navigator url="/pages/address-edit/address-edit">添加新地址</navigator>
+        </view>
+        <view class="no-data-tip" wx:if="{{show_no_data_tip}}">暂无收货地址</view>
+        <view class="address-list">
+            <view class="address-item" wx:for="{{address_list}}" wx:key="{{item.id}}">
+                <view class="userinfo flex-row">
+                    <view class="flex-grow-1">收货人：{{item.name}}</view>
+                    <view class="flex-grow-0">{{item.mobile}}</view>
+                </view>
+                <view class="address-detail">收货地址：{{item.address}}</view>
+                <view class="flex-row">
+                    <view class="flex-grow-1">
+                        <view style="display: inline-block" wx:if="{{item.is_default==1}}">
+                            <view class="default-address active flex-row flex-y-center">
+                                <image src="{{__wxapp_img.store.checked.url}}" style="width: 40rpx;height: 40rpx;margin-right: 12rpx"></image>
+                                <text>默认地址</text>
+                            </view>
+                        </view>
+                        <view style="display: inline-block" wx:else>
+                            <view bindtap="setDefaultAddress" class="default-address flex-row flex-y-center" data-index="{{index}}">
+                                <image src="{{__wxapp_img.store.uncheck.url}}" style="width: 40rpx;height: 40rpx;margin-right: 12rpx"></image>
+                                <text>设为默认</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flex-grow-0 flex-row">
+                        <navigator class="address-option flex-y-center" url="/pages/address-edit/address-edit?id={{item.id}}">
+                            <image src="{{__wxapp_img.store.edit.url}}"></image>
+                            <text>编辑</text>
+                        </navigator>
+                        <view bindtap="deleteAddress" class="address-option flex-y-center" data-id="{{item.id}}" data-index="{{index}}">
+                            <image src="{{__wxapp_img.store.delete.url}}"></image>
+                            <text>删除</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer"></include>
+</view>

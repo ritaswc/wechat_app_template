@@ -1,0 +1,26 @@
+<!--pages/shenghuo/GoodLife/GoodLifeCell/GoodLifeCell.wxml-->
+<!--<text>pages/shenghuo/GoodLife/GoodLifeCell/GoodLifeCell.wxml</text>-->
+
+<import src="../../../stars/stars-template.wxml" />
+
+<template name="GoodLifeCell">
+  <view class="goodLifeCell-container">
+    <view class="left-container">
+      <image class="left-image" src="{{doorImg}}"></image>
+    </view>
+    <view class="right-container">
+      <view class="serviceTitle">{{doorName}}</view>
+      <template is="starsTemplate" data="{{stars:starAr, score:star}}" />
+      <view class="right-middle-container">
+        <view class="address">{{province+city+country}}</view>
+        <view class="distance">{{distance}}</view>
+      </view>
+      <view class="right-bottom-container">
+
+        <view wx:if="{{maxDiscountPrice}}" class="bottomTitle">今日最高优惠
+          <text class="maxDiscountPrice">¥ {{maxDiscountPrice}}</text> 元</view>
+      </view>
+    </view>
+
+  </view>
+</template>

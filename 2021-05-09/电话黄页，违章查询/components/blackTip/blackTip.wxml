@@ -1,0 +1,6 @@
+<template name="blackTip">
+    <view class="blackTip" wx:if="{{show}}">
+        <view class="info"></view>
+        <view>{{str}}</view>
+    </view>
+</template>

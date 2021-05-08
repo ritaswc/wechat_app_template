@@ -1,0 +1,633 @@
+<template name="buy-data">
+    <form report-submit="true" onSubmit="_formIdSubmit" data-bind="test" data-type="navigate" data-url="{{buy.url}}">
+        <button formType="submit" id="_formIdSubmit">
+            <!-- 新订单提示 -->
+            <view class="purchase1" a:if="{{buy}}">
+                <image class="purchase2" src="{{buy.avatar_url}}"></image>
+                <view class="purchase3">{{buy.content}}, {{buy.time}}前</view>
+            </view>
+        </button>
+    </form>
+</template>
+
+<template name="notice">
+    <!--商城公告 开始-->
+    <view class='notice flex-row' a:if='{{param.content}}' onTap='showNotice' data-index="{{template_index}}" style='color:{{param.color}};background-color:{{param.bg_color}}'>
+        <view class='flex-grow-0 flex-y-center notice-a'>
+            <image src='{{param.icon ? param.icon : __wxapp_img.notice.notice.url}}' style='width:36rpx;height:36rpx;margin-right:24rpx;'></image>
+            <view>{{param.name}}</view>
+        </view>
+        <view class='flex-grow-1 notice-box'>
+            <view class='notice-content'>
+                <view style='display: inline-block;'>{{param.content}}</view>
+            </view>
+        </view>
+        <view class='flex-grow-0 flex-y-center notice-b'>
+            <image src='{{__wxapp_img.notice.jiantou.url}}' style='width:10rpx;height:18rpx;margin-left:32rpx;'></image>
+        </view>
+    </view>
+    <view class='notice-modal flex-y-center flex-x-center {{show_notice == template_index ? "" : "hidden"}}'>
+        <view style='margin-top:-200rpx;'>
+            <image class='notice-img' src='{{__wxapp_img.notice.title.url}}'></image>
+            <view class='w-100 notice-body'>
+                <scroll-view scroll-y style='color:#666;max-height:400rpx;'>
+                    <text>{{param.content}}</text>
+                </scroll-view>
+                <view class='flex-x-center'>
+                    <view class='notice-btn flex-x-center flex-y-center' onTap='closeNotice'>我知道了</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--商城公告 结束-->
+</template>
+
+<template name="banner">
+    <!-- Banner 开始 -->
+    <view>
+        <swiper class="banner" autoplay="true" interval="5000" duration="300" indicator-dots="true" circular="true" style="padding:0;height:{{param.height ? param.height+'rpx' : '360rpx'}}" previous-margin="{{param.style == 2 ? '60rpx' : ''}}" next-margin="{{param.style == 2 ? '60rpx' : ''}}">
+            <block a:for="{{param.banner_list}}" a:key="{{item.id}}">
+                <swiper-item style="text-align:center">
+                    <form report-submit="true" onSubmit="_formIdSubmit" data-type="{{item.open_type == 'wxapp' ? '' : 'navigate'}}" data-url="{{item.page_url}}">
+                        <button formType="submit" id="_formIdSubmit">
+                            <navigator onTap="navigatorClick" data-url="{{item.page_url}}" data-open_type="{{item.open_type}}" app-id="{{item.appId}}" path="{{item.path}}" target="{{item.open_type == 'wxapp' ? 'miniProgram' : ''}}" style="z-index:9">
+                                <view class="slide-title">{{item.title}}</view>
+                                <image src="{{item.pic_url}}" class="slide-image-{{param.style == 2 ? param.style : 1}}" style="padding:0;height:{{param.height ? param.height+'rpx' : '360rpx'}}" mode="{{param.fill == 0 ? 'aspectFit' : 'aspectFill'}}" />
+                            </navigator>
+                        </button>
+                    </form>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <!-- Banner 结束 -->
+</template>
+
+<template name="search">
+    <!-- 搜索栏 开始 -->
+    <form report-submit="true" onSubmit="_formIdSubmit" data-type="navigate" data-url="/pages/search/search">
+        <button formType="submit" id="_formIdSubmit">
+            <view class="search-block" style='background-color:{{param.backgroundColorW}}'>
+                <navigator style="background-color:{{param.backgroundColor}};text-align:{{param.textPosition}};padding-left: 24rpx;border-radius:{{param.borderRadius}}rpx">
+                    <image src="{{__wxapp_img.search.search.url}}" />
+                    <text style="color:{{param.color}}">{{param.text ? param.text : '搜索'}}</text>
+                </navigator>
+            </view>
+        </button>
+    </form>
+    <!-- 搜索栏 结束 -->
+</template>
+
+<template name="nav">
+    <!-- 导航图标 开始 -->
+    <view class="nav-icon-list flex-row" a:if="{{nav_icon_list&&nav_icon_list.length>0}}" style="flex-wrap:wrap">
+        <view class="flex-grow-0 nav-icon{{nav_count==1?'-1':''}}" a:for="{{nav_icon_list}}" a:key="{{item.id}}">
+            <form report-submit="true" onSubmit="_formIdSubmit" data-bind="myBtnClick" data-type="navigate" data-url="{{item.url}}">
+                <button formType="submit" id="_formIdSubmit">
+                    <block a:if='{{item.open_type == "wxapp"}}'>
+                        <navigator data-url="{{item.url}}" data-open_type="{{item.open_type}}" target="miniProgram" path="{{item.path}}" app-id="{{item.appId}}" style='z-index:9;position:relative'>
+                            <image src="{{item.pic_url}}"></image>
+                            <view>{{item.name}}</view>
+                        </navigator>
+                    </block>
+                    <navigator a:else onTap="navigatorClick" data-url="{{item.url}}" data-open_type="{{item.open_type}}" open-type="{{item.open_type}}">
+                        <image src="{{item.pic_url}}"></image>
+                        <view>{{item.name}}</view>
+                    </navigator>
+                </button>
+            </form>
+        </view>
+    </view>
+    <!-- 导航图标 结束 -->
+</template>
+
+<template name="topic">
+    <!-- 专题 开始 -->
+    <form report-submit="true" onSubmit="_formIdSubmit" data-bind="myBtnClick" data-type="navigate" data-url="/pages/topic-list/topic-list">
+        <button formType="submit" id="_formIdSubmit">
+            <navigator class="topic-bar" url="/pages/topic-list/topic-list">
+                <view class="flex-row">
+                    <view style='height:68rpx' class="flex-grow-0 flex-y-center" a:if='{{param.count == 2}}'>
+                        <image class="bar-icon" src="{{param.logo_2}}"></image>
+                    </view>
+                    <view class="flex-grow-0 flex-y-center" a:if='{{param.count == 1}}'>
+                        <image class="bar-icon-1" src="{{param.logo_1}}"></image>
+                    </view>
+                    <view class="flex-grow-1">
+                        <swiper style="height:100%;line-height:32rpx" vertical="true" display-multiple-items="1" autoplay="true" interval="4000" duration="500" circular="false">
+                            <swiper-item a:for="{{param.topic_list}}" a:key="{{item.id}}">
+                                <block a:for="{{item}}" a:for-index="i" a:for-item="v" a:key="{{v.id}}">
+                                    <view class='flex-row'>
+                                        <view class="flex-grow-0 flex-y-center">
+                                            <image src='{{param.heated}}' style='width:54rpx;height:28rpx;margin-right:10rpx;'></image>
+                                        </view>
+                                        <view class="flex-grow-1 topic-title fs-sm}">{{v.title}}</view>
+                                    </view>
+                                </block>
+                            </swiper-item>
+                        </swiper>
+                    </view>
+                </view>
+            </navigator>
+        </button>
+    </form>
+    <!-- 专题 结束 -->
+</template>
+
+<template name="coupon">
+    <!-- 优惠券 开始 -->
+    <view class="coupon" a:if='{{param.coupon_list.length>0}}' style="margin:0">
+        <view class='coupon-title flex-y-center flex-x-center' a:if="{{!coupon_index}}">
+            <view class='flex-y-center title'>
+                <image src="{{__wxapp_img.coupon.coupon.url}}" />
+                <text>专享优惠券</text>
+            </view>
+            <navigator class="flex-y-center" url="/pages/coupon-list/coupon-list">
+                <form report-submit="true" onSubmit="_formIdSubmit">
+                    <button formType="submit" id="_formIdSubmit">
+                        <text>更多</text>
+                        <image src="{{__wxapp_img.store.jiantou_r.url}}" />
+                    </button>
+                </form>
+            </navigator>
+        </view>
+        <scroll-view scroll-x="true" style="height: 162rpx">
+            <view class='coupon-list flex-row' style='color:{{param.color ? param.color : "#fff"}}'>
+                <block a:for='{{param.coupon_list}}' a:for-item="item" a:for-index="index" a:key="{{item.id}}">
+                    <view class='coupon-one flex-grow-0' data-index='{{item.id}}' onTap="{{type && type == 'integral' ? 'couponNavigator' : 'receive'}}" data-index="{{item.id}}">
+                        <image src='{{item.is_receive == 0 ?param.bg:param.bg_1}}'></image>
+                        <view class='coupon-content flex-row'>
+                            <view class='flex-grow-0 coupon-left'>
+                                <view class='flex-x-center sub flex-y-center'>
+                                    <block a:if='{{item.discount_type == 2}}'>
+                                        <view class="flex-y-bottom">
+                                            <text style='font-size: 9pt;line-height:1'>￥</text>
+                                            <text style='font-size:15pt;line-height:0.8'>{{item.sub_price}}
+                                                        </text>
+                                        </view>
+                                    </block>
+                                    <block a:if='{{item.discount_type == 1}}'>
+                                        <view class="flex-y-bottom">
+                                            <text style='font-size:22pt;line-height:0.8'>{{item.discount}}
+                                                        </text>
+                                            <text style='line-height:1'>折</text>
+                                        </view>
+                                    </block>
+                                </view>
+                                <view class='flex-x-center flex-y-center min'>满{{item.min_price}}元可用</view>
+                            </view>
+                            <view class='flex-grow-1 coupon-right flex-x-center flex-y-center'>{{item.receive_content}}</view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 优惠券 结束 -->
+</template>
+
+<template name="cat">
+    <!-- 分类 开始 -->
+    <block a:for="{{cat_list}}" a:for-index="cat_index" a:for-item="cat" a:key="{{cat.id}}">
+        <block a:if="{{cat_item.name == 'cat' || cat_item.cat_id==cat.id}}">
+            <view a:if="{{cat.goods_list.length>0}}" style="background: #fff;margin-bottom: 10rpx; width:100%;overflow-x: hidden;">
+                <view class="title-bar flex-y-center flex-x-center">
+                    <view class="title-line"></view>
+                    <view class="title flex-y-center">
+                        <image a:if="{{cat.pic_url}}" src="{{cat.pic_url}}" mode="aspectFill"></image>
+                        <text>{{cat.name}}</text>
+                    </view>
+                    <view class="title-line"></view>
+                    <navigator class="flex-y-center" url="/pages/list/list?cat_id={{cat.id}}">
+                        <text>更多</text>
+                        <image src="{{__wxapp_img.store.jiantou_r.url}}" />
+                    </navigator>
+                </view>
+                <view class="goods-list flex-row goods-list-cols-{{cat_goods_cols}}" a:if="{{cat_goods_cols == 1}}">
+                    <!-- <form report-submit="true" onSubmit="_formIdSubmit" data-bind="myBtnClick" data-type="navigate" data-url="/pages/topic-list/topic-list">
+                        <button formType="submit" id="_formIdSubmit"> -->
+                    <view class="products_container" a:for="{{cat.goods_list}}" a:for-index="goods_index" a:for-item="goods" a:key="{{goods.id}}">
+                        <navigator class="products_item flex-row" url="/pages/goods/goods?id={{goods.id}}">
+                            <view class='flex-grow-0 product_logo'>
+                                <image src="{{goods.pic_url}}" class="product_logo" mode="aspectFill" />
+                            </view>
+                            <view class="product_bd flex-grow-1 flex-col" style='margin-left:32rpx;justify-content:space-between'>
+                                <view class="text-more-2" style='margin-top:15rpx;'>{{goods.name}}</view>
+                                <view class='flex-row flex-y-center'>
+                                    <view class="new_price flex-grow-1">
+                                        <block a:if="{{goods.is_negotiable!=1}}">￥</block>{{goods.price}}</view>
+                                    <view a:if='{{__is_sales}}' class="sales_price flex-grow-0">已售{{goods.sales}}</view>
+                                </view>
+                            </view>
+                        </navigator>
+                        <view a:if="{{false}}" style="position:absolute;width:95%">
+                            <image catchTap="showshop" src="{{__wxapp_img.store.home_gwc.url}}" class="toCart" data-id="{{goods.id}}" />
+                        </view>
+                    </view>
+                    <!-- </button>
+                    </form> -->
+                </view>
+                <block a:else>
+                    <view class="goods-list flex-row goods-list-cols-{{cat_goods_cols}}">
+                        <view class="flex-grow-0" a:for="{{cat.goods_list}}" a:for-index="goods_index" a:for-item="goods" a:key="{{goods.id}}">
+                            <form report-submit="true" onSubmit="_formIdSubmit" data-bind="myBtnClick" data-type="navigate" data-url="/pages/goods/goods?id={{goods.id}}">
+                                <button formType="submit" id="_formIdSubmit">
+                                    <navigator class="goods-item" url="">
+                                        <image src="{{goods.pic_url}}" mode="aspectFill" />
+                                        <text class="text-more-2 {{cat_goods_cols == 3?'fs-sm':''}}" style='color:#353535;margin-top:15rpx;padding:0 20rpx;'>{{goods.name}}
+                                    </text>
+                                        <text class="goods-price" a:if='{{cat_goods_cols == 3}}'><block a:if="{{goods.is_negotiable!=1}}">￥</block>{{goods.price}}</text>
+                                        <view class='flex-row' style='padding:10rpx 20rpx' a:else>
+                                            <view class='flex-grow-1' style='color:#ff4544'>
+                                                <block a:if="{{goods.is_negotiable!=1}}">￥</block>{{goods.price}}</view>
+                                            <view a:if='{{__is_sales}}' class='fs-sm flex-y-center' style='color:#999999;'>已售{{goods.sales}}</view>
+                                        </view>
+                                    </navigator>
+                                </button>
+                            </form>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </block>
+    </block>
+    <!-- 分类 结束 -->
+</template>
+
+<template name="miaosha">
+    <!-- 秒杀板块 开始 -->
+    <view class="user-block">
+        <view class="flex-row miaosha-header">
+            <view class="flex-grow-1 flex-row flex-y-center">
+                <image src="{{__wxapp_img.miaosha.miaosha.url}}" style="width: 34rpx;height: 34rpx;margin-right: 12rpx"></image>
+                <view style="font-size: 12pt;color: #ff8b57;margin-right: 16rpx">整点秒杀</view>
+                <view style="margin-right: 24rpx" a:if="{{miaosha.date}}">{{miaosha.date}}</view>
+                <view style="margin-right: 24rpx">{{miaosha.name}}</view>
+
+                <block a:if="{{!miaosha.ms_next && miaosha.times}}">
+                    <view class="flex-y-center miaosha-time-item" style="width: 32rpx;height: 34rpx">
+                        <image src="{{__wxapp_img.store.time_bg.url}}" style="width: 100%;height: 100%"></image>
+                        <view class="flex-y-center flex-x-center">{{miaosha.times.h?miaosha.times.h:'--'}}
+                        </view>
+                    </view>
+
+                    <image src="{{__wxapp_img.store.time_split.url}}" class="miaosha-item-split" style="width: 20rpx;height: 34rpx"></image>
+
+                    <view class="flex-y-center miaosha-time-item" style="width: 32rpx;height: 34rpx">
+                        <image src="{{__wxapp_img.store.time_bg.url}}" style="width: 100%;height: 100%"></image>
+                        <view class="flex-y-center flex-x-center">{{miaosha.times.m?miaosha.times.m:'--'}}
+                        </view>
+                    </view>
+
+                    <image src="{{__wxapp_img.store.time_split.url}}" class="miaosha-item-split" style="width: 20rpx;height: 34rpx"></image>
+
+                    <view class="flex-y-center miaosha-time-item" style="width: 32rpx;height: 34rpx">
+                        <image src="{{__wxapp_img.store.time_bg.url}}" style="width: 100%;height: 100%"></image>
+                        <view class="flex-y-center flex-x-center">{{miaosha.times.s?miaosha.times.s:'--'}}
+                        </view>
+                    </view>
+                </block>
+
+            </view>
+            <navigator url="/pages/miaosha/miaosha" class="flex-grow-0 flex-row flex-y-center">
+                <view style="margin-right: 14rpx">更多</view>
+                <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+            </navigator>
+        </view>
+        <scroll-view scroll-x="true" style="background: #fff;padding: 16rpx 8rpx">
+            <view class="flex-row miaosha-goods-list">
+                <navigator class="flex-grow-0 miaosha-goods" style="background: #fff;" a:for="{{miaosha.goods_list}}" a:key="{{item.id}}" url="/pages/miaosha/details/details?id={{item.id}}">
+                    <form report-submit="true" onSubmit="_formIdSubmit">
+                        <button formType="submit" id="_formIdSubmit">
+                            <image mode="aspectFill" src="{{item.pic}}"></image>
+                            <view class='text-more-2'>{{item.name}}</view>
+                            <view style="color: #ff4544;" class="flex-row flex-y-center flex-x-center text-more">
+                                <view>￥</view>
+                                <view style='font-size:13pt'>{{item.miaosha_price}}</view>
+                            </view>
+                            <view style="color: #aaa;" class="flex-y-center flex-x-center text-more fs-sm">
+                                <view style="text-decoration: line-through;">￥{{item.price}}</view>
+                            </view>
+                        </button>
+                    </form>
+                </navigator>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 秒杀板块 结束 -->
+</template>
+
+<template name="pintuan">
+    <!-- 拼团板块 开始 -->
+    <view class="user-block pintuan-block" style="background: #fff7f5;">
+        <view class="flex-row flex-y-center pintuan-header" style="height: 80rpx;padding: 0 20rpx;">
+            <view class="flex-grow-1 flex-y-bottom">
+                <image src="{{__wxapp_img.pt.text.url}}" style="width: 88rpx;height: 40rpx;margin-right: 20rpx"></image>
+                <view style="color: #aaa;font-size: 9pt;line-height: 1.2">限量拼团，每日必逛</view>
+            </view>
+            <view class="flex-grow-0">
+                <navigator url="/pages/pt/index/index" class="flex-y-center">
+                    <view style="margin-right: 14rpx">更多</view>
+                    <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+                </navigator>
+            </view>
+        </view>
+        <scroll-view scroll-x="true">
+            <view class="flex-row pintuan-goods-list" style="padding: 0 20rpx 20rpx">
+                <navigator a:for="{{pintuan.goods_list}}" a:key="{{item.id}}" url="/pages/pt/details/details?gid={{item.id}}" class="flex-grow-0" style="background: #fff;width: 260rpx;">
+                    <form report-submit="true" onSubmit="_formIdSubmit">
+                        <button formType="submit" id="_formIdSubmit">
+                            <view style="padding:24rpx 20rpx;">
+                                <image mode="aspectFill" src="{{item.pic}}" style="width: 220rpx;height: 220rpx;margin-bottom: 12rpx;"></image>
+                                <view style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;font-size: 9pt;margin-bottom: 16rpx;">
+                                    {{item.name}}
+                                </view>
+                                <view style="color:#ff4544;line-height: 1">
+                                    <text style="font-size: 9pt">￥</text>
+                                    <text style="font-weight: bold">{{item.price}}</text>
+                                </view>
+                            </view>
+                            <view style="font-size: 9pt;color: #aaa;padding:10rpx 20rpx;border-top: 1rpx solid #eee">
+                                已拼{{item.sale_num}}
+                            </view>
+                        </button>
+                    </form>
+                </navigator>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 拼团板块 结束 -->
+</template>
+
+<template name="yuyue">
+    <!-- 预约板块 开始 -->
+    <view class="user-block">
+        <view class="flex-row miaosha-header">
+            <view class="flex-grow-1 flex-row flex-y-center">
+                <image src="{{__wxapp_img.system.yuyue.url}}" style="width: 34rpx;height: 34rpx;margin-right: 12rpx"></image>
+                <view style="color: #ff8b57;margin-right: 16rpx">预约</view>
+            </view>
+            <navigator url="/pages/book/index/index" class="flex-grow-0 flex-row flex-y-center">
+                <view style="margin-right: 14rpx">更多</view>
+                <image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+            </navigator>
+        </view>
+        <scroll-view scroll-x="true" style="background: #fff;padding: 16rpx 8rpx">
+            <view class="flex-row miaosha-goods-list">
+                <block a:for="{{yuyue}}" a:key="{{item.id}}">
+                    <navigator class="flex-grow-0 miaosha-goods" url="/pages/book/details/details?id={{item.id}}" style='width:352rpx'>
+                        <form report-submit="true" onSubmit="_formIdSubmit">
+                            <button formType="submit" id="_formIdSubmit">
+                                <image src="{{item.cover_pic}}" style="width:325rpx;height:325rpx;" mode="aspectFill"></image>
+                                <view class='text-more-2'>{{item.name}}</view>
+                                <view style="color: #ff4544;line-height: 1;text-overflow: ellipsis;overflow: hidden;white-space: nowrap" class="flex-row flex-y-center">
+                                    <block a:if='{{item.price > 0}}'>
+                                        <view>￥</view>
+                                        <view style='font-size:13pt'>{{item.price}}</view>
+                                    </block>
+                                    <block a:else>
+                                        <view>免费</view>
+                                    </block>
+                                </view>
+                            </button>
+                        </form>
+                    </navigator>
+                </block>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 预约板块 结束 -->
+</template>
+
+<template name="video">
+    <!-- 视频板块 开始 -->
+    <block a:for="{{update_list.video}}" a:for-item="video" a:key="{{video.id}}" a:if="{{video_item.video_id == video.name}}">
+        <view class='user-block' onTap='play' data-index='{{video.name}}'>
+            <view a:if="{{play == video.name}}">
+                <video class='video' direction='' style='width:750rpx;height:400rpx;' autoplay='true' src='{{video.url}}' controls='true' loop='true' onFullscreenchange='fullscreenchange'></video>
+            </view>
+            <view style='position:relative;' a:else>
+                <image src='{{video.pic_url}}' style='width:750rpx;height:400rpx;display:block'></image>
+                <image class='video-play' src='{{__wxapp_img.store.video_play.url}}'></image>
+            </view>
+        </view>
+    </block>
+    <!-- 视频板块 结束 -->
+</template>
+
+<template name='mch'>
+
+    <!-- HaoDian推荐（DuoShangHu） 开始 -->
+    <view a:if="{{mch_list.length > 0}}">
+        <view class="flex flex-row flex-y-center" style="background: #fff;height: 80rpx;" a:if="{{!mch_index}}">
+            <view class="flex-grow-1 flex-y-center" style="color:#ff8831;padding: 0 24rpx">
+                <image style="width: 36rpx;height: 36rpx;margin-right: 12rpx" src="{{__wxapp_img.store.good_shop.url}}"></image>
+                <text>{{item.title}}</text>
+            </view>
+            <view class="flex-row-0">
+                <navigator class="flex flex-row flex-y-center" style="height: 80rpx;padding: 0 24rpx" url="/mch/shop-list/shop-list">
+                    <view class="flex flex-row">
+                        <view style="margin-right: 12rpx">查看更多</view>
+                        <view class="flex-y-center">
+                            <image style="width: 12rpx;height: 22rpx;" src="{{__wxapp_img.store.jiantou_r.url}}"></image>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <scroll-view scroll-x="true" style="padding: 10rpx 19rpx;white-space: nowrap;">
+            <navigator a:for="{{mch_list}}" a:key="{{item.id}}" url="/mch/shop/shop?mch_id={{item.id}}" style="margin: 0 5rpx;display: inline-block;width: 224rpx">
+                <form report-submit="true" onSubmit="_formIdSubmit">
+                    <button formType="submit" id="_formIdSubmit">
+                        <image src="{{item.logo}}" style="width: 224rpx;height: 224rpx;background-color: #fff"></image>
+                        <view class="flex-x-center flex-y-center" style="height:2.5em;">
+                            <view class="text-more-2" style="font-size: 9pt;text-align:center;white-space:normal">
+                                {{item.name}}
+                            </view>
+                        </view>
+                    </button>
+                </form>
+            </navigator>
+        </scroll-view>
+    </view>
+    <!-- HaoDian推荐（DuoShangHu） 结束 -->
+</template>
+
+<template name="block-1-0">
+    <!-- 一张图片 开始 -->
+    <view class="user-block {{store.cut_thread == 0?'m-0':''}}" style="height: auto">
+        <navigator class='fs-0' style="display:block;width: 100%;height: auto;" hover-class='none' onTap="navigatorClick" data-url="{{block.data.pic_list[0].url}}" open-type="navigate" url="{{block.data.pic_list[0].url}}" target="{{block.data.pic_list[0].open_type=='wxapp' ? 'miniProgram' : ''}}"
+            app-id="{{block.data.pic_list[0].appId}}" path="{{block.data.pic_list[0].path}}">
+            <image src="{{block.data.pic_list[0].pic_url}}" mode="widthFix" style="width: 100%;"></image>
+        </navigator>
+    </view>
+    <!-- 一张图片 结束 -->
+</template>
+
+<template name="block-2-0">
+    <!-- 二张图片 开始 -->
+    <view class="flex-row user-block {{store.cut_thread == 0?'m-0':''}} user-block-1" style="height: 360rpx;">
+        <view class="flex-grow-0" style="height: 100%;">
+            <navigator style="display:block;font-size: 0;width: 100%;height: 100%;" hover-class='none' onTap="navigatorClick" data-url="{{block.data.pic_list[0].url}}" data-open_type="{{block.data.pic_list[0].open_type}}" url="{{block.data.pic_list[0].url}}" target="{{block.data.pic_list[0].open_type=='wxapp' ? 'miniProgram' : ''}}"
+                app-id="{{block.data.pic_list[0].appId}}" path="{{block.data.pic_list[0].path}}">
+                <image src="{{block.data.pic_list[0].pic_url}}" style="width: 100%;height: 100%;" mode="aspectFill"></image>
+            </navigator>
+        </view>
+        <view class="flex-grow-1" style="height: 100%;">
+            <navigator style="display:block;font-size: 0;width: 100%;height: 100%;" hover-class='none' onTap="navigatorClick" data-url="{{block.data.pic_list[1].url}}" data-open_type="{{block.data.pic_list[1].open_type}}" url="{{block.data.pic_list[1].url}}" target="{{block.data.pic_list[1].open_type=='wxapp' ? 'miniProgram' : ''}}"
+                app-id="{{block.data.pic_list[1].appId}}" path="{{block.data.pic_list[1].path}}">
+                <image src="{{block.data.pic_list[1].pic_url}}" style="width: 100%;height: 100%;" mode="aspectFill"></image>
+            </navigator>
+        </view>
+    </view>
+    <!-- 二张图片 结束 -->
+</template>
+
+<template name="block-2-1">
+    <!-- 二张图片 开始 -->
+    <view class="flex-row user-block {{store.cut_thread == 0?'m-0':''}} user-block-1" style="height:240rpx;">
+        <block a:for='{{block.data.pic_list}}' a:for-item="pic_one" a:for-index="pic_index" a:key="{{pic_one.id}}">
+            <view class="flex-grow-1" style="height: 100%;">
+                <navigator style="display:block;font-size: 0;width: 100%;height: 100%;" hover-class='none' onTap="navigatorClick" data-url="{{pic_one.url}}" data-open_type="{{pic_one.open_type}}" url="{{pic_one.url}}" target="{{pic_one.open_type=='wxapp' ? 'miniProgram' : ''}}"
+                    app-id="{{pic_one.appId}}" path="{{pic_one.path}}">
+                    <image src="{{pic_one.pic_url}}" style="width: 100%;height: 100%;" mode="aspectFill"></image>
+                </navigator>
+            </view>
+        </block>
+    </view>
+    <!-- 二张图片 结束 -->
+</template>
+
+<template name="block-3-0">
+    <!-- 三张图片 开始 -->
+    <view class="flex-row user-block {{store.cut_thread == 0?'m-0':''}}" style="height: 360rpx;">
+        <view class="flex-grow-0" style="width: 300rpx;height: 100%;">
+            <navigator style="display:block;font-size: 0;width: 100%;height: 100%;" hover-class='none' onTap="navigatorClick" data-url="{{block.data.pic_list[0].url}}" data-open_type="{{block.data.pic_list[0].open_type}}" url="{{block.data.pic_list[0].url}}" target="{{block.data.pic_list[0].open_type=='wxapp' ? 'miniProgram' : ''}}"
+                app-id="{{block.data.pic_list[0].appId}}" path="{{block.data.pic_list[0].path}}">
+                <image src="{{block.data.pic_list[0].pic_url}}" style="width: 100%;height: 100%;" mode="aspectFill"></image>
+            </navigator>
+        </view>
+        <view class="flex-grow-1 flex-col" style="height: 100%;">
+            <view class="flex-grow-1" style="height: 50%;">
+                <navigator style="display:block;font-size: 0;width: 100%;height: 100%;" hover-class='none' onTap="navigatorClick" data-url="{{block.data.pic_list[1].url}}" data-open_type="{{block.data.pic_list[1].open_type}}" url="{{block.data.pic_list[1].url}}" target="{{block.data.pic_list[1].open_type=='wxapp' ? 'miniProgram' : ''}}"
+                    app-id="{{block.data.pic_list[1].appId}}" path="{{block.data.pic_list[1].path}}">
+                    <image src="{{block.data.pic_list[1].pic_url}}" style="width: 100%;height: 100%;" mode="aspectFill"></image>
+                </navigator>
+            </view>
+            <view class="flex-grow-1" style="height: 50%">
+                <navigator style="display:block;font-size: 0;width: 100%;height: 100%;" hover-class='none' onTap="navigatorClick" data-url="{{block.data.pic_list[2].url}}" data-open_type="{{block.data.pic_list[2].open_type}}" url="{{block.data.pic_list[2].url}}" target="{{block.data.pic_list[2].open_type=='wxapp' ? 'miniProgram' : ''}}"
+                    app-id="{{block.data.pic_list[2].appId}}" path="{{block.data.pic_list[2].path}}">
+                    <image src="{{block.data.pic_list[2].pic_url}}" style="width: 100%;height: 100%;" mode="aspectFill"></image>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <!-- 三张图片 结束 -->
+</template>
+
+<template name="block-3-1">
+    <!-- 三张图片 开始 -->
+    <view class="flex-row user-block {{store.cut_thread == 0?'m-0':''}}" style="height: 240rpx;">
+        <block a:for='{{block.data.pic_list}}' a:for-item="pic_one" a:for-index="pic_index" a:key="{{pic_one.id}}">
+            <view class="flex-grow-1" style="height: 100%;">
+                <navigator style="display:block;font-size: 0;width: 100%;height: 100%;" hover-class='none' onTap="navigatorClick" data-url="{{pic_one.url}}" data-open_type="{{pic_one.open_type}}" url="{{pic_one.url}}" target="{{pic_one.open_type=='wxapp' ? 'miniProgram' : ''}}"
+                    app-id="{{pic_one.appId}}" path="{{pic_one.path}}">
+                    <image src="{{pic_one.pic_url}}" style="width: 100%;height: 100%;" mode="aspectFill"></image>
+                </navigator>
+            </view>
+        </block>
+    </view>
+    <!-- 三张图片 结束 -->
+</template>
+
+<template name="block-4-0">
+    <!-- 四张图片 开始 -->
+    <view class="flex-row user-block {{store.cut_thread == 0?'m-0':''}}" style="height: 360rpx;">
+        <view class="flex-grow-0" style="width: 300rpx;height: 100%;">
+            <navigator style="display:block;font-size: 0;width: 100%;height: 100%;" hover-class='none' onTap="navigatorClick" data-url="{{block.data.pic_list[0].url}}" data-open_type="{{block.data.pic_list[0].open_type}}" url="{{block.data.pic_list[0].url}}" target="{{block.data.pic_list[0].open_type=='wxapp' ? 'miniProgram' : ''}}"
+                app-id="{{block.data.pic_list[0].appId}}" path="{{block.data.pic_list[0].path}}">
+                <image src="{{block.data.pic_list[0].pic_url}}" style="width: 100%;height: 100%;" mode="aspectFill"></image>
+            </navigator>
+        </view>
+        <view class="flex-grow-1 flex-col" style="height: 100%">
+            <view class="flex-grow-1" style="height: 50%;">
+                <navigator style="display:block;font-size: 0;width: 100%;height: 100%;" hover-class='none' onTap="navigatorClick" data-url="{{block.data.pic_list[1].url}}" data-open_type="{{block.data.pic_list[1].open_type}}" url="{{block.data.pic_list[1].url}}" target=" {{block.data.pic_list[1].open_type=='wxapp' ? 'miniProgram' : ''}}"
+                    app-id="{{block.data.pic_list[1].appId}}" path="{{block.data.pic_list[1].path}}">
+                    <image src="{{block.data.pic_list[1].pic_url}}" style="width: 100%;height: 100%;" mode="aspectFill"></image>
+                </navigator>
+            </view>
+            <view class="flex-grow-1 flex-row" style="height: 50%">
+                <view class="flex-grow-1" style="height: 100%;">
+                    <navigator style="display:block;font-size: 0;width: 100%;height: 100%;" hover-class='none' onTap="navigatorClick" data-url="{{block.data.pic_list[2].url}}" data-open_type="{{block.data.pic_list[2].open_type}}" url="{{block.data.pic_list[2].url}}" target="{{block.data.pic_list[2].open_type=='wxapp' ? 'miniProgram' : ''}}"
+                        app-id="{{block.data.pic_list[2].appId}}" path="{{block.data.pic_list[2].path}}">
+                        <image src="{{block.data.pic_list[2].pic_url}}" style="width: 100%;height: 100%;" mode="aspectFill"></image>
+                    </navigator>
+                </view>
+                <view class="flex-grow-1" style="height: 100%;">
+                    <navigator style="display:block;font-size: 0;width: 100%;height: 100%;" hover-class='none' onTap="navigatorClick" data-url="{{block.data.pic_list[3].url}}" data-open_type="{{block.data.pic_list[3].open_type}}" url="{{block.data.pic_list[3].url}}" target="{{block.data.pic_list[3].open_type=='wxapp' ? 'miniProgram' : ''}}"
+                        app-id="{{block.data.pic_list[3].appId}}" path="{{block.data.pic_list[3].path}}">
+                        <image src="{{block.data.pic_list[3].pic_url}}" style="width: 100%;height: 100%;" mode="aspectFill"></image>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 四张图片 结束 -->
+</template>
+
+<template name="block-4-1">
+    <!-- 四张图片 开始 -->
+    <view class="flex-row user-block {{store.cut_thread == 0?'m-0':''}}" style="height: 186rpx;margin:0 -2rpx;">
+        <block a:for='{{block.data.pic_list}}' a:for-item="pic_one" a:for-index="pic_index" a:key="{{pic_one.id}}">
+            <view class="flex-grow-1" style="height: 100%;width: 25%;">
+                <navigator style="display:block;font-size: 0;width: 100%;height: 100%;" hover-class='none' onTap="navigatorClick" data-url="{{pic_one.url}}" data-open_type="{{pic_one.open_type}}" url="{{pic_one.url}}" target="{{pic_one.open_type=='wxapp' ? 'miniProgram' : ''}}"
+                    app-id="{{pic_one.appId}}" path="{{pic_one.path}}">
+                    <image src="{{pic_one.pic_url}}" style="width: 100%;height: 100%;" mode="aspectFill"></image>
+                </navigator>
+            </view>
+        </block>
+    </view>
+    <!-- 四张图片 结束 -->
+</template>
+
+<template name="block-4-2">
+    <!-- 四张图片 开始 -->
+    <view class="flex-row user-block {{store.cut_thread == 0?'m-0':''}}" style='flex-wrap:wrap'>
+        <block a:for='{{block.data.pic_list}}' a:for-item="pic_one" a:for-index="pic_index" a:key="{{pic_one.id}}">
+            <view class="flex-grow-0" style="height: 186rpx;width:50%;">
+                <navigator style="display:block;font-size: 0;width: 100%;height: 100%;" hover-class='none' onTap="navigatorClick" data-url="{{pic_one.url}}" data-open_type="{{pic_one.open_type}}" url="{{pic_one.url}}" target="{{pic_one.open_type=='wxapp' ? 'miniProgram' : ''}}"
+                    app-id="{{pic_one.appId}}" path="{{pic_one.path}}">
+                    <image src="{{pic_one.pic_url}}" style="width: 100%;height: 100%;" mode="aspectFill"></image>
+                </navigator>
+            </view>
+        </block>
+    </view>
+    <!-- 四张图片 结束 -->
+</template>
+
+<template name="act-modal">
+    <!-- 活动弹窗 -->
+    <block a:for="{{act_modal_list}}" a:key="{{item.id}}" a:if="{{index == 0 && item.show}}">
+        <view class="act-modal {{item.show?'show':''}}">
+            <view class="act-modal-bg" onTap="closeActModal"></view>
+            <view class="act-modal-pic flex-y-center flex-x-center">
+                <view class="text-center w-100">
+                    <swiper class="banner w-100" autoplay="true" interval="5000" duration="300" indicator-dots="{{item.list.length == 1 ? 'false' : 'true'}}" circular="true" style="height:700rpx;" current='{{index}}'>
+                        <block a:for="{{item.list}}" a:for-index="key" a:for-item="value" a:key="{{value.id}}">
+                            <swiper-item>
+                                <form report-submit="true" onSubmit="_formIdSubmit" data-bind="closeActModal" data-type="{{value.open_type}}" data-url="{{value.url}}" data-appId="{{value.appId}}" data-path="{{value.path}}">
+                                    <button formType="submit" id="_formIdSubmit">
+                                        <image mode="aspectFit" src="{{value.pic_url}}" style="width: {{value.pic_width}}rpx;height: {{value.pic_height}}rpx;"></image>
+                                    </button>
+                                </form>
+                            </swiper-item>
+                        </block>
+                    </swiper>
+                    <view class="act-modal-close flex-x-center" onTap="closeActModal">
+                        <image src="{{__wxapp_img.store.close4.url}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</template>

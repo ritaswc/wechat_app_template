@@ -1,0 +1,45 @@
+<view animation="{{animationError}}" class="showError" hidden="{{!errorShow}}"><text>{{errorText}}</text></view>
+<view class="cover-word">
+  <view wx:for="{{words}}" 
+        wx:key="*this" 
+        bindtouchstart="showModal"
+        bindtouchmove="changeModalText" 
+        bindtouchcancel="hideModal"
+        bindtouchend="hideModal"
+        bindtap="selectWord"
+        data-value="{{item}}"><text data-value="{{item}}">{{item}}</text></view>
+</view>
+<view wx:if="{{isShowModal}}" class="modal" style="left: 500rpx; top: {{currentTop}}px">{{selectedWord}}</view>
+<scroll-view scroll-y="{{true}}" scroll-into-view="{{selectedWord}}" style="height: {{wHeight}}px">
+  <view class="search-wrap" id="top">
+    <view class="search-number">
+      <view class="search"><image src="../../images/search-1.png"/></view>
+      <view class="input"><input bindconfirm="inputConfirm" 
+        bindinput="inputChange" type="text" placeholder="请输入快递名称搜索" placeholder-class="holder" value="{{searchInput}}"/></view>
+      <view hidden="{{searchInput === ''}}" class="clear-input-img" bindtap="clearNum"><icon type="clear" size="14" color="#B2B2B2"/></view>
+    </view>
+  </view>
+  
+  <block wx:for="{{epxressLists}}" wx:key="{{items.key}}" wx:for-item="items" wx:for-index="indexs">
+    <view class="title" id="{{items.key}}">
+      <view><text>{{items.key}}</text></view>
+    </view>
+    <view class="types-wrap">
+      <view class="wrap">
+        <view class="item" 
+              wx:for="{{items.list}}" 
+              wx:key="{{item.code}}" 
+              wx:for-item="item"
+              wx:for-index="index"
+              style="{{index === (items.list.length-1) ? 'border:none' : ''}}"
+              bindtap="radioChange"
+              data-index="{{indexs}}-{{index}}">
+          <view class="img"><image src="http://7xtwf5.com1.z0.glb.clouddn.com/{{item.image}}.png"></image></view>
+          <view class="text" id="{{item.code}}"><text>{{item.name}}</text></view>
+        </view>
+      </view>
+    </view>
+  </block>
+  
+  <view class="footer"></view>
+</scroll-view>

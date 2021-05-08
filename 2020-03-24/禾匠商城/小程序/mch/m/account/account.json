@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "资产",
+    "usingComponents": {
+        "app-navigation": "/components/quick-navigation-components/index"
+    }
+}

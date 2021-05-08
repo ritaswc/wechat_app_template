@@ -1,0 +1,50 @@
+<dl class="menu">
+	<dt data-index="0" bindtap="tapMainMenu">价格</dt>
+	<dd class="{{subMenuDisplay[0]}}">
+		<ul>
+			<li class="{{subMenuHighLight[0][0]}}" data-index="0-0" bindtap="tapSubMenu">100以内</li>
+			<li class="{{subMenuHighLight[0][1]}}" data-index="0-1" bindtap="tapSubMenu">100-500</li>
+			<li class="{{subMenuHighLight[0][2]}}" data-index="0-2" bindtap="tapSubMenu">500-1000</li>
+			<li class="{{subMenuHighLight[0][3]}}" data-index="0-3" bindtap="tapSubMenu">1000-3000</li>
+			<li class="{{subMenuHighLight[0][4]}}" data-index="0-4" bindtap="tapSubMenu">3000以上</li>
+		</ul>
+	</dd>
+	<dt data-index="1" bindtap="tapMainMenu">销量</dt>
+	<dd class="{{subMenuDisplay[1]}}">
+		<ul>
+			<li class="{{subMenuHighLight[1][0]}}" data-index="1-0" bindtap="tapSubMenu">从多到少</li>
+			<li class="{{subMenuHighLight[1][1]}}" data-index="1-1" bindtap="tapSubMenu">从少到多</li>
+		</ul>
+	</dd>
+	<dt data-index="2" bindtap="tapMainMenu">上架时间</dt>
+	<dd class="{{subMenuDisplay[2]}}">
+		<ul>
+			<li class="{{subMenuHighLight[2][0]}}" data-index="2-0" bindtap="tapSubMenu">从新到旧</li>
+			<li class="{{subMenuHighLight[2][1]}}" data-index="2-1" bindtap="tapSubMenu">从旧到到</li>
+			<li class="{{subMenuHighLight[2][2]}}" data-index="2-2" bindtap="tapSubMenu">智能排序</li>
+		</ul>
+	</dd>
+</dl>
+
+<view class="goodsList carts-list">
+	<view wx:for="{{goods}}" wx:key="objectId" class="carts-item" data-object-id="{{item.objectId}}" bindtap="tapGoods">
+		<view>
+			<!-- 缩略图 -->
+			<image class="carts-image" src="{{item.avatar}}" mode="aspectFill" />
+		</view>
+		<view class="carts-text">
+			<!-- 商品标题 -->
+			<text class="carts-title">{{item.title}}</text>
+			<view class="carts-subtitle">
+				<!-- 价格 -->
+				<text class="carts-price">￥{{item.price}}元</text>
+				<image class="cart-icon" src="/images/icon_cart.png" catchtap="addCart" mode="widthFix" data-object-id="{{item.objectId}}" />
+			</view>
+			<!-- 销量与评价 -->
+			<view class="goods-score">
+				<text>已售99件</text>
+				<text>好评率 99%</text>
+			</view>
+		</view>
+	</view>
+</view>

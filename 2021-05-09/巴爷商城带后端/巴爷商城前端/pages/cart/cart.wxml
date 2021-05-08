@@ -1,0 +1,76 @@
+<!--<view class="address-container" wx:if="{{ address.detail_address && address.customer_name && address.customer_mobile }}" bindtap="bindTapAddress">
+  <view class="receiver">
+    <view>
+      <text>收货人：{{address.customer_name}}</text>
+    </view>
+    <view>
+      <text>{{address.customer_mobile}}</text>
+    </view>
+  </view>
+  <view class="address">
+    <text>{{address.province}} {{address.city}} {{address.county}} {{address.detail_address}}</text>
+  </view>
+</view>
+<view wx:else bindtap="bindTapAddress">
+  <button class="button" type='primary'>填写收货地址</button>
+</view>-->
+
+<!--<view class="separate"></view>-->
+
+<!--<view wx:if="{{ coupon }}">
+  <view class="use-coupon" bindtap="bindSelectCoupon">
+    <view><text>优惠券</text></view>
+    <view class="red"><text>使用{{coupon.title}}</text></view>
+  </view>
+</view>
+<view wx:else>
+  <view class="use-coupon" bindtap="bindSelectCoupon">
+    <view><text>优惠券</text></view>
+    <view class="red"><text>点击使用优惠券</text></view>
+  </view>
+</view>-->
+
+<!--<view class="separate"></view>-->
+
+<view class="items-container">
+  <block wx:for="{{cartItems}}" wx:for-item="item" wx:key="id">
+    <view class="item" data-id="{{item.id}}">
+      <view class="image" catchtap="catchTapOnItem" data-id="{{item.id}}">
+        <image class="head-img" src="{{item.product['image-url']}}" mode="aspectFit"></image>
+      </view>
+      <view class="item-right">
+        <view class="title" catchtap="catchTapOnItem" data-id="{{item.id}}">
+          <text>{{item.product.name}}</text>
+        </view>
+        <view class="numbers">
+          <view>
+            <view wx:if="{{ accountType === '巴爷' }}">
+              <text class="price" catchtap="catchTapOnItem" data-id="{{item.id}}">¥{{item.product['baye-price'] * item.quantity}}</text>
+            </view>
+            <view wx:else>
+              <text class="price" catchtap="catchTapOnItem" data-id="{{item.id}}">¥{{item.product['member-price'] * item.quantity}}</text>
+            </view>
+          </view>
+          <view class="quantity">
+            <view class="op" bindtap="minusQuantity" data-id="{{item.id}}"><text class="text">-</text></view>
+            <view class="number">
+              <input class="input" value="{{item.quantity}}" bindinput="bindChangeQuantity" data-id="{{item.id}}"></input>
+            </view>
+            <view class="op" bindtap="addQuantity" data-id="{{item.id}}"><text class="text">+</text></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+
+<view class="billing-btn">
+  <view wx:if="{{coupon}}" class="total">
+    <view>总计：¥{{amount}}元 {{'-' + coupon['coupon-value'] + '元优惠券' }}</view>
+  </view>
+  <view wx:else class="total">
+    <view>总计：¥{{amount}}元</view>
+  </view>
+  <button class="button" type='warn' bindtap="bindBilling"> 去支付 </button>
+</view>

@@ -1,0 +1,12 @@
+<div class="text-center"><img src="{php echo tomedia('headimg_'.$wxapp_info['acid'].'.jpg')}?time={php echo time()}" class="head-logo"></div>
+<div class="text-center account-name">{$account['name']}</div>
+<div class="text-center operate">
+	{if in_array($role, array(ACCOUNT_MANAGE_NAME_OWNER, ACCOUNT_MANAGE_NAME_MANAGER)) || $_W['isfounder']}
+	<a href="{php echo url('account/post', array('uniacid' => $_W['account']['uniacid'], 'account_type' => ACCOUNT_TYPE_PHONEAPP_NORMAL))}"><i class="wi wi-appsetting" data-toggle="tooltip" data-placement="bottom" title="设置"></i></a>
+	{/if}
+
+	{if in_array($role, array(ACCOUNT_MANAGE_NAME_OWNER, ACCOUNT_MANAGE_NAME_MANAGER)) || $_W['isfounder']}
+	<a href="{php echo url('account/post', array('uniacid' => $_W['account']['uniacid'], 'account_type' => $_W['account']['type']))}"><i class="wi wi-manage" data-toggle="tooltip" data-placement="bottom" title="管理"></i></a>
+	{/if}
+	<a href="{php echo url('account/display', array('type' => 'all'))}" class="color-default"><i class="wi wi-cut-account" data-toggle="tooltip" data-placement="bottom" title="切换平台"></i></a>
+</div>

@@ -1,0 +1,39 @@
+<view class="container">
+    <view class="header-img-wrap">
+        <image class="header-img" src="/image/common/aboutUs/about_us.png"></image>
+    </view>
+
+    <view class="list-wrap">
+        <view class="list-wrap-inner">
+            <view class="item">
+                <view class="item-title f1 c5">
+                    隐私声明
+                </view>
+                <image class="item-img" src="/image/customer/index/3jianhui.png"></image>
+            </view>
+            <view class="item">
+                <view class="item-title f1 c5">
+                    关于我们
+                </view>
+                <image class="item-img" src="/image/customer/index/3jianhui.png"></image>
+            </view>
+            <view class="item">
+                <view class="item-title f1 c5">
+                    投诉电话
+                </view>
+                <view class="item-des">
+                    134565432
+                </view>
+            </view>
+            <view class="item">
+                <view class="item-title f1 c5">
+                    当前版本
+                </view>
+                <view class="item-des f1 c4">
+                    13.456.54.32
+                </view>
+            </view>
+        </view>
+    </view>
+    <button class="change-role-btn bgc" bindtap="changeRole">切换角色</button>
+</view>

@@ -1,0 +1,39 @@
+.container{
+  height:300px;
+  width:100%;
+}
+.bg{
+  position: absolute;
+  z-index:0;
+  height: 300px;
+  width:300px;
+}
+button{
+  margin-top:10px;
+
+}
+.hat{ 
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  border: dashed 2px yellow;
+  top:100px;
+}
+.handle,.cancel{
+  position: absolute;
+  z-index: 1;
+  width:20px;
+  height:20px;
+}
+.scrollView{
+   width: 100%; 
+   position: absolute;
+   bottom: 5px;
+   white-space: nowrap;
+}
+.imgList{
+  height: 70px;
+  width: 70px;
+  border:2px solid;
+  margin: 5px;
+}

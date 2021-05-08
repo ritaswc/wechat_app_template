@@ -1,0 +1,57 @@
+.shop-pic{
+    width: 100%;
+    height: 560rpx;
+}
+.content-view{
+    padding: 0 100rpx 0 50rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40rpx;
+}
+.buy-view{
+    height: 100rpx;
+    width: 100%;
+    background-color: #fafafa;
+    border-top: solid #ececec 1rpx;
+    border-bottom: solid #ececec 1rpx;
+    position: absolute;
+    bottom: 90rpx;
+}
+.buy-view .add-tocar{
+    background-color: #ed4040;
+    color: white;
+    font: 30rpx;
+    width: 230rpx;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+.bottom-menu{
+    width: 90%;
+    margin-left: 5%;
+    height: 90rpx;
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottom-menu .tab-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.tab-button image{
+    width: 44rpx;
+    height: 44rpx;
+}
+.tab-button text{
+    font-size:24rpx;
+    margin-top: 4rpx;
+}

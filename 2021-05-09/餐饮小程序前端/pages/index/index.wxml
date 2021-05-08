@@ -1,0 +1,46 @@
+<import src="../template/template" />
+<view class="container">
+  <!--顶部搜索栏-->
+  <view class="search">
+    <!--当前位置-->
+    <view bindtap="chooseLocation" class="search-site triangle">{{ userSite }}</view>
+    <view bindtap="goSearch" class="search-in iconfont icon-sousuo_sousuo">搜索餐厅、 菜系、 商圈</view>
+  </view>
+  <!--carousel-->
+  <template is="carousel" data="{{ imgUrls }}"></template>
+  <!--nav-->
+  <view class="nav">
+    <navigator url="../showShop/showShop?type={{ index }}" hover-class="none" class="{{ item.navIcon }}" wx:for="{{ navList }}" wx:key="unique">
+      {{ item.navTitle }}
+    </navigator>
+  </view>
+  <!--hot-shop-->
+  <view class="hot-shop">
+    <view class="slide">热门商家</view>
+    <view class="hot-shop-wrap">
+      <navigator url="../detail/detail?kind={{ index }}" hover-class="none" class="hot-shop-content" wx:for="{{ hotShop }}" wx:key="unique">
+        <image class="hot-shop-img" src="{{ item.shopImg }}"></image>
+        {{ item.shopName }}
+      </navigator>
+    </view>
+  </view>
+  <!--near-shop-->
+  <view class="near-shop">
+    <view class="slide ">附近商家</view>
+    <view class="near-shop-wrap">
+      <navigator url="../ordering/ordering?shopId={{ item.id }}" hover-class="none" class="near-shop-content" wx:for="{{ nearShop }}" wx:key="unique">
+        <image class="near-shop-img" src="{{ item.img }}"></image>
+        <view class="near-shop-detail">
+          <veiw class="n-s-c-name">{{ item.name }}</veiw>
+          <view class="n-s-c-price {{ item.grade }} iconfont icon-wuxing"> ￥{{ item.price }}/人</view>
+          <view class="n-s-c-kind">{{ item.kind }}  {{ item.distance }}</view>
+          <view class="n-s-c-status">
+            <text class="n-s-c-s-left">排队</text>
+            <text class="n-s-c-s-center">当前排队状况</text>
+            <text class="n-s-c-s-right">{{ item.status }}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

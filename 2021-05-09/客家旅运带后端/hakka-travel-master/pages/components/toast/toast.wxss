@@ -1,0 +1,39 @@
+/**
+ * toast component stylesheet
+ * @author liangkun
+ * 
+ */
+
+.toast-show {
+	display: block;
+}
+
+.toast-hide {
+	display: none;
+}
+
+.toast-wrapper {
+	position: absolute;
+	width: 280rpx;
+	height: 320rpx;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #333;
+	opacity: 0.7;
+}
+ 
+.toast-icon-wrapper {
+	width: 132rpx;
+	margin: 40rpx auto 20rpx;
+}
+
+.toast-content {
+	text-align: center;
+	margin: 40rpx auto;
+	padding: 0 40rpx;
+	line-height: 40rpx; 
+	font-size: 28rpx;
+	color: #fff;
+}
+

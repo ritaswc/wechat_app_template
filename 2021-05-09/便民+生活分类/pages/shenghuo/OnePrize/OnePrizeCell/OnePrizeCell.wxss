@@ -1,0 +1,30 @@
+/* pages/shenghuo/OnePrize/OnePrizeCell/OnePrizeCell.wxss */
+
+/*scroll-view*/
+.single-view-container{
+    float:left;
+    margin-bottom: 40rpx;
+}
+
+.grid-container{
+    height: 1300rpx;
+    margin:40rpx 0 40rpx 6rpx;
+}
+
+.OnePrize-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 22rpx;
+}
+
+.OnePrize-img {
+  width: 200rpx;
+  height: 270rpx;
+  padding-bottom: 20rpx;
+
+}
+
+.OnePrize-title {
+    margin-bottom: 16rpx;
+    font-size: 24rpx;
+}

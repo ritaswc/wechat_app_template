@@ -1,0 +1,174 @@
+page{
+    background-color: #F8F8F8;
+    font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+.page__hd {
+    padding: 40px;
+}
+.page__bd {
+    padding-bottom: 40px;
+}
+.page__bd_spacing {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page__ft{
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.page__title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.page__desc {
+    margin-top: 5px;
+    color: #888888;
+    text-align: left;
+    font-size: 14px;
+}
+
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 60%;
+}
+.mini-btn{
+    margin-right: 5px;
+}
+
+/**wx-scrollable-tab-view**/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10rpx 20rpx;
+}
+.header .h-city {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  line-height: 1.0;
+  letter-spacing: 0.4px;
+  text-align: center;
+  color: #a8a8a8;
+}
+.header .h-city image {
+  width: 22rpx;
+  height: 27rpx;
+  margin-right: 16rpx;
+}
+
+.header .h-close image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.now-city {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 22rpx;
+  line-height: 1.0;
+  color: #a8a8a8;
+  padding: 18rpx 20rpx;
+  border-bottom: 1rpx solid #dbdbdb;
+}
+.now-city .now-city-name {
+  display: flex;
+  background: white;
+  font-size: 30rpx;
+  line-height: 1.0;
+  letter-spacing: 0.4rpx;
+  color: #333333;
+  padding: 13rpx 33rpx;
+  border: solid 1rpx #dbdbdb;
+  margin-top: 18rpx;
+}
+
+.alphabet-list {
+
+}
+.alphabet-list .section-item {
+
+}
+.alphabet-list .section-item .section-item-header {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #a8a8a8;
+  background-color: #f2f4f5;
+  padding: 4rpx 20rpx;
+}
+
+.alphabet-list .section-item .section-item-cells {
+  padding-left: 20rpx;
+}
+.alphabet-list .section-item .section-item-cells .section-item-cell{
+  font-size: 36rpx;
+  line-height: 1.0;
+  color: #333333;
+  padding: 29rpx 0;
+}
+.border-bottom {
+  border-bottom: 1rpx solid #dbdbdb;
+}
+.alphanet-selector {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  height: 432px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  box-sizing: border-box;
+}
+.alphanet-selector .selector-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #43c1f4;
+  padding: 3px 3px;
+  height: 12px;
+}
+
+
+/**user.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  margin-top:10px;
+  font-size: 14px;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.commit-title {
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.commit-notify {
+  color: #aaa;
+  margin-top:20px;
+  font-size: 14px;
+}

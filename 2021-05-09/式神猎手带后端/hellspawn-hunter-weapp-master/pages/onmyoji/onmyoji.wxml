@@ -1,0 +1,28 @@
+<!--pages/onmyoji/onmyoji.wxml-->
+<import src="../template/template.wxml" />
+<view class="detail_background">
+    <view class="hellspawn_part">
+        <view class="hellspawn_name">
+            <text class="name_txt">{{ hellspawn.name }}</text>
+            <image wx:if="{{hellspawn.rarity == 1}}" src="../../static/image/ssr.png" class="level_ssr"></image>
+            <image wx:elif="{{hellspawn.rarity == 2}}" src="../../static/image/sr.png" class="level_sr"></image>
+            <image wx:elif="{{hellspawn.rarity == 3}}" src="../../static/image/r.png" class="level_r"></image>
+            <image wx:elif="{{hellspawn.rarity == 4}}" src="../../static/image/n.png" class="level_n"></image>
+        </view>
+        <view class="hellspawn_pic">
+                <image src="{{ hellspawn.picture }}" class="pic" ></image>
+            </view>
+    </view>
+</view>
+<view class="scenes">
+    <view class="scene_title"><text>出没</text></view>
+    <view class="no_scene" wx:if="{{ !haveScene }}">
+    <text>暂无线索</text>
+    </view>
+    <block wx:for="{{ sceneList }}" wx:key="id" >
+        <template is="scene" data="{{ ...item }}"/>
+    </block>
+</view>
+<view class="footer">
+    <text>Copyright © 2017 RaPoSpectre.com</text>
+  </view>

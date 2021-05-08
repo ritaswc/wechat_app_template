@@ -1,0 +1,62 @@
+
+<!--pages/payment/payment.wxml-->
+<view wx:if="{{loaded}}">
+  <view class="title">支付方式</view>
+  <view class="p_paylist" data-aid="0" bindtap="paymentselected">
+    <view class="p_paylist_imgbox">
+      <image src="http://m.test.bestcake.com/images/order/icon_1.png" class="p_paylist_img"></image>
+    </view>
+    <view class="p_payfont">
+      <view>微信支付 </view>
+      <view class="p_payfont_c">微信扫一扫，安全又健康 </view>
+    </view>
+    <view class="p_paylist_icon">
+      <icon type="success" size="25" color="{{selid=='0'?'green':'#EEE'}}" />
+    </view>
+  </view>
+  <view class="p_line"></view>
+  <view class="p_paylist" data-aid="1" bindtap="paymentselected">
+    <view class="p_paylist_imgbox">
+      <image src="http://m.test.bestcake.com/images/order/icon_3.png" class="p_paylist_img"></image>
+    </view>
+    <view class="p_payfont">
+      <view>货到付款 </view>
+      <view class="p_payfont_c">配送后再收费，支持现金 </view>
+    </view>
+    <view class="p_paylist_icon">
+      <icon type="success" size="25" color="{{selid=='1'?'green':'#EEE'}}" />
+    </view>
+  </view>
+  <view class="p_line"></view>
+  <view class="p_paylist" data-aid="2" bindtap="paymentselected">
+    <view class="p_paylist_imgbox">
+      <image src="http://m.test.bestcake.com/images/order/icon_4.png" class="p_paylist_img"></image>
+    </view>
+    <view class="p_payfont">
+      <view>吉致币 </view>
+      <view class="p_payfont_c">使用吉致币支付， 消费更超值 </view>
+    </view>
+    <view class="p_paylist_icon">
+      <icon type="success" size="25" color="{{selid=='2'?'green':'#EEE'}}" />
+    </view>
+  </view>
+  <view class="p_paylist">
+    <view class="p_payfont_c p_recharge">去充值</view>
+    <view class="p_payfont">
+      <view class="p_payfont_c">剩余：{{jzb}}个 </view>
+    </view>
+    <view class="p_paylist_icon"></view>
+    <view class="p_paylist_icon"></view>
+  </view>
+  <view class="p_line"></view>
+  <view class="m_totbox">
+    <view class="p_payfont">商品金额：￥{{goodprice}}</view>
+    <view class="p_payfont">优惠：￥{{myorder.DiscountAmount}}</view>
+    <view class="p_payfont">运费：￥{{myorder.ShippingCost}} </view>
+    <view class="p_payfont">配件：￥0</view>
+  </view>
+    <view class="m_sub">
+      <view class="p_payfont m_sub_yf">应付：￥{{myorder.TotalPrice}}</view>
+      <view class="p_payfont m_sub_btn" bindtap="gopay">去支付</view>
+    </view>
+</view>

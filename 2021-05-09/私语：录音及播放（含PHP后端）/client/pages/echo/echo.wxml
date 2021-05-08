@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <view>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    </view>
+    <view>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="userinfo-records">私语:<text class="records-num">{{recordsNum}}</text>条</text>
+    </view>
+  </view>
+  <view class="search">
+    <input placeholder="搜索标签/月份"  bindconfirm="search" value="{{key}}"/>
+  </view>
+  <scroll-view class="records-list" scroll-y="true" bindscrolltoupper="refreshList" bindscrolltolower="appendList" lower-threshold="20">
+    <view class="section" style="padding: 20rpx 0 0; height: 0; opacity: 0;" animation="{{loadingAnimation}}">
+      <image src="/images/loading.gif"></image>
+    </view>
+    <view class="content-wripper" wx:for="{{records}}" wx:key="id"  wx:for-item="record" data-id="{{record.id}}" data-src="{{record.src}}" bindlongtap="showActionSheet" bindtap="play">
+        <view class="info">
+          <text class="t">{{record.duration}}〞</text>
+          <text class="tag">{{record.tag}}</text>
+        </view>
+        <image src="{{isPlaying && record.src == playingSrc ? playUi.playing : playUi.play}}"></image>
+    </view>
+    <view class="section" style="padding: 0 0 20rpx; opacity: 0;"  animation="{{nomoreAnimation}}">
+      <text>没有更多...</text>
+    </view>
+  </scroll-view>
+</view>

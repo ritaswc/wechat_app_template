@@ -1,0 +1,42 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body">
+        <include src="/components/specifications_model/specifications_model.axml" />
+        <include src="/components/goods/specifications_model.axml" />
+        <include src="/components/quick-navigation/quick-navigation" />
+        <view class="{{(show_attr_picker||show||no_scroll)?'no-scroll':''}}">
+
+            <view style="padding-bottom: 120rpx">
+                <include src="/components/goods/goods_banner.axml" />
+                <include src="/components/goods/goods_info.axml" />
+
+                <view class="tab-group">
+                    <view class="flex-row tab-group-header">
+                        <view class='good-detail'>
+                            <text>商品详情</text>
+                        </view>
+                    </view>
+                    <view class="tab-group-body">
+                        <view class="tab-group-item {{tab_detail}}">
+                            <view class="goods-detail">
+                                <import src="../../wxParse/wxParse.axml" />
+                                <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <!-- 快速购买 购物车 -->
+            <block a:if="{{quick == 1}}">
+                <include src="/components/shopping_cart/shopping_cart" />
+            </block>
+            <block a:else>
+                <include src="/components/goods/goods_buy" />
+            </block>
+            <include src="/components/common/get-coupon.axml" />
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

@@ -1,0 +1,421 @@
+[2017-03-03 10:14:08.407] [INFO] BBMIS - 用户信息:{"openid":"oCd53s8gca9-qrPkPlVZnvyXdO9M","nickname":"🏃Minority🚶","sex":1,"language":"zh_CN","city":"","province":"","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEI0RGQPGbhpxySDotz4HHcYBVdmb8K2kNyQgSlL2UlXzDficibmwc3GKictdDhjGibbOgIZrcJzDIdjYw\/0","privilege":[]}
+[2017-03-03 10:23:20.524] [INFO] BBMIS - 用户信息:{"openid":"oCd53s8gca9-qrPkPlVZnvyXdO9M","nickname":"🏃Minority🚶","sex":1,"language":"zh_CN","city":"","province":"","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEI0RGQPGbhpxySDotz4HHcYBVdmb8K2kNyQgSlL2UlXzDficibmwc3GKictdDhjGibbOgIZrcJzDIdjYw\/0","privilege":[]}
+[2017-03-03 11:21:57.365] [INFO] BBMIS - 用户信息:{"openid":"oCd53s8gca9-qrPkPlVZnvyXdO9M","nickname":"🏃Minority🚶","sex":1,"language":"zh_CN","city":"","province":"","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/PiajxSqBRaEI0RGQPGbhpxySDotz4HHcYBVdmb8K2kNyQgSlL2UlXzDficibmwc3GKictdDhjGibbOgIZrcJzDIdjYw\/0","privilege":[]}
+[2017-03-03 11:30:57.052] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 13:14:16.185] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 13:14:21.034] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 13:26:22.761] [INFO] console - { shelvesid: '1488517633575',
+  shelves_type: '1',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ba9a3e9rrnp9131no9ma6h728t.png","http://olnlit77s.bkt.clouddn.com/o_1ba9a3e9rrnp9131no9ma6h728t.png"]}',
+  title: '的路',
+  describe: '\n                        <p><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9a424a1o1mfm7s23127o1ad797.jpg"></p>\n                    ',
+  product_group: '{"products":[{"productid":"1488367780440","count":"544","retail_price":0}]}',
+  label: '{"text":["火热促销","店家大促"]}',
+  total_price: '0',
+  selling_price: '0',
+  amount: '2558',
+  purchased: undefined,
+  begin_datetime: '2017-03-01 19:30:42  ',
+  finish_datetime: '2017-03-31 19:30:42',
+  power: undefined,
+  carousel: 0,
+  carousel_picture: 'http://olnlit77s.bkt.clouddn.com/o_1ba9a3k6c42rkrk194kafu1vno92.png',
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'ce06cad0fe7111e68ceb41e1cdea0ab7',
+  limit_purchased: '6558',
+  postage: 0,
+  need_express: 0 }
+[2017-03-03 13:29:37.183] [INFO] console - { shelvesid: '1488367979688',
+  shelves_type: '-1',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ba9aa11k1po51fldn2l1urb69e1r.jpg","http://olnlit77s.bkt.clouddn.com/o_1ba9aa11k1po51fldn2l1urb69e1r.jpg"]}',
+  title: '',
+  describe: '\n                        <p></p>\n                    ',
+  product_group: '{"products":[]}',
+  label: '{"text":[""]}',
+  total_price: '0',
+  selling_price: '',
+  amount: '',
+  purchased: undefined,
+  begin_datetime: '-undefined-undefined',
+  finish_datetime: '-undefined-undefined',
+  power: undefined,
+  carousel: 0,
+  carousel_picture: null,
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'ce06cad0fe7111e68ceb41e1cdea0ab7',
+  limit_purchased: '',
+  postage: 0,
+  need_express: 0 }
+[2017-03-03 13:30:50.225] [INFO] console - { shelvesid: '1488367979688',
+  shelves_type: undefined,
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg","http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg"]}',
+  title: undefined,
+  describe: '\n                        <p></p>\n                    ',
+  product_group: undefined,
+  label: undefined,
+  total_price: undefined,
+  selling_price: undefined,
+  amount: undefined,
+  purchased: undefined,
+  begin_datetime: undefined,
+  finish_datetime: undefined,
+  power: undefined,
+  carousel: 0,
+  carousel_picture: null,
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'ce06cad0fe7111e68ceb41e1cdea0ab7',
+  limit_purchased: undefined,
+  postage: 0,
+  need_express: 0 }
+[2017-03-03 13:31:08.985] [INFO] console - { shelvesid: '1488517633575',
+  shelves_type: undefined,
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ba9act4cub4os01hnp1qm392g3m.png","http://olnlit77s.bkt.clouddn.com/o_1ba9act4cub4os01hnp1qm392g3m.png"]}',
+  title: undefined,
+  describe: '\n                        <p></p>\n                    ',
+  product_group: undefined,
+  label: undefined,
+  total_price: undefined,
+  selling_price: undefined,
+  amount: undefined,
+  purchased: undefined,
+  begin_datetime: undefined,
+  finish_datetime: undefined,
+  power: undefined,
+  carousel: 0,
+  carousel_picture: null,
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'ce06cad0fe7111e68ceb41e1cdea0ab7',
+  limit_purchased: undefined,
+  postage: 0,
+  need_express: 0 }
+[2017-03-03 13:35:03.533] [INFO] console - { shelvesid: '1488367979688',
+  shelves_type: '1',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg","http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg"]}',
+  title: '',
+  describe: '\n                        <p></p>\n                    ',
+  product_group: '{"products":[{"productid":"1488371902052","count":"50","retail_price":298}]}',
+  label: '{"text":["火热促销","店家大促"]}',
+  total_price: '14900',
+  selling_price: '14900',
+  amount: '',
+  purchased: undefined,
+  begin_datetime: '2017-03-03 00:00:00 ',
+  finish_datetime: '2017-03-03 23:59:59',
+  power: undefined,
+  carousel: 0,
+  carousel_picture: null,
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'ce06cad0fe7111e68ceb41e1cdea0ab7',
+  limit_purchased: '',
+  postage: 0,
+  need_express: 0 }
+[2017-03-03 13:36:09.222] [INFO] console - { shelvesid: '1488517633575',
+  shelves_type: '1',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ba9act4cub4os01hnp1qm392g3m.png","http://olnlit77s.bkt.clouddn.com/o_1ba9act4cub4os01hnp1qm392g3m.png"]}',
+  title: '美容套餐推荐',
+  describe: '\n                        <p></p>\n                    ',
+  product_group: '{"products":[{"productid":"1488371957800","count":"90","retail_price":368}]}',
+  label: '{"text":["春节特惠","火热促销"]}',
+  total_price: '33120',
+  selling_price: '33120',
+  amount: '9',
+  purchased: undefined,
+  begin_datetime: '2017-03-03 00:00:00 ',
+  finish_datetime: '2017-03-03 23:59:59',
+  power: undefined,
+  carousel: 0,
+  carousel_picture: null,
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'ce06cad0fe7111e68ceb41e1cdea0ab7',
+  limit_purchased: '6',
+  postage: 0,
+  need_express: 0 }
+[2017-03-03 13:54:36.937] [INFO] console - { shelvesid: '1488367979688',
+  shelves_type: '1',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg","http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg"]}',
+  title: '11',
+  describe: '\n                        <p></p>\n                    ',
+  product_group: '{"products":[{"productid":"1488371902052","count":"50","retail_price":298}]}',
+  label: '{"text":["火热促销","店家大促"]}',
+  total_price: '33120',
+  selling_price: '14900',
+  amount: '12',
+  purchased: undefined,
+  begin_datetime: '2017-03-03 00:00:00 ',
+  finish_datetime: '2017-03-03 23:59:59',
+  power: undefined,
+  carousel: 0,
+  carousel_picture: null,
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'ce06cad0fe7111e68ceb41e1cdea0ab7',
+  limit_purchased: '32',
+  postage: 0,
+  need_express: 0 }
+[2017-03-03 15:06:48.942] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 15:20:02.978] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 15:54:33.346] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:286:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-03 15:54:34.699] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:286:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-03 15:54:40.661] [WARN] console - Unhandled rejection Error: Can't set headers after they are sent.
+    at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:350:11)
+    at ServerResponse.header (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:718:10)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:249:15)
+    at ServerResponse.send (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.4.13.4@express/lib/response.js:151:21)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/customer.js:286:17)
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:687:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-03-03 16:11:51.737] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 16:45:39.281] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 16:48:09.559] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 16:49:56.029] [INFO] console - { shelvesid: '1488367979688',
+  shelves_type: '1',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg","http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg"]}',
+  title: '美容秒杀套餐',
+  describe: '\n                        <p></p>\n                    ',
+  product_group: '{"products":[{"productid":"1488371902052","count":"50","retail_price":298}]}',
+  label: '{"text":["火热促销","店家大促"]}',
+  total_price: '0',
+  selling_price: '14900',
+  amount: '12',
+  purchased: undefined,
+  begin_datetime: '2017-03-03 00:00:00 ',
+  finish_datetime: '2017-03-03 23:59:59',
+  power: undefined,
+  carousel: 0,
+  carousel_picture: 'http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg',
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'ce06cad0fe7111e68ceb41e1cdea0ab7',
+  limit_purchased: '32',
+  postage: 0,
+  need_express: 0 }
+[2017-03-03 16:55:21.700] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 17:03:25.868] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 17:06:31.978] [INFO] console - { shelvesid: '1488367979688',
+  shelves_type: undefined,
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg","http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg"]}',
+  title: undefined,
+  describe: '\n                        <p><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31p5185397d1rbd1vlb10.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31t7111le1gq01mfevoe11.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31ecm1mld10fud721stt12.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou3hf411fc1prtcknmm313.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31eqc17hu66ga0v131u14.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31u6bg6d1244co5bbe15.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou36p11mmt1mhmqsv1sr516.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou3fakkjfihu4pt6ke17.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou3124j12fk9u4mpl1u2n18.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou318ivaih4udi3e1v9c19.jpg"></p>\n                    ',
+  product_group: undefined,
+  label: undefined,
+  total_price: undefined,
+  selling_price: undefined,
+  amount: undefined,
+  purchased: undefined,
+  begin_datetime: undefined,
+  finish_datetime: undefined,
+  power: undefined,
+  carousel: 0,
+  carousel_picture: 'http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg',
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'ce06cad0fe7111e68ceb41e1cdea0ab7',
+  limit_purchased: undefined,
+  postage: 0,
+  need_express: 0 }
+[2017-03-03 17:33:38.285] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 18:03:28.908] [INFO] console - { shelvesid: '1488367979688',
+  shelves_type: '1',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg","http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg"]}',
+  title: '美容套餐推荐',
+  describe: '\n                        <p><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31p5185397d1rbd1vlb10.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31t7111le1gq01mfevoe11.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31ecm1mld10fud721stt12.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou3hf411fc1prtcknmm313.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31eqc17hu66ga0v131u14.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31u6bg6d1244co5bbe15.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou36p11mmt1mhmqsv1sr516.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou3fakkjfihu4pt6ke17.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou3124j12fk9u4mpl1u2n18.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou318ivaih4udi3e1v9c19.jpg"></p>\n                    ',
+  product_group: '{"products":[]}',
+  label: '{"text":["火热促销","店家大促"]}',
+  total_price: '0',
+  selling_price: '0',
+  amount: '9',
+  purchased: undefined,
+  begin_datetime: '2017-03-03 00:00:00 ',
+  finish_datetime: '2017-03-03 23:59:59',
+  power: undefined,
+  carousel: 0,
+  carousel_picture: 'http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg',
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'ce06cad0fe7111e68ceb41e1cdea0ab7',
+  limit_purchased: '6',
+  postage: 0,
+  need_express: 0 }
+[2017-03-03 18:08:37.244] [INFO] console - { shelvesid: '1488367979688',
+  shelves_type: '1',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg","http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg"]}',
+  title: '美容秒杀套餐',
+  describe: '\n                        <p><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31p5185397d1rbd1vlb10.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31t7111le1gq01mfevoe11.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31ecm1mld10fud721stt12.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou3hf411fc1prtcknmm313.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31eqc17hu66ga0v131u14.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou31u6bg6d1244co5bbe15.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou36p11mmt1mhmqsv1sr516.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou3fakkjfihu4pt6ke17.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou3124j12fk9u4mpl1u2n18.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba9mmou318ivaih4udi3e1v9c19.jpg"></p>\n                    ',
+  product_group: '{"products":[{"productid":"1488371957800","count":"90","retail_price":368}]}',
+  label: '{"text":["火热促销","店家大促"]}',
+  total_price: '33120',
+  selling_price: '33120',
+  amount: '0',
+  purchased: undefined,
+  begin_datetime: '2017-03-03 00:00:00 ',
+  finish_datetime: '2017-03-03 23:59:59',
+  power: undefined,
+  carousel: 0,
+  carousel_picture: 'http://olnlit77s.bkt.clouddn.com/o_1ba9ac8hi19ik1jhs17vk17ct1e2pn.jpg',
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: 'ce06cad0fe7111e68ceb41e1cdea0ab7',
+  limit_purchased: '32',
+  postage: 0,
+  need_express: 0 }
+[2017-03-03 18:36:39.269] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 19:39:38.635] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 20:15:29.841] [INFO] BBMIS - 用户信息:{"openid":"oCd53s2duXI0GelJP17ZSdQTL-tY","nickname":"Walker","sex":1,"language":"zh_CN","city":"","province":"","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/BSPaAva2eMnVSIUR4Dia1BNEzRia4w792wWwJp9JTvNWUkLULOX5FXUFxNR2D4iaXF7vweicm8vNic702iak6IS9AJLM9gpoV2ia8Fb\/0","privilege":["chinaunicom"]}
+[2017-03-03 20:15:55.524] [INFO] BBMIS - 用户信息:{"openid":"oCd53s2duXI0GelJP17ZSdQTL-tY","nickname":"Walker","sex":1,"language":"zh_CN","city":"","province":"","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/BSPaAva2eMnVSIUR4Dia1BNEzRia4w792wWwJp9JTvNWUkLULOX5FXUFxNR2D4iaXF7vweicm8vNic702iak6IS9AJLM9gpoV2ia8Fb\/0","privilege":["chinaunicom"]}
+[2017-03-03 20:37:42.367] [WARN] console - Unhandled rejection SequelizeDatabaseError: ER_KEY_COLUMN_DOES_NOT_EXITS: Key column 'isHomeShow' doesn't exist in table
+    at Query.formatError (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/query.js:175:14)
+    at Query._callback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/query.js:49:21)
+    at Query.Sequence.end (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Sequence.js:86:24)
+    at Query.ErrorPacket (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Query.js:88:8)
+    at Protocol._parsePacket (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:280:23)
+    at Parser.write (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Parser.js:75:12)
+    at Protocol.write (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:146:16)
+    at Socket.Readable.push (_stream_readable.js:110:10)
+    at TCP.onread (net.js:523:20)
+[2017-03-03 20:48:49.683] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 20:49:35.212] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 20:49:46.028] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 20:50:06.535] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 20:52:56.390] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 21:08:36.963] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-03-03 00:00:00 , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:504:26)
+[2017-03-03 21:19:27.128] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/02huojia/index.html
+[2017-03-03 21:19:27.347] [INFO] console - data::{"access_token":"2yG5RyXZz-UYWGewZf3R-pUwKfXpVVufc3I7_SF_29zjaVCrsYz76qNKemO2HK9JLF8N30j6ux7WVW6I7cDTaf2IS6bwMgBs4HzDQfNhw3fK4ilngfGisxvwvUSgneA6HHEhADASSP","expires_in":7200}
+[2017-03-03 21:19:27.535] [INFO] console - data:::[object Object]
+[2017-03-03 21:19:27.535] [INFO] BBMIS - JSSDK签名:cce11435db278998b6c7ca6cd259da63e47b2ab2
+[2017-03-03 21:19:41.372] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/02huojia/index.html
+[2017-03-03 21:19:41.566] [INFO] BBMIS - JSSDK签名:32d0c6a1b53d4b99cdbdfa54e42cce3d3b3cacab
+[2017-03-03 21:19:50.140] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/02huojia/index.html
+[2017-03-03 21:19:50.350] [INFO] BBMIS - JSSDK签名:3527ec43256481361e8a086299a4f03a19e6e673
+[2017-03-03 21:23:28.590] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/02huojia/index.html
+[2017-03-03 21:23:28.767] [INFO] BBMIS - JSSDK签名:b3189d560078a5d0cd4aa1307e8c951cdf3cf449
+[2017-03-03 21:24:03.038] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 21:33:15.137] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-03-03 00:00:00 , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:504:26)
+[2017-03-03 21:42:17.432] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 21:53:29.262] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/02huojia/index.html
+[2017-03-03 21:53:30.666] [INFO] console - data::{"access_token":"H61B0hM2KBk-yqtpxh3gcGdDoRhuz8v9AJRceazZ78o7aDbbG86LBjP1ITZzdJfNJDxmRh7-w4DnWIygiz0zCYzBpcmKUuCcMkU_USh6_gVrS1BPR1Hx_zDfedfNu4IAAFQcAGAFKV","expires_in":7200}
+[2017-03-03 21:53:30.866] [INFO] console - data:::[object Object]
+[2017-03-03 21:53:30.866] [INFO] BBMIS - JSSDK签名:53b36913e9f05b40a0044c868f58e901327db91f
+[2017-03-03 21:55:55.418] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 21:56:10.254] [INFO] console - url1:http://10.0.0.151:3345/bbboss/boss/02huojia/index.html
+[2017-03-03 21:56:10.449] [INFO] BBMIS - JSSDK签名:a938006de4241adb6a69a1c1f8b8575b7baca9d1
+[2017-03-03 21:58:24.975] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 21:58:32.996] [INFO] console - url1:http://10.0.0.151:3345/webapp/html/product.html?shelvesid=1488546516872&customerid=bf98a190000f11e7a7d30713410241b4
+[2017-03-03 21:58:33.237] [INFO] BBMIS - JSSDK签名:b4ca473516400647a0ac0a7f542bab705b91dba6
+[2017-03-03 22:00:19.611] [INFO] console - url1:http://10.0.0.151:3345/webapp/html/product.html?shelvesid=1488546516872&customerid=bf98a190000f11e7a7d30713410241b4
+[2017-03-03 22:00:19.829] [INFO] BBMIS - JSSDK签名:e7463318d6c204b2d0b050c5c6495dbbbd1dc8b0
+[2017-03-03 22:01:37.009] [INFO] console - url1:http://10.0.0.151:3345/webapp/html/product.html?shelvesid=1488546516872&customerid=bf98a190000f11e7a7d30713410241b4
+[2017-03-03 22:01:37.235] [INFO] BBMIS - JSSDK签名:303baeeeac3a592e0149cefffa2a4edbc458f0f8
+[2017-03-03 22:03:51.035] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 22:22:12.948] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 22:40:05.408] [INFO] console - url1:http://10.0.0.151:3345/webapp/html/product.html?shelvesid=1488546516872&customerid=bf98a190000f11e7a7d30713410241b4
+[2017-03-03 22:40:05.644] [INFO] BBMIS - JSSDK签名:15251e1e2c305898e8b00055e4751ab5508758fb
+[2017-03-03 22:41:48.883] [INFO] console - url1:http://10.0.0.151:3345/webapp/html/product.html?shelvesid=1488546516872&customerid=bf98a190000f11e7a7d30713410241b4
+[2017-03-03 22:41:49.115] [INFO] BBMIS - JSSDK签名:93df29a4d3673a59c197448731fb0d3280adf36c
+[2017-03-03 22:48:18.734] [INFO] console - url1:http://10.0.0.151:3345/webapp/html/product.html?shelvesid=1488546516872&customerid=bf98a190000f11e7a7d30713410241b4
+[2017-03-03 22:48:18.926] [INFO] BBMIS - JSSDK签名:c99fd15cd8c29234693ac6ce290e49b236799105
+[2017-03-03 22:49:58.167] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 22:50:09.788] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 22:50:20.146] [INFO] console - url1:http://10.0.0.151:3345/webapp/html/product.html?shelvesid=1488546516872&customerid=bf98a190000f11e7a7d30713410241b4
+[2017-03-03 22:50:20.352] [INFO] BBMIS - JSSDK签名:c00eb4f852258441a0f729ecd923222923638fc3
+[2017-03-03 22:53:06.178] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-03-03 22:53:35.908] [INFO] console - url1:http://10.0.0.151:3345/webapp/html/product.html?shelvesid=1488546516872&customerid=bf98a190000f11e7a7d30713410241b4
+[2017-03-03 22:53:36.094] [INFO] console - data::{"access_token":"k0UF20NtbRRCy8-dFFoVC4GIQ79hn0wChBgMjRYzc9Hz29y__FJ9t00I3dGY8oLvPd7Xv9IlIJvnzd8W_2h5y937xSsqccBvW7K4hoeFPYcAHZaABANUM","expires_in":7200}
+[2017-03-03 22:53:36.321] [INFO] console - data:::[object Object]
+[2017-03-03 22:53:36.323] [INFO] BBMIS - JSSDK签名:d32c0de8640c0ed3e93b3a3c7e790f50f298180b

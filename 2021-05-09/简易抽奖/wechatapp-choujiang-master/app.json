@@ -1,0 +1,11 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#BA52ED",
+    "navigationBarTitleText": "转盘抽奖",
+    "navigationBarTextStyle":"light"
+  }
+}

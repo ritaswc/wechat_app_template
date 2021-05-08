@@ -1,0 +1,6 @@
+.topic-summary {
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}

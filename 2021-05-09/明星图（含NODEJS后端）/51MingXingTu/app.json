@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/album/album",
+    "pages/types/types"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FF88C2",
+    "navigationBarTitleText": "51明星图",
+    "navigationBarTextStyle":"white"
+  },
+  "debug":false
+}

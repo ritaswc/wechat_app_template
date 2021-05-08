@@ -1,0 +1,21 @@
+<!--question.wxml-->
+<view class="container">
+
+    <!--start-->
+    <view class="fq-list">
+        <view class="fq-item {{idx%2 ? '' : 'odd'}}" wx:for="{{listInfo}}" wx:for-index="idx" wx:for-item="item">
+            <image src="{{item.pic_url}}" class="pic"></image>
+            <view class="logo">
+                <image src="{{item.shop_logo}}" ></image>
+            </view>
+            <view class="item-text">
+              <text>{{item.coupon.rules[0].aeBankInfo}}</text>
+              <view class="bt-text">{{item.coupon.abName}}
+                <text>{{item.residue}}</text>
+              </view>
+            </view>
+        </view>
+    </view>
+    <!--end-->
+</view>
+

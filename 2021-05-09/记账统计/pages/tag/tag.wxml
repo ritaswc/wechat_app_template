@@ -1,0 +1,6 @@
+<!--pages/tag/tag.wxml-->
+<view class="main-body">
+  <view class="tag-list-view" wx:key="{{tagList}}" wx:for="{{tagList}}">
+    <text data-id="#{{item.Name}}#" class="tag-list-text" bindtap="bindTagTap">#{{item.Name}}#</text>
+  </view>
+</view>

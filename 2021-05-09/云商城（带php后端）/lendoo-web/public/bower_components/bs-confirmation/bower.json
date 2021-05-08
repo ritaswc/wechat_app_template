@@ -1,0 +1,15 @@
+{
+	"name": "bs-confirmation",
+	"version": "1.0.5",
+	"main": "bootstrap-confirmation.js",
+	"keywords": [ "bootstrap", "confirm", "confirmation"],
+	"description": "Confirmation plugin compatible with Twitter Bootstrap 3 extending Popover",
+	"homepage": "https://github.com/tavicu/bs-confirmation",
+	"authors": [
+			{
+					"name": "Tavicu",
+					"homepage": "https://github.com/tavicu"
+			}
+	],
+	"license": "https://github.com/tavicu/bs-confirmation"
+}

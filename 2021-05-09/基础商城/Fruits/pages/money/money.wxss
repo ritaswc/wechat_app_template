@@ -1,0 +1,23 @@
+.id{
+    padding-left:150px,
+}
+
+.id1{
+      padding: 300px,
+}
+.image{
+    float:left;
+    height:10px;
+}
+.ph_image{
+    float:left;
+    width: 20px; 
+    height: 30px;
+}
+
+.section__title1{
+    font-size:16px;
+    padding-left:30px; 
+    margin-top:2px;
+    margin-bottom:20px;
+}

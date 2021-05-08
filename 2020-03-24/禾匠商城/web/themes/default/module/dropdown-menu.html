@@ -1,0 +1,21 @@
+<span class="top-view">
+	<a href="{if $_W['role'] == ACCOUNT_MANAGE_NAME_CLERK}javascript:;{else}{php echo url('account/display/switch', array('uniacid' => $_W['uniacid'], 'type' => $_W['account']['type']))}{/if}" title="{php echo $_W['account']['name']}" target="_blank">
+		<i class="wi wi-{php echo $_W['account']->typeSign}"></i>
+		{$_W['account']['name']}
+	</a>
+</span>
+<span class="dropdown">
+	<a href="javascript:;" class="dropdown-icon" data-toggle="dropdown" aria-expanded="false"><i class="wi wi-angle-down"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu">
+		{loop $accounts_list $account}
+		<li>
+			<a href="{php echo $account['url']}">
+				<span>
+					<i class="wi wi-{php echo $account['type_name']}"></i>
+					{$account['account_name']}
+				</span>
+			</a>
+		</li>
+		{/loop}
+	</ul>
+</span>

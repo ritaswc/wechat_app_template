@@ -1,0 +1,216 @@
+/**index.wxss**/
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .favor-bar { border-bottom: solid 0.5px #999 }
+    .news-item ,.selector-header,{ border-bottom: solid 0.5px #ccc }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+    .favor-bar { border-bottom: solid 0.333333px #999 }
+    .news-item ,.selector-header,{ border-bottom: solid 0.333333px #ccc }
+}
+.news-page{
+  transition: all linear 0.5s;
+}
+.favor-bar{
+  position:fixed;
+  left: 0;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  white-space: nowrap;
+  z-index: 9999999;
+  background-color: white;
+} 
+.favor-tab{
+  margin-right: 40px;
+  margin-left: 40px;
+}
+.search{
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.favor-add{
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 2px;  
+  background-color: #fff;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold; 
+  height: 47px;
+  line-height: 50px;
+  color: #666;
+}
+.favor-search{
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+  background-color: #fff;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bolder;  
+  height: 47px;
+  line-height: 50px;
+  color: #666;
+}
+.favor-item{
+  display: inline-block;
+  font-size: 18px;
+  height: 47px;
+  line-height: 50px;
+  color: #666;
+  margin: 0 6px;
+}
+.favor-item-active{
+   border-bottom:  solid 3px #48C23D;
+   font-weight: 600;
+   color: #48C23D;
+}
+swiper{
+  height: 180px;
+}
+.swiper-news-title{
+  position:absolute;
+  left:0px;
+  top:157px;
+  width: 100%;
+  color:white;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: black;
+  opacity: 0.6;
+  padding: 0 10px;
+  z-index: 999997;
+}
+/*新闻列表*/
+.news{
+  margin-top: 50px;
+}
+.news-item{
+  padding: 0.5rem;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.news-item-info{
+  height: 100%;
+  padding-right:10px; 
+  flex:5;
+}
+.news-item-header{
+  
+}
+.title{
+  font-size: 15px;
+  font-weight: 500;
+}
+.channelName,.source,.time{
+  font-size: 12px;
+  color: #999;
+  padding-right: 0.5rem;
+}
+.news-item-image{
+  flex:2;
+  height: 80px;
+}
+.news-item-image3{
+  display: block;
+  width: 100%;
+}
+.tab-selector{
+  margin: 0 10px;
+  
+}
+.selector-header{
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 50px;
+  text-align: center; 
+  line-height: 50px;
+}
+.tab-item{
+  display: inline-block;
+  text-align: center;
+  width: 21%;
+  height: 25px;
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  margin: 5px 1% 5px 2%;
+  font-size: 14px;
+  line-height: 25px;
+}
+.attration-title,.newest-title{
+  padding: 5px 1%;
+  color:#ccc;
+}
+.close-selector{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 50px;
+  width: 30px;
+  line-height: 50px;
+  font-size: 20px;
+}
+.attration,.newest{
+  margin-bottom: 10px;
+}
+.selected{
+  color:#48C23D;
+  border-color: #48C23D;
+}
+.ball-beat{
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin-top: 50px;
+  box-sizing: border-box;
+  padding-top: 15px;
+  width: 100%;
+  text-align: center;
+}
+@-webkit-keyframes ball-beat {
+  50% {
+    opacity: 0.2;
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes ball-beat {
+  50% {
+    opacity: 0.2;
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+.ball-beat > view {
+  background-color: #48C23D;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin: 2px;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  display: inline-block;
+  -webkit-animation: ball-beat 0.7s 0s infinite linear;
+          animation: ball-beat 0.7s 0s infinite linear; }
+  .ball-beat > view:nth-child(2n-1) {
+    -webkit-animation-delay: 0.35s !important;
+            animation-delay: 0.35s !important; }

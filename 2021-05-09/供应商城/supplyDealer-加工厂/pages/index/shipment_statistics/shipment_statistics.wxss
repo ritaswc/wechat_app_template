@@ -1,0 +1,32 @@
+.table-4 .tr .td:first-child{
+    width:60%;
+}
+.table-4 .tr .th:first-child{
+    width:60%;
+}
+
+.table-5 .tr .td:last-child{
+    width:30%;
+}
+.table-5 .tr .th:last-child{
+    width:30%;
+}
+
+.state2{
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index:100;
+}
+
+.screen-time{
+    position: fixed;
+    top:102rpx;
+    left: 0;
+    z-index:100;
+}
+
+.order-statistics{
+    margin-top:276rpx;
+}
+

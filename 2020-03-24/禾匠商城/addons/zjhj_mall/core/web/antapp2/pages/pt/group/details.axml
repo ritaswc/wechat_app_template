@@ -1,0 +1,252 @@
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body">
+        <view class='{{show_attr_picker?"no-scroll":""}}'>
+            <navigator hover-class='none' url='/pages/pt/details/details?gid={{goods.id}}{{in_group || group_fail>0 ? "" : "&oid="+oid+"&group_id="+group_id}}'>
+                <view class='goods flex-row'>
+                    <view class='goods-pic flex-grow-0'>
+                        <image src='{{goods.cover_pic}}'></image>
+                    </view>
+                    <view class='goods-info flex-grow-1 flex-col'>
+                        <view class='goods-info-title flex-grow-0'>
+                            {{goods.name}}
+                        </view>
+                        <view class='goods-money flex-grow-0 flex-row flex-y-bottom'>
+                            <view class='goods-price flex-grow-0 flex-y-bottom'>
+                                ¥
+                                <text>{{goods.price}}</text>
+                            </view>
+                            <view class='goods-original-price flex-grow-0 flex-y-bottom'>
+                                ¥{{goods.original_price}}
+                            </view>
+                        </view>
+                        <view class='goods-label flex-row'>
+                            <view class='goods-limit flex-grow-0'>
+                                {{goods.group_num}}人团
+                            </view>
+                            <view class='goods-omit flex-grow-0'>
+                                拼团省{{reduce_price}}
+                            </view>
+                        </view>
+                    </view>
+                    <view class='pt-status-pic'>
+                        <image src='{{__wxapp_img.pt.success.url}}' a:if="{{group_fail ==1}}"></image>
+                        <image src='{{__wxapp_img.pt.fail.url}}' a:if="{{group_fail ==2}}"></image>
+                    </view>
+                </view>
+            </navigator>
+
+            <view class='pt-group-shell'>
+                <view class='flex-col pt-group' style="height:auto">
+                    <view class='flex-grow-0 top-title flex-x-center' a:if="{{group_fail==0}}">
+                        还剩
+                        <text>{{surplus}}</text> 人，仅剩
+                        <text>{{limit_time.days}}天{{limit_time.hours}} ：{{limit_time.mins}}：{{limit_time.secs}}</text> 失效
+                    </view>
+                    <view class='flex-grow-0 top-title flex-x-center' a:if="{{group_fail==2}}">
+                        超过有效时间，
+                        <text>拼团失败</text>
+                    </view>
+                    <view class='flex-grow-0 top-title flex-x-center' a:if="{{group_fail==1}}">
+                        拼团成功
+                    </view>
+                    <image src='{{__wxapp_img.pt.group_bg.url}}' style='position:absolute;left:0;top:0;width:702rpx;height:214rpx;'></image>
+                    <view class='head-pic flex-grow-0 flex-y-center flex-x-center'>
+                        <block a:for="{{groupList}}">
+                            <view class='head-pic-item flex-grow-0' a:if='{{index==0}}'>
+                                <image src='{{item.avatar_url}}' style='border:2rpx solid #ff5c5c;'></image>
+                                <view class='group-frist flex-x-center flex-y-center'>团长</view>
+                            </view>
+                            <view class='head-pic-item flex-grow-0' a:else>
+                                <image a:if='{{item.avatar_url !=0}}' src='{{item.avatar_url}}'></image>
+                                <image a:else src='{{__wxapp_img.pt.no_group_num.url}}'></image>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class='play-btn'>
+                <button class='pt_btn flex-y-center flex-x-center' data-id='{{oid}}' onTap='showShareModal' a:if='{{group_fail==0&&in_group==true}}'>
+                    邀请好友
+                </button>
+                <button class='pt_btn flex-y-center flex-x-center' data-id='{{oid}}' onTap='goToGoodsDetails' a:if='{{group_fail==1&&in_group==true}}'>
+                    一键开团
+                </button>
+                <view class='pt_btn flex-y-center flex-x-center' onTap='buyNow' a:if='{{group_fail==0&&in_group==false}}'>
+                    我要参团
+                </view>
+            </view>
+
+            <view class='group-notice flex-row flex-y-center' onTap='goArticle'>
+                <view class='group-notice-left flex-grow-1'>
+                    拼团须知
+                </view>
+                <view class='group-notice-info flex-gorw-1'>
+                    .好友参团 .人满发货 .人不满退款
+                </view>
+                <view class='goods-right flex-grow-0'>
+                    <image src='{{__wxapp_img.share.right.url}}'></image>
+                </view>
+            </view>
+
+            <view class='goods-list'>
+                <view class='goods-more flex-row flex-y-center' onTap='goToHome'>
+                    <view class='goods-more-left  flex-grow-1'>
+                        更多拼团
+                    </view>
+                    <view class='group-notice-info flex-gorw-1'>
+                        更多
+                    </view>
+                    <view class='goods-right flex-gorw-1'>
+                        <image src='{{__wxapp_img.share.right.url}}'></image>
+                    </view>
+                </view>
+                <block a:for='{{goods_list}}'>
+                    <navigator url="/pages/pt/details/details?gid={{item.id}}" open-type="navigate" class='list-item flex-row'>
+                        <view class='flex-grow-0 corver-pic'>
+                            <image src='{{item.cover_pic}}'></image>
+                        </view>
+                        <view class='flex-grow-1 flex-col'>
+                            <view class='flex-grow-1 goods-title'>
+                                {{item.name}}
+                            </view>
+                            <view class='flex-grow-0 flex-row'>
+                                <view class='goods-sales'>
+                                    已团 {{item.virtual_sales}}
+                                </view>
+                            </view>
+                            <view class='flex-grow-0 flex-row flex-y-bottom'>
+                                <view class='flex-grow-0 price flex-row flex-y-bottom'>
+                                    <view class='unit flex-grow-0 flex-y-bottom'>
+                                        ¥
+                                    </view>
+                                    <view class='flex-grow-1 flex-y-bottom'>{{item.price}}</view>
+                                </view>
+                                <view class='flex-grow-1 old-price flex-y-bottom'>
+                                    ¥ {{item.original_price}}
+                                </view>
+                                <view class='flex-grow-0 group-btn flex-x-center flex-y-center'>
+                                    去开团
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </block>
+            </view>
+        </view>
+        <!--     选择规格     -->
+        <view class="attr-picker" a:if="{{show_attr_picker}}">
+            <view class="content-box">
+                <view class="flex-row" style="border-bottom: 1rpx solid #e3e3e3;padding: 24rpx 28rpx">
+                    <view class="flex-grow-0">
+                        <view class="goods-pic-box">
+                            <block a:if="{{goods.attr_pic}}">
+                                <image mode="aspectFill" src="{{goods.attr_pic}}"></image>
+                            </block>
+                            <block a:else>
+                                <image mode="aspectFill" src="{{goods.cover_pic}}"></image>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="flex-grow-1" style="padding: 0 24rpx">
+                        <view style="color:#ff4544;margin-bottom: 12rpx;font-weight: bold">￥{{goods.price}}</view>
+                        <view style="font-size:9pt">
+                            库存{{goods.num}}
+                        </view>
+                    </view>
+                    <view class="flex-grow-0">
+                        <view onTap="hideAttrPicker" class="flex-x-center flex-y-center" style="width: 100rpx;height: 100rpx">
+                            <image style="width: 30rpx;height: 30rpx" src="{{__wxapp_img.store.close.url}}" />
+                        </view>
+                    </view>
+                </view>
+                <scroll-view scroll-y="true" style="max-height: 650rpx;">
+                    <view style="padding: 24rpx 28rpx">
+                        <view>
+                            <view class="attr-group" a:for="{{attr_group_list}}" a:for-item="attr_group" a:if="{{attr_group.attr_list.length>0}}">
+                                <view class="attr-group-name">{{attr_group.attr_group_name}}</view>
+                                <view class="attr-list">
+                                    <text class="attr-item {{item.checked?'active':''}}" a:for="{{attr_group.attr_list}}" data-group-id="{{attr_group.attr_group_id}}" data-id="{{item.attr_id}}" onTap="attrClick">{{item.attr_name}}
+                                </text>
+                                </view>
+                            </view>
+                        </view>
+                        <view style="height: 0;border-bottom: 1rpx solid #e3e3e3;margin-bottom: 40rpx"></view>
+                        <view style="padding-bottom: 40rpx">
+                            <view class="flex-row flex-y-center mb-20">
+                                <view class="flex-grow-1">数量</view>
+                                <view class="flex-grow-0">
+
+                                    <view class="flex-row number-input-box">
+                                        <view class="flex-grow-0 flex-x-center flex-y-center number-btn number-sub {{form.number<=1?'disabled':''}}" onTap="numberSub">-
+                                        </view>
+                                        <view class="flex-grow-0">
+                                            <input class="flex-grow-1 number-input" value="{{form.number}}" type="number" step="1" min="1" onBlur="numberBlur" />
+                                        </view>
+                                        <view class="flex-grow-0 flex-x-center flex-y-center number-btn number-add" onTap="numberAdd">+
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+                <view class='flex-row buy-confirm flex-y-center flex-x-center' onTap='buyNow'>
+                    确认
+                </view>
+            </view>
+        </view>
+
+        <view class="share-modal {{share_modal_active}}">
+            <view class="share-modal-body">
+                <view class="flex-row">
+                    <view class="flex-grow-1 flex-x-center">
+                        <button open-type="share" class="share-bottom" style='height:100%'>
+                            <image src="{{__wxapp_img.share.friend.url}}"></image>
+                            <view>分享给朋友</view>
+                        </button>
+                    </view>
+                    <view class="flex-grow-1 flex-x-center">
+                        <view onTap="getGoodsQrcode" class="share-bottom">
+                            <image src="{{__wxapp_img.share.qrcode.url}}"></image>
+                            <view>生成商品海报</view>
+                        </view>
+                    </view>
+                </view>
+                <view onTap="shareModalClose" class="share-modal-close flex-y-center flex-x-center">关闭</view>
+            </view>
+        </view>
+
+        <view class="goods-qrcode-modal {{goods_qrcode_active}}">
+            <view class="goods-qrcode-body flex-col">
+                <view class="flex-grow-1" style="position: relative">
+                    <view style="position: absolute;left: 0;top:0;width: 100%;height: 100%;padding: 100rpx 100rpx 60rpx">
+                        <view class="goods-qrcode-box">
+                            <view class="goods-qrcode-loading flex-x-center flex-y-center">
+                                <view class="flex-x-center flex-col">
+                                    <image style="width: 150rpx;height: 150rpx" src="{{__wxapp_img.system.loading2.url}}"></image>
+                                    <view style="color: #888">海报生成中</view>
+                                </view>
+                            </view>
+                            <image onTap="goodsQrcodeClick" mode="aspectFill" class="goods-qrcode {{goods_qrcode?'active':''}}" data-src="{{goods_qrcode}}" src="{{goods_qrcode}}"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="flex-grow-0 flex-col flex-x-center" style="padding: 0 60rpx 80rpx">
+                    <view style="margin-bottom: 20rpx;padding: 0 40rpx">
+                        <button a:if="{{goods_qrcode}}" onTap="saveGoodsQrcode" style="background: #ff4544;color: #fff;">
+                            保存图片
+                        </button>
+                        <button a:else style="opacity: .4">保存图片</button>
+                    </view>
+                    <view style="color: #888;font-size: 9pt;text-align: center">保存至相册可以分享给朋友</view>
+                </view>
+                <view class="goods-qrcode-close" onTap="goodsQrcodeClose">
+                    <image src="{{__wxapp_img.store.close2.url}}" style="width: 50rpx;height: 50rpx;display: block"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

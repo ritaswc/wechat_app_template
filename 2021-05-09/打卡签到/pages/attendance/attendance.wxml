@@ -1,0 +1,43 @@
+<!--pages/attendance/attendance.wxml-->
+
+
+ <view class="attendance">
+
+    <view class="header">
+        <text>设置公司上下班时间</text>
+    </view>
+
+    <view class="item">
+        <view class="item-left">
+            <text>上午时间</text>
+        </view>
+        <view class="item-right">
+            <picker mode="time" value="{{AMstart}}" data-time="AMstart" start="00:00" end="23:59" bindchange="bindTimeChange">
+                <view class="picker">{{AMstart}}</view>
+            </picker>
+            <text>-</text>
+            <picker mode="time" value="{{AMend}}" data-time="AMend" start="00:00" end="23:59" bindchange="bindTimeChange">
+                <view class="picker">{{AMend}}</view>
+            </picker>
+        </view>
+    </view>
+
+    <view class="item">
+        <view class="item-left">
+            <text>下午时间</text>
+        </view>
+        <view class="item-right">
+            <picker mode="time" value="{{PMstart}}" data-time="PMstart" start="00:00" end="23:59" bindchange="bindTimeChange">
+                <view class="picker">{{PMstart}}</view>
+            </picker>
+            <text>-</text>
+            <picker mode="time" value="{{PMend}}" data-time="PMend" start="00:00" end="23:59" bindchange="bindTimeChange">
+                <view class="picker">{{PMend}}</view>
+            </picker>
+        </view>
+    </view>
+
+    <view class="footer">
+        <button class="button" bindtap="saveCommuterTime">保存</button>
+    </view>
+</view>

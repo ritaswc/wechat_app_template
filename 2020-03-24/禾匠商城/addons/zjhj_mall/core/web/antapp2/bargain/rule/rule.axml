@@ -1,0 +1,11 @@
+<!--bargain/rule/rule.wxml-->
+<view class="page">
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+        <view class="p-24">
+            <text>{{content}}</text>
+        </view>
+    </view>
+    <include src="/components/footer/footer" />
+</view>

@@ -1,0 +1,49 @@
+{
+  "pages":[
+    "pages/login/login",
+    "pages/scan/scan",
+    "pages/workers/workers",
+    "pages/applylist/applylist",
+    "pages/create/create",
+    "pages/signMemo/signMemo",
+    "pages/editName/editName",
+    "pages/select/select",
+    "pages/list/list",
+    "pages/confirm/confirm",
+    "pages/audit/audit",
+    "pages/boss/boss",
+    "pages/name/name",
+    "pages/qrcode/qrcode",
+    "pages/unAuth/unAuth",
+    "pages/address/address",
+    "pages/success/success",
+    "pages/fail/fail",
+    "pages/attendance/attendance",
+    "pages/self/self",
+    "pages/feedback/feedback",
+    "pages/code/code"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "打卡咯",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+
+    "list": [{
+      "pagePath": "pages/workers/workers",
+      "text": "员工",
+      "iconPath": "images/tarbar/check.png",
+      "selectedIconPath": "images/tarbar/check-HL.png"
+    },{
+      "pagePath": "pages/boss/boss",
+      "text": "管理",
+      "iconPath": "images/tarbar/bussiness.png",
+      "selectedIconPath": "images/tarbar/business-HL.png"
+    }],
+    "color": "#000000",
+    "selectedColor": "#22a1e0"
+  },
+  "debug": true
+}

@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/comment/index",
+    "pages/my/my",
+    "pages/newjoke/newjoke",
+    "pages/logs/logs"
+  ],
+  "tabBar":{
+    "selectedColor":"#3cc51f",
+    "list":[{
+      "pagePath":"pages/index/index",
+      "text":"Top20"
+    },{
+      "pagePath":"pages/my/my",
+      "text":"我的"
+    }]
+
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "集思笑话--JSJoke",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  }
+}

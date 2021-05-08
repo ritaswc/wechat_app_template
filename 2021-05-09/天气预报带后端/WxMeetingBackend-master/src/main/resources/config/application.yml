@@ -1,0 +1,63 @@
+server: 
+    # 服务端口
+    port: 9999
+    # 服务路径
+    contextPath:
+
+
+spring:
+    # 服务名称
+    application:
+        name: WxMeetingBackend
+    # 服务当前使用的profile
+    profiles:
+        active: @spring.profiles.active@
+    jackson:
+        # json中日期是否用timestamps格式交互
+        serialization.write-dates-as-timestamps: true
+        # json中遇到无效变量是否报错
+        deserialization.FAIL_ON_UNKNOWN_PROPERTIES: off
+    # 国际化
+    messages: 
+        basename: i18n/messages
+     # 数据库相关设置
+    datasource:
+        driver-class-name: @datasource.driver@
+        url: @datasource.url@
+        username: @datasource.username@
+        password: @datasource.password@
+        test-while-idle: true
+        max-wait-millis: 30000
+        validation-query: 'SELECT 1'
+        time-between-eviction-runs-millis: 20000
+        min-evictable-idle-time-millis: 28700
+    # JPA相关设置
+    jpa:
+        database-platform: @datasource.dialect@
+        hibernate.ddl-auto: @datasource.jpa.hibernate.ddl-auto@
+        show-sql: @datasource.jpa.show-sql@
+
+
+# LOG相关设置
+logging:
+  path: /var/log/wx
+  level:
+    com.leadingsoft.liuw: TRACE
+    org.springframework: WARN
+
+# 本地文件存储配置
+local.storage: 
+    # 临时文件目录
+    tmp: /opt/ftp/tmp
+    # 临时文件清理间隔
+    tmp.clean.periodOfDays: 30
+    # 文件存储根目录
+    root: /opt/ftp/filestorage
+
+#微信配置相关
+weixin:
+  config:
+    appId: wxf9a70d30a6944069
+    secret: b735fc511979462ef3e2dd7f8e80ab58
+  code2session:
+    url: https://api.weixin.qq.com/sns/jscode2session?appid={appId}&secret={secret}&js_code={code}&grant_type=authorization_code

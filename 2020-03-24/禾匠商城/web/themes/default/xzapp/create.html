@@ -1,0 +1,44 @@
+{template 'common/header'}
+<div class="account-list-add-step">
+	<ol class="breadcrumb we7-breadcrumb">
+		<a href="{php echo url('account/manage', array('account_type' => ACCOUNT_TYPE_XZAPP_NORMAL))}"><i class="wi wi-back-circle"></i> </a>
+		<li><a href="{php echo url('account/manage', array('account_type' => ACCOUNT_TYPE_XZAPP_NORMAL))}">熊掌号列表</a></li>
+		<li>新建熊掌号</li>
+	</ol>
+	<div class="we7-step">
+		<ul>
+
+		</ul>
+	</div>
+	{if count($errors) > 0}
+	{loop $errors $val}
+	{loop $val $mes}
+	{$mes}
+	{/loop}
+	{/loop}
+	{/if}
+	<form action="" method="post" class="we7-form">
+		<!--第二步:基本信息-->
+		<div class="form-group">
+			<label for="" class="control-label col-sm-2">熊掌号名称</label>
+			<div class="form-controls col-sm-8">
+				<input type="text" name="name" class="form-control" required autocomplete="off" />
+				<span class="help-block">填写熊掌号名称</span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="control-label col-sm-2">描述</label>
+			<div class="form-controls col-sm-8">
+				<textarea style="height: 80px;" class="form-control" name="description" required></textarea>
+				<span class="help-block">用于说明此熊掌号的功能及用途。</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<input type="submit" name="submit" class="btn btn-primary btn-submit" value="提交"/>
+			<input type="hidden" name="token" value="{$_W['token']}">
+		</div>
+	</form>
+</div>
+
+{template 'common/footer'}

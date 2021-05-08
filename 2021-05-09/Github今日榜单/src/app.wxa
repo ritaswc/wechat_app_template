@@ -1,0 +1,46 @@
+<template>
+  <view>
+
+    <!-- wxp template -->
+    <page></page>
+
+    <layout-foot></layout-foot>
+  </view>
+</template>
+
+<script>
+  export default {
+    config: {
+      usingComponents: {
+        'layout-foot': 'layout/foot'
+      },
+      pages: [
+      ],
+      window: {
+        navigationStyle: 'custom',
+        backgroundTextStyle: 'dark',
+        backgroundColor: '#efefef',
+        navigationBarBackgroundColor: '#333333',
+        navigationBarTitleText: 'Github',
+        navigationBarTextStyle: 'white'
+      },
+      networkTimeout: {
+        request: 10000
+      }
+    },
+    globalData: { },
+    onLaunch () { },
+    onShow () { },
+    onHide () { }
+  }
+</script>
+
+<style>
+page {
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  background-color: #F8F8F8;
+  height: 100%;
+  font-size: 32rpx;
+  line-height: 1.5;
+}
+</style>

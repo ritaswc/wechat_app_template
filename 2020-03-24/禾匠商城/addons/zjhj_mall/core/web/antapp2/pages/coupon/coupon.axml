@@ -1,0 +1,89 @@
+<view class="page"> 
+    <include src="/components/common/common" />
+    <include src="/components/header/header" />
+    <view class="body after-navber">
+
+        <view class="top-bar flex-row">
+            <navigator open-type="redirect" url="/pages/coupon/coupon?status=0" class="flex-grow-1 {{status==0?'active':''}}">
+                <text>未使用</text>
+            </navigator>
+            <navigator open-type="redirect" url="/pages/coupon/coupon?status=1" class="flex-grow-1 {{status==1?'active':''}}">
+                <text>已使用</text>
+            </navigator>
+            <navigator open-type="redirect" url="/pages/coupon/coupon?status=2" class="flex-grow-1 {{status==2?'active':''}}">
+                <text>已过期</text>
+            </navigator>
+        </view>
+        <view a:if="{{list&&list.length>0}}" class="coupon-list">
+            <block a:for="{{list}}" a:for-item="coupon" a:key="{{item.id}}">
+                <view class="coupon-item coupon-status-{{coupon.status}}" style="margin-top:20rpx;">
+                    <image class="coupon-bg" src="/images/img-coupon-bg-{{coupon.status==0?0:1}}.png"></image>
+                    <image a:if="{{coupon.status!=0}}" class="coupon-status-icon"
+                        src="/images/img-coupon-status-icon-{{coupon.status}}.png"></image>
+                    <view class="flex-row" style="height: 100%;overflow: hidden;position:relative" >
+                        <view class="flex-grow-0 flex-col flex-y-center flex-x-center coupon-left">
+                            <view class="flex-row flex-y-bottom">
+                                <view class="fs-sm">￥</view>
+                                <view style="font-size: {{coupon.sub_price.length>4?'13':'19'}}pt;line-height: .9">
+                                    {{coupon.sub_price}}
+                                </view>
+                            </view>
+                            <view class="fs-sm" style="margin-top: 10rpx">{{coupon.min_price_desc}}</view>
+                        </view>
+                        <view class="flex-grow-1 flex-y-center coupon-right">
+                            <view style="width:100%;">
+                                <navigator open-type="navigateTo" url="/pages/coupon-detail/coupon-detail?user_coupon_id={{coupon.user_coupon_id}}">
+                                    <view class="flex-row flex-y-center mb-10" style="margin-bottom:5rpx;">
+                                        <view class="flex-grow-1">{{coupon.event_desc}}</view>
+                                    </view>
+                                    <view class="fs-sm" style="color: #666666; font-size: 8pt;" >{{coupon.begin_time}} ~ {{coupon.end_time}}</view>
+
+                                    <block a:if="{{coupon.appoint_type == 1 && coupon.cat.length == 0}}">
+                                        <text class="user_coupon_font">全场通用</text>
+                                    </block>
+                                    <block a:if="{{coupon.appoint_type == 2 && coupon.goods.length == 0}}">
+                                        <text class="user_coupon_font">全场通用</text>
+                                    </block>
+                                    <block a:if="{{coupon.appoint_type == null}}">
+                                        <text class="user_coupon_font">全场通用</text>
+                                    </block>
+                                </navigator>
+                                <block a:if="{{coupon.appoint_type == 1 &&  coupon.cat.length > 0}}">
+                                    <view class="user_coupon_font" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:87%;">
+                                    仅限<block a:for="{{coupon.cat}}" a:for-item="cat" a:key="id">
+                                        <text>{{cat.name}}、</text>
+                                    </block>产品使用
+                                    </view>
+                                    <block a:if="{{coupon.cat.length > 2}}">
+                                        <block a:if="{{index != check}}">
+                                            <image src="{{__wxapp_img.user.coupon_xia.url}}" class="xia" onTap='xia' data-index="{{index}}"></image>
+                                        </block>
+                                        <block a:if="{{index == check}}">
+                                            <image src="{{__wxapp_img.store.shou.url}}" class="xia" onTap='shou' data-index="{{index}}"></image>
+                                        </block>  
+                                    </block> 
+                                </block>
+
+                                <block a:if="{{coupon.appoint_type == 2 &&  coupon.goods.length > 0}}">
+                                    <view data-goods_id="{{coupon.goods}}" data-id="{{coupon.user_coupon_id}}" onTap='goodsList' class="user_coupon_font" style="height:50rpx;">指定商品使用 点进去查看指定商品</view>
+                                </block>
+                            </view>
+                        </view>
+                    </view> 
+                </view>
+                <block a:if="{{coupon.cat.length > 2}}">
+                    <block a:if="{{check == index}}" >
+                        <view class="user_coupon" style="padding:10rpx 24rpx;background:#fff;">
+                            仅限<block a:for="{{coupon.cat}}" a:for-item="cat" a:key="id">
+                                <text>{{cat.name}}、</text>
+                            </block>产品使用
+                        </view> 
+                    </block>
+                </block>
+            </block>
+        </view>
+        <view a:else style="padding-top: 200rpx;color: #888;text-align: center">暂无相关优惠券</view>
+
+    </view>
+    <include src="/components/footer/footer" />
+</view>

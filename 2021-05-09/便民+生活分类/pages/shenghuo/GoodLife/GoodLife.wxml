@@ -1,0 +1,27 @@
+<!--pages/shenghuo/GoodLife/GoodLife.wxml-->
+<!--<text>pages/shenghuo/GoodLife/GoodLife.wxml</text>-->
+
+<import src="../AllServiceclassify/AllServiceclassifyCell/AllServiceclassifyCell.wxml" />
+<import src="GoodLifeCell/GoodLifeCell.wxml" />
+
+<scroll-view class="scroll-container" scroll-y="true">
+  <swiper catchtap="onSwiperTap" vertical="{{false}}" indicator-dots="true" autoplay="true" interval="5000">
+
+    <block wx:for="{{advertCaroucelsAr}}" wx:for-item="item" wx:for-index="index" wx:key="key">
+      <swiper-item>
+        <image class="caroucels" src="http://m.jointem.com/{{item.imageUrl}}" data-postId="{{id}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <block wx:for="{{ChildCateAr}}" wx:for-item="item" wx:key="key">
+    <!--<view class="CouponSearchListCell">{{item.doorName}}</view>-->
+    <template is="AllServiceclassifyCell" data="{{...item}}"></template>
+  </block>
+
+  <block wx:for="{{LifeSearchList}}" wx:for-item="item" wx:key="key">
+    <!--<view class="CouponSearchListCell">{{item.doorName}}</view>-->
+    <template is="GoodLifeCell" data="{{...item}}"></template>
+  </block>
+
+</scroll-view>

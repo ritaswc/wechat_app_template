@@ -1,0 +1,45 @@
+<!-- HMT Bus GO! (WXSS VER.) -->
+<!-- 线路列表页 -->
+
+<page>
+	<view class="page">
+		<view class="page__hd">
+			<view class="page__title">实时校巴查询</view>
+			<view class="page__desc">点按任意一条线路，查看实时信息。</view>
+		</view>
+
+		<view class="page__bd">
+
+			<view class="weui-cells__title">1号线</view>
+			<view class="weui-cells weui-cells_after-title">
+				<block wx:for="{{lineList.line1}}" wx:for-item="line1">
+					<navigator class="weui-cell weui-cell_access" url="/pages/lineInfo/index?id={{line1.line_id}}" hover-class="weui-cell_active">
+						<view class="weui-cell__bd">{{line1.line_name}} [ {{line1.line_start}} 开往 {{line1.line_end}} ]</view>
+						<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+					</navigator>
+				</block>
+			</view>
+
+			<view class="weui-cells__title">2号线</view>
+			<view class="weui-cells weui-cells_after-title">
+				<block wx:for="{{lineList.line2}}" wx:for-item="line2">
+					<navigator class="weui-cell weui-cell_access" url="/pages/lineInfo/index?id={{line2.line_id}}" hover-class="weui-cell_active">
+						<view class="weui-cell__bd">{{line2.line_name}} [{{line2.line_start}} 开往 {{line2.line_end}}]</view>
+						<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+					</navigator>
+				</block>
+			</view>
+
+			<view class="weui-cells__title">3号线</view>
+			<view class="weui-cells weui-cells_after-title">
+				<block wx:for="{{lineList.line3}}" wx:for-item="line3">
+					<navigator class="weui-cell weui-cell_access" url="/pages/lineInfo/index?id={{line3.line_id}}" hover-class="weui-cell_active">
+						<view class="weui-cell__bd">{{line3.line_name}} [{{line3.line_start}} 开往 {{line3.line_end}}]</view>
+						<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+					</navigator>
+				</block>
+			</view>
+		</view>
+
+	</view>
+</page>

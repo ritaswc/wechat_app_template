@@ -1,0 +1,53 @@
+{template 'common/header'}
+<style>
+	.wx-qr-pay{padding:10px; max-width:640px; margin:0 auto;}
+	.wx-qr-pay .avatar{text-align:center; margin:20px;}
+	.wx-qr-pay .avatar img{width:60px; height:60px;}
+	.wx-qr-pay .qr-pay h5{text-align:center; border-bottom:1px solid #ddd; padding-bottom:10px;}
+	.wx-qr-pay .qr-pay .qr-img{text-align:center;}
+	.wx-qr-pay .qr-pay .qr-img img{width:70%; margin-bottom:5px;}
+</style>
+<div class="wx-qr-pay">
+	<div class="avatar">
+		<img src="{$fans['headimgurl']}" alt="" class="img-circle"/>
+	</div>
+	<form action="{php echo $this->createMobileUrl('order')}" method="post" id="form1">
+		<div class="form-group">
+			<input type="text" placeholder="付款人姓名" class="form-control" value="{$fans['nickname']}" disabled/>
+		</div>
+		<div class="form-group">
+			<input type="text" name="fee" placeholder="输入您要付的金额(必填,最小值0.01)" class="form-control" value="{$order['fee']}"/>
+		</div>
+		<div class="form-group">
+			<input type="text" name="body" placeholder="输入收款理由(必填)" class="form-control" value="{$order['body']}"/>
+		</div>
+		<div class="form-group">
+			<input type="hidden" name="openid" value="{$fans['openid']}"/>
+			<input type="hidden" name="nickname" value="{$fans['nickname']}"/>
+			<input type="hidden" name="token"" value="{$_W['token']}"/>
+			{loop $payment $row}
+				<input type="submit" name="submit" class="btn btn-success btn-block" value="提交订单">
+			{/loop}
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		$('#form1').submit(function(){
+			var body = $.trim($('#form1 :text[name="body"]').val());
+			if(!body) {
+				alert('付款理由不能为空');
+				return false;
+			}
+			var reg = /^(([1-9]{1}\d*)|([0]{1}))(\.(\d){1,2})?$/;
+			var fee = $.trim($('#form1 :text[name="fee"]').val());
+			if(!reg.test(fee)) {
+				alert('支付金额不能少于0.01元');
+				return false;
+			}
+			return true;
+		});
+	});
+</script>
+{template 'common/footer'}

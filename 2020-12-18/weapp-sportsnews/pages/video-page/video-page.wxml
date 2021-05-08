@@ -1,0 +1,6 @@
+<loading hidden="{{!loading}}">加载中...</loading>
+<view class="background">
+	<view class="video" bindtap="hideControl">
+		<video src="{{src}}"   controls="{{controls}}" ></video>
+	</view>
+</view>

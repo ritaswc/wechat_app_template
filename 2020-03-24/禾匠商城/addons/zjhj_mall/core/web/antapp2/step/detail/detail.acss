@@ -1,0 +1,96 @@
+/* step/detail/detail.wxss */
+
+.top {
+    height: 160rpx;
+    width: 100%;
+    position: relative;
+    margin-bottom: 20rpx;
+}
+
+.top image {
+    width: 100%;
+    height: 100%;
+}
+
+.detail-name {
+    position: absolute;
+    left: 24rpx;
+    top: 36rpx;
+    font-size: 10pt;
+    color: #fff;
+}
+
+.detail-number {
+    position: absolute;
+    bottom: 36rpx;
+    left: 24rpx;
+    font-size: 18pt;
+    color: white;
+    font-family: 'DIN';
+}
+
+.detail-number text {
+    font-size: 11pt;
+}
+
+.tab {
+    height: 87rpx;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1rpx #e2e2e2 solid;
+}
+
+.tab-list {
+    display: inline-block;
+    width: 50%;
+    line-height: 88rpx;
+    font-size: 12pt;
+    color: #666;
+    text-align: center;
+}
+
+.active {
+    color: #ff4544;
+    display: inline-block;
+    height: 84rpx;
+    border-bottom: 4rpx solid #ff4544;
+}
+
+.list {
+    height: 139rpx;
+    width: 100%;
+    padding: 36rpx 24rpx;
+    background-color: white;
+    border-bottom: 1rpx #e2e2e2 solid;
+}
+
+.list-left {
+    color: #666;
+    font-size: 9pt;
+    float: left;
+    width: 60%;
+}
+
+.name {
+    font-size: 11pt;
+    color: #353535;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list-right {
+    color: #353535;
+    font-size: 13pt;
+    float: right;
+    line-height: 68rpx;
+}
+
+.loading {
+    font-size: 9pt;
+    color: #353535;
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+    background-color: white;
+}

@@ -1,0 +1,154 @@
+.goods {
+    padding: 24rpx;
+    background-color: #fff;
+}
+
+.goods-pic {
+    margin-right: 24rpx;
+}
+
+.goods-pic image {
+    width: 208rpx;
+    height: 208rpx;
+}
+
+.goods-right image {
+    width: 16rpx;
+    height: 26rpx;
+}
+
+.goods-info {
+    margin-top: 10rpx;
+    margin-bottom: 32rpx;
+    margin-right: 56rpx;
+}
+
+.goods-name {
+    font-size: 11pt;
+    color: #353535;
+}
+
+.money {
+    margin-top: 20rpx;
+    justify-content: flex-end;
+}
+
+.original_price {
+    text-decoration: line-through;
+    color: #a4a4a4;
+    font-size: 10pt;
+}
+
+.price {
+    color: #ff4544;
+    font-size: 12.5pt;
+    margin-left: 24rpx;
+}
+
+.shop-more image {
+    width: 16rpx;
+    height: 26rpx;
+}
+
+.shop {
+    background-color: #ffffff;
+    margin-bottom: 20rpx;
+    padding: 0 24rpx;
+    font-size: 11pt;
+    margin-top: 20rpx;
+}
+
+.shop-title {
+    height: 72rpx;
+    font-size: 10pt;
+    color: #a4a4a4;
+    border-bottom: 1rpx solid #e2e2e2;
+}
+
+.shop-info {
+    border-bottom: 1rpx solid #e2e2e2;
+    padding: 30rpx 0;
+}
+
+.shop-name {
+    margin-bottom: 20rpx;
+    color: #353535;
+}
+
+.shop-addres,.shop-time {
+    color: #999999;
+}
+
+.all-shop {
+    color: #00a0e9;
+    height: 80rpx;
+}
+
+.order {
+    background-color: #fff;
+    padding: 0 24rpx;
+}
+
+.order-title {
+    font-size: 10pt;
+    color: #a4a4a4;
+    height: 72rpx;
+    border-bottom: 1rpx solid #e2e2e2;
+    margin-bottom: 30rpx;
+}
+
+.order-info {
+    font-size: 11pt;
+    color: #353535;
+    line-height: 1.5;
+}
+
+.order-info-item {
+    padding-bottom: 16rpx;
+}
+
+.btn-group {
+    border-top: 1rpx solid #e2e2e2;
+    padding: 24rpx;
+    justify-content: flex-end;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.btn-group-item {
+    font-size: 30rpx;
+    height: 60rpx;
+    width: 180rpx;
+    border-radius: 30rpx;
+    margin-left: 16rpx;
+    line-height: 60rpx;
+}
+
+.btn-group-item.apply {
+    border: 1rpx solid #c9c9c9;
+    color: #666666;
+    background-color: #fff;
+}
+
+.btn-group-item.promptly {
+    border: 1rpx solid #ff4545;
+    color: #ff4544;
+    background-color: #fff5f5;
+}
+
+.hide {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+}

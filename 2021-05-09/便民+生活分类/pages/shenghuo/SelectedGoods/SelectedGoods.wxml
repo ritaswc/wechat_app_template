@@ -1,0 +1,32 @@
+<!--pages/shenghuo/SelectedGoods/SelectedGoods.wxml-->
+<!--<text>pages/shenghuo/SelectedGoods/SelectedGoods.wxml</text>-->
+
+<import src="SelectedGoodsGridCell/SelectedGoodsGridCell.wxml" />
+
+<view class="top-container">
+  <scroll-view class="scroll-view_container selected" scroll-x="true" bindscroll="scroll">
+    <block wx:for="{{prdFirstCategoryList}}" wx:for-item="item" wx:key="key">
+      <view class="flex-sub-box-5 {{ currentTabIndex == item.id ? 'active' : '' }}" bindtap="clickOrderTab" data-index="{{item.id}}">{{item.cateName}}</view>
+    </block>
+  </scroll-view>
+  <image class="search_lb" src="/images/icon/search_lb.png"></image>
+</view>
+
+<scroll-view class="scroll-Goods-list-container" scroll-y="true">
+
+  <swiper catchtap="onSwiperTap" vertical="{{false}}" indicator-dots="true" autoplay="true" interval="5000">
+
+    <block wx:for="{{advertCaroucelsAr}}" wx:for-item="item" wx:for-index="index" wx:key="key">
+      <swiper-item>
+        <image class="caroucels" src="http://m.jointem.com/{{item.imageUrl}}" data-postId="{{id}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="selectGoods-list">
+    <block wx:for="{{prdSearchList}}" wx:for-item="item" wx:for-index="index" wx:key="key">
+      <template is="SelectedGoodsGridCell" data="{{...item}}"></template>
+    </block>
+  </view>
+
+</scroll-view>

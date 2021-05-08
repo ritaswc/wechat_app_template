@@ -1,0 +1,28 @@
+.user-info-container{padding: 10px 15px; width: 100%; display: flex; border-width: 10px; border-bottom-style: none; border-bottom-color: rgb(245, 245, 245); position: relative; }
+.user-info-wrap{height: 60px; width: 60%; margin-left: 10px; margin-right: 10px; }
+.user-img-wrap{height: 60px; width: 60px; border-radius: 5px; }
+.user-edit-wrap{height: 60px; width: 63px; display: flex; position: absolute; right: 10px; }
+.wx-image_bkrIYH{width: 100%; height: 100%; position: relative; }
+.user-img{position: relative; width: 100%; height: 100%; border-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-top-left-radius: 5px; }
+.wx-text_qUYxY6{position: relative; }
+.user-info-name{position: relative; height: 60%; width: 100%; font-size: 1rem; text-indent: 0px; text-align: left; line-height: 200%; overflow: hidden; }
+.user-info-follower{height: 40%; width: 100%; position: relative; font-size: 1rem; color: rgb(133, 133, 133); line-height: 120%; }
+.user-update{color: rgb(136, 136, 136); font-size: 1rem; padding-top: 20px; position: relative; height: 100%; width: 56px; }
+.user-info-arrow{width: 7px; height: 7px; border-width: 1px; border-color: rgb(136, 136, 136); border-style: none solid solid none; transform: rotate(315deg) scale(1) translate(0%,0%); transition: All 0s ease; -ms-transform: rotate(315deg) scale(1) translate(0%,0%); -o-transform: rotate(315deg) scale(1) translate(0%,0%); -moz-transform: rotate(315deg) scale(1) translate(0%,0%); -webkit-transform: rotate(315deg) scale(1) translate(0%,0%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
+.user-info-arrow-wrap{position: absolute; right: 15px; height: 100%; margin-left: 0px; padding-top: 26px; width: 7px; }
+.boundary{height: 10px; width: 100%; background-color: rgba(245,245,245,1); }
+.user-bbs-info-container{width: 100%; background-color: rgba(255,255,255,1); }
+.user-post-wrap{width: auto; height: 49px; padding: 12px 15px 12px 0px; display: flex; margin-left: 15px; border-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(245,245,245,1); }
+.user-post-icon{width: 25px; height: 25px; background: url("http://i.pengxun.cn/static/vzan/web/post-big-pic-09.png") 0px 0px / 100% no-repeat; vertical-align: middle; margin-right: 5px; display: inline-block;}
+.user-post-text-wrap{display: inline-block; height: 25px; position: static; padding-top: 2px; padding-bottom: 2px; }
+.user-text{position: static; font-size: 1rem; line-height: 100%; }
+.user-join-icon{width: 25px; height: 25px;background: url(http://i.pengxun.cn/static/vzan/web/post-big-pic-09.png) no-repeat 0 -25px; vertical-align: middle; margin-right: 5px; display: inline-block; background-size:100%}
+.user-reward-icon{width: 25px; height: 25px; background: url("http://i.pengxun.cn/static/vzan/web/post-big-pic-09.png") 0px -50px / 100% no-repeat; vertical-align: middle; margin-right: 5px; display: inline-block;}
+.user-list-container{height: 25px; position: absolute; right: 10px; width: 37px; display: flex; }
+.post-list-num{position: relative; height: 100%; width: 30px; font-size: 14px; font-style: normal;font-family: "Microsoft YaHei",Arial;line-height:25px; }
+.user-arrow-wrap{height: 100%; width: 7px; padding: 9px 5px 9px 0px; text-align: right;position:absolute; right:15px; }
+.user-post-chat{width: 25px; height: 25px; background: url("http://i.pengxun.cn/static/vzan/web/post-big-pic-09.png") 0px -100px / 100% no-repeat; vertical-align: middle; margin-right: 5px; display: inline-block;}
+.user-post-credit{width: 25px; height: 25px; background: url("http://i.pengxun.cn/static/vzan/web/post-big-pic-09.png") 0px -125px / 100% no-repeat; vertical-align: middle; margin-right: 5px; display: inline-block;}
+.user-post-gift{width: 25px; height: 25px; background: url("http://i.pengxun.cn/static/vzan/web/post-big-pic-09.png") 0px -150px / 100% no-repeat; vertical-align: middle; margin-right: 5px; display: inline-block;}
+.user-post-myad{width: 25px; height: 25px; background: url("http://i.pengxun.cn/static/vzan/web/post-big-pic-09.png") 0px -175px / 100% no-repeat; vertical-align: middle; margin-right: 5px; display: inline-block;}
+.user-post-aboutus{width: 25px; height: 25px; background: url("http://i.pengxun.cn/static/vzan/web/post-big-pic-09.png") 0px -200px / 100% no-repeat; vertical-align: middle; margin-right: 5px; display: inline-block;}

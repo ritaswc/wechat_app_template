@@ -1,0 +1,54 @@
+<view class="container">
+  <view class="header">
+    <view class="header-top">
+      <view class="setbtn" bindtap="setTap">
+        <image src="{{img_url}}mine/set.png" class="pic"></image>
+      </view>
+    </view>
+    <view class="userinfo">
+      <image src="{{img_url}}mine/user.jpg" class="img"></image>
+    </view>
+    <view class="nickname">
+      <text class="name">汇汇</text>
+      <view class="level"></view>
+    </view>
+    <view class="account-info">
+      <view class="list">
+        <view class="info" bindtap="voucherTap">
+          <text class="num">1</text>
+          <text class="type">代金券(张)</text>
+        </view>
+        <view class="info" bindtap="WalletTap">
+          <text class="num">9.80</text>
+          <text class="type">汇汇钱包(元)</text>
+        </view>
+        <view class="info" bindtap="hWalletTap">
+          <text class="num">88</text>
+          <text class="type">汇币(个)</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="nav">
+    <view class="nav-ul">
+      <view class="right-before bottom-after" bindtap="prizeTap">
+        <view class="nav-li">
+          <image class="label" src="{{img_url}}mine/icon1.png" />
+          <text class="label-name">我的奖品</text>
+        </view>
+      </view>
+      <view class="right-before bottom-after" bindtap="collectionTap">
+        <view class="nav-li">
+          <image class="label" src="{{img_url}}mine/icon2.png" />
+          <text class="label-name">我的收藏</text>
+        </view>
+      </view>
+      <view class="bottom-after" bindtap="contactTap">
+        <view class="nav-li">
+          <image class="label" src="{{img_url}}mine/icon3.png" />
+          <text class="label-name">联系客服</text>
+        </view>
+      </view>  
+    </view>
+  </view>
+</view>

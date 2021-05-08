@@ -1,0 +1,44 @@
+
+<!--渠道下单统计 - 个人-->
+<loading hidden="{{hidden}}" bindchange="loadingChange">
+  加载中...
+</loading>
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="{{hasMore ? 'bindDownLoad' : ''}}" bindscroll="scroll">
+  <view class="order-statistics">
+    <view class="statistics-title">
+      <text>{{adminDept == null ? dept+'-'+manageer : manageer+'-'+principal}}下单统计</text>
+    </view>
+    <view class="statistics-detail">
+      <view class="table table-5">
+        <view class="tr bg-w">
+          <view class="th">订单名称</view>
+          <view class="th">件数</view>
+          <view class="th">销售额</view>
+          <view class="th">应付</view>
+          <view class="th">毛利</view>
+        </view>
+        <view class="tr" wx:for="{{list}}">
+          <view class="td">
+            <view class="order-nav" data-orderno="{{item.order_no}}" bindtap="goDetail">{{item.order_name}}</view>
+          </view>
+          <view class="td">{{item.total_pkgs}}</view>
+          <view class="td">{{item.total_amount}}</view>
+          <view class="td">{{item.predict_give}}</view>
+          <view class="td">{{item.profit}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 上拉加载-->
+    <view class="tips" wx:if="{{scrollTop > scrollHeight && list.length>0}}">
+      <image class="tipsImg" wx:if="{{hasMore}}" src="{{imageCtx}}dealer/loaddingpro.gif"></image>
+      <view class="tipsText" wx:else>
+        <text>没有更多内容了</text>
+      </view>
+    </view>
+
+    <!-- 回到顶部-->
+    <view class="toTop" wx:if="{{scrollTop > 350}}" bindtap="goTop">
+      <image src="{{imageCtx}}dealer/s_top.png"></image>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,19 @@
+
+	{if !empty($_W['setting']['copyright']['statcode'])}{$_W['setting']['copyright']['statcode']}{/if}
+	{if !empty($_GPC['m']) && !in_array($_GPC['m'], array('keyword', 'special', 'welcome', 'default', 'userapi')) || defined('IN_MODULE')}
+	<script>
+		if(typeof $.fn.tooltip != 'function' || typeof $.fn.tab != 'function' || typeof $.fn.modal != 'function' || typeof $.fn.dropdown != 'function') {
+			require(['bootstrap']);
+		}
+		$('[data-toggle="tooltip"]').tooltip()
+	</script>
+	{/if}
+	{if !defined('IN_MODULE')}
+	<script>
+		$(document).ready(function() {
+			if($('select').niceSelect) {
+				$('select').niceSelect();
+			}
+		});
+	</script>
+	{/if}

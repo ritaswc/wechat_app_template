@@ -1,0 +1,16 @@
+/*.canvas {
+  width: 2250rpx;
+  height: 3000rpx;
+  position:fixed;
+  left:-0rpx;
+  top:-750rpx;
+  background-color: #F5DEB3;
+}*/
+
+.direction-icon {
+  position:fixed;
+  left:37rpx;
+  top:37rpx;
+  width: 100px;
+  height: 100px;
+}

@@ -1,0 +1,35 @@
+@import "../../static/icon.wxss";
+.header {
+    height: 80rpx;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: transparent;
+}
+.header .main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 695rpx;
+    height: 56rpx;
+    color: #fff;
+    font-weight: normal;
+    margin: 0 auto;
+    margin-top: 12rpx;
+    padding: 0 18rpx;
+    border-radius: 8rpx;
+    font-size: 35rpx;
+    background-color: rgba(255,255,255,.36);
+}
+.header .main .input {
+    flex: 1;
+    margin-left: 18rpx;
+    font-size: 25rpx;
+}
+.header .main .place-holder {
+    color: #fff;
+}

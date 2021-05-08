@@ -1,0 +1,7 @@
+<scroll-view class="category-list" scroll-y="true">
+  <view class="category" wx:for="{{categories}}" wx:for-item="category"
+   data-cate-id="{{category.id}}" bindtap="navigateToCategoryProduct">
+    <image mode="aspectFill" src="{{category.cate_img}}"></image>
+    <text>{{category.cate_name}}</text>
+  </view>
+</scroll-view>

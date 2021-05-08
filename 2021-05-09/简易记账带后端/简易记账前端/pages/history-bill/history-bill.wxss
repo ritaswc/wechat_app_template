@@ -1,0 +1,41 @@
+page{
+    height: 100%;
+    overflow: hidden;
+}
+.date-select {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 28rpx;
+  padding: 10rpx;
+}
+
+.picker-date {
+  color: #10aeff;
+}
+
+.history-bill-table-title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  color: #10aeff;
+  text-align: center;
+}
+
+.history-bill-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  text-align: center;
+  border-bottom: 1rpx solid #ddd;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.scroll-list{
+    padding-bottom: 50rpx;
+    height: 100%;
+    box-sizing: border-box;
+
+
+}
+

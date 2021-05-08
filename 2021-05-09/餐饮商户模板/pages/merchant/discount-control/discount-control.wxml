@@ -1,0 +1,120 @@
+<view class="top-search-wrap bgc">
+    <image bindtap="scanCode" class="qr-code" src="/image/merchant/discount/49youhuij.png"></image>
+    <view class="discount-search-wrap">
+        <image src="/image/common/icon_search.png"></image>
+        <input placeholder-class="ph-class" placeholder="输入名称开始搜索" />
+    </view>
+    <view class="search-btn">搜索</view>
+</view>
+
+<view class="search-condition" style="{{orderFilterHeight}}rpx;">
+    <view class="search-item" bindtap="searchByOrder">
+        <view class="icon-wrap">
+            <image class="icon-left" src="/image/merchant/merchandise-control/45guanli{{searchByOrder?'o':'h'}}.png"></image>
+            <text class="f3 {{searchByOrder?'c':'c-6'}}">排序</text>
+        </view>
+        <image class="icon_right" src="/image/merchant/merchandise-control/47guanli{{searchByOrder?'o':'h'}}.png"></image>
+    </view>
+    <view class="search-item" bindtap="searchByFilter">
+         <view class="icon-wrap">
+             <image class="icon-left" src="/image/merchant/merchandise-control/46guanli{{searchByFilter?'o':'h'}}.png"></image>
+             <text class="f3 {{searchByFilter?'c':'c-6'}}">过滤</text>
+         </view>
+         <image class="icon_right" src="/image/merchant/merchandise-control/47guanli{{searchByFilter?'o':'h'}}.png"></image>
+    </view>
+</view>
+<scroll-view scroll-y="true" style="height:{{scrollHeight}}px" scroll-top="0">
+    <view class="discount-item" catchtap="inspectDiscount">
+        <view class="discount-item-left">
+            <image class="" src="/image/merchant/discount/50youhuij.png"></image>
+            <text class="un-claimed f5">未领取</text>
+        </view>
+        <view class="discount-item-center">
+            <text class="f1 c5">优惠券名称</text>
+            <text class="discount-des two-line-ellipsis f2 c4">优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称</text>
+            <text class="f5 c">失效时间2019-09-09</text>
+        </view> 
+    </view>
+
+    <view class="discount-item">
+        <view class="discount-item-left">
+            <image class="" src="/image/merchant/discount/51youhuij.png"></image>
+            <text class="f5 c">未领取</text>
+        </view>
+        <view class="discount-item-center">
+            <text class="f1 c5">优惠券名称</text>
+            <text class="discount-des two-line-ellipsis f2 c4">优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称</text>
+            <text class="f5 c">失效时间2019-09-09</text>
+        </view>
+        <view class="discount-item-right">
+             <view class="cancel-after-verification bgc f2">核销</view>
+        </view> 
+    </view>
+    <view class="discount-item">
+        <view class="discount-item-left">
+            <image class="" src="/image/merchant/discount/51youhuij.png"></image>
+            <text class="f5 c">未领取</text>
+        </view>
+        <view class="discount-item-center">
+            <text class="f1 c5">优惠券名称</text>
+            <text class="discount-des two-line-ellipsis f2 c4">优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称</text>
+            <text class="f5 c">失效时间2019-09-09</text>
+        </view>
+        <view class="discount-item-right">
+             <view class="cancel-after-verification bgc f2">核销</view>
+        </view> 
+    </view>
+
+    <view class="discount-item">
+        <view class="discount-item-left">
+            <image class="" src="/image/merchant/discount/52youhuij.png"></image>
+            <text class="f5 c2">未领取</text>
+        </view>
+        <view class="discount-item-center">
+            <text class="f1 c5">优惠券名称</text>
+            <text class="discount-des two-line-ellipsis f2 c4">优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称</text>
+            <text class="f5 c">失效时间2019-09-09</text>
+        </view>     
+    </view>
+    <view class="discount-item">
+        <view class="discount-item-left">
+            <image class="" src="/image/merchant/discount/52youhuij.png"></image>
+            <text class="f5 c2">未领取</text>
+        </view>
+        <view class="discount-item-center">
+            <text class="f1 c5">优惠券名称</text>
+            <text class="discount-des two-line-ellipsis f2 c4">优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称优惠券名称</text>
+            <text class="f5 c">失效时间2019-09-09</text>
+        </view>  
+    </view>
+</scroll-view>
+<view class="fixed-add-btn" catchtap="addDiscount">
+    <image src="/image/common/icon_add_bg_red.png"></image>
+</view> 
+
+<view class="mask {{(searchByFilter||searchByOrder) ? '' : 'hide' }}">
+    <scroll-view class="order-select-list" scroll-y="true">
+         <view class="item f3">
+            <text class="c-6">内容内容内容</text>
+            <!--<image class="icon_yes_no_bg" src="/image/merchant/discount/53youhuij.png"></image>-->
+        </view>
+        <view wx:if="{{searchByOrder}}" class="item f3">
+            <text class="c">内容内容内容</text>
+            <image class="icon_yes_no_bg" src="/image/merchant/discount/53youhuij.png"></image>
+        </view>
+        <view wx:if="{{searchByFilter}}" class="item f3">
+            <text class="c-6">内容内容内容</text>
+            <image class="arrow-right" src="/image/common/icon_arrow.png"></image>
+        </view>
+
+        <view class="item f3">
+            <text class="c-6">内容内容内容</text>
+            <text>哈哈哈哈哈</text>
+            <!--<image src="/image/merchant/discount/53youhuij.png"></image>-->
+        </view> 
+    </scroll-view>
+    <view wx:if="{{searchByFilter}}" class="two-btn-wrap">
+        <view class="bgc f2">重置</view>
+        <view class="bgc f2" catchtap="confirmFilter">确定</view>
+    </view>
+</view>

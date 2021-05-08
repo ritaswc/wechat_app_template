@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.spacing {
+ padding-top: 25rpx;
+}
+
+page {
+  background-color: #f2f2f2;
+}
+@import 'src/styles/weui.wxss';
+@import 'src/styles/prompt.wxss';
+@import 'src/styles/skyvow.wxss';

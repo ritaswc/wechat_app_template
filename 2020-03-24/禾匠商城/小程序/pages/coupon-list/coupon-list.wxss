@@ -1,0 +1,45 @@
+.info {
+    padding: 20rpx;
+    width: 100%;
+}
+
+.info-one {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20rpx;
+    z-index: 10;
+}
+
+.info-one image {
+    width: 100%;
+    height: 160rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.info-content {
+    height: 160rpx;
+    width: 100%;
+    color: #fff;
+    padding: 0 24rpx;
+    line-height: 1;
+    position: relative;
+}
+
+.info-btn {
+    background-color: #fff;
+    width: 160rpx;
+    height: 56rpx;
+    border-radius: 28rpx;
+}
+
+.info-footer {
+    background-color: #fff;
+    padding: 24rpx 24rpx 32rpx 24rpx;
+    border-radius: 0 0 16rpx 16rpx;
+    border: 1rpx solid #cfcfcf;
+    border-top: none;
+    color: #666;
+}

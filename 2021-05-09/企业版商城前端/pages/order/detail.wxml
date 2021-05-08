@@ -1,0 +1,52 @@
+<!--pages/order/detail.wxml-->
+<view class="w100">
+		<view class="p_all bg_white df item">
+			<view class="cp_photo">			
+				<image src="{{orderData.ImgUrl}}"></image>
+			</view>
+			<view class="df_1">	
+				<view class="font_14 mt5 ovh1">
+		           {{orderData.Title}}
+		        </view>
+			<text class="gm_ovh_1h red pt10">¥{{orderData.Price}}</text>
+			</view>
+		</view>		
+		
+		<view class="p_all bg_white mt10 font_14">
+			<view class="df">
+				<view class="df_1 c6">
+				<view class="l_h20">收货人：{{orderData.ReceiptName}}<text class="fl_r mr10">{{orderData.ReceiptPhone}}</text></view>
+				<view class="l_h20 mt5">地址：{{orderData.ReceiptAddress}}</view>
+				</view>
+			</view>
+		</view>	
+
+		<view class="p_all bg_white mt10 c6 l_h20  font_14">
+			<view >
+			订单编号：{{orderData.OrderNo}}
+			</view>
+			<view class="mt10">
+			订单生成时间：{{orderData.PostDate}}
+			</view>         
+		    </view>
+
+           <view class="p_all bg_white mt10 font_14">
+			<textarea class="min_60" auto-height name="remark" disabled="{{true}}" placeholder="订单备注" value="{{!!orderData.Remark?orderData.Remark:'未备注'}}"/> 
+		</view>	
+
+	<view class="zhifu mt10 tc">金额：<span class="font_20 red">￥{{orderData.Price}}</span></view>
+        
+
+	<view class="p_all mt10">
+		<view class="btnGreen">
+			        <!-- <button type="warn" size="{{warnSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="warn"> 确认 </button> -->
+        		<contact-button type="default-light" session-from="orderNo_{{orderData.OrderNo}}">
+		        客服
+		        </contact-button >
+		</view>
+	</view>
+
+
+
+</view>

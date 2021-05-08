@@ -1,0 +1,231 @@
+[2017-02-28 10:19:15.859] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 10:35:05.276] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-02-27 00:00:00 , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:496:26)
+[2017-02-28 11:06:32.386] [INFO] console - fb64a5d0fb0e11e693154b76981a0d03
+[2017-02-28 11:06:32.389] [INFO] console - undefined
+[2017-02-28 11:08:39.937] [INFO] console - fb64a5d0fb0e11e693154b76981a0d03
+[2017-02-28 11:08:39.940] [INFO] console - undefined
+[2017-02-28 11:08:39.942] [INFO] console - undefined
+[2017-02-28 11:12:51.724] [INFO] console - webcustomer
+[2017-02-28 11:12:51.726] [INFO] console - fb64a5d0fb0e11e693154b76981a0d03
+[2017-02-28 11:12:51.726] [INFO] console - undefined
+[2017-02-28 11:12:51.727] [INFO] console - undefined
+[2017-02-28 11:13:41.182] [INFO] console - webcustomer
+[2017-02-28 11:13:41.184] [INFO] console - fb64a5d0fb0e11e693154b76981a0d03
+[2017-02-28 11:13:41.185] [INFO] console - undefined
+[2017-02-28 11:13:41.185] [INFO] console - fb64a5d0fb0e11e693154b76981a0d03
+[2017-02-28 11:28:24.746] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-02-27 00:00:00 , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:496:26)
+[2017-02-28 13:46:34.777] [INFO] BBMIS - 用户信息:{"openid":"oCd53s37C5Iwy1dyuKp1r0SIjVxM","nickname":"好知音","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/nwkUaBEXua2W6nMkz43c2G7WMvv21gl97dZPib2LwkcKGzic2BwsrCJsnxGeRkv87kVPczRS0HFNT8yxt2lfbib3xVHmDZ4Ebd6\/0","privilege":[]}
+[2017-02-28 15:40:36.319] [WARN] console - Unhandled rejection SequelizeDatabaseError: ER_KEY_COLUMN_DOES_NOT_EXITS: Key column 'couponid' doesn't exist in table
+    at Query.formatError (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/query.js:175:14)
+    at Query._callback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/mysql/query.js:49:21)
+    at Query.Sequence.end (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Sequence.js:86:24)
+    at Query.ErrorPacket (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/sequences/Query.js:88:8)
+    at Protocol._parsePacket (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:280:23)
+    at Parser.write (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Parser.js:75:12)
+    at Protocol.write (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/protocol/Protocol.js:39:16)
+    at Socket.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.13.0@mysql/lib/Connection.js:103:28)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at readableAddChunk (_stream_readable.js:146:16)
+    at Socket.Readable.push (_stream_readable.js:110:10)
+    at TCP.onread (net.js:523:20)
+[2017-02-28 15:42:08.883] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 15:43:05.894] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 15:45:35.801] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 15:48:31.737] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 15:57:01.306] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-02-28 15:54:31 , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:496:26)
+[2017-02-28 15:58:20.699] [INFO] console - { shelvesid: '1488268621052',
+  shelves_type: '5',
+  preview_picture: '{"pictures":["http://olnlit77s.bkt.clouddn.com/o_1ba1rh1gaqc11v6d31jkup1onn.jpg","http://olnlit77s.bkt.clouddn.com/o_1ba1rh1gaqc11v6d31jkup1onn.jpg"]}',
+  title: '五花肉关系',
+  describe: '\n                        <p><img src="http://olnlit77s.bkt.clouddn.com/o_1ba1rhbuqsvs1o011vqqhse15h11.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba1rhg50oj31bhf11b87b4gb316.jpg"><img src="http://olnlit77s.bkt.clouddn.com/o_1ba1rhlbua0r1gv71tbq19qu1f4m1b.jpg"></p>\n                    ',
+  product_group: '{"products":[{"productid":"1488268418583","count":"1","retail_price":600},{"productid":"1488268453777","count":"3","retail_price":669}]}',
+  label: '{"text":["火热促销","店家大促","火热促销"]}',
+  total_price: '0',
+  selling_price: '2607',
+  amount: '500',
+  purchased: undefined,
+  begin_datetime: '2017-02-28 15:54:31  ',
+  finish_datetime: '2017-05-29 15:54:31',
+  power: undefined,
+  carousel: 0,
+  carousel_picture: 'http://olnlit77s.bkt.clouddn.com/o_1ba1rh6t8tb21ileqog1cjqo1es.jpg',
+  praise_list: undefined,
+  beautician: undefined,
+  status: undefined,
+  customerid: '4cd090f0fd8a11e6b80d7d4075714940',
+  limit_purchased: '500',
+  postage: 0,
+  need_express: 0 }
+[2017-02-28 16:04:28.189] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 16:06:05.140] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 16:07:03.902] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 16:07:57.532] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 16:18:02.992] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 16:22:38.542] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 16:30:01.134] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 16:43:05.901] [INFO] console - { orderid: 'asdas',
+  customerid: '4cd090f0fd8a11e6b80d7d4075714940',
+  order_status: { '$notIn': [ 2, 3 ] } }
+[2017-02-28 16:43:05.925] [INFO] console - [TypeError: val.replace is not a function]
+TypeError: val.replace is not a function
+    at Object.SqlString.escape (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/sql-string.js:63:15)
+    at Object.QueryGenerator.escape (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/abstract/query-generator.js:978:22)
+    at Object.QueryGenerator.updateQuery (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/dialects/abstract/query-generator.js:474:58)
+    at QueryInterface.bulkUpdate (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/query-interface.js:604:33)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.30.2@sequelize/lib/model.js:2601:32
+    at tryCatcher (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:510:31)
+    at Promise._settlePromise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:567:18)
+    at Promise._settlePromise0 (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:612:10)
+    at Promise._settlePromises (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:691:18)
+    at Async._drainQueue (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues [as _onImmediate] (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/async.js:17:14)
+    at processImmediate [as _immediateCallback] (timers.js:368:17)
+[2017-02-28 16:45:55.275] [INFO] console - { orderid: 'asdas',
+  customerid: '4cd090f0fd8a11e6b80d7d4075714940',
+  order_status: 2 }
+[2017-02-28 16:47:20.584] [INFO] console - { orderid: 'asdas',
+  customerid: '4cd090f0fd8a11e6b80d7d4075714940',
+  order_status: 2 }
+[2017-02-28 16:54:06.930] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-02-28 15:54:31  , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:496:26)
+[2017-02-28 17:00:17.732] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-02-28 15:54:31  , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:496:26)
+[2017-02-28 17:15:57.991] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-02-28 15:54:31  , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:496:26)
+[2017-02-28 17:38:06.107] [WARN] console - Deprecation warning: value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2017-02-28 15:54:31  , _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at Function.createFromInputFallback (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:318:94)
+    at configFromString (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2080:15)
+    at configFromInput (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2444:9)
+    at prepareConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2427:9)
+    at createFromConfig (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2394:40)
+    at createLocalOrUTC (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2481:12)
+    at createLocal (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:2485:12)
+    at hooks (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.2.17.1@moment/moment.js:16:25)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:22:33
+    at Array.forEach (native)
+    at /Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:18:22
+    at Promise._execute (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/debuggability.js:300:9)
+    at Promise._resolveFromExecutor (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:481:18)
+    at new Promise (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/node_modules/.3.4.7@bluebird/js/release/promise.js:77:14)
+    at Object.module.exports._.extend.check_status (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/services/ecommerce.js:17:16)
+    at null.<anonymous> (/Users/wonderchief/Desktop/mjp/bbmisPush/bbmis/routes/ecommerce.js:496:26)
+[2017-02-28 17:58:09.215] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 17:59:39.500] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}
+[2017-02-28 18:24:58.869] [INFO] BBMIS - 用户信息:{"openid":"oCd53sxwIxDyxqoTqeXVCOOfLqH0","nickname":"Roc健鹏","sex":1,"language":"zh_CN","city":"广州","province":"广东","country":"中国","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/Jnz37m6nAxKJ4ibWfiaicz3ld2fsSuqz6Q20aHOmh8D103TE1sCWGicicPo98eCYINN95aFGmXXVcfmicibiccWpCcYWiauPKnWuyKoud\/0","privilege":[]}

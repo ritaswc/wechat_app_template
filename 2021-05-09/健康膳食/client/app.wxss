@@ -1,0 +1,122 @@
+page {
+    background-color: #f2f2f2;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+}
+
+.seperator-line {
+    width: 100%;
+    height: 20rpx;
+    background-color: #eeeeee;
+}
+
+
+/*
+    课程样式
+ */
+
+.course-list {
+    padding: 0 10px;
+}
+
+.course-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.course-item {
+    background-color: #fff;
+    border-radius: 10rpx;
+    box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.course-info {
+    flex: 1;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.course-image-wrapper {
+    margin-right: 20rpx;
+}
+
+.course-image-wrapper,
+.course-image {
+    width:100%;
+    height:244rpx;
+}
+
+.course-image-wrapper .course-image {
+    border-radius: 10rpx;
+}
+
+.course-name {
+    font-size: 32rpx;
+    height: 32px;
+    overflow:hidden;
+    margin-bottom: 20rpx;
+    color: #000;
+}
+
+.course-group {
+    color: #8c8c8c;
+    font-size: 22rpx;
+}
+
+.course-status {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22rpx;
+    color: #8c8c8c;
+    margin-top: 20rpx;
+}
+
+.course-study-num {
+    color: #399aff;
+}
+
+
+
+/*
+    选项卡切换
+ */
+
+.swiper-tab{
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    background-color: #fff;
+}
+.swiper-tab-list {
+    font-size: 30rpx;
+    display: inline-block;
+    width: 50%;
+    color: #777777;
+}
+.swiper-tab-list2 {
+    font-size: 30rpx;
+    display: inline-block;
+    width: 33.33%;
+    color: #777777;
+}
+.on {
+    color: #7fabfd;
+    border-bottom: 5rpx solid #7fabfd;
+}
+
+.swiper-box {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}

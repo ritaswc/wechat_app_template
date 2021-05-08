@@ -1,0 +1,54 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index/audio/audio",
+    "pages/index/city-list/city-list",
+    "pages/index/local-product/index",
+    "pages/index/local-snack/local-snack",
+    
+    "pages/index/location/location",
+    
+
+    "pages/friends/friends",
+    "pages/friends/about_with/about_with",
+    "pages/friends/meet/meet",
+    "pages/friends/near_group/near_group",
+    "pages/friends/tour_track/tour_track",
+    
+    "pages/mine/mine",
+    "pages/mine/down-center/down-center",
+    "pages/mine/my-order/my-order",
+    "pages/mine/my-voucher/my-voucher",
+    "pages/mine/shopping-car/shopping-car"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#43a5f6",
+    "navigationBarTitleText": "51导游",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color":"#797979",
+    "selectedColor": "#3fc3f1",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/btn_home.png",
+      "selectedIconPath": "images/btn_home_selector.png"
+    },
+    {
+      "pagePath": "pages/friends/friends",
+      "text": "驴友",
+      "iconPath": "images/btn_tour_pal.png",
+      "selectedIconPath": "images/btn_tour_pal_selector.png"
+    },
+    {
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "images/btn_personal.png",
+      "selectedIconPath": "images/btn_personal_selector.png"
+    }]
+  }
+}

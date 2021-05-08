@@ -1,0 +1,15 @@
+/**guide.wxss**/
+
+page {
+  background-color: #ffffff;
+}
+.navigator {
+  margin-top: 70rpx;
+  background-color: #ffffff;
+}
+
+image {
+  width: 706rpx;
+  height: 376rpx;
+  
+}

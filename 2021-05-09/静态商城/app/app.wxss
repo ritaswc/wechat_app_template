@@ -1,0 +1,198 @@
+page {
+  height: 100%;
+  flex: 1;
+  background-color: #f8f8f8;
+  font-size: 37.44rpx;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  overflow: hidden;
+}
+.hidden {
+    display: none;
+}
+
+.section {
+  margin: 23.4rpx 0;
+  padding: 0 16.38rpx;
+  background-color: white;
+}
+
+.btn-order {
+    width: 164.05rpx;
+    height: 65.62rpx;
+    font-size: 28.12rpx;
+    float: right;
+    padding: 0;
+    margin-left: 35.15rpx;
+}
+
+.btn-hollow-gray {
+  border: 1px solid #d6d6d6;
+  background: #fff;
+}
+
+.btn-solid-red {
+  background: #ff2d4b;
+  color: #fff;
+}
+
+.good-thumb {
+    width: 175.77rpx;
+    height: 175.77rpx;
+    border: 1px solid #d6d6d6;
+    float: left;
+    margin-left: 18.74rpx;
+}
+.mm-checkbox:after {
+  content: '';
+  clear:left;
+  height:0;
+  width:0;
+}
+.mm-checkbox .checkbox {
+
+}
+.mm-checkbox .checkbox label {
+    display: block;
+    line-height: 2.2rem;
+    position: relative;
+}
+
+.btnBox {
+    position: fixed;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    bottom:0;
+    box-sizing: border-box;
+}
+.btnBox .btn-block {
+    height: 1.7rem;
+    line-height: 1.7rem;
+    bottom: 0.5rem;
+    background-color: #FF2D4B;
+    color: #FFF;
+    text-align: center;
+    border-radius: 0.2rem;
+    font-size: 0.75rem;
+    outline: none;
+    border: none;
+    -webkit-appearance: none;
+}
+
+.input-clear {
+  display: block;
+  position: absolute;
+  width: 2.2rem;
+  height: 2.2rem;
+  right: 0;
+  top: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2028%2028'%3E%3Ccircle%20cx%3D'14'%20cy%3D'14'%20r%3D'14'%20fill%3D'%238e8e93'%2F%3E%3Cline%20stroke%3D'%23ffffff'%20stroke-width%3D'2'%20stroke-miterlimit%3D'10'%20x1%3D'8'%20y1%3D'8'%20x2%3D'20'%20y2%3D'20'%2F%3E%3Cline%20fill%3D'none'%20stroke%3D'%23ffffff'%20stroke-width%3D'2'%20stroke-miterlimit%3D'10'%20x1%3D'20'%20y1%3D'8'%20x2%3D'8'%20y2%3D'20'%2F%3E%3C%2Fsvg%3E");
+  -webkit-background-size: .8rem .8rem;
+  background-size: .8rem .8rem;
+}
+
+.operation {
+    height: 1.75rem;
+    padding: 0 0.45rem;
+    overflow: hidden;
+    position:relative;
+    display: -webkit-flex;
+}
+.operation radio-group {
+    display: -webkit-flex;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.operation .radio {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+}
+.operation image {
+    display: block;
+    height: 0.75rem;
+    margin-top: 0.5rem;
+    float: right;
+    width: 2.3rem;
+}
+.operation radio {
+    display: none;
+}
+.operation .labelText {
+    font-size: 0.6rem;
+    color: #A0A0A0;
+    margin-left: 0.5rem;
+}
+
+/* tips弹窗 */
+.weui-mask_transparent {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.weui-toast {
+    position: fixed;
+    z-index: 5000;
+    width: 88%;
+    top: 180px;
+    left: 0;
+    right: 0;
+    background: rgba(40, 40, 40, 0.75);
+    text-align: center;
+    border-radius: 5px;
+    color: #FFFFFF;
+    margin: 0 auto;
+    font-size: 0.65rem;
+}
+.weui-toast__content {
+    margin: 0.5rem 0;
+}
+
+
+.yatoast {
+  display: inline-block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  padding: 20rpx 28rpx;
+  border-radius: 8rpx;
+  max-width: 600rpx;
+  z-index: 10000; 
+}
+.yatoast.ng-enter, .yatoast.ng-leave, .yatoast.ng-move {
+  transition-property: opacity;
+  transition-duration: 300ms;
+  transition-timing-function: ease; 
+}
+.yatoast.ng-enter {
+  opacity: 0; 
+}
+.yatoast.ng-enter.ng-enter-active {
+  opacity: 1; 
+}
+.yatoast.ng-leave {
+  opacity: 1; 
+}
+.yatoast.ng-leave.ng-leave-active {
+  opacity: 0; 
+}
+.yatoast.ng-move {
+  opacity: 0.5; 
+}
+.yatoast.ng-move.ng-move-active {
+  opacity: 1; 
+}

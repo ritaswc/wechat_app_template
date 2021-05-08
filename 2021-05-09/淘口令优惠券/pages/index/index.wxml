@@ -1,0 +1,64 @@
+<view id="page-index">
+  <view id="search">
+    <image id="logo" src="../../images/logo.png" bindtap="selectAll"></image>
+    <input id="search-input" value="{{inputContent}}" placeholder="输入关键字搜索" bindinput="bindInputChange" bindconfirm="selectByItemName" />
+    <label id="search-label">
+      <image id="search-img" src="../../images/search.png" bindtap="selectByItemName"></image>
+    </label>
+  </view>
+  <view id="category">
+    <view class="category-item{{selectCategory=='C100'?' category-select':''}}" bindtap="selectByCategory" data-category-id="C100">
+      <view>
+        <image src="../../images/home.png"></image>家居</view>
+    </view>
+    <view class="category-item{{selectCategory=='C010'?' category-select':''}}" bindtap="selectByCategory" data-category-id="C010">
+      <view>
+        <image src="../../images/woman.png"></image>女装</view>
+    </view>
+    <view class="category-item{{selectCategory=='C110'?' category-select':''}}" bindtap="selectByCategory" data-category-id="C110">
+      <view>
+        <image src="../../images/food.png"></image>美食</view>
+    </view>
+    <view class="category-item category-item-last{{selectCategory!='C100'&&selectCategory!='C010'&&selectCategory!='C110'?' category-select':''}}" bindtap="showCategoryList">
+      <view>
+        <picker bindchange="bindPickerChange" value="{{selectIndex}}" range="{{categoryList}}" range-key="CategoryName">
+          <view class="picker">
+            <image src="../../images/all.png"></image>{{showCategoryName}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view id="coupon-list">
+    <navigator wx:for="{{couponList}}" wx:key="item.ItemID" url="../detail/detail" bindtap="setCouponInfo" data-index="{{index}}" >
+      <view class="coupon-item">
+        <view class="border-left"></view>
+        <image src="{{item.ItemPic}}"></image>
+        <view class="goods-content">
+          <view class="goods-content-view">
+            <view class="goods-name">{{item.ItemName}}</view>
+            <view class="goods-price-sales">
+              <view class="goods-price">￥{{item.ItemPrice}}</view>
+              <view class="goods-price-coupon">￥{{item.QuanHouJia}}</view>
+              <view class="goods-sales">月销量: {{item.MonthlySales}}</view>
+            </view>
+            <view class="coupon-denomination">{{item.CouponDenomination}}</view>
+          </view>
+        </view>
+        <view class="coupon-content">
+          <view class="coupon-background">券</view>
+          <view class="coupon-content-view">
+            <view class="coupon-coin">￥{{item.Jian}}</view>
+            <view class="coupon-num">数量: {{item.CouponTotal}}</view>
+            <view class="coupon-ratio">
+              <text>优惠\n比例</text>
+              <view>{{item.ZongHeBiLiText}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="border-right"></view>
+      </view>
+    </navigator>
+  </view>
+  <import src="../template/template.wxml" />
+  <template is="loading" data="{{isLoading,loadOver}}" />
+</view>

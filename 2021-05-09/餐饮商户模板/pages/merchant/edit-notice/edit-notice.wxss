@@ -1,0 +1,39 @@
+.container {
+    background-color: #ffffff;
+}
+.container textarea {
+    margin:30rpx 0rpx;
+    width: 650rpx;
+    background-color: #eeeeee;
+    padding: 20rpx 20rpx;
+}
+
+.notice-condition-choice {
+    display: flex;
+    justify-content: flex-start;
+    height: 99rpx;
+    width: 690rpx;
+    align-items: center;
+    border-bottom: 1rpx solid #f2f2f2;
+}
+.notice-condition-choice:last-child {
+    border: none;
+}
+.notice-condition-choice image{
+    width:41rpx;
+    height: 41rpx; 
+    margin-right: 20rpx;
+}
+.release {
+    margin-top: 60rpx;
+    width: 690rpx;
+    background-color: #fda100;
+    color: #ffffff;
+}
+.cancel {
+    margin-top: 60rpx;
+    width: 690rpx;
+    background-color: #cccccc;
+    color: #ffffff;
+
+}

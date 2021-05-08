@@ -1,0 +1,11 @@
+/* pages/banner/banner.wxss */
+page{
+    height: 100%;
+    width: 100%;
+}
+.banner-container{
+    height: 100%;
+    width:100%;
+    background-image: url(http://7xn9on.com1.z0.glb.clouddn.com/banner.png);
+    background-size: 100% 100%;
+}

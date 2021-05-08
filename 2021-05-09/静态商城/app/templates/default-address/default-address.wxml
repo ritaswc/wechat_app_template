@@ -1,0 +1,19 @@
+<template name="default-address">
+  <view class="default-address">
+    <image class="bg-line" src="../../templates/default-address/images/bg_line.png"></image>
+    <image class="pos-icon" src="../../templates/default-address/images/address.png"></image>
+    <view hidden="{{!hasData}}" class="address-detail">
+      <view class="address-user">
+        {{consignee}}  {{mobile}}
+      </view>
+      <view class="address-address">
+        {{detail_address}}
+      </view>
+    </view>
+    <view hidden="{{hasData}}" class="address-empty" hidden="{{true}}">
+      请填写收货人地址
+    </view>
+    <image class="address-arrow {{arrowShow}}" src="../../templates/default-address/images/arrow.png"></image>
+    <image class="bg-line" style="bottom:0;" src="../../templates/default-address/images/bg_line.png"></image>
+  </view>
+</template>

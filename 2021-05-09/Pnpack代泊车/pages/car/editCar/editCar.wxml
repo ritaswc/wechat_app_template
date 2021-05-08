@@ -1,0 +1,17 @@
+<!--pages/car/addCar/addCar.wxml-->
+<view>
+ <view class="column">
+    <view class="header-list-nav row br-b row-jb" >
+     <text>品牌</text>
+      <text class="unselected" catchtap="onchoosebrand">{{brand}}></text>
+    </view>
+     <view class="header-list-nav row br-b row-jb"  >
+      <text>车牌号</text>
+      <text class="unselected" catchtap="onchoosevehicle">{{vehicle}}></text>
+    </view>
+    <view class="header-list-nav row row-jc color-f bg-pp" 
+    bindtap="bindSuccess" >
+     保存
+    </view>
+  </view>
+</view>

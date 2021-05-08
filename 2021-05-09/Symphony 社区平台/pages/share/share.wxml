@@ -1,0 +1,61 @@
+<view class="body wrapper share" wx:if="{{book.bookTitle}}">
+  <view class="content">
+    <text class="title">📖《{{book.bookTitle}}》纸质实体书免费送啦！</text>
+    <image mode="aspectFit" src="{{book.bookImgURL}}" />
+    <view wx:if="{{book.bookAuthor.length > 0}}">
+      <text class="h3">作者</text>
+      <view wx:for="{{book.bookAuthor}}" wx:key="*this">
+         {{item}}
+      </view>
+    </view>
+    <view>
+      {{bool.bookAuthorIntro}}
+    </view>
+    <view wx:if="{{book.bookTranslator.length > 0}}">
+      <text class="h3">译者</text>
+      <view wx:for="{{book.bookTranslator}}" wx:key="*this">
+         {{item}}
+      </view>
+    </view>
+    <view wx:if="{{book.bookSummary}}">
+      <text class="h3">内容简介</text>
+     <view>{{book.bookSummary}}</view>
+    </view>
+    <view wx:if="{{book.bookCatalog}}">
+      <text class="h3"> 目录</text>
+      <view wx:for="{{book.bookCatalogList}}" wx:key="*this" wx:if="{{item}}">
+        {{item}}
+      </view>
+    </view>
+    <view>
+      <text class="h3">其他</text>
+      <view>
+        出版社：{{book.bookPublisher}}
+      </view>
+      <view wx:if="{{book.bookSeries}}">
+        丛书：{{book.bookSeries}}
+      </view>
+      <view wx:if="{{book.bookSubTitle}}">
+        副标题：{{book.bookSubTitle}}
+      </view>
+      <view wx:if="{{book.bookOriginalTitle}}">
+        原作名：{{book.bookOriginalTitle}}
+      </view>
+      <view>
+        出版年：{{book.bookPublishDate}}
+      </view>
+      <view>
+        总页数：{{book.bookPages}}
+      </view>
+      <view>
+        定　价：{{book.bookPrice}}
+      </view>
+      <view wx:if="{{book.bookBinding}}">
+        装　帧：{{book.bookBinding}}
+      </view>
+    </view>
+  </view>
+  <view class="bottom-btn wrapper">
+    <button type="warn" bindtap="share">共享</button>
+  </view>
+</view>

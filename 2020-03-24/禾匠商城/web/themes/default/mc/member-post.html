@@ -1,0 +1,1017 @@
+{template 'common/header'}
+{if $do=='post'}
+<ol class="breadcrumb we7-breadcrumb">
+	<a href="{php echo url('mc/member/display')}"><i class="wi wi-back-circle"></i> </a>
+	<li>
+		<a href="{php echo url('mc/member/display')}">会员管理</a>
+	</li>
+	<li>
+		编辑会员
+	</li>
+</ol>
+<div class="user-head-info we7-padding-bottom">
+	<img ng-src="./resource/images/nopic-107.png" class="img-circle user-avatar" src="./resource/images/nopic-107.png">
+	<div class="info">
+		<h3 class="tilte">姓名</h3>
+	</div>
+</div>
+<div class="btn-group we7-btn-group">
+	<a href="javascript:;" class="btn hidden">基本信息</a>
+	<a href="javascript:;" class="btn active">积分、余额、消费</a>
+	<a href="{php echo url('mc/member/credit_stat',array('uid' => $uid, 'type' => 1))}" title="日志" class="btn">日志</a>
+</div>
+
+<div class="btn-group we7-btn-group hidden">
+	<a href="javascript:;" class="btn">基本信息</a>
+	<a href="javascript:;" class="btn active">积分/余额</a>
+	<a href="javbascript:;" class="btn">数据统计</a>
+</div>
+<div class="main">
+	<form action="" class="we7-form form" method="post" enctype="multipart/form-data">
+		{if !empty($profile)}
+		<!--积分、余额-->
+		<table class="table we7-table table-hover table-form hidden">
+			<col width="140px">
+			<col />
+			<col width="100px">
+			<tr>
+				<th class="text-left" colspan="3">会员积分/余额操作</th>
+			</tr>
+			<tr>
+				<td class="table-label">积分</td>
+				<td>0.0</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">余额</td>
+				<td>0.00</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+		</table>
+		<table class="table we7-table table-hover table-form hidden">
+			<col width="140px">
+			<col />
+			<col width="100px">
+			<col />
+			<col />
+			<col />
+			<tr>
+				<th colspan="6">
+					<div class="btn-group we7-btn-group">
+						<a href="javascript:;" class="btn">积分记录</a>
+						<a href="javascript:;" class="btn active">余额记录</a>
+					</div>
+				</th>
+			</tr>
+			<tr>
+				<th>账户类型</th>
+				<th class="text-center">操作员</th>
+				<th class="text-center">积分增减</th>
+				<th class="text-center">模块</th>
+				<th class="text-center">操作时间</th>
+				<th class="text-center">备注</th>
+			</tr>
+			<tr>
+				<td class="text-center">积分</td>
+				<td class="text-center">admin</td>
+				<td class="text-center">100</td>
+				<td class="text-center">官方模块示例</td>
+				<td class="text-center">2017-06-15 14:02</td>
+				<td class="text-center">123456</td>
+			</tr>
+		</table>
+		<!--end积分、余额-->
+		<!--基本信息-->
+		<table class="table we7-table table-hover table-form hidden">
+			<col width="140px">
+			<col width="500px">
+			<tr>
+				<th class="text-left" colspan="3">会员信息</th>
+			</tr>
+			<tr>
+				<td class="table-label">会员名称</td>
+				<td>admin</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">密码</td>
+				<td>*****</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+		</table>
+		<table class="table we7-table table-hover table-form hidden">
+			<col width="140px">
+			<col />
+			<col width="100px">
+			<tr>
+				<th class="text-left" colspan="3">基本信息</th>
+			</tr>
+			<tr>
+				<td class="table-label">头像</td>
+				<td><img src="" alt="" class="img-circle" style="width: 65px; height: 65px;"/></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">用户UID</td>
+				<td colspan="2">{$uid}</td>
+			</tr>
+			<tr>
+				<td class="table-label">所在会员组</td>
+				<td>铜牌会员组</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">昵称</td>
+				<td>hahaha</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">真实姓名</td>
+				<td>韩梅梅</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">性别</td>
+				<td>女</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">生日</td>
+				<td>1990-01-01</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">户籍</td>
+				<td>山西省太原市小店区</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">详细地址</td>
+				<td>许坦东街锦东国际</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">手机</td>
+				<td>18812345678</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">QQ</td>
+				<td>123456</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">Email</td>
+				<td>123@qq.com</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+		</table>
+		<table class="table we7-table table-hover table-form hidden">
+			<col width="140px">
+			<col />
+			<col width="100px">
+			<tr>
+				<th class="text-left" colspan="3">联系方式</th>
+			</tr>
+			<tr>
+				<td class="table-label">固定电话</td>
+				<td>0351-12345678</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">MSN</td>
+				<td>MSN</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">阿里旺旺</td>
+				<td>aliwangwang</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">支付宝账号</td>
+				<td>zhifubao@qq.com</td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+		</table>
+		<table class="table we7-table table-hover table-form hidden">
+			<col width="140px">
+			<col width="100px">
+			<tr>
+				<th class="text-left">收货地址</th>
+				<th class="text-right">
+					<div class="link-group"><a href="javascript:;">添加收货地址</a></div>
+				</th>
+			</tr>
+			<tr>
+				<td class="table-label">
+					山西省-太原市-小店区-晋阳街长治路口 <span class="label label-success">默认收货地址</span>
+				</td>
+				<td class="text-right">
+					<div class="link-group">
+						<a href="javascript:;">编辑</a>
+						<a href="javascript:;" class="del">删除</a>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">
+					山西省-太原市-小店区-晋阳街长治路口
+				</td>
+				<td class="text-right">
+					<div class="link-group">
+						<a href="javascript:;">设为默认</a>
+						<a href="javascript:;">编辑</a>
+						<a href="javascript:;" class="del">删除</a>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<table class="table we7-table table-hover table-form hidden">
+			<col width="140px">
+			<col />
+			<col width="100px">
+			<tr>
+				<th class="text-left" colspan="3">教育情况</th>
+			</tr>
+			<tr>
+				<td class="table-label">学号</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">班级</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">毕业学校</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">学历</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+		</table>
+		<table class="table we7-table table-hover table-form hidden">
+			<col width="140px">
+			<col />
+			<col width="100px">
+			<tr>
+				<th class="text-left" colspan="3">工作情况</th>
+			</tr>
+			<tr>
+				<td class="table-label">公司</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">职业</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">职位</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">年收入</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+		</table>
+		<table class="table we7-table table-hover table-form hidden">
+			<col width="140px">
+			<col />
+			<col width="100px">
+			<tr>
+				<th class="text-left" colspan="3">个人情况</th>
+			</tr>
+			<tr>
+				<td class="table-label">星座</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">生肖</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">国籍</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">身高</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">体重</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">血型</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">身份证号</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">邮编</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">个人主页</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">情感状态</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">交友目的</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">自我介绍</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">兴趣爱好</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+		</table>
+		<table class="table we7-table table-hover table-form hidden">
+			<col width="140px">
+			<col />
+			<col width="100px">
+			<tr>
+				<th class="text-left" colspan="3">其他信息</th>
+			</tr>
+			<tr>
+				<td class="table-label">VIP级别</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">出生生日</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">居住地址</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="table-label">工号</td>
+				<td></td>
+				<td class="text-right">
+					<div class="link-group"><a href="javascript:;">修改</a></div>
+				</td>
+			</tr>
+		</table>
+		<!--end编辑会员-->
+		<div class="panel we7-panel">
+			<div class="panel-heading">修改密码</div>
+			<div class="panel-body we7-padding">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">新密码</label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="password" class="form-control" name="newpwd" value="" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">重复新密码</label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="password" class="form-control" name="rnewpwd" value="" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label"></label>
+					<div class="col-sm-9 col-xs-12">
+						<a href="javascript:;" id="updatepwd" class="btn btn-primary">修改密码</a>
+						<span class="label"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		{/if}
+		<div class="panel we7-panel">
+			<input type="hidden" name="uid" value="{$uid}" />
+			<input type="hidden" name="fanid" value="{$_GPC['fanid']}" />
+			<input type="hidden" name="email_effective" value="{$profile['email_effective']}" />
+			<div class="panel-heading">
+				基本资料
+			</div>
+			<div class="panel-body we7-padding">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">头像</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('avatar', $profile['avatar']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">用户UID</label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="text" class="form-control" name="" value="{$uid}" readonly="readonly">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">所在会员组</label>
+					<div class="col-sm-9 col-xs-12">
+						<select name="groupid" class="form-control we7-select">
+							{loop $groups $group}
+							<option value="{$group['groupid']}" {if $profile['groupid'] == $group['groupid']}selected{/if}>{$group['title']}</option>
+							{/loop}
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">昵称</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('nickname',$profile['nickname']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">真实姓名</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('realname',$profile['realname']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">性别</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('gender',$profile['gender']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">生日</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('birth',array('year' => $profile['birthyear'],'month' => $profile['birthmonth'],'day' => $profile['birthday']));}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">户籍</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('reside',array('province' => $profile['resideprovince'],'city' => $profile['residecity'],'district' => $profile['residedist']));}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">详细地址</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('address',$profile['address']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">手机</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('mobile',$profile['mobile']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">QQ</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('qq',$profile['qq']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Email</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('email',$profile['email']);}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel we7-panel">
+			<div class="panel-heading">联系方式</div>
+			<div class="panel-body we7-padding">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">固定电话</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('telephone',$profile['telephone']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">MSN</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('msn',$profile['msn']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">阿里旺旺</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('taobao',$profile['taobao']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">支付宝帐号</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('alipay',$profile['alipay']);}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel we7-panel" id="tip">
+			<div class="panel-heading">收货地址</div>
+			<div class="panel-body we7-padding">
+				<div id="address">
+					{loop $addresss $address}
+					<div class="form-group">
+						<label class="col-sm-2 control-label"></label>
+						<div class="col-sm-9 col-xs-12">
+							<label  data-id="{$address['id']}">{$address['province']}-{$address['city']}-{$address['district']}-{$address['address']}{if !empty($address['isdefault'])}<span id="default">【默认收货地址】</span>{/if}</label>
+				<span class="help-block">
+					<a href="javascript:" id="" class="isdefault" data-id="{$address['id']}">{if !$address['isdefault']}设为默认{/if}</a>
+					<a href="javascript:" data-toggle="modal" data-target="#myModal" class="editaddr" data-id="{$address['id']}" data-username="{$address['username']}" data-mobile="{$address['mobile']}" data-zipcode="{$address['zipcode']}" data-province="{$address['province']}" data-city="{$address['city']}" data-district="{$address['district']}" data-address="{$address['address']}">编辑</a>
+					<a href="javascript:" class="deleteaddr" data-id="{$address['id']}">删除</a>
+				</span>
+						</div>
+					</div>
+					{/loop}
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label"></label>
+					<div class="col-sm-9 col-xs-12">
+						<button type="button" id="add" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+							添加收货地址
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">添加收货地址</h4>
+					</div>
+					<div class="modal-body">
+						<div class="addaddress">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">姓名</label>
+								<div class="col-sm-9 col-xs-12">
+									<input class="form-control" name="name" value="{$_GPC['record']['username']}">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">手机号</label>
+								<div class="col-sm-9 col-xs-12">
+									<input class="form-control" name="phone" value="{$_GPC['record']['mobile']}">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">邮编</label>
+								<div class="col-sm-9 col-xs-12">
+									<input class="form-control" name="code" value="{$_GPC['record']['zipcode']}">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">收货地址</label>
+								<div class="col-sm-9 col-xs-12">
+									{php echo tpl_form_field_district("addaddress", array('province' => $_GPC['record']['province'], 'city' => $_GPC['record']['city'], 'district' => $_GPC['record']['district']));}
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">详细地址</label>
+								<div class="col-sm-9 col-xs-12">
+									<input class="form-control" name="detail" value="{$_GPC['record']['address']}">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label"></label>
+								<div class="col-sm-9 col-xs-12">
+									<a href="javascript:"  id="submitaddr" data-id="" data-op="" class="btn btn-default btn-primary">提交</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			$(function() {
+				$('#add').click(function () {
+					$('#myModalLabel').html('添加收货地址');
+					$('[name="name"]').val('');
+					$('[name="addaddress[province]"]').val('');
+					$('[name="addaddress[city]"]').val('');
+					$('[name="addaddress[district]"]').val('');
+					$('[name="detail"]').val('');
+					$('[name="code"]').val('');
+					$('[name="phone"]').val('');
+					$('#submitaddr').data('op', 'addaddress');
+				});
+				$('#address').on('click', ".editaddr", function() {
+					$('#myModalLabel').html('修改收货地址');
+					$('#submitaddr').data('op', 'editaddress');
+					$('#edit').prop('id', '');
+					$(this).prop('id', 'edit');
+					$('[name="name"]').val($(this).data('username'));
+					$('[name="addaddress[province]"]').val($(this).data('province'));
+					$('[name="addaddress[province]"]').trigger('change');
+					$('[name="addaddress[city]"]').val($(this).data('city'));
+					$('[name="addaddress[city]"]').trigger('change');
+					$('[name="addaddress[district]"]').val($(this).data('district'));
+
+					$('[name="detail"]').val($(this).data('address'));
+					$('[name="code"]').val($(this).data('zipcode'));
+					$('[name="phone"]').val($(this).data('mobile'));
+					$('#submitaddr').data('id', $(this).data('id'));
+				});
+				$('#address').on('click', ".isdefault",function () {
+					var uid = {$_GPC['uid']};
+					var id = $(this).data('id');
+					var obj = $(this);
+					$.post("{php echo url('mc/member/post' ,array('op' => 'isdefault'))}", {uid : uid, id: id}, function(data) {
+						if (data.message.errno) {
+							$('#default').parent().next().children(':first').html('设为默认');
+							$('#default').remove();
+							obj.parent().prev().html(obj.parent().prev().html()+'<span id="default">【默认收货地址】</span>');
+							obj.html('');
+						}
+					},'json');
+				});
+				$('#address').on('click', '.deleteaddr', function () {
+					if (!confirm('确认删除收货地址')) {
+						return false;
+					}
+					var id = $(this).data('id');
+					var obj = $(this);
+					$.post("{php echo url('mc/member/post', array('op' => 'del'));}", {id : id}, function(data) {
+						if (data.message.errno) {
+							obj.parent().parent().remove();
+						}
+					}, 'json');
+				});
+				$('#submitaddr').click(function () {
+					var name = $('[name="name"]').val();
+					if (name == '') {
+						util.message('请填写收货人姓名');
+						return false;
+					}
+					var province = $('[name="addaddress[province]"]').val();
+					var city = $('[name="addaddress[city]"]').val();
+					var district = $('[name="addaddress[district]"]').val();
+					var detail = $('[name="detail"]').val();
+					var uid = {$_GPC['uid']};
+					var code = $('[name="code"]').val();
+					var phone = $('[name="phone"]').val();
+					if (phone == '') {
+						util.message('请填写收货人手机号');
+						return false;
+					}
+					var reg = /^1\d{10}$/;
+					if (!reg.test(phone)) {
+						util.message('请填写正确的手机号码');
+						return false;
+					}
+					if (city == '') {
+						util.message('请填写收货地址');
+						return false;
+					}
+					if (detail == '') {
+						util.message('请填写详细收货地址');
+						return false;
+					}
+					$('#myModal').modal('hide');
+					var id = $(this).data('id');
+					var op = $(this).data('op');
+					$.post("./index.php?c=mc&a=member&do=post&op="+op, {province : province, city : city, district : district, detail : detail, uid : uid, name : name, code : code, phone : phone, id : id}, function(data) {
+						var post = data.message.message;
+						if (data.message.errno) {
+							if (op == 'editaddress') {
+								$('#edit').data({'username' : post.username, 'id' : post.id, 'mobile' : post.mobile, 'zipcode' : post.zipcode, 'province' : post.province, 'city' : post.city, 'district' : post.district, 'address' : post.address});
+								var html = $('#edit').parent().prev().html();
+								var edithtml = post.province + ' - ' + post.city + ' - ' + post.district + ' - '+ post.address;
+								if (html.indexOf('默认收货地址') > -1) {
+									edithtml += '<span id="default">【默认收货地址】</span>';
+								}
+								$('#edit').parent().prev().html(edithtml);
+								util.message('修改成功');
+							} else{
+								var isdefault = '';
+								if (post.isdefault == 1) {
+									isdefault += '<span id="default">【默认收货地址】</span>';
+								}
+								$('#address').append(
+										'<div class="form-group">' +
+										'   <label class="col-sm-2 control-label"></label>' +
+										'   <div class="col-sm-9 col-xs-12">'+
+										'<label  data-id='+post.id+'>'+post.province+'-'+post.city+'-'+post.district+'-'+post.address+isdefault+'</label>'+
+										'       <span class="help-block">' +
+										'           <a href="javascript:" class="isdefault" data-id="'+post.id+'">设为默认</a>'+
+										'           <a href="javascript:" class="editaddr" data-toggle="modal" data-target="#myModal" data-id="'+post.id+'" data-username="'+post.username+'" data-mobile="'+post.mobile+'" data-zipcode="'+post.zipcode+'" data-province="'+post.province+'" data-city="'+post.city+'" data-district="'+post.district+'" data-address="'+post.address+'">编辑</a>'+
+										'           <a href="javascript:" class="deleteaddr" data-id="'+post.id+'">删除</a>'+
+										'       </span>'+
+										'   </div>'+
+										'</div>'
+								);
+								util.message('添加成功');
+							}
+						}
+					}, 'json');
+				});
+			});
+		</script>
+
+		<div class="panel we7-panel">
+			<div class="panel-heading">教育情况</div>
+			<div class="panel-body we7-padding">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">学号</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('studentid',$profile['studentid']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">班级</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('grade',$profile['grade']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">毕业学校</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('graduateschool',$profile['graduateschool']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">学历</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('education',$profile['education']);}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel we7-panel">
+			<div class="panel-heading">工作情况</div>
+			<div class="panel-body we7-padding">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">公司</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('company',$profile['company']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">职业</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('occupation',$profile['occupation']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">职位</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('position',$profile['position']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">年收入</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('revenue',$profile['revenue']);}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel we7-panel">
+			<div class="panel-heading">个人情况</div>
+			<div class="panel-body we7-padding">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">星座</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('constellation',$profile['constellation']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">生肖</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('zodiac',$profile['zodiac']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">国籍</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('nationality',$profile['nationality']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">身高</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('height',$profile['height']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">体重</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('weight',$profile['weight']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">血型</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('bloodtype',$profile['bloodtype']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">身份证号</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('idcard',$profile['idcard']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">邮编</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('zipcode',$profile['zipcode']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">个人主页</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('site',$profile['site']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">情感状态</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('affectivestatus',$profile['affectivestatus']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">交友目的</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('lookingfor',$profile['lookingfor']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">自我介绍</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('bio',$profile['bio']);}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">兴趣爱好</label>
+					<div class="col-sm-9 col-xs-12">
+						{php echo tpl_fans_form('interest',$profile['interest']);}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel we7-panel">
+			<div class="panel-heading">其他信息</div>
+			<div class="panel-body we7-padding">
+				{loop $custom_fields $field}
+				<div class="form-group">
+					<label class="col-sm-2 control-label">{$all_fields[$field]}</label>
+					<div class="col-sm-9 col-xs-12">
+						<input name="{$field}" class="form-control" value="{$profile[$field]}">
+					</div>
+				</div>
+				{/loop}
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-12">
+				<button type="submit" class="btn btn-primary col-lg-1" name="submit" value="提交">提交</button>
+				<input type="hidden" name="token" value="{$_W['token']}" />
+			</div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+	$('#updatepwd').click(function(){
+		var newpwd = $("input[name='newpwd']").val();
+		var rnewpwd = $("input[name='rnewpwd']").val();
+		if (newpwd.length < 6) {
+			util.message('密码不得少于6个字符');
+			return false;
+		}
+		if (newpwd != rnewpwd) {
+			util.message('两次输入的密码不一致');
+			return false;
+		}
+		var uid = window.location.href.substr(window.location.href.lastIndexOf('=') + 1);
+		$.post(location.href, {uid:uid, password:newpwd}, function(resp){
+			if(resp == 'success') {
+				$('#updatepwd').next().removeClass().addClass('label label-success').text('密码修改成功');
+				$("input[name='newpwd']").val('');
+				$("input[name='rnewpwd']").val('');
+				setTimeout(function() {$('#updatepwd').next().empty();}, 2000);
+			} else if (resp == 'error') {
+				$('#updatepwd').next().removeClass().addClass('label label-danger').text('会员不存在或已删除');
+			} else {
+				$('#updatepwd').next().removeClass().addClass('label label-danger').text('网络错误，请稍后重试');
+			}
+		});
+
+	});
+</script>
+{/if}
+{template 'common/footer'}

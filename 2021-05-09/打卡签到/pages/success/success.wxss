@@ -1,0 +1,82 @@
+.vIcon-style {
+  display: flex;
+  justify-content: center;
+}
+
+.iIcon {
+  width: 300rpx;
+  height: 318rpx;
+  margin-top: 200rpx;
+}
+
+.vSuccessMsg {
+  display: flex;
+  justify-content: center;
+  margin-top: 78rpx;
+}
+.vSuccessMsg text
+{
+	height: 80rpx;
+	object-fit: contain;
+	font-family: PingFangSC;
+	font-size: 56rpx;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.54);
+  line-height: 60rpx;
+}
+
+.vDate-part {
+  margin-top: 146rpx;
+}
+
+.vDate-part text {
+  height: 100%;
+  font-size: 36rpx;
+  letter-spacing: -0.8rpx;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.54);
+  margin: auto 0rpx auto 0rpx;
+}
+
+.vTime-style {
+  display: flex;
+}
+
+.iTime {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 34rpx;
+  margin-right: 14rpx;
+}
+
+.vLocation-style {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.iLocation {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 34rpx;
+  margin-right: 14rpx;
+}
+
+.bBack {
+  width: 90%;
+  height: 94rpx;
+  line-height: 94rpx;
+  border: solid 4rpx rgba(5, 5, 5, 0.1);
+  margin-top: 112rpx;
+  font-size: 36rpx;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.54);
+}
+.vOutcompany
+{
+	height: 40rpx;
+	font-size: 28rpx;
+	color: rgba(0, 0, 0, 0.38);
+  text-align: center;
+  margin-top: 38rpx;
+}

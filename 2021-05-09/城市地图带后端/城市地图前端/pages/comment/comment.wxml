@@ -1,0 +1,14 @@
+<form catchsubmit="formSubmit">
+  <view class="weui-cells__title" style="font-size:20px">{{spot_name}}</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="spot_id" value="{{spot_id}}" hidden/>
+        <textarea class="weui-textarea" name="comment" placeholder="人多吗？有插座吗？网速快吗？有熊孩子吗？有洗手间吗" style="height: 6.0em" focus="true"/>
+      </view>
+    </view>
+  </view>
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" formType="submit">评论</button>
+  </view>
+</form>

@@ -1,0 +1,143 @@
+/**index.wxss**/
+
+.box {
+  height: 100%;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.search-box {
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+
+.head-img image {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 40%;
+  top: -80px;
+  transform: rotate(-40deg);
+}
+
+.search-input {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 1px solid #4fbdfa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-input input {
+  font-size: 22px;
+  height: 60px;
+  line-height: 60px;
+  display: inline-flex;
+  flex: 0 0 80%;
+  margin-left: 10px;
+}
+
+.search-input image {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  flex: 0 0 1;
+  margin-right: 10px;
+}
+
+.placeholderstyle {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/*按钮*/
+
+.search-button {
+  margin: 10%;
+  position: relative;
+}
+
+.search-button button {
+  color: white;
+  background-color: #4fbdfa;
+}
+
+/*分割线*/
+
+.explain-line {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background-color: #f8f8f8;
+  position: relative;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.explain-block {
+  width: 5px;
+  height: 30px;
+  background-color: #ef6262;
+  display: inline-block;
+}
+
+.explain-text {
+  display: inline-block;
+  color: #343434;
+  margin-left: 5%;
+  font-size: 1rem;
+}
+
+/*查询历史*/
+
+.search-result {
+  margin: 0 20px 20px 20px;
+  color: #979797;
+
+  font-size: 0.8rem;
+}
+
+.history-item {
+  border-bottom: 1px solid #e9e9e9;
+  line-height: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-detail{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expressname {
+  line-height: 50px;
+  height: 50px;
+}
+
+.expressorder {
+  margin-left: 10px;
+  line-height: 50px;
+  height: 50px;
+}
+
+.delhistory{
+  display: inline-flex;
+  height: 51px;
+  line-height: 51px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.delhistory image{
+  width: 20px;
+  height: 20px;
+}

@@ -1,0 +1,40 @@
+<import src="./../../wxParse/wxParse.wxml"></import>
+<view class="page">
+    <include src="/components/common/common"></include>
+    <include src="/components/header/header"></include>
+    <view class="body after-navber">
+        <view class="new-body">
+            <view class="title px-24">{{title}}</view>
+            <view class="flex-row info fs-sm px-24">
+                <view class="flex-grow-1">{{addtime}}</view>
+                <view class="flex-grow-0">{{read_count}}</view>
+            </view>
+            <view class="content">
+                <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+            </view>
+        </view>
+        <cover-view class="bar" wx:if="{{!wxParseVideoFullScreen}}">
+            <cover-view class="flex-row">
+                <cover-view class="flex-grow-1 flex-x-center">
+                    <cover-view bindtap="favoriteClick" class="btn fs-sm" data-action="0" wx:if="{{is_favorite==1}}">
+                        <cover-image class="icon" src="{{__wxapp_img.topic.love_active.url}}"></cover-image>
+                        <cover-view>已收藏</cover-view>
+                    </cover-view>
+                    <cover-view bindtap="favoriteClick" class="btn fs-sm" data-action="1" wx:else>
+                        <cover-image class="icon" src="{{__wxapp_img.topic.love.url}}"></cover-image>
+                        <cover-view>收藏</cover-view>
+                    </cover-view>
+                </cover-view>
+                <cover-view class="flex-grow-1 flex-x-center">
+                    <cover-view bindtap="showShareModal" class="btn fs-sm">
+                        <cover-image class="icon" src="{{__wxapp_img.topic.share.url}}"></cover-image>
+                        <cover-view>分享</cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+        </cover-view>
+    </view>
+    <include src="/components/save_qrcode/save_qrcode"></include>
+    <include src="/components/footer/footer"></include>
+    <include src="/components/quick-navigation/quick-navigation.wxml"></include>
+</view>

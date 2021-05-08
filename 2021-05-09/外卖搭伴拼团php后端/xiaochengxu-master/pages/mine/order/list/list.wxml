@@ -1,0 +1,55 @@
+
+<view class="content">
+    <view class="group-title">
+        <view>
+        <text bindtap="changeType" data-type="all" wx:if="{{active == 0}}" class="active">全部订单</text>
+      <text bindtap="changeType" data-type="all" wx:else>全部订单</text>
+<text bindtap="changeType" data-type="nopay" wx:if="{{active == 1}}" class="active">待付款</text>
+      <text bindtap="changeType" data-type="nopay" wx:else>待付款</text>
+<text bindtap="changeType" data-type="yepay" wx:if="{{active == 2}}" class="active">已付款</text>
+      <text bindtap="changeType" data-type="yepay" wx:else>已付款</text>     
+        </view>
+    </view>
+    <view style="padding-bottom:10rpx;">
+        <block wx:for="{{orderList}}" wx:key>
+        <view class="goods-info">
+            <image src="{{item.order_img}}"></image>
+            <view class="goods-info-handler">
+                <view class="goods-info-name"><text>{{item.goods_name}}</text></view>
+                <view class="goods-info-price">
+                    <text wx:if="{{item.pay_status == 0}}">¥{{item.order_amount}}</text>
+                    <text wx:else>¥{{item.money_paid}}</text>
+                </view>
+                <view class="group-state pull-right"  wx:if="{{item.pay_status == 0}}">
+                    <text bindtap="cancelOrder" data-ordersn="{{item.order_sn}}">取消订单</text>
+                    <text bindtap="pay" data-id="{{item.order_id}}">去支付</text>
+                </view>
+                <view class="group-state group-state-paid pull-right" wx:else>
+                    <text>已付款</text>
+                    <text bindtap="showDetail" data-orderid="{{item.order_id}}">查看详细</text>
+                </view>
+            </view>
+        </view>
+        </block>
+        <!--<view class="goods-info">
+            <image src="/asset/img/share.jpg"></image>
+            <view class="goods-info-handler">
+                <text>西红柿 一箱6~7斤 12~15颗大果</text>
+                <view class="goods-info-price">
+                    <text>¥68.00</text>
+                     <view class="calc">
+                        <text>已成团</text>
+                        <text>未发货</text>
+                     </view>   
+                </view>
+                <view class="group-state group-state-paid pull-right">
+                    <text>已付款</text>
+                    <text bindtap="showDetail">查看详细</text>
+                </view>
+            </view>
+        </view>-->
+    </view>
+</view>
+
+<import src="/asset/template/backhome.wxml" />
+<template is="backhome"/>

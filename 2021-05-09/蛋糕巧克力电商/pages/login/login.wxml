@@ -1,0 +1,11 @@
+
+
+<view class="ipt">
+  <input bindinput="changephone" placeholder="手机号" value="{{phone}}" />
+</view>
+<view class="ipt">
+  <input bindinput="changepwd" placeholder="密码" value="{{pwd}}" />
+</view>
+<view class="btn" bindtap="submit">
+  登 录
+</view>

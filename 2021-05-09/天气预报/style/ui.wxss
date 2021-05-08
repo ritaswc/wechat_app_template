@@ -1,0 +1,97 @@
+/*flex float*/
+
+.ui-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.ui-flex-item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.ui-flex-item-2 {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+  flex: 2;
+}
+/*text-align*/
+.text-center{
+  text-align: center;
+}
+/*ui-panel*/
+
+.ui-panel {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.panel-title {
+  height: 1.6em;
+  line-height: 1.6em;
+  font-size: 1em;
+  color: #333;
+  font-weight: 600;
+}
+
+.panel-content {
+  padding: 0.3em 0;
+}
+
+/*ui-card*/
+
+.ui-card {
+  margin: 0.3em 1em;
+  /*padding:.5em;*//*background-color: #333;*/
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: -apple-system-font, Arial, "Times New Roman", "Helvetica Neue", sans-serif;
+  letter-spacing: 1px;
+}
+
+.ui-card-in-page-content {
+  margin: 0;
+}
+
+.ui-card-header {
+  text-align: center;
+  height: 3em;
+  line-height: 3em;
+}
+
+.ui-card-content {
+  padding: 0.5em;
+}
+
+/*ui-btn*/
+
+/*.ui-btn,
+.ui-btn-primary{
+    background-color: #eee;
+    text-align: center;
+    margin: .5em;
+    border-radius: .3em;
+    height: 2.4em;
+    line-height: 2.4em;
+    font-size: 1em;
+    display: block;
+    color: #000;
+    box-sizing: border-box;
+}
+.ui-btn{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.ui-btn:active{
+    background-color: #ccc;
+}
+.ui-btn-primary{
+    background-color: #1AAD19;
+    color: #fff;
+}*/
+
+button {
+  margin: 0.3em;
+}
