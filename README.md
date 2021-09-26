@@ -5,3 +5,6 @@
 本人没有这些代码的所有权
 如果侵权，请私信我删除，并重建仓库
 
+
+中国大陆 gitee.com镜像站点：
+[https://github.com/ritaswc/wechat_app_template](https://github.com/ritaswc/wechat_app_template)
