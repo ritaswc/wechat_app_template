@@ -7,4 +7,4 @@
 
 
 中国大陆 gitee.com镜像站点：
-[https://github.com/ritaswc/wechat_app_template](https://github.com/ritaswc/wechat_app_template)
+[https://gitee.com/ritaswc/wechat_app_template](https://gitee.com/ritaswc/wechat_app_template)
